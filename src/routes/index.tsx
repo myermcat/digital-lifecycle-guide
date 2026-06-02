@@ -64,18 +64,21 @@ function Index() {
         <BgAnimal src={rabbit} className="w-32 md:w-44 bottom-2 right-4 md:right-16" rotate={-8} />
       </div>
 
-      <div className="relative mx-auto max-w-3xl px-6 py-16 md:py-24">
-        <header className="mb-12 md:mb-16">
-          <p className="text-sm uppercase tracking-widest text-muted-foreground">
+      <div className="relative mx-auto max-w-2xl px-6 py-20 md:py-28">
+        <header className="mb-14 md:mb-20 text-center">
+          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
             Government of Canada
           </p>
-          <h1 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-tight">
-            The Digital Lifecycle Guide
+          <h1 className="mt-4 font-serif text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-[1.05]">
+            The Digital
+            <br />
+            Lifecycle Guide
           </h1>
+          <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>
 
-        <section className="space-y-5 text-lg leading-relaxed text-foreground/90">
-          <p>
+        <section className="space-y-6 text-[1.1rem] md:text-lg leading-[1.75] text-foreground/90 font-serif">
+          <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:leading-none first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
             Canada. We do not know who you are. You might be in a small team or a big one.
             You might build things yourselves or buy them from suppliers. You might have a
@@ -95,10 +98,9 @@ function Index() {
 
         <section className="mt-14 md:mt-20">
           <h2 className="sr-only">The three regions of a digital service's life</h2>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-3">
             <RegionCard
               heading="Build"
-              shortDescription="The time before your service exists. You are figuring out what to build, whether to build it, and how."
               expandedIntro="The Build region has three sub-phases — Discovery, Alpha, and MVP — each with its own page."
               subItems={[
                 {
@@ -121,7 +123,6 @@ function Index() {
             />
             <RegionCard
               heading="Live"
-              shortDescription="The time your service is running. You are operating it, improving it, keeping it healthy. Most of a service's life is spent here."
               expandedIntro="The Live region has three sub-phases — Launch, Growth, and Maturity — each with its own page."
               subItems={[
                 {
@@ -144,7 +145,6 @@ function Index() {
             />
             <RegionCard
               heading="Sunset"
-              shortDescription="The time you wind your service down. Users move on, data is preserved, the service closes or hands off to a successor."
               expandedIntro="Sunset covers two patterns of work: shutdown, where the program ends and there is no successor, and transition, where a successor is taking over and users need to migrate. In Canadian government, transitions are far more common."
               deepLink={{ href: "#sunset", label: "Go to the Sunset region" }}
             />
@@ -152,7 +152,7 @@ function Index() {
         </section>
 
         <section className="mt-16 md:mt-20">
-          <p className="text-lg leading-relaxed text-foreground/90">
+          <p className="font-serif text-[1.1rem] md:text-lg leading-[1.75] text-foreground/90">
             This guide has two settings that change what you see throughout. Pick what
             fits your situation. You can change your mind later.
           </p>
@@ -172,17 +172,17 @@ function Index() {
             />
           </div>
 
-          <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+          <p className="mt-6 font-serif text-base text-muted-foreground leading-relaxed italic">
             You do not have to know your answer yet to keep reading. Pick what fits today.
             You can change your mind later.
           </p>
         </section>
 
-        <aside className="mt-14 md:mt-20 rounded-2xl border border-border bg-secondary/60 p-6 md:p-8">
-          <h2 className="text-lg md:text-xl font-semibold text-foreground tracking-tight">
+        <aside className="mt-14 md:mt-20 rounded-2xl border border-border bg-secondary/60 p-7 md:p-9">
+          <h2 className="font-serif text-xl md:text-2xl font-semibold text-foreground tracking-tight">
             Two things we assume
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-foreground/90">
+          <p className="mt-3 font-serif text-base md:text-[1.05rem] leading-[1.75] text-foreground/90">
             This guide assumes two things about you. First, that you are already trying to
             follow the Government of Canada Digital Standards and the law on privacy,
             security, and accessibility. Second, that you are not trying to build
