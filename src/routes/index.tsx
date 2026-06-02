@@ -167,7 +167,7 @@ function Index() {
             <ToggleBlock
               heading="How big is the thing you are working on?"
               prose="The practices in this guide apply at any size. What changes is how much weight each practice carries. A small page can do user research with a few conversations. A large system might need a research team. The practice exists either way."
-              options={["Small", "Medium", "Enterprise"]}
+              options={["Small", "Medium", "Large", "Enterprise"]}
               storageKey="guide.setting.size"
             />
           </div>
