@@ -37,9 +37,6 @@ export function RegionCard({
         <span className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
           {heading}
         </span>
-        <span className="absolute bottom-4 right-5 text-xs uppercase tracking-widest text-muted-foreground opacity-70 group-hover:opacity-100 transition">
-          Open
-        </span>
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
