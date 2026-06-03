@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { RegionCard } from "@/components/RegionCard";
 import { ToggleBlock } from "@/components/ToggleBlock";
+import { ContextNote } from "@/components/ContextNote";
+import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/RegionVisuals";
 import bear from "@/assets/animal-bear.png";
 import moose from "@/assets/animal-moose.png";
 import beaver from "@/assets/animal-beaver.png";
@@ -98,10 +100,18 @@ function Index() {
 
         <section className="mt-14 md:mt-20">
           <h2 className="sr-only">The three regions of a digital service's life</h2>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div
+            className="rounded-3xl p-5 md:p-7 shadow-inner"
+            style={{ backgroundColor: "var(--region-group)" }}
+          >
+            <p className="text-xs uppercase tracking-[0.22em] text-foreground/60 mb-4 text-center">
+              The three regions
+            </p>
+            <div className="grid gap-5 sm:grid-cols-3">
             <RegionCard
               heading="Build"
               expandedIntro="The Build region has three sub-phases — Discovery, Alpha, and MVP — each with its own page."
+              visual={<ArrowInVisual />}
               subItems={[
                 {
                   title: "Discovery",
@@ -123,12 +133,13 @@ function Index() {
             />
             <RegionCard
               heading="Live"
-              expandedIntro="The Live region has three sub-phases — Launch, Growth, and Maturity — each with its own page."
+              expandedIntro="The Live region has three phases — Stabilization, Growth, and Maturity — each with its own page."
+              visual={<InfinityVisual />}
               subItems={[
                 {
-                  title: "Launch",
+                  title: "Stabilization",
                   description: "Stabilize the service right after it goes live.",
-                  href: "#live-launch",
+                  href: "#live-stabilization",
                 },
                 {
                   title: "Growth",
@@ -146,8 +157,10 @@ function Index() {
             <RegionCard
               heading="Sunset"
               expandedIntro="Sunset covers two patterns of work: shutdown, where the program ends and there is no successor, and transition, where a successor is taking over and users need to migrate. In Canadian government, transitions are far more common."
+              visual={<ArrowOutVisual />}
               deepLink={{ href: "#sunset", label: "Go to the Sunset region" }}
             />
+            </div>
           </div>
         </section>
 
@@ -171,6 +184,8 @@ function Index() {
               storageKey="guide.setting.size"
             />
           </div>
+
+          <ContextNote />
 
           <p className="mt-6 font-serif text-base text-muted-foreground leading-relaxed italic">
             You do not have to know your answer yet to keep reading. Pick what fits today.

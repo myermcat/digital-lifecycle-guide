@@ -66,6 +66,7 @@
   --background: oklch(0.975 0.018 85);
   --foreground: oklch(0.25 0.025 60);
   --card: oklch(0.99 0.012 85);
+  --region-group: oklch(0.91 0.028 78);
   --card-foreground: oklch(0.25 0.025 60);
   --popover: oklch(0.99 0.012 85);
   --popover-foreground: oklch(0.25 0.025 60);
