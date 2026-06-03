@@ -34,19 +34,19 @@ export function RegionCard({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center justify-center p-6 overflow-hidden"
+        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex flex-col items-center justify-between p-6 overflow-hidden"
       >
+        <span className="relative font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
+          {heading}
+        </span>
         {visual && (
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.09] group-hover:opacity-[0.14] transition-opacity"
+            className="pointer-events-none flex items-end justify-center w-full flex-1 pt-4 opacity-25 group-hover:opacity-40 transition-opacity"
           >
             {visual}
           </span>
         )}
-        <span className="relative font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
-          {heading}
-        </span>
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
