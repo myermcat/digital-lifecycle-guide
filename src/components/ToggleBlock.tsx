@@ -21,6 +21,9 @@ export function ToggleBlock({ heading, prose, options, storageKey }: ToggleBlock
     setSelected(opt);
     try {
       localStorage.setItem(storageKey, opt);
+      window.dispatchEvent(
+        new CustomEvent("guide:setting", { detail: { key: storageKey, value: opt } }),
+      );
     } catch {}
   };
 
