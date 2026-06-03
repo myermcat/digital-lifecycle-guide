@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   Dialog,
   DialogContent,
@@ -17,6 +17,7 @@ interface RegionCardProps {
   expandedIntro: string;
   subItems?: SubItem[];
   deepLink: { href: string; label: string };
+  visual?: ReactNode;
 }
 
 export function RegionCard({
@@ -24,6 +25,7 @@ export function RegionCard({
   expandedIntro,
   subItems,
   deepLink,
+  visual,
 }: RegionCardProps) {
   const [open, setOpen] = useState(false);
 
@@ -32,9 +34,17 @@ export function RegionCard({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center justify-center p-6"
+        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center justify-center p-6 overflow-hidden"
       >
-        <span className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
+        {visual && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.09] group-hover:opacity-[0.14] transition-opacity"
+          >
+            {visual}
+          </span>
+        )}
+        <span className="relative font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
           {heading}
         </span>
       </button>
@@ -52,21 +62,23 @@ export function RegionCard({
           </p>
 
           {subItems && (
-            <ul className="mt-2 space-y-2 border-t border-border pt-4">
-              {subItems.map((s) => (
-                <li key={s.title}>
+            <div className="mt-2 border-t border-border pt-4">
+              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3">
+                Phases
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {subItems.map((s) => (
                   <a
+                    key={s.title}
                     href={s.href}
-                    className="block rounded-lg p-3 -mx-3 hover:bg-muted/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    title={s.description}
+                    className="inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
-                    <span className="font-medium text-foreground underline decoration-dotted underline-offset-4">
-                      {s.title}
-                    </span>
-                    <span className="text-muted-foreground">: {s.description}</span>
+                    {s.title}
                   </a>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           )}
 
           <a
