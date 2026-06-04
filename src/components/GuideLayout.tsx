@@ -9,19 +9,9 @@ import {
 import { BgAnimalField } from "@/components/BgAnimalField";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 
-function readPageHeight(main: HTMLElement, content: HTMLElement | null): number {
-  const fromMain = Math.max(main.offsetHeight, main.scrollHeight);
-  const fromContent = content
-    ? content.offsetHeight +
-      // py-20 md:py-28 on the content column
-      (typeof window !== "undefined" &&
-      window.matchMedia("(min-width: 768px)").matches
-        ? 224
-        : 160)
-    : 0;
-  const viewport =
-    typeof window !== "undefined" ? window.innerHeight : 0;
-  return Math.max(fromMain, fromContent, viewport);
+/** In-flow height only — avoid scrollHeight / minHeight on decorations (scroll feedback loop). */
+function readPageHeight(main: HTMLElement): number {
+  return main.offsetHeight;
 }
 
 export function GuideLayout({
@@ -39,7 +29,7 @@ export function GuideLayout({
   const measure = useCallback(() => {
     const main = mainRef.current;
     if (!main) return;
-    setPageHeight(readPageHeight(main, contentRef.current));
+    setPageHeight(readPageHeight(main));
   }, []);
 
   useLayoutEffect(() => {
@@ -74,7 +64,6 @@ export function GuideLayout({
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none"
         aria-hidden="true"
-        style={{ minHeight: pageHeight }}
       >
         <BgAnimalField pageHeight={pageHeight} />
       </div>

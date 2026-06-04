@@ -42,7 +42,7 @@ function Index() {
         </header>
 
         <section className={guideProseSpace}>
-          <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:leading-none first-letter:text-primary">
+          <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
             Canada. We do not know who you are. You might be in a small team or a big one.
             You might build things yourselves or buy them from suppliers. You might have a
