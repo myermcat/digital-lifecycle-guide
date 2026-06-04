@@ -210,7 +210,7 @@ function LiveMaturityPage() {
             {
               tag: "OCCASIONAL · EXTERNAL",
               title: "The peer review",
-              body: "External and occasional. People from outside the team see what you have stopped noticing.",
+              body: "External and occasional. If no one from outside looks, you never see your own gaps.",
               href: "#review-peer-review",
             },
             {
@@ -269,7 +269,7 @@ function LiveMaturityPage() {
             },
             {
               heading: "Inside your own bubble",
-              line: "People from outside the team see what you have stopped noticing.",
+              line: "If no one from outside looks, you never see your own gaps.",
             },
             {
               heading: "Knowledge leaves with people",

@@ -19,14 +19,14 @@ export function WhereThisFits({
         Where this fits
       </p>
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center justify-center gap-2 sm:gap-3 w-full max-w-md">
+        <div className="flex items-center justify-center w-full max-w-md">
           <span
             aria-hidden="true"
-            className="pointer-events-none opacity-25 w-16 h-10 flex items-center justify-center"
+            className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
           >
             {regionVisual(regionId as RegionId)}
           </span>
-          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground">
+          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
             {regionLabel}
           </span>
         </div>
