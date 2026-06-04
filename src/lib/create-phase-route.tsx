@@ -27,7 +27,7 @@ export function createPhaseRoute(slug: keyof typeof PHASE_META) {
         region={regionTitle}
         regionHref={meta.regionHref}
         phase={meta.phase}
-        subtitle={meta.subtitle}
+        intro={meta.subtitle}
         whereThisFits={meta.where()}
       />
     ),
@@ -57,7 +57,7 @@ export function createRegionRoute(region: RegionId) {
         id={region}
         region={meta.title}
         regionHref={meta.href}
-        subtitle={meta.subtitle}
+        intro={meta.subtitle}
         whereThisFits={where()}
       />
     ),

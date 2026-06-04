@@ -32,7 +32,11 @@ function LiveMaturityPage() {
     <GuideLayout id="live-maturity">
       <PhaseBreadcrumb region="Live" regionHref="/live" phase="Maturity" />
 
-      <section className={guideProseSpace}>
+      <section className="mt-5 md:mt-6">
+        <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
+      </section>
+
+      <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>
           You are no longer shipping major new features. Most of the work is keeping the
           service healthy, secure, affordable, and useful to the people who rely on it.
@@ -43,10 +47,6 @@ function LiveMaturityPage() {
           difference from earlier phases is that you are operating and improving an
           existing service rather than building a new one.
         </p>
-      </section>
-
-      <section className="mt-8 md:mt-10">
-        <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
       </section>
 
       <DoorwayBlock

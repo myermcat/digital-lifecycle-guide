@@ -2,16 +2,16 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
-import { PhaseSection } from "@/components/PhaseSection";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
-import { guideProse } from "@/lib/guide-typography";
+import { guideProseSpace } from "@/lib/guide-typography";
 
 interface PhasePlaceholderPageProps {
   id: string;
   region: string;
   regionHref: string;
   phase?: string;
-  subtitle: string;
+  /** Opening prose below Where this fits (same role as Maturity intro). */
+  intro: string;
   whereThisFits: WhereThisFitsConfig;
 }
 
@@ -20,29 +20,21 @@ export function PhasePlaceholderPage({
   region,
   regionHref,
   phase,
-  subtitle,
+  intro,
   whereThisFits,
 }: PhasePlaceholderPageProps) {
   return (
     <GuideLayout id={id}>
-      <PhaseBreadcrumb
-        region={region}
-        regionHref={regionHref}
-        phase={phase}
-        subtitle={subtitle}
-      />
+      <PhaseBreadcrumb region={region} regionHref={regionHref} phase={phase} />
 
-      <section className="mt-2 md:mt-3">
+      <section className="mt-5 md:mt-6">
         <WhereThisFits {...whereThisFits} />
       </section>
 
-      <PhaseSection
-        title={phase ?? region}
-        sectionId="page-content"
-        className={phase ? undefined : "mt-10"}
-      >
-        <p className={`italic text-foreground/60 ${guideProse}`}>Page content coming soon.</p>
-      </PhaseSection>
+      <section className={`${guideProseSpace} mt-8 md:mt-10`}>
+        <p>{intro}</p>
+        <p className="italic text-foreground/60">Page content coming soon.</p>
+      </section>
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
