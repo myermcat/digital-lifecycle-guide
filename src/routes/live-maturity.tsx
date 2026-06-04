@@ -12,18 +12,6 @@ import { CompactExitList } from "@/components/CompactLinkedList";
 import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
-import { OnThisPageNav } from "@/components/OnThisPageNav";
-
-const MATURITY_ON_THIS_PAGE = [
-  { id: "what-maturity-is", label: "What Maturity is" },
-  { id: "doorway", label: "New to Maturity?" },
-  { id: "running-your-service", label: "Running your service" },
-  { id: "watching-signals", label: "Watching the right signals" },
-  { id: "reviewing-three-levels", label: "Three levels of review" },
-  { id: "leaving-maturity", label: "Leaving Maturity" },
-  { id: "when-this-does-not-work", label: "When this does not work" },
-] as const;
-
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
     meta: [
@@ -48,11 +36,9 @@ function LiveMaturityPage() {
         subtitle="The mature life of a digital service."
       />
 
-      <section className="mt-8 md:mt-10">
+      <section className="mt-2 md:mt-3">
         <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
       </section>
-
-      <OnThisPageNav items={[...MATURITY_ON_THIS_PAGE]} />
 
       <PhaseSection title="What Maturity is" sectionId="what-maturity-is">
         <p>

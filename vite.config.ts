@@ -5,9 +5,13 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { GITHUB_PAGES_BASE, STATIC_PRERENDER_PATHS } from "./src/lib/github-pages";
+
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
 export default defineConfig({
   vite: {
+    base: isGitHubPages ? GITHUB_PAGES_BASE : "/",
     server: {
       port: 8080,
       strictPort: true,
@@ -17,5 +21,12 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    prerender: isGitHubPages
+      ? {
+          enabled: true,
+          crawlLinks: true,
+          pages: STATIC_PRERENDER_PATHS.map((path) => ({ path })),
+        }
+      : undefined,
   },
 });

@@ -1,13 +1,72 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, List } from "lucide-react";
+import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
 
-export type OnThisPageItem = {
-  id: string;
-  label: string;
-};
+export type { OnThisPageItem } from "@/lib/on-this-page";
+import type { OnThisPageItem } from "@/lib/on-this-page";
 
-export function OnThisPageNav({ items }: { items: OnThisPageItem[] }) {
+/** Matches section `scroll-mt-24` (6rem). */
+const SCROLL_OFFSET_PX = 96;
+const SCROLL_DURATION_MS = 550;
+
+function getTargetScrollTop(element: HTMLElement) {
+  return element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
+}
+
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function animateScrollTo(top: number, duration = SCROLL_DURATION_MS) {
+  const startY = window.scrollY;
+  const distance = top - startY;
+  if (Math.abs(distance) < 2) return;
+
+  const startTime = performance.now();
+
+  function frame(now: number) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * easeOutCubic(progress));
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+}
+
+function scrollToSection(id: string) {
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  const top = Math.max(0, getTargetScrollTop(target));
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReduced) {
+    window.scrollTo(0, top);
+    history.replaceState(null, "", `#${id}`);
+    return;
+  }
+
+  animateScrollTo(top);
+  window.setTimeout(() => {
+    history.replaceState(null, "", `#${id}`);
+  }, SCROLL_DURATION_MS + 50);
+}
+
+export function OnThisPageNav({
+  rootId,
+  items: itemsProp,
+}: {
+  /** Page `main` id — nav links are built from `section[id]` + `h2` inside it. */
+  rootId?: string;
+  /** Optional override; default is auto-discovery from the page. */
+  items?: OnThisPageItem[];
+}) {
+  const discovered = useOnThisPageSections(rootId);
+  const items = itemsProp ?? discovered;
   const [open, setOpen] = useState(false);
+
+  if (items.length === 0) return null;
 
   return (
     <div
@@ -28,16 +87,19 @@ export function OnThisPageNav({ items }: { items: OnThisPageItem[] }) {
           <ol className="list-none pl-0 space-y-1">
             {items.map((item, index) => (
               <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => setOpen(false)}
-                  className="flex gap-2 rounded-md px-2 py-1.5 text-xs leading-snug text-foreground/75 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                <button
+                  type="button"
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setOpen(false);
+                  }}
+                  className="w-full flex gap-2 rounded-md px-2 py-1.5 text-left text-xs leading-snug text-foreground/75 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   <span className="tabular-nums text-foreground/45 shrink-0 w-4">
                     {index + 1}.
                   </span>
                   <span>{item.label}</span>
-                </a>
+                </button>
               </li>
             ))}
           </ol>

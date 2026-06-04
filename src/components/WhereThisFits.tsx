@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { DashedArrow } from "@/components/RegionVisuals";
 import { regionVisual, type RegionId, type WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
 
@@ -33,12 +34,12 @@ export function WhereThisFits({
         <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 w-full overflow-x-auto pb-0.5">
           {priorRegionLink && (
             <span className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
-              <a
-                href={priorRegionLink.href}
+              <Link
+                to={priorRegionLink.href}
                 className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
                 {priorRegionLink.title} region
-              </a>
+              </Link>
               <DashedArrow direction="right" />
             </span>
           )}
@@ -56,24 +57,24 @@ export function WhereThisFits({
                   {phase.title}
                 </span>
               ) : (
-                <a
-                  href={phase.href}
+                <Link
+                  to={phase.href}
                   className="inline-flex shrink-0 items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground whitespace-nowrap hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   {phase.title}
-                </a>
+                </Link>
               )}
             </span>
           ))}
           {regionLink && (
             <span className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
               <DashedArrow direction="right" />
-              <a
-                href={regionLink.href}
+              <Link
+                to={regionLink.href}
                 className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
                 {regionLink.title} region
-              </a>
+              </Link>
             </span>
           )}
         </div>

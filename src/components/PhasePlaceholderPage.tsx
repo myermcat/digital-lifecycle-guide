@@ -2,6 +2,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { PhaseSection } from "@/components/PhaseSection";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
 import { guideProse } from "@/lib/guide-typography";
 
@@ -31,15 +32,17 @@ export function PhasePlaceholderPage({
         subtitle={subtitle}
       />
 
-      <section className="mt-8 md:mt-10">
+      <section className="mt-2 md:mt-3">
         <WhereThisFits {...whereThisFits} />
       </section>
 
-      {phase && (
-        <p className={`mt-10 italic text-foreground/60 ${guideProse}`}>
-          Page content coming soon.
-        </p>
-      )}
+      <PhaseSection
+        title={phase ?? region}
+        sectionId="page-content"
+        className={phase ? undefined : "mt-10"}
+      >
+        <p className={`italic text-foreground/60 ${guideProse}`}>Page content coming soon.</p>
+      </PhaseSection>
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
