@@ -1,4 +1,5 @@
-import { guideProseTight, guideLink } from "@/lib/guide-typography";
+import { ArrowRight } from "lucide-react";
+import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 
 export type CompactLinkedItem = {
   title: string;
@@ -32,23 +33,31 @@ export function CompactExitList({
   items: { lead: string; rest: string; href?: string }[];
 }) {
   return (
-    <ul className="mt-5 space-y-2.5 list-none pl-0">
+    <ul className="mt-4 space-y-4 list-none pl-0">
       {items.map((item) => (
-        <li
-          key={item.lead}
-          className="rounded-lg border border-primary/20 px-4 py-4"
-          style={{ backgroundColor: "var(--region-group)" }}
-        >
-          <p className="font-sans text-[11px] leading-[1.35] text-foreground/55">
-            {item.href ? (
-              <a href={item.href} className={`font-serif text-sm font-medium ${guideLink}`}>
-                {item.lead}
-              </a>
-            ) : (
-              <span className="font-serif text-sm font-medium text-foreground">{item.lead}</span>
-            )}{" "}
-            {item.rest}
-          </p>
+        <li key={item.lead} className="flex gap-2.5">
+          <ArrowRight
+            className="mt-[0.4rem] size-4 shrink-0 text-primary/35"
+            strokeWidth={1.5}
+            aria-hidden
+          />
+          <div className="min-w-0 flex-1">
+            <p>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  className={`font-serif text-base md:text-[1.05rem] leading-[1.45] ${guideLink}`}
+                >
+                  {item.lead}
+                </a>
+              ) : (
+                <span className={`${guideProse} font-medium text-foreground/85`}>
+                  {item.lead}
+                </span>
+              )}
+            </p>
+            <p className={`mt-1 ${guideProseTight} text-foreground/65`}>{item.rest}</p>
+          </div>
         </li>
       ))}
     </ul>
