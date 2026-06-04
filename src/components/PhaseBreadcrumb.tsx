@@ -5,7 +5,7 @@ interface PhaseBreadcrumbProps {
   region: string;
   regionHref: string;
   phase?: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 export function PhaseBreadcrumb({
@@ -15,9 +15,10 @@ export function PhaseBreadcrumb({
   subtitle,
 }: PhaseBreadcrumbProps) {
   const title = phase ?? region;
+  const headerSpacing = subtitle ? "mb-10 md:mb-14" : "mb-2 md:mb-3";
 
   return (
-    <header className="mb-10 md:mb-14">
+    <header className={headerSpacing}>
       <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
         <Link to="/" className="hover:text-foreground transition-colors">
           Home
@@ -42,10 +43,12 @@ export function PhaseBreadcrumb({
       <h1 className="mt-4 font-serif text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
         {title}
       </h1>
-      <p className={`mt-2 text-lg md:text-xl leading-snug ${guideProse}`}>
-        {subtitle}
-      </p>
-      <div className="mt-6 h-px w-16 bg-border" />
+      {subtitle ? (
+        <p className={`mt-2 text-lg md:text-xl leading-snug ${guideProse}`}>
+          {subtitle}
+        </p>
+      ) : null}
+      <div className={subtitle ? "mt-6 h-px w-16 bg-border" : "mt-3 h-px w-16 bg-border"} />
     </header>
   );
 }

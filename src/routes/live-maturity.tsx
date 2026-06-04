@@ -12,6 +12,7 @@ import { CompactExitList } from "@/components/CompactLinkedList";
 import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
+import { guideProseSpace } from "@/lib/guide-typography";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
     meta: [
@@ -29,18 +30,9 @@ export const Route = createFileRoute("/live-maturity")({
 function LiveMaturityPage() {
   return (
     <GuideLayout id="live-maturity">
-      <PhaseBreadcrumb
-        region="Live"
-        regionHref="/live"
-        phase="Maturity"
-        subtitle="The mature life of a digital service."
-      />
+      <PhaseBreadcrumb region="Live" regionHref="/live" phase="Maturity" />
 
-      <section className="mt-2 md:mt-3">
-        <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
-      </section>
-
-      <PhaseSection title="What Maturity is" sectionId="what-maturity-is">
+      <section className={guideProseSpace}>
         <p>
           You are no longer shipping major new features. Most of the work is keeping the
           service healthy, secure, affordable, and useful to the people who rely on it.
@@ -51,7 +43,11 @@ function LiveMaturityPage() {
           difference from earlier phases is that you are operating and improving an
           existing service rather than building a new one.
         </p>
-      </PhaseSection>
+      </section>
+
+      <section className="mt-8 md:mt-10">
+        <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
+      </section>
 
       <DoorwayBlock
         id="doorway"
