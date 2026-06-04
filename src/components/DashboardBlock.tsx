@@ -1,4 +1,4 @@
-import { guideProse, guideLink } from "@/lib/guide-typography";
+import { guideProseTight, guideLink } from "@/lib/guide-typography";
 
 export function DashboardBlock({
   href = "#practice-build-dashboard",
@@ -13,7 +13,7 @@ export function DashboardBlock({
     >
       <div className="px-4 py-3 border-b border-border/80 flex items-center justify-between gap-3">
         <span className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 font-sans">
-          Service signals
+          Dashboard
         </span>
         <span className="text-[10px] text-foreground/40 font-sans">Live · Maturity</span>
       </div>
@@ -48,7 +48,7 @@ export function DashboardBlock({
           ))}
         </div>
       </div>
-      <p className={`${guideProse} px-4 pb-5 md:px-5 md:pb-6 border-t border-border/60 pt-4`}>
+      <p className={`${guideProseTight} px-4 pb-5 md:px-5 md:pb-6 border-t border-border/60 pt-4`}>
         <a href={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
           Build a dashboard from instrumentation.
         </a>{" "}

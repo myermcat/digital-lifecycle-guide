@@ -2,12 +2,27 @@ import { createFileRoute } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { PracticeActivitiesPanel } from "@/components/PracticeActivitiesPanel";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { whereThisFitsForLivePhase } from "@/lib/lifecycle-navigation";
-import { PhaseSection, ProseList, ProseListItem } from "@/components/PhaseSection";
+import { PhaseSection } from "@/components/PhaseSection";
 import { DashboardBlock } from "@/components/DashboardBlock";
-import { CompactLinkedList, CompactExitList } from "@/components/CompactLinkedList";
+import { CompactExitList } from "@/components/CompactLinkedList";
+import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
+import { DoorwayBlock } from "@/components/DoorwayBlock";
+import { CautionBlock } from "@/components/CautionBlock";
+import { OnThisPageNav } from "@/components/OnThisPageNav";
+
+const MATURITY_ON_THIS_PAGE = [
+  { id: "what-maturity-is", label: "What Maturity is" },
+  { id: "doorway", label: "New to Maturity?" },
+  { id: "running-your-service", label: "Running your service" },
+  { id: "watching-signals", label: "Watching the right signals" },
+  { id: "reviewing-three-levels", label: "Three levels of review" },
+  { id: "leaving-maturity", label: "Leaving Maturity" },
+  { id: "when-this-does-not-work", label: "When this does not work" },
+] as const;
 
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
@@ -37,11 +52,12 @@ function LiveMaturityPage() {
         <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
       </section>
 
-      <PhaseSection title="What Maturity is">
+      <OnThisPageNav items={[...MATURITY_ON_THIS_PAGE]} />
+
+      <PhaseSection title="What Maturity is" sectionId="what-maturity-is">
         <p>
-          Maturity is the phase of Live where your service is mature. You are no longer
-          shipping major new features. Most of the work is keeping the service healthy,
-          secure, affordable, and useful to the people who rely on it.
+          You are no longer shipping major new features. Most of the work is keeping the
+          service healthy, secure, affordable, and useful to the people who rely on it.
         </p>
         <p>
           Maturity is not maintenance only. You will continue to make improvements,
@@ -51,23 +67,20 @@ function LiveMaturityPage() {
         </p>
       </PhaseSection>
 
-      <PhaseSection title="Before you move into Maturity">
+      <DoorwayBlock
+        id="doorway"
+        heading="New to Maturity? Start here."
+        href="#maturity-orientation"
+        linkLabel="Begin the orientation →"
+      >
         <p>
-          Before a service settles into Maturity, make sure the things that keep it healthy
-          are in place. If you are taking over a service that is already in Maturity, treat
-          this as your first month&apos;s checklist.
+          The first thing to do is understand the service as it currently is before changing
+          anything. Then find your monitoring, your backlog, your latest security and privacy
+          assessments, and schedule your first check-in.
         </p>
-        <ProseList>
-          <ProseListItem lead="Know who is on the team and right-size it. Work out the level of continuous improvement your service needs and who you need to support it." />
-          <ProseListItem lead="Know what you hold and who can reach it. Take an inventory of access to the production service, code, data, and infrastructure, and remove access that is no longer needed." />
-          <ProseListItem lead="Find the monitoring that already exists, even if it is incomplete, and confirm you can measure the success of the service." />
-          <ProseListItem lead="Read the most recent security and privacy assessments and note anything unresolved." />
-          <ProseListItem lead="Find the backlog. If there is no single prioritised list, that is the first thing to put in place." />
-          <ProseListItem lead="Schedule the first check-in within the first few weeks, and confirm the cadence from there." />
-        </ProseList>
-      </PhaseSection>
+      </DoorwayBlock>
 
-      <PhaseSection title="Running your service in Maturity">
+      <PhaseSection title="Running your service in Maturity" sectionId="running-your-service">
         <p>
           Running your service in Maturity means doing a set of recurring activities at a
           sensible frequency. You do not need to do all of them every time. The point is
@@ -75,6 +88,7 @@ function LiveMaturityPage() {
           your service is and how it is changing.
         </p>
 
+        <PracticeActivitiesPanel>
         <PracticeCardGroup
           heading="Keep the service working well"
           cards={[
@@ -176,42 +190,40 @@ function LiveMaturityPage() {
             },
           ]}
         />
+        </PracticeActivitiesPanel>
       </PhaseSection>
 
-      <PhaseSection title="Watching the right signals">
+      <PhaseSection title="Watching the right signals" sectionId="watching-signals">
         <DashboardBlock href="#practice-build-dashboard" />
       </PhaseSection>
 
-      <PhaseSection title="Reviewing your service: three levels">
-        <p>
-          A service in Maturity is looked at in three different ways. Each one sees something
-          the others cannot.
-        </p>
-        <CompactLinkedList
+      <PhaseSection title="Three levels of review" sectionId="reviewing-three-levels">
+        <ThreeReviewLevelsBlock
+          subtitle="A service in Maturity is looked at in three different ways. Each one sees something the others cannot."
           items={[
             {
-              title: "The check-in.",
+              tag: "FREQUENT · INTERNAL",
+              title: "The check-in",
               body: "Internal and frequent. The team turns the signals into decisions. It is maintenance, not an exam.",
               href: "#review-check-in",
-              linkLabel: "See how the check-in works",
             },
             {
-              title: "The peer review.",
+              tag: "OCCASIONAL · EXTERNAL",
+              title: "The peer review",
               body: "External and occasional. People from outside the team see what you have stopped noticing.",
               href: "#review-peer-review",
-              linkLabel: "See how the peer review works",
             },
             {
-              title: "The institutional review.",
+              tag: "RARE · CENTRAL",
+              title: "The institutional review",
               body: "External and rare. A central body looks at the service when its scope or impact warrants it.",
               href: "#review-institutional-review",
-              linkLabel: "See how the institutional review works",
             },
           ]}
         />
       </PhaseSection>
 
-      <PhaseSection title="When you need to leave Maturity">
+      <PhaseSection title="When you need to leave Maturity" sectionId="leaving-maturity">
         <p>
           Maturity is the longest phase, but not permanent. Three things can move a service
           out of it.
@@ -237,21 +249,36 @@ function LiveMaturityPage() {
         />
       </PhaseSection>
 
-      <PhaseSection title="When this does not work">
-        <p>
-          Doing these activities is not the same as doing them well. A service can run every
-          one of them on the surface and still be failing. The check-in can happen, the
-          dashboard can exist, the boxes can be ticked, and nothing improves. A dashboard
-          built from impressions instead of instrumentation drifts from reality and can be
-          gamed. A check-in that produces no decisions leaves scores unchanged cycle after
-          cycle. And when staff go and nothing was documented, the team can still operate
-          the service but no longer understands it.
-        </p>
-        <p>
-          This playbook is not enough on its own. It describes what to do; it cannot supply
-          the judgement, the team, or the will to do it well. It assumes you bring those.
-        </p>
-      </PhaseSection>
+      <section className="mt-10 md:mt-12">
+        <CautionBlock
+          id="when-this-does-not-work"
+          title="When this does not work"
+          lead="Doing these activities is not the same as doing them well. A service can run every one of them on the surface and still be failing."
+          items={[
+            {
+              heading: "Going through the motions",
+              line: "The check-in can happen, the dashboard can exist, the boxes can be ticked, and nothing improves.",
+            },
+            {
+              heading: "Dashboard by impression",
+              line: "A dashboard built from impressions instead of instrumentation drifts from reality and can be gamed.",
+            },
+            {
+              heading: "Check-ins that change nothing",
+              line: "A check-in that produces no decisions leaves scores unchanged cycle after cycle.",
+            },
+            {
+              heading: "Inside your own bubble",
+              line: "People from outside the team see what you have stopped noticing.",
+            },
+            {
+              heading: "Knowledge leaves with people",
+              line: "When staff go and nothing was documented, the team can still operate the service but no longer understands it.",
+            },
+          ]}
+          closing="This playbook is not enough on its own. It describes what to do; it cannot supply the judgement, the team, or the will to do it well. It assumes you bring those."
+        />
+      </section>
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

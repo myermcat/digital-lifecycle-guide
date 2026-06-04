@@ -1,4 +1,4 @@
-import { guideProse, guideLink } from "@/lib/guide-typography";
+import { guideProseTight, guideLink } from "@/lib/guide-typography";
 
 export type CompactLinkedItem = {
   title: string;
@@ -13,7 +13,7 @@ export function CompactLinkedList({ items }: { items: CompactLinkedItem[] }) {
       {items.map((item) => (
         <li
           key={item.href}
-          className={`${guideProse} rounded-xl border border-border/80 px-4 py-3.5`}
+          className={`${guideProseTight} rounded-xl border border-border/80 px-4 py-3.5`}
           style={{ backgroundColor: "var(--region-group)" }}
         >
           <span className="font-semibold text-foreground/90">{item.title}</span> {item.body}{" "}
@@ -36,21 +36,19 @@ export function CompactExitList({
       {items.map((item) => (
         <li
           key={item.lead}
-          className={`${guideProse} rounded-lg px-4 py-3 border border-border/70`}
+          className="rounded-lg border border-primary/20 px-4 py-4"
           style={{ backgroundColor: "var(--region-group)" }}
         >
-          {item.href ? (
-            <>
-              <a href={item.href} className={`font-semibold text-foreground/90 ${guideLink}`}>
+          <p className="font-sans text-[11px] leading-[1.35] text-foreground/55">
+            {item.href ? (
+              <a href={item.href} className={`font-serif text-sm font-medium ${guideLink}`}>
                 {item.lead}
-              </a>{" "}
-              {item.rest}
-            </>
-          ) : (
-            <>
-              <span className="font-semibold text-foreground/90">{item.lead}</span> {item.rest}
-            </>
-          )}
+              </a>
+            ) : (
+              <span className="font-serif text-sm font-medium text-foreground">{item.lead}</span>
+            )}{" "}
+            {item.rest}
+          </p>
         </li>
       ))}
     </ul>

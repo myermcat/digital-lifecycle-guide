@@ -10,14 +10,19 @@ export function PhaseSection({
   title,
   children,
   className,
+  sectionId,
 }: {
   title: string;
   children: ReactNode;
   className?: string;
+  sectionId?: string;
 }) {
   return (
-    <section className={className ?? "mt-10 md:mt-12"}>
-      <h2 className={`${guideSectionTitle} mb-5`}>{title}</h2>
+    <section
+      id={sectionId}
+      className={`scroll-mt-24 ${className ?? "mt-10 md:mt-12"}`}
+    >
+      <h2 className={`${guideSectionTitle} mb-2`}>{title}</h2>
       <div className={guideProseSpace}>{children}</div>
     </section>
   );

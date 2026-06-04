@@ -42,7 +42,7 @@ export function PhaseBreadcrumb({
       <h1 className="mt-4 font-serif text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
         {title}
       </h1>
-      <p className={`mt-3 text-lg md:text-xl leading-snug ${guideProse}`}>
+      <p className={`mt-2 text-lg md:text-xl leading-snug ${guideProse}`}>
         {subtitle}
       </p>
       <div className="mt-6 h-px w-16 bg-border" />

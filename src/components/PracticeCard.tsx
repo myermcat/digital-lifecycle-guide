@@ -8,18 +8,19 @@ export interface PracticeCardData {
 
 export function PracticeCard({ href, label, description }: PracticeCardData) {
   return (
-    <div className="flex flex-row rounded-lg overflow-hidden bg-foreground text-primary-foreground shadow-sm">
-      <p className="flex-[1.4] px-4 py-2.5 text-xs md:text-sm leading-snug text-primary-foreground/80">
+    <a
+      href={href}
+      className="group flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4 hover:border-primary/40 hover:border-l-primary/70 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      style={{ backgroundColor: "var(--region-group)" }}
+    >
+      <h4 className="font-serif text-sm font-medium text-primary leading-tight">
+        {label}
+      </h4>
+      <p className="mt-1.5 flex-1 font-sans text-[10px] leading-[1.35] text-foreground/55">
         {description}
       </p>
-      <a
-        href={href}
-        className="group/link flex flex-[0.6] shrink-0 items-center border-l border-primary-foreground/15 bg-primary px-3.5 py-2.5 text-xs md:text-sm font-medium leading-snug text-primary-foreground hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-      >
-        <span className="group-hover/link:underline">{label}</span>
-        <span className="sr-only"> — open practice page</span>
-      </a>
-    </div>
+      <span className="sr-only"> — open practice page</span>
+    </a>
   );
 }
 
@@ -30,14 +31,25 @@ export function PracticeCardGroup({
   heading: string;
   cards: PracticeCardData[];
 }) {
+  const cols =
+    cards.length >= 3
+      ? "sm:grid-cols-2 lg:grid-cols-3"
+      : cards.length === 2
+        ? "sm:grid-cols-2"
+        : "grid-cols-1";
+
   return (
-    <div className="mt-6 first:mt-5">
-      <h3 className={`${guideSubsectionTitle} mb-2.5`}>{heading}</h3>
-      <div className="space-y-2">
+    <div className="mt-12 first:mt-6">
+      <h3 className={guideSubsectionTitle}>{heading}</h3>
+      <ul
+        className={`mt-2 grid gap-3 list-none pl-0 ${cols}`}
+      >
         {cards.map((card) => (
-          <PracticeCard key={card.href} {...card} />
+          <li key={card.href} className="min-h-0">
+            <PracticeCard {...card} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
