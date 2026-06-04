@@ -3,6 +3,7 @@ import { RegionCard } from "@/components/RegionCard";
 import { SetupToggles } from "@/components/SetupToggles";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/RegionVisuals";
 
 export const Route = createFileRoute("/")({
@@ -40,7 +41,7 @@ function Index() {
           <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>
 
-        <section className="space-y-6 text-[1.1rem] md:text-lg leading-[1.75] text-foreground/90 font-serif">
+        <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:leading-none first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
             Canada. We do not know who you are. You might be in a small team or a big one.
@@ -126,7 +127,7 @@ function Index() {
         </section>
 
         <section className="mt-16 md:mt-20">
-          <p className="font-serif text-[1.1rem] md:text-lg leading-[1.75] text-foreground/90">
+          <p className={guideProse}>
             This guide has two settings that change what you see throughout. Pick what
             fits your situation. You can change your mind later.
           </p>

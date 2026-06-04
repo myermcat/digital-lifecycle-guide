@@ -7,6 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useHydrated } from "@/hooks/use-hydrated";
+import { guideProse } from "@/lib/guide-typography";
 
 export interface SubItem {
   title: string;
@@ -75,7 +76,7 @@ export function RegionCard({
               </DialogTitle>
             </DialogHeader>
 
-            <p className="text-base text-foreground/90 leading-relaxed">{expandedIntro}</p>
+            <p className={guideProse}>{expandedIntro}</p>
 
             {subItems && (
               <div className="mt-2 border-t border-border pt-4">

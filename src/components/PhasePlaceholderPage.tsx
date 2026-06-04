@@ -3,6 +3,7 @@ import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
+import { guideProse } from "@/lib/guide-typography";
 
 interface PhasePlaceholderPageProps {
   id: string;
@@ -35,7 +36,7 @@ export function PhasePlaceholderPage({
       </section>
 
       {phase && (
-        <p className="mt-10 font-serif text-[1.1rem] md:text-lg leading-[1.75] text-muted-foreground italic">
+        <p className={`mt-10 italic text-foreground/60 ${guideProse}`}>
           Page content coming soon.
         </p>
       )}

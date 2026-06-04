@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { guideProse } from "@/lib/guide-typography";
 
 interface PhaseBreadcrumbProps {
   region: string;
@@ -41,7 +42,7 @@ export function PhaseBreadcrumb({
       <h1 className="mt-4 font-serif text-4xl md:text-5xl font-semibold tracking-tight text-foreground leading-[1.1]">
         {title}
       </h1>
-      <p className="mt-3 font-serif text-lg md:text-xl text-foreground/80 leading-snug">
+      <p className={`mt-3 text-lg md:text-xl leading-snug ${guideProse}`}>
         {subtitle}
       </p>
       <div className="mt-6 h-px w-16 bg-border" />
