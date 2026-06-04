@@ -15,7 +15,7 @@ export function BgAnimal({
       loading="lazy"
       width={512}
       height={512}
-      className={`pointer-events-none select-none absolute opacity-50 ${className}`}
+      className={`pointer-events-none select-none absolute opacity-40 ${className}`}
       style={{ transform: `rotate(${rotate}deg)` }}
     />
   );
