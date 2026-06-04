@@ -1,10 +1,12 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useHydrated } from "@/hooks/use-hydrated";
 
 export interface SubItem {
   title: string;
@@ -20,6 +22,10 @@ interface RegionCardProps {
   visual?: ReactNode;
 }
 
+function isInternalHref(href: string) {
+  return href.startsWith("/");
+}
+
 export function RegionCard({
   heading,
   expandedIntro,
@@ -27,14 +33,25 @@ export function RegionCard({
   deepLink,
   visual,
 }: RegionCardProps) {
+  const hydrated = useHydrated();
   const [open, setOpen] = useState(false);
+
+  // Radix can leave body { pointer-events: none } if a dialog unmounts abruptly.
+  useEffect(() => {
+    if (!open) {
+      document.body.style.pointerEvents = "";
+    }
+    return () => {
+      document.body.style.pointerEvents = "";
+    };
+  }, [open]);
 
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex flex-col items-center justify-between p-6 overflow-hidden"
+        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex flex-col items-center justify-center gap-3 p-6 overflow-hidden cursor-pointer"
       >
         <span className="relative font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
           {heading}
@@ -42,53 +59,79 @@ export function RegionCard({
         {visual && (
           <span
             aria-hidden="true"
-            className="pointer-events-none flex items-end justify-center w-full flex-1 pt-4 opacity-25 group-hover:opacity-40 transition-opacity"
+            className="pointer-events-none flex items-center justify-center w-full opacity-25 group-hover:opacity-40 transition-opacity"
           >
             {visual}
           </span>
         )}
       </button>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-lg bg-card">
-          <DialogHeader>
-            <DialogTitle className="font-serif text-3xl md:text-4xl font-semibold tracking-tight">
-              {heading}
-            </DialogTitle>
-          </DialogHeader>
+      {hydrated && (
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="sm:max-w-lg bg-card">
+            <DialogHeader>
+              <DialogTitle className="font-serif text-3xl md:text-4xl font-semibold tracking-tight">
+                {heading}
+              </DialogTitle>
+            </DialogHeader>
 
-          <p className="text-base text-foreground/90 leading-relaxed">
-            {expandedIntro}
-          </p>
+            <p className="text-base text-foreground/90 leading-relaxed">{expandedIntro}</p>
 
-          {subItems && (
-            <div className="mt-2 border-t border-border pt-4">
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3">
-                Phases
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {subItems.map((s) => (
-                  <a
-                    key={s.title}
-                    href={s.href}
-                    title={s.description}
-                    className="inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  >
-                    {s.title}
-                  </a>
-                ))}
+            {subItems && (
+              <div className="mt-2 border-t border-border pt-4">
+                <p className="text-sm text-muted-foreground mb-3">
+                  {subItems.length === 3
+                    ? "Three phases:"
+                    : `${subItems.length} phases:`}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {subItems.map((s) =>
+                    isInternalHref(s.href) ? (
+                      <Link
+                        key={s.title}
+                        to={s.href}
+                        title={s.description}
+                        onClick={() => setOpen(false)}
+                        className="inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {s.title}
+                      </Link>
+                    ) : (
+                      <a
+                        key={s.title}
+                        href={s.href}
+                        title={s.description}
+                        onClick={() => setOpen(false)}
+                        className="inline-flex items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      >
+                        {s.title}
+                      </a>
+                    ),
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          <a
-            href={deepLink.href}
-            className="inline-block mt-2 text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
-          >
-            {deepLink.label} →
-          </a>
-        </DialogContent>
-      </Dialog>
+            {isInternalHref(deepLink.href) ? (
+              <Link
+                to={deepLink.href}
+                onClick={() => setOpen(false)}
+                className="inline-block mt-2 text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
+              >
+                {deepLink.label} →
+              </Link>
+            ) : (
+              <a
+                href={deepLink.href}
+                onClick={() => setOpen(false)}
+                className="inline-block mt-2 text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
+              >
+                {deepLink.label} →
+              </a>
+            )}
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 }

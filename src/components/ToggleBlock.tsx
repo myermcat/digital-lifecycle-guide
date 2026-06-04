@@ -32,7 +32,7 @@ export function ToggleBlock({ heading, prose, options, storageKey }: ToggleBlock
       <h3 className="text-xl md:text-2xl font-semibold text-foreground tracking-tight">
         {heading}
       </h3>
-      <p className="mt-3 text-base text-muted-foreground leading-relaxed">{prose}</p>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{prose}</p>
       <div
         role="radiogroup"
         aria-label={heading}

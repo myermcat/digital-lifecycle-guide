@@ -9,8 +9,74 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SunsetTransitionRouteImport } from './routes/sunset-transition'
+import { Route as SunsetShutdownRouteImport } from './routes/sunset-shutdown'
+import { Route as SunsetRouteImport } from './routes/sunset'
+import { Route as LiveStabilizationRouteImport } from './routes/live-stabilization'
+import { Route as LiveMaturityRouteImport } from './routes/live-maturity'
+import { Route as LiveGrowthRouteImport } from './routes/live-growth'
+import { Route as LiveRouteImport } from './routes/live'
+import { Route as BuildMvpRouteImport } from './routes/build-mvp'
+import { Route as BuildDiscoveryRouteImport } from './routes/build-discovery'
+import { Route as BuildAlphaRouteImport } from './routes/build-alpha'
+import { Route as BuildRouteImport } from './routes/build'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SunsetTransitionRoute = SunsetTransitionRouteImport.update({
+  id: '/sunset-transition',
+  path: '/sunset-transition',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SunsetShutdownRoute = SunsetShutdownRouteImport.update({
+  id: '/sunset-shutdown',
+  path: '/sunset-shutdown',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SunsetRoute = SunsetRouteImport.update({
+  id: '/sunset',
+  path: '/sunset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveStabilizationRoute = LiveStabilizationRouteImport.update({
+  id: '/live-stabilization',
+  path: '/live-stabilization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveMaturityRoute = LiveMaturityRouteImport.update({
+  id: '/live-maturity',
+  path: '/live-maturity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveGrowthRoute = LiveGrowthRouteImport.update({
+  id: '/live-growth',
+  path: '/live-growth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveRoute = LiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildMvpRoute = BuildMvpRouteImport.update({
+  id: '/build-mvp',
+  path: '/build-mvp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildDiscoveryRoute = BuildDiscoveryRouteImport.update({
+  id: '/build-discovery',
+  path: '/build-discovery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildAlphaRoute = BuildAlphaRouteImport.update({
+  id: '/build-alpha',
+  path: '/build-alpha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildRoute = BuildRouteImport.update({
+  id: '/build',
+  path: '/build',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +85,186 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/build': typeof BuildRoute
+  '/build-alpha': typeof BuildAlphaRoute
+  '/build-discovery': typeof BuildDiscoveryRoute
+  '/build-mvp': typeof BuildMvpRoute
+  '/live': typeof LiveRoute
+  '/live-growth': typeof LiveGrowthRoute
+  '/live-maturity': typeof LiveMaturityRoute
+  '/live-stabilization': typeof LiveStabilizationRoute
+  '/sunset': typeof SunsetRoute
+  '/sunset-shutdown': typeof SunsetShutdownRoute
+  '/sunset-transition': typeof SunsetTransitionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/build': typeof BuildRoute
+  '/build-alpha': typeof BuildAlphaRoute
+  '/build-discovery': typeof BuildDiscoveryRoute
+  '/build-mvp': typeof BuildMvpRoute
+  '/live': typeof LiveRoute
+  '/live-growth': typeof LiveGrowthRoute
+  '/live-maturity': typeof LiveMaturityRoute
+  '/live-stabilization': typeof LiveStabilizationRoute
+  '/sunset': typeof SunsetRoute
+  '/sunset-shutdown': typeof SunsetShutdownRoute
+  '/sunset-transition': typeof SunsetTransitionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/build': typeof BuildRoute
+  '/build-alpha': typeof BuildAlphaRoute
+  '/build-discovery': typeof BuildDiscoveryRoute
+  '/build-mvp': typeof BuildMvpRoute
+  '/live': typeof LiveRoute
+  '/live-growth': typeof LiveGrowthRoute
+  '/live-maturity': typeof LiveMaturityRoute
+  '/live-stabilization': typeof LiveStabilizationRoute
+  '/sunset': typeof SunsetRoute
+  '/sunset-shutdown': typeof SunsetShutdownRoute
+  '/sunset-transition': typeof SunsetTransitionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/build'
+    | '/build-alpha'
+    | '/build-discovery'
+    | '/build-mvp'
+    | '/live'
+    | '/live-growth'
+    | '/live-maturity'
+    | '/live-stabilization'
+    | '/sunset'
+    | '/sunset-shutdown'
+    | '/sunset-transition'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/build'
+    | '/build-alpha'
+    | '/build-discovery'
+    | '/build-mvp'
+    | '/live'
+    | '/live-growth'
+    | '/live-maturity'
+    | '/live-stabilization'
+    | '/sunset'
+    | '/sunset-shutdown'
+    | '/sunset-transition'
+  id:
+    | '__root__'
+    | '/'
+    | '/build'
+    | '/build-alpha'
+    | '/build-discovery'
+    | '/build-mvp'
+    | '/live'
+    | '/live-growth'
+    | '/live-maturity'
+    | '/live-stabilization'
+    | '/sunset'
+    | '/sunset-shutdown'
+    | '/sunset-transition'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BuildRoute: typeof BuildRoute
+  BuildAlphaRoute: typeof BuildAlphaRoute
+  BuildDiscoveryRoute: typeof BuildDiscoveryRoute
+  BuildMvpRoute: typeof BuildMvpRoute
+  LiveRoute: typeof LiveRoute
+  LiveGrowthRoute: typeof LiveGrowthRoute
+  LiveMaturityRoute: typeof LiveMaturityRoute
+  LiveStabilizationRoute: typeof LiveStabilizationRoute
+  SunsetRoute: typeof SunsetRoute
+  SunsetShutdownRoute: typeof SunsetShutdownRoute
+  SunsetTransitionRoute: typeof SunsetTransitionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sunset-transition': {
+      id: '/sunset-transition'
+      path: '/sunset-transition'
+      fullPath: '/sunset-transition'
+      preLoaderRoute: typeof SunsetTransitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sunset-shutdown': {
+      id: '/sunset-shutdown'
+      path: '/sunset-shutdown'
+      fullPath: '/sunset-shutdown'
+      preLoaderRoute: typeof SunsetShutdownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sunset': {
+      id: '/sunset'
+      path: '/sunset'
+      fullPath: '/sunset'
+      preLoaderRoute: typeof SunsetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-stabilization': {
+      id: '/live-stabilization'
+      path: '/live-stabilization'
+      fullPath: '/live-stabilization'
+      preLoaderRoute: typeof LiveStabilizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-maturity': {
+      id: '/live-maturity'
+      path: '/live-maturity'
+      fullPath: '/live-maturity'
+      preLoaderRoute: typeof LiveMaturityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-growth': {
+      id: '/live-growth'
+      path: '/live-growth'
+      fullPath: '/live-growth'
+      preLoaderRoute: typeof LiveGrowthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live': {
+      id: '/live'
+      path: '/live'
+      fullPath: '/live'
+      preLoaderRoute: typeof LiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-mvp': {
+      id: '/build-mvp'
+      path: '/build-mvp'
+      fullPath: '/build-mvp'
+      preLoaderRoute: typeof BuildMvpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-discovery': {
+      id: '/build-discovery'
+      path: '/build-discovery'
+      fullPath: '/build-discovery'
+      preLoaderRoute: typeof BuildDiscoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-alpha': {
+      id: '/build-alpha'
+      path: '/build-alpha'
+      fullPath: '/build-alpha'
+      preLoaderRoute: typeof BuildAlphaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build': {
+      id: '/build'
+      path: '/build'
+      fullPath: '/build'
+      preLoaderRoute: typeof BuildRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +277,28 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BuildRoute: BuildRoute,
+  BuildAlphaRoute: BuildAlphaRoute,
+  BuildDiscoveryRoute: BuildDiscoveryRoute,
+  BuildMvpRoute: BuildMvpRoute,
+  LiveRoute: LiveRoute,
+  LiveGrowthRoute: LiveGrowthRoute,
+  LiveMaturityRoute: LiveMaturityRoute,
+  LiveStabilizationRoute: LiveStabilizationRoute,
+  SunsetRoute: SunsetRoute,
+  SunsetShutdownRoute: SunsetShutdownRoute,
+  SunsetTransitionRoute: SunsetTransitionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
