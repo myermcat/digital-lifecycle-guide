@@ -1,5 +1,5 @@
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
-export const GITHUB_PAGES_BASE = "/simple-gov-guide/";
+export const GITHUB_PAGES_BASE = "/digital-lifecycle-guide/";
 
 /** All static app routes — used for prerender on GitHub Pages builds. */
 export const STATIC_PRERENDER_PATHS = [

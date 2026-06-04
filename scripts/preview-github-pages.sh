@@ -2,7 +2,7 @@
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PREVIEW_DIR="$ROOT/dist/gh-pages-preview"
-BASE="simple-gov-guide"
+BASE="digital-lifecycle-guide"
 
 cd "$ROOT"
 npm run build:pages
