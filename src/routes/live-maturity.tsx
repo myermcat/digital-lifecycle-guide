@@ -38,7 +38,7 @@ function LiveMaturityPage() {
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>
-          You are no longer shipping major new features. Most of the work is keeping the
+          You are no longer delivering major new features. Most of the work is keeping the
           service healthy, secure, affordable, and useful to the people who rely on it.
         </p>
         <p>
@@ -81,8 +81,8 @@ function LiveMaturityPage() {
                 "Track how the service actually behaves in production. The signals you watch should come from instrumentation, not from impressions.",
             },
             {
-              label: "Ship changes safely",
-              href: "#practice-ship-changes-safely",
+              label: "Deliver changes safely",
+              href: "#practice-deliver-changes-safely",
               description:
                 "Keep changes small, tested, and reversible, with zero-downtime releases and a rollback you have actually tested.",
             },
@@ -214,7 +214,7 @@ function LiveMaturityPage() {
           items={[
             {
               lead: "Back to Growth,",
-              rest: "when a new mandate or expanding scope means you are shipping substantial new features again.",
+              rest: "when a new mandate or expanding scope means you are delivering substantial new features again.",
               href: "/live-growth",
             },
             {
