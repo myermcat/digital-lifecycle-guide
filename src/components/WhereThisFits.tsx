@@ -20,64 +20,68 @@ export function WhereThisFits({
         Where this fits
       </p>
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center justify-center w-full max-w-md">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
-          >
-            {regionVisual(regionId as RegionId)}
-          </span>
-          <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
-            {regionLabel}
-          </span>
-        </div>
         <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 w-full overflow-x-auto pb-0.5">
           {priorRegionLink && (
-            <span className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
+            <>
               <Link
                 to={priorRegionLink.href}
                 className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
-                {priorRegionLink.title} region
+                {priorRegionLink.title}
               </Link>
               <DashedArrow direction="right" />
-            </span>
+            </>
           )}
-          {phases.map((phase, i) => (
+          <span className="inline-flex shrink-0 items-center">
             <span
-              key={phase.href}
-              className="inline-flex shrink-0 items-center gap-2 sm:gap-3"
+              aria-hidden="true"
+              className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
             >
-              {(i > 0 || priorRegionLink) && <DashedArrow direction="right" />}
-              {phase.current ? (
-                <span
-                  className="inline-flex shrink-0 items-center rounded-full border-2 border-foreground/50 bg-card px-4 py-1.5 text-sm font-semibold text-foreground whitespace-nowrap"
-                  aria-current="page"
-                >
-                  {phase.title}
-                </span>
-              ) : (
-                <Link
-                  to={phase.href}
-                  className="inline-flex shrink-0 items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground whitespace-nowrap hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {phase.title}
-                </Link>
-              )}
+              {regionVisual(regionId as RegionId)}
             </span>
-          ))}
+            <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
+              {regionLabel}
+            </span>
+          </span>
           {regionLink && (
-            <span className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
+            <>
               <DashedArrow direction="right" />
               <Link
                 to={regionLink.href}
                 className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
               >
-                {regionLink.title} region
+                {regionLink.title}
               </Link>
-            </span>
+            </>
           )}
         </div>
+        {phases.length > 0 && (
+          <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 w-full overflow-x-auto pb-0.5">
+            {phases.map((phase, i) => (
+              <span
+                key={phase.href}
+                className="inline-flex shrink-0 items-center gap-2 sm:gap-3"
+              >
+                {i > 0 && <DashedArrow direction="right" />}
+                {phase.current ? (
+                  <span
+                    className="inline-flex shrink-0 items-center rounded-full border-2 border-foreground/50 bg-card px-4 py-1.5 text-sm font-semibold text-foreground whitespace-nowrap"
+                    aria-current="page"
+                  >
+                    {phase.title}
+                  </span>
+                ) : (
+                  <Link
+                    to={phase.href}
+                    className="inline-flex shrink-0 items-center rounded-full border border-border bg-background px-4 py-1.5 text-sm font-medium text-foreground whitespace-nowrap hover:bg-muted hover:border-foreground/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    {phase.title}
+                  </Link>
+                )}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
