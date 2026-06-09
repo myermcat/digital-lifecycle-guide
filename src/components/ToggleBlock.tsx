@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 interface ToggleBlockProps {
   heading: string;
   prose: string;
-  options: string[];
+  options: readonly string[];
   storageKey: string;
 }
 

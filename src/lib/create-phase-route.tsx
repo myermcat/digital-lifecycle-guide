@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, type FileRoutesByPath } from "@tanstack/react-router";
 import { PhasePlaceholderPage } from "@/components/PhasePlaceholderPage";
 import { PHASE_META, REGION_META, type RegionId } from "@/lib/lifecycle-navigation";
 import {
@@ -12,7 +12,7 @@ export function createPhaseRoute(slug: keyof typeof PHASE_META) {
   const meta = PHASE_META[slug];
   const regionTitle = meta.region.charAt(0).toUpperCase() + meta.region.slice(1);
 
-  return createFileRoute(meta.path)({
+  return createFileRoute(meta.path as keyof FileRoutesByPath)({
     head: () => ({
       meta: [
         {
@@ -43,7 +43,7 @@ export function createRegionRoute(region: RegionId) {
         ? () => whereThisFitsForLivePhase(null)
         : () => whereThisFitsForSunsetRegion();
 
-  return createFileRoute(meta.href)({
+  return createFileRoute(meta.href as keyof FileRoutesByPath)({
     head: () => ({
       meta: [
         {
