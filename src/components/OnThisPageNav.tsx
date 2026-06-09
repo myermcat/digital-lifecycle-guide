@@ -7,31 +7,9 @@ import type { OnThisPageItem } from "@/lib/on-this-page";
 
 /** Matches section `scroll-mt-24` (6rem). */
 const SCROLL_OFFSET_PX = 96;
-const SCROLL_DURATION_MS = 550;
 
 function getTargetScrollTop(element: HTMLElement) {
   return element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
-}
-
-function easeOutCubic(t: number) {
-  return 1 - Math.pow(1 - t, 3);
-}
-
-function animateScrollTo(top: number, duration = SCROLL_DURATION_MS) {
-  const startY = window.scrollY;
-  const distance = top - startY;
-  if (Math.abs(distance) < 2) return;
-
-  const startTime = performance.now();
-
-  function frame(now: number) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    window.scrollTo(0, startY + distance * easeOutCubic(progress));
-    if (progress < 1) requestAnimationFrame(frame);
-  }
-
-  requestAnimationFrame(frame);
 }
 
 function scrollToSection(id: string) {
@@ -41,16 +19,8 @@ function scrollToSection(id: string) {
   const top = Math.max(0, getTargetScrollTop(target));
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (prefersReduced) {
-    window.scrollTo(0, top);
-    history.replaceState(null, "", `#${id}`);
-    return;
-  }
-
-  animateScrollTo(top);
-  window.setTimeout(() => {
-    history.replaceState(null, "", `#${id}`);
-  }, SCROLL_DURATION_MS + 50);
+  window.scrollTo({ top, behavior: prefersReduced ? "auto" : "smooth" });
+  history.replaceState(null, "", `#${id}`);
 }
 
 export function OnThisPageNav({
