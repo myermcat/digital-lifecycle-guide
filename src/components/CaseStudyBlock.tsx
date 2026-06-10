@@ -54,7 +54,7 @@ export function CaseStudyBlock({
   alternativeLabel = "How it could have been",
   className,
 }: CaseStudyBlockProps) {
-  const [view, setView] = useState<"actual" | "alternative">("actual");
+  const [view, setView] = useState<"actual" | "alternative">("alternative");
   const groupId = useId();
 
   const active = view === "actual" ? actual : alternative;
