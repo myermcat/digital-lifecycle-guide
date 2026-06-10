@@ -13,7 +13,7 @@ import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { guideProseSpace } from "@/lib/guide-typography";
-import { practicePath, reviewPath } from "@/lib/guide-strings";
+import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
     meta: [
@@ -77,19 +77,19 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Monitor and improve performance",
-              href: practicePath("monitor-performance"),
+              href: threadPath("monitoring-and-instrumentation"),
               description:
                 "Track how the service actually behaves in production. The signals you watch should come from instrumentation, not from impressions.",
             },
             {
               label: "Deliver changes safely",
-              href: practicePath("deliver-changes-safely"),
+              href: threadPath("releasing-changes"),
               description:
                 "Keep changes small, tested, and reversible, with zero-downtime releases and a rollback you have actually tested.",
             },
             {
               label: "Manage your dependencies and open standards",
-              href: practicePath("manage-dependencies-standards"),
+              href: threadPath("dependencies-and-standards"),
               description:
                 "Track what your service relies on upstream, and adopt the updates that matter.",
             },
@@ -101,13 +101,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Continue user research",
-              href: practicePath("continue-user-research"),
+              href: threadPath("user-research"),
               description:
                 "Stay in contact with the people who use your service, and act on what they tell you.",
             },
             {
               label: "Maintain accessibility",
-              href: practicePath("maintain-accessibility"),
+              href: threadPath("accessibility"),
               description:
                 "Standards and assistive technologies change. Test on a cadence and with disabled users, not only with automated checks.",
             },
@@ -119,25 +119,25 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Maintain security",
-              href: practicePath("maintain-security"),
+              href: threadPath("cybersecurity"),
               description:
                 "Patch on schedule, audit access, test for vulnerabilities, and keep your incident response plan current.",
             },
             {
               label: "Maintain privacy",
-              href: practicePath("maintain-privacy"),
+              href: threadPath("privacy"),
               description:
                 "Keep personal data protected and handled lawfully, with assessments and retention kept current.",
             },
             {
               label: "Steward the data",
-              href: practicePath("steward-data"),
+              href: threadPath("data-stewardship"),
               description:
                 "Hold only the data you still need, dispose of what you should, and open what you can.",
             },
             {
               label: "Review ethics and bias",
-              href: practicePath("review-ethics-bias"),
+              href: threadPath("ethics-and-bias"),
               description:
                 "If the service makes automated decisions, test for bias on a schedule and keep the assessment current.",
             },
@@ -149,13 +149,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Maintain team capability",
-              href: practicePath("maintain-team-capability"),
+              href: threadPath("team-capability"),
               description:
                 "Document knowledge so it survives staff changes, run retrospectives, and manage any vendor relationships against the contract.",
             },
             {
               label: "Run the backlog",
-              href: practicePath("run-backlog"),
+              href: threadPath("backlog"),
               description:
                 "Keep one prioritised list, reorder it at every check-in, and record what you decide not to do.",
             },
@@ -167,13 +167,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Coordinate with adjacent services",
-              href: practicePath("coordinate-adjacent-services"),
+              href: threadPath("joined-up-delivery"),
               description:
                 "Keep working with the teams responsible for the services on either side of yours, so the user's whole journey keeps working and not just your part of it.",
             },
             {
               label: "Keep all channels in step",
-              href: practicePath("keep-channels-in-step"),
+              href: threadPath("joined-up-delivery"),
               description:
                 "As the online service changes, keep the other channels in sync: update call centre scripts, retrain operations staff, and make sure the people who support users understand the current service.",
             },

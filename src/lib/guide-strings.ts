@@ -59,14 +59,71 @@ export const REVIEW_LEVELS = {
   },
 } as const;
 
-/** Cross-cutting threads (Accessibility, Cybersecurity, etc.). */
+/** Cross-cutting threads — each covers a practice across the whole lifecycle. */
 export const THREADS = {
+  "monitoring-and-instrumentation": {
+    title: "Monitoring and instrumentation",
+    slug: "monitoring-and-instrumentation",
+    path: "/thread/monitoring-and-instrumentation",
+  },
+  "releasing-changes": {
+    title: "Releasing changes",
+    slug: "releasing-changes",
+    path: "/thread/releasing-changes",
+  },
+  "dependencies-and-standards": {
+    title: "Dependencies and standards",
+    slug: "dependencies-and-standards",
+    path: "/thread/dependencies-and-standards",
+  },
+  "user-research": {
+    title: "User research",
+    slug: "user-research",
+    path: "/thread/user-research",
+  },
   accessibility: {
     title: "Accessibility",
     slug: "accessibility",
     path: "/thread/accessibility",
   },
+  cybersecurity: {
+    title: "Cybersecurity",
+    slug: "cybersecurity",
+    path: "/thread/cybersecurity",
+  },
+  privacy: {
+    title: "Privacy",
+    slug: "privacy",
+    path: "/thread/privacy",
+  },
+  "data-stewardship": {
+    title: "Data stewardship",
+    slug: "data-stewardship",
+    path: "/thread/data-stewardship",
+  },
+  "ethics-and-bias": {
+    title: "Ethics and bias",
+    slug: "ethics-and-bias",
+    path: "/thread/ethics-and-bias",
+  },
+  "team-capability": {
+    title: "Team capability",
+    slug: "team-capability",
+    path: "/thread/team-capability",
+  },
+  backlog: {
+    title: "Backlog",
+    slug: "backlog",
+    path: "/thread/backlog",
+  },
+  "joined-up-delivery": {
+    title: "Joined-up delivery",
+    slug: "joined-up-delivery",
+    path: "/thread/joined-up-delivery",
+  },
 } as const;
+
+export type ThreadSlug = keyof typeof THREADS;
 
 export function practicePath(slug: string) {
   return `/practice/${slug}` as const;
@@ -76,6 +133,6 @@ export function reviewPath(slug: keyof typeof REVIEW_LEVELS) {
   return REVIEW_LEVELS[slug].path;
 }
 
-export function threadPath(slug: keyof typeof THREADS) {
+export function threadPath(slug: ThreadSlug) {
   return THREADS[slug].path;
 }

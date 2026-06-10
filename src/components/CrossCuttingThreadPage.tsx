@@ -73,18 +73,36 @@ export function CrossCuttingThreadPage({ content }: { content: ThreadContent }) 
         </div>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
-        <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-        <ul className={`${guideProse} space-y-2 list-none pl-0`}>
-          {content.furtherReading.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className={guideLink} target="_blank" rel="noopener noreferrer">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {content.topicSections && content.topicSections.length > 0 ? (
+        <section className="mt-10 md:mt-12 scroll-mt-24" id="focus-areas">
+          <h2 className={`${guideSectionTitle} mb-3`}>Focus areas</h2>
+          <div className={`${guideProseSpace} mt-4`}>
+            {content.topicSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="font-serif text-lg font-semibold text-primary/80 tracking-tight">
+                  {section.title}
+                </h3>
+                <p className="mt-1">{section.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {content.furtherReading.length > 0 ? (
+        <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
+          <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
+          <ul className={`${guideProse} space-y-2 list-none pl-0`}>
+            {content.furtherReading.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className={guideLink} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       <div className="h-16" />

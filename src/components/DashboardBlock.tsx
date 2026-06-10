@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { practicePath } from "@/lib/guide-strings";
+import { threadPath } from "@/lib/guide-strings";
 import { guideProseTight, guideLink } from "@/lib/guide-typography";
 
 export function DashboardBlock({
-  href = practicePath("build-dashboard"),
+  href = threadPath("monitoring-and-instrumentation"),
 }: {
   href?: string;
 }) {
