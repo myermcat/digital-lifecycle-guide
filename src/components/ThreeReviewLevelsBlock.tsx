@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { guideProseTight, guideCardHeading, guideCalloutLabel } from "@/lib/guide-typography";
 
@@ -22,20 +23,37 @@ export function ThreeReviewLevelsBlock({
       <div className="flex flex-col gap-3 md:flex-row md:items-stretch md:gap-1">
         {items.map((item, index) => (
           <Fragment key={item.href}>
-            <a
-              href={item.href}
-              className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
-              style={{ backgroundColor: "var(--region-group)" }}
-            >
-              <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
-                {item.tag}
-              </p>
-              <h3 className={`${guideCardHeading} mt-2 text-lg group-hover:text-primary transition-colors`}>
-                {item.title}
-              </h3>
-              <p className={`mt-2 flex-1 ${guideProseTight}`}>{item.body}</p>
-              <span className="sr-only"> — open review page</span>
-            </a>
+            {item.href.startsWith("/") ? (
+              <Link
+                to={item.href}
+                className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
+                style={{ backgroundColor: "var(--region-group)" }}
+              >
+                <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
+                  {item.tag}
+                </p>
+                <h3 className={`${guideCardHeading} mt-2 text-lg group-hover:text-primary transition-colors`}>
+                  {item.title}
+                </h3>
+                <p className={`mt-2 flex-1 ${guideProseTight}`}>{item.body}</p>
+                <span className="sr-only"> — open review page</span>
+              </Link>
+            ) : (
+              <a
+                href={item.href}
+                className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
+                style={{ backgroundColor: "var(--region-group)" }}
+              >
+                <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
+                  {item.tag}
+                </p>
+                <h3 className={`${guideCardHeading} mt-2 text-lg group-hover:text-primary transition-colors`}>
+                  {item.title}
+                </h3>
+                <p className={`mt-2 flex-1 ${guideProseTight}`}>{item.body}</p>
+                <span className="sr-only"> — open review page</span>
+              </a>
+            )}
             {index < items.length - 1 && (
               <div
                 className="flex shrink-0 items-center justify-center py-0.5 md:px-1 md:py-0"

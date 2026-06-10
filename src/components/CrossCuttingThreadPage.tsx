@@ -1,0 +1,93 @@
+import { Link } from "@tanstack/react-router";
+import { GuideLayout } from "@/components/GuideLayout";
+import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { REGIONS, type RegionId } from "@/lib/guide-strings";
+import type { ThreadContent } from "@/lib/thread-content";
+import {
+  guideProse,
+  guideProseSpace,
+  guideSectionTitle,
+  guideLink,
+} from "@/lib/guide-typography";
+
+export function CrossCuttingThreadPage({ content }: { content: ThreadContent }) {
+  const regionNotes = new Map(
+    content.byRegion.map((note) => [note.region, note.body] as const),
+  );
+
+  return (
+    <GuideLayout id={`thread-${content.slug}`}>
+      <header className="mb-8 md:mb-10">
+        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+          <Link to="/" className="hover:text-foreground transition-colors">
+            Home
+          </Link>
+          <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
+            ›
+          </span>
+          <span className="text-foreground/80">{content.title}</span>
+        </nav>
+        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+          {content.title}
+        </h1>
+        <div className="mt-4 h-px w-16 bg-border" />
+      </header>
+
+      <section className={guideProseSpace}>
+        <p>{content.stakes}</p>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
+        <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
+        <ul className={`${guideProse} space-y-2 list-disc pl-5`}>
+          {content.whatGoodLooksLike.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
+        <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
+        <p className={guideProse}>{content.whyItMatters}</p>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
+        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <p className={guideProse}>{content.whoseJob}</p>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-region">
+        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each region</h2>
+        <div className={`${guideProseSpace} mt-4`}>
+          {(["create", "live", "sunset"] as RegionId[]).map((regionId) => (
+            <div key={regionId}>
+              <h3 className="font-serif text-lg font-semibold text-primary/80 tracking-tight">
+                {REGIONS[regionId].title}
+              </h3>
+              <p className="mt-1">
+                {regionNotes.get(regionId) ??
+                  "This page will describe how this thread applies during this region."}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
+        <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
+        <ul className={`${guideProse} space-y-2 list-none pl-0`}>
+          {content.furtherReading.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className={guideLink} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
+      <div className="h-16" />
+    </GuideLayout>
+  );
+}

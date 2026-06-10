@@ -4,8 +4,9 @@ import {
   ArrowOutVisual,
   InfinityVisual,
 } from "@/components/RegionVisuals";
+import { REGIONS, type RegionId } from "@/lib/guide-strings";
 
-export type RegionId = "build" | "live" | "sunset";
+export type { RegionId };
 
 export interface PhaseNavItem {
   title: string;
@@ -13,10 +14,10 @@ export interface PhaseNavItem {
   slug: string;
 }
 
-export const BUILD_PHASES: PhaseNavItem[] = [
-  { title: "Discovery", href: "/build-discovery", slug: "discovery" },
-  { title: "Alpha", href: "/build-alpha", slug: "alpha" },
-  { title: "MVP", href: "/build-mvp", slug: "mvp" },
+export const CREATE_PHASES: PhaseNavItem[] = [
+  { title: "Discovery", href: "/create-discovery", slug: "discovery" },
+  { title: "Alpha", href: "/create-alpha", slug: "alpha" },
+  { title: "MVP", href: "/create-mvp", slug: "mvp" },
 ];
 
 export const LIVE_PHASES: PhaseNavItem[] = [
@@ -30,9 +31,12 @@ export const SUNSET_PHASES: PhaseNavItem[] = [
   { title: "Transition", href: "/sunset-transition", slug: "transition" },
 ];
 
+/** @deprecated Use CREATE_PHASES */
+export const BUILD_PHASES = CREATE_PHASES;
+
 export function regionVisual(region: RegionId): ReactNode {
   switch (region) {
-    case "build":
+    case "create":
       return <ArrowInVisual />;
     case "live":
       return <InfinityVisual />;
@@ -49,41 +53,44 @@ export interface WhereThisFitsConfig {
   priorRegionLink?: { title: string; href: string };
 }
 
-export function whereThisFitsForBuildPhase(
+export function whereThisFitsForCreatePhase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: "Build",
-    regionVisual: "build",
-    phases: BUILD_PHASES.map((p) => ({
+    regionLabel: REGIONS.create.title,
+    regionVisual: "create",
+    phases: CREATE_PHASES.map((p) => ({
       title: p.title,
       href: p.href,
       current: p.slug === currentSlug,
     })),
-    regionLink: { title: "Live", href: "/live" },
+    regionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
   };
 }
+
+/** @deprecated Use whereThisFitsForCreatePhase */
+export const whereThisFitsForBuildPhase = whereThisFitsForCreatePhase;
 
 export function whereThisFitsForLivePhase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: "Live",
+    regionLabel: REGIONS.live.title,
     regionVisual: "live",
     phases: LIVE_PHASES.map((p) => ({
       title: p.title,
       href: p.href,
       current: p.slug === currentSlug,
     })),
-    regionLink: { title: "Sunset", href: "/sunset" },
+    regionLink: { title: REGIONS.sunset.title, href: REGIONS.sunset.href },
   };
 }
 
 export function whereThisFitsForSunsetRegion(): WhereThisFitsConfig {
   return {
-    regionLabel: "Sunset",
+    regionLabel: REGIONS.sunset.title,
     regionVisual: "sunset",
-    priorRegionLink: { title: "Live", href: "/live" },
+    priorRegionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
     phases: [],
   };
 }
@@ -92,9 +99,9 @@ export function whereThisFitsForSunsetPhase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: "Sunset",
+    regionLabel: REGIONS.sunset.title,
     regionVisual: "sunset",
-    priorRegionLink: { title: "Live", href: "/live" },
+    priorRegionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
     phases: SUNSET_PHASES.map((p) => ({
       title: p.title,
       href: p.href,
@@ -107,20 +114,20 @@ export const REGION_META: Record<
   RegionId,
   { title: string; href: string; subtitle: string }
 > = {
-  build: {
-    title: "Build",
-    href: "/build",
-    subtitle: "Figure out what to build and deliver the first version that will go live.",
+  create: {
+    title: REGIONS.create.title,
+    href: REGIONS.create.href,
+    subtitle: REGIONS.create.subtitle,
   },
   live: {
-    title: "Live",
-    href: "/live",
-    subtitle: "Run the service after it goes live.",
+    title: REGIONS.live.title,
+    href: REGIONS.live.href,
+    subtitle: REGIONS.live.subtitle,
   },
   sunset: {
-    title: "Sunset",
-    href: "/sunset",
-    subtitle: "Shut down the service or move users to what comes next.",
+    title: REGIONS.sunset.title,
+    href: REGIONS.sunset.href,
+    subtitle: REGIONS.sunset.subtitle,
   },
 };
 
@@ -136,32 +143,32 @@ export const PHASE_META: Record<
   }
 > = {
   discovery: {
-    region: "build",
-    regionHref: "/build",
+    region: "create",
+    regionHref: REGIONS.create.href,
     phase: "Discovery",
     subtitle: "Understand the problem before you commit to a solution.",
-    path: "/build-discovery",
-    where: () => whereThisFitsForBuildPhase("discovery"),
+    path: "/create-discovery",
+    where: () => whereThisFitsForCreatePhase("discovery"),
   },
   alpha: {
-    region: "build",
-    regionHref: "/build",
+    region: "create",
+    regionHref: REGIONS.create.href,
     phase: "Alpha",
     subtitle: "Try things out cheaply before you build the real one.",
-    path: "/build-alpha",
-    where: () => whereThisFitsForBuildPhase("alpha"),
+    path: "/create-alpha",
+    where: () => whereThisFitsForCreatePhase("alpha"),
   },
   mvp: {
-    region: "build",
-    regionHref: "/build",
+    region: "create",
+    regionHref: REGIONS.create.href,
     phase: "MVP",
     subtitle: "Build the first real version that will go live.",
-    path: "/build-mvp",
-    where: () => whereThisFitsForBuildPhase("mvp"),
+    path: "/create-mvp",
+    where: () => whereThisFitsForCreatePhase("mvp"),
   },
   stabilization: {
     region: "live",
-    regionHref: "/live",
+    regionHref: REGIONS.live.href,
     phase: "Stabilization",
     subtitle: "Stabilize the service right after it goes live.",
     path: "/live-stabilization",
@@ -169,7 +176,7 @@ export const PHASE_META: Record<
   },
   growth: {
     region: "live",
-    regionHref: "/live",
+    regionHref: REGIONS.live.href,
     phase: "Growth",
     subtitle: "Add capability as more users arrive.",
     path: "/live-growth",
@@ -177,7 +184,7 @@ export const PHASE_META: Record<
   },
   shutdown: {
     region: "sunset",
-    regionHref: "/sunset",
+    regionHref: REGIONS.sunset.href,
     phase: "Shutdown",
     subtitle: "End the program when there is no successor.",
     path: "/sunset-shutdown",
@@ -185,7 +192,7 @@ export const PHASE_META: Record<
   },
   transition: {
     region: "sunset",
-    regionHref: "/sunset",
+    regionHref: REGIONS.sunset.href,
     phase: "Transition",
     subtitle: "Move users to a successor when one is taking over.",
     path: "/sunset-transition",

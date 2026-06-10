@@ -13,6 +13,7 @@ import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { guideProseSpace } from "@/lib/guide-typography";
+import { practicePath, reviewPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
     meta: [
@@ -52,7 +53,7 @@ function LiveMaturityPage() {
       <DoorwayBlock
         id="doorway"
         heading="New to Maturity? Start here."
-        href="#maturity-orientation"
+        href={practicePath("maturity-orientation")}
         linkLabel="Begin the orientation →"
       >
         <p>
@@ -76,19 +77,19 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Monitor and improve performance",
-              href: "#practice-monitor-performance",
+              href: practicePath("monitor-performance"),
               description:
                 "Track how the service actually behaves in production. The signals you watch should come from instrumentation, not from impressions.",
             },
             {
               label: "Deliver changes safely",
-              href: "#practice-deliver-changes-safely",
+              href: practicePath("deliver-changes-safely"),
               description:
                 "Keep changes small, tested, and reversible, with zero-downtime releases and a rollback you have actually tested.",
             },
             {
               label: "Manage your dependencies and open standards",
-              href: "#practice-manage-dependencies-standards",
+              href: practicePath("manage-dependencies-standards"),
               description:
                 "Track what your service relies on upstream, and adopt the updates that matter.",
             },
@@ -100,13 +101,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Continue user research",
-              href: "#practice-continue-user-research",
+              href: practicePath("continue-user-research"),
               description:
                 "Stay in contact with the people who use your service, and act on what they tell you.",
             },
             {
               label: "Maintain accessibility",
-              href: "#practice-maintain-accessibility",
+              href: practicePath("maintain-accessibility"),
               description:
                 "Standards and assistive technologies change. Test on a cadence and with disabled users, not only with automated checks.",
             },
@@ -117,20 +118,26 @@ function LiveMaturityPage() {
           heading="Keep the service safe and well-governed"
           cards={[
             {
-              label: "Maintain security and privacy",
-              href: "#practice-maintain-security-privacy",
+              label: "Maintain security",
+              href: practicePath("maintain-security"),
               description:
                 "Patch on schedule, audit access, test for vulnerabilities, and keep your incident response plan current.",
             },
             {
+              label: "Maintain privacy",
+              href: practicePath("maintain-privacy"),
+              description:
+                "Keep personal data protected and handled lawfully, with assessments and retention kept current.",
+            },
+            {
               label: "Steward the data",
-              href: "#practice-steward-data",
+              href: practicePath("steward-data"),
               description:
                 "Hold only the data you still need, dispose of what you should, and open what you can.",
             },
             {
               label: "Review ethics and bias",
-              href: "#practice-review-ethics-bias",
+              href: practicePath("review-ethics-bias"),
               description:
                 "If the service makes automated decisions, test for bias on a schedule and keep the assessment current.",
             },
@@ -142,13 +149,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Maintain team capability",
-              href: "#practice-maintain-team-capability",
+              href: practicePath("maintain-team-capability"),
               description:
                 "Document knowledge so it survives staff changes, run retrospectives, and manage any vendor relationships against the contract.",
             },
             {
               label: "Run the backlog",
-              href: "#practice-run-backlog",
+              href: practicePath("run-backlog"),
               description:
                 "Keep one prioritised list, reorder it at every check-in, and record what you decide not to do.",
             },
@@ -160,13 +167,13 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Coordinate with adjacent services",
-              href: "#practice-coordinate-adjacent-services",
+              href: practicePath("coordinate-adjacent-services"),
               description:
                 "Keep working with the teams responsible for the services on either side of yours, so the user's whole journey keeps working and not just your part of it.",
             },
             {
               label: "Keep all channels in step",
-              href: "#practice-keep-channels-in-step",
+              href: practicePath("keep-channels-in-step"),
               description:
                 "As the online service changes, keep the other channels in sync: update call centre scripts, retrain operations staff, and make sure the people who support users understand the current service.",
             },
@@ -176,7 +183,7 @@ function LiveMaturityPage() {
       </PhaseSection>
 
       <PhaseSection title="Watching the right signals" sectionId="watching-signals">
-        <DashboardBlock href="#practice-build-dashboard" />
+        <DashboardBlock />
       </PhaseSection>
 
       <PhaseSection title="Three levels of review" sectionId="reviewing-three-levels">
@@ -185,21 +192,21 @@ function LiveMaturityPage() {
           items={[
             {
               tag: "FREQUENT · INTERNAL",
-              title: "The check-in",
+              title: "Internal team review",
               body: "Internal and frequent. The team turns the signals into decisions. It is maintenance, not an exam.",
-              href: "#review-check-in",
+              href: reviewPath("internal-team-review"),
             },
             {
               tag: "OCCASIONAL · EXTERNAL",
-              title: "The peer review",
+              title: "External peer review",
               body: "External and occasional. If no one from outside looks, you never see your own gaps.",
-              href: "#review-peer-review",
+              href: reviewPath("external-peer-review"),
             },
             {
               tag: "RARE · CENTRAL",
-              title: "The institutional review",
+              title: "Institutional review",
               body: "External and rare. A central body looks at the service when its scope or impact warrants it.",
-              href: "#review-institutional-review",
+              href: reviewPath("institutional-review"),
             },
           ]}
         />
@@ -238,16 +245,16 @@ function LiveMaturityPage() {
           lead="Doing these activities is not the same as doing them well. A service can run every one of them on the surface and still be failing."
           items={[
             {
-              heading: "Going through the motions",
-              line: "The check-in can happen, the dashboard can exist, the boxes can be ticked, and nothing improves.",
+              heading: "Only going through the motions.",
+              line: "The internal team review can happen, the dashboard can exist, the boxes can be ticked, and nothing improves.",
             },
             {
               heading: "Dashboard by impression",
               line: "A dashboard built from impressions instead of instrumentation drifts from reality and can be gamed.",
             },
             {
-              heading: "Check-ins that change nothing",
-              line: "A check-in that produces no decisions leaves scores unchanged cycle after cycle.",
+              heading: "Reviews that change nothing",
+              line: "An internal team review that produces no decisions leaves scores unchanged cycle after cycle.",
             },
             {
               heading: "Inside your own bubble",

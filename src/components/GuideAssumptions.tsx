@@ -1,5 +1,6 @@
-export const GUIDE_ASSUMPTIONS_TEXT =
-  "You are already working to the GC Digital Standards and the relevant law on privacy, security, and accessibility. You are designing your service to be reused and to scale across government, not as a one-off for your team alone. The playbook builds on these rather than repeating them.";
+import { GUIDE_ASSUMPTIONS_TEXT } from "@/lib/guide-strings";
+
+export { GUIDE_ASSUMPTIONS_TEXT };
 
 export function GuideAssumptions({ className }: { className?: string }) {
   return (

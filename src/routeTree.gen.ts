@@ -16,11 +16,14 @@ import { Route as LiveStabilizationRouteImport } from './routes/live-stabilizati
 import { Route as LiveMaturityRouteImport } from './routes/live-maturity'
 import { Route as LiveGrowthRouteImport } from './routes/live-growth'
 import { Route as LiveRouteImport } from './routes/live'
-import { Route as BuildMvpRouteImport } from './routes/build-mvp'
-import { Route as BuildDiscoveryRouteImport } from './routes/build-discovery'
-import { Route as BuildAlphaRouteImport } from './routes/build-alpha'
-import { Route as BuildRouteImport } from './routes/build'
+import { Route as CreateMvpRouteImport } from './routes/create-mvp'
+import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
+import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
+import { Route as CreateRouteImport } from './routes/create'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
+import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
+import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 
 const SunsetTransitionRoute = SunsetTransitionRouteImport.update({
   id: '/sunset-transition',
@@ -57,24 +60,24 @@ const LiveRoute = LiveRouteImport.update({
   path: '/live',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BuildMvpRoute = BuildMvpRouteImport.update({
-  id: '/build-mvp',
-  path: '/build-mvp',
+const CreateMvpRoute = CreateMvpRouteImport.update({
+  id: '/create-mvp',
+  path: '/create-mvp',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BuildDiscoveryRoute = BuildDiscoveryRouteImport.update({
-  id: '/build-discovery',
-  path: '/build-discovery',
+const CreateDiscoveryRoute = CreateDiscoveryRouteImport.update({
+  id: '/create-discovery',
+  path: '/create-discovery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BuildAlphaRoute = BuildAlphaRouteImport.update({
-  id: '/build-alpha',
-  path: '/build-alpha',
+const CreateAlphaRoute = CreateAlphaRouteImport.update({
+  id: '/create-alpha',
+  path: '/create-alpha',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BuildRoute = BuildRouteImport.update({
-  id: '/build',
-  path: '/build',
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -82,13 +85,28 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThreadSlugRoute = ThreadSlugRouteImport.update({
+  id: '/thread/$slug',
+  path: '/thread/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewSlugRoute = ReviewSlugRouteImport.update({
+  id: '/review/$slug',
+  path: '/review/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticeSlugRoute = PracticeSlugRouteImport.update({
+  id: '/practice/$slug',
+  path: '/practice/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/build': typeof BuildRoute
-  '/build-alpha': typeof BuildAlphaRoute
-  '/build-discovery': typeof BuildDiscoveryRoute
-  '/build-mvp': typeof BuildMvpRoute
+  '/create': typeof CreateRoute
+  '/create-alpha': typeof CreateAlphaRoute
+  '/create-discovery': typeof CreateDiscoveryRoute
+  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -96,13 +114,16 @@ export interface FileRoutesByFullPath {
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
+  '/practice/$slug': typeof PracticeSlugRoute
+  '/review/$slug': typeof ReviewSlugRoute
+  '/thread/$slug': typeof ThreadSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/build': typeof BuildRoute
-  '/build-alpha': typeof BuildAlphaRoute
-  '/build-discovery': typeof BuildDiscoveryRoute
-  '/build-mvp': typeof BuildMvpRoute
+  '/create': typeof CreateRoute
+  '/create-alpha': typeof CreateAlphaRoute
+  '/create-discovery': typeof CreateDiscoveryRoute
+  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -110,14 +131,17 @@ export interface FileRoutesByTo {
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
+  '/practice/$slug': typeof PracticeSlugRoute
+  '/review/$slug': typeof ReviewSlugRoute
+  '/thread/$slug': typeof ThreadSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/build': typeof BuildRoute
-  '/build-alpha': typeof BuildAlphaRoute
-  '/build-discovery': typeof BuildDiscoveryRoute
-  '/build-mvp': typeof BuildMvpRoute
+  '/create': typeof CreateRoute
+  '/create-alpha': typeof CreateAlphaRoute
+  '/create-discovery': typeof CreateDiscoveryRoute
+  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -125,15 +149,18 @@ export interface FileRoutesById {
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
+  '/practice/$slug': typeof PracticeSlugRoute
+  '/review/$slug': typeof ReviewSlugRoute
+  '/thread/$slug': typeof ThreadSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/build'
-    | '/build-alpha'
-    | '/build-discovery'
-    | '/build-mvp'
+    | '/create'
+    | '/create-alpha'
+    | '/create-discovery'
+    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -141,13 +168,16 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
+    | '/practice/$slug'
+    | '/review/$slug'
+    | '/thread/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/build'
-    | '/build-alpha'
-    | '/build-discovery'
-    | '/build-mvp'
+    | '/create'
+    | '/create-alpha'
+    | '/create-discovery'
+    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -155,13 +185,16 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
+    | '/practice/$slug'
+    | '/review/$slug'
+    | '/thread/$slug'
   id:
     | '__root__'
     | '/'
-    | '/build'
-    | '/build-alpha'
-    | '/build-discovery'
-    | '/build-mvp'
+    | '/create'
+    | '/create-alpha'
+    | '/create-discovery'
+    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -169,14 +202,17 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
+    | '/practice/$slug'
+    | '/review/$slug'
+    | '/thread/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BuildRoute: typeof BuildRoute
-  BuildAlphaRoute: typeof BuildAlphaRoute
-  BuildDiscoveryRoute: typeof BuildDiscoveryRoute
-  BuildMvpRoute: typeof BuildMvpRoute
+  CreateRoute: typeof CreateRoute
+  CreateAlphaRoute: typeof CreateAlphaRoute
+  CreateDiscoveryRoute: typeof CreateDiscoveryRoute
+  CreateMvpRoute: typeof CreateMvpRoute
   LiveRoute: typeof LiveRoute
   LiveGrowthRoute: typeof LiveGrowthRoute
   LiveMaturityRoute: typeof LiveMaturityRoute
@@ -184,6 +220,9 @@ export interface RootRouteChildren {
   SunsetRoute: typeof SunsetRoute
   SunsetShutdownRoute: typeof SunsetShutdownRoute
   SunsetTransitionRoute: typeof SunsetTransitionRoute
+  PracticeSlugRoute: typeof PracticeSlugRoute
+  ReviewSlugRoute: typeof ReviewSlugRoute
+  ThreadSlugRoute: typeof ThreadSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -237,32 +276,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LiveRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/build-mvp': {
-      id: '/build-mvp'
-      path: '/build-mvp'
-      fullPath: '/build-mvp'
-      preLoaderRoute: typeof BuildMvpRouteImport
+    '/create-mvp': {
+      id: '/create-mvp'
+      path: '/create-mvp'
+      fullPath: '/create-mvp'
+      preLoaderRoute: typeof CreateMvpRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/build-discovery': {
-      id: '/build-discovery'
-      path: '/build-discovery'
-      fullPath: '/build-discovery'
-      preLoaderRoute: typeof BuildDiscoveryRouteImport
+    '/create-discovery': {
+      id: '/create-discovery'
+      path: '/create-discovery'
+      fullPath: '/create-discovery'
+      preLoaderRoute: typeof CreateDiscoveryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/build-alpha': {
-      id: '/build-alpha'
-      path: '/build-alpha'
-      fullPath: '/build-alpha'
-      preLoaderRoute: typeof BuildAlphaRouteImport
+    '/create-alpha': {
+      id: '/create-alpha'
+      path: '/create-alpha'
+      fullPath: '/create-alpha'
+      preLoaderRoute: typeof CreateAlphaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/build': {
-      id: '/build'
-      path: '/build'
-      fullPath: '/build'
-      preLoaderRoute: typeof BuildRouteImport
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -272,15 +311,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thread/$slug': {
+      id: '/thread/$slug'
+      path: '/thread/$slug'
+      fullPath: '/thread/$slug'
+      preLoaderRoute: typeof ThreadSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review/$slug': {
+      id: '/review/$slug'
+      path: '/review/$slug'
+      fullPath: '/review/$slug'
+      preLoaderRoute: typeof ReviewSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practice/$slug': {
+      id: '/practice/$slug'
+      path: '/practice/$slug'
+      fullPath: '/practice/$slug'
+      preLoaderRoute: typeof PracticeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BuildRoute: BuildRoute,
-  BuildAlphaRoute: BuildAlphaRoute,
-  BuildDiscoveryRoute: BuildDiscoveryRoute,
-  BuildMvpRoute: BuildMvpRoute,
+  CreateRoute: CreateRoute,
+  CreateAlphaRoute: CreateAlphaRoute,
+  CreateDiscoveryRoute: CreateDiscoveryRoute,
+  CreateMvpRoute: CreateMvpRoute,
   LiveRoute: LiveRoute,
   LiveGrowthRoute: LiveGrowthRoute,
   LiveMaturityRoute: LiveMaturityRoute,
@@ -288,6 +348,9 @@ const rootRouteChildren: RootRouteChildren = {
   SunsetRoute: SunsetRoute,
   SunsetShutdownRoute: SunsetShutdownRoute,
   SunsetTransitionRoute: SunsetTransitionRoute,
+  PracticeSlugRoute: PracticeSlugRoute,
+  ReviewSlugRoute: ReviewSlugRoute,
+  ThreadSlugRoute: ThreadSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

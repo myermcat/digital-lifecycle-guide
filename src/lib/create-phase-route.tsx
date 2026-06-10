@@ -2,7 +2,7 @@ import { createFileRoute, type FileRoutesByPath } from "@tanstack/react-router";
 import { PhasePlaceholderPage } from "@/components/PhasePlaceholderPage";
 import { PHASE_META, REGION_META, type RegionId } from "@/lib/lifecycle-navigation";
 import {
-  whereThisFitsForBuildPhase,
+  whereThisFitsForCreatePhase,
   whereThisFitsForLivePhase,
   whereThisFitsForSunsetPhase,
   whereThisFitsForSunsetRegion,
@@ -10,7 +10,7 @@ import {
 
 export function createPhaseRoute(slug: keyof typeof PHASE_META) {
   const meta = PHASE_META[slug];
-  const regionTitle = meta.region.charAt(0).toUpperCase() + meta.region.slice(1);
+  const regionTitle = REGION_META[meta.region].title;
 
   return createFileRoute(meta.path as keyof FileRoutesByPath)({
     head: () => ({
@@ -37,8 +37,8 @@ export function createPhaseRoute(slug: keyof typeof PHASE_META) {
 export function createRegionRoute(region: RegionId) {
   const meta = REGION_META[region];
   const where =
-    region === "build"
-      ? () => whereThisFitsForBuildPhase(null)
+    region === "create"
+      ? () => whereThisFitsForCreatePhase(null)
       : region === "live"
         ? () => whereThisFitsForLivePhase(null)
         : () => whereThisFitsForSunsetRegion();

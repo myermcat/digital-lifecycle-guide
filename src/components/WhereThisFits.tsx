@@ -1,14 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { DashedArrow } from "@/components/RegionVisuals";
 import { regionVisual, type RegionId, type WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
+import { REGIONS, REGION_ORDER } from "@/lib/guide-strings";
 
 export type WhereThisFitsProps = WhereThisFitsConfig;
-
-const REGION_ORDER: { id: RegionId; label: string; href: string }[] = [
-  { id: "build", label: "Build", href: "/build" },
-  { id: "live", label: "Live", href: "/live" },
-  { id: "sunset", label: "Sunset", href: "/sunset" },
-];
 
 export function WhereThisFits({
   regionVisual: regionId,
@@ -24,27 +19,27 @@ export function WhereThisFits({
       </p>
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 w-full overflow-x-auto pb-0.5">
-          {REGION_ORDER.map((region, i) => (
-            <span key={region.id} className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
+          {REGION_ORDER.map((id, i) => (
+            <span key={id} className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
               {i > 0 && <DashedArrow direction="right" />}
-              {region.id === regionId ? (
+              {id === regionId ? (
                 <span className="inline-flex shrink-0 items-center" aria-current="page">
                   <span
                     aria-hidden="true"
                     className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
                   >
-                    {regionVisual(region.id)}
+                    {regionVisual(id as RegionId)}
                   </span>
                   <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
-                    {region.label}
+                    {REGIONS[id].title}
                   </span>
                 </span>
               ) : (
                 <Link
-                  to={region.href}
+                  to={REGIONS[id].href}
                   className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
                 >
-                  {region.label}
+                  {REGIONS[id].title}
                 </Link>
               )}
             </span>

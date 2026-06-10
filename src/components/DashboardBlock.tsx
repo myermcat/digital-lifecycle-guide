@@ -1,7 +1,9 @@
+import { Link } from "@tanstack/react-router";
+import { practicePath } from "@/lib/guide-strings";
 import { guideProseTight, guideLink } from "@/lib/guide-typography";
 
 export function DashboardBlock({
-  href = "#practice-build-dashboard",
+  href = practicePath("build-dashboard"),
 }: {
   href?: string;
 }) {
@@ -20,7 +22,7 @@ export function DashboardBlock({
       <div className="p-4 md:p-5 grid grid-cols-3 gap-3 md:gap-4">
         {[
           { label: "Availability", value: "99.2%", bar: 82 },
-          { label: "Latency p95", value: "240ms", bar: 58 },
+          { label: "Customer satisfaction", value: "82%", bar: 82 },
           { label: "Error rate", value: "0.04%", bar: 22 },
         ].map((m) => (
           <div key={m.label} className="rounded-lg bg-background/60 border border-border/60 p-3">
@@ -49,9 +51,15 @@ export function DashboardBlock({
         </div>
       </div>
       <p className={`${guideProseTight} px-4 pb-5 md:px-5 md:pb-6 border-t border-border/60 pt-4`}>
-        <a href={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
-          Build a dashboard from instrumentation.
-        </a>{" "}
+        {href.startsWith("/") ? (
+          <Link to={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
+            Build a dashboard from instrumentation.
+          </Link>
+        ) : (
+          <a href={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
+            Build a dashboard from instrumentation.
+          </a>
+        )}{" "}
         Its signals should be measured by the service and its infrastructure, not entered by
         hand. Keep it readable, and make it visible to the bodies that review you.
       </p>

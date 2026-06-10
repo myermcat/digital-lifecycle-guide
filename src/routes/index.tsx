@@ -5,6 +5,8 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/RegionVisuals";
+import { REGIONS } from "@/lib/guide-strings";
+import { CREATE_PHASES, LIVE_PHASES } from "@/lib/lifecycle-navigation";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -71,56 +73,42 @@ function Index() {
             </p>
             <div className="grid gap-5 sm:grid-cols-3">
             <RegionCard
-              heading="Build"
-              expandedIntro="The Build region covers figuring out what to build and delivering the first version that will go live. Each phase has its own page."
+              heading={REGIONS.create.title}
+              expandedIntro={REGIONS.create.expandedIntro}
               visual={<ArrowInVisual />}
-              subItems={[
-                {
-                  title: "Discovery",
-                  description: "Understand the problem before you commit to a solution.",
-                  href: "/build-discovery",
-                },
-                {
-                  title: "Alpha",
-                  description: "Try things out cheaply before you build the real one.",
-                  href: "/build-alpha",
-                },
-                {
-                  title: "MVP",
-                  description: "Build the first real version that will go live.",
-                  href: "/build-mvp",
-                },
-              ]}
-              deepLink={{ href: "/build", label: "Go to the Build region" }}
+              subItems={CREATE_PHASES.map((phase) => ({
+                title: phase.title,
+                description:
+                  phase.slug === "discovery"
+                    ? "Understand the problem before you commit to a solution."
+                    : phase.slug === "alpha"
+                      ? "Try things out cheaply before you build the real one."
+                      : "Build the first real version that will go live.",
+                href: phase.href,
+              }))}
+              deepLink={{ href: REGIONS.create.href, label: REGIONS.create.deepLinkLabel }}
             />
             <RegionCard
-              heading="Live"
-              expandedIntro="The Live region covers running a service after it goes live. Each phase has its own page."
+              heading={REGIONS.live.title}
+              expandedIntro={REGIONS.live.expandedIntro}
               visual={<InfinityVisual />}
-              subItems={[
-                {
-                  title: "Stabilization",
-                  description: "Stabilize the service right after it goes live.",
-                  href: "/live-stabilization",
-                },
-                {
-                  title: "Growth",
-                  description: "Add capability as more users arrive.",
-                  href: "/live-growth",
-                },
-                {
-                  title: "Maturity",
-                  description: "Keep the service healthy over the long term.",
-                  href: "/live-maturity",
-                },
-              ]}
-              deepLink={{ href: "/live", label: "Go to the Live region" }}
+              subItems={LIVE_PHASES.map((phase) => ({
+                title: phase.title,
+                description:
+                  phase.slug === "stabilization"
+                    ? "Stabilize the service right after it goes live."
+                    : phase.slug === "growth"
+                      ? "Add capability as more users arrive."
+                      : "Keep the service healthy over the long term.",
+                href: phase.href,
+              }))}
+              deepLink={{ href: REGIONS.live.href, label: REGIONS.live.deepLinkLabel }}
             />
             <RegionCard
-              heading="Sunset"
-              expandedIntro="The Sunset region covers ending a service or moving users to what comes next. In Canadian government, transitions are far more common than shutdowns."
+              heading={REGIONS.sunset.title}
+              expandedIntro={REGIONS.sunset.expandedIntro}
               visual={<ArrowOutVisual />}
-              deepLink={{ href: "/sunset", label: "Go to the Sunset region" }}
+              deepLink={{ href: REGIONS.sunset.href, label: REGIONS.sunset.deepLinkLabel }}
             />
             </div>
           </div>

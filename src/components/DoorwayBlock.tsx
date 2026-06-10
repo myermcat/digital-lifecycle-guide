@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { guideProseTight, guideBlockTitle, guideLink, guideCalloutLabel } from "@/lib/guide-typography";
 
 export function DoorwayBlock({
@@ -31,9 +32,15 @@ export function DoorwayBlock({
       <div className="space-y-4">
         <div className={guideProseTight}>{children}</div>
         <p>
-          <a href={href} className={`text-sm ${guideLink}`}>
-            {linkLabel}
-          </a>
+          {href.startsWith("/") ? (
+            <Link to={href} className={`text-sm ${guideLink}`}>
+              {linkLabel}
+            </Link>
+          ) : (
+            <a href={href} className={`text-sm ${guideLink}`}>
+              {linkLabel}
+            </a>
+          )}
         </p>
       </div>
     </section>

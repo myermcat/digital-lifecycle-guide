@@ -1,3 +1,3 @@
 import { createRegionRoute } from "@/lib/create-phase-route";
 
-export const Route = createRegionRoute("build");
+export const Route = createRegionRoute("create");
