@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
@@ -10,7 +11,13 @@ import {
   guideLink,
 } from "@/lib/guide-typography";
 
-export function CrossCuttingThreadPage({ content }: { content: ThreadContent }) {
+export function CrossCuttingThreadPage({
+  content,
+  children,
+}: {
+  content: ThreadContent;
+  children?: ReactNode;
+}) {
   const regionNotes = new Map(
     content.byRegion.map((note) => [note.region, note.body] as const),
   );
@@ -103,6 +110,8 @@ export function CrossCuttingThreadPage({ content }: { content: ThreadContent }) 
           </ul>
         </section>
       ) : null}
+
+      {children}
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       <div className="h-16" />
