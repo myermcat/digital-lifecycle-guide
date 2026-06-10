@@ -136,6 +136,10 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     "dependencies-and-standards",
     "dependencies and open standards",
   ),
+  "component-eol": placeholderThread(
+    "component-eol",
+    "component end of life",
+  ),
   "user-research": placeholderThread("user-research", "user research"),
   cybersecurity: {
     ...placeholderThread("cybersecurity", "cybersecurity"),
@@ -159,6 +163,10 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
       "Breach response procedures are in place.",
     ],
   },
+  procurement: placeholderThread(
+    "procurement",
+    "procurement and contracts",
+  ),
   "data-stewardship": placeholderThread("data-stewardship", "data stewardship"),
   "ethics-and-bias": placeholderThread("ethics-and-bias", "ethics and bias"),
   "team-capability": placeholderThread("team-capability", "team capability"),

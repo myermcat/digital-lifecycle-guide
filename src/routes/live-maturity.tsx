@@ -93,6 +93,12 @@ function LiveMaturityPage() {
               description:
                 "Track what your service relies on upstream, and adopt the updates that matter.",
             },
+            {
+              label: "Manage component end of life",
+              href: threadPath("component-eol"),
+              description:
+                "Track when libraries, services, and bought products will reach end of supplier support, and plan replacements before risk and cost compound.",
+            },
           ]}
         />
 
@@ -140,6 +146,12 @@ function LiveMaturityPage() {
               href: threadPath("ethics-and-bias"),
               description:
                 "If the service makes automated decisions, test for bias on a schedule and keep the assessment current.",
+            },
+            {
+              label: "Manage procurement and contracts",
+              href: threadPath("procurement"),
+              description:
+                "Hold vendors to the contracts you signed. Watch for lock-in. Plan for renewal or exit before you are forced to act.",
             },
           ]}
         />

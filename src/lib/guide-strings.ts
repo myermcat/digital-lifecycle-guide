@@ -76,6 +76,11 @@ export const THREADS = {
     slug: "dependencies-and-standards",
     path: "/thread/dependencies-and-standards",
   },
+  "component-eol": {
+    title: "Component end of life",
+    slug: "component-eol",
+    path: "/thread/component-eol",
+  },
   "user-research": {
     title: "User research",
     slug: "user-research",
@@ -95,6 +100,11 @@ export const THREADS = {
     title: "Privacy",
     slug: "privacy",
     path: "/thread/privacy",
+  },
+  procurement: {
+    title: "Procurement",
+    slug: "procurement",
+    path: "/thread/procurement",
   },
   "data-stewardship": {
     title: "Data stewardship",
