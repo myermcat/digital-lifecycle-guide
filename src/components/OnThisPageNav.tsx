@@ -40,7 +40,7 @@ export function OnThisPageNav({
 
   return (
     <div
-      className="fixed z-50 bottom-5 right-4 md:bottom-8 md:right-6 flex flex-col items-end gap-2 pointer-events-auto"
+      className="fixed z-50 bottom-5 left-4 md:bottom-8 md:left-6 flex flex-col items-start gap-2 pointer-events-auto"
       aria-label="On this page"
     >
       {open && (

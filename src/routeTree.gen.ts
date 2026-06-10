@@ -21,9 +21,12 @@ import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
 import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
+import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
+import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
 const SunsetTransitionRoute = SunsetTransitionRouteImport.update({
   id: '/sunset-transition',
@@ -85,6 +88,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThreadContractingRoute = ThreadContractingRouteImport.update({
+  id: '/thread/contracting',
+  path: '/thread/contracting',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThreadSlugRoute = ThreadSlugRouteImport.update({
   id: '/thread/$slug',
   path: '/thread/$slug',
@@ -99,6 +107,16 @@ const PracticeSlugRoute = PracticeSlugRouteImport.update({
   id: '/practice/$slug',
   path: '/practice/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ThreadContractingIndexRoute = ThreadContractingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ThreadContractingRoute,
+} as any)
+const ThreadContractingPageRoute = ThreadContractingPageRouteImport.update({
+  id: '/$page',
+  path: '/$page',
+  getParentRoute: () => ThreadContractingRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -117,6 +135,9 @@ export interface FileRoutesByFullPath {
   '/practice/$slug': typeof PracticeSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
+  '/thread/contracting': typeof ThreadContractingRouteWithChildren
+  '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/contracting/': typeof ThreadContractingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -134,6 +155,8 @@ export interface FileRoutesByTo {
   '/practice/$slug': typeof PracticeSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
+  '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/contracting': typeof ThreadContractingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -152,6 +175,9 @@ export interface FileRoutesById {
   '/practice/$slug': typeof PracticeSlugRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
+  '/thread/contracting': typeof ThreadContractingRouteWithChildren
+  '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/contracting/': typeof ThreadContractingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -171,6 +197,9 @@ export interface FileRouteTypes {
     | '/practice/$slug'
     | '/review/$slug'
     | '/thread/$slug'
+    | '/thread/contracting'
+    | '/thread/contracting/$page'
+    | '/thread/contracting/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -188,6 +217,8 @@ export interface FileRouteTypes {
     | '/practice/$slug'
     | '/review/$slug'
     | '/thread/$slug'
+    | '/thread/contracting/$page'
+    | '/thread/contracting'
   id:
     | '__root__'
     | '/'
@@ -205,6 +236,9 @@ export interface FileRouteTypes {
     | '/practice/$slug'
     | '/review/$slug'
     | '/thread/$slug'
+    | '/thread/contracting'
+    | '/thread/contracting/$page'
+    | '/thread/contracting/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -223,6 +257,7 @@ export interface RootRouteChildren {
   PracticeSlugRoute: typeof PracticeSlugRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
+  ThreadContractingRoute: typeof ThreadContractingRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -311,6 +346,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thread/contracting': {
+      id: '/thread/contracting'
+      path: '/thread/contracting'
+      fullPath: '/thread/contracting'
+      preLoaderRoute: typeof ThreadContractingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thread/$slug': {
       id: '/thread/$slug'
       path: '/thread/$slug'
@@ -332,8 +374,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thread/contracting/': {
+      id: '/thread/contracting/'
+      path: '/'
+      fullPath: '/thread/contracting/'
+      preLoaderRoute: typeof ThreadContractingIndexRouteImport
+      parentRoute: typeof ThreadContractingRoute
+    }
+    '/thread/contracting/$page': {
+      id: '/thread/contracting/$page'
+      path: '/$page'
+      fullPath: '/thread/contracting/$page'
+      preLoaderRoute: typeof ThreadContractingPageRouteImport
+      parentRoute: typeof ThreadContractingRoute
+    }
   }
 }
+
+interface ThreadContractingRouteChildren {
+  ThreadContractingPageRoute: typeof ThreadContractingPageRoute
+  ThreadContractingIndexRoute: typeof ThreadContractingIndexRoute
+}
+
+const ThreadContractingRouteChildren: ThreadContractingRouteChildren = {
+  ThreadContractingPageRoute: ThreadContractingPageRoute,
+  ThreadContractingIndexRoute: ThreadContractingIndexRoute,
+}
+
+const ThreadContractingRouteWithChildren =
+  ThreadContractingRoute._addFileChildren(ThreadContractingRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -351,7 +420,18 @@ const rootRouteChildren: RootRouteChildren = {
   PracticeSlugRoute: PracticeSlugRoute,
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
+  ThreadContractingRoute: ThreadContractingRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

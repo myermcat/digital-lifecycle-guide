@@ -4,6 +4,7 @@ import {
   guideCalloutLabel,
   guideProseTight,
 } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 export interface CaseStudySide {
   /** Heading shown above the list (e.g. "What happened"). */
@@ -41,7 +42,7 @@ function CaseStudyIcon({ className }: { className?: string }) {
 
 /**
  * Case study comparison: same situation, two ways. A toggle swaps between
- * how it was done and how it could have been.
+ * the risky way and the safer way.
  */
 export function CaseStudyBlock({
   id,
@@ -50,8 +51,8 @@ export function CaseStudyBlock({
   intro,
   actual,
   alternative,
-  actualLabel = "How it was done",
-  alternativeLabel = "How it could have been",
+  actualLabel = "The risky way",
+  alternativeLabel = "The safer way",
   className,
 }: CaseStudyBlockProps) {
   const [view, setView] = useState<"actual" | "alternative">("alternative");
@@ -63,10 +64,10 @@ export function CaseStudyBlock({
   return (
     <section
       id={id}
-      className={
-        className ??
-        "scroll-mt-24 rounded-lg border border-border bg-card overflow-hidden"
-      }
+      className={cn(
+        "scroll-mt-24 rounded-lg border border-border bg-card shadow-sm overflow-hidden",
+        className,
+      )}
     >
       <div className="px-6 py-6 md:px-8 md:py-7 space-y-5">
         <div className="flex items-start gap-3">

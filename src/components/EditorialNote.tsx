@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { guideCalloutLabel, guideProseTight } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 export type EditorialNoteTone = "quiet" | "caution";
 
@@ -33,10 +34,10 @@ export function EditorialNote({
 
   return (
     <aside
-      className={
-        className ??
-        `rounded-md border border-l-4 ${toneClasses} px-4 py-3 md:px-5 md:py-3.5`
-      }
+      className={cn(
+        `rounded-md border border-l-4 ${toneClasses} px-4 py-3 md:px-5 md:py-3.5`,
+        className,
+      )}
       style={isCaution ? { backgroundColor: "color-mix(in oklab, var(--destructive) 8%, var(--background))" } : undefined}
     >
       <p className={labelClasses}>{label ?? defaultLabel}</p>

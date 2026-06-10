@@ -52,7 +52,7 @@ export function PracticeCardGroup({
   heading,
   cards,
 }: {
-  heading: string;
+  heading?: string;
   cards: PracticeCardData[];
 }) {
   const cols =
@@ -63,9 +63,9 @@ export function PracticeCardGroup({
         : "grid-cols-1";
 
   return (
-    <div className="mt-12 first:mt-6">
-      <h3 className={guideSubsectionTitle}>{heading}</h3>
-      <ul className={`mt-2 grid gap-3 list-none pl-0 ${cols}`}>
+    <div className={heading ? "mt-12 first:mt-6" : "mt-0"}>
+      {heading ? <h3 className={guideSubsectionTitle}>{heading}</h3> : null}
+      <ul className={`${heading ? "mt-2" : ""} grid gap-3 list-none pl-0 ${cols}`}>
         {cards.map((card) => (
           <li key={card.href} className="min-h-0">
             <PracticeCard {...card} />

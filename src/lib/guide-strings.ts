@@ -106,6 +106,11 @@ export const THREADS = {
     slug: "procurement",
     path: "/thread/procurement",
   },
+  contracting: {
+    title: "Contracting",
+    slug: "contracting",
+    path: "/thread/contracting",
+  },
   "data-stewardship": {
     title: "Data stewardship",
     slug: "data-stewardship",
