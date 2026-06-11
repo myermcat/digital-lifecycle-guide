@@ -12,6 +12,7 @@ import { CompactExitList } from "@/components/CompactLinkedList";
 import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
+import { ProcurementCallout } from "@/components/ProcurementCallout";
 import { guideProseSpace } from "@/lib/guide-typography";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
@@ -147,12 +148,6 @@ function LiveMaturityPage() {
               description:
                 "If the service makes automated decisions, test for bias on a schedule and keep the assessment current.",
             },
-            {
-              label: "Manage procurement and contracts",
-              href: threadPath("procurement"),
-              description:
-                "Hold vendors to the contracts you signed. Watch for lock-in. Plan for renewal or exit before you are forced to act.",
-            },
           ]}
         />
 
@@ -192,6 +187,8 @@ function LiveMaturityPage() {
           ]}
         />
         </PracticeActivitiesPanel>
+
+        <ProcurementCallout phaseId="live-maturity" />
       </PhaseSection>
 
       <PhaseSection title="Watching the right signals" sectionId="watching-signals">
