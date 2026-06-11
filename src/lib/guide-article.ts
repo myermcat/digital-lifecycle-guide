@@ -1,4 +1,4 @@
-import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
 
 /** Comfortable reading measure — matches assumptions and footnote blocks site-wide. */
 export const guideArticleMeasure = "max-w-xl";
@@ -17,3 +17,16 @@ export const guideArticleProse = `${guideProse} space-y-4`;
 
 /** Space before editorial notes, case studies, and similar lifted blocks. */
 export const guideArticleCalloutLift = "mt-8 md:mt-10";
+
+/** Dialogue Q&A: gap between question-and-answer pairs. */
+export const guideArticleQaList = "space-y-5 md:space-y-6 list-none pl-0";
+
+/** Dialogue Q&A: light card per exchange. */
+export const guideArticleQaCard =
+  "rounded-md border border-border/50 bg-muted/15 px-4 py-3.5 md:px-5 md:py-4";
+
+/** Dialogue Q&A: question line — leads the eye. */
+export const guideArticleQaQuestion = `${guideProse} font-medium text-primary border-l-2 border-primary/25 pl-3 -ml-px`;
+
+/** Dialogue Q&A: answer line — smaller, plainer, slightly indented. */
+export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 md:ml-4 mt-2.5`;
