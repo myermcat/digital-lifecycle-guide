@@ -1,8 +1,13 @@
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
+import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
+import {
+  getPhaseLeavingContent,
+  type PhaseLeavingSlug,
+} from "@/lib/phase-leaving-content";
 import { guideProseSpace } from "@/lib/guide-typography";
 
 interface PhasePlaceholderPageProps {
@@ -13,6 +18,7 @@ interface PhasePlaceholderPageProps {
   /** Opening prose below Where this fits (same role as Maturity intro). */
   intro: string;
   whereThisFits: WhereThisFitsConfig;
+  phaseLeavingSlug?: PhaseLeavingSlug;
 }
 
 export function PhasePlaceholderPage({
@@ -22,7 +28,12 @@ export function PhasePlaceholderPage({
   phase,
   intro,
   whereThisFits,
+  phaseLeavingSlug,
 }: PhasePlaceholderPageProps) {
+  const leavingContent = phaseLeavingSlug
+    ? getPhaseLeavingContent(phaseLeavingSlug)
+    : null;
+
   return (
     <GuideLayout id={id}>
       <PhaseBreadcrumb region={region} regionHref={regionHref} phase={phase} />
@@ -35,6 +46,8 @@ export function PhasePlaceholderPage({
         <p>{intro}</p>
         <p className="italic text-foreground/60">Page content coming soon.</p>
       </section>
+
+      {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

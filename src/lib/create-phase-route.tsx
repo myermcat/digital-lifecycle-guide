@@ -7,6 +7,7 @@ import {
   whereThisFitsForSunsetPhase,
   whereThisFitsForSunsetRegion,
 } from "@/lib/lifecycle-navigation";
+import { phaseLeavingSlugOrNull } from "@/lib/phase-leaving-content";
 
 export function createPhaseRoute(slug: keyof typeof PHASE_META) {
   const meta = PHASE_META[slug];
@@ -29,6 +30,7 @@ export function createPhaseRoute(slug: keyof typeof PHASE_META) {
         phase={meta.phase}
         intro={meta.subtitle}
         whereThisFits={meta.where()}
+        phaseLeavingSlug={phaseLeavingSlugOrNull(slug)}
       />
     ),
   });
@@ -59,6 +61,7 @@ export function createRegionRoute(region: RegionId) {
         regionHref={meta.href}
         intro={meta.subtitle}
         whereThisFits={where()}
+        phaseLeavingSlug={region === "sunset" ? "sunset" : undefined}
       />
     ),
   });

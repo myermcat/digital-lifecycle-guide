@@ -8,13 +8,13 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { whereThisFitsForLivePhase } from "@/lib/lifecycle-navigation";
 import { PhaseSection } from "@/components/PhaseSection";
 import { DashboardBlock } from "@/components/DashboardBlock";
-import { CompactExitList } from "@/components/CompactLinkedList";
+import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
 import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
-import { LookingAhead } from "@/components/LookingAhead";
 import { guideProseSpace } from "@/lib/guide-typography";
+import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
@@ -222,68 +222,7 @@ function LiveMaturityPage() {
         />
       </PhaseSection>
 
-      <PhaseSection title="When you need to leave Maturity" sectionId="leaving-maturity">
-        <p>
-          Maturity is the longest phase, but not permanent. Three things can move a service
-          out of it.
-        </p>
-        <LookingAhead
-          title=""
-          intro="Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this phase, and roughly when to begin."
-          pills={[
-            {
-              label: "Preparing for sunset",
-              intro:
-                "The end of this application will take longer to handle than you expect. Begin before the signals get loud.",
-              items: [
-                "Know your contract end date, and work backwards from it. Moving your data and workload out is often months of work, not weeks.",
-                "If you do not know how long an exit would actually take, that is the first thing to find out.",
-                "Watch the sunset signals your dashboard already tracks: support ending, a replacement arriving, the user base shrinking, the policy basis going away.",
-                "Do not deepen lock-in this late with new customisations you will only have to unwind.",
-              ],
-            },
-            {
-              label: "The next contract renewal",
-              intro:
-                "Renewals arrive faster than they feel, and re-competing has its own lead time.",
-              items: [
-                "Know when the current contract ends and how long a re-competition takes in practice.",
-                "Decide early whether you are renewing, re-competing, or moving. Each needs a different runway.",
-              ],
-            },
-            {
-              label: "Components reaching end of life",
-              intro:
-                "The bought and borrowed parts of your service age on their own schedule, not yours.",
-              items: [
-                "Track the support timelines of the major components you depend on.",
-                "A component going end of life can force a move before you planned one. Spot it early.",
-              ],
-              href: threadPath("component-eol"),
-              linkLabel: "Component end of life →",
-            },
-          ]}
-        />
-        <CompactExitList
-          items={[
-            {
-              lead: "Back to Growth,",
-              rest: "when a new mandate or expanding scope means you are delivering substantial new features again.",
-              href: "/live-growth",
-            },
-            {
-              lead: "Forward to Sunset,",
-              rest: "when a sunset signal appears: support ending, a replacement coming, the user base shrinking, the policy basis going away.",
-              href: "/sunset",
-            },
-            {
-              lead: "Back to a Stabilization-like mode,",
-              rest: "when a critical failure or major replatforming forces a period of rapid stabilisation.",
-              href: "/live-stabilization",
-            },
-          ]}
-        />
-      </PhaseSection>
+      <PhaseLeavingSection content={getPhaseLeavingContent("maturity")} />
 
       <section className="mt-10 md:mt-12">
         <CautionBlock
