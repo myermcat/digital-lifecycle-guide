@@ -11,6 +11,8 @@ export type ContractingSection = {
   paragraphs?: string[];
   paragraphsAfterBullets?: string[];
   bullets?: ContractingBullet[];
+  /** How lead/body bullet lists are rendered. */
+  bulletsVariant?: "inline" | "qa";
   caseStudy?: {
     intro: string;
     risky: CaseStudySide;
@@ -176,6 +178,7 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         paragraphs: [
           "Most of the reasons people sign one big contract are not rules. They are fears and habits. Here are the ones you will run into, and what to do about each.",
         ],
+        bulletsVariant: "qa",
         bullets: [
           {
             lead: "“A smaller contract will look less controlled, and won't get approved.”",

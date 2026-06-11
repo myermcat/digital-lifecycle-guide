@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { CONTRACTING_LANDING_PATH } from "@/lib/contracting-landing";
+import { guideArticleMeasure } from "@/lib/guide-article";
 
 export function ThreadArticleLayout({
   id,
@@ -38,7 +39,7 @@ export function ThreadArticleLayout({
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
-      {children}
+      <div className={guideArticleMeasure}>{children}</div>
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       {afterAssumptions}
       <div className="h-16" />

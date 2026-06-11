@@ -1,10 +1,19 @@
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ContractingSectionNav } from "@/components/ContractingSectionNav";
 import { EditorialNote } from "@/components/EditorialNote";
-import { PhaseSection } from "@/components/PhaseSection";
+import {
+  ThreadArticleLeadList,
+  ThreadArticleQaList,
+  ThreadArticleSection,
+} from "@/components/ThreadArticleSection";
 import { ThreadArticleLayout } from "@/components/ThreadArticleLayout";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
-import { guideProse, guideProseSpace } from "@/lib/guide-typography";
+import {
+  guideArticleCalloutLift,
+  guideArticleProse,
+  guideArticleSectionGap,
+} from "@/lib/guide-article";
+import { guideProse } from "@/lib/guide-typography";
 
 export function ContractingSubPage({ page }: { page: ContractingSubPageContent }) {
   const sectionNav = <ContractingSectionNav slug={page.slug} />;
@@ -31,32 +40,32 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
       afterAssumptions={sectionNav}
     >
       {page.intro ? (
-        <section className={guideProseSpace}>
+        <section className={guideArticleProse}>
           {page.intro.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </section>
       ) : null}
 
-      {page.sections.map((section) => (
-        <PhaseSection key={section.id} title={section.title} sectionId={section.id}>
+      {page.sections.map((section, index) => (
+        <ThreadArticleSection
+          key={section.id}
+          title={section.title}
+          sectionId={section.id}
+          isFirst={index === 0 && !page.intro}
+        >
           {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          {section.bullets ? (
-            <ul className="space-y-3 list-none pl-0">
-              {section.bullets.map((bullet) => (
-                <li key={bullet.lead} className={guideProse}>
-                  <span className="font-semibold text-foreground/90">{bullet.lead}</span>{" "}
-                  {bullet.body}
-                </li>
-              ))}
-            </ul>
+          {section.bullets && section.bulletsVariant === "qa" ? (
+            <ThreadArticleQaList items={section.bullets} />
+          ) : section.bullets ? (
+            <ThreadArticleLeadList items={section.bullets} />
           ) : null}
           {section.paragraphsAfterBullets?.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           {section.caseStudy ? (
             <CaseStudyBlock
-              className="mt-6"
+              className={guideArticleCalloutLift}
               title="The same programme, bought two ways"
               intro={section.caseStudy.intro}
               actual={section.caseStudy.risky}
@@ -64,17 +73,20 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
             />
           ) : null}
           {section.editorialNote ? (
-            <EditorialNote label={section.editorialNote.label}>
+            <EditorialNote
+              label={section.editorialNote.label}
+              className={guideArticleCalloutLift}
+            >
               {section.editorialNote.body}
             </EditorialNote>
           ) : null}
-        </PhaseSection>
+        </ThreadArticleSection>
       ))}
 
       {page.trailingEditorialNote ? (
         <EditorialNote
           label={page.trailingEditorialNote.label}
-          className="mt-10 md:mt-12"
+          className={guideArticleSectionGap}
         >
           {page.trailingEditorialNote.body}
         </EditorialNote>
