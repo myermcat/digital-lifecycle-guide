@@ -1,5 +1,11 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
-import { SOO_VS_SOW_PATH } from "@/lib/reference-paths";
+import {
+  CONTRACTING_SUBPAGE_SLUGS,
+  type ContractingSubPageSlug,
+} from "./contracting-subpage-slugs";
+import { SOO_VS_SOW_PATH } from "./reference-paths";
+
+export { CONTRACTING_SUBPAGE_SLUGS, type ContractingSubPageSlug };
 
 export type ContractingBullet = {
   lead: string;
@@ -44,16 +50,6 @@ export type ContractingSubPage = {
     body: string;
   };
 };
-
-export const CONTRACTING_SUBPAGE_SLUGS = [
-  "the-contract-carries-the-practices",
-  "you-bought-small-in-pieces",
-  "you-did-not-over-customise",
-  "you-can-leave-when-you-need-to",
-  "you-kept-enough-in-house",
-] as const;
-
-export type ContractingSubPageSlug = (typeof CONTRACTING_SUBPAGE_SLUGS)[number];
 
 export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSubPage> = {
   "the-contract-carries-the-practices": {

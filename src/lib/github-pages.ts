@@ -1,6 +1,6 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { THREADS } from "./guide-strings";
-import { CONTRACTING_SUBPAGE_SLUGS } from "./contracting-subpages";
+import { CONTRACTING_SUBPAGE_SLUGS } from "./contracting-subpage-slugs";
 import { SOO_VS_SOW_PATH } from "./reference-paths";
 
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
