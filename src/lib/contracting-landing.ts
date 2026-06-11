@@ -73,7 +73,7 @@ export const CONTRACTING_LANDING = {
     },
   ] satisfies WeightedRegionNote[],
   furtherReading:
-    "This thread sits under Treasury Board's Directive on the Management of Procurement, which takes an outcomes-based, lifecycle view of buying. It also draws on the Boots and Clarke guide to reforming IT procurement in Canada, the UK Service Manual, and Skylight's open agile procurement playbook. The outside sources are translated to Canadian rules, not copied.",
+    "This thread sits under Treasury Board's Directive on the Management of Procurement, which takes an outcomes-based, lifecycle view of buying. It also draws on the Boots and Clarke guide to reforming IT procurement in Canada, the UK Service Manual, and Skylight's open agile procurement playbook. The outside sources are translated to Canadian rules.",
   sources: [
     {
       label: "Governing instrument",

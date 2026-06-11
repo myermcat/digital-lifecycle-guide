@@ -2,7 +2,8 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
-import { CONTRACTING_LANDING_PATH } from "@/lib/contracting-landing";
+import { CONTRACTING_LANDING, CONTRACTING_LANDING_PATH } from "@/lib/contracting-landing";
+import { THREADS } from "@/lib/guide-strings";
 import { guideArticleMeasure } from "@/lib/guide-article";
 
 export function ThreadArticleLayout({
@@ -26,8 +27,14 @@ export function ThreadArticleLayout({
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
           </span>
+          <Link to={THREADS.procurement.path} className="hover:text-foreground transition-colors">
+            {THREADS.procurement.title}
+          </Link>
+          <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
+            ›
+          </span>
           <Link to={CONTRACTING_LANDING_PATH} className="hover:text-foreground transition-colors">
-            Contracting
+            {CONTRACTING_LANDING.title}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›

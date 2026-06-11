@@ -187,9 +187,9 @@ function LiveMaturityPage() {
           ]}
         />
         </PracticeActivitiesPanel>
-
-        <ProcurementCallout phaseId="live-maturity" />
       </PhaseSection>
+
+      <ProcurementCallout phaseId="live-maturity" />
 
       <PhaseSection title="Watching the right signals" sectionId="watching-signals">
         <DashboardBlock />

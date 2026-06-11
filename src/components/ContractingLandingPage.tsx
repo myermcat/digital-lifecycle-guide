@@ -8,6 +8,7 @@ import {
   CONTRACTING_GOOD_LOOKS_CARDS,
   CONTRACTING_LANDING,
 } from "@/lib/contracting-landing";
+import { THREADS } from "@/lib/guide-strings";
 import {
   guideProse,
   guideProseSpace,
@@ -21,6 +22,12 @@ export function ContractingLandingPage() {
         <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
             Home
+          </Link>
+          <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
+            ›
+          </span>
+          <Link to={THREADS.procurement.path} className="hover:text-foreground transition-colors">
+            {THREADS.procurement.title}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -40,7 +47,7 @@ export function ContractingLandingPage() {
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-2`}>What good looks like</h2>
         <p className={`${guideProse} mb-4`}>{CONTRACTING_LANDING.goodLooksIntro}</p>
-        <PracticeCardGroup cards={CONTRACTING_GOOD_LOOKS_CARDS} />
+        <PracticeCardGroup cards={CONTRACTING_GOOD_LOOKS_CARDS} numbered />
         <p className={`${guideProse} mt-6`}>{CONTRACTING_LANDING.businessOwnerNote}</p>
       </section>
 

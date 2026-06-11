@@ -1,4 +1,4 @@
-import { CONTRACTING_LANDING_PATH } from "@/lib/contracting-landing";
+import { THREADS } from "@/lib/guide-strings";
 
 /** Phase pages that can host the procurement callout block. */
 export type ProcurementCalloutPhaseId =
@@ -19,9 +19,9 @@ export const PROCUREMENT_CALLOUT_HEADING = "Procurement and contracting";
 export const PROCUREMENT_CALLOUT_FRAMING =
   "Most government services are bought, in whole or in part. When a supplier builds or runs your service, contracting runs through all of the work above. It decides what you can change, what you can measure, and whether you can ever leave.";
 
-export const PROCUREMENT_CALLOUT_LINK_LABEL = "Go to the Contracting thread →";
+export const PROCUREMENT_CALLOUT_LINK_LABEL = "Go to the Procurement thread →";
 
-export const PROCUREMENT_CALLOUT_LINK = CONTRACTING_LANDING_PATH;
+export const PROCUREMENT_CALLOUT_LINK = THREADS.procurement.path;
 
 /** What procurement and contracting mean at each phase. */
 export const PROCUREMENT_CALLOUT_AT_PHASE: Record<ProcurementCalloutPhaseId, string> = {

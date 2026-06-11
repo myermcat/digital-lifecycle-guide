@@ -18,10 +18,11 @@ import {
 /**
  * Standalone procurement callout for phase pages — visually heavier than practice
  * cards, with accent border. Only this cross-cutting thread gets its own block.
+ * Renders as `section[id]` + `h2` so it appears in the page's On this page nav.
  */
 export function ProcurementCallout({
   phaseId,
-  id = "procurement-callout",
+  id = "procurement-and-contracting",
   className,
 }: {
   phaseId: ProcurementCalloutPhaseId;
@@ -29,16 +30,16 @@ export function ProcurementCallout({
   className?: string;
 }) {
   return (
-    <aside
+    <section
       id={id}
       className={
         className ??
-        "mt-10 md:mt-12 scroll-mt-24 rounded-lg border border-primary/40 bg-background shadow-sm overflow-hidden"
+        "scroll-mt-24 mt-10 md:mt-12 rounded-lg border border-primary/40 bg-background shadow-sm overflow-hidden"
       }
     >
       <div className="border-l-[5px] border-l-primary px-6 py-6 md:px-8 md:py-7 space-y-4">
         <p className={guideCalloutLabel}>{PROCUREMENT_CALLOUT_LABEL}</p>
-        <h3 className={`${guideBlockTitle} mt-1`}>{PROCUREMENT_CALLOUT_HEADING}</h3>
+        <h2 className={`${guideBlockTitle} mt-1`}>{PROCUREMENT_CALLOUT_HEADING}</h2>
         <p className={guideProseTight}>{PROCUREMENT_CALLOUT_FRAMING}</p>
         <p className={guideProseTight}>{PROCUREMENT_CALLOUT_AT_PHASE[phaseId]}</p>
         <p>
@@ -47,6 +48,6 @@ export function ProcurementCallout({
           </Link>
         </p>
       </div>
-    </aside>
+    </section>
   );
 }
