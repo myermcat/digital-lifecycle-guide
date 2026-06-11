@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ContractingSectionNav } from "@/components/ContractingSectionNav";
 import { EditorialNote } from "@/components/EditorialNote";
@@ -13,7 +14,31 @@ import {
   guideArticleProse,
   guideArticleSectionGap,
 } from "@/lib/guide-article";
-import { guideProse } from "@/lib/guide-typography";
+import { guideLink, guideProse } from "@/lib/guide-typography";
+
+function paragraphWithLink(
+  paragraph: string,
+  link?: { phrase: string; to: string },
+) {
+  if (!link) {
+    return paragraph;
+  }
+
+  const start = paragraph.indexOf(link.phrase);
+  if (start === -1) {
+    return paragraph;
+  }
+
+  return (
+    <>
+      {paragraph.slice(0, start)}
+      <Link to={link.to} className={guideLink}>
+        {link.phrase}
+      </Link>
+      {paragraph.slice(start + link.phrase.length)}
+    </>
+  );
+}
 
 export function ContractingSubPage({ page }: { page: ContractingSubPageContent }) {
   const sectionNav = <ContractingSectionNav slug={page.slug} />;
@@ -54,7 +79,14 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           sectionId={section.id}
           isFirst={index === 0 && !page.intro}
         >
-          {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {section.paragraphs?.map((paragraph, paragraphIndex) => {
+            const link = section.paragraphLinks?.find(
+              (item) => item.index === paragraphIndex,
+            );
+            return (
+              <p key={paragraph}>{paragraphWithLink(paragraph, link)}</p>
+            );
+          })}
           {section.bullets && section.bulletsVariant === "qa" ? (
             <ThreadArticleQaList items={section.bullets} />
           ) : section.bullets ? (

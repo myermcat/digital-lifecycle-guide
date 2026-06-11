@@ -16,11 +16,10 @@ export interface CaseStudySide {
 interface CaseStudyBlockProps {
   id?: string;
   label?: string;
-  title: string;
-  intro: string;
-  /** The cautionary / historical side. */
+  title?: string;
+  intro?: string;
   actual: CaseStudySide;
-  /** The better-way / alternative side. */
+  /** The cautionary / historical side. */
   alternative: CaseStudySide;
   actualLabel?: string;
   alternativeLabel?: string;
@@ -60,6 +59,8 @@ export function CaseStudyBlock({
 
   const active = view === "actual" ? actual : alternative;
   const isActual = view === "actual";
+  const hasHeader = Boolean(label || title || intro);
+  const comparisonLabel = title ?? `${actualLabel} and ${alternativeLabel}`;
 
   return (
     <section
@@ -70,18 +71,20 @@ export function CaseStudyBlock({
       )}
     >
       <div className="px-6 py-6 md:px-8 md:py-7 space-y-5">
-        <div className="flex items-start gap-3">
-          <CaseStudyIcon className="h-5 w-5 mt-1 shrink-0 text-primary" />
-          <div>
-            <p className={guideCalloutLabel}>{label}</p>
-            <h3 className={`${guideBlockTitle} mt-1.5`}>{title}</h3>
-            <p className={`${guideProseTight} mt-2`}>{intro}</p>
+        {hasHeader ? (
+          <div className="flex items-start gap-3">
+            <CaseStudyIcon className="h-5 w-5 mt-1 shrink-0 text-primary" />
+            <div>
+              {label ? <p className={guideCalloutLabel}>{label}</p> : null}
+              {title ? <h3 className={`${guideBlockTitle} mt-1.5`}>{title}</h3> : null}
+              {intro ? <p className={`${guideProseTight} mt-2`}>{intro}</p> : null}
+            </div>
           </div>
-        </div>
+        ) : null}
 
         <div
           role="radiogroup"
-          aria-label={`${title} — comparison`}
+          aria-label={`${comparisonLabel} — comparison`}
           className="inline-flex rounded-full border border-border bg-background p-1"
         >
           {(

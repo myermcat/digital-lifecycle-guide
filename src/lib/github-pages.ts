@@ -1,6 +1,7 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { THREADS } from "./guide-strings";
 import { CONTRACTING_SUBPAGE_SLUGS } from "./contracting-subpages";
+import { SOO_VS_SOW_PATH } from "./reference-paths";
 
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
 export const GITHUB_PAGES_BASE = "/digital-lifecycle-guide/";
@@ -34,4 +35,5 @@ export const STATIC_PRERENDER_PATHS = [
   ...REVIEW_PATHS,
   ...THREAD_PATHS,
   ...CONTRACTING_SUB_PATHS,
+  SOO_VS_SOW_PATH,
 ] as const;

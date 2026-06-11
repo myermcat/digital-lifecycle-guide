@@ -12,6 +12,8 @@ export type CompactLinkedItem = {
 export type ArrowLeadItem = {
   lead: string;
   body: string;
+  /** Optional extra lines below the body, with looser spacing between them. */
+  bodyLines?: string[];
   href?: string;
 };
 
@@ -46,6 +48,15 @@ export function ArrowLeadList({
               )}
             </p>
             <p className={`mt-1 ${guideProseTight} text-foreground/65`}>{item.body}</p>
+            {item.bodyLines && item.bodyLines.length > 0 ? (
+              <div className="mt-2 space-y-1.5">
+                {item.bodyLines.map((line) => (
+                  <p key={line} className={`${guideProseTight} text-foreground/65`}>
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ) : null}
           </div>
         </li>
       ))}

@@ -24,6 +24,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
+import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
@@ -103,6 +104,11 @@ const ReviewSlugRoute = ReviewSlugRouteImport.update({
   path: '/review/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferenceSooVsSowRoute = ReferenceSooVsSowRouteImport.update({
+  id: '/reference/soo-vs-sow',
+  path: '/reference/soo-vs-sow',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PracticeSlugRoute = PracticeSlugRouteImport.update({
   id: '/practice/$slug',
   path: '/practice/$slug',
@@ -133,6 +139,7 @@ export interface FileRoutesByFullPath {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
@@ -153,6 +160,7 @@ export interface FileRoutesByTo {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
@@ -173,6 +181,7 @@ export interface FileRoutesById {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
@@ -195,6 +204,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
@@ -215,6 +225,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting/$page'
@@ -234,6 +245,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
@@ -255,6 +267,7 @@ export interface RootRouteChildren {
   SunsetShutdownRoute: typeof SunsetShutdownRoute
   SunsetTransitionRoute: typeof SunsetTransitionRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
+  ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
   ThreadContractingRoute: typeof ThreadContractingRouteWithChildren
@@ -367,6 +380,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/soo-vs-sow': {
+      id: '/reference/soo-vs-sow'
+      path: '/reference/soo-vs-sow'
+      fullPath: '/reference/soo-vs-sow'
+      preLoaderRoute: typeof ReferenceSooVsSowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/practice/$slug': {
       id: '/practice/$slug'
       path: '/practice/$slug'
@@ -418,6 +438,7 @@ const rootRouteChildren: RootRouteChildren = {
   SunsetShutdownRoute: SunsetShutdownRoute,
   SunsetTransitionRoute: SunsetTransitionRoute,
   PracticeSlugRoute: PracticeSlugRoute,
+  ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
   ThreadContractingRoute: ThreadContractingRouteWithChildren,

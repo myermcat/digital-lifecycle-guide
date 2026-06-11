@@ -1,14 +1,23 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
+import { SOO_VS_SOW_PATH } from "@/lib/reference-paths";
 
 export type ContractingBullet = {
   lead: string;
   body: string;
+  bodyLines?: string[];
+};
+
+export type ContractingParagraphLink = {
+  index: number;
+  phrase: string;
+  to: string;
 };
 
 export type ContractingSection = {
   id: string;
   title: string;
   paragraphs?: string[];
+  paragraphLinks?: ContractingParagraphLink[];
   paragraphsAfterBullets?: string[];
   bullets?: ContractingBullet[];
   /** How lead/body bullet lists are rendered. */
@@ -73,7 +82,11 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         bullets: [
           {
             lead: "Name it.",
-            body: "Put it in the contract as a real deliverable. “The supplier will run user research with real users at each stage” is a clause you can hold someone to. “The supplier will care about users” is not.",
+            body: "Put it in the contract as a real deliverable.",
+            bodyLines: [
+              'Good clause: "The supplier will run usability testing in each phase with at least five participants from the service\'s real user groups, including people who use assistive technology, and give the findings to the department."',
+              'Bad clause: "The supplier will do user research with real users."',
+            ],
           },
           {
             lead: "Govern it.",
@@ -131,6 +144,9 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
           "How you write what the supplier must do decides whether buying in pieces is even workable.",
           "The usual way is a statement of work: a fixed list of exactly what gets built and how, written as if you already know everything. It reads like “the supplier shall build these screens, in this order, by this date.” That suits things that do not change. It suits digital work badly, because you do not know everything up front, and every time you learn something new you have to reopen the contract to change the list.",
           "A statement of objectives works better for digital. You write down the goals, and bring in people who can work out what to build to meet them. It reads like “here is what this service has to achieve, and who it is for.” The details can shift as you learn, because the contract is tied to the goal, not to a frozen list. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful.",
+        ],
+        paragraphLinks: [
+          { index: 2, phrase: "statement of objectives", to: SOO_VS_SOW_PATH },
         ],
       },
       {

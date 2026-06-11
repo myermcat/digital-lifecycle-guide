@@ -43,12 +43,13 @@ export function ThreadArticleSection({
 export type LeadBullet = {
   lead: string;
   body: string;
+  bodyLines?: string[];
 };
 
 export function ThreadArticleLeadList({ items }: { items: LeadBullet[] }) {
   return (
     <ArrowLeadList
-      items={items.map(({ lead, body }) => ({ lead, body }))}
+      items={items.map(({ lead, body, bodyLines }) => ({ lead, body, bodyLines }))}
     />
   );
 }
