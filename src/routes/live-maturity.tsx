@@ -13,6 +13,7 @@ import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
+import { LookingAhead } from "@/components/LookingAhead";
 import { guideProseSpace } from "@/lib/guide-typography";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
@@ -226,6 +227,38 @@ function LiveMaturityPage() {
           Maturity is the longest phase, but not permanent. Three things can move a service
           out of it.
         </p>
+        <LookingAhead
+          intro="A short preview of what tends to come next, and what's worth keeping an eye on now."
+          pills={[
+            {
+              label: "Signals to watch",
+              intro: "Early signs that the service may be heading out of Maturity.",
+              items: [
+                "Support for a core component is being withdrawn.",
+                "A replacement service is being planned upstream.",
+                "Usage is steadily declining quarter over quarter.",
+              ],
+            },
+            {
+              label: "Preparing for Sunset",
+              intro: "Small things you can do now that make a future sunset easier.",
+              items: [
+                "Keep an up-to-date inventory of integrations and dependents.",
+                "Document who owns the data and where it goes next.",
+                "Note the policy basis the service rests on.",
+              ],
+            },
+            {
+              label: "Back to Growth",
+              intro: "What changes if a new mandate expands the scope again.",
+              items: [
+                "Re-establish a delivery cadence and a product owner.",
+                "Re-check team capacity against the new scope.",
+                "Refresh user research before committing to new features.",
+              ],
+            },
+          ]}
+        />
         <CompactExitList
           items={[
             {
