@@ -228,34 +228,39 @@ function LiveMaturityPage() {
           out of it.
         </p>
         <LookingAhead
-          intro="A short preview of what tends to come next, and what's worth keeping an eye on now."
+          title=""
+          intro="Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this phase, and roughly when to begin."
           pills={[
             {
-              label: "Signals to watch",
-              intro: "Early signs that the service may be heading out of Maturity.",
+              label: "Preparing for sunset",
+              intro:
+                "The end of this application will take longer to handle than you expect. Begin before the signals get loud.",
               items: [
-                "Support for a core component is being withdrawn.",
-                "A replacement service is being planned upstream.",
-                "Usage is steadily declining quarter over quarter.",
+                "Know your contract end date, and work backwards from it. Moving your data and workload out is often months of work, not weeks.",
+                "If you do not know how long an exit would actually take, that is the first thing to find out.",
+                "Watch the sunset signals your dashboard already tracks: support ending, a replacement arriving, the user base shrinking, the policy basis going away.",
+                "Do not deepen lock-in this late with new customisations you will only have to unwind.",
               ],
             },
             {
-              label: "Preparing for Sunset",
-              intro: "Small things you can do now that make a future sunset easier.",
+              label: "The next contract renewal",
+              intro:
+                "Renewals arrive faster than they feel, and re-competing has its own lead time.",
               items: [
-                "Keep an up-to-date inventory of integrations and dependents.",
-                "Document who owns the data and where it goes next.",
-                "Note the policy basis the service rests on.",
+                "Know when the current contract ends and how long a re-competition takes in practice.",
+                "Decide early whether you are renewing, re-competing, or moving. Each needs a different runway.",
               ],
             },
             {
-              label: "Back to Growth",
-              intro: "What changes if a new mandate expands the scope again.",
+              label: "Components reaching end of life",
+              intro:
+                "The bought and borrowed parts of your service age on their own schedule, not yours.",
               items: [
-                "Re-establish a delivery cadence and a product owner.",
-                "Re-check team capacity against the new scope.",
-                "Refresh user research before committing to new features.",
+                "Track the support timelines of the major components you depend on.",
+                "A component going end of life can force a move before you planned one. Spot it early.",
               ],
+              href: threadPath("component-eol"),
+              linkLabel: "Component end of life →",
             },
           ]}
         />

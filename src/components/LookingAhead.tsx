@@ -1,7 +1,9 @@
 import { useId, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   guideBlockTitle,
   guideCalloutLabel,
+  guideLink,
   guideProseTight,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
@@ -13,6 +15,9 @@ export interface LookingAheadPill {
   intro: string;
   /** A few short bullet points. */
   items: string[];
+  /** Optional in-guide link shown below the bullets. */
+  href?: string;
+  linkLabel?: string;
 }
 
 interface LookingAheadProps {
@@ -22,6 +27,22 @@ interface LookingAheadProps {
   intro?: string;
   pills: LookingAheadPill[];
   className?: string;
+}
+
+function LookingAheadIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className ?? "h-6 w-6 text-primary"}
+    >
+      <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2" />
+      <path
+        fill="currentColor"
+        d="M12 7.25a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V8a.75.75 0 0 1 .75-.75zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+      />
+    </svg>
+  );
 }
 
 /**
@@ -45,11 +66,14 @@ export function LookingAhead({
     <section
       id={id}
       className={cn(
-        "scroll-mt-24 rounded-lg border border-border bg-background/60 px-6 py-6 md:px-8 md:py-7",
+        "scroll-mt-24 rounded-lg border border-primary/15 bg-primary/[0.04] px-6 py-6 md:px-8 md:py-7",
         className,
       )}
     >
-      <p className={guideCalloutLabel}>{label}</p>
+      <div className="flex items-center gap-2">
+        <LookingAheadIcon className="h-6 w-6 shrink-0 text-primary" />
+        <p className={guideCalloutLabel}>{label}</p>
+      </div>
       {title ? <h3 className={`${guideBlockTitle} mt-1.5`}>{title}</h3> : null}
       {intro ? <p className={`${guideProseTight} mt-2`}>{intro}</p> : null}
 
@@ -99,6 +123,13 @@ export function LookingAhead({
               <li key={i}>{item}</li>
             ))}
           </ul>
+          {active.href && active.linkLabel ? (
+            <p className="mt-3">
+              <Link to={active.href} className={`text-sm ${guideLink}`}>
+                {active.linkLabel}
+              </Link>
+            </p>
+          ) : null}
         </div>
       ) : null}
     </section>
