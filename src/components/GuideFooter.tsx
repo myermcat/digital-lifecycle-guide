@@ -10,13 +10,6 @@ import { REGIONS } from "@/lib/guide-strings";
 export function GuideFooter() {
   const year = new Date().getFullYear();
   const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
-  const featuredThreads = [
-    THREADS.procurement,
-    THREADS["user-research"],
-    THREADS.accessibility,
-    THREADS.privacy,
-    THREADS.cybersecurity,
-  ];
 
   return (
     <footer className="mt-20 md:mt-28 -mx-6">
