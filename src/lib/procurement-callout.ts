@@ -30,7 +30,7 @@ export const PROCUREMENT_CALLOUT_AT_PHASE: Record<ProcurementCalloutPhaseId, str
   "create-mvp":
     "At this phase it means contracting for the first version that will go live — with measures you can check and an exit you have planned.",
   "live-stabilization":
-    "At this phase it means holding a new supplier to what was agreed while the service settles, before lock-in quietly deepens.",
+    "At this phase it means holding a new supplier to what was agreed while the service settles, before lock-in deepens over time.",
   "live-growth":
     "At this phase it means keeping contracts short enough to change course, and watching that growth does not bind you to one vendor.",
   "live-maturity":

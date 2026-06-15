@@ -256,8 +256,6 @@ function LiveMaturityPage() {
       </section>
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
-
-      <div className="h-16" />
     </GuideLayout>
   );
 }

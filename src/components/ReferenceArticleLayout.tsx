@@ -32,7 +32,6 @@ export function ReferenceArticleLayout({
       </header>
       <div className={guideArticleMeasure}>{children}</div>
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
-      <div className="h-16" />
     </GuideLayout>
   );
 }

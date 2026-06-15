@@ -56,7 +56,7 @@ function Index() {
           </p>
           <p>
             We will not tell you exactly what to do. We do not know enough about your
-            situation to do that honestly. We will tell you what to think about, what to
+            situation to do that for you. We will tell you what to think about, what to
             watch for, and what to do regardless of the rest. The shape of your work will
             be different from someone else's. The questions are the same.
           </p>

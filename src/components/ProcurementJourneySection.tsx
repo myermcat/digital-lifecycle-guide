@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
+import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { ProcurementJourneyStep } from "@/lib/procurement-landing";
 import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
 
@@ -56,9 +56,10 @@ export function ProcurementJourneySection({
             </AccordionTrigger>
             <AccordionContent className="px-5 pb-4">
               <p className={guideProseTight}>
-                {step.externalLinks?.length
-                  ? proseWithExternalLinks(step.body, step.externalLinks)
-                  : step.body}
+                {proseWithMixedLinks(step.body, {
+                  external: step.externalLinks,
+                  internal: step.internalLinks,
+                })}
               </p>
             </AccordionContent>
           </AccordionItem>

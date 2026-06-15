@@ -77,7 +77,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
       {
         id: "look-at-the-options",
-        title: "Look honestly at the options",
+        title: "Look at the options",
         paragraphs: [
           "Do you already own something that could do this? Could you reuse or adapt a tool another team or department already runs? Could you build it with the people you have? Or do you need to buy? Buying is one answer, not the default answer.",
         ],
@@ -248,7 +248,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           },
           {
             lead: "“Won't this look like splitting?”",
-            body: "Only if you are doing it to dodge a limit. If your pieces are real, different deliverables competed in the open, you are on the right side of the line. Use the test from earlier and keep your reasoning written down. Modular done openly is the opposite of splitting done quietly.",
+            body: "Only if you are doing it to dodge a limit. If your pieces are real, different deliverables competed in the open, you are on the right side of the line. Use the test from earlier and keep your reasoning written down. Modular done openly is the opposite of splitting done in secret.",
           },
         ],
       },
@@ -295,7 +295,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "how-stuck-happens",
         title: "How being stuck happens",
         paragraphs: [
-          "Lock-in is when leaving a supplier is painful enough that you effectively can't, so they hold the power at every renewal. It rarely arrives as one big decision. It builds up quietly, in a few ordinary ways:",
+          "Lock-in is when leaving a supplier is painful enough that you effectively can't, so they hold the power at every renewal. It rarely arrives as one big decision. It builds up over time, in a few ordinary ways:",
         ],
         bullets: [
           {
@@ -337,7 +337,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           },
           {
             lead: "Keep contracts short.",
-            body: "Short contracts bring the switching point around often, so being stuck cannot quietly deepen.",
+            body: "Short contracts bring the switching point around often, so being stuck cannot deepen without you noticing.",
           },
           {
             lead: "Require off-boarding.",
@@ -353,7 +353,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "after-you-bought",
         title: "What changes once you have bought it",
         paragraphs: [
-          "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch is quieter, but it does not stop.",
+          "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop.",
           "You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives.",
         ],
       },
@@ -378,7 +378,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "why-it-matters",
         title: "Why it matters",
         paragraphs: [
-          "This is the quiet insurance against lock-in. A team that kept enough in-house can ask the right questions, push back on a bad change, judge a renewal honestly, and run an exit when the time comes. A team that handed over everything is at the supplier's mercy, and usually does not find out until it is late and expensive.",
+          "This is the insurance against lock-in. A team that kept enough in-house can ask the right questions, push back on a bad change, judge a renewal on its merits, and run an exit when the time comes. A team that handed over everything is at the supplier's mercy, and usually does not find out until it is late and expensive.",
         ],
       },
       {

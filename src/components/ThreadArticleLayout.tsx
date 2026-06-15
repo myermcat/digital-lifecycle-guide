@@ -42,7 +42,6 @@ export function ThreadArticleLayout({
       <div className={guideArticleMeasure}>{children}</div>
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       {afterAssumptions}
-      <div className="h-16" />
     </GuideLayout>
   );
 }

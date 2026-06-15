@@ -68,6 +68,7 @@ export type ProcurementJourneyStep = {
   title: string;
   body: string;
   externalLinks?: ExternalPhraseLink[];
+  internalLinks?: { phrase: string; to: string }[];
 };
 
 export type ComparisonRow = {
@@ -160,7 +161,11 @@ export const PROCUREMENT_LANDING = {
     {
       label: "Manage",
       title: "Manage the contract, and write down what you learned.",
-      body: "The signature is the starting line, not the finish. What happens next lives in the regions below.",
+      body: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset regions.",
+      internalLinks: [
+        { phrase: "Live", to: "/live" },
+        { phrase: "Sunset", to: "/sunset" },
+      ],
     },
   ] satisfies ProcurementJourneyStep[],
   comparisonRows: [
@@ -224,7 +229,7 @@ export const PROCUREMENT_LANDING = {
     "A handful of things, all of which you can check. Each one has its own page.",
   whyItMatters: [
     "The contract decides the future of your service. What it costs over its life. Whether you can change it. Whether you can ever move off it. Most of that is settled the day you sign, and undoing it later is slow and expensive.",
-    "A good buy leaves your options open. A bad one closes them quietly, for as long as the service runs, often without anyone noticing until it is too late.",
+    "A good buy leaves your options open. A bad one closes them over time, for as long as the service runs, often without anyone noticing until it is too late.",
     "Buying the agile way lowers the worst risk of all, the two-year effort that ends in \"start over.\" When you can correct course along the way, you are never far from solid ground.",
   ],
   whoseJob: {
@@ -247,7 +252,7 @@ export const PROCUREMENT_LANDING = {
     {
       region: "live" as const,
       weight: "medium" as const,
-      body: "You have stopped buying. Now you hold the supplier to what was agreed, watch the relationship for drift, and keep the service improving so it does not quietly age into a forced replacement.",
+      body: "You have stopped buying. Now you hold the supplier to what was agreed, watch the relationship for drift, and keep the service improving so it does not gradually age into a forced replacement.",
     },
     {
       region: "sunset" as const,

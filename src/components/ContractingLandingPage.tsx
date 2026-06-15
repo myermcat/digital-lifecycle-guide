@@ -87,7 +87,6 @@ export function ContractingLandingPage() {
       <SourcesBlock items={CONTRACTING_LANDING.sources} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
-      <div className="h-16" />
     </GuideLayout>
   );
 }

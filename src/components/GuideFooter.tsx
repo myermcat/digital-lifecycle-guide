@@ -12,7 +12,7 @@ export function GuideFooter() {
   const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
 
   return (
-    <footer className="mt-20 md:mt-28 -mx-6">
+    <footer className="mt-20 md:mt-28 w-full">
       {/* Thin accent rule — subtle nod to GoC red */}
       <div
         aria-hidden="true"

@@ -60,7 +60,7 @@ export function GuideLayout({
     <main
       ref={mainRef}
       id={id}
-      className="relative isolate min-h-screen bg-background"
+      className="relative isolate flex min-h-screen flex-col bg-background"
     >
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none"
@@ -70,9 +70,11 @@ export function GuideLayout({
       </div>
       <div
         ref={contentRef}
-        className="relative z-10 mx-auto max-w-2xl px-6 py-20 md:py-28 pointer-events-auto"
+        className="relative z-10 mx-auto w-full max-w-2xl flex-1 px-6 pt-20 md:pt-28 pointer-events-auto"
       >
         {children}
+      </div>
+      <div className="relative z-10 w-full pointer-events-auto">
         <GuideFooter />
       </div>
       {id ? <OnThisPageNav rootId={id} /> : null}

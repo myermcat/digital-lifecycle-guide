@@ -113,7 +113,7 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
       "What you learn from monitoring leads to decisions, not just reports.",
     ],
     whyItMatters:
-      "Without instrumentation, you are guessing. A service can feel fine while failing users quietly. Monitoring is how you notice problems before they become crises.",
+      "Without instrumentation, you are guessing. A service can feel fine while failing users without you noticing. Monitoring is how you notice problems before they become crises.",
     whoseJob:
       "Developers instrument the service. The whole team chooses what to watch and acts on what they see. Dashboards are a team tool, not a vanity display.",
     byRegion: [

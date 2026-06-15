@@ -51,7 +51,6 @@ export function ProcurementThreadPage() {
       <SourcesBlock items={PROCUREMENT_CONTRACTING_SOURCES} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
-      <div className="h-16" />
     </GuideLayout>
   );
 }
