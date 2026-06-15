@@ -14,11 +14,7 @@ import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
-import {
-  guideProse,
-  guideProseSpace,
-  guideSectionTitle,
-} from "@/lib/guide-typography";
+import { guideLink, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -42,14 +38,22 @@ export function ProcurementLandingPage() {
       </header>
 
       <section className={guideProseSpace}>
-        {landing.intro.map((paragraph) => (
+        {landing.intro.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+        <p>
+          {landing.intro.managingLink.lead}{" "}
+          <Link to={landing.intro.managingLink.to} className={guideLink}>
+            {landing.intro.managingLink.phrase}
+          </Link>
+          .
+        </p>
       </section>
 
       <ProcurementScopeCallout text={landing.scopeCallout} />
 
       <WhatStaysYoursBlock
+        heading={landing.whatStaysYours.heading}
         intro={landing.whatStaysYours.intro}
         items={landing.whatStaysYours.items}
         close={landing.whatStaysYours.close}
@@ -65,8 +69,7 @@ export function ProcurementLandingPage() {
       <CaseStudyBlock
         className="mt-8"
         id="case-study"
-        title="The same programme, bought two ways"
-        intro={landing.caseStudy.intro}
+        title={landing.caseStudy.title}
         actual={landing.caseStudy.risky}
         alternative={landing.caseStudy.safer}
       />

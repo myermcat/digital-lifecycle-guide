@@ -7,9 +7,11 @@ import {
 } from "@/lib/guide-typography";
 
 export function TraditionalAgileComparison({
+  id = "traditional-vs-agile",
   rows,
   caption,
 }: {
+  id?: string;
   rows: ComparisonRow[];
   caption: string;
 }) {
@@ -17,7 +19,7 @@ export function TraditionalAgileComparison({
   const groupId = useId();
 
   return (
-    <div className="mt-8 rounded-lg border border-border bg-card shadow-sm overflow-hidden">
+    <section id={id} className="mt-8 scroll-mt-24 rounded-lg border border-border bg-card shadow-sm overflow-hidden">
       <div className="px-6 py-6 md:px-8 md:py-7 space-y-5">
         <div>
           <p className={guideCalloutLabel}>Comparison</p>
@@ -115,6 +117,6 @@ export function TraditionalAgileComparison({
 
         <p className={guideProseTight}>{caption}</p>
       </div>
-    </div>
+    </section>
   );
 }

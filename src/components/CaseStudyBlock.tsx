@@ -1,4 +1,6 @@
 import { useId, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   guideBlockTitle,
   guideCalloutLabel,
@@ -6,11 +8,18 @@ import {
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
+export interface CaseStudyTradeoff {
+  lead: string;
+  body: string;
+}
+
 export interface CaseStudySide {
-  /** Heading shown above the list (e.g. "What happened"). */
   heading: string;
-  /** Short bullet list. */
-  items: string[];
+  /** Legacy bullet list. */
+  items?: string[];
+  framing?: string;
+  good?: CaseStudyTradeoff[];
+  bad?: CaseStudyTradeoff[];
 }
 
 interface CaseStudyBlockProps {
@@ -19,7 +28,6 @@ interface CaseStudyBlockProps {
   title?: string;
   intro?: string;
   actual: CaseStudySide;
-  /** The cautionary / historical side. */
   alternative: CaseStudySide;
   actualLabel?: string;
   alternativeLabel?: string;
@@ -39,10 +47,146 @@ function CaseStudyIcon({ className }: { className?: string }) {
   );
 }
 
-/**
- * Case study comparison: same situation, two ways. A toggle swaps between
- * the risky way and the safer way.
- */
+function isTradeoffMode(side: CaseStudySide) {
+  return Boolean(side.good?.length && side.bad?.length);
+}
+
+function TradeoffGroup({
+  label,
+  items,
+  panelId,
+  open,
+  onToggle,
+}: {
+  label: string;
+  items: CaseStudyTradeoff[];
+  panelId: string;
+  open: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="rounded-md border border-border/60 bg-background/50">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-3 px-3.5 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
+      >
+        <span className="font-sans text-xs font-semibold uppercase tracking-wide text-foreground/60">
+          {label}
+        </span>
+        <ChevronDown
+          className={cn(
+            "h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
+            open && "rotate-180",
+          )}
+          aria-hidden
+        />
+      </button>
+      {open ? (
+        <div id={panelId} className="px-3.5 pb-3.5">
+          <ul className={`${guideProseTight} space-y-2 list-none pl-0`}>
+            {items.map((item) => (
+              <li key={item.lead} className="flex gap-2.5">
+                <GuideArrowBullet />
+                <span>
+                  <span className="font-semibold text-foreground/90">{item.lead}</span> {item.body}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function TradeoffPanel({
+  side,
+  tone,
+  groupId,
+}: {
+  side: CaseStudySide;
+  tone: "risky" | "safer";
+  groupId: string;
+}) {
+  const [openGroups, setOpenGroups] = useState<Set<"good" | "bad">>(() => new Set());
+
+  const toggleGroup = (key: "good" | "bad") => {
+    setOpenGroups((current) => {
+      const next = new Set(current);
+      if (next.has(key)) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
+  };
+
+  const isRisky = tone === "risky";
+  return (
+    <div
+      className={`rounded-md border px-4 py-4 md:px-5 md:py-5 ${
+        isRisky
+          ? "border-destructive/25 bg-destructive/5"
+          : "border-primary/25 bg-primary/5"
+      }`}
+    >
+      <p
+        className={`font-serif text-sm font-semibold tracking-tight mb-2 ${
+          isRisky ? "text-destructive/90" : "text-primary"
+        }`}
+      >
+        {side.heading}
+      </p>
+      {side.framing ? <p className={`${guideProseTight} mb-4`}>{side.framing}</p> : null}
+      <div className="space-y-2">
+        <TradeoffGroup
+          label="Good"
+          items={side.good ?? []}
+          panelId={`${groupId}-good`}
+          open={openGroups.has("good")}
+          onToggle={() => toggleGroup("good")}
+        />
+        <TradeoffGroup
+          label="Bad"
+          items={side.bad ?? []}
+          panelId={`${groupId}-bad`}
+          open={openGroups.has("bad")}
+          onToggle={() => toggleGroup("bad")}
+        />
+      </div>
+    </div>
+  );
+}
+
+function LegacyPanel({ side, isRisky }: { side: CaseStudySide; isRisky: boolean }) {
+  return (
+    <div
+      className={`rounded-md border px-4 py-4 md:px-5 md:py-5 ${
+        isRisky
+          ? "border-destructive/25 bg-destructive/5"
+          : "border-primary/25 bg-primary/5"
+      }`}
+    >
+      <p
+        className={`font-serif text-sm font-semibold tracking-tight mb-2 ${
+          isRisky ? "text-destructive/90" : "text-primary"
+        }`}
+      >
+        {side.heading}
+      </p>
+      <ul className={`${guideProseTight} space-y-1.5 list-disc pl-5`}>
+        {side.items?.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function CaseStudyBlock({
   id,
   label = "Case study",
@@ -56,7 +200,7 @@ export function CaseStudyBlock({
 }: CaseStudyBlockProps) {
   const [view, setView] = useState<"actual" | "alternative">("alternative");
   const groupId = useId();
-
+  const tradeoffMode = isTradeoffMode(actual) && isTradeoffMode(alternative);
   const active = view === "actual" ? actual : alternative;
   const isActual = view === "actual";
   const hasHeader = Boolean(label || title || intro);
@@ -113,29 +257,19 @@ export function CaseStudyBlock({
           })}
         </div>
 
-        <div
-          id={`${groupId}-panel`}
-          role="region"
-          aria-live="polite"
-          className={`rounded-md border px-4 py-4 md:px-5 md:py-5 ${
-            isActual
-              ? "border-destructive/25 bg-destructive/5"
-              : "border-primary/25 bg-primary/5"
-          }`}
-        >
-          <p
-            className={`font-serif text-sm font-semibold tracking-tight mb-2 ${
-              isActual ? "text-destructive/90" : "text-primary"
-            }`}
-          >
-            {active.heading}
-          </p>
-          <ul className={`${guideProseTight} space-y-1.5 list-disc pl-5`}>
-            {active.items.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {tradeoffMode ? (
+          <div id={`${groupId}-panel`} role="region" aria-live="polite">
+            <TradeoffPanel
+              side={active}
+              tone={isActual ? "risky" : "safer"}
+              groupId={groupId}
+            />
+          </div>
+        ) : (
+          <div id={`${groupId}-panel`} role="region" aria-live="polite">
+            <LegacyPanel side={active} isRisky={isActual} />
+          </div>
+        )}
       </div>
     </section>
   );

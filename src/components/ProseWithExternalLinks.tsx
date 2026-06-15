@@ -14,23 +14,32 @@ export type InternalPhraseLink = {
   to: string;
 };
 
+export type AnchorPhraseLink = {
+  phrase: string;
+  hash: string;
+};
+
 type MixedPhraseLink =
   | ({ kind: "external" } & ExternalPhraseLink)
-  | ({ kind: "internal" } & InternalPhraseLink);
+  | ({ kind: "internal" } & InternalPhraseLink)
+  | ({ kind: "anchor" } & AnchorPhraseLink);
 
 export function proseWithMixedLinks(
   text: string,
   {
     external = [],
     internal = [],
+    anchor = [],
   }: {
     external?: ExternalPhraseLink[];
     internal?: InternalPhraseLink[];
+    anchor?: AnchorPhraseLink[];
   },
 ): ReactNode {
   const links: MixedPhraseLink[] = [
     ...external.map((link) => ({ kind: "external" as const, ...link })),
     ...internal.map((link) => ({ kind: "internal" as const, ...link })),
+    ...anchor.map((link) => ({ kind: "anchor" as const, ...link })),
   ];
 
   if (links.length === 0) {
@@ -56,10 +65,14 @@ export function proseWithMixedLinks(
         <ExternalLink key={`${link.linkKey}-${start}`} linkKey={link.linkKey}>
           {link.phrase}
         </ExternalLink>
-      ) : (
+      ) : link.kind === "internal" ? (
         <Link key={`${link.to}-${start}`} to={link.to} className={guideLink}>
           {link.phrase}
         </Link>
+      ) : (
+        <a key={`${link.hash}-${start}`} href={`#${link.hash}`} className={guideLink}>
+          {link.phrase}
+        </a>
       ),
     );
     cursor = start + link.phrase.length;

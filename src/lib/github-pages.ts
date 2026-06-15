@@ -1,6 +1,6 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
-import { SOO_VS_SOW_PATH } from "./reference-paths";
+import { MANAGING_WHAT_YOU_BOUGHT_PATH, SOO_VS_SOW_PATH } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
@@ -41,5 +41,6 @@ export const STATIC_PRERENDER_PATHS = [
   "/thread/contracting",
   ...LEGACY_CONTRACTING_PATHS,
   SOO_VS_SOW_PATH,
+  MANAGING_WHAT_YOU_BOUGHT_PATH,
   ALL_PAGES_PATH,
 ] as const;

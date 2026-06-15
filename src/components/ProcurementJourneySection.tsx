@@ -54,11 +54,13 @@ export function ProcurementJourneySection({
                 <span className="font-serif text-base font-semibold text-primary">{step.title}</span>
               </span>
             </AccordionTrigger>
-            <AccordionContent className="px-5 pb-4">
+            <AccordionContent className="px-5 pb-4 space-y-3">
+              <p className={`${guideProseTight} font-medium text-foreground/85`}>{step.leadIn}</p>
               <p className={guideProseTight}>
                 {proseWithMixedLinks(step.body, {
                   external: step.externalLinks,
                   internal: step.internalLinks,
+                  anchor: step.anchorLinks,
                 })}
               </p>
             </AccordionContent>

@@ -44,6 +44,12 @@ export type ContractingSection = {
   paragraphsAfterBullets?: string[];
   /** How text below a bullet list is rendered. */
   paragraphsAfterBulletsVariant?: "prose" | "note";
+  paragraphsAfterNote?: string[];
+  contentTodo?: {
+    title: string;
+    items: string[];
+    note?: string;
+  };
   bullets?: ContractingBullet[];
   /** How lead/body bullet lists are rendered. */
   bulletsVariant?: "inline" | "qa" | "ladder";
@@ -81,7 +87,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "walk-the-options",
         title: "Then walk the options, in order",
         paragraphs: [
-          "From the cheapest and least disruptive to the most. Buying new sits near the bottom of this ladder.",
+          "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder.",
         ],
         bulletsVariant: "ladder",
         bullets: [
@@ -91,7 +97,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           },
           {
             lead: "Reuse or adapt what someone else runs.",
-            body: "Another team, another department, or a government-wide platform may already solve your problem. Borrowing beats buying.",
+            body: "Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying.",
           },
           {
             lead: "Solve it a different way.",
@@ -103,9 +109,25 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           },
         ],
         paragraphsAfterBullets: [
+          "And if the thing does not exist yet, ask around before you set up a buy of your own. If another team needs the same thing, join up and buy it once for both of you.",
+        ],
+        paragraphsAfterNote: [
           "One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on.",
         ],
-        paragraphsAfterBulletsVariant: "note",
+      },
+      {
+        id: "where-to-look",
+        title: "Where to look",
+        paragraphs: [
+          "Before you commit to a buy, check whether something already exists elsewhere in government.",
+        ],
+        contentTodo: {
+          title: "Links pending (John Currah's team and Jessica Lahoud)",
+          items: [
+            "Enterprise architecture repository",
+            "Enterprise solutions catalog",
+          ],
+        },
       },
       {
         id: "do-the-homework",

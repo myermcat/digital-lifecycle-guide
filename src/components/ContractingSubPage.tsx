@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ContentTodo } from "@/components/ContentTodo";
 import { OptionsLadder } from "@/components/OptionsLadder";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ContractingSectionNav } from "@/components/ContractingSectionNav";
@@ -125,6 +126,18 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
               {paragraph}
             </p>
           ))}
+          {section.paragraphsAfterNote?.map((paragraph) => (
+            <p key={paragraph} className={guideArticleNote}>
+              {paragraph}
+            </p>
+          ))}
+          {section.contentTodo ? (
+            <ContentTodo
+              title={section.contentTodo.title}
+              items={section.contentTodo.items}
+              note={section.contentTodo.note}
+            />
+          ) : null}
           {section.caseStudy ? (
             <CaseStudyBlock
               className={guideArticleCalloutLift}

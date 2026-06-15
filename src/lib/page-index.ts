@@ -1,7 +1,8 @@
 import { REGIONS, THREADS, practicePath, reviewPath } from "./guide-strings";
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
-import { SOO_VS_SOW_PATH } from "./reference-paths";
+import { SOO_VS_SOW_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH } from "./reference-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
+import { MANAGING_WHAT_YOU_BOUGHT } from "./managing-what-you-bought-content";
 
 import { ALL_PAGES_PATH } from "./all-pages-path";
 
@@ -109,6 +110,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   },
 
   { title: SOO_VS_SOW.title, path: SOO_VS_SOW_PATH, type: "reference", status: "in-review" },
+  {
+    title: MANAGING_WHAT_YOU_BOUGHT.title,
+    path: MANAGING_WHAT_YOU_BOUGHT_PATH,
+    type: "reference",
+    status: "in-progress",
+  },
 
   {
     title: PRACTICE_STUBS["maturity-orientation"].title,

@@ -27,6 +27,7 @@ import { Route as ThreadContractingRouteImport } from './routes/thread.contracti
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
+import { Route as ReferenceManagingWhatYouBoughtRouteImport } from './routes/reference.managing-what-you-bought'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
@@ -123,6 +124,12 @@ const ReferenceSooVsSowRoute = ReferenceSooVsSowRouteImport.update({
   path: '/reference/soo-vs-sow',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferenceManagingWhatYouBoughtRoute =
+  ReferenceManagingWhatYouBoughtRouteImport.update({
+    id: '/reference/managing-what-you-bought',
+    path: '/reference/managing-what-you-bought',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PracticeSlugRoute = PracticeSlugRouteImport.update({
   id: '/practice/$slug',
   path: '/practice/$slug',
@@ -164,6 +171,7 @@ export interface FileRoutesByFullPath {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -189,6 +197,7 @@ export interface FileRoutesByTo {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -213,6 +222,7 @@ export interface FileRoutesById {
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -240,6 +250,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/managing-what-you-bought'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -265,6 +276,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/managing-what-you-bought'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -288,6 +300,7 @@ export interface FileRouteTypes {
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
+    | '/reference/managing-what-you-bought'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -314,6 +327,7 @@ export interface RootRouteChildren {
   SunsetShutdownRoute: typeof SunsetShutdownRoute
   SunsetTransitionRoute: typeof SunsetTransitionRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
+  ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
   ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
@@ -449,6 +463,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenceSooVsSowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/managing-what-you-bought': {
+      id: '/reference/managing-what-you-bought'
+      path: '/reference/managing-what-you-bought'
+      fullPath: '/reference/managing-what-you-bought'
+      preLoaderRoute: typeof ReferenceManagingWhatYouBoughtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/practice/$slug': {
       id: '/practice/$slug'
       path: '/practice/$slug'
@@ -528,6 +549,7 @@ const rootRouteChildren: RootRouteChildren = {
   SunsetShutdownRoute: SunsetShutdownRoute,
   SunsetTransitionRoute: SunsetTransitionRoute,
   PracticeSlugRoute: PracticeSlugRoute,
+  ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
   ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
