@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { HeldOpenBlock } from "@/components/HeldOpenBlock";
-import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
+import { proseWithExternalLinks, type ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { PROCUREMENT_HELD_OPEN } from "@/lib/contracting-landing";
 import { PROCUREMENT_CONTRACTING_SOURCES } from "@/lib/procurement-sources";
@@ -34,7 +34,7 @@ export function ProcurementThreadPage() {
         linkLabel={PROCUREMENT_HELD_OPEN.linkLabel}
       >
         {(PROCUREMENT_HELD_OPEN.paragraphs as ReadonlyArray<
-          string | { text: string; externalLinks?: { phrase: string; linkKey: string }[] }
+          string | { text: string; externalLinks?: ExternalPhraseLink[] }
         >).map((paragraph) => {
           if (typeof paragraph === "string") {
             return <p key={paragraph}>{paragraph}</p>;
