@@ -27,7 +27,7 @@ export function GuideFooter() {
       {/* Upper band — soft cream, structured link columns */}
       <div className="bg-secondary/40 border-t border-border/60">
         <div className="mx-auto max-w-2xl px-6 py-10 md:py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
             <FooterColumn title="The guide">
               <FooterLink to="/">Home</FooterLink>
               <FooterLink to={ALL_PAGES_PATH}>All pages</FooterLink>
@@ -37,14 +37,6 @@ export function GuideFooter() {
               {regions.map((r) => (
                 <FooterLink key={r.id} to={r.href}>
                   {r.title}
-                </FooterLink>
-              ))}
-            </FooterColumn>
-
-            <FooterColumn title="Threads">
-              {featuredThreads.map((t) => (
-                <FooterLink key={t.slug} to={t.path}>
-                  {t.title}
                 </FooterLink>
               ))}
             </FooterColumn>
