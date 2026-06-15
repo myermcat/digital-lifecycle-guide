@@ -1,0 +1,57 @@
+export type ExternalLinkAccessibility = "public" | "gc-network-only";
+
+export type ExternalLinkEntry = {
+  url: string;
+  description: string;
+  accessibility: ExternalLinkAccessibility;
+};
+
+export const EXTERNAL_LINKS = {
+  "directive-procurement": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32692",
+    description:
+      "Treasury Board Directive on the Management of Procurement (the binding instrument)",
+    accessibility: "public",
+  },
+  "buyers-portal": {
+    url: "https://canadabuys.canada.ca/en/buyer-s-portal",
+    description:
+      "PSPC Buyer's Portal, the official source for the federal acquisitions program",
+    accessibility: "public",
+  },
+  "procurement-policies": {
+    url: "https://www.canada.ca/en/services/business/doing-business/how-to-sell/procurement-policies.html",
+    description: "Plain-language overview of federal procurement policies",
+    accessibility: "public",
+  },
+  "procura-chatbot": {
+    url: "https://canadabuys.canada.ca/en/procura-chatbot-beta",
+    description: "Procura Chatbot (Beta), ask procurement questions",
+    accessibility: "public",
+  },
+  "professional-services-policy": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32775",
+    description:
+      "TBS policy on professional services procurement (guidance extracts more generally)",
+    accessibility: "public",
+  },
+  "agile-procurement-guide": {
+    url: "https://www.gcpedia.gc.ca/gcwiki/images/f/fa/PSPC_Agile_Procurement_Guide_v1_EN.pdf",
+    description: "PSPC Agile Procurement Guide",
+    accessibility: "gc-network-only",
+  },
+} as const satisfies Record<string, ExternalLinkEntry>;
+
+export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;
+
+export function getExternalLink(key: ExternalLinkKey): ExternalLinkEntry {
+  return EXTERNAL_LINKS[key];
+}
+
+export function externalLinkUrl(key: ExternalLinkKey): string {
+  return EXTERNAL_LINKS[key].url;
+}
+
+export function isGcNetworkOnly(key: ExternalLinkKey): boolean {
+  return EXTERNAL_LINKS[key].accessibility === "gc-network-only";
+}

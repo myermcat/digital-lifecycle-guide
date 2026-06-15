@@ -8,6 +8,7 @@ import {
   ThreadArticleSection,
 } from "@/components/ThreadArticleSection";
 import { ThreadArticleLayout } from "@/components/ThreadArticleLayout";
+import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
 import {
   guideArticleCalloutLift,
@@ -15,6 +16,29 @@ import {
   guideArticleSectionGap,
 } from "@/lib/guide-article";
 import { guideLink, guideProse } from "@/lib/guide-typography";
+
+function renderParagraph(
+  paragraph: string,
+  paragraphIndex: number,
+  section: ContractingSubPageContent["sections"][number],
+) {
+  const internalLink = section.paragraphLinks?.find(
+    (item) => item.index === paragraphIndex,
+  );
+  if (internalLink) {
+    return paragraphWithLink(paragraph, internalLink);
+  }
+
+  const externalLinks =
+    section.externalParagraphLinks?.filter(
+      (item) => item.index === paragraphIndex,
+    ) ?? [];
+  if (externalLinks.length > 0) {
+    return proseWithExternalLinks(paragraph, externalLinks);
+  }
+
+  return paragraph;
+}
 
 function paragraphWithLink(
   paragraph: string,
@@ -79,14 +103,11 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           sectionId={section.id}
           isFirst={index === 0 && !page.intro}
         >
-          {section.paragraphs?.map((paragraph, paragraphIndex) => {
-            const link = section.paragraphLinks?.find(
-              (item) => item.index === paragraphIndex,
-            );
-            return (
-              <p key={paragraph}>{paragraphWithLink(paragraph, link)}</p>
-            );
-          })}
+          {section.paragraphs?.map((paragraph, paragraphIndex) => (
+            <p key={paragraph}>
+              {renderParagraph(paragraph, paragraphIndex, section)}
+            </p>
+          ))}
           {section.bullets && section.bulletsVariant === "qa" ? (
             <ThreadArticleQaList items={section.bullets} />
           ) : section.bullets ? (

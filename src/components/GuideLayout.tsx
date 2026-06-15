@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { BgAnimalField } from "@/components/BgAnimalField";
+import { GuideFooter } from "@/components/GuideFooter";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 
 /** In-flow height only — avoid scrollHeight / minHeight on decorations (scroll feedback loop). */
@@ -72,6 +73,7 @@ export function GuideLayout({
         className="relative z-10 mx-auto max-w-2xl px-6 py-20 md:py-28 pointer-events-auto"
       >
         {children}
+        <GuideFooter />
       </div>
       {id ? <OnThisPageNav rootId={id} /> : null}
     </main>

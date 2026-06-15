@@ -20,6 +20,7 @@ import { Route as CreateMvpRouteImport } from './routes/create-mvp'
 import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
 import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
+import { Route as AllPagesRouteImport } from './routes/all-pages'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
@@ -84,6 +85,11 @@ const CreateRoute = CreateRouteImport.update({
   path: '/create',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AllPagesRoute = AllPagesRouteImport.update({
+  id: '/all-pages',
+  path: '/all-pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -127,6 +133,7 @@ const ThreadContractingPageRoute = ThreadContractingPageRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-discovery': typeof CreateDiscoveryRoute
@@ -148,6 +155,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-discovery': typeof CreateDiscoveryRoute
@@ -169,6 +177,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-discovery': typeof CreateDiscoveryRoute
@@ -192,6 +201,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/all-pages'
     | '/create'
     | '/create-alpha'
     | '/create-discovery'
@@ -213,6 +223,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/all-pages'
     | '/create'
     | '/create-alpha'
     | '/create-discovery'
@@ -233,6 +244,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/all-pages'
     | '/create'
     | '/create-alpha'
     | '/create-discovery'
@@ -255,6 +267,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AllPagesRoute: typeof AllPagesRoute
   CreateRoute: typeof CreateRoute
   CreateAlphaRoute: typeof CreateAlphaRoute
   CreateDiscoveryRoute: typeof CreateDiscoveryRoute
@@ -352,6 +365,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/all-pages': {
+      id: '/all-pages'
+      path: '/all-pages'
+      fullPath: '/all-pages'
+      preLoaderRoute: typeof AllPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -426,6 +446,7 @@ const ThreadContractingRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AllPagesRoute: AllPagesRoute,
   CreateRoute: CreateRoute,
   CreateAlphaRoute: CreateAlphaRoute,
   CreateDiscoveryRoute: CreateDiscoveryRoute,

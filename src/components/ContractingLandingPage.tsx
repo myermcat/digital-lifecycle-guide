@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { WeightedRegionBlock } from "@/components/WeightedRegionBlock";
 import {
@@ -48,7 +49,12 @@ export function ContractingLandingPage() {
         <h2 className={`${guideSectionTitle} mb-2`}>What good looks like</h2>
         <p className={`${guideProse} mb-4`}>{CONTRACTING_LANDING.goodLooksIntro}</p>
         <PracticeCardGroup cards={CONTRACTING_GOOD_LOOKS_CARDS} numbered />
-        <p className={`${guideProse} mt-6`}>{CONTRACTING_LANDING.businessOwnerNote}</p>
+        <p className={`${guideProse} mt-6`}>
+          {proseWithExternalLinks(
+            CONTRACTING_LANDING.businessOwnerNote.text,
+            CONTRACTING_LANDING.businessOwnerNote.externalLinks ?? [],
+          )}
+        </p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
@@ -58,7 +64,12 @@ export function ContractingLandingPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
-        <p className={guideProse}>{CONTRACTING_LANDING.whoseJob}</p>
+        <p className={guideProse}>
+          {proseWithExternalLinks(
+            CONTRACTING_LANDING.whoseJob.text,
+            CONTRACTING_LANDING.whoseJob.externalLinks ?? [],
+          )}
+        </p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="by-region">
@@ -69,7 +80,12 @@ export function ContractingLandingPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
         <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-        <p className={guideProse}>{CONTRACTING_LANDING.furtherReading}</p>
+        <p className={guideProse}>
+          {proseWithExternalLinks(
+            CONTRACTING_LANDING.furtherReading.text,
+            CONTRACTING_LANDING.furtherReading.externalLinks ?? [],
+          )}
+        </p>
       </section>
 
       <SourcesBlock items={CONTRACTING_LANDING.sources} />

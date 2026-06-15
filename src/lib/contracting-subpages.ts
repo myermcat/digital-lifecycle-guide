@@ -4,6 +4,7 @@ import {
   type ContractingSubPageSlug,
 } from "./contracting-subpage-slugs";
 import { SOO_VS_SOW_PATH } from "./reference-paths";
+import type { ExternalLinkKey } from "./external-links";
 
 export { CONTRACTING_SUBPAGE_SLUGS, type ContractingSubPageSlug };
 
@@ -11,6 +12,12 @@ export type ContractingBullet = {
   lead: string;
   body: string;
   bodyLines?: string[];
+};
+
+export type ContractingExternalParagraphLink = {
+  index: number;
+  phrase: string;
+  linkKey: ExternalLinkKey;
 };
 
 export type ContractingParagraphLink = {
@@ -24,6 +31,7 @@ export type ContractingSection = {
   title: string;
   paragraphs?: string[];
   paragraphLinks?: ContractingParagraphLink[];
+  externalParagraphLinks?: ContractingExternalParagraphLink[];
   paragraphsAfterBullets?: string[];
   bullets?: ContractingBullet[];
   /** How lead/body bullet lists are rendered. */
@@ -131,6 +139,9 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
           "Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule.",
           "Modular contracting is legal, and the Directive actually leans toward it: it favours contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand or fall on its own, often going to different suppliers, because that produces a better result. Nothing is hidden. Each piece is competed in the open at its real size.",
           "The test is simple. Would these pieces exist as separate work even if there were no dollar limit to dodge? If they would, because they are genuinely different deliverables, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones.",
+        ],
+        externalParagraphLinks: [
+          { index: 2, phrase: "the Directive", linkKey: "directive-procurement" },
         ],
       },
       {

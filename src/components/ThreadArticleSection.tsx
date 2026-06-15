@@ -1,13 +1,10 @@
 import type { ReactNode } from "react";
 import { ArrowLeadList } from "@/components/CompactLinkedList";
+import { QaToggleBlock } from "@/components/QaToggleBlock";
 import { cn } from "@/lib/utils";
 import {
   guideArticleFirstSectionGap,
   guideArticleProse,
-  guideArticleQaAnswer,
-  guideArticleQaCard,
-  guideArticleQaList,
-  guideArticleQaQuestion,
   guideArticleSectionGap,
   guideArticleSectionTitle,
 } from "@/lib/guide-article";
@@ -56,13 +53,8 @@ export function ThreadArticleLeadList({ items }: { items: LeadBullet[] }) {
 
 export function ThreadArticleQaList({ items }: { items: LeadBullet[] }) {
   return (
-    <ul className={guideArticleQaList}>
-      {items.map((item) => (
-        <li key={item.lead} className={guideArticleQaCard}>
-          <p className={guideArticleQaQuestion}>{item.lead}</p>
-          <p className={guideArticleQaAnswer}>{item.body}</p>
-        </li>
-      ))}
-    </ul>
+    <QaToggleBlock
+      items={items.map(({ lead, body }) => ({ question: lead, answer: body }))}
+    />
   );
 }

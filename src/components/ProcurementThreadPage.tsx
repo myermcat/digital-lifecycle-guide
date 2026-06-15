@@ -2,7 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { HeldOpenBlock } from "@/components/HeldOpenBlock";
+import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
+import { SourcesBlock } from "@/components/SourcesBlock";
 import { PROCUREMENT_HELD_OPEN } from "@/lib/contracting-landing";
+import { PROCUREMENT_CONTRACTING_SOURCES } from "@/lib/procurement-sources";
 import { THREADS } from "@/lib/guide-strings";
 
 export function ProcurementThreadPage() {
@@ -30,10 +33,20 @@ export function ProcurementThreadPage() {
         linkTo={PROCUREMENT_HELD_OPEN.linkTo}
         linkLabel={PROCUREMENT_HELD_OPEN.linkLabel}
       >
-        {PROCUREMENT_HELD_OPEN.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+        {PROCUREMENT_HELD_OPEN.paragraphs.map((paragraph) => {
+          if (typeof paragraph === "string") {
+            return <p key={paragraph}>{paragraph}</p>;
+          }
+
+          return (
+            <p key={paragraph.text}>
+              {proseWithExternalLinks(paragraph.text, paragraph.externalLinks ?? [])}
+            </p>
+          );
+        })}
       </HeldOpenBlock>
+
+      <SourcesBlock items={PROCUREMENT_CONTRACTING_SOURCES} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       <div className="h-16" />
