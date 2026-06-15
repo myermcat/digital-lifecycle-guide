@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ContractingSectionNav } from "@/components/ContractingSectionNav";
-import { EditorialNote } from "@/components/EditorialNote";
 import {
   ThreadArticleLeadList,
   ThreadArticleQaList,
@@ -13,7 +12,6 @@ import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/cont
 import {
   guideArticleCalloutLift,
   guideArticleProse,
-  guideArticleSectionGap,
 } from "@/lib/guide-article";
 import { guideLink, guideProse } from "@/lib/guide-typography";
 
@@ -125,25 +123,8 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
               alternative={section.caseStudy.safer}
             />
           ) : null}
-          {section.editorialNote ? (
-            <EditorialNote
-              label={section.editorialNote.label}
-              className={guideArticleCalloutLift}
-            >
-              {section.editorialNote.body}
-            </EditorialNote>
-          ) : null}
         </ThreadArticleSection>
       ))}
-
-      {page.trailingEditorialNote ? (
-        <EditorialNote
-          label={page.trailingEditorialNote.label}
-          className={guideArticleSectionGap}
-        >
-          {page.trailingEditorialNote.body}
-        </EditorialNote>
-      ) : null}
     </ThreadArticleLayout>
   );
 }

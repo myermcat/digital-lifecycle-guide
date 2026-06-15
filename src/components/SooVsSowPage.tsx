@@ -1,5 +1,4 @@
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
-import { EditorialNote } from "@/components/EditorialNote";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
@@ -47,10 +46,6 @@ export function SooVsSowPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </ThreadArticleSection>
-
-      <EditorialNote label="Editorial note" className={guideArticleCalloutLift}>
-        {SOO_VS_SOW.editorialNote}
-      </EditorialNote>
 
       <SourcesBlock items={SOO_VS_SOW.sources} />
     </ReferenceArticleLayout>

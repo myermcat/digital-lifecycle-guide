@@ -49,8 +49,6 @@ export const SOO_VS_SOW = {
       "The first locks the answer before anyone has tested it. The second fixes what matters and lets the answer be found.",
     ],
   },
-  editorialNote:
-    "Drafted from open sources. The exact wording of a statement of objectives, and when it is the right tool, should be checked with a Government of Canada contracting officer before use.",
   sources: [
     {
       label: "Used for inspiration",

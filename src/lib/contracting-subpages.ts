@@ -41,10 +41,6 @@ export type ContractingSection = {
     risky: CaseStudySide;
     safer: CaseStudySide;
   };
-  editorialNote?: {
-    label?: string;
-    body: string;
-  };
 };
 
 export type ContractingSubPage = {
@@ -53,10 +49,6 @@ export type ContractingSubPage = {
   stub?: boolean;
   intro?: string[];
   sections: ContractingSection[];
-  trailingEditorialNote?: {
-    label?: string;
-    body: string;
-  };
 };
 
 export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSubPage> = {
@@ -110,10 +102,6 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         ],
       },
     ],
-    trailingEditorialNote: {
-      label: "Editorial note",
-      body: "Drafted from open sources. How to name and govern a practice inside a real Government of Canada contract still needs a contracting officer's check before this goes out as advice.",
-    },
   },
   "you-bought-small-in-pieces": {
     slug: "you-bought-small-in-pieces",
@@ -182,10 +170,6 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
             ],
           },
         },
-        editorialNote: {
-          label: "Editorial note: anonymised on purpose",
-          body: "This example does not name a real programme. Real Government of Canada programmes have failed in the way the left column describes, and naming one here would turn a teaching example into a claim about another department. The pattern is the point, not the name. A named version can be talked through with Dan before anything is published.",
-        },
       },
       {
         id: "honest-cost",
@@ -226,10 +210,6 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         ],
       },
     ],
-    trailingEditorialNote: {
-      label: "Editorial note",
-      body: "Which buying tools to use, and how to frame a modular plan for a Government of Canada approver, are the parts that need a contracting officer's eye before publishing. The principle is open and sound; the exact manoeuvres should be checked.",
-    },
   },
   "you-did-not-over-customise": {
     slug: "you-did-not-over-customise",
@@ -335,10 +315,6 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         ],
       },
     ],
-    trailingEditorialNote: {
-      label: "Editorial note",
-      body: "Where this thread meets the end of a service or a bought component, it joins the End-of-life thread. That join gets written when the End-of-life thread is built. For now this page points forward to it.",
-    },
   },
   "you-kept-enough-in-house": {
     slug: "you-kept-enough-in-house",
