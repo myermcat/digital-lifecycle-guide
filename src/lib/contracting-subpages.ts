@@ -42,9 +42,11 @@ export type ContractingSection = {
   paragraphLinks?: ContractingParagraphLink[];
   externalParagraphLinks?: ContractingExternalParagraphLink[];
   paragraphsAfterBullets?: string[];
+  /** How text below a bullet list is rendered. */
+  paragraphsAfterBulletsVariant?: "prose" | "note";
   bullets?: ContractingBullet[];
   /** How lead/body bullet lists are rendered. */
-  bulletsVariant?: "inline" | "qa";
+  bulletsVariant?: "inline" | "qa" | "ladder";
   caseStudy?: {
     intro: string;
     risky: CaseStudySide;
@@ -65,28 +67,58 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
     slug: "you-looked-before-you-bought",
     title: "You looked before you bought",
     intro: [
-      "Before you buy anything, stop and ask whether you should. The strongest move in procurement happens before any contract exists: working out what the problem actually is, and what the real options are.",
+      "The strongest move in procurement happens before any contract exists. It is the work of asking whether you should buy at all, and if so, what the real options are. Most teams skip it and jump straight to buying, and that costs them later.",
     ],
     sections: [
       {
         id: "start-with-the-problem",
         title: "Start with the problem, not the product",
         paragraphs: [
-          "Who are the users, what is going wrong for them, and what would good look like? Only then ask how to solve it.",
+          "Before you name a solution, name the need. Who are the users, what is going wrong for them, what would good actually look like, and how would you know you had reached it? A clear problem is worth more than a clever solution, because every later decision gets measured against it. Write it down plainly, and be ready to find that the real problem is not the one you assumed.",
         ],
       },
       {
-        id: "look-at-the-options",
-        title: "Look at the options",
+        id: "walk-the-options",
+        title: "Then walk the options, in order",
         paragraphs: [
-          "Do you already own something that could do this? Could you reuse or adapt a tool another team or department already runs? Could you build it with the people you have? Or do you need to buy? Buying is one answer, not the default answer.",
+          "From the cheapest and least disruptive to the most. Buying new sits near the bottom of this ladder.",
+        ],
+        bulletsVariant: "ladder",
+        bullets: [
+          {
+            lead: "Use what you already have.",
+            body: "Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy.",
+          },
+          {
+            lead: "Reuse or adapt what someone else runs.",
+            body: "Another team, another department, or a government-wide platform may already solve your problem. Borrowing beats buying.",
+          },
+          {
+            lead: "Solve it a different way.",
+            body: "Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary.",
+          },
+          {
+            lead: "Buy new.",
+            body: "If none of the above fits, then you buy. And you can explain why when someone asks.",
+          },
+        ],
+        paragraphsAfterBullets: [
+          "One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on.",
+        ],
+        paragraphsAfterBulletsVariant: "note",
+      },
+      {
+        id: "do-the-homework",
+        title: "Do the homework before you commit",
+        paragraphs: [
+          "Look at how other departments solved the same thing, and what it cost them. Look at other jurisdictions with similar rules, the UK, Australia, and borrow rather than start from scratch. Read the guidance that already exists. You are almost never the first person to face this problem, and learning from someone who already paid for the mistake is the cheapest research you will do.",
         ],
       },
       {
         id: "why-it-matters",
-        title: "Why this step matters",
+        title: "Why this matters",
         paragraphs: [
-          "This is the cheapest insurance in the whole journey. An afternoon of honest options analysis can save you a two-year procurement for something you did not need to buy. PSPC's guidance begins after the decision to buy is made. This part is on you, and it is where the biggest savings hide.",
+          "An afternoon of options work can save you a two-year procurement for something you did not need to buy, or point you at a far better answer than the one you would have rushed into. PSPC's procurement guidance begins after the decision to buy is made. This step is on you, and it decides where the biggest savings and the biggest regrets land.",
         ],
       },
     ],

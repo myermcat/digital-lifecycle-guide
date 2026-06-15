@@ -26,7 +26,7 @@ export const PROCUREMENT_GOOD_LOOKS_CARDS: PracticeCardData[] = [
     label: "You looked before you bought",
     href: procurementSubPath("you-looked-before-you-bought"),
     description:
-      "Before you buy anything, you worked out what the problem actually is and what the real options are.",
+      "You checked whether you needed to buy at all, and what the real options were, before reaching for a contract.",
   },
   {
     label: "You bought small, in pieces",

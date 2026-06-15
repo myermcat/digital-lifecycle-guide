@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { OptionsLadder } from "@/components/OptionsLadder";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ContractingSectionNav } from "@/components/ContractingSectionNav";
 import {
@@ -11,6 +12,7 @@ import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
 import {
   guideArticleCalloutLift,
+  guideArticleNote,
   guideArticleProse,
 } from "@/lib/guide-article";
 import { guideLink, guideProse } from "@/lib/guide-typography";
@@ -108,11 +110,20 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           ))}
           {section.bullets && section.bulletsVariant === "qa" ? (
             <ThreadArticleQaList items={section.bullets} />
+          ) : section.bullets && section.bulletsVariant === "ladder" ? (
+            <OptionsLadder items={section.bullets} />
           ) : section.bullets ? (
             <ThreadArticleLeadList items={section.bullets} />
           ) : null}
           {section.paragraphsAfterBullets?.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p
+              key={paragraph}
+              className={
+                section.paragraphsAfterBulletsVariant === "note" ? guideArticleNote : undefined
+              }
+            >
+              {paragraph}
+            </p>
           ))}
           {section.caseStudy ? (
             <CaseStudyBlock

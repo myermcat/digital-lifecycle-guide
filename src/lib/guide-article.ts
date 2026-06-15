@@ -1,4 +1,4 @@
-import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideProseTight, guideSubsectionTitle } from "@/lib/guide-typography";
 
 /** Comfortable reading measure — matches assumptions and footnote blocks site-wide. */
 export const guideArticleMeasure = "max-w-xl";
@@ -9,8 +9,8 @@ export const guideArticleSectionGap = "mt-14 md:mt-16";
 /** Gap from intro or page header into the first section. */
 export const guideArticleFirstSectionGap = "mt-10 md:mt-12";
 
-/** Section heading: tight below, section margin supplies space above. */
-export const guideArticleSectionTitle = `${guideSectionTitle} mb-3 md:mb-4`;
+/** Section heading on thread/reference article pages — subordinate to the page h1. */
+export const guideArticleSectionTitle = `${guideSubsectionTitle} mb-3 md:mb-4`;
 
 /** Within-section paragraph and block rhythm. */
 export const guideArticleProse = `${guideProse} space-y-4`;
@@ -30,3 +30,7 @@ export const guideArticleQaQuestion = `${guideProse} font-medium text-primary bo
 
 /** Dialogue Q&A: answer line — smaller, plainer, slightly indented. */
 export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 md:ml-4 mt-2.5`;
+
+/** Light aside below a block — thin weight, low contrast. Not main body copy. */
+export const guideArticleNote =
+  "mt-3 font-sans text-xs leading-[1.45] text-foreground/45 font-normal";
