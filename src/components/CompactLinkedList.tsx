@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { guideArrowList, guideArrowListIcon } from "@/lib/guide-typography";
 import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -17,7 +18,18 @@ export type ArrowLeadItem = {
   href?: string;
 };
 
-/** Arrow + primary lead + body — shared by Maturity exits and thread article lists. */
+/** Small arrow marker for guide bullet lists. Use with your own text layout. */
+export function GuideArrowBullet({ className }: { className?: string }) {
+  return (
+    <ArrowRight
+      className={cn(guideArrowListIcon, className)}
+      strokeWidth={1.5}
+      aria-hidden
+    />
+  );
+}
+
+/** Arrow + primary lead + body. Prefer importing from @/lib/guide-lists. */
 export function ArrowLeadList({
   items,
   className,
@@ -26,14 +38,10 @@ export function ArrowLeadList({
   className?: string;
 }) {
   return (
-    <ul className={cn("space-y-4 list-none pl-0", className)}>
+    <ul className={cn(guideArrowList, className)}>
       {items.map((item) => (
         <li key={item.lead} className="flex gap-2.5">
-          <ArrowRight
-            className="mt-[0.4rem] size-4 shrink-0 text-primary/35"
-            strokeWidth={1.5}
-            aria-hidden
-          />
+          <GuideArrowBullet />
           <div className="min-w-0 flex-1">
             <p>
               {item.href ? (

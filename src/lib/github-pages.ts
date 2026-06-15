@@ -1,6 +1,5 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
-import { THREADS } from "./guide-strings";
-import { CONTRACTING_SUBPAGE_SLUGS } from "./contracting-subpage-slugs";
+import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
 import { SOO_VS_SOW_PATH } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 
@@ -24,8 +23,11 @@ const CORE_PATHS = [
 
 const PRACTICE_PATHS = Object.keys(PRACTICE_STUBS).map((slug) => `/practice/${slug}`);
 const REVIEW_PATHS = Object.keys(REVIEW_STUBS).map((slug) => `/review/${slug}`);
-const THREAD_PATHS = Object.values(THREADS).map((thread) => thread.path);
-const CONTRACTING_SUB_PATHS = CONTRACTING_SUBPAGE_SLUGS.map(
+const THREAD_PATHS = ["/thread/procurement"];
+const PROCUREMENT_SUB_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
+  (slug) => `/thread/procurement/${slug}`,
+);
+const LEGACY_CONTRACTING_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
   (slug) => `/thread/contracting/${slug}`,
 );
 
@@ -35,7 +37,9 @@ export const STATIC_PRERENDER_PATHS = [
   ...PRACTICE_PATHS,
   ...REVIEW_PATHS,
   ...THREAD_PATHS,
-  ...CONTRACTING_SUB_PATHS,
+  ...PROCUREMENT_SUB_PATHS,
+  "/thread/contracting",
+  ...LEGACY_CONTRACTING_PATHS,
   SOO_VS_SOW_PATH,
   ALL_PAGES_PATH,
 ] as const;

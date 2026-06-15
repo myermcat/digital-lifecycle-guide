@@ -167,7 +167,6 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     "procurement",
     "procurement and contracts",
   ),
-  contracting: placeholderThread("contracting", "contracting"),
   "data-stewardship": placeholderThread("data-stewardship", "data stewardship"),
   "ethics-and-bias": placeholderThread("ethics-and-bias", "ethics and bias"),
   "team-capability": placeholderThread("team-capability", "team capability"),

@@ -1,12 +1,21 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import {
-  CONTRACTING_SUBPAGE_SLUGS,
-  type ContractingSubPageSlug,
-} from "./contracting-subpage-slugs";
+  PROCUREMENT_SUBPAGE_SLUGS,
+  type ProcurementSubPageSlug,
+} from "./procurement-subpage-slugs";
 import { SOO_VS_SOW_PATH } from "./reference-paths";
 import type { ExternalLinkKey } from "./external-links";
 
-export { CONTRACTING_SUBPAGE_SLUGS, type ContractingSubPageSlug };
+export {
+  PROCUREMENT_SUBPAGE_SLUGS,
+  type ProcurementSubPageSlug,
+} from "./procurement-subpage-slugs";
+
+/** @deprecated Use PROCUREMENT_SUBPAGE_SLUGS */
+export const CONTRACTING_SUBPAGE_SLUGS = PROCUREMENT_SUBPAGE_SLUGS;
+
+/** @deprecated Use ProcurementSubPageSlug */
+export type ContractingSubPageSlug = ProcurementSubPageSlug;
 
 export type ContractingBullet = {
   lead: string;
@@ -51,7 +60,37 @@ export type ContractingSubPage = {
   sections: ContractingSection[];
 };
 
-export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSubPage> = {
+export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSubPage> = {
+  "you-looked-before-you-bought": {
+    slug: "you-looked-before-you-bought",
+    title: "You looked before you bought",
+    intro: [
+      "Before you buy anything, stop and ask whether you should. The strongest move in procurement happens before any contract exists: working out what the problem actually is, and what the real options are.",
+    ],
+    sections: [
+      {
+        id: "start-with-the-problem",
+        title: "Start with the problem, not the product",
+        paragraphs: [
+          "Who are the users, what is going wrong for them, and what would good look like? Only then ask how to solve it.",
+        ],
+      },
+      {
+        id: "look-at-the-options",
+        title: "Look honestly at the options",
+        paragraphs: [
+          "Do you already own something that could do this? Could you reuse or adapt a tool another team or department already runs? Could you build it with the people you have? Or do you need to buy? Buying is one answer, not the default answer.",
+        ],
+      },
+      {
+        id: "why-it-matters",
+        title: "Why this step matters",
+        paragraphs: [
+          "This is the cheapest insurance in the whole journey. An afternoon of honest options analysis can save you a two-year procurement for something you did not need to buy. PSPC's guidance begins after the decision to buy is made. This part is on you, and it is where the biggest savings hide.",
+        ],
+      },
+    ],
+  },
   "the-contract-carries-the-practices": {
     slug: "the-contract-carries-the-practices",
     title: "The contract carries the practices",
@@ -108,6 +147,8 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
     title: "You bought small, in pieces",
     intro: [
       "The most useful thing you can do when buying a service is to not buy all of it at once.",
+      "You bought the work in small, separate pieces instead of one large block. Each piece is tightly scoped, due soon, and able to build on the one before.",
+      "There are two well-worn ways to do this. Phased deliveries break the work into stages with go and no-go gates, so you can stop or change course at each one. Contracts with task authorizations let you draw work down as and when you need it, in small, controlled amounts. You can mix them.",
     ],
     sections: [
       {
@@ -116,6 +157,7 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         paragraphs: [
           "If you were building the service yourself, you would not write the whole thing in one sitting. You would work out the shape of it, build a piece, check that it works, then build the next piece on top. Small steps you can test. You fix your course as you learn.",
           "Buying in pieces is the same habit applied to contracts. Instead of one big contract for the whole job, you write several smaller ones, each for a real piece of work. The architecture is a piece. Moving the data is a piece. Each part of the service is a piece. You buy them in an order where each one teaches you something before the next begins.",
+          "Why bother, when one big contract feels simpler? Because small pieces show their value early, and their problems early too. If a supplier underperforms, you replace that piece, not the whole programme. If needs change, the next piece absorbs the change. Risk and cost stay in hand because nothing rides on a single, distant delivery.",
           "This helps because building a service is full of things you cannot know up front. Whether the technology fits. Whether it clashes with what you already run. Whether the problem turns out harder than it looked. A single big contract bets that you got all of that right before you started. You almost never do. Small contracts let you find out cheaply and change course.",
         ],
       },
@@ -126,6 +168,7 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
           "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about.",
           "Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule.",
           "Modular contracting is legal, and the Directive actually leans toward it: it favours contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand or fall on its own, often going to different suppliers, because that produces a better result. Nothing is hidden. Each piece is competed in the open at its real size.",
+          "The fear to name out loud: this is not contract splitting. Splitting is taking the same work and slicing it to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine, separately useful increments is a different thing, and it is allowed. If the whole exceeds the level that needs a competition, the pieces still go to competition. You are changing the shape of the buying, not hiding its size.",
           "The test is simple. Would these pieces exist as separate work even if there were no dollar limit to dodge? If they would, because they are genuinely different deliverables, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones.",
         ],
         externalParagraphLinks: [
@@ -310,7 +353,7 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
         id: "after-you-bought",
         title: "What changes once you have bought it",
         paragraphs: [
-          "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. The contracting job in this stretch is quieter, but it does not stop.",
+          "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch is quieter, but it does not stop.",
           "You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives.",
         ],
       },
@@ -319,11 +362,44 @@ export const CONTRACTING_SUBPAGES: Record<ContractingSubPageSlug, ContractingSub
   "you-kept-enough-in-house": {
     slug: "you-kept-enough-in-house",
     title: "You kept enough in-house",
-    stub: true,
-    sections: [],
+    intro: [
+      "When a supplier builds or runs your service, it is tempting to hand over everything and free your own people for other work. Keep something back.",
+    ],
+    sections: [
+      {
+        id: "what-enough-means",
+        title: "What enough means",
+        paragraphs: [
+          "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else.",
+          "Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who can read what the supplier delivers and tell whether it is good, who know where your data lives and how it moves, who understand the main design decisions and why they were made, and who would not be lost if the supplier left tomorrow.",
+        ],
+      },
+      {
+        id: "why-it-matters",
+        title: "Why it matters",
+        paragraphs: [
+          "This is the quiet insurance against lock-in. A team that kept enough in-house can ask the right questions, push back on a bad change, judge a renewal honestly, and run an exit when the time comes. A team that handed over everything is at the supplier's mercy, and usually does not find out until it is late and expensive.",
+        ],
+      },
+      {
+        id: "keep-it-alive",
+        title: "Keep it alive on purpose",
+        paragraphs: [
+          "Knowledge fades when no one uses it. Write down the decisions that matter, keep your documentation current, rotate people through the work rather than letting one person hold it all, and make sure what lives in the supplier's head also exists on your side.",
+        ],
+      },
+    ],
   },
 };
 
+/** @deprecated Use PROCUREMENT_SUBPAGES */
+export const CONTRACTING_SUBPAGES = PROCUREMENT_SUBPAGES;
+
+export function isProcurementSubPageSlug(slug: string): slug is ProcurementSubPageSlug {
+  return PROCUREMENT_SUBPAGE_SLUGS.includes(slug as ProcurementSubPageSlug);
+}
+
+/** @deprecated Use isProcurementSubPageSlug */
 export function isContractingSubPageSlug(slug: string): slug is ContractingSubPageSlug {
-  return CONTRACTING_SUBPAGE_SLUGS.includes(slug as ContractingSubPageSlug);
+  return isProcurementSubPageSlug(slug);
 }

@@ -78,13 +78,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: THREADS.privacy.title, path: THREADS.privacy.path, type: "thread", status: "in-progress" },
   {
     title: THREADS.procurement.title,
-    path: THREADS.procurement.path,
-    type: "thread",
-    status: "in-progress",
-  },
-  {
-    title: THREADS.contracting.title,
-    path: THREADS.contracting.path,
+    path: "/thread/procurement",
     type: "thread",
     status: "in-review",
   },

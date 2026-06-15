@@ -40,6 +40,23 @@ export const EXTERNAL_LINKS = {
     description: "PSPC Agile Procurement Guide",
     accessibility: "gc-network-only",
   },
+  "policy-planning-investments": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593",
+    description: "Treasury Board Policy on the Planning and Management of Investments",
+    accessibility: "public",
+  },
+  "supply-manual-chapter-6": {
+    url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
+    description:
+      "Supply Manual, Chapter 6, Approvals and authorities (contract approval, signing authorities, and contract splitting)",
+    accessibility: "public",
+  },
+  "contract-approval-authorities": {
+    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/approve/delegation-procurement-authority/contract-approval-and-signing-authorities",
+    description:
+      "Contract approval and signing authorities, plain-language Buyer's Guide on CanadaBuys",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

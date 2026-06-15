@@ -1,13 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ContractingLandingPage } from "@/components/ContractingLandingPage";
-import { CONTRACTING_LANDING } from "@/lib/contracting-landing";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/thread/contracting/")({
-  head: () => ({
-    meta: [
-      { title: `${CONTRACTING_LANDING.title} — The Digital Lifecycle Guide` },
-      { name: "description", content: CONTRACTING_LANDING.opening },
-    ],
-  }),
-  component: ContractingLandingPage,
+  beforeLoad: () => {
+    throw redirect({ to: "/thread/procurement" });
+  },
 });

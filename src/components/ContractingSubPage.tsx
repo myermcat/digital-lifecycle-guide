@@ -68,7 +68,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
   if (page.stub) {
     return (
       <ThreadArticleLayout
-        id={`contracting-${page.slug}`}
+        id={`procurement-${page.slug}`}
         title={page.title}
         afterAssumptions={sectionNav}
       >
@@ -82,7 +82,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
 
   return (
     <ThreadArticleLayout
-      id={`contracting-${page.slug}`}
+      id={`procurement-${page.slug}`}
       title={page.title}
       afterAssumptions={sectionNav}
     >

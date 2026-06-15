@@ -1,9 +1,7 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/thread/contracting")({
-  component: ContractingLayout,
+  beforeLoad: () => {
+    throw redirect({ to: "/thread/procurement" });
+  },
 });
-
-function ContractingLayout() {
-  return <Outlet />;
-}

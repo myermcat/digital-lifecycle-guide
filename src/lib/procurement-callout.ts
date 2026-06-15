@@ -1,5 +1,3 @@
-import { THREADS } from "@/lib/guide-strings";
-
 /** Phase pages that can host the procurement callout block. */
 export type ProcurementCalloutPhaseId =
   | "create-discovery"
@@ -21,7 +19,7 @@ export const PROCUREMENT_CALLOUT_FRAMING =
 
 export const PROCUREMENT_CALLOUT_LINK_LABEL = "Go to the Procurement thread →";
 
-export const PROCUREMENT_CALLOUT_LINK = THREADS.procurement.path;
+export const PROCUREMENT_CALLOUT_LINK = "/thread/procurement";
 
 /** What procurement and contracting mean at each phase. */
 export const PROCUREMENT_CALLOUT_AT_PHASE: Record<ProcurementCalloutPhaseId, string> = {

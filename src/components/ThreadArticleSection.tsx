@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowLeadList } from "@/components/CompactLinkedList";
+import { ArrowLeadList } from "@/lib/guide-lists";
 import { QaToggleBlock } from "@/components/QaToggleBlock";
 import { cn } from "@/lib/utils";
 import {

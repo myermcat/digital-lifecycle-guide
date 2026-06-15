@@ -7,12 +7,14 @@ type RegistrySourceRef = {
   linkKey: ExternalLinkKey;
 };
 
-const PROCUREMENT_CONTRACTING_SOURCE_REFS = {
-  governing: {
-    label: "Governing instrument",
-    linkKey: "directive-procurement",
-  },
+const PROCUREMENT_SOURCE_REFS = {
+  governing: [
+    { label: "Governing instrument", linkKey: "directive-procurement" },
+    { label: "Governing instrument", linkKey: "policy-planning-investments" },
+  ],
   supporting: [
+    { label: "Supporting reference", linkKey: "supply-manual-chapter-6" },
+    { label: "Supporting reference", linkKey: "contract-approval-authorities" },
     { label: "Supporting reference", linkKey: "buyers-portal" },
     { label: "Supporting reference", linkKey: "procurement-policies" },
     { label: "Supporting reference", linkKey: "procura-chatbot" },
@@ -20,7 +22,7 @@ const PROCUREMENT_CONTRACTING_SOURCE_REFS = {
     { label: "Supporting reference", linkKey: "agile-procurement-guide" },
   ],
 } as const satisfies {
-  governing: RegistrySourceRef;
+  governing: readonly RegistrySourceRef[];
   supporting: readonly RegistrySourceRef[];
 };
 
@@ -33,8 +35,10 @@ function sourceItemFromRef({ label, linkKey }: RegistrySourceRef): SourceItem {
   };
 }
 
-/** Sources for procurement and contracting landing pages — resolved from the links registry. */
-export const PROCUREMENT_CONTRACTING_SOURCES: SourceItem[] = [
-  sourceItemFromRef(PROCUREMENT_CONTRACTING_SOURCE_REFS.governing),
-  ...PROCUREMENT_CONTRACTING_SOURCE_REFS.supporting.map(sourceItemFromRef),
+export const PROCUREMENT_SOURCES: SourceItem[] = [
+  ...PROCUREMENT_SOURCE_REFS.governing.map(sourceItemFromRef),
+  ...PROCUREMENT_SOURCE_REFS.supporting.map(sourceItemFromRef),
 ];
+
+/** @deprecated Use PROCUREMENT_SOURCES */
+export const PROCUREMENT_CONTRACTING_SOURCES = PROCUREMENT_SOURCES;

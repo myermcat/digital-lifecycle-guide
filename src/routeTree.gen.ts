@@ -22,12 +22,15 @@ import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as AllPagesRouteImport } from './routes/all-pages'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThreadProcurementRouteImport } from './routes/thread.procurement'
 import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
+import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
+import { Route as ThreadProcurementPageRouteImport } from './routes/thread.procurement.$page'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
 const SunsetTransitionRoute = SunsetTransitionRouteImport.update({
@@ -95,6 +98,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThreadProcurementRoute = ThreadProcurementRouteImport.update({
+  id: '/thread/procurement',
+  path: '/thread/procurement',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThreadContractingRoute = ThreadContractingRouteImport.update({
   id: '/thread/contracting',
   path: '/thread/contracting',
@@ -120,10 +128,20 @@ const PracticeSlugRoute = PracticeSlugRouteImport.update({
   path: '/practice/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThreadProcurementIndexRoute = ThreadProcurementIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ThreadProcurementRoute,
+} as any)
 const ThreadContractingIndexRoute = ThreadContractingIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ThreadContractingRoute,
+} as any)
+const ThreadProcurementPageRoute = ThreadProcurementPageRouteImport.update({
+  id: '/$page',
+  path: '/$page',
+  getParentRoute: () => ThreadProcurementRoute,
 } as any)
 const ThreadContractingPageRoute = ThreadContractingPageRouteImport.update({
   id: '/$page',
@@ -150,8 +168,11 @@ export interface FileRoutesByFullPath {
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
+  '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
+  '/thread/procurement/': typeof ThreadProcurementIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -172,7 +193,9 @@ export interface FileRoutesByTo {
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/contracting': typeof ThreadContractingIndexRoute
+  '/thread/procurement': typeof ThreadProcurementIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -194,8 +217,11 @@ export interface FileRoutesById {
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
+  '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
+  '/thread/procurement/': typeof ThreadProcurementIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -218,8 +244,11 @@ export interface FileRouteTypes {
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
+    | '/thread/procurement'
     | '/thread/contracting/$page'
+    | '/thread/procurement/$page'
     | '/thread/contracting/'
+    | '/thread/procurement/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -240,7 +269,9 @@ export interface FileRouteTypes {
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting/$page'
+    | '/thread/procurement/$page'
     | '/thread/contracting'
+    | '/thread/procurement'
   id:
     | '__root__'
     | '/'
@@ -261,8 +292,11 @@ export interface FileRouteTypes {
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
+    | '/thread/procurement'
     | '/thread/contracting/$page'
+    | '/thread/procurement/$page'
     | '/thread/contracting/'
+    | '/thread/procurement/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -284,6 +318,7 @@ export interface RootRouteChildren {
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
   ThreadContractingRoute: typeof ThreadContractingRouteWithChildren
+  ThreadProcurementRoute: typeof ThreadProcurementRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -379,6 +414,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thread/procurement': {
+      id: '/thread/procurement'
+      path: '/thread/procurement'
+      fullPath: '/thread/procurement'
+      preLoaderRoute: typeof ThreadProcurementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thread/contracting': {
       id: '/thread/contracting'
       path: '/thread/contracting'
@@ -414,12 +456,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thread/procurement/': {
+      id: '/thread/procurement/'
+      path: '/'
+      fullPath: '/thread/procurement/'
+      preLoaderRoute: typeof ThreadProcurementIndexRouteImport
+      parentRoute: typeof ThreadProcurementRoute
+    }
     '/thread/contracting/': {
       id: '/thread/contracting/'
       path: '/'
       fullPath: '/thread/contracting/'
       preLoaderRoute: typeof ThreadContractingIndexRouteImport
       parentRoute: typeof ThreadContractingRoute
+    }
+    '/thread/procurement/$page': {
+      id: '/thread/procurement/$page'
+      path: '/$page'
+      fullPath: '/thread/procurement/$page'
+      preLoaderRoute: typeof ThreadProcurementPageRouteImport
+      parentRoute: typeof ThreadProcurementRoute
     }
     '/thread/contracting/$page': {
       id: '/thread/contracting/$page'
@@ -444,6 +500,19 @@ const ThreadContractingRouteChildren: ThreadContractingRouteChildren = {
 const ThreadContractingRouteWithChildren =
   ThreadContractingRoute._addFileChildren(ThreadContractingRouteChildren)
 
+interface ThreadProcurementRouteChildren {
+  ThreadProcurementPageRoute: typeof ThreadProcurementPageRoute
+  ThreadProcurementIndexRoute: typeof ThreadProcurementIndexRoute
+}
+
+const ThreadProcurementRouteChildren: ThreadProcurementRouteChildren = {
+  ThreadProcurementPageRoute: ThreadProcurementPageRoute,
+  ThreadProcurementIndexRoute: ThreadProcurementIndexRoute,
+}
+
+const ThreadProcurementRouteWithChildren =
+  ThreadProcurementRoute._addFileChildren(ThreadProcurementRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AllPagesRoute: AllPagesRoute,
@@ -463,6 +532,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
   ThreadContractingRoute: ThreadContractingRouteWithChildren,
+  ThreadProcurementRoute: ThreadProcurementRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

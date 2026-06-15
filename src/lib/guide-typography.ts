@@ -28,3 +28,9 @@ export const guideLink =
 /** Small uppercase labels on callout blocks (WCAG AA on cream). */
 export const guideCalloutLabel =
   "text-[10px] uppercase tracking-[0.22em] text-primary/80 font-sans";
+
+/** Wrapper classes for arrow-bullet lists. */
+export const guideArrowList = "space-y-4 list-none pl-0";
+
+/** Classes for GuideArrowBullet — the reusable list arrow marker. */
+export const guideArrowListIcon = "mt-[0.4rem] size-4 shrink-0 text-primary/35";
