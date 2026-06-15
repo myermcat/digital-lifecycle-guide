@@ -115,7 +115,7 @@ function FooterLink({ to, children }: { to: string; children: React.ReactNode })
 function CanadaWordmark() {
   return (
     <div
-      className="flex items-end gap-0.5 select-none"
+      className="relative inline-flex select-none"
       aria-label="Canada"
       role="img"
     >
@@ -123,21 +123,14 @@ function CanadaWordmark() {
         className="font-serif text-2xl leading-none tracking-tight"
         style={{ color: "var(--gc-footer-fg)" }}
       >
-        Canad
+        Canada
       </span>
-      <span className="relative inline-block">
-        <span
-          className="font-serif text-2xl leading-none tracking-tight"
-          style={{ color: "var(--gc-footer-fg)" }}
-        >
-          a
-        </span>
-        <span
-          aria-hidden="true"
-          className="absolute -top-1 -right-2 inline-block h-2 w-2.5"
-          style={{ backgroundColor: "var(--gc-red)" }}
-        />
-      </span>
+      {/* Red flag square sits over the bowl of the final 'a' */}
+      <span
+        aria-hidden="true"
+        className="absolute -top-1.5 right-[0.1em] inline-block h-[0.55em] w-[0.65em]"
+        style={{ backgroundColor: "var(--gc-red)" }}
+      />
     </div>
   );
 }
