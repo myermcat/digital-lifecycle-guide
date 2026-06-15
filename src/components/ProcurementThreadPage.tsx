@@ -33,7 +33,9 @@ export function ProcurementThreadPage() {
         linkTo={PROCUREMENT_HELD_OPEN.linkTo}
         linkLabel={PROCUREMENT_HELD_OPEN.linkLabel}
       >
-        {PROCUREMENT_HELD_OPEN.paragraphs.map((paragraph) => {
+        {(PROCUREMENT_HELD_OPEN.paragraphs as ReadonlyArray<
+          string | { text: string; externalLinks?: { phrase: string; linkKey: string }[] }
+        >).map((paragraph) => {
           if (typeof paragraph === "string") {
             return <p key={paragraph}>{paragraph}</p>;
           }

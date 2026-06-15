@@ -42,19 +42,15 @@ export function ContractingLandingPage() {
       </header>
 
       <section className={guideProseSpace}>
-        <p>{CONTRACTING_LANDING.opening}</p>
+        {CONTRACTING_LANDING.intro.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-2`}>What good looks like</h2>
         <p className={`${guideProse} mb-4`}>{CONTRACTING_LANDING.goodLooksIntro}</p>
         <PracticeCardGroup cards={CONTRACTING_GOOD_LOOKS_CARDS} numbered />
-        <p className={`${guideProse} mt-6`}>
-          {proseWithExternalLinks(
-            CONTRACTING_LANDING.businessOwnerNote.text,
-            CONTRACTING_LANDING.businessOwnerNote.externalLinks ?? [],
-          )}
-        </p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
