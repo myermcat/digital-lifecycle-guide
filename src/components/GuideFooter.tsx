@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
-import { REGIONS, THREADS } from "@/lib/guide-strings";
+import { REGIONS } from "@/lib/guide-strings";
 
 /**
  * Site footer — Government of Canada–inflected, calm to match the guide.
