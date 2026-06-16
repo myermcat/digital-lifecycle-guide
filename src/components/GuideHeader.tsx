@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
+import { List } from "lucide-react";
 import { HeaderSearch } from "@/components/HeaderSearch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { REGIONS } from "@/lib/guide-strings";
+import { cn } from "@/lib/utils";
 
 /**
  * Site header — calm, editorial chrome that sits above the page content.
@@ -47,16 +49,28 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
                 {r.title}
               </Link>
             ))}
-            <Link
-              to={ALL_PAGES_PATH}
-              className="text-[11px] uppercase tracking-[0.18em] text-foreground/55 hover:text-foreground transition-colors"
-              activeProps={{ className: "text-foreground" }}
-            >
-              All pages
-            </Link>
           </nav>
 
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2.5 md:gap-3">
+            <div
+              aria-hidden="true"
+              className="hidden md:block h-4 w-px bg-border/60 mr-0.5"
+            />
+            <Link
+              to={ALL_PAGES_PATH}
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-md px-1.5 py-1",
+                "text-[11px] text-muted-foreground/75 hover:text-foreground/80 transition-colors",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+              )}
+              activeProps={{
+                className: "text-foreground/75",
+              }}
+            >
+              <List className="size-3.5 shrink-0 opacity-70" aria-hidden />
+              <span className="hidden sm:inline">All pages</span>
+              <span className="sr-only sm:hidden">All pages</span>
+            </Link>
             <HeaderSearch />
             {rootId ? (
               <div className="lg:hidden">
