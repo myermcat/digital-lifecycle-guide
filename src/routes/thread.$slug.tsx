@@ -10,7 +10,7 @@ export const Route = createFileRoute("/thread/$slug")({
       return {
         meta: [
           { title: `${PROCUREMENT_LANDING.title} — The Digital Lifecycle Guide` },
-          { name: "description", content: PROCUREMENT_LANDING.intro[0] },
+          { name: "description", content: PROCUREMENT_LANDING.intro.paragraphs[0] },
         ],
       };
     }

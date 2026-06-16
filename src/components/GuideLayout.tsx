@@ -8,7 +8,7 @@ import {
 } from "react";
 import { BgAnimalField } from "@/components/BgAnimalField";
 import { GuideFooter } from "@/components/GuideFooter";
-import { OnThisPageNav } from "@/components/OnThisPageNav";
+import { GuideHeader } from "@/components/GuideHeader";
 
 /** In-flow height only — avoid scrollHeight / minHeight on decorations (scroll feedback loop). */
 function readPageHeight(main: HTMLElement): number {
@@ -68,16 +68,18 @@ export function GuideLayout({
       >
         <BgAnimalField pageHeight={pageHeight} />
       </div>
+      <div className="relative z-30 w-full pointer-events-auto">
+        <GuideHeader rootId={id} />
+      </div>
       <div
         ref={contentRef}
-        className="relative z-10 mx-auto w-full max-w-2xl flex-1 px-6 pt-20 md:pt-28 pointer-events-auto"
+        className="relative z-10 mx-auto w-full max-w-2xl flex-1 px-6 pt-12 md:pt-16 pointer-events-auto"
       >
         {children}
       </div>
       <div className="relative z-10 w-full pointer-events-auto">
         <GuideFooter />
       </div>
-      {id ? <OnThisPageNav rootId={id} /> : null}
     </main>
   );
 }
