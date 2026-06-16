@@ -9,6 +9,7 @@ import {
 import { BgAnimalField } from "@/components/BgAnimalField";
 import { GuideFooter } from "@/components/GuideFooter";
 import { GuideHeader } from "@/components/GuideHeader";
+import { OnThisPageNav } from "@/components/OnThisPageNav";
 
 /** In-flow height only — avoid scrollHeight / minHeight on decorations (scroll feedback loop). */
 function readPageHeight(main: HTMLElement): number {
@@ -80,6 +81,7 @@ export function GuideLayout({
       <div className="relative z-10 w-full pointer-events-auto">
         <GuideFooter />
       </div>
+      {id ? <OnThisPageNav rootId={id} /> : null}
     </main>
   );
 }
