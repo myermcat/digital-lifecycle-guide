@@ -42,7 +42,7 @@ export function ContractingLandingPage() {
       </header>
 
       <section className={guideProseSpace}>
-        {CONTRACTING_LANDING.intro.map((paragraph) => (
+        {CONTRACTING_LANDING.intro.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
       </section>
