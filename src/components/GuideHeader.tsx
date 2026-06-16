@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { REGIONS } from "@/lib/guide-strings";
-import { OnThisPageNav } from "@/components/OnThisPageNav";
 
 /**
  * Site header — calm, editorial chrome that sits above the page content.
@@ -9,7 +8,7 @@ import { OnThisPageNav } from "@/components/OnThisPageNav";
  * the region links, and (when a `rootId` is provided) an inline
  * "On this page" nav drawn from the page's sections.
  */
-export function GuideHeader({ rootId }: { rootId?: string }) {
+export function GuideHeader({ rootId: _rootId }: { rootId?: string }) {
   const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
 
   return (
@@ -55,10 +54,7 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
             </Link>
           </nav>
 
-          {/* On-this-page lives on the right */}
-          <div className="ml-auto flex items-center">
-            {rootId ? <OnThisPageNav rootId={rootId} variant="inline" /> : null}
-          </div>
+          <div className="ml-auto" />
         </div>
       </div>
       {/* Thin GoC-red accent under the header */}
