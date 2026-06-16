@@ -9,7 +9,7 @@ import {
 import { BgAnimalField } from "@/components/BgAnimalField";
 import { GuideFooter } from "@/components/GuideFooter";
 import { GuideHeader } from "@/components/GuideHeader";
-import { OnThisPageNav } from "@/components/OnThisPageNav";
+import { OnThisPageRail } from "@/components/OnThisPageRail";
 
 /** In-flow height only — avoid scrollHeight / minHeight on decorations (scroll feedback loop). */
 function readPageHeight(main: HTMLElement): number {
@@ -74,14 +74,26 @@ export function GuideLayout({
       </div>
       <div
         ref={contentRef}
-        className="relative z-10 mx-auto w-full max-w-2xl flex-1 px-6 pt-12 md:pt-16 pointer-events-auto"
+        className="relative z-10 w-full flex-1 px-6 pt-12 md:pt-16 pointer-events-auto"
       >
-        {children}
+        {!id ? (
+          <div className="mx-auto w-full max-w-2xl">{children}</div>
+        ) : (
+          <div className="mx-auto w-full max-w-2xl lg:max-w-5xl">
+            <div className="lg:flex lg:justify-center">
+              <div className="w-full lg:flex lg:items-start lg:gap-14 lg:w-auto">
+                <div className="min-w-0 w-full max-w-2xl">{children}</div>
+                {/* Spacer only (rail is fixed-position on desktop). */}
+                <div className="hidden lg:block w-[240px] shrink-0" aria-hidden="true" />
+              </div>
+            </div>
+            <OnThisPageRail rootId={id} />
+          </div>
+        )}
       </div>
       <div className="relative z-10 w-full pointer-events-auto">
         <GuideFooter />
       </div>
-      {id ? <OnThisPageNav rootId={id} /> : null}
     </main>
   );
 }

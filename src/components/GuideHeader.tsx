@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { REGIONS } from "@/lib/guide-strings";
 
@@ -8,7 +9,7 @@ import { REGIONS } from "@/lib/guide-strings";
  * the region links, and (when a `rootId` is provided) an inline
  * "On this page" nav drawn from the page's sections.
  */
-export function GuideHeader({ rootId: _rootId }: { rootId?: string }) {
+export function GuideHeader({ rootId }: { rootId?: string }) {
   const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
 
   return (
@@ -54,7 +55,9 @@ export function GuideHeader({ rootId: _rootId }: { rootId?: string }) {
             </Link>
           </nav>
 
-          <div className="ml-auto" />
+          <div className="ml-auto flex items-center lg:hidden">
+            {rootId ? <OnThisPageNav rootId={rootId} /> : null}
+          </div>
         </div>
       </div>
       {/* Thin GoC-red accent under the header */}
