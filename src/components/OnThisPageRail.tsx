@@ -88,11 +88,11 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
       className="hidden lg:block w-[240px] shrink-0 self-stretch"
     >
       <div className="sticky top-24">
-        <div className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm px-4 py-4">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/55 font-sans mb-3">
+        <div className="rounded-xl border border-border/35 bg-background/30 px-3 py-3">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/40 font-sans mb-2.5">
             On this page
           </p>
-          <ol className="list-none pl-0 space-y-2">
+          <ol className="list-none pl-0 space-y-1.5">
             {items.map((item) => {
               const active = item.id === activeId;
               return (
@@ -102,10 +102,10 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
                     onClick={() => scrollToSection(item.id)}
                     aria-current={active ? "true" : undefined}
                     className={cn(
-                      "w-full text-left text-[13px] leading-relaxed transition-colors border-l-2 pl-3 -ml-[2px]",
+                      "w-full text-left text-[13px] leading-relaxed transition-colors border-l pl-2.5 -ml-px",
                       active
-                        ? "border-primary text-primary font-medium"
-                        : "border-transparent text-foreground/65 hover:text-foreground hover:border-foreground/30",
+                        ? "border-primary/80 text-primary/90 font-medium"
+                        : "border-transparent text-foreground/50 hover:text-foreground/70 hover:border-foreground/20",
                       "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
                     )}
                   >
