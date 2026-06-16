@@ -9,7 +9,7 @@ export function PracticeGroups({ groups }: { groups: PracticeGroup[] }) {
   return (
     <div
       className="rounded-3xl p-5 md:p-7 shadow-inner space-y-8"
-      style={{ backgroundColor: "var(--region-group)" }}
+      style={{ backgroundColor: "var(--phase-group)" }}
     >
       {groups.map((group, i) => (
         <div key={i} className={i > 0 ? "pt-2 border-t border-border/60" : undefined}>

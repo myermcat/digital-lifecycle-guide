@@ -27,7 +27,7 @@ export function ThreeReviewLevelsBlock({
               <Link
                 to={item.href}
                 className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
-                style={{ backgroundColor: "var(--region-group)" }}
+                style={{ backgroundColor: "var(--phase-group)" }}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
                   {item.tag}
@@ -42,7 +42,7 @@ export function ThreeReviewLevelsBlock({
               <a
                 href={item.href}
                 className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
-                style={{ backgroundColor: "var(--region-group)" }}
+                style={{ backgroundColor: "var(--phase-group)" }}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
                   {item.tag}

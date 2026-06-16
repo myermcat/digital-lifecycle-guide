@@ -17,11 +17,11 @@ type SearchIndexRecord = {
   pagePath: string;
   sectionId: string;
   sectionHeading: string;
-  region: string;
+  lifecyclePhase: string;
   text: string;
 };
 
-function inferRegion(path: string) {
+function inferLifecyclePhase(path: string) {
   if (path.startsWith("/create")) return "create";
   if (path.startsWith("/live")) return "live";
   if (path.startsWith("/sunset")) return "sunset";
@@ -52,7 +52,7 @@ for (const page of PAGE_INDEX) {
     pagePath: page.path,
     sectionId: "",
     sectionHeading: page.title,
-    region: inferRegion(page.path),
+    lifecyclePhase: inferLifecyclePhase(page.path),
     text: "",
   });
 }
@@ -124,9 +124,9 @@ for (const page of PAGE_INDEX) {
       text: PROCUREMENT_STRINGS.whoseJob.text,
     },
     {
-      sectionId: "by-region",
-      sectionHeading: "What it looks like in each region",
-      text: PROCUREMENT_STRINGS.byRegionIntro,
+      sectionId: "by-phase",
+      sectionHeading: "What it looks like in each phase",
+      text: PROCUREMENT_STRINGS.byPhaseIntro,
     },
     {
       sectionId: "further-reading",
@@ -143,7 +143,7 @@ for (const page of PAGE_INDEX) {
       pagePath,
       sectionId: section.sectionId,
       sectionHeading: section.sectionHeading,
-      region: inferRegion(pagePath),
+      lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
     });
   }
@@ -168,7 +168,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       pagePath,
       sectionId: section.id,
       sectionHeading: section.title,
-      region: inferRegion(pagePath),
+      lifecyclePhase: inferLifecyclePhase(pagePath),
       text: concat(
         ...(section.paragraphs ?? []),
         bulletText,
@@ -197,7 +197,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     pagePath,
     sectionId: SOO_VS_SOW.whatEachOneIs.id,
     sectionHeading: SOO_VS_SOW.whatEachOneIs.title,
-    region: inferRegion(pagePath),
+    lifecyclePhase: inferLifecyclePhase(pagePath),
     text: concat(SOO_VS_SOW.opening, SOO_VS_SOW.whatEachOneIs.body),
   });
 
@@ -207,7 +207,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     pagePath,
     sectionId: SOO_VS_SOW.workTogether.id,
     sectionHeading: SOO_VS_SOW.workTogether.title,
-    region: inferRegion(pagePath),
+    lifecyclePhase: inferLifecyclePhase(pagePath),
     text: SOO_VS_SOW.workTogether.body,
   });
 
@@ -217,7 +217,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     pagePath,
     sectionId: SOO_VS_SOW.workedExample.id,
     sectionHeading: SOO_VS_SOW.workedExample.title,
-    region: inferRegion(pagePath),
+    lifecyclePhase: inferLifecyclePhase(pagePath),
     text: concat(...SOO_VS_SOW.workedExample.paragraphs),
   });
 }
@@ -234,7 +234,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       pagePath,
       sectionId: section.id,
       sectionHeading: section.title,
-      region: inferRegion(pagePath),
+      lifecyclePhase: inferLifecyclePhase(pagePath),
       text: concat(...section.paragraphs),
     });
   }

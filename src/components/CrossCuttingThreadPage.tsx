@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
-import { REGIONS, type RegionId } from "@/lib/guide-strings";
+import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import type { ThreadContent } from "@/lib/thread-content";
 import {
   guideProse,
@@ -18,8 +18,8 @@ export function CrossCuttingThreadPage({
   content: ThreadContent;
   children?: ReactNode;
 }) {
-  const regionNotes = new Map(
-    content.byRegion.map((note) => [note.region, note.body] as const),
+  const phaseNotes = new Map(
+    content.byPhase.map((note) => [note.lifecyclePhase, note.body] as const),
   );
 
   return (
@@ -63,17 +63,17 @@ export function CrossCuttingThreadPage({
         <p className={guideProse}>{content.whoseJob}</p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-region">
-        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each region</h2>
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
+        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each phase</h2>
         <div className={`${guideProseSpace} mt-4`}>
-          {(["create", "live", "sunset"] as RegionId[]).map((regionId) => (
-            <div key={regionId}>
+          {(["create", "live", "sunset"] as LifecyclePhaseId[]).map((phaseId) => (
+            <div key={phaseId}>
               <h3 className="font-serif text-lg font-semibold text-primary/80 tracking-tight">
-                {REGIONS[regionId].title}
+                {PHASES[phaseId].title}
               </h3>
               <p className="mt-1">
-                {regionNotes.get(regionId) ??
-                  "This page will describe how this thread applies during this region."}
+                {phaseNotes.get(phaseId) ??
+                  "This page will describe how this thread applies during this phase."}
               </p>
             </div>
           ))}

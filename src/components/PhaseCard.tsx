@@ -15,7 +15,7 @@ export interface SubItem {
   href: string;
 }
 
-interface RegionCardProps {
+interface PhaseCardProps {
   heading: string;
   expandedIntro: string;
   subItems?: SubItem[];
@@ -27,13 +27,13 @@ function isInternalHref(href: string) {
   return href.startsWith("/");
 }
 
-export function RegionCard({
+export function PhaseCard({
   heading,
   expandedIntro,
   subItems,
   deepLink,
   visual,
-}: RegionCardProps) {
+}: PhaseCardProps) {
   const hydrated = useHydrated();
   const [open, setOpen] = useState(false);
 

@@ -29,4 +29,4 @@ export function DashedArrow({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "./RegionVisuals.icons";
+export { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "./PhaseVisuals.icons";

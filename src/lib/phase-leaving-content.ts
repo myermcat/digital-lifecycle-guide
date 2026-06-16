@@ -2,7 +2,7 @@ import type { LookingAheadPill } from "@/components/LookingAhead";
 import { threadPath } from "@/lib/guide-strings";
 
 export const LOOKING_AHEAD_INTRO =
-  "Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this phase, and roughly when to begin.";
+  "Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this subphase, and roughly when to begin.";
 
 export type PhaseLeavingExit = {
   lead: string;
@@ -166,7 +166,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     phaseName: "Maturity",
     sectionId: "leaving-maturity",
     intro:
-      "Maturity is the longest phase, but not permanent. Three things can move a service out of it.",
+      "Maturity is the longest subphase, but not permanent. Three things can move a service out of it.",
     exits: [
       {
         lead: "Back to Growth,",
@@ -226,7 +226,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     exits: [
       {
         lead: "Out of the lifecycle,",
-        rest: "when the service is retired or fully replaced, the data is moved, and the contract is closed. There is no next phase.",
+        rest: "when the service is retired or fully replaced, the data is moved, and the contract is closed. There is no next subphase.",
       },
     ],
     pills: [

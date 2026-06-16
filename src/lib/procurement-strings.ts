@@ -1,6 +1,6 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import type { WeightedRegionNote } from "@/components/WeightedRegionBlock";
+import type { WeightedPhaseNote } from "@/components/WeightedPhaseBlock";
 import { MANAGING_WHAT_YOU_BOUGHT_PATH } from "@/lib/reference-paths";
 
 export type ProcurementJourneyStepStrings = {
@@ -130,7 +130,7 @@ export const PROCUREMENT_STRINGS = {
         label: "Manage",
         title: "Manage the contract.",
         leadIn: "Signing is where the real work begins.",
-        body: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset regions.",
+        body: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases.",
         internalLinks: [
           { phrase: "Live", to: "/live" },
           { phrase: "Sunset", to: "/sunset" },
@@ -281,26 +281,26 @@ export const PROCUREMENT_STRINGS = {
     ],
   } satisfies LinkedProseStrings,
 
-  byRegionIntro:
+  byPhaseIntro:
     "Procurement runs through the whole life of a service, but it weighs more at some stages than others.",
 
-  byRegion: [
+  byPhase: [
     {
-      region: "create" as const,
+      lifecyclePhase: "create" as const,
       weight: "heavy" as const,
       body: "Heaviest. Diagnose, set the strategy, go to market, award. Almost every decision that will bind you is made here.",
     },
     {
-      region: "live" as const,
+      lifecyclePhase: "live" as const,
       weight: "medium" as const,
       body: "You have stopped buying. Now you hold the supplier to what was agreed, watch the relationship for drift, and keep the service improving so it does not gradually age into a forced replacement.",
     },
     {
-      region: "sunset" as const,
+      lifecyclePhase: "sunset" as const,
       weight: "light" as const,
       body: "You are leaving. Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time. Data moves, knowledge transfers, and what you bought is retired or replaced.",
     },
-  ] satisfies WeightedRegionNote[],
+  ] satisfies WeightedPhaseNote[],
 
   furtherReading: {
     text: "This thread comes under the Treasury Board Directive on the Management of Procurement, which takes an outcomes-based, lifecycle view of buying. Its closest internal companion is the PSPC Agile Procurement Guide, on the GC network, which this thread leans on for the agile patterns. It also draws on the Boots and Clarke guide to reforming IT procurement in Canada, the UK Service Manual, and Skylight's open agile procurement playbook, all translated to Canadian rules.",

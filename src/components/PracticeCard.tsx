@@ -36,7 +36,7 @@ function PracticeCardLink({
       <Link
         to={href}
         className={className}
-        style={{ backgroundColor: "var(--region-group)" }}
+        style={{ backgroundColor: "var(--phase-group)" }}
       >
         {inner}
       </Link>
@@ -47,7 +47,7 @@ function PracticeCardLink({
     <a
       href={href}
       className={className}
-      style={{ backgroundColor: "var(--region-group)" }}
+      style={{ backgroundColor: "var(--phase-group)" }}
     >
       {inner}
     </a>

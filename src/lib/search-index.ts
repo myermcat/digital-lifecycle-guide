@@ -4,7 +4,7 @@ export type SearchIndexRecord = {
   pagePath: string;
   sectionId: string;
   sectionHeading: string;
-  region: string;
+  lifecyclePhase: string;
   text: string;
 };
 

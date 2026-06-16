@@ -13,7 +13,7 @@ import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
 import {
   guideArticleCalloutLift,
-  guideArticleNote,
+  guideAsideNote,
   guideArticleProse,
 } from "@/lib/guide-article";
 import { guideLink, guideProse } from "@/lib/guide-typography";
@@ -120,14 +120,14 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
             <p
               key={paragraph}
               className={
-                section.paragraphsAfterBulletsVariant === "note" ? guideArticleNote : undefined
+                section.paragraphsAfterBulletsVariant === "note" ? guideAsideNote : undefined
               }
             >
               {paragraph}
             </p>
           ))}
           {section.paragraphsAfterNote?.map((paragraph) => (
-            <p key={paragraph} className={guideArticleNote}>
+            <p key={paragraph} className={guideAsideNote}>
               {paragraph}
             </p>
           ))}

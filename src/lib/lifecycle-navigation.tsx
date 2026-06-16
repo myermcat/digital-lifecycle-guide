@@ -3,39 +3,54 @@ import {
   ArrowInVisual,
   ArrowOutVisual,
   InfinityVisual,
-} from "@/components/RegionVisuals";
-import { REGIONS, type RegionId } from "@/lib/guide-strings";
+} from "@/components/PhaseVisuals";
+import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 
-export type { RegionId };
+export type { LifecyclePhaseId };
 
-export interface PhaseNavItem {
+/** @deprecated Use LifecyclePhaseId */
+export type RegionId = LifecyclePhaseId;
+
+export interface SubphaseNavItem {
   title: string;
   href: string;
   slug: string;
 }
 
-export const CREATE_PHASES: PhaseNavItem[] = [
+/** @deprecated Use SubphaseNavItem */
+export type PhaseNavItem = SubphaseNavItem;
+
+export const CREATE_SUBPHASES: SubphaseNavItem[] = [
   { title: "Discovery", href: "/create-discovery", slug: "discovery" },
   { title: "Alpha", href: "/create-alpha", slug: "alpha" },
   { title: "MVP", href: "/create-mvp", slug: "mvp" },
 ];
 
-export const LIVE_PHASES: PhaseNavItem[] = [
+export const LIVE_SUBPHASES: SubphaseNavItem[] = [
   { title: "Stabilization", href: "/live-stabilization", slug: "stabilization" },
   { title: "Growth", href: "/live-growth", slug: "growth" },
   { title: "Maturity", href: "/live-maturity", slug: "maturity" },
 ];
 
-export const SUNSET_PHASES: PhaseNavItem[] = [
+export const SUNSET_SUBPHASES: SubphaseNavItem[] = [
   { title: "Shutdown", href: "/sunset-shutdown", slug: "shutdown" },
   { title: "Transition", href: "/sunset-transition", slug: "transition" },
 ];
 
-/** @deprecated Use CREATE_PHASES */
-export const BUILD_PHASES = CREATE_PHASES;
+/** @deprecated Use CREATE_SUBPHASES */
+export const CREATE_PHASES = CREATE_SUBPHASES;
 
-export function regionVisual(region: RegionId): ReactNode {
-  switch (region) {
+/** @deprecated Use LIVE_SUBPHASES */
+export const LIVE_PHASES = LIVE_SUBPHASES;
+
+/** @deprecated Use SUNSET_SUBPHASES */
+export const SUNSET_PHASES = SUNSET_SUBPHASES;
+
+/** @deprecated Use CREATE_SUBPHASES */
+export const BUILD_PHASES = CREATE_SUBPHASES;
+
+export function phaseVisual(phaseId: LifecyclePhaseId): ReactNode {
+  switch (phaseId) {
     case "create":
       return <ArrowInVisual />;
     case "live":
@@ -45,64 +60,76 @@ export function regionVisual(region: RegionId): ReactNode {
   }
 }
 
+/** @deprecated Use phaseVisual */
+export const regionVisual = phaseVisual;
+
 export interface WhereThisFitsConfig {
-  regionLabel: string;
-  regionVisual: RegionId;
-  phases: { title: string; href: string; current?: boolean }[];
-  regionLink?: { title: string; href: string };
-  priorRegionLink?: { title: string; href: string };
+  phaseLabel: string;
+  phaseVisual: LifecyclePhaseId;
+  subphases: { title: string; href: string; current?: boolean }[];
+  nextPhaseLink?: { title: string; href: string };
+  priorPhaseLink?: { title: string; href: string };
 }
 
-export function whereThisFitsForCreatePhase(
+export function whereThisFitsForCreateSubphase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: REGIONS.create.title,
-    regionVisual: "create",
-    phases: CREATE_PHASES.map((p) => ({
+    phaseLabel: PHASES.create.title,
+    phaseVisual: "create",
+    subphases: CREATE_SUBPHASES.map((p) => ({
       title: p.title,
       href: p.href,
       current: p.slug === currentSlug,
     })),
-    regionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
+    nextPhaseLink: { title: PHASES.live.title, href: PHASES.live.href },
   };
 }
 
-/** @deprecated Use whereThisFitsForCreatePhase */
-export const whereThisFitsForBuildPhase = whereThisFitsForCreatePhase;
+/** @deprecated Use whereThisFitsForCreateSubphase */
+export const whereThisFitsForCreatePhase = whereThisFitsForCreateSubphase;
 
-export function whereThisFitsForLivePhase(
+/** @deprecated Use whereThisFitsForCreateSubphase */
+export const whereThisFitsForBuildPhase = whereThisFitsForCreateSubphase;
+
+export function whereThisFitsForLiveSubphase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: REGIONS.live.title,
-    regionVisual: "live",
-    phases: LIVE_PHASES.map((p) => ({
+    phaseLabel: PHASES.live.title,
+    phaseVisual: "live",
+    subphases: LIVE_SUBPHASES.map((p) => ({
       title: p.title,
       href: p.href,
       current: p.slug === currentSlug,
     })),
-    regionLink: { title: REGIONS.sunset.title, href: REGIONS.sunset.href },
+    nextPhaseLink: { title: PHASES.sunset.title, href: PHASES.sunset.href },
   };
 }
 
-export function whereThisFitsForSunsetRegion(): WhereThisFitsConfig {
+/** @deprecated Use whereThisFitsForLiveSubphase */
+export const whereThisFitsForLivePhase = whereThisFitsForLiveSubphase;
+
+export function whereThisFitsForSunsetPhaseLanding(): WhereThisFitsConfig {
   return {
-    regionLabel: REGIONS.sunset.title,
-    regionVisual: "sunset",
-    priorRegionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
-    phases: [],
+    phaseLabel: PHASES.sunset.title,
+    phaseVisual: "sunset",
+    priorPhaseLink: { title: PHASES.live.title, href: PHASES.live.href },
+    subphases: [],
   };
 }
 
-export function whereThisFitsForSunsetPhase(
+/** @deprecated Use whereThisFitsForSunsetPhaseLanding */
+export const whereThisFitsForSunsetRegion = whereThisFitsForSunsetPhaseLanding;
+
+export function whereThisFitsForSunsetSubphase(
   currentSlug: string | null,
 ): WhereThisFitsConfig {
   return {
-    regionLabel: REGIONS.sunset.title,
-    regionVisual: "sunset",
-    priorRegionLink: { title: REGIONS.live.title, href: REGIONS.live.href },
-    phases: SUNSET_PHASES.map((p) => ({
+    phaseLabel: PHASES.sunset.title,
+    phaseVisual: "sunset",
+    priorPhaseLink: { title: PHASES.live.title, href: PHASES.live.href },
+    subphases: SUNSET_SUBPHASES.map((p) => ({
       title: p.title,
       href: p.href,
       current: p.slug === currentSlug,
@@ -110,92 +137,123 @@ export function whereThisFitsForSunsetPhase(
   };
 }
 
-export const REGION_META: Record<
-  RegionId,
+/** @deprecated Use whereThisFitsForSunsetSubphase */
+export const whereThisFitsForSunsetPhase = whereThisFitsForSunsetSubphase;
+
+export const LIFECYCLE_PHASE_META: Record<
+  LifecyclePhaseId,
   { title: string; href: string; subtitle: string }
 > = {
   create: {
-    title: REGIONS.create.title,
-    href: REGIONS.create.href,
-    subtitle: REGIONS.create.subtitle,
+    title: PHASES.create.title,
+    href: PHASES.create.href,
+    subtitle: PHASES.create.subtitle,
   },
   live: {
-    title: REGIONS.live.title,
-    href: REGIONS.live.href,
-    subtitle: REGIONS.live.subtitle,
+    title: PHASES.live.title,
+    href: PHASES.live.href,
+    subtitle: PHASES.live.subtitle,
   },
   sunset: {
-    title: REGIONS.sunset.title,
-    href: REGIONS.sunset.href,
-    subtitle: REGIONS.sunset.subtitle,
+    title: PHASES.sunset.title,
+    href: PHASES.sunset.href,
+    subtitle: PHASES.sunset.subtitle,
   },
 };
 
-export const PHASE_META: Record<
+/** @deprecated Use LIFECYCLE_PHASE_META */
+export const REGION_META = LIFECYCLE_PHASE_META;
+
+export const SUBPHASE_META: Record<
   string,
   {
-    region: RegionId;
-    regionHref: string;
-    phase: string;
+    lifecyclePhase: LifecyclePhaseId;
+    lifecyclePhaseHref: string;
+    subphase: string;
     subtitle: string;
     path: string;
     where: () => WhereThisFitsConfig;
   }
 > = {
   discovery: {
-    region: "create",
-    regionHref: REGIONS.create.href,
-    phase: "Discovery",
+    lifecyclePhase: "create",
+    lifecyclePhaseHref: PHASES.create.href,
+    subphase: "Discovery",
     subtitle: "Understand the problem before you commit to a solution.",
     path: "/create-discovery",
-    where: () => whereThisFitsForCreatePhase("discovery"),
+    where: () => whereThisFitsForCreateSubphase("discovery"),
   },
   alpha: {
-    region: "create",
-    regionHref: REGIONS.create.href,
-    phase: "Alpha",
+    lifecyclePhase: "create",
+    lifecyclePhaseHref: PHASES.create.href,
+    subphase: "Alpha",
     subtitle: "Try things out cheaply before you build the real one.",
     path: "/create-alpha",
-    where: () => whereThisFitsForCreatePhase("alpha"),
+    where: () => whereThisFitsForCreateSubphase("alpha"),
   },
   mvp: {
-    region: "create",
-    regionHref: REGIONS.create.href,
-    phase: "MVP",
+    lifecyclePhase: "create",
+    lifecyclePhaseHref: PHASES.create.href,
+    subphase: "MVP",
     subtitle: "Build the first real version that will go live.",
     path: "/create-mvp",
-    where: () => whereThisFitsForCreatePhase("mvp"),
+    where: () => whereThisFitsForCreateSubphase("mvp"),
   },
   stabilization: {
-    region: "live",
-    regionHref: REGIONS.live.href,
-    phase: "Stabilization",
+    lifecyclePhase: "live",
+    lifecyclePhaseHref: PHASES.live.href,
+    subphase: "Stabilization",
     subtitle: "Stabilize the service right after it goes live.",
     path: "/live-stabilization",
-    where: () => whereThisFitsForLivePhase("stabilization"),
+    where: () => whereThisFitsForLiveSubphase("stabilization"),
   },
   growth: {
-    region: "live",
-    regionHref: REGIONS.live.href,
-    phase: "Growth",
+    lifecyclePhase: "live",
+    lifecyclePhaseHref: PHASES.live.href,
+    subphase: "Growth",
     subtitle: "Add capability as more users arrive.",
     path: "/live-growth",
-    where: () => whereThisFitsForLivePhase("growth"),
+    where: () => whereThisFitsForLiveSubphase("growth"),
   },
   shutdown: {
-    region: "sunset",
-    regionHref: REGIONS.sunset.href,
-    phase: "Shutdown",
+    lifecyclePhase: "sunset",
+    lifecyclePhaseHref: PHASES.sunset.href,
+    subphase: "Shutdown",
     subtitle: "End the program when there is no successor.",
     path: "/sunset-shutdown",
-    where: () => whereThisFitsForSunsetPhase("shutdown"),
+    where: () => whereThisFitsForSunsetSubphase("shutdown"),
   },
   transition: {
-    region: "sunset",
-    regionHref: REGIONS.sunset.href,
-    phase: "Transition",
+    lifecyclePhase: "sunset",
+    lifecyclePhaseHref: PHASES.sunset.href,
+    subphase: "Transition",
     subtitle: "Move users to a successor when one is taking over.",
     path: "/sunset-transition",
-    where: () => whereThisFitsForSunsetPhase("transition"),
+    where: () => whereThisFitsForSunsetSubphase("transition"),
   },
 };
+
+/** @deprecated Use SUBPHASE_META */
+export const PHASE_META = Object.fromEntries(
+  Object.entries(SUBPHASE_META).map(([slug, meta]) => [
+    slug,
+    {
+      region: meta.lifecyclePhase,
+      regionHref: meta.lifecyclePhaseHref,
+      phase: meta.subphase,
+      subtitle: meta.subtitle,
+      path: meta.path,
+      where: meta.where,
+    },
+  ]),
+) as Record<
+  string,
+  {
+    region: LifecyclePhaseId;
+    regionHref: string;
+    phase: string;
+    subtitle: string;
+    path: string;
+    where: () => WhereThisFitsConfig;
+  }
+>;

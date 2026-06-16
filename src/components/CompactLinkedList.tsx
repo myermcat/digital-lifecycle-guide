@@ -79,7 +79,7 @@ export function CompactLinkedList({ items }: { items: CompactLinkedItem[] }) {
         <li
           key={item.href}
           className={`${guideProseTight} rounded-xl border border-border/80 px-4 py-3.5`}
-          style={{ backgroundColor: "var(--region-group)" }}
+          style={{ backgroundColor: "var(--phase-group)" }}
         >
           <span className="font-semibold text-foreground/90">{item.title}</span> {item.body}{" "}
           <a href={item.href} className={guideLink}>

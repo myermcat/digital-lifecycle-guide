@@ -1,13 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { RegionCard } from "@/components/RegionCard";
+import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { guideProse, guideProseSpace } from "@/lib/guide-typography";
-import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/RegionVisuals";
-import { REGIONS } from "@/lib/guide-strings";
-import { CREATE_PHASES, LIVE_PHASES } from "@/lib/lifecycle-navigation";
+import { guideProse, guideProseSpace, guideArrowList } from "@/lib/guide-typography";
+import { guideAsideNote } from "@/lib/guide-article";
+import { GuideArrowBullet } from "@/lib/guide-lists";
+import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
+import { PHASES } from "@/lib/guide-strings";
+import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
+import lifecycleVisual from "@/assets/lifecycle_three_regions_bow.svg?url";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,53 +58,111 @@ function Index() {
           </p>
         </section>
 
-        <section className="mt-14 md:mt-20">
-          <h2 className="sr-only">The three regions of a digital service's life</h2>
+        <figure className="mt-12 md:mt-14 mx-auto max-w-3xl">
+          <img
+            src={lifecycleVisual}
+            alt="The three phases of a digital service: a small loop labelled Create, an arrow into a large infinity loop labelled Live, then a fading arrow to a small pale loop labelled Sunset."
+            className="w-full h-auto"
+            width={760}
+            height={250}
+          />
+        </figure>
+
+        <section className={`mt-10 md:mt-12 max-w-xl ${guideProseSpace}`}>
+          <p>
+            Every digital service, whatever it does, runs into the same handful of questions
+            over its life. What problem are we solving, and for whom. Is the solution working
+            for the people who use it. Is it still the right solution. When is it time to let
+            it go. The questions repeat. What changes is where you are in the life of the
+            service when you ask them.
+          </p>
+          <p>That life falls into three phases.</p>
+          <ul className={guideArrowList}>
+            <li className="flex gap-2.5">
+              <GuideArrowBullet />
+              <p>
+                <span className="font-semibold text-foreground/90">Create.</span> It starts with
+                a problem to solve, well before any system exists. From &ldquo;we have a
+                problem&rdquo; to a working solution in real users&rsquo; hands, you are
+                figuring out what the problem really is, deciding how to solve it, and building
+                or buying that solution. Almost everything that follows is shaped here.
+              </p>
+            </li>
+            <li className="flex gap-2.5">
+              <GuideArrowBullet />
+              <p>
+                <span className="font-semibold text-foreground/90">Live.</span> The longest phase
+                by far. The solution is running, and you are keeping it useful: watching how it
+                performs, improving it, and meeting new needs as they arrive.
+              </p>
+            </li>
+            <li className="flex gap-2.5">
+              <GuideArrowBullet />
+              <p>
+                <span className="font-semibold text-foreground/90">Sunset.</span> The solution is
+                reaching its end, and the work is figuring out how to retire or replace it
+                cleanly. You plan the decommission, move or archive the data, and bring users
+                safely onto whatever comes next. You are out of Sunset when the old service is
+                fully shut down and its data and people have a safe home, often a new service
+                that begins its own Create.
+              </p>
+            </li>
+          </ul>
+          <p className={guideAsideNote}>
+            Not sure which phase you are in? The quickest test is where your feedback comes from.
+            In Create it comes from sketches, prototypes, and conversations about what you might
+            build. In Live it comes from the running system: real users, real data, real bugs.
+            In Sunset you have mostly stopped gathering feedback and started closing things down.
+          </p>
+        </section>
+
+        <section className="mt-12 md:mt-16">
+          <h2 className="sr-only">The three phases of a digital service&apos;s life</h2>
           <div
             className="rounded-3xl p-5 md:p-7 shadow-inner"
-            style={{ backgroundColor: "var(--region-group)" }}
+            style={{ backgroundColor: "var(--phase-group)" }}
           >
             <p className="text-xs uppercase tracking-[0.22em] text-foreground/60 mb-4 text-center">
-              The three regions
+              The three phases
             </p>
             <div className="grid gap-5 sm:grid-cols-3">
-            <RegionCard
-              heading={REGIONS.create.title}
-              expandedIntro={REGIONS.create.expandedIntro}
+            <PhaseCard
+              heading={PHASES.create.title}
+              expandedIntro={PHASES.create.expandedIntro}
               visual={<ArrowInVisual />}
-              subItems={CREATE_PHASES.map((phase) => ({
-                title: phase.title,
+              subItems={CREATE_SUBPHASES.map((subphase) => ({
+                title: subphase.title,
                 description:
-                  phase.slug === "discovery"
+                  subphase.slug === "discovery"
                     ? "Understand the problem before you commit to a solution."
-                    : phase.slug === "alpha"
+                    : subphase.slug === "alpha"
                       ? "Try things out cheaply before you build the real one."
                       : "Build the first real version that will go live.",
-                href: phase.href,
+                href: subphase.href,
               }))}
-              deepLink={{ href: REGIONS.create.href, label: REGIONS.create.deepLinkLabel }}
+              deepLink={{ href: PHASES.create.href, label: PHASES.create.deepLinkLabel }}
             />
-            <RegionCard
-              heading={REGIONS.live.title}
-              expandedIntro={REGIONS.live.expandedIntro}
+            <PhaseCard
+              heading={PHASES.live.title}
+              expandedIntro={PHASES.live.expandedIntro}
               visual={<InfinityVisual />}
-              subItems={LIVE_PHASES.map((phase) => ({
-                title: phase.title,
+              subItems={LIVE_SUBPHASES.map((subphase) => ({
+                title: subphase.title,
                 description:
-                  phase.slug === "stabilization"
+                  subphase.slug === "stabilization"
                     ? "Stabilize the service right after it goes live."
-                    : phase.slug === "growth"
+                    : subphase.slug === "growth"
                       ? "Add capability as more users arrive."
                       : "Keep the service healthy over the long term.",
-                href: phase.href,
+                href: subphase.href,
               }))}
-              deepLink={{ href: REGIONS.live.href, label: REGIONS.live.deepLinkLabel }}
+              deepLink={{ href: PHASES.live.href, label: PHASES.live.deepLinkLabel }}
             />
-            <RegionCard
-              heading={REGIONS.sunset.title}
-              expandedIntro={REGIONS.sunset.expandedIntro}
+            <PhaseCard
+              heading={PHASES.sunset.title}
+              expandedIntro={PHASES.sunset.expandedIntro}
               visual={<ArrowOutVisual />}
-              deepLink={{ href: REGIONS.sunset.href, label: REGIONS.sunset.deepLinkLabel }}
+              deepLink={{ href: PHASES.sunset.href, label: PHASES.sunset.deepLinkLabel }}
             />
             </div>
           </div>

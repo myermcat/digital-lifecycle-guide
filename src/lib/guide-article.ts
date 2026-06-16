@@ -31,6 +31,10 @@ export const guideArticleQaQuestion = `${guideProse} font-medium text-primary bo
 /** Dialogue Q&A: answer line — smaller, plainer, slightly indented. */
 export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 md:ml-4 mt-2.5`;
 
-/** Light aside below a block — thin weight, low contrast. Not main body copy. */
-export const guideArticleNote =
+/** Light aside below a list or block — smaller sans, low contrast. Not main body copy.
+ *  Example: "One option is left off this ladder on purpose…" (You looked before you bought). */
+export const guideAsideNote =
   "mt-3 font-sans text-xs leading-[1.45] text-foreground/45 font-normal";
+
+/** @deprecated Use guideAsideNote */
+export const guideArticleNote = guideAsideNote;

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Georgia, 'Times New Roman', serif" style="">
+  <title id="t" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">The three phases of a digital service</title>
+  <desc id="d" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">A small loop labelled Create, an arrow into a large infinity loop labelled Live, then a fading arrow to a small pale loop labelled Sunset.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1432f"/>
+    </marker>
+    <marker id="ahp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1432f" fill-opacity="0.5"/>
+    </marker>
+    <marker id="ahs" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1432f"/>
+    </marker>
+  </defs>
+
+  <!-- Create: small loop -->
+  <path d="M 96 104 A 24 24 0 1 1 92 102" fill="none" stroke="#b1432f" stroke-width="2.6" marker-end="url(#ahs)" style="fill:none;stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2.6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- arrow into Live -->
+  <line x1="110" y1="116" x2="178" y2="116" stroke="#b1432f" stroke-width="2.4" marker-end="url(#ah)" style="fill:rgb(0, 0, 0);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Live: infinity loop -->
+  <path d="M 366 116 C 300 60, 210 60, 196 116 C 210 172, 300 172, 366 116 C 432 60, 538 60, 552 116 C 538 172, 432 172, 366 116 Z" fill="none" stroke="#b1432f" stroke-width="3.2" style="fill:none;stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:3.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- arrow into Sunset (dashed, fading) -->
+  <line x1="560" y1="116" x2="650" y2="116" stroke="#b1432f" stroke-width="2.2" stroke-opacity="0.5" stroke-dasharray="6 6" marker-end="url(#ahp)" style="fill:rgb(0, 0, 0);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2.2px;stroke-dasharray:6px, 6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Sunset: small pale loop -->
+  <path d="M 700 104 A 24 24 0 1 1 696 102" fill="none" stroke="#b1432f" stroke-width="2.4" stroke-opacity="0.5" marker-end="url(#ahs)" style="fill:none;stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2.4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- labels -->
+  <g text-anchor="middle" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:16px;font-weight:400;text-anchor:middle;dominant-baseline:auto">
+    <text x="78" y="178" fill="#4a3b30" font-size="17" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:17px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Create</text>
+    <text x="78" y="197" fill="#8a7a6d" font-size="11.5" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(138, 122, 109);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Build or buy it</text>
+
+    <text x="374" y="212" fill="#4a3b30" font-size="17" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:17px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Live</text>
+    <text x="374" y="231" fill="#8a7a6d" font-size="11.5" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(138, 122, 109);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Run it, improve it</text>
+
+    <text x="682" y="178" fill="#4a3b30" fill-opacity="0.7" font-size="17" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:17px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Sunset</text>
+    <text x="682" y="197" fill="#8a7a6d" font-size="11.5" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(138, 122, 109);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Retire or replace it</text>
+  </g>
+</svg>

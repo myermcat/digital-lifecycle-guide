@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
-import { REGIONS } from "@/lib/guide-strings";
+import { PHASES } from "@/lib/guide-strings";
 
 /**
  * Site footer — Government of Canada–inflected, calm to match the guide.
@@ -9,7 +9,7 @@ import { REGIONS } from "@/lib/guide-strings";
  */
 export function GuideFooter() {
   const year = new Date().getFullYear();
-  const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
+  const lifecyclePhases = [PHASES.create, PHASES.live, PHASES.sunset];
 
   return (
     <footer className="mt-20 md:mt-28 w-full">
@@ -33,8 +33,8 @@ export function GuideFooter() {
               <FooterLink to={ALL_PAGES_PATH}>All pages</FooterLink>
             </FooterColumn>
 
-            <FooterColumn title="Regions">
-              {regions.map((r) => (
+            <FooterColumn title="Phases">
+              {lifecyclePhases.map((r) => (
                 <FooterLink key={r.id} to={r.href}>
                   {r.title}
                 </FooterLink>

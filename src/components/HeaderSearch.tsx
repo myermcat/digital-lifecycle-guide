@@ -36,7 +36,7 @@ function useSearchData(open: boolean) {
             "pagePath",
             "sectionId",
             "sectionHeading",
-            "region",
+            "lifecyclePhase",
             "text",
           ],
           searchOptions: {

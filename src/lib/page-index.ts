@@ -1,4 +1,4 @@
-import { REGIONS, THREADS, practicePath, reviewPath } from "./guide-strings";
+import { PHASES, THREADS, practicePath, reviewPath } from "./guide-strings";
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { SOO_VS_SOW_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH } from "./reference-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
@@ -8,7 +8,7 @@ import { ALL_PAGES_PATH } from "./all-pages-path";
 
 export { ALL_PAGES_PATH };
 
-export type PageIndexType = "region" | "phase" | "thread" | "reference" | "other";
+export type PageIndexType = "phase" | "subphase" | "thread" | "reference" | "other";
 
 export type PageIndexStatus = "not-started" | "in-progress" | "in-review" | "done";
 
@@ -26,18 +26,18 @@ export type PageIndexEntry = {
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
 
-  { title: REGIONS.create.title, path: REGIONS.create.href, type: "region", status: "in-progress" },
-  { title: REGIONS.live.title, path: REGIONS.live.href, type: "region", status: "in-progress" },
-  { title: REGIONS.sunset.title, path: REGIONS.sunset.href, type: "region", status: "in-progress" },
+  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
+  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-progress" },
+  { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-progress" },
 
-  { title: "Discovery", path: "/create-discovery", type: "phase", status: "in-progress" },
-  { title: "Alpha", path: "/create-alpha", type: "phase", status: "in-progress" },
-  { title: "MVP", path: "/create-mvp", type: "phase", status: "in-progress" },
-  { title: "Stabilization", path: "/live-stabilization", type: "phase", status: "in-progress" },
-  { title: "Growth", path: "/live-growth", type: "phase", status: "in-progress" },
-  { title: "Maturity", path: "/live-maturity", type: "phase", status: "in-review" },
-  { title: "Shutdown", path: "/sunset-shutdown", type: "phase", status: "not-started" },
-  { title: "Transition", path: "/sunset-transition", type: "phase", status: "not-started" },
+  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-progress" },
+  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-progress" },
+  { title: "MVP", path: "/create-mvp", type: "subphase", status: "in-progress" },
+  { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "in-progress" },
+  { title: "Growth", path: "/live-growth", type: "subphase", status: "in-progress" },
+  { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
+  { title: "Shutdown", path: "/sunset-shutdown", type: "subphase", status: "not-started" },
+  { title: "Transition", path: "/sunset-transition", type: "subphase", status: "not-started" },
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-progress" },
   {
@@ -144,16 +144,16 @@ export const PAGE_INDEX: PageIndexEntry[] = [
 ];
 
 export const PAGE_INDEX_TYPE_ORDER: PageIndexType[] = [
-  "region",
   "phase",
+  "subphase",
   "thread",
   "reference",
   "other",
 ];
 
 export const PAGE_INDEX_TYPE_LABELS: Record<PageIndexType, string> = {
-  region: "Regions",
   phase: "Phases",
+  subphase: "Subphases",
   thread: "Threads",
   reference: "Reference",
   other: "Other",

@@ -1,14 +1,17 @@
-import { REGIONS, type RegionId } from "@/lib/guide-strings";
+import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 
-export type WeightedRegionNote = {
-  region: RegionId;
+export type WeightedPhaseNote = {
+  lifecyclePhase: LifecyclePhaseId;
   body: string;
   weight: "heavy" | "medium" | "light";
 };
 
+/** @deprecated Use WeightedPhaseNote */
+export type WeightedRegionNote = WeightedPhaseNote;
+
 const weightStyles: Record<
-  WeightedRegionNote["weight"],
+  WeightedPhaseNote["weight"],
   { box: string; title: string; body: string }
 > = {
   heavy: {
@@ -28,22 +31,39 @@ const weightStyles: Record<
   },
 };
 
-export function WeightedRegionBlock({ regions }: { regions: WeightedRegionNote[] }) {
+export function WeightedPhaseBlock({ phases }: { phases: WeightedPhaseNote[] }) {
   return (
     <div className={`${guideProseSpace} mt-4`}>
-      {regions.map((note) => {
+      {phases.map((note) => {
         const styles = weightStyles[note.weight];
         return (
           <div
-            key={note.region}
+            key={note.lifecyclePhase}
             className={styles.box}
-            style={{ backgroundColor: "var(--region-group)" }}
+            style={{ backgroundColor: "var(--phase-group)" }}
           >
-            <h3 className={styles.title}>{REGIONS[note.region].title}.</h3>
+            <h3 className={styles.title}>{PHASES[note.lifecyclePhase].title}.</h3>
             <p className={`mt-2 ${styles.body}`}>{note.body}</p>
           </div>
         );
       })}
     </div>
+  );
+}
+
+/** @deprecated Use WeightedPhaseBlock */
+export function WeightedRegionBlock({
+  regions,
+}: {
+  regions: Array<WeightedPhaseNote & { region?: LifecyclePhaseId }>;
+}) {
+  return (
+    <WeightedPhaseBlock
+      phases={regions.map((note) => ({
+        lifecyclePhase: note.lifecyclePhase ?? note.region!,
+        body: note.body,
+        weight: note.weight,
+      }))}
+    />
   );
 }

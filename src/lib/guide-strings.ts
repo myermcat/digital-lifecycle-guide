@@ -1,12 +1,12 @@
 /**
- * Central naming for the guide — regions, threads, review levels, and shared copy.
+ * Central naming for the guide — lifecycle phases, threads, review levels, and shared copy.
  * Import from here when displaying labels or building routes.
  */
 
 export const GUIDE_ASSUMPTIONS_TEXT =
   "You are already working to the Government of Canada Digital Standards, design with users, iterate and improve frequently, work in the open, use open standards, address security and privacy, build in accessibility, empower staff, be good data stewards, design ethical services, and collaborate widely, and to the law on privacy, security, official languages, and accessibility. This guide builds on those.";
 
-export const REGIONS = {
+export const PHASES = {
   create: {
     id: "create" as const,
     title: "Create",
@@ -14,8 +14,8 @@ export const REGIONS = {
     subtitle:
       "Figure out what to build and deliver the first version that will go live.",
     expandedIntro:
-      "The Create region covers figuring out what to build and delivering the first version that will go live. Each phase has its own page.",
-    deepLinkLabel: "Go to the Create region",
+      "The Create phase covers figuring out what to build and delivering the first version that will go live. Each subphase has its own page.",
+    deepLinkLabel: "Go to the Create phase",
   },
   live: {
     id: "live" as const,
@@ -23,8 +23,8 @@ export const REGIONS = {
     href: "/live",
     subtitle: "Run the service after it goes live.",
     expandedIntro:
-      "The Live region covers running a service after it goes live. Each phase has its own page.",
-    deepLinkLabel: "Go to the Live region",
+      "The Live phase covers running a service after it goes live. Each subphase has its own page.",
+    deepLinkLabel: "Go to the Live phase",
   },
   sunset: {
     id: "sunset" as const,
@@ -32,14 +32,23 @@ export const REGIONS = {
     href: "/sunset",
     subtitle: "Shut down the service or move users to what comes next.",
     expandedIntro:
-      "The Sunset region covers ending a service or moving users to what comes next. In Canadian government, transitions are far more common than shutdowns.",
-    deepLinkLabel: "Go to the Sunset region",
+      "The Sunset phase covers ending a service or moving users to what comes next. In Canadian government, transitions are far more common than shutdowns.",
+    deepLinkLabel: "Go to the Sunset phase",
   },
 } as const;
 
-export type RegionId = keyof typeof REGIONS;
+export type LifecyclePhaseId = keyof typeof PHASES;
 
-export const REGION_ORDER: RegionId[] = ["create", "live", "sunset"];
+/** @deprecated Use LifecyclePhaseId */
+export type RegionId = LifecyclePhaseId;
+
+export const PHASE_ORDER: LifecyclePhaseId[] = ["create", "live", "sunset"];
+
+/** @deprecated Use PHASES */
+export const REGIONS = PHASES;
+
+/** @deprecated Use PHASE_ORDER */
+export const REGION_ORDER = PHASE_ORDER;
 
 export const REVIEW_LEVELS = {
   "internal-team-review": {

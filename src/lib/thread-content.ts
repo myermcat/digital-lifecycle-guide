@@ -1,8 +1,14 @@
-import type { RegionId } from "@/lib/guide-strings";
+import type { LifecyclePhaseId } from "@/lib/guide-strings";
 import { THREADS, type ThreadSlug } from "@/lib/guide-strings";
 
+export interface ThreadPhaseNote {
+  lifecyclePhase: LifecyclePhaseId;
+  body: string;
+}
+
+/** @deprecated Use ThreadPhaseNote */
 export interface ThreadRegionNote {
-  region: RegionId;
+  lifecyclePhase: LifecyclePhaseId;
   body: string;
 }
 
@@ -18,7 +24,7 @@ export interface ThreadContent {
   whatGoodLooksLike: string[];
   whyItMatters: string;
   whoseJob: string;
-  byRegion: ThreadRegionNote[];
+  byPhase: ThreadPhaseNote[];
   /** Optional thematic sections (e.g. Joined-up delivery). */
   topicSections?: ThreadTopicSection[];
   furtherReading: { label: string; href: string }[];
@@ -40,17 +46,17 @@ function placeholderThread(
     ],
     whyItMatters: `This page will cover the principle and human stakes behind ${title.toLowerCase()}.`,
     whoseJob: `This page will explain how ${title.toLowerCase()} is shared across the team, not owned by one person.`,
-    byRegion: [
+    byPhase: [
       {
-        region: "create",
+        lifecyclePhase: "create",
         body: `This page will describe how ${title.toLowerCase()} shows up during Create.`,
       },
       {
-        region: "live",
+        lifecyclePhase: "live",
         body: `This page will describe how ${title.toLowerCase()} shows up during Live.`,
       },
       {
-        region: "sunset",
+        lifecyclePhase: "sunset",
         body: `This page will describe how ${title.toLowerCase()} shows up during Sunset.`,
       },
     ],
@@ -74,17 +80,17 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
       "A service that works for some people but not others is not finished. Accessibility is about dignity and equal access — and about building something that still works when circumstances, devices, or abilities change.",
     whoseJob:
       "Accessibility is shared work. Designers, developers, content authors, and product owners each carry part of it. No single role can own it alone.",
-    byRegion: [
+    byPhase: [
       {
-        region: "create",
+        lifecyclePhase: "create",
         body: "Bake accessibility in from the start: inclusive research, accessible prototypes, and standards in acceptance criteria before anything goes live.",
       },
       {
-        region: "live",
+        lifecyclePhase: "live",
         body: "Most of the ongoing work lives here: regression testing, monitoring for drift, fixing issues from user feedback, and keeping assistive technology compatibility current.",
       },
       {
-        region: "sunset",
+        lifecyclePhase: "sunset",
         body: "Keep accessible paths open until the last user has moved on. Do not remove support channels or documentation people still rely on.",
       },
     ],
@@ -116,17 +122,17 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
       "Without instrumentation, you are guessing. A service can feel fine while failing users without you noticing. Monitoring is how you notice problems before they become crises.",
     whoseJob:
       "Developers instrument the service. The whole team chooses what to watch and acts on what they see. Dashboards are a team tool, not a vanity display.",
-    byRegion: [
+    byPhase: [
       {
-        region: "create",
+        lifecyclePhase: "create",
         body: "Decide what to measure before go-live. Build instrumentation into the first real version, not as an afterthought.",
       },
       {
-        region: "live",
+        lifecyclePhase: "live",
         body: "Most monitoring work lives here: dashboards, alerts, performance tracking, and turning signals into backlog items.",
       },
       {
-        region: "sunset",
+        lifecyclePhase: "sunset",
         body: "Keep monitoring until the last user has moved on. Watch for stragglers and failures during transition.",
       },
     ],
@@ -186,17 +192,17 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
       "A user does not care which team owns which system. They care whether they can finish what they came to do.",
     whoseJob:
       "Joined-up delivery is shared. Product owners, service owners, and channel leads each carry part of keeping the whole journey coherent.",
-    byRegion: [
+    byPhase: [
       {
-        region: "create",
+        lifecyclePhase: "create",
         body: "Map the user journey across services early. Design handoffs before building in isolation.",
       },
       {
-        region: "live",
+        lifecyclePhase: "live",
         body: "Most coordination work lives here: keeping adjacent services aligned and all channels current as the service evolves.",
       },
       {
-        region: "sunset",
+        lifecyclePhase: "sunset",
         body: "Coordinate the exit across services and channels so users are not stranded between old and new.",
       },
     ],

@@ -10,7 +10,7 @@ export function DashboardBlock({
   return (
     <div
       className="mt-5 rounded-2xl border border-border overflow-hidden shadow-sm"
-      style={{ backgroundColor: "var(--region-group)" }}
+      style={{ backgroundColor: "var(--phase-group)" }}
       aria-label="Example service dashboard"
     >
       <div className="px-4 py-3 border-b border-border/80 flex items-center justify-between gap-3">

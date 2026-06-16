@@ -8,7 +8,7 @@ import { ProcurementScopeCallout } from "@/components/ProcurementScopeCallout";
 import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
-import { WeightedRegionBlock } from "@/components/WeightedRegionBlock";
+import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
 import { WhatStaysYoursBlock } from "@/components/WhatStaysYoursBlock";
 import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
@@ -99,10 +99,10 @@ export function ProcurementLandingPage() {
         </p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-region">
-        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each region</h2>
-        <p className={`${guideProse} mb-2`}>{landing.byRegionIntro}</p>
-        <WeightedRegionBlock regions={landing.byRegion} />
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
+        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each phase</h2>
+        <p className={`${guideProse} mb-2`}>{landing.byPhaseIntro}</p>
+        <WeightedPhaseBlock phases={landing.byPhase} />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">

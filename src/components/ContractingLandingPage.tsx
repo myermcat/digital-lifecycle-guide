@@ -4,7 +4,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
-import { WeightedRegionBlock } from "@/components/WeightedRegionBlock";
+import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
 import {
   CONTRACTING_GOOD_LOOKS_CARDS,
   CONTRACTING_LANDING,
@@ -68,10 +68,10 @@ export function ContractingLandingPage() {
         </p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-region">
-        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each region</h2>
-        <p className={`${guideProse} mb-2`}>{CONTRACTING_LANDING.byRegionIntro}</p>
-        <WeightedRegionBlock regions={CONTRACTING_LANDING.byRegion} />
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
+        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each phase</h2>
+        <p className={`${guideProse} mb-2`}>{CONTRACTING_LANDING.byPhaseIntro}</p>
+        <WeightedPhaseBlock phases={CONTRACTING_LANDING.byPhase} />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">

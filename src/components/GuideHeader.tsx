@@ -3,17 +3,17 @@ import { List } from "lucide-react";
 import { HeaderSearch } from "@/components/HeaderSearch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
-import { REGIONS } from "@/lib/guide-strings";
+import { PHASES } from "@/lib/guide-strings";
 import { cn } from "@/lib/utils";
 
 /**
  * Site header — calm, editorial chrome that sits above the page content.
  * Carries the guide wordmark, a thin red Government-of-Canada accent,
- * the region links, and (when a `rootId` is provided) an inline
+ * the lifecycle phase links, and (when a `rootId` is provided) an inline
  * "On this page" nav drawn from the page's sections.
  */
 export function GuideHeader({ rootId }: { rootId?: string }) {
-  const regions = [REGIONS.create, REGIONS.live, REGIONS.sunset];
+  const lifecyclePhases = [PHASES.create, PHASES.live, PHASES.sunset];
 
   return (
     <header className="sticky top-0 z-40 w-full">
@@ -34,12 +34,12 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
             </span>
           </Link>
 
-          {/* Region nav — hides labels on small screens, keeps tappable */}
+          {/* Lifecycle phase nav — hides labels on small screens, keeps tappable */}
           <nav
-            aria-label="Regions"
+            aria-label="Phases"
             className="hidden md:flex items-center gap-5 ml-2"
           >
-            {regions.map((r) => (
+            {lifecyclePhases.map((r) => (
               <Link
                 key={r.id}
                 to={r.href}

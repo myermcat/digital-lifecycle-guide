@@ -5,7 +5,7 @@ import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PracticeActivitiesPanel } from "@/components/PracticeActivitiesPanel";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
-import { whereThisFitsForLivePhase } from "@/lib/lifecycle-navigation";
+import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
 import { PhaseSection } from "@/components/PhaseSection";
 import { DashboardBlock } from "@/components/DashboardBlock";
 import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/live-maturity")({
       {
         name: "description",
         content:
-          "The mature life of a digital service in the Live region — operating and improving an existing service.",
+          "The mature life of a digital service in the Live phase — operating and improving an existing service.",
       },
     ],
   }),
@@ -33,22 +33,24 @@ export const Route = createFileRoute("/live-maturity")({
 function LiveMaturityPage() {
   return (
     <GuideLayout id="live-maturity">
-      <PhaseBreadcrumb region="Live" regionHref="/live" phase="Maturity" />
+      <PhaseBreadcrumb lifecyclePhase="Live" lifecyclePhaseHref="/live" subphase="Maturity" />
 
       <section className="mt-5 md:mt-6">
-        <WhereThisFits {...whereThisFitsForLivePhase("maturity")} />
+        <WhereThisFits {...whereThisFitsForLiveSubphase("maturity")} />
       </section>
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>
-          You are no longer delivering major new features. Most of the work is keeping the
-          service healthy, secure, affordable, and useful to the people who rely on it.
+          Maturity is about keeping a working service alive and well. The big build is behind
+          you, and most of the effort now goes to keeping the service healthy, secure,
+          affordable, and useful to the people who rely on it.
         </p>
         <p>
-          Maturity is not maintenance only. You will continue to make improvements,
-          respond to what users tell you, and replace parts of the service over time. The
-          difference from earlier phases is that you are operating and improving an
-          existing service rather than building a new one.
+          Maturity is not maintenance only. You still improve it: you fix what users flag, tune
+          performance, patch dependencies, and replace ageing parts over time, and you still
+          deliver some new features, usually smaller ones. What sets Maturity apart from the
+          earlier subphases is that you are caring for an existing service rather than building
+          a new one.
         </p>
       </section>
 
@@ -190,7 +192,7 @@ function LiveMaturityPage() {
         </PracticeActivitiesPanel>
       </PhaseSection>
 
-      <ProcurementCallout phaseId="live-maturity" />
+      <ProcurementCallout subphaseId="live-maturity" />
 
       <PhaseSection title="Watching the right signals" sectionId="watching-signals">
         <DashboardBlock />

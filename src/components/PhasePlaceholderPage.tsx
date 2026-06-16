@@ -12,31 +12,35 @@ import { guideProseSpace } from "@/lib/guide-typography";
 
 interface PhasePlaceholderPageProps {
   id: string;
-  region: string;
-  regionHref: string;
-  phase?: string;
+  lifecyclePhase: string;
+  lifecyclePhaseHref: string;
+  subphase?: string;
   /** Opening prose below Where this fits (same role as Maturity intro). */
   intro: string;
   whereThisFits: WhereThisFitsConfig;
-  phaseLeavingSlug?: PhaseLeavingSlug;
+  subphaseLeavingSlug?: PhaseLeavingSlug;
 }
 
 export function PhasePlaceholderPage({
   id,
-  region,
-  regionHref,
-  phase,
+  lifecyclePhase,
+  lifecyclePhaseHref,
+  subphase,
   intro,
   whereThisFits,
-  phaseLeavingSlug,
+  subphaseLeavingSlug,
 }: PhasePlaceholderPageProps) {
-  const leavingContent = phaseLeavingSlug
-    ? getPhaseLeavingContent(phaseLeavingSlug)
+  const leavingContent = subphaseLeavingSlug
+    ? getPhaseLeavingContent(subphaseLeavingSlug)
     : null;
 
   return (
     <GuideLayout id={id}>
-      <PhaseBreadcrumb region={region} regionHref={regionHref} phase={phase} />
+      <PhaseBreadcrumb
+        lifecyclePhase={lifecyclePhase}
+        lifecyclePhaseHref={lifecyclePhaseHref}
+        subphase={subphase}
+      />
 
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...whereThisFits} />

@@ -7,7 +7,7 @@ import {
 } from "@/lib/phase-leaving-content";
 
 /**
- * Paired "When you need to leave [phase]" block and "Looking ahead" callout.
+ * Paired "When you need to leave [subphase]" block and "Looking ahead" callout.
  * Callout sits directly under the heading; leave-phase prose and exits follow.
  */
 export function PhaseLeavingSection({ content }: { content: PhaseLeavingContent }) {
