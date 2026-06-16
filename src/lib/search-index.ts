@@ -1,0 +1,25 @@
+export type SearchIndexRecord = {
+  id: string;
+  pageTitle: string;
+  pagePath: string;
+  sectionId: string;
+  sectionHeading: string;
+  region: string;
+  text: string;
+};
+
+let cachedRecords: SearchIndexRecord[] | null = null;
+
+export async function loadSearchIndex(): Promise<SearchIndexRecord[]> {
+  if (cachedRecords) return cachedRecords;
+  const res = await fetch(`${import.meta.env.BASE_URL}search-index.json`, {
+    cache: "force-cache",
+  });
+  if (!res.ok) {
+    throw new Error(`Failed to load search index (${res.status})`);
+  }
+  const json = (await res.json()) as SearchIndexRecord[];
+  cachedRecords = json;
+  return json;
+}
+

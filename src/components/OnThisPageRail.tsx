@@ -74,7 +74,6 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
 
     elements.forEach((el) => observer.observe(el));
 
-    // Seed from location hash if present.
     const hash = window.location.hash.replace(/^#/, "");
     if (hash && ids.includes(hash)) setActiveId(hash);
 
@@ -86,37 +85,38 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
   return (
     <nav
       aria-label="On this page"
-      className="hidden lg:block fixed top-24 right-12 w-[240px]"
+      className="hidden lg:block w-[240px] shrink-0 self-stretch"
     >
-      <div className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm px-4 py-4">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/55 font-sans mb-3">
-          On this page
-        </p>
-        <ol className="list-none pl-0 space-y-2">
-          {items.map((item) => {
-            const active = item.id === activeId;
-            return (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  onClick={() => scrollToSection(item.id)}
-                  aria-current={active ? "true" : undefined}
-                  className={cn(
-                    "w-full text-left text-[13px] leading-relaxed transition-colors border-l-2 pl-3 -ml-[2px]",
-                    active
-                      ? "border-primary text-primary font-medium"
-                      : "border-transparent text-foreground/65 hover:text-foreground hover:border-foreground/30",
-                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
-                  )}
-                >
-                  {item.label}
-                </button>
-              </li>
-            );
-          })}
-        </ol>
+      <div className="sticky top-24">
+        <div className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-sm px-4 py-4">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/55 font-sans mb-3">
+            On this page
+          </p>
+          <ol className="list-none pl-0 space-y-2">
+            {items.map((item) => {
+              const active = item.id === activeId;
+              return (
+                <li key={item.id}>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSection(item.id)}
+                    aria-current={active ? "true" : undefined}
+                    className={cn(
+                      "w-full text-left text-[13px] leading-relaxed transition-colors border-l-2 pl-3 -ml-[2px]",
+                      active
+                        ? "border-primary text-primary font-medium"
+                        : "border-transparent text-foreground/65 hover:text-foreground hover:border-foreground/30",
+                      "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
+                    )}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       </div>
     </nav>
   );
 }
-

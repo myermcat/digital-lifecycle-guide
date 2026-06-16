@@ -79,15 +79,13 @@ export function GuideLayout({
         {!id ? (
           <div className="mx-auto w-full max-w-2xl">{children}</div>
         ) : (
-          <div className="mx-auto w-full max-w-2xl lg:max-w-5xl">
+          <div className="mx-auto w-full max-w-2xl lg:max-w-none">
             <div className="lg:flex lg:justify-center">
-              <div className="w-full lg:flex lg:items-start lg:gap-14 lg:w-auto">
+              <div className="w-full lg:flex lg:gap-14 lg:w-auto">
                 <div className="min-w-0 w-full max-w-2xl">{children}</div>
-                {/* Spacer only (rail is fixed-position on desktop). */}
-                <div className="hidden lg:block w-[240px] shrink-0" aria-hidden="true" />
+                <OnThisPageRail rootId={id} />
               </div>
             </div>
-            <OnThisPageRail rootId={id} />
           </div>
         )}
       </div>

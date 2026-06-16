@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { HeaderSearch } from "@/components/HeaderSearch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { REGIONS } from "@/lib/guide-strings";
@@ -55,8 +56,13 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
             </Link>
           </nav>
 
-          <div className="ml-auto flex items-center lg:hidden">
-            {rootId ? <OnThisPageNav rootId={rootId} /> : null}
+          <div className="ml-auto flex items-center gap-3">
+            <HeaderSearch />
+            {rootId ? (
+              <div className="lg:hidden">
+                <OnThisPageNav rootId={rootId} />
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

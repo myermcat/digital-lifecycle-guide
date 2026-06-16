@@ -224,10 +224,10 @@ function LiveMaturityPage() {
 
       <PhaseLeavingSection content={getPhaseLeavingContent("maturity")} />
 
-      <section className="mt-10 md:mt-12">
-        <CautionBlock
-          id="when-this-does-not-work"
-          title="When this does not work"
+      <CautionBlock
+        id="when-this-does-not-work"
+        className="mt-10 md:mt-12"
+        title="When this does not work"
           lead="Doing these activities is not the same as doing them well. A service can run every one of them on the surface and still be failing."
           items={[
             {
@@ -253,7 +253,6 @@ function LiveMaturityPage() {
           ]}
           closing="This playbook is not enough on its own. It describes what to do; it cannot supply the judgement, the team, or the will to do it well. It assumes you bring those."
         />
-      </section>
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
     </GuideLayout>

@@ -1,0 +1,632 @@
+[
+  {
+    "id": "/",
+    "pageTitle": "Home",
+    "pagePath": "/",
+    "sectionId": "",
+    "sectionHeading": "Home",
+    "region": "other",
+    "text": ""
+  },
+  {
+    "id": "/create",
+    "pageTitle": "Create",
+    "pagePath": "/create",
+    "sectionId": "",
+    "sectionHeading": "Create",
+    "region": "create",
+    "text": ""
+  },
+  {
+    "id": "/live",
+    "pageTitle": "Live",
+    "pagePath": "/live",
+    "sectionId": "",
+    "sectionHeading": "Live",
+    "region": "live",
+    "text": ""
+  },
+  {
+    "id": "/sunset",
+    "pageTitle": "Sunset",
+    "pagePath": "/sunset",
+    "sectionId": "",
+    "sectionHeading": "Sunset",
+    "region": "sunset",
+    "text": ""
+  },
+  {
+    "id": "/create-discovery",
+    "pageTitle": "Discovery",
+    "pagePath": "/create-discovery",
+    "sectionId": "",
+    "sectionHeading": "Discovery",
+    "region": "create",
+    "text": ""
+  },
+  {
+    "id": "/create-alpha",
+    "pageTitle": "Alpha",
+    "pagePath": "/create-alpha",
+    "sectionId": "",
+    "sectionHeading": "Alpha",
+    "region": "create",
+    "text": ""
+  },
+  {
+    "id": "/create-mvp",
+    "pageTitle": "MVP",
+    "pagePath": "/create-mvp",
+    "sectionId": "",
+    "sectionHeading": "MVP",
+    "region": "create",
+    "text": ""
+  },
+  {
+    "id": "/live-stabilization",
+    "pageTitle": "Stabilization",
+    "pagePath": "/live-stabilization",
+    "sectionId": "",
+    "sectionHeading": "Stabilization",
+    "region": "live",
+    "text": ""
+  },
+  {
+    "id": "/live-growth",
+    "pageTitle": "Growth",
+    "pagePath": "/live-growth",
+    "sectionId": "",
+    "sectionHeading": "Growth",
+    "region": "live",
+    "text": ""
+  },
+  {
+    "id": "/live-maturity",
+    "pageTitle": "Maturity",
+    "pagePath": "/live-maturity",
+    "sectionId": "",
+    "sectionHeading": "Maturity",
+    "region": "live",
+    "text": ""
+  },
+  {
+    "id": "/sunset-shutdown",
+    "pageTitle": "Shutdown",
+    "pagePath": "/sunset-shutdown",
+    "sectionId": "",
+    "sectionHeading": "Shutdown",
+    "region": "sunset",
+    "text": ""
+  },
+  {
+    "id": "/sunset-transition",
+    "pageTitle": "Transition",
+    "pagePath": "/sunset-transition",
+    "sectionId": "",
+    "sectionHeading": "Transition",
+    "region": "sunset",
+    "text": ""
+  },
+  {
+    "id": "/thread/accessibility",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "",
+    "sectionHeading": "Accessibility",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "",
+    "sectionHeading": "Monitoring and instrumentation",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/releasing-changes",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "",
+    "sectionHeading": "Releasing changes",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/dependencies-and-standards",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "",
+    "sectionHeading": "Dependencies and standards",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/component-eol",
+    "pageTitle": "Component end of life",
+    "pagePath": "/thread/component-eol",
+    "sectionId": "",
+    "sectionHeading": "Component end of life",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/user-research",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "",
+    "sectionHeading": "User research",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/cybersecurity",
+    "pageTitle": "Cybersecurity",
+    "pagePath": "/thread/cybersecurity",
+    "sectionId": "",
+    "sectionHeading": "Cybersecurity",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/privacy",
+    "pageTitle": "Privacy",
+    "pagePath": "/thread/privacy",
+    "sectionId": "",
+    "sectionHeading": "Privacy",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/procurement",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "",
+    "sectionHeading": "Procurement",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/data-stewardship",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "",
+    "sectionHeading": "Data stewardship",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/ethics-and-bias",
+    "pageTitle": "Ethics and bias",
+    "pagePath": "/thread/ethics-and-bias",
+    "sectionId": "",
+    "sectionHeading": "Ethics and bias",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/team-capability",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "",
+    "sectionHeading": "Team capability",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/backlog",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "",
+    "sectionHeading": "Backlog",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/joined-up-delivery",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "",
+    "sectionHeading": "Joined-up delivery",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/reference/soo-vs-sow",
+    "pageTitle": "Statement of objectives vs statement of work",
+    "pagePath": "/reference/soo-vs-sow",
+    "sectionId": "",
+    "sectionHeading": "Statement of objectives vs statement of work",
+    "region": "reference",
+    "text": ""
+  },
+  {
+    "id": "/reference/managing-what-you-bought",
+    "pageTitle": "Managing what you bought, or a hybrid",
+    "pagePath": "/reference/managing-what-you-bought",
+    "sectionId": "",
+    "sectionHeading": "Managing what you bought, or a hybrid",
+    "region": "reference",
+    "text": ""
+  },
+  {
+    "id": "/practice/maturity-orientation",
+    "pageTitle": "Maturity orientation",
+    "pagePath": "/practice/maturity-orientation",
+    "sectionId": "",
+    "sectionHeading": "Maturity orientation",
+    "region": "other",
+    "text": ""
+  },
+  {
+    "id": "/review/internal-team-review",
+    "pageTitle": "Internal team review",
+    "pagePath": "/review/internal-team-review",
+    "sectionId": "",
+    "sectionHeading": "Internal team review",
+    "region": "other",
+    "text": ""
+  },
+  {
+    "id": "/review/external-peer-review",
+    "pageTitle": "External peer review",
+    "pagePath": "/review/external-peer-review",
+    "sectionId": "",
+    "sectionHeading": "External peer review",
+    "region": "other",
+    "text": ""
+  },
+  {
+    "id": "/review/institutional-review",
+    "pageTitle": "Institutional review",
+    "pagePath": "/review/institutional-review",
+    "sectionId": "",
+    "sectionHeading": "Institutional review",
+    "region": "other",
+    "text": ""
+  },
+  {
+    "id": "/thread/procurement#what-work-stays-yours",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "what-work-stays-yours",
+    "sectionHeading": "What work stays yours",
+    "region": "thread",
+    "text": "Whatever your role here, some of the work is yours to carry. Here is what usually lands on your side. How long it takes. Procurement runs on its own clock, often many months from first idea to signed contract. Plan your timelines around it early, so it does not catch you short. The decisions only you can make. What problem you are solving, what good outcomes look like, whether to reuse or buy, and how to break the work into pieces. No one can make these calls for you. What you bring to each approval. Every checkpoint along the way expects something from you, a document, a number, a sign-off, and the work waits until it has it. The accountability. You can hand a supplier the work, but the result is still yours to answer for. When the service stumbles, the responsibility lands on your desk. The long shadow of the buy. Today's contract shapes the whole later life of the service: what it costs, whether you can change it, and whether you can ever move off it. You do not need to be an expert. You need to stay in charge, and to ask when you are unsure."
+  },
+  {
+    "id": "/thread/procurement#how-a-procurement-goes",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "how-a-procurement-goes",
+    "sectionHeading": "How a procurement goes",
+    "region": "thread",
+    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments. Build the team. Buying well is a team sport from the start. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. Choose the strategy. There are two ways to buy, and for digital, agile is the default. There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset regions."
+  },
+  {
+    "id": "/thread/procurement#traditional-vs-agile",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "traditional-vs-agile",
+    "sectionHeading": "Traditional vs agile",
+    "region": "thread",
+    "text": "Requirements. Traditional: Fixed up front, then sent to market. Agile: Start from a challenge and your minimum needs, refine with suppliers. Shape of the buy. Traditional: One or two large contracts. Agile: Several smaller contracts, in series or in parallel. Talking to industry. Traditional: Through formal documents. Agile: Early and often, in workshops and working sessions. Handling change. Traditional: Strategy mostly frozen once approved. Agile: Strategy evolves as you learn. When planning happens. Traditional: Mostly at the start. Agile: All the way through. When you know it worked. Traditional: After award and delivery. Agile: At each increment along the way. Agile is not always faster. The payoff is confidence. You find the problems early, while they are still cheap to fix. And because the work comes in smaller pieces, you see its value earlier too."
+  },
+  {
+    "id": "/thread/procurement#case-study",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "case-study",
+    "sectionHeading": "The same programme, bought two ways",
+    "region": "thread",
+    "text": "The risky way Buy the whole programme as a single contract, awarded to a single supplier, delivered over years. This is how most government buying has been done. Simple to set up and run. One competition, one contract, one supplier, one relationship. For a small team with little procurement capacity, that simplicity is worth a lot. Accountability is in one place. When something goes wrong, there is a single supplier to answer for it and a single contract to hold them to. Less to coordinate. You are not stitching together the work of several suppliers or making sure the pieces fit at the seams. The risk all arrives at the end. You spend months, often years, before you see anything working, and only then learn whether it meets the need. By that point the money is largely spent. You get locked in. Once the supplier is deep in the build, moving away is slow and costly, so departments keep paying even when the work is going badly. Change is expensive. The contract is written around the original plan. When the need shifts, every adjustment becomes a negotiation. One failure can sink the whole programme. Everything rides on a single supplier and a single delivery, so a single bad call puts all of it at risk. The safer way Break the programme into smaller, tightly scoped contracts that build on each other, often across several suppliers. This is the agile default. Value shows up early. Each piece delivers something usable in weeks or months, so the service starts helping people sooner and you learn from real use as you go. You can course-correct. A weak supplier or a wrong turn costs you one small piece you can replace, rather than the whole programme. Change is cheaper. The next piece absorbs the new need, so the work bends with reality. Risk is spread. No single delivery or supplier can take the whole thing down. More suppliers can compete. Smaller pieces let smaller and more specialised firms bid, which widens the field and can lower cost. More coordination falls on you. Several contracts and suppliers mean more relationships to manage and more seams to keep aligned. Keeping pieces small takes discipline. A \"small\" piece drifts back into a monolith if no one holds the line. It needs more procurement attention up front. Designing the pieces and how they fit is real work, and in-house capacity for it is often thin. Integration becomes your problem. When different suppliers build different parts, making them work together lands on your side."
+  },
+  {
+    "id": "/thread/procurement#what-good-looks-like",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "region": "thread",
+    "text": "A handful of things, all of which you can check. Each one has its own page."
+  },
+  {
+    "id": "/thread/procurement#why-it-matters",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "region": "thread",
+    "text": "The contract decides the future of your service. What it costs over its life. Whether you can change it. Whether you can ever move off it. Most of that is settled the day you sign, and undoing it later is slow and expensive. A good buy leaves your options open. A bad one closes them over time, for as long as the service runs, often without anyone noticing until it is too late. Buying the agile way lowers the worst risk of all, the two-year effort that ends in \"start over.\" When you can correct course along the way, you are never far from solid ground."
+  },
+  {
+    "id": "/thread/procurement#whose-job",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "region": "thread",
+    "text": "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way."
+  },
+  {
+    "id": "/thread/procurement#by-region",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "by-region",
+    "sectionHeading": "What it looks like in each region",
+    "region": "thread",
+    "text": "Procurement runs through the whole life of a service, but it weighs more at some stages than others."
+  },
+  {
+    "id": "/thread/procurement#further-reading",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "region": "thread",
+    "text": "This thread comes under the Treasury Board Directive on the Management of Procurement, which takes an outcomes-based, lifecycle view of buying. Its closest internal companion is the PSPC Agile Procurement Guide, on the GC network, which this thread leans on for the agile patterns. It also draws on the Boots and Clarke guide to reforming IT procurement in Canada, the UK Service Manual, and Skylight's open agile procurement playbook, all translated to Canadian rules."
+  },
+  {
+    "id": "/thread/procurement#sources",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "region": "thread",
+    "text": "Sources and references."
+  },
+  {
+    "id": "/thread/procurement/you-looked-before-you-bought#start-with-the-problem",
+    "pageTitle": "You looked before you bought",
+    "pagePath": "/thread/procurement/you-looked-before-you-bought",
+    "sectionId": "start-with-the-problem",
+    "sectionHeading": "Start with the problem, not the product",
+    "region": "thread",
+    "text": "Before you name a solution, name the need. Who are the users, what is going wrong for them, what would good actually look like, and how would you know you had reached it? A clear problem is worth more than a clever solution, because every later decision gets measured against it. Write it down plainly, and be ready to find that the real problem is not the one you assumed."
+  },
+  {
+    "id": "/thread/procurement/you-looked-before-you-bought#walk-the-options",
+    "pageTitle": "You looked before you bought",
+    "pagePath": "/thread/procurement/you-looked-before-you-bought",
+    "sectionId": "walk-the-options",
+    "sectionHeading": "Then walk the options, in order",
+    "region": "thread",
+    "text": "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder. Use what you already have. Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, then you buy. And you can explain why when someone asks. And if the thing does not exist yet, ask around before you set up a buy of your own. If another team needs the same thing, join up and buy it once for both of you. One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on."
+  },
+  {
+    "id": "/thread/procurement/you-looked-before-you-bought#where-to-look",
+    "pageTitle": "You looked before you bought",
+    "pagePath": "/thread/procurement/you-looked-before-you-bought",
+    "sectionId": "where-to-look",
+    "sectionHeading": "Where to look",
+    "region": "thread",
+    "text": "Before you commit to a buy, check whether something already exists elsewhere in government. Links pending (John Currah's team and Jessica Lahoud) Enterprise architecture repository Enterprise solutions catalog"
+  },
+  {
+    "id": "/thread/procurement/you-looked-before-you-bought#do-the-homework",
+    "pageTitle": "You looked before you bought",
+    "pagePath": "/thread/procurement/you-looked-before-you-bought",
+    "sectionId": "do-the-homework",
+    "sectionHeading": "Do the homework before you commit",
+    "region": "thread",
+    "text": "Look at how other departments solved the same thing, and what it cost them. Look at other jurisdictions with similar rules, the UK, Australia, and borrow rather than start from scratch. Read the guidance that already exists. You are almost never the first person to face this problem, and learning from someone who already paid for the mistake is the cheapest research you will do."
+  },
+  {
+    "id": "/thread/procurement/you-looked-before-you-bought#why-it-matters",
+    "pageTitle": "You looked before you bought",
+    "pagePath": "/thread/procurement/you-looked-before-you-bought",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why this matters",
+    "region": "thread",
+    "text": "An afternoon of options work can save you a two-year procurement for something you did not need to buy, or point you at a far better answer than the one you would have rushed into. PSPC's procurement guidance begins after the decision to buy is made. This step is on you, and it decides where the biggest savings and the biggest regrets land."
+  },
+  {
+    "id": "/thread/procurement/the-contract-carries-the-practices#cannot-outsource-responsibility",
+    "pageTitle": "The contract carries the practices",
+    "pagePath": "/thread/procurement/the-contract-carries-the-practices",
+    "sectionId": "cannot-outsource-responsibility",
+    "sectionHeading": "You cannot outsource the responsibility",
+    "region": "thread",
+    "text": "User research, accessibility, security, keeping the service usable and safe: none of these stop being your job because a supplier is at the keyboard. If the service is not accessible, your department is the one that has shut people out, no matter who wrote the code. So when you buy the work, the practices do not go away. They move into the contract, and into the things you check the supplier on."
+  },
+  {
+    "id": "/thread/procurement/the-contract-carries-the-practices#playbook-becomes-spec",
+    "pageTitle": "The contract carries the practices",
+    "pagePath": "/thread/procurement/the-contract-carries-the-practices",
+    "sectionId": "playbook-becomes-spec",
+    "sectionHeading": "The playbook becomes the spec",
+    "region": "thread",
+    "text": "This is the useful part. Every practice in this guide is something you can ask for in a contract, and the contract is where you say what the supplier has to deliver. So the playbook turns into the checklist you build that contract from. For each practice that matters, there are two moves: Name it. Put it in the contract as a real deliverable. Good clause: \"The supplier will run usability testing in each phase with at least five participants from the service's real user groups, including people who use assistive technology, and give the findings to the department.\" Bad clause: \"The supplier will do user research with real users.\" Govern it. Decide how you will see it being done. If you cannot check a practice, you cannot govern it. Ask for the proof: the research write-ups, the accessibility audit, the test results. Where you can, write the measure into the contract, and make it specific. “Pages load in under three seconds for almost everyone” is checkable. “The service will be fast” is not. It is the same idea as a good dashboard: the number has to be measured, not guessed. Those measures are what you hold the supplier to, and what you pay against."
+  },
+  {
+    "id": "/thread/procurement/the-contract-carries-the-practices#what-department-does",
+    "pageTitle": "The contract carries the practices",
+    "pagePath": "/thread/procurement/the-contract-carries-the-practices",
+    "sectionId": "what-department-does",
+    "sectionHeading": "What the department actually does",
+    "region": "thread",
+    "text": "When you build it yourself, you do the work. When you buy it, your job is to make sure the supplier does it, and does it well. That is its own kind of work, and it takes real time and attention. People sometimes treat buying as the lighter option. It usually isn't. It also means you cannot govern what you do not understand. To know whether the supplier's research was any good, someone on your side has to know what good research looks like. To know whether the security work is real, someone has to be able to read the answer. These are the same skills the rest of the playbook teaches. You are using them to govern a supplier instead of to do the work, but they are the same skills."
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#build-the-way-you-code",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "build-the-way-you-code",
+    "sectionHeading": "Build it the way you would code it",
+    "region": "thread",
+    "text": "If you were building the service yourself, you would not write the whole thing in one sitting. You would work out the shape of it, build a piece, check that it works, then build the next piece on top. Small steps you can test. You fix your course as you learn. Buying in pieces is the same habit applied to contracts. Instead of one big contract for the whole job, you write several smaller ones, each for a real piece of work. The architecture is a piece. Moving the data is a piece. Each part of the service is a piece. You buy them in an order where each one teaches you something before the next begins. Why bother, when one big contract feels simpler? Because small pieces show their value early, and their problems early too. If a supplier underperforms, you replace that piece, not the whole programme. If needs change, the next piece absorbs the change. Risk and cost stay in hand because nothing rides on a single, distant delivery. This helps because building a service is full of things you cannot know up front. Whether the technology fits. Whether it clashes with what you already run. Whether the problem turns out harder than it looked. A single big contract bets that you got all of that right before you started. You almost never do. Small contracts let you find out cheaply and change course."
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#modular-not-split",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "modular-not-split",
+    "sectionHeading": "Modular, not split: the line you cannot cross",
+    "region": "thread",
+    "text": "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about. Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule. Modular contracting is legal, and the Directive actually leans toward it: it favours contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand or fall on its own, often going to different suppliers, because that produces a better result. Nothing is hidden. Each piece is competed in the open at its real size. The fear to name out loud: this is not contract splitting. Splitting is taking the same work and slicing it to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine, separately useful increments is a different thing, and it is allowed. If the whole exceeds the level that needs a competition, the pieces still go to competition. You are changing the shape of the buying, not hiding its size. The test is simple. Would these pieces exist as separate work even if there were no dollar limit to dodge? If they would, because they are genuinely different deliverables, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones."
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#write-objectives",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "write-objectives",
+    "sectionHeading": "Write objectives, not a fixed list",
+    "region": "thread",
+    "text": "How you write what the supplier must do decides whether buying in pieces is even workable. The usual way is a statement of work: a fixed list of exactly what gets built and how, written as if you already know everything. It reads like “the supplier shall build these screens, in this order, by this date.” That suits things that do not change. It suits digital work badly, because you do not know everything up front, and every time you learn something new you have to reopen the contract to change the list. A statement of objectives works better for digital. You write down the goals, and bring in people who can work out what to build to meet them. It reads like “here is what this service has to achieve, and who it is for.” The details can shift as you learn, because the contract is tied to the goal, not to a frozen list. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful."
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#worked-example",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "worked-example",
+    "sectionHeading": "A worked example",
+    "region": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#honest-cost",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "honest-cost",
+    "sectionHeading": "The honest cost of buying in pieces",
+    "region": "thread",
+    "text": "Buying in pieces is not free. It asks more of you, not less. There are more contracts to run, more suppliers to coordinate, and you need someone holding the whole picture so the pieces fit. This is real work, and it is why people reach for one big contract instead. What you get for the effort is this: the big contract feels easier, right up to the point where it fails, and then it fails all at once with the money already spent. Buying in pieces costs you more attention along the way and far less when something goes wrong. You are spending coordination now to avoid a much bigger bill later."
+  },
+  {
+    "id": "/thread/procurement/you-bought-small-in-pieces#common-worries",
+    "pageTitle": "You bought small, in pieces",
+    "pagePath": "/thread/procurement/you-bought-small-in-pieces",
+    "sectionId": "common-worries",
+    "sectionHeading": "But won't this be a hard sell? Common worries, answered",
+    "region": "thread",
+    "text": "Most of the reasons people sign one big contract are not rules. They are fears and habits. Here are the ones you will run into, and what to do about each. “A smaller contract will look less controlled, and won't get approved.” This is the real one, and there is a true instinct behind it: one big plan looks tidy to an approver, and a set of pieces looks messy. The move is to show that the pieces are actually more controlled. Point to where the big-contract approach has already failed. Show that a short contract you can stop is safer than a long one you cannot. The evidence backs you up: research on government IT contracts in Canada finds the large, long ones are the most likely to fail. Bring that into the room, and the messy-looking option starts to look like the careful one. “Running many competitions is more work.” It can be, but you do not start each piece from scratch. Government already has buying tools, standing offers and pre-qualified supplier lists, that let you place smaller pieces of work without a full competition every time. Use them. The aim is to make each small buy cheap to run, so that small does not turn into slow. “The budget comes as one big project, so the contract has to be big too.” This is the most common mix-up, and clearing it up is the key. The money and the contract are two different things. One funded programme can hold many small contracts under it. You do not need a separate budget approval for each piece. You need one funded programme and the freedom to buy it in pieces. The envelope is big. The contracts inside it do not have to be. “If the work isn't fixed up front, what are we actually paying for?” You are paying for progress against agreed goals, checked as you go, instead of for a fixed list of features promised before anyone really understood the problem. The commitments are real: the measures you wrote into the contract, the working software delivered each short stretch, the goals met. Often this is easier to defend than the big fixed list, because you can watch value arrive and stop paying if it doesn't. You are buying a run of delivered, checkable steps. “Won't this look like splitting?” Only if you are doing it to dodge a limit. If your pieces are real, different deliverables competed in the open, you are on the right side of the line. Use the test from earlier and keep your reasoning written down. Modular done openly is the opposite of splitting done in secret."
+  },
+  {
+    "id": "/thread/procurement/you-did-not-over-customise#table-with-hole",
+    "pageTitle": "You did not over-customise",
+    "pagePath": "/thread/procurement/you-did-not-over-customise",
+    "sectionId": "table-with-hole",
+    "sectionHeading": "The table with a hole in it",
+    "region": "thread",
+    "text": "Say you buy a good, standard table. Then you cut a hole in it to fit one particular machine you own. Now the table only works for that machine. You cannot use it for anything else, and you cannot sell it on. You have traded a thing that fit many needs for a thing that fits one. Customising bought software does the same. You bend it to fit the one way you happen to work today, and in doing that you make it yours alone, good for nothing but the job you bent it toward."
+  },
+  {
+    "id": "/thread/procurement/you-did-not-over-customise#why-customising-hurts",
+    "pageTitle": "You did not over-customise",
+    "pagePath": "/thread/procurement/you-did-not-over-customise",
+    "sectionId": "why-customising-hurts",
+    "sectionHeading": "Why customising hurts later",
+    "region": "thread",
+    "text": "The real cost shows up at upgrade time. The supplier ships a new version, with improvements you would have got for free. But your copy is full of your own changes. Before you can take the new version, you have to redo every one of those changes on top of it. So you either fall behind on an old version, or you pay, again and again, to carry your changes forward. Every upgrade becomes a project. Customise far enough and the thing can no longer be patched at all, and then a security fix you need is one you cannot take."
+  },
+  {
+    "id": "/thread/procurement/you-did-not-over-customise#bend-process",
+    "pageTitle": "You did not over-customise",
+    "pagePath": "/thread/procurement/you-did-not-over-customise",
+    "sectionId": "bend-process",
+    "sectionHeading": "Bend the process, not the software",
+    "region": "thread",
+    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows."
+  },
+  {
+    "id": "/thread/procurement/you-can-leave-when-you-need-to#how-stuck-happens",
+    "pageTitle": "You can leave when you need to",
+    "pagePath": "/thread/procurement/you-can-leave-when-you-need-to",
+    "sectionId": "how-stuck-happens",
+    "sectionHeading": "How being stuck happens",
+    "region": "thread",
+    "text": "Lock-in is when leaving a supplier is painful enough that you effectively can't, so they hold the power at every renewal. It rarely arrives as one big decision. It builds up over time, in a few ordinary ways: They own the work. The supplier owns the code, so you cannot hand it to anyone else or maintain it yourself. Every change runs through them, at their price. They hold the data. Your data sits in a format only their software reads, so moving it out means a slow, risky conversion you keep putting off. No one else knows it. The thing was built just for you, so no other supplier knows it. Re-tendering means paying someone new to learn or rebuild it, and the current supplier wins by default. The knowledge is theirs. Only the supplier's people understand how it works. They walk, you are blind. This one needs no contract clause at all."
+  },
+  {
+    "id": "/thread/procurement/you-can-leave-when-you-need-to#staying-free",
+    "pageTitle": "You can leave when you need to",
+    "pagePath": "/thread/procurement/you-can-leave-when-you-need-to",
+    "sectionId": "staying-free",
+    "sectionHeading": "Staying free is a bundle, not one clause",
+    "region": "thread",
+    "text": "No single term keeps you free. Staying able to leave is a set of habits, each one shutting a different door: Own the intellectual property. Then you can hand it to another supplier or maintain it yourself. Go further than owning it on paper: make the supplier keep the code in a repository your department controls, from day one, not on their own machines. Code you hold and can read is code no supplier can sit on. Use open standards and open formats. So your data and your service stay portable, and more than one supplier can work on them. Avoid bespoke where something off-the-shelf will do. Standard things have a market of suppliers who know them. Bespoke things have a market of one. Keep contracts short. Short contracts bring the switching point around often, so being stuck cannot deepen without you noticing. Require off-boarding. Make the contract require the supplier to hand back your data in a usable, standard form and help you move, rather than holding it hostage. The UK builds this right into its buying: a supplier has to let you off-board to a competitor. Keep enough knowledge in-house. Even with every clause in place, you can only leave if someone on your side understands the service well enough to run the move."
+  },
+  {
+    "id": "/thread/procurement/you-can-leave-when-you-need-to#after-you-bought",
+    "pageTitle": "You can leave when you need to",
+    "pagePath": "/thread/procurement/you-can-leave-when-you-need-to",
+    "sectionId": "after-you-bought",
+    "sectionHeading": "What changes once you have bought it",
+    "region": "thread",
+    "text": "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop. You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives."
+  },
+  {
+    "id": "/thread/procurement/you-kept-enough-in-house#what-enough-means",
+    "pageTitle": "You kept enough in-house",
+    "pagePath": "/thread/procurement/you-kept-enough-in-house",
+    "sectionId": "what-enough-means",
+    "sectionHeading": "What enough means",
+    "region": "thread",
+    "text": "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else. Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who can read what the supplier delivers and tell whether it is good, who know where your data lives and how it moves, who understand the main design decisions and why they were made, and who would not be lost if the supplier left tomorrow."
+  },
+  {
+    "id": "/thread/procurement/you-kept-enough-in-house#why-it-matters",
+    "pageTitle": "You kept enough in-house",
+    "pagePath": "/thread/procurement/you-kept-enough-in-house",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "region": "thread",
+    "text": "This is the insurance against lock-in. A team that kept enough in-house can ask the right questions, push back on a bad change, judge a renewal on its merits, and run an exit when the time comes. A team that handed over everything is at the supplier's mercy, and usually does not find out until it is late and expensive."
+  },
+  {
+    "id": "/thread/procurement/you-kept-enough-in-house#keep-it-alive",
+    "pageTitle": "You kept enough in-house",
+    "pagePath": "/thread/procurement/you-kept-enough-in-house",
+    "sectionId": "keep-it-alive",
+    "sectionHeading": "Keep it alive on purpose",
+    "region": "thread",
+    "text": "Knowledge fades when no one uses it. Write down the decisions that matter, keep your documentation current, rotate people through the work rather than letting one person hold it all, and make sure what lives in the supplier's head also exists on your side."
+  },
+  {
+    "id": "/reference/soo-vs-sow#what-each-one-is",
+    "pageTitle": "Statement of objectives vs statement of work",
+    "pagePath": "/reference/soo-vs-sow",
+    "sectionId": "what-each-one-is",
+    "sectionHeading": "What each one is",
+    "region": "reference",
+    "text": "Every contract needs a description of the work being bought. It is usually written one of two ways, and the choice shapes whether the work can change as you learn. A statement of work spells out exactly what gets built and how, written as if all the requirements are known up front and will not change. A statement of objectives describes what the service has to achieve and who it is for, and leaves the supplier room to work out how. One fixes the steps. The other fixes the goal."
+  },
+  {
+    "id": "/reference/soo-vs-sow#they-work-together",
+    "pageTitle": "Statement of objectives vs statement of work",
+    "pagePath": "/reference/soo-vs-sow",
+    "sectionId": "they-work-together",
+    "sectionHeading": "They work together",
+    "region": "reference",
+    "text": "The two are not enemies. A common pattern is that the department writes the statement of objectives, and suppliers respond with their own statement of work that turns those objectives into concrete tasks. So you are not throwing the detail away. You are deciding who writes it, and when. The department sets the goal. The supplier proposes how to meet it."
+  },
+  {
+    "id": "/reference/soo-vs-sow#a-worked-example",
+    "pageTitle": "Statement of objectives vs statement of work",
+    "pagePath": "/reference/soo-vs-sow",
+    "sectionId": "a-worked-example",
+    "sectionHeading": "A worked example",
+    "region": "reference",
+    "text": "Say a department needs an online way for people to apply for a benefit. A statement of work would list it out: build these eight screens, in this order, with these fields, connected to this system, delivered by this date. A statement of objectives would say: people who are eligible should be able to apply online, on their own, without help, in under fifteen minutes, including people who use assistive technology. How that gets built is for the supplier to propose and for the work to settle as it goes. The first locks the answer before anyone has tested it. The second fixes what matters and lets the answer be found."
+  },
+  {
+    "id": "/reference/managing-what-you-bought#managing-what-you-have",
+    "pageTitle": "Managing what you bought, or a hybrid",
+    "pagePath": "/reference/managing-what-you-bought",
+    "sectionId": "managing-what-you-have",
+    "sectionHeading": "Managing what you already have",
+    "region": "reference",
+    "text": "Sometimes you are not buying anything new, you are running or extending a service you already bought. The procurement steps do not all apply, but the contract you signed still sets what you can do. Worked guidance to come."
+  },
+  {
+    "id": "/reference/managing-what-you-bought#hybrid",
+    "pageTitle": "Managing what you bought, or a hybrid",
+    "pagePath": "/reference/managing-what-you-bought",
+    "sectionId": "hybrid",
+    "sectionHeading": "A hybrid",
+    "region": "reference",
+    "text": "Sometimes you buy part and manage part, for example buying a platform and hiring someone to run it. The procurement steps apply to the part you buy. Worked guidance to come."
+  }
+]
