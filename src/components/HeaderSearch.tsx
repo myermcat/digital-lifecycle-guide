@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import MiniSearch from "minisearch";
 import { Command } from "cmdk";
 import { Search } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { loadSearchIndex, type SearchIndexRecord } from "@/lib/search-index";
@@ -134,6 +135,7 @@ export function HeaderSearch() {
   const [query, setQuery] = useState("");
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const navigate = useNavigate();
 
   const searchState = useSearchData(open);
 
@@ -212,8 +214,10 @@ export function HeaderSearch() {
     if (!record) return;
 
     setOpen(false);
-    const href = record.sectionId ? `${record.pagePath}#${record.sectionId}` : record.pagePath;
-    window.location.assign(href);
+    void navigate({
+      to: record.pagePath,
+      hash: record.sectionId || undefined,
+    });
   };
 
   return (

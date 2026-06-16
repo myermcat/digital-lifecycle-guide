@@ -7,22 +7,15 @@ import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/RegionVisuals";
 import { REGIONS } from "@/lib/guide-strings";
 import { CREATE_PHASES, LIVE_PHASES } from "@/lib/lifecycle-navigation";
+import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Digital Lifecycle Guide — Government of Canada" },
-      {
-        name: "description",
-        content:
-          "A plain-language guide for people working on digital services for the Government of Canada.",
-      },
-      { property: "og:title", content: "The Digital Lifecycle Guide" },
-      {
-        property: "og:description",
-        content:
-          "A plain-language guide for people working on digital services for the Government of Canada.",
-      },
+      { title: SITE_FULL_TITLE },
+      { name: "description", content: SITE_DESCRIPTION },
+      { property: "og:title", content: SITE_NAME },
+      { property: "og:description", content: SITE_DESCRIPTION },
     ],
   }),
   component: Index,
