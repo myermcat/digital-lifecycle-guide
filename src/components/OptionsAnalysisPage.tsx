@@ -53,7 +53,6 @@ export function OptionsAnalysisPage() {
       <ThreadArticleSection title={howToWeigh.title} sectionId={howToWeigh.id}>
         <p>{howToWeigh.intro}</p>
         <InlineArrowLeadList
-          variant="primary"
           items={howToWeigh.criteria.map((item) => ({
             lead: item.lead,
             body: item.body,

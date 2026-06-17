@@ -1,4 +1,4 @@
-import { guideProse, guideProseTight, guideSubsectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideProseTight } from "@/lib/guide-typography";
 
 /** Comfortable reading measure — matches assumptions and footnote blocks site-wide. */
 export const guideArticleMeasure = "max-w-xl";
@@ -10,7 +10,8 @@ export const guideArticleSectionGap = "mt-14 md:mt-16";
 export const guideArticleFirstSectionGap = "mt-10 md:mt-12";
 
 /** Section heading on thread/reference article pages — subordinate to the page h1. */
-export const guideArticleSectionTitle = `${guideSubsectionTitle} mb-3 md:mb-4`;
+export const guideArticleSectionTitle =
+  "font-serif text-lg md:text-xl font-semibold text-foreground tracking-tight leading-tight mb-3 md:mb-4";
 
 /** Within-section paragraph and block rhythm. */
 export const guideArticleProse = `${guideProse} space-y-4`;
