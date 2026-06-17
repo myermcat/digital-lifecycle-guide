@@ -40,3 +40,6 @@ export const guideArrowLeadGroup = "space-y-0.5";
 
 /** Classes for GuideArrowBullet — the reusable list arrow marker. */
 export const guideArrowListIcon = "mt-[0.4rem] size-4 shrink-0 text-primary/35";
+
+/** Arrow marker for inline tight lists (guideProseTight, lead + body on one line). */
+export const guideArrowListIconInline = "mt-[0.15rem] size-4 shrink-0 text-primary/35";

@@ -1,7 +1,6 @@
-import { GuideArrowBullet } from "@/lib/guide-lists";
-import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
+import { InlineArrowLeadList } from "@/lib/guide-lists";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
-import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
 
 type Item = {
   lead: string;
@@ -25,17 +24,7 @@ export function WhatStaysYoursBlock({
       <h2 className={`${guideSectionTitle} mb-4`}>{heading}</h2>
 
       <p className={`${guideProse} mb-4`}>{intro}</p>
-      <ul className={`${guideProseTight} space-y-3 list-none pl-0`}>
-        {items.map((item) => (
-          <li key={item.lead} className="flex gap-2.5">
-            <GuideArrowBullet />
-            <span>
-              <span className="font-semibold text-foreground/90">{item.lead}</span>{" "}
-              {proseWithMixedLinks(item.body, { placeholder: item.placeholderLinks })}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <InlineArrowLeadList items={items} />
       <p className={`${guideProse} mt-4`}>{close}</p>
     </section>
   );

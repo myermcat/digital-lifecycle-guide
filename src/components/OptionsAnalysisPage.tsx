@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
-import { OptionsLadder } from "@/components/OptionsLadder";
+import { OptionsAlternativeGrid } from "@/components/OptionsAlternativeGrid";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
 import { PhaseFitCards } from "@/components/WeightedPhaseBlock";
+import { InlineArrowLeadList } from "@/lib/guide-lists";
 import { SourcesBlock } from "@/components/SourcesBlock";
-import { ThreadArticleLeadList, ThreadArticleSection } from "@/components/ThreadArticleSection";
+import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
-import { guideProseSpace } from "@/lib/guide-typography";
+import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 
 function renderProblemParagraph(
   paragraph: string,
@@ -45,17 +46,18 @@ export function OptionsAnalysisPage() {
       </ThreadArticleSection>
 
       <ThreadArticleSection title={fieldOfOptions.title} sectionId={fieldOfOptions.id}>
-        <OptionsLadder items={fieldOfOptions.ladder} />
+        <p className={`${guideProse} mb-5`}>{fieldOfOptions.intro}</p>
+        <OptionsAlternativeGrid items={fieldOfOptions.ladder} />
       </ThreadArticleSection>
 
       <ThreadArticleSection title={howToWeigh.title} sectionId={howToWeigh.id}>
         <p>{howToWeigh.intro}</p>
-        <ThreadArticleLeadList
+        <InlineArrowLeadList
+          variant="primary"
           items={howToWeigh.criteria.map((item) => ({
             lead: item.lead,
-            body: item.placeholderLinks
-              ? proseWithMixedLinks(item.body, { placeholder: item.placeholderLinks })
-              : item.body,
+            body: item.body,
+            placeholderLinks: item.placeholderLinks,
           }))}
         />
         <p>

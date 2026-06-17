@@ -654,7 +654,7 @@
     "sectionId": "the-field-of-options",
     "sectionHeading": "The field of options",
     "lifecyclePhase": "reference",
-    "text": "Use what you already have. A tool you already own that does this, or nearly does, is the cheapest answer of all. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use spare capacity on someone else's system, or ride an existing enterprise contract for better value, since buying in volume costs less per unit. Partner with another department. If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, you procure a solution, through an existing framework or your own procurement. Build it yourself. Possible, but the in-house capability to build and run software is thin in most departments, so treat building as a rare exception rather than a default. Retire without replacing. If the need has genuinely gone, the right option may be to stop. This one mostly comes up in Sunset."
+    "text": "The answer might not be a purchase at all. Sometimes a small process change, or a tool another team already runs, solves the problem without buying anything. Here are the options, roughly cheapest first: Use what you already have. A tool you already own that does this, or nearly does, is the cheapest answer of all. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use spare capacity on someone else's system, or ride an existing enterprise contract for better value, since buying in volume costs less per unit. Partner with another department. If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, you procure a solution, through an existing framework or your own procurement. Build it yourself. Possible, but the in-house capability to build and run software is thin in most departments, so treat building as a rare exception rather than a default. Retire without replacing. If the need has genuinely gone, the right option may be to stop. This one mostly comes up in Sunset."
   },
   {
     "id": "/reference/options-analysis#how-to-weigh-them",
@@ -675,11 +675,11 @@
     "text": "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules, the UK and Australia among them. Borrowing a worked answer beats starting from a blank page."
   },
   {
-    "id": "/reference/options-analysis#where-this-fits",
+    "id": "/reference/options-analysis#by-phase",
     "pageTitle": "Options analysis",
     "pagePath": "/reference/options-analysis",
-    "sectionId": "where-this-fits",
-    "sectionHeading": "Where this fits",
+    "sectionId": "by-phase",
+    "sectionHeading": "What it looks like in each phase",
     "lifecyclePhase": "reference",
     "text": "In Create, this is your \"look before you buy\" step, done before any contract exists. In Sunset, this is how you assess options for a replacement, or reach the decision to retire without one."
   },

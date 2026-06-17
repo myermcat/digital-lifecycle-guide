@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
-import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon } from "@/lib/guide-typography";
+import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
+import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
+import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon, guideArrowListIconInline } from "@/lib/guide-typography";
 import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -19,11 +21,63 @@ export type ArrowLeadItem = {
   href?: string;
 };
 
+export type InlineArrowLeadItem = {
+  lead: string;
+  body: ReactNode;
+  placeholderLinks?: PlaceholderPhraseLink[];
+};
+
+/**
+ * Arrow bullet with bold lead and body on one line — as in "What work stays yours".
+ * Use variant="primary" for a brown bold lead; body stays neutral foreground.
+ */
+export function InlineArrowLeadList({
+  items,
+  className,
+  variant = "default",
+}: {
+  items: InlineArrowLeadItem[];
+  className?: string;
+  variant?: "default" | "primary";
+}) {
+  const leadClass =
+    variant === "primary"
+      ? "font-semibold text-primary"
+      : "font-semibold text-foreground/90";
+
+  return (
+    <ul className={cn(`${guideProseTight} space-y-3 list-none pl-0`, className)}>
+      {items.map((item) => {
+        const body =
+          typeof item.body === "string" && item.placeholderLinks?.length
+            ? proseWithMixedLinks(item.body, { placeholder: item.placeholderLinks })
+            : item.body;
+
+        return (
+          <li key={item.lead} className="flex items-start gap-2.5">
+            <GuideArrowBullet inline />
+            <span className="min-w-0 flex-1">
+              <span className={leadClass}>{item.lead}</span> {body}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 /** Small arrow marker for guide bullet lists. Use with your own text layout. */
-export function GuideArrowBullet({ className }: { className?: string }) {
+export function GuideArrowBullet({
+  className,
+  inline = false,
+}: {
+  className?: string;
+  /** Tighter top offset for guideProseTight inline lists. */
+  inline?: boolean;
+}) {
   return (
     <ArrowRight
-      className={cn(guideArrowListIcon, className)}
+      className={cn(inline ? guideArrowListIconInline : guideArrowListIcon, className)}
       strokeWidth={1.5}
       aria-hidden
     />

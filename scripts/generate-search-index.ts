@@ -267,6 +267,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: OPTIONS_ANALYSIS.fieldOfOptions.id,
       sectionHeading: OPTIONS_ANALYSIS.fieldOfOptions.title,
       text: concat(
+        OPTIONS_ANALYSIS.fieldOfOptions.intro,
         ...OPTIONS_ANALYSIS.fieldOfOptions.ladder.map((r) => `${r.lead} ${r.body}`),
       ),
     },

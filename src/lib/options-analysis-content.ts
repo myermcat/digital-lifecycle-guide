@@ -35,6 +35,8 @@ export const OPTIONS_ANALYSIS = {
   fieldOfOptions: {
     id: "the-field-of-options",
     title: "The field of options",
+    intro:
+      "The answer might not be a purchase at all. Sometimes a small process change, or a tool another team already runs, solves the problem without buying anything. Here are the options, roughly cheapest first:",
     ladder: [
       {
         lead: "Use what you already have.",
