@@ -8,6 +8,7 @@ import { PracticeCardGroup } from "@/components/PracticeCard";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { SunsetJourneySection } from "@/components/SunsetJourneySection";
+import { SunsetPathFork } from "@/components/SunsetPathFork";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { whereThisFitsForSunsetPhaseLanding } from "@/lib/lifecycle-navigation";
 import {
@@ -59,46 +60,23 @@ export function SunsetLandingPage() {
         <InlineArrowLeadList items={landing.fork.bullets} />
         <p className={`${guideProse} mt-4`}>{landing.fork.close}</p>
 
-        <div
-          role="radiogroup"
-          aria-label="Replace or retire path"
-          className="mt-5 inline-flex rounded-full border border-border bg-background p-1"
+        <SunsetPathFork
+          path={path}
+          onPathChange={setPath}
+          options={landing.fork.pathOptions}
+          cardTitle={landing.fork.cardTitle}
+          journeyId={`${toggleId}-journey`}
         >
-          {(
-            [
-              { key: "replace" as const, label: "Replace" },
-              { key: "retire" as const, label: "Retire" },
-            ] as const
-          ).map((opt) => {
-            const selected = path === opt.key;
-            return (
-              <button
-                key={opt.key}
-                type="button"
-                role="radio"
-                aria-checked={selected}
-                aria-controls={`${toggleId}-journey`}
-                onClick={() => setPath(opt.key)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                  selected
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                {opt.label}
-              </button>
-            );
-          })}
-        </div>
+          <div id={`${toggleId}-journey`} key={path}>
+            <SunsetJourneySection
+              embedded
+              intro={landing.journeyIntro}
+              footer={landing.journeyFooter}
+              steps={visibleSteps}
+            />
+          </div>
+        </SunsetPathFork>
       </section>
-
-      <div id={`${toggleId}-journey`}>
-        <SunsetJourneySection
-          intro={landing.journeyIntro}
-          footer={landing.journeyFooter}
-          steps={visibleSteps}
-        />
-      </div>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="where-to-go-next">
         <h2 className={`${guideSectionTitle} mb-4`}>{landing.whereNext.title}</h2>

@@ -49,6 +49,19 @@ export const SUNSET_STRINGS = {
     ],
     close:
       "Most of this page follows the replace path, the longer of the two. The retire path is the same journey with the middle removed.",
+    cardTitle: "Replace or retire?",
+    pathOptions: [
+      {
+        path: "replace" as const,
+        description:
+          "The need remains, so you replace it. You assess what should come next, acquire it, and migrate across.",
+      },
+      {
+        path: "retire" as const,
+        description:
+          "The need is gone, so you retire it. You plan the shutdown, archive the records, and decommission, but you are not standing up a replacement.",
+      },
+    ],
   },
 
   journey: {
@@ -127,6 +140,12 @@ export const SUNSET_STRINGS = {
         ],
       },
     ] satisfies SunsetJourneyStepStrings[],
+    decommissionStep: {
+      label: "Decommission",
+      title: "Decommission.",
+      leadIn: "Wind the service down for good.",
+      body: "There is no switch to a replacement, so the work is a clean shutdown: archive the records to their retention schedule, confirm nothing still depends on the service, and retire it.",
+    } satisfies SunsetJourneyStepStrings,
   },
 
   whereNext: {

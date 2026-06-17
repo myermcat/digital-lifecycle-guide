@@ -27,19 +27,25 @@ export function comingSoonSourceItem(source: string): SourceItem {
   };
 }
 
-export const GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION =
-  "GCcase Migration Readiness Guide and Assessment (TBS-OCIO, in production). Guidance for departments migrating off the GCcase case-management platform, which is being decommissioned. Cited here as a worked example of a transition; it is specific to GCcase rather than general migration guidance.";
+export const GCCASE_MIGRATION_READINESS_GUIDE_TITLE =
+  "GCcase Migration Readiness Guide and Assessment (TBS-OCIO, in production)";
 
-/** @deprecated Use GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION */
+export const GCCASE_MIGRATION_READINESS_GUIDE_NOTE =
+  "Guidance for departments migrating off the GCcase case-management platform, which is being decommissioned. Cited here as a worked example of a transition; it is specific to GCcase rather than general migration guidance.";
+
+/** @deprecated Use GCCASE_MIGRATION_READINESS_GUIDE_TITLE and GCCASE_MIGRATION_READINESS_GUIDE_NOTE */
+export const GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION = `${GCCASE_MIGRATION_READINESS_GUIDE_TITLE} ${GCCASE_MIGRATION_READINESS_GUIDE_NOTE}`;
+
+/** @deprecated Use GCCASE_MIGRATION_READINESS_GUIDE_TITLE */
 export const GCCASE_MIGRATION_ASSESSMENT_DESCRIPTION =
-  GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION;
+  GCCASE_MIGRATION_READINESS_GUIDE_TITLE;
 
 export function gccaseComingSoonSourceItem(): SourceItem {
   return {
-    label: "Supporting reference (coming soon)",
+    label: "Supporting reference",
     href: placeholderSourceHref(GCCASE_MIGRATION_READINESS_GUIDE),
-    description: GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION,
+    description: GCCASE_MIGRATION_READINESS_GUIDE_TITLE,
+    note: GCCASE_MIGRATION_READINESS_GUIDE_NOTE,
     comingSoon: true,
-    tone: "very-light",
   };
 }

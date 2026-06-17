@@ -2,6 +2,7 @@ import { useId, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import {
   externalLinkUrl,
+  getExternalLink,
   isGcNetworkOnly,
   type ExternalLinkKey,
 } from "@/lib/external-links";
@@ -12,6 +13,8 @@ export type SourceItem = {
   href?: string;
   linkKey?: ExternalLinkKey;
   description?: string;
+  /** Lower-emphasis note shown below the link, in the right column. */
+  note?: string;
   comingSoon?: boolean;
   /** Optional styling hint for low-emphasis citations. */
   tone?: "default" | "very-light";
@@ -23,6 +26,16 @@ const sourceLinkByTone: Record<NonNullable<SourceItem["tone"]>, string> = {
   "very-light":
     "text-muted-foreground/25 underline underline-offset-4 hover:text-muted-foreground/40 transition-colors",
 };
+
+function sourceLinkText(item: SourceItem, href: string | undefined): string {
+  if (item.description) {
+    return item.description;
+  }
+  if (item.linkKey) {
+    return getExternalLink(item.linkKey).description;
+  }
+  return href ?? "";
+}
 
 export function SourcesBlock({
   items,
@@ -62,7 +75,7 @@ export function SourcesBlock({
         {open ? (
           <ul
             id={panelId}
-            className="mt-3 space-y-2 list-none pl-0 text-sm leading-[1.7] text-muted-foreground/50 border-t border-border/40 pt-3"
+            className="mt-3 list-none pl-0 border-t border-border/40 pt-3 text-sm leading-[1.7] text-muted-foreground/50 space-y-2 sm:space-y-0 sm:grid sm:grid-cols-[max-content_1fr] sm:gap-x-[0.6rem] sm:gap-y-2 sm:items-baseline"
           >
             {items.map((item) => {
               const href = item.linkKey ? externalLinkUrl(item.linkKey) : item.href;
@@ -70,31 +83,39 @@ export function SourcesBlock({
               const key = item.linkKey ?? item.href ?? item.label;
               const isInternal = href?.startsWith("/") ?? false;
               const tone = item.tone ?? "default";
+              const linkText = sourceLinkText(item, href);
 
               return (
-                <li key={key}>
-                  <span className="text-muted-foreground/35">{item.label}: </span>
-                  {href ? (
-                    <>
-                      <a
-                        href={href}
-                        className={sourceLinkByTone[tone]}
-                        {...(isInternal
-                          ? {}
-                          : { target: "_blank", rel: "noopener noreferrer" })}
-                      >
-                        {item.description ?? href}
-                      </a>
-                      {gcNetworkOnly ? (
-                        <span className="text-muted-foreground/35"> (GC network only)</span>
-                      ) : null}
-                      {item.comingSoon ? (
-                        <span className="text-muted-foreground/35"> (coming soon)</span>
-                      ) : null}
-                    </>
-                  ) : (
-                    <span className="text-muted-foreground/40">{item.description}</span>
-                  )}
+                <li key={key} className="flex flex-col gap-0.5 sm:contents">
+                  <span className="text-muted-foreground/35 shrink-0">{item.label}:</span>
+                  <span className="min-w-0">
+                    {href ? (
+                      <>
+                        <a
+                          href={href}
+                          className={sourceLinkByTone[tone]}
+                          {...(isInternal
+                            ? {}
+                            : { target: "_blank", rel: "noopener noreferrer" })}
+                        >
+                          {linkText}
+                        </a>
+                        {gcNetworkOnly ? (
+                          <span className="text-muted-foreground/35"> (GC network only)</span>
+                        ) : null}
+                        {item.comingSoon ? (
+                          <span className="text-muted-foreground/35"> (coming soon)</span>
+                        ) : null}
+                        {item.note ? (
+                          <p className="mt-0.5 font-sans text-[10px] leading-[1.35] text-muted-foreground/25">
+                            {item.note}
+                          </p>
+                        ) : null}
+                      </>
+                    ) : (
+                      <span className="text-muted-foreground/40">{item.description}</span>
+                    )}
+                  </span>
                 </li>
               );
             })}

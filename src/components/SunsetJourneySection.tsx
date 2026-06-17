@@ -20,13 +20,22 @@ export function SunsetJourneySection({
   intro,
   footer,
   steps,
+  embedded = false,
 }: {
   intro: string;
   footer: string;
   steps: SunsetJourneyStep[];
+  embedded?: boolean;
 }) {
   return (
-    <section className="mt-10 md:mt-12 scroll-mt-24" id="how-a-sunset-goes">
+    <section
+      className={
+        embedded
+          ? "mt-6 pt-6 border-t border-border/45 scroll-mt-24"
+          : "mt-10 md:mt-12 scroll-mt-24"
+      }
+      id="how-a-sunset-goes"
+    >
       <h2 className={`${guideSectionTitle} mb-4`}>How a sunset goes</h2>
 
       <div className="mb-6 overflow-x-auto pb-1">

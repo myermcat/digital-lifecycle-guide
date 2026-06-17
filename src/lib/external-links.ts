@@ -45,6 +45,11 @@ export const EXTERNAL_LINKS = {
     description: "Treasury Board Policy on the Planning and Management of Investments",
     accessibility: "public",
   },
+  "digital-standards": {
+    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html",
+    description: "Government of Canada Digital Standards",
+    accessibility: "public",
+  },
   "supply-manual-chapter-6": {
     url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
     description:
