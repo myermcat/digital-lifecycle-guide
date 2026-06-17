@@ -10,6 +10,8 @@ import {
   MANAGING_WHAT_YOU_BOUGHT_PATH,
   SOO_VS_SOW_PATH,
 } from "../src/lib/reference-paths";
+import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
+import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
 
 type SearchIndexRecord = {
   id: string;
@@ -236,6 +238,71 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: section.title,
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: concat(...section.paragraphs),
+    });
+  }
+}
+
+// Reference: Options analysis
+{
+  const pageTitle = OPTIONS_ANALYSIS.title;
+  const pagePath = OPTIONS_ANALYSIS_PATH;
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(...OPTIONS_ANALYSIS.intro),
+  });
+
+  const sections = [
+    {
+      sectionId: OPTIONS_ANALYSIS.startWithProblem.id,
+      sectionHeading: OPTIONS_ANALYSIS.startWithProblem.title,
+      text: concat(...OPTIONS_ANALYSIS.startWithProblem.paragraphs),
+    },
+    {
+      sectionId: OPTIONS_ANALYSIS.fieldOfOptions.id,
+      sectionHeading: OPTIONS_ANALYSIS.fieldOfOptions.title,
+      text: concat(
+        ...OPTIONS_ANALYSIS.fieldOfOptions.ladder.map((r) => `${r.lead} ${r.body}`),
+      ),
+    },
+    {
+      sectionId: OPTIONS_ANALYSIS.howToWeigh.id,
+      sectionHeading: OPTIONS_ANALYSIS.howToWeigh.title,
+      text: concat(
+        OPTIONS_ANALYSIS.howToWeigh.intro,
+        ...OPTIONS_ANALYSIS.howToWeigh.criteria.map((c) => `${c.lead} ${c.body}`),
+        OPTIONS_ANALYSIS.howToWeighClosing,
+      ),
+    },
+    {
+      sectionId: OPTIONS_ANALYSIS.homework.id,
+      sectionHeading: OPTIONS_ANALYSIS.homework.title,
+      text: OPTIONS_ANALYSIS.homework.body,
+    },
+    {
+      sectionId: OPTIONS_ANALYSIS.byPhase.id,
+      sectionHeading: OPTIONS_ANALYSIS.byPhase.title,
+      text: concat(
+        ...OPTIONS_ANALYSIS.byPhase.cards.map((c) => c.body),
+      ),
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
     });
   }
 }

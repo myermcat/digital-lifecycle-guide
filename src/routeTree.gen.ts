@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SunsetTransitionRouteImport } from './routes/sunset-transition'
 import { Route as SunsetShutdownRouteImport } from './routes/sunset-shutdown'
 import { Route as SunsetRouteImport } from './routes/sunset'
+import { Route as SourceComingSoonRouteImport } from './routes/source-coming-soon'
 import { Route as LiveStabilizationRouteImport } from './routes/live-stabilization'
 import { Route as LiveMaturityRouteImport } from './routes/live-maturity'
 import { Route as LiveGrowthRouteImport } from './routes/live-growth'
@@ -27,6 +28,7 @@ import { Route as ThreadContractingRouteImport } from './routes/thread.contracti
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
+import { Route as ReferenceOptionsAnalysisRouteImport } from './routes/reference.options-analysis'
 import { Route as ReferenceManagingWhatYouBoughtRouteImport } from './routes/reference.managing-what-you-bought'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
@@ -47,6 +49,11 @@ const SunsetShutdownRoute = SunsetShutdownRouteImport.update({
 const SunsetRoute = SunsetRouteImport.update({
   id: '/sunset',
   path: '/sunset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SourceComingSoonRoute = SourceComingSoonRouteImport.update({
+  id: '/source-coming-soon',
+  path: '/source-coming-soon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LiveStabilizationRoute = LiveStabilizationRouteImport.update({
@@ -124,6 +131,12 @@ const ReferenceSooVsSowRoute = ReferenceSooVsSowRouteImport.update({
   path: '/reference/soo-vs-sow',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferenceOptionsAnalysisRoute =
+  ReferenceOptionsAnalysisRouteImport.update({
+    id: '/reference/options-analysis',
+    path: '/reference/options-analysis',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReferenceManagingWhatYouBoughtRoute =
   ReferenceManagingWhatYouBoughtRouteImport.update({
     id: '/reference/managing-what-you-bought',
@@ -167,11 +180,13 @@ export interface FileRoutesByFullPath {
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
   '/live-stabilization': typeof LiveStabilizationRoute
+  '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
+  '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -193,11 +208,13 @@ export interface FileRoutesByTo {
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
   '/live-stabilization': typeof LiveStabilizationRoute
+  '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
+  '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -218,11 +235,13 @@ export interface FileRoutesById {
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
   '/live-stabilization': typeof LiveStabilizationRoute
+  '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/sunset-shutdown': typeof SunsetShutdownRoute
   '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
+  '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
@@ -246,11 +265,13 @@ export interface FileRouteTypes {
     | '/live-growth'
     | '/live-maturity'
     | '/live-stabilization'
+    | '/source-coming-soon'
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
+    | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -272,11 +293,13 @@ export interface FileRouteTypes {
     | '/live-growth'
     | '/live-maturity'
     | '/live-stabilization'
+    | '/source-coming-soon'
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
+    | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -296,11 +319,13 @@ export interface FileRouteTypes {
     | '/live-growth'
     | '/live-maturity'
     | '/live-stabilization'
+    | '/source-coming-soon'
     | '/sunset'
     | '/sunset-shutdown'
     | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
+    | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/review/$slug'
     | '/thread/$slug'
@@ -323,11 +348,13 @@ export interface RootRouteChildren {
   LiveGrowthRoute: typeof LiveGrowthRoute
   LiveMaturityRoute: typeof LiveMaturityRoute
   LiveStabilizationRoute: typeof LiveStabilizationRoute
+  SourceComingSoonRoute: typeof SourceComingSoonRoute
   SunsetRoute: typeof SunsetRoute
   SunsetShutdownRoute: typeof SunsetShutdownRoute
   SunsetTransitionRoute: typeof SunsetTransitionRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
   ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
+  ReferenceOptionsAnalysisRoute: typeof ReferenceOptionsAnalysisRoute
   ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
@@ -356,6 +383,13 @@ declare module '@tanstack/react-router' {
       path: '/sunset'
       fullPath: '/sunset'
       preLoaderRoute: typeof SunsetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/source-coming-soon': {
+      id: '/source-coming-soon'
+      path: '/source-coming-soon'
+      fullPath: '/source-coming-soon'
+      preLoaderRoute: typeof SourceComingSoonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/live-stabilization': {
@@ -463,6 +497,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenceSooVsSowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/options-analysis': {
+      id: '/reference/options-analysis'
+      path: '/reference/options-analysis'
+      fullPath: '/reference/options-analysis'
+      preLoaderRoute: typeof ReferenceOptionsAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reference/managing-what-you-bought': {
       id: '/reference/managing-what-you-bought'
       path: '/reference/managing-what-you-bought'
@@ -545,11 +586,13 @@ const rootRouteChildren: RootRouteChildren = {
   LiveGrowthRoute: LiveGrowthRoute,
   LiveMaturityRoute: LiveMaturityRoute,
   LiveStabilizationRoute: LiveStabilizationRoute,
+  SourceComingSoonRoute: SourceComingSoonRoute,
   SunsetRoute: SunsetRoute,
   SunsetShutdownRoute: SunsetShutdownRoute,
   SunsetTransitionRoute: SunsetTransitionRoute,
   PracticeSlugRoute: PracticeSlugRoute,
   ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
+  ReferenceOptionsAnalysisRoute: ReferenceOptionsAnalysisRoute,
   ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,

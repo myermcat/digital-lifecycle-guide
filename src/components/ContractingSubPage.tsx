@@ -9,7 +9,8 @@ import {
   ThreadArticleSection,
 } from "@/components/ThreadArticleSection";
 import { ThreadArticleLayout } from "@/components/ThreadArticleLayout";
-import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
+import { SourcesBlock } from "@/components/SourcesBlock";
+import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
 import {
   guideArticleCalloutLift,
@@ -36,6 +37,14 @@ function renderParagraph(
     ) ?? [];
   if (externalLinks.length > 0) {
     return proseWithExternalLinks(paragraph, externalLinks);
+  }
+
+  const placeholderLinks =
+    section.placeholderParagraphLinks?.filter(
+      (item) => item.index === paragraphIndex,
+    ) ?? [];
+  if (placeholderLinks.length > 0) {
+    return proseWithMixedLinks(paragraph, { placeholder: placeholderLinks });
   }
 
   return paragraph;
@@ -149,6 +158,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           ) : null}
         </ThreadArticleSection>
       ))}
+      {page.sources ? <SourcesBlock items={page.sources} /> : null}
     </ThreadArticleLayout>
   );
 }

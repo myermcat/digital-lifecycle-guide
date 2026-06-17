@@ -1,11 +1,13 @@
 import type { PracticeCardData } from "@/components/PracticeCard";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
+import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PROCUREMENT_SOURCES } from "@/lib/procurement-sources";
 import { PROCUREMENT_STRINGS } from "@/lib/procurement-strings";
 
 export type LinkedProse = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
+  placeholderLinks?: PlaceholderPhraseLink[];
 };
 
 export const PROCUREMENT_LANDING_PATH = "/thread/procurement";
@@ -25,7 +27,7 @@ export const PROCUREMENT_GOOD_LOOKS_CARDS: PracticeCardData[] = [
     label: "You looked before you bought",
     href: procurementSubPath("you-looked-before-you-bought"),
     description:
-      "You checked whether you needed to buy at all, and what the real options were, before reaching for a contract.",
+      "You checked whether you needed to buy at all, and what the real options were, before reaching for a contract. The Options analysis reference page walks through the full ladder.",
   },
   {
     label: "You bought small, in pieces",
@@ -70,6 +72,7 @@ export type ProcurementJourneyStep = {
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
+  placeholderLinks?: PlaceholderPhraseLink[];
 };
 
 export type ComparisonRow = {

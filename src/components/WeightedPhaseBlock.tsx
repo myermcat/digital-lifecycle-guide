@@ -1,5 +1,7 @@
+import { Link } from "@tanstack/react-router";
+import { ContentTodo } from "@/components/ContentTodo";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
-import { guideProse, guideProseSpace } from "@/lib/guide-typography";
+import { guideLink, guideProse, guideProseSpace, guideProseTight } from "@/lib/guide-typography";
 
 export type WeightedPhaseNote = {
   lifecyclePhase: LifecyclePhaseId;
@@ -33,17 +35,58 @@ const weightStyles: Record<
 
 export function WeightedPhaseBlock({ phases }: { phases: WeightedPhaseNote[] }) {
   return (
+    <PhaseFitCards
+      cards={phases.map((note) => ({
+        lifecyclePhase: note.lifecyclePhase,
+        body: note.body,
+        weight: note.weight,
+      }))}
+    />
+  );
+}
+
+const compactCardStyles = {
+  box: "rounded-md border border-border/45 bg-muted/20 px-3.5 py-3 md:px-4 md:py-3.5",
+  title: "font-serif text-sm font-semibold text-primary/65 tracking-tight",
+  body: `${guideProseTight} text-foreground/60`,
+};
+
+export type PhaseFitCard = {
+  lifecyclePhase: LifecyclePhaseId;
+  body: string;
+  weight: WeightedPhaseNote["weight"];
+  /** Smaller, lighter cards — for reference pages and secondary phase callouts. */
+  compact?: boolean;
+  linkTo?: string;
+  linkLabel?: string;
+  todo?: { title: string; items: string[] };
+};
+
+export function PhaseFitCards({ cards }: { cards: PhaseFitCard[] }) {
+  return (
     <div className={`${guideProseSpace} mt-4`}>
-      {phases.map((note) => {
-        const styles = weightStyles[note.weight];
+      {cards.map((card) => {
+        const styles = card.compact ? compactCardStyles : weightStyles[card.weight];
         return (
           <div
-            key={note.lifecyclePhase}
+            key={card.lifecyclePhase}
             className={styles.box}
-            style={{ backgroundColor: "var(--phase-group)" }}
+            style={card.compact ? undefined : { backgroundColor: "var(--phase-group)" }}
           >
-            <h3 className={styles.title}>{PHASES[note.lifecyclePhase].title}.</h3>
-            <p className={`mt-2 ${styles.body}`}>{note.body}</p>
+            <h3 className={styles.title}>{PHASES[card.lifecyclePhase].title}.</h3>
+            <p className={`mt-1.5 ${styles.body}`}>{card.body}</p>
+            {card.linkTo && card.linkLabel ? (
+              <p className="mt-2">
+                <Link to={card.linkTo} className={`text-xs ${guideLink}`}>
+                  {card.linkLabel}
+                </Link>
+              </p>
+            ) : null}
+            {card.todo ? (
+              <div className="mt-3">
+                <ContentTodo title={card.todo.title} items={card.todo.items} />
+              </div>
+            ) : null}
           </div>
         );
       })}

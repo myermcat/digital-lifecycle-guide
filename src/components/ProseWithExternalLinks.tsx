@@ -2,7 +2,10 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ExternalLink } from "@/components/ExternalLink";
 import type { ExternalLinkKey } from "@/lib/external-links";
+import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { guideLink } from "@/lib/guide-typography";
+
+export type { PlaceholderPhraseLink };
 
 export type ExternalPhraseLink = {
   phrase: string;
@@ -22,7 +25,8 @@ export type AnchorPhraseLink = {
 type MixedPhraseLink =
   | ({ kind: "external" } & ExternalPhraseLink)
   | ({ kind: "internal" } & InternalPhraseLink)
-  | ({ kind: "anchor" } & AnchorPhraseLink);
+  | ({ kind: "anchor" } & AnchorPhraseLink)
+  | ({ kind: "placeholder" } & PlaceholderPhraseLink);
 
 export function proseWithMixedLinks(
   text: string,
@@ -30,16 +34,19 @@ export function proseWithMixedLinks(
     external = [],
     internal = [],
     anchor = [],
+    placeholder = [],
   }: {
     external?: ExternalPhraseLink[];
     internal?: InternalPhraseLink[];
     anchor?: AnchorPhraseLink[];
+    placeholder?: PlaceholderPhraseLink[];
   },
 ): ReactNode {
   const links: MixedPhraseLink[] = [
     ...external.map((link) => ({ kind: "external" as const, ...link })),
     ...internal.map((link) => ({ kind: "internal" as const, ...link })),
     ...anchor.map((link) => ({ kind: "anchor" as const, ...link })),
+    ...placeholder.map((link) => ({ kind: "placeholder" as const, ...link })),
   ];
 
   if (links.length === 0) {
@@ -67,6 +74,15 @@ export function proseWithMixedLinks(
         </ExternalLink>
       ) : link.kind === "internal" ? (
         <Link key={`${link.to}-${start}`} to={link.to} className={guideLink}>
+          {link.phrase}
+        </Link>
+      ) : link.kind === "placeholder" ? (
+        <Link
+          key={`${link.source}-${link.part ?? ""}-${start}`}
+          to="/source-coming-soon"
+          search={{ source: link.source, part: link.part }}
+          className={guideLink}
+        >
           {link.phrase}
         </Link>
       ) : (

@@ -39,7 +39,7 @@ export function ThreadArticleSection({
 
 export type LeadBullet = {
   lead: string;
-  body: string;
+  body: ReactNode;
   bodyLines?: string[];
 };
 

@@ -61,6 +61,7 @@ export function ProcurementJourneySection({
                   external: step.externalLinks,
                   internal: step.internalLinks,
                   anchor: step.anchorLinks,
+                  placeholder: step.placeholderLinks,
                 })}
               </p>
             </AccordionContent>

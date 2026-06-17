@@ -12,6 +12,7 @@ export type SourceItem = {
   href?: string;
   linkKey?: ExternalLinkKey;
   description?: string;
+  comingSoon?: boolean;
 };
 
 const sourceLink =
@@ -61,6 +62,7 @@ export function SourcesBlock({
               const href = item.linkKey ? externalLinkUrl(item.linkKey) : item.href;
               const gcNetworkOnly = item.linkKey ? isGcNetworkOnly(item.linkKey) : false;
               const key = item.linkKey ?? item.href ?? item.label;
+              const isInternal = href?.startsWith("/") ?? false;
 
               return (
                 <li key={key}>
@@ -70,13 +72,17 @@ export function SourcesBlock({
                       <a
                         href={href}
                         className={sourceLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(isInternal
+                          ? {}
+                          : { target: "_blank", rel: "noopener noreferrer" })}
                       >
                         {item.description ?? href}
                       </a>
                       {gcNetworkOnly ? (
                         <span className="text-muted-foreground/35"> (GC network only)</span>
+                      ) : null}
+                      {item.comingSoon ? (
+                        <span className="text-muted-foreground/35"> (coming soon)</span>
                       ) : null}
                     </>
                   ) : (

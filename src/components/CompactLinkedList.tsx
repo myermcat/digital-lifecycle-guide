@@ -1,5 +1,6 @@
+import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
-import { guideArrowList, guideArrowListIcon } from "@/lib/guide-typography";
+import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon } from "@/lib/guide-typography";
 import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -12,7 +13,7 @@ export type CompactLinkedItem = {
 
 export type ArrowLeadItem = {
   lead: string;
-  body: string;
+  body: ReactNode;
   /** Optional extra lines below the body, with looser spacing between them. */
   bodyLines?: string[];
   href?: string;
@@ -38,24 +39,26 @@ export function ArrowLeadList({
   className?: string;
 }) {
   return (
-    <ul className={cn(guideArrowList, className)}>
+    <ul className={cn(guideArrowLeadList, className)}>
       {items.map((item) => (
         <li key={item.lead} className="flex gap-2.5">
           <GuideArrowBullet />
-          <div className="min-w-0 flex-1">
-            <p>
+          <div className={cn("min-w-0 flex-1", guideArrowLeadGroup)}>
+            <p className="mb-0">
               {item.href ? (
                 <a
                   href={item.href}
-                  className={`font-serif text-base md:text-[1.05rem] leading-[1.45] ${guideLink}`}
+                  className={`font-serif text-base md:text-[1.05rem] leading-snug ${guideLink}`}
                 >
                   {item.lead}
                 </a>
               ) : (
-                <span className={`${guideProse} font-medium text-primary`}>{item.lead}</span>
+                <span className={`${guideProse} font-medium text-primary leading-snug`}>
+                  {item.lead}
+                </span>
               )}
             </p>
-            <p className={`mt-1 ${guideProseTight} text-foreground/65`}>{item.body}</p>
+            <p className={`${guideProseTight} text-foreground/65 leading-snug`}>{item.body}</p>
             {item.bodyLines && item.bodyLines.length > 0 ? (
               <div className="mt-2 space-y-1.5">
                 {item.bodyLines.map((line) => (

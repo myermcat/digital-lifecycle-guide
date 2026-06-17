@@ -1,7 +1,11 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { WeightedPhaseNote } from "@/components/WeightedPhaseBlock";
-import { MANAGING_WHAT_YOU_BOUGHT_PATH } from "@/lib/reference-paths";
+import { MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import {
+  GCCASE_MIGRATION_READINESS_GUIDE,
+  type PlaceholderPhraseLink,
+} from "@/lib/placeholder-sources";
 
 export type ProcurementJourneyStepStrings = {
   label: string;
@@ -11,6 +15,13 @@ export type ProcurementJourneyStepStrings = {
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
+  placeholderLinks?: PlaceholderPhraseLink[];
+};
+
+export type WhatStaysYoursItemStrings = {
+  lead: string;
+  body: string;
+  placeholderLinks?: PlaceholderPhraseLink[];
 };
 
 export type ComparisonRowStrings = {
@@ -22,6 +33,7 @@ export type ComparisonRowStrings = {
 export type LinkedProseStrings = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
+  placeholderLinks?: PlaceholderPhraseLink[];
 };
 
 /** Procurement thread copy — organized by page section. */
@@ -81,13 +93,14 @@ export const PROCUREMENT_STRINGS = {
         label: "Look",
         title: "Look before you buy.",
         leadIn: "The cheapest procurement is the one you do not have to run.",
-        body: "Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments.",
+        body: "Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments.",
         externalLinks: [
           {
             phrase: "Policy on the Planning and Management of Investments",
             linkKey: "policy-planning-investments",
           },
         ],
+        internalLinks: [{ phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
       },
       {
         label: "Team",
@@ -99,7 +112,15 @@ export const PROCUREMENT_STRINGS = {
         label: "Ask",
         title: "Say the problem, not the solution.",
         leadIn: "Hand suppliers the problem and let them bring the solution.",
-        body: "Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written.",
+        body: "Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one.",
+        // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 2, Confirm Requirements / Business Requirements Discovery Workbook — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
+        placeholderLinks: [
+          {
+            phrase: "TBS's own migration guidance",
+            source: GCCASE_MIGRATION_READINESS_GUIDE,
+            part: "Step 2, Confirm Requirements / Business Requirements Discovery Workbook",
+          },
+        ],
       },
       {
         label: "Strategy",
@@ -112,7 +133,15 @@ export const PROCUREMENT_STRINGS = {
         label: "Approve",
         title: "Get the approval level right, and check in at the right moment.",
         leadIn: "The question everyone asks: when do you loop in Treasury Board?",
-        body: "It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources).",
+        body: "It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity.",
+        // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning, procurement delays — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
+        placeholderLinks: [
+          {
+            phrase: "12 to 24 months",
+            source: GCCASE_MIGRATION_READINESS_GUIDE,
+            part: "Risks of Delayed Planning, procurement delays",
+          },
+        ],
       },
       {
         label: "Engage",
@@ -272,11 +301,19 @@ export const PROCUREMENT_STRINGS = {
   ],
 
   whoseJob: {
-    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way.",
+    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture.",
     externalLinks: [
       {
         phrase: "Treasury Board Directive on the Management of Procurement",
         linkKey: "directive-procurement",
+      },
+    ],
+    // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Roles and Responsibilities — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
+    placeholderLinks: [
+      {
+        phrase: "TBS's migration guidance",
+        source: GCCASE_MIGRATION_READINESS_GUIDE,
+        part: "Roles and Responsibilities",
       },
     ],
   } satisfies LinkedProseStrings,

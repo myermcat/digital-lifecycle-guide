@@ -1,7 +1,8 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
-import { MANAGING_WHAT_YOU_BOUGHT_PATH, SOO_VS_SOW_PATH } from "./reference-paths";
+import { MANAGING_WHAT_YOU_BOUGHT_PATH, SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
+import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
 
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
 export const GITHUB_PAGES_BASE = "/digital-lifecycle-guide/";
@@ -42,5 +43,7 @@ export const STATIC_PRERENDER_PATHS = [
   ...LEGACY_CONTRACTING_PATHS,
   SOO_VS_SOW_PATH,
   MANAGING_WHAT_YOU_BOUGHT_PATH,
+  OPTIONS_ANALYSIS_PATH,
   ALL_PAGES_PATH,
+  SOURCE_COMING_SOON_PATH,
 ] as const;

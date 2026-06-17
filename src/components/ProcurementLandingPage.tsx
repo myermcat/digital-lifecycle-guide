@@ -5,7 +5,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { ProcurementJourneySection } from "@/components/ProcurementJourneySection";
 import { ProcurementScopeCallout } from "@/components/ProcurementScopeCallout";
-import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
+import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
 import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
@@ -92,10 +92,10 @@ export function ProcurementLandingPage() {
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
         <p className={guideProse}>
-          {proseWithExternalLinks(
-            landing.whoseJob.text,
-            landing.whoseJob.externalLinks ?? [],
-          )}
+          {proseWithMixedLinks(landing.whoseJob.text, {
+            external: landing.whoseJob.externalLinks,
+            placeholder: landing.whoseJob.placeholderLinks,
+          })}
         </p>
       </section>
 

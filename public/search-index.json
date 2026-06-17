@@ -252,6 +252,15 @@
     "text": ""
   },
   {
+    "id": "/reference/options-analysis",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "",
+    "sectionHeading": "Options analysis",
+    "lifecyclePhase": "reference",
+    "text": ""
+  },
+  {
     "id": "/practice/maturity-orientation",
     "pageTitle": "Maturity orientation",
     "pagePath": "/practice/maturity-orientation",
@@ -303,7 +312,7 @@
     "sectionId": "how-a-procurement-goes",
     "sectionHeading": "How a procurement goes",
     "lifecyclePhase": "thread",
-    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments. Build the team. Buying well is a team sport from the start. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. Choose the strategy. There are two ways to buy, and for digital, agile is the default. There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases."
+    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments. Build the team. Buying well is a team sport from the start. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one. Choose the strategy. There are two ways to buy, and for digital, agile is the default. There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity. Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases."
   },
   {
     "id": "/thread/procurement#traditional-vs-agile",
@@ -348,7 +357,7 @@
     "sectionId": "whose-job",
     "sectionHeading": "Whose job it is",
     "lifecyclePhase": "thread",
-    "text": "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way."
+    "text": "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture."
   },
   {
     "id": "/thread/procurement#by-phase",
@@ -393,7 +402,7 @@
     "sectionId": "walk-the-options",
     "sectionHeading": "Then walk the options, in order",
     "lifecyclePhase": "thread",
-    "text": "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder. Use what you already have. Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, then you buy. And you can explain why when someone asks. And if the thing does not exist yet, ask around before you set up a buy of your own. If another team needs the same thing, join up and buy it once for both of you. One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on."
+    "text": "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder. The full walkthrough lives on the Options analysis reference page. Use what you already have. Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, then you buy. And you can explain why when someone asks. And if the thing does not exist yet, ask around before you set up a buy of your own. If another team needs the same thing, join up and buy it once for both of you. One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on."
   },
   {
     "id": "/thread/procurement/you-looked-before-you-bought#where-to-look",
@@ -528,7 +537,7 @@
     "sectionId": "bend-process",
     "sectionHeading": "Bend the process, not the software",
     "lifecyclePhase": "thread",
-    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows."
+    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows. A migration is the moment to drop this. TBS's migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one."
   },
   {
     "id": "/thread/procurement/you-can-leave-when-you-need-to#how-stuck-happens",
@@ -628,5 +637,59 @@
     "sectionHeading": "A hybrid",
     "lifecyclePhase": "reference",
     "text": "Sometimes you buy part and manage part, for example buying a platform and hiring someone to run it. The procurement steps apply to the part you buy. Worked guidance to come."
+  },
+  {
+    "id": "/reference/options-analysis#start-with-the-problem",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "start-with-the-problem",
+    "sectionHeading": "Start with the problem",
+    "lifecyclePhase": "reference",
+    "text": "Before you compare options, be sure what you are solving. Name the problem and the outcomes you need, and separate the business need from the features of whatever you have now. A clear need is what every option gets measured against, and it keeps you from rebuilding an old tool's quirks into a new one. TBS's migration guidance puts it the same way: distinguish business needs from system features, so you do not recreate a legacy solution by default."
+  },
+  {
+    "id": "/reference/options-analysis#the-field-of-options",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "the-field-of-options",
+    "sectionHeading": "The field of options",
+    "lifecyclePhase": "reference",
+    "text": "Use what you already have. A tool you already own that does this, or nearly does, is the cheapest answer of all. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use spare capacity on someone else's system, or ride an existing enterprise contract for better value, since buying in volume costs less per unit. Partner with another department. If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, you procure a solution, through an existing framework or your own procurement. Build it yourself. Possible, but the in-house capability to build and run software is thin in most departments, so treat building as a rare exception rather than a default. Retire without replacing. If the need has genuinely gone, the right option may be to stop. This one mostly comes up in Sunset."
+  },
+  {
+    "id": "/reference/options-analysis#how-to-weigh-them",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "how-to-weigh-them",
+    "sectionHeading": "How to weigh them",
+    "lifecyclePhase": "reference",
+    "text": "No option is best in the abstract. The right one depends on your situation. A few things to weigh for each: How soon you need it and how long each path takes to stand up. Whether it needs procurement and how long that runs. For a cloud solution this can be 12 to 24 months from start to contract award, depending on value and complexity. How complex your service is and whether the option fits that complexity. Integrations and dependencies which are easy to underestimate and often decide the effort. How much you would need to customise and whether that is worth it. Cost over its whole life not just to set up. Who supports and maintains it once it is running. Room to grow and how well it meets where you are heading. TBS's migration guidance includes a structured checklist that compares the main options against criteria like these. It is the deeper tool when you are ready to score them."
+  },
+  {
+    "id": "/reference/options-analysis#do-the-homework-first",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "do-the-homework-first",
+    "sectionHeading": "Do the homework first",
+    "lifecyclePhase": "reference",
+    "text": "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules, the UK and Australia among them. Borrowing a worked answer beats starting from a blank page."
+  },
+  {
+    "id": "/reference/options-analysis#where-this-fits",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "where-this-fits",
+    "sectionHeading": "Where this fits",
+    "lifecyclePhase": "reference",
+    "text": "In Create, this is your \"look before you buy\" step, done before any contract exists. In Sunset, this is how you assess options for a replacement, or reach the decision to retire without one."
+  },
+  {
+    "id": "/reference/options-analysis#sources",
+    "pageTitle": "Options analysis",
+    "pagePath": "/reference/options-analysis",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "reference",
+    "text": "Sources and references."
   }
 ]

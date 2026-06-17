@@ -1,6 +1,10 @@
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { EXTERNAL_LINKS } from "@/lib/external-links";
+import {
+  comingSoonSourceItem,
+  GCCASE_MIGRATION_READINESS_GUIDE,
+} from "@/lib/placeholder-sources";
 
 type RegistrySourceRef = {
   label: string;
@@ -36,6 +40,7 @@ function sourceItemFromRef({ label, linkKey }: RegistrySourceRef): SourceItem {
 }
 
 export const PROCUREMENT_SOURCES: SourceItem[] = [
+  comingSoonSourceItem(GCCASE_MIGRATION_READINESS_GUIDE),
   ...PROCUREMENT_SOURCE_REFS.governing.map(sourceItemFromRef),
   ...PROCUREMENT_SOURCE_REFS.supporting.map(sourceItemFromRef),
 ];

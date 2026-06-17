@@ -1,10 +1,15 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
+import type { SourceItem } from "@/components/SourcesBlock";
 import {
   PROCUREMENT_SUBPAGE_SLUGS,
   type ProcurementSubPageSlug,
 } from "./procurement-subpage-slugs";
-import { SOO_VS_SOW_PATH } from "./reference-paths";
+import { SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
 import type { ExternalLinkKey } from "./external-links";
+import {
+  comingSoonSourceItem,
+  GCCASE_MIGRATION_READINESS_GUIDE,
+} from "./placeholder-sources";
 
 export {
   PROCUREMENT_SUBPAGE_SLUGS,
@@ -35,12 +40,20 @@ export type ContractingParagraphLink = {
   to: string;
 };
 
+export type ContractingPlaceholderParagraphLink = {
+  index: number;
+  phrase: string;
+  source: string;
+  part?: string;
+};
+
 export type ContractingSection = {
   id: string;
   title: string;
   paragraphs?: string[];
   paragraphLinks?: ContractingParagraphLink[];
   externalParagraphLinks?: ContractingExternalParagraphLink[];
+  placeholderParagraphLinks?: ContractingPlaceholderParagraphLink[];
   paragraphsAfterBullets?: string[];
   /** How text below a bullet list is rendered. */
   paragraphsAfterBulletsVariant?: "prose" | "note";
@@ -66,6 +79,7 @@ export type ContractingSubPage = {
   stub?: boolean;
   intro?: string[];
   sections: ContractingSection[];
+  sources?: SourceItem[];
 };
 
 export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSubPage> = {
@@ -87,8 +101,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "walk-the-options",
         title: "Then walk the options, in order",
         paragraphs: [
-          "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder.",
+          "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder. The full walkthrough lives on the Options analysis reference page.",
         ],
+        paragraphLinks: [{ index: 0, phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
         bulletsVariant: "ladder",
         bullets: [
           {
@@ -312,6 +327,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
     slug: "you-did-not-over-customise",
     title: "You did not over-customise",
     intro: ["When you buy software that already exists, the strongest thing you can do is leave it alone."],
+    sources: [comingSoonSourceItem(GCCASE_MIGRATION_READINESS_GUIDE)],
     sections: [
       {
         id: "table-with-hole",
@@ -334,6 +350,16 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         paragraphs: [
           "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade.",
           "Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows.",
+          "A migration is the moment to drop this. TBS's migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one.",
+        ],
+        // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Common Migration Approaches / Best Practices — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
+        placeholderParagraphLinks: [
+          {
+            index: 2,
+            phrase: "TBS's migration guidance",
+            source: GCCASE_MIGRATION_READINESS_GUIDE,
+            part: "Common Migration Approaches / Best Practices",
+          },
         ],
       },
     ],

@@ -32,5 +32,11 @@ export const guideCalloutLabel =
 /** Wrapper classes for arrow-bullet lists. */
 export const guideArrowList = "space-y-4 list-none pl-0";
 
+/** Between arrow-lead items (heading + subtext groups). Default bullet list style. */
+export const guideArrowLeadList = "list-none pl-0 space-y-5";
+
+/** Within one arrow-lead item: gap between heading and subtext. */
+export const guideArrowLeadGroup = "space-y-0.5";
+
 /** Classes for GuideArrowBullet — the reusable list arrow marker. */
 export const guideArrowListIcon = "mt-[0.4rem] size-4 shrink-0 text-primary/35";

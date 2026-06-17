@@ -9,4 +9,9 @@ export {
   GuideArrowBullet,
   type ArrowLeadItem,
 } from "@/components/CompactLinkedList";
-export { guideArrowList, guideArrowListIcon } from "@/lib/guide-typography";
+export {
+  guideArrowLeadGroup,
+  guideArrowLeadList,
+  guideArrowList,
+  guideArrowListIcon,
+} from "@/lib/guide-typography";
