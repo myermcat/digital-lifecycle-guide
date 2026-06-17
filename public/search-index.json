@@ -357,7 +357,7 @@
     "sectionId": "whose-job",
     "sectionHeading": "Whose job it is",
     "lifecyclePhase": "thread",
-    "text": "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture."
+    "text": "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's GCcase migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture."
   },
   {
     "id": "/thread/procurement#by-phase",
@@ -537,7 +537,7 @@
     "sectionId": "bend-process",
     "sectionHeading": "Bend the process, not the software",
     "lifecyclePhase": "thread",
-    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows. A migration is the moment to drop this. TBS's migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one."
+    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows. A migration is the moment to drop this. TBS's GCcase migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one."
   },
   {
     "id": "/thread/procurement/you-can-leave-when-you-need-to#how-stuck-happens",
@@ -645,7 +645,7 @@
     "sectionId": "start-with-the-problem",
     "sectionHeading": "Start with the problem",
     "lifecyclePhase": "reference",
-    "text": "Before you compare options, be sure what you are solving. Name the problem and the outcomes you need, and separate the business need from the features of whatever you have now. A clear need is what every option gets measured against, and it keeps you from rebuilding an old tool's quirks into a new one. TBS's migration guidance puts it the same way: distinguish business needs from system features, so you do not recreate a legacy solution by default."
+    "text": "Before you compare options, be sure what you are solving. Name the problem and the outcomes you need, and separate the business need from the features of whatever you have now. A clear need is what every option gets measured against, and it keeps you from rebuilding an old tool's quirks into a new one. TBS's GCcase migration guidance puts it the same way: distinguish business needs from system features, so you do not recreate a legacy solution by default."
   },
   {
     "id": "/reference/options-analysis#the-field-of-options",
@@ -663,7 +663,7 @@
     "sectionId": "how-to-weigh-them",
     "sectionHeading": "How to weigh them",
     "lifecyclePhase": "reference",
-    "text": "No option is best in the abstract. The right one depends on your situation. A few things to weigh for each: How soon you need it and how long each path takes to stand up. Whether it needs procurement and how long that runs. For a cloud solution this can be 12 to 24 months from start to contract award, depending on value and complexity. How complex your service is and whether the option fits that complexity. Integrations and dependencies which are easy to underestimate and often decide the effort. How much you would need to customise and whether that is worth it. Cost over its whole life not just to set up. Who supports and maintains it once it is running. Room to grow and how well it meets where you are heading. TBS's migration guidance includes a structured checklist that compares the main options against criteria like these. It is the deeper tool when you are ready to score them."
+    "text": "No option is best in the abstract. The right one depends on your situation. A few things to weigh for each: How soon you need it and how long each path takes to stand up. Whether it needs procurement and how long that runs. For a cloud solution this can be 12 to 24 months from start to contract award, depending on value and complexity. How complex your service is and whether the option fits that complexity. Integrations and dependencies which are easy to underestimate and often decide the effort. How much you would need to customise and whether that is worth it. Cost over its whole life not just to set up. Who supports and maintains it once it is running. Room to grow and how well it meets where you are heading. TBS's GCcase migration guidance includes a structured checklist that compares the main options against criteria like these. It is the deeper tool when you are ready to score them."
   },
   {
     "id": "/reference/options-analysis#do-the-homework-first",

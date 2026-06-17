@@ -19,13 +19,13 @@ export const OPTIONS_ANALYSIS = {
     title: "Start with the problem",
     paragraphs: [
       "Before you compare options, be sure what you are solving. Name the problem and the outcomes you need, and separate the business need from the features of whatever you have now. A clear need is what every option gets measured against, and it keeps you from rebuilding an old tool's quirks into a new one.",
-      "TBS's migration guidance puts it the same way: distinguish business needs from system features, so you do not recreate a legacy solution by default.",
+      "TBS's GCcase migration guidance puts it the same way: distinguish business needs from system features, so you do not recreate a legacy solution by default.",
     ],
     // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 2, Business Requirements Discovery Workbook — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
     placeholderParagraphLinks: [
       {
         index: 1,
-        phrase: "TBS's migration guidance",
+        phrase: "TBS's GCcase migration guidance",
         source: GCCASE_MIGRATION_READINESS_GUIDE,
         part: "Step 2, Business Requirements Discovery Workbook",
       },
@@ -117,7 +117,7 @@ export const OPTIONS_ANALYSIS = {
 
   // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Migration Decision Checklist; Risks of Delayed Planning — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
   howToWeighClosing:
-    "TBS's migration guidance includes a structured checklist that compares the main options against criteria like these. It is the deeper tool when you are ready to score them.",
+    "TBS's GCcase migration guidance includes a structured checklist that compares the main options against criteria like these. It is the deeper tool when you are ready to score them.",
   howToWeighClosingPlaceholderLinks: [
     {
       phrase: "structured checklist",

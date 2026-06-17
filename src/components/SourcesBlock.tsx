@@ -13,10 +13,16 @@ export type SourceItem = {
   linkKey?: ExternalLinkKey;
   description?: string;
   comingSoon?: boolean;
+  /** Optional styling hint for low-emphasis citations. */
+  tone?: "default" | "very-light";
 };
 
-const sourceLink =
-  "text-muted-foreground/40 underline underline-offset-4 hover:text-muted-foreground/55 transition-colors";
+const sourceLinkByTone: Record<NonNullable<SourceItem["tone"]>, string> = {
+  default:
+    "text-muted-foreground/40 underline underline-offset-4 hover:text-muted-foreground/55 transition-colors",
+  "very-light":
+    "text-muted-foreground/25 underline underline-offset-4 hover:text-muted-foreground/40 transition-colors",
+};
 
 export function SourcesBlock({
   items,
@@ -63,6 +69,7 @@ export function SourcesBlock({
               const gcNetworkOnly = item.linkKey ? isGcNetworkOnly(item.linkKey) : false;
               const key = item.linkKey ?? item.href ?? item.label;
               const isInternal = href?.startsWith("/") ?? false;
+              const tone = item.tone ?? "default";
 
               return (
                 <li key={key}>
@@ -71,7 +78,7 @@ export function SourcesBlock({
                     <>
                       <a
                         href={href}
-                        className={sourceLink}
+                        className={sourceLinkByTone[tone]}
                         {...(isInternal
                           ? {}
                           : { target: "_blank", rel: "noopener noreferrer" })}

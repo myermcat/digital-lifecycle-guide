@@ -301,7 +301,7 @@ export const PROCUREMENT_STRINGS = {
   ],
 
   whoseJob: {
-    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture.",
+    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's GCcase migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture.",
     externalLinks: [
       {
         phrase: "Treasury Board Directive on the Management of Procurement",
@@ -311,7 +311,7 @@ export const PROCUREMENT_STRINGS = {
     // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Roles and Responsibilities — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
     placeholderLinks: [
       {
-        phrase: "TBS's migration guidance",
+        phrase: "TBS's GCcase migration guidance",
         source: GCCASE_MIGRATION_READINESS_GUIDE,
         part: "Roles and Responsibilities",
       },

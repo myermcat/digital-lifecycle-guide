@@ -350,13 +350,13 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         paragraphs: [
           "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade.",
           "Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows.",
-          "A migration is the moment to drop this. TBS's migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one.",
+          "A migration is the moment to drop this. TBS's GCcase migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one.",
         ],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Common Migration Approaches / Best Practices — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
         placeholderParagraphLinks: [
           {
             index: 2,
-            phrase: "TBS's migration guidance",
+            phrase: "TBS's GCcase migration guidance",
             source: GCCASE_MIGRATION_READINESS_GUIDE,
             part: "Common Migration Approaches / Best Practices",
           },

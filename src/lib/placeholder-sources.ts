@@ -27,14 +27,19 @@ export function comingSoonSourceItem(source: string): SourceItem {
   };
 }
 
+export const GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION =
+  "GCcase Migration Readiness Guide and Assessment (TBS-OCIO, in production). Guidance for departments migrating off the GCcase case-management platform, which is being decommissioned. Cited here as a worked example of a transition; it is specific to GCcase rather than general migration guidance.";
+
+/** @deprecated Use GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION */
 export const GCCASE_MIGRATION_ASSESSMENT_DESCRIPTION =
-  "GCcase Migration Readiness Guide and Assessment (TBS-OCIO, in production)";
+  GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION;
 
 export function gccaseComingSoonSourceItem(): SourceItem {
   return {
-    label: "Supporting reference",
+    label: "Supporting reference (coming soon)",
     href: placeholderSourceHref(GCCASE_MIGRATION_READINESS_GUIDE),
-    description: GCCASE_MIGRATION_ASSESSMENT_DESCRIPTION,
+    description: GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION,
     comingSoon: true,
+    tone: "very-light",
   };
 }
