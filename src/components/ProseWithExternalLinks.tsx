@@ -22,11 +22,16 @@ export type AnchorPhraseLink = {
   hash: string;
 };
 
+export type BoldPhrase = {
+  phrase: string;
+};
+
 type MixedPhraseLink =
   | ({ kind: "external" } & ExternalPhraseLink)
   | ({ kind: "internal" } & InternalPhraseLink)
   | ({ kind: "anchor" } & AnchorPhraseLink)
-  | ({ kind: "placeholder" } & PlaceholderPhraseLink);
+  | ({ kind: "placeholder" } & PlaceholderPhraseLink)
+  | ({ kind: "bold" } & BoldPhrase);
 
 export function proseWithMixedLinks(
   text: string,
@@ -35,11 +40,13 @@ export function proseWithMixedLinks(
     internal = [],
     anchor = [],
     placeholder = [],
+    bold = [],
   }: {
     external?: ExternalPhraseLink[];
     internal?: InternalPhraseLink[];
     anchor?: AnchorPhraseLink[];
     placeholder?: PlaceholderPhraseLink[];
+    bold?: BoldPhrase[];
   },
 ): ReactNode {
   const links: MixedPhraseLink[] = [
@@ -47,6 +54,7 @@ export function proseWithMixedLinks(
     ...internal.map((link) => ({ kind: "internal" as const, ...link })),
     ...anchor.map((link) => ({ kind: "anchor" as const, ...link })),
     ...placeholder.map((link) => ({ kind: "placeholder" as const, ...link })),
+    ...bold.map((link) => ({ kind: "bold" as const, ...link })),
   ];
 
   if (links.length === 0) {
@@ -85,6 +93,10 @@ export function proseWithMixedLinks(
         >
           {link.phrase}
         </Link>
+      ) : link.kind === "bold" ? (
+        <strong key={`bold-${link.phrase}-${start}`} className="font-semibold text-foreground/90">
+          {link.phrase}
+        </strong>
       ) : (
         <a key={`${link.hash}-${start}`} href={`#${link.hash}`} className={guideLink}>
           {link.phrase}

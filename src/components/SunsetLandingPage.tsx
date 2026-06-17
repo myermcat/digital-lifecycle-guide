@@ -8,7 +8,7 @@ import { PracticeCardGroup } from "@/components/PracticeCard";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { SourcesBlock } from "@/components/SourcesBlock";
 import { SunsetJourneySection } from "@/components/SunsetJourneySection";
-import { SunsetPathFork } from "@/components/SunsetPathFork";
+import { SunsetPathFork, sunsetJourneyCardBox } from "@/components/SunsetPathFork";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { whereThisFitsForSunsetPhaseLanding } from "@/lib/lifecycle-navigation";
 import {
@@ -60,22 +60,26 @@ export function SunsetLandingPage() {
         <InlineArrowLeadList items={landing.fork.bullets} />
         <p className={`${guideProse} mt-4`}>{landing.fork.close}</p>
 
-        <SunsetPathFork
-          path={path}
-          onPathChange={setPath}
-          options={landing.fork.pathOptions}
-          cardTitle={landing.fork.cardTitle}
-          journeyId={`${toggleId}-journey`}
-        >
+        <div className={sunsetJourneyCardBox}>
           <div id={`${toggleId}-journey`} key={path}>
             <SunsetJourneySection
               embedded
+              path={path}
               intro={landing.journeyIntro}
               footer={landing.journeyFooter}
               steps={visibleSteps}
+              fork={
+                <SunsetPathFork
+                  path={path}
+                  onPathChange={setPath}
+                  options={landing.fork.pathOptions}
+                  cardTitle={landing.fork.cardTitle}
+                  journeyId={`${toggleId}-journey`}
+                />
+              }
             />
           </div>
-        </SunsetPathFork>
+        </div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="where-to-go-next">

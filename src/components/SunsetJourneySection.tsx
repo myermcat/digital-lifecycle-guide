@@ -4,9 +4,18 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import type { ReactNode } from "react";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import type { SunsetJourneyStep } from "@/lib/sunset-landing";
-import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
+import type { SunsetJourneyStep, SunsetPath } from "@/lib/sunset-landing";
+import type { SunsetJourneyStepExample } from "@/lib/sunset-strings";
+import sunsetReplaceOverlap from "@/assets/sunset_replace_overlap.svg?url";
+import {
+  guideBlockTitle,
+  guideCalloutLabel,
+  guideProse,
+  guideProseTight,
+  guideSectionTitle,
+} from "@/lib/guide-typography";
 
 function JourneyStepNumber({ n }: { n: number }) {
   return (
@@ -16,27 +25,60 @@ function JourneyStepNumber({ n }: { n: number }) {
   );
 }
 
+function SunsetJourneyStepExample({ example }: { example: SunsetJourneyStepExample }) {
+  return (
+    <div className="mt-4 rounded-lg border border-border bg-card shadow-sm overflow-hidden">
+      <div className="px-4 py-4 md:px-5 md:py-5 space-y-4">
+        <div>
+          <p className={guideCalloutLabel}>Example</p>
+          <h4 className={`${guideBlockTitle} mt-1.5 text-lg md:text-xl`}>{example.title}</h4>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-md border border-primary/25 bg-primary/5 px-4 py-3.5">
+            <p className="font-serif text-sm font-semibold text-primary tracking-tight mb-1.5">
+              {example.left.heading}
+            </p>
+            <p className={guideProseTight}>{example.left.body}</p>
+          </div>
+          <div className="rounded-md border border-destructive/25 bg-destructive/5 px-4 py-3.5">
+            <p className="font-serif text-sm font-semibold text-destructive/90 tracking-tight mb-1.5">
+              {example.right.heading}
+            </p>
+            <p className={guideProseTight}>{example.right.body}</p>
+          </div>
+        </div>
+        <p className={guideProseTight}>{example.caption}</p>
+      </div>
+    </div>
+  );
+}
+
+const SUNSET_REPLACE_OVERLAP_ALT =
+  "The new service's Create overlaps the old service's Sunset from Decide onward. A bottom timeline shows the old service moving through five Sunset steps: Assess, Decide, Plan, Acquire, Migrate. A top timeline shows the new service's Create starting above Decide as discover and decide, becoming build and deliver above Acquire and Migrate, then continuing into Live. Decide through Migrate are shaded as the overlap, and at Migrate an arrow shows users and data moving up to the new service.";
+
 export function SunsetJourneySection({
   intro,
   footer,
   steps,
   embedded = false,
+  fork,
+  path,
 }: {
   intro: string;
   footer: string;
   steps: SunsetJourneyStep[];
   embedded?: boolean;
+  fork?: ReactNode;
+  path: SunsetPath;
 }) {
   return (
     <section
-      className={
-        embedded
-          ? "mt-6 pt-6 border-t border-border/45 scroll-mt-24"
-          : "mt-10 md:mt-12 scroll-mt-24"
-      }
+      className={embedded ? "scroll-mt-24" : "mt-10 md:mt-12 scroll-mt-24"}
       id="how-a-sunset-goes"
     >
       <h2 className={`${guideSectionTitle} mb-4`}>How a sunset goes</h2>
+
+      {fork}
 
       <div className="mb-6 overflow-x-auto pb-1">
         <ol className="flex min-w-max gap-2 list-none pl-0">
@@ -72,12 +114,26 @@ export function SunsetJourneySection({
                   external: step.externalLinks,
                   internal: step.internalLinks,
                   placeholder: step.placeholderLinks,
+                  bold: step.boldPhrases,
                 })}
               </p>
+              {step.example ? <SunsetJourneyStepExample example={step.example} /> : null}
             </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
+
+      {path === "replace" ? (
+        <figure className="mt-5">
+          <img
+            src={sunsetReplaceOverlap}
+            alt={SUNSET_REPLACE_OVERLAP_ALT}
+            className="w-full h-auto"
+            width={800}
+            height={250}
+          />
+        </figure>
+      ) : null}
 
       <p className={`${guideProse} mt-5`}>{footer}</p>
     </section>

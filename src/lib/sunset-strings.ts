@@ -1,5 +1,5 @@
 import type { CautionItem } from "@/components/CautionBlock";
-import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
+import type { BoldPhrase, ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import { threadPath } from "@/lib/guide-strings";
@@ -7,6 +7,13 @@ import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
+
+export type SunsetJourneyStepExample = {
+  title: string;
+  left: { heading: string; body: string };
+  right: { heading: string; body: string };
+  caption: string;
+};
 
 export type SunsetJourneyStepStrings = {
   label: string;
@@ -16,6 +23,8 @@ export type SunsetJourneyStepStrings = {
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   placeholderLinks?: PlaceholderPhraseLink[];
+  boldPhrases?: BoldPhrase[];
+  example?: SunsetJourneyStepExample;
   /** Hidden on the retire path (step 4 Acquire). */
   replaceOnly?: boolean;
 };
@@ -73,7 +82,7 @@ export const SUNSET_STRINGS = {
         label: "Assess",
         title: "Assess.",
         leadIn: "Build a clear picture of what you have.",
-        body: "Inventory the service: what it does, who uses it, how critical it is, what it connects to, what it costs, and what data it holds. Then decide, for each application, whether it is still needed and what the risks of touching it are.",
+        body: "Build a clear picture of what you have before you change anything. Inventory the service: what it does, who uses it and how, what it connects to, what it costs to run, what data it holds, and how critical it is. Then ask the harder question for each application: is it still needed at all? Some are worth keeping and moving, others can be retired outright. Name the risks of touching it, especially anything that would disrupt users mid-cycle.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 1, Application Inventory Template — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -87,14 +96,28 @@ export const SUNSET_STRINGS = {
         label: "Decide",
         title: "Decide.",
         leadIn: "Work out what you need going forward, and how to get it.",
-        body: "Separate the business need from the current features, so you do not rebuild the old tool's quirks into the new one. Judge the complexity. Then weigh your options, and confirm the replace-or-retire decision. The Options analysis page is the full version of this step.",
-        internalLinks: [{ phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
+        body: "Work out what you actually need going forward, and how to get it. The trap is recreating the old system feature for feature. Separate the business need from the current features, so you carry forward what creates value and drop what only exists because of the old platform's limits. Judge how complex the replacement really is, map the integrations (they are routinely underestimated), then do options analysis.",
+        internalLinks: [{ phrase: "do options analysis", to: OPTIONS_ANALYSIS_PATH }],
+        boldPhrases: [{ phrase: "Separate the business need from the current features" }],
+        example: {
+          title: "Write the need, not the feature",
+          left: {
+            heading: "The need",
+            body: "We must receive applications, assess them against published criteria, and record each decision with reasons.",
+          },
+          right: {
+            heading: "The old feature",
+            body: "We must keep all 47 fields, the three approval tabs, and the colour-coded status flags exactly as they were.",
+          },
+          caption:
+            "The features are only how the old tool met the need. The new one may meet it better.",
+        },
       },
       {
         label: "Plan",
         title: "Plan.",
         leadIn: "Turn the decision into a plan.",
-        body: "Bring in the people who matter (the users, IM for records retention, IT, security, and whoever holds the budget), write a business case, plan the change for users, name who is responsible for what, and define what success looks like.",
+        body: "Turn the decision into a plan that lines up people, money, and timing. Bring the right people in early: the users who live in the service, IM for records retention, IT and security, and whoever holds the budget and the approvals. Write the business case, plan the change for users (adoption makes or breaks a migration), set out who is responsible for what, and define what success looks like and how you will measure it.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 3, Business Case and Roles and Responsibilities — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -108,7 +131,7 @@ export const SUNSET_STRINGS = {
         label: "Acquire",
         title: "Acquire.",
         leadIn: "Get and prepare the new solution.",
-        body: "Run the procurement or build, configure it, decide your migration approach, clean the data, and train people. Procurement here can take 12 to 24 months, so start early. See the Procurement thread for how the buying works.",
+        body: "Secure and prepare the new solution. Run the procurement or build, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Procurement alone can run 12 to 24 months, so this is where starting early pays off. See the Procurement thread for how the buying works.",
         replaceOnly: true,
         internalLinks: [{ phrase: "Procurement thread", to: PROCUREMENT_LANDING_PATH }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
@@ -124,7 +147,7 @@ export const SUNSET_STRINGS = {
         label: "Migrate",
         title: "Migrate.",
         leadIn: "Make the switch and close out the old.",
-        body: "Move the data, archive the historical records to their retention schedule, bring users across, and decommission the old service.",
+        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, bring users across, and decommission the old service. A migration is a chance to simplify, so move what still creates value and leave the rest behind.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 5, Migrate and Common Migration Approaches — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {

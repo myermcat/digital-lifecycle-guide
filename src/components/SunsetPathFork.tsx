@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import type { SunsetPath } from "@/lib/sunset-landing";
 import { guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
@@ -9,10 +8,13 @@ export type SunsetPathForkOption = {
 };
 
 /** Matches PhaseFitCards compact variant (Options analysis by-phase section). */
-const forkCardBox =
-  "mt-6 w-full rounded-md border border-border/45 bg-muted/20 px-3.5 py-3 md:px-4 md:py-3.5";
-const forkCardTitle = "font-serif text-base font-semibold text-primary tracking-tight";
-const forkCardBody = `${guideProseTight} text-foreground/60`;
+export const sunsetJourneyCardSkin =
+  "w-full rounded-md border border-border/45 bg-muted/20 px-3.5 py-3 md:px-4 md:py-3.5";
+
+export const sunsetJourneyCardBox = `mt-6 ${sunsetJourneyCardSkin}`;
+
+const forkTitle = "font-serif text-base font-semibold text-primary tracking-tight";
+const forkBody = `${guideProseTight} text-foreground/60`;
 
 export function SunsetPathFork({
   path,
@@ -20,20 +22,18 @@ export function SunsetPathFork({
   options,
   cardTitle,
   journeyId,
-  children,
 }: {
   path: SunsetPath;
   onPathChange: (path: SunsetPath) => void;
   options: SunsetPathForkOption[];
   cardTitle: string;
   journeyId: string;
-  children?: ReactNode;
 }) {
   const selected = options.find((option) => option.path === path) ?? options[0];
 
   return (
-    <div className={forkCardBox}>
-      <h3 className={forkCardTitle}>{cardTitle}</h3>
+    <div className={`mb-5 ${sunsetJourneyCardSkin}`}>
+      <h3 className={forkTitle}>{cardTitle}</h3>
 
       <div
         role="radiogroup"
@@ -69,10 +69,9 @@ export function SunsetPathFork({
         })}
       </div>
 
-      <p className={`mt-4 ${forkCardBody}`} aria-live="polite">
+      <p className={`mt-4 ${forkBody}`} aria-live="polite">
         {selected.description}
       </p>
-      {children}
     </div>
   );
 }
