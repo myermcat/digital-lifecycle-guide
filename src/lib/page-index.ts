@@ -29,7 +29,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
 
   { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
   { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-progress" },
-  { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-progress" },
+  { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
   { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-progress" },
   { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-progress" },

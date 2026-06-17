@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import {
   guideProseTight,
   guideCalloutLabel,
@@ -24,7 +25,7 @@ export function CautionBlock({
   title: string;
   lead: string;
   items: CautionItem[];
-  closing: string;
+  closing: ReactNode;
 }) {
   return (
     <section
@@ -56,7 +57,7 @@ export function CautionBlock({
             </li>
           ))}
         </ul>
-        <p className={guideProseTight}>{closing}</p>
+        <div className={guideProseTight}>{closing}</div>
       </div>
     </section>
   );

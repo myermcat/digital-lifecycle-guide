@@ -149,13 +149,8 @@ export const OPTIONS_ANALYSIS = {
         weight: "light" as const,
         compact: true,
         body: "In Sunset, this is how you assess options for a replacement, or reach the decision to retire without one.",
-        todo: {
-          title: "Link when Sunset assess-options content is built",
-          items: [
-            'Add a link from the Sunset "assess options" step to this page.',
-            "Until then, the Sunset phase landing is at /sunset.",
-          ],
-        },
+        linkTo: "/sunset",
+        linkLabel: "Sunset phase",
       },
     ],
   },

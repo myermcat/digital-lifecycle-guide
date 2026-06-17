@@ -66,7 +66,6 @@ export function createLifecyclePhaseRoute(lifecyclePhase: LifecyclePhaseId) {
         lifecyclePhaseHref={meta.href}
         intro={meta.subtitle}
         whereThisFits={where()}
-        subphaseLeavingSlug={lifecyclePhase === "sunset" ? "sunset" : undefined}
       />
     ),
   });
