@@ -2,8 +2,8 @@ import type { CautionItem } from "@/components/CautionBlock";
 import type { BoldPhrase, ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
-import { threadPath } from "@/lib/guide-strings";
 import {
+  EOL_OF_PARTS_SOURCE,
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
@@ -39,8 +39,8 @@ export const SUNSET_STRINGS = {
   ],
 
   scope: {
-    text: "This page is about sunsetting a whole service. If it is one part reaching its end of life, a library, a dependency, or a bought product inside a larger service, see the End of life of parts thread.",
-    internalLinks: [{ phrase: "End of life of parts", to: threadPath("component-eol") }],
+    text: "This page is about sunsetting a whole service. If it is one part reaching its end of life, a library, a dependency, or a bought product inside a larger service, see End of life of parts.",
+    placeholderLinks: [{ phrase: "End of life of parts", source: EOL_OF_PARTS_SOURCE }],
   },
 
   fork: {
@@ -103,11 +103,11 @@ export const SUNSET_STRINGS = {
           title: "Write the need, not the feature",
           left: {
             heading: "The need",
-            body: "We must receive applications, assess them against published criteria, and record each decision with reasons.",
+            body: "A nonprofit applies for funding online, an officer assesses it against the published criteria, and the applicant gets a decision with reasons within the 40-day service standard.",
           },
           right: {
             heading: "The old feature",
-            body: "We must keep all 47 fields, the three approval tabs, and the colour-coded status flags exactly as they were.",
+            body: "The 47-field intake form, the three-tab approval routing, and the colour-coded status flags, rebuilt exactly as the old system had them.",
           },
           caption:
             "The features are only how the old tool met the need. The new one may meet it better.",

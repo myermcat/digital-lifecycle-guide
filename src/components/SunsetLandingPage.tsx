@@ -49,7 +49,7 @@ export function SunsetLandingPage() {
         <p className={guideCalloutLabel}>Scope</p>
         <p className={`${guideProseTight} mt-2`}>
           {proseWithMixedLinks(landing.scope.text, {
-            internal: landing.scope.internalLinks,
+            placeholder: landing.scope.placeholderLinks,
           })}
         </p>
       </aside>

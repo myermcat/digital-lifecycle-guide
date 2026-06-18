@@ -90,24 +90,6 @@
     "text": ""
   },
   {
-    "id": "/sunset-shutdown",
-    "pageTitle": "Shutdown",
-    "pagePath": "/sunset-shutdown",
-    "sectionId": "",
-    "sectionHeading": "Shutdown",
-    "lifecyclePhase": "sunset",
-    "text": ""
-  },
-  {
-    "id": "/sunset-transition",
-    "pageTitle": "Transition",
-    "pagePath": "/sunset-transition",
-    "sectionId": "",
-    "sectionHeading": "Transition",
-    "lifecyclePhase": "sunset",
-    "text": ""
-  },
-  {
     "id": "/thread/accessibility",
     "pageTitle": "Accessibility",
     "pagePath": "/thread/accessibility",
@@ -140,15 +122,6 @@
     "pagePath": "/thread/dependencies-and-standards",
     "sectionId": "",
     "sectionHeading": "Dependencies and standards",
-    "lifecyclePhase": "thread",
-    "text": ""
-  },
-  {
-    "id": "/thread/component-eol",
-    "pageTitle": "Component end of life",
-    "pagePath": "/thread/component-eol",
-    "sectionId": "",
-    "sectionHeading": "Component end of life",
     "lifecyclePhase": "thread",
     "text": ""
   },

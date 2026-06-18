@@ -32,19 +32,11 @@ export const LIVE_SUBPHASES: SubphaseNavItem[] = [
   { title: "Maturity", href: "/live-maturity", slug: "maturity" },
 ];
 
-export const SUNSET_SUBPHASES: SubphaseNavItem[] = [
-  { title: "Shutdown", href: "/sunset-shutdown", slug: "shutdown" },
-  { title: "Transition", href: "/sunset-transition", slug: "transition" },
-];
-
 /** @deprecated Use CREATE_SUBPHASES */
 export const CREATE_PHASES = CREATE_SUBPHASES;
 
 /** @deprecated Use LIVE_SUBPHASES */
 export const LIVE_PHASES = LIVE_SUBPHASES;
-
-/** @deprecated Use SUNSET_SUBPHASES */
-export const SUNSET_PHASES = SUNSET_SUBPHASES;
 
 /** @deprecated Use CREATE_SUBPHASES */
 export const BUILD_PHASES = CREATE_SUBPHASES;
@@ -122,24 +114,6 @@ export function whereThisFitsForSunsetPhaseLanding(): WhereThisFitsConfig {
 /** @deprecated Use whereThisFitsForSunsetPhaseLanding */
 export const whereThisFitsForSunsetRegion = whereThisFitsForSunsetPhaseLanding;
 
-export function whereThisFitsForSunsetSubphase(
-  currentSlug: string | null,
-): WhereThisFitsConfig {
-  return {
-    phaseLabel: PHASES.sunset.title,
-    phaseVisual: "sunset",
-    priorPhaseLink: { title: PHASES.live.title, href: PHASES.live.href },
-    subphases: SUNSET_SUBPHASES.map((p) => ({
-      title: p.title,
-      href: p.href,
-      current: p.slug === currentSlug,
-    })),
-  };
-}
-
-/** @deprecated Use whereThisFitsForSunsetSubphase */
-export const whereThisFitsForSunsetPhase = whereThisFitsForSunsetSubphase;
-
 export const LIFECYCLE_PHASE_META: Record<
   LifecyclePhaseId,
   { title: string; href: string; subtitle: string }
@@ -214,22 +188,6 @@ export const SUBPHASE_META: Record<
     subtitle: "Add capability as more users arrive.",
     path: "/live-growth",
     where: () => whereThisFitsForLiveSubphase("growth"),
-  },
-  shutdown: {
-    lifecyclePhase: "sunset",
-    lifecyclePhaseHref: PHASES.sunset.href,
-    subphase: "Shutdown",
-    subtitle: "End the program when there is no successor.",
-    path: "/sunset-shutdown",
-    where: () => whereThisFitsForSunsetSubphase("shutdown"),
-  },
-  transition: {
-    lifecyclePhase: "sunset",
-    lifecyclePhaseHref: PHASES.sunset.href,
-    subphase: "Transition",
-    subtitle: "Move users to a successor when one is taking over.",
-    path: "/sunset-transition",
-    where: () => whereThisFitsForSunsetSubphase("transition"),
   },
 };
 

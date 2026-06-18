@@ -25,6 +25,10 @@ export const guideLead = `${guideProse}`;
 export const guideLink =
   "font-medium text-primary underline underline-offset-4 hover:opacity-80";
 
+/** External links reachable only on the GC network — paler, dotted underline. */
+export const guideLinkGcNetwork =
+  "font-medium text-muted-foreground/50 underline decoration-dotted decoration-muted-foreground/35 underline-offset-4 hover:text-muted-foreground/65 transition-colors";
+
 /** Small uppercase labels on callout blocks (WCAG AA on cream). */
 export const guideCalloutLabel =
   "text-[10px] uppercase tracking-[0.22em] text-primary/80 font-sans";

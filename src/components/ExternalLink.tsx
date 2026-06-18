@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import { guideLink } from "@/lib/guide-typography";
+import { guideLink, guideLinkGcNetwork } from "@/lib/guide-typography";
 import {
   externalLinkUrl,
+  isGcNetworkOnly,
   type ExternalLinkKey,
 } from "@/lib/external-links";
 import { cn } from "@/lib/utils";
@@ -15,10 +16,13 @@ export function ExternalLink({
   children: ReactNode;
   className?: string;
 }) {
+  const gcNetworkOnly = isGcNetworkOnly(linkKey);
+
   return (
     <a
       href={externalLinkUrl(linkKey)}
-      className={cn(guideLink, className)}
+      className={cn(gcNetworkOnly ? guideLinkGcNetwork : guideLink, className)}
+      title={gcNetworkOnly ? "GC network only" : undefined}
       target="_blank"
       rel="noopener noreferrer"
     >

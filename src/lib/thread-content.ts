@@ -142,10 +142,6 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     "dependencies-and-standards",
     "dependencies and open standards",
   ),
-  "component-eol": placeholderThread(
-    "component-eol",
-    "component end of life",
-  ),
   "user-research": placeholderThread("user-research", "user research"),
   cybersecurity: {
     ...placeholderThread("cybersecurity", "cybersecurity"),

@@ -4,6 +4,8 @@ export const SOURCE_COMING_SOON_PATH = "/source-coming-soon" as const;
 
 export const GCCASE_MIGRATION_READINESS_GUIDE = "GCcase Migration Readiness Guide";
 
+export const EOL_OF_PARTS_SOURCE = "EoL of parts";
+
 export type PlaceholderPhraseLink = {
   phrase: string;
   source: string;
@@ -16,6 +18,10 @@ export function placeholderSourceHref(source: string, part?: string): string {
     params.set("part", part);
   }
   return `${SOURCE_COMING_SOON_PATH}?${params.toString()}`;
+}
+
+export function eolOfPartsComingSoonHref(): string {
+  return placeholderSourceHref(EOL_OF_PARTS_SOURCE);
 }
 
 export function comingSoonSourceItem(source: string): SourceItem {

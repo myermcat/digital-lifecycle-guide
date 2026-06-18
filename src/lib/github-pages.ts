@@ -18,8 +18,6 @@ const CORE_PATHS = [
   "/live-growth",
   "/live-maturity",
   "/sunset",
-  "/sunset-shutdown",
-  "/sunset-transition",
 ] as const;
 
 const PRACTICE_PATHS = Object.keys(PRACTICE_STUBS).map((slug) => `/practice/${slug}`);

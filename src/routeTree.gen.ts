@@ -9,8 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SunsetTransitionRouteImport } from './routes/sunset-transition'
-import { Route as SunsetShutdownRouteImport } from './routes/sunset-shutdown'
 import { Route as SunsetRouteImport } from './routes/sunset'
 import { Route as SourceComingSoonRouteImport } from './routes/source-coming-soon'
 import { Route as LiveStabilizationRouteImport } from './routes/live-stabilization'
@@ -36,16 +34,6 @@ import { Route as ThreadContractingIndexRouteImport } from './routes/thread.cont
 import { Route as ThreadProcurementPageRouteImport } from './routes/thread.procurement.$page'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
-const SunsetTransitionRoute = SunsetTransitionRouteImport.update({
-  id: '/sunset-transition',
-  path: '/sunset-transition',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SunsetShutdownRoute = SunsetShutdownRouteImport.update({
-  id: '/sunset-shutdown',
-  path: '/sunset-shutdown',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SunsetRoute = SunsetRouteImport.update({
   id: '/sunset',
   path: '/sunset',
@@ -182,8 +170,6 @@ export interface FileRoutesByFullPath {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
-  '/sunset-shutdown': typeof SunsetShutdownRoute
-  '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -210,8 +196,6 @@ export interface FileRoutesByTo {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
-  '/sunset-shutdown': typeof SunsetShutdownRoute
-  '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -237,8 +221,6 @@ export interface FileRoutesById {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
-  '/sunset-shutdown': typeof SunsetShutdownRoute
-  '/sunset-transition': typeof SunsetTransitionRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -267,8 +249,6 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
-    | '/sunset-shutdown'
-    | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -295,8 +275,6 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
-    | '/sunset-shutdown'
-    | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -321,8 +299,6 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
-    | '/sunset-shutdown'
-    | '/sunset-transition'
     | '/practice/$slug'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -350,8 +326,6 @@ export interface RootRouteChildren {
   LiveStabilizationRoute: typeof LiveStabilizationRoute
   SourceComingSoonRoute: typeof SourceComingSoonRoute
   SunsetRoute: typeof SunsetRoute
-  SunsetShutdownRoute: typeof SunsetShutdownRoute
-  SunsetTransitionRoute: typeof SunsetTransitionRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
   ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
   ReferenceOptionsAnalysisRoute: typeof ReferenceOptionsAnalysisRoute
@@ -364,20 +338,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sunset-transition': {
-      id: '/sunset-transition'
-      path: '/sunset-transition'
-      fullPath: '/sunset-transition'
-      preLoaderRoute: typeof SunsetTransitionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sunset-shutdown': {
-      id: '/sunset-shutdown'
-      path: '/sunset-shutdown'
-      fullPath: '/sunset-shutdown'
-      preLoaderRoute: typeof SunsetShutdownRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sunset': {
       id: '/sunset'
       path: '/sunset'
@@ -588,8 +548,6 @@ const rootRouteChildren: RootRouteChildren = {
   LiveStabilizationRoute: LiveStabilizationRoute,
   SourceComingSoonRoute: SourceComingSoonRoute,
   SunsetRoute: SunsetRoute,
-  SunsetShutdownRoute: SunsetShutdownRoute,
-  SunsetTransitionRoute: SunsetTransitionRoute,
   PracticeSlugRoute: PracticeSlugRoute,
   ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
   ReferenceOptionsAnalysisRoute: ReferenceOptionsAnalysisRoute,

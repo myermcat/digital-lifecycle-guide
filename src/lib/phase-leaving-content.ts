@@ -1,5 +1,5 @@
 import type { LookingAheadPill } from "@/components/LookingAhead";
-import { threadPath } from "@/lib/guide-strings";
+import { eolOfPartsComingSoonHref } from "@/lib/placeholder-sources";
 
 export const LOOKING_AHEAD_INTRO =
   "Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this subphase, and roughly when to begin.";
@@ -213,8 +213,8 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
           "Track the support timelines of the major components you depend on.",
           "A component going end of life can force a move before you planned one. Spot it early.",
         ],
-        href: threadPath("component-eol"),
-        linkLabel: "Component end of life →",
+        href: eolOfPartsComingSoonHref(),
+        linkLabel: "EoL of parts →",
       },
     ],
   },

@@ -37,8 +37,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "in-progress" },
   { title: "Growth", path: "/live-growth", type: "subphase", status: "in-progress" },
   { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
-  { title: "Shutdown", path: "/sunset-shutdown", type: "subphase", status: "not-started" },
-  { title: "Transition", path: "/sunset-transition", type: "subphase", status: "not-started" },
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-progress" },
   {
@@ -56,12 +54,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   {
     title: THREADS["dependencies-and-standards"].title,
     path: THREADS["dependencies-and-standards"].path,
-    type: "thread",
-    status: "not-started",
-  },
-  {
-    title: THREADS["component-eol"].title,
-    path: THREADS["component-eol"].path,
     type: "thread",
     status: "not-started",
   },

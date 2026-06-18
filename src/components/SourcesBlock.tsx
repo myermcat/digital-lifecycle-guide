@@ -27,6 +27,9 @@ const sourceLinkByTone: Record<NonNullable<SourceItem["tone"]>, string> = {
     "text-muted-foreground/25 underline underline-offset-4 hover:text-muted-foreground/40 transition-colors",
 };
 
+const sourceLinkGcNetwork =
+  "text-muted-foreground/30 underline decoration-dotted decoration-muted-foreground/25 underline-offset-4 hover:text-muted-foreground/45 transition-colors";
+
 function sourceLinkText(item: SourceItem, href: string | undefined): string {
   if (item.description) {
     return item.description;
@@ -93,7 +96,10 @@ export function SourcesBlock({
                       <>
                         <a
                           href={href}
-                          className={sourceLinkByTone[tone]}
+                          className={
+                            gcNetworkOnly ? sourceLinkGcNetwork : sourceLinkByTone[tone]
+                          }
+                          title={gcNetworkOnly ? "GC network only" : undefined}
                           {...(isInternal
                             ? {}
                             : { target: "_blank", rel: "noopener noreferrer" })}
