@@ -100,7 +100,7 @@ export function ProcurementLandingPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
-        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each phase</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>What Procurement looks like in each phase</h2>
         <p className={`${guideProse} mb-2`}>{landing.byPhaseIntro}</p>
         <WeightedPhaseBlock phases={landing.byPhase} />
       </section>

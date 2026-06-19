@@ -73,6 +73,71 @@ export const EXTERNAL_LINKS = {
       "Contract approval and signing authorities, plain-language Buyer's Guide on CanadaBuys",
     accessibility: "public",
   },
+  "directive-security-management-appendix-b": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32611",
+    description: "Directive on Security Management, Appendix B (TBS)",
+    accessibility: "public",
+  },
+  "guideline-vulnerability-management": {
+    url: "https://www.canada.ca/en/government/system/digital-government/online-security-privacy/cyber-security-guidance-policy/guideline-vulnerability-management.html",
+    description: "Guideline on Vulnerability Management (GC)",
+    accessibility: "public",
+  },
+  "itsg-33": {
+    url: "https://www.cyber.gc.ca/en/guidance/it-security-risk-management-lifecycle-approach-itsg-33",
+    description: "ITSG-33, IT security risk management, a lifecycle approach (CCCS)",
+    accessibility: "public",
+  },
+  "owasp-top-10": {
+    url: "https://owasp.org/www-project-developer-guide/release/foundations/owasp_top_ten/",
+    description: "OWASP Top 10",
+    accessibility: "public",
+  },
+  "owasp-dsomm": {
+    url: "https://dsomm.owasp.org/usage/",
+    description: "OWASP DevSecOps Maturity Model (DSOMM)",
+    accessibility: "public",
+  },
+  "guide-open-source-software": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-using-open-source-software.html",
+    description: "Guide for Using Open Source Software (GC)",
+    accessibility: "public",
+  },
+  "secure-containers-microservices": {
+    url: "https://canada-ca.github.io/platform-security_securite-de-plateforme/",
+    description: "Secure Containers and Microservices (Guideline annex, open)",
+    accessibility: "public",
+  },
+  "threat-modelling-developers": {
+    url: "https://www.cyber.gc.ca/en/education-community/learning-hub/courses/threat-modelling-developers",
+    description: "CCCS, Threat Modelling for Developers",
+    accessibility: "public",
+  },
+  "incident-response-plan-itsap40003": {
+    url: "https://www.cyber.gc.ca/en/guidance/developing-your-incident-response-plan-itsap40003",
+    description: "CCCS, Developing your incident response plan (ITSAP.40.003)",
+    accessibility: "public",
+  },
+  "least-privilege-itsap10094": {
+    url: "https://www.cyber.gc.ca/en/guidance/managing-and-controlling-administrative-privileges-itsap10094",
+    description: "CCCS, Managing and controlling administrative privileges (ITSAP.10.094)",
+    accessibility: "public",
+  },
+  "cyber-supply-chain-itsap10070": {
+    url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-approach-assessing-risk-itsap10070",
+    description: "CCCS, Cyber supply chain: An approach to assessing risk (ITSAP.10.070)",
+    accessibility: "public",
+  },
+  "directive-security-management": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32611&section=html",
+    description: "Directive on Security Management (TBS)",
+    accessibility: "public",
+  },
+  "nist-ssdf": {
+    url: "https://csrc.nist.gov/projects/ssdf",
+    description: "NIST Secure Software Development Framework (SSDF)",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

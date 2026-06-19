@@ -16,6 +16,8 @@ export type SourceItem = {
   /** Lower-emphasis note shown below the link, in the right column. */
   note?: string;
   comingSoon?: boolean;
+  /** GC-network-only source (placeholder or registry link). */
+  gcNetworkOnly?: boolean;
   /** Optional styling hint for low-emphasis citations. */
   tone?: "default" | "very-light";
 };
@@ -82,7 +84,8 @@ export function SourcesBlock({
           >
             {items.map((item) => {
               const href = item.linkKey ? externalLinkUrl(item.linkKey) : item.href;
-              const gcNetworkOnly = item.linkKey ? isGcNetworkOnly(item.linkKey) : false;
+              const gcNetworkOnly =
+                item.gcNetworkOnly ?? (item.linkKey ? isGcNetworkOnly(item.linkKey) : false);
               const key = item.linkKey ?? item.href ?? item.label;
               const isInternal = href?.startsWith("/") ?? false;
               const tone = item.tone ?? "default";
@@ -99,16 +102,17 @@ export function SourcesBlock({
                           className={
                             gcNetworkOnly ? sourceLinkGcNetwork : sourceLinkByTone[tone]
                           }
-                          title={gcNetworkOnly ? "GC network only" : undefined}
+                          title={
+                            gcNetworkOnly
+                              ? "Only available on the Government of Canada network."
+                              : undefined
+                          }
                           {...(isInternal
                             ? {}
                             : { target: "_blank", rel: "noopener noreferrer" })}
                         >
                           {linkText}
                         </a>
-                        {gcNetworkOnly ? (
-                          <span className="text-muted-foreground/35"> (GC network only)</span>
-                        ) : null}
                         {item.comingSoon ? (
                           <span className="text-muted-foreground/35"> (coming soon)</span>
                         ) : null}

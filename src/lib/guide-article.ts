@@ -37,5 +37,9 @@ export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 
 export const guideAsideNote =
   "mt-3 font-sans text-xs leading-[1.45] text-foreground/45 font-normal";
 
+/** Inline link within a guideAsideNote — muted to match the note tone. */
+export const guideAsideLink =
+  "font-medium text-foreground/55 underline underline-offset-4 decoration-foreground/30 hover:text-foreground/70 hover:decoration-foreground/45 transition-colors";
+
 /** @deprecated Use guideAsideNote */
 export const guideArticleNote = guideAsideNote;

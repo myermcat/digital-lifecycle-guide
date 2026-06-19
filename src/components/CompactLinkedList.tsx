@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
-import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon, guideArrowListIconInline } from "@/lib/guide-typography";
+import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon } from "@/lib/guide-typography";
 import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -72,15 +72,21 @@ export function GuideArrowBullet({
   inline = false,
 }: {
   className?: string;
-  /** Tighter top offset for guideProseTight inline lists. */
+  /** Tighter line box for guideProseTight inline lists. */
   inline?: boolean;
 }) {
   return (
-    <ArrowRight
-      className={cn(inline ? guideArrowListIconInline : guideArrowListIcon, className)}
-      strokeWidth={1.5}
+    <span
+      className={cn(
+        "inline-flex shrink-0 items-center",
+        inline ? "h-[1.35em]" : "h-[1.45em]",
+        guideArrowListIcon,
+        className,
+      )}
       aria-hidden
-    />
+    >
+      <ArrowRight className="size-[0.85em] shrink-0" strokeWidth={2} />
+    </span>
   );
 }
 
@@ -95,7 +101,7 @@ export function ArrowLeadList({
   return (
     <ul className={cn(guideArrowLeadList, className)}>
       {items.map((item) => (
-        <li key={item.lead} className="flex gap-2.5">
+        <li key={item.lead} className="flex items-start gap-2.5">
           <GuideArrowBullet />
           <div className={cn("min-w-0 flex-1", guideArrowLeadGroup)}>
             <p className="mb-0">

@@ -1,9 +1,6 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { PhasePlaceholderPage } from "@/components/PhasePlaceholderPage";
-import {
-  DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
-  DESIGN_FOR_WHOLE_JOURNEY_PATH,
-} from "@/lib/create-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH, DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/reference-paths";
 import {
   LIFECYCLE_PHASE_META,
   whereThisFitsForCreateSubphase,

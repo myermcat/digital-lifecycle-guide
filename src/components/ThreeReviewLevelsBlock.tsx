@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { interactivePanelCardClassName } from "@/components/PracticeCard";
 import { guideProseTight, guideCardHeading, guideCalloutLabel } from "@/lib/guide-typography";
 
 export type ReviewLevelItem = {
@@ -26,7 +27,7 @@ export function ThreeReviewLevelsBlock({
             {item.href.startsWith("/") ? (
               <Link
                 to={item.href}
-                className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
+                className={interactivePanelCardClassName}
                 style={{ backgroundColor: "var(--phase-group)" }}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
@@ -41,7 +42,7 @@ export function ThreeReviewLevelsBlock({
             ) : (
               <a
                 href={item.href}
-                className="group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 hover:border-primary/40 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring md:min-w-0 md:px-5 md:py-5"
+                className={interactivePanelCardClassName}
                 style={{ backgroundColor: "var(--phase-group)" }}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>

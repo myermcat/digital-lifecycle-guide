@@ -65,7 +65,7 @@ export function CrossCuttingThreadPage({
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
-        <h2 className={`${guideSectionTitle} mb-3`}>What it looks like in each phase</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>What {content.title} looks like in each phase</h2>
         <div className={`${guideProseSpace} mt-4`}>
           {(["create", "live", "sunset"] as LifecyclePhaseId[]).map((phaseId) => (
             <div key={phaseId}>

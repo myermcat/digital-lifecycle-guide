@@ -1,8 +1,10 @@
 import { createFileRoute, redirect, notFound } from "@tanstack/react-router";
 import { CrossCuttingThreadPage } from "@/components/CrossCuttingThreadPage";
+import { SecurityThreadPage } from "@/components/SecurityThreadPage";
 import { THREAD_CONTENT } from "@/lib/thread-content";
 import type { ThreadSlug } from "@/lib/guide-strings";
 import { PROCUREMENT_LANDING } from "@/lib/procurement-landing";
+import { SECURITY_THREAD } from "@/lib/security-thread-content";
 
 export const Route = createFileRoute("/thread/$slug")({
   head: ({ params }) => {
@@ -11,6 +13,15 @@ export const Route = createFileRoute("/thread/$slug")({
         meta: [
           { title: `${PROCUREMENT_LANDING.title} — The Digital Lifecycle Guide` },
           { name: "description", content: PROCUREMENT_LANDING.intro.paragraphs[0] },
+        ],
+      };
+    }
+
+    if (params.slug === "security") {
+      return {
+        meta: [
+          { title: `${SECURITY_THREAD.title} — The Digital Lifecycle Guide` },
+          { name: "description", content: SECURITY_THREAD.lead },
         ],
       };
     }
@@ -26,6 +37,9 @@ export const Route = createFileRoute("/thread/$slug")({
     };
   },
   beforeLoad: ({ params }) => {
+    if (params.slug === "cybersecurity") {
+      throw redirect({ to: "/thread/security" });
+    }
     if (params.slug === "procurement") {
       throw redirect({ to: "/thread/procurement" });
     }
@@ -38,6 +52,10 @@ export const Route = createFileRoute("/thread/$slug")({
 
 function ThreadRoutePage() {
   const { slug } = Route.useParams();
+
+  if (slug === "security") {
+    return <SecurityThreadPage />;
+  }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];
   if (!content) throw notFound();

@@ -7,8 +7,20 @@ export interface PracticeCardData {
   description: string;
 }
 
-export const practiceCardLinkClassName =
-  "group flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4 hover:border-primary/40 hover:border-l-primary/70 hover:shadow-sm transition-[border-color,box-shadow] focus:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+export const interactiveCardFocus =
+  "cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+
+export const interactiveCardHover =
+  "hover:border-primary/55 hover:bg-primary/[0.06] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200";
+
+/** Linked practice cards and popup phase preview cards (Security, etc.). */
+export const practiceCardLinkClassName = `group flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4 ${interactiveCardFocus} ${interactiveCardHover} hover:border-l-primary`;
+
+/** Review-level and similar panel cards that navigate on click. */
+export const interactivePanelCardClassName = `group flex flex-1 flex-col rounded-lg border border-primary/25 px-4 py-4 md:min-w-0 md:px-5 md:py-5 ${interactiveCardFocus} ${interactiveCardHover}`;
+
+/** Homepage phase cards that open a dialog on click. */
+export const phaseDialogTriggerClassName = `group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm ${interactiveCardFocus} hover:border-primary/40 hover:bg-card hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col items-center justify-center gap-3 p-6 overflow-hidden`;
 
 export const practiceCardStaticClassName =
   "flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4";

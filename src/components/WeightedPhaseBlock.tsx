@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ContentTodo } from "@/components/ContentTodo";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
@@ -56,6 +57,8 @@ export type PhaseFitCard = {
   /** When set, used instead of the lifecycle phase title (e.g. thread names on "Where to go next"). */
   title?: string;
   body: string;
+  /** When set, rendered instead of the plain body string (e.g. inline links in phase notes). */
+  bodyContent?: ReactNode;
   weight: WeightedPhaseNote["weight"];
   /** Smaller, lighter cards — for reference pages and secondary phase callouts. */
   compact?: boolean;
@@ -80,7 +83,7 @@ export function PhaseFitCards({ cards }: { cards: PhaseFitCard[] }) {
             style={card.compact ? undefined : { backgroundColor: "var(--phase-group)" }}
           >
             <h3 className={styles.title}>{cardTitle}</h3>
-            <p className={`mt-1.5 ${styles.body}`}>{card.body}</p>
+            <p className={`mt-1.5 ${styles.body}`}>{card.bodyContent ?? card.body}</p>
             {card.linkTo && card.linkLabel ? (
               <p className="mt-2">
                 <Link to={card.linkTo} className={`text-xs ${guideLink}`}>

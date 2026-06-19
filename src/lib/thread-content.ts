@@ -143,17 +143,6 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     "dependencies and open standards",
   ),
   "user-research": placeholderThread("user-research", "user research"),
-  cybersecurity: {
-    ...placeholderThread("cybersecurity", "cybersecurity"),
-    stakes:
-      "Security failures can shut down a service, expose citizens' data, and erode trust. Keeping security current is not a one-time task.",
-    whatGoodLooksLike: [
-      "Patches are applied on schedule.",
-      "Access is audited and least-privilege is the default.",
-      "Vulnerabilities are tested for regularly.",
-      "An incident response plan exists and has been exercised.",
-    ],
-  },
   privacy: {
     ...placeholderThread("privacy", "privacy"),
     stakes:

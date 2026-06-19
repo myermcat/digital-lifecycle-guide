@@ -147,7 +147,7 @@ export const OPTIONS_ANALYSIS = {
 
   byPhase: {
     id: "by-phase",
-    title: "What it looks like in each phase",
+    title: "What Options analysis looks like in each phase",
     cards: [
       {
         lifecyclePhase: "create" as const,

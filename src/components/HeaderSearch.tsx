@@ -29,7 +29,7 @@ function useSearchData(open: boolean) {
       .then((records) => {
         if (cancelled) return;
         const mini = new MiniSearch<SearchIndexRecord>({
-          fields: ["pageTitle", "sectionHeading", "text"],
+          fields: ["pageTitle", "sectionHeading", "text", "keywords"],
           storeFields: [
             "id",
             "pageTitle",
@@ -38,11 +38,12 @@ function useSearchData(open: boolean) {
             "sectionHeading",
             "lifecyclePhase",
             "text",
+            "keywords",
           ],
           searchOptions: {
             prefix: true,
             fuzzy: 0.2,
-            boost: { pageTitle: 4, sectionHeading: 3, text: 1 },
+            boost: { pageTitle: 4, sectionHeading: 3, keywords: 2, text: 1 },
           },
         });
         mini.addAll(records);
@@ -188,7 +189,7 @@ export function HeaderSearch() {
       return searchState.mini.search(q, {
         prefix: true,
         fuzzy: 0.2,
-        boost: { pageTitle: 4, sectionHeading: 3, text: 1 },
+        boost: { pageTitle: 4, sectionHeading: 3, keywords: 2, text: 1 },
       }) as SearchHit[];
     } catch {
       return [] as SearchHit[];

@@ -3,9 +3,16 @@ import { Link } from "@tanstack/react-router";
 import { ExternalLink } from "@/components/ExternalLink";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
+import { PlaceholderGcNetworkLink } from "@/components/PlaceholderGcNetworkLink";
 import { guideLink } from "@/lib/guide-typography";
 
 export type { PlaceholderPhraseLink };
+
+export type PlaceholderGcNetworkPhraseLink = {
+  phrase: string;
+  source: string;
+  part?: string;
+};
 
 export type ExternalPhraseLink = {
   phrase: string;
@@ -31,6 +38,7 @@ type MixedPhraseLink =
   | ({ kind: "internal" } & InternalPhraseLink)
   | ({ kind: "anchor" } & AnchorPhraseLink)
   | ({ kind: "placeholder" } & PlaceholderPhraseLink)
+  | ({ kind: "placeholderGcNetwork" } & PlaceholderGcNetworkPhraseLink)
   | ({ kind: "bold" } & BoldPhrase);
 
 export function proseWithMixedLinks(
@@ -40,12 +48,14 @@ export function proseWithMixedLinks(
     internal = [],
     anchor = [],
     placeholder = [],
+    placeholderGcNetwork = [],
     bold = [],
   }: {
     external?: ExternalPhraseLink[];
     internal?: InternalPhraseLink[];
     anchor?: AnchorPhraseLink[];
     placeholder?: PlaceholderPhraseLink[];
+    placeholderGcNetwork?: PlaceholderGcNetworkPhraseLink[];
     bold?: BoldPhrase[];
   },
 ): ReactNode {
@@ -54,6 +64,10 @@ export function proseWithMixedLinks(
     ...internal.map((link) => ({ kind: "internal" as const, ...link })),
     ...anchor.map((link) => ({ kind: "anchor" as const, ...link })),
     ...placeholder.map((link) => ({ kind: "placeholder" as const, ...link })),
+    ...placeholderGcNetwork.map((link) => ({
+      kind: "placeholderGcNetwork" as const,
+      ...link,
+    })),
     ...bold.map((link) => ({ kind: "bold" as const, ...link })),
   ];
 
@@ -93,6 +107,14 @@ export function proseWithMixedLinks(
         >
           {link.phrase}
         </Link>
+      ) : link.kind === "placeholderGcNetwork" ? (
+        <PlaceholderGcNetworkLink
+          key={`gc-${link.source}-${link.part ?? ""}-${start}`}
+          source={link.source}
+          part={link.part}
+        >
+          {link.phrase}
+        </PlaceholderGcNetworkLink>
       ) : link.kind === "bold" ? (
         <strong key={`bold-${link.phrase}-${start}`} className="font-semibold text-foreground/90">
           {link.phrase}

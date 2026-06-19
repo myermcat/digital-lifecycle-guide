@@ -2,15 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
+import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { guideProse, guideProseSpace, guideArrowList, guideLink } from "@/lib/guide-typography";
-import { guideAsideNote } from "@/lib/guide-article";
+import { guideProse, guideProseSpace, guideArrowList } from "@/lib/guide-typography";
+import { guideAsideLink, guideAsideNote } from "@/lib/guide-article";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
 import { PHASES } from "@/lib/guide-strings";
 import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/create-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/reference-paths";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
 import lifecycleVisual from "@/assets/lifecycle_three_regions_bow.svg?url";
 
@@ -40,6 +41,15 @@ function Index() {
           </h1>
           <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>
+
+        <EditorialNote
+          label="Who this is for"
+          className="w-full -mt-6 mb-10 md:mb-12"
+        >
+          This guide is written for the business owner of an application as its main reader.
+          Each page is about the decisions that belong to you, and where to send your team for
+          the how-to.
+        </EditorialNote>
 
         <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
@@ -80,7 +90,7 @@ function Index() {
           </p>
           <p>That life falls into three phases.</p>
           <ul className={guideArrowList}>
-            <li className="flex gap-2.5">
+            <li className="flex items-start gap-2.5">
               <GuideArrowBullet />
               <p>
                 <span className="font-semibold text-foreground/90">Create.</span> It starts with
@@ -90,7 +100,7 @@ function Index() {
                 or buying that solution. Almost everything that follows is shaped here.
               </p>
             </li>
-            <li className="flex gap-2.5">
+            <li className="flex items-start gap-2.5">
               <GuideArrowBullet />
               <p>
                 <span className="font-semibold text-foreground/90">Live.</span> The longest phase
@@ -98,7 +108,7 @@ function Index() {
                 performs, improving it, and meeting new needs as they arrive.
               </p>
             </li>
-            <li className="flex gap-2.5">
+            <li className="flex items-start gap-2.5">
               <GuideArrowBullet />
               <p>
                 <span className="font-semibold text-foreground/90">Sunset.</span> The solution is
@@ -116,11 +126,11 @@ function Index() {
             build. In Live it comes from the running system: real users, real data, real bugs.
             In Sunset you have mostly stopped gathering feedback and started closing things down.
           </p>
-          <p>
+          <p className={guideAsideNote}>
             Whichever phase you are in, one idea runs under all of it: a government service is
             almost never the thing a person actually wants. It is one step in a much bigger journey
             of theirs, often spread across many departments and levels of government.{" "}
-            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideLink}>
+            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideAsideLink}>
               Design for the whole journey
             </Link>{" "}
             is where that thinking starts.

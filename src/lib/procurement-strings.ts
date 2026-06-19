@@ -42,7 +42,7 @@ export const PROCUREMENT_STRINGS = {
 
   intro: {
     paragraphs: [
-      "Most government services are bought rather than built. Sometimes the whole thing, more often a part. Procurement is that buying: the whole journey from working out what you need, through choosing a supplier, to living with the contract for as long as the service runs. The contract is one part of it.",
+      "Most existing government applications are bought rather than built. Sometimes the whole thing, more often a part. Procurement is that buying: the whole journey from working out what you need, through choosing a supplier, to living with the contract for as long as the service runs. The contract is one part of it.",
       "Think of this thread as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
     ],
     managingLink: {

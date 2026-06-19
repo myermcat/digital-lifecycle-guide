@@ -1,7 +1,13 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
-import { MANAGING_WHAT_YOU_BOUGHT_PATH, SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH, DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH } from "./create-paths";
+import {
+  DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_PATH,
+  MANAGING_WHAT_YOU_BOUGHT_PATH,
+  SOO_VS_SOW_PATH,
+  OPTIONS_ANALYSIS_PATH,
+} from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
 
@@ -14,8 +20,6 @@ const CORE_PATHS = [
   "/create-discovery",
   "/create-alpha",
   "/create-mvp",
-  DESIGN_FOR_WHOLE_JOURNEY_PATH,
-  DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
   "/live",
   "/live-stabilization",
   "/live-growth",
@@ -25,7 +29,7 @@ const CORE_PATHS = [
 
 const PRACTICE_PATHS = Object.keys(PRACTICE_STUBS).map((slug) => `/practice/${slug}`);
 const REVIEW_PATHS = Object.keys(REVIEW_STUBS).map((slug) => `/review/${slug}`);
-const THREAD_PATHS = ["/thread/procurement"];
+const THREAD_PATHS = ["/thread/procurement", "/thread/security", "/thread/cybersecurity"];
 const PROCUREMENT_SUB_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
   (slug) => `/thread/procurement/${slug}`,
 );
@@ -45,6 +49,9 @@ export const STATIC_PRERENDER_PATHS = [
   SOO_VS_SOW_PATH,
   MANAGING_WHAT_YOU_BOUGHT_PATH,
   OPTIONS_ANALYSIS_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
   ALL_PAGES_PATH,
   SOURCE_COMING_SOON_PATH,
 ] as const;

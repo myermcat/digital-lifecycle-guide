@@ -95,10 +95,10 @@ export const THREADS = {
     slug: "accessibility",
     path: "/thread/accessibility",
   },
-  cybersecurity: {
-    title: "Cybersecurity",
-    slug: "cybersecurity",
-    path: "/thread/cybersecurity",
+  security: {
+    title: "Security",
+    slug: "security",
+    path: "/thread/security",
   },
   privacy: {
     title: "Privacy",

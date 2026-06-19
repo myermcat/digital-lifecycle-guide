@@ -47,8 +47,8 @@ export const guideArrowLeadList = "list-none pl-0 space-y-5";
 /** Within one arrow-lead item: gap between heading and subtext. */
 export const guideArrowLeadGroup = "space-y-0.5";
 
-/** Classes for GuideArrowBullet — the reusable list arrow marker. */
-export const guideArrowListIcon = "mt-[0.4rem] size-4 shrink-0 text-primary/35";
+/** Classes for GuideArrowBullet — colour only; alignment is handled in the component. */
+export const guideArrowListIcon = "text-primary/45";
 
-/** Arrow marker for inline tight lists (guideProseTight, lead + body on one line). */
-export const guideArrowListIconInline = "mt-[0.15rem] size-4 shrink-0 text-primary/35";
+/** @deprecated Alignment handled in GuideArrowBullet */
+export const guideArrowListIconInline = "text-primary/45";

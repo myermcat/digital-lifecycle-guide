@@ -13,7 +13,9 @@ import {
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/create-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/reference-paths";
+import { SECURITY_THREAD } from "../src/lib/security-thread-content";
+import { THREADS } from "../src/lib/guide-strings";
 
 type SearchIndexRecord = {
   id: string;
@@ -23,6 +25,7 @@ type SearchIndexRecord = {
   sectionHeading: string;
   lifecyclePhase: string;
   text: string;
+  keywords?: string;
 };
 
 function inferLifecyclePhase(path: string) {
@@ -387,13 +390,92 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
   }
 }
 
-// Dedupe by id (keep first).
-const seenIds = new Set<string>();
-const deduped = records.filter((r) => {
-  if (seenIds.has(r.id)) return false;
-  seenIds.add(r.id);
-  return true;
-});
+// Security thread — section-level records.
+{
+  const pageTitle = SECURITY_THREAD.title;
+  const pagePath = THREADS.security.path;
+
+  const securityKeywords = "cybersecurity";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: SECURITY_THREAD.lead,
+    keywords: securityKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...SECURITY_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: SECURITY_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: SECURITY_THREAD.whoseJob,
+    },
+    {
+      sectionId: SECURITY_THREAD.closerLook.id,
+      sectionHeading: SECURITY_THREAD.closerLook.title,
+      text: concat(
+        ...SECURITY_THREAD.closerLook.blocks.map((block) => `${block.title} ${block.text}`),
+      ),
+    },
+    {
+      sectionId: SECURITY_THREAD.byPhase.id,
+      sectionHeading: SECURITY_THREAD.byPhase.title,
+      text: concat(
+        SECURITY_THREAD.byPhase.intro,
+        ...SECURITY_THREAD.byPhase.blocks.map(
+          (block) => `${block.title} ${block.preview} ${block.popup.text}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: SECURITY_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: securityKeywords,
+    });
+  }
+}
+
+function recordSearchWeight(record: SearchIndexRecord) {
+  return record.text.length + (record.keywords?.length ?? 0);
+}
+
+// Dedupe by id — keep the richer record when PAGE_INDEX stubs collide with section copy.
+const dedupedById = new Map<string, SearchIndexRecord>();
+for (const record of records) {
+  const existing = dedupedById.get(record.id);
+  if (!existing || recordSearchWeight(record) > recordSearchWeight(existing)) {
+    dedupedById.set(record.id, record);
+  }
+}
+const deduped = [...dedupedById.values()];
 
 const outPath = new URL("../public/search-index.json", import.meta.url);
 await mkdir(dirname(outPath.pathname), { recursive: true });

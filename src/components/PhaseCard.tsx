@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { phaseDialogTriggerClassName } from "@/components/PracticeCard";
 import { Link } from "@tanstack/react-router";
 import {
   Dialog,
@@ -52,7 +53,7 @@ export function PhaseCard({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring flex flex-col items-center justify-center gap-3 p-6 overflow-hidden cursor-pointer"
+        className={phaseDialogTriggerClassName}
       >
         <span className="relative font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
           {heading}

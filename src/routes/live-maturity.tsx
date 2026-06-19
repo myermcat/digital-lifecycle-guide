@@ -130,7 +130,7 @@ function LiveMaturityPage() {
           cards={[
             {
               label: "Maintain security",
-              href: threadPath("cybersecurity"),
+              href: threadPath("security"),
               description:
                 "Patch on schedule, audit access, test for vulnerabilities, and keep your incident response plan current.",
             },
