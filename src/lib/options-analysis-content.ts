@@ -1,5 +1,7 @@
 import type { SourceItem } from "@/components/SourcesBlock";
+import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
+import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   gccaseComingSoonSourceItem,
@@ -10,8 +12,8 @@ export const OPTIONS_ANALYSIS = {
   title: "Options analysis",
 
   intro: [
-    "Options analysis is the work of widening your choices before you narrow them. It comes before you commit to buying or building anything, and it applies whether you are solving a new problem or replacing a service that is reaching its end.",
-    "The instinct is to jump to a solution, often the one you already have in mind. The value of this step is the pause: name the problem clearly, then look across the real options with clear eyes before you pick one.",
+    "Options analysis is the step where you work out the different ways a need could be met, and weigh them, before committing to any one. It happens early, before anything has been bought or built, and it applies whether you are solving a new problem or replacing a service that is ending.",
+    "Why do it? Because the instinct is to jump straight to a solution, usually the one already in mind, and that is how departments end up buying something they did not need, or a worse answer than they could have had. The value of this step is the pause: name the problem plainly, then look across the real options with clear eyes before you pick one. An afternoon here can save a two-year procurement.",
   ],
 
   startWithProblem: {
@@ -40,15 +42,15 @@ export const OPTIONS_ANALYSIS = {
     ladder: [
       {
         lead: "Use what you already have.",
-        body: "A tool you already own that does this, or nearly does, is the cheapest answer of all.",
+        body: "Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy.",
       },
       {
         lead: "Reuse or adapt what someone else runs.",
-        body: "Another team, another department, or a government-wide platform may already solve your problem. You might use spare capacity on someone else's system, or ride an existing enterprise contract for better value, since buying in volume costs less per unit.",
+        body: "Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying.",
       },
       {
         lead: "Partner with another department.",
-        body: "If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you.",
+        body: "If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you. If the thing does not exist yet, ask around before you set up a buy of your own.",
       },
       {
         lead: "Solve it a different way.",
@@ -56,7 +58,7 @@ export const OPTIONS_ANALYSIS = {
       },
       {
         lead: "Buy new.",
-        body: "If none of the above fits, you procure a solution, through an existing framework or your own procurement.",
+        body: "If none of the above fits, you procure a solution, through an existing framework or your own procurement. And you can explain why when someone asks.",
       },
       {
         lead: "Build it yourself.",
@@ -67,6 +69,17 @@ export const OPTIONS_ANALYSIS = {
         body: "If the need has genuinely gone, the right option may be to stop. This one mostly comes up in Sunset.",
       },
     ],
+  },
+
+  whereToLook: {
+    id: "where-to-look",
+    title: "Where to look",
+    intro:
+      "Before you commit to a buy, check whether something already exists elsewhere in government.",
+    contentTodo: {
+      title: "Links pending (John Currah's team and Jessica Lahoud)",
+      items: ["Enterprise architecture repository", "Enterprise solutions catalog"],
+    },
   },
 
   howToWeigh: {
@@ -141,8 +154,8 @@ export const OPTIONS_ANALYSIS = {
         weight: "light" as const,
         compact: true,
         body: 'In Create, this is your "look before you buy" step, done before any contract exists.',
-        linkTo: "/thread/procurement/you-looked-before-you-bought",
-        linkLabel: "You looked before you bought",
+        linkTo: PROCUREMENT_LANDING_PATH,
+        linkLabel: "Procurement thread",
       },
       {
         lifecyclePhase: "sunset" as const,
@@ -155,6 +168,15 @@ export const OPTIONS_ANALYSIS = {
     ],
   },
 
+  whyThisMatters: {
+    id: "why-this-matters",
+    title: "Why this matters",
+    body: "PSPC's procurement guidance begins after the decision to buy is made. This step is on you, and it decides where the biggest savings and the biggest regrets land.",
+    externalLinks: [
+      { phrase: "PSPC's procurement guidance", linkKey: "agile-procurement-guide" },
+    ] satisfies ExternalPhraseLink[],
+  },
+
   sources: [
     {
       label: "Governing instrument",
@@ -163,6 +185,10 @@ export const OPTIONS_ANALYSIS = {
     {
       label: "Supporting reference",
       linkKey: "buyers-portal" satisfies ExternalLinkKey,
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "agile-procurement-guide" satisfies ExternalLinkKey,
     },
     gccaseComingSoonSourceItem(),
   ] satisfies SourceItem[],

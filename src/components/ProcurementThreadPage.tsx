@@ -7,6 +7,7 @@ import { SourcesBlock } from "@/components/SourcesBlock";
 import { PROCUREMENT_HELD_OPEN } from "@/lib/contracting-landing";
 import { PROCUREMENT_CONTRACTING_SOURCES } from "@/lib/procurement-sources";
 import { THREADS } from "@/lib/guide-strings";
+import { guidePageTitle } from "@/lib/guide-typography";
 
 export function ProcurementThreadPage() {
   const title = THREADS.procurement.title;
@@ -23,7 +24,7 @@ export function ProcurementThreadPage() {
           </span>
           <span className="text-foreground/80">{title}</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           {title}
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />

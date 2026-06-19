@@ -11,7 +11,7 @@ export const guideArticleFirstSectionGap = "mt-10 md:mt-12";
 
 /** Section heading on thread/reference article pages — subordinate to the page h1. */
 export const guideArticleSectionTitle =
-  "font-serif text-lg md:text-xl font-semibold text-foreground tracking-tight leading-tight mb-3 md:mb-4";
+  "font-serif text-2xl md:text-3xl lg:text-[2.125rem] font-bold text-foreground tracking-tight leading-[1.12] mb-4 md:mb-5";
 
 /** Within-section paragraph and block rhythm. */
 export const guideArticleProse = `${guideProse} space-y-4`;

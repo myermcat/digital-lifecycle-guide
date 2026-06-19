@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { guidePageTitle } from "@/lib/guide-typography";
 
 interface PhaseBreadcrumbProps {
   lifecyclePhase: string;
@@ -38,7 +39,7 @@ export function PhaseBreadcrumb({
           <span className="text-foreground/80">{lifecyclePhase}</span>
         )}
       </nav>
-      <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+      <h1 className={`mt-4 ${guidePageTitle}`}>
         {title}
       </h1>
     </header>

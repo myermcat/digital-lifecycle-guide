@@ -3,6 +3,7 @@ import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PROCUREMENT_SOURCES } from "@/lib/procurement-sources";
 import { PROCUREMENT_STRINGS } from "@/lib/procurement-strings";
+import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 
 export type LinkedProse = {
   text: string;
@@ -25,37 +26,37 @@ export const contractingSubPath = procurementSubPath;
 export const PROCUREMENT_GOOD_LOOKS_CARDS: PracticeCardData[] = [
   {
     label: "You looked before you bought",
-    href: procurementSubPath("you-looked-before-you-bought"),
+    href: OPTIONS_ANALYSIS_PATH,
     description:
       "You checked whether you needed to buy at all, and what the real options were, before reaching for a contract. The Options analysis reference page walks through the full ladder.",
   },
   {
     label: "You bought small, in pieces",
-    href: procurementSubPath("you-bought-small-in-pieces"),
+    href: procurementSubPath("buy-in-small-pieces"),
     description:
       "You bought the work in small, separate pieces instead of one large block.",
   },
   {
     label: "You did not over-customise",
-    href: procurementSubPath("you-did-not-over-customise"),
+    href: procurementSubPath("avoid-over-customising"),
     description:
       "You changed your process to fit the software, rather than changing the software to fit your process.",
   },
   {
     label: "You can leave when you need to",
-    href: procurementSubPath("you-can-leave-when-you-need-to"),
+    href: procurementSubPath("avoid-lock-in"),
     description:
       "You can leave the supplier when you need to, with your data, your code, and the knowledge to move.",
   },
   {
     label: "You kept enough in-house",
-    href: procurementSubPath("you-kept-enough-in-house"),
+    href: procurementSubPath("keep-capability-in-house"),
     description:
       "You held on to enough understanding to govern the work and to handle an exit.",
   },
   {
     label: "The contract carries the practices",
-    href: procurementSubPath("the-contract-carries-the-practices"),
+    href: procurementSubPath("put-the-practices-in-the-contract"),
     description:
       "The contract names the work the supplier must deliver, and says how you will see it being done.",
   },

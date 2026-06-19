@@ -8,8 +8,13 @@ export const guideProseTight =
 
 export const guideProseSpace = `${guideProse} space-y-3`;
 
+/** Page title (h1) — large display scale relative to body copy. */
+export const guidePageTitle =
+  "font-serif text-4xl sm:text-5xl md:text-[3.25rem] lg:text-6xl font-bold tracking-tight text-foreground leading-[1.05]";
+
+/** Major section heading (h2) on phase and thread landing pages. */
 export const guideSectionTitle =
-  "font-serif text-xl md:text-2xl font-semibold text-foreground tracking-tight";
+  "font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-[1.1]";
 
 export const guideBlockTitle =
   "font-serif text-xl md:text-2xl font-semibold text-primary tracking-tight leading-tight";

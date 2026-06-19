@@ -1,14 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { guideProse, guideProseSpace, guideArrowList } from "@/lib/guide-typography";
+import { guideProse, guideProseSpace, guideArrowList, guideLink } from "@/lib/guide-typography";
 import { guideAsideNote } from "@/lib/guide-article";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
 import { PHASES } from "@/lib/guide-strings";
 import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/create-paths";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
 import lifecycleVisual from "@/assets/lifecycle_three_regions_bow.svg?url";
 
@@ -113,6 +115,15 @@ function Index() {
             In Create it comes from sketches, prototypes, and conversations about what you might
             build. In Live it comes from the running system: real users, real data, real bugs.
             In Sunset you have mostly stopped gathering feedback and started closing things down.
+          </p>
+          <p>
+            Whichever phase you are in, one idea runs under all of it: a government service is
+            almost never the thing a person actually wants. It is one step in a much bigger journey
+            of theirs, often spread across many departments and levels of government.{" "}
+            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideLink}>
+              Design for the whole journey
+            </Link>{" "}
+            is where that thinking starts.
           </p>
         </section>
 

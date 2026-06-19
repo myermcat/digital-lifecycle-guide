@@ -14,7 +14,7 @@ import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
-import { guideLink, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import { guideLink, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -31,7 +31,7 @@ export function ProcurementLandingPage() {
           </span>
           <span className="text-foreground/80">{landing.title}</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           {landing.title}
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />

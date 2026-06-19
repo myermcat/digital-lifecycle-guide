@@ -11,6 +11,7 @@ import {
 } from "@/lib/contracting-landing";
 import { THREADS } from "@/lib/guide-strings";
 import {
+  guidePageTitle,
   guideProse,
   guideProseSpace,
   guideSectionTitle,
@@ -35,7 +36,7 @@ export function ContractingLandingPage() {
           </span>
           <span className="text-foreground/80">{CONTRACTING_LANDING.title}</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           {CONTRACTING_LANDING.title}
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />

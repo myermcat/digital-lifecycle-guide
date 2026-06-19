@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
-import { guideProse } from "@/lib/guide-typography";
+import { guidePageTitle, guideProse } from "@/lib/guide-typography";
 
 export function PracticeStubPage({
   id,
@@ -34,7 +34,7 @@ export function PracticeStubPage({
           </span>
           <span className="text-foreground/80">{title}</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           {title}
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />

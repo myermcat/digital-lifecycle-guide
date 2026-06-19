@@ -1,0 +1,41 @@
+<svg viewBox="0 0 820 235.38" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" style="">
+  <title id="t" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Options analysis comes before the three phases, and recurs at Sunset</title>
+  <desc id="d" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">An Options analysis box on the left, the first step, with an arrow into the lifecycle: Create, then Live, then Sunset. A faint dashed arrow loops from Sunset back to Options analysis, showing it is revisited when weighing a replacement.</desc>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b1432f"/>
+    </marker>
+    <marker id="arm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b89a86"/>
+    </marker>
+    <marker id="ard" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b89a86"/>
+    </marker>
+  </defs>
+
+  <text x="110" y="52" text-anchor="middle" font-size="10.5" letter-spacing="1.6" fill="#9a8a7b" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">THE FIRST STEP</text>
+  <rect x="26" y="64" width="168" height="74" rx="13" fill="#f1d8cd" stroke="#b1432f" stroke-width="2" style="fill:rgb(241, 216, 205);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="110" y="107" text-anchor="middle" font-size="17" fill="#8f3a2a" font-family="Georgia, 'Times New Roman', serif" font-weight="600" style="fill:rgb(143, 58, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:17px;font-weight:600;text-anchor:middle;dominant-baseline:auto">Options analysis</text>
+
+  <line x1="196" y1="101" x2="252" y2="101" stroke="#b1432f" stroke-width="2.2" marker-end="url(#ar)" style="fill:rgb(0, 0, 0);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#4a3b30" font-weight="600" text-anchor="middle" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto">
+    <rect x="260" y="64" width="146" height="74" rx="13" fill="#fdf6e9" stroke="#d9cbb0" style="fill:rgb(253, 246, 233);stroke:rgb(217, 203, 176);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto"/>
+    <text x="333" y="108" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto">Create</text>
+
+    <line x1="406" y1="101" x2="436" y2="101" stroke="#b89a86" stroke-width="2" marker-end="url(#arm)" style="fill:rgb(74, 59, 48);stroke:rgb(184, 154, 134);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto"/>
+    <rect x="436" y="64" width="120" height="74" rx="13" fill="#fdf6e9" stroke="#d9cbb0" style="fill:rgb(253, 246, 233);stroke:rgb(217, 203, 176);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto"/>
+    <text x="496" y="108" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto">Live</text>
+
+    <line x1="556" y1="101" x2="586" y2="101" stroke="#b89a86" stroke-width="2" marker-end="url(#arm)" style="fill:rgb(74, 59, 48);stroke:rgb(184, 154, 134);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto"/>
+    <rect x="586" y="64" width="150" height="74" rx="13" fill="#fdf6e9" stroke="#d9cbb0" style="fill:rgb(253, 246, 233);stroke:rgb(217, 203, 176);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto"/>
+    <text x="661" y="108" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:18px;font-weight:600;text-anchor:middle;dominant-baseline:auto">Sunset</text>
+  </g>
+
+  <text x="498" y="52" text-anchor="middle" font-size="10.5" letter-spacing="1.6" fill="#9a8a7b" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">THE LIFECYCLE</text>
+
+  <!-- faint dashed return from Sunset back to Options analysis, angled into the box -->
+  <path d="M 661 142 C 661 206, 195 206, 122 152" fill="none" stroke="#b89a86" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ard)" style="fill:none;stroke:rgb(184, 154, 134);color:rgb(255, 255, 255);stroke-width:1.6px;stroke-dasharray:5px, 4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="392" y="223" text-anchor="middle" font-size="10.5" fill="#9a8a7b" font-family="Helvetica, Arial, sans-serif" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">and again at Sunset, when you weigh a replacement</text>
+</svg>

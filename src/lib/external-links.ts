@@ -50,6 +50,17 @@ export const EXTERNAL_LINKS = {
     description: "Government of Canada Digital Standards",
     accessibility: "public",
   },
+  "uk-home-office-service-design": {
+    url: "https://hodigital.blog.gov.uk/2016/04/27/service-design-at-the-home-office/",
+    description:
+      "UK Home Office, Service design at the Home Office (Kate Tarling, 2016), Open Government Licence",
+    accessibility: "public",
+  },
+  "uk-service-manual-whole-problem": {
+    url: "https://www.gov.uk/service-manual/design/map-a-users-whole-problem",
+    description: "UK Service Manual, Map and understand a user's whole problem",
+    accessibility: "public",
+  },
   "supply-manual-chapter-6": {
     url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
     description:

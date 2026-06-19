@@ -1,6 +1,7 @@
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
 import { MANAGING_WHAT_YOU_BOUGHT_PATH, SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH, DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH } from "./create-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
 
@@ -13,6 +14,8 @@ const CORE_PATHS = [
   "/create-discovery",
   "/create-alpha",
   "/create-mvp",
+  DESIGN_FOR_WHOLE_JOURNEY_PATH,
+  DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
   "/live",
   "/live-stabilization",
   "/live-growth",

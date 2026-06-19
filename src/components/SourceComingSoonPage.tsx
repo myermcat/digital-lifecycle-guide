@@ -1,6 +1,6 @@
 import { AnimalIllustrationPanel } from "@/components/AnimalIllustrationPanel";
 import { GuideLayout } from "@/components/GuideLayout";
-import { guideProse, guideProseSpace } from "@/lib/guide-typography";
+import { guidePageTitle, guideProse, guideProseSpace } from "@/lib/guide-typography";
 
 export function SourceComingSoonPage({
   source,
@@ -15,7 +15,7 @@ export function SourceComingSoonPage({
     <GuideLayout bare>
       <AnimalIllustrationPanel animal="fox">
         <header className="mb-6 md:mb-8">
-          <h1 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+          <h1 className={guidePageTitle}>
             This source is on its way
           </h1>
           <div className="mx-auto md:mx-0 mt-5 h-px w-16 bg-border" />

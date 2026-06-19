@@ -17,6 +17,7 @@ import { Route as LiveGrowthRouteImport } from './routes/live-growth'
 import { Route as LiveRouteImport } from './routes/live'
 import { Route as CreateMvpRouteImport } from './routes/create-mvp'
 import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
+import { Route as CreateDesignForTheWholeJourneyRouteImport } from './routes/create-design-for-the-whole-journey'
 import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as AllPagesRouteImport } from './routes/all-pages'
@@ -74,6 +75,12 @@ const CreateDiscoveryRoute = CreateDiscoveryRouteImport.update({
   path: '/create-discovery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreateDesignForTheWholeJourneyRoute =
+  CreateDesignForTheWholeJourneyRouteImport.update({
+    id: '/create-design-for-the-whole-journey',
+    path: '/create-design-for-the-whole-journey',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CreateAlphaRoute = CreateAlphaRouteImport.update({
   id: '/create-alpha',
   path: '/create-alpha',
@@ -162,6 +169,7 @@ export interface FileRoutesByFullPath {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
   '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
@@ -188,6 +196,7 @@ export interface FileRoutesByTo {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
   '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
@@ -213,6 +222,7 @@ export interface FileRoutesById {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
   '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
@@ -241,6 +251,7 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-design-for-the-whole-journey'
     | '/create-discovery'
     | '/create-mvp'
     | '/live'
@@ -267,6 +278,7 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-design-for-the-whole-journey'
     | '/create-discovery'
     | '/create-mvp'
     | '/live'
@@ -291,6 +303,7 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-design-for-the-whole-journey'
     | '/create-discovery'
     | '/create-mvp'
     | '/live'
@@ -318,6 +331,7 @@ export interface RootRouteChildren {
   AllPagesRoute: typeof AllPagesRoute
   CreateRoute: typeof CreateRoute
   CreateAlphaRoute: typeof CreateAlphaRoute
+  CreateDesignForTheWholeJourneyRoute: typeof CreateDesignForTheWholeJourneyRoute
   CreateDiscoveryRoute: typeof CreateDiscoveryRoute
   CreateMvpRoute: typeof CreateMvpRoute
   LiveRoute: typeof LiveRoute
@@ -392,6 +406,13 @@ declare module '@tanstack/react-router' {
       path: '/create-discovery'
       fullPath: '/create-discovery'
       preLoaderRoute: typeof CreateDiscoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/create-design-for-the-whole-journey': {
+      id: '/create-design-for-the-whole-journey'
+      path: '/create-design-for-the-whole-journey'
+      fullPath: '/create-design-for-the-whole-journey'
+      preLoaderRoute: typeof CreateDesignForTheWholeJourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create-alpha': {
@@ -540,6 +561,7 @@ const rootRouteChildren: RootRouteChildren = {
   AllPagesRoute: AllPagesRoute,
   CreateRoute: CreateRoute,
   CreateAlphaRoute: CreateAlphaRoute,
+  CreateDesignForTheWholeJourneyRoute: CreateDesignForTheWholeJourneyRoute,
   CreateDiscoveryRoute: CreateDiscoveryRoute,
   CreateMvpRoute: CreateMvpRoute,
   LiveRoute: LiveRoute,

@@ -1,8 +1,10 @@
 import { PHASES, THREADS, practicePath, reviewPath } from "./guide-strings";
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { SOO_VS_SOW_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "./create-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "./managing-what-you-bought-content";
+import { DESIGN_FOR_WHOLE_JOURNEY } from "./design-for-whole-journey-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
 
 import { ALL_PAGES_PATH } from "./all-pages-path";
@@ -32,6 +34,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
   { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-progress" },
+  {
+    title: DESIGN_FOR_WHOLE_JOURNEY.title,
+    path: DESIGN_FOR_WHOLE_JOURNEY_PATH,
+    type: "subphase",
+    status: "in-review",
+  },
   { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-progress" },
   { title: "MVP", path: "/create-mvp", type: "subphase", status: "in-progress" },
   { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "in-progress" },

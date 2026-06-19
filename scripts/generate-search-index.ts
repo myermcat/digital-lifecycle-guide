@@ -12,6 +12,8 @@ import {
 } from "../src/lib/reference-paths";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/create-paths";
 
 type SearchIndexRecord = {
   id: string;
@@ -272,6 +274,15 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       ),
     },
     {
+      sectionId: OPTIONS_ANALYSIS.whereToLook.id,
+      sectionHeading: OPTIONS_ANALYSIS.whereToLook.title,
+      text: concat(
+        OPTIONS_ANALYSIS.whereToLook.intro,
+        OPTIONS_ANALYSIS.whereToLook.contentTodo.title,
+        ...OPTIONS_ANALYSIS.whereToLook.contentTodo.items,
+      ),
+    },
+    {
       sectionId: OPTIONS_ANALYSIS.howToWeigh.id,
       sectionHeading: OPTIONS_ANALYSIS.howToWeigh.title,
       text: concat(
@@ -290,6 +301,74 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: OPTIONS_ANALYSIS.byPhase.title,
       text: concat(
         ...OPTIONS_ANALYSIS.byPhase.cards.map((c) => c.body),
+      ),
+    },
+    {
+      sectionId: OPTIONS_ANALYSIS.whyThisMatters.id,
+      sectionHeading: OPTIONS_ANALYSIS.whyThisMatters.title,
+      text: OPTIONS_ANALYSIS.whyThisMatters.body,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+    });
+  }
+}
+
+// Design for the whole journey — section-level records.
+{
+  const pageTitle = DESIGN_FOR_WHOLE_JOURNEY.title;
+  const pagePath = DESIGN_FOR_WHOLE_JOURNEY_PATH;
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(...DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.paragraphs),
+  });
+
+  const sections = [
+    {
+      sectionId: DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.id,
+      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.title,
+      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.paragraphs),
+    },
+    {
+      sectionId: DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.id,
+      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.title,
+      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.paragraphs),
+    },
+    {
+      sectionId: DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.id,
+      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.title,
+      text: concat(
+        DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.intro,
+        DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.amaraJourney,
+        ...DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.afterVisual,
+      ),
+    },
+    {
+      sectionId: DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.id,
+      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.title,
+      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.paragraphs),
+    },
+    {
+      sectionId: DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.id,
+      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.title,
+      text: concat(
+        ...DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.cards.map((c) => `${c.title} ${c.body}`),
       ),
     },
     { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },

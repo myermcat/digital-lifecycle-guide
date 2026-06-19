@@ -4,7 +4,7 @@ import {
   PROCUREMENT_SUBPAGE_SLUGS,
   type ProcurementSubPageSlug,
 } from "./procurement-subpage-slugs";
-import { SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH } from "./reference-paths";
+import { SOO_VS_SOW_PATH } from "./reference-paths";
 import type { ExternalLinkKey } from "./external-links";
 import {
   comingSoonSourceItem,
@@ -83,86 +83,9 @@ export type ContractingSubPage = {
 };
 
 export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSubPage> = {
-  "you-looked-before-you-bought": {
-    slug: "you-looked-before-you-bought",
-    title: "You looked before you bought",
-    intro: [
-      "The strongest move in procurement happens before any contract exists. It is the work of asking whether you should buy at all, and if so, what the real options are. Most teams skip it and jump straight to buying, and that costs them later.",
-    ],
-    sections: [
-      {
-        id: "start-with-the-problem",
-        title: "Start with the problem, not the product",
-        paragraphs: [
-          "Before you name a solution, name the need. Who are the users, what is going wrong for them, what would good actually look like, and how would you know you had reached it? A clear problem is worth more than a clever solution, because every later decision gets measured against it. Write it down plainly, and be ready to find that the real problem is not the one you assumed.",
-        ],
-      },
-      {
-        id: "walk-the-options",
-        title: "Then walk the options, in order",
-        paragraphs: [
-          "From the cheapest and least disruptive to the most. Buying new is near the bottom of this ladder. The full walkthrough lives on the Options analysis reference page.",
-        ],
-        paragraphLinks: [{ index: 0, phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
-        bulletsVariant: "ladder",
-        bullets: [
-          {
-            lead: "Use what you already have.",
-            body: "Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy.",
-          },
-          {
-            lead: "Reuse or adapt what someone else runs.",
-            body: "Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying.",
-          },
-          {
-            lead: "Solve it a different way.",
-            body: "Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary.",
-          },
-          {
-            lead: "Buy new.",
-            body: "If none of the above fits, then you buy. And you can explain why when someone asks.",
-          },
-        ],
-        paragraphsAfterBullets: [
-          "And if the thing does not exist yet, ask around before you set up a buy of your own. If another team needs the same thing, join up and buy it once for both of you.",
-        ],
-        paragraphsAfterNote: [
-          "One option is left off this ladder on purpose: building it with your own people. In most government departments the in-house capability to build and run software is thin, so treat building as a rare exception, not a step you can count on.",
-        ],
-      },
-      {
-        id: "where-to-look",
-        title: "Where to look",
-        paragraphs: [
-          "Before you commit to a buy, check whether something already exists elsewhere in government.",
-        ],
-        contentTodo: {
-          title: "Links pending (John Currah's team and Jessica Lahoud)",
-          items: [
-            "Enterprise architecture repository",
-            "Enterprise solutions catalog",
-          ],
-        },
-      },
-      {
-        id: "do-the-homework",
-        title: "Do the homework before you commit",
-        paragraphs: [
-          "Look at how other departments solved the same thing, and what it cost them. Look at other jurisdictions with similar rules, the UK, Australia, and borrow rather than start from scratch. Read the guidance that already exists. You are almost never the first person to face this problem, and learning from someone who already paid for the mistake is the cheapest research you will do.",
-        ],
-      },
-      {
-        id: "why-it-matters",
-        title: "Why this matters",
-        paragraphs: [
-          "An afternoon of options work can save you a two-year procurement for something you did not need to buy, or point you at a far better answer than the one you would have rushed into. PSPC's procurement guidance begins after the decision to buy is made. This step is on you, and it decides where the biggest savings and the biggest regrets land.",
-        ],
-      },
-    ],
-  },
-  "the-contract-carries-the-practices": {
-    slug: "the-contract-carries-the-practices",
-    title: "The contract carries the practices",
+  "put-the-practices-in-the-contract": {
+    slug: "put-the-practices-in-the-contract",
+    title: "Put the practices in the contract",
     intro: [
       "The rest of this playbook tells you how to run a service well. This page is about what happens to that advice when a supplier is the one doing the work.",
       "It still has to happen. The contract is how you make sure it does.",
@@ -211,9 +134,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
     ],
   },
-  "you-bought-small-in-pieces": {
-    slug: "you-bought-small-in-pieces",
-    title: "You bought small, in pieces",
+  "buy-in-small-pieces": {
+    slug: "buy-in-small-pieces",
+    title: "Buy in small pieces",
     intro: [
       "The most useful thing you can do when buying a service is to not buy all of it at once.",
       "You bought the work in small, separate pieces instead of one large block. Each piece is tightly scoped, due soon, and able to build on the one before.",
@@ -323,9 +246,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
     ],
   },
-  "you-did-not-over-customise": {
-    slug: "you-did-not-over-customise",
-    title: "You did not over-customise",
+  "avoid-over-customising": {
+    slug: "avoid-over-customising",
+    title: "Avoid over-customising",
     intro: ["When you buy software that already exists, the strongest thing you can do is leave it alone."],
     sources: [comingSoonSourceItem(GCCASE_MIGRATION_READINESS_GUIDE)],
     sections: [
@@ -364,9 +287,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
     ],
   },
-  "you-can-leave-when-you-need-to": {
-    slug: "you-can-leave-when-you-need-to",
-    title: "You can leave when you need to",
+  "avoid-lock-in": {
+    slug: "avoid-lock-in",
+    title: "Avoid lock-in",
     intro: [
       "A supplier you cannot leave is a supplier who sets the price. Owning your exit is what keeps the relationship honest while it lasts.",
     ],
@@ -439,9 +362,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
     ],
   },
-  "you-kept-enough-in-house": {
-    slug: "you-kept-enough-in-house",
-    title: "You kept enough in-house",
+  "keep-capability-in-house": {
+    slug: "keep-capability-in-house",
+    title: "Keep capability in-house",
     intro: [
       "When a supplier builds or runs your service, it is tempting to hand over everything and free your own people for other work. Keep something back.",
     ],

@@ -93,13 +93,7 @@ export const PROCUREMENT_STRINGS = {
         label: "Look",
         title: "Look before you buy.",
         leadIn: "The cheapest procurement is the one you do not have to run.",
-        body: "Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. This step is not in PSPC's guidance, which starts after the decision to buy, so it belongs with the Policy on the Planning and Management of Investments.",
-        externalLinks: [
-          {
-            phrase: "Policy on the Planning and Management of Investments",
-            linkKey: "policy-planning-investments",
-          },
-        ],
+        body: "Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit.",
         internalLinks: [{ phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
       },
       {

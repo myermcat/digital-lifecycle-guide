@@ -6,7 +6,7 @@ import {
   type PageIndexEntry,
   type PageIndexStatus,
 } from "@/lib/page-index";
-import { guideLink, guideProseTight } from "@/lib/guide-typography";
+import { guideLink, guidePageTitle, guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
 const STATUS_LABELS: Record<PageIndexStatus, string> = {
@@ -156,7 +156,7 @@ export function AllPagesPage() {
           </span>
           <span className="text-foreground/80">All pages</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           All pages
         </h1>
         <p className={`${guideProseTight} mt-3 text-foreground/65 max-w-xl`}>

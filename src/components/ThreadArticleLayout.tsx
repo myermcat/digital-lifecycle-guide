@@ -4,6 +4,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PROCUREMENT_LANDING, PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { guideArticleMeasure } from "@/lib/guide-article";
+import { guidePageTitle } from "@/lib/guide-typography";
 
 export function ThreadArticleLayout({
   id,
@@ -34,7 +35,7 @@ export function ThreadArticleLayout({
           </span>
           <span className="text-foreground/80">{title}</span>
         </nav>
-        <h1 className="mt-4 font-serif text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-[1.1]">
+        <h1 className={`mt-4 ${guidePageTitle}`}>
           {title}
         </h1>
         <div className="mt-4 h-px w-16 bg-border" />

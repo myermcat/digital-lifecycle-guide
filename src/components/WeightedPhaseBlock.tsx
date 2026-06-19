@@ -52,7 +52,9 @@ const compactCardStyles = {
 };
 
 export type PhaseFitCard = {
-  lifecyclePhase: LifecyclePhaseId;
+  lifecyclePhase?: LifecyclePhaseId;
+  /** When set, used instead of the lifecycle phase title (e.g. thread names on "Where to go next"). */
+  title?: string;
   body: string;
   weight: WeightedPhaseNote["weight"];
   /** Smaller, lighter cards — for reference pages and secondary phase callouts. */
@@ -67,13 +69,17 @@ export function PhaseFitCards({ cards }: { cards: PhaseFitCard[] }) {
     <div className={`${guideProseSpace} mt-4`}>
       {cards.map((card) => {
         const styles = card.compact ? compactCardStyles : weightStyles[card.weight];
+        const cardTitle =
+          card.title ??
+          (card.lifecyclePhase ? `${PHASES[card.lifecyclePhase].title}.` : "");
+        const cardKey = card.title ?? card.lifecyclePhase ?? card.body;
         return (
           <div
-            key={card.lifecyclePhase}
+            key={cardKey}
             className={styles.box}
             style={card.compact ? undefined : { backgroundColor: "var(--phase-group)" }}
           >
-            <h3 className={styles.title}>{PHASES[card.lifecyclePhase].title}.</h3>
+            <h3 className={styles.title}>{cardTitle}</h3>
             <p className={`mt-1.5 ${styles.body}`}>{card.body}</p>
             {card.linkTo && card.linkLabel ? (
               <p className="mt-2">
