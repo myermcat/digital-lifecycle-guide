@@ -12,8 +12,10 @@ interface EditorialNoteProps {
 }
 
 /**
- * Small editorial callout: thick left accent, soft tint, tiny label,
- * one or two lines of body. Two tones: quiet (neutral) and caution (red).
+ * Editorial aside: who the page is for, framing, or cautions. Thick left accent, soft tint.
+ *
+ * For practical tips and in-page orientation, use {@link GuideCallout} instead —
+ * see `guideBlockTypes` in `@/lib/guide-article`.
  */
 export function EditorialNote({
   tone = "quiet",

@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
 import { EditorialNote } from "@/components/EditorialNote";
+import { GuideCallout } from "@/components/GuideCallout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { guideProse, guideProseSpace, guideArrowList } from "@/lib/guide-typography";
-import { guideAsideLink, guideAsideNote } from "@/lib/guide-article";
+import { guideProse, guideProseSpace, guideArrowList, guideLink } from "@/lib/guide-typography";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
 import { PHASES } from "@/lib/guide-strings";
@@ -80,7 +80,7 @@ function Index() {
           />
         </figure>
 
-        <section className={`mt-10 md:mt-12 max-w-xl ${guideProseSpace}`}>
+        <section className={`mt-10 md:mt-12 ${guideProseSpace}`}>
           <p>
             Every digital service, whatever it does, runs into the same handful of questions
             over its life. What problem are we solving, and for whom. Is the solution working
@@ -120,32 +120,29 @@ function Index() {
               </p>
             </li>
           </ul>
-          <p className={guideAsideNote}>
-            Not sure which phase you are in? The quickest test is where your feedback comes from.
-            In Create it comes from sketches, prototypes, and conversations about what you might
-            build. In Live it comes from the running system: real users, real data, real bugs.
-            In Sunset you have mostly stopped gathering feedback and started closing things down.
-          </p>
-          <p className={guideAsideNote}>
+          <GuideCallout title="Not sure which phase you are in?">
+            The quickest test is where your feedback comes from. In Create it comes from
+            sketches, prototypes, and conversations about what you might build. In Live it
+            comes from the running system: real users, real data, real bugs. In Sunset you
+            have mostly stopped gathering feedback and started closing things down.
+          </GuideCallout>
+          <p>
             Whichever phase you are in, one idea runs under all of it: a government service is
             almost never the thing a person actually wants. It is one step in a much bigger journey
             of theirs, often spread across many departments and levels of government.{" "}
-            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideAsideLink}>
+            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideLink}>
               Design for the whole journey
             </Link>{" "}
             is where that thinking starts.
           </p>
+          <p>The three phases of a digital service&apos;s life</p>
         </section>
 
-        <section className="mt-12 md:mt-16">
-          <h2 className="sr-only">The three phases of a digital service&apos;s life</h2>
+        <section className="mt-6 md:mt-8">
           <div
             className="rounded-3xl p-5 md:p-7 shadow-inner"
             style={{ backgroundColor: "var(--phase-group)" }}
           >
-            <p className="text-xs uppercase tracking-[0.22em] text-foreground/60 mb-4 text-center">
-              The three phases
-            </p>
             <div className="grid gap-5 sm:grid-cols-3">
             <PhaseCard
               heading={PHASES.create.title}
