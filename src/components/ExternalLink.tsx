@@ -22,7 +22,7 @@ export function ExternalLink({
     <a
       href={externalLinkUrl(linkKey)}
       className={cn(gcNetworkOnly ? guideLinkGcNetwork : guideLink, className)}
-      title={gcNetworkOnly ? "GC network only" : undefined}
+      title={gcNetworkOnly ? "Only available on the Government of Canada network." : undefined}
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -19,6 +19,10 @@ export const guideSectionTitle =
 export const guideBlockTitle =
   "font-serif text-xl md:text-2xl font-semibold text-primary tracking-tight leading-tight";
 
+/** Support callout heading — Doorway anatomy, slightly smaller than guideBlockTitle. */
+export const guideSupportCalloutTitle =
+  "font-serif text-lg md:text-xl font-semibold text-primary tracking-tight leading-tight";
+
 export const guideSubsectionTitle =
   "font-serif text-lg md:text-xl font-semibold text-primary/75 tracking-tight leading-tight";
 
@@ -37,6 +41,10 @@ export const guideLinkGcNetwork =
 /** Small uppercase labels on callout blocks (WCAG AA on cream). */
 export const guideCalloutLabel =
   "text-[10px] uppercase tracking-[0.22em] text-primary/80 font-sans";
+
+/** Callout title — editorial label size and face, primary colour. */
+export const guideCalloutTitle =
+  "font-sans text-[10px] uppercase tracking-[0.22em] text-primary leading-snug";
 
 /** Wrapper classes for arrow-bullet lists. */
 export const guideArrowList = "space-y-4 list-none pl-0";

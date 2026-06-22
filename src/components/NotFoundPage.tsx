@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { AnimalIllustrationPanel } from "@/components/AnimalIllustrationPanel";
 import { GuideLayout } from "@/components/GuideLayout";
+import { PageFoot } from "@/components/PageFoot";
 import { guideProse } from "@/lib/guide-typography";
 
 export function NotFoundPage() {
@@ -30,6 +31,7 @@ export function NotFoundPage() {
           </div>
         </div>
       </AnimalIllustrationPanel>
+      <PageFoot className="mt-10 md:mt-12" />
     </GuideLayout>
   );
 }

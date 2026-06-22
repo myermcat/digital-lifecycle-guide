@@ -54,7 +54,7 @@ function SunsetJourneyStepExample({ example }: { example: SunsetJourneyStepExamp
 }
 
 const SUNSET_REPLACE_OVERLAP_ALT =
-  "The new service's Create overlaps the old service's Sunset from Decide onward. A bottom timeline shows the old service moving through five Sunset steps: Assess, Decide, Plan, Acquire, Migrate. A top timeline shows the new service's Create starting above Decide as discover and decide, becoming build and deliver above Acquire and Migrate, then continuing into Live. Decide through Migrate are shaded as the overlap, and at Migrate an arrow shows users and data moving up to the new service.";
+  "The new service's Create overlaps the old service's Sunset from Decide onward. A bottom timeline shows the old service moving through five Sunset steps: Assess, Decide, Plan, Buy or build, Migrate. A top timeline shows the new service's Create starting above Decide as discover and decide, becoming build and deliver above Buy or build and Migrate, then continuing into Live. Decide through Migrate are shaded as the overlap, and at Migrate an arrow shows users and data moving up to the new service.";
 
 const SUNSET_REPLACE_OVERLAP_CAPTION =
   "The new service's Create starts while the old one is still in Sunset. They overlap from Decide on, and at Migrate the data and users move across.";

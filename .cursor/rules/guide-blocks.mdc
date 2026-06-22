@@ -1,0 +1,41 @@
+---
+description: Editorial note vs callout — two lifted block types; use the right one when the user names them.
+alwaysApply: true
+---
+
+# Guide blocks: editorial note vs callout
+
+When the user says **"editorial note"**, use `EditorialNote` from `@/components/EditorialNote`.
+
+When the user says **"callout"**, use `GuideCallout` from `@/components/GuideCallout`.
+
+When the user says **"support callout"**, use `SupportCallout` via `PageFoot` from `@/components/PageFoot` (before Further reading and Sources on every page).
+
+Full spec: `src/lib/guide-blocks.ts` (`EDITORIAL_NOTE_BLOCK`, `CALLOUT_BLOCK`, `SUPPORT_CALLOUT_BLOCK`).
+
+## Editorial note
+
+- **Job:** Who the page is for, editorial framing, cautions.
+- **Look:** Muted grey fill. Left bar muted grey. Tiny uppercase muted label. Tight sans body.
+- **Example:** Home page — "Who this is for".
+- **DOM:** `data-guide-block="editorial-note"`
+
+## Callout
+
+- **Job:** Practical tips, tests, scope, in-page orientation ("how to tell…").
+- **Look:** Primary-tint fill. Left bar primary red. Title in tiny uppercase primary sans; body in serif (or tight sans if `compact`).
+- **Examples:** Home — "Not sure which phase you are in?"; Procurement — Scope.
+- **DOM:** `data-guide-block="callout"`
+
+## Support callout
+
+- **Job:** Standing help pointer at the foot of every page (before Further reading and Sources).
+- **Look:** Reuses Doorway card anatomy — small-caps label "SUPPORT AND COMMUNITIES", rust heading (smaller than Doorway), prose line, arrow link "Browse the support communities →".
+- **Variants:** Generic, or page-specific contact linked inline on thread pages (Security, Procurement, Privacy, Accessibility, User research, Dependencies and standards, Data stewardship).
+- **DOM:** `data-guide-block="support-callout"`
+
+## Do not
+
+- Use EditorialNote for practical how-to / phase tests.
+- Use GuideCallout for audience framing ("who this is for").
+- Treat DoorwayBlock, CautionBlock, or LookingAhead as interchangeable with these two.

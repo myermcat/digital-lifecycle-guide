@@ -138,6 +138,81 @@ export const EXTERNAL_LINKS = {
     description: "NIST Secure Software Development Framework (SSDF)",
     accessibility: "public",
   },
+  "application-portfolio-management-community": {
+    url: "https://gcxgce.sharepoint.com/teams/0318",
+    description: "Application Portfolio Management community (GC network)",
+    accessibility: "gc-network-only",
+  },
+  "it-plan-space": {
+    url: "https://wiki.gccollab.ca/IT_Plan",
+    description: "IT Plan space (GCcollab)",
+    accessibility: "public",
+  },
+  "enterprise-architecture-cop": {
+    url: "https://gccollab.ca/groups/profile/1896301/",
+    description: "Enterprise Architecture Community of Practice",
+    accessibility: "public",
+  },
+  "gc-cloud-information-centre": {
+    url: "https://wiki.gccollab.ca/About_Cloud_Information_Centre",
+    description: "GC Cloud Information Centre",
+    accessibility: "public",
+  },
+  "cyber-centre-contact": {
+    url: "https://www.cyber.gc.ca/en/about-cyber-centre/contact-cyber-centre",
+    description: "Canadian Centre for Cyber Security — contact",
+    accessibility: "public",
+  },
+  "atip-privacy-hub": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy.html",
+    description: "Access to information and privacy (TBS hub)",
+    accessibility: "public",
+  },
+  "privacy-commissioner": {
+    url: "https://www.priv.gc.ca/en/",
+    description: "Office of the Privacy Commissioner of Canada",
+    accessibility: "public",
+  },
+  "digital-accessibility-toolkit": {
+    url: "https://a11y.canada.ca/en/",
+    description: "Digital Accessibility Toolkit",
+    accessibility: "public",
+  },
+  "a11y-community-directory": {
+    url: "https://a11y.canada.ca/en/community-directory/",
+    description: "Digital Accessibility Toolkit community directory",
+    accessibility: "public",
+  },
+  "gc-notify-contact": {
+    url: "https://notification.canada.ca/en/contact",
+    description: "GC Notify contact",
+    accessibility: "public",
+  },
+  "gc-forms-assistance": {
+    url: "https://assistance.cds-snc.ca",
+    description: "GC Forms assistance",
+    accessibility: "public",
+  },
+  "gc-design-system": {
+    url: "https://wiki.gccollab.ca/GCDigital_design_system",
+    description: "GC Design System",
+    accessibility: "public",
+  },
+  "gc-open-source-community": {
+    url: "https://github.com/canada-ca",
+    description: "GC Open Source community (GitHub)",
+    accessibility: "public",
+  },
+  "gc-functional-communities-directory": {
+    url: "https://wiki.gccollab.ca/GCOnboard/Functional_Communities",
+    description: "GC Functional Communities directory",
+    accessibility: "public",
+  },
+  "gc-enterprise-it-portfolio": {
+    url: "https://wiki.gccollab.ca/GC_Enterprise_IT_Portfolio",
+    description: "GC Enterprise IT Portfolio (GCcollab)",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

@@ -1,6 +1,5 @@
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { guideArticleCalloutLift } from "@/lib/guide-article";
 import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
@@ -10,7 +9,11 @@ export function SooVsSowPage() {
   const { comparison } = SOO_VS_SOW;
 
   return (
-    <ReferenceArticleLayout id="reference-soo-vs-sow" title={SOO_VS_SOW.title}>
+    <ReferenceArticleLayout
+      id="reference-soo-vs-sow"
+      title={SOO_VS_SOW.title}
+      sources={SOO_VS_SOW.sources}
+    >
       <section className={guideProseSpace}>
         <p>{SOO_VS_SOW.opening}</p>
       </section>
@@ -46,8 +49,6 @@ export function SooVsSowPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </ThreadArticleSection>
-
-      <SourcesBlock items={SOO_VS_SOW.sources} />
     </ReferenceArticleLayout>
   );
 }

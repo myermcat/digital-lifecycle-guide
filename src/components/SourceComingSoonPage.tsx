@@ -1,5 +1,6 @@
 import { AnimalIllustrationPanel } from "@/components/AnimalIllustrationPanel";
 import { GuideLayout } from "@/components/GuideLayout";
+import { PageFoot } from "@/components/PageFoot";
 import { guidePageTitle, guideProse, guideProseSpace } from "@/lib/guide-typography";
 
 export function SourceComingSoonPage({
@@ -33,6 +34,7 @@ export function SourceComingSoonPage({
           ) : null}
         </section>
       </AnimalIllustrationPanel>
+      <PageFoot className="mt-10 md:mt-12" />
     </GuideLayout>
   );
 }

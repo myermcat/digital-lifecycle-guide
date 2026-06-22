@@ -25,7 +25,7 @@ export type SunsetJourneyStepStrings = {
   placeholderLinks?: PlaceholderPhraseLink[];
   boldPhrases?: BoldPhrase[];
   example?: SunsetJourneyStepExample;
-  /** Hidden on the retire path (step 4 Acquire). */
+  /** Hidden on the retire path (step 4 Buy or build). */
   replaceOnly?: boolean;
 };
 
@@ -128,12 +128,12 @@ export const SUNSET_STRINGS = {
         ],
       },
       {
-        label: "Acquire",
-        title: "Acquire.",
-        leadIn: "Get and prepare the new solution.",
-        body: "Secure and prepare the new solution. Run the procurement or build, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Procurement alone can run 12 to 24 months, so this is where starting early pays off. See the Procurement thread for how the buying works.",
+        label: "Buy/build",
+        title: "Buy or build.",
+        leadIn: "Get and prepare the new solution, by buying it or building it.",
+        body: "If you buy, run the procurement process; if you build, stand up the team and do the development work. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters.",
         replaceOnly: true,
-        internalLinks: [{ phrase: "Procurement thread", to: PROCUREMENT_LANDING_PATH }],
+        internalLinks: [{ phrase: "the procurement process", to: PROCUREMENT_LANDING_PATH }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {

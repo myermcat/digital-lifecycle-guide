@@ -15,6 +15,8 @@ import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
 import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/reference-paths";
 import { SECURITY_THREAD } from "../src/lib/security-thread-content";
+import { SUPPORT_PAGE } from "../src/lib/support-content";
+import { SUPPORT_PATH } from "../src/lib/support-path";
 import { THREADS } from "../src/lib/guide-strings";
 
 type SearchIndexRecord = {
@@ -459,6 +461,54 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: securityKeywords,
+    });
+  }
+}
+
+// Support and communities — section-level records.
+{
+  const pageTitle = SUPPORT_PAGE.title;
+  const pagePath = SUPPORT_PATH;
+
+  const sections = [
+    {
+      sectionId: "",
+      sectionHeading: pageTitle,
+      text: SUPPORT_PAGE.lead,
+    },
+    {
+      sectionId: SUPPORT_PAGE.acrossLifecycle.id,
+      sectionHeading: SUPPORT_PAGE.acrossLifecycle.title,
+      text: concat(
+        ...SUPPORT_PAGE.acrossLifecycle.bullets.map((bullet) => bullet.text),
+      ),
+    },
+    {
+      sectionId: SUPPORT_PAGE.byTopic.id,
+      sectionHeading: SUPPORT_PAGE.byTopic.title,
+      text: concat(
+        ...SUPPORT_PAGE.byTopic.bullets.map((bullet) => bullet.text),
+        SUPPORT_PAGE.byTopic.closing.text,
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: SUPPORT_PAGE.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: "support communities help contact mailbox",
     });
   }
 }

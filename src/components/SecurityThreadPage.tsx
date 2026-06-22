@@ -9,7 +9,7 @@ import {
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
-import { SourcesBlock } from "@/components/SourcesBlock";
+import { PageFoot } from "@/components/PageFoot";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
@@ -135,12 +135,11 @@ export function SecurityThreadPage() {
         <PhasePreviewPopupCards cards={phaseCards} />
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
-        <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-        <p className={guideProse}>{renderLinkedProse(furtherReading)}</p>
-      </section>
-
-      <SourcesBlock items={sources} />
+      <PageFoot
+        support="security"
+        furtherReading={renderLinkedProse(furtherReading)}
+        sources={sources}
+      />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

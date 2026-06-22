@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
+import { PageFoot } from "@/components/PageFoot";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { guidePageTitle, guideProse } from "@/lib/guide-typography";
 
@@ -41,6 +42,8 @@ export function PracticeStubPage({
       </header>
 
       <p className={guideProse}>{body}</p>
+
+      <PageFoot />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

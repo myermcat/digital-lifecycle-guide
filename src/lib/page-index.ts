@@ -5,6 +5,8 @@ import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "./managing-what-you-bought-content";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "./design-for-whole-journey-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
+import { SUPPORT_PAGE } from "./support-content";
+import { SUPPORT_PATH } from "./support-path";
 
 import { ALL_PAGES_PATH } from "./all-pages-path";
 
@@ -27,6 +29,7 @@ export type PageIndexEntry = {
  */
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
+  { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
 
   { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
   { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-progress" },

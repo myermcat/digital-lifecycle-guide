@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as SunsetRouteImport } from './routes/sunset'
 import { Route as SourceComingSoonRouteImport } from './routes/source-coming-soon'
 import { Route as LiveStabilizationRouteImport } from './routes/live-stabilization'
@@ -36,6 +37,11 @@ import { Route as ThreadContractingIndexRouteImport } from './routes/thread.cont
 import { Route as ThreadProcurementPageRouteImport } from './routes/thread.procurement.$page'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SunsetRoute = SunsetRouteImport.update({
   id: '/sunset',
   path: '/sunset',
@@ -185,6 +191,7 @@ export interface FileRoutesByFullPath {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
+  '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
@@ -213,6 +220,7 @@ export interface FileRoutesByTo {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
+  '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
@@ -240,6 +248,7 @@ export interface FileRoutesById {
   '/live-stabilization': typeof LiveStabilizationRoute
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
+  '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
@@ -270,6 +279,7 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
+    | '/support'
     | '/practice/$slug'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
@@ -298,6 +308,7 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
+    | '/support'
     | '/practice/$slug'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
@@ -324,6 +335,7 @@ export interface FileRouteTypes {
     | '/live-stabilization'
     | '/source-coming-soon'
     | '/sunset'
+    | '/support'
     | '/practice/$slug'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
@@ -353,6 +365,7 @@ export interface RootRouteChildren {
   LiveStabilizationRoute: typeof LiveStabilizationRoute
   SourceComingSoonRoute: typeof SourceComingSoonRoute
   SunsetRoute: typeof SunsetRoute
+  SupportRoute: typeof SupportRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
   ReferenceDesignForTheWholeJourneyRoute: typeof ReferenceDesignForTheWholeJourneyRoute
   ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
@@ -366,6 +379,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sunset': {
       id: '/sunset'
       path: '/sunset'
@@ -591,6 +611,7 @@ const rootRouteChildren: RootRouteChildren = {
   LiveStabilizationRoute: LiveStabilizationRoute,
   SourceComingSoonRoute: SourceComingSoonRoute,
   SunsetRoute: SunsetRoute,
+  SupportRoute: SupportRoute,
   PracticeSlugRoute: PracticeSlugRoute,
   ReferenceDesignForTheWholeJourneyRoute:
     ReferenceDesignForTheWholeJourneyRoute,

@@ -3,6 +3,7 @@ import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { PageFoot } from "@/components/PageFoot";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
 import {
   getPhaseLeavingContent,
@@ -52,6 +53,8 @@ export function PhasePlaceholderPage({
       </section>
 
       {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}
+
+      <PageFoot />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

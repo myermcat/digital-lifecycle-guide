@@ -2,7 +2,9 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { PageFoot } from "@/components/PageFoot";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
+import { supportCalloutVariantForThread } from "@/lib/support-callout";
 import type { ThreadContent } from "@/lib/thread-content";
 import {
   guideLink,
@@ -97,22 +99,24 @@ export function CrossCuttingThreadPage({
         </section>
       ) : null}
 
-      {content.furtherReading.length > 0 ? (
-        <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
-          <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-          <ul className={`${guideProse} space-y-2 list-none pl-0`}>
-            {content.furtherReading.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className={guideLink} target="_blank" rel="noopener noreferrer">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
       {children}
+
+      <PageFoot
+        support={supportCalloutVariantForThread(content.slug)}
+        furtherReading={
+          content.furtherReading.length > 0 ? (
+            <ul className="space-y-2 list-none pl-0">
+              {content.furtherReading.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className={guideLink} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : undefined
+        }
+      />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

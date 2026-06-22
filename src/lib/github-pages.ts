@@ -10,6 +10,7 @@ import {
 } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
+import { SUPPORT_PATH } from "./support-path";
 
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
 export const GITHUB_PAGES_BASE = "/digital-lifecycle-guide/";
@@ -53,5 +54,6 @@ export const STATIC_PRERENDER_PATHS = [
   DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
   ALL_PAGES_PATH,
+  SUPPORT_PATH,
   SOURCE_COMING_SOON_PATH,
 ] as const;

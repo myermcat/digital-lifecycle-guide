@@ -5,8 +5,8 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { InlineArrowLeadList } from "@/lib/guide-lists";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { PageFoot } from "@/components/PageFoot";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { SunsetJourneySection } from "@/components/SunsetJourneySection";
 import { SunsetPathFork, sunsetJourneyCardBox } from "@/components/SunsetPathFork";
 import { WhereThisFits } from "@/components/WhereThisFits";
@@ -98,7 +98,7 @@ export function SunsetLandingPage() {
         })}
       />
 
-      <SourcesBlock items={landing.sources} />
+      <PageFoot sources={landing.sources} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { HeldOpenBlock } from "@/components/HeldOpenBlock";
+import { PageFoot } from "@/components/PageFoot";
 import { proseWithExternalLinks, type ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { PROCUREMENT_HELD_OPEN } from "@/lib/contracting-landing";
 import { PROCUREMENT_CONTRACTING_SOURCES } from "@/lib/procurement-sources";
 import { THREADS } from "@/lib/guide-strings";
@@ -49,7 +49,7 @@ export function ProcurementThreadPage() {
         })}
       </HeldOpenBlock>
 
-      <SourcesBlock items={PROCUREMENT_CONTRACTING_SOURCES} />
+      <PageFoot support="procurement" sources={PROCUREMENT_CONTRACTING_SOURCES} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

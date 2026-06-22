@@ -1,6 +1,5 @@
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
 import { PhaseFitCards } from "@/components/WeightedPhaseBlock";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "@/lib/design-for-whole-journey-content";
 import wholeJourneyVisual from "@/assets/building_a_life_in_canada_whole_journey.svg?url";
@@ -22,6 +21,7 @@ export function DesignForWholeJourneyPage() {
     <ReferenceArticleLayout
       id="reference-design-for-the-whole-journey"
       title={DESIGN_FOR_WHOLE_JOURNEY.title}
+      sources={sources}
     >
       <ThreadArticleSection
         title={mostPeopleDoNotWant.title}
@@ -73,8 +73,6 @@ export function DesignForWholeJourneyPage() {
       <ThreadArticleSection title={whereToGoNext.title} sectionId={whereToGoNext.id}>
         <PhaseFitCards cards={whereToGoNext.cards} />
       </ThreadArticleSection>
-
-      <SourcesBlock items={sources} />
     </ReferenceArticleLayout>
   );
 }

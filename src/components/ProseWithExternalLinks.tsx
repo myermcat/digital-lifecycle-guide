@@ -33,12 +33,18 @@ export type BoldPhrase = {
   phrase: string;
 };
 
+export type MailtoPhraseLink = {
+  phrase: string;
+  href: string;
+};
+
 type MixedPhraseLink =
   | ({ kind: "external" } & ExternalPhraseLink)
   | ({ kind: "internal" } & InternalPhraseLink)
   | ({ kind: "anchor" } & AnchorPhraseLink)
   | ({ kind: "placeholder" } & PlaceholderPhraseLink)
   | ({ kind: "placeholderGcNetwork" } & PlaceholderGcNetworkPhraseLink)
+  | ({ kind: "mailto" } & MailtoPhraseLink)
   | ({ kind: "bold" } & BoldPhrase);
 
 export function proseWithMixedLinks(
@@ -49,6 +55,7 @@ export function proseWithMixedLinks(
     anchor = [],
     placeholder = [],
     placeholderGcNetwork = [],
+    mailto = [],
     bold = [],
   }: {
     external?: ExternalPhraseLink[];
@@ -56,6 +63,7 @@ export function proseWithMixedLinks(
     anchor?: AnchorPhraseLink[];
     placeholder?: PlaceholderPhraseLink[];
     placeholderGcNetwork?: PlaceholderGcNetworkPhraseLink[];
+    mailto?: MailtoPhraseLink[];
     bold?: BoldPhrase[];
   },
 ): ReactNode {
@@ -68,6 +76,7 @@ export function proseWithMixedLinks(
       kind: "placeholderGcNetwork" as const,
       ...link,
     })),
+    ...mailto.map((link) => ({ kind: "mailto" as const, ...link })),
     ...bold.map((link) => ({ kind: "bold" as const, ...link })),
   ];
 
@@ -115,6 +124,10 @@ export function proseWithMixedLinks(
         >
           {link.phrase}
         </PlaceholderGcNetworkLink>
+      ) : link.kind === "mailto" ? (
+        <a key={`mailto-${start}`} href={link.href} className={guideLink}>
+          {link.phrase}
+        </a>
       ) : link.kind === "bold" ? (
         <strong key={`bold-${link.phrase}-${start}`} className="font-semibold text-foreground/90">
           {link.phrase}

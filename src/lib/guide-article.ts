@@ -1,19 +1,13 @@
 import { guideProse, guideProseTight } from "@/lib/guide-typography";
 
-/**
- * Lifted block conventions — pick the component that matches the job:
- *
- * - **EditorialNote** (`@/components/EditorialNote`): editorial framing — who the page
- *   is for, background context, cautions. Left accent bar, muted fill, tiny label.
- * - **GuideCallout** (`@/components/GuideCallout`): in-page orientation and practical
- *   tips — tests, scope notes, "how to tell" guidance. Rounded primary-tint box.
- *
- * Do not use EditorialNote for practical callouts, or GuideCallout for audience framing.
- */
-export const guideBlockTypes = {
-  editorialNote: "EditorialNote",
-  callout: "GuideCallout",
-} as const;
+export {
+  CALLOUT_BLOCK,
+  EDITORIAL_NOTE_BLOCK,
+  GUIDE_BLOCKS_BY_NAME,
+  SUPPORT_CALLOUT_BLOCK,
+  guideBlockTypes,
+  type GuideBlockName,
+} from "@/lib/guide-blocks";
 
 /** Comfortable reading measure — matches assumptions and footnote blocks site-wide. */
 export const guideArticleMeasure = "max-w-xl";

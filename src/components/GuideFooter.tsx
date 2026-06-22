@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { PHASES } from "@/lib/guide-strings";
+import { SUPPORT_PATH } from "@/lib/support-path";
 
 /**
  * Site footer — Government of Canada–inflected, calm to match the guide.
@@ -31,6 +32,7 @@ export function GuideFooter() {
             <FooterColumn title="The guide">
               <FooterLink to="/">Home</FooterLink>
               <FooterLink to={ALL_PAGES_PATH}>All pages</FooterLink>
+              <FooterLink to={SUPPORT_PATH}>Support and communities</FooterLink>
             </FooterColumn>
 
             <FooterColumn title="Phases">
@@ -42,10 +44,22 @@ export function GuideFooter() {
             </FooterColumn>
 
             <FooterColumn title="About">
-              <p className="text-xs leading-relaxed text-muted-foreground">
-                A practitioner's guide to the digital service lifecycle in the
-                Government of Canada.
-              </p>
+              <div>
+                <p className="text-xs leading-relaxed text-muted-foreground/60">
+                  A practitioner's guide to the digital service lifecycle in the
+                  Government of Canada.
+                </p>
+                <p className="text-xs leading-relaxed text-muted-foreground/60 mt-3">
+                  Need a hand? Browse the{" "}
+                  <Link
+                    to={SUPPORT_PATH}
+                    className="text-muted-foreground/75 hover:text-muted-foreground underline underline-offset-4 transition-colors"
+                  >
+                    support communities
+                  </Link>{" "}
+                  for a team or mailbox that can help.
+                </p>
+              </div>
             </FooterColumn>
           </div>
         </div>

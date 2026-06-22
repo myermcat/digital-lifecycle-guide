@@ -2,8 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { PageFoot } from "@/components/PageFoot";
 import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
 import {
   CONTRACTING_GOOD_LOOKS_CARDS,
@@ -75,17 +75,14 @@ export function ContractingLandingPage() {
         <WeightedPhaseBlock phases={CONTRACTING_LANDING.byPhase} />
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
-        <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-        <p className={guideProse}>
-          {proseWithExternalLinks(
-            CONTRACTING_LANDING.furtherReading.text,
-            CONTRACTING_LANDING.furtherReading.externalLinks ?? [],
-          )}
-        </p>
-      </section>
-
-      <SourcesBlock items={CONTRACTING_LANDING.sources} />
+      <PageFoot
+        support="procurement"
+        furtherReading={proseWithExternalLinks(
+          CONTRACTING_LANDING.furtherReading.text,
+          CONTRACTING_LANDING.furtherReading.externalLinks ?? [],
+        )}
+        sources={CONTRACTING_LANDING.sources}
+      />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

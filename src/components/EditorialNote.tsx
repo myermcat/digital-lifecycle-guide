@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { EDITORIAL_NOTE_BLOCK } from "@/lib/guide-blocks";
 import { guideCalloutLabel, guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -12,10 +13,9 @@ interface EditorialNoteProps {
 }
 
 /**
- * Editorial aside: who the page is for, framing, or cautions. Thick left accent, soft tint.
+ * **Editorial note** block — see `EDITORIAL_NOTE_BLOCK` in `@/lib/guide-blocks`.
  *
- * For practical tips and in-page orientation, use {@link GuideCallout} instead —
- * see `guideBlockTypes` in `@/lib/guide-article`.
+ * Say "editorial note" (not "callout"). For practical in-page tips, use {@link GuideCallout}.
  */
 export function EditorialNote({
   tone = "quiet",
@@ -36,6 +36,7 @@ export function EditorialNote({
 
   return (
     <aside
+      data-guide-block={EDITORIAL_NOTE_BLOCK.blockId}
       className={cn(
         `rounded-md border border-l-4 ${toneClasses} px-4 py-3 md:px-5 md:py-3.5`,
         className,

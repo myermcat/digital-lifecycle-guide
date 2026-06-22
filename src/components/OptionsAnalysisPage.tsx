@@ -5,7 +5,6 @@ import { OptionsAlternativeGrid } from "@/components/OptionsAlternativeGrid";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
 import { PhaseFitCards } from "@/components/WeightedPhaseBlock";
 import { InlineArrowLeadList } from "@/lib/guide-lists";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { guideArticleCalloutLift } from "@/lib/guide-article";
@@ -35,7 +34,11 @@ export function OptionsAnalysisPage() {
     OPTIONS_ANALYSIS;
 
   return (
-    <ReferenceArticleLayout id="reference-options-analysis" title={OPTIONS_ANALYSIS.title}>
+    <ReferenceArticleLayout
+      id="reference-options-analysis"
+      title={OPTIONS_ANALYSIS.title}
+      sources={OPTIONS_ANALYSIS.sources}
+    >
       <figure className="mb-8 md:mb-10">
         <img
           src={optionsAnalysisLifecycle}
@@ -110,8 +113,6 @@ export function OptionsAnalysisPage() {
           })}
         </p>
       </ThreadArticleSection>
-
-      <SourcesBlock items={OPTIONS_ANALYSIS.sources} />
     </ReferenceArticleLayout>
   );
 }

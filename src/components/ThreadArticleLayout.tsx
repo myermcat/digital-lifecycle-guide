@@ -2,6 +2,9 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { PageFoot } from "@/components/PageFoot";
+import type { SourceItem } from "@/components/SourcesBlock";
+import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { PROCUREMENT_LANDING, PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { guideArticleMeasure } from "@/lib/guide-article";
 import { guidePageTitle } from "@/lib/guide-typography";
@@ -10,11 +13,17 @@ export function ThreadArticleLayout({
   id,
   title,
   children,
+  support = "procurement",
+  furtherReading,
+  sources,
   afterAssumptions,
 }: {
   id: string;
   title: string;
   children: ReactNode;
+  support?: SupportCalloutVariant;
+  furtherReading?: ReactNode;
+  sources?: SourceItem[];
   afterAssumptions?: ReactNode;
 }) {
   return (
@@ -41,6 +50,7 @@ export function ThreadArticleLayout({
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
       <div className={guideArticleMeasure}>{children}</div>
+      <PageFoot support={support} furtherReading={furtherReading} sources={sources} />
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
       {afterAssumptions}
     </GuideLayout>

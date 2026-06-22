@@ -9,7 +9,6 @@ import {
   ThreadArticleSection,
 } from "@/components/ThreadArticleSection";
 import { ThreadArticleLayout } from "@/components/ThreadArticleLayout";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
 import {
@@ -96,6 +95,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
     <ThreadArticleLayout
       id={`procurement-${page.slug}`}
       title={page.title}
+      sources={page.sources}
       afterAssumptions={sectionNav}
     >
       {page.intro ? (
@@ -158,7 +158,6 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           ) : null}
         </ThreadArticleSection>
       ))}
-      {page.sources ? <SourcesBlock items={page.sources} /> : null}
     </ThreadArticleLayout>
   );
 }

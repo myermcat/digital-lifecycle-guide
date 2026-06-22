@@ -5,6 +5,7 @@ import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PracticeActivitiesPanel } from "@/components/PracticeActivitiesPanel";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { PageFoot } from "@/components/PageFoot";
 import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
 import { PhaseSection } from "@/components/PhaseSection";
 import { DashboardBlock } from "@/components/DashboardBlock";
@@ -256,6 +257,8 @@ function LiveMaturityPage() {
           ]}
           closing="This playbook is not enough on its own. It describes what to do; it cannot supply the judgement, the team, or the will to do it well. It assumes you bring those."
         />
+
+      <PageFoot />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
     </GuideLayout>

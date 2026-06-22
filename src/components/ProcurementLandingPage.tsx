@@ -5,8 +5,8 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { ProcurementJourneySection } from "@/components/ProcurementJourneySection";
 import { ProcurementScopeCallout } from "@/components/ProcurementScopeCallout";
+import { PageFoot } from "@/components/PageFoot";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import { SourcesBlock } from "@/components/SourcesBlock";
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
 import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
 import { WhatStaysYoursBlock } from "@/components/WhatStaysYoursBlock";
@@ -105,17 +105,14 @@ export function ProcurementLandingPage() {
         <WeightedPhaseBlock phases={landing.byPhase} />
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="further-reading">
-        <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
-        <p className={guideProse}>
-          {proseWithExternalLinks(
-            landing.furtherReading.text,
-            landing.furtherReading.externalLinks ?? [],
-          )}
-        </p>
-      </section>
-
-      <SourcesBlock items={landing.sources} />
+      <PageFoot
+        support="procurement"
+        furtherReading={proseWithExternalLinks(
+          landing.furtherReading.text,
+          landing.furtherReading.externalLinks ?? [],
+        )}
+        sources={landing.sources}
+      />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>

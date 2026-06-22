@@ -6,6 +6,7 @@ import { EditorialNote } from "@/components/EditorialNote";
 import { GuideCallout } from "@/components/GuideCallout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { PageFoot } from "@/components/PageFoot";
 import { guideProse, guideProseSpace, guideArrowList, guideLink } from "@/lib/guide-typography";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
@@ -194,6 +195,8 @@ function Index() {
 
           <SetupToggles className="mt-6" />
         </section>
+
+        <PageFoot />
 
         <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
