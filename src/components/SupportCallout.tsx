@@ -4,8 +4,6 @@ import { SUPPORT_CALLOUT_BLOCK } from "@/lib/guide-blocks";
 import { SUPPORT_CALLOUT_BODIES, type SupportCalloutVariant } from "@/lib/support-callout";
 import { SUPPORT_PATH } from "@/lib/support-path";
 import {
-  guideCalloutLabel,
-  guideLink,
   guideProseTight,
   guideSupportCalloutTitle,
 } from "@/lib/guide-typography";
@@ -30,21 +28,30 @@ export function SupportCallout({
     <aside
       data-guide-block={SUPPORT_CALLOUT_BLOCK.blockId}
       className={cn(
-        "rounded-lg border border-primary/35 bg-background px-6 py-6 md:px-8 md:py-7",
+        "rounded-lg border border-primary/15 bg-muted/20 px-6 py-5 md:px-7 md:py-6",
         className,
       )}
     >
-      <p className={guideCalloutLabel}>SUPPORT AND COMMUNITIES</p>
-      <h2 className={`${guideSupportCalloutTitle} mt-2 mb-1.5`}>Need a hand with this?</h2>
+      <p className="text-[10px] uppercase tracking-[0.22em] text-primary/50 font-sans">
+        SUPPORT AND COMMUNITIES
+      </p>
+      <h2
+        className={`${guideSupportCalloutTitle} mt-2 mb-1.5 text-primary/70`}
+      >
+        Need a hand with this?
+      </h2>
       <div className="space-y-4">
-        <p className={guideProseTight}>
+        <p className={`${guideProseTight} text-foreground/60`}>
           {proseWithMixedLinks(body.text, {
             external: body.externalLinks,
             mailto: body.mailtoLinks,
           })}
         </p>
         <p>
-          <Link to={SUPPORT_PATH} className={`text-sm ${guideLink}`}>
+          <Link
+            to={SUPPORT_PATH}
+            className="text-sm font-medium text-primary/65 underline underline-offset-4 hover:text-primary/85 transition-colors"
+          >
             Browse the support communities →
           </Link>
         </p>
