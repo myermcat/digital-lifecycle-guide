@@ -4,6 +4,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
   guideLink,
+  guideListIndent,
 } from "@/lib/guide-typography";
 
 export function PhaseSection({
@@ -35,7 +36,7 @@ export function MutedNote({ children, className }: { children: ReactNode; classN
 }
 
 export function ProseList({ children }: { children: ReactNode }) {
-  return <ul className="space-y-3.5 list-none pl-0">{children}</ul>;
+  return <ul className={`space-y-3.5 list-none ${guideListIndent}`}>{children}</ul>;
 }
 
 export function ProseListItem({

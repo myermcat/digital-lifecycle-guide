@@ -6,6 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { practiceCardGridCols, practiceCardLinkClassName } from "@/components/PracticeCard";
+import { guideClickableCardFillStyle } from "@/lib/guide-cards";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { guideProse, guideSubsectionTitle } from "@/lib/guide-typography";
 
@@ -42,7 +43,7 @@ export function PhasePreviewPopupCards({ cards }: { cards: PhasePreviewCardData[
               type="button"
               onClick={() => setOpenId(card.id)}
               className={`${practiceCardLinkClassName} w-full text-left`}
-              style={{ backgroundColor: "var(--phase-group)" }}
+              style={guideClickableCardFillStyle}
             >
               <span className={guideSubsectionTitle}>{card.title}</span>
               <span className={`mt-2 ${guideProse}`}>{card.preview}</span>

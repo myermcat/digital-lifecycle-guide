@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ContentTodo } from "@/components/ContentTodo";
+import { guideStaticCardClassName } from "@/lib/guide-cards";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import { guideLink, guideProse, guideProseSpace, guideProseTight } from "@/lib/guide-typography";
 
@@ -18,17 +19,17 @@ const weightStyles: Record<
   { box: string; title: string; body: string }
 > = {
   heavy: {
-    box: "rounded-xl border border-primary/30 px-5 py-5 md:px-6 md:py-6",
+    box: `rounded-xl border border-primary/30 px-5 py-5 md:px-6 md:py-6 ${guideStaticCardClassName}`,
     title: "font-serif text-xl md:text-2xl font-semibold text-primary tracking-tight",
     body: guideProse,
   },
   medium: {
-    box: "rounded-lg border border-border/80 px-4 py-4 md:px-5 md:py-5",
+    box: `rounded-lg border border-border/80 px-4 py-4 md:px-5 md:py-5 ${guideStaticCardClassName}`,
     title: "font-serif text-lg font-semibold text-primary/85 tracking-tight",
     body: `${guideProse} text-foreground/80`,
   },
   light: {
-    box: "rounded-lg border border-border/60 px-4 py-3.5 md:px-5 md:py-4",
+    box: `rounded-lg border border-border/60 px-4 py-3.5 md:px-5 md:py-4 ${guideStaticCardClassName}`,
     title: "font-serif text-base font-semibold text-primary/75 tracking-tight",
     body: `${guideProse} text-foreground/70`,
   },
@@ -47,7 +48,7 @@ export function WeightedPhaseBlock({ phases }: { phases: WeightedPhaseNote[] }) 
 }
 
 const compactCardStyles = {
-  box: "rounded-md border border-border/45 bg-muted/20 px-3.5 py-3 md:px-4 md:py-3.5",
+  box: `rounded-md border border-border/45 px-3.5 py-3 md:px-4 md:py-3.5 ${guideStaticCardClassName}`,
   title: "font-serif text-sm font-semibold text-primary/65 tracking-tight",
   body: `${guideProseTight} text-foreground/60`,
 };
@@ -77,11 +78,7 @@ export function PhaseFitCards({ cards }: { cards: PhaseFitCard[] }) {
           (card.lifecyclePhase ? `${PHASES[card.lifecyclePhase].title}.` : "");
         const cardKey = card.title ?? card.lifecyclePhase ?? card.body;
         return (
-          <div
-            key={cardKey}
-            className={styles.box}
-            style={card.compact ? undefined : { backgroundColor: "var(--phase-group)" }}
-          >
+          <div key={cardKey} className={styles.box}>
             <h3 className={styles.title}>{cardTitle}</h3>
             <p className={`mt-1.5 ${styles.body}`}>{card.bodyContent ?? card.body}</p>
             {card.linkTo && card.linkLabel ? (

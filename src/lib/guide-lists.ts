@@ -18,4 +18,5 @@ export {
   guideArrowList,
   guideArrowListIcon,
   guideArrowListIconInline,
+  guideInlineArrowLeadList,
 } from "@/lib/guide-typography";

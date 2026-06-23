@@ -134,8 +134,8 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "nist-ssdf": {
-    url: "https://csrc.nist.gov/projects/ssdf",
-    description: "NIST Secure Software Development Framework (SSDF)",
+    url: "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    description: "NIST Secure Software Development Framework (NIST SP 800-218)",
     accessibility: "public",
   },
   "application-portfolio-management-community": {

@@ -140,10 +140,7 @@ function Index() {
         </section>
 
         <section className="mt-6 md:mt-8">
-          <div
-            className="rounded-3xl p-5 md:p-7 shadow-inner"
-            style={{ backgroundColor: "var(--phase-group)" }}
-          >
+          <div className="rounded-3xl border border-border/60 p-5 md:p-7 shadow-inner">
             <div className="grid gap-5 sm:grid-cols-3">
             <PhaseCard
               heading={PHASES.create.title}

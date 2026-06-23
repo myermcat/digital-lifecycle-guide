@@ -1,5 +1,14 @@
 import { Link } from "@tanstack/react-router";
+import {
+  guideClickableCardFillStyle,
+  guideStaticCardClassName,
+} from "@/lib/guide-cards";
 import { guideSubsectionTitle } from "@/lib/guide-typography";
+
+export {
+  guideClickableCardFillStyle,
+  guideStaticCardClassName,
+} from "@/lib/guide-cards";
 
 export interface PracticeCardData {
   href: string;
@@ -22,8 +31,7 @@ export const interactivePanelCardClassName = `group flex flex-1 flex-col rounded
 /** Homepage phase cards that open a dialog on click. */
 export const phaseDialogTriggerClassName = `group relative aspect-[4/5] w-full rounded-2xl border border-border bg-card/90 backdrop-blur-sm shadow-sm ${interactiveCardFocus} hover:border-primary/40 hover:bg-card hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col items-center justify-center gap-3 p-6 overflow-hidden`;
 
-export const practiceCardStaticClassName =
-  "flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4";
+export const practiceCardStaticClassName = `flex h-full min-h-[7.5rem] flex-col rounded-lg border border-primary/20 border-l-2 border-l-primary/45 pl-3.5 pr-4 py-4 ${guideStaticCardClassName}`;
 
 export function practiceCardGridCols(count: number) {
   return count >= 3
@@ -69,10 +77,7 @@ export function PracticeCardStatic({
   description: string;
 }) {
   return (
-    <div
-      className={practiceCardStaticClassName}
-      style={{ backgroundColor: "var(--phase-group)" }}
-    >
+    <div className={practiceCardStaticClassName}>
       <PracticeCardContent label={label} description={description} />
     </div>
   );
@@ -98,7 +103,7 @@ function PracticeCardLink({
       <Link
         to={href}
         className={practiceCardLinkClassName}
-        style={{ backgroundColor: "var(--phase-group)" }}
+        style={guideClickableCardFillStyle}
       >
         {inner}
       </Link>
@@ -109,7 +114,7 @@ function PracticeCardLink({
     <a
       href={href}
       className={practiceCardLinkClassName}
-      style={{ backgroundColor: "var(--phase-group)" }}
+      style={guideClickableCardFillStyle}
     >
       {inner}
     </a>

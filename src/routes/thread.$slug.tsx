@@ -9,6 +9,7 @@ import { PROCUREMENT_LANDING } from "@/lib/procurement-landing";
 import { SECURITY_THREAD } from "@/lib/security-thread-content";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
 import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
+import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
   head: ({ params }) => {
@@ -34,7 +35,7 @@ export const Route = createFileRoute("/thread/$slug")({
       return {
         meta: [
           { title: `${PRIVACY_THREAD.title} — The Digital Lifecycle Guide` },
-          { name: "description", content: PRIVACY_THREAD.lead.text },
+          { name: "description", content: threadLeadPlainText(PRIVACY_THREAD.lead) },
         ],
       };
     }
@@ -43,7 +44,7 @@ export const Route = createFileRoute("/thread/$slug")({
       return {
         meta: [
           { title: `${DATA_STEWARDSHIP_THREAD.title} — The Digital Lifecycle Guide` },
-          { name: "description", content: DATA_STEWARDSHIP_THREAD.lead.text },
+          { name: "description", content: threadLeadPlainText(DATA_STEWARDSHIP_THREAD.lead) },
         ],
       };
     }

@@ -20,6 +20,10 @@ import {
   DATA_STEWARDSHIP_THREAD,
   dataStewardshipSectionsPlainText,
 } from "../src/lib/data-stewardship-thread-content";
+import {
+  threadLeadPlainText,
+  threadWhoseJobPlainText,
+} from "../src/lib/thread-rich-content";
 import { SUPPORT_PAGE } from "../src/lib/support-content";
 import { SUPPORT_PATH } from "../src/lib/support-path";
 import { THREADS } from "../src/lib/guide-strings";
@@ -484,7 +488,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     sectionId: "",
     sectionHeading: pageTitle,
     lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: PRIVACY_THREAD.lead.text,
+    text: threadLeadPlainText(PRIVACY_THREAD.lead),
     keywords: privacyKeywords,
   });
 
@@ -502,7 +506,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "whose-job",
       sectionHeading: "Whose job it is",
-      text: PRIVACY_THREAD.whoseJob,
+      text: threadWhoseJobPlainText(PRIVACY_THREAD.whoseJob),
     },
     {
       sectionId: PRIVACY_THREAD.closerLook.id,
@@ -563,7 +567,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     sectionId: "",
     sectionHeading: pageTitle,
     lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: DATA_STEWARDSHIP_THREAD.lead.text,
+    text: threadLeadPlainText(DATA_STEWARDSHIP_THREAD.lead),
     keywords: dataKeywords,
   });
 
@@ -581,7 +585,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "whose-job",
       sectionHeading: "Whose job it is",
-      text: DATA_STEWARDSHIP_THREAD.whoseJob.text,
+      text: threadWhoseJobPlainText(DATA_STEWARDSHIP_THREAD.whoseJob),
     },
     {
       sectionId: DATA_STEWARDSHIP_THREAD.closerLook.id,

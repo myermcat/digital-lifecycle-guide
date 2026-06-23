@@ -2,7 +2,13 @@ import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
-import { guideArrowLeadGroup, guideArrowLeadList, guideArrowListIcon } from "@/lib/guide-typography";
+import {
+  guideArrowLeadGroup,
+  guideArrowLeadList,
+  guideArrowListIcon,
+  guideInlineArrowLeadList,
+} from "@/lib/guide-typography";
+import { guideStaticCardClassName } from "@/lib/guide-cards";
 import { guideProse, guideProseTight, guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +52,7 @@ export function InlineArrowLeadList({
       : "font-semibold text-foreground/90";
 
   return (
-    <ul className={cn(`${guideProseTight} space-y-3 list-none pl-0`, className)}>
+    <ul className={cn(guideInlineArrowLeadList, className)}>
       {items.map((item) => {
         const body =
           typeof item.body === "string" && item.placeholderLinks?.length
@@ -141,8 +147,7 @@ export function CompactLinkedList({ items }: { items: CompactLinkedItem[] }) {
       {items.map((item) => (
         <li
           key={item.href}
-          className={`${guideProseTight} rounded-xl border border-border/80 px-4 py-3.5`}
-          style={{ backgroundColor: "var(--phase-group)" }}
+          className={`${guideProseTight} rounded-xl border border-border/80 px-4 py-3.5 ${guideStaticCardClassName}`}
         >
           <span className="font-semibold text-foreground/90">{item.title}</span> {item.body}{" "}
           <a href={item.href} className={guideLink}>

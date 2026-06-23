@@ -39,3 +39,17 @@ Full spec: `src/lib/guide-blocks.ts` (`EDITORIAL_NOTE_BLOCK`, `CALLOUT_BLOCK`, `
 - Use EditorialNote for practical how-to / phase tests.
 - Use GuideCallout for audience framing ("who this is for").
 - Treat DoorwayBlock, CautionBlock, or LookingAhead as interchangeable with these two.
+
+## Card fill (clickable vs static)
+
+- **Clickable cards** (whole card navigates or opens a dialog): cream fill via `guideClickableCardFillStyle` from `@/lib/guide-cards`.
+- **Static cards** (decorative / informational only): outline only — `guideStaticCardClassName` (`bg-transparent`), no cream fill.
+- Canonical constants and class names live in `src/lib/guide-cards.ts`; `PracticeCard` re-exports them for interactive card shells.
+
+## List vs prose enumerations
+
+- **Thread-page intros (lead paragraphs):** always flowing prose — never a bullet list, even for four or more items.
+- **Short inline enumerations elsewhere (three or fewer items):** keep as inline prose in the sentence.
+- **Four or more items in body content** (not the lead): render as a real list (`guideListMinCount` in `@/lib/thread-rich-content`).
+- **Whose job it is:** intro line is prose; roles use `InlineArrowLeadList` (bold lead + body on one line, rust arrow) — same as Sunset “replace or retire” fork bullets.
+- **Body list indent:** all body bullet and numbered lists use `guideListIndent` (`pl-6 md:pl-8`), including `InlineArrowLeadList`, `guideArrowList`, and `ArrowLeadList`. Navigation, card grids, and footer link lists stay flush.

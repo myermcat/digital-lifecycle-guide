@@ -63,6 +63,12 @@ export const GUIDE_BLOCKS_BY_NAME = {
   [SUPPORT_CALLOUT_BLOCK.name]: SUPPORT_CALLOUT_BLOCK,
 } as const;
 
+/** Card surfaces — clickable vs static. See `src/lib/guide-cards.ts`. */
+export {
+  guideClickableCardFillStyle,
+  guideStaticCardClassName,
+} from "@/lib/guide-cards";
+
 /** @deprecated Prefer EDITORIAL_NOTE_BLOCK / CALLOUT_BLOCK */
 export const guideBlockTypes = {
   editorialNote: EDITORIAL_NOTE_BLOCK.component,

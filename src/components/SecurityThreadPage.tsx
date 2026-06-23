@@ -10,12 +10,15 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   SECURITY_THREAD,
   type SecurityLinkedProse,
 } from "@/lib/security-thread-content";
+import { SECURITY_CORE_STRIP } from "@/lib/thread-core-strip";
+import { renderThreadLead } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
   guidePageTitle,
@@ -82,9 +85,9 @@ export function SecurityThreadPage() {
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
 
-      <section className={guideProseSpace}>
-        <p>{lead}</p>
-      </section>
+      <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
+
+      <ThreadCoreStrip content={SECURITY_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>

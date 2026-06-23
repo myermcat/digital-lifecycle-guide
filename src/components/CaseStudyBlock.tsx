@@ -87,7 +87,7 @@ function TradeoffGroup({
       </button>
       {open ? (
         <div id={panelId} className="px-3.5 pb-3.5">
-          <ul className={`${guideProseTight} space-y-2 list-none pl-0`}>
+          <ul className={`${guideProseTight} space-y-2 list-none ${guideListIndent}`}>
             {items.map((item) => (
               <li key={item.lead} className="flex items-start gap-2.5">
                 <GuideArrowBullet inline />

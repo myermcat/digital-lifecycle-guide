@@ -3,10 +3,15 @@ import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseW
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { THREADS } from "@/lib/guide-strings";
 import {
+  threadLeadPlainText,
   threadSectionsPlainText,
+  threadWhoseJobPlainText,
   type ThreadCloserLookBlock,
   type ThreadLinkedProse,
+  type ThreadLead,
+  type ThreadLinkedProse,
   type ThreadPhasePreviewBlock,
+  type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
 
 export const DATA_STEWARDSHIP_THREAD = {
@@ -15,12 +20,12 @@ export const DATA_STEWARDSHIP_THREAD = {
 
   lead: {
     text:
-      "Data stewardship is the care of the data a service holds across its whole life, from the first record it collects to the day that record is destroyed. The Government of Canada treats information and data as a public trust, managed as a strategic asset, under the Policy on Service and Digital and its directive. For the data inside one service that comes down to four things: knowing who is accountable for it, keeping it fit to use, keeping it only as long as it is needed, and moving it safely when the service changes. These decisions are made early and revisited as the service grows. The business owner answers for them; the team does the work.",
+      "Data stewardship is the care of the data a service holds across its whole life, from the first record it collects to the day that record is destroyed. The Government of Canada treats information and data as a public trust, managed as a strategic asset, under the Policy on Service and Digital and its directive. For the data inside one service, that comes down to four things: knowing who is accountable for it, keeping it fit to use, keeping it only as long as it is needed, and moving it safely when the service changes. These decisions are made early and revisited as the service grows. The business owner answers for them; the team does the work.",
     externalLinks: [
       { phrase: "Policy on Service and Digital", linkKey: "policy-on-service-and-digital" },
       { phrase: "directive", linkKey: "directive-on-service-and-digital" },
     ] satisfies ExternalPhraseLink[],
-  },
+  } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
     {
@@ -64,12 +69,25 @@ export const DATA_STEWARDSHIP_THREAD = {
   },
 
   whoseJob: {
-    text:
-      "Data stewardship is shared across the team, with each role holding a different part. The department's information management office sets the standards and holds the disposition authorities; some departments name a Chief Data Officer to lead this. Developers build the service so it captures data cleanly, applies the retention rules, and can export the data without losing its meaning. The business owner of the application decides what data the service needs, makes sure retention and disposition are set before launch, and answers for the data's quality and its lawful disposal. The day-to-day work belongs to the team. The decision about what data to hold, and the accountability for it, belong to the business owner.",
-    externalLinks: [
-      { phrase: "disposition authorities", linkKey: "lac-information-disposition-hub" },
-    ] satisfies ExternalPhraseLink[],
-  },
+    intro: "Data stewardship is shared across the team, with each role holding a different part:",
+    roles: [
+      {
+        role: "The department's information management office",
+        text: "sets the standards and holds the disposition authorities; some departments name a Chief Data Officer to lead this.",
+        externalLinks: [
+          { phrase: "disposition authorities", linkKey: "lac-information-disposition-hub" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        role: "Developers",
+        text: "build the service so it captures data cleanly, applies the retention rules, and can export the data without losing its meaning.",
+      },
+      {
+        role: "The business owner",
+        text: "of the application decides what data the service needs, makes sure retention and disposition are set before launch, and answers for the data's quality and its lawful disposal.",
+      },
+    ],
+  } satisfies ThreadWhoseJobSection,
 
   closerLook: {
     id: "a-closer-look",
@@ -89,15 +107,21 @@ export const DATA_STEWARDSHIP_THREAD = {
           {
             type: "orderedList",
             items: [
-              "access, how easily the data can be found, retrieved, and used",
-              "accuracy, how correctly it describes what it is about",
-              "coherence, how well it fits with related data",
-              "completeness, how fully the values are filled in",
-              "consistency, whether it is free of internal contradictions",
-              "interpretability, whether there is enough supporting information to understand it",
-              "relevance, how well it meets the actual need",
-              "reliability, how well differences in the data can be explained",
-              "timeliness, how current it is for the decision at hand",
+              { bold: "Access", text: ", how easily the data can be found, retrieved, and used" },
+              { bold: "Accuracy", text: ", how correctly it describes what it is about" },
+              { bold: "Coherence", text: ", how well it fits with related data" },
+              { bold: "Completeness", text: ", how fully the values are filled in" },
+              { bold: "Consistency", text: ", whether it is free of internal contradictions" },
+              {
+                bold: "Interpretability",
+                text: ", whether there is enough supporting information to understand it",
+              },
+              { bold: "Relevance", text: ", how well it meets the actual need" },
+              {
+                bold: "Reliability",
+                text: ", how well differences in the data can be explained",
+              },
+              { bold: "Timeliness", text: ", how current it is for the decision at hand" },
             ],
           },
           {
@@ -207,14 +231,26 @@ export const DATA_STEWARDSHIP_THREAD = {
         preview: "Migrate or dispose of the data, lawfully.",
         popup: [
           {
+            text: "When the service is retired or replaced, every record is migrated, archived, or destroyed.",
+          },
+          {
             text:
-              "When the service is retired or replaced, every record is migrated, archived, or destroyed. If the service is replaced, the data is cleaned, moved with its meaning intact, and checked before the old system is switched off. If the service is retired, records are kept or destroyed under their retention schedule, and what is destroyed is destroyed securely so it cannot be recovered. Nothing is destroyed without a disposition authority.",
+              "If the service is replaced, the data is cleaned, moved with its meaning intact, and checked before the old system is switched off.",
+            bold: [{ phrase: "replaced" }],
             externalLinks: [
               {
                 phrase: "moved with its meaning intact",
                 linkKey: "uk-national-archives-migration",
               },
             ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text:
+              "If the service is retired, records are kept or destroyed under their retention schedule, and what is destroyed is destroyed securely so it cannot be recovered.",
+            bold: [{ phrase: "retired" }],
+          },
+          {
+            text: "Nothing is destroyed without a disposition authority.",
           },
         ],
       },
@@ -308,3 +344,6 @@ export const DATA_STEWARDSHIP_THREAD = {
 } as const;
 
 export const dataStewardshipSectionsPlainText = threadSectionsPlainText;
+export const dataStewardshipLeadPlainText = (lead: ThreadLead) => threadLeadPlainText(lead);
+export const dataStewardshipWhoseJobPlainText = (whoseJob: ThreadWhoseJobSection) =>
+  threadWhoseJobPlainText(whoseJob);

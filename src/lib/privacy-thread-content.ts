@@ -4,11 +4,15 @@ import type { ExternalLinkKey } from "@/lib/external-links";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { THREADS } from "@/lib/guide-strings";
 import {
+  threadLeadPlainText,
   threadSectionsPlainText,
+  threadWhoseJobPlainText,
   type ThreadCloserLookBlock,
   type ThreadContentSection,
+  type ThreadLead,
   type ThreadLinkedProse,
   type ThreadPhasePreviewBlock,
+  type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
 
 export type PrivacyLinkedProse = ThreadLinkedProse;
@@ -18,6 +22,9 @@ export type PrivacyCloserLookBlock = ThreadCloserLookBlock;
 export type PrivacyPhasePreviewBlock = ThreadPhasePreviewBlock;
 
 export const privacySectionsPlainText = threadSectionsPlainText;
+export const privacyLeadPlainText = (lead: ThreadLead) => threadLeadPlainText(lead);
+export const privacyWhoseJobPlainText = (whoseJob: ThreadWhoseJobSection) =>
+  threadWhoseJobPlainText(whoseJob);
 
 export const PRIVACY_THREAD = {
   title: "Privacy",
@@ -27,7 +34,7 @@ export const PRIVACY_THREAD = {
     text:
       "Privacy runs through the whole life of a service that handles people's personal information, from the first design sketch to the day the data is destroyed. Personal information is anything that can identify a person: a name, a case number, an address, an IP address. Canada's Privacy Act sets the rules for how a federal institution may collect, use, and share it. The decisions that shape a service's privacy are made early and revisited as it changes: what personal information to collect, how to protect it, and when to reassess the risk. The business owner answers for those decisions; the team does the work.",
     externalLinks: [{ phrase: "Privacy Act", linkKey: "privacy-act" }] satisfies ExternalPhraseLink[],
-  },
+  } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
     { text: "Only the personal information the service genuinely needs is collected, and nothing more." },
@@ -66,8 +73,23 @@ export const PRIVACY_THREAD = {
     ] satisfies ExternalPhraseLink[],
   },
 
-  whoseJob:
-    "Privacy is shared across the team, with each role holding a different part. The department's privacy or ATIP office reviews the Privacy Impact Assessment and advises on the Privacy Act. Developers build the safeguards and collect only what the design calls for. The business owner of the application decides what personal information the service needs, makes sure the assessment is done before launch, and accepts the privacy risk that remains. The day-to-day work belongs to the team. The decision about what to collect, and the sign-off, belong to the business owner.",
+  whoseJob: {
+    intro: "Privacy is shared across the team, with each role holding a different part:",
+    roles: [
+      {
+        role: "The department's privacy or ATIP office",
+        text: "reviews the Privacy Impact Assessment and advises on the Privacy Act.",
+      },
+      {
+        role: "Developers",
+        text: "build the safeguards and collect only what the design calls for.",
+      },
+      {
+        role: "The business owner",
+        text: "of the application decides what personal information the service needs, makes sure the assessment is done before launch, and accepts the privacy risk that remains.",
+      },
+    ],
+  } satisfies ThreadWhoseJobSection,
 
   closerLook: {
     id: "a-closer-look",
@@ -127,7 +149,7 @@ export const PRIVACY_THREAD = {
           {
             text:
               "People have a right to know what a service collects and why, before they hand it over. That is the job of the privacy notice, in plain words and in the right place. A complete notice says seven things:",
-            bold: [{ phrase: "privacy notice" }],
+            bold: [{ phrase: "privacy notice" }, { phrase: "seven things" }],
             externalLinks: [
               { phrase: "privacy notice", linkKey: "digital-privacy-playbook-privacy-notices" },
             ] satisfies ExternalPhraseLink[],
@@ -214,14 +236,26 @@ export const PRIVACY_THREAD = {
         preview: "Move or dispose of the personal information the right way.",
         popup: [
           {
+            text: "A service is eventually replaced or retired, and the personal information has to be dealt with either way.",
+          },
+          {
             text:
-              "A service is eventually replaced or retired, and the personal information has to be dealt with either way. If the service is replaced, the information moves to the new service, and the Privacy Impact Assessment and privacy notice are revisited for its new home. If the service is retired, the information is kept or destroyed under its retention and disposition schedule, archived where required, and securely destroyed so it cannot be recovered. A service that holds personal information past the point it is needed is a standing privacy risk.",
+              "If the service is replaced, the information moves to the new service, and the Privacy Impact Assessment and privacy notice are revisited for its new home.",
+            bold: [{ phrase: "replaced" }],
+          },
+          {
+            text:
+              "If the service is retired, the information is kept or destroyed under its retention and disposition schedule, archived where required, and securely destroyed so it cannot be recovered.",
+            bold: [{ phrase: "retired" }],
             internalLinks: [
               {
                 phrase: "retention and disposition",
                 to: THREADS["data-stewardship"].path,
               },
             ] satisfies InternalPhraseLink[],
+          },
+          {
+            text: "A service that holds personal information past the point it is needed is a standing privacy risk.",
           },
         ],
       },

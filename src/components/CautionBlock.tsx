@@ -45,8 +45,7 @@ export function CautionBlock({
           {items.map((item) => (
             <li
               key={item.heading}
-              className="rounded-lg border border-primary/20 px-4 py-4"
-              style={{ backgroundColor: "var(--phase-group)" }}
+              className="rounded-lg border border-primary/20 bg-transparent px-4 py-4"
             >
               <p className="font-serif text-sm font-medium text-foreground leading-tight">
                 {item.heading}

@@ -10,11 +10,15 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
+import { PRIVACY_CORE_STRIP } from "@/lib/thread-core-strip";
 import {
   renderLinkedProse,
+  renderThreadLead,
   renderThreadSections,
+  renderThreadWhoseJob,
 } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
@@ -68,9 +72,9 @@ export function PrivacyThreadPage() {
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
 
-      <section className={guideProseSpace}>
-        <p>{renderLinkedProse(lead)}</p>
-      </section>
+      <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
+
+      <ThreadCoreStrip content={PRIVACY_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
@@ -91,7 +95,7 @@ export function PrivacyThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
-        <p className={guideProse}>{whoseJob}</p>
+        <div>{renderThreadWhoseJob(whoseJob)}</div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={closerLook.id}>

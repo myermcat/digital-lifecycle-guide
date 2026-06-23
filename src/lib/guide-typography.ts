@@ -55,6 +55,9 @@ export const guideArrowList = `space-y-4 list-none ${guideListIndent}`;
 /** Between arrow-lead items (heading + subtext groups). Default bullet list style. */
 export const guideArrowLeadList = `list-none space-y-5 ${guideListIndent}`;
 
+/** Inline arrow + bold lead + body on one line (Sunset fork, whose job, what stays yours). */
+export const guideInlineArrowLeadList = `${guideProseTight} space-y-3 list-none ${guideListIndent}`;
+
 /** Within one arrow-lead item: gap between heading and subtext. */
 export const guideArrowLeadGroup = "space-y-0.5";
 

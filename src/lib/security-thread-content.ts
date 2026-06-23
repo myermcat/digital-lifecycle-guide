@@ -36,7 +36,7 @@ export const SECURITY_THREAD = {
   slug: "security" as const,
 
   lead:
-    "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The business owner of the application does not write the code or run the scans. Their job is the security decisions: making sure security is planned and funded, approving the service for release, and accepting the risk that comes with it.",
+    "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The decisions that shape a service's security are made early and revisited as it changes: which threats to defend against, how to control access, and when to reassess the risk. The business owner answers for those decisions; the team does the work.",
 
   whatGoodLooksLike: [
     { text: "Security is planned and funded from the start." },
@@ -69,7 +69,7 @@ export const SECURITY_THREAD = {
     {
       text: "Third-party components, the open-source and bought libraries the service is built on, are inventoried and watched for known problems.",
       externalLinks: [
-        { phrase: "third-party components", linkKey: "cyber-supply-chain-itsap10070" },
+        { phrase: "Third-party components", linkKey: "cyber-supply-chain-itsap10070" },
       ] satisfies ExternalPhraseLink[],
     },
   ] satisfies SecurityLinkedProse[],
@@ -104,7 +104,7 @@ export const SECURITY_THREAD = {
       {
         title: "What the business owner signs off on.",
         text:
-          "Even when specialists do the work, certain decisions belong to the business owner of the application: approving the plan for handling threats, accepting the risks that remain after the fixes, and giving the final go-ahead to put the service in front of the public. The last two matter most. Approval to deploy and acceptance of the remaining risk both belong to the business owner, and putting a name to a release means that risk has been understood and accepted.",
+          "Even when specialists do the work, certain decisions belong to the business owner of the application: approving the plan for handling threats, accepting the risks that remain after the fixes, and giving the final go-ahead to put the service in front of the public. Approval to deploy and acceptance of the remaining risk both belong to the business owner, and putting a name to a release means that risk has been understood and accepted.",
       },
       {
         title: "Open by default.",
@@ -186,7 +186,7 @@ export const SECURITY_THREAD = {
 
   furtherReading: {
     text:
-      "This thread comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions.",
+      "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions.",
     externalLinks: [
       {
         phrase: "Directive on Security Management",
@@ -230,6 +230,8 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "itsg-33" satisfies ExternalLinkKey,
+      description:
+        "ITSG-33, IT security risk management, a lifecycle approach (CCCS) — the GC security control catalogue and lifecycle approach.",
     },
     {
       label: "Supporting reference",
@@ -239,12 +241,12 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "owasp-dsomm" satisfies ExternalLinkKey,
-      description: "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in Card 1.",
+      description: "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in Block 1.",
     },
     {
       label: "Supporting reference",
       linkKey: "guide-open-source-software" satisfies ExternalLinkKey,
-      description: "Guide for Using Open Source Software (GC) — the open-by-default call in Card 3.",
+      description: "Guide for Using Open Source Software (GC) — the open-by-default call in Block 3.",
     },
     {
       label: "Supporting reference",
@@ -268,7 +270,7 @@ export const SECURITY_THREAD = {
       label: "Supporting reference",
       href: placeholderSourceHref(SECURITY_CATEGORIZATION_OF_SOURCE_CODE),
       description:
-        "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in Card 3.",
+        "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in Block 3.",
       comingSoon: true,
       gcNetworkOnly: true,
     },

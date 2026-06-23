@@ -8,6 +8,9 @@ import {
 } from "@/lib/external-links";
 import { cn } from "@/lib/utils";
 
+const GOVERNING_INSTRUMENT_LABEL = "Governing instrument";
+const SUPPORTING_REFERENCE_LABEL = "Supporting reference";
+
 export type SourceItem = {
   label: string;
   href?: string;
@@ -22,6 +25,11 @@ export type SourceItem = {
   tone?: "default" | "very-light";
 };
 
+type SourceSection = {
+  label: string;
+  items: SourceItem[];
+};
+
 const sourceLinkByTone: Record<NonNullable<SourceItem["tone"]>, string> = {
   default:
     "text-muted-foreground/40 underline underline-offset-4 hover:text-muted-foreground/55 transition-colors",
@@ -31,6 +39,9 @@ const sourceLinkByTone: Record<NonNullable<SourceItem["tone"]>, string> = {
 
 const sourceLinkGcNetwork =
   "text-muted-foreground/30 underline decoration-dotted decoration-muted-foreground/25 underline-offset-4 hover:text-muted-foreground/45 transition-colors";
+
+const sourceSectionHeading =
+  "text-xs uppercase tracking-[0.18em] font-normal text-muted-foreground/35";
 
 function sourceLinkText(item: SourceItem, href: string | undefined): string {
   if (item.description) {
@@ -42,6 +53,77 @@ function sourceLinkText(item: SourceItem, href: string | undefined): string {
   return href ?? "";
 }
 
+function groupSourceSections(items: SourceItem[]): SourceSection[] {
+  const governing = items.filter((item) => item.label === GOVERNING_INSTRUMENT_LABEL);
+  const supporting = items.filter((item) => item.label === SUPPORTING_REFERENCE_LABEL);
+  const otherLabels: string[] = [];
+
+  for (const item of items) {
+    if (
+      item.label !== GOVERNING_INSTRUMENT_LABEL &&
+      item.label !== SUPPORTING_REFERENCE_LABEL &&
+      !otherLabels.includes(item.label)
+    ) {
+      otherLabels.push(item.label);
+    }
+  }
+
+  const sections: SourceSection[] = [];
+
+  if (governing.length > 0) {
+    sections.push({ label: GOVERNING_INSTRUMENT_LABEL, items: governing });
+  }
+  if (supporting.length > 0) {
+    sections.push({ label: SUPPORTING_REFERENCE_LABEL, items: supporting });
+  }
+  for (const label of otherLabels) {
+    sections.push({
+      label,
+      items: items.filter((item) => item.label === label),
+    });
+  }
+
+  return sections;
+}
+
+function SourceLinkItem({ item }: { item: SourceItem }) {
+  const href = item.linkKey ? externalLinkUrl(item.linkKey) : item.href;
+  const gcNetworkOnly =
+    item.gcNetworkOnly ?? (item.linkKey ? isGcNetworkOnly(item.linkKey) : false);
+  const isInternal = href?.startsWith("/") ?? false;
+  const tone = item.tone ?? "default";
+  const linkText = sourceLinkText(item, href);
+
+  return (
+    <li className="min-w-0">
+      {href ? (
+        <>
+          <a
+            href={href}
+            className={gcNetworkOnly ? sourceLinkGcNetwork : sourceLinkByTone[tone]}
+            title={
+              gcNetworkOnly ? "Only available on the Government of Canada network." : undefined
+            }
+            {...(isInternal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+          >
+            {linkText}
+          </a>
+          {item.comingSoon ? (
+            <span className="text-muted-foreground/35"> (coming soon)</span>
+          ) : null}
+          {item.note ? (
+            <p className="mt-0.5 font-sans text-[10px] leading-[1.35] text-muted-foreground/25">
+              {item.note}
+            </p>
+          ) : null}
+        </>
+      ) : (
+        <span className="text-muted-foreground/40">{item.description}</span>
+      )}
+    </li>
+  );
+}
+
 export function SourcesBlock({
   items,
   className,
@@ -51,6 +133,7 @@ export function SourcesBlock({
 }) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
+  const sections = groupSourceSections(items);
 
   return (
     <section
@@ -78,58 +161,25 @@ export function SourcesBlock({
           </span>
         </button>
         {open ? (
-          <ul
+          <div
             id={panelId}
-            className="mt-3 list-none pl-0 border-t border-border/40 pt-3 text-sm leading-[1.7] text-muted-foreground/50 space-y-2 sm:space-y-0 sm:grid sm:grid-cols-[max-content_1fr] sm:gap-x-[0.6rem] sm:gap-y-2 sm:items-baseline"
+            className="mt-3 border-t border-border/40 pt-3 text-sm leading-[1.7] text-muted-foreground/50 space-y-4"
           >
-            {items.map((item) => {
-              const href = item.linkKey ? externalLinkUrl(item.linkKey) : item.href;
-              const gcNetworkOnly =
-                item.gcNetworkOnly ?? (item.linkKey ? isGcNetworkOnly(item.linkKey) : false);
-              const key = item.linkKey ?? item.href ?? item.label;
-              const isInternal = href?.startsWith("/") ?? false;
-              const tone = item.tone ?? "default";
-              const linkText = sourceLinkText(item, href);
-
-              return (
-                <li key={key} className="flex flex-col gap-0.5 sm:contents">
-                  <span className="text-muted-foreground/35 shrink-0">{item.label}:</span>
-                  <span className="min-w-0">
-                    {href ? (
-                      <>
-                        <a
-                          href={href}
-                          className={
-                            gcNetworkOnly ? sourceLinkGcNetwork : sourceLinkByTone[tone]
-                          }
-                          title={
-                            gcNetworkOnly
-                              ? "Only available on the Government of Canada network."
-                              : undefined
-                          }
-                          {...(isInternal
-                            ? {}
-                            : { target: "_blank", rel: "noopener noreferrer" })}
-                        >
-                          {linkText}
-                        </a>
-                        {item.comingSoon ? (
-                          <span className="text-muted-foreground/35"> (coming soon)</span>
-                        ) : null}
-                        {item.note ? (
-                          <p className="mt-0.5 font-sans text-[10px] leading-[1.35] text-muted-foreground/25">
-                            {item.note}
-                          </p>
-                        ) : null}
-                      </>
-                    ) : (
-                      <span className="text-muted-foreground/40">{item.description}</span>
-                    )}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+            {sections.map((section, sectionIndex) => (
+              <section
+                key={section.label}
+                className={cn(sectionIndex > 0 && "border-t border-border/40 pt-4")}
+              >
+                <h3 className={sourceSectionHeading}>{section.label}</h3>
+                <ul className="mt-2 list-none space-y-2 pl-0">
+                  {section.items.map((item) => {
+                    const key = item.linkKey ?? item.href ?? item.description ?? item.label;
+                    return <SourceLinkItem key={key} item={item} />;
+                  })}
+                </ul>
+              </section>
+            ))}
+          </div>
         ) : null}
       </div>
     </section>

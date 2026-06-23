@@ -25,7 +25,7 @@ export const SUPPORT_CALLOUT_BODIES = {
     text: "You are not the first to work through this. There is a team, a community, or a mailbox for almost every part of it.",
   },
   security: {
-    text: "For security questions, the Canadian Centre for Cyber Security can help. There is a team or community for almost every part of this guide.",
+    text: "For security questions, your department's IT security team or departmental security officer is the first call, and the Canadian Centre for Cyber Security advises government institutions.",
     externalLinks: [
       { phrase: "Canadian Centre for Cyber Security", linkKey: "cyber-centre-contact" },
     ],

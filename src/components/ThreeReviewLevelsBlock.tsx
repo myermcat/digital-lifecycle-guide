@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { interactivePanelCardClassName } from "@/components/PracticeCard";
+import { guideClickableCardFillStyle } from "@/lib/guide-cards";
 import { guideProseTight, guideCardHeading, guideCalloutLabel } from "@/lib/guide-typography";
 
 export type ReviewLevelItem = {
@@ -28,7 +29,7 @@ export function ThreeReviewLevelsBlock({
               <Link
                 to={item.href}
                 className={interactivePanelCardClassName}
-                style={{ backgroundColor: "var(--phase-group)" }}
+                style={guideClickableCardFillStyle}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
                   {item.tag}
@@ -43,7 +44,7 @@ export function ThreeReviewLevelsBlock({
               <a
                 href={item.href}
                 className={interactivePanelCardClassName}
-                style={{ backgroundColor: "var(--phase-group)" }}
+                style={guideClickableCardFillStyle}
               >
                 <p className={`${guideCalloutLabel} normal-case tracking-[0.14em] text-[9px]`}>
                   {item.tag}
