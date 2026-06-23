@@ -290,6 +290,76 @@ export const EXTERNAL_LINKS = {
       "AWS Prescriptive Guidance, Retiring applications before decommissioning infrastructure",
     accessibility: "public",
   },
+  "accessible-canada-act-summary": {
+    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada/act-summary.html",
+    description: "Accessible Canada Act (ESDC summary)",
+    accessibility: "public",
+  },
+  "accessible-canada-regulations-digital-technologies": {
+    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/category-digital-technologies.html",
+    description: "Accessible Canada Regulations, digital technologies (ESDC)",
+    accessibility: "public",
+  },
+  "can-asc-en-301-549": {
+    url: "https://accessible.canada.ca/",
+    description: "CAN/ASC-EN 301 549:2024, Accessibility requirements for ICT",
+    accessibility: "public",
+  },
+  "wcag-22-quickref": {
+    url: "https://www.w3.org/WAI/WCAG22/quickref/",
+    description: "WCAG 2.2 Quick Reference (W3C WAI)",
+    accessibility: "public",
+  },
+  "a11y-toolkit-procurement": {
+    url: "https://a11y.canada.ca/en/procurement/",
+    description: "Digital Accessibility Toolkit — procurement",
+    accessibility: "public",
+  },
+  "a11y-toolkit-test-products": {
+    url: "https://a11y.canada.ca/en/test-your-products/",
+    description: "Digital Accessibility Toolkit — test your products",
+    accessibility: "public",
+  },
+  "a11y-toolkit-standards": {
+    url: "https://a11y.canada.ca/en/accessibility-standards/",
+    description: "Digital Accessibility Toolkit — accessibility standards",
+    accessibility: "public",
+  },
+  "w3c-wai-accessibility-intro": {
+    url: "https://www.w3.org/WAI/fundamentals/accessibility-intro/",
+    description: "W3C Introduction to Web Accessibility",
+    accessibility: "public",
+  },
+  "webaim-wave": {
+    url: "https://wave.webaim.org/",
+    description: "WebAIM WAVE (free automated checker)",
+    accessibility: "public",
+  },
+  "section508-gov": {
+    url: "https://www.section508.gov/",
+    description: "Section508.gov (US)",
+    accessibility: "public",
+  },
+  "nz-web-accessibility-standard": {
+    url: "https://www.digital.govt.nz/standards-and-guidance/nz-government-web-standards/web-accessibility-standard-1-2",
+    description: "NZ Government Web Accessibility Standard 1.2",
+    accessibility: "public",
+  },
+  "australia-dta-leave-no-one-behind": {
+    url: "https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-3",
+    description: 'Australia DTA, "Leave no one behind" (formerly Criterion 9)',
+    accessibility: "public",
+  },
+  "uk-service-manual-assisted-digital": {
+    url: "https://www.gov.uk/service-manual/helping-people-to-use-your-service",
+    description: "UK Service Manual, accessibility and assisted digital",
+    accessibility: "public",
+  },
+  "nng-accessible-web-design": {
+    url: "https://www.nngroup.com/reports/usability-guidelines-accessible-web-design/",
+    description: "Nielsen Norman Group, Usability Guidelines for Accessible Web Design",
+    accessibility: "public",
+  },
   "digital-accessibility-toolkit": {
     url: "https://a11y.canada.ca/en/",
     description: "Digital Accessibility Toolkit",

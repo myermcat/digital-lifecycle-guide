@@ -21,6 +21,10 @@ import {
   dataStewardshipSectionsPlainText,
 } from "../src/lib/data-stewardship-thread-content";
 import {
+  ACCESSIBILITY_THREAD,
+  accessibilitySectionsPlainText,
+} from "../src/lib/accessibility-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -625,6 +629,82 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: dataKeywords,
+    });
+  }
+}
+
+// Accessibility thread — section-level records.
+{
+  const pageTitle = ACCESSIBILITY_THREAD.title;
+  const pagePath = THREADS.accessibility.path;
+
+  const accessibilityKeywords = "WCAG EN 301 549 Accessible Canada Act";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(ACCESSIBILITY_THREAD.lead),
+    keywords: accessibilityKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...ACCESSIBILITY_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: ACCESSIBILITY_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(ACCESSIBILITY_THREAD.whoseJob),
+    },
+    {
+      sectionId: ACCESSIBILITY_THREAD.closerLook.id,
+      sectionHeading: ACCESSIBILITY_THREAD.closerLook.title,
+      text: concat(
+        ...ACCESSIBILITY_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, accessibilitySectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: ACCESSIBILITY_THREAD.byPhase.id,
+      sectionHeading: ACCESSIBILITY_THREAD.byPhase.title,
+      text: concat(
+        ACCESSIBILITY_THREAD.byPhase.intro,
+        ...ACCESSIBILITY_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${accessibilitySectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: ACCESSIBILITY_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: accessibilityKeywords,
     });
   }
 }

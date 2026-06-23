@@ -42,9 +42,10 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   accessibility: {
-    text: "For accessibility questions, the Digital Accessibility Toolkit can help. There is a team or community for almost every part of this guide.",
+    text: "For accessibility questions, the Digital Accessibility Toolkit is the Government of Canada starting point, and its community directory connects you to the accessibility community across departments.",
     externalLinks: [
       { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
+      { phrase: "community directory", linkKey: "a11y-community-directory" },
     ],
   },
   "user-research": {

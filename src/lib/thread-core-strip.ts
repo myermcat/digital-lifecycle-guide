@@ -28,6 +28,16 @@ export const PRIVACY_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const ACCESSIBILITY_CORE_STRIP = {
+  heading: "THE CORE OF ACCESSIBILITY",
+  tiles: [
+    { label: "The law applies", gloss: "it is a legal duty" },
+    { label: "Build to the standard", gloss: "EN 301 549, WCAG 2.1 AA" },
+    { label: "Buy it accessible", gloss: "a condition of purchase" },
+    { label: "Test with real people", gloss: "not only tools" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 export const DATA_STEWARDSHIP_CORE_STRIP = {
   heading: "THE CORE OF DATA STEWARDSHIP",
   tiles: [

@@ -42,7 +42,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Growth", path: "/live-growth", type: "subphase", status: "in-progress" },
   { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
 
-  { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-progress" },
+  { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
   {
     title: THREADS["monitoring-and-instrumentation"].title,
     path: THREADS["monitoring-and-instrumentation"].path,

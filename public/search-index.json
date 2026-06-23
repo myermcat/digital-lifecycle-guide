@@ -106,7 +106,8 @@
     "sectionId": "",
     "sectionHeading": "Accessibility",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Accessibility means building a service everyone can use, including people with a disability, whether that disability is permanent, temporary, or situational. In Canada it is the law: the Accessible Canada Act sets a goal of a barrier-free Canada by 2040 and names information and communication technology as one of the areas that has to be made accessible. A service that cannot be used with a keyboard, a screen reader, captions, or clear language shuts people out of something government often makes the only option. The decisions that make a service accessible are taken early and revisited as it changes. The business owner answers for them; the team does the work.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
     "id": "/thread/monitoring-and-instrumentation",
@@ -923,6 +924,76 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/accessibility#what-good-looks-like",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "Accessibility is designed in from the start, not retrofitted before launch. The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA. Digital documents and any mobile app meet the standard too, not only the website. Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report. The service is tested with real people, including people who use assistive technology, not only with automated tools. A published accessibility statement says what is and is not accessible, and how to get help or an alternative. People who cannot use the service on their own can still get it done, by phone, in person, or with support. Staff who build, maintain, or buy digital technology have accessibility training.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#why-it-matters",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "When a service is not accessible, people are shut out of things they have a right to use, a benefit, a tax filing, a health service, and there is often no other way to get them. It is also a legal duty: under the Accessible Canada Act and the Accessible Canada Regulations a federal digital service must meet the accessibility standard, with deadlines phased in across 2027 and 2028, and the Accessibility Commissioner can impose penalties. Building accessibility in early costs far less than fixing it under deadline, and an accessible service is easier for everyone, on a phone, on a slow connection, in bright sun. Most barriers are ordinary and avoidable: an image with no text alternative, a form that needs a mouse, contrast too low to read.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#whose-job",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Accessibility is shared across the team, with each role holding a different part: Designers and content authors write in plain language, structure content properly, and design for keyboard and screen-reader use. Developers build to the standard and fix what testing finds. The department's accessibility or IT team advises, runs testing with assistive technology, and helps publish the accessibility statement. The business owner of the application makes sure accessibility is planned and funded, is built to the standard before launch, and answers for meeting the legal requirements.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#a-closer-look",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Build to the standard. The law points to one technical standard, CAN/ASC-EN 301 549, Canada's accessibility standard for information and communication technology. For a website, meeting it means meeting WCAG 2.1 Level AA, the international web content accessibility guidelines, which are organised around four ideas: Perceivable, people can see or hear the content Operable, it works by keyboard, not only a mouse Understandable, it reads clearly and behaves predictably Robust, it works with assistive technology such as screen readers The standard reaches past the website: digital documents like PDFs and Word files, and any mobile app, have to meet it too. WCAG has three levels, A, AA, and AAA; AA is the bar a government service builds to. Buy it accessible. Most services run on technology the team buys rather than builds, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage. Test with real people. Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use, so testing with people who have disabilities is part of the work.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#by-phase",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Accessibility looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "The accessibility work changes shape across the life of a service. Create. Design it in and set the standard. Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people who have disabilities is planned now, not left to the end. Live. Keep it accessible and tell people where it stands. Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current. Sunset. Keep the replacement accessible, and strand no one. When a service is retired or replaced, accessibility carries into what comes next: a replacement is built to the standard from the start, and content that moves keeps its accessible structure. While the old service is still running, its accessibility statement and feedback channel stay live. No one should be left without an accessible way to do the task during the change.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#further-reading",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Accessibility in Canada comes under the Accessible Canada Act and the Accessible Canada Regulations, which require federal digital services to meet CAN/ASC-EN 301 549, the standard that adopts WCAG 2.1 Level AA for the web. The Digital Accessibility Toolkit is the closest companion for doing the work, from procurement to testing. For why accessibility matters, the W3C Introduction to Web Accessibility is the plainest start, and other governments' guidance is worth a look for ideas Canada frames less crisply, the UK Service Manual on assisted digital and the United States' Section 508 procurement resources.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#sources",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

@@ -1,5 +1,6 @@
 import { createFileRoute, redirect, notFound } from "@tanstack/react-router";
 import { CrossCuttingThreadPage } from "@/components/CrossCuttingThreadPage";
+import { AccessibilityThreadPage } from "@/components/AccessibilityThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -9,6 +10,7 @@ import { PROCUREMENT_LANDING } from "@/lib/procurement-landing";
 import { SECURITY_THREAD } from "@/lib/security-thread-content";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
 import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
+import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -45,6 +47,15 @@ export const Route = createFileRoute("/thread/$slug")({
         meta: [
           { title: `${DATA_STEWARDSHIP_THREAD.title} — The Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(DATA_STEWARDSHIP_THREAD.lead) },
+        ],
+      };
+    }
+
+    if (params.slug === "accessibility") {
+      return {
+        meta: [
+          { title: `${ACCESSIBILITY_THREAD.title} — The Digital Lifecycle Guide` },
+          { name: "description", content: threadLeadPlainText(ACCESSIBILITY_THREAD.lead) },
         ],
       };
     }
@@ -86,6 +97,10 @@ function ThreadRoutePage() {
 
   if (slug === "data-stewardship") {
     return <DataStewardshipThreadPage />;
+  }
+
+  if (slug === "accessibility") {
+    return <AccessibilityThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];
