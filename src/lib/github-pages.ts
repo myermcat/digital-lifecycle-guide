@@ -30,7 +30,7 @@ const CORE_PATHS = [
 
 const PRACTICE_PATHS = Object.keys(PRACTICE_STUBS).map((slug) => `/practice/${slug}`);
 const REVIEW_PATHS = Object.keys(REVIEW_STUBS).map((slug) => `/review/${slug}`);
-const THREAD_PATHS = ["/thread/procurement", "/thread/security", "/thread/cybersecurity"];
+const THREAD_PATHS = ["/thread/procurement", "/thread/security", "/thread/privacy", "/thread/cybersecurity"];
 const PROCUREMENT_SUB_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
   (slug) => `/thread/procurement/${slug}`,
 );

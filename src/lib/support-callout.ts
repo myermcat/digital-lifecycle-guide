@@ -35,10 +35,10 @@ export const SUPPORT_CALLOUT_BODIES = {
     externalLinks: [{ phrase: "CanadaBuys Buyer's Portal", linkKey: "buyers-portal" }],
   },
   privacy: {
-    text: "For privacy questions, talk to your department's ATIP or Privacy Coordinator first (find yours through the Access to information and privacy hub); the Office of the Privacy Commissioner is the regulator. There is a team or community for almost every part of this guide.",
+    text: "For privacy questions, your department's ATIP or Privacy Coordinator is the first call (find yours through the Access to information and privacy hub), and the Office of the Privacy Commissioner advises federal institutions.",
     externalLinks: [
       { phrase: "Access to information and privacy", linkKey: "atip-privacy-hub" },
-      { phrase: "Office of the Privacy Commissioner", linkKey: "privacy-commissioner" },
+      { phrase: "Office of the Privacy Commissioner", linkKey: "opc-federal-institutions" },
     ],
   },
   accessibility: {

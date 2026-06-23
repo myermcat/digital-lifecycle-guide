@@ -20,6 +20,7 @@ interface PhasePlaceholderPageProps {
   intro: string;
   whereThisFits: WhereThisFitsConfig;
   subphaseLeavingSlug?: PhaseLeavingSlug;
+  showComingSoon?: boolean;
 }
 
 export function PhasePlaceholderPage({
@@ -30,6 +31,7 @@ export function PhasePlaceholderPage({
   intro,
   whereThisFits,
   subphaseLeavingSlug,
+  showComingSoon = true,
 }: PhasePlaceholderPageProps) {
   const leavingContent = subphaseLeavingSlug
     ? getPhaseLeavingContent(subphaseLeavingSlug)
@@ -49,7 +51,9 @@ export function PhasePlaceholderPage({
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>{intro}</p>
-        <p className="italic text-foreground/60">Page content coming soon.</p>
+        {showComingSoon ? (
+          <p className="italic text-foreground/60">Page content coming soon.</p>
+        ) : null}
       </section>
 
       {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}

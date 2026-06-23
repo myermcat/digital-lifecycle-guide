@@ -57,6 +57,7 @@ export function proseWithMixedLinks(
     placeholderGcNetwork = [],
     mailto = [],
     bold = [],
+    linkClassName = guideLink,
   }: {
     external?: ExternalPhraseLink[];
     internal?: InternalPhraseLink[];
@@ -65,6 +66,7 @@ export function proseWithMixedLinks(
     placeholderGcNetwork?: PlaceholderGcNetworkPhraseLink[];
     mailto?: MailtoPhraseLink[];
     bold?: BoldPhrase[];
+    linkClassName?: string;
   },
 ): ReactNode {
   const links: MixedPhraseLink[] = [
@@ -100,11 +102,15 @@ export function proseWithMixedLinks(
 
     parts.push(
       link.kind === "external" ? (
-        <ExternalLink key={`${link.linkKey}-${start}`} linkKey={link.linkKey}>
+        <ExternalLink
+          key={`${link.linkKey}-${start}`}
+          linkKey={link.linkKey}
+          className={linkClassName}
+        >
           {link.phrase}
         </ExternalLink>
       ) : link.kind === "internal" ? (
-        <Link key={`${link.to}-${start}`} to={link.to} className={guideLink}>
+        <Link key={`${link.to}-${start}`} to={link.to} className={linkClassName}>
           {link.phrase}
         </Link>
       ) : link.kind === "placeholder" ? (
@@ -112,7 +118,7 @@ export function proseWithMixedLinks(
           key={`${link.source}-${link.part ?? ""}-${start}`}
           to="/source-coming-soon"
           search={{ source: link.source, part: link.part }}
-          className={guideLink}
+          className={linkClassName}
         >
           {link.phrase}
         </Link>
@@ -125,7 +131,7 @@ export function proseWithMixedLinks(
           {link.phrase}
         </PlaceholderGcNetworkLink>
       ) : link.kind === "mailto" ? (
-        <a key={`mailto-${start}`} href={link.href} className={guideLink}>
+        <a key={`mailto-${start}`} href={link.href} className={linkClassName}>
           {link.phrase}
         </a>
       ) : link.kind === "bold" ? (
@@ -133,7 +139,7 @@ export function proseWithMixedLinks(
           {link.phrase}
         </strong>
       ) : (
-        <a key={`${link.hash}-${start}`} href={`#${link.hash}`} className={guideLink}>
+        <a key={`${link.hash}-${start}`} href={`#${link.hash}`} className={linkClassName}>
           {link.phrase}
         </a>
       ),

@@ -9,6 +9,9 @@ import {
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
+const supportCalloutLink =
+  "text-sm font-medium text-primary/65 underline underline-offset-4 transition-colors hover:text-primary/85";
+
 /**
  * **Support callout** — see `SUPPORT_CALLOUT_BLOCK` in `@/lib/guide-blocks`.
  *
@@ -45,13 +48,11 @@ export function SupportCallout({
           {proseWithMixedLinks(body.text, {
             external: body.externalLinks,
             mailto: body.mailtoLinks,
+            linkClassName: supportCalloutLink,
           })}
         </p>
         <p>
-          <Link
-            to={SUPPORT_PATH}
-            className="text-sm font-medium text-primary/65 underline underline-offset-4 hover:text-primary/85 transition-colors"
-          >
+          <Link to={SUPPORT_PATH} className={supportCalloutLink}>
             Browse the support communities →
           </Link>
         </p>

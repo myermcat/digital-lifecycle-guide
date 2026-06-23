@@ -32,6 +32,7 @@ export function createSubphaseRoute(slug: keyof typeof SUBPHASE_META) {
         intro={meta.subtitle}
         whereThisFits={meta.where()}
         subphaseLeavingSlug={phaseLeavingSlugOrNull(slug)}
+        showComingSoon={meta.showComingSoon}
       />
     ),
   });

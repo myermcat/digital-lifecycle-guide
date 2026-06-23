@@ -173,6 +173,66 @@ export const EXTERNAL_LINKS = {
     description: "Office of the Privacy Commissioner of Canada",
     accessibility: "public",
   },
+  "privacy-act": {
+    url: "https://laws-lois.justice.gc.ca/eng/acts/P-21/",
+    description: "Privacy Act (R.S.C. 1985, c. P-21)",
+    accessibility: "public",
+  },
+  "directive-privacy-practices": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=18309",
+    description: "Directive on Privacy Practices (TBS)",
+    accessibility: "public",
+  },
+  "digital-privacy-playbook": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook.html",
+    description: "Digital Privacy Playbook (TBS)",
+    accessibility: "public",
+  },
+  "digital-privacy-playbook-pia": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-impact-assessments.html",
+    description: "Digital Privacy Playbook — Privacy Impact Assessments",
+    accessibility: "public",
+  },
+  "digital-privacy-playbook-privacy-notices": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-notices.html",
+    description: "Digital Privacy Playbook — privacy notices",
+    accessibility: "public",
+  },
+  "digital-privacy-playbook-checklist": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-guidance-checklist.html",
+    description: "Digital Privacy Playbook — privacy guidance checklist",
+    accessibility: "public",
+  },
+  "opc-pia-expectations": {
+    url: "https://www.priv.gc.ca/en/privacy-topics/federal-government-privacy/privacy-impact-assessments/gd_exp_202003/",
+    description: "OPC, Guide to the Privacy Impact Assessment process (Expectations)",
+    accessibility: "public",
+  },
+  "opc-federal-institutions": {
+    url: "https://www.priv.gc.ca/en/for-federal-institutions/",
+    description: "OPC, For federal institutions",
+    accessibility: "public",
+  },
+  "privacy-by-design-principles": {
+    url: "https://www.sfu.ca/~palys/Cavoukian-2011-PrivacyByDesign-7FoundationalPrinciples.pdf",
+    description: "Privacy by Design: The 7 Foundational Principles (Ann Cavoukian)",
+    accessibility: "public",
+  },
+  "ssc-tapi": {
+    url: "https://www.canada.ca/en/shared-services/campaigns/stories/tapi-ervpt.html",
+    description: "SSC, Technology Assessment for Privacy Implications (TAPI)",
+    accessibility: "public",
+  },
+  "uk-ico-dpia": {
+    url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/data-protection-impact-assessments-dpias/",
+    description: "UK ICO, Data Protection Impact Assessments",
+    accessibility: "public",
+  },
+  "gdpr-article-25": {
+    url: "https://gdpr-info.eu/art-25-gdpr/",
+    description: "GDPR Article 25 (data protection by design and by default)",
+    accessibility: "public",
+  },
   "digital-accessibility-toolkit": {
     url: "https://a11y.canada.ca/en/",
     description: "Digital Accessibility Toolkit",
