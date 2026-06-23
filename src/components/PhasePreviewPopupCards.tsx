@@ -57,7 +57,7 @@ export function PhasePreviewPopupCards({ cards }: { cards: PhasePreviewCardData[
             <DialogHeader>
               <DialogTitle className={guideSubsectionTitle}>{openCard.title}</DialogTitle>
             </DialogHeader>
-            <p className={guideProse}>{openCard.popupBody}</p>
+            <div className={guideProse}>{openCard.popupBody}</div>
           </DialogContent>
         </Dialog>
       ) : null}

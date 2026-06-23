@@ -233,6 +233,63 @@ export const EXTERNAL_LINKS = {
     description: "GDPR Article 25 (data protection by design and by default)",
     accessibility: "public",
   },
+  "policy-on-service-and-digital": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603",
+    description: "Policy on Service and Digital (TBS)",
+    accessibility: "public",
+  },
+  "directive-on-service-and-digital": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601",
+    description: "Directive on Service and Digital (TBS)",
+    accessibility: "public",
+  },
+  laca: {
+    url: "https://laws-lois.justice.gc.ca/eng/acts/l-7.7/FullText.html",
+    description: "Library and Archives of Canada Act (S.C. 2004, c. 11)",
+    accessibility: "public",
+  },
+  "lac-documented-disposition": {
+    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/management/guidelines/documented-disposition-records.html",
+    description: "LAC, Guidelines on Documented Disposition of Records",
+    accessibility: "public",
+  },
+  "lac-gvt-overview": {
+    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/management/generic-valuation-tools/overview.html",
+    description: "LAC, Generic Valuation Tools (overview)",
+    accessibility: "public",
+  },
+  "lac-information-disposition-hub": {
+    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition.html",
+    description: "LAC, Information management and disposition of government records (hub)",
+    accessibility: "public",
+  },
+  "tbs-data-quality-guidance": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-data-quality.html",
+    description: "TBS, Guidance on Data Quality (nine dimensions)",
+    accessibility: "public",
+  },
+  "statcan-quality-guidelines": {
+    url: "https://www150.statcan.gc.ca/n1/pub/12-539-x/12-539-x2019001-eng.htm",
+    description: "Statistics Canada, Quality Guidelines (6th ed., 12-539-X)",
+    accessibility: "public",
+  },
+  "tbs-fair-principles": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html",
+    description: "TBS, Guidance on readiness to manage data according to the FAIR principles",
+    accessibility: "public",
+  },
+  "uk-national-archives-migration": {
+    url: "https://cdn.nationalarchives.gov.uk/documents/information-management/edrms.pdf",
+    description:
+      "The National Archives (UK), Migrating information between records management systems",
+    accessibility: "public",
+  },
+  "aws-app-retirement": {
+    url: "https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-app-retirement-best-practices/welcome.html",
+    description:
+      "AWS Prescriptive Guidance, Retiring applications before decommissioning infrastructure",
+    accessibility: "public",
+  },
   "digital-accessibility-toolkit": {
     url: "https://a11y.canada.ca/en/",
     description: "Digital Accessibility Toolkit",

@@ -4,6 +4,7 @@ import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   guideBlockTitle,
   guideCalloutLabel,
+  guideListIndent,
   guideProseTight,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
@@ -178,7 +179,7 @@ function LegacyPanel({ side, isRisky }: { side: CaseStudySide; isRisky: boolean 
       >
         {side.heading}
       </p>
-      <ul className={`${guideProseTight} space-y-1.5 list-disc pl-5`}>
+      <ul className={`${guideProseTight} space-y-1.5 list-disc ${guideListIndent}`}>
         {side.items?.map((item, i) => (
           <li key={i}>{item}</li>
         ))}

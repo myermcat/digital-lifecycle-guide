@@ -1,4 +1,4 @@
-import { guideProseTight } from "@/lib/guide-typography";
+import { guideListIndent, guideProseTight } from "@/lib/guide-typography";
 
 export function ContentTodo({
   title,
@@ -19,7 +19,7 @@ export function ContentTodo({
         TODO
       </p>
       <p className={`${guideProseTight} font-medium text-foreground/90 mb-2`}>{title}</p>
-      <ul className={`${guideProseTight} list-disc pl-5 space-y-1`}>
+      <ul className={`${guideProseTight} list-disc ${guideListIndent} space-y-1`}>
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}

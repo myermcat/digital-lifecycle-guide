@@ -8,6 +8,7 @@ import { supportCalloutVariantForThread } from "@/lib/support-callout";
 import type { ThreadContent } from "@/lib/thread-content";
 import {
   guideLink,
+  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
@@ -49,7 +50,7 @@ export function CrossCuttingThreadPage({
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
-        <ul className={`${guideProse} space-y-2 list-disc pl-5`}>
+        <ul className={`${guideProse} space-y-2 list-disc ${guideListIndent}`}>
           {content.whatGoodLooksLike.map((item) => (
             <li key={item}>{item}</li>
           ))}

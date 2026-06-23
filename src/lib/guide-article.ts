@@ -1,4 +1,4 @@
-import { guideProse, guideProseTight } from "@/lib/guide-typography";
+import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
 
 export {
   CALLOUT_BLOCK,
@@ -29,7 +29,7 @@ export const guideArticleProse = `${guideProse} space-y-4`;
 export const guideArticleCalloutLift = "mt-8 md:mt-10";
 
 /** Dialogue Q&A: gap between question-and-answer pairs. */
-export const guideArticleQaList = "space-y-5 md:space-y-6 list-none pl-0";
+export const guideArticleQaList = `space-y-5 md:space-y-6 list-none ${guideListIndent}`;
 
 /** Dialogue Q&A: light card per exchange. */
 export const guideArticleQaCard =

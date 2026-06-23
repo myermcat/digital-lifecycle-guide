@@ -15,7 +15,11 @@ import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
 import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/reference-paths";
 import { SECURITY_THREAD } from "../src/lib/security-thread-content";
-import { PRIVACY_THREAD } from "../src/lib/privacy-thread-content";
+import { PRIVACY_THREAD, privacySectionsPlainText } from "../src/lib/privacy-thread-content";
+import {
+  DATA_STEWARDSHIP_THREAD,
+  dataStewardshipSectionsPlainText,
+} from "../src/lib/data-stewardship-thread-content";
 import { SUPPORT_PAGE } from "../src/lib/support-content";
 import { SUPPORT_PATH } from "../src/lib/support-path";
 import { THREADS } from "../src/lib/guide-strings";
@@ -504,7 +508,12 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: PRIVACY_THREAD.closerLook.id,
       sectionHeading: PRIVACY_THREAD.closerLook.title,
       text: concat(
-        ...PRIVACY_THREAD.closerLook.blocks.map((block) => `${block.title} ${block.text}`),
+        ...PRIVACY_THREAD.closerLook.blocks.map((block) =>
+          concat(
+            block.title,
+            privacySectionsPlainText(block.sections),
+          ),
+        ),
       ),
     },
     {
@@ -513,7 +522,8 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: concat(
         PRIVACY_THREAD.byPhase.intro,
         ...PRIVACY_THREAD.byPhase.blocks.map(
-          (block) => `${block.title} ${block.preview} ${block.popup.text}`,
+          (block) =>
+            `${block.title} ${block.preview} ${privacySectionsPlainText(block.popup)}`,
         ),
       ),
     },
@@ -535,6 +545,82 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: privacyKeywords,
+    });
+  }
+}
+
+// Data stewardship thread — section-level records.
+{
+  const pageTitle = DATA_STEWARDSHIP_THREAD.title;
+  const pagePath = THREADS["data-stewardship"].path;
+
+  const dataKeywords = "retention disposition data quality";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: DATA_STEWARDSHIP_THREAD.lead.text,
+    keywords: dataKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...DATA_STEWARDSHIP_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: DATA_STEWARDSHIP_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: DATA_STEWARDSHIP_THREAD.whoseJob.text,
+    },
+    {
+      sectionId: DATA_STEWARDSHIP_THREAD.closerLook.id,
+      sectionHeading: DATA_STEWARDSHIP_THREAD.closerLook.title,
+      text: concat(
+        ...DATA_STEWARDSHIP_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, dataStewardshipSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: DATA_STEWARDSHIP_THREAD.byPhase.id,
+      sectionHeading: DATA_STEWARDSHIP_THREAD.byPhase.title,
+      text: concat(
+        DATA_STEWARDSHIP_THREAD.byPhase.intro,
+        ...DATA_STEWARDSHIP_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${dataStewardshipSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: DATA_STEWARDSHIP_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: dataKeywords,
     });
   }
 }

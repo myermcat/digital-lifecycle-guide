@@ -58,8 +58,13 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   "data-stewardship": {
-    text: "For data stewardship questions, the GC Data Community can help (ask through the CIOB mailbox for the current home). There is a team or community for almost every part of this guide.",
-    mailtoLinks: [{ phrase: "CIOB mailbox", href: CIOB_MAILBOX }],
+    text: "For data management and disposition questions, your department's information management office or Chief Data Officer is the first call, and Library and Archives Canada advises institutions on disposition and transfers through its information management and disposition service.",
+    externalLinks: [
+      {
+        phrase: "information management and disposition",
+        linkKey: "lac-information-disposition-hub",
+      },
+    ],
   },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 

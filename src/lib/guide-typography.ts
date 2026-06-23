@@ -46,11 +46,14 @@ export const guideCalloutLabel =
 export const guideCalloutTitle =
   "font-sans text-[10px] uppercase tracking-[0.22em] text-primary leading-snug";
 
+/** Left indent for body lists (bullets and numbers) relative to section prose. */
+export const guideListIndent = "pl-6 md:pl-8";
+
 /** Wrapper classes for arrow-bullet lists. */
-export const guideArrowList = "space-y-4 list-none pl-0";
+export const guideArrowList = `space-y-4 list-none ${guideListIndent}`;
 
 /** Between arrow-lead items (heading + subtext groups). Default bullet list style. */
-export const guideArrowLeadList = "list-none pl-0 space-y-5";
+export const guideArrowLeadList = `list-none space-y-5 ${guideListIndent}`;
 
 /** Within one arrow-lead item: gap between heading and subtext. */
 export const guideArrowLeadGroup = "space-y-0.5";

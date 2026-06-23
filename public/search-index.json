@@ -161,7 +161,7 @@
     "sectionId": "",
     "sectionHeading": "Privacy",
     "lifecyclePhase": "thread",
-    "text": "Privacy runs through the whole life of a service that handles people's personal information, from the first design sketch to the day the data is destroyed. Personal information is anything that can identify a person: a name, a case number, an address, an IP address. Canada's Privacy Act sets the rules for how a federal institution may collect, use, and share it. The business owner of the application does not run the privacy reviews or write the legal text. Their part is the privacy decisions: what personal information the service collects, making sure it is assessed before launch, and answering for how it is protected.",
+    "text": "Privacy runs through the whole life of a service that handles people's personal information, from the first design sketch to the day the data is destroyed. Personal information is anything that can identify a person: a name, a case number, an address, an IP address. Canada's Privacy Act sets the rules for how a federal institution may collect, use, and share it. The decisions that shape a service's privacy are made early and revisited as it changes: what personal information to collect, how to protect it, and when to reassess the risk. The business owner answers for those decisions; the team does the work.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -180,7 +180,8 @@
     "sectionId": "",
     "sectionHeading": "Data stewardship",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Data stewardship is the care of the data a service holds across its whole life, from the first record it collects to the day that record is destroyed. The Government of Canada treats information and data as a public trust, managed as a strategic asset, under the Policy on Service and Digital and its directive. For the data inside one service that comes down to four things: knowing who is accountable for it, keeping it fit to use, keeping it only as long as it is needed, and moving it safely when the service changes. These decisions are made early and revisited as the service grows. The business owner answers for them; the team does the work.",
+    "keywords": "retention disposition data quality"
   },
   {
     "id": "/thread/ethics-and-bias",
@@ -820,7 +821,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "The Privacy Impact Assessment. A Privacy Impact Assessment, or PIA, is the formal check of what could go wrong with the personal information a service handles, done before it launches. It records what is collected and why, the legal authority for collecting it, how the data flows, how it is protected, and how long it is kept, then names the risks and how they will be reduced. It is triggered whenever a service uses personal information to make a decision about someone, or changes that use: when a paper benefits form moves online, for example, the PIA is updated before the new service goes live. Under the Directive on Privacy Practices a PIA is required, and the Digital Privacy Playbook walks through it step by step. The Office of the Privacy Commissioner reviews a PIA and advises, but does not approve it; the sign-off stays with the institution, with the business owner. Build privacy in from the start. Designing privacy in early costs far less than fixing it after launch. The idea has a name, privacy by design, and its seven principles were written in Canada and are now used worldwide: default to the most private setting, collect the least you can, be open about it. Shared Services Canada's Technology Assessment for Privacy Implications is one GC example of running this assessment early, at the technology level. Tell people what you collect. People have a right to know what a service collects and why, before they hand it over. That is the job of the privacy notice, in plain words and in the right place. A complete notice says seven things: why the information is collected, the legal authority for collecting it, whether it will be shared, what happens to someone who does not provide it, their right to see and correct it, the Personal Information Bank it is held in, and how to complain to the Office of the Privacy Commissioner. It is easy to forget, and it is the part the public actually sees.",
+    "text": "The Privacy Impact Assessment. A Privacy Impact Assessment (PIA) is the formal check of what could go wrong with the personal information a service handles, done before it launches. It records: what is collected, and why the legal authority for collecting it how the data flows how it is protected, and how long it is kept the risks, and how they will be reduced It is triggered whenever a service uses personal information to make a decision about someone, or changes that use: when a paper benefits form moves online, for example, the PIA is updated before the new service goes live. Under the Directive on Privacy Practices a PIA is required, and the Digital Privacy Playbook walks through it step by step. The Office of the Privacy Commissioner reviews a PIA and advises, but does not approve it; the sign-off stays with the institution. Build privacy in from the start. Designing privacy in early costs far less than fixing it after launch. The idea has a name, privacy by design, and its seven principles were written in Canada and are now used worldwide: default to the most private setting, collect the least you can, be open about it. Shared Services Canada's Technology Assessment for Privacy Implications is one GC example of running this assessment early, at the technology level. Tell people what you collect. People have a right to know what a service collects and why, before they hand it over. That is the job of the privacy notice, in plain words and in the right place. A complete notice says seven things: why the information is collected the legal authority for collecting it whether it will be shared what happens to someone who does not provide it their right to see and correct it the Personal Information Bank it is held in how to complain to the Office of the Privacy Commissioner It is easy to forget, and it is the part the public actually sees.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -830,7 +831,7 @@
     "sectionId": "by-phase",
     "sectionHeading": "What Privacy looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "The privacy work changes shape across the life of a service. Create. Decide what you collect, and assess it before launch. Most privacy is decided before the service exists. The team lists the personal information the service will hold and works out the least it can collect (collecting more than you need is a liability), confirms it has the legal authority to collect it, chooses private defaults, and runs the Privacy Impact Assessment early, while changing the design is still cheap. The privacy notice is drafted, the safeguards and access controls are built, a retention and disposition plan is written, and the staff who will handle the data are trained. The Digital Privacy Playbook checklist lays out these plan and design steps. Live. Keep the assessment current and watch for breaches. Once the service is running, the privacy work continues. The privacy notice is published before any collection begins and kept accurate, the Privacy Impact Assessment is updated whenever the service starts collecting or using personal information in a new way, and access to the data is limited and logged. If a privacy breach happens, there is a plan to contain it, assess the harm, notify the people affected, and report it; the Office of the Privacy Commissioner is who a federal institution works with, and it provides a breach-reporting form. For the security side of protecting the data, see the security thread. Sunset. Dispose of personal information the right way. When a service retires, the personal information does not just disappear. It is kept or destroyed under its retention schedule, transferred or archived where required, and securely disposed of so it cannot be recovered. How long to keep what is a records question, handled in data stewardship, and destroying it safely is a security one, handled in the security thread. A service that keeps personal information past its retention is a standing privacy risk.",
+    "text": "The privacy work changes shape across the life of a service. Create. Decide what you collect, and assess it before launch. Most privacy is decided before the service exists. The team lists the personal information the service will hold and works out the least it can collect (collecting more than you need is a liability), confirms it has the legal authority to collect it, chooses private defaults, and runs the Privacy Impact Assessment early, while changing the design is still cheap. The privacy notice is drafted, the safeguards and access controls are built, a retention and disposition plan is written, and the staff who will handle the data are trained. If a supplier will hold or handle the personal information, the privacy requirements are written into the contract so the supplier is bound by them. The Digital Privacy Playbook checklist lays out these plan and design steps. Live. Keep the assessment current and watch for breaches. Once the service is running, the privacy work continues. The privacy notice is published before any collection begins and kept accurate, the Privacy Impact Assessment is updated whenever the service starts collecting or using personal information in a new way, and access to the data is limited and logged. If a privacy breach happens, a rehearsed plan kicks in: contain it assess the harm notify the people affected report it The Office of the Privacy Commissioner is who a federal institution works with, and it provides a breach-reporting form. The safeguards that keep the data locked down are covered under keeping the service secure. Sunset. Move or dispose of the personal information the right way. A service is eventually replaced or retired, and the personal information has to be dealt with either way. If the service is replaced, the information moves to the new service, and the Privacy Impact Assessment and privacy notice are revisited for its new home. If the service is retired, the information is kept or destroyed under its retention and disposition schedule, archived where required, and securely destroyed so it cannot be recovered. A service that holds personal information past the point it is needed is a standing privacy risk.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -840,7 +841,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "This thread comes under the Privacy Act, with the Treasury Board Directive on Privacy Practices setting the day-to-day obligations, including the Privacy Impact Assessment. The Digital Privacy Playbook is the closest companion, turning the rules into steps. It also draws on the made-in-Canada seven principles of privacy by design, and, for how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments and Article 25 of the GDPR.",
+    "text": "Privacy in the Government of Canada comes under the Privacy Act, with the Treasury Board Directive on Privacy Practices setting the day-to-day obligations, including the Privacy Impact Assessment. The Digital Privacy Playbook is the closest companion, turning the rules into steps. It also draws on the made-in-Canada seven principles of privacy by design, and, for how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments and Article 25 of the GDPR.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -852,6 +853,76 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "PIA privacy impact assessment"
+  },
+  {
+    "id": "/thread/data-stewardship#what-good-looks-like",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "One person is accountable for the data the service holds, and the rules for managing it are written down. The data is fit for its purpose: accurate, complete, and current enough for the decisions it supports. Only the data the service needs is collected, and it is kept only as long as it is needed. Every retention period has three parts: a length, a trigger that starts the clock, and a reason. Nothing is destroyed without the disposition authority that covers it. Personal information follows the extra rules that protect it. When the service moves to a new system, the data is cleaned first, moved with its meaning intact, and checked before the old system is switched off. Data is open by default where it can be, and protected where it must be.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#why-it-matters",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "Data is the part of a service that outlives the software. A team can replace the system and keep the records, so the records are worth more care than the code. When data quality slips, decisions get made on wrong information, and the error spreads to everyone downstream who trusts it. Holding data longer than allowed, or destroying it without authority, both break the rules: the Policy on Service and Digital and its directive require an institution to manage data quality, set retention periods, and run a documented disposition process, and under the Library and Archives of Canada Act no government record may be destroyed without the written consent of the Librarian and Archivist.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#whose-job",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Data stewardship is shared across the team, with each role holding a different part. The department's information management office sets the standards and holds the disposition authorities; some departments name a Chief Data Officer to lead this. Developers build the service so it captures data cleanly, applies the retention rules, and can export the data without losing its meaning. The business owner of the application decides what data the service needs, makes sure retention and disposition are set before launch, and answers for the data's quality and its lawful disposal. The day-to-day work belongs to the team. The decision about what data to hold, and the accountability for it, belong to the business owner.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#a-closer-look",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Keep the data fit to use. Data quality is how well data serves the decisions it supports. The Government of Canada's Guidance on Data Quality describes it in nine dimensions: access, how easily the data can be found, retrieved, and used accuracy, how correctly it describes what it is about coherence, how well it fits with related data completeness, how fully the values are filled in consistency, whether it is free of internal contradictions interpretability, whether there is enough supporting information to understand it relevance, how well it meets the actual need reliability, how well differences in the data can be explained timeliness, how current it is for the decision at hand No dataset scores perfectly on all nine. The test is whether the data is fit for purpose, good enough for the use it is put to, which varies by decision and by stage of the service. These dimensions grew out of Statistics Canada's older six in its Quality Guidelines, and they pair with the FAIR principles, findable, accessible, interoperable, reusable, when data is shared or reused. Keep data only as long as it is needed. Two linked practices keep data from piling up. Retention is how long data is kept, and every retention period has three parts: a length, a trigger that starts the clock (a file is closed, a fiscal year ends), and a reason. Disposition is what happens at the end. Under the Library and Archives of Canada Act a government record cannot be destroyed without the written consent of the Librarian and Archivist, and disposition is one of three actions: destroy the record, transfer it to Library and Archives Canada, or alienate it (remove it from government control). Before disposing of anything, the documented disposition process runs a few checks: confirm a disposition authority covers the records check the security classification check for legal holds or open access-to-information requests get sign-off from the office that owns the records complete the action and record what was done Setting the retention period is not guesswork: Library and Archives Canada's Generic Valuation Tools give ready-made starting points for common government activities, and the disposition guideline includes a sample disposition form to record each decision. Where the records hold personal information, the extra rules on keeping and disposing of it apply as well. Move data safely when the service changes. When a service is replaced, or its data moves to a new system, the data has to arrive intact and still make sense. The first decision is whether to move the data at all: for each set of records the choice is to migrate it, archive it, or dispose of it. What moves is then cleaned first, because fixing data quality before a migration costs far less than after, and it is moved with its meaning intact, the metadata that lets someone find, open, and trust it later. A pilot migration and a roll-back plan guard against surprises, and the data is checked before the old system is switched off. For the end-of-life case, preserving data before a system is decommissioned, the same rule holds: capture and archive the data while the system is still running, then destroy what is left securely.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#by-phase",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Data stewardship looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "The data work changes shape across the life of a service. Create. Decide what data you hold, and how it will be kept. Most data decisions are cheapest at the start. The team decides what data the service needs and collects no more, names who is accountable for it, and sets a retention period for each kind of data (a length, a trigger, a reason), using Library and Archives Canada's Generic Valuation Tools as a starting point. The service is designed so data is captured cleanly and can be exported later, and the quality rules and metadata standards are chosen now. If the data includes personal information, the privacy requirements apply on top. Live. Keep the data fit to use, and dispose on schedule. Once the service is running, the data is kept fit for purpose, checked against trusted sources and watched for errors. Retention periods are applied, and disposition runs on schedule: records past their retention are disposed of through the documented process, and nothing is destroyed without the authority that covers it. Data is opened by default where it can be and restricted where it must be. Keeping the data secure is part of this. Sunset. Migrate or dispose of the data, lawfully. When the service is retired or replaced, every record is migrated, archived, or destroyed. If the service is replaced, the data is cleaned, moved with its meaning intact, and checked before the old system is switched off. If the service is retired, records are kept or destroyed under their retention schedule, and what is destroyed is destroyed securely so it cannot be recovered. Nothing is destroyed without a disposition authority.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#further-reading",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Managing data in the Government of Canada comes under the Policy on Service and Digital and its directive, which set the duties for data quality, retention, disposition, and openness. Disposing of records is governed by the Library and Archives of Canada Act, with Library and Archives Canada's guideline on documented disposition and Generic Valuation Tools showing how it is done. For data quality, the Guidance on Data Quality sets out the nine dimensions, with Statistics Canada's Quality Guidelines behind them and the FAIR principles as a further lens for sharing and reuse. For moving data between systems, The National Archives' guide to migrating records and the checklist for retiring applications before decommissioning infrastructure are practical companions.",
+    "keywords": "retention disposition data quality"
+  },
+  {
+    "id": "/thread/data-stewardship#sources",
+    "pageTitle": "Data stewardship",
+    "pagePath": "/thread/data-stewardship",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "retention disposition data quality"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

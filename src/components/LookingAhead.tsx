@@ -4,6 +4,7 @@ import {
   guideBlockTitle,
   guideCalloutLabel,
   guideLink,
+  guideListIndent,
   guideProseTight,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
@@ -118,7 +119,7 @@ export function LookingAhead({
             {active.label}
           </p>
           <p className={`${guideProseTight} mb-2`}>{active.intro}</p>
-          <ul className={`${guideProseTight} space-y-1.5 list-disc pl-5`}>
+          <ul className={`${guideProseTight} space-y-1.5 list-disc ${guideListIndent}`}>
             {active.items.map((item, i) => (
               <li key={i}>{item}</li>
             ))}

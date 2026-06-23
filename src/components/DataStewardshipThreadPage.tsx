@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Accordion,
@@ -11,7 +10,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
 import { GuideArrowBullet } from "@/lib/guide-lists";
-import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
+import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -32,7 +31,7 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
-export function PrivacyThreadPage() {
+export function DataStewardshipThreadPage() {
   const {
     title,
     lead,
@@ -43,7 +42,7 @@ export function PrivacyThreadPage() {
     byPhase,
     furtherReading,
     sources,
-  } = PRIVACY_THREAD;
+  } = DATA_STEWARDSHIP_THREAD;
 
   const phaseCards = byPhase.blocks.map((block) => ({
     id: block.title,
@@ -53,7 +52,7 @@ export function PrivacyThreadPage() {
   }));
 
   return (
-    <GuideLayout id={`thread-${PRIVACY_THREAD.slug}`}>
+    <GuideLayout id={`thread-${DATA_STEWARDSHIP_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
         <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
@@ -91,7 +90,7 @@ export function PrivacyThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
-        <p className={guideProse}>{whoseJob}</p>
+        <p className={guideProse}>{renderLinkedProse(whoseJob)}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={closerLook.id}>
@@ -122,7 +121,7 @@ export function PrivacyThreadPage() {
       </section>
 
       <PageFoot
-        support="privacy"
+        support="data-stewardship"
         furtherReading={renderLinkedProse(furtherReading)}
         sources={sources}
       />

@@ -84,7 +84,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["data-stewardship"].title,
     path: THREADS["data-stewardship"].path,
     type: "thread",
-    status: "not-started",
+    status: "in-review",
   },
   {
     title: THREADS["ethics-and-bias"].title,
