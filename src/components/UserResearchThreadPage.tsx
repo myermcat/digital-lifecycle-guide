@@ -131,11 +131,7 @@ export function UserResearchThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{byPhase.title}</h2>
-        <blockquote
-          className={`${guideProse} mb-5 border-l-2 border-primary/25 pl-3 text-foreground/80`}
-        >
-          {byPhase.intro}
-        </blockquote>
+        <p className={`${guideProse} mb-5`}>{byPhase.intro}</p>
         <PhasePreviewPopupCards cards={phaseCards} />
       </section>
 
