@@ -134,7 +134,15 @@ export const OPTIONS_ANALYSIS = {
     paragraphs: [
       {
         text:
-          "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules. Australia's reuse standard and the UK's Technology Code of Practice both make checking for reuse a step before you spend, and the UK's guidance on sharing and reusing technology points to the common platforms and components other departments already run. Borrowing a worked answer beats starting from a blank page.",
+          "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them. A good place to start is the Government of Canada's own shelf. The GC Reference Architectures repository holds approved starting designs for common kinds of system, including case management and grants and contributions, so a team builds from a proven pattern instead of a blank page. A draft enterprise solutions catalog lists what other teams already run. Both are on the Government of Canada network.",
+        externalLinks: [
+          { phrase: "GC Reference Architectures repository", linkKey: "gc-reference-architectures" },
+          { phrase: "enterprise solutions catalog", linkKey: "gc-enterprise-solutions-catalog" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text:
+          "Other governments have already solved versions of this, and many publish how, so you can lift a worked approach instead of working it out from scratch. Australia's reuse standard and the UK's Technology Code of Practice turn 'check for reuse before you spend' into a concrete checklist you can follow, and the UK's guidance on sharing and reusing technology shows the shared platforms and components their teams reuse. Borrowing a worked answer beats starting from a blank page.",
         externalLinks: [
           { phrase: "reuse standard", linkKey: "australia-digital-architecture-reuse" },
           { phrase: "Technology Code of Practice", linkKey: "uk-technology-code-of-practice" },
@@ -142,14 +150,6 @@ export const OPTIONS_ANALYSIS = {
             phrase: "sharing and reusing technology",
             linkKey: "uk-share-and-reuse-technology",
           },
-        ] satisfies ExternalPhraseLink[],
-      },
-      {
-        text:
-          "A good place to start is the Government of Canada's own shelf. The GC Reference Architectures repository holds approved starting designs for common kinds of system, including case management and grants and contributions, so a team builds from a proven pattern instead of a blank page. A draft enterprise solutions catalog lists what other teams already run. Both are on the Government of Canada network.",
-        externalLinks: [
-          { phrase: "GC Reference Architectures repository", linkKey: "gc-reference-architectures" },
-          { phrase: "enterprise solutions catalog", linkKey: "gc-enterprise-solutions-catalog" },
         ] satisfies ExternalPhraseLink[],
       },
     ],

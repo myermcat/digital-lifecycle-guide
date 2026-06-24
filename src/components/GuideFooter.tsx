@@ -33,6 +33,9 @@ export function GuideFooter() {
               <FooterLink to="/">Home</FooterLink>
               <FooterLink to={ALL_PAGES_PATH}>All pages</FooterLink>
               <FooterLink to={SUPPORT_PATH}>Support and communities</FooterLink>
+              <FooterExternalLink href="https://github.com/myermcat/digital-lifecycle-guide">
+                GitHub
+              </FooterExternalLink>
             </FooterColumn>
 
             <FooterColumn title="Phases">
@@ -121,6 +124,21 @@ function FooterLink({ to, children }: { to: string; children: React.ReactNode })
       >
         {children}
       </Link>
+    </li>
+  );
+}
+
+function FooterExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-sm text-foreground/75 hover:text-foreground transition-colors"
+      >
+        {children}
+      </a>
     </li>
   );
 }
