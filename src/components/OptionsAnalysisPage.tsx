@@ -1,13 +1,10 @@
 import type { ReactNode } from "react";
-import { ContentTodo } from "@/components/ContentTodo";
-import { EditorialNote } from "@/components/EditorialNote";
 import { OptionsAlternativeGrid } from "@/components/OptionsAlternativeGrid";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
 import { PhaseFitCards } from "@/components/WeightedPhaseBlock";
 import { InlineArrowLeadList } from "@/lib/guide-lists";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import { guideArticleCalloutLift } from "@/lib/guide-article";
 import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
 import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 import optionsAnalysisLifecycle from "@/assets/options_analysis_lifecycle.svg?url";
@@ -30,7 +27,7 @@ function renderProblemParagraph(
 }
 
 export function OptionsAnalysisPage() {
-  const { startWithProblem, fieldOfOptions, whereToLook, howToWeigh, homework, byPhase, whyThisMatters } =
+  const { startWithProblem, fieldOfOptions, howToWeigh, homework, byPhase, whyThisMatters } =
     OPTIONS_ANALYSIS;
 
   return (
@@ -70,18 +67,6 @@ export function OptionsAnalysisPage() {
         <OptionsAlternativeGrid items={fieldOfOptions.ladder} />
       </ThreadArticleSection>
 
-      <aside id={whereToLook.id} className={`${guideArticleCalloutLift} scroll-mt-24`}>
-        <EditorialNote label={whereToLook.title}>
-          <p>{whereToLook.intro}</p>
-          <div className="mt-3">
-            <ContentTodo
-              title={whereToLook.contentTodo.title}
-              items={whereToLook.contentTodo.items}
-            />
-          </div>
-        </EditorialNote>
-      </aside>
-
       <ThreadArticleSection title={howToWeigh.title} sectionId={howToWeigh.id}>
         <p>{howToWeigh.intro}</p>
         <InlineArrowLeadList
@@ -99,7 +84,15 @@ export function OptionsAnalysisPage() {
       </ThreadArticleSection>
 
       <ThreadArticleSection title={homework.title} sectionId={homework.id}>
-        <p>{homework.body}</p>
+        {homework.paragraphs.map((paragraph) =>
+          typeof paragraph === "string" ? (
+            <p key={paragraph}>{paragraph}</p>
+          ) : (
+            <p key={paragraph.text}>
+              {proseWithMixedLinks(paragraph.text, { external: paragraph.externalLinks })}
+            </p>
+          ),
+        )}
       </ThreadArticleSection>
 
       <ThreadArticleSection title={byPhase.title} sectionId={byPhase.id}>

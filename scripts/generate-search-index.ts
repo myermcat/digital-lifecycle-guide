@@ -292,15 +292,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       ),
     },
     {
-      sectionId: OPTIONS_ANALYSIS.whereToLook.id,
-      sectionHeading: OPTIONS_ANALYSIS.whereToLook.title,
-      text: concat(
-        OPTIONS_ANALYSIS.whereToLook.intro,
-        OPTIONS_ANALYSIS.whereToLook.contentTodo.title,
-        ...OPTIONS_ANALYSIS.whereToLook.contentTodo.items,
-      ),
-    },
-    {
       sectionId: OPTIONS_ANALYSIS.howToWeigh.id,
       sectionHeading: OPTIONS_ANALYSIS.howToWeigh.title,
       text: concat(
@@ -312,7 +303,11 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: OPTIONS_ANALYSIS.homework.id,
       sectionHeading: OPTIONS_ANALYSIS.homework.title,
-      text: OPTIONS_ANALYSIS.homework.body,
+      text: concat(
+        ...OPTIONS_ANALYSIS.homework.paragraphs.map((paragraph) =>
+          typeof paragraph === "string" ? paragraph : paragraph.text,
+        ),
+      ),
     },
     {
       sectionId: OPTIONS_ANALYSIS.byPhase.id,

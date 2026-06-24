@@ -47,7 +47,7 @@ export const SUPPORT_CALLOUT_BLOCK = {
   purpose:
     "Standing offer of help at the foot of every page, immediately before Further reading and Sources.",
   visual:
-    "Doorway-card anatomy: small-caps primary label, rust heading (slightly smaller than Doorway), tight sans body, arrow link to /support.",
+    "Doorway-card anatomy: small-caps primary label, tight sans body, arrow link to /support.",
   examples: ["Generic on most pages", "Security → CCCS", "Procurement → CanadaBuys"],
 } as const;
 

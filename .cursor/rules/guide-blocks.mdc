@@ -30,7 +30,7 @@ Full spec: `src/lib/guide-blocks.ts` (`EDITORIAL_NOTE_BLOCK`, `CALLOUT_BLOCK`, `
 ## Support callout
 
 - **Job:** Standing help pointer at the foot of every page (before Further reading and Sources).
-- **Look:** Reuses Doorway card anatomy — small-caps label "SUPPORT AND COMMUNITIES", rust heading (smaller than Doorway), prose line, arrow link "Browse the support communities →".
+- **Look:** Reuses Doorway card anatomy — small-caps label "SUPPORT AND COMMUNITIES", prose line, arrow link "Browse the support communities →".
 - **Variants:** Generic, or page-specific contact linked inline on thread pages (Security, Procurement, Privacy, Accessibility, User research, Dependencies and standards, Data stewardship).
 - **DOM:** `data-guide-block="support-callout"`
 

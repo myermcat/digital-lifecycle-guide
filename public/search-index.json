@@ -608,15 +608,6 @@
     "text": "The answer might not be a purchase at all. Sometimes a small process change, or a tool another team already runs, solves the problem without buying anything. Here are the options, roughly cheapest first: Use what you already have. Do you own a tool that already does this, or nearly does? The cheapest solution is the one you do not have to buy. Reuse or adapt what someone else runs. Another team, another department, or a government-wide platform may already solve your problem. You might use something idle on someone else's books, or ride an existing enterprise contract to get the same thing for less, since buying in volume costs less per unit. Borrowing beats buying. Partner with another department. If someone else needs the same thing, build or buy it together so the problem gets solved once for both of you. If the thing does not exist yet, ask around before you set up a buy of your own. Solve it a different way. Sometimes the answer is not software at all. A process change, a policy fix, or one small manual step can make the whole purchase unnecessary. Buy new. If none of the above fits, you procure a solution, through an existing framework or your own procurement. And you can explain why when someone asks. Build it yourself. Possible, but the in-house capability to build and run software is thin in most departments, so treat building as a rare exception rather than a default. Retire without replacing. If the need has genuinely gone, the right option may be to stop. This one mostly comes up in Sunset."
   },
   {
-    "id": "/reference/options-analysis#where-to-look",
-    "pageTitle": "Options analysis",
-    "pagePath": "/reference/options-analysis",
-    "sectionId": "where-to-look",
-    "sectionHeading": "Where to look",
-    "lifecyclePhase": "reference",
-    "text": "Before you commit to a buy, check whether something already exists elsewhere in government. Links pending (John Currah's team and Jessica Lahoud) Enterprise architecture repository Enterprise solutions catalog"
-  },
-  {
     "id": "/reference/options-analysis#how-to-weigh-them",
     "pageTitle": "Options analysis",
     "pagePath": "/reference/options-analysis",
@@ -632,7 +623,7 @@
     "sectionId": "do-the-homework-first",
     "sectionHeading": "Do the homework first",
     "lifecyclePhase": "reference",
-    "text": "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules, the UK and Australia among them. Borrowing a worked answer beats starting from a blank page."
+    "text": "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules. Australia's reuse standard and the UK's Technology Code of Practice both make checking for reuse a step before you spend, and the UK's guidance on sharing and reusing technology points to the common platforms and components other departments already run. Borrowing a worked answer beats starting from a blank page. A good place to start is the Government of Canada's own shelf. The GC Reference Architectures repository holds approved starting designs for common kinds of system, including case management and grants and contributions, so a team builds from a proven pattern instead of a blank page. A draft enterprise solutions catalog lists what other teams already run. Both are on the Government of Canada network."
   },
   {
     "id": "/reference/options-analysis#by-phase",

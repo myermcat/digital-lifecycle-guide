@@ -40,6 +40,16 @@ export const EXTERNAL_LINKS = {
     description: "PSPC Agile Procurement Guide",
     accessibility: "gc-network-only",
   },
+  "gc-reference-architectures": {
+    url: "https://gcxgce.sharepoint.com/teams/1000913/SitePages/GC-Reference-Architectures.aspx",
+    description: "GC Reference Architectures repository",
+    accessibility: "gc-network-only",
+  },
+  "gc-enterprise-solutions-catalog": {
+    url: "https://gcxgce.sharepoint.com/teams/1000913/Lists/DRAFT%20Product%20Catalog/Main%20View%201.aspx",
+    description: "GC enterprise solutions catalog (draft)",
+    accessibility: "gc-network-only",
+  },
   "policy-planning-investments": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593",
     description: "Treasury Board Policy on the Planning and Management of Investments",
@@ -59,6 +69,21 @@ export const EXTERNAL_LINKS = {
   "uk-service-manual-whole-problem": {
     url: "https://www.gov.uk/service-manual/design/map-a-users-whole-problem",
     description: "UK Service Manual, Map and understand a user's whole problem",
+    accessibility: "public",
+  },
+  "uk-technology-code-of-practice": {
+    url: "https://www.gov.uk/guidance/the-technology-code-of-practice",
+    description: "UK Technology Code of Practice",
+    accessibility: "public",
+  },
+  "uk-share-and-reuse-technology": {
+    url: "https://www.gov.uk/guidance/share-and-reuse-technology",
+    description: "UK guidance on sharing and reusing technology",
+    accessibility: "public",
+  },
+  "australia-digital-architecture-reuse": {
+    url: "https://architecture.digital.gov.au/standard/reuse",
+    description: "Australia Digital Architecture Standard — reuse",
     accessibility: "public",
   },
   "supply-manual-chapter-6": {

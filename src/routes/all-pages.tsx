@@ -21,7 +21,7 @@ function AllPagesRoute() {
   return (
     <GuideLayout id="all-pages">
       <AllPagesPage />
-      <PageFoot />
+      <PageFoot showSupportCallout={false} />
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>
   );

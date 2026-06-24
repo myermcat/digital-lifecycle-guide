@@ -71,17 +71,6 @@ export const OPTIONS_ANALYSIS = {
     ],
   },
 
-  whereToLook: {
-    id: "where-to-look",
-    title: "Where to look",
-    intro:
-      "Before you commit to a buy, check whether something already exists elsewhere in government.",
-    contentTodo: {
-      title: "Links pending (John Currah's team and Jessica Lahoud)",
-      items: ["Enterprise architecture repository", "Enterprise solutions catalog"],
-    },
-  },
-
   howToWeigh: {
     id: "how-to-weigh-them",
     title: "How to weigh them",
@@ -142,7 +131,28 @@ export const OPTIONS_ANALYSIS = {
   homework: {
     id: "do-the-homework-first",
     title: "Do the homework first",
-    body: "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules, the UK and Australia among them. Borrowing a worked answer beats starting from a blank page.",
+    paragraphs: [
+      {
+        text:
+          "You are almost never the first to face this. Before you commit, look at how other departments solved the same problem and what it cost them, and look at other jurisdictions with similar rules. Australia's reuse standard and the UK's Technology Code of Practice both make checking for reuse a step before you spend, and the UK's guidance on sharing and reusing technology points to the common platforms and components other departments already run. Borrowing a worked answer beats starting from a blank page.",
+        externalLinks: [
+          { phrase: "reuse standard", linkKey: "australia-digital-architecture-reuse" },
+          { phrase: "Technology Code of Practice", linkKey: "uk-technology-code-of-practice" },
+          {
+            phrase: "sharing and reusing technology",
+            linkKey: "uk-share-and-reuse-technology",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text:
+          "A good place to start is the Government of Canada's own shelf. The GC Reference Architectures repository holds approved starting designs for common kinds of system, including case management and grants and contributions, so a team builds from a proven pattern instead of a blank page. A draft enterprise solutions catalog lists what other teams already run. Both are on the Government of Canada network.",
+        externalLinks: [
+          { phrase: "GC Reference Architectures repository", linkKey: "gc-reference-architectures" },
+          { phrase: "enterprise solutions catalog", linkKey: "gc-enterprise-solutions-catalog" },
+        ] satisfies ExternalPhraseLink[],
+      },
+    ],
   },
 
   byPhase: {
@@ -189,6 +199,15 @@ export const OPTIONS_ANALYSIS = {
     {
       label: "Supporting reference",
       linkKey: "agile-procurement-guide" satisfies ExternalLinkKey,
+    },
+    {
+      label: "Supporting reference (GC network)",
+      linkKey: "gc-reference-architectures" satisfies ExternalLinkKey,
+    },
+    {
+      label: "Supporting reference (GC network)",
+      linkKey: "gc-enterprise-solutions-catalog" satisfies ExternalLinkKey,
+      note: "Draft catalog; URL may change.",
     },
     gccaseComingSoonSourceItem(),
   ] satisfies SourceItem[],
