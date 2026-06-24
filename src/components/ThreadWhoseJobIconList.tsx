@@ -15,7 +15,7 @@ import {
 import { guideProse } from "@/lib/guide-typography";
 
 const iconTileClassName =
-  "flex h-[4.25rem] w-[4.25rem] shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/[0.07] md:h-[4.75rem] md:w-[4.75rem]";
+  "flex h-16 w-16 shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/[0.07] md:h-[4.25rem] md:w-[4.25rem]";
 
 /** Map a whose-job role label to its lucide icon. */
 export function whoseJobIconForRole(role: string): LucideIcon {
@@ -53,7 +53,7 @@ export function ThreadWhoseJobIconList({ intro, roles, closing }: ThreadWhoseJob
           return (
             <li key={role.role} className="flex items-center gap-4 md:gap-5">
               <span className={iconTileClassName} aria-hidden>
-                <Icon className="size-9 text-primary/55 md:size-10" strokeWidth={1.75} />
+                <Icon className="size-8 text-primary/55 md:size-9" strokeWidth={1.75} />
               </span>
               <span className="min-w-0 flex-1">
                 <span className="font-semibold text-foreground/90">{role.role}</span>{" "}

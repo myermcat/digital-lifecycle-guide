@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
-import { EditorialNote } from "@/components/EditorialNote";
 import { GuideCallout } from "@/components/GuideCallout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -42,15 +41,6 @@ function Index() {
           </h1>
           <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>
-
-        <EditorialNote
-          label="Who this is for"
-          className="w-full -mt-6 mb-10 md:mb-12"
-        >
-          This guide is written for the business owner of an application as its main reader.
-          Each page is about the decisions that belong to you, and where to send your team for
-          the how-to.
-        </EditorialNote>
 
         <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
