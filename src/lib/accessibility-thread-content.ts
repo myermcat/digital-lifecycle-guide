@@ -1,6 +1,8 @@
+import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
+import { THREADS } from "@/lib/guide-strings";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import {
   threadLeadPlainText,
@@ -35,6 +37,14 @@ export const ACCESSIBILITY_THREAD = {
     ] satisfies ExternalPhraseLink[],
   } satisfies ThreadLinkedProse,
 
+  userResearchOverlap: {
+    text:
+      "Accessibility overlaps with user research, especially the testing with real people. This page covers the accessibility side; researching and testing with users in general lives in user research.",
+    internalLinks: [
+      { phrase: "user research", to: THREADS["user-research"].path },
+    ] satisfies InternalPhraseLink[],
+  } satisfies ThreadLinkedProse,
+
   whatGoodLooksLike: [
     { text: "Accessibility is designed in from the start, not retrofitted before launch." },
     {
@@ -48,21 +58,38 @@ export const ACCESSIBILITY_THREAD = {
       text: "Digital documents and any mobile app meet the standard too, not only the website.",
     },
     {
-      text: "Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report.",
+      text: "Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is.",
       internalLinks: [
         { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
       ] satisfies InternalPhraseLink[],
+      externalLinks: [
+        { phrase: "Accessibility Conformance Report", linkKey: "a11y-toolkit-procurement" },
+      ] satisfies ExternalPhraseLink[],
     },
     {
       text: "The service is tested with real people, including people who use assistive technology, not only with automated tools.",
+      internalLinks: [
+        { phrase: "tested with real people", to: THREADS["user-research"].path },
+      ] satisfies InternalPhraseLink[],
     },
     {
       text: "A published accessibility statement says what is and is not accessible, and how to get help or an alternative.",
+      externalLinks: [
+        {
+          phrase: "accessibility statement",
+          linkKey: "accessible-canada-regulations-digital-technologies",
+        },
+      ] satisfies ExternalPhraseLink[],
     },
     {
       text: "People who cannot use the service on their own can still get it done, by phone, in person, or with support.",
     },
-    { text: "Staff who build, maintain, or buy digital technology have accessibility training." },
+    {
+      text: "Staff who build, maintain, or buy digital technology have accessibility training.",
+      externalLinks: [
+        { phrase: "accessibility training", linkKey: "digital-accessibility-toolkit" },
+      ] satisfies ExternalPhraseLink[],
+    },
   ] satisfies AccessibilityLinkedProse[],
 
   whyItMatters: {
@@ -137,7 +164,7 @@ export const ACCESSIBILITY_THREAD = {
         sections: [
           {
             text:
-              "Most services run on technology the team buys rather than builds, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage.",
+              "Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage.",
             bold: [{ phrase: "Accessibility Conformance Report" }],
             externalLinks: [
               { phrase: "Digital Accessibility Toolkit", linkKey: "a11y-toolkit-procurement" },
@@ -157,10 +184,43 @@ export const ACCESSIBILITY_THREAD = {
             externalLinks: [
               { phrase: "Digital Accessibility Toolkit", linkKey: "a11y-toolkit-test-products" },
             ] satisfies ExternalPhraseLink[],
+            internalLinks: [
+              {
+                phrase: "testing with people who have disabilities",
+                to: THREADS["user-research"].path,
+              },
+            ] satisfies InternalPhraseLink[],
           },
         ],
       },
     ] satisfies AccessibilityCloserLookBlock[],
+  },
+
+  twoWaysComparison: {
+    id: "two-ways",
+    title: "Two ways to do accessibility",
+    risky: {
+      heading: "Vell",
+      framing: "Meet Vell. They treated accessibility as a final check on the grant portal:",
+      items: [
+        "bolted it on at the end, with one automated scan the week before launch, on the website only, not the PDF decision letters or the mobile app",
+        "never tested with a real person",
+      ],
+      closing:
+        "The result: at launch, an applicant using a screen reader could not finish the form because the fields had no labels, and the decision letters could not be read aloud. The fixes came late, rushed, and expensive, and people were locked out in the meantime.",
+    } satisfies CaseStudySide,
+    safe: {
+      heading: "Pax",
+      framing: "Meet Pax. They built accessibility into the grant portal from the first sketch:",
+      items: [
+        "designed for keyboard and screen-reader use, with EN 301 549 (WCAG 2.1 AA) as the bar",
+        "required an Accessibility Conformance Report from the supplier of the case-management tool, and checked it",
+        "tested with real people, including someone using a screen reader and someone navigating by keyboard, and fixed what they found before launch",
+        "published an accessibility statement saying what works and how to get an alternative",
+      ],
+      closing:
+        "The result: the portal met the law, worked for everyone, and cost far less because the problems were caught early.",
+    } satisfies CaseStudySide,
   },
 
   byPhase: {
@@ -191,6 +251,12 @@ export const ACCESSIBILITY_THREAD = {
           {
             text:
               "Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current.",
+            internalLinks: [
+              {
+                phrase: "supported by phone or in person",
+                to: THREADS["joined-up-delivery"].path,
+              },
+            ] satisfies InternalPhraseLink[],
           },
         ],
       },

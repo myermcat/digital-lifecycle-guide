@@ -49,7 +49,11 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   "user-research": {
-    text: "For user research questions, the Canadian Digital Service user-centred design community can help. There is a team or community for almost every part of this guide.",
+    text: "For user research help, the Government of Canada's user-centred design and service-design community is the place to ask, and the Design with users guidance and the GC Feedback tool are practical starting points.",
+    externalLinks: [
+      { phrase: "Design with users", linkKey: "design-with-users" },
+      { phrase: "GC Feedback tool", linkKey: "gc-page-feedback" },
+    ],
   },
   "dependencies-and-standards": {
     text: "For dependencies and standards questions, the GC Open Source community and the GC Design System are good starting points. There is a team or community for almost every part of this guide.",

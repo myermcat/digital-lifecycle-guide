@@ -25,6 +25,10 @@ import {
   accessibilitySectionsPlainText,
 } from "../src/lib/accessibility-thread-content";
 import {
+  USER_RESEARCH_THREAD,
+  userResearchSectionsPlainText,
+} from "../src/lib/user-research-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -432,7 +436,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "whose-job",
       sectionHeading: "Whose job it is",
-      text: SECURITY_THREAD.whoseJob,
+      text: threadWhoseJobPlainText(SECURITY_THREAD.whoseJob),
     },
     {
       sectionId: SECURITY_THREAD.closerLook.id,
@@ -574,7 +578,11 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
-      text: concat(...DATA_STEWARDSHIP_THREAD.whatGoodLooksLike.map((item) => item.text)),
+      text: concat(
+        ...DATA_STEWARDSHIP_THREAD.whatGoodLooksLike.map((item) => item.text),
+        DATA_STEWARDSHIP_THREAD.retentionQuestionCallout.title,
+        DATA_STEWARDSHIP_THREAD.retentionQuestionCallout.body.text,
+      ),
     },
     {
       sectionId: "why-it-matters",
@@ -648,6 +656,11 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
 
   const sections = [
     {
+      sectionId: "user-research-overlap",
+      sectionHeading: "Accessibility and user research overlap",
+      text: ACCESSIBILITY_THREAD.userResearchOverlap.text,
+    },
+    {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
       text: concat(...ACCESSIBILITY_THREAD.whatGoodLooksLike.map((item) => item.text)),
@@ -669,6 +682,18 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
         ...ACCESSIBILITY_THREAD.closerLook.blocks.map((block) =>
           concat(block.title, accessibilitySectionsPlainText(block.sections)),
         ),
+      ),
+    },
+    {
+      sectionId: ACCESSIBILITY_THREAD.twoWaysComparison.id,
+      sectionHeading: ACCESSIBILITY_THREAD.twoWaysComparison.title,
+      text: concat(
+        ACCESSIBILITY_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(ACCESSIBILITY_THREAD.twoWaysComparison.risky.items ?? []),
+        ACCESSIBILITY_THREAD.twoWaysComparison.risky.closing ?? "",
+        ACCESSIBILITY_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(ACCESSIBILITY_THREAD.twoWaysComparison.safe.items ?? []),
+        ACCESSIBILITY_THREAD.twoWaysComparison.safe.closing ?? "",
       ),
     },
     {
@@ -700,6 +725,94 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: accessibilityKeywords,
+    });
+  }
+}
+
+// User research thread — section-level records.
+{
+  const pageTitle = USER_RESEARCH_THREAD.title;
+  const pagePath = THREADS["user-research"].path;
+
+  const userResearchKeywords = "usability testing design with users UX research";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(USER_RESEARCH_THREAD.lead),
+    keywords: userResearchKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...USER_RESEARCH_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: USER_RESEARCH_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(USER_RESEARCH_THREAD.whoseJob),
+    },
+    {
+      sectionId: USER_RESEARCH_THREAD.closerLook.id,
+      sectionHeading: USER_RESEARCH_THREAD.closerLook.title,
+      text: concat(
+        ...USER_RESEARCH_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, userResearchSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: USER_RESEARCH_THREAD.twoWaysComparison.id,
+      sectionHeading: USER_RESEARCH_THREAD.twoWaysComparison.title,
+      text: concat(
+        USER_RESEARCH_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(USER_RESEARCH_THREAD.twoWaysComparison.risky.items ?? []),
+        USER_RESEARCH_THREAD.twoWaysComparison.risky.closing ?? "",
+        USER_RESEARCH_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(USER_RESEARCH_THREAD.twoWaysComparison.safe.items ?? []),
+        USER_RESEARCH_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: USER_RESEARCH_THREAD.byPhase.id,
+      sectionHeading: USER_RESEARCH_THREAD.byPhase.title,
+      text: concat(
+        USER_RESEARCH_THREAD.byPhase.intro,
+        ...USER_RESEARCH_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${userResearchSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: USER_RESEARCH_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: userResearchKeywords,
     });
   }
 }

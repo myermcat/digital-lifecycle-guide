@@ -239,7 +239,7 @@ export const PROCUREMENT_STRINGS = {
       ],
     } satisfies CaseStudySide,
     safer: {
-      heading: "The safer way",
+      heading: "The safe way",
       framing:
         "Break the programme into smaller, tightly scoped contracts that build on each other, often across several suppliers. This is the agile default.",
       good: [

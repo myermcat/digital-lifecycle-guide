@@ -18,7 +18,7 @@ import {
   type SecurityLinkedProse,
 } from "@/lib/security-thread-content";
 import { SECURITY_CORE_STRIP } from "@/lib/thread-core-strip";
-import { renderThreadLead } from "@/lib/thread-rich-content";
+import { renderThreadLead, renderThreadWhoseJob } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
   guidePageTitle,
@@ -108,7 +108,7 @@ export function SecurityThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
-        <p className={guideProse}>{whoseJob}</p>
+        {renderThreadWhoseJob(whoseJob)}
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={closerLook.id}>

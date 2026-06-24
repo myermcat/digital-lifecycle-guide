@@ -60,6 +60,66 @@ export const EXTERNAL_LINKS = {
     description: "Government of Canada Digital Standards",
     accessibility: "public",
   },
+  "design-with-users": {
+    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/design-with-users.html",
+    description: 'GC Digital Standards, "Design with users" (TBS)',
+    accessibility: "public",
+  },
+  "guideline-service-digital": {
+    url: "https://www.canada.ca/en/government/system/digital-government/guideline-service-digital.html",
+    description: "Guideline on Service and Digital (TBS)",
+    accessibility: "public",
+  },
+  "gc-page-feedback": {
+    url: "https://design.canada.ca/feedback/index.html",
+    description: "Canada.ca GC Feedback / Page Feedback Tool (ESDC)",
+    accessibility: "public",
+  },
+  "nng-usability-testing-101": {
+    url: "https://www.nngroup.com/articles/usability-testing-101/",
+    description: "Nielsen Norman Group, Usability Testing 101",
+    accessibility: "public",
+  },
+  "nng-ux-research-methods": {
+    url: "https://www.nngroup.com/articles/which-ux-research-methods/",
+    description: "Nielsen Norman Group, Which UX research methods to use when",
+    accessibility: "public",
+  },
+  "ontario-user-research-guide": {
+    url: "https://www.ontario.ca/page/user-research-guide",
+    description: "Ontario User Research Guide (Ontario Digital Service, CC-BY)",
+    accessibility: "public",
+  },
+  "ontario-service-design-playbook": {
+    url: "https://www.ontario.ca/page/service-design-playbook",
+    description: "Ontario Service Design Playbook (ODS, CC-BY)",
+    accessibility: "public",
+  },
+  "cds-build-first-users-first": {
+    url: "https://digital.canada.ca/2018/11/29/from-build-first-to-users-first/",
+    description: "Canadian Digital Service, From build first to users first",
+    accessibility: "public",
+  },
+  "18f-derisking": {
+    url: "https://guides.18f.gov/derisking/",
+    description: "18F, De-risking Government Technology",
+    accessibility: "public",
+  },
+  "18f-accessibility-in-research": {
+    url: "https://guides.18f.gov/ux-guide/research/accessibility/",
+    description: "18F, Accessibility in research",
+    accessibility: "public",
+  },
+  "australia-dta-understand-user-needs": {
+    url: "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/1-understand-user-needs",
+    description: "DTA (Australia), Digital Service Standard, Criterion 1: Understand user needs",
+    accessibility: "public",
+  },
+  "uk-service-manual-user-research": {
+    url: "https://www.gov.uk/service-manual/user-research",
+    description: "UK Service Manual, User research",
+    accessibility: "public",
+  },
   "uk-home-office-service-design": {
     url: "https://hodigital.blog.gov.uk/2016/04/27/service-design-at-the-home-office/",
     description:

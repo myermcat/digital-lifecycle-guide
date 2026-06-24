@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, PersonStanding, UserRound, type LucideIcon } from "lucide-react";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   guideBlockTitle,
@@ -19,6 +19,8 @@ export interface CaseStudySide {
   /** Legacy bullet list. */
   items?: string[];
   framing?: string;
+  /** Closing line after bullets (e.g. "The result: …"). */
+  closing?: string;
   good?: CaseStudyTradeoff[];
   bad?: CaseStudyTradeoff[];
 }
@@ -163,7 +165,16 @@ function TradeoffPanel({
   );
 }
 
+function characterIconForHeading(heading: string): LucideIcon | null {
+  if (heading === "Vell") return UserRound;
+  if (heading === "Pax") return PersonStanding;
+  return null;
+}
+
 function LegacyPanel({ side, isRisky }: { side: CaseStudySide; isRisky: boolean }) {
+  const CharacterIcon = characterIconForHeading(side.heading);
+  const headingColor = isRisky ? "text-destructive/90" : "text-primary";
+
   return (
     <div
       className={`rounded-md border px-4 py-4 md:px-5 md:py-5 ${
@@ -172,18 +183,23 @@ function LegacyPanel({ side, isRisky }: { side: CaseStudySide; isRisky: boolean 
           : "border-primary/25 bg-primary/5"
       }`}
     >
-      <p
-        className={`font-serif text-sm font-semibold tracking-tight mb-2 ${
-          isRisky ? "text-destructive/90" : "text-primary"
-        }`}
-      >
-        {side.heading}
-      </p>
-      <ul className={`${guideProseTight} space-y-1.5 list-disc ${guideListIndent}`}>
-        {side.items?.map((item, i) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
+      <div className={`flex items-center gap-2 mb-2 ${headingColor}`}>
+        {CharacterIcon ? (
+          <CharacterIcon className="h-4 w-4 shrink-0" strokeWidth={1.75} aria-hidden />
+        ) : null}
+        <p className={`font-serif text-sm font-semibold tracking-tight ${headingColor}`}>
+          {side.heading}
+        </p>
+      </div>
+      {side.framing ? <p className={`${guideProseTight} mb-3`}>{side.framing}</p> : null}
+      {side.items && side.items.length > 0 ? (
+        <ul className={`${guideProseTight} space-y-1.5 list-disc ${guideListIndent}`}>
+          {side.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
+      {side.closing ? <p className={`${guideProseTight} mt-3`}>{side.closing}</p> : null}
     </div>
   );
 }
@@ -196,7 +212,7 @@ export function CaseStudyBlock({
   actual,
   alternative,
   actualLabel = "The risky way",
-  alternativeLabel = "The safer way",
+  alternativeLabel = "The safe way",
   className,
 }: CaseStudyBlockProps) {
   const [view, setView] = useState<"actual" | "alternative">("alternative");

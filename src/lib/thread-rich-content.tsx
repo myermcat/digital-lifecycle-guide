@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { BoldPhrase, ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import { InlineArrowLeadList } from "@/lib/guide-lists";
+import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
 import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
 
 /** Body enumerations with fewer than four items stay inline prose; four or more become a list. */
@@ -52,6 +52,7 @@ export type ThreadRoleBullet = ThreadLinkedProse & {
 export type ThreadWhoseJobSection = {
   intro: string;
   roles: readonly ThreadRoleBullet[];
+  closing?: ThreadLinkedProse | string;
 };
 
 function orderedListItemPlainText(item: ThreadOrderedListItem): string {
@@ -98,8 +99,11 @@ export function threadLeadPlainText(lead: ThreadLead): string {
     .join(" ");
 }
 
-export function threadWhoseJobPlainText({ intro, roles }: ThreadWhoseJobSection): string {
-  return [intro, ...roles.map((role) => `${role.role} ${role.text}`)].join(" ");
+export function threadWhoseJobPlainText({ intro, roles, closing }: ThreadWhoseJobSection): string {
+  const closingText = typeof closing === "string" ? closing : closing?.text;
+  return [intro, ...roles.map((role) => `${role.role} ${role.text}`), closingText]
+    .filter((part): part is string => Boolean(part))
+    .join(" ");
 }
 
 export function threadSectionsPlainText(sections: readonly ThreadContentSection[]): string {
@@ -166,24 +170,8 @@ export function renderThreadLead(lead: ThreadLead): ReactNode {
   );
 }
 
-export function renderThreadWhoseJob({ intro, roles }: ThreadWhoseJobSection): ReactNode {
-  return (
-    <div className={guideProse}>
-      <p>{intro}</p>
-      <InlineArrowLeadList
-        className="mt-3"
-        items={roles.map((role) => ({
-          lead: role.role,
-          body: renderLinkedProse({
-            text: role.text,
-            externalLinks: role.externalLinks,
-            internalLinks: role.internalLinks,
-            bold: role.bold,
-          }),
-        }))}
-      />
-    </div>
-  );
+export function renderThreadWhoseJob(section: ThreadWhoseJobSection): ReactNode {
+  return <ThreadWhoseJobIconList {...section} />;
 }
 
 export function renderThreadSections(sections: readonly ThreadContentSection[]): ReactNode {

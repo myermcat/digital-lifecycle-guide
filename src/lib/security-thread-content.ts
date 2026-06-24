@@ -85,8 +85,29 @@ export const SECURITY_THREAD = {
     ] satisfies PlaceholderGcNetworkPhraseLink[],
   },
 
-  whoseJob:
-    "Security is shared across the team, with each role holding a different part. Developers write secure code and fix what the scans find. Security specialists decide which threats to defend against and review the design. Operations run and monitor the service once it is live. The business owner of the application makes sure security is planned and paid for from the start, approves the service for release, and accepts the risk that comes with it. The day-to-day work belongs to the team. The sign-off, the formal approval that lets a service go live, belongs to the business owner.",
+  whoseJob: {
+    intro: "Security is shared across the team, with each role holding a different part:",
+    roles: [
+      {
+        role: "Developers",
+        text: "write secure code and fix what the scans find.",
+      },
+      {
+        role: "Security specialists",
+        text: "decide which threats to defend against and review the design.",
+      },
+      {
+        role: "Operations",
+        text: "run and monitor the service once it is live.",
+      },
+      {
+        role: "The business owner",
+        text: "of the application makes sure security is planned and paid for from the start, approves the service for release, and accepts the risk that comes with it.",
+      },
+    ],
+    closing:
+      "The day-to-day work belongs to the team. The sign-off, the formal approval that lets a service go live, belongs to the business owner.",
+  },
 
   closerLook: {
     id: "a-closer-look",

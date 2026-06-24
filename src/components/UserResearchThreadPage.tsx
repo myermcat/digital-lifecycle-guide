@@ -6,15 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
-import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
-import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
-import { ACCESSIBILITY_CORE_STRIP } from "@/lib/thread-core-strip";
+import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
+import { USER_RESEARCH_CORE_STRIP } from "@/lib/thread-core-strip";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -37,11 +36,10 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
-export function AccessibilityThreadPage() {
+export function UserResearchThreadPage() {
   const {
     title,
     lead,
-    userResearchOverlap,
     whatGoodLooksLike,
     whyItMatters,
     whoseJob,
@@ -50,7 +48,7 @@ export function AccessibilityThreadPage() {
     byPhase,
     furtherReading,
     sources,
-  } = ACCESSIBILITY_THREAD;
+  } = USER_RESEARCH_THREAD;
 
   const phaseCards = byPhase.blocks.map((block) => ({
     id: block.title,
@@ -60,7 +58,7 @@ export function AccessibilityThreadPage() {
   }));
 
   return (
-    <GuideLayout id={`thread-${ACCESSIBILITY_THREAD.slug}`}>
+    <GuideLayout id={`thread-${USER_RESEARCH_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
         <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
@@ -77,11 +75,7 @@ export function AccessibilityThreadPage() {
 
       <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
 
-      <ThreadCoreStrip content={ACCESSIBILITY_CORE_STRIP} />
-
-      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24">
-        {renderLinkedProse(userResearchOverlap)}
-      </EditorialNote>
+      <ThreadCoreStrip content={USER_RESEARCH_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
@@ -137,12 +131,16 @@ export function AccessibilityThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{byPhase.title}</h2>
-        <p className={`${guideProse} mb-5`}>{byPhase.intro}</p>
+        <blockquote
+          className={`${guideProse} mb-5 border-l-2 border-primary/25 pl-3 text-foreground/80`}
+        >
+          {byPhase.intro}
+        </blockquote>
         <PhasePreviewPopupCards cards={phaseCards} />
       </section>
 
       <PageFoot
-        support="accessibility"
+        support="user-research"
         furtherReading={renderLinkedProse(furtherReading)}
         sources={sources}
       />

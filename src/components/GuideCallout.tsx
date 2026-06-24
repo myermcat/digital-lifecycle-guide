@@ -40,7 +40,7 @@ export function GuideCallout({
       {title ? (
         <p className={cn(titleClass, label ? "mt-2" : undefined)}>{title}</p>
       ) : null}
-      <div className={cn(bodyClass, label || title ? "mt-1" : undefined)}>{children}</div>
+      <div className={cn(bodyClass, label || title ? "mt-2" : undefined)}>{children}</div>
     </aside>
   );
 }

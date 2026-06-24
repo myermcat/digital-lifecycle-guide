@@ -38,6 +38,16 @@ export const ACCESSIBILITY_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const USER_RESEARCH_CORE_STRIP = {
+  heading: "THE CORE OF USER RESEARCH",
+  tiles: [
+    { label: "Understand needs", gloss: "before you build" },
+    { label: "Test with real people", gloss: "not just at the end" },
+    { label: "Include everyone", gloss: "a diverse sample" },
+    { label: "Keep listening", gloss: "after launch too" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 export const DATA_STEWARDSHIP_CORE_STRIP = {
   heading: "THE CORE OF DATA STEWARDSHIP",
   tiles: [

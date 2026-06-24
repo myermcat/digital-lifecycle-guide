@@ -1,6 +1,7 @@
 import { createFileRoute, redirect, notFound } from "@tanstack/react-router";
 import { CrossCuttingThreadPage } from "@/components/CrossCuttingThreadPage";
 import { AccessibilityThreadPage } from "@/components/AccessibilityThreadPage";
+import { UserResearchThreadPage } from "@/components/UserResearchThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -11,6 +12,7 @@ import { SECURITY_THREAD } from "@/lib/security-thread-content";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
 import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
 import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
+import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -60,6 +62,15 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "user-research") {
+      return {
+        meta: [
+          { title: `${USER_RESEARCH_THREAD.title} — The Digital Lifecycle Guide` },
+          { name: "description", content: threadLeadPlainText(USER_RESEARCH_THREAD.lead) },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -101,6 +112,10 @@ function ThreadRoutePage() {
 
   if (slug === "accessibility") {
     return <AccessibilityThreadPage />;
+  }
+
+  if (slug === "user-research") {
+    return <UserResearchThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

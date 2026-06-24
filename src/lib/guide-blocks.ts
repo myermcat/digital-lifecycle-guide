@@ -33,8 +33,8 @@ export const CALLOUT_BLOCK = {
   purpose:
     "In-page orientation and practical tips: tests, scope notes, how to tell something. Not for audience framing.",
   visual:
-    "Primary-tint fill (bg-primary/[0.04]). Thick left bar in primary red (border-l-primary). Heading: tiny uppercase primary sans (guideCalloutTitle) or muted label for short tags like Scope. Body in serif (guideProse) or tight sans when compact.",
-  examples: ['Home — "Not sure which phase you are in?"', "Procurement — Scope"],
+    "Primary-tint fill (bg-primary/[0.04]). Thick left bar in primary red (border-l-primary). Heading: tiny uppercase primary sans (guideCalloutTitle) in the title prop, or muted label for short tags like Scope. Body in serif (guideProse) or tight sans when compact — always separate from the title.",
+  examples: ['Home — "Not sure which phase you are in?"', "Procurement — Scope", "Data stewardship — retention question"],
 } as const;
 
 /** Support callout — help pointer before Further reading on every page. */

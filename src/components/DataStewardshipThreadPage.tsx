@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { GuideCallout } from "@/components/GuideCallout";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
@@ -40,6 +41,7 @@ export function DataStewardshipThreadPage() {
     title,
     lead,
     whatGoodLooksLike,
+    retentionQuestionCallout,
     whyItMatters,
     whoseJob,
     closerLook,
@@ -86,6 +88,13 @@ export function DataStewardshipThreadPage() {
           ))}
         </ul>
       </section>
+
+      <GuideCallout
+        title={retentionQuestionCallout.title}
+        className="mt-10 md:mt-12 scroll-mt-24"
+      >
+        {renderLinkedProse(retentionQuestionCallout.body)}
+      </GuideCallout>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>

@@ -143,7 +143,8 @@
     "sectionId": "",
     "sectionHeading": "User research",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "User research means learning what the people who will use a service actually need, by studying and testing with them, instead of guessing. The Government of Canada puts this first among its digital standards: research with users to understand their needs, and test with them to guide what gets built. A service built on what a few people assume users want is the most common way services fail. The decisions about who to learn from and what to find out are made early and repeated as the service changes. The business owner answers for them; the team does the work.",
+    "keywords": "usability testing design with users UX research"
   },
   {
     "id": "/thread/security",
@@ -326,7 +327,7 @@
     "sectionId": "case-study",
     "sectionHeading": "The same programme, bought two ways",
     "lifecyclePhase": "thread",
-    "text": "The risky way Buy the whole programme as a single contract, awarded to a single supplier, delivered over years. This is how most government buying has been done. Simple to set up and run. One competition, one contract, one supplier, one relationship. For a small team with little procurement capacity, that simplicity is worth a lot. Accountability is in one place. When something goes wrong, there is a single supplier to answer for it and a single contract to hold them to. Less to coordinate. You are not stitching together the work of several suppliers or making sure the pieces fit at the seams. The risk all arrives at the end. You spend months, often years, before you see anything working, and only then learn whether it meets the need. By that point the money is largely spent. You get locked in. Once the supplier is deep in the build, moving away is slow and costly, so departments keep paying even when the work is going badly. Change is expensive. The contract is written around the original plan. When the need shifts, every adjustment becomes a negotiation. One failure can sink the whole programme. Everything rides on a single supplier and a single delivery, so a single bad call puts all of it at risk. The safer way Break the programme into smaller, tightly scoped contracts that build on each other, often across several suppliers. This is the agile default. Value shows up early. Each piece delivers something usable in weeks or months, so the service starts helping people sooner and you learn from real use as you go. You can course-correct. A weak supplier or a wrong turn costs you one small piece you can replace, rather than the whole programme. Change is cheaper. The next piece absorbs the new need, so the work bends with reality. Risk is spread. No single delivery or supplier can take the whole thing down. More suppliers can compete. Smaller pieces let smaller and more specialised firms bid, which widens the field and can lower cost. More coordination falls on you. Several contracts and suppliers mean more relationships to manage and more seams to keep aligned. Keeping pieces small takes discipline. A \"small\" piece drifts back into a monolith if no one holds the line. It needs more procurement attention up front. Designing the pieces and how they fit is real work, and in-house capacity for it is often thin. Integration becomes your problem. When different suppliers build different parts, making them work together lands on your side."
+    "text": "The risky way Buy the whole programme as a single contract, awarded to a single supplier, delivered over years. This is how most government buying has been done. Simple to set up and run. One competition, one contract, one supplier, one relationship. For a small team with little procurement capacity, that simplicity is worth a lot. Accountability is in one place. When something goes wrong, there is a single supplier to answer for it and a single contract to hold them to. Less to coordinate. You are not stitching together the work of several suppliers or making sure the pieces fit at the seams. The risk all arrives at the end. You spend months, often years, before you see anything working, and only then learn whether it meets the need. By that point the money is largely spent. You get locked in. Once the supplier is deep in the build, moving away is slow and costly, so departments keep paying even when the work is going badly. Change is expensive. The contract is written around the original plan. When the need shifts, every adjustment becomes a negotiation. One failure can sink the whole programme. Everything rides on a single supplier and a single delivery, so a single bad call puts all of it at risk. The safe way Break the programme into smaller, tightly scoped contracts that build on each other, often across several suppliers. This is the agile default. Value shows up early. Each piece delivers something usable in weeks or months, so the service starts helping people sooner and you learn from real use as you go. You can course-correct. A weak supplier or a wrong turn costs you one small piece you can replace, rather than the whole programme. Change is cheaper. The next piece absorbs the new need, so the work bends with reality. Risk is spread. No single delivery or supplier can take the whole thing down. More suppliers can compete. Smaller pieces let smaller and more specialised firms bid, which widens the field and can lower cost. More coordination falls on you. Several contracts and suppliers mean more relationships to manage and more seams to keep aligned. Keeping pieces small takes discipline. A \"small\" piece drifts back into a monolith if no one holds the line. It needs more procurement attention up front. Designing the pieces and how they fit is real work, and in-house capacity for it is often thin. Integration becomes your problem. When different suppliers build different parts, making them work together lands on your side."
   },
   {
     "id": "/thread/procurement#what-good-looks-like",
@@ -733,7 +734,7 @@
     "sectionId": "whose-job",
     "sectionHeading": "Whose job it is",
     "lifecyclePhase": "thread",
-    "text": "Security is shared across the team, with each role holding a different part. Developers write secure code and fix what the scans find. Security specialists decide which threats to defend against and review the design. Operations run and monitor the service once it is live. The business owner of the application makes sure security is planned and paid for from the start, approves the service for release, and accepts the risk that comes with it. The day-to-day work belongs to the team. The sign-off, the formal approval that lets a service go live, belongs to the business owner.",
+    "text": "Security is shared across the team, with each role holding a different part: Developers write secure code and fix what the scans find. Security specialists decide which threats to defend against and review the design. Operations run and monitor the service once it is live. The business owner of the application makes sure security is planned and paid for from the start, approves the service for release, and accepts the risk that comes with it. The day-to-day work belongs to the team. The sign-off, the formal approval that lets a service go live, belongs to the business owner.",
     "keywords": "cybersecurity"
   },
   {
@@ -853,7 +854,7 @@
     "sectionId": "what-good-looks-like",
     "sectionHeading": "What good looks like",
     "lifecyclePhase": "thread",
-    "text": "One person is accountable for the data the service holds, and the rules for managing it are written down. The data is fit for its purpose: accurate, complete, and current enough for the decisions it supports. Only the data the service needs is collected, and it is kept only as long as it is needed. Every retention period has three parts: a length, a trigger that starts the clock, and a reason. Nothing is destroyed without the disposition authority that covers it. Personal information follows the extra rules that protect it. When the service moves to a new system, the data is cleaned first, moved with its meaning intact, and checked before the old system is switched off. Data is open by default where it can be, and protected where it must be.",
+    "text": "One person is accountable for the data the service holds, and the rules for managing it are written down. The data is fit for its purpose: accurate, complete, and current enough for the decisions it supports. Only the data the service needs is collected, and it is kept only as long as it is needed. Every retention period has three parts: a length, a trigger that starts the clock, and a reason. Nothing is destroyed without the disposition authority that covers it. Personal information follows the extra rules that protect it. When the service moves to a new system, the data is cleaned first, moved with its meaning intact, and checked before the old system is switched off. Data is open by default where it can be, and protected where it must be. Common question: how long do I keep data? There is no single number. Each kind of record has its own retention period. Library and Archives Canada's Generic Valuation Tools give the standard starting periods by activity, and your department's retention schedule sets the specifics. Once you have the period, record it as a length, a trigger that starts the clock, and a reason, then dispose on schedule.",
     "keywords": "retention disposition data quality"
   },
   {
@@ -917,13 +918,23 @@
     "keywords": "retention disposition data quality"
   },
   {
+    "id": "/thread/accessibility#user-research-overlap",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "user-research-overlap",
+    "sectionHeading": "Accessibility and user research overlap",
+    "lifecyclePhase": "thread",
+    "text": "Accessibility overlaps with user research, especially the testing with real people. This page covers the accessibility side; researching and testing with users in general lives in user research.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
     "id": "/thread/accessibility#what-good-looks-like",
     "pageTitle": "Accessibility",
     "pagePath": "/thread/accessibility",
     "sectionId": "what-good-looks-like",
     "sectionHeading": "What good looks like",
     "lifecyclePhase": "thread",
-    "text": "Accessibility is designed in from the start, not retrofitted before launch. The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA. Digital documents and any mobile app meet the standard too, not only the website. Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report. The service is tested with real people, including people who use assistive technology, not only with automated tools. A published accessibility statement says what is and is not accessible, and how to get help or an alternative. People who cannot use the service on their own can still get it done, by phone, in person, or with support. Staff who build, maintain, or buy digital technology have accessibility training.",
+    "text": "Accessibility is designed in from the start, not retrofitted before launch. The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA. Digital documents and any mobile app meet the standard too, not only the website. Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is. The service is tested with real people, including people who use assistive technology, not only with automated tools. A published accessibility statement says what is and is not accessible, and how to get help or an alternative. People who cannot use the service on their own can still get it done, by phone, in person, or with support. Staff who build, maintain, or buy digital technology have accessibility training.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -953,7 +964,17 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "Build to the standard. The law points to one technical standard, CAN/ASC-EN 301 549, Canada's accessibility standard for information and communication technology. For a website, meeting it means meeting WCAG 2.1 Level AA, the international web content accessibility guidelines, which are organised around four ideas: Perceivable, people can see or hear the content Operable, it works by keyboard, not only a mouse Understandable, it reads clearly and behaves predictably Robust, it works with assistive technology such as screen readers The standard reaches past the website: digital documents like PDFs and Word files, and any mobile app, have to meet it too. WCAG has three levels, A, AA, and AAA; AA is the bar a government service builds to. Buy it accessible. Most services run on technology the team buys rather than builds, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage. Test with real people. Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use, so testing with people who have disabilities is part of the work.",
+    "text": "Build to the standard. The law points to one technical standard, CAN/ASC-EN 301 549, Canada's accessibility standard for information and communication technology. For a website, meeting it means meeting WCAG 2.1 Level AA, the international web content accessibility guidelines, which are organised around four ideas: Perceivable, people can see or hear the content Operable, it works by keyboard, not only a mouse Understandable, it reads clearly and behaves predictably Robust, it works with assistive technology such as screen readers The standard reaches past the website: digital documents like PDFs and Word files, and any mobile app, have to meet it too. WCAG has three levels, A, AA, and AAA; AA is the bar a government service builds to. Buy it accessible. Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage. Test with real people. Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use, so testing with people who have disabilities is part of the work.",
+    "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/accessibility#two-ways",
+    "pageTitle": "Accessibility",
+    "pagePath": "/thread/accessibility",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to do accessibility",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They treated accessibility as a final check on the grant portal: bolted it on at the end, with one automated scan the week before launch, on the website only, not the PDF decision letters or the mobile app never tested with a real person The result: at launch, an applicant using a screen reader could not finish the form because the fields had no labels, and the decision letters could not be read aloud. The fixes came late, rushed, and expensive, and people were locked out in the meantime. Meet Pax. They built accessibility into the grant portal from the first sketch: designed for keyboard and screen-reader use, with EN 301 549 (WCAG 2.1 AA) as the bar required an Accessibility Conformance Report from the supplier of the case-management tool, and checked it tested with real people, including someone using a screen reader and someone navigating by keyboard, and fixed what they found before launch published an accessibility statement saying what works and how to get an alternative The result: the portal met the law, worked for everyone, and cost far less because the problems were caught early.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -985,6 +1006,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
+  },
+  {
+    "id": "/thread/user-research#what-good-looks-like",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "Real users are studied before the design is set, so the service solves a need they actually have. The service is tested with real people throughout, including before launch and as it changes. The people researched reflect who actually uses the service, including people who use assistive technology and people who face barriers of language, literacy, or distance. Findings are shared with the team and acted on. Research runs across the whole life: discovery, build, testing, and after launch. After launch, client feedback and analytics keep showing what to improve. A \"stop\" is a valid result: if research shows the service is not needed, that counts as success. Research is planned and funded, with consent, privacy, and fair compensation for participants.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#why-it-matters",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "Most government software that fails, fails because it was built on what a few people assumed users wanted, not on what users actually need. Research is the cheapest way to avoid building the wrong thing, which is why it is framed as risk reduction for the people who fund and own services. It is also required: the Design with users standard sets the expectation, and the Directive on Service and Digital makes the designated official responsible for ensuring client feedback and user-experience testing are collected and used to improve the service. The usual causes of failure are ordinary: guessing at needs, testing too late, and hearing only from stakeholders.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#whose-job",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "User research is shared across the team, with each role holding a different part: User researchers and service designers plan and run the research and turn it into findings the team can act on. Designers and content authors turn those findings into the design and plain-language content. Developers build what is tested and iterate on what the research finds. The business owner of the application makes sure research is planned, funded, and acted on, and accepts a \"stop\" as a valid result.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#a-closer-look",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Research is more than testing. User research is the umbrella: understanding who your users are and what they need across the whole service. Usability testing, watching real people attempt real tasks with your design, is one method inside it, the one you reach for to find and fix problems in something you have built or prototyped. The field of methods is wide, and the simplest way to choose is by the question: qualitative methods (interviews, usability testing) answer \"why\", and quantitative methods (analytics, A/B testing) answer \"how many\". Use the one that fits the decision in front of you. Test with real people, and few are enough. You do not need a big study. Testing with about five users in a group surfaces most of the common problems, and a small round can run in a few days. Tests can be moderated (someone guides the session) or unmoderated (a tool runs it), in person or remote. The point is to watch real people, including people who use assistive technology, try real tasks, because a service can look right to the team and still defeat the person using it. Usability testing is the plainest place to start. Include everyone. Research is only as good as who is in it. Recruit a sample that reflects real users across disability, language, literacy, age, and distance, not just the easy-to-reach. Accommodations that help disabled participants take part, accessible materials, a tech check, flexible timing, tend to help everyone. Tie what you learn to people's needs and goals, not to any one person's disability. This is shared ground with accessibility, where building for everyone is the law.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#two-ways",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to do user research",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They built the grant portal on what the team assumed applicants wanted: talked only to a couple of managers, never to a real applicant tested the finished service once, the week before launch shared no findings, because there were none to share The result: applicants could not work out how to start a claim, the call centre was swamped in the first week, and the fixes meant rebuilding screens that were already live. Meet Pax. They researched the grant portal with the people who would use it: interviewed real applicants in discovery to learn what they actually needed tested prototypes with about five users each round, including someone using a screen reader, and fixed what they found shared findings with the team and kept a feedback channel open after launch The result: applicants could complete a claim on their own, calls dropped, and changes were small because the big problems were caught early.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#by-phase",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "by-phase",
+    "sectionHeading": "What User research looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "The research changes shape across the life of a service. Create. Learn what people need before you build. The most valuable research happens before much is built. The team works out who the users are, interviews and observes them to find the real need, and tests early prototypes with a handful of people each round. This is also where a \"stop\" can be the right answer: if the research shows the service is not needed, that is a result worth having before money is spent. The Design with users guidance walks through the Discover and Build stages. Live. Keep testing, and keep listening. Once the service is running, research does not stop. The team keeps testing as the service changes, and watches how people actually use it through client feedback and analytics, then improves in small steps. Acting on what comes back is the part that is required and the part most often skipped. Sunset. Research the move, or the ending. When a service is retired or replaced, research still helps. If it is replaced, the same understanding of user needs shapes the new service, and the move is tested with real people so no one is stranded. If it is retired, research tells you whether the need has truly gone and how people will do the task another way.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#further-reading",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Researching with users is the first of the Government of Canada's digital standards, and the Directive on Service and Digital makes collecting and acting on client feedback and user-experience testing a responsibility, not an option. For how to actually do it, Ontario's User Research Guide and Service Design Playbook are reusable Canadian references on what to plan, fund, and expect. For methods and testing, the Nielsen Norman Group's map of research methods and Usability Testing 101 are the plainest starts, 18F's De-risking Government Technology makes the case to funders, and the UK Service Manual's user research is the fullest how-to.",
+    "keywords": "usability testing design with users UX research"
+  },
+  {
+    "id": "/thread/user-research#sources",
+    "pageTitle": "User research",
+    "pagePath": "/thread/user-research",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "usability testing design with users UX research"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

@@ -58,6 +58,17 @@ export const DATA_STEWARDSHIP_THREAD = {
     },
   ] satisfies ThreadLinkedProse[],
 
+  retentionQuestionCallout: {
+    title: "Common question: how long do I keep data?",
+    body: {
+      text:
+        "There is no single number. Each kind of record has its own retention period. Library and Archives Canada's Generic Valuation Tools give the standard starting periods by activity, and your department's retention schedule sets the specifics. Once you have the period, record it as a length, a trigger that starts the clock, and a reason, then dispose on schedule.",
+      externalLinks: [
+        { phrase: "Generic Valuation Tools", linkKey: "lac-gvt-overview" },
+      ] satisfies ExternalPhraseLink[],
+    } satisfies ThreadLinkedProse,
+  },
+
   whyItMatters: {
     text:
       "Data is the part of a service that outlives the software. A team can replace the system and keep the records, so the records are worth more care than the code. When data quality slips, decisions get made on wrong information, and the error spreads to everyone downstream who trusts it. Holding data longer than allowed, or destroying it without authority, both break the rules: the Policy on Service and Digital and its directive require an institution to manage data quality, set retention periods, and run a documented disposition process, and under the Library and Archives of Canada Act no government record may be destroyed without the written consent of the Librarian and Archivist.",
