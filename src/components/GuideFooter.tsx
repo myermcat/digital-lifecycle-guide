@@ -62,6 +62,19 @@ export function GuideFooter() {
                   </Link>{" "}
                   for a team or mailbox that can help.
                 </p>
+                <p className="text-xs leading-relaxed text-muted-foreground/60 mt-3">
+                  This guide is a work in progress. Spotted something off, or have
+                  feedback?{" "}
+                  <a
+                    href="https://github.com/myermcat/digital-lifecycle-guide/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground/75 hover:text-muted-foreground underline underline-offset-4 transition-colors"
+                  >
+                    Open an issue on GitHub
+                  </a>
+                  .
+                </p>
               </div>
             </FooterColumn>
           </div>

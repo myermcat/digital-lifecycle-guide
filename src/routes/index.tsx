@@ -3,6 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { PhaseCard } from "@/components/PhaseCard";
 import { SetupToggles } from "@/components/SetupToggles";
 import { GuideCallout } from "@/components/GuideCallout";
+import { EditorialNote } from "@/components/EditorialNote";
+import { ExternalLink } from "@/components/ExternalLink";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
@@ -41,6 +43,14 @@ function Index() {
           </h1>
           <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>
+
+        <EditorialNote className="mb-8 md:mb-10">
+          This is an early version, built in the open. We&apos;re looking for feedback,{" "}
+          <ExternalLink linkKey="github-issues">
+            tell us what&apos;s missing, wrong, or unclear
+          </ExternalLink>
+          .
+        </EditorialNote>
 
         <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">

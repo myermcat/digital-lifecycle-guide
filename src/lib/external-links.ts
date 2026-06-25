@@ -540,6 +540,57 @@ export const EXTERNAL_LINKS = {
     description: "EU AI Act, high-level summary",
     accessibility: "public",
   },
+  "iterate-improve-frequently": {
+    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/iterate-improve-frequently.html",
+    description: 'GC Digital Standards, "Iterate and improve frequently" (TBS)',
+    accessibility: "public",
+  },
+  "work-open-default": {
+    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/work-open-default.html",
+    description: 'GC Digital Standards, "Work in the open by default" (TBS)',
+    accessibility: "public",
+  },
+  "scrum-guide": {
+    url: "https://scrumguides.org/scrum-guide.html",
+    description: "The Scrum Guide (Schwaber & Sutherland, CC BY-SA)",
+    accessibility: "public",
+  },
+  "uk-service-manual-agile-delivery": {
+    url: "https://www.gov.uk/service-manual/agile-delivery",
+    description: "GOV.UK Service Manual, agile delivery",
+    accessibility: "public",
+  },
+  "uk-writing-user-stories": {
+    url: "https://www.gov.uk/service-manual/agile-delivery/writing-user-stories",
+    description: "GOV.UK Service Manual, writing user stories",
+    accessibility: "public",
+  },
+  "uk-deciding-on-priorities": {
+    url: "https://www.gov.uk/service-manual/agile-delivery/deciding-on-priorities",
+    description: "GOV.UK Service Manual, deciding on priorities",
+    accessibility: "public",
+  },
+  "robodebt-royal-commission-report": {
+    url: "https://robodebt.royalcommission.gov.au/publications/report",
+    description: "Robodebt Royal Commission report",
+    accessibility: "public",
+  },
+  "netherlands-childcare-fraud-algorithm-ap": {
+    url: "https://www.autoriteitpersoonsgegevens.nl/en/current/tax-administration-fined-for-discriminatory-and-unlawful-data-processing",
+    description:
+      "Dutch Data Protection Authority, tax administration fined for discriminatory algorithm",
+    accessibility: "public",
+  },
+  "github-issues": {
+    url: "https://github.com/myermcat/digital-lifecycle-guide/issues",
+    description: "GitHub issues for The Digital Lifecycle Guide",
+    accessibility: "public",
+  },
+  "nist-face-recognition-demographics-study": {
+    url: "https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software",
+    description: "NIST study on demographic effects in face-recognition software",
+    accessibility: "public",
+  },
   "gc-functional-communities-directory": {
     url: "https://wiki.gccollab.ca/GCOnboard/Functional_Communities",
     description: "GC Functional Communities directory",

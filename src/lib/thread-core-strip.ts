@@ -48,6 +48,16 @@ export const USER_RESEARCH_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const BACKLOG_CORE_STRIP = {
+  heading: "THE CORE OF A BACKLOG",
+  tiles: [
+    { label: "A prioritized list", gloss: "the work, ordered" },
+    { label: "Rooted in user needs", gloss: "every item" },
+    { label: "One owner", gloss: "orders it" },
+    { label: "Never finished", gloss: "refined as you go" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 export const ETHICS_AND_BIAS_CORE_STRIP = {
   heading: "THE CORE OF ETHICS AND BIAS",
   tiles: [

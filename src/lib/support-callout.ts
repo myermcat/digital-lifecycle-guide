@@ -12,6 +12,7 @@ export type SupportCalloutVariant =
   | "accessibility"
   | "user-research"
   | "ethics-and-bias"
+  | "backlog"
   | "dependencies-and-standards"
   | "data-stewardship";
 
@@ -79,6 +80,12 @@ export const SUPPORT_CALLOUT_BODIES = {
       { phrase: "GBA Plus", linkKey: "gba-plus" },
     ],
   },
+  backlog: {
+    text: "For help running an agile backlog, the Government of Canada's service-design and delivery community is the place to ask, and the standard to iterate and improve frequently is the expectation it supports.",
+    externalLinks: [
+      { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
+    ],
+  },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 
 const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>> = {
@@ -88,6 +95,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   accessibility: "accessibility",
   "user-research": "user-research",
   "ethics-and-bias": "ethics-and-bias",
+  backlog: "backlog",
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
 };

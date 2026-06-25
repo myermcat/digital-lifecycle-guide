@@ -211,7 +211,8 @@
     "sectionId": "",
     "sectionHeading": "Backlog",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "A backlog is the single, prioritized list of work for a service: the features, fixes, and improvements still to do, ordered so the most valuable work comes first. The Government of Canada's digital standards put it plainly: keep a backlog and use it to set priorities. Every item traces back to a real user need, one person orders the list, and it is never finished, it is refined as the service learns and changes. The business owner answers for what gets prioritized; the team does the work.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
     "id": "/thread/joined-up-delivery",
@@ -1015,7 +1016,7 @@
     "sectionId": "what-good-looks-like",
     "sectionHeading": "What good looks like",
     "lifecyclePhase": "thread",
-    "text": "Real users are studied before the design is set, so the service solves a need they actually have. The service is tested with real people throughout, including before launch and as it changes. The people researched reflect who actually uses the service, including people who use assistive technology and people who face barriers of language, literacy, or distance. Findings are shared with the team and acted on. Research runs across the whole life: discovery, build, testing, and after launch. After launch, client feedback and analytics keep showing what to improve. A \"stop\" is a valid result: if research shows the service is not needed, that counts as success. Research is planned and funded, with consent, privacy, and fair compensation for participants.",
+    "text": "Real users are studied before the design is set, so the service solves a need they actually have. The service is tested with real people throughout, including before launch and as it changes. The people researched reflect who actually uses the service, including people who use assistive technology and people who face barriers of language, literacy, or distance. Findings are shared with the team and turned into prioritized work. Research runs across the whole life: discovery, build, testing, and after launch. After launch, client feedback and analytics keep showing what to improve. A \"stop\" is a valid result: if research shows the service is not needed, that counts as success. Research is planned and funded, with consent, privacy, and fair compensation for participants.",
     "keywords": "usability testing design with users UX research"
   },
   {
@@ -1105,7 +1106,7 @@
     "sectionId": "why-it-matters",
     "sectionHeading": "Why it matters",
     "lifecyclePhase": "thread",
-    "text": "Automated decisions can deny a benefit, flag a person, or rank an application, and when the system is biased or unexplained, real people are harmed and the harm repeats at scale. Trust in the service, and the basic fairness owed in any government decision, are on the line. It is also a legal duty: the Directive on Automated Decision-Making makes the impact assessment, notice, explanation, bias testing, human oversight, and recourse mandatory for federal automated decisions, and GBA Plus is required in Treasury Board submissions. One trap worth naming: \"representative data\" does not fix everything, because systems still misjudge the people who sit far from the average, so testing and human judgment stay necessary.",
+    "text": "Automated decisions can deny a benefit, flag a person, or rank an application, and when the system is biased or unexplained, real people are harmed and the harm repeats at scale. Trust in the service, and the basic fairness owed in any government decision, are on the line. It is also a legal duty: the Directive on Automated Decision-Making makes the impact assessment, notice, explanation, bias testing, human oversight, and recourse mandatory for federal automated decisions, and GBA Plus is required in Treasury Board submissions. One trap worth naming: \"representative data\" does not fix everything, because systems still misjudge the people who sit far from the average, so testing and human judgment stay necessary. It has happened, at scale Automated decisions have gone badly wrong elsewhere. In Australia, the Robodebt scheme used a crude automated method to wrongly tell about 381,000 people they owed money they did not owe, around A$746 million of it, and it ended in a Royal Commission. In the Netherlands, a fraud-detection algorithm wrongly accused around 26,000 families of childcare-benefit fraud, treated dual nationality as a risk factor, and helped bring the government down. Canada has not had a failure on that scale, and the Directive on Automated Decision-Making and its impact assessment exist to keep it that way. Bias is also measurable: a NIST study found face-recognition systems misidentified Asian and Black faces 10 to 100 times more often than white faces.",
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
   },
   {
@@ -1135,7 +1136,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to automate a decision",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They added an AI model to auto-score grant applications and save staff time: trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus gave applicants no notice it was automated, and no way to appeal never tested the outputs across different groups The result: the model repeated old bias without anyone noticing, rejecting strong applicants from some regions, no one could explain why a given application was scored low, and there was no human to turn to. Meet Pax. They treated the auto-scoring as a decision about people: ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it kept the AI as a recommendation, with a person making the final call tested the outputs for bias across groups, before launch and as it ran told applicants a tool was used, gave a plain explanation, and offered an appeal to a human The result: decisions people could understand and challenge, less bias, and a system that holds up to scrutiny.",
+    "text": "Meet Vell. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time: trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus gave applicants no notice it was automated, and no way to appeal never tested the outputs across different groups The result: the model repeated old bias without anyone noticing, rejecting strong applicants from some regions, no one could explain why a given application was scored low, and there was no human to turn to. Meet Pax. They run a service that screens benefit applications and treated the auto-scoring as a decision about people: ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it kept the AI as a recommendation, with a person making the final call tested the outputs for bias across groups, before launch and as it ran told applicants a tool was used, gave a plain explanation, and offered an appeal to a human The result: decisions people could understand and challenge, less bias, and a system that holds up to scrutiny.",
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
   },
   {
@@ -1167,6 +1168,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
+  },
+  {
+    "id": "/thread/backlog#what-good-looks-like",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "There is one backlog, a single ordered list of the work still to do, not the same work scattered across inboxes and spreadsheets. One person, the product or service owner, is accountable for the order. Every item traces back to a real user need, usually written as a short user story. Priorities are set by impact on users, fit with goals, and effort, and are revisited regularly, not set once. The backlog holds more than new features: support work and technical debt compete for the same slots. A clear definition of done decides when an item is finished, and unfinished work goes back on the list rather than out to the public. The backlog is kept in the open, where the team and users can see and shape what is prioritized. It is never complete: it keeps being refined across the whole life of the service.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#why-it-matters",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "Without one prioritized list, the work gets driven by whoever asks loudest, and the important but undramatic things, the security fix, the accessibility gap, the thing users keep struggling with, never rise to the top. A good backlog is how a service keeps improving steadily after launch instead of stalling, which matters because the live years are the longest part of its life. The Government of Canada's standards ask teams to iterate and improve frequently and to be open about what they prioritize.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#whose-job",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Running a backlog is shared across the team, with each role holding a different part: The product or service owner keeps the single list, orders it, and refines it; they decide what comes next. The team (designers, developers, researchers) breaks items down, estimates them, and delivers them. The business owner of the application makes sure there is a clear owner and that the priorities serve users and the service's goals.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#a-closer-look",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Write the work as user stories. The work in a backlog is usually written as short user stories, in a simple format that keeps the focus on the need rather than a spec: \"As a [type of user], I need [something], so that [reason].\" Each story carries acceptance criteria, a short \"it is done when…\" list that says when the work is finished. The GOV.UK guide to writing user stories and Ontario's Service Design Playbook both use this format. The needs themselves come from user research. Prioritize, and keep prioritizing. Order the list by impact on users, fit with the service's goals, and the effort it takes. A simple, common method is MoSCoW: must have, should have, could have, and will not have (for now). Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. And the backlog is not only new features: support requests and technical debt compete for the same slots. The GOV.UK guide to deciding on priorities walks through this. Keep it healthy. A backlog stays useful only if it is tended. Refinement is the ongoing work of breaking big items down and adding enough detail that the team can pick them up. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#two-ways",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to run a backlog",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They ran the permit renewal service off whatever came up: kept the work in scattered email threads, chat messages, and personal lists built whatever the loudest stakeholder asked for next, with no agreed priorities treated \"done\" as \"demoed in a meeting\" The result: half-finished features piled up, the accessibility and security fixes never reached the top, the team kept thrashing between requests, and no one could say what was coming next. Meet Pax. They ran the permit renewal service from one backlog: kept a single, ordered list, every item tied to a user need prioritized by impact and effort, using MoSCoW, and revisited the order each week set a clear definition of done, so unfinished work went back on the list, not out the door The result: steady, visible improvement, the important fixes got done, and everyone, including users, could see what was next.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#by-phase",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "by-phase",
+    "sectionHeading": "What the backlog looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "The backlog changes shape across the life of a service. Create. The backlog is born from research. The backlog starts in discovery as a prioritized list of user stories drawn from user research. As building begins, the team works the top items first, and the first release delivers the most critical needs rather than everything at once. The order is set by impact and effort, and it is already expected to change. Live. Where continuous improvement lives. Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that quietly stalls. Sunset. The backlog winds down. When a service is retired or replaced, the backlog narrows to what still matters: essential fixes, and the work of moving off the service. If the service is being replaced, the backlog of unmet needs carries forward into the new one, so the research already done is not lost.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#further-reading",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life, in a Canadian voice. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#sources",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

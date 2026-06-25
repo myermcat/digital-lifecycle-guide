@@ -33,6 +33,10 @@ import {
   ethicsAndBiasSectionsPlainText,
 } from "../src/lib/ethics-and-bias-thread-content";
 import {
+  BACKLOG_THREAD,
+  backlogSectionsPlainText,
+} from "../src/lib/backlog-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -848,7 +852,11 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
-      text: ETHICS_AND_BIAS_THREAD.whyItMatters.text,
+      text: concat(
+        ETHICS_AND_BIAS_THREAD.whyItMatters.text,
+        ETHICS_AND_BIAS_THREAD.happenedAtScaleCallout.title,
+        ETHICS_AND_BIAS_THREAD.happenedAtScaleCallout.body.text,
+      ),
     },
     {
       sectionId: "whose-job",
@@ -905,6 +913,94 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: ethicsKeywords,
+    });
+  }
+}
+
+// Backlog thread — section-level records.
+{
+  const pageTitle = BACKLOG_THREAD.title;
+  const pagePath = THREADS.backlog.path;
+
+  const backlogKeywords = "product backlog prioritization user stories MoSCoW";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(BACKLOG_THREAD.lead),
+    keywords: backlogKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...BACKLOG_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: BACKLOG_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(BACKLOG_THREAD.whoseJob),
+    },
+    {
+      sectionId: BACKLOG_THREAD.closerLook.id,
+      sectionHeading: BACKLOG_THREAD.closerLook.title,
+      text: concat(
+        ...BACKLOG_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, backlogSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: BACKLOG_THREAD.twoWaysComparison.id,
+      sectionHeading: BACKLOG_THREAD.twoWaysComparison.title,
+      text: concat(
+        BACKLOG_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(BACKLOG_THREAD.twoWaysComparison.risky.items ?? []),
+        BACKLOG_THREAD.twoWaysComparison.risky.closing ?? "",
+        BACKLOG_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(BACKLOG_THREAD.twoWaysComparison.safe.items ?? []),
+        BACKLOG_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: BACKLOG_THREAD.byPhase.id,
+      sectionHeading: BACKLOG_THREAD.byPhase.title,
+      text: concat(
+        BACKLOG_THREAD.byPhase.intro,
+        ...BACKLOG_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${backlogSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: BACKLOG_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: backlogKeywords,
     });
   }
 }

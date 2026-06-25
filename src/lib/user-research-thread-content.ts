@@ -56,7 +56,10 @@ export const USER_RESEARCH_THREAD = {
         },
       ] satisfies InternalPhraseLink[],
     },
-    { text: "Findings are shared with the team and acted on." },
+    {
+      text: "Findings are shared with the team and turned into prioritized work.",
+      internalLinks: [{ phrase: "prioritized work", to: THREADS.backlog.path }] satisfies InternalPhraseLink[],
+    },
     {
       text: "Research runs across the whole life: discovery, build, testing, and after launch.",
     },

@@ -3,6 +3,7 @@ import { CrossCuttingThreadPage } from "@/components/CrossCuttingThreadPage";
 import { AccessibilityThreadPage } from "@/components/AccessibilityThreadPage";
 import { UserResearchThreadPage } from "@/components/UserResearchThreadPage";
 import { EthicsAndBiasThreadPage } from "@/components/EthicsAndBiasThreadPage";
+import { BacklogThreadPage } from "@/components/BacklogThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -15,6 +16,7 @@ import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
 import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
 import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
 import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
+import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -82,6 +84,15 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "backlog") {
+      return {
+        meta: [
+          { title: `${BACKLOG_THREAD.title} — The Digital Lifecycle Guide` },
+          { name: "description", content: threadLeadPlainText(BACKLOG_THREAD.lead) },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -131,6 +142,10 @@ function ThreadRoutePage() {
 
   if (slug === "ethics-and-bias") {
     return <EthicsAndBiasThreadPage />;
+  }
+
+  if (slug === "backlog") {
+    return <BacklogThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

@@ -6,15 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
-import { GuideCallout } from "@/components/GuideCallout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
-import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
-import { ETHICS_AND_BIAS_CORE_STRIP } from "@/lib/thread-core-strip";
+import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
+import { BACKLOG_CORE_STRIP } from "@/lib/thread-core-strip";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -37,20 +36,19 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
-export function EthicsAndBiasThreadPage() {
+export function BacklogThreadPage() {
   const {
     title,
     lead,
     whatGoodLooksLike,
     whyItMatters,
-    happenedAtScaleCallout,
     whoseJob,
     closerLook,
     twoWaysComparison,
     byPhase,
     furtherReading,
     sources,
-  } = ETHICS_AND_BIAS_THREAD;
+  } = BACKLOG_THREAD;
 
   const phaseCards = byPhase.blocks.map((block) => ({
     id: block.title,
@@ -60,7 +58,7 @@ export function EthicsAndBiasThreadPage() {
   }));
 
   return (
-    <GuideLayout id={`thread-${ETHICS_AND_BIAS_THREAD.slug}`}>
+    <GuideLayout id={`thread-${BACKLOG_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
         <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
@@ -77,7 +75,7 @@ export function EthicsAndBiasThreadPage() {
 
       <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
 
-      <ThreadCoreStrip content={ETHICS_AND_BIAS_CORE_STRIP} />
+      <ThreadCoreStrip content={BACKLOG_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
@@ -94,12 +92,6 @@ export function EthicsAndBiasThreadPage() {
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
         <p className={guideProse}>{renderLinkedProse(whyItMatters)}</p>
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="it-has-happened-at-scale">
-        <GuideCallout title={happenedAtScaleCallout.title}>
-          {renderLinkedProse(happenedAtScaleCallout.body)}
-        </GuideCallout>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
@@ -144,7 +136,7 @@ export function EthicsAndBiasThreadPage() {
       </section>
 
       <PageFoot
-        support="ethics-and-bias"
+        support="backlog"
         furtherReading={renderLinkedProse(furtherReading)}
         sources={sources}
       />

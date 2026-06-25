@@ -1,5 +1,6 @@
 import {
   Briefcase,
+  ClipboardList,
   Code,
   LifeBuoy,
   PenTool,
@@ -23,6 +24,12 @@ export function whoseJobIconForRole(role: string): LucideIcon {
 
   if (normalized.includes("business owner")) {
     return Briefcase;
+  }
+  if (normalized.includes("product or service owner")) {
+    return ClipboardList;
+  }
+  if (normalized === "the team") {
+    return Code;
   }
   if (normalized.includes("user researcher") || normalized.includes("service designer")) {
     return Search;

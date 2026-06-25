@@ -79,6 +79,26 @@ export const ETHICS_AND_BIAS_THREAD = {
     ] satisfies ExternalPhraseLink[],
   },
 
+  happenedAtScaleCallout: {
+    title: "It has happened, at scale",
+    body: {
+      text:
+        "Automated decisions have gone badly wrong elsewhere. In Australia, the Robodebt scheme used a crude automated method to wrongly tell about 381,000 people they owed money they did not owe, around A$746 million of it, and it ended in a Royal Commission. In the Netherlands, a fraud-detection algorithm wrongly accused around 26,000 families of childcare-benefit fraud, treated dual nationality as a risk factor, and helped bring the government down. Canada has not had a failure on that scale, and the Directive on Automated Decision-Making and its impact assessment exist to keep it that way. Bias is also measurable: a NIST study found face-recognition systems misidentified Asian and Black faces 10 to 100 times more often than white faces.",
+      externalLinks: [
+        { phrase: "Robodebt scheme", linkKey: "robodebt-royal-commission-report" },
+        {
+          phrase: "fraud-detection algorithm",
+          linkKey: "netherlands-childcare-fraud-algorithm-ap",
+        },
+        {
+          phrase: "Directive on Automated Decision-Making",
+          linkKey: "directive-automated-decision-making",
+        },
+        { phrase: "NIST study", linkKey: "nist-face-recognition-demographics-study" },
+      ] satisfies ExternalPhraseLink[],
+    } satisfies ThreadLinkedProse,
+  },
+
   whoseJob: {
     intro: "Ethics and bias is shared across the team, with each role holding a different part:",
     roles: [
@@ -173,7 +193,8 @@ export const ETHICS_AND_BIAS_THREAD = {
     title: "Two ways to automate a decision",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They added an AI model to auto-score grant applications and save staff time:",
+      framing:
+        "Meet Vell. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time:",
       items: [
         "trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus",
         "gave applicants no notice it was automated, and no way to appeal",
@@ -184,7 +205,8 @@ export const ETHICS_AND_BIAS_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They treated the auto-scoring as a decision about people:",
+      framing:
+        "Meet Pax. They run a service that screens benefit applications and treated the auto-scoring as a decision about people:",
       items: [
         "ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it",
         "kept the AI as a recommendation, with a person making the final call",

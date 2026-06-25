@@ -98,7 +98,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     type: "thread",
     status: "not-started",
   },
-  { title: THREADS.backlog.title, path: THREADS.backlog.path, type: "thread", status: "not-started" },
+  { title: THREADS.backlog.title, path: THREADS.backlog.path, type: "thread", status: "in-review" },
   {
     title: THREADS["joined-up-delivery"].title,
     path: THREADS["joined-up-delivery"].path,
