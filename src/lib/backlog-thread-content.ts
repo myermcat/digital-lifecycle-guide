@@ -196,7 +196,36 @@ export const BACKLOG_THREAD = {
         sections: [
           {
             text:
-              "A backlog stays useful only if it is tended, and the single most important habit is a regular review (often called refinement or grooming). It is not a one-time clean-up: on a set cadence the team looks over the whole list and, in the same sitting, adds new items, breaks down the ones rising toward the top, drops what no longer serves the goal, and re-orders the rest. Booking that review in keeps the list honest, so deciding what to keep or cut is a recurring check-in rather than a decision made once and never revisited. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
+              "A backlog stays useful only if it is tended, and the single most important habit is a regular review (often called refinement or grooming) on a set cadence. It is a recurring check-in, not a one-time clean-up. At each review the team works through the whole list and does five things:",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                bold: "Add",
+                text: " the new items that have come up, from feedback, user research, live signals, support requests, and the ideas you have promoted from a separate idea list.",
+              },
+              {
+                bold: "Break down",
+                text: " the big items rising toward the top into pieces small enough to finish in one short cycle.",
+              },
+              {
+                bold: "Clarify",
+                text: ' those top items so they are ready to pick up, with enough detail and a clear "done" test.',
+              },
+              {
+                bold: "Re-order",
+                text: " the list by current priority, because what matters most changes as the service grows.",
+              },
+              {
+                bold: "Remove",
+                text: " the items that no longer serve the goal, whether they have gone stale or been overtaken by events.",
+              },
+            ],
+          },
+          {
+            text:
+              "One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
             externalLinks: [{ phrase: "Scrum Guide", linkKey: "scrum-guide" }] satisfies ExternalPhraseLink[],
           },
         ],

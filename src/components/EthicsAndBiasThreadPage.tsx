@@ -9,7 +9,7 @@ import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideCallout } from "@/components/GuideCallout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
+import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
@@ -51,13 +51,6 @@ export function EthicsAndBiasThreadPage() {
     furtherReading,
     sources,
   } = ETHICS_AND_BIAS_THREAD;
-
-  const phaseCards = byPhase.blocks.map((block) => ({
-    id: block.title,
-    title: block.title,
-    preview: block.preview,
-    popupBody: renderThreadSections(block.popup),
-  }));
 
   return (
     <GuideLayout id={`thread-${ETHICS_AND_BIAS_THREAD.slug}`}>
@@ -137,11 +130,7 @@ export function EthicsAndBiasThreadPage() {
         alternative={twoWaysComparison.safe}
       />
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{byPhase.title}</h2>
-        <p className={`${guideProse} mb-5`}>{byPhase.intro}</p>
-        <PhasePreviewPopupCards cards={phaseCards} />
-      </section>
+      <ThreadByPhaseSection byPhase={byPhase} />
 
       <PageFoot
         support="ethics-and-bias"

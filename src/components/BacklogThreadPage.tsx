@@ -10,7 +10,7 @@ import { BacklogPriorityFigure } from "@/components/BacklogPriorityFigure";
 import { QaToggleBlock } from "@/components/QaToggleBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
+import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
@@ -55,13 +55,6 @@ export function BacklogThreadPage() {
     furtherReading,
     sources,
   } = BACKLOG_THREAD;
-
-  const phaseCards = byPhase.blocks.map((block) => ({
-    id: block.title,
-    title: block.title,
-    preview: block.preview,
-    popupBody: renderThreadSections(block.popup),
-  }));
 
   return (
     <GuideLayout id={`thread-${BACKLOG_THREAD.slug}`}>
@@ -151,11 +144,7 @@ export function BacklogThreadPage() {
         alternative={twoWaysComparison.safe}
       />
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{byPhase.title}</h2>
-        <p className={`${guideProse} mb-5`}>{byPhase.intro}</p>
-        <PhasePreviewPopupCards cards={phaseCards} />
-      </section>
+      <ThreadByPhaseSection byPhase={byPhase} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={commonQuestions.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{commonQuestions.title}</h2>

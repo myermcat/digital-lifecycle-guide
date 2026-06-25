@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Accordion,
@@ -8,8 +7,8 @@ import {
 } from "@/components/ui/accordion";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
@@ -48,13 +47,6 @@ export function PrivacyThreadPage() {
     furtherReading,
     sources,
   } = PRIVACY_THREAD;
-
-  const phaseCards = byPhase.blocks.map((block) => ({
-    id: block.title,
-    title: block.title,
-    preview: block.preview,
-    popupBody: renderThreadSections(block.popup),
-  }));
 
   return (
     <GuideLayout id={`thread-${PRIVACY_THREAD.slug}`}>
@@ -119,11 +111,7 @@ export function PrivacyThreadPage() {
         </Accordion>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{byPhase.title}</h2>
-        <p className={`${guideProse} mb-5`}>{byPhase.intro}</p>
-        <PhasePreviewPopupCards cards={phaseCards} />
-      </section>
+      <ThreadByPhaseSection byPhase={byPhase} />
 
       <PageFoot
         support="privacy"
