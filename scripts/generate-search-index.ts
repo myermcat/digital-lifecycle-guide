@@ -946,13 +946,13 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: concat(...BACKLOG_THREAD.whatGoodLooksLike.map((item) => item.text)),
     },
     {
-      sectionId: BACKLOG_THREAD.whatABacklogLooksLike.id,
-      sectionHeading: BACKLOG_THREAD.whatABacklogLooksLike.title,
+      sectionId: BACKLOG_THREAD.insideABacklog.id,
+      sectionHeading: BACKLOG_THREAD.insideABacklog.title,
       text: concat(
-        BACKLOG_THREAD.whatABacklogLooksLike.intro.text,
-        BACKLOG_THREAD.whatABacklogLooksLike.example.story,
-        ...BACKLOG_THREAD.whatABacklogLooksLike.example.doneWhen,
-        BACKLOG_THREAD.whatABacklogLooksLike.closing.text,
+        BACKLOG_THREAD.insideABacklog.intro.text,
+        BACKLOG_THREAD.insideABacklog.example.story,
+        ...BACKLOG_THREAD.insideABacklog.example.doneWhen,
+        BACKLOG_THREAD.insideABacklog.closing.text,
       ),
     },
     {

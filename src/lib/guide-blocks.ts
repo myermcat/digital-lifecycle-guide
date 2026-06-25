@@ -37,6 +37,22 @@ export const CALLOUT_BLOCK = {
   examples: ['Home — "Not sure which phase you are in?"', "Procurement — Scope", "Data stewardship — retention question"],
 } as const;
 
+/** Q&A toggle — expand-in-place question-and-answer lists. */
+export const QA_TOGGLE_BLOCK = {
+  name: "Q&A toggle",
+  blockId: "qa-toggle",
+  component: "QaToggleBlock",
+  importPath: "@/components/QaToggleBlock",
+  purpose:
+    "Expand-in-place question-and-answer lists: each question is a card toggle; the answer opens on tap.",
+  visual:
+    "Closer-look accordion structure (? badge left, chevron right, separator lines). Muted procurement fill (bg-muted/15, border-border/50) and answer tone.",
+  examples: [
+    "Procurement — Buy in small pieces, common worries",
+    "Backlog — Common questions",
+  ],
+} as const;
+
 /** Support callout — help pointer before Further reading on every page. */
 export const SUPPORT_CALLOUT_BLOCK = {
   /** Say "support callout" when referring to this block. */
@@ -54,12 +70,14 @@ export const SUPPORT_CALLOUT_BLOCK = {
 export type GuideBlockName =
   | typeof EDITORIAL_NOTE_BLOCK.name
   | typeof CALLOUT_BLOCK.name
+  | typeof QA_TOGGLE_BLOCK.name
   | typeof SUPPORT_CALLOUT_BLOCK.name;
 
 /** Lookup by conversational name. */
 export const GUIDE_BLOCKS_BY_NAME = {
   [EDITORIAL_NOTE_BLOCK.name]: EDITORIAL_NOTE_BLOCK,
   [CALLOUT_BLOCK.name]: CALLOUT_BLOCK,
+  [QA_TOGGLE_BLOCK.name]: QA_TOGGLE_BLOCK,
   [SUPPORT_CALLOUT_BLOCK.name]: SUPPORT_CALLOUT_BLOCK,
 } as const;
 

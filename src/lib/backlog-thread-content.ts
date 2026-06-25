@@ -21,7 +21,7 @@ export type BacklogCloserLookBlock = ThreadCloserLookBlock;
 export type BacklogPhasePreviewBlock = ThreadPhasePreviewBlock;
 export type BacklogToggleBlock = ThreadToggleBlock;
 
-const MONITORING_THREAD_PATH = "/thread/monitoring";
+const CLOSER_LOOK_PATH = `${THREADS.backlog.path}#a-closer-look`;
 
 export const backlogSectionsPlainText = threadSectionsPlainText;
 export const backlogLeadPlainText = (lead: ThreadLinkedProse) => threadLeadPlainText(lead);
@@ -67,26 +67,27 @@ export const BACKLOG_THREAD = {
     },
   ] satisfies BacklogLinkedProse[],
 
-  whatABacklogLooksLike: {
-    id: "what-a-backlog-looks-like",
-    title: "What a backlog looks like",
+  insideABacklog: {
+    id: "inside-a-backlog",
+    title: "Inside a backlog",
     intro: {
       text:
-        "A backlog is one ordered list. The items near the top are small, clear, and ready to pick up next; the items lower down are bigger and rougher, and get broken down later as they rise toward the top. New features, fixes, and technical debt all live on the same list and compete for the same place in the order.",
+        "A backlog item usually takes this shape, here using a grant application service as the example:",
     } satisfies ThreadLinkedProse,
     example: {
       story:
-        "As a UK resident, I want to get my details on the electoral register so that I can vote.",
+        "As an organization applying for funding, I want to save a partly finished application so that I can come back and complete it later.",
       doneWhen: [
-        "the user knows how to register online",
-        "the user knows how to download a form to register by post",
-        "the user knows where to send the form",
+        "the applicant can save a draft and return to it",
+        "the applicant can see which sections are still incomplete",
+        "a saved draft is stored securely and tied to the applicant's account",
       ],
     },
     closing: {
       text:
-        "The first line is the user story (who, what, and why), and the \"it's done when…\" list is its acceptance criteria, the test for when the item is finished. This example is from the UK, a sibling government, and the format carries over directly. For more detail on writing items this way, the GOV.UK guide to writing user stories is the plainest start.",
+        "The first line is the user story (who, what, and why), and the \"it's done when…\" list is its acceptance criteria, the test for when the item is finished. For more detail on writing items this way, Ontario's Service Design Playbook and the GOV.UK guide to writing user stories both use this format.",
       externalLinks: [
+        { phrase: "Service Design Playbook", linkKey: "ontario-service-design-playbook" },
         { phrase: "GOV.UK guide to writing user stories", linkKey: "uk-writing-user-stories" },
       ] satisfies ExternalPhraseLink[],
     } satisfies ThreadLinkedProse,
@@ -176,7 +177,10 @@ export const BACKLOG_THREAD = {
             text:
               "Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. The backlog also holds more than new features: support requests and technical debt compete for the same slots, and the signals from a live service are part of what tells you where the real problems are. The GOV.UK guide to deciding on priorities walks through this.",
             internalLinks: [
-              { phrase: "signals from a live service", to: MONITORING_THREAD_PATH },
+              {
+                phrase: "signals from a live service",
+                to: THREADS["monitoring-and-instrumentation"].path,
+              },
             ] satisfies InternalPhraseLink[],
             externalLinks: [
               {
@@ -188,12 +192,11 @@ export const BACKLOG_THREAD = {
         ],
       },
       {
-        title: "Keep it healthy.",
+        title: "Review it on a schedule.",
         sections: [
           {
             text:
-              "A backlog stays useful only if it is tended. Refinement is the ongoing work of breaking big items down and adding enough detail that the team can pick them up. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
-            bold: [{ phrase: "Refinement" }, { phrase: "definition of done" }],
+              "A backlog stays useful only if it is tended, and the single most important habit is a regular review (often called refinement or grooming). It is not a one-time clean-up: on a set cadence the team looks over the whole list and, in the same sitting, adds new items, breaks down the ones rising toward the top, drops what no longer serves the goal, and re-orders the rest. Booking that review in keeps the list honest, so deciding what to keep or cut is a recurring check-in rather than a decision made once and never revisited. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
             externalLinks: [{ phrase: "Scrum Guide", linkKey: "scrum-guide" }] satisfies ExternalPhraseLink[],
           },
         ],
@@ -253,7 +256,9 @@ export const BACKLOG_THREAD = {
           {
             text:
               "Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that stops improving.",
-            internalLinks: [{ phrase: "analytics", to: MONITORING_THREAD_PATH }] satisfies InternalPhraseLink[],
+            internalLinks: [
+              { phrase: "analytics", to: THREADS["monitoring-and-instrumentation"].path },
+            ] satisfies InternalPhraseLink[],
           },
         ],
       },
@@ -279,7 +284,8 @@ export const BACKLOG_THREAD = {
         sections: [
           {
             text:
-              "That usually means it has turned into a catch-all. A backlog is a curated, ordered queue, not a place to drop every idea, so part of the work is declining and removing items that no longer serve the goal. Review it regularly: reword, re-rank, and delete what has gone stale. The plainest overview of keeping a backlog healthy is a good start.",
+              "A backlog of work should hold action items the team has agreed to do, not raw ideas, and mixing the two is the usual reason it balloons. Keep ideas on a separate idea list, and go through that list on a schedule: promote the few worth doing into real, prioritized work, and accept that many ideas will never become tasks, which is fine. Ideas do not belong on the work backlog at all. Beyond that, the work backlog still needs a regular review to delete items that have gone stale. The plainest overview of keeping a backlog healthy is a good start.",
+            internalLinks: [{ phrase: "regular review", to: CLOSER_LOOK_PATH }] satisfies InternalPhraseLink[],
             externalLinks: [
               { phrase: "keeping a backlog healthy", linkKey: "atlassian-scrum-backlogs" },
             ] satisfies ExternalPhraseLink[],
@@ -313,7 +319,8 @@ export const BACKLOG_THREAD = {
         sections: [
           {
             text:
-              "Those are usually items added to please someone, that no one really intends to build. Left there, they turn the backlog into a junk drawer. Remove what does not serve the current goal; a shorter, honest list is easier to act on.",
+              "Some were added to please someone and were never really going to be built; others were genuinely good ideas that got overtaken as priorities shifted. The cause does not change the fix: a backlog is not a place items live forever. At each regular review, drop what no longer serves the current goal, and keep the rest in honest priority order, so the list stays short enough to act on.",
+            internalLinks: [{ phrase: "regular review", to: CLOSER_LOOK_PATH }] satisfies InternalPhraseLink[],
           },
         ],
       },

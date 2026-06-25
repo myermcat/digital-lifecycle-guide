@@ -1,4 +1,4 @@
-import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
+import { guideProse, guideProseTight } from "@/lib/guide-typography";
 
 export {
   CALLOUT_BLOCK,
@@ -28,18 +28,15 @@ export const guideArticleProse = `${guideProse} space-y-4`;
 /** Space before editorial notes, case studies, and similar lifted blocks. */
 export const guideArticleCalloutLift = "mt-8 md:mt-10";
 
-/** Dialogue Q&A: gap between question-and-answer pairs. */
-export const guideArticleQaList = `space-y-5 md:space-y-6 list-none ${guideListIndent}`;
+/** Q&A accordion shell — muted fill from the original procurement Q&A cards. */
+export const guideArticleQaShell =
+  "rounded-lg border border-border/50 bg-muted/15";
 
-/** Dialogue Q&A: light card per exchange. */
-export const guideArticleQaCard =
-  "rounded-md border border-border/50 bg-muted/15 px-4 py-3.5 md:px-5 md:py-4";
+/** Q&A question line inside an accordion trigger. */
+export const guideArticleQaQuestion = `${guideProse} font-medium text-primary`;
 
-/** Dialogue Q&A: question line — leads the eye. */
-export const guideArticleQaQuestion = `${guideProse} font-medium text-primary border-l-2 border-primary/25 pl-3 -ml-px`;
-
-/** Dialogue Q&A: answer line — smaller, plainer, slightly indented. */
-export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 md:ml-4 mt-2.5`;
+/** Q&A answer line below an expanded trigger. */
+export const guideArticleQaAnswer = `${guideProseTight} text-foreground/55 ml-3 md:ml-4`;
 
 /** Light aside below a list or block — smaller sans, low contrast. Not main body copy.
  *  Example: "One option is left off this ladder on purpose…" (You looked before you bought). */

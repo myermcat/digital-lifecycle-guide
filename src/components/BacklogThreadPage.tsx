@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { BacklogPriorityFigure } from "@/components/BacklogPriorityFigure";
+import { QaToggleBlock } from "@/components/QaToggleBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
@@ -44,7 +45,7 @@ export function BacklogThreadPage() {
     title,
     lead,
     whatGoodLooksLike,
-    whatABacklogLooksLike,
+    insideABacklog,
     whyItMatters,
     whoseJob,
     closerLook,
@@ -94,20 +95,20 @@ export function BacklogThreadPage() {
         </ul>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={whatABacklogLooksLike.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{whatABacklogLooksLike.title}</h2>
-        <p className={guideProse}>{renderLinkedProse(whatABacklogLooksLike.intro)}</p>
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={insideABacklog.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{insideABacklog.title}</h2>
         <BacklogPriorityFigure />
+        <p className={`${guideProse} mt-5`}>{renderLinkedProse(insideABacklog.intro)}</p>
         <blockquote className="my-5 rounded-md border border-primary/15 border-l-4 border-l-primary/35 bg-primary/[0.03] px-4 py-4 md:px-5 md:py-5">
-          <p className={guideProse}>{whatABacklogLooksLike.example.story}</p>
+          <p className={guideProse}>{insideABacklog.example.story}</p>
           <p className={`${guideProseTight} mt-3 text-foreground/70`}>It&apos;s done when:</p>
           <ul className={`${guideProseTight} mt-2 list-disc space-y-1 text-foreground/70 ${guideListIndent}`}>
-            {whatABacklogLooksLike.example.doneWhen.map((item) => (
+            {insideABacklog.example.doneWhen.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </blockquote>
-        <p className={guideProse}>{renderLinkedProse(whatABacklogLooksLike.closing)}</p>
+        <p className={guideProse}>{renderLinkedProse(insideABacklog.closing)}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
@@ -158,20 +159,13 @@ export function BacklogThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={commonQuestions.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{commonQuestions.title}</h2>
-        <Accordion type="single" collapsible className="mt-4 rounded-lg border border-border bg-card">
-          {commonQuestions.blocks.map((block) => (
-            <AccordionItem key={block.title} value={block.title}>
-              <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
-                <span className="font-serif text-base font-semibold text-primary">
-                  {block.title}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-5 pb-4">
-                {renderThreadSections(block.sections)}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <QaToggleBlock
+          className="mt-4"
+          items={commonQuestions.blocks.map((block) => ({
+            question: block.title,
+            answer: renderThreadSections(block.sections),
+          }))}
+        />
       </section>
 
       <PageFoot

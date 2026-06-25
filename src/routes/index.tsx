@@ -113,7 +113,7 @@ function Index() {
               </p>
             </li>
           </ul>
-          <GuideCallout title="Not sure which phase you are in?">
+          <GuideCallout title="Not sure which phase you are in?" className="my-10 md:my-14">
             The quickest test is where your feedback comes from. In Create it comes from
             sketches, prototypes, and conversations about what you might build. In Live it
             comes from the running system: real users, real data, real bugs. In Sunset you
