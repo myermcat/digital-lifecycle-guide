@@ -221,7 +221,8 @@
     "sectionId": "",
     "sectionHeading": "Joined-up delivery",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Joined-up delivery means making a person's whole task work from end to end, including the steps that fall to the services on either side of yours. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website. The business owner of the application answers for how the journey holds together; the team does the work.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
     "id": "/reference/soo-vs-sow",
@@ -816,7 +817,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "The Privacy Impact Assessment. A Privacy Impact Assessment (PIA) is the formal check of what could go wrong with the personal information a service handles, done before it launches. It records: what is collected, and why the legal authority for collecting it how the data flows how it is protected, and how long it is kept the risks, and how they will be reduced It is triggered whenever a service uses personal information to make a decision about someone, or changes that use: when a paper benefits form moves online, for example, the PIA is updated before the new service goes live. Under the Directive on Privacy Practices a PIA is required, and the Digital Privacy Playbook walks through it step by step. The Office of the Privacy Commissioner reviews a PIA and advises, but does not approve it; the sign-off stays with the institution. Build privacy in from the start. Designing privacy in early costs far less than fixing it after launch. The idea has a name, privacy by design, and its seven principles were written in Canada and are now used worldwide: default to the most private setting, collect the least you can, be open about it. Shared Services Canada's Technology Assessment for Privacy Implications is one GC example of running this assessment early, at the technology level. Tell people what you collect. People have a right to know what a service collects and why, before they hand it over. That is the job of the privacy notice, in plain words and in the right place. A complete notice says seven things: why the information is collected the legal authority for collecting it whether it will be shared what happens to someone who does not provide it their right to see and correct it the Personal Information Bank it is held in how to complain to the Office of the Privacy Commissioner It is easy to forget, and it is the part the public actually sees.",
+    "text": "The Privacy Impact Assessment. A Privacy Impact Assessment (PIA) is the formal check of what could go wrong with the personal information a service handles, done before it launches. It records: what is collected, and why the legal authority for collecting it how the data flows how it is protected, and how long it is kept the risks, and how they will be reduced It is triggered whenever a service uses personal information to make a decision about someone, or changes that use: when a paper benefits form moves online, for example, the PIA is updated before the new service goes live. Under the Directive on Privacy Practices a PIA is required, and the Digital Privacy Playbook walks through it step by step. The Office of the Privacy Commissioner reviews a PIA and advises, but does not approve it; the sign-off stays with the institution. If your service uses that information to make automated decisions about people, see Ethics and bias. Build privacy in from the start. Designing privacy in early costs far less than fixing it after launch. The idea has a name, privacy by design, and its seven principles were written in Canada and are now used worldwide: default to the most private setting, collect the least you can, be open about it. Shared Services Canada's Technology Assessment for Privacy Implications is one GC example of running this assessment early, at the technology level. Tell people what you collect. People have a right to know what a service collects and why, before they hand it over. That is the job of the privacy notice, in plain words and in the right place. A complete notice says seven things: why the information is collected the legal authority for collecting it whether it will be shared what happens to someone who does not provide it their right to see and correct it the Personal Information Bank it is held in how to complain to the Office of the Privacy Commissioner It is easy to forget, and it is the part the public actually sees.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -1180,6 +1181,16 @@
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
+    "id": "/thread/backlog#what-a-backlog-looks-like",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "what-a-backlog-looks-like",
+    "sectionHeading": "What a backlog looks like",
+    "lifecyclePhase": "thread",
+    "text": "A backlog is one ordered list. The items near the top are small, clear, and ready to pick up next; the items lower down are bigger and rougher, and get broken down later as they rise toward the top. New features, fixes, and technical debt all live on the same list and compete for the same place in the order. As a UK resident, I want to get my details on the electoral register so that I can vote. the user knows how to register online the user knows how to download a form to register by post the user knows where to send the form The first line is the user story (who, what, and why), and the \"it's done when…\" list is its acceptance criteria, the test for when the item is finished. This example is from the UK, a sibling government, and the format carries over directly. For more detail on writing items this way, the GOV.UK guide to writing user stories is the plainest start.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
     "id": "/thread/backlog#why-it-matters",
     "pageTitle": "Backlog",
     "pagePath": "/thread/backlog",
@@ -1206,7 +1217,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "Write the work as user stories. The work in a backlog is usually written as short user stories, in a simple format that keeps the focus on the need rather than a spec: \"As a [type of user], I need [something], so that [reason].\" Each story carries acceptance criteria, a short \"it is done when…\" list that says when the work is finished. The GOV.UK guide to writing user stories and Ontario's Service Design Playbook both use this format. The needs themselves come from user research. Prioritize, and keep prioritizing. Order the list by impact on users, fit with the service's goals, and the effort it takes. A simple, common method is MoSCoW: must have, should have, could have, and will not have (for now). Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. And the backlog is not only new features: support requests and technical debt compete for the same slots. The GOV.UK guide to deciding on priorities walks through this. Keep it healthy. A backlog stays useful only if it is tended. Refinement is the ongoing work of breaking big items down and adding enough detail that the team can pick them up. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
+    "text": "Write the work as user stories. The work in a backlog is usually written as short user stories, in a simple format that keeps the focus on the need rather than a spec: \"As a [type of user], I need [something], so that [reason].\" Each story carries acceptance criteria, a short \"it is done when…\" list that says when the work is finished. The GOV.UK guide to writing user stories and Ontario's Service Design Playbook both use this format. The needs themselves come from user research. Prioritize, and keep prioritizing. Order the list by impact on users, fit with the service's goals, and the effort it takes. A simple, common method is MoSCoW, which sorts every item into four groups: Must have: the service does not work, or cannot launch, without it. Should have: important, and painful to leave out, but the service can manage without it for now. Could have: worth doing if time and capacity allow, and the first thing dropped when they run short. Will not have (for now): deliberately out of scope this round, written down so it reads as a decision rather than an oversight. Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. The backlog also holds more than new features: support requests and technical debt compete for the same slots, and the signals from a live service are part of what tells you where the real problems are. The GOV.UK guide to deciding on priorities walks through this. Keep it healthy. A backlog stays useful only if it is tended. Refinement is the ongoing work of breaking big items down and adding enough detail that the team can pick them up. One person, the product or service owner, owns the order; everyone else makes their case to that person rather than reordering the list themselves. And a definition of done, a shared bar for when something is truly finished, keeps quality steady: if an item does not meet it, it goes back on the backlog instead of out to the public. The Scrum Guide is the source of these terms.",
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
@@ -1226,7 +1237,17 @@
     "sectionId": "by-phase",
     "sectionHeading": "What the backlog looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "The backlog changes shape across the life of a service. Create. The backlog is born from research. The backlog starts in discovery as a prioritized list of user stories drawn from user research. As building begins, the team works the top items first, and the first release delivers the most critical needs rather than everything at once. The order is set by impact and effort, and it is already expected to change. Live. Where continuous improvement lives. Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that quietly stalls. Sunset. The backlog winds down. When a service is retired or replaced, the backlog narrows to what still matters: essential fixes, and the work of moving off the service. If the service is being replaced, the backlog of unmet needs carries forward into the new one, so the research already done is not lost.",
+    "text": "The backlog changes shape across the life of a service. Create. The backlog is born from research. The backlog starts in discovery as a prioritized list of user stories drawn from user research. As building begins, the team works the top items first, and the first release delivers the most critical needs rather than everything at once. The order is set by impact and effort, and it is already expected to change. Live. Where continuous improvement lives. Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that stops improving. Sunset. The backlog winds down. When a service is retired or replaced, the backlog narrows to what still matters: essential fixes, and the work of moving off the service. If the service is being replaced, the backlog of unmet needs carries forward into the new one, so the research already done is not lost.",
+    "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/backlog#common-questions",
+    "pageTitle": "Backlog",
+    "pagePath": "/thread/backlog",
+    "sectionId": "common-questions",
+    "sectionHeading": "Common questions",
+    "lifecyclePhase": "thread",
+    "text": "My backlog keeps growing. It feels like an endless to-do list. That usually means it has turned into a catch-all. A backlog is a curated, ordered queue, not a place to drop every idea, so part of the work is declining and removing items that no longer serve the goal. Review it regularly: reword, re-rank, and delete what has gone stale. The plainest overview of keeping a backlog healthy is a good start. Everything feels like a top priority. How do I choose? If everything is top priority, nothing is. Force a single order, there is only ever one item that comes next, and rank by a few practical factors like risk, value against effort, and what depends on what. MoSCoW, above, is one simple way to begin. The items are too big or too vague to start. Break a big item, sometimes called an epic, into pieces small enough to finish in one short cycle, and write each one around a user and a goal. If you cannot state the goal, the \"so that…\" part, that is a sign to reconsider whether you need it. The GOV.UK guide to writing user stories shows how. Old items pile up at the bottom and never get done. Those are usually items added to please someone, that no one really intends to build. Left there, they turn the backlog into a junk drawer. Remove what does not serve the current goal; a shorter, honest list is easier to act on. The boring technical fixes and bugs never rise to the top. They get buried, especially when they live on a separate, hidden list. Keep new features, bug fixes, and technical debt on one ordered backlog, so the trade-offs are visible and the owner can weigh them together.",
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
@@ -1236,7 +1257,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life, in a Canadian voice. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
+    "text": "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
@@ -1248,6 +1269,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/joined-up-delivery#what-good-looks-like",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "The user's whole journey is mapped end to end, across every service and channel it touches, including the steps that happen before and after your own part. The teams responsible for the services on either side have agreed how the journey works across organizational lines. Systems exchange information so a person gives the same information to government once, rather than repeating it to each service. Existing solutions are reused and functionality is exposed as a service, so the next team can connect to yours instead of rebuilding it. Every channel gives a consistent experience, and a change to the online service updates the phone scripts, letters, and in-person steps at the same time. Front-line and operations staff who help users know how the current service works, and there is a process to keep them up to date when it changes. People who cannot or will not use the online service on their own can get help by phone or in person, and the non-digital channels stay easy to find.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#why-it-matters",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "A person does not experience your service on its own; they experience the whole task, and that task usually runs across departments and across channels. When the parts do not join up, the person is left to work out how government is organized just to get something done, give the same details to one service after another, or fall into the gap between an online form and a phone line that knows nothing about it. The Government of Canada sets the expectation in its digital standards, to design around user needs and collaborate widely, and the Policy on Service and Digital makes it firmer: services are expected to take an omni-channel approach that gives an integrated client experience, with service standards for every channel in use and non-digital channels kept open so people have a choice. Joining a service up is also how a person who needs the phone or the counter is not left behind as more of the service moves online.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#whose-job",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Joined-up delivery is shared across the team and the organizations around it, with each role holding a different part: Service designers and user researchers map the whole journey, run the cross-organization mapping, and find where the journey breaks between services and channels. Developers and architects build the connections, expose the service's functionality through an API, and reuse what already exists so systems interoperate. Operations and front-line staff deliver the phone and in-person channels and the help people need, and keep their scripts and knowledge current as the service changes. The business owner of the application takes responsibility for agreeing how the journey works with the other organizations, and funds the non-digital channels and the support that go with it.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#a-closer-look",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Map the whole journey first. Before you can join a service up, you need to see the whole task the way the person does. Two views help. A service landscape shows the task from government's side: every touchpoint, the back-office steps, and which organizations are involved. An experience map shows it from the user's side, where they wait, repeat themselves, or hit a dead end. Mapping starts by working out who else delivers the journey, because complicated tasks cross organizational boundaries, and then bringing those teams together so everyone shares one picture. The map then shows the quick wins (often content fixes) and the bigger changes worth making. Connect the systems, and do not ask twice. Services join up technically when they can exchange information. The Government of Canada's standards on APIs describe how a service exposes its functionality so other systems, internal teams, partners, and the public, can use it, with the principle to build once and serve every channel from it. The enterprise architecture expectation is to reuse what exists and expose functionality as services rather than rebuild. Interoperability is not only a technical question: the European model describes four layers, legal, organizational, semantic, and technical, and a useful test for the semantic layer is that what one service sends is what the next service understands. The payoff for the user is plain: they give their information to government once. Keep every channel in step. Most services run across more than one channel, a mix of online, phone, letter, and in person. Keeping them in step means a change to the online service reaches the others at the same time: the call-centre scripts are updated, the letters are revised, and the front-line staff who answer questions know how the current service works. It also means looking after the people who cannot or will not use the online service on their own. That help, by phone or in person, is called assisted digital support, and people may need it for reasons of trust, confidence, internet access, digital skills, or motivation. As more of a service moves online, the phone and the counter stay easy to find, because pushing digital take-up should never make the other channels harder to reach.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#two-ways",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to join up a service",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They built a change-of-address form for one program and stopped there: never spoke to the other programs a person who moves also has to tell built no connection to other systems, so the person had to enter the same new address again with each department changed the online form but never told the call centre, so phone staff walked people through steps that no longer existed The result: people thought one update had reached everyone and it had not, calls climbed, and the website and the phone line contradicted each other. Meet Pax. They treated moving as one journey across the services it touches: mapped the journey with the other programs and agreed how the address change would flow between them exposed the change through an API so the downstream services updated, and the person entered the new address once updated the call-centre scripts and trained front-line staff in the same week the online form changed, and kept the phone option easy to find The result: a person could update their address once and have it reach the programs that needed it, and the phone line gave the same answers as the website.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#by-phase",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Joined-up delivery looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Joining a service up is work in every phase, not a one-time launch task. Create. Map the whole journey before you build. The cheapest time to join a service up is before it is built. The team maps the whole task the way the user experiences it, works out which other services it touches, and decides what to reuse or connect to rather than rebuild. Designing the service to expose its functionality as an API from the start is far easier than retrofitting it later. The research that maps the journey is the same research that tells you who relies on the channels around it. Live. Coordinate with adjacent services, and keep all channels in step. Once a service is running, joined-up delivery is two ongoing jobs. The first is to coordinate with adjacent services: keep working with the teams responsible for the services on either side of yours, so the user's whole journey keeps working and not just your part of it. The second is to keep all channels in step: as the online service changes, update the call-centre scripts, retrain operations staff, and make sure the people who support users understand the current service. Sunset. Retire or replace without breaking the journey. When a service is retired or replaced, the connections it has to other services matter most. The team works with the adjacent services and the systems that depend on its data so nothing downstream breaks, redirects people to wherever the task now lives, and tells the call centre and in-person staff before the change reaches users. A person who relies on the phone or the counter should never be the last to find out a service has moved.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#further-reading",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Joining a service up is set out in the Government of Canada's digital standards and made firmer by the Policy on Service and Digital, which expects an omni-channel approach and an integrated client experience across every channel a service uses. For connecting systems, the GC standards on APIs and the Enabling Interoperability guidance are the GC references, and the enterprise architecture reuse and interoperability expectations say to expose functionality as services. For the method, the UK Service Manual's map a user's whole problem and the Nielsen Norman Group's journey mapping guide are the plainest how-tos, the UK Service Standard on solving a whole problem and on joining up across channels read across cleanly, and GOV.UK's assisted digital support is the clearest guide to helping people who cannot use a service on their own.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/joined-up-delivery#sources",
+    "pageTitle": "Joined-up delivery",
+    "pagePath": "/thread/joined-up-delivery",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

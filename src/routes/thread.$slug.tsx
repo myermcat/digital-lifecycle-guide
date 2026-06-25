@@ -4,6 +4,7 @@ import { AccessibilityThreadPage } from "@/components/AccessibilityThreadPage";
 import { UserResearchThreadPage } from "@/components/UserResearchThreadPage";
 import { EthicsAndBiasThreadPage } from "@/components/EthicsAndBiasThreadPage";
 import { BacklogThreadPage } from "@/components/BacklogThreadPage";
+import { JoinedUpDeliveryThreadPage } from "@/components/JoinedUpDeliveryThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -17,6 +18,7 @@ import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
 import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
 import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
 import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
+import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -93,6 +95,18 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "joined-up-delivery") {
+      return {
+        meta: [
+          { title: `${JOINED_UP_DELIVERY_THREAD.title} — The Digital Lifecycle Guide` },
+          {
+            name: "description",
+            content: threadLeadPlainText(JOINED_UP_DELIVERY_THREAD.lead),
+          },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -146,6 +160,10 @@ function ThreadRoutePage() {
 
   if (slug === "backlog") {
     return <BacklogThreadPage />;
+  }
+
+  if (slug === "joined-up-delivery") {
+    return <JoinedUpDeliveryThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

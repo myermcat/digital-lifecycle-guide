@@ -125,6 +125,13 @@ export const PRIVACY_THREAD = {
               { phrase: "Office of the Privacy Commissioner", linkKey: "opc-pia-expectations" },
             ] satisfies ExternalPhraseLink[],
           },
+          {
+            text:
+              "If your service uses that information to make automated decisions about people, see Ethics and bias.",
+            internalLinks: [
+              { phrase: "Ethics and bias", to: THREADS["ethics-and-bias"].path },
+            ] satisfies InternalPhraseLink[],
+          },
         ],
       },
       {

@@ -11,6 +11,7 @@ import {
   type ThreadContentSection,
   type ThreadLinkedProse,
   type ThreadPhasePreviewBlock,
+  type ThreadToggleBlock,
   type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
 
@@ -18,6 +19,9 @@ export type BacklogLinkedProse = ThreadLinkedProse;
 export type BacklogContentSection = ThreadContentSection;
 export type BacklogCloserLookBlock = ThreadCloserLookBlock;
 export type BacklogPhasePreviewBlock = ThreadPhasePreviewBlock;
+export type BacklogToggleBlock = ThreadToggleBlock;
+
+const MONITORING_THREAD_PATH = "/thread/monitoring";
 
 export const backlogSectionsPlainText = threadSectionsPlainText;
 export const backlogLeadPlainText = (lead: ThreadLinkedProse) => threadLeadPlainText(lead);
@@ -62,6 +66,31 @@ export const BACKLOG_THREAD = {
       text: "It is never complete: it keeps being refined across the whole life of the service.",
     },
   ] satisfies BacklogLinkedProse[],
+
+  whatABacklogLooksLike: {
+    id: "what-a-backlog-looks-like",
+    title: "What a backlog looks like",
+    intro: {
+      text:
+        "A backlog is one ordered list. The items near the top are small, clear, and ready to pick up next; the items lower down are bigger and rougher, and get broken down later as they rise toward the top. New features, fixes, and technical debt all live on the same list and compete for the same place in the order.",
+    } satisfies ThreadLinkedProse,
+    example: {
+      story:
+        "As a UK resident, I want to get my details on the electoral register so that I can vote.",
+      doneWhen: [
+        "the user knows how to register online",
+        "the user knows how to download a form to register by post",
+        "the user knows where to send the form",
+      ],
+    },
+    closing: {
+      text:
+        "The first line is the user story (who, what, and why), and the \"it's done when…\" list is its acceptance criteria, the test for when the item is finished. This example is from the UK, a sibling government, and the format carries over directly. For more detail on writing items this way, the GOV.UK guide to writing user stories is the plainest start.",
+      externalLinks: [
+        { phrase: "GOV.UK guide to writing user stories", linkKey: "uk-writing-user-stories" },
+      ] satisfies ExternalPhraseLink[],
+    } satisfies ThreadLinkedProse,
+  },
 
   whyItMatters: {
     text:
@@ -119,8 +148,36 @@ export const BACKLOG_THREAD = {
         sections: [
           {
             text:
-              "Order the list by impact on users, fit with the service's goals, and the effort it takes. A simple, common method is MoSCoW: must have, should have, could have, and will not have (for now). Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. And the backlog is not only new features: support requests and technical debt compete for the same slots. The GOV.UK guide to deciding on priorities walks through this.",
+              "Order the list by impact on users, fit with the service's goals, and the effort it takes. A simple, common method is MoSCoW, which sorts every item into four groups:",
             bold: [{ phrase: "MoSCoW" }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                bold: "Must have:",
+                text: " the service does not work, or cannot launch, without it.",
+              },
+              {
+                bold: "Should have:",
+                text: " important, and painful to leave out, but the service can manage without it for now.",
+              },
+              {
+                bold: "Could have:",
+                text: " worth doing if time and capacity allow, and the first thing dropped when they run short.",
+              },
+              {
+                bold: "Will not have (for now):",
+                text: " deliberately out of scope this round, written down so it reads as a decision rather than an oversight.",
+              },
+            ],
+          },
+          {
+            text:
+              "Revisit the order regularly, weekly for the next sprint of work, and every few months for the roadmap, because what matters most changes as the service grows. The backlog also holds more than new features: support requests and technical debt compete for the same slots, and the signals from a live service are part of what tells you where the real problems are. The GOV.UK guide to deciding on priorities walks through this.",
+            internalLinks: [
+              { phrase: "signals from a live service", to: MONITORING_THREAD_PATH },
+            ] satisfies InternalPhraseLink[],
             externalLinks: [
               {
                 phrase: "GOV.UK guide to deciding on priorities",
@@ -195,7 +252,8 @@ export const BACKLOG_THREAD = {
         popup: [
           {
             text:
-              "Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that quietly stalls.",
+              "Live is the longest chapter, and the backlog is where its improvement happens. New feedback and analytics add items, support requests and technical debt compete with new features, and the order is revisited regularly. A healthy backlog here is the difference between a service that keeps getting better and one that stops improving.",
+            internalLinks: [{ phrase: "analytics", to: MONITORING_THREAD_PATH }] satisfies InternalPhraseLink[],
           },
         ],
       },
@@ -212,9 +270,69 @@ export const BACKLOG_THREAD = {
     ] satisfies BacklogPhasePreviewBlock[],
   },
 
+  commonQuestions: {
+    id: "common-questions",
+    title: "Common questions",
+    blocks: [
+      {
+        title: "My backlog keeps growing. It feels like an endless to-do list.",
+        sections: [
+          {
+            text:
+              "That usually means it has turned into a catch-all. A backlog is a curated, ordered queue, not a place to drop every idea, so part of the work is declining and removing items that no longer serve the goal. Review it regularly: reword, re-rank, and delete what has gone stale. The plainest overview of keeping a backlog healthy is a good start.",
+            externalLinks: [
+              { phrase: "keeping a backlog healthy", linkKey: "atlassian-scrum-backlogs" },
+            ] satisfies ExternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Everything feels like a top priority. How do I choose?",
+        sections: [
+          {
+            text:
+              "If everything is top priority, nothing is. Force a single order, there is only ever one item that comes next, and rank by a few practical factors like risk, value against effort, and what depends on what. MoSCoW, above, is one simple way to begin.",
+            bold: [{ phrase: "MoSCoW" }],
+          },
+        ],
+      },
+      {
+        title: "The items are too big or too vague to start.",
+        sections: [
+          {
+            text:
+              'Break a big item, sometimes called an epic, into pieces small enough to finish in one short cycle, and write each one around a user and a goal. If you cannot state the goal, the "so that…" part, that is a sign to reconsider whether you need it. The GOV.UK guide to writing user stories shows how.',
+            externalLinks: [
+              { phrase: "GOV.UK guide to writing user stories", linkKey: "uk-writing-user-stories" },
+            ] satisfies ExternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Old items pile up at the bottom and never get done.",
+        sections: [
+          {
+            text:
+              "Those are usually items added to please someone, that no one really intends to build. Left there, they turn the backlog into a junk drawer. Remove what does not serve the current goal; a shorter, honest list is easier to act on.",
+          },
+        ],
+      },
+      {
+        title: "The boring technical fixes and bugs never rise to the top.",
+        sections: [
+          {
+            text:
+              "They get buried, especially when they live on a separate, hidden list. Keep new features, bug fixes, and technical debt on one ordered backlog, so the trade-offs are visible and the owner can weigh them together.",
+            externalLinks: [{ phrase: "technical debt", linkKey: "atlassian-technical-debt" }] satisfies ExternalPhraseLink[],
+          },
+        ],
+      },
+    ] satisfies BacklogToggleBlock[],
+  },
+
   furtherReading: {
     text:
-      "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life, in a Canadian voice. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
+      "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
     externalLinks: [
       { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
       { phrase: "work in the open", linkKey: "work-open-default" },
@@ -261,6 +379,29 @@ export const BACKLOG_THREAD = {
       linkKey: "18f-derisking" satisfies ExternalLinkKey,
       description:
         "18F, De-risking Government Technology / Product Guide — https://guides.18f.gov/derisking/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "gc-design-community" satisfies ExternalLinkKey,
+      description:
+        "GC design community (GCcollab wiki) — https://wiki.gccollab.ca/GC_design_community",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "atlassian-scrum-backlogs" satisfies ExternalLinkKey,
+      description: "Atlassian, Product backlog — https://www.atlassian.com/agile/scrum/backlogs",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "atlassian-technical-debt" satisfies ExternalLinkKey,
+      description:
+        "Atlassian, Technical debt — https://www.atlassian.com/agile/software-development/technical-debt",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "roman-pichler-backlog-mistakes" satisfies ExternalLinkKey,
+      description:
+        "Roman Pichler, Seven Product Backlog Mistakes to Avoid — https://www.romanpichler.com/blog/product-backlog-mistakes/",
     },
   ] satisfies SourceItem[],
 } as const;

@@ -6,15 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
-import { BacklogPriorityFigure } from "@/components/BacklogPriorityFigure";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PhasePreviewPopupCards } from "@/components/PhasePreviewPopupCards";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
-import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
-import { BACKLOG_CORE_STRIP } from "@/lib/thread-core-strip";
+import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-content";
+import { JOINED_UP_DELIVERY_CORE_STRIP } from "@/lib/thread-core-strip";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -23,11 +22,9 @@ import {
 } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
-  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
-  guideProseTight,
   guideSectionTitle,
 } from "@/lib/guide-typography";
 
@@ -39,21 +36,19 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
-export function BacklogThreadPage() {
+export function JoinedUpDeliveryThreadPage() {
   const {
     title,
     lead,
     whatGoodLooksLike,
-    whatABacklogLooksLike,
     whyItMatters,
     whoseJob,
     closerLook,
     twoWaysComparison,
     byPhase,
-    commonQuestions,
     furtherReading,
     sources,
-  } = BACKLOG_THREAD;
+  } = JOINED_UP_DELIVERY_THREAD;
 
   const phaseCards = byPhase.blocks.map((block) => ({
     id: block.title,
@@ -63,7 +58,7 @@ export function BacklogThreadPage() {
   }));
 
   return (
-    <GuideLayout id={`thread-${BACKLOG_THREAD.slug}`}>
+    <GuideLayout id={`thread-${JOINED_UP_DELIVERY_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
         <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
@@ -80,7 +75,7 @@ export function BacklogThreadPage() {
 
       <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
 
-      <ThreadCoreStrip content={BACKLOG_CORE_STRIP} />
+      <ThreadCoreStrip content={JOINED_UP_DELIVERY_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
@@ -92,22 +87,6 @@ export function BacklogThreadPage() {
             </li>
           ))}
         </ul>
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={whatABacklogLooksLike.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{whatABacklogLooksLike.title}</h2>
-        <p className={guideProse}>{renderLinkedProse(whatABacklogLooksLike.intro)}</p>
-        <BacklogPriorityFigure />
-        <blockquote className="my-5 rounded-md border border-primary/15 border-l-4 border-l-primary/35 bg-primary/[0.03] px-4 py-4 md:px-5 md:py-5">
-          <p className={guideProse}>{whatABacklogLooksLike.example.story}</p>
-          <p className={`${guideProseTight} mt-3 text-foreground/70`}>It&apos;s done when:</p>
-          <ul className={`${guideProseTight} mt-2 list-disc space-y-1 text-foreground/70 ${guideListIndent}`}>
-            {whatABacklogLooksLike.example.doneWhen.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </blockquote>
-        <p className={guideProse}>{renderLinkedProse(whatABacklogLooksLike.closing)}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
@@ -156,26 +135,8 @@ export function BacklogThreadPage() {
         <PhasePreviewPopupCards cards={phaseCards} />
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={commonQuestions.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{commonQuestions.title}</h2>
-        <Accordion type="single" collapsible className="mt-4 rounded-lg border border-border bg-card">
-          {commonQuestions.blocks.map((block) => (
-            <AccordionItem key={block.title} value={block.title}>
-              <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
-                <span className="font-serif text-base font-semibold text-primary">
-                  {block.title}
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="px-5 pb-4">
-                {renderThreadSections(block.sections)}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
-
       <PageFoot
-        support="backlog"
+        support="joined-up-delivery"
         furtherReading={renderLinkedProse(furtherReading)}
         sources={sources}
       />

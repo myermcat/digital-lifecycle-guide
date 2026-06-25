@@ -13,6 +13,7 @@ export type SupportCalloutVariant =
   | "user-research"
   | "ethics-and-bias"
   | "backlog"
+  | "joined-up-delivery"
   | "dependencies-and-standards"
   | "data-stewardship";
 
@@ -81,9 +82,17 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   backlog: {
-    text: "For help running an agile backlog, the Government of Canada's service-design and delivery community is the place to ask, and the standard to iterate and improve frequently is the expectation it supports.",
+    text: "For help running an agile backlog, the Government of Canada's design community is a place to ask, and the standard to iterate and improve frequently is the expectation it supports.",
     externalLinks: [
+      { phrase: "design community", linkKey: "gc-design-community" },
       { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
+    ],
+  },
+  "joined-up-delivery": {
+    text: "For joining a service up, the Government of Canada's service-design and user-centred design community is the place to ask about mapping a whole journey, and the enterprise architecture community and the Enabling Interoperability guidance are the starting points for connecting systems.",
+    externalLinks: [
+      { phrase: "enterprise architecture community", linkKey: "gc-ea-application-architecture" },
+      { phrase: "Enabling Interoperability", linkKey: "enabling-interoperability" },
     ],
   },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
@@ -96,6 +105,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   "user-research": "user-research",
   "ethics-and-bias": "ethics-and-bias",
   backlog: "backlog",
+  "joined-up-delivery": "joined-up-delivery",
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
 };

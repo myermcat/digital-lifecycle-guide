@@ -26,12 +26,22 @@ export type ThreadOrderedListSection = {
   items: readonly ThreadOrderedListItem[];
 };
 
-export type ThreadContentSection = ThreadLinkedProse | ThreadOrderedListSection;
+export type ThreadUnorderedListSection = {
+  type: "unorderedList";
+  items: readonly ThreadOrderedListItem[];
+};
+
+export type ThreadContentSection =
+  | ThreadLinkedProse
+  | ThreadOrderedListSection
+  | ThreadUnorderedListSection;
 
 export type ThreadCloserLookBlock = {
   title: string;
   sections: readonly ThreadContentSection[];
 };
+
+export type ThreadToggleBlock = ThreadCloserLookBlock;
 
 export type ThreadPhasePreviewBlock = {
   title: string;
@@ -109,11 +119,17 @@ export function threadWhoseJobPlainText({ intro, roles, closing }: ThreadWhoseJo
 export function threadSectionsPlainText(sections: readonly ThreadContentSection[]): string {
   return sections
     .map((section) =>
-      "type" in section && section.type === "orderedList"
+      "type" in section && (section.type === "orderedList" || section.type === "unorderedList")
         ? section.items.map(orderedListItemPlainText).join(" ")
         : section.text,
     )
     .join(" ");
+}
+
+function isUnorderedList(
+  section: ThreadContentSection,
+): section is ThreadUnorderedListSection {
+  return "type" in section && section.type === "unorderedList";
 }
 
 function isOrderedList(
@@ -184,6 +200,12 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
               <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
             ))}
           </ol>
+        ) : isUnorderedList(section) ? (
+          <ul key={index} className={`list-disc space-y-1 ${guideListIndent}`}>
+            {section.items.map((item) => (
+              <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
+            ))}
+          </ul>
         ) : (
           <p key={index}>{renderLinkedProse(section)}</p>
         ),

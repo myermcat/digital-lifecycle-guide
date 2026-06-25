@@ -591,6 +591,52 @@ export const EXTERNAL_LINKS = {
     description: "NIST study on demographic effects in face-recognition software",
     accessibility: "public",
   },
+  "uk-assisted-digital-introduction": {
+    url: "https://www.gov.uk/service-manual/helping-people-to-use-your-service/assisted-digital-support-introduction",
+    description: "GOV.UK Service Manual, Assisted digital support: an introduction",
+    accessibility: "public",
+  },
+  "gc-standards-on-apis": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html",
+    description: "Government of Canada Standards on APIs (TBS)",
+    accessibility: "public",
+  },
+  "enabling-interoperability": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability.html",
+    description: "GC Enabling Interoperability hub (TBS)",
+    accessibility: "public",
+  },
+  "gc-ea-application-architecture": {
+    url: "https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture",
+    description: "GC Enterprise Architecture, Application Architecture (GC EARB, GCcollab)",
+    accessibility: "public",
+  },
+  "uk-service-standard-point-2": {
+    url: "https://www.gov.uk/service-manual/service-standard/point-2-solve-a-whole-problem",
+    description: "GOV.UK Service Standard, Point 2: Solve a whole problem for users",
+    accessibility: "public",
+  },
+  "uk-service-standard-point-3-join-channels": {
+    url: "https://www.gov.uk/service-manual/service-standard/point-3-join-up-across-channels",
+    description:
+      "GOV.UK Service Standard, Point 3: Provide a joined up experience across all channels",
+    accessibility: "public",
+  },
+  "uk-creating-experience-map": {
+    url: "https://www.gov.uk/service-manual/user-research/creating-an-experience-map",
+    description: "UK Service Manual, Creating an experience map",
+    accessibility: "public",
+  },
+  "nng-journey-mapping-101": {
+    url: "https://www.nngroup.com/articles/journey-mapping-101/",
+    description: "Nielsen Norman Group, Journey Mapping 101",
+    accessibility: "public",
+  },
+  "european-interoperability-framework": {
+    url: "https://interoperable-europe.ec.europa.eu/collection/iopeu-monitoring/european-interoperability-framework-detail",
+    description: "European Interoperability Framework, the four layers (European Commission)",
+    accessibility: "public",
+  },
   "gc-functional-communities-directory": {
     url: "https://wiki.gccollab.ca/GCOnboard/Functional_Communities",
     description: "GC Functional Communities directory",
@@ -599,6 +645,26 @@ export const EXTERNAL_LINKS = {
   "gc-enterprise-it-portfolio": {
     url: "https://wiki.gccollab.ca/GC_Enterprise_IT_Portfolio",
     description: "GC Enterprise IT Portfolio (GCcollab)",
+    accessibility: "public",
+  },
+  "gc-design-community": {
+    url: "https://wiki.gccollab.ca/GC_design_community",
+    description: "GC design community (GCcollab wiki)",
+    accessibility: "public",
+  },
+  "atlassian-scrum-backlogs": {
+    url: "https://www.atlassian.com/agile/scrum/backlogs",
+    description: "Atlassian, Product backlog",
+    accessibility: "public",
+  },
+  "atlassian-technical-debt": {
+    url: "https://www.atlassian.com/agile/software-development/technical-debt",
+    description: "Atlassian, Technical debt",
+    accessibility: "public",
+  },
+  "roman-pichler-backlog-mistakes": {
+    url: "https://www.romanpichler.com/blog/product-backlog-mistakes/",
+    description: "Roman Pichler, Seven Product Backlog Mistakes to Avoid",
     accessibility: "public",
   },
 } as const satisfies Record<string, ExternalLinkEntry>;

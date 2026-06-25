@@ -103,7 +103,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["joined-up-delivery"].title,
     path: THREADS["joined-up-delivery"].path,
     type: "thread",
-    status: "in-progress",
+    status: "in-review",
   },
 
   { title: SOO_VS_SOW.title, path: SOO_VS_SOW_PATH, type: "reference", status: "in-review" },
@@ -176,6 +176,9 @@ const THREAD_IN_REVIEW_DISPLAY_ORDER: string[] = [
   THREADS["data-stewardship"].path,
   THREADS.accessibility.path,
   THREADS["user-research"].path,
+  THREADS["ethics-and-bias"].path,
+  THREADS.backlog.path,
+  THREADS["joined-up-delivery"].path,
 ];
 
 function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {

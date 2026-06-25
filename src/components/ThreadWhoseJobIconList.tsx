@@ -2,9 +2,10 @@ import {
   Briefcase,
   ClipboardList,
   Code,
+  Headset,
   LifeBuoy,
+  Map,
   PenTool,
-  Search,
   Server,
   ShieldCheck,
   type LucideIcon,
@@ -28,13 +29,16 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   if (normalized.includes("product or service owner")) {
     return ClipboardList;
   }
+  if (normalized.includes("service designer") || normalized.includes("user researcher")) {
+    return Map;
+  }
   if (normalized === "the team") {
     return Code;
   }
-  if (normalized.includes("user researcher") || normalized.includes("service designer")) {
-    return Search;
+  if (normalized.includes("operations") || normalized.includes("front-line")) {
+    return Headset;
   }
-  if (normalized.includes("data scientist") || normalized.includes("developer")) {
+  if (normalized.includes("data scientist") || normalized.includes("developer") || normalized.includes("architect")) {
     return Code;
   }
   if (normalized.includes("designer") || normalized.includes("content author")) {

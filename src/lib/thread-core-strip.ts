@@ -68,6 +68,16 @@ export const ETHICS_AND_BIAS_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const JOINED_UP_DELIVERY_CORE_STRIP = {
+  heading: "THE CORE OF JOINED-UP DELIVERY",
+  tiles: [
+    { label: "Map the whole journey", gloss: "see the user's whole task" },
+    { label: "Work across boundaries", gloss: "agree how the journey runs" },
+    { label: "Connect the systems", gloss: "so they exchange information" },
+    { label: "Keep channels in step", gloss: "online, phone, in person" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 export const DATA_STEWARDSHIP_CORE_STRIP = {
   heading: "THE CORE OF DATA STEWARDSHIP",
   tiles: [

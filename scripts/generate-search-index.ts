@@ -37,6 +37,10 @@ import {
   backlogSectionsPlainText,
 } from "../src/lib/backlog-thread-content";
 import {
+  JOINED_UP_DELIVERY_THREAD,
+  joinedUpDeliverySectionsPlainText,
+} from "../src/lib/joined-up-delivery-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -942,6 +946,16 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: concat(...BACKLOG_THREAD.whatGoodLooksLike.map((item) => item.text)),
     },
     {
+      sectionId: BACKLOG_THREAD.whatABacklogLooksLike.id,
+      sectionHeading: BACKLOG_THREAD.whatABacklogLooksLike.title,
+      text: concat(
+        BACKLOG_THREAD.whatABacklogLooksLike.intro.text,
+        BACKLOG_THREAD.whatABacklogLooksLike.example.story,
+        ...BACKLOG_THREAD.whatABacklogLooksLike.example.doneWhen,
+        BACKLOG_THREAD.whatABacklogLooksLike.closing.text,
+      ),
+    },
+    {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
       text: BACKLOG_THREAD.whyItMatters.text,
@@ -984,6 +998,15 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       ),
     },
     {
+      sectionId: BACKLOG_THREAD.commonQuestions.id,
+      sectionHeading: BACKLOG_THREAD.commonQuestions.title,
+      text: concat(
+        ...BACKLOG_THREAD.commonQuestions.blocks.map((block) =>
+          concat(block.title, backlogSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
       sectionId: "further-reading",
       sectionHeading: "Further reading",
       text: BACKLOG_THREAD.furtherReading.text,
@@ -1001,6 +1024,95 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: backlogKeywords,
+    });
+  }
+}
+
+// Joined-up delivery thread — section-level records.
+{
+  const pageTitle = JOINED_UP_DELIVERY_THREAD.title;
+  const pagePath = THREADS["joined-up-delivery"].path;
+
+  const joinedUpKeywords =
+    "joined-up delivery omni-channel interoperability API journey mapping assisted digital";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(JOINED_UP_DELIVERY_THREAD.lead),
+    keywords: joinedUpKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...JOINED_UP_DELIVERY_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: JOINED_UP_DELIVERY_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(JOINED_UP_DELIVERY_THREAD.whoseJob),
+    },
+    {
+      sectionId: JOINED_UP_DELIVERY_THREAD.closerLook.id,
+      sectionHeading: JOINED_UP_DELIVERY_THREAD.closerLook.title,
+      text: concat(
+        ...JOINED_UP_DELIVERY_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, joinedUpDeliverySectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: JOINED_UP_DELIVERY_THREAD.twoWaysComparison.id,
+      sectionHeading: JOINED_UP_DELIVERY_THREAD.twoWaysComparison.title,
+      text: concat(
+        JOINED_UP_DELIVERY_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(JOINED_UP_DELIVERY_THREAD.twoWaysComparison.risky.items ?? []),
+        JOINED_UP_DELIVERY_THREAD.twoWaysComparison.risky.closing ?? "",
+        JOINED_UP_DELIVERY_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(JOINED_UP_DELIVERY_THREAD.twoWaysComparison.safe.items ?? []),
+        JOINED_UP_DELIVERY_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: JOINED_UP_DELIVERY_THREAD.byPhase.id,
+      sectionHeading: JOINED_UP_DELIVERY_THREAD.byPhase.title,
+      text: concat(
+        JOINED_UP_DELIVERY_THREAD.byPhase.intro,
+        ...JOINED_UP_DELIVERY_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${joinedUpDeliverySectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: JOINED_UP_DELIVERY_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: joinedUpKeywords,
     });
   }
 }
