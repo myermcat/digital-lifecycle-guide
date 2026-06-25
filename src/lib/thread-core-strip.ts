@@ -48,6 +48,16 @@ export const USER_RESEARCH_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const ETHICS_AND_BIAS_CORE_STRIP = {
+  heading: "THE CORE OF ETHICS AND BIAS",
+  tiles: [
+    { label: "Check who it affects", gloss: "even without AI" },
+    { label: "Assess the impact", gloss: "the AIA" },
+    { label: "Keep a human accountable", gloss: "oversight and recourse" },
+    { label: "Be open about it", gloss: "explain and publish" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 export const DATA_STEWARDSHIP_CORE_STRIP = {
   heading: "THE CORE OF DATA STEWARDSHIP",
   tiles: [

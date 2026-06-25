@@ -13,7 +13,7 @@ import { PHASES } from "@/lib/guide-strings";
 import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
 import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/reference-paths";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
-import lifecycleVisual from "@/assets/lifecycle_three_regions_bow.svg?url";
+import { LifecycleThreeRegionsFigure } from "@/components/LifecycleThreeRegionsFigure";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,15 +61,7 @@ function Index() {
           </p>
         </section>
 
-        <figure className="mt-12 md:mt-14 mx-auto max-w-3xl">
-          <img
-            src={lifecycleVisual}
-            alt="The three phases of a digital service: a small loop labelled Create, an arrow into a large infinity loop labelled Live, then a fading arrow to a small pale loop labelled Sunset."
-            className="w-full h-auto"
-            width={760}
-            height={250}
-          />
-        </figure>
+        <LifecycleThreeRegionsFigure variant="featured" className="mt-12 md:mt-14" />
 
         <section className={`mt-10 md:mt-12 ${guideProseSpace}`}>
           <p>

@@ -29,6 +29,10 @@ import {
   userResearchSectionsPlainText,
 } from "../src/lib/user-research-thread-content";
 import {
+  ETHICS_AND_BIAS_THREAD,
+  ethicsAndBiasSectionsPlainText,
+} from "../src/lib/ethics-and-bias-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -813,6 +817,94 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: userResearchKeywords,
+    });
+  }
+}
+
+// Ethics and bias thread — section-level records.
+{
+  const pageTitle = ETHICS_AND_BIAS_THREAD.title;
+  const pagePath = THREADS["ethics-and-bias"].path;
+
+  const ethicsKeywords = "AIA GBA Plus automated decision-making AI bias fairness";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(ETHICS_AND_BIAS_THREAD.lead),
+    keywords: ethicsKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...ETHICS_AND_BIAS_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: ETHICS_AND_BIAS_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(ETHICS_AND_BIAS_THREAD.whoseJob),
+    },
+    {
+      sectionId: ETHICS_AND_BIAS_THREAD.closerLook.id,
+      sectionHeading: ETHICS_AND_BIAS_THREAD.closerLook.title,
+      text: concat(
+        ...ETHICS_AND_BIAS_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, ethicsAndBiasSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: ETHICS_AND_BIAS_THREAD.twoWaysComparison.id,
+      sectionHeading: ETHICS_AND_BIAS_THREAD.twoWaysComparison.title,
+      text: concat(
+        ETHICS_AND_BIAS_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(ETHICS_AND_BIAS_THREAD.twoWaysComparison.risky.items ?? []),
+        ETHICS_AND_BIAS_THREAD.twoWaysComparison.risky.closing ?? "",
+        ETHICS_AND_BIAS_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(ETHICS_AND_BIAS_THREAD.twoWaysComparison.safe.items ?? []),
+        ETHICS_AND_BIAS_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: ETHICS_AND_BIAS_THREAD.byPhase.id,
+      sectionHeading: ETHICS_AND_BIAS_THREAD.byPhase.title,
+      text: concat(
+        ETHICS_AND_BIAS_THREAD.byPhase.intro,
+        ...ETHICS_AND_BIAS_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${ethicsAndBiasSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: ETHICS_AND_BIAS_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: ethicsKeywords,
     });
   }
 }

@@ -475,6 +475,71 @@ export const EXTERNAL_LINKS = {
     description: "GC Open Source community (GitHub)",
     accessibility: "public",
   },
+  "directive-automated-decision-making": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    description: "Directive on Automated Decision-Making (TBS)",
+    accessibility: "public",
+  },
+  "algorithmic-impact-assessment": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+    description: "Algorithmic Impact Assessment (TBS)",
+    accessibility: "public",
+  },
+  "gba-plus": {
+    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus.html",
+    description: "Gender-based Analysis Plus (Women and Gender Equality Canada)",
+    accessibility: "public",
+  },
+  "responsible-use-ai-hub": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai.html",
+    description: "Responsible use of AI in government (hub, TBS)",
+    accessibility: "public",
+  },
+  "ai-guiding-principles": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/principles.html",
+    description: "Guiding principles for the use of AI in government (TBS)",
+    accessibility: "public",
+  },
+  "generative-ai-faster": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html",
+    description: "Guide on the Use of Generative AI, the FASTER principles (TBS)",
+    accessibility: "public",
+  },
+  "agentic-ai-guide": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-agentic-artificial-antelligence.html",
+    description: "Guide on the Use of Agentic AI (TBS)",
+    accessibility: "public",
+  },
+  "can-asc-62-equitable-ai": {
+    url: "https://accessible.canada.ca/creating-accessibility-standards/asc-62-accessible-equitable-artificial-intelligence-systems",
+    description: "CAN-ASC-6.2 Accessible and Equitable AI Systems (Accessibility Standards Canada)",
+    accessibility: "public",
+  },
+  "opc-generative-ai-principles": {
+    url: "https://www.priv.gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/",
+    description: "OPC, Principles for responsible, trustworthy and privacy-protective generative AI",
+    accessibility: "public",
+  },
+  "statcan-ai": {
+    url: "https://www.statcan.gc.ca/en/trust/collecting-your-data/artificial-intelligence",
+    description: "Artificial intelligence at Statistics Canada",
+    accessibility: "public",
+  },
+  "nist-ai-rmf": {
+    url: "https://www.nist.gov/itl/ai-risk-management-framework",
+    description: "US NIST AI Risk Management Framework (AI RMF 1.0)",
+    accessibility: "public",
+  },
+  "oecd-ai-principles": {
+    url: "https://oecd.ai/en/ai-principles",
+    description: "OECD AI Principles",
+    accessibility: "public",
+  },
+  "eu-ai-act-summary": {
+    url: "https://artificialintelligenceact.eu/high-level-summary/",
+    description: "EU AI Act, high-level summary",
+    accessibility: "public",
+  },
   "gc-functional-communities-directory": {
     url: "https://wiki.gccollab.ca/GCOnboard/Functional_Communities",
     description: "GC Functional Communities directory",

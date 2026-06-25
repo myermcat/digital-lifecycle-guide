@@ -27,7 +27,7 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   if (normalized.includes("user researcher") || normalized.includes("service designer")) {
     return Search;
   }
-  if (normalized.includes("developer")) {
+  if (normalized.includes("data scientist") || normalized.includes("developer")) {
     return Code;
   }
   if (normalized.includes("designer") || normalized.includes("content author")) {
@@ -38,6 +38,9 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   }
   if (normalized.includes("operations")) {
     return Server;
+  }
+  if (normalized.includes("legal") || normalized.includes("privacy")) {
+    return LifeBuoy;
   }
 
   return LifeBuoy;

@@ -3,6 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { THREADS } from "@/lib/guide-strings";
+import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -195,6 +196,9 @@ export const USER_RESEARCH_THREAD = {
             externalLinks: [
               { phrase: "Design with users", linkKey: "design-with-users" },
             ] satisfies ExternalPhraseLink[],
+            internalLinks: [
+              { phrase: "the right answer", to: OPTIONS_ANALYSIS_PATH },
+            ] satisfies InternalPhraseLink[],
           },
         ],
       },

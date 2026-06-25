@@ -11,6 +11,7 @@ export type SupportCalloutVariant =
   | "privacy"
   | "accessibility"
   | "user-research"
+  | "ethics-and-bias"
   | "dependencies-and-standards"
   | "data-stewardship";
 
@@ -71,6 +72,13 @@ export const SUPPORT_CALLOUT_BODIES = {
       },
     ],
   },
+  "ethics-and-bias": {
+    text: "For responsible-AI and fairness questions, the Responsible use of AI in government hub is the Government of Canada starting point; your department's data or AI office, privacy or ATIP office, and legal services are the people to involve early, and GBA Plus support comes from Women and Gender Equality Canada.",
+    externalLinks: [
+      { phrase: "Responsible use of AI in government", linkKey: "responsible-use-ai-hub" },
+      { phrase: "GBA Plus", linkKey: "gba-plus" },
+    ],
+  },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 
 const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>> = {
@@ -79,6 +87,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   privacy: "privacy",
   accessibility: "accessibility",
   "user-research": "user-research",
+  "ethics-and-bias": "ethics-and-bias",
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
 };

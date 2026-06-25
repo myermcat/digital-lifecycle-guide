@@ -65,7 +65,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["user-research"].title,
     path: THREADS["user-research"].path,
     type: "thread",
-    status: "not-started",
+    status: "in-review",
   },
   {
     title: THREADS.security.title,
@@ -90,7 +90,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["ethics-and-bias"].title,
     path: THREADS["ethics-and-bias"].path,
     type: "thread",
-    status: "not-started",
+    status: "in-review",
   },
   {
     title: THREADS["team-capability"].title,
@@ -168,10 +168,45 @@ export const PAGE_INDEX_TYPE_LABELS: Record<PageIndexType, string> = {
   other: "Other",
 };
 
+/** In-review threads float to the top of the Threads table in this order. */
+const THREAD_IN_REVIEW_DISPLAY_ORDER: string[] = [
+  THREADS.security.path,
+  THREADS.procurement.path,
+  THREADS.privacy.path,
+  THREADS["data-stewardship"].path,
+  THREADS.accessibility.path,
+  THREADS["user-research"].path,
+];
+
+function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {
+  return pages
+    .map((page, index) => ({ page, index }))
+    .sort((a, b) => {
+      const aInReview = a.page.status === "in-review";
+      const bInReview = b.page.status === "in-review";
+
+      if (aInReview && bInReview) {
+        const aOrder = THREAD_IN_REVIEW_DISPLAY_ORDER.indexOf(a.page.path);
+        const bOrder = THREAD_IN_REVIEW_DISPLAY_ORDER.indexOf(b.page.path);
+        const aRank = aOrder === -1 ? Number.MAX_SAFE_INTEGER : aOrder;
+        const bRank = bOrder === -1 ? Number.MAX_SAFE_INTEGER : bOrder;
+        if (aRank !== bRank) return aRank - bRank;
+      } else if (aInReview !== bInReview) {
+        return aInReview ? -1 : 1;
+      }
+
+      return a.index - b.index;
+    })
+    .map(({ page }) => page);
+}
+
 export function getPageIndexByType(): { type: PageIndexType; label: string; pages: PageIndexEntry[] }[] {
-  return PAGE_INDEX_TYPE_ORDER.map((type) => ({
-    type,
-    label: PAGE_INDEX_TYPE_LABELS[type],
-    pages: PAGE_INDEX.filter((page) => page.type === type),
-  })).filter((group) => group.pages.length > 0);
+  return PAGE_INDEX_TYPE_ORDER.map((type) => {
+    const pages = PAGE_INDEX.filter((page) => page.type === type);
+    return {
+      type,
+      label: PAGE_INDEX_TYPE_LABELS[type],
+      pages: type === "thread" ? sortThreadPages(pages) : pages,
+    };
+  }).filter((group) => group.pages.length > 0);
 }
