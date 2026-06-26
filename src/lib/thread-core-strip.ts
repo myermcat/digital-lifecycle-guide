@@ -88,6 +88,16 @@ export const DATA_STEWARDSHIP_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const RELEASING_CHANGES_CORE_STRIP = {
+  heading: "THE CORE OF RELEASING CHANGES",
+  tiles: [
+    { label: "Small and often", gloss: "not big-bang" },
+    { label: "Automated pipeline", gloss: "tested before it goes out" },
+    { label: "Roll out gradually", gloss: "a slice first, then watch" },
+    { label: "Roll back fast", gloss: "undo a bad change" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 function threadCoreStripAltText(content: ThreadCoreStripContent): string {
   const pillars = content.tiles
     .map((tile) => `${tile.label}, ${tile.gloss}`)

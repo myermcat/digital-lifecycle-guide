@@ -6,6 +6,7 @@ import {
   LifeBuoy,
   Map,
   PenTool,
+  Rocket,
   Server,
   ShieldCheck,
   type LucideIcon,
@@ -34,6 +35,9 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   }
   if (normalized === "the team") {
     return Code;
+  }
+  if (normalized.includes("release engineer")) {
+    return Rocket;
   }
   if (normalized.includes("operations") || normalized.includes("front-line")) {
     return Headset;

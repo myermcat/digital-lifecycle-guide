@@ -61,7 +61,7 @@ export const SUPPORT_CALLOUT_BLOCK = {
   component: "SupportCallout",
   importPath: "@/components/SupportCallout",
   purpose:
-    "Standing offer of help at the foot of every page, immediately before Further reading and Sources.",
+    "Standing offer of help at the foot of every page, before Further reading and Sources.",
   visual:
     "Doorway-card anatomy: small-caps primary label, tight sans body, arrow link to /support.",
   examples: ["Generic on most pages", "Security → CCCS", "Procurement → CanadaBuys"],

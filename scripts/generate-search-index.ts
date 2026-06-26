@@ -41,6 +41,10 @@ import {
   joinedUpDeliverySectionsPlainText,
 } from "../src/lib/joined-up-delivery-thread-content";
 import {
+  RELEASING_CHANGES_THREAD,
+  releasingChangesSectionsPlainText,
+} from "../src/lib/releasing-changes-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -1113,6 +1117,96 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: joinedUpKeywords,
+    });
+  }
+}
+
+// Releasing changes thread — section-level records.
+{
+  const pageTitle = RELEASING_CHANGES_THREAD.title;
+  const pagePath = THREADS["releasing-changes"].path;
+
+  const releasingKeywords =
+    "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(RELEASING_CHANGES_THREAD.lead),
+    keywords: releasingKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(
+        ...RELEASING_CHANGES_THREAD.whatGoodLooksLike.map((item) => item.text),
+      ),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: RELEASING_CHANGES_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(RELEASING_CHANGES_THREAD.whoseJob),
+    },
+    {
+      sectionId: RELEASING_CHANGES_THREAD.closerLook.id,
+      sectionHeading: RELEASING_CHANGES_THREAD.closerLook.title,
+      text: concat(
+        ...RELEASING_CHANGES_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, releasingChangesSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: RELEASING_CHANGES_THREAD.twoWaysComparison.id,
+      sectionHeading: RELEASING_CHANGES_THREAD.twoWaysComparison.title,
+      text: concat(
+        RELEASING_CHANGES_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(RELEASING_CHANGES_THREAD.twoWaysComparison.risky.items ?? []),
+        RELEASING_CHANGES_THREAD.twoWaysComparison.risky.closing ?? "",
+        RELEASING_CHANGES_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(RELEASING_CHANGES_THREAD.twoWaysComparison.safe.items ?? []),
+        RELEASING_CHANGES_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: RELEASING_CHANGES_THREAD.byPhase.id,
+      sectionHeading: RELEASING_CHANGES_THREAD.byPhase.title,
+      text: concat(
+        RELEASING_CHANGES_THREAD.byPhase.intro,
+        ...RELEASING_CHANGES_THREAD.byPhase.blocks.map(
+          (block) => concat(block.title, block.preview, releasingChangesSectionsPlainText(block.popup)),
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: RELEASING_CHANGES_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: releasingKeywords,
     });
   }
 }

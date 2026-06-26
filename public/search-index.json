@@ -125,7 +125,8 @@
     "sectionId": "",
     "sectionHeading": "Releasing changes",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Releasing changes means getting new features and fixes onto the live service, safely and often. The surprising part, for anyone who finds releases nerve-wracking, is that releasing small and often is safer than saving everything up for a big launch. Releasing changes pulls together four habits: release in small, frequent batches; run every change through an automated pipeline that tests it before it goes out; roll each change out gradually and watch how it behaves; and keep the ability to roll back quickly if something goes wrong. The business owner of the application answers for releasing being frequent and funded; the team does the work.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
   },
   {
     "id": "/thread/dependencies-and-standards",
@@ -221,7 +222,7 @@
     "sectionId": "",
     "sectionHeading": "Joined-up delivery",
     "lifecyclePhase": "thread",
-    "text": "Joined-up delivery means making a person's whole task work from end to end, including the steps that fall to the services on either side of yours. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website. The business owner of the application answers for how the journey holds together; the team does the work.",
+    "text": "Joined-up delivery means making a person's whole task work from end to end, including the steps handled by other services that come before and after yours in the person's journey. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website. The business owner of the application answers for how the journey holds together; the team does the work.",
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
@@ -1307,7 +1308,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "Map the whole journey first. Before you can join a service up, you need to see the whole task the way the person does. Two views help. A service landscape shows the task from government's side: every touchpoint, the back-office steps, and which organizations are involved. An experience map shows it from the user's side, where they wait, repeat themselves, or hit a dead end. Mapping starts by working out who else delivers the journey, because complicated tasks cross organizational boundaries, and then bringing those teams together so everyone shares one picture. The map then shows the quick wins (often content fixes) and the bigger changes worth making. Connect the systems, and do not ask twice. Services join up technically when they can exchange information. The Government of Canada's standards on APIs describe how a service exposes its functionality so other systems, internal teams, partners, and the public, can use it, with the principle to build once and serve every channel from it. The enterprise architecture expectation is to reuse what exists and expose functionality as services rather than rebuild. Interoperability is not only a technical question: the European model describes four layers, legal, organizational, semantic, and technical, and a useful test for the semantic layer is that what one service sends is what the next service understands. The payoff for the user is plain: they give their information to government once. Keep every channel in step. Most services run across more than one channel, a mix of online, phone, letter, and in person. Keeping them in step means a change to the online service reaches the others at the same time: the call-centre scripts are updated, the letters are revised, and the front-line staff who answer questions know how the current service works. It also means looking after the people who cannot or will not use the online service on their own. That help, by phone or in person, is called assisted digital support, and people may need it for reasons of trust, confidence, internet access, digital skills, or motivation. As more of a service moves online, the phone and the counter stay easy to find, because pushing digital take-up should never make the other channels harder to reach.",
+    "text": "Map the whole journey first. Before you can join a service up, you need to see the whole task the way the person does. Two views help. A service landscape shows the task from government's side: every touchpoint, the back-office steps, and which organizations are involved. An experience map shows it from the user's side, where they wait, repeat themselves, or hit a dead end. Mapping starts by working out who else delivers the journey, because complicated tasks cross organizational boundaries, and then bringing those teams together so everyone shares one picture. The map then shows the quick wins (often content fixes) and the bigger changes worth making. Connect the systems so people enter their information only once. Services join up technically when they can exchange information. The Government of Canada's standards on APIs describe how a service exposes its functionality so other systems, internal teams, partners, and the public, can use it, with the principle to build once and serve every channel from it. The enterprise architecture expectation is to reuse what exists and expose functionality as services rather than rebuild. Interoperability is not only a technical question: the European model describes four layers, legal, organizational, semantic, and technical, and a useful test for the semantic layer is that what one service sends is what the next service understands. The payoff for the user is plain: they give their information to government once. Keep every channel in step. Most services run across more than one channel, a mix of online, phone, letter, and in person. Keeping them in step means a change to the online service reaches the others at the same time: the call-centre scripts are updated, the letters are revised, and the front-line staff who answer questions know how the current service works. It also means looking after the people who cannot or will not use the online service on their own. That help, by phone or in person, is called assisted digital support, and people may need it for reasons of trust, confidence, internet access, digital skills, or motivation. As more of a service moves online, the phone and the counter stay easy to find, because pushing digital take-up should never make the other channels harder to reach.",
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
@@ -1349,6 +1350,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
+  },
+  {
+    "id": "/thread/releasing-changes#what-good-looks-like",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "Changes go out in small, frequent batches, rather than being saved up for big, risky releases. Every change runs through an automated pipeline that builds and tests it before it can be released. Each release is tested before it reaches the public, and a person gives the final go-ahead on the releases that need one. New changes are rolled out gradually, to a small share of users first, watched, and continued only if they behave. A release can be rolled back quickly when something goes wrong, so a bad change is a short problem rather than a lasting one. Before deploying to the cloud, the Government of Canada's security guardrails are in place. The team tracks whether releasing is healthy: how often it releases, how long a change takes to reach users, how often a release breaks something, and how fast it recovers.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#why-it-matters",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "Big, infrequent releases are where risk collects. When months of changes go out at once, there is more that can break, it is harder to tell which change caused a problem, and users wait a long time for fixes and improvements. Releasing in small batches turns that around: each change is small enough to test, to understand, and to undo, so a problem is caught early and contained. This is the Government of Canada's expectation, its standard is to iterate and improve frequently, releasing small batches and building in automated testing so new changes do not introduce new problems. The evidence backs it up: teams that release often and recover fast are also the ones that break things least, so speed and stability come together rather than trading off. For a service in the cloud, releasing also rides on a baseline of security: the GC Cloud Guardrails must be implemented, validated, and reported within the first 30 business days of getting a cloud account.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#whose-job",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Releasing changes is shared across the team, with each role holding a different part: Developers keep each change small, write the automated tests, and build and maintain the pipeline that delivers them. Operations and release engineers run the deployments, watch each rollout, and roll back when something misbehaves. Security specialists make sure the security checks and guardrails ride the pipeline and that patches go out promptly. The business owner of the application makes sure releasing is frequent and funded, accepts that small frequent releases are the safer path, and gives the go-ahead on releases that need a sign-off.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#a-closer-look",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Small, frequent releases beat big ones. Two practices make small releases possible. Continuous integration means developers merge their work into the shared codebase often, where an automated build and test check it right away, so problems surface while they are small. Continuous delivery means each change is then carried through a deployment pipeline, a series of automated stages that each add confidence, until it is ready to release at the click of a button. Built on a single tested package moved through development, staging, and production, this is what lets a team release weekly, daily, or many times a day, with each release low-risk because so little has changed since the last one. Roll out gradually, and be ready to undo. Even a tested change can behave unexpectedly with real users, so the safe pattern is to release it to a small share of them first. This is a canary release: the change goes to, say, 5% of users while the rest stay on the old version, the two are compared, and the rollout only continues if the change behaves. The math is the point, a fault that would fail one in five requests reaches only a fraction of users instead of everyone. Alongside that, a team needs a fast way back: an auditable, single-package deployment makes rolling back to the last good version straightforward, and a quick post-release check can trigger that rollback automatically. The ability to undo in minutes is what makes frequent releasing safe. Know whether your releasing is healthy. You can tell a healthy release process from an unhealthy one with a few plain measures, often called the DORA metrics: how often you release, how long a change takes to get from done to live, how often a release causes a problem, and how fast you recover when one does. The useful finding behind them is that these do not trade off, the teams that release most often are also the ones that break things least and recover fastest. Treat the numbers as a temperature check the team uses to improve. A metric chased as a target for its own sake stops being honest.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#two-ways",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to release changes",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They ran the tax-filing service on one big release a quarter: saved up months of changes for a single release night tested by hand at the end, then deployed everything to everyone at once had no quick way back when the release broke The result: the big release took down filing at peak season, it took days to work out which of the many changes was to blame, and the call centre was buried while it was fixed. Meet Pax. They ran the tax-filing service on small, frequent releases: released small changes every week through an automated pipeline that tested each one rolled each change out to a small share of filers first, watched it, then expanded could roll back to the last good version in minutes The result: the few problems that slipped through hit a handful of users, were spotted fast, and were undone before most people noticed, and filing stayed up through the busy season.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#by-phase",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Releasing changes looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "How a service releases changes shifts across its life. Create. Set up how you will release. The release habits are set before launch. The team builds the pipeline and the automated tests, decides how it will deploy and roll back, and, for a cloud service, puts the GC security guardrails in place and validates them within the first 30 business days. Choosing to release small and often from the start is far easier than retrofitting it onto a service built for big launches. Live. Where most releasing happens. Once the service is running, releasing is continuous. The team releases small changes often, rolls them out gradually and watches them through monitoring, rolls back the ones that misbehave, and applies security patches promptly. The work to release comes from the prioritized backlog, and the team keeps an eye on whether releasing stays healthy. Sunset. Releasing winds down, but still counts. As a service is retired or replaced, changes slow to the essential ones: security fixes, and the steps that move data to a new home. These still go through the pipeline and testing, because a botched final change can strand the people still using the service. Keep the ability to fix and roll back until the service is fully off.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#further-reading",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Releasing often is the Government of Canada's standard to iterate and improve frequently, and for a service in the cloud the GC Cloud Guardrails set the security baseline that must be validated within 30 business days, with the guidance to use open standards and solutions adding the exit-strategy and portability expectations. For how to do it, the UK Service Manual on deploying software regularly is the fullest government how-to, Atlassian explains continuous integration, delivery, and deployment in plain words, Martin Fowler defines the deployment pipeline, Google's SRE workbook covers canary releases, and the DORA metrics are the way to tell whether releasing is healthy.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/releasing-changes#sources",
+    "pageTitle": "Releasing changes",
+    "pagePath": "/thread/releasing-changes",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

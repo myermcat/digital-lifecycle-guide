@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { useId } from "react";
+import { guideClickableCardFillStyle } from "@/lib/guide-cards";
 import { guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -8,17 +9,21 @@ export type GuideFolderTabOption<T extends string> = {
   label: string;
 };
 
-const folderTabBaseClassName = "font-serif text-base leading-tight";
+const folderTabShellClassName =
+  "rounded-xl border border-primary/20 bg-primary/[0.05] p-1.5 shadow-sm";
 
-const folderTabInactiveClassName = "font-medium text-primary/40 hover:text-primary/60";
+const folderTabBaseClassName =
+  "font-serif text-base leading-tight border border-transparent";
 
-const folderTabActiveClassName = "font-semibold text-primary";
+const folderTabInactiveClassName = "font-medium text-primary/45 hover:text-primary/65";
 
-const innerTopRadius = "rounded-t-[calc(var(--radius)-1px)]";
-const innerTopLeftRadius = "rounded-tl-[calc(var(--radius)-1px)]";
-const innerTopRightRadius = "rounded-tr-[calc(var(--radius)-1px)]";
+const folderTabActiveClassName =
+  "font-semibold text-primary shadow-sm border-primary/15";
 
-/** Thin-outline card — tab strip and panel share one border, no fill. */
+/**
+ * Full-width folder tabs on the cream phase-group surface — inactive tabs recede;
+ * the selected tab lifts forward and opens the panel below.
+ */
 export function GuideFolderTabs<T extends string>({
   options,
   value,
@@ -39,20 +44,13 @@ export function GuideFolderTabs<T extends string>({
   const groupId = useId();
   const contentId = panelId ?? `${groupId}-panel`;
   const activeTabId = `${groupId}-tab-${value}`;
-  const lastIndex = options.length - 1;
 
   return (
-    <div className={cn("rounded-lg border border-border/60", className)}>
-      <div
-        role="tablist"
-        aria-label={ariaLabel}
-        className="flex w-full border-b border-border/60"
-      >
-        {options.map((opt, index) => {
+    <div className={cn(folderTabShellClassName, className)}>
+      <div role="tablist" aria-label={ariaLabel} className="flex w-full gap-1">
+        {options.map((opt) => {
           const selected = value === opt.value;
           const tabLabel = opt.label.endsWith(".") ? opt.label : `${opt.label}.`;
-          const isFirst = index === 0;
-          const isLast = index === lastIndex;
 
           return (
             <button
@@ -65,24 +63,13 @@ export function GuideFolderTabs<T extends string>({
               tabIndex={selected ? 0 : -1}
               onClick={() => onChange(opt.value)}
               className={cn(
-                "relative flex-1 min-w-0 px-3 py-2.5 text-center",
+                "flex-1 min-w-0 rounded-lg px-3 py-3.5 text-center",
                 folderTabBaseClassName,
-                "transition-colors duration-150 ease-out",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:ring-offset-1",
-                selected
-                  ? cn(
-                      folderTabActiveClassName,
-                      "z-10 -mb-px border-b-2 border-primary",
-                      isFirst && innerTopLeftRadius,
-                      isLast && innerTopRightRadius,
-                      !isFirst && !isLast && innerTopRadius,
-                    )
-                  : cn(
-                      folderTabInactiveClassName,
-                      isFirst && innerTopLeftRadius,
-                      isLast && innerTopRightRadius,
-                    ),
+                "transition-[color,background-color,box-shadow,border-color] duration-200 ease-out",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/25 focus-visible:ring-offset-1 focus-visible:ring-offset-transparent",
+                selected ? folderTabActiveClassName : folderTabInactiveClassName,
               )}
+              style={selected ? guideClickableCardFillStyle : undefined}
             >
               {tabLabel}
             </button>
@@ -93,7 +80,8 @@ export function GuideFolderTabs<T extends string>({
         id={contentId}
         role="tabpanel"
         aria-labelledby={activeTabId}
-        className="px-5 py-4 md:px-6 md:py-5"
+        className="mt-1 rounded-lg px-5 py-5 md:px-7 md:py-6"
+        style={guideClickableCardFillStyle}
       >
         <div className={guideProseTight}>{children}</div>
       </div>

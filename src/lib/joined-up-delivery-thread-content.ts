@@ -3,7 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
-import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { DESIGN_FOR_WHOLE_JOURNEY_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -31,7 +31,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
 
   lead: {
     text:
-      "Joined-up delivery means making a person's whole task work from end to end, including the steps that fall to the services on either side of yours. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website. The business owner of the application answers for how the journey holds together; the team does the work.",
+      "Joined-up delivery means making a person's whole task work from end to end, including the steps handled by other services that come before and after yours in the person's journey. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website. The business owner of the application answers for how the journey holds together; the team does the work.",
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
@@ -115,11 +115,17 @@ export const JOINED_UP_DELIVERY_THREAD = {
               { phrase: "service landscape", linkKey: "uk-service-manual-whole-problem" },
               { phrase: "experience map", linkKey: "nng-journey-mapping-101" },
             ] satisfies ExternalPhraseLink[],
+            internalLinks: [
+              {
+                phrase: "see the whole task the way the person does",
+                to: DESIGN_FOR_WHOLE_JOURNEY_PATH,
+              },
+            ] satisfies InternalPhraseLink[],
           },
         ],
       },
       {
-        title: "Connect the systems, and do not ask twice.",
+        title: "Connect the systems so people enter their information only once.",
         sections: [
           {
             text:
@@ -204,6 +210,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
             internalLinks: [
               { phrase: "reuse or connect to", to: OPTIONS_ANALYSIS_PATH },
               { phrase: "research", to: THREADS["user-research"].path },
+              { phrase: "maps the whole task", to: DESIGN_FOR_WHOLE_JOURNEY_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],

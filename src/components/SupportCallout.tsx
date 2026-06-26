@@ -16,7 +16,7 @@ const supportCalloutLink =
  * **Support callout** — see `SUPPORT_CALLOUT_BLOCK` in `@/lib/guide-blocks`.
  *
  * Doorway-card anatomy: small-caps label, rust heading, prose line, arrow link.
- * Sits before Further reading and Sources on every page.
+ * Sits after main content and before Further reading and Sources on every page.
  */
 export function SupportCallout({
   variant = "generic",

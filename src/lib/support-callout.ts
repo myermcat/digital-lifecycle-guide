@@ -14,6 +14,7 @@ export type SupportCalloutVariant =
   | "ethics-and-bias"
   | "backlog"
   | "joined-up-delivery"
+  | "releasing-changes"
   | "dependencies-and-standards"
   | "data-stewardship";
 
@@ -95,6 +96,13 @@ export const SUPPORT_CALLOUT_BODIES = {
       { phrase: "Enabling Interoperability", linkKey: "enabling-interoperability" },
     ],
   },
+  "releasing-changes": {
+    text: "For releasing changes, your department's platform or DevOps team runs the pipeline and deployments; for the cloud security baseline, Shared Services Canada validates the GC Cloud Guardrails, and the standard to iterate and improve frequently is the expectation behind releasing often.",
+    externalLinks: [
+      { phrase: "GC Cloud Guardrails", linkKey: "gc-cloud-guardrails" },
+      { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
+    ],
+  },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 
 const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>> = {
@@ -106,6 +114,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   "ethics-and-bias": "ethics-and-bias",
   backlog: "backlog",
   "joined-up-delivery": "joined-up-delivery",
+  "releasing-changes": "releasing-changes",
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
 };

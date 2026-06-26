@@ -667,6 +667,41 @@ export const EXTERNAL_LINKS = {
     description: "Roman Pichler, Seven Product Backlog Mistakes to Avoid",
     accessibility: "public",
   },
+  "gc-cloud-guardrails": {
+    url: "https://canada-ca.github.io/cloud-guardrails/",
+    description: "GC Cloud Guardrails (TBS / Shared Services Canada)",
+    accessibility: "public",
+  },
+  "gc-use-open-standards-solutions": {
+    url: "https://canada-ca.github.io/gcdigital-tools_outils-numeriquesgc/en/4-use-open-standards-solutions.html",
+    description: 'GC "Use open standards and solutions" (Guideline 4, TBS)',
+    accessibility: "public",
+  },
+  "uk-deploying-software-regularly": {
+    url: "https://www.gov.uk/service-manual/technology/deploying-software-regularly",
+    description: "UK Service Manual, Deploying software regularly",
+    accessibility: "public",
+  },
+  "atlassian-ci-cd": {
+    url: "https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment",
+    description: "Atlassian, Continuous integration vs delivery vs deployment",
+    accessibility: "public",
+  },
+  "martin-fowler-deployment-pipeline": {
+    url: "https://martinfowler.com/bliki/DeploymentPipeline.html",
+    description: "Martin Fowler, Deployment Pipeline",
+    accessibility: "public",
+  },
+  "google-sre-canarying-releases": {
+    url: "https://sre.google/workbook/canarying-releases/",
+    description: "Google SRE Workbook, Canarying Releases",
+    accessibility: "public",
+  },
+  "dora-metrics": {
+    url: "https://dora.dev/guides/dora-metrics/",
+    description: "DORA, software delivery performance metrics",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;
