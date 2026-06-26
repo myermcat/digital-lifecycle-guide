@@ -1,3 +1,4 @@
+import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 import type {
   ExternalPhraseLink,
@@ -8,27 +9,33 @@ import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import {
+  COMPONENT_END_OF_LIFE_GUIDANCE,
+  GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT,
   placeholderSourceHref,
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE,
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE_SHORT,
   SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
+  type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
+import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 
-export type SecurityLinkedProse = {
-  text: string;
+export type SecurityLinkedProse = ThreadLinkedProse;
+
+export type SecurityCloserLookBlock = {
+  title: string;
+  text?: string;
+  sections?: readonly ThreadContentSection[];
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: InternalPhraseLink[];
+  placeholderLinks?: PlaceholderPhraseLink[];
   placeholderGcNetworkLinks?: PlaceholderGcNetworkPhraseLink[];
-};
-
-export type SecurityCloserLookBlock = SecurityLinkedProse & {
-  title: string;
+  bold?: { phrase: string }[];
 };
 
 export type SecurityPhasePreviewBlock = {
   title: string;
   preview: string;
-  popup: SecurityLinkedProse;
+  popup: SecurityLinkedProse | readonly ThreadContentSection[];
 };
 
 export const SECURITY_THREAD = {
@@ -57,7 +64,10 @@ export const SECURITY_THREAD = {
       ] satisfies ExternalPhraseLink[],
     },
     {
-      text: "An incident response plan exists and has been rehearsed.",
+      text: "Monitoring and alerting flag unusual activity, because you cannot prevent everything and what counts is how fast you notice.",
+    },
+    {
+      text: "An incident response plan exists and has been rehearsed, so a problem is contained quickly rather than weeks later.",
       externalLinks: [
         { phrase: "incident response plan", linkKey: "incident-response-plan-itsap40003" },
       ] satisfies ExternalPhraseLink[],
@@ -144,7 +154,78 @@ export const SECURITY_THREAD = {
           },
         ] satisfies ExternalPhraseLink[],
       },
+      {
+        title: "Work out what could go wrong, then protect what matters most.",
+        sections: [
+          {
+            text:
+              "The clearest way into security at the design stage is to ask four plain questions:",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "What are we building?",
+              "What can go wrong?",
+              "What are we going to do about it?",
+              "Did we do a good enough job?",
+            ],
+          },
+          {
+            text:
+              "That is a threat model, and the four questions come from the Threat Modeling Manifesto. Threat modeling is an industry practice rather than Government of Canada policy. The GC equivalent is security categorization, an injury assessment that asks how much harm a compromise would cause across economic, physical, well-being, and reputation, and sets the level from that: Protected B, Secret, or Top Secret.",
+            externalLinks: [
+              { phrase: "threat model", linkKey: "threat-modelling-developers" },
+              { phrase: "Threat Modeling Manifesto", linkKey: "threat-modeling-manifesto" },
+            ] satisfies ExternalPhraseLink[],
+            placeholderLinks: [
+              {
+                phrase: "security categorization",
+                source: GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT,
+              },
+            ] satisfies PlaceholderPhraseLink[],
+          },
+          {
+            text:
+              "Once you know what could go wrong, protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. The COVID Alert app held one truly sensitive thing, the random codes that triggered exposure notifications, so the security effort was concentrated there, with safeguards that stopped anyone flooding people with fake exposure alerts. The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, has no windows, and costs a fortune. If you marked everything Top Secret, the way you would protect that one critical thing, the whole team would have to crowd into that single room to get anything done. So you find the crown jewels first, decide what genuinely needs that level, and guard those well.",
+            bold: [{ phrase: "protect the few things that matter most" }],
+            externalLinks: [
+              { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
+            ] satisfies ExternalPhraseLink[],
+          },
+        ],
+      },
     ] satisfies SecurityCloserLookBlock[],
+  },
+
+  twoWaysComparison: {
+    id: "two-ways",
+    title: "Two ways to do security",
+    risky: {
+      heading: "Vell",
+      framing:
+        "Meet Vell, a service manager. They treated security as someone else's problem on the grant portal:",
+      items: [
+        "skipped the threat model, so no one mapped what could go wrong",
+        "left an admin account on its default password",
+        "never patched the third-party components the portal was built on",
+        "had no incident response plan",
+      ],
+      closing:
+        "The result: a known vulnerability in an unpatched component was exploited, applicants' personal data leaked, and the breach was only noticed weeks later.",
+    } satisfies CaseStudySide,
+    safe: {
+      heading: "Pax",
+      framing:
+        "Meet Pax, a service manager. They built security into the grant portal from the design:",
+      items: [
+        "built a threat model to set out what could go wrong, and chose secure defaults",
+        "gave each person and system only the access they needed, and audited it",
+        "patched on a schedule and watched the third-party components for known problems",
+        "kept a rehearsed incident response plan",
+      ],
+      closing:
+        "The result: when a phishing attempt came, it was caught and contained quickly, and the data stayed safe.",
+    } satisfies CaseStudySide,
   },
 
   byPhase: {
@@ -158,9 +239,6 @@ export const SECURITY_THREAD = {
         popup: {
           text:
             "Most of the security that matters is decided before code exists. The team builds a threat model to set out what could go wrong and who might attack the service, chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
-          externalLinks: [
-            { phrase: "threat model", linkKey: "threat-modelling-developers" },
-          ] satisfies ExternalPhraseLink[],
           internalLinks: [
             { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
           ] satisfies InternalPhraseLink[],
@@ -168,38 +246,63 @@ export const SECURITY_THREAD = {
       },
       {
         title: "Live.",
-        preview: "The service is patched, watched, and ready to respond.",
-        popup: {
-          text:
-            "Once the service is running, security work is continuous. The team applies patches on a schedule, scans for new vulnerabilities, and checks each release for security problems before it goes out, with the business owner giving the final go-ahead. Unusual activity is caught by monitoring the service in production, and a rehearsed incident response plan means a breach is caught and contained quickly.",
-          externalLinks: [
-            {
-              phrase: "scans for new vulnerabilities",
-              linkKey: "guideline-vulnerability-management",
-            },
-            {
-              phrase: "incident response plan",
-              linkKey: "incident-response-plan-itsap40003",
-            },
-          ] satisfies ExternalPhraseLink[],
-          internalLinks: [
-            {
-              phrase: "monitoring the service in production",
-              to: THREADS["monitoring-and-instrumentation"].path,
-            },
-          ] satisfies InternalPhraseLink[],
-        },
+        preview: "The service is patched, watched, and ready to respond fast.",
+        popup: [
+          {
+            text:
+              "Once the service is running, security work is continuous, and it has two halves.",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text:
+                  "Keeping the service current. Apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
+                bold: [{ phrase: "Keeping the service current." }],
+                externalLinks: [
+                  {
+                    phrase: "scan for new vulnerabilities",
+                    linkKey: "guideline-vulnerability-management",
+                  },
+                ] satisfies ExternalPhraseLink[],
+              },
+              {
+                text:
+                  "Noticing and containing a problem fast. Because you cannot prevent everything, this half matters just as much. Monitoring the service in production flags unusual activity, and a rehearsed incident response plan means that when something does get through, the team catches it and shuts it down quickly instead of finding out weeks later.",
+                bold: [{ phrase: "Noticing and containing a problem fast." }],
+                externalLinks: [
+                  {
+                    phrase: "incident response plan",
+                    linkKey: "incident-response-plan-itsap40003",
+                  },
+                ] satisfies ExternalPhraseLink[],
+                internalLinks: [
+                  {
+                    phrase: "Monitoring the service in production",
+                    to: THREADS["monitoring-and-instrumentation"].path,
+                  },
+                ] satisfies InternalPhraseLink[],
+              },
+            ],
+          },
+        ],
       },
       {
         title: "Sunset.",
         preview: "The service is shut down or replaced without leaving holes open.",
         popup: {
           text:
-            "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B. A service left running unpatched past its end-of-support date is a standing risk, so finishing on time is part of the security work.",
+            "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B. Most of this is easier when you plan and fund retiring a component up front: technology that runs past its end-of-support date stops getting patches, so known vulnerabilities pile up until it is trivially exploitable. Lifecycle replacement should be budgeted from the start rather than run at risk. When hardware is finally decommissioned or donated, securely erase all the data on it first, so nothing walks out the door on a disposed drive.",
           internalLinks: [
             { phrase: "retired or replaced", to: PHASES.sunset.href },
             { phrase: "moves or destroys data", to: THREADS["data-stewardship"].path },
           ] satisfies InternalPhraseLink[],
+          placeholderLinks: [
+            {
+              phrase: "retiring a component",
+              source: COMPONENT_END_OF_LIFE_GUIDANCE,
+            },
+          ] satisfies PlaceholderPhraseLink[],
         },
       },
     ] satisfies SecurityPhasePreviewBlock[],
@@ -283,15 +386,34 @@ export const SECURITY_THREAD = {
     },
     {
       label: "Supporting reference",
+      linkKey: "covid-alert-privacy-assessment" satisfies ExternalLinkKey,
+      description:
+        "COVID Alert privacy assessment (Health Canada / CDS) — https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/covid-alert/privacy-policy/assessment.html",
+    },
+    {
+      label: "Supporting reference",
       linkKey: "threat-modelling-developers" satisfies ExternalLinkKey,
       description:
-        "CCCS, Threat Modelling for Developers — what a threat model is; linked inline from the Create phase.",
+        "CCCS, Threat Modelling for Developers — what a threat model is; linked inline from A closer look (Block 4).",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "threat-modeling-manifesto" satisfies ExternalLinkKey,
+      description:
+        "Threat Modeling Manifesto — https://www.threatmodelingmanifesto.org/",
+    },
+    {
+      label: "Supporting reference",
+      href: placeholderSourceHref(GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT),
+      description:
+        "GC security categorization (injury assessment) (TBS) — placeholder /source-coming-soon (real link pending).",
+      comingSoon: true,
     },
     {
       label: "Supporting reference",
       linkKey: "incident-response-plan-itsap40003" satisfies ExternalLinkKey,
       description:
-        "CCCS, Developing your incident response plan (ITSAP.40.003) — what an incident response plan is; linked inline from the Live phase.",
+        "CCCS, Developing your incident response plan (ITSAP.40.003) — what an incident response plan is; linked inline from What good looks like and the Live phase.",
     },
     {
       label: "Supporting reference",

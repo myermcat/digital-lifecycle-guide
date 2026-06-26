@@ -105,6 +105,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     type: "thread",
     status: "in-review",
   },
+  {
+    title: THREADS["component-end-of-life"].title,
+    path: THREADS["component-end-of-life"].path,
+    type: "thread",
+    status: "not-started",
+  },
 
   { title: SOO_VS_SOW.title, path: SOO_VS_SOW_PATH, type: "reference", status: "in-review" },
   {

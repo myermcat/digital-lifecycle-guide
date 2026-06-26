@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   Accordion,
@@ -6,19 +5,24 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
-import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   SECURITY_THREAD,
-  type SecurityLinkedProse,
+  type SecurityCloserLookBlock,
 } from "@/lib/security-thread-content";
 import { SECURITY_CORE_STRIP } from "@/lib/thread-core-strip";
-import { renderThreadLead, renderThreadWhoseJob } from "@/lib/thread-rich-content";
+import {
+  renderLinkedProse,
+  renderThreadLead,
+  renderThreadSections,
+  renderThreadWhoseJob,
+} from "@/lib/thread-rich-content";
 import {
   guideArrowList,
   guidePageTitle,
@@ -36,17 +40,16 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
-function renderLinkedProse({
-  text,
-  externalLinks,
-  internalLinks,
-  placeholderGcNetworkLinks,
-}: SecurityLinkedProse): ReactNode {
-  return proseWithMixedLinks(text, {
-    external: externalLinks,
-    internal: internalLinks,
-    placeholderGcNetwork: placeholderGcNetworkLinks,
-  });
+function renderCloserLookBlock(block: SecurityCloserLookBlock) {
+  if (block.sections) {
+    return renderThreadSections(block.sections);
+  }
+
+  if (!block.text) {
+    return null;
+  }
+
+  return <p className={guideProseTight}>{renderLinkedProse(block)}</p>;
 }
 
 export function SecurityThreadPage() {
@@ -57,6 +60,7 @@ export function SecurityThreadPage() {
     whyItMatters,
     whoseJob,
     closerLook,
+    twoWaysComparison,
     byPhase,
     furtherReading,
     sources,
@@ -118,12 +122,21 @@ export function SecurityThreadPage() {
                 </span>
               </AccordionTrigger>
               <AccordionContent className="px-5 pb-4">
-                <p className={guideProseTight}>{renderLinkedProse(block)}</p>
+                {renderCloserLookBlock(block)}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </section>
+
+      <CaseStudyBlock
+        id={twoWaysComparison.id}
+        className="mt-10 md:mt-12"
+        label="Comparison"
+        title={twoWaysComparison.title}
+        actual={twoWaysComparison.risky}
+        alternative={twoWaysComparison.safe}
+      />
 
       <ThreadByPhaseSection byPhase={byPhase} />
 

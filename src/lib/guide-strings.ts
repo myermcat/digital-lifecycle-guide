@@ -135,6 +135,11 @@ export const THREADS = {
     slug: "joined-up-delivery",
     path: "/thread/joined-up-delivery",
   },
+  "component-end-of-life": {
+    title: "Component end of life",
+    slug: "component-end-of-life",
+    path: "/thread/component-end-of-life",
+  },
 } as const;
 
 export type ThreadSlug = keyof typeof THREADS;

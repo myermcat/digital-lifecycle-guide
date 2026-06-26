@@ -837,6 +837,16 @@ export const EXTERNAL_LINKS = {
     description: "Interaction Design Foundation, What is User Research?",
     accessibility: "public",
   },
+  "threat-modeling-manifesto": {
+    url: "https://www.threatmodelingmanifesto.org/",
+    description: "Threat Modeling Manifesto",
+    accessibility: "public",
+  },
+  "covid-alert-privacy-assessment": {
+    url: "https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/covid-alert/privacy-policy/assessment.html",
+    description: "COVID Alert privacy assessment (Health Canada / CDS)",
+    accessibility: "public",
+  },
   "open-first-whitepaper-standards": {
     url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper/open-first-whitepaper-standards.html",
     description: "Open First Whitepaper: Open Standards (TBS)",

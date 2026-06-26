@@ -1,5 +1,11 @@
 import type { ReactNode } from "react";
-import type { BoldPhrase, ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
+import type {
+  BoldPhrase,
+  ExternalPhraseLink,
+  InternalPhraseLink,
+  PlaceholderGcNetworkPhraseLink,
+} from "@/components/ProseWithExternalLinks";
+import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
 import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
@@ -11,15 +17,20 @@ export type ThreadLinkedProse = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: InternalPhraseLink[];
+  placeholderLinks?: PlaceholderPhraseLink[];
+  placeholderGcNetworkLinks?: PlaceholderGcNetworkPhraseLink[];
   bold?: BoldPhrase[];
+};
+
+export type ThreadPlainBoldListItem = {
+  bold: string;
+  text: string;
 };
 
 export type ThreadOrderedListItem =
   | string
-  | {
-      bold: string;
-      text: string;
-    };
+  | ThreadPlainBoldListItem
+  | ThreadLinkedProse;
 
 export type ThreadOrderedListSection = {
   type: "orderedList";
@@ -65,8 +76,18 @@ export type ThreadWhoseJobSection = {
   closing?: ThreadLinkedProse | string;
 };
 
+function isPlainBoldListItem(item: ThreadOrderedListItem): item is ThreadPlainBoldListItem {
+  return typeof item === "object" && "bold" in item && typeof item.bold === "string";
+}
+
 function orderedListItemPlainText(item: ThreadOrderedListItem): string {
-  return typeof item === "string" ? item : `${item.bold}${item.text}`;
+  if (typeof item === "string") {
+    return item;
+  }
+  if (isPlainBoldListItem(item)) {
+    return `${item.bold}${item.text}`;
+  }
+  return item.text;
 }
 
 export type ThreadLead = string | ThreadLinkedProse | ThreadLeadSection;
@@ -142,11 +163,15 @@ export function renderLinkedProse({
   text,
   externalLinks,
   internalLinks,
+  placeholderLinks,
+  placeholderGcNetworkLinks,
   bold,
 }: ThreadLinkedProse): ReactNode {
   return proseWithMixedLinks(text, {
     external: externalLinks,
     internal: internalLinks,
+    placeholder: placeholderLinks,
+    placeholderGcNetwork: placeholderGcNetworkLinks,
     bold,
   });
 }
@@ -155,12 +180,15 @@ function renderOrderedListItem(item: ThreadOrderedListItem) {
   if (typeof item === "string") {
     return item;
   }
-  return (
-    <>
-      <strong>{item.bold}</strong>
-      {item.text}
-    </>
-  );
+  if (isPlainBoldListItem(item)) {
+    return (
+      <>
+        <strong>{item.bold}</strong>
+        {item.text}
+      </>
+    );
+  }
+  return renderLinkedProse(item);
 }
 
 export function renderThreadLead(lead: ThreadLead): ReactNode {

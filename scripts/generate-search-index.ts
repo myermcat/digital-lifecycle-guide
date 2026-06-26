@@ -50,6 +50,7 @@ import {
 } from "../src/lib/dependencies-and-standards-thread-content";
 import {
   threadLeadPlainText,
+  threadSectionsPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
 import { SUPPORT_PAGE } from "../src/lib/support-content";
@@ -462,7 +463,25 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: SECURITY_THREAD.closerLook.id,
       sectionHeading: SECURITY_THREAD.closerLook.title,
       text: concat(
-        ...SECURITY_THREAD.closerLook.blocks.map((block) => `${block.title} ${block.text}`),
+        ...SECURITY_THREAD.closerLook.blocks.map((block) =>
+          concat(
+            block.title,
+            block.text ?? "",
+            ...(block.sections ? [threadSectionsPlainText(block.sections)] : []),
+          ),
+        ),
+      ),
+    },
+    {
+      sectionId: SECURITY_THREAD.twoWaysComparison.id,
+      sectionHeading: SECURITY_THREAD.twoWaysComparison.title,
+      text: concat(
+        SECURITY_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(SECURITY_THREAD.twoWaysComparison.risky.items ?? []),
+        SECURITY_THREAD.twoWaysComparison.risky.closing ?? "",
+        SECURITY_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(SECURITY_THREAD.twoWaysComparison.safe.items ?? []),
+        SECURITY_THREAD.twoWaysComparison.safe.closing ?? "",
       ),
     },
     {
@@ -470,8 +489,12 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: SECURITY_THREAD.byPhase.title,
       text: concat(
         SECURITY_THREAD.byPhase.intro,
-        ...SECURITY_THREAD.byPhase.blocks.map(
-          (block) => `${block.title} ${block.preview} ${block.popup.text}`,
+        ...SECURITY_THREAD.byPhase.blocks.map((block) =>
+          `${block.title} ${block.preview} ${
+            Array.isArray(block.popup)
+              ? threadSectionsPlainText(block.popup)
+              : block.popup.text
+          }`,
         ),
       ),
     },

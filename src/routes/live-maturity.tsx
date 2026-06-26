@@ -16,7 +16,6 @@ import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
 import { guideProseSpace } from "@/lib/guide-typography";
 import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
-import { eolOfPartsComingSoonHref } from "@/lib/placeholder-sources";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
@@ -101,7 +100,7 @@ function LiveMaturityPage() {
             },
             {
               label: "Manage component end of life",
-              href: eolOfPartsComingSoonHref(),
+              href: threadPath("component-end-of-life"),
               description:
                 "Track when libraries, services, and bought products will reach end of supplier support, and plan replacements before risk and cost compound.",
             },

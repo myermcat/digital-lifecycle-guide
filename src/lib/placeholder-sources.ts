@@ -6,6 +6,9 @@ export const GCCASE_MIGRATION_READINESS_GUIDE = "GCcase Migration Readiness Guid
 
 export const EOL_OF_PARTS_SOURCE = "EoL of parts";
 
+export const COMPONENT_END_OF_LIFE_GUIDANCE =
+  "Component end of life guidance (TBS, GCX draft)";
+
 export const SECURE_APPLICATION_DEVELOPMENT_GUIDELINE =
   "Guideline on Secure Application Development (TBS, May 2026)";
 
@@ -14,6 +17,9 @@ export const SECURE_APPLICATION_DEVELOPMENT_GUIDELINE_SHORT =
   "Guideline on Secure Application Development";
 
 export const SECURITY_CATEGORIZATION_OF_SOURCE_CODE = "Security Categorization of Source Code";
+
+export const GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT =
+  "GC security categorization (injury assessment)";
 
 export type PlaceholderPhraseLink = {
   phrase: string;
