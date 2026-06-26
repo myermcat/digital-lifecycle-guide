@@ -271,15 +271,11 @@ export const PRIVACY_THREAD = {
 
   furtherReading: {
     text:
-      "Privacy in the Government of Canada comes under the Privacy Act, with the Treasury Board Directive on Privacy Practices setting the day-to-day obligations, including the Privacy Impact Assessment. The Digital Privacy Playbook is the closest companion, turning the rules into steps. It also draws on the made-in-Canada seven principles of privacy by design, and, for how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments and Article 25 of the GDPR.",
+      "For a plain-language tour of your duties under the Privacy Act, the Office of the Privacy Commissioner's Privacy Act in brief walks through what counts as personal information and the rules for collecting, using, keeping, and disclosing it. To see the made-in-Canada privacy-by-design idea explained by the provincial regulator that wrote it, the Information and Privacy Commissioner of Ontario's Privacy by Design resource gives you the seven principles in one place. And for a structured way to size up and manage privacy risk across a whole service, the US NIST Privacy Framework offers a voluntary tool many organizations use to organize that work. For how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments sets out a clear seven-step process, and Article 25 of the GDPR shows how privacy by design became binding EU law.",
     externalLinks: [
-      { phrase: "Privacy Act", linkKey: "privacy-act" },
-      { phrase: "Directive on Privacy Practices", linkKey: "directive-privacy-practices" },
-      { phrase: "Digital Privacy Playbook", linkKey: "digital-privacy-playbook" },
-      {
-        phrase: "seven principles of privacy by design",
-        linkKey: "privacy-by-design-principles",
-      },
+      { phrase: "Privacy Act in brief", linkKey: "opc-privacy-act-in-brief" },
+      { phrase: "Privacy by Design", linkKey: "ontario-ipc-privacy-by-design" },
+      { phrase: "NIST Privacy Framework", linkKey: "nist-privacy-framework" },
       {
         phrase: "guidance on data protection impact assessments",
         linkKey: "uk-ico-dpia",
@@ -340,6 +336,23 @@ export const PRIVACY_THREAD = {
       linkKey: "gdpr-article-25" satisfies ExternalLinkKey,
       description:
         "GDPR Article 25 (data protection by design and by default) — https://gdpr-info.eu/art-25-gdpr/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "opc-privacy-act-in-brief" satisfies ExternalLinkKey,
+      description:
+        "OPC The Privacy Act in brief — https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-privacy-act/pa_brief/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "ontario-ipc-privacy-by-design" satisfies ExternalLinkKey,
+      description:
+        "Ontario IPC Privacy by Design — https://www.ipc.on.ca/en/resources-and-decisions/privacy-design",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "nist-privacy-framework" satisfies ExternalLinkKey,
+      description: "NIST Privacy Framework — https://www.nist.gov/privacy-framework",
     },
   ] satisfies SourceItem[],
 } as const;

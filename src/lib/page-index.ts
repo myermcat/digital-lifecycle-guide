@@ -59,7 +59,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["dependencies-and-standards"].title,
     path: THREADS["dependencies-and-standards"].path,
     type: "thread",
-    status: "not-started",
+    status: "in-review",
   },
   {
     title: THREADS["user-research"].title,

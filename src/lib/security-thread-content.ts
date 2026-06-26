@@ -207,7 +207,7 @@ export const SECURITY_THREAD = {
 
   furtherReading: {
     text:
-      "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions.",
+      "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions. To see where your spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
     externalLinks: [
       {
         phrase: "Directive on Security Management",
@@ -219,6 +219,12 @@ export const SECURITY_THREAD = {
         phrase: "NIST Secure Software Development Framework",
         linkKey: "nist-ssdf",
       },
+      { phrase: "top 10 IT security actions", linkKey: "cccs-top-10-it-security-actions" },
+      {
+        phrase: "baseline controls for small and medium organizations",
+        linkKey: "cccs-baseline-cyber-security-sme",
+      },
+      { phrase: "secure-by-design principles", linkKey: "cisa-secure-by-design" },
     ] satisfies ExternalPhraseLink[],
     placeholderGcNetworkLinks: [
       {
@@ -294,6 +300,23 @@ export const SECURITY_THREAD = {
         "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in Block 3.",
       comingSoon: true,
       gcNetworkOnly: true,
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cccs-top-10-it-security-actions" satisfies ExternalLinkKey,
+      description:
+        "CCCS Top 10 IT security actions (ITSM.10.089) — https://www.cyber.gc.ca/en/guidance/top-10-it-security-actions-protect-internet-connected-networks-and-information-itsm10089",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cccs-baseline-cyber-security-sme" satisfies ExternalLinkKey,
+      description:
+        "CCCS Baseline cyber security controls for small and medium organizations — https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cisa-secure-by-design" satisfies ExternalLinkKey,
+      description: "US CISA Secure by Design — https://www.cisa.gov/securebydesign",
     },
   ] satisfies SourceItem[],
 } as const;

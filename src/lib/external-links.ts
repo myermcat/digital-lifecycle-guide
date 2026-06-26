@@ -702,6 +702,191 @@ export const EXTERNAL_LINKS = {
     description: "DORA, software delivery performance metrics",
     accessibility: "public",
   },
+  "cccs-top-10-it-security-actions": {
+    url: "https://www.cyber.gc.ca/en/guidance/top-10-it-security-actions-protect-internet-connected-networks-and-information-itsm10089",
+    description: "CCCS Top 10 IT security actions (ITSM.10.089)",
+    accessibility: "public",
+  },
+  "cccs-baseline-cyber-security-sme": {
+    url: "https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations",
+    description: "CCCS Baseline cyber security controls for small and medium organizations",
+    accessibility: "public",
+  },
+  "cisa-secure-by-design": {
+    url: "https://www.cisa.gov/securebydesign",
+    description: "US CISA Secure by Design",
+    accessibility: "public",
+  },
+  "opc-privacy-act-in-brief": {
+    url: "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-privacy-act/pa_brief/",
+    description: "OPC The Privacy Act in brief",
+    accessibility: "public",
+  },
+  "ontario-ipc-privacy-by-design": {
+    url: "https://www.ipc.on.ca/en/resources-and-decisions/privacy-design",
+    description: "Ontario IPC Privacy by Design",
+    accessibility: "public",
+  },
+  "nist-privacy-framework": {
+    url: "https://www.nist.gov/privacy-framework",
+    description: "NIST Privacy Framework",
+    accessibility: "public",
+  },
+  "asc-creating-accessibility-standards": {
+    url: "https://accessible.canada.ca/creating-accessibility-standards",
+    description: "Accessibility Standards Canada (Creating accessibility standards)",
+    accessibility: "public",
+  },
+  "w3c-wai-tutorials": {
+    url: "https://www.w3.org/WAI/tutorials/",
+    description: "W3C WAI Tutorials",
+    accessibility: "public",
+  },
+  "webaim-keyboard-accessibility": {
+    url: "https://webaim.org/techniques/keyboard/",
+    description: "WebAIM Keyboard Accessibility",
+    accessibility: "public",
+  },
+  "tbs-2023-2026-data-strategy": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/2023-2026-data-strategy.html",
+    description: "TBS 2023–2026 Data Strategy for the Federal Public Service",
+    accessibility: "public",
+  },
+  "statcan-data-stewardship-intro": {
+    url: "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020013",
+    description: "StatCan Data stewardship: An introduction",
+    accessibility: "public",
+  },
+  "go-fair-principles": {
+    url: "https://www.go-fair.org/fair-principles/",
+    description: "GO FAIR FAIR Principles",
+    accessibility: "public",
+  },
+  "montreal-declaration-responsible-ai": {
+    url: "https://montrealdeclaration-responsibleai.com/the-declaration/",
+    description: "Montréal Declaration on Responsible AI",
+    accessibility: "public",
+  },
+  "cifar-ai-and-society": {
+    url: "https://cifar.ca/ai/ai-and-society/",
+    description: "CIFAR AI & Society (Pan-Canadian AI Strategy)",
+    accessibility: "public",
+  },
+  "uk-introduction-to-ai-assurance": {
+    url: "https://www.gov.uk/government/publications/introduction-to-ai-assurance",
+    description: "UK DSIT Introduction to AI assurance",
+    accessibility: "public",
+  },
+  "cds-service-design-at-cds": {
+    url: "https://digital.canada.ca/service-digital-toolkit/user-centred-design/service-design-at-cds/",
+    description: "Canadian Digital Service, Service design at CDS",
+    accessibility: "public",
+  },
+  "uk-working-across-organisational-boundaries": {
+    url: "https://www.gov.uk/service-manual/design/working-across-organisational-boundaries",
+    description: "GOV.UK Working across organisational boundaries with service communities",
+    accessibility: "public",
+  },
+  "dta-service-design-delivery-process": {
+    url: "https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
+    description: "Australia DTA Service design and delivery process",
+    accessibility: "public",
+  },
+  "design-canada-continuous-improvement": {
+    url: "https://design.canada.ca/continuous-improvement.html",
+    description: "design.canada.ca Continuous improvement",
+    accessibility: "public",
+  },
+  "mountaingoat-user-stories": {
+    url: "https://www.mountaingoatsoftware.com/agile/user-stories",
+    description: "Mike Cohn (Mountain Goat) User Stories",
+    accessibility: "public",
+  },
+  "svpg-product-vs-feature-teams": {
+    url: "https://www.svpg.com/product-vs-feature-teams/",
+    description: "Marty Cagan (SVPG) Product vs Feature Teams",
+    accessibility: "public",
+  },
+  "github-continuous-integration": {
+    url: "https://docs.github.com/en/actions/get-started/continuous-integration",
+    description: "GitHub Docs Continuous integration",
+    accessibility: "public",
+  },
+  "aws-well-architected-operational-excellence": {
+    url: "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operational-excellence.html",
+    description: "AWS Well-Architected Operational Excellence Pillar",
+    accessibility: "public",
+  },
+  "google-sre-release-engineering": {
+    url: "https://sre.google/sre-book/release-engineering/",
+    description: "Google SRE Book, Release Engineering (Ch. 8)",
+    accessibility: "public",
+  },
+  "design-canada-research-summaries": {
+    url: "https://design.canada.ca/research-summaries/",
+    description: "Canada.ca research summaries",
+    accessibility: "public",
+  },
+  "uk-start-by-learning-user-needs": {
+    url: "https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs",
+    description: "UK Service Manual, Learning about users and their needs",
+    accessibility: "public",
+  },
+  "ixdf-user-research": {
+    url: "https://www.interaction-design.org/literature/topics/user-research",
+    description: "Interaction Design Foundation, What is User Research?",
+    accessibility: "public",
+  },
+  "open-first-whitepaper-standards": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper/open-first-whitepaper-standards.html",
+    description: "Open First Whitepaper: Open Standards (TBS)",
+    accessibility: "public",
+  },
+  "cccs-software-supply-chain-itsm10071": {
+    url: "https://www.cyber.gc.ca/en/guidance/protecting-your-organization-software-supply-chain-threats-itsm10071",
+    description: "CCCS, Protecting your organization from software supply chain threats (ITSM.10.071)",
+    accessibility: "public",
+  },
+  "cccs-cyber-supply-chain-smb-itsap00070": {
+    url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-security-small-medium-sized-organizations-itsap00070",
+    description: "CCCS, Cyber supply chain security for small and medium organizations (ITSAP.00.070)",
+    accessibility: "public",
+  },
+  "open-first-whitepaper-oss-use": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper/open-first-whitepaper-use.html",
+    description: "Open First Whitepaper: Open Source Software Use (TBS)",
+    accessibility: "public",
+  },
+  "uk-make-use-of-open-standards": {
+    url: "https://www.gov.uk/guidance/make-use-of-open-standards",
+    description: "GOV.UK, Make use of open standards",
+    accessibility: "public",
+  },
+  "cisa-sbom": {
+    url: "https://www.cisa.gov/sbom",
+    description: "CISA, Software Bill of Materials (SBOM)",
+    accessibility: "public",
+  },
+  "openssf-scorecard": {
+    url: "https://openssf.org/projects/scorecard/",
+    description: "OpenSSF Scorecard",
+    accessibility: "public",
+  },
+  slsa: {
+    url: "https://slsa.dev/",
+    description: "SLSA, Supply-chain Levels for Software Artifacts",
+    accessibility: "public",
+  },
+  "gc-open-resource-exchange": {
+    url: "https://code.open.canada.ca/en/index.html",
+    description: "GC Open Resource Exchange (TBS)",
+    accessibility: "public",
+  },
+  "nist-sp-800-161-cscrm": {
+    url: "https://csrc.nist.gov/pubs/sp/800/161/r1/upd1/final",
+    description: "NIST SP 800-161 Rev. 1, Cybersecurity Supply Chain Risk Management Practices",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

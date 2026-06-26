@@ -98,6 +98,16 @@ export const RELEASING_CHANGES_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const DEPENDENCIES_AND_STANDARDS_CORE_STRIP = {
+  heading: "THE CORE OF DEPENDENCIES AND STANDARDS",
+  tiles: [
+    { label: "Build on open standards", gloss: "so parts connect and swap" },
+    { label: "Know what you depend on", gloss: "a current inventory" },
+    { label: "Vet before you adopt", gloss: "maintained and secure" },
+    { label: "Keep it patched", gloss: "and watched" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 function threadCoreStripAltText(content: ThreadCoreStripContent): string {
   const pillars = content.tiles
     .map((tile) => `${tile.label}, ${tile.gloss}`)

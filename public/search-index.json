@@ -135,7 +135,8 @@
     "sectionId": "",
     "sectionHeading": "Dependencies and standards",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Almost no service is built from scratch. It is assembled from parts: open-source libraries, third-party services, vendor products, and the formats and protocols that let those parts talk to each other. Dependencies and standards is about choosing and looking after those parts well. It pulls together four habits: build on open standards so the pieces can connect and be swapped; know everything the service depends on; vet a component before you adopt it; and keep what you depend on patched and watched. The business owner of the application answers for not being trapped by a single vendor and for the parts staying safe; the team does the work.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
   },
   {
     "id": "/thread/user-research",
@@ -768,7 +769,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions.",
+    "text": "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions. To see where your spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
     "keywords": "cybersecurity"
   },
   {
@@ -838,7 +839,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Privacy in the Government of Canada comes under the Privacy Act, with the Treasury Board Directive on Privacy Practices setting the day-to-day obligations, including the Privacy Impact Assessment. The Digital Privacy Playbook is the closest companion, turning the rules into steps. It also draws on the made-in-Canada seven principles of privacy by design, and, for how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments and Article 25 of the GDPR.",
+    "text": "For a plain-language tour of your duties under the Privacy Act, the Office of the Privacy Commissioner's Privacy Act in brief walks through what counts as personal information and the rules for collecting, using, keeping, and disclosing it. To see the made-in-Canada privacy-by-design idea explained by the provincial regulator that wrote it, the Information and Privacy Commissioner of Ontario's Privacy by Design resource gives you the seven principles in one place. And for a structured way to size up and manage privacy risk across a whole service, the US NIST Privacy Framework offers a voluntary tool many organizations use to organize that work. For how other jurisdictions handle the same assessment, the UK ICO's guidance on data protection impact assessments sets out a clear seven-step process, and Article 25 of the GDPR shows how privacy by design became binding EU law.",
     "keywords": "PIA privacy impact assessment"
   },
   {
@@ -908,7 +909,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Managing data in the Government of Canada comes under the Policy on Service and Digital and its directive, which set the duties for data quality, retention, disposition, and openness. Disposing of records is governed by the Library and Archives of Canada Act, with Library and Archives Canada's guideline on documented disposition and Generic Valuation Tools showing how it is done. For data quality, the Guidance on Data Quality sets out the nine dimensions, with Statistics Canada's Quality Guidelines behind them and the FAIR principles as a further lens for sharing and reuse. For moving data between systems, The National Archives' guide to migrating records and the checklist for retiring applications before decommissioning infrastructure are practical companions.",
+    "text": "Every source behind this page is listed with links in the Sources block below. To see how this single service fits the government-wide picture, the 2023–2026 Data Strategy for the Federal Public Service lays out where the federal government is taking data governance and the expectations that flow down to your department. For a short plain-language primer on the idea itself, Statistics Canada's Data stewardship: An introduction explains the difference between data governance and stewardship and what a data steward actually does day to day. And if you want the source of the FAIR ideas the page touches on, the GO FAIR initiative's FAIR Principles sets out each principle so your data stays findable and reusable when it is shared.",
     "keywords": "retention disposition data quality"
   },
   {
@@ -998,7 +999,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Accessibility in Canada comes under the Accessible Canada Act and the Accessible Canada Regulations, which require federal digital services to meet CAN/ASC-EN 301 549, the standard that adopts WCAG 2.1 Level AA for the web. The Digital Accessibility Toolkit is the closest companion for doing the work, from procurement to testing. For why accessibility matters, the W3C Introduction to Web Accessibility is the plainest start, and other governments' guidance is worth a look for ideas Canada frames less crisply, the UK Service Manual on assisted digital and the United States' Section 508 procurement resources.",
+    "text": "The Accessible Canada Act, the Accessible Canada Regulations, CAN/ASC-EN 301 549, and the Digital Accessibility Toolkit are all in the Sources below. For why accessibility matters, the W3C Introduction to Web Accessibility is the plainest start, and other governments' guidance is worth a look, the UK Service Manual on assisted digital and the United States' Section 508 procurement resources. To see who sets the bar at home and what else is coming, Accessibility Standards Canada is the federal standards body, with the disability definition, the seven priority areas, and a free database of published and in-progress standards. When the team needs to know how to actually build an accessible page, the W3C WAI tutorials give worked guidance on images, forms, tables, and page structure, and WebAIM's keyboard accessibility guide shows how to check that everything works without a mouse.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1078,7 +1079,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Researching with users is the first of the Government of Canada's digital standards, and the Directive on Service and Digital makes collecting and acting on client feedback and user-experience testing a responsibility, not an option. For how to actually do it, Ontario's User Research Guide and Service Design Playbook are reusable Canadian references on what to plan, fund, and expect. For methods and testing, the Nielsen Norman Group's map of research methods and Usability Testing 101 are the plainest starts, 18F's De-risking Government Technology makes the case to funders, and the UK Service Manual's user research is the fullest how-to.",
+    "text": "For how to actually do it, Ontario's User Research Guide and Service Design Playbook are reusable Canadian references on what to plan, fund, and expect. To see federal research in practice, Canada.ca's research summaries show how the Government of Canada tested real services and what it changed as a result. For the basics of learning about users and their needs, the UK Service Manual walks through writing and validating needs, and the Interaction Design Foundation's plain-English primer on user research is a good first read if the discipline is new to you.",
     "keywords": "usability testing design with users UX research"
   },
   {
@@ -1158,7 +1159,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "When a service makes decisions about people, the binding rules are the Directive on Automated Decision-Making and its Algorithmic Impact Assessment, with GBA Plus as the broader fairness lens required across government. The Responsible use of AI hub gathers the rest, the twelve guiding principles, the FASTER principles for generative AI, and Canada's standard on accessible and equitable AI. The OPC's principles add the privacy-and-fairness lens, and for how other places frame it, the US NIST AI Risk Management Framework and the EU AI Act (which tiers AI by risk) are useful companions.",
+    "text": "Beyond the binding Directive, Algorithmic Impact Assessment, and GBA Plus already linked above, a few sources go further. The twelve guiding principles for the use of AI in government set out the openness-and-accountability expectations, and the OPC's principles add the privacy-and-fairness lens. For a plain statement of the ethical values your service should uphold, the made-in-Canada Montréal Declaration on Responsible AI gives ten principles you can hold a design up against, and CIFAR's AI & Society work under the Pan-Canadian AI Strategy gathers Canadian research on AI's effects on people. When you want a hands-on sense of how to check a system rather than just principles, the UK government's Introduction to AI assurance walks through the techniques teams use to test that an AI system is fair and works as intended. For how other places frame it, the US NIST AI Risk Management Framework and the EU AI Act are useful companions.",
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
   },
   {
@@ -1258,7 +1259,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
+    "text": "For a broad how-to that ties the backlog together, the UK's Service Manual on agile delivery is the plainest overview. To see how a Government of Canada team decides what to work on next, design.canada.ca's continuous improvement guidance walks through choosing what to improve and measuring whether it worked. For writing the items themselves, Mike Cohn's guide to user stories gives the template, worked examples, and how to break an epic down. And to understand why a backlog should be run as a product rather than a project, Marty Cagan's Product vs Feature Teams explains why the owner should be set problems to solve rather than a fixed list to deliver.",
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
@@ -1338,7 +1339,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Joining a service up is set out in the Government of Canada's digital standards and made firmer by the Policy on Service and Digital, which expects an omni-channel approach and an integrated client experience across every channel a service uses. For connecting systems, the GC standards on APIs and the Enabling Interoperability guidance are the GC references, and the enterprise architecture reuse and interoperability expectations say to expose functionality as services. For the method, the UK Service Manual's map a user's whole problem and the Nielsen Norman Group's journey mapping guide are the plainest how-tos, the UK Service Standard on solving a whole problem and on joining up across channels read across cleanly, and GOV.UK's assisted digital support is the clearest guide to helping people who cannot use a service on their own.",
+    "text": "The UK Service Standard on solving a whole problem for users sets out the principle behind facet 1. To see how the Canadian Digital Service frames the end-to-end craft, its service design practice lays out the principles and methods a designer uses to plan a service across digital and offline channels. For the working-across-boundaries part, GOV.UK's guide to working across organisational boundaries with service communities gives you a practical way to set up and run a cross-organization group around a shared user journey. And if you want the whole journey expressed as named stages, Australia's service design and delivery process walks a service from discovery through to live.",
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
@@ -1418,7 +1419,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Releasing often is the Government of Canada's standard to iterate and improve frequently, and for a service in the cloud the GC Cloud Guardrails set the security baseline that must be validated within 30 business days, with the guidance to use open standards and solutions adding the exit-strategy and portability expectations. For how to do it, the UK Service Manual on deploying software regularly is the fullest government how-to, Atlassian explains continuous integration, delivery, and deployment in plain words, Martin Fowler defines the deployment pipeline, Google's SRE workbook covers canary releases, and the DORA metrics are the way to tell whether releasing is healthy.",
+    "text": "For deploying to the cloud without locking yourself in, the Government of Canada's guidance to use open standards and solutions adds the exit-strategy and portability expectations behind releasing. For a plain-language starting point on the first habit, GitHub's explainer on continuous integration shows why committing small changes often catches errors sooner. If you want to see how a cloud platform frames the whole practice, AWS's operational excellence guidance lays out the principles of making frequent, small, reversible changes and automating deployments safely. And for the bigger picture of treating releasing as a discipline to set up from the start, Google's chapter on release engineering explains why repeatable, automated builds and an audit trail make releases routine.",
     "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
   },
   {
@@ -1430,6 +1431,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#what-good-looks-like",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "The service is built on open standards, so it can connect to other systems and is not tied to one vendor. A component or provider can be swapped without rebuilding the service, because the pieces are substitutable and there is an exit plan set before going to the cloud. The team knows everything the service depends on, kept as a current inventory, a software bill of materials, the list of ingredients that make up the software. New components and suppliers are vetted before they are adopted: is it still maintained, is it secure, is it well supported. Dependencies are kept patched, and a known vulnerability is fixed promptly rather than left in place. Contracts set minimum security requirements and require a supplier to report a security incident within a set time. Open-source options are considered first, in line with the Government of Canada's open-first position.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#why-it-matters",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "The parts a service is built from are also the ways it can go wrong. There are two risks. The first is lock-in: when a service is tied to one vendor's proprietary formats, that vendor controls the features, the fixes, and the price, and moving away later costs a great deal. Open standards keep the pieces substitutable, so a service can change one part without rebuilding the rest. The second risk is the supply chain: a flaw or a tampering in a component you did not write becomes your problem, and as the Canadian Centre for Cyber Security puts it, an organization is legally responsible for protecting its information even when using third-party services. When the Log4j flaw appeared in a logging library used by millions of applications in 2021, the teams who came through it well were the ones who knew exactly where they used it and could patch fast. That is what knowing, vetting, and patching your dependencies buys you. The Government of Canada's position is to use open source and open standards first, for exactly these reasons.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#whose-job",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Dependencies and standards is shared across the team, with each role holding a different part: Developers and architects choose open standards, select and integrate the components, keep the inventory of what the service depends on, and apply patches. Security specialists assess supply-chain risk, watch for new vulnerabilities, and judge whether a component is safe to rely on. Procurement and contracting specialists write the minimum security requirements and notify-on-incident clauses into the contract. The business owner of the application makes sure open options and the cost of lock-in are weighed, funds keeping dependencies current, and accepts that the service is responsible for its parts.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#a-closer-look",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Open standards keep you free to change. Two ideas are easy to confuse. Open source is a way of building and sharing software, where the code can be used and changed by anyone. Open standards are the common rules, file formats, protocols, and interfaces, that any product can follow so it works with others. Building on open standards is what keeps a service's parts substitutable: each piece can be replaced by another that does the same job without breaking the rest, which is the practical meaning of avoiding vendor lock-in. The cost of lock-in is concrete, a vendor you cannot leave controls your features, fixes, and price, so the Government of Canada's open-first position asks teams to factor exit and transition costs into the total cost of ownership and to set an exit strategy before committing to a cloud service. Know and vet what you depend on. You cannot look after what you cannot see, so the starting point is an inventory of everything the service depends on, a software bill of materials, which is a list of ingredients that make up the software. Before a new component is adopted, it is worth a quick health check: the GC guide to using open source software suggests looking at whether the project is actively maintained, who develops it, how well it is documented, and how quickly it patches security flaws. Tools can do much of this automatically: an open-source health score rates a project out of ten on checks like whether it is still maintained and whether it keeps its own dependencies up to date, so a team can judge the risk of adding it. Keep the supply chain safe. A weak link anywhere in the chain is a risk to the whole service, so a few habits matter. Keep dependencies patched, a known vulnerability left in place is an open door, and the inventory is what lets you find every place a flawed component is used when news of a flaw breaks. For the parts that come from suppliers, the Canadian Centre for Cyber Security advises knowing your vendors, setting minimum security requirements, and putting a clause in the contract that the supplier must tell you about a security incident within a set time. Asking a vendor whether they keep a software bill of materials, how fast they patch, and how they would notify you turns a vague trust into something you can check.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#two-ways",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to handle dependencies",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They built the case-management system on whatever was quickest: built it on one vendor's proprietary formats, with no exit plan never tracked what the service depended on pulled in open-source components without checking them, and rarely patched The result: when a widely used library turned out to have a critical flaw, they could not tell whether they were affected or where, and the vendor quoted a fortune to make a change they could not make themselves. Meet Pax. They treated the parts as something to look after: built on open standards and kept an exit plan, so a vendor could be changed kept a current inventory of every component and where it came from vetted new components for being maintained and secure, patched promptly, and required suppliers to report incidents fast The result: when the same flaw appeared, they knew within hours exactly where the library was used and patched it, and no vendor could hold the service hostage.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#by-phase",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Dependencies and standards looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Choosing and tending the parts is work across the whole life of a service. Create. Choose open standards and pick parts deliberately. The choices that matter most are made before the service is built. The team builds on open standards so the pieces stay substitutable, picks each dependency deliberately and starts the inventory, sets an exit strategy before committing to a cloud provider, and works with procurement to put security and notify-on-incident requirements in the contract. Designing to connect through open interfaces from the start is far easier than retrofitting it. Live. Keep the inventory current and patch. Once the service is running, this work is continuous. The team keeps the inventory of dependencies up to date, watches for newly discovered vulnerabilities and patches them promptly, and re-evaluates suppliers from time to time. A patch only protects users once it is released, so keeping dependencies current and getting the fix out go together. Sunset. Standards make the move possible. When a service is retired or replaced, the earlier choices pay off. Open standards make the data and components portable to whatever comes next, so the move is not a rebuild, vendor contracts are ended cleanly, and the exit strategy set back at the start is what makes leaving possible without losing the data.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#further-reading",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Beyond the sources already linked above, the Government of Canada's Open Resource Exchange lets you browse the open standards and open-source software other Canadian public administrations already use, so you can reuse a vetted solution rather than start from nothing. For the supply-chain side, NIST's cybersecurity supply chain risk management practices set out how a large organization identifies, assesses, and manages the risk in the products and services it buys, and the Secure Software Development Framework gives you a shared checklist of secure-build practices to ask a supplier about during procurement.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/dependencies-and-standards#sources",
+    "pageTitle": "Dependencies and standards",
+    "pagePath": "/thread/dependencies-and-standards",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

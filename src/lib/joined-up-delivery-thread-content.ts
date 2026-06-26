@@ -250,21 +250,18 @@ export const JOINED_UP_DELIVERY_THREAD = {
 
   furtherReading: {
     text:
-      "Joining a service up is set out in the Government of Canada's digital standards and made firmer by the Policy on Service and Digital, which expects an omni-channel approach and an integrated client experience across every channel a service uses. For connecting systems, the GC standards on APIs and the Enabling Interoperability guidance are the GC references, and the enterprise architecture reuse and interoperability expectations say to expose functionality as services. For the method, the UK Service Manual's map a user's whole problem and the Nielsen Norman Group's journey mapping guide are the plainest how-tos, the UK Service Standard on solving a whole problem and on joining up across channels read across cleanly, and GOV.UK's assisted digital support is the clearest guide to helping people who cannot use a service on their own.",
+      "The UK Service Standard on solving a whole problem for users sets out the principle behind facet 1. To see how the Canadian Digital Service frames the end-to-end craft, its service design practice lays out the principles and methods a designer uses to plan a service across digital and offline channels. For the working-across-boundaries part, GOV.UK's guide to working across organisational boundaries with service communities gives you a practical way to set up and run a cross-organization group around a shared user journey. And if you want the whole journey expressed as named stages, Australia's service design and delivery process walks a service from discovery through to live.",
     externalLinks: [
-      { phrase: "digital standards", linkKey: "digital-standards" },
-      { phrase: "Policy on Service and Digital", linkKey: "guideline-service-digital" },
-      { phrase: "standards on APIs", linkKey: "gc-standards-on-apis" },
-      { phrase: "Enabling Interoperability", linkKey: "enabling-interoperability" },
+      { phrase: "solving a whole problem for users", linkKey: "uk-service-standard-point-2" },
+      { phrase: "service design practice", linkKey: "cds-service-design-at-cds" },
       {
-        phrase: "reuse and interoperability",
-        linkKey: "gc-ea-application-architecture",
+        phrase: "working across organisational boundaries with service communities",
+        linkKey: "uk-working-across-organisational-boundaries",
       },
-      { phrase: "map a user's whole problem", linkKey: "uk-service-manual-whole-problem" },
-      { phrase: "journey mapping guide", linkKey: "nng-journey-mapping-101" },
-      { phrase: "solving a whole problem", linkKey: "uk-service-standard-point-2" },
-      { phrase: "joining up across channels", linkKey: "uk-service-standard-point-3-join-channels" },
-      { phrase: "assisted digital support", linkKey: "uk-assisted-digital-introduction" },
+      {
+        phrase: "service design and delivery process",
+        linkKey: "dta-service-design-delivery-process",
+      },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -352,6 +349,24 @@ export const JOINED_UP_DELIVERY_THREAD = {
       linkKey: "uk-assisted-digital-introduction" satisfies ExternalLinkKey,
       description:
         "GOV.UK Service Manual, Assisted digital support: an introduction — https://www.gov.uk/service-manual/helping-people-to-use-your-service/assisted-digital-support-introduction",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cds-service-design-at-cds" satisfies ExternalLinkKey,
+      description:
+        "Canadian Digital Service, Service design at CDS — https://digital.canada.ca/service-digital-toolkit/user-centred-design/service-design-at-cds/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "uk-working-across-organisational-boundaries" satisfies ExternalLinkKey,
+      description:
+        "GOV.UK Working across organisational boundaries with service communities — https://www.gov.uk/service-manual/design/working-across-organisational-boundaries",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "dta-service-design-delivery-process" satisfies ExternalLinkKey,
+      description:
+        "Australia DTA Service design and delivery process — https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
     },
   ] satisfies SourceItem[],
 } as const;

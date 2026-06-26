@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { DashedArrow } from "@/components/PhaseVisuals";
+import { guideLink } from "@/lib/guide-typography";
 import { phaseVisual, type LifecyclePhaseId, type WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
 import { PHASES, PHASE_ORDER } from "@/lib/guide-strings";
 
@@ -37,7 +38,7 @@ export function WhereThisFits({
               ) : (
                 <Link
                   to={PHASES[id].href}
-                  className="shrink-0 whitespace-nowrap text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
+                  className={`shrink-0 whitespace-nowrap text-sm ${guideLink}`}
                 >
                   {PHASES[id].title}
                 </Link>

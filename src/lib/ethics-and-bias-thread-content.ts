@@ -268,19 +268,16 @@ export const ETHICS_AND_BIAS_THREAD = {
 
   furtherReading: {
     text:
-      "When a service makes decisions about people, the binding rules are the Directive on Automated Decision-Making and its Algorithmic Impact Assessment, with GBA Plus as the broader fairness lens required across government. The Responsible use of AI hub gathers the rest, the twelve guiding principles, the FASTER principles for generative AI, and Canada's standard on accessible and equitable AI. The OPC's principles add the privacy-and-fairness lens, and for how other places frame it, the US NIST AI Risk Management Framework and the EU AI Act (which tiers AI by risk) are useful companions.",
+      "Beyond the binding Directive, Algorithmic Impact Assessment, and GBA Plus already linked above, a few sources go further. The twelve guiding principles for the use of AI in government set out the openness-and-accountability expectations, and the OPC's principles add the privacy-and-fairness lens. For a plain statement of the ethical values your service should uphold, the made-in-Canada Montréal Declaration on Responsible AI gives ten principles you can hold a design up against, and CIFAR's AI & Society work under the Pan-Canadian AI Strategy gathers Canadian research on AI's effects on people. When you want a hands-on sense of how to check a system rather than just principles, the UK government's Introduction to AI assurance walks through the techniques teams use to test that an AI system is fair and works as intended. For how other places frame it, the US NIST AI Risk Management Framework and the EU AI Act are useful companions.",
     externalLinks: [
-      {
-        phrase: "Directive on Automated Decision-Making",
-        linkKey: "directive-automated-decision-making",
-      },
-      { phrase: "Algorithmic Impact Assessment", linkKey: "algorithmic-impact-assessment" },
-      { phrase: "GBA Plus", linkKey: "gba-plus" },
-      { phrase: "Responsible use of AI", linkKey: "responsible-use-ai-hub" },
       { phrase: "guiding principles", linkKey: "ai-guiding-principles" },
-      { phrase: "FASTER principles", linkKey: "generative-ai-faster" },
-      { phrase: "accessible and equitable AI", linkKey: "can-asc-62-equitable-ai" },
       { phrase: "OPC's principles", linkKey: "opc-generative-ai-principles" },
+      {
+        phrase: "Montréal Declaration on Responsible AI",
+        linkKey: "montreal-declaration-responsible-ai",
+      },
+      { phrase: "AI & Society", linkKey: "cifar-ai-and-society" },
+      { phrase: "Introduction to AI assurance", linkKey: "uk-introduction-to-ai-assurance" },
       { phrase: "NIST AI Risk Management Framework", linkKey: "nist-ai-rmf" },
       { phrase: "EU AI Act", linkKey: "eu-ai-act-summary" },
     ] satisfies ExternalPhraseLink[],
@@ -363,6 +360,24 @@ export const ETHICS_AND_BIAS_THREAD = {
       linkKey: "eu-ai-act-summary" satisfies ExternalLinkKey,
       description:
         "EU AI Act, high-level summary — https://artificialintelligenceact.eu/high-level-summary/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "montreal-declaration-responsible-ai" satisfies ExternalLinkKey,
+      description:
+        "Montréal Declaration on Responsible AI — https://montrealdeclaration-responsibleai.com/the-declaration/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cifar-ai-and-society" satisfies ExternalLinkKey,
+      description:
+        "CIFAR AI & Society (Pan-Canadian AI Strategy) — https://cifar.ca/ai/ai-and-society/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "uk-introduction-to-ai-assurance" satisfies ExternalLinkKey,
+      description:
+        "UK DSIT Introduction to AI assurance — https://www.gov.uk/government/publications/introduction-to-ai-assurance",
     },
   ] satisfies SourceItem[],
 } as const;

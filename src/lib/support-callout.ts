@@ -60,10 +60,9 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   "dependencies-and-standards": {
-    text: "For dependencies and standards questions, the GC Open Source community and the GC Design System are good starting points. There is a team or community for almost every part of this guide.",
+    text: "For the supply-chain and dependency side, the Canadian Centre for Cyber Security advises government institutions, and for open source the GC guide to using open source software and the Open Resource Exchange are the starting points.",
     externalLinks: [
-      { phrase: "GC Open Source community", linkKey: "gc-open-source-community" },
-      { phrase: "GC Design System", linkKey: "gc-design-system" },
+      { phrase: "Canadian Centre for Cyber Security", linkKey: "cyber-centre-contact" },
     ],
   },
   "data-stewardship": {

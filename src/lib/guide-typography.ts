@@ -32,7 +32,7 @@ export const guideCardHeading =
 export const guideLead = `${guideProse}`;
 
 export const guideLink =
-  "font-medium text-primary underline underline-offset-4 hover:opacity-80";
+  "font-medium text-primary/80 underline decoration-primary/35 underline-offset-4 hover:text-primary/65 hover:decoration-primary/50 transition-colors";
 
 /** External links reachable only on the GC network — paler, dotted underline. */
 export const guideLinkGcNetwork =

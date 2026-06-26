@@ -2,6 +2,7 @@ import {
   Briefcase,
   ClipboardList,
   Code,
+  FileText,
   Headset,
   LifeBuoy,
   Map,
@@ -50,6 +51,9 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   }
   if (normalized.includes("security specialist")) {
     return ShieldCheck;
+  }
+  if (normalized.includes("procurement") || normalized.includes("contracting")) {
+    return FileText;
   }
   if (normalized.includes("operations")) {
     return Server;

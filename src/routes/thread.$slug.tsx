@@ -6,6 +6,7 @@ import { EthicsAndBiasThreadPage } from "@/components/EthicsAndBiasThreadPage";
 import { BacklogThreadPage } from "@/components/BacklogThreadPage";
 import { JoinedUpDeliveryThreadPage } from "@/components/JoinedUpDeliveryThreadPage";
 import { ReleasingChangesThreadPage } from "@/components/ReleasingChangesThreadPage";
+import { DependenciesAndStandardsThreadPage } from "@/components/DependenciesAndStandardsThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -21,6 +22,7 @@ import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
 import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
 import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-content";
 import { RELEASING_CHANGES_THREAD } from "@/lib/releasing-changes-thread-content";
+import { DEPENDENCIES_AND_STANDARDS_THREAD } from "@/lib/dependencies-and-standards-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -121,6 +123,20 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "dependencies-and-standards") {
+      return {
+        meta: [
+          {
+            title: `${DEPENDENCIES_AND_STANDARDS_THREAD.title} — The Digital Lifecycle Guide`,
+          },
+          {
+            name: "description",
+            content: threadLeadPlainText(DEPENDENCIES_AND_STANDARDS_THREAD.lead),
+          },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -182,6 +198,10 @@ function ThreadRoutePage() {
 
   if (slug === "releasing-changes") {
     return <ReleasingChangesThreadPage />;
+  }
+
+  if (slug === "dependencies-and-standards") {
+    return <DependenciesAndStandardsThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

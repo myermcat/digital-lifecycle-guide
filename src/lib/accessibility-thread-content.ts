@@ -275,21 +275,14 @@ export const ACCESSIBILITY_THREAD = {
 
   furtherReading: {
     text:
-      "Accessibility in Canada comes under the Accessible Canada Act and the Accessible Canada Regulations, which require federal digital services to meet CAN/ASC-EN 301 549, the standard that adopts WCAG 2.1 Level AA for the web. The Digital Accessibility Toolkit is the closest companion for doing the work, from procurement to testing. For why accessibility matters, the W3C Introduction to Web Accessibility is the plainest start, and other governments' guidance is worth a look for ideas Canada frames less crisply, the UK Service Manual on assisted digital and the United States' Section 508 procurement resources.",
+      "The Accessible Canada Act, the Accessible Canada Regulations, CAN/ASC-EN 301 549, and the Digital Accessibility Toolkit are all in the Sources below. For why accessibility matters, the W3C Introduction to Web Accessibility is the plainest start, and other governments' guidance is worth a look, the UK Service Manual on assisted digital and the United States' Section 508 procurement resources. To see who sets the bar at home and what else is coming, Accessibility Standards Canada is the federal standards body, with the disability definition, the seven priority areas, and a free database of published and in-progress standards. When the team needs to know how to actually build an accessible page, the W3C WAI tutorials give worked guidance on images, forms, tables, and page structure, and WebAIM's keyboard accessibility guide shows how to check that everything works without a mouse.",
     externalLinks: [
-      { phrase: "Accessible Canada Act", linkKey: "accessible-canada-act-summary" },
-      {
-        phrase: "Accessible Canada Regulations",
-        linkKey: "accessible-canada-regulations-digital-technologies",
-      },
-      { phrase: "CAN/ASC-EN 301 549", linkKey: "can-asc-en-301-549" },
-      { phrase: "WCAG 2.1 Level AA", linkKey: "wcag-22-quickref" },
-      { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
-      { phrase: "procurement", linkKey: "a11y-toolkit-procurement" },
-      { phrase: "testing", linkKey: "a11y-toolkit-test-products" },
       { phrase: "W3C Introduction to Web Accessibility", linkKey: "w3c-wai-accessibility-intro" },
       { phrase: "assisted digital", linkKey: "uk-service-manual-assisted-digital" },
       { phrase: "Section 508 procurement resources", linkKey: "section508-gov" },
+      { phrase: "Accessibility Standards Canada", linkKey: "asc-creating-accessibility-standards" },
+      { phrase: "W3C WAI tutorials", linkKey: "w3c-wai-tutorials" },
+      { phrase: "keyboard accessibility guide", linkKey: "webaim-keyboard-accessibility" },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -369,6 +362,22 @@ export const ACCESSIBILITY_THREAD = {
       linkKey: "nng-accessible-web-design" satisfies ExternalLinkKey,
       description:
         "Nielsen Norman Group, Usability Guidelines for Accessible Web Design — accessibility is usability — https://www.nngroup.com/reports/usability-guidelines-accessible-web-design/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "asc-creating-accessibility-standards" satisfies ExternalLinkKey,
+      description:
+        "Accessibility Standards Canada (Creating accessibility standards) — https://accessible.canada.ca/creating-accessibility-standards",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "w3c-wai-tutorials" satisfies ExternalLinkKey,
+      description: "W3C WAI Tutorials — https://www.w3.org/WAI/tutorials/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "webaim-keyboard-accessibility" satisfies ExternalLinkKey,
+      description: "WebAIM Keyboard Accessibility — https://webaim.org/techniques/keyboard/",
     },
   ] satisfies SourceItem[],
 } as const;

@@ -45,6 +45,10 @@ import {
   releasingChangesSectionsPlainText,
 } from "../src/lib/releasing-changes-thread-content";
 import {
+  DEPENDENCIES_AND_STANDARDS_THREAD,
+  dependenciesAndStandardsSectionsPlainText,
+} from "../src/lib/dependencies-and-standards-thread-content";
+import {
   threadLeadPlainText,
   threadWhoseJobPlainText,
 } from "../src/lib/thread-rich-content";
@@ -1207,6 +1211,104 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: releasingKeywords,
+    });
+  }
+}
+
+// Dependencies and standards thread — section-level records.
+{
+  const pageTitle = DEPENDENCIES_AND_STANDARDS_THREAD.title;
+  const pagePath = THREADS["dependencies-and-standards"].path;
+
+  const dependenciesKeywords =
+    "dependencies standards open source SBOM supply chain vetting patching lock-in";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: threadLeadPlainText(DEPENDENCIES_AND_STANDARDS_THREAD.lead),
+    keywords: dependenciesKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(
+        ...DEPENDENCIES_AND_STANDARDS_THREAD.whatGoodLooksLike.map((item) => item.text),
+      ),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: DEPENDENCIES_AND_STANDARDS_THREAD.whyItMatters.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: threadWhoseJobPlainText(DEPENDENCIES_AND_STANDARDS_THREAD.whoseJob),
+    },
+    {
+      sectionId: DEPENDENCIES_AND_STANDARDS_THREAD.closerLook.id,
+      sectionHeading: DEPENDENCIES_AND_STANDARDS_THREAD.closerLook.title,
+      text: concat(
+        ...DEPENDENCIES_AND_STANDARDS_THREAD.closerLook.blocks.map((block) =>
+          concat(
+            block.title,
+            dependenciesAndStandardsSectionsPlainText(block.sections),
+          ),
+        ),
+      ),
+    },
+    {
+      sectionId: DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.id,
+      sectionHeading: DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.title,
+      text: concat(
+        DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.risky.items ?? []),
+        DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.risky.closing ?? "",
+        DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.safe.items ?? []),
+        DEPENDENCIES_AND_STANDARDS_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.id,
+      sectionHeading: DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.title,
+      text: concat(
+        DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.intro,
+        ...DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.blocks.map(
+          (block) =>
+            concat(
+              block.title,
+              block.preview,
+              dependenciesAndStandardsSectionsPlainText(block.popup),
+            ),
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: DEPENDENCIES_AND_STANDARDS_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: dependenciesKeywords,
     });
   }
 }

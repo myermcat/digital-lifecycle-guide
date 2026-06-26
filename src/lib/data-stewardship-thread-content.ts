@@ -270,21 +270,17 @@ export const DATA_STEWARDSHIP_THREAD = {
 
   furtherReading: {
     text:
-      "Managing data in the Government of Canada comes under the Policy on Service and Digital and its directive, which set the duties for data quality, retention, disposition, and openness. Disposing of records is governed by the Library and Archives of Canada Act, with Library and Archives Canada's guideline on documented disposition and Generic Valuation Tools showing how it is done. For data quality, the Guidance on Data Quality sets out the nine dimensions, with Statistics Canada's Quality Guidelines behind them and the FAIR principles as a further lens for sharing and reuse. For moving data between systems, The National Archives' guide to migrating records and the checklist for retiring applications before decommissioning infrastructure are practical companions.",
+      "Every source behind this page is listed with links in the Sources block below. To see how this single service fits the government-wide picture, the 2023–2026 Data Strategy for the Federal Public Service lays out where the federal government is taking data governance and the expectations that flow down to your department. For a short plain-language primer on the idea itself, Statistics Canada's Data stewardship: An introduction explains the difference between data governance and stewardship and what a data steward actually does day to day. And if you want the source of the FAIR ideas the page touches on, the GO FAIR initiative's FAIR Principles sets out each principle so your data stays findable and reusable when it is shared.",
     externalLinks: [
-      { phrase: "Policy on Service and Digital", linkKey: "policy-on-service-and-digital" },
-      { phrase: "directive", linkKey: "directive-on-service-and-digital" },
-      { phrase: "Library and Archives of Canada Act", linkKey: "laca" },
-      { phrase: "guideline on documented disposition", linkKey: "lac-documented-disposition" },
-      { phrase: "Generic Valuation Tools", linkKey: "lac-gvt-overview" },
-      { phrase: "Guidance on Data Quality", linkKey: "tbs-data-quality-guidance" },
-      { phrase: "Quality Guidelines", linkKey: "statcan-quality-guidelines" },
-      { phrase: "FAIR principles", linkKey: "tbs-fair-principles" },
-      { phrase: "guide to migrating records", linkKey: "uk-national-archives-migration" },
       {
-        phrase: "checklist for retiring applications before decommissioning infrastructure",
-        linkKey: "aws-app-retirement",
+        phrase: "2023–2026 Data Strategy for the Federal Public Service",
+        linkKey: "tbs-2023-2026-data-strategy",
       },
+      {
+        phrase: "Data stewardship: An introduction",
+        linkKey: "statcan-data-stewardship-intro",
+      },
+      { phrase: "FAIR Principles", linkKey: "go-fair-principles" },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -350,6 +346,23 @@ export const DATA_STEWARDSHIP_THREAD = {
       linkKey: "aws-app-retirement" satisfies ExternalLinkKey,
       description:
         "AWS Prescriptive Guidance, Retiring applications before decommissioning infrastructure",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "tbs-2023-2026-data-strategy" satisfies ExternalLinkKey,
+      description:
+        "TBS 2023–2026 Data Strategy for the Federal Public Service — https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/2023-2026-data-strategy.html",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "statcan-data-stewardship-intro" satisfies ExternalLinkKey,
+      description:
+        "StatCan Data stewardship: An introduction — https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020013",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "go-fair-principles" satisfies ExternalLinkKey,
+      description: "GO FAIR FAIR Principles — https://www.go-fair.org/fair-principles/",
     },
   ] satisfies SourceItem[],
 } as const;

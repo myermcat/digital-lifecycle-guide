@@ -233,16 +233,16 @@ export const USER_RESEARCH_THREAD = {
 
   furtherReading: {
     text:
-      "Researching with users is the first of the Government of Canada's digital standards, and the Directive on Service and Digital makes collecting and acting on client feedback and user-experience testing a responsibility, not an option. For how to actually do it, Ontario's User Research Guide and Service Design Playbook are reusable Canadian references on what to plan, fund, and expect. For methods and testing, the Nielsen Norman Group's map of research methods and Usability Testing 101 are the plainest starts, 18F's De-risking Government Technology makes the case to funders, and the UK Service Manual's user research is the fullest how-to.",
+      "For how to actually do it, Ontario's User Research Guide and Service Design Playbook are reusable Canadian references on what to plan, fund, and expect. To see federal research in practice, Canada.ca's research summaries show how the Government of Canada tested real services and what it changed as a result. For the basics of learning about users and their needs, the UK Service Manual walks through writing and validating needs, and the Interaction Design Foundation's plain-English primer on user research is a good first read if the discipline is new to you.",
     externalLinks: [
-      { phrase: "digital standards", linkKey: "design-with-users" },
-      { phrase: "Directive on Service and Digital", linkKey: "guideline-service-digital" },
       { phrase: "User Research Guide", linkKey: "ontario-user-research-guide" },
       { phrase: "Service Design Playbook", linkKey: "ontario-service-design-playbook" },
-      { phrase: "map of research methods", linkKey: "nng-ux-research-methods" },
-      { phrase: "Usability Testing 101", linkKey: "nng-usability-testing-101" },
-      { phrase: "De-risking Government Technology", linkKey: "18f-derisking" },
-      { phrase: "user research", linkKey: "uk-service-manual-user-research" },
+      { phrase: "research summaries", linkKey: "design-canada-research-summaries" },
+      {
+        phrase: "learning about users and their needs",
+        linkKey: "uk-start-by-learning-user-needs",
+      },
+      { phrase: "user research", linkKey: "ixdf-user-research" },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -318,6 +318,24 @@ export const USER_RESEARCH_THREAD = {
       linkKey: "uk-service-manual-user-research" satisfies ExternalLinkKey,
       description:
         "UK Service Manual, User research — https://www.gov.uk/service-manual/user-research",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "design-canada-research-summaries" satisfies ExternalLinkKey,
+      description:
+        "Canada.ca research summaries — https://design.canada.ca/research-summaries/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "uk-start-by-learning-user-needs" satisfies ExternalLinkKey,
+      description:
+        "UK Service Manual, Learning about users and their needs — https://www.gov.uk/service-manual/user-research/start-by-learning-user-needs",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "ixdf-user-research" satisfies ExternalLinkKey,
+      description:
+        "Interaction Design Foundation, What is User Research? — https://www.interaction-design.org/literature/topics/user-research",
     },
   ] satisfies SourceItem[],
 } as const;

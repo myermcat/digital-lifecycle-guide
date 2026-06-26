@@ -95,7 +95,7 @@ function SourceLinkItem({ item }: { item: SourceItem }) {
   const linkText = sourceLinkText(item, href);
 
   return (
-    <li className="min-w-0">
+    <li className="min-w-0 pl-6 -indent-6">
       {href ? (
         <>
           <a

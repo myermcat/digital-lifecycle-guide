@@ -368,15 +368,15 @@ export const BACKLOG_THREAD = {
 
   furtherReading: {
     text:
-      "The Government of Canada's digital standards to iterate and improve frequently and to work in the open set the expectation to keep and prioritize a backlog. Ontario's Service Design Playbook shows how it runs across a service's life. For the formal terms, the Scrum Guide defines the product backlog, the product owner, refinement, and the definition of done, and the UK's Service Manual is the plainest how-to for user stories and priorities.",
+      "For a broad how-to that ties the backlog together, the UK's Service Manual on agile delivery is the plainest overview. To see how a Government of Canada team decides what to work on next, design.canada.ca's continuous improvement guidance walks through choosing what to improve and measuring whether it worked. For writing the items themselves, Mike Cohn's guide to user stories gives the template, worked examples, and how to break an epic down. And to understand why a backlog should be run as a product rather than a project, Marty Cagan's Product vs Feature Teams explains why the owner should be set problems to solve rather than a fixed list to deliver.",
     externalLinks: [
-      { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
-      { phrase: "work in the open", linkKey: "work-open-default" },
-      { phrase: "Service Design Playbook", linkKey: "ontario-service-design-playbook" },
-      { phrase: "Scrum Guide", linkKey: "scrum-guide" },
-      { phrase: "Service Manual", linkKey: "uk-service-manual-agile-delivery" },
-      { phrase: "user stories", linkKey: "uk-writing-user-stories" },
-      { phrase: "priorities", linkKey: "uk-deciding-on-priorities" },
+      { phrase: "agile delivery", linkKey: "uk-service-manual-agile-delivery" },
+      {
+        phrase: "continuous improvement guidance",
+        linkKey: "design-canada-continuous-improvement",
+      },
+      { phrase: "guide to user stories", linkKey: "mountaingoat-user-stories" },
+      { phrase: "Product vs Feature Teams", linkKey: "svpg-product-vs-feature-teams" },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -438,6 +438,24 @@ export const BACKLOG_THREAD = {
       linkKey: "roman-pichler-backlog-mistakes" satisfies ExternalLinkKey,
       description:
         "Roman Pichler, Seven Product Backlog Mistakes to Avoid — https://www.romanpichler.com/blog/product-backlog-mistakes/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "design-canada-continuous-improvement" satisfies ExternalLinkKey,
+      description:
+        "design.canada.ca Continuous improvement — https://design.canada.ca/continuous-improvement.html",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "mountaingoat-user-stories" satisfies ExternalLinkKey,
+      description:
+        "Mike Cohn (Mountain Goat) User Stories — https://www.mountaingoatsoftware.com/agile/user-stories",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "svpg-product-vs-feature-teams" satisfies ExternalLinkKey,
+      description:
+        "Marty Cagan (SVPG) Product vs Feature Teams — https://www.svpg.com/product-vs-feature-teams/",
     },
   ] satisfies SourceItem[],
 } as const;

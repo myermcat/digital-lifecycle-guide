@@ -43,7 +43,7 @@ export const RELEASING_CHANGES_THREAD = {
     {
       text: "Every change runs through an automated pipeline that builds and tests it before it can be released.",
       externalLinks: [
-        { phrase: "automated pipeline", linkKey: "atlassian-ci-cd" },
+        { phrase: "automated pipeline", linkKey: "martin-fowler-deployment-pipeline" },
       ] satisfies ExternalPhraseLink[],
     },
     {
@@ -73,10 +73,6 @@ export const RELEASING_CHANGES_THREAD = {
   whyItMatters: {
     text:
       "Big, infrequent releases are where risk collects. When months of changes go out at once, there is more that can break, it is harder to tell which change caused a problem, and users wait a long time for fixes and improvements. Releasing in small batches turns that around: each change is small enough to test, to understand, and to undo, so a problem is caught early and contained. This is the Government of Canada's expectation, its standard is to iterate and improve frequently, releasing small batches and building in automated testing so new changes do not introduce new problems. The evidence backs it up: teams that release often and recover fast are also the ones that break things least, so speed and stability come together rather than trading off. For a service in the cloud, releasing also rides on a baseline of security: the GC Cloud Guardrails must be implemented, validated, and reported within the first 30 business days of getting a cloud account.",
-    externalLinks: [
-      { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
-      { phrase: "GC Cloud Guardrails", linkKey: "gc-cloud-guardrails" },
-    ] satisfies ExternalPhraseLink[],
   },
 
   whoseJob: {
@@ -117,7 +113,6 @@ export const RELEASING_CHANGES_THREAD = {
             bold: [{ phrase: "Continuous integration" }, { phrase: "Continuous delivery" }],
             externalLinks: [
               { phrase: "automated build and test", linkKey: "atlassian-ci-cd" },
-              { phrase: "deployment pipeline", linkKey: "martin-fowler-deployment-pipeline" },
             ] satisfies ExternalPhraseLink[],
           },
         ],
@@ -129,7 +124,6 @@ export const RELEASING_CHANGES_THREAD = {
             text:
               "Even a tested change can behave unexpectedly with real users, so the safe pattern is to release it to a small share of them first. This is a canary release: the change goes to, say, 5% of users while the rest stay on the old version, the two are compared, and the rollout only continues if the change behaves. The math is the point, a fault that would fail one in five requests reaches only a fraction of users instead of everyone. Alongside that, a team needs a fast way back: an auditable, single-package deployment makes rolling back to the last good version straightforward, and a quick post-release check can trigger that rollback automatically. The ability to undo in minutes is what makes frequent releasing safe.",
             externalLinks: [
-              { phrase: "canary release", linkKey: "google-sre-canarying-releases" },
               {
                 phrase: "auditable, single-package deployment",
                 linkKey: "uk-deploying-software-regularly",
@@ -144,7 +138,6 @@ export const RELEASING_CHANGES_THREAD = {
           {
             text:
               "You can tell a healthy release process from an unhealthy one with a few plain measures, often called the DORA metrics: how often you release, how long a change takes to get from done to live, how often a release causes a problem, and how fast you recover when one does. The useful finding behind them is that these do not trade off, the teams that release most often are also the ones that break things least and recover fastest. Treat the numbers as a temperature check the team uses to improve. A metric chased as a target for its own sake stops being honest.",
-            externalLinks: [{ phrase: "DORA metrics", linkKey: "dora-metrics" }] satisfies ExternalPhraseLink[],
           },
         ],
       },
@@ -190,10 +183,6 @@ export const RELEASING_CHANGES_THREAD = {
           {
             text:
               "The release habits are set before launch. The team builds the pipeline and the automated tests, decides how it will deploy and roll back, and, for a cloud service, puts the GC security guardrails in place and validates them within the first 30 business days. Choosing to release small and often from the start is far easier than retrofitting it onto a service built for big launches.",
-            externalLinks: [
-              { phrase: "pipeline", linkKey: "martin-fowler-deployment-pipeline" },
-              { phrase: "GC security guardrails", linkKey: "gc-cloud-guardrails" },
-            ] satisfies ExternalPhraseLink[],
           },
         ],
       },
@@ -204,13 +193,8 @@ export const RELEASING_CHANGES_THREAD = {
           {
             text:
               "Once the service is running, releasing is continuous. The team releases small changes often, rolls them out gradually and watches them through monitoring, rolls back the ones that misbehave, and applies security patches promptly. The work to release comes from the prioritized backlog, and the team keeps an eye on whether releasing stays healthy.",
-            externalLinks: [
-              { phrase: "gradually", linkKey: "google-sre-canarying-releases" },
-              { phrase: "releasing stays healthy", linkKey: "dora-metrics" },
-            ] satisfies ExternalPhraseLink[],
             internalLinks: [
               { phrase: "monitoring", to: THREADS["monitoring-and-instrumentation"].path },
-              { phrase: "security patches", to: THREADS.security.path },
               { phrase: "the prioritized backlog", to: THREADS.backlog.path },
             ] satisfies InternalPhraseLink[],
           },
@@ -235,19 +219,15 @@ export const RELEASING_CHANGES_THREAD = {
 
   furtherReading: {
     text:
-      "Releasing often is the Government of Canada's standard to iterate and improve frequently, and for a service in the cloud the GC Cloud Guardrails set the security baseline that must be validated within 30 business days, with the guidance to use open standards and solutions adding the exit-strategy and portability expectations. For how to do it, the UK Service Manual on deploying software regularly is the fullest government how-to, Atlassian explains continuous integration, delivery, and deployment in plain words, Martin Fowler defines the deployment pipeline, Google's SRE workbook covers canary releases, and the DORA metrics are the way to tell whether releasing is healthy.",
+      "For deploying to the cloud without locking yourself in, the Government of Canada's guidance to use open standards and solutions adds the exit-strategy and portability expectations behind releasing. For a plain-language starting point on the first habit, GitHub's explainer on continuous integration shows why committing small changes often catches errors sooner. If you want to see how a cloud platform frames the whole practice, AWS's operational excellence guidance lays out the principles of making frequent, small, reversible changes and automating deployments safely. And for the bigger picture of treating releasing as a discipline to set up from the start, Google's chapter on release engineering explains why repeatable, automated builds and an audit trail make releases routine.",
     externalLinks: [
-      { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
-      { phrase: "GC Cloud Guardrails", linkKey: "gc-cloud-guardrails" },
       { phrase: "use open standards and solutions", linkKey: "gc-use-open-standards-solutions" },
-      { phrase: "deploying software regularly", linkKey: "uk-deploying-software-regularly" },
+      { phrase: "continuous integration", linkKey: "github-continuous-integration" },
       {
-        phrase: "continuous integration, delivery, and deployment",
-        linkKey: "atlassian-ci-cd",
+        phrase: "operational excellence guidance",
+        linkKey: "aws-well-architected-operational-excellence",
       },
-      { phrase: "deployment pipeline", linkKey: "martin-fowler-deployment-pipeline" },
-      { phrase: "canary releases", linkKey: "google-sre-canarying-releases" },
-      { phrase: "DORA metrics", linkKey: "dora-metrics" },
+      { phrase: "release engineering", linkKey: "google-sre-release-engineering" },
     ] satisfies ExternalPhraseLink[],
   },
 
@@ -299,6 +279,24 @@ export const RELEASING_CHANGES_THREAD = {
       linkKey: "dora-metrics" satisfies ExternalLinkKey,
       description:
         "DORA, software delivery performance metrics — https://dora.dev/guides/dora-metrics/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "github-continuous-integration" satisfies ExternalLinkKey,
+      description:
+        "GitHub Docs Continuous integration — https://docs.github.com/en/actions/get-started/continuous-integration",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "aws-well-architected-operational-excellence" satisfies ExternalLinkKey,
+      description:
+        "AWS Well-Architected Operational Excellence Pillar — https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operational-excellence.html",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "google-sre-release-engineering" satisfies ExternalLinkKey,
+      description:
+        "Google SRE Book, Release Engineering (Ch. 8) — https://sre.google/sre-book/release-engineering/",
     },
   ] satisfies SourceItem[],
 } as const;

@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useHydrated } from "@/hooks/use-hydrated";
-import { guideProse } from "@/lib/guide-typography";
+import { guideProse, guideLink } from "@/lib/guide-typography";
 
 export interface SubItem {
   title: string;
@@ -118,7 +118,7 @@ export function PhaseCard({
               <Link
                 to={deepLink.href}
                 onClick={() => setOpen(false)}
-                className="inline-block mt-2 text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
+                className={`inline-block mt-2 text-sm ${guideLink}`}
               >
                 {deepLink.label} →
               </Link>
@@ -126,7 +126,7 @@ export function PhaseCard({
               <a
                 href={deepLink.href}
                 onClick={() => setOpen(false)}
-                className="inline-block mt-2 text-sm font-medium text-primary underline underline-offset-4 hover:opacity-80"
+                className={`inline-block mt-2 text-sm ${guideLink}`}
               >
                 {deepLink.label} →
               </a>
