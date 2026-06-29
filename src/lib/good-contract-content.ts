@@ -39,6 +39,22 @@ export type GoodContractSchedule = {
   whyHere: GoodContractLinkedProse;
 };
 
+export type GoodContractSimplificationNote = {
+  lead: string;
+  paragraphs: readonly GoodContractLinkedProse[];
+  expansionList: readonly string[];
+  closing: string;
+};
+
+export function goodContractSimplificationNoteText(note: GoodContractSimplificationNote) {
+  return [
+    note.lead,
+    ...note.paragraphs.map((paragraph) => paragraph.text),
+    ...note.expansionList,
+    note.closing,
+  ].join(" ");
+}
+
 export const GOOD_CONTRACT = {
   title: "What a good contract looks like",
 
@@ -62,6 +78,35 @@ export const GOOD_CONTRACT = {
 
   exampleNote:
     "Everything below is written for the grant portal. The clauses, and the bracketed details like dates and percentages, are things you set for your own service. Treat this as a worked example to adapt, not text to copy.",
+
+  simplificationNote: {
+    lead: "These clauses are shortened.",
+    paragraphs: [
+      {
+        text:
+          "We boiled each promise down to a line or two so you can see the whole contract on one page. A real one spells each out in full.",
+      },
+      {
+        text:
+          "As written, they would also make poor requirements. 'Hand over the service in good order' is vague: you could not hold a supplier to it, or check whether they had done it.",
+        bold: [{ phrase: "poor requirements" }],
+      },
+      {
+        text:
+          "A good requirement is specific, measurable, and testable. Schedule I's 'good order' would become a list you can check off:",
+        bold: [{ phrase: "specific, measurable, and testable" }],
+      },
+    ],
+    expansionList: [
+      "a complete copy of the data in an agreed open format",
+      "the source code and configuration",
+      "current documentation and a runbook",
+      "a register of every third-party component and its licence",
+      "a set number of days of support while a new team takes over",
+    ],
+    closing:
+      "Read each clause below as the short version of something a real contract spells out, and makes testable, in full.",
+  } satisfies GoodContractSimplificationNote,
 
   howToRead: {
     intro: [
@@ -244,6 +289,12 @@ export const GOOD_CONTRACT = {
         {
           label: "D.1",
           text: "The Supplier shall meet the security requirements set out in the Security Requirements Check List for this contract.",
+          externalLinks: [
+            {
+              phrase: "Security Requirements Check List",
+              linkKey: "tbs-srcl-350-103",
+            },
+          ] satisfies ExternalPhraseLink[],
         },
         {
           label: "D.2",

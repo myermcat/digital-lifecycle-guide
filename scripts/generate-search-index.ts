@@ -7,7 +7,7 @@ import { PROCUREMENT_SUBPAGES } from "../src/lib/contracting-subpages";
 import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
-import { GOOD_CONTRACT } from "../src/lib/good-contract-content";
+import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
 import {
   DESIGN_FOR_WHOLE_JOURNEY_PATH,
@@ -383,7 +383,10 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "how-to-read",
       sectionHeading: "How to read this contract",
-      text: concat(...GOOD_CONTRACT.howToRead.intro.map((paragraph) => paragraph.text)),
+      text: concat(
+        ...GOOD_CONTRACT.howToRead.intro.map((paragraph) => paragraph.text),
+        goodContractSimplificationNoteText(GOOD_CONTRACT.simplificationNote),
+      ),
     },
     {
       sectionId: "the-contract",

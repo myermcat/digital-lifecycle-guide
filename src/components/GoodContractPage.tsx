@@ -24,6 +24,8 @@ import {
   guideProseSpace,
   guideSectionTitle,
   guideSubsectionTitle,
+  guideLink,
+  guideListIndent,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -48,6 +50,27 @@ function renderLinkedProseBlock(prose: GoodContractLinkedProse) {
   });
 }
 
+function SimplificationNote() {
+  const note = GOOD_CONTRACT.simplificationNote;
+
+  return (
+    <EditorialNote label="Shortened">
+      <div className="space-y-3">
+        <p className="font-semibold text-foreground/90">{note.lead}</p>
+        {note.paragraphs.map((paragraph) => (
+          <p key={paragraph.text}>{renderLinkedProseBlock(paragraph)}</p>
+        ))}
+        <ul className={`list-disc space-y-1 ${guideListIndent}`}>
+          {note.expansionList.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p>{note.closing}</p>
+      </div>
+    </EditorialNote>
+  );
+}
+
 function ScheduleTag({ tag }: { tag: GoodContractScheduleTag }) {
   const isStandard = tag === "standard";
   return (
@@ -70,7 +93,10 @@ function ContractClause({ clause }: { clause: GoodContractClause }) {
       <span className="shrink-0 font-semibold tabular-nums text-[#2f2920]/90">{clause.label}</span>
       <span>
         {clause.externalLinks
-          ? proseWithMixedLinks(clause.text, { external: clause.externalLinks })
+          ? proseWithMixedLinks(clause.text, {
+              external: clause.externalLinks,
+              linkClassName: guideLink,
+            })
           : clause.text}
       </span>
     </li>
@@ -125,13 +151,6 @@ function ContractSchedulesAccordion({
 export function GoodContractPage() {
   const [openSchedule, setOpenSchedule] = useState<string | undefined>("schedule-a");
 
-  function jumpToSchedule(scheduleId: string) {
-    setOpenSchedule(scheduleId);
-    requestAnimationFrame(() => {
-      document.getElementById(scheduleId)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }
-
   const tagLegendLead = GOOD_CONTRACT.howToRead.intro.at(-1)?.text ?? "";
 
   return (
@@ -183,31 +202,8 @@ export function GoodContractPage() {
             contract; <ScheduleTag tag="tailored" /> means we wrote it in because of what the
             grant portal is and the information it holds.
           </p>
+          <SimplificationNote />
         </div>
-        <nav aria-label="Contract schedules" className="mt-6">
-          <ul className="flex flex-wrap gap-x-4 gap-y-2 list-none p-0 font-sans text-sm">
-            {GOOD_CONTRACT.schedules.map((schedule) => (
-              <li key={schedule.id}>
-                <button
-                  type="button"
-                  onClick={() => jumpToSchedule(schedule.id)}
-                  className="inline-flex items-center gap-2 text-left text-foreground/70 hover:text-foreground"
-                >
-                  <span
-                    aria-hidden="true"
-                    className={cn(
-                      "h-2 w-2 shrink-0 rounded-full",
-                      schedule.tag === "standard" ? "bg-primary/80" : "bg-amber-500/80",
-                    )}
-                  />
-                  <span>
-                    {schedule.letter} — {schedule.title}
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="the-contract">
