@@ -84,7 +84,7 @@ export function DependenciesAndStandardsThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
-        <p className={guideProse}>{renderLinkedProse(whyItMatters)}</p>
+        {renderThreadSections(whyItMatters)}
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">

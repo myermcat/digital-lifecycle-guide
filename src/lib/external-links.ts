@@ -702,6 +702,11 @@ export const EXTERNAL_LINKS = {
     description: 'GC "Use open standards and solutions" (Guideline 4, TBS)',
     accessibility: "public",
   },
+  "isc2-cloud-exit-strategies": {
+    url: "https://www.isc2.org/Insights/2024/04/Cloud-Exit-Strategies-Avoiding-Vendor-Lock-in",
+    description: "ISC2, Cloud Exit Strategies: Why and How to Avoid Vendor Lock-in",
+    accessibility: "public",
+  },
   "uk-deploying-software-regularly": {
     url: "https://www.gov.uk/service-manual/technology/deploying-software-regularly",
     description: "UK Service Manual, Deploying software regularly",
@@ -885,6 +890,11 @@ export const EXTERNAL_LINKS = {
   "cccs-cyber-supply-chain-smb-itsap00070": {
     url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-security-small-medium-sized-organizations-itsap00070",
     description: "CCCS, Cyber supply chain security for small and medium organizations (ITSAP.00.070)",
+    accessibility: "public",
+  },
+  "cccs-log4j-alert": {
+    url: "https://www.cyber.gc.ca/en/alerts/active-exploitation-apache-log4j-vulnerability",
+    description: "CCCS, Active exploitation of Apache Log4j vulnerability",
     accessibility: "public",
   },
   "open-first-whitepaper-oss-use": {

@@ -16,6 +16,7 @@ import {
 
 export type DependenciesAndStandardsLinkedProse = ThreadLinkedProse;
 export type DependenciesAndStandardsContentSection = ThreadContentSection;
+export type DependenciesAndStandardsWhyItMatters = readonly DependenciesAndStandardsContentSection[];
 export type DependenciesAndStandardsCloserLookBlock = ThreadCloserLookBlock;
 export type DependenciesAndStandardsPhasePreviewBlock = ThreadPhasePreviewBlock;
 
@@ -44,7 +45,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
     {
       text: "A component or provider can be swapped without rebuilding the service, because the pieces are substitutable and there is an exit plan set before going to the cloud.",
       externalLinks: [
-        { phrase: "exit plan", linkKey: "gc-use-open-standards-solutions" },
+        { phrase: "exit plan", linkKey: "isc2-cloud-exit-strategies" },
       ] satisfies ExternalPhraseLink[],
     },
     {
@@ -76,13 +77,44 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
     },
     {
       text: "Open-source options are considered first, in line with the Government of Canada's open-first position.",
+      externalLinks: [
+        { phrase: "open-first position", linkKey: "open-first-whitepaper-oss-use" },
+      ] satisfies ExternalPhraseLink[],
     },
   ] satisfies DependenciesAndStandardsLinkedProse[],
 
-  whyItMatters: {
-    text:
-      "The parts a service is built from are also the ways it can go wrong. There are two risks. The first is lock-in: when a service is tied to one vendor's proprietary formats, that vendor controls the features, the fixes, and the price, and moving away later costs a great deal. Open standards keep the pieces substitutable, so a service can change one part without rebuilding the rest. The second risk is the supply chain: a flaw or a tampering in a component you did not write becomes your problem, and as the Canadian Centre for Cyber Security puts it, an organization is legally responsible for protecting its information even when using third-party services. When the Log4j flaw appeared in a logging library used by millions of applications in 2021, the teams who came through it well were the ones who knew exactly where they used it and could patch fast. That is what knowing, vetting, and patching your dependencies buys you. The Government of Canada's position is to use open source and open standards first, for exactly these reasons.",
-  },
+  whyItMatters: [
+    {
+      text:
+        "The parts a service is built from are also the ways it can go wrong. There are two risks.",
+    },
+    {
+      type: "orderedList",
+      items: [
+        {
+          bold: "Lock-in.",
+          text:
+            "When a service is tied to one vendor's proprietary formats, that vendor controls the features, the fixes, and the price, and moving away later costs a great deal. Open standards keep the pieces substitutable, so a service can change one part without rebuilding the rest.",
+        },
+        {
+          text:
+            "The supply chain. A flaw or a tampering in a component you did not write becomes your problem. As the Canadian Centre for Cyber Security puts it, an organization is legally responsible for protecting its information even when using third-party services.",
+          bold: [{ phrase: "The supply chain." }],
+        },
+      ],
+    },
+    {
+      text:
+        "The Log4j flaw shows why this matters. When it appeared in a logging library used by millions of applications in 2021, the teams who came through it well were the ones who knew exactly where they used it and could patch fast. That is what knowing, vetting, and patching your dependencies buys you.",
+      externalLinks: [
+        { phrase: "Log4j", linkKey: "cccs-log4j-alert" },
+      ] satisfies ExternalPhraseLink[],
+    },
+    {
+      text:
+        "The Government of Canada's position is to use open source and open standards first, for exactly these reasons.",
+    },
+  ] satisfies DependenciesAndStandardsWhyItMatters,
 
   whoseJob: {
     intro: "Dependencies and standards is shared across the team, with each role holding a different part:",
@@ -119,13 +151,32 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
       {
         title: "Open standards keep you free to change.",
         sections: [
+          { text: "Two ideas are easy to confuse:" },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "Open source is a way of building and sharing software, where the code can be used and changed by anyone.",
+                bold: [{ phrase: "Open source" }],
+                externalLinks: [
+                  { phrase: "used and changed by anyone", linkKey: "uk-make-use-of-open-standards" },
+                ] satisfies ExternalPhraseLink[],
+              },
+              {
+                text: "Open standards are the common rules, the file formats, protocols, and interfaces, that any product can follow so it works with others.",
+                bold: [{ phrase: "Open standards" }],
+              },
+            ],
+          },
           {
             text:
-              "Two ideas are easy to confuse. Open source is a way of building and sharing software, where the code can be used and changed by anyone. Open standards are the common rules, file formats, protocols, and interfaces, that any product can follow so it works with others. Building on open standards is what keeps a service's parts substitutable: each piece can be replaced by another that does the same job without breaking the rest, which is the practical meaning of avoiding vendor lock-in. The cost of lock-in is concrete, a vendor you cannot leave controls your features, fixes, and price, so the Government of Canada's open-first position asks teams to factor exit and transition costs into the total cost of ownership and to set an exit strategy before committing to a cloud service.",
-            bold: [{ phrase: "Open standards" }],
-            externalLinks: [
-              { phrase: "Open source", linkKey: "uk-make-use-of-open-standards" },
-            ] satisfies ExternalPhraseLink[],
+              "Building on open standards keeps a service's parts substitutable: each piece can be swapped for another that does the same job without breaking the rest. That is the practical meaning of avoiding vendor lock-in.",
+            bold: [{ phrase: "open standards" }, { phrase: "substitutable" }],
+          },
+          {
+            text:
+              "The cost of lock-in is concrete: a vendor you cannot leave controls your features, your fixes, and your price. So the Government of Canada's open-first position asks teams to factor exit and transition costs into the total cost of ownership, and to set an exit strategy before committing to a cloud service.",
+            bold: [{ phrase: "set an exit strategy before committing to a cloud service" }],
           },
         ],
       },
@@ -134,7 +185,33 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
         sections: [
           {
             text:
-              "You cannot look after what you cannot see, so the starting point is an inventory of everything the service depends on, a software bill of materials, which is a list of ingredients that make up the software. Before a new component is adopted, it is worth a quick health check: the GC guide to using open source software suggests looking at whether the project is actively maintained, who develops it, how well it is documented, and how quickly it patches security flaws. Tools can do much of this automatically: an open-source health score rates a project out of ten on checks like whether it is still maintained and whether it keeps its own dependencies up to date, so a team can judge the risk of adding it.",
+              "You cannot look after what you cannot see. So the starting point is an inventory of everything the service depends on, a software bill of materials, which is a list of ingredients that make up the software.",
+            bold: [{ phrase: "software bill of materials" }],
+          },
+          {
+            text: "Before adopting a new component, give it a quick health check. The GC guide to using open source software suggests looking at:",
+            externalLinks: [
+              { phrase: "GC guide to using open source software", linkKey: "guide-open-source-software" },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "whether the project is still actively maintained;",
+                bold: [{ phrase: "actively maintained" }],
+              },
+              { text: "who develops it;", bold: [{ phrase: "who develops" }] },
+              { text: "how well it is documented;", bold: [{ phrase: "documented" }] },
+              {
+                text: "how quickly it patches security flaws.",
+                bold: [{ phrase: "patches" }],
+              },
+            ],
+          },
+          {
+            text:
+              "Tools can do much of this for you. An open-source health score rates a project out of ten on checks like whether it is still maintained and whether it keeps its own dependencies up to date, so a team can judge the risk of adding it.",
             externalLinks: [
               { phrase: "open-source health score", linkKey: "openssf-scorecard" },
             ] satisfies ExternalPhraseLink[],
@@ -145,8 +222,29 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
         title: "Keep the supply chain safe.",
         sections: [
           {
+            text: "A weak link anywhere in the chain is a risk to the whole service, so a few habits matter.",
+          },
+          {
             text:
-              "A weak link anywhere in the chain is a risk to the whole service, so a few habits matter. Keep dependencies patched, a known vulnerability left in place is an open door, and the inventory is what lets you find every place a flawed component is used when news of a flaw breaks. For the parts that come from suppliers, the Canadian Centre for Cyber Security advises knowing your vendors, setting minimum security requirements, and putting a clause in the contract that the supplier must tell you about a security incident within a set time. Asking a vendor whether they keep a software bill of materials, how fast they patch, and how they would notify you turns a vague trust into something you can check.",
+              "Patch your dependencies. A known vulnerability left in place is an open door, and your inventory is what lets you find every place a flawed component is used the moment a flaw is announced.",
+            bold: [{ phrase: "Patch your dependencies." }],
+          },
+          {
+            text:
+              "Hold your suppliers to a standard. For the parts that come from vendors, the Canadian Centre for Cyber Security advises:",
+            bold: [{ phrase: "Hold your suppliers to a standard." }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "know your vendors;",
+              "set minimum security requirements;",
+              "put a clause in the contract that the supplier must report a security incident within a set time.",
+            ],
+          },
+          {
+            text:
+              "Three questions turn vague trust into something you can check: does the vendor keep a software bill of materials, how fast do they patch, and how would they notify you?",
           },
         ],
       },
@@ -272,6 +370,12 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
       linkKey: "cccs-cyber-supply-chain-smb-itsap00070" satisfies ExternalLinkKey,
       description:
         "CCCS, Cyber supply chain security for small and medium organizations (ITSAP.00.070) — https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-security-small-medium-sized-organizations-itsap00070",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cccs-log4j-alert" satisfies ExternalLinkKey,
+      description:
+        "CCCS, Active exploitation of Apache Log4j vulnerability — the Cyber Centre's Log4j (Log4Shell) alert. — https://www.cyber.gc.ca/en/alerts/active-exploitation-apache-log4j-vulnerability",
     },
     {
       label: "Supporting reference",

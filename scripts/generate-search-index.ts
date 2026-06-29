@@ -1278,7 +1278,9 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
-      text: DEPENDENCIES_AND_STANDARDS_THREAD.whyItMatters.text,
+      text: dependenciesAndStandardsSectionsPlainText(
+        DEPENDENCIES_AND_STANDARDS_THREAD.whyItMatters,
+      ),
     },
     {
       sectionId: "whose-job",
