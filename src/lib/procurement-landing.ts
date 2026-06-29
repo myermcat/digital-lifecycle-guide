@@ -3,7 +3,7 @@ import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PROCUREMENT_SOURCES } from "@/lib/procurement-sources";
 import { PROCUREMENT_STRINGS } from "@/lib/procurement-strings";
-import { OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
+import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 
 export type LinkedProse = {
   text: string;
@@ -60,12 +60,6 @@ export const PROCUREMENT_GOOD_LOOKS_CARDS: PracticeCardData[] = [
     description:
       "The contract names the work the supplier must deliver, and says how you will see it being done.",
   },
-  {
-    label: "You know what belongs in the contract",
-    href: GOOD_CONTRACT_PATH,
-    description:
-      "A plain sample agreement for the grant portal: Articles of Agreement plus nine schedules, standard backbone and service-specific clauses.",
-  },
 ];
 
 /** @deprecated Use PROCUREMENT_GOOD_LOOKS_CARDS */
@@ -93,8 +87,8 @@ const S = PROCUREMENT_STRINGS;
 export const PROCUREMENT_LANDING = {
   title: S.title,
   intro: S.intro,
-  scopeCallout: S.scopeCallout,
   whatStaysYours: S.whatWorkStaysYours,
+  goodContractCallout: S.goodContractCallout,
   journeyIntro: S.journey.intro,
   journeySteps: S.journey.steps satisfies ProcurementJourneyStep[],
   comparisonRows: S.comparison.rows satisfies ComparisonRow[],
@@ -103,7 +97,6 @@ export const PROCUREMENT_LANDING = {
   goodLooksIntro: S.goodLooksIntro,
   whyItMatters: S.whyItMatters,
   whoseJob: S.whoseJob satisfies LinkedProse,
-  byPhaseIntro: S.byPhaseIntro,
   byPhase: S.byPhase,
   furtherReading: S.furtherReading satisfies LinkedProse,
   sources: PROCUREMENT_SOURCES,

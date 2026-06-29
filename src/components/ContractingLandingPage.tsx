@@ -4,7 +4,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PageFoot } from "@/components/PageFoot";
 import { proseWithExternalLinks } from "@/components/ProseWithExternalLinks";
-import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
+import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import {
   CONTRACTING_GOOD_LOOKS_CARDS,
   CONTRACTING_LANDING,
@@ -69,11 +69,7 @@ export function ContractingLandingPage() {
         </p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
-        <h2 className={`${guideSectionTitle} mb-3`}>What Procurement looks like in each phase</h2>
-        <p className={`${guideProse} mb-2`}>{CONTRACTING_LANDING.byPhaseIntro}</p>
-        <WeightedPhaseBlock phases={CONTRACTING_LANDING.byPhase} />
-      </section>
+      <ThreadByPhaseSection byPhase={CONTRACTING_LANDING.byPhase} />
 
       <PageFoot
         support="procurement"

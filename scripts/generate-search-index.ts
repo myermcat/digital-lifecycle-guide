@@ -163,6 +163,15 @@ for (const page of PAGE_INDEX) {
       text: PROCUREMENT_STRINGS.goodLooksIntro,
     },
     {
+      sectionId: "good-contract",
+      sectionHeading: PROCUREMENT_STRINGS.goodContractCallout.title,
+      text: concat(
+        PROCUREMENT_STRINGS.goodContractCallout.label,
+        ...PROCUREMENT_STRINGS.goodContractCallout.paragraphs,
+        PROCUREMENT_STRINGS.goodContractCallout.linkLabel,
+      ),
+    },
+    {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
       text: concat(...PROCUREMENT_STRINGS.whyItMatters),
@@ -174,8 +183,15 @@ for (const page of PAGE_INDEX) {
     },
     {
       sectionId: "by-phase",
-      sectionHeading: "What it looks like in each phase",
-      text: PROCUREMENT_STRINGS.byPhaseIntro,
+      sectionHeading: PROCUREMENT_STRINGS.byPhase.title,
+      text: concat(
+        PROCUREMENT_STRINGS.byPhase.intro,
+        ...PROCUREMENT_STRINGS.byPhase.blocks.map((block) =>
+          Array.isArray(block.popup)
+            ? block.popup.map((section) => ("text" in section ? section.text : "")).join(" ")
+            : block.popup.text,
+        ),
+      ),
     },
     {
       sectionId: "further-reading",

@@ -3,12 +3,12 @@ import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { GoodContractCallout } from "@/components/GoodContractCallout";
 import { ProcurementJourneySection } from "@/components/ProcurementJourneySection";
-import { ProcurementScopeCallout } from "@/components/ProcurementScopeCallout";
 import { PageFoot } from "@/components/PageFoot";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
-import { WeightedPhaseBlock } from "@/components/WeightedPhaseBlock";
+import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { WhatStaysYoursBlock } from "@/components/WhatStaysYoursBlock";
 import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
@@ -50,8 +50,6 @@ export function ProcurementLandingPage() {
         </p>
       </section>
 
-      <ProcurementScopeCallout text={landing.scopeCallout} />
-
       <WhatStaysYoursBlock
         heading={landing.whatStaysYours.heading}
         intro={landing.whatStaysYours.intro}
@@ -80,6 +78,8 @@ export function ProcurementLandingPage() {
         <PracticeCardGroup cards={PROCUREMENT_GOOD_LOOKS_CARDS} numbered />
       </section>
 
+      <GoodContractCallout />
+
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
         <div className={guideProseSpace}>
@@ -99,11 +99,7 @@ export function ProcurementLandingPage() {
         </p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="by-phase">
-        <h2 className={`${guideSectionTitle} mb-3`}>What Procurement looks like in each phase</h2>
-        <p className={`${guideProse} mb-2`}>{landing.byPhaseIntro}</p>
-        <WeightedPhaseBlock phases={landing.byPhase} />
-      </section>
+      <ThreadByPhaseSection byPhase={landing.byPhase} />
 
       <PageFoot
         support="procurement"

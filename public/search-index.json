@@ -371,6 +371,15 @@
     "text": "A handful of things, all of which you can check. Each one has its own page."
   },
   {
+    "id": "/thread/procurement#good-contract",
+    "pageTitle": "Procurement",
+    "pagePath": "/thread/procurement",
+    "sectionId": "good-contract",
+    "sectionHeading": "What a good contract looks like",
+    "lifecyclePhase": "thread",
+    "text": "A GOOD CONTRACT When a supplier builds or runs your service, the contract is where every promise lives: what they must deliver, how you will see it being done, and whether you can ever leave. We have written out a short, real-looking sample contract for the grant portal, with each clause the rest of the playbook tells you to put in. See what a good contract looks like →"
+  },
+  {
     "id": "/thread/procurement#why-it-matters",
     "pageTitle": "Procurement",
     "pagePath": "/thread/procurement",
@@ -393,9 +402,9 @@
     "pageTitle": "Procurement",
     "pagePath": "/thread/procurement",
     "sectionId": "by-phase",
-    "sectionHeading": "What it looks like in each phase",
+    "sectionHeading": "What Procurement looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "Procurement runs through the whole life of a service, but it weighs more at some stages than others."
+    "text": "Procurement runs through the whole life of a service, but it weighs more at some stages than others. This is where procurement weighs the most. You work out the real problem, choose whether to reuse or buy, set the strategy, go to market, and award the contract. Almost every decision that will bind the service for years is made here, so it is worth slowing down to get right. The buying has stopped, but the work has not. You hold the supplier to what the contract promised, and watch the service levels and the relationship for drift. Keep the service improving too, so it does not age into a forced replacement, and start lining up the next contract well before this one ends. Leaving takes longer than people expect. Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time. Data has to move, knowledge has to transfer, and what you bought is retired or replaced."
   },
   {
     "id": "/thread/procurement#further-reading",

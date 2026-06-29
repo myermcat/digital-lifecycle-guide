@@ -1,7 +1,7 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
+import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import type { WeightedPhaseNote } from "@/components/WeightedPhaseBlock";
-import { MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { GOOD_CONTRACT_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
@@ -51,9 +51,6 @@ export const PROCUREMENT_STRINGS = {
       to: MANAGING_WHAT_YOU_BOUGHT_PATH,
     },
   },
-
-  scopeCallout:
-    "Throughout this playbook the worked example is a critical grants and contributions application. The procurement rules here are general and apply to most buys. The grants and contributions example is there to make them concrete, not to fence them in.",
 
   whatWorkStaysYours: {
     heading: "What work stays yours",
@@ -312,26 +309,79 @@ export const PROCUREMENT_STRINGS = {
     ],
   } satisfies LinkedProseStrings,
 
-  byPhaseIntro:
-    "Procurement runs through the whole life of a service, but it weighs more at some stages than others.",
+  goodContractCallout: {
+    label: "A GOOD CONTRACT",
+    title: "What a good contract looks like",
+    paragraphs: [
+      "When a supplier builds or runs your service, the contract is where every promise lives: what they must deliver, how you will see it being done, and whether you can ever leave.",
+      "We have written out a short, real-looking sample contract for the grant portal, with each clause the rest of the playbook tells you to put in.",
+    ],
+    linkLabel: "See what a good contract looks like →",
+    href: GOOD_CONTRACT_PATH,
+  },
 
-  byPhase: [
-    {
-      lifecyclePhase: "create" as const,
-      weight: "heavy" as const,
-      body: "Heaviest. Diagnose, set the strategy, go to market, award. Almost every decision that will bind you is made here.",
-    },
-    {
-      lifecyclePhase: "live" as const,
-      weight: "medium" as const,
-      body: "You have stopped buying. Now you hold the supplier to what was agreed, watch the relationship for drift, and keep the service improving so it does not gradually age into a forced replacement.",
-    },
-    {
-      lifecyclePhase: "sunset" as const,
-      weight: "light" as const,
-      body: "You are leaving. Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time. Data moves, knowledge transfers, and what you bought is retired or replaced.",
-    },
-  ] satisfies WeightedPhaseNote[],
+  byPhase: {
+    id: "by-phase",
+    title: "What Procurement looks like in each phase",
+    intro:
+      "Procurement runs through the whole life of a service, but it weighs more at some stages than others.",
+    blocks: [
+      {
+        title: "Create.",
+        preview: "This is where procurement weighs the most.",
+        popup: [
+          {
+            text: "This is where procurement weighs the most.",
+            bold: [{ phrase: "This is where procurement weighs the most." }],
+          },
+          {
+            text:
+              "You work out the real problem, choose whether to reuse or buy, set the strategy, go to market, and award the contract.",
+          },
+          {
+            text:
+              "Almost every decision that will bind the service for years is made here, so it is worth slowing down to get right.",
+          },
+        ],
+      },
+      {
+        title: "Live.",
+        preview: "The buying has stopped, but the work has not.",
+        popup: [
+          {
+            text: "The buying has stopped, but the work has not.",
+            bold: [{ phrase: "The buying has stopped, but the work has not." }],
+          },
+          {
+            text:
+              "You hold the supplier to what the contract promised, and watch the service levels and the relationship for drift.",
+          },
+          {
+            text:
+              "Keep the service improving too, so it does not age into a forced replacement, and start lining up the next contract well before this one ends.",
+          },
+        ],
+      },
+      {
+        title: "Sunset.",
+        preview: "Leaving takes longer than people expect.",
+        popup: [
+          {
+            text: "Leaving takes longer than people expect.",
+            bold: [{ phrase: "Leaving takes longer than people expect." }],
+          },
+          {
+            text:
+              "Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time.",
+          },
+          {
+            text:
+              "Data has to move, knowledge has to transfer, and what you bought is retired or replaced.",
+          },
+        ],
+      },
+    ],
+  } satisfies ThreadByPhaseContent,
 
   furtherReading: {
     text: "This thread comes under the Treasury Board Directive on the Management of Procurement, which takes an outcomes-based, lifecycle view of buying. Its closest internal companion is the PSPC Agile Procurement Guide, on the GC network, which this thread leans on for the agile patterns. It also draws on the Boots and Clarke guide to reforming IT procurement in Canada, the UK Service Manual, and Skylight's open agile procurement playbook, all translated to Canadian rules.",
