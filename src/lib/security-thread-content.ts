@@ -171,12 +171,16 @@ export const SECURITY_THREAD = {
             ],
           },
           {
-            text:
-              "That is a threat model, and the four questions come from the Threat Modeling Manifesto. Threat modeling is an industry practice rather than Government of Canada policy. The GC equivalent is security categorization, an injury assessment that asks how much harm a compromise would cause across economic, physical, well-being, and reputation, and sets the level from that: Protected B, Secret, or Top Secret.",
+            text: "That is a threat model, and the four questions come from the Threat Modeling Manifesto.",
             externalLinks: [
               { phrase: "threat model", linkKey: "threat-modelling-developers" },
               { phrase: "Threat Modeling Manifesto", linkKey: "threat-modeling-manifesto" },
             ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text:
+              "Working out what could go wrong is only half of it. The other half is the impact: how much harm it would actually cause if it did go wrong, because you cannot protect everything to the same degree. The Government of Canada has its own tool for weighing that, security categorization, which rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the impact, the more protection it earns. Threat modeling tells you what could go wrong; categorization tells you how much it would hurt. Together they point you to the few things that deserve the most protection.",
+            bold: [{ phrase: "impact" }],
             placeholderLinks: [
               {
                 phrase: "security categorization",
@@ -186,19 +190,25 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              "Once you know what could go wrong, protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
+              "So protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
             bold: [{ phrase: "protect the few things that matter most" }],
           },
           {
             type: "editorialNote",
             label: "Example",
-            prose: {
-              text:
-                "The COVID Alert app worked by having phones swap anonymous random codes over Bluetooth; if someone later tested positive, those codes were used to warn the people they had recently been near. The one sensitive thing was the code that could trigger a 'you were exposed' alert, so the security effort was concentrated there, with safeguards that stopped anyone sending fake alerts. The opposite extreme makes the same point: a Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
-              externalLinks: [
-                { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
-              ] satisfies ExternalPhraseLink[],
-            },
+            paragraphs: [
+              {
+                text:
+                  "The COVID Alert app worked by having phones swap anonymous random codes over Bluetooth; if someone later tested positive, those codes were used to warn the people they had recently been near. The one thing that would cause real harm was the code that could trigger a 'you were exposed' alert, so the security effort was concentrated there, with safeguards that stopped anyone sending fake alerts.",
+                externalLinks: [
+                  { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
+                ] satisfies ExternalPhraseLink[],
+              },
+              {
+                text:
+                  "The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
+              },
+            ],
           },
         ],
       },
@@ -298,20 +308,30 @@ export const SECURITY_THREAD = {
       {
         title: "Sunset.",
         preview: "The service is shut down or replaced without leaving holes open.",
-        popup: {
-          text:
-            "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B. Most of this is easier when you plan and fund retiring a component up front: technology that runs past its end-of-support date stops getting patches, so known vulnerabilities pile up until it is trivially exploitable. Lifecycle replacement should be budgeted from the start rather than run at risk. When hardware is finally decommissioned or donated, securely erase all the data on it first, so nothing walks out the door on a disposed drive.",
-          internalLinks: [
-            { phrase: "retired or replaced", to: PHASES.sunset.href },
-            { phrase: "moves or destroys data", to: THREADS["data-stewardship"].path },
-          ] satisfies InternalPhraseLink[],
-          placeholderLinks: [
-            {
-              phrase: "retiring a component",
-              source: COMPONENT_END_OF_LIFE_GUIDANCE,
-            },
-          ] satisfies PlaceholderPhraseLink[],
-        },
+        popup: [
+          {
+            text:
+              "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B.",
+            internalLinks: [
+              { phrase: "retired or replaced", to: PHASES.sunset.href },
+              { phrase: "moves or destroys data", to: THREADS["data-stewardship"].path },
+            ] satisfies InternalPhraseLink[],
+          },
+          {
+            text:
+              "Most of this is easier when you plan and fund retiring a component up front. Technology that runs past its end-of-support date stops getting patches, so known vulnerabilities pile up until it is trivially exploitable. Lifecycle replacement should be budgeted from the start rather than run at risk.",
+            placeholderLinks: [
+              {
+                phrase: "retiring a component",
+                source: COMPONENT_END_OF_LIFE_GUIDANCE,
+              },
+            ] satisfies PlaceholderPhraseLink[],
+          },
+          {
+            text:
+              "When hardware is finally decommissioned or donated, securely erase all the data on it first, so nothing walks out the door on a disposed drive.",
+          },
+        ],
       },
     ] satisfies SecurityPhasePreviewBlock[],
   },

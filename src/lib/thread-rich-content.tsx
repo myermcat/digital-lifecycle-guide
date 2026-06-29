@@ -46,7 +46,7 @@ export type ThreadUnorderedListSection = {
 export type ThreadEditorialNoteSection = {
   type: "editorialNote";
   label?: string;
-  prose: ThreadLinkedProse;
+  paragraphs: readonly ThreadLinkedProse[];
 };
 
 export type ThreadContentSection =
@@ -151,7 +151,7 @@ export function threadSectionsPlainText(sections: readonly ThreadContentSection[
       "type" in section && (section.type === "orderedList" || section.type === "unorderedList")
         ? section.items.map(orderedListItemPlainText).join(" ")
         : "type" in section && section.type === "editorialNote"
-          ? section.prose.text
+          ? section.paragraphs.map((paragraph) => paragraph.text).join(" ")
           : section.text,
     )
     .join(" ");
@@ -250,7 +250,11 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
           </ul>
         ) : isEditorialNote(section) ? (
           <EditorialNote key={index} label={section.label ?? "Example"}>
-            <p>{renderLinkedProse(section.prose)}</p>
+            <div className="space-y-2">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+              ))}
+            </div>
           </EditorialNote>
         ) : (
           <p key={index}>{renderLinkedProse(section)}</p>
