@@ -9,7 +9,7 @@ import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { EditorialNote } from "@/components/EditorialNote";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
-import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
+import { guideListIndent, guideProse, guideProseTight, guideFormulaLine } from "@/lib/guide-typography";
 
 /** Body enumerations with fewer than four items stay inline prose; four or more become a list. */
 export const guideListMinCount = 4;
@@ -49,11 +49,17 @@ export type ThreadEditorialNoteSection = {
   paragraphs: readonly ThreadLinkedProse[];
 };
 
+export type ThreadFormulaSection = {
+  type: "formula";
+  text: string;
+};
+
 export type ThreadContentSection =
   | ThreadLinkedProse
   | ThreadOrderedListSection
   | ThreadUnorderedListSection
-  | ThreadEditorialNoteSection;
+  | ThreadEditorialNoteSection
+  | ThreadFormulaSection;
 
 export type ThreadCloserLookBlock = {
   title: string;
@@ -152,9 +158,15 @@ export function threadSectionsPlainText(sections: readonly ThreadContentSection[
         ? section.items.map(orderedListItemPlainText).join(" ")
         : "type" in section && section.type === "editorialNote"
           ? section.paragraphs.map((paragraph) => paragraph.text).join(" ")
-          : section.text,
+          : "type" in section && section.type === "formula"
+            ? section.text
+            : section.text,
     )
     .join(" ");
+}
+
+function isFormula(section: ThreadContentSection): section is ThreadFormulaSection {
+  return "type" in section && section.type === "formula";
 }
 
 function isEditorialNote(section: ThreadContentSection): section is ThreadEditorialNoteSection {
@@ -248,6 +260,13 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
               <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
             ))}
           </ul>
+        ) : isFormula(section) ? (
+          <p
+            key={index}
+            className={`rounded-md border border-border/80 bg-muted/35 px-3 py-1.5 ${guideFormulaLine}`}
+          >
+            {section.text}
+          </p>
         ) : isEditorialNote(section) ? (
           <EditorialNote key={index} label={section.label ?? "Example"}>
             <div className="space-y-2">

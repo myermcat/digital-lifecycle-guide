@@ -173,6 +173,11 @@ export const EXTERNAL_LINKS = {
     description: "ITSG-33, IT security risk management, a lifecycle approach (CCCS)",
     accessibility: "public",
   },
+  "nist-cyberframework": {
+    url: "https://www.nist.gov/cyberframework",
+    description: "NIST Cybersecurity Framework",
+    accessibility: "public",
+  },
   "owasp-top-10": {
     url: "https://owasp.org/www-project-developer-guide/release/foundations/owasp_top_ten/",
     description: "OWASP Top 10",

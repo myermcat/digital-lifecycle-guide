@@ -9,12 +9,13 @@ export type ThreadCoreStripContent = {
 };
 
 export const SECURITY_CORE_STRIP = {
-  heading: "THE CORE OF SECURITY",
+  heading: "THE SECURITY LIFECYCLE",
   tiles: [
-    { label: "Design it in", gloss: "before code exists" },
-    { label: "Control access", gloss: "least privilege, audited" },
-    { label: "Keep it current", gloss: "patch, scan, monitor" },
-    { label: "Respond and recover", gloss: "a rehearsed plan" },
+    { label: "Identify", gloss: "know what is at risk" },
+    { label: "Protect", gloss: "build the defenses" },
+    { label: "Detect", gloss: "spot trouble fast" },
+    { label: "Respond", gloss: "contain it" },
+    { label: "Recover", gloss: "restore and learn" },
   ],
 } as const satisfies ThreadCoreStripContent;
 

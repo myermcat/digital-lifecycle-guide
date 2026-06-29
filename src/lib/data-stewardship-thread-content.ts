@@ -20,7 +20,7 @@ export const DATA_STEWARDSHIP_THREAD = {
 
   lead: {
     text:
-      "Data stewardship is the care of the data a service holds across its whole life, from the first record it collects to the day that record is destroyed. The Government of Canada treats information and data as a public trust, managed as a strategic asset, under the Policy on Service and Digital and its directive. For the data inside one service, that comes down to four things: knowing who is accountable for it, keeping it fit to use, keeping it only as long as it is needed, and moving it safely when the service changes. These decisions are made early and revisited as the service grows. The business owner answers for them; the team does the work.",
+      "Data stewardship is the care of the data a service holds across its whole life, from the first record it collects to the day that record is destroyed. The Government of Canada treats information and data as a public trust, managed as a strategic asset, under the Policy on Service and Digital and its directive. For the data inside one service, that comes down to four things: knowing who is accountable for it, keeping it fit to use, keeping it only as long as it is needed, and moving it safely when the service changes. These decisions are made early and revisited as the service grows.",
     externalLinks: [
       { phrase: "Policy on Service and Digital", linkKey: "policy-on-service-and-digital" },
       { phrase: "directive", linkKey: "directive-on-service-and-digital" },

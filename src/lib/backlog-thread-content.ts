@@ -34,7 +34,7 @@ export const BACKLOG_THREAD = {
 
   lead: {
     text:
-      "A backlog is the single, prioritized list of work for a service: the features, fixes, and improvements still to do, ordered so the most valuable work comes first. The Government of Canada's digital standards put it plainly: keep a backlog and use it to set priorities. Every item traces back to a real user need, one person orders the list, and it is never finished, it is refined as the service learns and changes. The business owner answers for what gets prioritized; the team does the work.",
+      "A backlog is the single, prioritized list of work for a service: the features, fixes, and improvements still to do, ordered so the most valuable work comes first. The Government of Canada's digital standards put it plainly: keep a backlog and use it to set priorities. Every item traces back to a real user need, one person orders the list, and it is never finished, it is refined as the service learns and changes.",
     externalLinks: [
       { phrase: "digital standards", linkKey: "iterate-improve-frequently" },
     ] satisfies ExternalPhraseLink[],

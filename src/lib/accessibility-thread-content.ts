@@ -31,7 +31,7 @@ export const ACCESSIBILITY_THREAD = {
 
   lead: {
     text:
-      "Accessibility means building a service everyone can use, including people with a disability, whether that disability is permanent, temporary, or situational. In Canada it is the law: the Accessible Canada Act sets a goal of a barrier-free Canada by 2040 and names information and communication technology as one of the areas that has to be made accessible. A service that cannot be used with a keyboard, a screen reader, captions, or clear language shuts people out of something government often makes the only option. The decisions that make a service accessible are taken early and revisited as it changes. The business owner answers for them; the team does the work.",
+      "Accessibility means building a service everyone can use, including people with a disability, whether that disability is permanent, temporary, or situational. In Canada it is the law: the Accessible Canada Act sets a goal of a barrier-free Canada by 2040 and names information and communication technology as one of the areas that has to be made accessible. A service that cannot be used with a keyboard, a screen reader, captions, or clear language shuts people out of something government often makes the only option. The decisions that make a service accessible are taken early and revisited as it changes.",
     externalLinks: [
       { phrase: "Accessible Canada Act", linkKey: "accessible-canada-act-summary" },
     ] satisfies ExternalPhraseLink[],

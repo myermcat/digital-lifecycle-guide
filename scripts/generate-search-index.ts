@@ -445,6 +445,16 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
 
   const sections = [
     {
+      sectionId: "the-security-lifecycle",
+      sectionHeading: "The security lifecycle",
+      text: concat(
+        SECURITY_THREAD.securityLifecycle.framing.text,
+        ...SECURITY_THREAD.securityLifecycle.tiles.map(
+          (tile) => `${tile.label} ${tile.gloss}`,
+        ),
+      ),
+    },
+    {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
       text: concat(...SECURITY_THREAD.whatGoodLooksLike.map((item) => item.text)),

@@ -31,7 +31,7 @@ export const USER_RESEARCH_THREAD = {
 
   lead: {
     text:
-      "User research means learning what the people who will use a service actually need, by studying and testing with them, instead of guessing. The Government of Canada puts this first among its digital standards: research with users to understand their needs, and test with them to guide what gets built. A service built on what a few people assume users want is the most common way services fail. The decisions about who to learn from and what to find out are made early and repeated as the service changes. The business owner answers for them; the team does the work.",
+      "User research means learning what the people who will use a service actually need, by studying and testing with them, instead of guessing. The Government of Canada puts this first among its digital standards: research with users to understand their needs, and test with them to guide what gets built. A service built on what a few people assume users want is the most common way services fail. The decisions about who to learn from and what to find out are made early and repeated as the service changes.",
     externalLinks: [
       { phrase: "digital standards", linkKey: "design-with-users" },
     ] satisfies ExternalPhraseLink[],

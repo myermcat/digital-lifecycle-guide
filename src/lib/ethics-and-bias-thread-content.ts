@@ -30,7 +30,7 @@ export const ETHICS_AND_BIAS_THREAD = {
 
   lead: {
     text:
-      "Ethics and bias is about building a service that treats people fairly and stays accountable for the decisions it makes, especially when those decisions are automated or use AI. Bias is a design problem before it is a technology problem: any service can advantage some people and shut others out without anyone noticing. When a service automates or assists a decision about a person, the Government of Canada requires it to be transparent, accountable, and fair, and to be assessed for its impact before it goes live. The decisions that shape this are made early and revisited as the service learns. The business owner answers for them; the team does the work.",
+      "Ethics and bias is about building a service that treats people fairly and stays accountable for the decisions it makes, especially when those decisions are automated or use AI. Bias is a design problem before it is a technology problem: any service can advantage some people and shut others out without anyone noticing. When a service automates or assists a decision about a person, the Government of Canada requires it to be transparent, accountable, and fair, and to be assessed for its impact before it goes live. The decisions that shape this are made early and revisited as the service learns.",
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [

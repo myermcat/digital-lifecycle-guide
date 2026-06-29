@@ -15,9 +15,11 @@ import {
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE,
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE_SHORT,
   SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
+  THREAT_AND_RISK_ASSESSMENT_TRA,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { ThreadCoreStripTile } from "@/lib/thread-core-strip";
 
 export type SecurityLinkedProse = ThreadLinkedProse;
 
@@ -38,16 +40,42 @@ export type SecurityPhasePreviewBlock = {
   popup: SecurityLinkedProse | readonly ThreadContentSection[];
 };
 
+export type SecurityLifecycleContent = {
+  heading: string;
+  tiles: readonly ThreadCoreStripTile[];
+  framing: SecurityLinkedProse;
+};
+
 export const SECURITY_THREAD = {
   title: "Security",
   slug: "security" as const,
 
   lead:
-    "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The decisions that shape a service's security are made early and revisited as it changes: which threats to defend against, how to control access, and when to reassess the risk. The business owner answers for those decisions; the team does the work.",
+    "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The same five questions come round again and again: what is at risk, how do we defend it, how do we spot trouble, how do we contain it, and how do we recover. Those five make up the security lifecycle.",
+
+  securityLifecycle: {
+    heading: "THE SECURITY LIFECYCLE",
+    tiles: [
+      { label: "Identify", gloss: "know what is at risk" },
+      { label: "Protect", gloss: "build the defenses" },
+      { label: "Detect", gloss: "spot trouble fast" },
+      { label: "Respond", gloss: "contain it" },
+      { label: "Recover", gloss: "restore and learn" },
+    ],
+    framing: {
+      text:
+        "These are the five functions of the recognizable security lifecycle, the model the Government of Canada works in: Canada's ITSG-33 sets out the GC IT-security risk-management lifecycle, the Canadian Centre for Cyber Security publishes the guidance under it, and the same five functions are the international frame of the NIST Cybersecurity Framework.",
+      externalLinks: [
+        { phrase: "ITSG-33", linkKey: "itsg-33" },
+        { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+      ] satisfies ExternalPhraseLink[],
+    },
+  } satisfies SecurityLifecycleContent,
 
   whatGoodLooksLike: [
-    { text: "Security is planned and funded from the start." },
-    { text: "Patches are applied on a schedule." },
+    {
+      text: "Security is planned and funded from the start, with the risks worked out before any code is written.",
+    },
     {
       text: "Access follows least privilege, meaning each person and system gets only the access they need, and that access is audited.",
       externalLinks: [
@@ -55,7 +83,7 @@ export const SECURITY_THREAD = {
       ] satisfies ExternalPhraseLink[],
     },
     {
-      text: "The application is tested for vulnerabilities on a regular basis.",
+      text: "Patches are applied on a schedule and the application is tested for vulnerabilities on a regular basis.",
       externalLinks: [
         {
           phrase: "tested for vulnerabilities",
@@ -73,6 +101,9 @@ export const SECURITY_THREAD = {
       ] satisfies ExternalPhraseLink[],
     },
     {
+      text: "The service can be brought back after an incident, and the lesson is fed back into the design.",
+    },
+    {
       text: "The service's security maturity level is known, with a clear next step to improve it.",
       externalLinks: [{ phrase: "security maturity level", linkKey: "owasp-dsomm" }] satisfies ExternalPhraseLink[],
     },
@@ -86,7 +117,7 @@ export const SECURITY_THREAD = {
 
   whyItMatters: {
     text:
-      "When security fails, a service can go offline or leak people's personal information, and public trust is slow to rebuild. The most common causes are mundane: an unpatched component, a default password, a permission left too wide. Catching these early also costs less, because a flaw designed in and found late is the most expensive kind to undo. The Government of Canada's guide for all of this is the Guideline on Secure Application Development, which covers building security into each stage of development, secure coding, handling third-party components, and managing vulnerabilities. It is where the team goes for the how-to.",
+      "When security fails, a service can go offline or leak people's personal information, and public trust is slow to rebuild. The most common causes are mundane: an unpatched component, a default password, a permission left too wide. Each of the five functions is a guard against a different failure, and the cycle only holds if none of them is skipped. Catching a flaw early also costs less, because one designed in and found late is the most expensive kind to undo. The Government of Canada's guide for all of this is the Guideline on Secure Application Development, which covers building security into each stage of development, secure coding, handling third-party components, and managing vulnerabilities. It is where the team goes for the how-to.",
     placeholderGcNetworkLinks: [
       {
         phrase: "Guideline on Secure Application Development",
@@ -112,11 +143,9 @@ export const SECURITY_THREAD = {
       },
       {
         role: "The business owner",
-        text: "of the application makes sure security is planned and paid for from the start, approves the service for release, and accepts the risk that comes with it.",
+        text: "of the application makes sure security is planned and paid for from the start, approves the plan for handling threats, accepts the risk that remains after the fixes, and gives the deploy go-ahead (the formal approval that lets a service go live).",
       },
     ],
-    closing:
-      "The day-to-day work belongs to the team. The sign-off, the formal approval that lets a service go live, belongs to the business owner.",
   },
 
   closerLook: {
@@ -124,42 +153,16 @@ export const SECURITY_THREAD = {
     title: "A closer look",
     blocks: [
       {
-        title: "Know where the service stands.",
-        text:
-          "Security maturity is a ladder a service can be placed on without reading a line of code. The model, the OWASP DevSecOps Maturity Model, runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once. Security maturity is one part of a service's overall maturity.",
-        externalLinks: [
-          { phrase: "OWASP DevSecOps Maturity Model", linkKey: "owasp-dsomm" },
-        ] satisfies ExternalPhraseLink[],
-        internalLinks: [{ phrase: "overall maturity", to: "/live-maturity" }] satisfies InternalPhraseLink[],
-      },
-      {
-        title: "What the business owner signs off on.",
-        text:
-          "Even when specialists do the work, certain decisions belong to the business owner of the application: approving the plan for handling threats, accepting the risks that remain after the fixes, and giving the final go-ahead to put the service in front of the public. Approval to deploy and acceptance of the remaining risk both belong to the business owner, and putting a name to a release means that risk has been understood and accepted.",
-      },
-      {
-        title: "Open by default.",
-        text:
-          'Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets and can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws, so hiding code is a weak way to keep it safe. The categorization is a deliberate decision the business owner makes with the team: public and open to contributions, public but closed to them, fully private, or genuinely Protected B. The Guide for Using Open Source Software sets out how to make that call.',
-        placeholderGcNetworkLinks: [
-          {
-            phrase: "categorization",
-            source: SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
-          },
-        ] satisfies PlaceholderGcNetworkPhraseLink[],
-        externalLinks: [
-          {
-            phrase: "Guide for Using Open Source Software",
-            linkKey: "guide-open-source-software",
-          },
-        ] satisfies ExternalPhraseLink[],
-      },
-      {
-        title: "Work out what could go wrong, then protect what matters most.",
+        title: "Identify, work out what is at risk.",
         sections: [
           {
             text:
-              "The clearest way into security at the design stage is to ask four plain questions:",
+              "Two questions sit under Identify: what could go wrong, and how sensitive is the information.",
+          },
+          {
+            text:
+              "Threat modeling tells you what could go wrong. The clearest way in at the design stage is to ask four plain questions:",
+            bold: [{ phrase: "what could go wrong" }],
           },
           {
             type: "orderedList",
@@ -179,14 +182,26 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              "Working out what could go wrong is only half of it. The other half is the impact: how much harm it would actually cause if it did go wrong, because you cannot protect everything to the same degree. The Government of Canada has its own tool for weighing that, security categorization, which rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the impact, the more protection it earns. Threat modeling tells you what could go wrong; categorization tells you how much it would hurt. Together they point you to the few things that deserve the most protection.",
-            bold: [{ phrase: "impact" }],
-            placeholderLinks: [
+              "Security categorization tells you how sensitive the information is. The Government of Canada has its own tool for this, an injury assessment that rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the harm, the more protection it earns. See security categorization for how that call is made.",
+            bold: [{ phrase: "how sensitive the information is" }],
+            placeholderGcNetworkLinks: [
               {
                 phrase: "security categorization",
                 source: GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT,
               },
-            ] satisfies PlaceholderPhraseLink[],
+            ] satisfies PlaceholderGcNetworkPhraseLink[],
+          },
+          {
+            text: "You rate threats by",
+          },
+          {
+            type: "formula",
+            text: "RISK = LIKELIHOOD x IMPACT",
+          },
+          {
+            text:
+              "In the Government of Canada, the tool that does this is a Threat and Risk Assessment (TRA), the risk-management approach in ITSG-33. The TRA takes the threats from your threat model, the sensitivity of the information from categorization, and the likelihood, and ranks the risks so you know what to protect most.",
+            externalLinks: [{ phrase: "ITSG-33", linkKey: "itsg-33" }] satisfies ExternalPhraseLink[],
           },
           {
             text:
@@ -209,6 +224,81 @@ export const SECURITY_THREAD = {
                   "The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
               },
             ],
+          },
+        ],
+      },
+      {
+        title: "Protect, build the defenses.",
+        sections: [
+          {
+            text:
+              "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Give each person and system only the access they need, encrypt the data that matters, and keep the service current by patching on a schedule.",
+          },
+          {
+            text: "Security requirements are written into the contract so the supplier is held to them rather than asked nicely later.",
+            internalLinks: [
+              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+            ] satisfies InternalPhraseLink[],
+          },
+          {
+            text:
+              'Most source code is part of the defenses too, and Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets and can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws, so hiding code is a weak way to keep it safe. The categorization is a deliberate decision the business owner makes with the team: public and open to contributions, public but closed to them, fully private, or genuinely Protected B. The Guide for Using Open Source Software sets out how to make that call.',
+            placeholderGcNetworkLinks: [
+              {
+                phrase: "categorization",
+                source: SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
+              },
+            ] satisfies PlaceholderGcNetworkPhraseLink[],
+            externalLinks: [
+              {
+                phrase: "Guide for Using Open Source Software",
+                linkKey: "guide-open-source-software",
+              },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text:
+              "To level up these defenses over time, the OWASP DevSecOps Maturity Model is a ladder a service can be placed on without reading a line of code. It runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once. Security maturity is one part of a service's overall maturity.",
+            externalLinks: [
+              { phrase: "OWASP DevSecOps Maturity Model", linkKey: "owasp-dsomm" },
+            ] satisfies ExternalPhraseLink[],
+            internalLinks: [{ phrase: "overall maturity", to: "/live-maturity" }] satisfies InternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Detect, spot trouble fast.",
+        sections: [
+          {
+            text:
+              "You cannot prevent everything, so Detect is the half that catches what gets through. Monitoring and alerting flag unusual activity, and what counts is how fast you notice. Monitoring the service in production is where this lives once the service is running.",
+            internalLinks: [
+              {
+                phrase: "Monitoring the service in production",
+                to: THREADS["monitoring-and-instrumentation"].path,
+              },
+            ] satisfies InternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Respond, contain it.",
+        sections: [
+          {
+            text:
+              "When something is spotted, Respond shuts it down quickly instead of weeks later. A rehearsed incident response plan means the team has practised the steps in advance, so a problem is caught and contained rather than left to spread.",
+            externalLinks: [
+              { phrase: "incident response plan", linkKey: "incident-response-plan-itsap40003" },
+            ] satisfies ExternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Recover, restore and learn.",
+        sections: [
+          {
+            text:
+              "Recover brings the service and its data back after an incident, then closes the gap that let it happen. The lesson feeds back into Identify and Protect, so the same failure does not return. That is what makes the lifecycle a cycle rather than a line.",
           },
         ],
       },
@@ -249,34 +339,41 @@ export const SECURITY_THREAD = {
   byPhase: {
     id: "by-phase",
     title: "What Security looks like in each phase",
-    intro: "The security work changes shape across the life of a service.",
+    intro:
+      "The five functions are present throughout, but their weight shifts across the life of a service.",
     blocks: [
       {
         title: "Create.",
-        preview: "Security is built into the design, before any code is written.",
-        popup: {
-          text:
-            "Most of the security that matters is decided before code exists. The team builds a threat model to set out what could go wrong and who might attack the service, chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
-          internalLinks: [
-            { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
-          ] satisfies InternalPhraseLink[],
-        },
-      },
-      {
-        title: "Live.",
-        preview: "The service is patched, watched, and ready to respond fast.",
+        preview: "Identify and Protect are designed in, before any code is written.",
         popup: [
           {
             text:
-              "Once the service is running, security work is continuous, and it has two halves:",
+              'This is where Identify and Protect are designed in, before any code is written. The team builds a threat model to set out what could go wrong and who might attack the service (the threat model itself lives in the Identify block of "A closer look").',
+          },
+          {
+            text:
+              "The team then chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
+            internalLinks: [
+              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+            ] satisfies InternalPhraseLink[],
+          },
+        ],
+      },
+      {
+        title: "Live.",
+        preview: "Protect, Detect, Respond, and Recover run continuously.",
+        popup: [
+          {
+            text:
+              "Once the service is running, the Protect, Detect, Respond, and Recover functions are all running at once, and the work is continuous. It splits into two halves:",
           },
           {
             type: "orderedList",
             items: [
               {
                 text:
-                  "Prevention. Keep the service hardened and current: apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
-                bold: [{ phrase: "Prevention." }],
+                  "Prevention (Protect). Keep the service hardened and current: apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
+                bold: [{ phrase: "Prevention (Protect)." }],
                 externalLinks: [
                   {
                     phrase: "scan for new vulnerabilities",
@@ -286,8 +383,8 @@ export const SECURITY_THREAD = {
               },
               {
                 text:
-                  "Detection and response. You cannot prevent everything, so this half matters just as much: monitor the service in production to catch unusual activity, and keep a rehearsed incident response plan so a problem is contained quickly instead of found weeks later.",
-                bold: [{ phrase: "Detection and response." }],
+                  "Detection and response (Detect, Respond, Recover). You cannot prevent everything, so this half matters just as much: monitor the service in production to catch unusual activity, and keep a rehearsed incident response plan so a problem is contained quickly instead of found weeks later, and the service brought back after.",
+                bold: [{ phrase: "Detection and response (Detect, Respond, Recover)." }],
                 externalLinks: [
                   {
                     phrase: "incident response plan",
@@ -389,7 +486,21 @@ export const SECURITY_THREAD = {
       label: "Supporting reference",
       linkKey: "itsg-33" satisfies ExternalLinkKey,
       description:
-        "ITSG-33, IT security risk management, a lifecycle approach (CCCS) — the GC security control catalogue and lifecycle approach.",
+        "ITSG-33, IT security risk management, a lifecycle approach (CCCS) — the GC IT-security risk-management lifecycle and control catalogue; the Canadian-first frame for the five functions, linked inline from \"The security lifecycle\" and the Identify block (the TRA).",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "nist-cyberframework" satisfies ExternalLinkKey,
+      description:
+        "NIST Cybersecurity Framework (NIST) — the international frame for the five functions Identify, Protect, Detect, Respond, Recover; linked inline from \"The security lifecycle.\"",
+    },
+    {
+      label: "Supporting reference",
+      href: placeholderSourceHref(THREAT_AND_RISK_ASSESSMENT_TRA),
+      description:
+        "Threat and Risk Assessment (TRA) (CCCS, harmonized TRA methodology) — the GC tool that ranks risk as likelihood times impact, drawing on the threat model and categorization; named in the Identify block. Real GC link pending.",
+      comingSoon: true,
+      gcNetworkOnly: true,
     },
     {
       label: "Supporting reference",
@@ -399,12 +510,12 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "owasp-dsomm" satisfies ExternalLinkKey,
-      description: "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in Block 1.",
+      description: "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in the Protect block.",
     },
     {
       label: "Supporting reference",
       linkKey: "guide-open-source-software" satisfies ExternalLinkKey,
-      description: "Guide for Using Open Source Software (GC) — the open-by-default call in Block 3.",
+      description: "Guide for Using Open Source Software (GC) — the open-by-default call in the Protect block.",
     },
     {
       label: "Supporting reference",
@@ -414,40 +525,41 @@ export const SECURITY_THREAD = {
     },
     {
       label: "Supporting reference",
-      linkKey: "covid-alert-privacy-assessment" satisfies ExternalLinkKey,
-      description:
-        "COVID Alert privacy assessment (Health Canada / CDS) — https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/covid-alert/privacy-policy/assessment.html",
-    },
-    {
-      label: "Supporting reference",
       linkKey: "threat-modelling-developers" satisfies ExternalLinkKey,
       description:
-        "CCCS, Threat Modelling for Developers — what a threat model is; linked inline from A closer look (Block 4).",
+        "CCCS, Threat Modelling for Developers — what a threat model is; linked inline from the Identify block.",
     },
     {
       label: "Supporting reference",
       linkKey: "threat-modeling-manifesto" satisfies ExternalLinkKey,
       description:
-        "Threat Modeling Manifesto — https://www.threatmodelingmanifesto.org/",
+        "Threat Modeling Manifesto — the four plain questions behind threat modeling; linked inline from the Identify block.",
     },
     {
       label: "Supporting reference",
       href: placeholderSourceHref(GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT),
       description:
-        "GC security categorization (injury assessment) (TBS) — placeholder /source-coming-soon (real link pending).",
+        "GC security categorization (injury assessment) (TBS) — the injury assessment that sets Protected B / Secret / Top Secret; linked inline from the Identify block. Real GC link pending.",
       comingSoon: true,
+      gcNetworkOnly: true,
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "covid-alert-privacy-assessment" satisfies ExternalLinkKey,
+      description:
+        "COVID Alert privacy assessment (Health Canada / CDS) — the crown-jewels worked example in the Identify block (security concentrated on the random exposure codes, with anti-spam safeguards against fake alerts).",
     },
     {
       label: "Supporting reference",
       linkKey: "incident-response-plan-itsap40003" satisfies ExternalLinkKey,
       description:
-        "CCCS, Developing your incident response plan (ITSAP.40.003) — what an incident response plan is; linked inline from What good looks like and the Live phase.",
+        "CCCS, Developing your incident response plan (ITSAP.40.003) — what an incident response plan is; linked inline from What good looks like, the Respond block, and the Live phase.",
     },
     {
       label: "Supporting reference",
       href: placeholderSourceHref(SECURITY_CATEGORIZATION_OF_SOURCE_CODE),
       description:
-        "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in Block 3.",
+        "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in the Protect block.",
       comingSoon: true,
       gcNetworkOnly: true,
     },
@@ -455,18 +567,18 @@ export const SECURITY_THREAD = {
       label: "Supporting reference",
       linkKey: "cccs-top-10-it-security-actions" satisfies ExternalLinkKey,
       description:
-        "CCCS Top 10 IT security actions (ITSM.10.089) — https://www.cyber.gc.ca/en/guidance/top-10-it-security-actions-protect-internet-connected-networks-and-information-itsm10089",
+        "CCCS Top 10 IT security actions (ITSM.10.089) — the ranked defences that buy down the most risk; further reading.",
     },
     {
       label: "Supporting reference",
       linkKey: "cccs-baseline-cyber-security-sme" satisfies ExternalLinkKey,
       description:
-        "CCCS Baseline cyber security controls for small and medium organizations — https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations",
+        "CCCS Baseline cyber security controls for small and medium organizations — a plainer starting set of controls for a smaller service; further reading.",
     },
     {
       label: "Supporting reference",
       linkKey: "cisa-secure-by-design" satisfies ExternalLinkKey,
-      description: "US CISA Secure by Design — https://www.cisa.gov/securebydesign",
+      description: "US CISA Secure by Design — the case for designing security in rather than bolting it on; further reading.",
     },
   ] satisfies SourceItem[],
 } as const;

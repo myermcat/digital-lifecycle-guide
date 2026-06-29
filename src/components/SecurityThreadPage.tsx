@@ -8,15 +8,14 @@ import {
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { SecurityLifecycleStrip } from "@/components/SecurityLifecycleStrip";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
-import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   SECURITY_THREAD,
   type SecurityCloserLookBlock,
 } from "@/lib/security-thread-content";
-import { SECURITY_CORE_STRIP } from "@/lib/thread-core-strip";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -56,6 +55,7 @@ export function SecurityThreadPage() {
   const {
     title,
     lead,
+    securityLifecycle,
     whatGoodLooksLike,
     whyItMatters,
     whoseJob,
@@ -84,7 +84,7 @@ export function SecurityThreadPage() {
 
       <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
 
-      <ThreadCoreStrip content={SECURITY_CORE_STRIP} />
+      <SecurityLifecycleStrip content={securityLifecycle} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
@@ -110,7 +110,24 @@ export function SecurityThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={closerLook.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{closerLook.title}</h2>
-        <Accordion type="single" collapsible className="mt-4 rounded-lg border border-border bg-card">
+
+        <div className="mb-6 overflow-x-auto pb-1">
+          <ol className="flex min-w-max gap-2 list-none pl-0">
+            {securityLifecycle.tiles.map((tile, index) => (
+              <li
+                key={tile.label}
+                className="flex min-w-[4.5rem] flex-col items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2.5"
+              >
+                <ToggleStepNumber n={index + 1} />
+                <span className="font-sans text-[11px] font-medium uppercase tracking-wide text-foreground/70">
+                  {tile.label}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <Accordion type="single" collapsible className="rounded-lg border border-border bg-card">
           {closerLook.blocks.map((block, index) => (
             <AccordionItem key={block.title} value={block.title}>
               <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">

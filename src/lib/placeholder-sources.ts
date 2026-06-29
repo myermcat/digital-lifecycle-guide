@@ -21,6 +21,9 @@ export const SECURITY_CATEGORIZATION_OF_SOURCE_CODE = "Security Categorization o
 export const GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT =
   "GC security categorization (injury assessment)";
 
+export const THREAT_AND_RISK_ASSESSMENT_TRA =
+  "Threat and Risk Assessment (TRA) (CCCS, harmonized TRA methodology)";
+
 export type PlaceholderPhraseLink = {
   phrase: string;
   source: string;

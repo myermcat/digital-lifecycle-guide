@@ -6,6 +6,10 @@ export const guideProse =
 export const guideProseTight =
   "font-sans text-sm leading-[1.35] text-foreground/75";
 
+/** Monospace formula — same size and leading as guideProseTight. */
+export const guideFormulaLine =
+  "font-mono text-sm leading-[1.35] text-foreground/75 uppercase tracking-[0.05em]";
+
 export const guideProseSpace = `${guideProse} space-y-3`;
 
 /** Page title (h1) — large display scale relative to body copy. */

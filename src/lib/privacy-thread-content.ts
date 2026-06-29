@@ -32,7 +32,7 @@ export const PRIVACY_THREAD = {
 
   lead: {
     text:
-      "Privacy runs through the whole life of a service that handles people's personal information, from the first design sketch to the day the data is destroyed. Personal information is anything that can identify a person: a name, a case number, an address, an IP address. Canada's Privacy Act sets the rules for how a federal institution may collect, use, and share it. The decisions that shape a service's privacy are made early and revisited as it changes: what personal information to collect, how to protect it, and when to reassess the risk. The business owner answers for those decisions; the team does the work.",
+      "Privacy runs through the whole life of a service that handles people's personal information, from the first design sketch to the day the data is destroyed. Personal information is anything that can identify a person: a name, a case number, an address, an IP address. Canada's Privacy Act sets the rules for how a federal institution may collect, use, and share it. The decisions that shape a service's privacy are made early and revisited as it changes: what personal information to collect, how to protect it, and when to reassess the risk.",
     externalLinks: [{ phrase: "Privacy Act", linkKey: "privacy-act" }] satisfies ExternalPhraseLink[],
   } satisfies ThreadLinkedProse,
 

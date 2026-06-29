@@ -31,7 +31,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
 
   lead: {
     text:
-      "Almost no service is built from scratch. It is assembled from parts: open-source libraries, third-party services, vendor products, and the formats and protocols that let those parts talk to each other. Dependencies and standards is about choosing and looking after those parts well. It pulls together four habits: build on open standards so the pieces can connect and be swapped; know everything the service depends on; vet a component before you adopt it; and keep what you depend on patched and watched. The business owner of the application answers for not being trapped by a single vendor and for the parts staying safe; the team does the work.",
+      "Almost no service is built from scratch. It is assembled from parts: open-source libraries, third-party services, vendor products, and the formats and protocols that let those parts talk to each other. Dependencies and standards is about choosing and looking after those parts well. It pulls together four habits: build on open standards so the pieces can connect and be swapped; know everything the service depends on; vet a component before you adopt it; and keep what you depend on patched and watched.",
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
