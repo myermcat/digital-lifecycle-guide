@@ -12,6 +12,7 @@ import { SecurityLifecycleStrip } from "@/components/SecurityLifecycleStrip";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
 import { GuideArrowBullet } from "@/lib/guide-lists";
+import { securityLifecycleIconForLabel } from "@/lib/security-lifecycle-icons";
 import {
   SECURITY_THREAD,
   type SecurityCloserLookBlock,
@@ -37,6 +38,11 @@ function ToggleStepNumber({ n }: { n: number }) {
       {n}
     </span>
   );
+}
+
+function LifecycleAccordionIcon({ label }: { label: string }) {
+  const Icon = securityLifecycleIconForLabel(label);
+  return <Icon className="size-7 shrink-0 text-primary md:size-8" strokeWidth={1.75} aria-hidden />;
 }
 
 function renderCloserLookBlock(block: SecurityCloserLookBlock) {
@@ -132,7 +138,7 @@ export function SecurityThreadPage() {
             <AccordionItem key={block.title} value={block.title}>
               <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
                 <span className="flex min-w-0 flex-1 items-center gap-3">
-                  <ToggleStepNumber n={index + 1} />
+                  <LifecycleAccordionIcon label={securityLifecycle.tiles[index]?.label ?? ""} />
                   <span className="font-serif text-base font-semibold text-primary">
                     {block.title}
                   </span>

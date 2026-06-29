@@ -193,6 +193,26 @@ export const EXTERNAL_LINKS = {
     description: "Guide for Using Open Source Software (GC)",
     accessibility: "public",
   },
+  "standard-on-security-categorization": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614",
+    description: "Standard on Security Categorization (Directive on Security Management, Appendix J, TBS)",
+    accessibility: "public",
+  },
+  "harmonized-tra-methodology": {
+    url: "https://www.cyber.gc.ca/en/tools-services/harmonized-tra-methodology",
+    description: "Harmonized Threat and Risk Assessment (TRA) methodology (CCCS)",
+    accessibility: "public",
+  },
+  "gcpedia-security-categorization-tool": {
+    url: "https://www.gcpedia.gc.ca/wiki/Security_Categorization_Tool",
+    description: "Security Categorization Tool (GCpedia)",
+    accessibility: "public",
+  },
+  "gcpedia-esa-tools": {
+    url: "https://www.gcpedia.gc.ca/wiki/ESA_Tools",
+    description: "ESA Tools (GCpedia)",
+    accessibility: "public",
+  },
   "secure-containers-microservices": {
     url: "https://canada-ca.github.io/platform-security_securite-de-plateforme/",
     description: "Secure Containers and Microservices (Guideline annex, open)",

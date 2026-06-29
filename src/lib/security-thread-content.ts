@@ -10,12 +10,10 @@ import { PHASES, THREADS } from "@/lib/guide-strings";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import {
   COMPONENT_END_OF_LIFE_GUIDANCE,
-  GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT,
   placeholderSourceHref,
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE,
   SECURE_APPLICATION_DEVELOPMENT_GUIDELINE_SHORT,
   SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
-  THREAT_AND_RISK_ASSESSMENT_TRA,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
@@ -182,14 +180,14 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              "Security categorization tells you how sensitive the information is. The Government of Canada has its own tool for this, an injury assessment that rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the harm, the more protection it earns. See security categorization for how that call is made.",
+              "Security categorization tells you how sensitive the information is. The Government of Canada has its own tool for this, an injury assessment that rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the harm, the more protection it earns. The Standard on Security Categorization sets out how that call is made.",
             bold: [{ phrase: "how sensitive the information is" }],
-            placeholderGcNetworkLinks: [
+            externalLinks: [
               {
-                phrase: "security categorization",
-                source: GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT,
+                phrase: "Standard on Security Categorization",
+                linkKey: "standard-on-security-categorization",
               },
-            ] satisfies PlaceholderGcNetworkPhraseLink[],
+            ] satisfies ExternalPhraseLink[],
           },
           {
             text: "You rate threats by",
@@ -200,8 +198,31 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              "In the Government of Canada, the tool that does this is a Threat and Risk Assessment (TRA), the risk-management approach in ITSG-33. The TRA takes the threats from your threat model, the sensitivity of the information from categorization, and the likelihood, and ranks the risks so you know what to protect most.",
-            externalLinks: [{ phrase: "ITSG-33", linkKey: "itsg-33" }] satisfies ExternalPhraseLink[],
+              "In the Government of Canada, the tool that does this is a Threat and Risk Assessment (TRA), the risk-management approach in ITSG-33. A TRA takes three things and ranks the risks so you know what to protect most:",
+            externalLinks: [
+              {
+                phrase: "Threat and Risk Assessment (TRA)",
+                linkKey: "harmonized-tra-methodology",
+              },
+              { phrase: "ITSG-33", linkKey: "itsg-33" },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            type: "orderedList",
+            items: [
+              {
+                text: "the threats, from your threat model;",
+                bold: [{ phrase: "threats" }],
+              },
+              {
+                text: "the sensitivity of the information, from categorization;",
+                bold: [{ phrase: "sensitivity" }],
+              },
+              {
+                text: "the likelihood that each threat actually happens.",
+                bold: [{ phrase: "likelihood" }],
+              },
+            ],
           },
           {
             text:
@@ -232,7 +253,16 @@ export const SECURITY_THREAD = {
         sections: [
           {
             text:
-              "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Give each person and system only the access they need, encrypt the data that matters, and keep the service current by patching on a schedule.",
+              "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Three defenses do most of the work:",
+            bold: [{ phrase: "Protect" }, { phrase: "Identify" }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "give each person and system only the access they need;",
+              "encrypt the data that matters;",
+              "keep the service current by patching on a schedule.",
+            ],
           },
           {
             text: "Security requirements are written into the contract so the supplier is held to them rather than asked nicely later.",
@@ -242,27 +272,24 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              'Most source code is part of the defenses too, and Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets and can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws, so hiding code is a weak way to keep it safe. The categorization is a deliberate decision the business owner makes with the team: public and open to contributions, public but closed to them, fully private, or genuinely Protected B. The Guide for Using Open Source Software sets out how to make that call.',
+              'Open by default. Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets and can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws, so hiding code is a weak way to keep it safe. The source-code categorization is a deliberate decision the business owner makes with the team: public and open to contributions, public but closed to them, fully private, or genuinely Protected B.',
+            bold: [{ phrase: "Open by default." }],
             placeholderGcNetworkLinks: [
               {
-                phrase: "categorization",
+                phrase: "source-code categorization",
                 source: SECURITY_CATEGORIZATION_OF_SOURCE_CODE,
               },
             ] satisfies PlaceholderGcNetworkPhraseLink[],
             externalLinks: [
-              {
-                phrase: "Guide for Using Open Source Software",
-                linkKey: "guide-open-source-software",
-              },
+              { phrase: "open by default", linkKey: "guide-open-source-software" },
             ] satisfies ExternalPhraseLink[],
           },
           {
             text:
-              "To level up these defenses over time, the OWASP DevSecOps Maturity Model is a ladder a service can be placed on without reading a line of code. It runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once. Security maturity is one part of a service's overall maturity.",
+              "To level up these defenses over time, the OWASP DevSecOps Maturity Model is a ladder a service can be placed on without reading a line of code. It runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once.",
             externalLinks: [
               { phrase: "OWASP DevSecOps Maturity Model", linkKey: "owasp-dsomm" },
             ] satisfies ExternalPhraseLink[],
-            internalLinks: [{ phrase: "overall maturity", to: "/live-maturity" }] satisfies InternalPhraseLink[],
           },
         ],
       },
@@ -496,11 +523,9 @@ export const SECURITY_THREAD = {
     },
     {
       label: "Supporting reference",
-      href: placeholderSourceHref(THREAT_AND_RISK_ASSESSMENT_TRA),
+      linkKey: "harmonized-tra-methodology" satisfies ExternalLinkKey,
       description:
-        "Threat and Risk Assessment (TRA) (CCCS, harmonized TRA methodology) — the GC tool that ranks risk as likelihood times impact, drawing on the threat model and categorization; named in the Identify block. Real GC link pending.",
-      comingSoon: true,
-      gcNetworkOnly: true,
+        "Harmonized Threat and Risk Assessment (TRA) methodology (CCCS) — https://www.cyber.gc.ca/en/tools-services/harmonized-tra-methodology — linked inline from the Identify block.",
     },
     {
       label: "Supporting reference",
@@ -515,7 +540,8 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "guide-open-source-software" satisfies ExternalLinkKey,
-      description: "Guide for Using Open Source Software (GC) — the open-by-default call in the Protect block.",
+      description:
+        "Guide for Using Open Source Software (GC) — https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-using-open-source-software.html — the GC open-source position behind 'open by default'; linked inline from the Protect block.",
     },
     {
       label: "Supporting reference",
@@ -537,11 +563,9 @@ export const SECURITY_THREAD = {
     },
     {
       label: "Supporting reference",
-      href: placeholderSourceHref(GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT),
+      linkKey: "standard-on-security-categorization" satisfies ExternalLinkKey,
       description:
-        "GC security categorization (injury assessment) (TBS) — the injury assessment that sets Protected B / Secret / Top Secret; linked inline from the Identify block. Real GC link pending.",
-      comingSoon: true,
-      gcNetworkOnly: true,
+        "Standard on Security Categorization (Directive on Security Management, Appendix J, TBS) — https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614 — linked inline from the Identify block.",
     },
     {
       label: "Supporting reference",
@@ -559,9 +583,20 @@ export const SECURITY_THREAD = {
       label: "Supporting reference",
       href: placeholderSourceHref(SECURITY_CATEGORIZATION_OF_SOURCE_CODE),
       description:
-        "Security Categorization of Source Code (Guideline annex, TBS) — the open-by-default categorization in the Protect block.",
+        "Security Categorization of Source Code (Guideline annex, TBS) — source-code categorization in the Protect block.",
       comingSoon: true,
       gcNetworkOnly: true,
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "gcpedia-security-categorization-tool" satisfies ExternalLinkKey,
+      description:
+        "Security Categorization Tool (GCpedia) — https://www.gcpedia.gc.ca/wiki/Security_Categorization_Tool",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "gcpedia-esa-tools" satisfies ExternalLinkKey,
+      description: "ESA Tools (GCpedia) — https://www.gcpedia.gc.ca/wiki/ESA_Tools",
     },
     {
       label: "Supporting reference",
