@@ -42,7 +42,7 @@ export type GoodContractSchedule = {
 export type GoodContractSimplificationNote = {
   lead: string;
   paragraphs: readonly GoodContractLinkedProse[];
-  expansionList: readonly string[];
+  exampleBlock: string;
   closing: string;
 };
 
@@ -50,7 +50,7 @@ export function goodContractSimplificationNoteText(note: GoodContractSimplificat
   return [
     note.lead,
     ...note.paragraphs.map((paragraph) => paragraph.text),
-    ...note.expansionList,
+    note.exampleBlock,
     note.closing,
   ].join(" ");
 }
@@ -93,17 +93,17 @@ export const GOOD_CONTRACT = {
       },
       {
         text:
-          "A good requirement is specific, measurable, and testable. Schedule I's 'good order' would become a list you can check off:",
+          "A good requirement is specific, measurable, and testable. Written in full, Schedule I's 'good order' would read more like this:",
         bold: [{ phrase: "specific, measurable, and testable" }],
       },
     ],
-    expansionList: [
-      "a complete copy of the data in an agreed open format",
-      "the source code and configuration",
-      "current documentation and a runbook",
-      "a register of every third-party component and its licence",
-      "a set number of days of support while a new team takes over",
-    ],
+    exampleBlock: `Within 30 days of the end of the Agreement, the Supplier shall provide Canada with:
+  - a complete export of all service data in CSV and JSON,
+  - the source code and configuration in Canada's repository,
+  - current operations documentation and a runbook,
+  - a register of every third-party component and its licence,
+  - up to 20 business days of transition support.
+The handover is complete when Canada confirms the export restores into a test environment.`,
     closing:
       "Read each clause below as the short version of something a real contract spells out, and makes testable, in full.",
   } satisfies GoodContractSimplificationNote,

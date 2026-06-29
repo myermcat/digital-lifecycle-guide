@@ -25,7 +25,6 @@ import {
   guideSectionTitle,
   guideSubsectionTitle,
   guideLink,
-  guideListIndent,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +39,9 @@ const contractBodyClassName =
 
 const contractAnnotationClassName =
   "font-serif text-sm italic leading-[1.5] text-[#4a4338]/58";
+
+const contractExampleBlockClassName =
+  "overflow-x-auto rounded-md border border-border/55 bg-background/70 px-3.5 py-3 font-mono text-[13px] leading-[1.55] text-foreground/80 whitespace-pre-wrap";
 
 function renderLinkedProseBlock(prose: GoodContractLinkedProse) {
   return proseWithMixedLinks(prose.text, {
@@ -60,11 +62,7 @@ function SimplificationNote() {
         {note.paragraphs.map((paragraph) => (
           <p key={paragraph.text}>{renderLinkedProseBlock(paragraph)}</p>
         ))}
-        <ul className={`list-disc space-y-1 ${guideListIndent}`}>
-          {note.expansionList.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <pre className={contractExampleBlockClassName}>{note.exampleBlock}</pre>
         <p>{note.closing}</p>
       </div>
     </EditorialNote>
