@@ -162,7 +162,7 @@ export const SECURITY_THREAD = {
               "The clearest way into security at the design stage is to ask four plain questions:",
           },
           {
-            type: "unorderedList",
+            type: "orderedList",
             items: [
               "What are we building?",
               "What can go wrong?",
@@ -186,11 +186,19 @@ export const SECURITY_THREAD = {
           },
           {
             text:
-              "Once you know what could go wrong, protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. The COVID Alert app held one truly sensitive thing, the random codes that triggered exposure notifications, so the security effort was concentrated there, with safeguards that stopped anyone flooding people with fake exposure alerts. The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, has no windows, and costs a fortune. If you marked everything Top Secret, the way you would protect that one critical thing, the whole team would have to crowd into that single room to get anything done. So you find the crown jewels first, decide what genuinely needs that level, and guard those well.",
+              "Once you know what could go wrong, protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
             bold: [{ phrase: "protect the few things that matter most" }],
-            externalLinks: [
-              { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
-            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            type: "editorialNote",
+            label: "Example",
+            prose: {
+              text:
+                "The COVID Alert app worked by having phones swap anonymous random codes over Bluetooth; if someone later tested positive, those codes were used to warn the people they had recently been near. The one sensitive thing was the code that could trigger a 'you were exposed' alert, so the security effort was concentrated there, with safeguards that stopped anyone sending fake alerts. The opposite extreme makes the same point: a Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
+              externalLinks: [
+                { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
+              ] satisfies ExternalPhraseLink[],
+            },
           },
         ],
       },
@@ -250,15 +258,15 @@ export const SECURITY_THREAD = {
         popup: [
           {
             text:
-              "Once the service is running, security work is continuous, and it has two halves.",
+              "Once the service is running, security work is continuous, and it has two halves:",
           },
           {
-            type: "unorderedList",
+            type: "orderedList",
             items: [
               {
                 text:
-                  "Keeping the service current. Apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
-                bold: [{ phrase: "Keeping the service current." }],
+                  "Prevention. Keep the service hardened and current: apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
+                bold: [{ phrase: "Prevention." }],
                 externalLinks: [
                   {
                     phrase: "scan for new vulnerabilities",
@@ -268,8 +276,8 @@ export const SECURITY_THREAD = {
               },
               {
                 text:
-                  "Noticing and containing a problem fast. Because you cannot prevent everything, this half matters just as much. Monitoring the service in production flags unusual activity, and a rehearsed incident response plan means that when something does get through, the team catches it and shuts it down quickly instead of finding out weeks later.",
-                bold: [{ phrase: "Noticing and containing a problem fast." }],
+                  "Detection and response. You cannot prevent everything, so this half matters just as much: monitor the service in production to catch unusual activity, and keep a rehearsed incident response plan so a problem is contained quickly instead of found weeks later.",
+                bold: [{ phrase: "Detection and response." }],
                 externalLinks: [
                   {
                     phrase: "incident response plan",
@@ -278,7 +286,7 @@ export const SECURITY_THREAD = {
                 ] satisfies ExternalPhraseLink[],
                 internalLinks: [
                   {
-                    phrase: "Monitoring the service in production",
+                    phrase: "monitor the service in production",
                     to: THREADS["monitoring-and-instrumentation"].path,
                   },
                 ] satisfies InternalPhraseLink[],

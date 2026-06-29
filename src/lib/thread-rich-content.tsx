@@ -7,6 +7,7 @@ import type {
 } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
+import { EditorialNote } from "@/components/EditorialNote";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
 import { guideListIndent, guideProse, guideProseTight } from "@/lib/guide-typography";
 
@@ -42,10 +43,17 @@ export type ThreadUnorderedListSection = {
   items: readonly ThreadOrderedListItem[];
 };
 
+export type ThreadEditorialNoteSection = {
+  type: "editorialNote";
+  label?: string;
+  prose: ThreadLinkedProse;
+};
+
 export type ThreadContentSection =
   | ThreadLinkedProse
   | ThreadOrderedListSection
-  | ThreadUnorderedListSection;
+  | ThreadUnorderedListSection
+  | ThreadEditorialNoteSection;
 
 export type ThreadCloserLookBlock = {
   title: string;
@@ -142,9 +150,15 @@ export function threadSectionsPlainText(sections: readonly ThreadContentSection[
     .map((section) =>
       "type" in section && (section.type === "orderedList" || section.type === "unorderedList")
         ? section.items.map(orderedListItemPlainText).join(" ")
-        : section.text,
+        : "type" in section && section.type === "editorialNote"
+          ? section.prose.text
+          : section.text,
     )
     .join(" ");
+}
+
+function isEditorialNote(section: ThreadContentSection): section is ThreadEditorialNoteSection {
+  return "type" in section && section.type === "editorialNote";
 }
 
 function isUnorderedList(
@@ -234,6 +248,10 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
               <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
             ))}
           </ul>
+        ) : isEditorialNote(section) ? (
+          <EditorialNote key={index} label={section.label ?? "Example"}>
+            <p>{renderLinkedProse(section.prose)}</p>
+          </EditorialNote>
         ) : (
           <p key={index}>{renderLinkedProse(section)}</p>
         ),
