@@ -227,11 +227,20 @@
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
-    "id": "/thread/component-end-of-life",
-    "pageTitle": "Component end of life",
-    "pagePath": "/thread/component-end-of-life",
+    "id": "/thread/funding",
+    "pageTitle": "Funding and TB submissions",
+    "pagePath": "/thread/funding",
     "sectionId": "",
-    "sectionHeading": "Component end of life",
+    "sectionHeading": "Funding and TB submissions",
+    "lifecyclePhase": "thread",
+    "text": ""
+  },
+  {
+    "id": "/thread/change-management",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "",
+    "sectionHeading": "Change management",
     "lifecyclePhase": "thread",
     "text": ""
   },
@@ -270,6 +279,15 @@
     "sectionHeading": "Design for the whole journey",
     "lifecyclePhase": "reference",
     "text": "Most of the time, people do not want to use a government service. What they want is to move to a new country, start a job, raise a child, retire. The service is the thing they have to do to get to what they actually want. The best service of all is one where the person barely has to do anything, because the parts of government that already hold the information just use it. If the tax agency already knows someone's income, that person should not have to prove it again to another department. That only works when teams and departments step back and work together. A good service mirrors what the person is trying to do. As Louise Downe, who led design for the UK government, put it: good services are verbs, and bad services are nouns."
+  },
+  {
+    "id": "/thread/procurement/good-contract",
+    "pageTitle": "What a good contract looks like",
+    "pagePath": "/thread/procurement/good-contract",
+    "sectionId": "",
+    "sectionHeading": "What a good contract looks like",
+    "lifecyclePhase": "thread",
+    "text": "When you buy or build a service with a supplier, the contract is where the promises live. The rest of the playbook keeps telling you to put things in the contract. This page puts them all in one place and shows them as a real contract would look, for our example service, the grant portal. This is a tour of a sample contract, not a legal template and not the authority. The rules that govern federal contracts sit with PSPC, the Directive on the Management of Procurement, and CanadaBuys. For how to run the buying itself, see the Procurement thread. This page is only about what a good agreement should contain. Everything below is written for the grant portal. The clauses, and the bracketed details like dates and percentages, are things you set for your own service. Treat this as a worked example to adapt, not text to copy."
   },
   {
     "id": "/practice/maturity-orientation",
@@ -668,6 +686,42 @@
     "text": "Sources and references."
   },
   {
+    "id": "/thread/procurement/good-contract#how-to-read",
+    "pageTitle": "What a good contract looks like",
+    "pagePath": "/thread/procurement/good-contract",
+    "sectionId": "how-to-read",
+    "sectionHeading": "How to read this contract",
+    "lifecyclePhase": "thread",
+    "text": "A real contract is built from parts. There is a short main agreement, the Articles of Agreement, and then the detail is attached at the back in numbered sections called schedules (a contract word, some lawyers say annexes or appendices). We use the contract's own words here so the page reads like the real thing you would sign. It is shortened and plain, but laid out the way a real one is. Some schedules are in almost every service contract, the standard backbone: the statement of work, the price, the service levels, and how the supplier hands the service back at the end. Others are added to fit the particular service. The grant portal holds people's personal and financial information, so it carries schedules for security, privacy, accessibility, the parts it is built from, and the data it keeps. So each schedule below carries a tag:"
+  },
+  {
+    "id": "/thread/procurement/good-contract#the-contract",
+    "pageTitle": "What a good contract looks like",
+    "pagePath": "/thread/procurement/good-contract",
+    "sectionId": "the-contract",
+    "sectionHeading": "The contract",
+    "lifecyclePhase": "thread",
+    "text": "Contract for the grant portal This Agreement is between His Majesty the King in right of Canada, represented by the department (Canada), and the Supplier. The work. The Supplier shall deliver and operate the grant portal, the online service people use to apply for and manage grants and contributions, as set out in Schedule A. Term. This Agreement runs for three years from the start date, with two optional one-year extensions at Canada's choice. Price. Canada shall pay the Supplier as set out in Schedule B. The Supplier's obligations. The Supplier shall meet the requirements in Schedules C through I. Oversight. Canada may verify the Supplier's compliance with this Agreement at any time, and the Supplier shall give Canada the access and evidence needed to do so. Order of precedence. If a Schedule conflicts with these Articles, the Articles prevail. The Schedules attached form part of this Agreement."
+  },
+  {
+    "id": "/thread/procurement/good-contract#the-schedules",
+    "pageTitle": "What a good contract looks like",
+    "pagePath": "/thread/procurement/good-contract",
+    "sectionId": "the-schedules",
+    "sectionHeading": "The schedules",
+    "lifecyclePhase": "thread",
+    "text": "Schedule A — Statement of Work What the supplier is hired to build and run. A.1 The Supplier shall design, build, and operate the grant portal so an applicant can create an account, apply for a grant, upload documents, and track a decision. A.2 The Supplier shall meet the delivery dates set out in this Schedule. A.3 The Supplier shall provide the people and skills needed to run the service for the Term. every contract names the work it is buying (the General Conditions of a Service Contract). More on this: statement of objectives vs statement of work. Schedule B — Basis of Payment The price, and what triggers each payment. B.1 Canada shall pay the Supplier a fixed monthly fee to operate the service, and milestone payments on delivery, as set out in this Schedule. B.2 The Supplier shall invoice monthly, and Canada shall pay within thirty days of accepting a correct invoice. B.3 Paying an invoice does not waive Canada's right to later reject work that does not meet this Agreement. Why this is here: every contract sets out what is paid and when (the General Conditions of a Service Contract, linked under Schedule A). Schedule C — Service Levels How well the service must run, not only that it exists. C.1 The Supplier shall keep the service available at least 99.5 percent of the time each month. C.2 The Supplier shall respond to a critical fault within one hour and resolve it within the time set in this Schedule. C.3 The Supplier shall report on these service levels each month, so Canada can see them being met. C.4 If the Supplier misses a service level, service credits apply as set out in this Schedule. Why this is here: service levels are an essential element of a service agreement (TBS Guideline on Service Agreements). Schedule D — Security Security is not automatic in every contract. It is triggered when the service handles sensitive information, and the grant portal holds personal and financial data, so it is written in here. D.1 The Supplier shall meet the security requirements set out in the Security Requirements Check List for this contract. D.2 The Supplier shall report a security incident to Canada within 24 hours of detecting it. D.3 The Supplier shall allow Canada to assess its security controls before go-live and during the Term. Why this is here: required through the GC Contract Security Program. More in the Security thread. Schedule E — Privacy A supplier handling personal information is bound to protect it. E.1 The Supplier shall use personal information only to deliver the service, and only as this Agreement allows. E.2 The Supplier shall apply the safeguards and access controls set out in Canada's Privacy Impact Assessment. E.3 The Supplier shall keep and dispose of personal information as Canada's retention and disposition plan directs. E.4 The Supplier shall accept responsibility for a breach it causes, notify Canada without delay, and bind any subcontractor to these same terms. Why this is here: the TBS guidance on taking privacy into account before contracting. More in the Privacy thread. Schedule F — Accessibility So everyone, including people with disabilities, can use the service. F.1 The product shall meet EN 301 549, which includes WCAG 2.1 AA for the web. F.2 The Supplier shall provide an Accessibility Conformance Report and update it on each significant release, or at least once a year. F.3 Accessibility applies to documents and any mobile app, not only the website. Why this is here: the GC guide to including accessibility in ICT procurement. More in the Accessibility thread. Schedule G — Dependencies and supply chain So the parts the service is built from stay safe, known, and replaceable. G.1 The Supplier shall keep a software bill of materials, the list of components in the product, and share it with Canada on request. G.2 The Supplier shall patch known vulnerabilities within the time set in this Schedule. G.3 The Supplier shall keep the service portable, so its data and components can move without a rebuild. G.4 The Supplier shall hold its own suppliers to minimum security requirements. Why this is here: the Cyber Centre's guidance on software supply chain threats (linked under G.1). More in the Dependencies and standards thread. Schedule H — Data stewardship The data stays Canada's, stays in the right place, and comes back at the end. H.1 The data is Canada's. The Supplier holds it on Canada's behalf and shall return it on request in a usable form. H.2 The Supplier shall store the data in Canada where the rules require it. H.3 The Supplier shall tell Canada of any unauthorized access to the data, including access compelled by a court order, unless prohibited by law from saying so. H.4 At the end of this Agreement, the Supplier shall return the data and securely destroy its own copies. Why this is here: the GC white paper on data sovereignty and the public cloud. More in the Data stewardship thread. Schedule I — Exit and Transition So Canada can leave at the end without the service stopping. I.1 The Supplier shall hand over the service in good order at the end: the data, the documentation, and the knowledge needed to run or move it. I.2 The Supplier shall support a transition period so a new supplier or an in-house team can take over without a gap in service. I.3 The Supplier shall not block a clean exit with fees or steps that trap the service. Why this is here: transition is part of a well-managed service agreement (the Guideline on Service Agreements, linked under Schedule C)."
+  },
+  {
+    "id": "/thread/procurement/good-contract#sources",
+    "pageTitle": "What a good contract looks like",
+    "pagePath": "/thread/procurement/good-contract",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references."
+  },
+  {
     "id": "/reference/design-for-the-whole-journey#most-people-do-not-want",
     "pageTitle": "Design for the whole journey",
     "pagePath": "/reference/design-for-the-whole-journey",
@@ -1008,7 +1062,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to do accessibility",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They treated accessibility as a final check on the grant portal: bolted it on at the end, with one automated scan the week before launch, on the website only, not the PDF decision letters or the mobile app never tested with a real person The result: at launch, an applicant using a screen reader could not finish the form because the fields had no labels, and the decision letters could not be read aloud. The fixes came late, rushed, and expensive, and people were locked out in the meantime. Meet Pax. They built accessibility into the grant portal from the first sketch: designed for keyboard and screen-reader use, with EN 301 549 (WCAG 2.1 AA) as the bar required an Accessibility Conformance Report from the supplier of the case-management tool, and checked it tested with real people, including someone using a screen reader and someone navigating by keyboard, and fixed what they found before launch published an accessibility statement saying what works and how to get an alternative The result: the portal met the law, worked for everyone, and cost far less because the problems were caught early.",
+    "text": "Meet Vell, a program officer. They treated accessibility as a final check on the grant portal: bolted it on at the end, with one automated scan the week before launch, on the website only, not the PDF decision letters or the mobile app never tested with a real person The result: at launch, an applicant using a screen reader could not finish the form because the fields had no labels, and the decision letters could not be read aloud. The fixes came late, rushed, and expensive, and people were locked out in the meantime. Meet Pax, a program officer. They built accessibility into the grant portal from the first sketch: designed for keyboard and screen-reader use, with EN 301 549 (WCAG 2.1 AA) as the bar required an Accessibility Conformance Report from the supplier of the case-management tool, and checked it tested with real people, including someone using a screen reader and someone navigating by keyboard, and fixed what they found before launch published an accessibility statement saying what works and how to get an alternative The result: the portal met the law, worked for everyone, and cost far less because the problems were caught early.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1088,7 +1142,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to do user research",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They built the grant portal on what the team assumed applicants wanted: talked only to a couple of managers, never to a real applicant tested the finished service once, the week before launch shared no findings, because there were none to share The result: applicants could not work out how to start a claim, the call centre was swamped in the first week, and the fixes meant rebuilding screens that were already live. Meet Pax. They researched the grant portal with the people who would use it: interviewed real applicants in discovery to learn what they actually needed tested prototypes with about five users each round, including someone using a screen reader, and fixed what they found shared findings with the team and kept a feedback channel open after launch The result: applicants could complete a claim on their own, calls dropped, and changes were small because the big problems were caught early.",
+    "text": "Meet Vell, a program officer. They built the grant portal on what the team assumed applicants wanted: talked only to a couple of managers, never to a real applicant tested the finished service once, the week before launch shared no findings, because there were none to share The result: applicants could not work out how to start a claim, the call centre was swamped in the first week, and the fixes meant rebuilding screens that were already live. Meet Pax, a program officer. They researched the grant portal with the people who would use it: interviewed real applicants in discovery to learn what they actually needed tested prototypes with about five users each round, including someone using a screen reader, and fixed what they found shared findings with the team and kept a feedback channel open after launch The result: applicants could complete a claim on their own, calls dropped, and changes were small because the big problems were caught early.",
     "keywords": "usability testing design with users UX research"
   },
   {
@@ -1168,7 +1222,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to automate a decision",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time: trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus gave applicants no notice it was automated, and no way to appeal never tested the outputs across different groups The result: the model repeated old bias without anyone noticing, rejecting strong applicants from some regions, no one could explain why a given application was scored low, and there was no human to turn to. Meet Pax. They run a service that screens benefit applications and treated the auto-scoring as a decision about people: ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it kept the AI as a recommendation, with a person making the final call tested the outputs for bias across groups, before launch and as it ran told applicants a tool was used, gave a plain explanation, and offered an appeal to a human The result: decisions people could understand and challenge, less bias, and a system that holds up to scrutiny.",
+    "text": "Meet Vell, a benefits caseworker. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time: trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus gave applicants no notice it was automated, and no way to appeal never tested the outputs across different groups The result: the model repeated old bias without anyone noticing, rejecting strong applicants from some regions, no one could explain why a given application was scored low, and there was no human to turn to. Meet Pax, a benefits caseworker. They run a service that screens benefit applications and treated the auto-scoring as a decision about people: ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it kept the AI as a recommendation, with a person making the final call tested the outputs for bias across groups, before launch and as it ran told applicants a tool was used, gave a plain explanation, and offered an appeal to a human The result: decisions people could understand and challenge, less bias, and a system that holds up to scrutiny.",
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
   },
   {
@@ -1258,7 +1312,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to run a backlog",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They ran the permit renewal service off whatever came up: kept the work in scattered email threads, chat messages, and personal lists built whatever the loudest stakeholder asked for next, with no agreed priorities treated \"done\" as \"demoed in a meeting\" The result: half-finished features piled up, the accessibility and security fixes never reached the top, the team kept thrashing between requests, and no one could say what was coming next. Meet Pax. They ran the permit renewal service from one backlog: kept a single, ordered list, every item tied to a user need prioritized by impact and effort, using MoSCoW, and revisited the order each week set a clear definition of done, so unfinished work went back on the list, not out the door The result: steady, visible improvement, the important fixes got done, and everyone, including users, could see what was next.",
+    "text": "Meet Vell, a service manager. They ran the permit renewal service off whatever came up: kept the work in scattered email threads, chat messages, and personal lists built whatever the loudest stakeholder asked for next, with no agreed priorities treated \"done\" as \"demoed in a meeting\" The result: half-finished features piled up, the accessibility and security fixes never reached the top, the team kept thrashing between requests, and no one could say what was coming next. Meet Pax, a service manager. They ran the permit renewal service from one backlog: kept a single, ordered list, every item tied to a user need prioritized by impact and effort, using MoSCoW, and revisited the order each week set a clear definition of done, so unfinished work went back on the list, not out the door The result: steady, visible improvement, the important fixes got done, and everyone, including users, could see what was next.",
     "keywords": "product backlog prioritization user stories MoSCoW"
   },
   {
@@ -1348,7 +1402,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to join up a service",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They built a change-of-address form for one program and stopped there: never spoke to the other programs a person who moves also has to tell built no connection to other systems, so the person had to enter the same new address again with each department changed the online form but never told the call centre, so phone staff walked people through steps that no longer existed The result: people thought one update had reached everyone and it had not, calls climbed, and the website and the phone line contradicted each other. Meet Pax. They treated moving as one journey across the services it touches: mapped the journey with the other programs and agreed how the address change would flow between them exposed the change through an API so the downstream services updated, and the person entered the new address once updated the call-centre scripts and trained front-line staff in the same week the online form changed, and kept the phone option easy to find The result: a person could update their address once and have it reach the programs that needed it, and the phone line gave the same answers as the website.",
+    "text": "Meet Vell, a service manager. They built a change-of-address form for one program and stopped there: never spoke to the other programs a person who moves also has to tell built no connection to other systems, so the person had to enter the same new address again with each department changed the online form but never told the call centre, so phone staff walked people through steps that no longer existed The result: people thought one update had reached everyone and it had not, calls climbed, and the website and the phone line contradicted each other. Meet Pax, a service manager. They treated moving as one journey across the services it touches: mapped the journey with the other programs and agreed how the address change would flow between them exposed the change through an API so the downstream services updated, and the person entered the new address once updated the call-centre scripts and trained front-line staff in the same week the online form changed, and kept the phone option easy to find The result: a person could update their address once and have it reach the programs that needed it, and the phone line gave the same answers as the website.",
     "keywords": "joined-up delivery omni-channel interoperability API journey mapping assisted digital"
   },
   {
@@ -1428,7 +1482,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to release changes",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They ran the tax-filing service on one big release a quarter: saved up months of changes for a single release night tested by hand at the end, then deployed everything to everyone at once had no quick way back when the release broke The result: the big release took down filing at peak season, it took days to work out which of the many changes was to blame, and the call centre was buried while it was fixed. Meet Pax. They ran the tax-filing service on small, frequent releases: released small changes every week through an automated pipeline that tested each one rolled each change out to a small share of filers first, watched it, then expanded could roll back to the last good version in minutes The result: the few problems that slipped through hit a handful of users, were spotted fast, and were undone before most people noticed, and filing stayed up through the busy season.",
+    "text": "Meet Vell, a service manager. They ran the tax-filing service on one big release a quarter: saved up months of changes for a single release night tested by hand at the end, then deployed everything to everyone at once had no quick way back when the release broke The result: the big release took down filing at peak season, it took days to work out which of the many changes was to blame, and the call centre was buried while it was fixed. Meet Pax, a service manager. They ran the tax-filing service on small, frequent releases: released small changes every week through an automated pipeline that tested each one rolled each change out to a small share of filers first, watched it, then expanded could roll back to the last good version in minutes The result: the few problems that slipped through hit a handful of users, were spotted fast, and were undone before most people noticed, and filing stayed up through the busy season.",
     "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
   },
   {
@@ -1508,7 +1562,7 @@
     "sectionId": "two-ways",
     "sectionHeading": "Two ways to handle dependencies",
     "lifecyclePhase": "thread",
-    "text": "Meet Vell. They built the case-management system on whatever was quickest: built it on one vendor's proprietary formats, with no exit plan never tracked what the service depended on pulled in open-source components without checking them, and rarely patched The result: when a widely used library turned out to have a critical flaw, they could not tell whether they were affected or where, and the vendor quoted a fortune to make a change they could not make themselves. Meet Pax. They treated the parts as something to look after: built on open standards and kept an exit plan, so a vendor could be changed kept a current inventory of every component and where it came from vetted new components for being maintained and secure, patched promptly, and required suppliers to report incidents fast The result: when the same flaw appeared, they knew within hours exactly where the library was used and patched it, and no vendor could hold the service hostage.",
+    "text": "Meet Vell, a service manager. They built the case-management system on whatever was quickest: built it on one vendor's proprietary formats, with no exit plan never tracked what the service depended on pulled in open-source components without checking them, and rarely patched The result: when a widely used library turned out to have a critical flaw, they could not tell whether they were affected or where, and the vendor quoted a fortune to make a change they could not make themselves. Meet Pax, a service manager. They treated the parts as something to look after: built on open standards and kept an exit plan, so a vendor could be changed kept a current inventory of every component and where it came from vetted new components for being maintained and secure, patched promptly, and required suppliers to report incidents fast The result: when the same flaw appeared, they knew within hours exactly where the library was used and patched it, and no vendor could hold the service hostage.",
     "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
   },
   {

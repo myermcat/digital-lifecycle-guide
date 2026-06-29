@@ -194,7 +194,7 @@ export const ETHICS_AND_BIAS_THREAD = {
     risky: {
       heading: "Vell",
       framing:
-        "Meet Vell. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time:",
+        "Meet Vell, a benefits caseworker. They run a service that screens benefit applications and added an AI model to auto-score them and save staff time:",
       items: [
         "trained it on past decisions, with no Algorithmic Impact Assessment and no GBA Plus",
         "gave applicants no notice it was automated, and no way to appeal",
@@ -206,7 +206,7 @@ export const ETHICS_AND_BIAS_THREAD = {
     safe: {
       heading: "Pax",
       framing:
-        "Meet Pax. They run a service that screens benefit applications and treated the auto-scoring as a decision about people:",
+        "Meet Pax, a benefits caseworker. They run a service that screens benefit applications and treated the auto-scoring as a decision about people:",
       items: [
         "ran a GBA Plus and an Algorithmic Impact Assessment before building, and published it",
         "kept the AI as a recommendation, with a person making the final call",

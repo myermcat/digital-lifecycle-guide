@@ -135,10 +135,15 @@ export const THREADS = {
     slug: "joined-up-delivery",
     path: "/thread/joined-up-delivery",
   },
-  "component-end-of-life": {
-    title: "Component end of life",
-    slug: "component-end-of-life",
-    path: "/thread/component-end-of-life",
+  funding: {
+    title: "Funding and TB submissions",
+    slug: "funding",
+    path: "/thread/funding",
+  },
+  "change-management": {
+    title: "Change management",
+    slug: "change-management",
+    path: "/thread/change-management",
   },
 } as const;
 

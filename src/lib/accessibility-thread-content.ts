@@ -3,7 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { THREADS } from "@/lib/guide-strings";
-import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
+import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -60,7 +60,7 @@ export const ACCESSIBILITY_THREAD = {
     {
       text: "Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is.",
       internalLinks: [
-        { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+        { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
       ] satisfies InternalPhraseLink[],
       externalLinks: [
         { phrase: "Accessibility Conformance Report", linkKey: "a11y-toolkit-procurement" },
@@ -170,7 +170,7 @@ export const ACCESSIBILITY_THREAD = {
               { phrase: "Digital Accessibility Toolkit", linkKey: "a11y-toolkit-procurement" },
             ] satisfies ExternalPhraseLink[],
             internalLinks: [
-              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+              { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],
@@ -201,7 +201,7 @@ export const ACCESSIBILITY_THREAD = {
     title: "Two ways to do accessibility",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They treated accessibility as a final check on the grant portal:",
+      framing: "Meet Vell, a program officer. They treated accessibility as a final check on the grant portal:",
       items: [
         "bolted it on at the end, with one automated scan the week before launch, on the website only, not the PDF decision letters or the mobile app",
         "never tested with a real person",
@@ -211,7 +211,7 @@ export const ACCESSIBILITY_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They built accessibility into the grant portal from the first sketch:",
+      framing: "Meet Pax, a program officer. They built accessibility into the grant portal from the first sketch:",
       items: [
         "designed for keyboard and screen-reader use, with EN 301 549 (WCAG 2.1 AA) as the bar",
         "required an Accessibility Conformance Report from the supplier of the case-management tool, and checked it",
@@ -239,7 +239,7 @@ export const ACCESSIBILITY_THREAD = {
               { phrase: "EN 301 549", linkKey: "can-asc-en-301-549" },
             ] satisfies ExternalPhraseLink[],
             internalLinks: [
-              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+              { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],

@@ -166,7 +166,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
     risky: {
       heading: "Vell",
       framing:
-        "Meet Vell. They built a change-of-address form for one program and stopped there:",
+        "Meet Vell, a service manager. They built a change-of-address form for one program and stopped there:",
       items: [
         "never spoke to the other programs a person who moves also has to tell",
         "built no connection to other systems, so the person had to enter the same new address again with each department",
@@ -178,7 +178,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
     safe: {
       heading: "Pax",
       framing:
-        "Meet Pax. They treated moving as one journey across the services it touches:",
+        "Meet Pax, a service manager. They treated moving as one journey across the services it touches:",
       items: [
         "mapped the journey with the other programs and agreed how the address change would flow between them",
         "exposed the change through an API so the downstream services updated, and the person entered the new address once",

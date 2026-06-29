@@ -149,7 +149,7 @@ export const RELEASING_CHANGES_THREAD = {
     title: "Two ways to release changes",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They ran the tax-filing service on one big release a quarter:",
+      framing: "Meet Vell, a service manager. They ran the tax-filing service on one big release a quarter:",
       items: [
         "saved up months of changes for a single release night",
         "tested by hand at the end, then deployed everything to everyone at once",
@@ -160,7 +160,7 @@ export const RELEASING_CHANGES_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They ran the tax-filing service on small, frequent releases:",
+      framing: "Meet Pax, a service manager. They ran the tax-filing service on small, frequent releases:",
       items: [
         "released small changes every week through an automated pipeline that tested each one",
         "rolled each change out to a small share of filers first, watched it, then expanded",

@@ -7,6 +7,10 @@ import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
 import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
+import {
+  COMPONENT_END_OF_LIFE_GUIDANCE,
+  placeholderSourceHref,
+} from "@/lib/placeholder-sources";
 import { PhaseSection } from "@/components/PhaseSection";
 import { DashboardBlock } from "@/components/DashboardBlock";
 import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
@@ -100,7 +104,7 @@ function LiveMaturityPage() {
             },
             {
               label: "Manage component end of life",
-              href: threadPath("component-end-of-life"),
+              href: placeholderSourceHref(COMPONENT_END_OF_LIFE_GUIDANCE),
               description:
                 "Track when libraries, services, and bought products will reach end of supplier support, and plan replacements before risk and cost compound.",
             },

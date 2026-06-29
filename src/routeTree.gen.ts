@@ -34,6 +34,7 @@ import { Route as ReferenceDesignForTheWholeJourneyRouteImport } from './routes/
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
+import { Route as ThreadProcurementGoodContractRouteImport } from './routes/thread.procurement.good-contract'
 import { Route as ThreadProcurementPageRouteImport } from './routes/thread.procurement.$page'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
@@ -166,6 +167,12 @@ const ThreadContractingIndexRoute = ThreadContractingIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ThreadContractingRoute,
 } as any)
+const ThreadProcurementGoodContractRoute =
+  ThreadProcurementGoodContractRouteImport.update({
+    id: '/good-contract',
+    path: '/good-contract',
+    getParentRoute: () => ThreadProcurementRoute,
+  } as any)
 const ThreadProcurementPageRoute = ThreadProcurementPageRouteImport.update({
   id: '/$page',
   path: '/$page',
@@ -203,6 +210,7 @@ export interface FileRoutesByFullPath {
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
+  '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
   '/thread/procurement/': typeof ThreadProcurementIndexRoute
 }
@@ -230,6 +238,7 @@ export interface FileRoutesByTo {
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
+  '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting': typeof ThreadContractingIndexRoute
   '/thread/procurement': typeof ThreadProcurementIndexRoute
 }
@@ -260,6 +269,7 @@ export interface FileRoutesById {
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
+  '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
   '/thread/procurement/': typeof ThreadProcurementIndexRoute
 }
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/thread/procurement'
     | '/thread/contracting/$page'
     | '/thread/procurement/$page'
+    | '/thread/procurement/good-contract'
     | '/thread/contracting/'
     | '/thread/procurement/'
   fileRoutesByTo: FileRoutesByTo
@@ -318,6 +329,7 @@ export interface FileRouteTypes {
     | '/thread/$slug'
     | '/thread/contracting/$page'
     | '/thread/procurement/$page'
+    | '/thread/procurement/good-contract'
     | '/thread/contracting'
     | '/thread/procurement'
   id:
@@ -347,6 +359,7 @@ export interface FileRouteTypes {
     | '/thread/procurement'
     | '/thread/contracting/$page'
     | '/thread/procurement/$page'
+    | '/thread/procurement/good-contract'
     | '/thread/contracting/'
     | '/thread/procurement/'
   fileRoutesById: FileRoutesById
@@ -554,6 +567,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThreadContractingIndexRouteImport
       parentRoute: typeof ThreadContractingRoute
     }
+    '/thread/procurement/good-contract': {
+      id: '/thread/procurement/good-contract'
+      path: '/good-contract'
+      fullPath: '/thread/procurement/good-contract'
+      preLoaderRoute: typeof ThreadProcurementGoodContractRouteImport
+      parentRoute: typeof ThreadProcurementRoute
+    }
     '/thread/procurement/$page': {
       id: '/thread/procurement/$page'
       path: '/$page'
@@ -586,11 +606,13 @@ const ThreadContractingRouteWithChildren =
 
 interface ThreadProcurementRouteChildren {
   ThreadProcurementPageRoute: typeof ThreadProcurementPageRoute
+  ThreadProcurementGoodContractRoute: typeof ThreadProcurementGoodContractRoute
   ThreadProcurementIndexRoute: typeof ThreadProcurementIndexRoute
 }
 
 const ThreadProcurementRouteChildren: ThreadProcurementRouteChildren = {
   ThreadProcurementPageRoute: ThreadProcurementPageRoute,
+  ThreadProcurementGoodContractRoute: ThreadProcurementGoodContractRoute,
   ThreadProcurementIndexRoute: ThreadProcurementIndexRoute,
 }
 

@@ -19,6 +19,11 @@ export const EXTERNAL_LINKS = {
       "PSPC Buyer's Portal, the official source for the federal acquisitions program",
     accessibility: "public",
   },
+  "canadabuys": {
+    url: "https://canadabuys.canada.ca/en",
+    description: "CanadaBuys — federal opportunities and procurement guidance",
+    accessibility: "public",
+  },
   "procurement-policies": {
     url: "https://www.canada.ca/en/services/business/doing-business/how-to-sell/procurement-policies.html",
     description: "Plain-language overview of federal procurement policies",
@@ -293,6 +298,11 @@ export const EXTERNAL_LINKS = {
     description: "Directive on Privacy Practices (TBS)",
     accessibility: "public",
   },
+  "tbs-privacy-before-contracting": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy/privacy/guidance-document-taking-privacy-into-account-before-making-contracting-decisions.html",
+    description: "Taking Privacy into Account Before Making Contracting Decisions (TBS)",
+    accessibility: "public",
+  },
   "digital-privacy-playbook": {
     url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook.html",
     description: "Digital Privacy Playbook (TBS)",
@@ -411,7 +421,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "can-asc-en-301-549": {
-    url: "https://accessible.canada.ca/",
+    url: "https://accessible.canada.ca/creating-accessibility-standards/canasc-en-301-5492024-accessibility-requirements-ict-products-and-services",
     description: "CAN/ASC-EN 301 549:2024, Accessibility requirements for ICT",
     accessibility: "public",
   },
@@ -423,6 +433,17 @@ export const EXTERNAL_LINKS = {
   "a11y-toolkit-procurement": {
     url: "https://a11y.canada.ca/en/procurement/",
     description: "Digital Accessibility Toolkit — procurement",
+    accessibility: "public",
+  },
+  "a11y-ict-procurement-guide": {
+    url: "https://a11y.canada.ca/en/guide-for-including-accessibility-in-information-and-communication-technology-ict-related-procurement/",
+    description:
+      "Guide for Including Accessibility in ICT-Related Procurement (Digital Accessibility Toolkit)",
+    accessibility: "public",
+  },
+  "gccatalogue-accessibility-procurement": {
+    url: "https://gccatalogue.alpha.canada.ca/patterns/accessibilityprocurement-EN.html",
+    description: "Accessibility procurement language (GC Catalogue)",
     accessibility: "public",
   },
   "a11y-toolkit-test-products": {
@@ -697,6 +718,16 @@ export const EXTERNAL_LINKS = {
     description: "GC Cloud Guardrails (TBS / Shared Services Canada)",
     accessibility: "public",
   },
+  "gc-data-sovereignty-white-paper": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html",
+    description: "Government of Canada White Paper: Data Sovereignty and Public Cloud (TBS)",
+    accessibility: "public",
+  },
+  "tbs-digital-sovereignty-residency": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty.html",
+    description: "Digital sovereignty, including the Direction for Electronic Data Residency (TBS)",
+    accessibility: "public",
+  },
   "gc-use-open-standards-solutions": {
     url: "https://canada-ca.github.io/gcdigital-tools_outils-numeriquesgc/en/4-use-open-standards-solutions.html",
     description: 'GC "Use open standards and solutions" (Guideline 4, TBS)',
@@ -895,6 +926,31 @@ export const EXTERNAL_LINKS = {
   "cccs-log4j-alert": {
     url: "https://www.cyber.gc.ca/en/alerts/active-exploitation-apache-log4j-vulnerability",
     description: "CCCS, Active exploitation of Apache Log4j vulnerability",
+    accessibility: "public",
+  },
+  "pspc-security-requirements-contracting": {
+    url: "https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting.html",
+    description: "Security requirements for contracting with the Government of Canada (PSPC)",
+    accessibility: "public",
+  },
+  "psc-general-conditions-service-contract": {
+    url: "https://www.canada.ca/en/public-service-commission/corporate/about-us/doing-business-public-service-commission/general-conditions-service-contract.html",
+    description: "General Conditions of a Service Contract (PSC)",
+    accessibility: "public",
+  },
+  "tbs-service-agreements-essential-elements": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=25761",
+    description: "Guideline on Service Agreements: Essential Elements (TBS)",
+    accessibility: "public",
+  },
+  "pspc-contract-security-manual": {
+    url: "https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/contract-security-manual-contracting-government-canada/contract-security-manual.html",
+    description: "Contract Security Manual (PSPC)",
+    accessibility: "public",
+  },
+  "tbs-srcl-350-103": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/corporate/forms/350-103.html",
+    description: "Security Requirements Check List, SRCL (TBS/SCT 350-103)",
     accessibility: "public",
   },
   "open-first-whitepaper-oss-use": {

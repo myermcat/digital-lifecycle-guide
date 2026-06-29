@@ -6,14 +6,16 @@ import { PROCUREMENT_STRINGS } from "../src/lib/procurement-strings";
 import { PROCUREMENT_SUBPAGES } from "../src/lib/contracting-subpages";
 import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
+import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
+import { GOOD_CONTRACT } from "../src/lib/good-contract-content";
+import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
 import {
+  DESIGN_FOR_WHOLE_JOURNEY_PATH,
+  GOOD_CONTRACT_PATH,
   MANAGING_WHAT_YOU_BOUGHT_PATH,
+  OPTIONS_ANALYSIS_PATH,
   SOO_VS_SOW_PATH,
 } from "../src/lib/reference-paths";
-import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
-import { OPTIONS_ANALYSIS_PATH } from "../src/lib/reference-paths";
-import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "../src/lib/reference-paths";
 import { SECURITY_THREAD } from "../src/lib/security-thread-content";
 import { PRIVACY_THREAD, privacySectionsPlainText } from "../src/lib/privacy-thread-content";
 import {
@@ -345,6 +347,67 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: OPTIONS_ANALYSIS.whyThisMatters.id,
       sectionHeading: OPTIONS_ANALYSIS.whyThisMatters.title,
       text: OPTIONS_ANALYSIS.whyThisMatters.body,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+    });
+  }
+}
+
+// Reference: What a good contract looks like
+{
+  const pageTitle = GOOD_CONTRACT.title;
+  const pagePath = GOOD_CONTRACT_PATH;
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(...GOOD_CONTRACT.lead.map((paragraph) => paragraph.text), GOOD_CONTRACT.exampleNote),
+  });
+
+  const sections = [
+    {
+      sectionId: "how-to-read",
+      sectionHeading: "How to read this contract",
+      text: concat(...GOOD_CONTRACT.howToRead.intro.map((paragraph) => paragraph.text)),
+    },
+    {
+      sectionId: "the-contract",
+      sectionHeading: "The contract",
+      text: concat(
+        GOOD_CONTRACT.contractTitle,
+        GOOD_CONTRACT.parties,
+        ...GOOD_CONTRACT.articles.map((article) => `${article.title} ${article.text}`),
+        GOOD_CONTRACT.schedulesClosing,
+      ),
+    },
+    {
+      sectionId: "the-schedules",
+      sectionHeading: "The schedules",
+      text: concat(
+        ...GOOD_CONTRACT.schedules.map((schedule) =>
+          concat(
+            schedule.heading,
+            schedule.purpose,
+            ...schedule.clauses.map((clause) => `${clause.label} ${clause.text}`),
+            schedule.whyHere.text,
+          ),
+        ),
+      ),
     },
     { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
   ];

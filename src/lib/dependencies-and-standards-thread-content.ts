@@ -3,6 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
+import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -133,7 +134,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
         internalLinks: [
           {
             phrase: "minimum security requirements and notify-on-incident clauses into the contract",
-            to: THREADS.procurement.path,
+            to: GOOD_CONTRACT_PATH,
           },
         ] satisfies InternalPhraseLink[],
       },
@@ -256,7 +257,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
     title: "Two ways to handle dependencies",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They built the case-management system on whatever was quickest:",
+      framing: "Meet Vell, a service manager. They built the case-management system on whatever was quickest:",
       items: [
         "built it on one vendor's proprietary formats, with no exit plan",
         "never tracked what the service depended on",
@@ -267,7 +268,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They treated the parts as something to look after:",
+      framing: "Meet Pax, a service manager. They treated the parts as something to look after:",
       items: [
         "built on open standards and kept an exit plan, so a vendor could be changed",
         "kept a current inventory of every component and where it came from",
@@ -292,10 +293,6 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
               "The choices that matter most are made before the service is built. The team builds on open standards so the pieces stay substitutable, picks each dependency deliberately and starts the inventory, sets an exit strategy before committing to a cloud provider, and works with procurement to put security and notify-on-incident requirements in the contract. Designing to connect through open interfaces from the start is far easier than retrofitting it.",
             internalLinks: [
               { phrase: "procurement", to: THREADS.procurement.path },
-              {
-                phrase: "connect through open interfaces",
-                to: THREADS["joined-up-delivery"].path,
-              },
             ] satisfies InternalPhraseLink[],
           },
         ],

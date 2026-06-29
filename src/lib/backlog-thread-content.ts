@@ -238,7 +238,7 @@ export const BACKLOG_THREAD = {
     title: "Two ways to run a backlog",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They ran the permit renewal service off whatever came up:",
+      framing: "Meet Vell, a service manager. They ran the permit renewal service off whatever came up:",
       items: [
         "kept the work in scattered email threads, chat messages, and personal lists",
         "built whatever the loudest stakeholder asked for next, with no agreed priorities",
@@ -249,7 +249,7 @@ export const BACKLOG_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They ran the permit renewal service from one backlog:",
+      framing: "Meet Pax, a service manager. They ran the permit renewal service from one backlog:",
       items: [
         "kept a single, ordered list, every item tied to a user need",
         "prioritized by impact and effort, using MoSCoW, and revisited the order each week",

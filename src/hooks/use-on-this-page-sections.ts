@@ -2,6 +2,13 @@ import { useLayoutEffect, useState } from "react";
 import type { OnThisPageItem } from "@/lib/on-this-page";
 import { discoverPageSections } from "@/lib/discover-page-sections";
 
+function sectionsEqual(a: OnThisPageItem[], b: OnThisPageItem[]) {
+  return (
+    a.length === b.length &&
+    a.every((item, index) => item.id === b[index]?.id && item.label === b[index]?.label)
+  );
+}
+
 export function useOnThisPageSections(rootId: string | undefined) {
   const [items, setItems] = useState<OnThisPageItem[]>([]);
 
@@ -11,13 +18,28 @@ export function useOnThisPageSections(rootId: string | undefined) {
       return;
     }
 
-    const root = document.getElementById(rootId);
-    if (!root) {
-      setItems([]);
-      return;
-    }
+    let cancelled = false;
 
-    setItems(discoverPageSections(root));
+    const refresh = () => {
+      if (cancelled) return;
+
+      const root = document.getElementById(rootId);
+      if (!root) {
+        setItems([]);
+        return;
+      }
+
+      const next = discoverPageSections(root);
+      setItems((current) => (sectionsEqual(current, next) ? current : next));
+    };
+
+    refresh();
+    const raf = requestAnimationFrame(refresh);
+
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
+    };
   }, [rootId]);
 
   return items;

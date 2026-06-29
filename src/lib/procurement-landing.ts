@@ -3,7 +3,7 @@ import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PROCUREMENT_SOURCES } from "@/lib/procurement-sources";
 import { PROCUREMENT_STRINGS } from "@/lib/procurement-strings";
-import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 
 export type LinkedProse = {
   text: string;
@@ -59,6 +59,12 @@ export const PROCUREMENT_GOOD_LOOKS_CARDS: PracticeCardData[] = [
     href: procurementSubPath("put-the-practices-in-the-contract"),
     description:
       "The contract names the work the supplier must deliver, and says how you will see it being done.",
+  },
+  {
+    label: "You know what belongs in the contract",
+    href: GOOD_CONTRACT_PATH,
+    description:
+      "A plain sample agreement for the grant portal: Articles of Agreement plus nine schedules, standard backbone and service-specific clauses.",
   },
 ];
 

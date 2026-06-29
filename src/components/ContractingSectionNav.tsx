@@ -7,7 +7,8 @@ import {
 } from "@/lib/procurement-landing";
 import { PROCUREMENT_SUBPAGES, isProcurementSubPageSlug } from "@/lib/contracting-subpages";
 import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
-import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
+import { GOOD_CONTRACT } from "@/lib/good-contract-content";
 import { guideLink } from "@/lib/guide-typography";
 
 function slugFromHref(href: string) {
@@ -21,6 +22,9 @@ function cardMatchesSlug(cardHref: string, slug: string) {
 function navLabelForHref(href: string): string {
   if (href === PROCUREMENT_LANDING_PATH) {
     return PROCUREMENT_LANDING.title;
+  }
+  if (href === GOOD_CONTRACT_PATH) {
+    return GOOD_CONTRACT.title;
   }
   if (href === OPTIONS_ANALYSIS_PATH) {
     return OPTIONS_ANALYSIS.title;

@@ -1,10 +1,11 @@
 import { PHASES, THREADS, practicePath, reviewPath } from "./guide-strings";
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
-import { SOO_VS_SOW_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH, DESIGN_FOR_WHOLE_JOURNEY_PATH } from "./reference-paths";
+import { SOO_VS_SOW_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH, DESIGN_FOR_WHOLE_JOURNEY_PATH, GOOD_CONTRACT_PATH } from "./reference-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "./managing-what-you-bought-content";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "./design-for-whole-journey-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
+import { GOOD_CONTRACT } from "./good-contract-content";
 import { SUPPORT_PAGE } from "./support-content";
 import { SUPPORT_PATH } from "./support-path";
 
@@ -106,8 +107,14 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     status: "in-review",
   },
   {
-    title: THREADS["component-end-of-life"].title,
-    path: THREADS["component-end-of-life"].path,
+    title: THREADS.funding.title,
+    path: THREADS.funding.path,
+    type: "thread",
+    status: "not-started",
+  },
+  {
+    title: THREADS["change-management"].title,
+    path: THREADS["change-management"].path,
     type: "thread",
     status: "not-started",
   },
@@ -128,6 +135,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   {
     title: DESIGN_FOR_WHOLE_JOURNEY.title,
     path: DESIGN_FOR_WHOLE_JOURNEY_PATH,
+    type: "reference",
+    status: "in-review",
+  },
+  {
+    title: GOOD_CONTRACT.title,
+    path: GOOD_CONTRACT_PATH,
     type: "reference",
     status: "in-review",
   },

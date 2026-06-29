@@ -1,7 +1,7 @@
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
-import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
+import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import { THREADS } from "@/lib/guide-strings";
 import {
   threadLeadPlainText,
@@ -201,7 +201,7 @@ export const PRIVACY_THREAD = {
               },
             ] satisfies ExternalPhraseLink[],
             internalLinks: [
-              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+              { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],

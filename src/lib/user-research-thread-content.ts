@@ -162,7 +162,7 @@ export const USER_RESEARCH_THREAD = {
     title: "Two ways to do user research",
     risky: {
       heading: "Vell",
-      framing: "Meet Vell. They built the grant portal on what the team assumed applicants wanted:",
+      framing: "Meet Vell, a program officer. They built the grant portal on what the team assumed applicants wanted:",
       items: [
         "talked only to a couple of managers, never to a real applicant",
         "tested the finished service once, the week before launch",
@@ -173,7 +173,7 @@ export const USER_RESEARCH_THREAD = {
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
-      framing: "Meet Pax. They researched the grant portal with the people who would use it:",
+      framing: "Meet Pax, a program officer. They researched the grant portal with the people who would use it:",
       items: [
         "interviewed real applicants in discovery to learn what they actually needed",
         "tested prototypes with about five users each round, including someone using a screen reader, and fixed what they found",

@@ -203,8 +203,6 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     ],
     furtherReading: [],
   },
-  "component-end-of-life": placeholderThread(
-    "component-end-of-life",
-    "retiring a component before end of support",
-  ),
+  funding: placeholderThread("funding", "funding and TB submissions"),
+  "change-management": placeholderThread("change-management", "change management"),
 };

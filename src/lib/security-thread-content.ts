@@ -7,7 +7,7 @@ import type {
 } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
-import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
+import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import {
   COMPONENT_END_OF_LIFE_GUIDANCE,
   placeholderSourceHref,
@@ -110,6 +110,9 @@ export const SECURITY_THREAD = {
       externalLinks: [
         { phrase: "Third-party components", linkKey: "cyber-supply-chain-itsap10070" },
       ] satisfies ExternalPhraseLink[],
+      internalLinks: [
+        { phrase: "inventoried and watched for known problems", to: THREADS["dependencies-and-standards"].path },
+      ] satisfies InternalPhraseLink[],
     },
   ] satisfies SecurityLinkedProse[],
 
@@ -267,7 +270,7 @@ export const SECURITY_THREAD = {
           {
             text: "Security requirements are written into the contract so the supplier is held to them rather than asked nicely later.",
             internalLinks: [
-              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+              { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
           },
           {
@@ -381,7 +384,7 @@ export const SECURITY_THREAD = {
             text:
               "The team then chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
             internalLinks: [
-              { phrase: "written into the contract", to: PROCUREMENT_LANDING_PATH },
+              { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],
