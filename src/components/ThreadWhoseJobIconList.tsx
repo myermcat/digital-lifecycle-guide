@@ -68,7 +68,7 @@ export function whoseJobIconForRole(role: string): LucideIcon {
 export function ThreadWhoseJobIconList({ intro, roles, closing }: ThreadWhoseJobSection) {
   return (
     <div className={guideProse}>
-      <p>{intro}</p>
+      {intro ? <p>{intro}</p> : null}
       <ul className="mt-5 space-y-5 list-none pl-0">
         {roles.map((role) => {
           const Icon = whoseJobIconForRole(role.role);

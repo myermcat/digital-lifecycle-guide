@@ -1,0 +1,31 @@
+<svg viewBox="0 0 760 450" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <text x="380" y="40" text-anchor="middle" font-size="22" fill="#4A3B2E" font-weight="bold">When a department needs Treasury Board</text>
+
+  <!-- baseline -->
+  <line x1="120" y1="380" x2="600" y2="380" stroke="#4A3B2E" stroke-width="2"/>
+
+  <!-- Bar A: a small project, all under the limit -->
+  <rect x="180" y="266" width="120" height="114" fill="#E2BBA6" stroke="#A8492A" stroke-width="2"/>
+  <text x="240" y="312" text-anchor="middle" font-size="14" fill="#4A3B2E">approved</text>
+  <text x="240" y="330" text-anchor="middle" font-size="14" fill="#4A3B2E">on its own</text>
+  <text x="240" y="404" text-anchor="middle" font-size="16" fill="#4A3B2E">A small project</text>
+
+  <!-- Bar B: a larger project, crosses the limit -->
+  <!-- lower part: within own authority -->
+  <rect x="420" y="210" width="120" height="170" fill="#E2BBA6" stroke="#A8492A" stroke-width="2"/>
+  <text x="480" y="300" text-anchor="middle" font-size="14" fill="#4A3B2E">approved</text>
+  <text x="480" y="318" text-anchor="middle" font-size="14" fill="#4A3B2E">on its own</text>
+  <!-- upper part: above the limit -->
+  <rect x="420" y="120" width="120" height="90" fill="#A8492A" stroke="#A8492A" stroke-width="2"/>
+  <text x="480" y="158" text-anchor="middle" font-size="14" fill="#F6F1E7">needs Treasury</text>
+  <text x="480" y="176" text-anchor="middle" font-size="14" fill="#F6F1E7">Board</text>
+  <text x="480" y="404" text-anchor="middle" font-size="16" fill="#4A3B2E">A larger project</text>
+
+  <!-- the limit line -->
+  <line x1="140" y1="210" x2="612" y2="210" stroke="#A8492A" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="620" y="206" font-size="15" fill="#A8492A" font-weight="bold">the limit</text>
+  <text x="620" y="224" font-size="13" fill="#6B5B49">above this, Treasury</text>
+  <text x="620" y="240" font-size="13" fill="#6B5B49">Board must approve</text>
+
+  <text x="380" y="438" text-anchor="middle" font-size="14" fill="#6B5B49" font-style="italic">The limit is not a fixed amount. It depends on the department and the kind of project.</text>
+</svg>

@@ -228,12 +228,13 @@
   },
   {
     "id": "/thread/funding",
-    "pageTitle": "Funding and TB submissions",
+    "pageTitle": "Funding",
     "pagePath": "/thread/funding",
     "sectionId": "",
-    "sectionHeading": "Funding and TB submissions",
+    "sectionHeading": "Funding",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Every government service costs money, and someone has to approve spending it. Funding is how a service gets that money and that permission, from the first build through every year it keeps running. It is the other half of buying. Procurement is how a service is bought. Funding is how it is paid for and approved. A service can have a supplier ready to start and still go nowhere until the money and the permission are in place. This page covers three things: where the money comes from, how to tell when a service needs a fresh funding decision, and the main way a department asks for one, a Treasury Board (TB) submission.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
     "id": "/thread/change-management",
@@ -279,6 +280,15 @@
     "sectionHeading": "Design for the whole journey",
     "lifecyclePhase": "reference",
     "text": "Most of the time, people do not want to use a government service. What they want is to move to a new country, start a job, raise a child, retire. The service is the thing they have to do to get to what they actually want. The best service of all is one where the person barely has to do anything, because the parts of government that already hold the information just use it. If the tax agency already knows someone's income, that person should not have to prove it again to another department. That only works when teams and departments step back and work together. A good service mirrors what the person is trying to do. As Louise Downe, who led design for the UK government, put it: good services are verbs, and bad services are nouns."
+  },
+  {
+    "id": "/reference/approval-journey",
+    "pageTitle": "How a digital service gets approved and funded",
+    "pagePath": "/reference/approval-journey",
+    "sectionId": "",
+    "sectionHeading": "How a digital service gets approved and funded",
+    "lifecyclePhase": "reference",
+    "text": "Before a digital service is built, it has to be approved and funded. That is not one decision. It is a series of gates, run by different people, and they are easy to confuse: getting the money is not the same as getting the design approved, which is not the same as getting the project approved. This page is the map. It walks the whole journey from idea to money-in-hand, in order, and points you to the page that goes deep on each stop. Most of it happens in the Create phase, before anything is bought or built. Not every service passes through every gate, and the map says where you can skip one."
   },
   {
     "id": "/thread/procurement/good-contract",
@@ -341,7 +351,7 @@
     "sectionId": "how-a-procurement-goes",
     "sectionHeading": "How a procurement goes",
     "lifecyclePhase": "thread",
-    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. Build the team. Buying well is a team sport from the start. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one. Choose the strategy. There are two ways to buy, and for digital, agile is the default. There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity. Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases."
+    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. Build the team. Buying well is a team sport from the start. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one. Choose the strategy. There are two ways to buy, and for digital, agile is the default. There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. For the full map from idea to money-in-hand, see the approval journey. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity. Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases."
   },
   {
     "id": "/thread/procurement#traditional-vs-agile",
@@ -779,6 +789,42 @@
     "id": "/reference/design-for-the-whole-journey#sources",
     "pageTitle": "Design for the whole journey",
     "pagePath": "/reference/design-for-the-whole-journey",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "reference",
+    "text": "Sources and references."
+  },
+  {
+    "id": "/reference/approval-journey#the-journey",
+    "pageTitle": "How a digital service gets approved and funded",
+    "pagePath": "/reference/approval-journey",
+    "sectionId": "the-journey",
+    "sectionHeading": "The journey",
+    "lifecyclePhase": "reference",
+    "text": "Make the case. Name the problem and who has it before you name a solution, and weigh whether to reuse, buy, or build. A clear problem and a real look at the options is the cheapest work you will do. See Options analysis and the Procurement thread. Find the money. Work out whether the service runs on the budget your department already holds, or needs new funding, for example money set aside in a Budget. The rule that governs everything after this: no confirmed source of funds, nothing moves. See Funding. Check the design (architecture review). For a digital project, the concept case goes to your departmental architecture review board, then to the GC Enterprise Architecture Review Board, to check the design is sound and aligns with government-wide standards. This is about the design, not the money, and it happens early, before the solution is locked. Cost it. Build a whole-life cost estimate and the business case behind the ask. Your CFO and finance team own and sign off the numbers, and an early estimate is allowed to be rough as long as you say so. See Funding. Get the authority (a Treasury Board submission). If the service needs new money, a new authority, or an approval above your department's own limit, you go to the Treasury Board with a submission. If it runs on existing budget and authority, you can skip this gate. See Funding. Get project approval. The project itself needs approval to proceed, with the right expenditure authority, under the Directive on the Management of Projects and Programmes. This asks whether the project is ready and within limits. Money reaches the department. Funds flow through the Estimates, the government's spending plans that Parliament votes, on the government's schedule, not yours. This is why you start early. Now you can buy and build. With the money and the authorities in hand, you run the procurement and start delivering. See the Procurement thread."
+  },
+  {
+    "id": "/reference/approval-journey#not-every-gate",
+    "pageTitle": "How a digital service gets approved and funded",
+    "pagePath": "/reference/approval-journey",
+    "sectionId": "not-every-gate",
+    "sectionHeading": "Not every service hits every gate",
+    "lifecyclePhase": "reference",
+    "text": "A small change funded from money you already have skips the Treasury Board submission. A service with no digital build skips the architecture review. A project inside your department's own limits skips the central project approval. The map is the full set of gates; your service takes the stops that apply to it."
+  },
+  {
+    "id": "/reference/approval-journey#who-runs-the-gates",
+    "pageTitle": "How a digital service gets approved and funded",
+    "pagePath": "/reference/approval-journey",
+    "sectionId": "who-runs-the-gates",
+    "sectionHeading": "Who runs the gates",
+    "lifecyclePhase": "reference",
+    "text": "You, the business owner drive the journey: the problem, the options, the business case, and the approvals you sponsor. The CFO and finance team own the costing and the financial attestation. Your departmental review board and the GC EARB judge the architecture. A TBS analyst guides the submission, and the minister signs it."
+  },
+  {
+    "id": "/reference/approval-journey#sources",
+    "pageTitle": "How a digital service gets approved and funded",
+    "pagePath": "/reference/approval-journey",
     "sectionId": "sources",
     "sectionHeading": "Sources",
     "lifecyclePhase": "reference",
@@ -1603,6 +1649,126 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"
+  },
+  {
+    "id": "/thread/funding#where-the-money-comes-from",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "where-the-money-comes-from",
+    "sectionHeading": "Where the money comes from",
+    "lifecyclePhase": "thread",
+    "text": "A department does not hold one pot of money. A service is usually paid for from one or more of these: Money the department already has. The ongoing reference levels, sometimes called the A-base, cover most day-to-day running. A service that stays within the limit needs no submission. New money from a federal Budget. The government earmarks it in the Budget; it is not yet in the department's hands until the Treasury Board releases it through a submission. Money moved from another priority. Money the department already holds, shifted from a lower priority to this one. A Treasury Board submission does not invent money. It unlocks money already earmarked.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#when-a-service-needs-treasury-board",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "when-a-service-needs-treasury-board",
+    "sectionHeading": "When a service needs Treasury Board",
+    "lifecyclePhase": "thread",
+    "text": "A department can approve much of its own spending. Up to a set limit, it decides on its own. Above that limit, it has to ask the Treasury Board. That limit is not one national number. It depends on the department, on how well its ability to manage projects has been assessed, and on the kind of work. A department judged to handle complex projects well is trusted with a higher limit, so the same project can fall within one department's authority and exceed another's. A service needs a Treasury Board submission when any of these is true: it needs new money that has not yet been released to the department; it needs a new authority, for example permission to run a new grants program; its cost is above the department's own approval limit. A service that runs on money the department already holds, and stays inside the limit, does not need a submission.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#what-a-treasury-board-submission-is",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "what-a-treasury-board-submission-is",
+    "sectionHeading": "What a Treasury Board submission is",
+    "lifecyclePhase": "thread",
+    "text": "A Treasury Board submission is a formal request to the Treasury Board, a committee of Cabinet that controls government spending, for permission to act. Most often it asks to release funding that has been set aside, and to approve creating or changing a service. A submission is about authority as well as money. It is how a department gets permission to do things it cannot do on its own, such as start a new grants program or spend above its limit. The Government of Canada publishes full guidance on how to write one, the Treasury Board submissions overview and the Guidance for Drafters of Treasury Board Submissions. That guidance begins once a department already knows it needs a submission. This page covers what comes before: what a submission is, when one is needed, and what to prepare.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#what-to-prepare-for-a-submission",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "what-to-prepare-for-a-submission",
+    "sectionHeading": "What to prepare for a submission",
+    "lifecyclePhase": "thread",
+    "text": "A submission is built from a set of documents. A department puts these together before writing it: a cost estimate for the whole life of the service, from the finance team (see Costing below); a business case: the problem, the options that were considered, and why this one; a Gender-based Analysis Plus (GBA Plus) analysis: a way of working out who a service affects and what could make it harder for some people to use, across factors like age, disability, language, income, and where people live. A submission has to show how this analysis shaped the service. The free introductory course walks through how to do it. a legal risk assessment, written by the department's legal team; the appendices the submission template requires: a Financial appendix whenever money is involved, a Human Resources appendix when the work adds more than ten new staff, and others, for results, risks, service and digital, and official languages, when the work calls for them. One rule decides whether a submission goes anywhere: the department has to name a confirmed source of funds. The Treasury Board will not consider a request that cannot say which money will pay for it, because a submission releases money that has already been set aside, it does not conjure new money.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#costing",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "costing",
+    "sectionHeading": "Costing",
+    "lifecyclePhase": "thread",
+    "text": "A cost estimate covers the whole life of a service: building it, running it, supporting it, securing it, and retiring it at the end. The finance team produces the numbers and signs off that they stand up. An estimate carries a confidence range, and the range narrows as the work becomes clearer. A first Rough Order of Magnitude (ROM) estimate can be up to 40 percent away from the real cost. An indicative estimate narrows that to about 25 percent, and a substantive one to about 15 percent. Each estimate should say which kind it is, so an early figure is not read as a firm price. ROM ±40%  →  indicative ±25%  →  substantive ±15%",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#how-funding-goes-step-by-step",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "how-funding-goes-step-by-step",
+    "sectionHeading": "How funding goes, step by step",
+    "lifecyclePhase": "thread",
+    "text": "Getting new funding for a service follows a fairly set order: Work out what it needs. Decide whether the service can run on money the department already has, or needs new funding or a new authority. Confirm the source of funds. Make sure the money exists, in a Budget or in the department's budget. Until a source is confirmed, the Treasury Board will not consider a submission. Cost it and build the case. Produce the whole-life cost estimate and the business case behind the request. Make the submission. If the service needs new money, a new authority, or approval above the department's limit, prepare and send a Treasury Board submission. The money is released. Once approved, the funds reach the department through the government's spending plans, the Estimates, which Parliament votes on a fixed yearly cycle. Because the money is released on that cycle, a request that starts late delays the build.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#by-phase",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Funding looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Most of the funding work happens here. A department works out what the service needs, confirms a source of funds, costs the whole life of it, and makes a Treasury Board submission if one is needed. Funding approval takes months, so this starts early. A running service still has to stay funded. It runs on the budget secured for it, and that budget is watched and reported on. A renewal or an expansion needs its own funding decision, planned well before the current money runs out. Retiring a service also costs money. Moving the data, winding the service down, and closing contracts all need funding. The money for the exit is set aside before the current funding ends.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#funding-is-one-of-several-approvals",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "funding-is-one-of-several-approvals",
+    "sectionHeading": "Funding is one of several approvals",
+    "lifecyclePhase": "thread",
+    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The full path from idea to money in hand lays them out in order.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#whose-job",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Funding is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and sign off that the numbers stand up. The legal team writes the legal risk assessment. A Treasury Board Secretariat analyst guides the submission and challenges it before it goes forward. The responsible minister signs the submission.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#two-ways",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "two-ways",
+    "sectionHeading": "Two ways to fund a service",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell, a program manager. They left the money to the end: costed only the build, with one confident-looking number went ahead before the source of funds was confirmed added the Gender-based Analysis Plus near the end to fill the template The result: the request was sent back to be redone, the running costs turned out to be far higher than the single number, and the service had to cut features to stay inside its budget. Meet Pax, a program manager. They treated funding as part of the work from the start: costed the whole life of the service and said how rough the early numbers were confirmed the source of funds first, with the finance team involved early used Gender-based Analysis Plus to shape the design, so it served the people who would use it The result: the request cleared the first time, the budget matched the real cost, and the next year of funding was known in advance.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#further-reading",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "Funding New Government Initiatives: From Announcement to Money Allocation (Library of Parliament) — a clear, neutral walk from a Budget announcement, through the Estimates, to money reaching a department. Introduction to the Planning and Management of Investments, COR433 (Canada School of Public Service) — a plain-language course on how government plans and approves investments.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#sources",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
     "id": "/support#across-the-whole-lifecycle",

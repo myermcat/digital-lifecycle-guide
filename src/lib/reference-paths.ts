@@ -6,6 +6,8 @@ export const OPTIONS_ANALYSIS_PATH = "/reference/options-analysis";
 
 export const DESIGN_FOR_WHOLE_JOURNEY_PATH = "/reference/design-for-the-whole-journey";
 
+export const APPROVAL_JOURNEY_PATH = "/reference/approval-journey";
+
 export const GOOD_CONTRACT_PATH = "/thread/procurement/good-contract";
 
 /** @deprecated Flat Create-route URL from an earlier build. */

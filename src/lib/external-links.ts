@@ -988,6 +988,76 @@ export const EXTERNAL_LINKS = {
     description: "NIST SP 800-161 Rev. 1, Cybersecurity Supply Chain Risk Management Practices",
     accessibility: "public",
   },
+  "tbs-tb-submissions-overview": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/treasury-board-submissions-overview.html",
+    description: "The Treasury Board Submission Process and Best Practices (TBS)",
+    accessibility: "public",
+  },
+  "tbs-guidance-drafters-tb-submissions": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/guidance-for-drafters-of-treasury-board-submissions.html",
+    description: "Guidance for Drafters of Treasury Board Submissions (TBS)",
+    accessibility: "public",
+  },
+  "tbs-tb-submission-template-form": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/guidance/treasury-board-submission-template-form.html",
+    description: "Treasury Board submission template and appendices (TBS)",
+    accessibility: "public",
+  },
+  "tbs-tb-submission-roles": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/roles-responsibilities-treasury-board-submission-process.html",
+    description: "Roles and Responsibilities in the TB Submission Process (TBS)",
+    accessibility: "public",
+  },
+  "tbs-three-phases-submission-process": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/three-phases-submission-process.html",
+    description: "Three Phases of the Submission Process (TBS)",
+    accessibility: "public",
+  },
+  "tbs-submission-service-quality-standards": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/service-quality-standards-support-submission-reviews.html",
+    description: "Service and Quality Standards to Support Submission Reviews (TBS)",
+    accessibility: "public",
+  },
+  "tbs-cfo-attestation-cabinet-submissions": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=27256",
+    description: "Guideline on CFO Attestation for Cabinet Submissions (TBS)",
+    accessibility: "public",
+  },
+  "tbs-guide-costing": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/guidance-government-spending/guide-costing.html",
+    description: "GC Guide to Costing (TBS)",
+    accessibility: "public",
+  },
+  "tbs-guide-assessing-cost-estimates": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32818",
+    description: "Guide to Assessing Cost Estimates (TBS)",
+    accessibility: "public",
+  },
+  "tbs-directive-management-projects-programmes": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32594",
+    description: "Directive on the Management of Projects and Programmes (TBS)",
+    accessibility: "public",
+  },
+  "gba-plus-what-is": {
+    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus/what-gender-based-analysis-plus.html",
+    description: "GBA Plus, What is GBA Plus (Women and Gender Equality Canada)",
+    accessibility: "public",
+  },
+  "gba-plus-course": {
+    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus/take-course.html",
+    description: "GBA Plus, Take the course (WAGE / CSPS)",
+    accessibility: "public",
+  },
+  "lop-funding-new-government-initiatives": {
+    url: "https://lop.parl.ca/sites/PublicWebsite/default/en_CA/ResearchPublications/202132E",
+    description: "Funding New Government Initiatives: From Announcement to Money Allocation (Library of Parliament)",
+    accessibility: "public",
+  },
+  "csps-cor433": {
+    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=COR433&cm_locale=en",
+    description: "Introduction to the Planning and Management of Investments, COR433 (CSPS)",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

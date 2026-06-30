@@ -7,6 +7,7 @@ import { BacklogThreadPage } from "@/components/BacklogThreadPage";
 import { JoinedUpDeliveryThreadPage } from "@/components/JoinedUpDeliveryThreadPage";
 import { ReleasingChangesThreadPage } from "@/components/ReleasingChangesThreadPage";
 import { DependenciesAndStandardsThreadPage } from "@/components/DependenciesAndStandardsThreadPage";
+import { FundingThreadPage } from "@/components/FundingThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -23,6 +24,7 @@ import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
 import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-content";
 import { RELEASING_CHANGES_THREAD } from "@/lib/releasing-changes-thread-content";
 import { DEPENDENCIES_AND_STANDARDS_THREAD } from "@/lib/dependencies-and-standards-thread-content";
+import { FUNDING_THREAD, fundingLeadPlainText } from "@/lib/funding-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -137,6 +139,18 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "funding") {
+      return {
+        meta: [
+          { title: `${FUNDING_THREAD.title} — The Digital Lifecycle Guide` },
+          {
+            name: "description",
+            content: fundingLeadPlainText(FUNDING_THREAD.lead),
+          },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -202,6 +216,10 @@ function ThreadRoutePage() {
 
   if (slug === "dependencies-and-standards") {
     return <DependenciesAndStandardsThreadPage />;
+  }
+
+  if (slug === "funding") {
+    return <FundingThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

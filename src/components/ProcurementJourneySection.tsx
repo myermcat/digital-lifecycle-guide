@@ -17,15 +17,19 @@ function JourneyStepNumber({ n }: { n: number }) {
 }
 
 export function ProcurementJourneySection({
+  sectionId = "how-a-procurement-goes",
+  heading = "How a procurement goes",
   intro,
   steps,
 }: {
+  sectionId?: string;
+  heading?: string;
   intro: string;
   steps: ProcurementJourneyStep[];
 }) {
   return (
-    <section className="mt-10 md:mt-12 scroll-mt-24" id="how-a-procurement-goes">
-      <h2 className={`${guideSectionTitle} mb-4`}>How a procurement goes</h2>
+    <section className="mt-10 md:mt-12 scroll-mt-24" id={sectionId}>
+      <h2 className={`${guideSectionTitle} mb-4`}>{heading}</h2>
 
       <div className="mb-6 overflow-x-auto pb-1">
         <ol className="flex min-w-max gap-2 list-none pl-0">
@@ -43,7 +47,7 @@ export function ProcurementJourneySection({
         </ol>
       </div>
 
-      <p className={`${guideProse} mb-5`}>{intro}</p>
+      {intro ? <p className={`${guideProse} mb-5`}>{intro}</p> : null}
 
       <Accordion type="single" collapsible className="rounded-lg border border-border bg-card">
         {steps.map((step, index) => (
@@ -55,15 +59,24 @@ export function ProcurementJourneySection({
               </span>
             </AccordionTrigger>
             <AccordionContent className="px-5 pb-4 space-y-3">
-              <p className={`${guideProseTight} font-medium text-foreground/85`}>{step.leadIn}</p>
-              <p className={guideProseTight}>
-                {proseWithMixedLinks(step.body, {
+              <p className={`${guideProseTight} font-medium text-foreground/85`}>
+                {proseWithMixedLinks(step.leadIn, {
                   external: step.externalLinks,
                   internal: step.internalLinks,
                   anchor: step.anchorLinks,
                   placeholder: step.placeholderLinks,
                 })}
               </p>
+              {step.body ? (
+                <p className={guideProseTight}>
+                  {proseWithMixedLinks(step.body, {
+                    external: step.externalLinks,
+                    internal: step.internalLinks,
+                    anchor: step.anchorLinks,
+                    placeholder: step.placeholderLinks,
+                  })}
+                </p>
+              ) : null}
             </AccordionContent>
           </AccordionItem>
         ))}

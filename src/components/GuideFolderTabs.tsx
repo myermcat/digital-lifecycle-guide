@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export type GuideFolderTabOption<T extends string> = {
   value: T;
-  label: string;
+  label: string | ReactNode;
 };
 
 const folderTabShellClassName =
@@ -50,7 +50,12 @@ export function GuideFolderTabs<T extends string>({
       <div role="tablist" aria-label={ariaLabel} className="flex w-full gap-1">
         {options.map((opt) => {
           const selected = value === opt.value;
-          const tabLabel = opt.label.endsWith(".") ? opt.label : `${opt.label}.`;
+          const tabLabel =
+            typeof opt.label === "string"
+              ? opt.label.endsWith(".")
+                ? opt.label
+                : `${opt.label}.`
+              : opt.label;
 
           return (
             <button

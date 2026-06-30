@@ -16,7 +16,8 @@ export type SupportCalloutVariant =
   | "joined-up-delivery"
   | "releasing-changes"
   | "dependencies-and-standards"
-  | "data-stewardship";
+  | "data-stewardship"
+  | "funding";
 
 export type SupportCalloutBody = {
   text: string;
@@ -102,6 +103,9 @@ export const SUPPORT_CALLOUT_BODIES = {
       { phrase: "iterate and improve frequently", linkKey: "iterate-improve-frequently" },
     ],
   },
+  funding: {
+    text: "For funding and Treasury Board submission questions, the department's finance branch and Chief Financial Officer, and the Treasury Board Secretariat analyst assigned to the submission, are the starting contacts.",
+  },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 
 const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>> = {
@@ -116,6 +120,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   "releasing-changes": "releasing-changes",
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
+  funding: "funding",
 };
 
 export function supportCalloutVariantForThread(slug: ThreadSlug): SupportCalloutVariant {

@@ -9,7 +9,9 @@ import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-co
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
 import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
+import { APPROVAL_JOURNEY } from "../src/lib/approval-journey-content";
 import {
+  APPROVAL_JOURNEY_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_PATH,
   GOOD_CONTRACT_PATH,
   MANAGING_WHAT_YOU_BOUGHT_PATH,
@@ -50,6 +52,12 @@ import {
   DEPENDENCIES_AND_STANDARDS_THREAD,
   dependenciesAndStandardsSectionsPlainText,
 } from "../src/lib/dependencies-and-standards-thread-content";
+import {
+  FUNDING_THREAD,
+  fundingLeadPlainText,
+  fundingSectionsPlainText,
+  fundingWhoseJobPlainText,
+} from "../src/lib/funding-thread-content";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -489,6 +497,59 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.title,
       text: concat(
         ...DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.cards.map((c) => `${c.title} ${c.body}`),
+      ),
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+    });
+  }
+}
+
+// Approval journey reference — section-level records.
+{
+  const pageTitle = APPROVAL_JOURNEY.title;
+  const pagePath = APPROVAL_JOURNEY_PATH;
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(...APPROVAL_JOURNEY.intro),
+  });
+
+  const sections = [
+    {
+      sectionId: "the-journey",
+      sectionHeading: "The journey",
+      text: concat(
+        ...APPROVAL_JOURNEY.journey.steps.map(
+          (step) => `${step.title} ${step.leadIn} ${step.body}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "not-every-gate",
+      sectionHeading: "Not every service hits every gate",
+      text: APPROVAL_JOURNEY.notEveryGate,
+    },
+    {
+      sectionId: "who-runs-the-gates",
+      sectionHeading: "Who runs the gates",
+      text: concat(
+        ...APPROVAL_JOURNEY.whoseJob.roles.map((role) => `${role.role} ${role.text}`),
       ),
     },
     { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
@@ -1426,6 +1487,122 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: dependenciesKeywords,
+    });
+  }
+}
+
+// Funding thread — section-level records.
+{
+  const pageTitle = FUNDING_THREAD.title;
+  const pagePath = THREADS.funding.path;
+
+  const fundingKeywords =
+    "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: fundingLeadPlainText(FUNDING_THREAD.lead),
+    keywords: fundingKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: FUNDING_THREAD.whereMoneyComesFrom.id,
+      sectionHeading: FUNDING_THREAD.whereMoneyComesFrom.title,
+      text: concat(
+        FUNDING_THREAD.whereMoneyComesFrom.intro,
+        ...FUNDING_THREAD.whereMoneyComesFrom.items.map(
+          (item) => `${item.heading} ${item.text}`,
+        ),
+        FUNDING_THREAD.whereMoneyComesFrom.closing,
+      ),
+    },
+    {
+      sectionId: FUNDING_THREAD.whenNeedsTreasuryBoard.id,
+      sectionHeading: FUNDING_THREAD.whenNeedsTreasuryBoard.title,
+      text: fundingSectionsPlainText(FUNDING_THREAD.whenNeedsTreasuryBoard.sections),
+    },
+    {
+      sectionId: FUNDING_THREAD.whatIsSubmission.id,
+      sectionHeading: FUNDING_THREAD.whatIsSubmission.title,
+      text: fundingSectionsPlainText(FUNDING_THREAD.whatIsSubmission.sections),
+    },
+    {
+      sectionId: FUNDING_THREAD.whatToPrepare.id,
+      sectionHeading: FUNDING_THREAD.whatToPrepare.title,
+      text: fundingSectionsPlainText(FUNDING_THREAD.whatToPrepare.sections),
+    },
+    {
+      sectionId: FUNDING_THREAD.costing.id,
+      sectionHeading: FUNDING_THREAD.costing.title,
+      text: fundingSectionsPlainText(FUNDING_THREAD.costing.sections),
+    },
+    {
+      sectionId: FUNDING_THREAD.fundingSteps.id,
+      sectionHeading: FUNDING_THREAD.fundingSteps.title,
+      text: concat(
+        FUNDING_THREAD.fundingSteps.intro,
+        fundingSectionsPlainText([
+          { type: "orderedList", items: FUNDING_THREAD.fundingSteps.items },
+        ]),
+      ),
+    },
+    {
+      sectionId: FUNDING_THREAD.byPhase.id,
+      sectionHeading: FUNDING_THREAD.byPhase.title,
+      text: concat(
+        ...FUNDING_THREAD.byPhase.blocks.map((block) =>
+          fundingSectionsPlainText(
+            Array.isArray(block.popup) ? block.popup : [block.popup],
+          ),
+        ),
+      ),
+    },
+    {
+      sectionId: FUNDING_THREAD.oneOfSeveralApprovals.id,
+      sectionHeading: FUNDING_THREAD.oneOfSeveralApprovals.title,
+      text: FUNDING_THREAD.oneOfSeveralApprovals.text,
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: fundingWhoseJobPlainText(FUNDING_THREAD.whoseJob),
+    },
+    {
+      sectionId: FUNDING_THREAD.twoWaysComparison.id,
+      sectionHeading: FUNDING_THREAD.twoWaysComparison.title,
+      text: concat(
+        FUNDING_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(FUNDING_THREAD.twoWaysComparison.risky.items ?? []),
+        FUNDING_THREAD.twoWaysComparison.risky.closing ?? "",
+        FUNDING_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(FUNDING_THREAD.twoWaysComparison.safe.items ?? []),
+        FUNDING_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: concat(...FUNDING_THREAD.furtherReading.map((item) => item.text)),
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: fundingKeywords,
     });
   }
 }

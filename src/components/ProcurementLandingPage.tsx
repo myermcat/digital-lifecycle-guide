@@ -59,6 +59,8 @@ export function ProcurementLandingPage() {
 
       <ProcurementJourneySection intro={landing.journeyIntro} steps={landing.journeySteps} />
 
+      <GoodContractCallout />
+
       <TraditionalAgileComparison
         rows={landing.comparisonRows}
         caption={landing.comparisonCaption}
@@ -77,8 +79,6 @@ export function ProcurementLandingPage() {
         <p className={`${guideProse} mb-4`}>{landing.goodLooksIntro}</p>
         <PracticeCardGroup cards={PROCUREMENT_GOOD_LOOKS_CARDS} numbered />
       </section>
-
-      <GoodContractCallout />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>

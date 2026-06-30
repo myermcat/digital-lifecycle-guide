@@ -166,8 +166,8 @@ function TradeoffPanel({
 }
 
 function characterIconForHeading(heading: string): LucideIcon | null {
-  if (heading === "Vell") return UserRound;
-  if (heading === "Pax") return PersonStanding;
+  if (heading === "Vell") return PersonStanding;
+  if (heading === "Pax") return UserRound;
   return null;
 }
 

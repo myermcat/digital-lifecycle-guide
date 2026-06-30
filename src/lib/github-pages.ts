@@ -8,6 +8,7 @@ import {
   MANAGING_WHAT_YOU_BOUGHT_PATH,
   SOO_VS_SOW_PATH,
   OPTIONS_ANALYSIS_PATH,
+  APPROVAL_JOURNEY_PATH,
 } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
 import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
@@ -39,6 +40,7 @@ const THREAD_PATHS = [
   "/thread/cybersecurity",
   "/thread/releasing-changes",
   "/thread/dependencies-and-standards",
+  "/thread/funding",
 ];
 const PROCUREMENT_SUB_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
   (slug) => `/thread/procurement/${slug}`,
@@ -60,6 +62,7 @@ export const STATIC_PRERENDER_PATHS = [
   MANAGING_WHAT_YOU_BOUGHT_PATH,
   OPTIONS_ANALYSIS_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_PATH,
+  APPROVAL_JOURNEY_PATH,
   GOOD_CONTRACT_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,

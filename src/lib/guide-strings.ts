@@ -136,7 +136,7 @@ export const THREADS = {
     path: "/thread/joined-up-delivery",
   },
   funding: {
-    title: "Funding and TB submissions",
+    title: "Funding",
     slug: "funding",
     path: "/thread/funding",
   },

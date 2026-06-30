@@ -203,6 +203,5 @@ export const THREAD_CONTENT: Record<ThreadSlug, ThreadContent> = {
     ],
     furtherReading: [],
   },
-  funding: placeholderThread("funding", "funding and TB submissions"),
   "change-management": placeholderThread("change-management", "change management"),
 };

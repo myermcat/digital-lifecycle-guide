@@ -31,6 +31,7 @@ import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs
 import { Route as ReferenceOptionsAnalysisRouteImport } from './routes/reference.options-analysis'
 import { Route as ReferenceManagingWhatYouBoughtRouteImport } from './routes/reference.managing-what-you-bought'
 import { Route as ReferenceDesignForTheWholeJourneyRouteImport } from './routes/reference.design-for-the-whole-journey'
+import { Route as ReferenceApprovalJourneyRouteImport } from './routes/reference.approval-journey'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
@@ -152,6 +153,12 @@ const ReferenceDesignForTheWholeJourneyRoute =
     path: '/reference/design-for-the-whole-journey',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ReferenceApprovalJourneyRoute =
+  ReferenceApprovalJourneyRouteImport.update({
+    id: '/reference/approval-journey',
+    path: '/reference/approval-journey',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PracticeSlugRoute = PracticeSlugRouteImport.update({
   id: '/practice/$slug',
   path: '/practice/$slug',
@@ -200,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -230,6 +238,7 @@ export interface FileRoutesByTo {
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -259,6 +268,7 @@ export interface FileRoutesById {
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
+  '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/support'
     | '/practice/$slug'
+    | '/reference/approval-journey'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -321,6 +332,7 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/support'
     | '/practice/$slug'
+    | '/reference/approval-journey'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -349,6 +361,7 @@ export interface FileRouteTypes {
     | '/sunset'
     | '/support'
     | '/practice/$slug'
+    | '/reference/approval-journey'
     | '/reference/design-for-the-whole-journey'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
@@ -380,6 +393,7 @@ export interface RootRouteChildren {
   SunsetRoute: typeof SunsetRoute
   SupportRoute: typeof SupportRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
+  ReferenceApprovalJourneyRoute: typeof ReferenceApprovalJourneyRoute
   ReferenceDesignForTheWholeJourneyRoute: typeof ReferenceDesignForTheWholeJourneyRoute
   ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
   ReferenceOptionsAnalysisRoute: typeof ReferenceOptionsAnalysisRoute
@@ -546,6 +560,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenceDesignForTheWholeJourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/approval-journey': {
+      id: '/reference/approval-journey'
+      path: '/reference/approval-journey'
+      fullPath: '/reference/approval-journey'
+      preLoaderRoute: typeof ReferenceApprovalJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/practice/$slug': {
       id: '/practice/$slug'
       path: '/practice/$slug'
@@ -635,6 +656,7 @@ const rootRouteChildren: RootRouteChildren = {
   SunsetRoute: SunsetRoute,
   SupportRoute: SupportRoute,
   PracticeSlugRoute: PracticeSlugRoute,
+  ReferenceApprovalJourneyRoute: ReferenceApprovalJourneyRoute,
   ReferenceDesignForTheWholeJourneyRoute:
     ReferenceDesignForTheWholeJourneyRoute,
   ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
