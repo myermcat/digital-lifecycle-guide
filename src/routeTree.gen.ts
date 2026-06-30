@@ -27,16 +27,24 @@ import { Route as ThreadProcurementRouteImport } from './routes/thread.procureme
 import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
 import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
+import { Route as ReferenceTreasuryBoardSubmissionRouteImport } from './routes/reference.treasury-board-submission'
+import { Route as ReferenceStayingFundedRouteImport } from './routes/reference.staying-funded'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
 import { Route as ReferenceOptionsAnalysisRouteImport } from './routes/reference.options-analysis'
 import { Route as ReferenceManagingWhatYouBoughtRouteImport } from './routes/reference.managing-what-you-bought'
+import { Route as ReferenceFundingTheExitRouteImport } from './routes/reference.funding-the-exit'
 import { Route as ReferenceDesignForTheWholeJourneyRouteImport } from './routes/reference.design-for-the-whole-journey'
+import { Route as ReferenceCostingAServiceRouteImport } from './routes/reference.costing-a-service'
 import { Route as ReferenceApprovalJourneyRouteImport } from './routes/reference.approval-journey'
 import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
 import { Route as ThreadProcurementGoodContractRouteImport } from './routes/thread.procurement.good-contract'
 import { Route as ThreadProcurementPageRouteImport } from './routes/thread.procurement.$page'
+import { Route as ThreadFundingTreasuryBoardSubmissionRouteImport } from './routes/thread.funding.treasury-board-submission'
+import { Route as ThreadFundingStayingFundedRouteImport } from './routes/thread.funding.staying-funded'
+import { Route as ThreadFundingFundingTheExitRouteImport } from './routes/thread.funding.funding-the-exit'
+import { Route as ThreadFundingCostingAServiceRouteImport } from './routes/thread.funding.costing-a-service'
 import { Route as ThreadContractingPageRouteImport } from './routes/thread.contracting.$page'
 
 const SupportRoute = SupportRouteImport.update({
@@ -130,6 +138,17 @@ const ReviewSlugRoute = ReviewSlugRouteImport.update({
   path: '/review/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferenceTreasuryBoardSubmissionRoute =
+  ReferenceTreasuryBoardSubmissionRouteImport.update({
+    id: '/reference/treasury-board-submission',
+    path: '/reference/treasury-board-submission',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ReferenceStayingFundedRoute = ReferenceStayingFundedRouteImport.update({
+  id: '/reference/staying-funded',
+  path: '/reference/staying-funded',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReferenceSooVsSowRoute = ReferenceSooVsSowRouteImport.update({
   id: '/reference/soo-vs-sow',
   path: '/reference/soo-vs-sow',
@@ -147,10 +166,21 @@ const ReferenceManagingWhatYouBoughtRoute =
     path: '/reference/managing-what-you-bought',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ReferenceFundingTheExitRoute = ReferenceFundingTheExitRouteImport.update({
+  id: '/reference/funding-the-exit',
+  path: '/reference/funding-the-exit',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReferenceDesignForTheWholeJourneyRoute =
   ReferenceDesignForTheWholeJourneyRouteImport.update({
     id: '/reference/design-for-the-whole-journey',
     path: '/reference/design-for-the-whole-journey',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ReferenceCostingAServiceRoute =
+  ReferenceCostingAServiceRouteImport.update({
+    id: '/reference/costing-a-service',
+    path: '/reference/costing-a-service',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ReferenceApprovalJourneyRoute =
@@ -185,6 +215,30 @@ const ThreadProcurementPageRoute = ThreadProcurementPageRouteImport.update({
   path: '/$page',
   getParentRoute: () => ThreadProcurementRoute,
 } as any)
+const ThreadFundingTreasuryBoardSubmissionRoute =
+  ThreadFundingTreasuryBoardSubmissionRouteImport.update({
+    id: '/thread/funding/treasury-board-submission',
+    path: '/thread/funding/treasury-board-submission',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ThreadFundingStayingFundedRoute =
+  ThreadFundingStayingFundedRouteImport.update({
+    id: '/thread/funding/staying-funded',
+    path: '/thread/funding/staying-funded',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ThreadFundingFundingTheExitRoute =
+  ThreadFundingFundingTheExitRouteImport.update({
+    id: '/thread/funding/funding-the-exit',
+    path: '/thread/funding/funding-the-exit',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ThreadFundingCostingAServiceRoute =
+  ThreadFundingCostingAServiceRouteImport.update({
+    id: '/thread/funding/costing-a-service',
+    path: '/thread/funding/costing-a-service',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ThreadContractingPageRoute = ThreadContractingPageRouteImport.update({
   id: '/$page',
   path: '/$page',
@@ -208,15 +262,23 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
+  '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
+  '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
+  '/reference/staying-funded': typeof ReferenceStayingFundedRoute
+  '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/funding/costing-a-service': typeof ThreadFundingCostingAServiceRoute
+  '/thread/funding/funding-the-exit': typeof ThreadFundingFundingTheExitRoute
+  '/thread/funding/staying-funded': typeof ThreadFundingStayingFundedRoute
+  '/thread/funding/treasury-board-submission': typeof ThreadFundingTreasuryBoardSubmissionRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
@@ -239,13 +301,21 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
+  '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
+  '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
+  '/reference/staying-funded': typeof ReferenceStayingFundedRoute
+  '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/funding/costing-a-service': typeof ThreadFundingCostingAServiceRoute
+  '/thread/funding/funding-the-exit': typeof ThreadFundingFundingTheExitRoute
+  '/thread/funding/staying-funded': typeof ThreadFundingStayingFundedRoute
+  '/thread/funding/treasury-board-submission': typeof ThreadFundingTreasuryBoardSubmissionRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting': typeof ThreadContractingIndexRoute
@@ -269,15 +339,23 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
+  '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
+  '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
   '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
+  '/reference/staying-funded': typeof ReferenceStayingFundedRoute
+  '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
   '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
+  '/thread/funding/costing-a-service': typeof ThreadFundingCostingAServiceRoute
+  '/thread/funding/funding-the-exit': typeof ThreadFundingFundingTheExitRoute
+  '/thread/funding/staying-funded': typeof ThreadFundingStayingFundedRoute
+  '/thread/funding/treasury-board-submission': typeof ThreadFundingTreasuryBoardSubmissionRoute
   '/thread/procurement/$page': typeof ThreadProcurementPageRoute
   '/thread/procurement/good-contract': typeof ThreadProcurementGoodContractRoute
   '/thread/contracting/': typeof ThreadContractingIndexRoute
@@ -302,15 +380,23 @@ export interface FileRouteTypes {
     | '/support'
     | '/practice/$slug'
     | '/reference/approval-journey'
+    | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
+    | '/reference/funding-the-exit'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
+    | '/reference/staying-funded'
+    | '/reference/treasury-board-submission'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
     | '/thread/procurement'
     | '/thread/contracting/$page'
+    | '/thread/funding/costing-a-service'
+    | '/thread/funding/funding-the-exit'
+    | '/thread/funding/staying-funded'
+    | '/thread/funding/treasury-board-submission'
     | '/thread/procurement/$page'
     | '/thread/procurement/good-contract'
     | '/thread/contracting/'
@@ -333,13 +419,21 @@ export interface FileRouteTypes {
     | '/support'
     | '/practice/$slug'
     | '/reference/approval-journey'
+    | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
+    | '/reference/funding-the-exit'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
+    | '/reference/staying-funded'
+    | '/reference/treasury-board-submission'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting/$page'
+    | '/thread/funding/costing-a-service'
+    | '/thread/funding/funding-the-exit'
+    | '/thread/funding/staying-funded'
+    | '/thread/funding/treasury-board-submission'
     | '/thread/procurement/$page'
     | '/thread/procurement/good-contract'
     | '/thread/contracting'
@@ -362,15 +456,23 @@ export interface FileRouteTypes {
     | '/support'
     | '/practice/$slug'
     | '/reference/approval-journey'
+    | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
+    | '/reference/funding-the-exit'
     | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
+    | '/reference/staying-funded'
+    | '/reference/treasury-board-submission'
     | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
     | '/thread/procurement'
     | '/thread/contracting/$page'
+    | '/thread/funding/costing-a-service'
+    | '/thread/funding/funding-the-exit'
+    | '/thread/funding/staying-funded'
+    | '/thread/funding/treasury-board-submission'
     | '/thread/procurement/$page'
     | '/thread/procurement/good-contract'
     | '/thread/contracting/'
@@ -394,14 +496,22 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   PracticeSlugRoute: typeof PracticeSlugRoute
   ReferenceApprovalJourneyRoute: typeof ReferenceApprovalJourneyRoute
+  ReferenceCostingAServiceRoute: typeof ReferenceCostingAServiceRoute
   ReferenceDesignForTheWholeJourneyRoute: typeof ReferenceDesignForTheWholeJourneyRoute
+  ReferenceFundingTheExitRoute: typeof ReferenceFundingTheExitRoute
   ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
   ReferenceOptionsAnalysisRoute: typeof ReferenceOptionsAnalysisRoute
   ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
+  ReferenceStayingFundedRoute: typeof ReferenceStayingFundedRoute
+  ReferenceTreasuryBoardSubmissionRoute: typeof ReferenceTreasuryBoardSubmissionRoute
   ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
   ThreadContractingRoute: typeof ThreadContractingRouteWithChildren
   ThreadProcurementRoute: typeof ThreadProcurementRouteWithChildren
+  ThreadFundingCostingAServiceRoute: typeof ThreadFundingCostingAServiceRoute
+  ThreadFundingFundingTheExitRoute: typeof ThreadFundingFundingTheExitRoute
+  ThreadFundingStayingFundedRoute: typeof ThreadFundingStayingFundedRoute
+  ThreadFundingTreasuryBoardSubmissionRoute: typeof ThreadFundingTreasuryBoardSubmissionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -532,6 +642,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/treasury-board-submission': {
+      id: '/reference/treasury-board-submission'
+      path: '/reference/treasury-board-submission'
+      fullPath: '/reference/treasury-board-submission'
+      preLoaderRoute: typeof ReferenceTreasuryBoardSubmissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reference/staying-funded': {
+      id: '/reference/staying-funded'
+      path: '/reference/staying-funded'
+      fullPath: '/reference/staying-funded'
+      preLoaderRoute: typeof ReferenceStayingFundedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reference/soo-vs-sow': {
       id: '/reference/soo-vs-sow'
       path: '/reference/soo-vs-sow'
@@ -553,11 +677,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenceManagingWhatYouBoughtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reference/funding-the-exit': {
+      id: '/reference/funding-the-exit'
+      path: '/reference/funding-the-exit'
+      fullPath: '/reference/funding-the-exit'
+      preLoaderRoute: typeof ReferenceFundingTheExitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reference/design-for-the-whole-journey': {
       id: '/reference/design-for-the-whole-journey'
       path: '/reference/design-for-the-whole-journey'
       fullPath: '/reference/design-for-the-whole-journey'
       preLoaderRoute: typeof ReferenceDesignForTheWholeJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reference/costing-a-service': {
+      id: '/reference/costing-a-service'
+      path: '/reference/costing-a-service'
+      fullPath: '/reference/costing-a-service'
+      preLoaderRoute: typeof ReferenceCostingAServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reference/approval-journey': {
@@ -601,6 +739,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/thread/procurement/$page'
       preLoaderRoute: typeof ThreadProcurementPageRouteImport
       parentRoute: typeof ThreadProcurementRoute
+    }
+    '/thread/funding/treasury-board-submission': {
+      id: '/thread/funding/treasury-board-submission'
+      path: '/thread/funding/treasury-board-submission'
+      fullPath: '/thread/funding/treasury-board-submission'
+      preLoaderRoute: typeof ThreadFundingTreasuryBoardSubmissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thread/funding/staying-funded': {
+      id: '/thread/funding/staying-funded'
+      path: '/thread/funding/staying-funded'
+      fullPath: '/thread/funding/staying-funded'
+      preLoaderRoute: typeof ThreadFundingStayingFundedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thread/funding/funding-the-exit': {
+      id: '/thread/funding/funding-the-exit'
+      path: '/thread/funding/funding-the-exit'
+      fullPath: '/thread/funding/funding-the-exit'
+      preLoaderRoute: typeof ThreadFundingFundingTheExitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thread/funding/costing-a-service': {
+      id: '/thread/funding/costing-a-service'
+      path: '/thread/funding/costing-a-service'
+      fullPath: '/thread/funding/costing-a-service'
+      preLoaderRoute: typeof ThreadFundingCostingAServiceRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/thread/contracting/$page': {
       id: '/thread/contracting/$page'
@@ -657,15 +823,24 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   PracticeSlugRoute: PracticeSlugRoute,
   ReferenceApprovalJourneyRoute: ReferenceApprovalJourneyRoute,
+  ReferenceCostingAServiceRoute: ReferenceCostingAServiceRoute,
   ReferenceDesignForTheWholeJourneyRoute:
     ReferenceDesignForTheWholeJourneyRoute,
+  ReferenceFundingTheExitRoute: ReferenceFundingTheExitRoute,
   ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
   ReferenceOptionsAnalysisRoute: ReferenceOptionsAnalysisRoute,
   ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
+  ReferenceStayingFundedRoute: ReferenceStayingFundedRoute,
+  ReferenceTreasuryBoardSubmissionRoute: ReferenceTreasuryBoardSubmissionRoute,
   ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
   ThreadContractingRoute: ThreadContractingRouteWithChildren,
   ThreadProcurementRoute: ThreadProcurementRouteWithChildren,
+  ThreadFundingCostingAServiceRoute: ThreadFundingCostingAServiceRoute,
+  ThreadFundingFundingTheExitRoute: ThreadFundingFundingTheExitRoute,
+  ThreadFundingStayingFundedRoute: ThreadFundingStayingFundedRoute,
+  ThreadFundingTreasuryBoardSubmissionRoute:
+    ThreadFundingTreasuryBoardSubmissionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

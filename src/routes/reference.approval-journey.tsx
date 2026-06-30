@@ -1,13 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ApprovalJourneyPage } from "@/components/ApprovalJourneyPage";
-import { APPROVAL_JOURNEY } from "@/lib/approval-journey-content";
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { PHASES } from "@/lib/guide-strings";
 
 export const Route = createFileRoute("/reference/approval-journey")({
+  beforeLoad: () => {
+    throw redirect({ to: PHASES.create.href });
+  },
   head: () => ({
-    meta: [
-      { title: `${APPROVAL_JOURNEY.title} — The Digital Lifecycle Guide` },
-      { name: "description", content: APPROVAL_JOURNEY.intro[0] },
-    ],
+    meta: [{ title: `Create — The Digital Lifecycle Guide` }],
   }),
-  component: ApprovalJourneyPage,
 });

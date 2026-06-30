@@ -5,9 +5,10 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
+import { PracticeCardGroup } from "@/components/PracticeCard";
 import {
+  FUNDING_DETAIL_CARDS,
   FUNDING_HERO_ALT,
-  FUNDING_THRESHOLD_ALT,
   FUNDING_THREAD,
 } from "@/lib/funding-thread-content";
 import {
@@ -15,10 +16,9 @@ import {
   renderThreadSections,
   renderThreadWhoseJob,
 } from "@/lib/thread-rich-content";
-import { guideListIndent, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import { guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 import fundingHero from "@/assets/funding_hero.svg?url";
-import fundingThreshold from "@/assets/funding_threshold.svg?url";
 
 function FundingDollarMark({ className }: { className?: string }) {
   return (
@@ -69,12 +69,7 @@ export function FundingThreadPage() {
     title,
     lead,
     whereMoneyComesFrom,
-    whenNeedsTreasuryBoard,
-    whatIsSubmission,
-    whatToPrepare,
-    costing,
-    fundingSteps,
-    oneOfSeveralApprovals,
+    detailCards,
     whoseJob,
     twoWaysComparison,
     furtherReading,
@@ -133,47 +128,9 @@ export function FundingThreadPage() {
         <p className={`${guideProse} mt-5`}>{whereMoneyComesFrom.closing}</p>
       </section>
 
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24"
-        id={whenNeedsTreasuryBoard.id}
-      >
-        <h2 className={`${guideSectionTitle} mb-4`}>{whenNeedsTreasuryBoard.title}</h2>
-        <figure className="mb-6">
-          <img
-            src={fundingThreshold}
-            alt={FUNDING_THRESHOLD_ALT}
-            className="w-full h-auto max-w-2xl"
-            width={760}
-            height={450}
-          />
-        </figure>
-        {renderThreadSections(whenNeedsTreasuryBoard.sections)}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={whatIsSubmission.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{whatIsSubmission.title}</h2>
-        {renderThreadSections(whatIsSubmission.sections)}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={whatToPrepare.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{whatToPrepare.title}</h2>
-        {renderThreadSections(whatToPrepare.sections)}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={costing.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{costing.title}</h2>
-        {renderThreadSections(costing.sections)}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={fundingSteps.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{fundingSteps.title}</h2>
-        <p className={`${guideProse} mb-4`}>{fundingSteps.intro}</p>
-        {renderThreadSections([{ type: "orderedList", items: fundingSteps.items }])}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={oneOfSeveralApprovals.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{oneOfSeveralApprovals.title}</h2>
-        <p className={guideProse}>{renderLinkedProse(oneOfSeveralApprovals)}</p>
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={detailCards.id}>
+        <h2 className={`${guideSectionTitle} mb-5`}>{detailCards.title}</h2>
+        <PracticeCardGroup cards={FUNDING_DETAIL_CARDS} numbered />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
@@ -195,7 +152,7 @@ export function FundingThreadPage() {
       <PageFoot
         support="funding"
         furtherReading={
-          <ul className={`space-y-2 list-none pl-0 ${guideListIndent}`}>
+          <ul className="space-y-2 list-none pl-0">
             {furtherReading.map((item) => (
               <li key={item.text}>{renderLinkedProse(item)}</li>
             ))}

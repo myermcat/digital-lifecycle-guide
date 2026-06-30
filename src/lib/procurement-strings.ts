@@ -1,7 +1,8 @@
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import { GOOD_CONTRACT_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH, APPROVAL_JOURNEY_PATH } from "@/lib/reference-paths";
+import { GOOD_CONTRACT_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { PHASES } from "@/lib/guide-strings";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
@@ -127,7 +128,7 @@ export const PROCUREMENT_STRINGS = {
         body: "It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. For the full map from idea to money-in-hand, see the approval journey. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity.",
         internalLinks: [
           { phrase: "engage Treasury Board", to: "/thread/funding" },
-          { phrase: "the approval journey", to: APPROVAL_JOURNEY_PATH },
+          { phrase: "the approval journey", to: PHASES.create.href },
         ],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning, procurement delays — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
         placeholderLinks: [

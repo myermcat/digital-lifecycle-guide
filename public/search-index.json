@@ -25,7 +25,7 @@
     "sectionId": "",
     "sectionHeading": "Create",
     "lifecyclePhase": "create",
-    "text": ""
+    "text": "Create is the first stretch of a service's life: from the first idea to the day it is ready to build and run. Before any code, a service has to be shaped, approved, and paid for, and that runs through a set order of stages, each owned by different people. This page is the map of that order. Each stage below says what happens and points to the page that covers it in full. Not every service takes every stage, and the map says where one can be skipped."
   },
   {
     "id": "/live",
@@ -233,7 +233,7 @@
     "sectionId": "",
     "sectionHeading": "Funding",
     "lifecyclePhase": "thread",
-    "text": "Every government service costs money, and someone has to approve spending it. Funding is how a service gets that money and that permission, from the first build through every year it keeps running. It is the other half of buying. Procurement is how a service is bought. Funding is how it is paid for and approved. A service can have a supplier ready to start and still go nowhere until the money and the permission are in place. This page covers three things: where the money comes from, how to tell when a service needs a fresh funding decision, and the main way a department asks for one, a Treasury Board (TB) submission.",
+    "text": "Every government service costs money, and someone has to approve spending it. Funding is how a service gets that money and the permission to spend it, across its whole life: getting it built, keeping it running, and paying to retire it at the end. It is the other half of buying. Procurement is how a service is bought; funding is how it is paid for and approved. A service can have a supplier ready to start and still go nowhere until the money and the permission are in place. Most of a service's funding is more routine than people expect, because it runs on money its department already has. The demanding part comes when a service needs new money, or permission to spend above what the department can approve on its own. That means a formal request to the Treasury Board, called a submission. It is one event in a service's money story, and the rest of that story matters too.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -280,15 +280,6 @@
     "sectionHeading": "Design for the whole journey",
     "lifecyclePhase": "reference",
     "text": "Most of the time, people do not want to use a government service. What they want is to move to a new country, start a job, raise a child, retire. The service is the thing they have to do to get to what they actually want. The best service of all is one where the person barely has to do anything, because the parts of government that already hold the information just use it. If the tax agency already knows someone's income, that person should not have to prove it again to another department. That only works when teams and departments step back and work together. A good service mirrors what the person is trying to do. As Louise Downe, who led design for the UK government, put it: good services are verbs, and bad services are nouns."
-  },
-  {
-    "id": "/reference/approval-journey",
-    "pageTitle": "How a digital service gets approved and funded",
-    "pagePath": "/reference/approval-journey",
-    "sectionId": "",
-    "sectionHeading": "How a digital service gets approved and funded",
-    "lifecyclePhase": "reference",
-    "text": "Before a digital service is built, it has to be approved and funded. That is not one decision. It is a series of gates, run by different people, and they are easy to confuse: getting the money is not the same as getting the design approved, which is not the same as getting the project approved. This page is the map. It walks the whole journey from idea to money-in-hand, in order, and points you to the page that goes deep on each stop. Most of it happens in the Create phase, before anything is bought or built. Not every service passes through every gate, and the map says where you can skip one."
   },
   {
     "id": "/thread/procurement/good-contract",
@@ -795,39 +786,48 @@
     "text": "Sources and references."
   },
   {
-    "id": "/reference/approval-journey#the-journey",
-    "pageTitle": "How a digital service gets approved and funded",
-    "pagePath": "/reference/approval-journey",
-    "sectionId": "the-journey",
-    "sectionHeading": "The journey",
-    "lifecyclePhase": "reference",
-    "text": "Make the case. Name the problem and who has it before you name a solution, and weigh whether to reuse, buy, or build. A clear problem and a real look at the options is the cheapest work you will do. See Options analysis and the Procurement thread. Find the money. Work out whether the service runs on the budget your department already holds, or needs new funding, for example money set aside in a Budget. The rule that governs everything after this: no confirmed source of funds, nothing moves. See Funding. Check the design (architecture review). For a digital project, the concept case goes to your departmental architecture review board, then to the GC Enterprise Architecture Review Board, to check the design is sound and aligns with government-wide standards. This is about the design, not the money, and it happens early, before the solution is locked. Cost it. Build a whole-life cost estimate and the business case behind the ask. Your CFO and finance team own and sign off the numbers, and an early estimate is allowed to be rough as long as you say so. See Funding. Get the authority (a Treasury Board submission). If the service needs new money, a new authority, or an approval above your department's own limit, you go to the Treasury Board with a submission. If it runs on existing budget and authority, you can skip this gate. See Funding. Get project approval. The project itself needs approval to proceed, with the right expenditure authority, under the Directive on the Management of Projects and Programmes. This asks whether the project is ready and within limits. Money reaches the department. Funds flow through the Estimates, the government's spending plans that Parliament votes, on the government's schedule, not yours. This is why you start early. Now you can buy and build. With the money and the authorities in hand, you run the procurement and start delivering. See the Procurement thread."
+    "id": "/create#the-stages",
+    "pageTitle": "Create",
+    "pagePath": "/create",
+    "sectionId": "the-stages",
+    "sectionHeading": "The stages",
+    "lifecyclePhase": "create",
+    "text": "Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. Then comes where the money comes from. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, at the concept-case stage, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: building it, running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this stage. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the build. Buy and build. With the money and the approvals in place, the department runs the procurement and starts building. Procurement covers the buying."
   },
   {
-    "id": "/reference/approval-journey#not-every-gate",
-    "pageTitle": "How a digital service gets approved and funded",
-    "pagePath": "/reference/approval-journey",
-    "sectionId": "not-every-gate",
-    "sectionHeading": "Not every service hits every gate",
-    "lifecyclePhase": "reference",
-    "text": "A small change funded from money you already have skips the Treasury Board submission. A service with no digital build skips the architecture review. A project inside your department's own limits skips the central project approval. The map is the full set of gates; your service takes the stops that apply to it."
+    "id": "/create#not-every-stage",
+    "pageTitle": "Create",
+    "pagePath": "/create",
+    "sectionId": "not-every-stage",
+    "sectionHeading": "Not every service takes every stage",
+    "lifecyclePhase": "create",
+    "text": "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval. The map is the full set of stages; a service takes the ones that apply to it."
   },
   {
-    "id": "/reference/approval-journey#who-runs-the-gates",
-    "pageTitle": "How a digital service gets approved and funded",
-    "pagePath": "/reference/approval-journey",
-    "sectionId": "who-runs-the-gates",
-    "sectionHeading": "Who runs the gates",
-    "lifecyclePhase": "reference",
-    "text": "You, the business owner drive the journey: the problem, the options, the business case, and the approvals you sponsor. The CFO and finance team own the costing and the financial attestation. Your departmental review board and the GC EARB judge the architecture. A TBS analyst guides the submission, and the minister signs it."
+    "id": "/create#who-runs-the-stages",
+    "pageTitle": "Create",
+    "pagePath": "/create",
+    "sectionId": "who-runs-the-stages",
+    "sectionHeading": "Who runs the stages",
+    "lifecyclePhase": "create",
+    "text": "The business owner of the application drives the work: the problem, the options, the business case, and the approvals they sponsor. The finance team and the Chief Financial Officer (CFO) build and stand behind the cost estimate. The department's architecture review board and GC EARB judge the design. A Treasury Board Secretariat analyst guides the submission, and the responsible minister signs it."
   },
   {
-    "id": "/reference/approval-journey#sources",
-    "pageTitle": "How a digital service gets approved and funded",
-    "pagePath": "/reference/approval-journey",
+    "id": "/create#working-through-create-in-detail",
+    "pageTitle": "Create",
+    "pagePath": "/create",
+    "sectionId": "working-through-create-in-detail",
+    "sectionHeading": "Working through Create in detail",
+    "lifecyclePhase": "create",
+    "text": "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and MVP."
+  },
+  {
+    "id": "/create#sources",
+    "pageTitle": "Create",
+    "pagePath": "/create",
     "sectionId": "sources",
     "sectionHeading": "Sources",
-    "lifecyclePhase": "reference",
+    "lifecyclePhase": "create",
     "text": "Sources and references."
   },
   {
@@ -1657,57 +1657,17 @@
     "sectionId": "where-the-money-comes-from",
     "sectionHeading": "Where the money comes from",
     "lifecyclePhase": "thread",
-    "text": "A department does not hold one pot of money. A service is usually paid for from one or more of these: Money the department already has. The ongoing reference levels, sometimes called the A-base, cover most day-to-day running. A service that stays within the limit needs no submission. New money from a federal Budget. The government earmarks it in the Budget; it is not yet in the department's hands until the Treasury Board releases it through a submission. Money moved from another priority. Money the department already holds, shifted from a lower priority to this one. A Treasury Board submission does not invent money. It unlocks money already earmarked.",
+    "text": "A department does not hold one pot of money. A service is usually paid for from one or more of these: Money the department already has. The ongoing budget a department gets each year to run its existing programs, called its reference levels, or the A-base. Running a service from here, within the department's own limit, does not need a submission. New money from a federal Budget. When the government decides to pay for something new, it earmarks the money in the federal Budget. That money is promised, but it is not yet in the department's hands. Treasury Board has to release it, through a submission, before the department can spend it. Money moved from another priority. The department shifts money it already holds from one thing to this one. So a Treasury Board submission does not invent money. It unlocks money the government has already earmarked and grants the permission to spend it. That is why every submission has to name where its money comes from: the money exists, and the submission releases it.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
-    "id": "/thread/funding#when-a-service-needs-treasury-board",
+    "id": "/thread/funding#the-funding-work-in-detail",
     "pageTitle": "Funding",
     "pagePath": "/thread/funding",
-    "sectionId": "when-a-service-needs-treasury-board",
-    "sectionHeading": "When a service needs Treasury Board",
+    "sectionId": "the-funding-work-in-detail",
+    "sectionHeading": "The funding work, in detail",
     "lifecyclePhase": "thread",
-    "text": "A department can approve much of its own spending. Up to a set limit, it decides on its own. Above that limit, it has to ask the Treasury Board. That limit is not one national number. It depends on the department, on how well its ability to manage projects has been assessed, and on the kind of work. A department judged to handle complex projects well is trusted with a higher limit, so the same project can fall within one department's authority and exceed another's. A service needs a Treasury Board submission when any of these is true: it needs new money that has not yet been released to the department; it needs a new authority, for example permission to run a new grants program; its cost is above the department's own approval limit. A service that runs on money the department already holds, and stays inside the limit, does not need a submission.",
-    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
-  },
-  {
-    "id": "/thread/funding#what-a-treasury-board-submission-is",
-    "pageTitle": "Funding",
-    "pagePath": "/thread/funding",
-    "sectionId": "what-a-treasury-board-submission-is",
-    "sectionHeading": "What a Treasury Board submission is",
-    "lifecyclePhase": "thread",
-    "text": "A Treasury Board submission is a formal request to the Treasury Board, a committee of Cabinet that controls government spending, for permission to act. Most often it asks to release funding that has been set aside, and to approve creating or changing a service. A submission is about authority as well as money. It is how a department gets permission to do things it cannot do on its own, such as start a new grants program or spend above its limit. The Government of Canada publishes full guidance on how to write one, the Treasury Board submissions overview and the Guidance for Drafters of Treasury Board Submissions. That guidance begins once a department already knows it needs a submission. This page covers what comes before: what a submission is, when one is needed, and what to prepare.",
-    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
-  },
-  {
-    "id": "/thread/funding#what-to-prepare-for-a-submission",
-    "pageTitle": "Funding",
-    "pagePath": "/thread/funding",
-    "sectionId": "what-to-prepare-for-a-submission",
-    "sectionHeading": "What to prepare for a submission",
-    "lifecyclePhase": "thread",
-    "text": "A submission is built from a set of documents. A department puts these together before writing it: a cost estimate for the whole life of the service, from the finance team (see Costing below); a business case: the problem, the options that were considered, and why this one; a Gender-based Analysis Plus (GBA Plus) analysis: a way of working out who a service affects and what could make it harder for some people to use, across factors like age, disability, language, income, and where people live. A submission has to show how this analysis shaped the service. The free introductory course walks through how to do it. a legal risk assessment, written by the department's legal team; the appendices the submission template requires: a Financial appendix whenever money is involved, a Human Resources appendix when the work adds more than ten new staff, and others, for results, risks, service and digital, and official languages, when the work calls for them. One rule decides whether a submission goes anywhere: the department has to name a confirmed source of funds. The Treasury Board will not consider a request that cannot say which money will pay for it, because a submission releases money that has already been set aside, it does not conjure new money.",
-    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
-  },
-  {
-    "id": "/thread/funding#costing",
-    "pageTitle": "Funding",
-    "pagePath": "/thread/funding",
-    "sectionId": "costing",
-    "sectionHeading": "Costing",
-    "lifecyclePhase": "thread",
-    "text": "A cost estimate covers the whole life of a service: building it, running it, supporting it, securing it, and retiring it at the end. The finance team produces the numbers and signs off that they stand up. An estimate carries a confidence range, and the range narrows as the work becomes clearer. A first Rough Order of Magnitude (ROM) estimate can be up to 40 percent away from the real cost. An indicative estimate narrows that to about 25 percent, and a substantive one to about 15 percent. Each estimate should say which kind it is, so an early figure is not read as a firm price. ROM ±40%  →  indicative ±25%  →  substantive ±15%",
-    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
-  },
-  {
-    "id": "/thread/funding#how-funding-goes-step-by-step",
-    "pageTitle": "Funding",
-    "pagePath": "/thread/funding",
-    "sectionId": "how-funding-goes-step-by-step",
-    "sectionHeading": "How funding goes, step by step",
-    "lifecyclePhase": "thread",
-    "text": "Getting new funding for a service follows a fairly set order: Work out what it needs. Decide whether the service can run on money the department already has, or needs new funding or a new authority. Confirm the source of funds. Make sure the money exists, in a Budget or in the department's budget. Until a source is confirmed, the Treasury Board will not consider a submission. Cost it and build the case. Produce the whole-life cost estimate and the business case behind the request. Make the submission. If the service needs new money, a new authority, or approval above the department's limit, prepare and send a Treasury Board submission. The money is released. Once approved, the funds reach the department through the government's spending plans, the Estimates, which Parliament votes on a fixed yearly cycle. Because the money is released on that cycle, a request that starts late delays the build.",
+    "text": "The Treasury Board submission The formal request for new money or a new authority, and the hardest part of funding to get right. Costing a service Building a whole-life cost estimate that holds up, and saying how firm each number is. Staying funded once it is live Running within the budget, and planning the next funding decision before the money runs out. Funding the exit Paying for the move, the wind-down, and the contracts when a service is retired.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1721,23 +1681,13 @@
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
-    "id": "/thread/funding#funding-is-one-of-several-approvals",
-    "pageTitle": "Funding",
-    "pagePath": "/thread/funding",
-    "sectionId": "funding-is-one-of-several-approvals",
-    "sectionHeading": "Funding is one of several approvals",
-    "lifecyclePhase": "thread",
-    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The full path from idea to money in hand lays them out in order.",
-    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
-  },
-  {
     "id": "/thread/funding#whose-job",
     "pageTitle": "Funding",
     "pagePath": "/thread/funding",
     "sectionId": "whose-job",
     "sectionHeading": "Whose job it is",
     "lifecyclePhase": "thread",
-    "text": "Funding is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and sign off that the numbers stand up. The legal team writes the legal risk assessment. A Treasury Board Secretariat analyst guides the submission and challenges it before it goes forward. The responsible minister signs the submission.",
+    "text": "Funding is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs and what it should cost. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and stand behind the numbers. The fuller set of roles for a Treasury Board submission, including legal, the Treasury Board Secretariat analyst, and the minister, is on the Treasury Board submission page.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1769,6 +1719,123 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "",
+    "sectionHeading": "The Treasury Board submission",
+    "lifecyclePhase": "thread",
+    "text": "A Treasury Board submission is a formal request to the Treasury Board, a committee of Cabinet that controls government spending, for permission to act. Most often it asks to release funding that has been set aside, and to approve creating or changing a service. A submission is about authority as well as money. It is how a department gets permission to do things it cannot do on its own, such as start a new grants program or spend above its limit. The Government of Canada publishes full guidance on how to write one, the Treasury Board submissions overview and the Guidance for Drafters of Treasury Board Submissions. That guidance begins once a department already knows it needs a submission. This page covers what comes before: what one is, when it is needed, and what to prepare."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#when-a-service-needs-a-submission",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "when-a-service-needs-a-submission",
+    "sectionHeading": "When a service needs a submission",
+    "lifecyclePhase": "thread",
+    "text": "A department can approve much of its own spending. Up to a set limit, it decides on its own. Above that limit, it has to ask the Treasury Board. That limit is not one national number. It depends on the department, on how well its ability to manage projects has been assessed, and on the kind of work. A department judged to handle complex projects well is trusted with a higher limit, so the same project can fall within one department's authority and exceed another's. A service needs a submission when any of these is true: it needs new money that the government earmarked but has not yet released to the department; it needs a new authority, for example permission to run a new grants program; its cost is above the department's own approval limit. A service that runs on money the department already holds, and stays inside the limit, does not need a submission."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#what-to-prepare",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "what-to-prepare",
+    "sectionHeading": "What to prepare",
+    "lifecyclePhase": "thread",
+    "text": "A submission is built from a set of documents. A department puts these together before writing it: Cost estimate. A figure for the whole life of the service, produced by the finance team. Costing a service covers how this is built. Business case. The problem, the options that were considered, and why this one. This is shaped earlier, when the case for the service is first made. Gender-based Analysis Plus (GBA Plus). A look at who the service affects and what could make it harder for some people to use, beyond gender, at things like age, disability, language, income, and where people live. The submission has to show how this shaped the design. The free introductory course covers how to do one. Legal risk assessment. Written by the department's legal team. The required appendices. The submission template sets these out: a Financial appendix whenever money is involved, a Human Resources appendix when the work adds more than ten new staff, and others, for results, risks, service and digital, and official languages, when the work calls for them. One rule decides whether a submission goes anywhere: the department has to name a confirmed source of funds. The Treasury Board will not consider a request that cannot say which money will pay for it, because a submission releases money that is already earmarked, it does not conjure new money."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#how-it-goes-step-by-step",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "how-it-goes-step-by-step",
+    "sectionHeading": "How it goes, step by step",
+    "lifecyclePhase": "thread",
+    "text": "Once a department knows it needs a submission, the work runs in a fairly set order. Confirm the source of funds. Before anything else, the department has to know where the money will come from, a Budget allocation or its existing budget. The Treasury Board will not look at a submission that cannot name a confirmed source, so this comes first. Prepare the documents. The cost estimate, the business case, the Gender-based Analysis Plus, the legal risk assessment, and the appendices are pulled together. Each has its own owner in the department, and a missing one sends the submission back. Write and clear the submission. The department drafts the submission and gets its internal sign-offs: the Chief Financial Officer attests to the numbers, legal signs the risk assessment, and the department approves it before it goes up. Treasury Board decides. A Treasury Board Secretariat analyst reviews and challenges the submission, the responsible minister signs it, and it goes to the Board for a decision. The money is released. Once approved, the funds reach the department through the government's spending plans, the Estimates, which Parliament votes on a fixed yearly cycle. Because the money is released on that cycle, a request that starts late delays the build."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#a-submission-is-one-of-several-approvals",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "a-submission-is-one-of-several-approvals",
+    "sectionHeading": "A submission is one of several approvals",
+    "lifecyclePhase": "thread",
+    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Create page lays out the full path, from first idea to money in hand, in order."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#whose-job",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Preparing a submission is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and sign off that the numbers stand up. The legal team writes the legal risk assessment. A Treasury Board Secretariat analyst guides the submission and challenges it before it goes forward. The responsible minister signs the submission."
+  },
+  {
+    "id": "/thread/funding/treasury-board-submission#sources",
+    "pageTitle": "The Treasury Board submission",
+    "pagePath": "/thread/funding/treasury-board-submission",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references."
+  },
+  {
+    "id": "/thread/funding/costing-a-service",
+    "pageTitle": "Costing a service",
+    "pagePath": "/thread/funding/costing-a-service",
+    "sectionId": "",
+    "sectionHeading": "Costing a service",
+    "lifecyclePhase": "thread",
+    "text": "Before a department can ask for money, it has to know how much the service will cost. A cost estimate is that figure. The finance team produces it and stands behind it. The number that matters is the whole-life cost: building the service, running it, supporting it, keeping it secure, and retiring it at the end. A build-only figure looks cheaper, and it sets the service up to run short later."
+  },
+  {
+    "id": "/thread/funding/costing-a-service#an-estimate-has-a-confidence-range",
+    "pageTitle": "Costing a service",
+    "pagePath": "/thread/funding/costing-a-service",
+    "sectionId": "an-estimate-has-a-confidence-range",
+    "sectionHeading": "An estimate has a confidence range",
+    "lifecyclePhase": "thread",
+    "text": "An early estimate is allowed to be rough, as long as it says how rough. The range narrows as the work becomes clearer: Rough Order of Magnitude (ROM) estimate can be up to 40 percent away from the real cost; indicative estimate narrows that to about 25 percent; substantive estimate narrows it to about 15 percent. Each estimate should say which kind it is, so an early figure is not read as a firm price. ROM ±40% → indicative ±25% → substantive ±15% The GC Guide to Costing sets out a seven-step method for building an estimate that holds up."
+  },
+  {
+    "id": "/thread/funding/staying-funded",
+    "pageTitle": "Staying funded once a service is live",
+    "pagePath": "/thread/funding/staying-funded",
+    "sectionId": "",
+    "sectionHeading": "Staying funded once a service is live",
+    "lifecyclePhase": "thread",
+    "text": "Getting a service funded is only the beginning. A running service has to stay funded, year after year, and that takes attention."
+  },
+  {
+    "id": "/thread/funding/staying-funded#what-this-takes",
+    "pageTitle": "Staying funded once a service is live",
+    "pagePath": "/thread/funding/staying-funded",
+    "sectionId": "what-this-takes",
+    "sectionHeading": "What this takes",
+    "lifecyclePhase": "thread",
+    "text": "Run within the budget. A live service runs on the money secured for it. Spending is tracked against that budget so the service does not run short partway through the year. Plan renewals early. Some funding is time-limited and runs out on a set date. The next funding decision, a renewal or an expansion, has to be started well before the current money ends, because approval takes months. Adjust when priorities shift. If the work changes, a department can move money it already holds toward the service, or has to make a fresh request for more. A service that watches its funding stays ahead of the moment the money runs out. A service that does not often finds out too late, and has to cut features or pause work to get through the year."
+  },
+  {
+    "id": "/thread/funding/funding-the-exit",
+    "pageTitle": "Funding the exit",
+    "pagePath": "/thread/funding/funding-the-exit",
+    "sectionId": "",
+    "sectionHeading": "Funding the exit",
+    "lifecyclePhase": "thread",
+    "text": "Retiring or replacing a service is not free. The move costs money, and so does shutting the old service down cleanly. A department that has not budgeted for the exit can find itself stuck paying for a service it wants to leave."
+  },
+  {
+    "id": "/thread/funding/funding-the-exit#what-costs-money-at-the-end",
+    "pageTitle": "Funding the exit",
+    "pagePath": "/thread/funding/funding-the-exit",
+    "sectionId": "what-costs-money-at-the-end",
+    "sectionHeading": "What costs money at the end",
+    "lifecyclePhase": "thread",
+    "text": "Moving the data and the service. Getting the data out, moving it to whatever comes next, and standing up the replacement all take effort and money. The data side of the move is its own piece of work. Winding the old service down. Running two services in parallel during a transition, then decommissioning the old one, has a cost. Closing the contracts. Ending a supplier contract cleanly, and any transition support in it, is part of the bill. The money for the exit is set aside before the current funding ends, so the move is planned rather than scrambled. An exit left unfunded tends to stall, and the old service runs on at cost long after it should have gone."
   },
   {
     "id": "/support#across-the-whole-lifecycle",

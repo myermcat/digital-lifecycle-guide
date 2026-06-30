@@ -8,9 +8,15 @@ import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { guideArticleMeasure } from "@/lib/guide-article";
 import { guidePageTitle } from "@/lib/guide-typography";
 
+export type ReferenceBreadcrumbParent = {
+  title: string;
+  href: string;
+};
+
 export function ReferenceArticleLayout({
   id,
   title,
+  breadcrumbParent,
   children,
   support = "generic",
   furtherReading,
@@ -18,6 +24,7 @@ export function ReferenceArticleLayout({
 }: {
   id: string;
   title: string;
+  breadcrumbParent?: ReferenceBreadcrumbParent;
   children: ReactNode;
   support?: SupportCalloutVariant;
   furtherReading?: ReactNode;
@@ -30,6 +37,16 @@ export function ReferenceArticleLayout({
           <Link to="/" className="hover:text-foreground transition-colors">
             Home
           </Link>
+          {breadcrumbParent ? (
+            <>
+              <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
+                ›
+              </span>
+              <Link to={breadcrumbParent.href} className="hover:text-foreground transition-colors">
+                {breadcrumbParent.title}
+              </Link>
+            </>
+          ) : null}
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
           </span>

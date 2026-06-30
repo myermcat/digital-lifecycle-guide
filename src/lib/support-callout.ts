@@ -17,7 +17,8 @@ export type SupportCalloutVariant =
   | "releasing-changes"
   | "dependencies-and-standards"
   | "data-stewardship"
-  | "funding";
+  | "funding"
+  | "treasury-board-submission";
 
 export type SupportCalloutBody = {
   text: string;
@@ -104,6 +105,9 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   funding: {
+    text: "For funding questions, the department's finance branch and Chief Financial Officer are the starting contacts.",
+  },
+  "treasury-board-submission": {
     text: "For funding and Treasury Board submission questions, the department's finance branch and Chief Financial Officer, and the Treasury Board Secretariat analyst assigned to the submission, are the starting contacts.",
   },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;

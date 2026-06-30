@@ -1,15 +1,19 @@
 import {
   Briefcase,
+  ClipboardCheck,
   ClipboardList,
   Code,
+  Coins,
   FileText,
   Headset,
   LifeBuoy,
   Map,
   PenTool,
   Rocket,
+  Scale,
   Server,
   ShieldCheck,
+  Stamp,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -27,6 +31,22 @@ export function whoseJobIconForRole(role: string): LucideIcon {
 
   if (normalized.includes("business owner")) {
     return Briefcase;
+  }
+  if (
+    normalized.includes("finance team") ||
+    normalized.includes("chief financial officer") ||
+    normalized.includes("(cfo)")
+  ) {
+    return Coins;
+  }
+  if (normalized.includes("legal team") || normalized.includes("legal services")) {
+    return Scale;
+  }
+  if (normalized.includes("treasury board secretariat analyst") || normalized.includes("tbs analyst")) {
+    return ClipboardCheck;
+  }
+  if (normalized.includes("responsible minister") || normalized.includes("the minister")) {
+    return Stamp;
   }
   if (normalized.includes("product or service owner")) {
     return ClipboardList;
