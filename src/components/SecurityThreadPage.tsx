@@ -17,6 +17,7 @@ import {
   SECURITY_THREAD,
   type SecurityCloserLookBlock,
 } from "@/lib/security-thread-content";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -166,6 +167,7 @@ export function SecurityThreadPage() {
       <PageFoot
         support="security"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO.security}
         sources={sources}
       />
 

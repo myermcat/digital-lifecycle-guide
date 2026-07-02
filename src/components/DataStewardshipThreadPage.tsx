@@ -14,6 +14,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { DATA_STEWARDSHIP_THREAD } from "@/lib/data-stewardship-thread-content";
 import { DATA_STEWARDSHIP_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -125,6 +126,7 @@ export function DataStewardshipThreadPage() {
       <PageFoot
         support="data-stewardship"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO["data-stewardship"]}
         sources={sources}
       />
 

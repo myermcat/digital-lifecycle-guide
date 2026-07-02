@@ -11,6 +11,7 @@ import {
   FUNDING_HERO_ALT,
   FUNDING_THREAD,
 } from "@/lib/funding-thread-content";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -158,6 +159,7 @@ export function FundingThreadPage() {
             ))}
           </ul>
         }
+        seeAlso={SEE_ALSO.funding}
         sources={sources}
       />
 

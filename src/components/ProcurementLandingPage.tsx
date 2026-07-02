@@ -14,6 +14,7 @@ import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
+import { SEE_ALSO } from "@/lib/see-also";
 import { guideLink, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
@@ -107,6 +108,7 @@ export function ProcurementLandingPage() {
           landing.furtherReading.text,
           landing.furtherReading.externalLinks ?? [],
         )}
+        seeAlso={SEE_ALSO.procurement}
         sources={landing.sources}
       />
 

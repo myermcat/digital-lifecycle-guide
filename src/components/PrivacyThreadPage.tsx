@@ -13,6 +13,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { PRIVACY_THREAD } from "@/lib/privacy-thread-content";
 import { PRIVACY_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -116,6 +117,7 @@ export function PrivacyThreadPage() {
       <PageFoot
         support="privacy"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO.privacy}
         sources={sources}
       />
 

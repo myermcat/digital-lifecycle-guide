@@ -15,6 +15,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
 import { ACCESSIBILITY_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -133,6 +134,7 @@ export function AccessibilityThreadPage() {
       <PageFoot
         support="accessibility"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO.accessibility}
         sources={sources}
       />
 

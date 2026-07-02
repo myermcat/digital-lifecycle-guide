@@ -5,6 +5,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import { supportCalloutVariantForThread } from "@/lib/support-callout";
+import { SEE_ALSO } from "@/lib/see-also";
 import type { ThreadContent } from "@/lib/thread-content";
 import {
   guideLink,
@@ -117,6 +118,7 @@ export function CrossCuttingThreadPage({
             </ul>
           ) : undefined
         }
+        seeAlso={SEE_ALSO[content.slug]}
       />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />

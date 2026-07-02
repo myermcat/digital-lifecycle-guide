@@ -14,6 +14,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { DEPENDENCIES_AND_STANDARDS_THREAD } from "@/lib/dependencies-and-standards-thread-content";
 import { DEPENDENCIES_AND_STANDARDS_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -127,6 +128,7 @@ export function DependenciesAndStandardsThreadPage() {
       <PageFoot
         support="dependencies-and-standards"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO["dependencies-and-standards"]}
         sources={sources}
       />
 

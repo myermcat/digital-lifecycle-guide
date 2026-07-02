@@ -15,6 +15,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
 import { ETHICS_AND_BIAS_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -135,6 +136,7 @@ export function EthicsAndBiasThreadPage() {
       <PageFoot
         support="ethics-and-bias"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO["ethics-and-bias"]}
         sources={sources}
       />
 

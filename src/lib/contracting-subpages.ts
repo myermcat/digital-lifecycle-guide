@@ -126,7 +126,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
       {
         id: "what-department-does",
-        title: "What the department actually does",
+        title: "What the department does",
         paragraphs: [
           "When you build it yourself, you do the work. When you buy it, your job is to make sure the supplier does it, and does it well. That is its own kind of work, and it takes real time and attention. People sometimes treat buying as the lighter option. It usually isn't.",
           "It also means you cannot govern what you do not understand. To know whether the supplier's research was any good, someone on your side has to know what good research looks like. To know whether the security work is real, someone has to be able to read the answer. These are the same skills the rest of the playbook teaches. You are using them to govern a supplier instead of to do the work, but they are the same skills.",

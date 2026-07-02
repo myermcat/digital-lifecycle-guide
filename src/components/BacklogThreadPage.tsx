@@ -16,6 +16,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
 import { BACKLOG_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -160,6 +161,7 @@ export function BacklogThreadPage() {
       <PageFoot
         support="backlog"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO.backlog}
         sources={sources}
       />
 

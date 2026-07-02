@@ -14,6 +14,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { RELEASING_CHANGES_THREAD } from "@/lib/releasing-changes-thread-content";
 import { RELEASING_CHANGES_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -127,6 +128,7 @@ export function ReleasingChangesThreadPage() {
       <PageFoot
         support="releasing-changes"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO["releasing-changes"]}
         sources={sources}
       />
 

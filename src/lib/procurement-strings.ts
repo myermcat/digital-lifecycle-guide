@@ -47,7 +47,7 @@ export const PROCUREMENT_STRINGS = {
       "Think of this thread as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
     ],
     managingLink: {
-      lead: "Already running something you bought, or mixing a buy with managing it? That falls just outside this tour.",
+      lead: "Already running something you bought, or mixing a buy with managing it? That falls just outside this article.",
       phrase: "See what changes",
       to: MANAGING_WHAT_YOU_BOUGHT_PATH,
     },

@@ -14,6 +14,7 @@ import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
 import { USER_RESEARCH_CORE_STRIP } from "@/lib/thread-core-strip";
+import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadLead,
@@ -127,6 +128,7 @@ export function UserResearchThreadPage() {
       <PageFoot
         support="user-research"
         furtherReading={renderLinkedProse(furtherReading)}
+        seeAlso={SEE_ALSO["user-research"]}
         sources={sources}
       />
 

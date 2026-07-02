@@ -1,27 +1,31 @@
 import type { ReactNode } from "react";
+import { SeeAlso, type SeeAlsoItem } from "@/components/SeeAlso";
 import { SourcesBlock, type SourceItem } from "@/components/SourcesBlock";
 import { SupportCallout } from "@/components/SupportCallout";
 import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { guideSectionTitle, guideProse } from "@/lib/guide-typography";
 
 /**
- * Standard page foot: support callout → Further reading → Sources.
+ * Standard page foot: support callout → Further reading → See also → Sources.
  * GuideAssumptions usually follows this block on the page.
  */
 export function PageFoot({
   support = "generic",
   showSupportCallout = true,
   furtherReading,
+  seeAlso,
   sources,
   className,
 }: {
   support?: SupportCalloutVariant;
   showSupportCallout?: boolean;
   furtherReading?: ReactNode;
+  seeAlso?: SeeAlsoItem[];
   sources?: SourceItem[];
   className?: string;
 }) {
   const hasFurtherReading = furtherReading != null;
+  const hasSeeAlso = seeAlso != null && seeAlso.length > 0;
   const hasSources = sources != null && sources.length > 0;
 
   return (
@@ -33,6 +37,7 @@ export function PageFoot({
           <div className={guideProse}>{furtherReading}</div>
         </section>
       ) : null}
+      {hasSeeAlso ? <SeeAlso items={seeAlso} className="mt-0" /> : null}
       {hasSources ? <SourcesBlock items={sources} /> : null}
     </div>
   );
