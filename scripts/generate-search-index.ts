@@ -8,11 +8,9 @@ import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
-import { DESIGN_FOR_WHOLE_JOURNEY } from "../src/lib/design-for-whole-journey-content";
 import { CREATE_PHASE, createPhaseLeadPlainText, createSpinePlainText } from "../src/lib/create-phase-content";
 import { PHASES } from "../src/lib/guide-strings";
 import {
-  DESIGN_FOR_WHOLE_JOURNEY_PATH,
   GOOD_CONTRACT_PATH,
   MANAGING_WHAT_YOU_BOUGHT_PATH,
   OPTIONS_ANALYSIS_PATH,
@@ -449,69 +447,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
             schedule.whyHere.text,
           ),
         ),
-      ),
-    },
-    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
-  ];
-
-  for (const section of sections) {
-    records.push({
-      id: recordId({ pagePath, sectionId: section.sectionId }),
-      pageTitle,
-      pagePath,
-      sectionId: section.sectionId,
-      sectionHeading: section.sectionHeading,
-      lifecyclePhase: inferLifecyclePhase(pagePath),
-      text: section.text,
-    });
-  }
-}
-
-// Design for the whole journey — section-level records.
-{
-  const pageTitle = DESIGN_FOR_WHOLE_JOURNEY.title;
-  const pagePath = DESIGN_FOR_WHOLE_JOURNEY_PATH;
-
-  records.push({
-    id: recordId({ pagePath, sectionId: "" }),
-    pageTitle,
-    pagePath,
-    sectionId: "",
-    sectionHeading: pageTitle,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.paragraphs),
-  });
-
-  const sections = [
-    {
-      sectionId: DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.id,
-      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.title,
-      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.mostPeopleDoNotWant.paragraphs),
-    },
-    {
-      sectionId: DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.id,
-      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.title,
-      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.seeingTheBiggerPicture.paragraphs),
-    },
-    {
-      sectionId: DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.id,
-      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.title,
-      text: concat(
-        DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.intro,
-        DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.amaraJourney,
-        ...DESIGN_FOR_WHOLE_JOURNEY.buildingALifeInCanada.afterVisual,
-      ),
-    },
-    {
-      sectionId: DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.id,
-      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.title,
-      text: concat(...DESIGN_FOR_WHOLE_JOURNEY.yourServiceIsOneBox.paragraphs),
-    },
-    {
-      sectionId: DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.id,
-      sectionHeading: DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.title,
-      text: concat(
-        ...DESIGN_FOR_WHOLE_JOURNEY.whereToGoNext.cards.map((c) => `${c.title} ${c.body}`),
       ),
     },
     { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
@@ -1249,6 +1184,15 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
 
   const sections = [
     {
+      sectionId: JOINED_UP_DELIVERY_THREAD.wholeJourney.id,
+      sectionHeading: JOINED_UP_DELIVERY_THREAD.wholeJourney.title,
+      text: concat(
+        ...JOINED_UP_DELIVERY_THREAD.wholeJourney.paragraphs.map((item) => item.text),
+        JOINED_UP_DELIVERY_THREAD.wholeJourney.example.text,
+        ...JOINED_UP_DELIVERY_THREAD.wholeJourney.closingLeads.map((item) => item.text),
+      ),
+    },
+    {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
       text: concat(...JOINED_UP_DELIVERY_THREAD.whatGoodLooksLike.map((item) => item.text)),
@@ -1256,7 +1200,12 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
-      text: JOINED_UP_DELIVERY_THREAD.whyItMatters.text,
+      text: concat(
+        JOINED_UP_DELIVERY_THREAD.whyItMatters.lead,
+        JOINED_UP_DELIVERY_THREAD.whyItMatters.failureIntro,
+        ...JOINED_UP_DELIVERY_THREAD.whyItMatters.failureModes,
+        JOINED_UP_DELIVERY_THREAD.whyItMatters.closing.text,
+      ),
     },
     {
       sectionId: "whose-job",

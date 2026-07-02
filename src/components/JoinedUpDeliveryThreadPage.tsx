@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
+import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
@@ -22,6 +23,7 @@ import {
 } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
+  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
@@ -40,6 +42,7 @@ export function JoinedUpDeliveryThreadPage() {
   const {
     title,
     lead,
+    wholeJourney,
     whatGoodLooksLike,
     whyItMatters,
     whoseJob,
@@ -70,6 +73,22 @@ export function JoinedUpDeliveryThreadPage() {
 
       <ThreadCoreStrip content={JOINED_UP_DELIVERY_CORE_STRIP} />
 
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={wholeJourney.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{wholeJourney.title}</h2>
+        <div className={guideProseSpace}>
+          {wholeJourney.paragraphs.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+          <EditorialNote label="Example" className="my-6 md:my-8">
+            <p className="font-semibold">{wholeJourney.example.title}</p>
+            <p className="mt-2">{wholeJourney.example.text}</p>
+          </EditorialNote>
+          {wholeJourney.closingLeads.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
         <ul className={guideArrowList}>
@@ -84,7 +103,18 @@ export function JoinedUpDeliveryThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
-        <p className={guideProse}>{renderLinkedProse(whyItMatters)}</p>
+        <div className={guideProseSpace}>
+          <p className={guideProse}>{whyItMatters.lead}</p>
+          <p className={guideProse}>{whyItMatters.failureIntro}</p>
+          <ul className={`list-disc space-y-1 ${guideListIndent}`}>
+            {whyItMatters.failureModes.map((item) => (
+              <li key={item} className={guideProse}>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className={guideProse}>{renderLinkedProse(whyItMatters.closing)}</p>
+        </div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">

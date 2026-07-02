@@ -14,7 +14,7 @@ export const PHASES = {
     subtitle:
       "Figure out what to build and deliver the first version that will go live.",
     expandedIntro:
-      "The Create phase covers figuring out what to build and delivering the first version that will go live. Each subphase has its own page.",
+      "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here.",
     deepLinkLabel: "Go to the Create phase",
   },
   live: {
@@ -23,7 +23,7 @@ export const PHASES = {
     href: "/live",
     subtitle: "Run the service after it goes live.",
     expandedIntro:
-      "The Live phase covers running a service after it goes live. Each subphase has its own page.",
+      "The longest phase, where the service is up and running and the work is keeping it useful: watching how it performs, fixing and improving it, adding capability as more people arrive, and keeping it secure and funded year after year.",
     deepLinkLabel: "Go to the Live phase",
   },
   sunset: {
@@ -32,7 +32,7 @@ export const PHASES = {
     href: "/sunset",
     subtitle: "Shut down the service or move users to what comes next.",
     expandedIntro:
-      "The Sunset phase covers ending a service or moving users to what comes next. In Canadian government, transitions are far more common than shutdowns.",
+      "Where a service reaches its end and is retired or replaced cleanly. The team plans the shutdown, moves or archives the data, and brings users safely onto whatever comes next. In government, replacing a service is far more common than shutting one down for good.",
     deepLinkLabel: "Go to the Sunset phase",
   },
 } as const;

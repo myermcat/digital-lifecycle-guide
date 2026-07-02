@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   createRootRouteWithContext,
+  redirect,
   useRouter,
   HeadContent,
   Scripts,
@@ -13,6 +14,8 @@ import appCss from "../styles.css?url";
 import favicon from "@/assets/favicon.png?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "../lib/site-meta";
+import { THREADS } from "@/lib/guide-strings";
+import { DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH } from "@/lib/reference-paths";
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
@@ -53,6 +56,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  beforeLoad: ({ location }) => {
+    if (location.pathname === DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH) {
+      throw redirect({ to: THREADS["joined-up-delivery"].path });
+    }
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },

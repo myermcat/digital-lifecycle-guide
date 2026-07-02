@@ -11,9 +11,8 @@ import { PageFoot } from "@/components/PageFoot";
 import { guideProse, guideProseSpace, guideArrowList, guideLink } from "@/lib/guide-typography";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/PhaseVisuals";
-import { PHASES } from "@/lib/guide-strings";
+import { PHASES, THREADS } from "@/lib/guide-strings";
 import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH } from "@/lib/reference-paths";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
 import { LifecycleThreeRegionsFigure } from "@/components/LifecycleThreeRegionsFigure";
 
@@ -81,7 +80,10 @@ function Index() {
             it go. The questions repeat. What changes is where you are in the life of the
             service when you ask them.
           </p>
-          <p>That life falls into three phases.</p>
+          <p>
+            That life falls into three phases: Create, Live, and Sunset. A phase is a big chapter
+            in the life of a service.
+          </p>
           <ul className={guideArrowList}>
             <li className="flex items-start gap-2.5">
               <GuideArrowBullet />
@@ -113,6 +115,12 @@ function Index() {
               </p>
             </li>
           </ul>
+          <p>
+            Each phase breaks into smaller stages, called subphases, so you can find the part that
+            matches where you are. Create has Discovery, Alpha, and MVP. Live has Stabilization,
+            Growth, and Maturity. The phase is the chapter; the subphase is the page you are on
+            within it.
+          </p>
           <GuideCallout title="Not sure which phase you are in?" className="my-10 md:my-14">
             The quickest test is where your feedback comes from. In Create it comes from
             sketches, prototypes, and conversations about what you might build. In Live it
@@ -123,12 +131,11 @@ function Index() {
             Whichever phase you are in, one idea runs under all of it: a government service is
             almost never the thing a person actually wants. It is one step in a much bigger journey
             of theirs, often spread across many departments and levels of government.{" "}
-            <Link to={DESIGN_FOR_WHOLE_JOURNEY_PATH} className={guideLink}>
-              Design for the whole journey
+            <Link to={THREADS["joined-up-delivery"].path} className={guideLink}>
+              Joined-up delivery
             </Link>{" "}
             is where that thinking starts.
           </p>
-          <p>The three phases of a digital service&apos;s life</p>
         </section>
 
         <section className="mt-6 md:mt-8">

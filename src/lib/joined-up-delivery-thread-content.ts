@@ -3,7 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
-import { DESIGN_FOR_WHOLE_JOURNEY_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -33,6 +33,40 @@ export const JOINED_UP_DELIVERY_THREAD = {
     text:
       "Joined-up delivery means making a person's whole task work from end to end, including the steps handled by other services that come before and after yours in the person's journey. A person rarely sets out to use one service; they set out to move house, start a business, or recover after a death, and that task usually crosses several services and several ways of getting help. Joined-up delivery pulls together four things: seeing the user's whole journey across every service and channel it touches, working with the teams responsible for the services on either side of yours, connecting the systems so they exchange information instead of asking the user for it twice, and keeping every channel in step so the phone line and the counter give the same answers as the website.",
   } satisfies ThreadLinkedProse,
+
+  wholeJourney: {
+    id: "your-service-is-one-box-in-a-bigger-journey",
+    title: "Your service is one box in a bigger journey",
+    paragraphs: [
+      {
+        text: "Most of the time, people do not want to use a government service. What they want is to move to a new country, start a job, raise a child, retire. The service is the thing they have to do to get to what they actually want. As Louise Downe, who led design for the UK government, put it: good services are verbs, and bad services are nouns.",
+        externalLinks: [
+          {
+            phrase: "good services are verbs, and bad services are nouns",
+            linkKey: "uk-home-office-service-design",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Government touches those big moments, but the services for any one of them are split into fragments, spread across departments and across federal, provincial, and municipal government. A person has to work out, on their own, what to do and when.",
+        bold: [{ phrase: "split into fragments" }],
+      },
+    ] satisfies ThreadLinkedProse[],
+    example: {
+      title: "Building a life in Canada.",
+      text: "Take Amara, a nurse moving to Canada for work. Her goal is simple: live and work here, with her kids in school. To get there she has to get permission to come (permanent residence, IRCC; if her job requires it, her employer first gets a labour market assessment, ESDC), be admitted at the border (CBSA), get a Social Insurance Number before she can be paid (Service Canada), open a bank account, apply for a provincial health card and in some provinces wait three months for coverage, get a driver's licence, have her nursing credentials recognised by the provincial regulator, enrol her kids in school, and file taxes to receive the Canada Child Benefit and the GST credit (CRA). Months later she has to track when her permanent residence card needs renewing and when she can apply for citizenship. No single office sees Amara's whole journey. Each sees its own form. She is the only one who lives the whole thing, and she has to work out the order, the timing, and which office to call.",
+    },
+    closingLeads: [
+      {
+        text: "Your service is one box in that larger journey. The part your team owns, the visa, the health card, the tax account, can be flawless on its own and the journey can still fall apart if the boxes do not join up.",
+        bold: [{ phrase: "Your service is one box in that larger journey." }],
+      },
+      {
+        text: "Map the journey first, then design your box to fit it. Mapping the whole journey shows where it breaks between offices, which is where people get lost, scared, or stuck, and it shows the steps that repeat and the parts that could be reused.",
+        bold: [{ phrase: "Map the journey first, then design your box to fit it." }],
+      },
+    ] satisfies ThreadLinkedProse[],
+  },
 
   whatGoodLooksLike: [
     {
@@ -69,12 +103,21 @@ export const JOINED_UP_DELIVERY_THREAD = {
   ] satisfies JoinedUpDeliveryLinkedProse[],
 
   whyItMatters: {
-    text:
-      "A person does not experience your service on its own; they experience the whole task, and that task usually runs across departments and across channels. When the parts do not join up, the person is left to work out how government is organized just to get something done, give the same details to one service after another, or fall into the gap between an online form and a phone line that knows nothing about it. The Government of Canada sets the expectation in its digital standards, to design around user needs and collaborate widely, and the Policy on Service and Digital makes it firmer: services are expected to take an omni-channel approach that gives an integrated client experience, with service standards for every channel in use and non-digital channels kept open so people have a choice. Joining a service up is also how a person who needs the phone or the counter is not left behind as more of the service moves online.",
-    externalLinks: [
-      { phrase: "digital standards", linkKey: "digital-standards" },
-      { phrase: "Policy on Service and Digital", linkKey: "guideline-service-digital" },
-    ] satisfies ExternalPhraseLink[],
+    lead:
+      "A person does not experience your service on its own. They experience the whole task, and that task usually runs across departments and across channels.",
+    failureIntro: "When the parts do not join up, the person is left to:",
+    failureModes: [
+      "work out how government is organized just to get something done;",
+      "give the same details to one service after another;",
+      "or fall into the gap between an online form and a phone line that knows nothing about it.",
+    ],
+    closing: {
+      text: "The Government of Canada sets the expectation in its digital standards, to design around user needs and collaborate widely, and the Policy on Service and Digital makes it firmer: services should take an omni-channel approach that gives an integrated client experience, with service standards for every channel and non-digital channels kept open so people have a choice. Joining a service up is also how someone who needs the phone or the counter is not left behind as more of the service moves online.",
+      externalLinks: [
+        { phrase: "digital standards", linkKey: "digital-standards" },
+        { phrase: "Policy on Service and Digital", linkKey: "policy-on-service-and-digital" },
+      ] satisfies ExternalPhraseLink[],
+    } satisfies ThreadLinkedProse,
   },
 
   whoseJob: {
@@ -109,53 +152,75 @@ export const JOINED_UP_DELIVERY_THREAD = {
         title: "Map the whole journey first.",
         sections: [
           {
-            text:
-              "Before you can join a service up, you need to see the whole task the way the person does. Two views help. A service landscape shows the task from government's side: every touchpoint, the back-office steps, and which organizations are involved. An experience map shows it from the user's side, where they wait, repeat themselves, or hit a dead end. Mapping starts by working out who else delivers the journey, because complicated tasks cross organizational boundaries, and then bringing those teams together so everyone shares one picture. The map then shows the quick wins (often content fixes) and the bigger changes worth making.",
-            externalLinks: [
-              { phrase: "service landscape", linkKey: "uk-service-manual-whole-problem" },
-              { phrase: "experience map", linkKey: "nng-journey-mapping-101" },
-            ] satisfies ExternalPhraseLink[],
-            internalLinks: [
-              {
-                phrase: "see the whole task the way the person does",
-                to: DESIGN_FOR_WHOLE_JOURNEY_PATH,
-              },
-            ] satisfies InternalPhraseLink[],
+            text: "Before you can join a service up, you have to see the whole task the way the person does, the way Amara does above. Two maps help:",
           },
-        ],
+          {
+            type: "unorderedList",
+            items: [
+              {
+                bold: "A service landscape",
+                text: " shows the task from government's side: every touchpoint, the back-office steps, and which organizations are involved.",
+              },
+              {
+                text: "An experience map shows it from the user's side, where they wait, repeat themselves, or hit a dead end.",
+                externalLinks: [
+                  { phrase: "experience map", linkKey: "nng-journey-mapping-101" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
+            text: "Mapping starts by working out who else delivers the journey, then bringing those teams together so everyone shares one picture. The map shows the quick wins, often content fixes, and the bigger changes worth making.",
+          },
+        ] satisfies ThreadContentSection[],
       },
       {
-        title: "Connect the systems so people enter their information only once.",
+        title: "Connect the systems so people enter details once.",
         sections: [
           {
-            text:
-              "Services join up technically when they can exchange information. The Government of Canada's standards on APIs describe how a service exposes its functionality so other systems, internal teams, partners, and the public, can use it, with the principle to build once and serve every channel from it. The enterprise architecture expectation is to reuse what exists and expose functionality as services rather than rebuild. Interoperability is not only a technical question: the European model describes four layers, legal, organizational, semantic, and technical, and a useful test for the semantic layer is that what one service sends is what the next service understands. The payoff for the user is plain: they give their information to government once.",
+            text: "Services join up technically when they can exchange information. The Government of Canada's standards on APIs describe how a service exposes its functionality so other systems can use it, on the principle of build once and serve every channel. The enterprise architecture expectation is to reuse what exists and expose functionality as services rather than rebuild.",
             externalLinks: [
               { phrase: "standards on APIs", linkKey: "gc-standards-on-apis" },
               {
                 phrase: "reuse what exists and expose functionality as services",
                 linkKey: "gc-ea-application-architecture",
               },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text: "The European model sets out four layers: legal, organizational, semantic, and technical. A useful test for the semantic layer is that what one service sends is what the next service understands.",
+            bold: [{ phrase: "Interoperability is more than technical." }],
+            externalLinks: [
               { phrase: "European model", linkKey: "european-interoperability-framework" },
             ] satisfies ExternalPhraseLink[],
           },
-        ],
+          {
+            text: "The payoff for the user is plain: they give their information to government once.",
+          },
+        ] satisfies ThreadContentSection[],
       },
       {
         title: "Keep every channel in step.",
         sections: [
           {
-            text:
-              "Most services run across more than one channel, a mix of online, phone, letter, and in person. Keeping them in step means a change to the online service reaches the others at the same time: the call-centre scripts are updated, the letters are revised, and the front-line staff who answer questions know how the current service works. It also means looking after the people who cannot or will not use the online service on their own. That help, by phone or in person, is called assisted digital support, and people may need it for reasons of trust, confidence, internet access, digital skills, or motivation. As more of a service moves online, the phone and the counter stay easy to find, because pushing digital take-up should never make the other channels harder to reach.",
+            text: "Most services run across more than one channel: online, phone, letter, in person. Keeping them in step means a change to the online service reaches the others at the same time. The call-centre scripts are updated, the letters are revised, and the front-line staff who answer questions know how the current service works.",
             externalLinks: [
               {
                 phrase: "front-line staff who answer questions",
                 linkKey: "uk-service-standard-point-3-join-channels",
               },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text: "It also means looking after the people who cannot or will not use the online service on their own. That help, by phone or in person, is called assisted digital support, and people may need it for reasons of trust, confidence, internet access, digital skills, or motivation.",
+            externalLinks: [
               { phrase: "assisted digital support", linkKey: "uk-assisted-digital-introduction" },
             ] satisfies ExternalPhraseLink[],
           },
-        ],
+          {
+            text: "As more of a service moves online, the phone and the counter stay easy to find. Pushing digital take-up should never make the other channels harder to reach.",
+          },
+        ] satisfies ThreadContentSection[],
       },
     ] satisfies JoinedUpDeliveryCloserLookBlock[],
   },
@@ -210,7 +275,6 @@ export const JOINED_UP_DELIVERY_THREAD = {
             internalLinks: [
               { phrase: "reuse or connect to", to: OPTIONS_ANALYSIS_PATH },
               { phrase: "research", to: THREADS["user-research"].path },
-              { phrase: "maps the whole task", to: DESIGN_FOR_WHOLE_JOURNEY_PATH },
             ] satisfies InternalPhraseLink[],
           },
         ],
@@ -250,7 +314,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
 
   furtherReading: {
     text:
-      "The UK Service Standard on solving a whole problem for users sets out the principle behind facet 1. To see how the Canadian Digital Service frames the end-to-end craft, its service design practice lays out the principles and methods a designer uses to plan a service across digital and offline channels. For the working-across-boundaries part, GOV.UK's guide to working across organisational boundaries with service communities gives you a practical way to set up and run a cross-organization group around a shared user journey. And if you want the whole journey expressed as named stages, Australia's service design and delivery process walks a service from discovery through to live.",
+      "The UK Service Standard on solving a whole problem for users sets out the principle behind facet 1 and reads across cleanly. To see how the Canadian Digital Service frames the end-to-end craft, its service design practice lays out the principles and methods a designer uses to plan a service across digital and offline channels. For the working-across-boundaries part, GOV.UK's guide to working across organisational boundaries with service communities gives you a practical way to set up and run a cross-organization group around a shared user journey. And if you want the whole journey expressed as named stages, Australia's service design and delivery process walks a service from discovery through to live so you understand the problem before building the solution.",
     externalLinks: [
       { phrase: "solving a whole problem for users", linkKey: "uk-service-standard-point-2" },
       { phrase: "service design practice", linkKey: "cds-service-design-at-cds" },
@@ -266,6 +330,12 @@ export const JOINED_UP_DELIVERY_THREAD = {
   },
 
   sources: [
+    {
+      label: "Inspiration and source",
+      linkKey: "uk-home-office-service-design" satisfies ExternalLinkKey,
+      description:
+        'UK Home Office, Service design at the Home Office (Louise Downe, "good services are verbs") — https://hodigital.blog.gov.uk/2016/04/27/service-design-at-the-home-office/',
+    },
     {
       label: "Governing instrument",
       linkKey: "policy-on-service-and-digital" satisfies ExternalLinkKey,
@@ -366,7 +436,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
       label: "Supporting reference",
       linkKey: "dta-service-design-delivery-process" satisfies ExternalLinkKey,
       description:
-        "Australia DTA Service design and delivery process — https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
+        "Digital Transformation Agency (Australia), Service design and delivery process — https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
     },
   ] satisfies SourceItem[],
 } as const;

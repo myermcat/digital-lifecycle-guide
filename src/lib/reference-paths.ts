@@ -4,6 +4,7 @@ export const MANAGING_WHAT_YOU_BOUGHT_PATH = "/reference/managing-what-you-bough
 
 export const OPTIONS_ANALYSIS_PATH = "/reference/options-analysis";
 
+/** @deprecated Redirects to /thread/joined-up-delivery; content lives on the Joined-up delivery thread page. */
 export const DESIGN_FOR_WHOLE_JOURNEY_PATH = "/reference/design-for-the-whole-journey";
 
 export const TREASURY_BOARD_SUBMISSION_PATH = "/thread/funding/treasury-board-submission";
