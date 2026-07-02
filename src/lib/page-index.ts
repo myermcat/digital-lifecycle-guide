@@ -31,15 +31,15 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
 
-  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-review" },
-  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-progress" },
+  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
+  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "not-started" },
   { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
-  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-progress" },
-  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-progress" },
-  { title: "MVP", path: "/create-mvp", type: "subphase", status: "in-progress" },
-  { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "in-progress" },
-  { title: "Growth", path: "/live-growth", type: "subphase", status: "in-progress" },
+  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "not-started" },
+  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "not-started" },
+  { title: "MVP", path: "/create-mvp", type: "subphase", status: "not-started" },
+  { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "not-started" },
+  { title: "Growth", path: "/live-growth", type: "subphase", status: "not-started" },
   { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
@@ -47,7 +47,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     title: THREADS["monitoring-and-instrumentation"].title,
     path: THREADS["monitoring-and-instrumentation"].path,
     type: "thread",
-    status: "in-progress",
+    status: "not-started",
   },
   {
     title: THREADS["releasing-changes"].title,
