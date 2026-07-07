@@ -88,7 +88,7 @@ export function TeamCapabilityThreadPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
-        <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>The cost of skipping it</h2>
         {renderThreadWhyItMattersPitch(whyItMatters)}
       </section>
 

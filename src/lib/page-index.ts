@@ -49,12 +49,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
   {
-    title: THREADS["monitoring-and-instrumentation"].title,
-    path: THREADS["monitoring-and-instrumentation"].path,
-    type: "thread",
-    status: "not-started",
-  },
-  {
     title: THREADS["releasing-changes"].title,
     path: THREADS["releasing-changes"].path,
     type: "thread",
@@ -119,6 +113,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   {
     title: THREADS["change-management"].title,
     path: THREADS["change-management"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["monitoring-and-instrumentation"].title,
+    path: THREADS["monitoring-and-instrumentation"].path,
     type: "thread",
     status: "in-review",
   },

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 68 900 232" font-family="Georgia, 'Times New Roman', serif">
+<!-- LEFT: not instrumented -->
+<rect x="120" y="70" width="150" height="95" rx="12" fill="#F6F1E7" stroke="#C9BBA4" stroke-width="2"/>
+<rect x="152" y="90" width="86" height="56" rx="5" fill="none" stroke="#8C7B63" stroke-width="2"/>
+<text x="195" y="133" text-anchor="middle" font-size="40" fill="#8C7B63">?</text>
+<text x="195" y="200" text-anchor="middle" font-size="18" fill="#4A3B2E">Not instrumented</text>
+<text x="195" y="223" text-anchor="middle" font-size="13" font-style="italic" fill="#8C7B63">no signals, so the team guesses</text>
+<!-- divider -->
+<line x1="450" y1="72" x2="450" y2="175" stroke="#DBD1BF" stroke-width="1.5"/>
+<rect x="432" y="108" width="36" height="30" fill="#F8F4E9"/>
+<text x="450" y="130" text-anchor="middle" font-size="19" font-style="italic" fill="#8C7B63">vs</text>
+<!-- RIGHT: instrumented -->
+<rect x="545" y="78" width="78" height="80" rx="10" fill="#F6F1E7" stroke="#A8492A" stroke-width="2"/>
+<polyline points="558,120 566,120 571,106 579,134 584,120 610,120" fill="none" stroke="#A8492A" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="636" cy="118" r="2" fill="#A8492A"/><circle cx="649" cy="118" r="3" fill="#A8492A"/><circle cx="663" cy="118" r="4" fill="#A8492A"/>
+<rect x="685" y="82" width="96" height="72" rx="8" fill="#F6F1E7" stroke="#A8492A" stroke-width="2"/>
+<line x1="700" y1="140" x2="700" y2="124" stroke="#A8492A" stroke-width="4.5"/>
+<line x1="716" y1="140" x2="716" y2="110" stroke="#A8492A" stroke-width="4.5"/>
+<line x1="732" y1="140" x2="732" y2="118" stroke="#A8492A" stroke-width="4.5"/>
+<line x1="748" y1="140" x2="748" y2="102" stroke="#A8492A" stroke-width="4.5"/>
+<line x1="764" y1="140" x2="764" y2="114" stroke="#A8492A" stroke-width="4.5"/>
+<text x="663" y="200" text-anchor="middle" font-size="18" fill="#4A3B2E">Instrumented</text>
+<text x="663" y="223" text-anchor="middle" font-size="13" font-style="italic" fill="#8C7B63">signals show how it is doing</text>
+<!-- caption -->
+<text x="450" y="275" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">The same service. The difference is whether it was built to show what it is doing.</text>
+</svg>

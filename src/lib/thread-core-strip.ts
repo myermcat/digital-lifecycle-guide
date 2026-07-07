@@ -6,6 +6,8 @@ export type ThreadCoreStripTile = {
 export type ThreadCoreStripContent = {
   heading: string;
   tiles: readonly ThreadCoreStripTile[];
+  /** When true, show arrows between tiles (a genuine sequence). */
+  sequenced?: boolean;
 };
 
 export const SECURITY_CORE_STRIP = {
@@ -125,6 +127,16 @@ export const CHANGE_MANAGEMENT_CORE_STRIP = {
     { label: "Able", gloss: "people know how, and can actually do it" },
     { label: "Kept going", gloss: "the change is reinforced until it sticks" },
   ],
+} as const satisfies ThreadCoreStripContent;
+
+export const MONITORING_CORE_STRIP = {
+  heading: "INSTRUMENT, SEE, ACT",
+  tiles: [
+    { label: "Instrument it", gloss: "build in the signals" },
+    { label: "See it", gloss: "a few signals that matter" },
+    { label: "Act on it", gloss: "signals become work" },
+  ],
+  sequenced: true,
 } as const satisfies ThreadCoreStripContent;
 
 function threadCoreStripAltText(content: ThreadCoreStripContent): string {

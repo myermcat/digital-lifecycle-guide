@@ -10,6 +10,7 @@ import { DependenciesAndStandardsThreadPage } from "@/components/DependenciesAnd
 import { FundingThreadPage } from "@/components/FundingThreadPage";
 import { TeamCapabilityThreadPage } from "@/components/TeamCapabilityThreadPage";
 import { ChangeManagementThreadPage } from "@/components/ChangeManagementThreadPage";
+import { MonitoringAndInstrumentationThreadPage } from "@/components/MonitoringAndInstrumentationThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -35,6 +36,10 @@ import {
   CHANGE_MANAGEMENT_THREAD,
   changeManagementLeadPlainText,
 } from "@/lib/change-management-thread-content";
+import {
+  MONITORING_THREAD,
+  monitoringLeadPlainText,
+} from "@/lib/monitoring-and-instrumentation-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -185,6 +190,20 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "monitoring-and-instrumentation") {
+      return {
+        meta: [
+          {
+            title: `${MONITORING_THREAD.title} — The Digital Lifecycle Guide`,
+          },
+          {
+            name: "description",
+            content: monitoringLeadPlainText(MONITORING_THREAD.lead),
+          },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -262,6 +281,10 @@ function ThreadRoutePage() {
 
   if (slug === "change-management") {
     return <ChangeManagementThreadPage />;
+  }
+
+  if (slug === "monitoring-and-instrumentation") {
+    return <MonitoringAndInstrumentationThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

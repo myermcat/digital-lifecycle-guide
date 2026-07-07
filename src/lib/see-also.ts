@@ -5,7 +5,7 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
     {
       label: "Releasing changes",
       to: "/thread/releasing-changes",
-      gloss: "shipping changes safely once you can see the service",
+      gloss: "releasing changes safely once you can see the service",
     },
     { label: "Security", to: "/thread/security", gloss: "detection and response lean on monitoring" },
     { label: "Backlog", to: "/thread/backlog", gloss: "what the signals feed into next" },
@@ -26,7 +26,7 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
       to: "/thread/change-management",
       gloss: "helping people adopt the change",
     },
-    { label: "Backlog", to: "/thread/backlog", gloss: "deciding what ships next" },
+    { label: "Backlog", to: "/thread/backlog", gloss: "deciding what to release next" },
   ],
   "dependencies-and-standards": [
     {
@@ -166,7 +166,7 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
     {
       label: "Releasing changes",
       to: "/thread/releasing-changes",
-      gloss: "turning backlog into shipped work",
+      gloss: "turning backlog into delivered work",
     },
     {
       label: "Monitoring and instrumentation",
@@ -223,7 +223,7 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
     {
       label: "Releasing changes",
       to: "/thread/releasing-changes",
-      gloss: "the technical side of shipping change",
+      gloss: "the technical side of releasing a change",
     },
   ],
 };

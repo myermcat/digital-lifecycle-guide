@@ -21,6 +21,7 @@ export type SupportCalloutVariant =
   | "funding"
   | "team-capability"
   | "change-management"
+  | "monitoring-and-instrumentation"
   | "treasury-board-submission";
 
 export type SupportCalloutBody = {
@@ -132,6 +133,16 @@ export const SUPPORT_CALLOUT_BODIES = {
       },
     ],
   },
+  "monitoring-and-instrumentation": {
+    text: "For performance measurement and web analytics, the Government of Canada's performance measurement and web analytics community, and the analytics tooling and guidance at design.canada.ca and Canada.ca analytics, are starting points.",
+    externalLinks: [
+      {
+        phrase: "Monitoring and measuring task success",
+        linkKey: "monitoring-measuring-task-success",
+      },
+      { phrase: "Canada.ca analytics", linkKey: "canada-ca-analytics" },
+    ],
+  },
   "treasury-board-submission": {
     text: "For funding and Treasury Board submission questions, the department's finance branch and Chief Financial Officer, and the Treasury Board Secretariat analyst assigned to the submission, are the starting contacts.",
   },
@@ -152,6 +163,7 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   funding: "funding",
   "team-capability": "team-capability",
   "change-management": "change-management",
+  "monitoring-and-instrumentation": "monitoring-and-instrumentation",
 };
 
 export function supportCalloutVariantForThread(slug: ThreadSlug): SupportCalloutVariant {

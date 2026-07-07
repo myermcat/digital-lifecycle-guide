@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 362" font-family="Georgia, 'Times New Roman', serif">
+<!-- BOX 1: Instrument it -->
+<rect x="60" y="50" width="180" height="100" rx="14" fill="#F6F1E7" stroke="#C9BBA4" stroke-width="1.5"/>
+<rect x="112" y="84" width="30" height="30" rx="3" fill="none" stroke="#A8492A" stroke-width="2.2"/>
+<polyline points="142,100 152,100 158,86 166,116 172,100 188,100" fill="none" stroke="#A8492A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="150" y="177" text-anchor="middle" font-size="18" fill="#4A3B2E">Instrument it</text>
+<text x="150" y="197" text-anchor="middle" font-size="13" font-style="italic" fill="#8C7B63">build in the signals</text>
+<!-- arrow 1 -->
+<line x1="250" y1="100" x2="336" y2="100" stroke="#A8492A" stroke-width="3"/><path d="M336,92 L352,100 L336,108 Z" fill="#A8492A"/>
+<!-- BOX 2: See it -->
+<rect x="360" y="50" width="180" height="100" rx="14" fill="#F6F1E7" stroke="#C9BBA4" stroke-width="1.5"/>
+<rect x="418" y="76" width="64" height="46" rx="3" fill="none" stroke="#A8492A" stroke-width="2.2"/>
+<line x1="430" y1="112" x2="430" y2="100" stroke="#A8492A" stroke-width="4"/>
+<line x1="443" y1="112" x2="443" y2="90" stroke="#A8492A" stroke-width="4"/>
+<line x1="456" y1="112" x2="456" y2="96" stroke="#A8492A" stroke-width="4"/>
+<line x1="469" y1="112" x2="469" y2="86" stroke="#A8492A" stroke-width="4"/>
+<text x="450" y="177" text-anchor="middle" font-size="18" fill="#4A3B2E">See it</text>
+<text x="450" y="197" text-anchor="middle" font-size="13" font-style="italic" fill="#8C7B63">a few that matter</text>
+<!-- arrow 2 -->
+<line x1="550" y1="100" x2="636" y2="100" stroke="#A8492A" stroke-width="3"/><path d="M636,92 L652,100 L636,108 Z" fill="#A8492A"/>
+<!-- BOX 3: Act on it -->
+<rect x="660" y="50" width="180" height="100" rx="14" fill="#F6F1E7" stroke="#C9BBA4" stroke-width="1.5"/>
+<path d="M718,86 l5,5 l9,-10" fill="none" stroke="#A8492A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="740" y1="86" x2="782" y2="86" stroke="#A8492A" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M718,100 l5,5 l9,-10" fill="none" stroke="#A8492A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="740" y1="100" x2="782" y2="100" stroke="#A8492A" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M718,114 l5,5 l9,-10" fill="none" stroke="#A8492A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><line x1="740" y1="114" x2="782" y2="114" stroke="#A8492A" stroke-width="2.4" stroke-linecap="round"/>
+<text x="750" y="177" text-anchor="middle" font-size="18" fill="#4A3B2E">Act on it</text>
+<text x="750" y="197" text-anchor="middle" font-size="13" font-style="italic" fill="#8C7B63">signals become work</text>
+<!-- return loop: wraps around the outside, enters box 1 from the left -->
+<path d="M840,100 H864 Q880,100 880,116 V264 Q880,280 864,280 H36 Q20,280 20,264 V116 Q20,100 36,100" fill="none" stroke="#A8492A" stroke-width="2.6"/>
+<path d="M36,92 L52,100 L36,108 Z" fill="#A8492A"/>
+<text x="450" y="305" text-anchor="middle" font-size="14" font-style="italic" fill="#8C7B63">and keep going</text>
+<text x="450" y="343" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">The signals only matter once they turn into work.</text>
+</svg>

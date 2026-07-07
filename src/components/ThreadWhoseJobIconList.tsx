@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   Stamp,
   Users,
+  Activity,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -74,6 +75,12 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   }
   if (normalized.includes("service team")) {
     return Code;
+  }
+  if (normalized.includes("product manager")) {
+    return Activity;
+  }
+  if (normalized.includes("runs the service in production")) {
+    return Headset;
   }
   if (normalized.includes("change management community")) {
     return LifeBuoy;

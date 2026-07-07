@@ -110,15 +110,6 @@
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
-    "id": "/thread/monitoring-and-instrumentation",
-    "pageTitle": "Monitoring and instrumentation",
-    "pagePath": "/thread/monitoring-and-instrumentation",
-    "sectionId": "",
-    "sectionHeading": "Monitoring and instrumentation",
-    "lifecyclePhase": "thread",
-    "text": ""
-  },
-  {
     "id": "/thread/releasing-changes",
     "pageTitle": "Releasing changes",
     "pagePath": "/thread/releasing-changes",
@@ -198,16 +189,6 @@
     "keywords": "AIA GBA Plus automated decision-making AI bias fairness"
   },
   {
-    "id": "/thread/team-capability",
-    "pageTitle": "Team capability",
-    "pagePath": "/thread/team-capability",
-    "sectionId": "",
-    "sectionHeading": "Team capability",
-    "lifecyclePhase": "thread",
-    "text": "Every government service needs people to build it and keep it running: to work out what users need, design it, write the code, test it, watch it in production, and fix it when it breaks. Team capability is having the right mix of those skills, and holding enough of them inside the department so the service can be governed and moved even when a supplier does the building. Most digital work runs best as one multidisciplinary team, a single group that covers the skills a service needs from start to finish. The Government of Canada builds this capability in-house under the Directive on Digital Talent and the GC Digital Talent Strategy. In practice, most departments do not have deep digital teams of their own, and across the Government of Canada in-house capability is thin. Much of the building is done by suppliers. That makes the in-house side matter even more. Even a small service needs enough people, on the team or a short call away, who understand it well enough to steer it, judge the work, and step in if a supplier leaves. A capable team comes down to the right roles, knowing who else you need and keeping them close, and skills kept current.",
-    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
-  },
-  {
     "id": "/thread/backlog",
     "pageTitle": "Backlog",
     "pagePath": "/thread/backlog",
@@ -238,14 +219,34 @@
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
+    "id": "/thread/team-capability",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "",
+    "sectionHeading": "Team capability",
+    "lifecyclePhase": "thread",
+    "text": "Every government service needs people to build it and keep it running: to work out what users need, design it, write the code, test it, watch it in production, and fix it when it breaks. Team capability is having the right mix of those skills, and holding enough of them inside the department so the service can be governed and moved even when a supplier does the building. Most digital work runs best as one multidisciplinary team, a single group that covers the skills a service needs from start to finish. The Government of Canada builds this capability in-house under the Directive on Digital Talent and the GC Digital Talent Strategy. In practice, most departments do not have deep digital teams of their own, and across the Government of Canada in-house capability is thin. Much of the building is done by suppliers. That makes the in-house side matter even more. Even a small service needs enough people, on the team or a short call away, who understand it well enough to steer it, judge the work, and step in if a supplier leaves. A capable team comes down to the right roles, knowing who else you need and keeping them close, and skills kept current.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
     "id": "/thread/change-management",
     "pageTitle": "Change management",
     "pagePath": "/thread/change-management",
     "sectionId": "",
     "sectionHeading": "Change management",
     "lifecyclePhase": "thread",
-    "text": "When a service is new or changes, the people who use it, and the staff who work with it, have to change how they do things. Change management is the work of helping them make that shift, so the service is taken up and used, and does not stall because people carry on the old way. This is the people side of a change. The technical side, getting a change safely into production, is releasing changes. Change management is about making people aware of the change, willing to make it, able to do it, and supported to keep it going. The Government of Canada treats adoption as what makes or breaks a digital shift, set out in the GC Information Management Strategy. Diagram: Releasing the change and Change management converge on the people who use it; when both reach them, the change gets used. Two tracks, one outcome Releasing a change and managing a change are two different jobs aimed at the same people. Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never shipped, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "text": "When a service is new or changes, the people who use it, and the staff who work with it, have to change how they do things. Change management is the work of helping them make that shift, so the service is taken up and used, and does not stall because people carry on the old way. This is the people side of a change. The technical side, getting a change safely into production, is releasing changes. Change management is about making people aware of the change, willing to make it, able to do it, and supported to keep it going. The Government of Canada treats adoption as what makes or breaks a digital shift, set out in the GC Information Management Strategy. Diagram: Releasing the change and Change management converge on the people who use it; when both reach them, the change gets used. Two tracks, one outcome Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "",
+    "sectionHeading": "Monitoring and instrumentation",
+    "lifecyclePhase": "thread",
+    "text": "A live service is sending signals about how it is doing all the time: which tasks people finish, where they get stuck, what breaks, how long things take. Monitoring is the work of collecting those signals and looking at the few that matter, so the team can see whether the service is actually working for the people who use it. Two things make that possible, in order. First, instrument the service: build it so it records what happens as people use it. Then watch a small set of signals and act on them. The instrumentation comes first, because a beautiful dashboard built on signals the service never emitted shows nothing real. This is not optional for a Government of Canada service. The Guideline on Service and Digital requires departments to measure service performance and to collect and use client feedback to improve. Monitoring is how a team meets that obligation, and how it notices a problem before it becomes a crisis. A team cannot improve what it cannot see. Diagram: Not instrumented — no signals, so the team guesses — versus instrumented — signals show how it is doing. The same service; the difference is whether it was built to show what it is doing.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
   },
   {
     "id": "/reference/soo-vs-sow",
@@ -1364,7 +1365,7 @@
     "pageTitle": "Team capability",
     "pagePath": "/thread/team-capability",
     "sectionId": "why-it-matters",
-    "sectionHeading": "Why it matters",
+    "sectionHeading": "The cost of skipping it",
     "lifecyclePhase": "thread",
     "text": "Team capability is easy to skip. A supplier can be hired to do the work, and the service still launches. The cost shows up later, and it is steep: You get locked in. With no one inside who understands the service, the supplier holds every answer and sets the price at each renewal. This is the trap avoiding lock-in is about. You cannot govern the work. To judge whether a supplier's research, security, or design is any good, someone on the department's side has to know what good looks like. Without that, the department signs off on work it cannot check. You cannot leave. Moving a service to a new supplier, or bringing it back in-house, needs people who understand it. A department that kept no one loses that option. The department falls behind its own service. Knowledge fades, the service ages, and the department ends up unable to safely change the thing it is accountable for. The Government of Canada makes this a requirement in the Directive on Digital Talent, because a department that keeps no capability cannot govern its services, cannot leave a supplier, and cannot improve what it runs.",
     "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
@@ -1436,7 +1437,7 @@
     "sectionId": "two-tracks-one-outcome",
     "sectionHeading": "Two tracks, one outcome",
     "lifecyclePhase": "thread",
-    "text": "Releasing a change and managing a change are two different jobs aimed at the same people. Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never shipped, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "text": "Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
@@ -1454,7 +1455,7 @@
     "pageTitle": "Change management",
     "pagePath": "/thread/change-management",
     "sectionId": "why-it-matters",
-    "sectionHeading": "Why it matters",
+    "sectionHeading": "The cost of skipping it",
     "lifecyclePhase": "thread",
     "text": "A change can be delivered perfectly and still fail, because the people it was built for carry on the old way. When the people side is skipped, the cost is real: The old way lingers. People keep using the system or process they know, and the change never takes hold. Two systems run at once. The old and the new run in parallel, at double the cost and effort, sometimes for years. The benefits never arrive. The service was funded to deliver an outcome; without adoption, the money is spent and the outcome does not come. Trust erodes. A botched rollout makes the next change harder, because people learned that change means disruption with no payoff. The Government of Canada treats adoption as what makes or breaks a digital shift, in the GC Information Management Strategy.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
@@ -1466,7 +1467,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "A change succeeds one person at a time. The widely used ADKAR model names the five stages each person moves through, and a change stalls at whichever one is skipped. Example: a new case screen for grants officers. A grants-and-contributions program is replacing the old case screen its officers use every day. Three groups are involved. The delivery team builds the new screen and releases it to production one Tuesday night. The grants officers are the users: the new screen is what they open on the Wednesday morning. Their manager, a change lead, and the delivery team are the ones who get them ready. The five stages below follow those officers. Awareness. People need to know a change is coming and why. State the reason in plain terms, from the point of view of the people it affects, before it arrives. A change sprung on people with no warning meets resistance before anyone understands it. the officers hear why the old screen is going, from their own manager, three weeks before the switch. Desire. Knowing about a change does not make people want it. Show what it does for them, involve them early so they help shape it, and be straight about what is hard. People who helped build a change are the ones who carry it. a few officers help test the new screen, so their colleagues hear it is better from people they trust. Knowledge. People need to know how to work the new way: what to do differently, and where to get help. This is training, guidance, and clear documentation, ready before the change goes live. the officers get a hands-on training session and a one-page guide before the new screen goes live. Ability. Knowing how is not the same as being able to. People need time to practise, support on hand while they find their feet, and the old obstacles removed so the new way is the easy one. the officers get a few days to practise with someone on hand to help, and their most common task is set up to be quicker in the new screen. Reinforcement. A change that is not reinforced slides back to the old way. Measure whether people have actually adopted it, keep supporting them, retire the old path so there is nothing to slip back to, and recognise the teams that made the switch. after go-live the old screen is switched off on a set date, usage is checked, and the first team to move across is thanked.",
+    "text": "A change succeeds one person at a time. The widely used ADKAR model names the five stages each person moves through, and a change stalls at whichever one is skipped. A new case screen for grants officers A grants-and-contributions program is replacing the old case screen its officers use every day. Three groups are involved: The delivery team builds the new screen and releases it to production one Tuesday night. The grants officers are the users: the new screen is what they open on the Wednesday morning. Their manager, a change lead, and the delivery team get them ready. The five stages below follow those officers. Awareness. People need to know a change is coming and why. State the reason in plain terms, from the point of view of the people it affects, before it arrives. A change sprung on people with no warning meets resistance before anyone understands it. the officers hear why the old screen is going, from their own manager, three weeks before the switch. Desire. Knowing about a change does not make people want it. Show what it does for them, involve them early so they help shape it, and be straight about what is hard. People who helped build a change are the ones who carry it. a few officers help test the new screen, so their colleagues hear it is better from people they trust. Knowledge. People need to know how to work the new way: what to do differently, and where to get help. This is training, guidance, and clear documentation, ready before the change goes live. the officers get a hands-on training session and a one-page guide before the new screen goes live. Ability. Knowing how is not the same as being able to. People need time to practise, support on hand while they find their feet, and the old obstacles removed so the new way is the easy one. the officers get a few days to practise with someone on hand to help, and their most common task is set up to be quicker in the new screen. Reinforcement. A change that is not reinforced slides back to the old way. Measure whether people have actually adopted it, keep supporting them, retire the old path so there is nothing to slip back to, and recognise the teams that made the switch. after go-live the old screen is switched off on a set date, usage is checked, and the first team to move across is thanked.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
@@ -1518,6 +1519,86 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#what-good-looks-like",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "Signals come from the service itself, generated as people use it, rather than typed into a spreadsheet by hand. The team watches a small set of signals tied to real user experience and system health. Every signal that matters has a target set in advance, so the team can tell whether a number is good or bad. Dashboards are readable, trusted, and visible to the bodies that review the service. Every signal that matters has an owner who acts on it, and an all-green dashboard is allowed to generate nothing. Instrumentation is built into the service before go-live, while it is still cheap to add. The Canadian how-to for this, at a business-owner level, is Monitoring and measuring task success on design.canada.ca.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#why-it-matters",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "The cost of skipping it",
+    "lifecyclePhase": "thread",
+    "text": "Collecting data is easy. Acting on it is the part that gets skipped, and a dashboard no one acts on is just decoration. When monitoring is missing or ignored, the cost is real: The first news of a problem comes from complaints. Without its own signals, a team hears about a broken service from users, from the minister's office, or from the media, long after it started. No one can tell whether a change helped. With nothing measured before and after, every release is a guess and arguments get settled by whoever is most senior. Vanity metrics hide the truth. A dashboard full of big green numbers no one chose can look healthy while people fail at the one task that matters. Reports pile up and nothing changes. Data that is collected but never turned into work is a cost with no return.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#a-closer-look",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "Monitoring works as a loop with three stages. Skip the first and there is nothing real to see; skip the last and nothing changes. Instrument it. Instrumentation is building the service so it records what happens as people use it: each key step attempted and completed, each error, how long each step takes. Done as the service is built, this is cheap and accurate. Added afterward, it is expensive and full of gaps. Instrument in an open, standard way so the signals are not locked to one vendor's monitoring product. OpenTelemetry is the common open standard for this, and naming it in a contract keeps the option to change tools later. See it. Put the signals on a dashboard, and watch only a few that matter. A good dashboard shows a small set of signals tied to real user experience and system health, each with a target set in advance, so a number means something. For a Government of Canada service, the few worth watching are: Task success — are people completing what they came to do? The GC Task Success Survey is the mandatory GC method, measuring task completion, ease, and satisfaction. Errors and failed transactions — where the service is breaking, and how often. Performance — speed and availability, the plumbing working. Satisfaction and feedback — what people say in their own words, which the Guideline on Service and Digital requires a team to collect and use. Release health — after a change goes out, is the service still holding up? The DORA metrics track this, and so does releasing changes. A signal also needs a target beside it, or the number cannot be judged. GC services publish these as service standards, a public promise of the performance a client can expect, with the results reported each year in the GC service inventory. For the shape of a small target set, the clearest example is the United Kingdom's four key performance indicators, or KPIs (how to set performance metrics for your service): completion rate, digital take-up, user satisfaction, and cost per transaction. A lot of the GC web signal already sits in Canada.ca analytics. Dashboard mock Act on it. A dashboard is worth nothing unless someone acts on what it shows. The signals become work at the backlog review, where a reading turns into a specific item: A task with a low completion rate becomes a fix. A spike in errors or failed transactions becomes a bug. A step with high drop-off becomes a user-experience improvement. A rising volume of support calls about one thing becomes a root-cause fix. Slow or worsening performance becomes a performance or tech-debt item. A feature almost no one uses becomes a question: improve it, promote it, or retire it. Healthy numbers and vanity metrics become nothing, and that is correct: an all-green dashboard generates no work. One kind of signal goes elsewhere. Unusual or suspicious activity is a security signal, handled through detection and response on the security thread.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#whose-job",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Monitoring is a team activity, and it fails when the dashboard is someone's side project that no one reads. The service team builds the instrumentation into the service and stands up the dashboards. The product manager chooses the few signals that matter, sets their targets, and brings the readings to the backlog review. Whoever runs the service in production watches it live and responds when a signal crosses a line. The business owner of the application owns the targets, answers for the service's performance to the bodies that review it, and makes sure signals turn into work rather than reports.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#two-ways-comparison",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "two-ways-comparison",
+    "sectionHeading": "Two ways to monitor a service",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell, a service manager. They launched the licensing service and planned to sort out measurement later: released the first version with no instrumentation built in added a dashboard months later, filled with server-uptime numbers because those were easy to get never set a target for anything, so every number was green by default found out the payment step had been failing for weeks from a pile of complaints The result: a real problem ran unseen for weeks, and the dashboard that existed measured everything except whether people could get a licence. Meet Pax, a service manager. They treated measurement as part of building the service: instrumented the service before launch, so it recorded each step people attempted and completed picked five signals tied to getting a licence, each with a target reviewed the signals at every backlog session and turned the weak ones into work caught an early drop-off on one step and fixed it before it grew The result: the team saw the service the way its users experienced it, and fixed the real problems while they were still small.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#by-phase",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Monitoring and instrumentation looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Monitoring and instrumentation changes shape across the life of a service. Create. Decide what to measure before go-live. Decide what to measure before go-live. Choose the few signals that matter and build the instrumentation into the first real version from the start. Set a target for each one, so that from the first day live the team can tell a good number from a bad one. Live. Watch, and turn signals into work. Watch, and turn signals into work. Most monitoring lives here: dashboards, alerts, performance tracking, and the backlog review that turns readings into fixes, bugs, and improvements. This is where a measured service becomes a better one. Sunset. Keep watching until the last user has moved. Keep watching until the last user has moved. A service that is being retired still needs its signals. Watch for stragglers and for failures during the move to whatever comes next, and keep the instrumentation on until the service is switched off for good.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#further-reading",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "For the deeper version of setting a target, Service Level Objectives in the Google SRE Book covers service level indicators, objectives, and error budgets in plain language. DORA software delivery metrics are the four delivery-health metrics for judging whether releases are going well, service by service. The Digital Performance Standard from Australia's DTA is a peer government's monitoring framework in five plain criteria.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
+  },
+  {
+    "id": "/thread/monitoring-and-instrumentation#sources",
+    "pageTitle": "Monitoring and instrumentation",
+    "pagePath": "/thread/monitoring-and-instrumentation",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
   },
   {
     "id": "/thread/joined-up-delivery#your-service-is-one-box-in-a-bigger-journey",
@@ -1704,7 +1785,7 @@
     "pageTitle": "Dependencies and standards",
     "pagePath": "/thread/dependencies-and-standards",
     "sectionId": "why-it-matters",
-    "sectionHeading": "Why it matters",
+    "sectionHeading": "The cost of skipping it",
     "lifecyclePhase": "thread",
     "text": "The parts a service is built from are also the ways it can go wrong. There are two risks. Lock-in.When a service is tied to one vendor's proprietary formats, that vendor controls the features, the fixes, and the price, and moving away later costs a great deal. Open standards keep the pieces substitutable, so a service can change one part without rebuilding the rest. The supply chain. A flaw or a tampering in a component you did not write becomes your problem. As the Canadian Centre for Cyber Security puts it, an organization is legally responsible for protecting its information even when using third-party services. The Log4j flaw shows why this matters. When it appeared in a logging library used by millions of applications in 2021, the teams who came through it well were the ones who knew exactly where they used it and could patch fast. That is what knowing, vetting, and patching your dependencies buys you. The Government of Canada's position is to use open source and open standards first, for exactly these reasons.",
     "keywords": "dependencies standards open source SBOM supply chain vetting patching lock-in"

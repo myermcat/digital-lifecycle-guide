@@ -2,11 +2,61 @@ import { Link } from "@tanstack/react-router";
 import { threadPath } from "@/lib/guide-strings";
 import { guideProseTight, guideLink } from "@/lib/guide-typography";
 
+export type DashboardMetric = {
+  label: string;
+  value: string;
+  bar: number;
+  detail?: string;
+};
+
+export type DashboardBlockVariant = "maturity" | "monitoring";
+
+const DASHBOARD_VARIANTS: Record<
+  DashboardBlockVariant,
+  {
+    headerBadge: string;
+    metrics: DashboardMetric[];
+    captionLead: string;
+    captionBody: string;
+    linkCaption: boolean;
+  }
+> = {
+  maturity: {
+    headerBadge: "Live · Maturity",
+    metrics: [
+      { label: "Availability", value: "99.2%", bar: 82 },
+      { label: "Customer satisfaction", value: "82%", bar: 82 },
+      { label: "Error rate", value: "0.04%", bar: 22 },
+    ],
+    captionLead: "Build a dashboard from instrumentation.",
+    captionBody:
+      "Its signals should be measured by the service and its infrastructure, not entered by hand. Keep it readable, and make it visible to the bodies that review you.",
+    linkCaption: true,
+  },
+  monitoring: {
+    headerBadge: "Live · Monitoring",
+    metrics: [
+      { label: "Task success", value: "78%", bar: 78, detail: "target 85%" },
+      { label: "Satisfaction", value: "3.9 / 5", bar: 78 },
+      { label: "Error rate", value: "Rising on upload step", bar: 68 },
+    ],
+    captionLead: "Build the dashboard from instrumentation.",
+    captionBody:
+      "Its signals are measured by the service and its infrastructure rather than entered by hand, and it is readable and visible to the bodies that review the service.",
+    linkCaption: false,
+  },
+};
+
 export function DashboardBlock({
+  variant = "maturity",
   href = threadPath("monitoring-and-instrumentation"),
 }: {
+  variant?: DashboardBlockVariant;
   href?: string;
 }) {
+  const { headerBadge, metrics, captionLead, captionBody, linkCaption } =
+    DASHBOARD_VARIANTS[variant];
+
   return (
     <div
       className="mt-5 rounded-2xl border border-border overflow-hidden bg-transparent shadow-sm"
@@ -16,19 +66,18 @@ export function DashboardBlock({
         <span className="text-[10px] uppercase tracking-[0.2em] text-foreground/50 font-sans">
           Dashboard
         </span>
-        <span className="text-[10px] text-foreground/40 font-sans">Live · Maturity</span>
+        <span className="text-[10px] text-foreground/40 font-sans">{headerBadge}</span>
       </div>
       <div className="p-4 md:p-5 grid grid-cols-3 gap-3 md:gap-4">
-        {[
-          { label: "Availability", value: "99.2%", bar: 82 },
-          { label: "Customer satisfaction", value: "82%", bar: 82 },
-          { label: "Error rate", value: "0.04%", bar: 22 },
-        ].map((m) => (
+        {metrics.map((m) => (
           <div key={m.label} className="rounded-lg bg-background/60 border border-border/60 p-3">
             <p className="text-[10px] uppercase tracking-wide text-foreground/45 font-sans">
               {m.label}
             </p>
             <p className="mt-1 font-sans text-sm font-medium text-foreground/80">{m.value}</p>
+            {m.detail ? (
+              <p className="mt-0.5 text-[10px] text-foreground/45 font-sans">{m.detail}</p>
+            ) : null}
             <div className="mt-2 h-1.5 rounded-full bg-border overflow-hidden">
               <div
                 className="h-full rounded-full bg-primary/70"
@@ -50,17 +99,20 @@ export function DashboardBlock({
         </div>
       </div>
       <p className={`${guideProseTight} px-4 pb-5 md:px-5 md:pb-6 border-t border-border/60 pt-4`}>
-        {href.startsWith("/") ? (
-          <Link to={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
-            Build a dashboard from instrumentation.
-          </Link>
+        {linkCaption ? (
+          href.startsWith("/") ? (
+            <Link to={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
+              {captionLead}
+            </Link>
+          ) : (
+            <a href={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
+              {captionLead}
+            </a>
+          )
         ) : (
-          <a href={href} className={`font-semibold text-foreground/85 ${guideLink}`}>
-            Build a dashboard from instrumentation.
-          </a>
+          <span className="font-semibold text-primary">{captionLead}</span>
         )}{" "}
-        Its signals should be measured by the service and its infrastructure, not entered by
-        hand. Keep it readable, and make it visible to the bodies that review you.
+        {captionBody}
       </p>
     </div>
   );

@@ -1134,6 +1134,51 @@ export const EXTERNAL_LINKS = {
     description: "Interdepartmental Organizational Change Network (IOCN, GCcollab)",
     accessibility: "public",
   },
+  "monitoring-measuring-task-success": {
+    url: "https://design.canada.ca/continuous-improvement/monitoring.html",
+    description: "Monitoring and measuring task success (ESDC, design.canada.ca)",
+    accessibility: "public",
+  },
+  "gc-task-success-survey": {
+    url: "https://design.canada.ca/survey/",
+    description: "GC Task Success Survey (ESDC)",
+    accessibility: "public",
+  },
+  "gc-service-inventory": {
+    url: "https://open.canada.ca/data/en/dataset/3ac0d080-6149-499a-8b06-7ce5f00ec56c",
+    description: "GC service inventory (Open Government)",
+    accessibility: "public",
+  },
+  "canada-ca-analytics": {
+    url: "https://www.canada.ca/en/analytics.html",
+    description: "Canada.ca analytics (TBS/ESDC)",
+    accessibility: "public",
+  },
+  "uk-service-manual-performance-metrics": {
+    url: "https://www.gov.uk/service-manual/measuring-success/how-to-set-performance-metrics-for-your-service",
+    description: "How to set performance metrics for your service (UK Service Manual)",
+    accessibility: "public",
+  },
+  "opentelemetry": {
+    url: "https://opentelemetry.io/docs/what-is-opentelemetry/",
+    description: "What is OpenTelemetry? (CNCF)",
+    accessibility: "public",
+  },
+  "google-sre-service-level-objectives": {
+    url: "https://sre.google/sre-book/service-level-objectives/",
+    description: "Service Level Objectives (Google SRE Book)",
+    accessibility: "public",
+  },
+  "dta-digital-performance-standard": {
+    url: "https://www.digital.gov.au/policy/digital-experience/digital-performance-standard",
+    description: "Digital Performance Standard (Australia, DTA)",
+    accessibility: "public",
+  },
+  "cccs-network-security-logging-monitoring": {
+    url: "https://www.cyber.gc.ca/en/guidance/network-security-logging-monitoring-itsap80085",
+    description: "Network security logging and monitoring, ITSAP.80.085 (CCCS)",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

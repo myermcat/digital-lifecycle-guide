@@ -58,6 +58,15 @@ import {
   changeManagementWhyItMattersPlainText,
 } from "../src/lib/change-management-thread-content";
 import {
+  MONITORING_BLIND_VS_SEEING_DIAGRAM_ALT,
+  MONITORING_INSTRUMENT_SEE_ACT_DIAGRAM_ALT,
+  MONITORING_THREAD,
+  monitoringLeadPlainText,
+  monitoringSectionsPlainText,
+  monitoringWhoseJobPlainText,
+  monitoringWhyItMattersPlainText,
+} from "../src/lib/monitoring-and-instrumentation-thread-content";
+import {
   RELEASING_CHANGES_THREAD,
   releasingChangesSectionsPlainText,
 } from "../src/lib/releasing-changes-thread-content";
@@ -1210,7 +1219,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     },
     {
       sectionId: "why-it-matters",
-      sectionHeading: "Why it matters",
+      sectionHeading: "The cost of skipping it",
       text: teamCapabilityWhyItMattersPlainText(TEAM_CAPABILITY_THREAD.whyItMatters),
     },
     {
@@ -1309,7 +1318,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     },
     {
       sectionId: "why-it-matters",
-      sectionHeading: "Why it matters",
+      sectionHeading: "The cost of skipping it",
       text: changeManagementWhyItMattersPlainText(CHANGE_MANAGEMENT_THREAD.whyItMatters),
     },
     {
@@ -1370,6 +1379,103 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: changeManagementKeywords,
+    });
+  }
+}
+
+// Monitoring and instrumentation thread — section-level records.
+{
+  const pageTitle = MONITORING_THREAD.title;
+  const pagePath = THREADS["monitoring-and-instrumentation"].path;
+
+  const monitoringKeywords =
+    "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(
+      monitoringLeadPlainText(MONITORING_THREAD.lead, MONITORING_THREAD.keyCallout),
+      MONITORING_INSTRUMENT_SEE_ACT_DIAGRAM_ALT,
+      MONITORING_BLIND_VS_SEEING_DIAGRAM_ALT,
+    ),
+    keywords: monitoringKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(
+        ...MONITORING_THREAD.whatGoodLooksLike.map((item) => item.text),
+        MONITORING_THREAD.whatGoodLooksLikeFooter.text,
+      ),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "The cost of skipping it",
+      text: monitoringWhyItMattersPlainText(MONITORING_THREAD.whyItMatters),
+    },
+    {
+      sectionId: MONITORING_THREAD.closerLook.id,
+      sectionHeading: MONITORING_THREAD.closerLook.title,
+      text: concat(
+        MONITORING_THREAD.closerLook.intro.text,
+        ...MONITORING_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, monitoringSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: monitoringWhoseJobPlainText(MONITORING_THREAD.whoseJob),
+    },
+    {
+      sectionId: MONITORING_THREAD.twoWaysComparison.id,
+      sectionHeading: MONITORING_THREAD.twoWaysComparison.title,
+      text: concat(
+        MONITORING_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(MONITORING_THREAD.twoWaysComparison.risky.items ?? []),
+        MONITORING_THREAD.twoWaysComparison.risky.closing ?? "",
+        MONITORING_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(MONITORING_THREAD.twoWaysComparison.safe.items ?? []),
+        MONITORING_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: MONITORING_THREAD.byPhase.id,
+      sectionHeading: MONITORING_THREAD.byPhase.title,
+      text: concat(
+        MONITORING_THREAD.byPhase.intro,
+        ...MONITORING_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${block.popupHeading ?? ""} ${monitoringSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: MONITORING_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: monitoringKeywords,
     });
   }
 }
@@ -1596,7 +1702,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     },
     {
       sectionId: "why-it-matters",
-      sectionHeading: "Why it matters",
+      sectionHeading: "The cost of skipping it",
       text: dependenciesAndStandardsSectionsPlainText(
         DEPENDENCIES_AND_STANDARDS_THREAD.whyItMatters,
       ),

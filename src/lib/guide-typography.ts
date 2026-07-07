@@ -6,6 +6,10 @@ export const guideProse =
 export const guideProseTight =
   "font-sans text-sm leading-[1.35] text-foreground/75";
 
+/** Subheading within thread body blocks — one step above guideProseTight, full foreground. */
+export const guideBodySubheading =
+  "font-sans text-[0.9375rem] md:text-[15px] font-semibold text-foreground leading-snug";
+
 /** Monospace formula — same size and leading as guideProseTight. */
 export const guideFormulaLine =
   "font-mono text-sm leading-[1.35] text-foreground/75 uppercase tracking-[0.05em]";
@@ -19,6 +23,10 @@ export const guidePageTitle =
 /** Major section heading (h2) on phase and thread landing pages. */
 export const guideSectionTitle =
   "font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-[1.1]";
+
+/** Hero pull-quote (keyCallout) — modest step above body, not display scale. */
+export const guideKeyCallout =
+  "font-serif text-lg md:text-xl font-semibold text-primary/90 tracking-tight leading-snug";
 
 export const guideBlockTitle =
   "font-serif text-xl md:text-2xl font-semibold text-primary tracking-tight leading-tight";

@@ -87,6 +87,7 @@ export const CHANGE_MANAGEMENT_THREAD = {
         text: "The two run alongside each other, not one after the other.",
       },
       {
+        type: "subheading",
         text: "Both have to reach the same users, or the change does not take:",
       },
       {
@@ -100,7 +101,7 @@ export const CHANGE_MANAGEMENT_THREAD = {
           {
             bold: "Managed, but not released.",
             text:
-              " People are trained and ready for something that never shipped, so there is nothing there to use.",
+              " People are trained and ready for something that never went live, so there is nothing there to use.",
           },
         ],
       },

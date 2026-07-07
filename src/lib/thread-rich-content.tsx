@@ -8,8 +8,9 @@ import type {
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { EditorialNote } from "@/components/EditorialNote";
+import { DashboardBlock, type DashboardBlockVariant } from "@/components/DashboardBlock";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
-import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine } from "@/lib/guide-typography";
+import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine, guideBodySubheading } from "@/lib/guide-typography";
 
 /** Body enumerations with fewer than four items stay inline prose; four or more become a list. */
 export const guideListMinCount = 4;
@@ -54,12 +55,24 @@ export type ThreadFormulaSection = {
   text: string;
 };
 
+export type ThreadSubheadingSection = {
+  type: "subheading";
+  text: string;
+};
+
+export type ThreadDashboardMockSection = {
+  type: "dashboardMock";
+  variant: DashboardBlockVariant;
+};
+
 export type ThreadContentSection =
   | ThreadLinkedProse
   | ThreadOrderedListSection
   | ThreadUnorderedListSection
   | ThreadEditorialNoteSection
-  | ThreadFormulaSection;
+  | ThreadFormulaSection
+  | ThreadSubheadingSection
+  | ThreadDashboardMockSection;
 
 export type ThreadCloserLookBlock = {
   title: string;
@@ -96,7 +109,7 @@ export type ThreadWhyItMattersPitch = {
   lead: string;
   failureIntro: string;
   failureModes: readonly ThreadLinkedProse[];
-  closing: ThreadLinkedProse;
+  closing?: ThreadLinkedProse;
 };
 
 function isPlainBoldListItem(item: ThreadOrderedListItem): item is ThreadPlainBoldListItem {
@@ -166,7 +179,7 @@ export function threadWhyItMattersPitchPlainText({
   failureModes,
   closing,
 }: ThreadWhyItMattersPitch): string {
-  return [lead, failureIntro, ...failureModes.map((item) => item.text), closing.text]
+  return [lead, failureIntro, ...failureModes.map((item) => item.text), closing?.text]
     .filter(Boolean)
     .join(" ");
 }
@@ -180,13 +193,25 @@ export function threadSectionsPlainText(sections: readonly ThreadContentSection[
           ? section.paragraphs.map((paragraph) => paragraph.text).join(" ")
           : "type" in section && section.type === "formula"
             ? section.text
-            : section.text,
+            : "type" in section && section.type === "subheading"
+              ? section.text
+              : "type" in section && section.type === "dashboardMock"
+                ? "Dashboard mock"
+                : section.text,
     )
     .join(" ");
 }
 
 function isFormula(section: ThreadContentSection): section is ThreadFormulaSection {
   return "type" in section && section.type === "formula";
+}
+
+function isSubheading(section: ThreadContentSection): section is ThreadSubheadingSection {
+  return "type" in section && section.type === "subheading";
+}
+
+function isDashboardMock(section: ThreadContentSection): section is ThreadDashboardMockSection {
+  return "type" in section && section.type === "dashboardMock";
 }
 
 function isEditorialNote(section: ThreadContentSection): section is ThreadEditorialNoteSection {
@@ -276,7 +301,9 @@ export function renderThreadWhyItMattersPitch(section: ThreadWhyItMattersPitch):
           </li>
         ))}
       </ul>
-      <p className={guideProse}>{renderLinkedProse(section.closing)}</p>
+      {section.closing?.text ? (
+        <p className={guideProse}>{renderLinkedProse(section.closing)}</p>
+      ) : null}
     </div>
   );
 }
@@ -304,6 +331,12 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
           >
             {section.text}
           </p>
+        ) : isSubheading(section) ? (
+          <p key={index} className={guideBodySubheading}>
+            {section.text}
+          </p>
+        ) : isDashboardMock(section) ? (
+          <DashboardBlock key={index} variant={section.variant} />
         ) : isEditorialNote(section) ? (
           <EditorialNote key={index} label={section.label ?? "Example"}>
             <div className="space-y-2">
