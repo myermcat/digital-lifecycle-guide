@@ -4,16 +4,19 @@ import {
   ClipboardList,
   Code,
   Coins,
+  Compass,
   FileText,
   Headset,
   LifeBuoy,
   Map,
+  Megaphone,
   PenTool,
   Rocket,
   Scale,
   Server,
   ShieldCheck,
   Stamp,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -50,6 +53,36 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   }
   if (normalized.includes("product or service owner")) {
     return ClipboardList;
+  }
+  if (
+    normalized.includes("product owner or delivery lead") ||
+    normalized.includes("delivery lead")
+  ) {
+    return Compass;
+  }
+  if (normalized.includes("human resources") || normalized.includes("hiring managers")) {
+    return Users;
+  }
+  if (
+    normalized.includes("change lead or sponsor") ||
+    normalized.includes("change sponsor")
+  ) {
+    return Megaphone;
+  }
+  if (normalized.includes("managers of the affected teams") || normalized.includes("affected teams")) {
+    return Users;
+  }
+  if (normalized.includes("service team")) {
+    return Code;
+  }
+  if (normalized.includes("change management community")) {
+    return LifeBuoy;
+  }
+  if (normalized.includes("team members")) {
+    return Code;
+  }
+  if (normalized.includes("digital talent community")) {
+    return LifeBuoy;
   }
   if (normalized.includes("service designer") || normalized.includes("user researcher")) {
     return Map;

@@ -8,6 +8,8 @@ import { JoinedUpDeliveryThreadPage } from "@/components/JoinedUpDeliveryThreadP
 import { ReleasingChangesThreadPage } from "@/components/ReleasingChangesThreadPage";
 import { DependenciesAndStandardsThreadPage } from "@/components/DependenciesAndStandardsThreadPage";
 import { FundingThreadPage } from "@/components/FundingThreadPage";
+import { TeamCapabilityThreadPage } from "@/components/TeamCapabilityThreadPage";
+import { ChangeManagementThreadPage } from "@/components/ChangeManagementThreadPage";
 import { PrivacyThreadPage } from "@/components/PrivacyThreadPage";
 import { DataStewardshipThreadPage } from "@/components/DataStewardshipThreadPage";
 import { SecurityThreadPage } from "@/components/SecurityThreadPage";
@@ -25,6 +27,14 @@ import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-conte
 import { RELEASING_CHANGES_THREAD } from "@/lib/releasing-changes-thread-content";
 import { DEPENDENCIES_AND_STANDARDS_THREAD } from "@/lib/dependencies-and-standards-thread-content";
 import { FUNDING_THREAD, fundingLeadPlainText } from "@/lib/funding-thread-content";
+import {
+  TEAM_CAPABILITY_THREAD,
+  teamCapabilityLeadPlainText,
+} from "@/lib/team-capability-thread-content";
+import {
+  CHANGE_MANAGEMENT_THREAD,
+  changeManagementLeadPlainText,
+} from "@/lib/change-management-thread-content";
 import { threadLeadPlainText } from "@/lib/thread-rich-content";
 
 export const Route = createFileRoute("/thread/$slug")({
@@ -151,6 +161,30 @@ export const Route = createFileRoute("/thread/$slug")({
       };
     }
 
+    if (params.slug === "team-capability") {
+      return {
+        meta: [
+          { title: `${TEAM_CAPABILITY_THREAD.title} — The Digital Lifecycle Guide` },
+          {
+            name: "description",
+            content: teamCapabilityLeadPlainText(TEAM_CAPABILITY_THREAD.lead),
+          },
+        ],
+      };
+    }
+
+    if (params.slug === "change-management") {
+      return {
+        meta: [
+          { title: `${CHANGE_MANAGEMENT_THREAD.title} — The Digital Lifecycle Guide` },
+          {
+            name: "description",
+            content: changeManagementLeadPlainText(CHANGE_MANAGEMENT_THREAD.lead),
+          },
+        ],
+      };
+    }
+
     const content = THREAD_CONTENT[params.slug as ThreadSlug];
     return {
       meta: content
@@ -220,6 +254,14 @@ function ThreadRoutePage() {
 
   if (slug === "funding") {
     return <FundingThreadPage />;
+  }
+
+  if (slug === "team-capability") {
+    return <TeamCapabilityThreadPage />;
+  }
+
+  if (slug === "change-management") {
+    return <ChangeManagementThreadPage />;
   }
 
   const content = THREAD_CONTENT[slug as ThreadSlug];

@@ -9,7 +9,7 @@ import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { EditorialNote } from "@/components/EditorialNote";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
-import { guideListIndent, guideProse, guideProseTight, guideFormulaLine } from "@/lib/guide-typography";
+import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine } from "@/lib/guide-typography";
 
 /** Body enumerations with fewer than four items stay inline prose; four or more become a list. */
 export const guideListMinCount = 4;
@@ -71,6 +71,8 @@ export type ThreadToggleBlock = ThreadCloserLookBlock;
 export type ThreadPhasePreviewBlock = {
   title: string;
   preview: string;
+  /** Renders above popup body as a small bold heading, on its own line. */
+  popupHeading?: string;
   popup: readonly ThreadContentSection[];
 };
 
@@ -88,6 +90,13 @@ export type ThreadWhoseJobSection = {
   intro: string;
   roles: readonly ThreadRoleBullet[];
   closing?: ThreadLinkedProse | string;
+};
+
+export type ThreadWhyItMattersPitch = {
+  lead: string;
+  failureIntro: string;
+  failureModes: readonly ThreadLinkedProse[];
+  closing: ThreadLinkedProse;
 };
 
 function isPlainBoldListItem(item: ThreadOrderedListItem): item is ThreadPlainBoldListItem {
@@ -148,6 +157,17 @@ export function threadWhoseJobPlainText({ intro, roles, closing }: ThreadWhoseJo
   const closingText = typeof closing === "string" ? closing : closing?.text;
   return [intro, ...roles.map((role) => `${role.role} ${role.text}`), closingText]
     .filter((part): part is string => Boolean(part))
+    .join(" ");
+}
+
+export function threadWhyItMattersPitchPlainText({
+  lead,
+  failureIntro,
+  failureModes,
+  closing,
+}: ThreadWhyItMattersPitch): string {
+  return [lead, failureIntro, ...failureModes.map((item) => item.text), closing.text]
+    .filter(Boolean)
     .join(" ");
 }
 
@@ -242,6 +262,23 @@ export function renderThreadLead(lead: ThreadLead): ReactNode {
 
 export function renderThreadWhoseJob(section: ThreadWhoseJobSection): ReactNode {
   return <ThreadWhoseJobIconList {...section} />;
+}
+
+export function renderThreadWhyItMattersPitch(section: ThreadWhyItMattersPitch): ReactNode {
+  return (
+    <div className={guideProseSpace}>
+      <p className={guideProse}>{section.lead}</p>
+      <p className={guideProse}>{section.failureIntro}</p>
+      <ul className={`list-disc space-y-1 ${guideListIndent}`}>
+        {section.failureModes.map((item) => (
+          <li key={item.text} className={guideProse}>
+            {renderLinkedProse(item)}
+          </li>
+        ))}
+      </ul>
+      <p className={guideProse}>{renderLinkedProse(section.closing)}</p>
+    </div>
+  );
 }
 
 export function renderThreadSections(sections: readonly ThreadContentSection[]): ReactNode {

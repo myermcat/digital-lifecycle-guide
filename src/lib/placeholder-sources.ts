@@ -16,6 +16,9 @@ export const SECURE_APPLICATION_DEVELOPMENT_GUIDELINE =
 export const SECURE_APPLICATION_DEVELOPMENT_GUIDELINE_SHORT =
   "Guideline on Secure Application Development";
 
+export const DIGITAL_SOLUTIONS_CHANGE_MANAGEMENT_PORTAL =
+  "Digital Solutions Change Management Portal";
+
 export const SECURITY_CATEGORIZATION_OF_SOURCE_CODE = "Security Categorization of Source Code";
 
 export const GC_SECURITY_CATEGORIZATION_INJURY_ASSESSMENT =

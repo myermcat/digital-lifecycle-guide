@@ -15,10 +15,19 @@ Full spec: `src/lib/guide-blocks.ts` (`EDITORIAL_NOTE_BLOCK`, `CALLOUT_BLOCK`, `
 
 ## Editorial note
 
-- **Job:** Who the page is for, editorial framing, cautions.
+- **Job:** Who the page is for, editorial framing, cautions, and **worked examples** (running scenarios).
 - **Look:** Muted grey fill. Left bar muted grey. Tiny uppercase muted label. Tight sans body.
 - **Example:** Home page — "Who this is for".
 - **DOM:** `data-guide-block="editorial-note"`
+
+### Worked examples (always editorial note, never callout)
+
+Use `EditorialNote` for every example block — setup and nested parts — so they stay grey and consistent.
+
+- **Setup** (above a toggle list or accordion): `label="Example"`. Bold the scenario lead in the body (`renderLinkedProse` with `bold`, or a semibold first line).
+- **Nested** (one line under a stage inside a toggle): `editorialNote` section in thread content with `label: "In the example"` (renders via `renderThreadSections`).
+
+Do not use `GuideCallout` for examples. Labels: `WORKED_EXAMPLE_LABELS` in `@/lib/guide-blocks`.
 
 ## Callout
 

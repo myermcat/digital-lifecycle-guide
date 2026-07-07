@@ -109,6 +109,24 @@ export const DEPENDENCIES_AND_STANDARDS_CORE_STRIP = {
   ],
 } as const satisfies ThreadCoreStripContent;
 
+export const TEAM_CAPABILITY_CORE_STRIP = {
+  heading: "THE CORE OF TEAM CAPABILITY",
+  tiles: [
+    { label: "The right roles", gloss: "the mix of skills a service needs, in one team" },
+    { label: "Who you need, kept close", gloss: "a small in-house core, plus a clear map of who else to call" },
+    { label: "Kept current", gloss: "skills renewed as the work changes" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
+export const CHANGE_MANAGEMENT_CORE_STRIP = {
+  heading: "THE CORE OF CHANGE MANAGEMENT",
+  tiles: [
+    { label: "Ready", gloss: "people know about the change and want to make it" },
+    { label: "Able", gloss: "people know how, and can actually do it" },
+    { label: "Kept going", gloss: "the change is reinforced until it sticks" },
+  ],
+} as const satisfies ThreadCoreStripContent;
+
 function threadCoreStripAltText(content: ThreadCoreStripContent): string {
   const pillars = content.tiles
     .map((tile) => `${tile.label}, ${tile.gloss}`)

@@ -34,11 +34,24 @@ export function useOnThisPageSections(rootId: string | undefined) {
     };
 
     refresh();
+
+    const root = document.getElementById(rootId);
+    const observer =
+      root &&
+      new MutationObserver(() => {
+        refresh();
+      });
+
+    if (observer && root) {
+      observer.observe(root, { childList: true, subtree: true });
+    }
+
     const raf = requestAnimationFrame(refresh);
 
     return () => {
       cancelled = true;
       cancelAnimationFrame(raf);
+      observer?.disconnect();
     };
   }, [rootId]);
 

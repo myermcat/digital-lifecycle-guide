@@ -1,6 +1,7 @@
 import type { ExternalLinkKey } from "@/lib/external-links";
-import type { ExternalPhraseLink, MailtoPhraseLink } from "@/components/ProseWithExternalLinks";
+import type { ExternalPhraseLink, MailtoPhraseLink, PlaceholderGcNetworkPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ThreadSlug } from "@/lib/guide-strings";
+import { DIGITAL_SOLUTIONS_CHANGE_MANAGEMENT_PORTAL } from "@/lib/placeholder-sources";
 
 const CIOB_MAILBOX = "mailto:zzciobdp@tbs-sct.gc.ca";
 
@@ -18,12 +19,15 @@ export type SupportCalloutVariant =
   | "dependencies-and-standards"
   | "data-stewardship"
   | "funding"
+  | "team-capability"
+  | "change-management"
   | "treasury-board-submission";
 
 export type SupportCalloutBody = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
   mailtoLinks?: MailtoPhraseLink[];
+  placeholderGcNetworkLinks?: PlaceholderGcNetworkPhraseLink[];
 };
 
 export const SUPPORT_CALLOUT_BODIES = {
@@ -107,6 +111,27 @@ export const SUPPORT_CALLOUT_BODIES = {
   funding: {
     text: "For funding questions, the department's finance branch and Chief Financial Officer are the starting contacts.",
   },
+  "team-capability": {
+    text: "For team capability questions, the department's human resources and digital talent community, and the GC Digital Talent platform, are the starting contacts.",
+    externalLinks: [
+      { phrase: "GC Digital Talent platform", linkKey: "gc-digital-talent-platform" },
+    ],
+  },
+  "change-management": {
+    text: "For change management help, the Interdepartmental Organizational Change Network and the Digital Solutions Change Management Portal are the starting contacts.",
+    externalLinks: [
+      {
+        phrase: "Interdepartmental Organizational Change Network",
+        linkKey: "iocn-change-network",
+      },
+    ],
+    placeholderGcNetworkLinks: [
+      {
+        phrase: "Digital Solutions Change Management Portal",
+        source: DIGITAL_SOLUTIONS_CHANGE_MANAGEMENT_PORTAL,
+      },
+    ],
+  },
   "treasury-board-submission": {
     text: "For funding and Treasury Board submission questions, the department's finance branch and Chief Financial Officer, and the Treasury Board Secretariat analyst assigned to the submission, are the starting contacts.",
   },
@@ -125,6 +150,8 @@ const THREAD_SUPPORT_CALLOUT: Partial<Record<ThreadSlug, SupportCalloutVariant>>
   "dependencies-and-standards": "dependencies-and-standards",
   "data-stewardship": "data-stewardship",
   funding: "funding",
+  "team-capability": "team-capability",
+  "change-management": "change-management",
 };
 
 export function supportCalloutVariantForThread(slug: ThreadSlug): SupportCalloutVariant {

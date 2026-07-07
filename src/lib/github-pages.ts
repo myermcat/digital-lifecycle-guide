@@ -46,6 +46,8 @@ const THREAD_PATHS = [
   "/thread/releasing-changes",
   "/thread/dependencies-and-standards",
   "/thread/funding",
+  "/thread/team-capability",
+  "/thread/change-management",
 ];
 const PROCUREMENT_SUB_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
   (slug) => `/thread/procurement/${slug}`,

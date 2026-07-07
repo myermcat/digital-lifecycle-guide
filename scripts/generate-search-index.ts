@@ -3,7 +3,7 @@ import { dirname } from "node:path";
 
 import { PAGE_INDEX } from "../src/lib/page-index";
 import { PROCUREMENT_STRINGS } from "../src/lib/procurement-strings";
-import { PROCUREMENT_SUBPAGES } from "../src/lib/contracting-subpages";
+import { PROCUREMENT_SUBPAGES, contractingParagraphPlainText } from "../src/lib/contracting-subpages";
 import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
@@ -42,6 +42,21 @@ import {
   JOINED_UP_DELIVERY_THREAD,
   joinedUpDeliverySectionsPlainText,
 } from "../src/lib/joined-up-delivery-thread-content";
+import {
+  TEAM_CAPABILITY_THREAD,
+  teamCapabilityLeadPlainText,
+  teamCapabilitySectionsPlainText,
+  teamCapabilityWhoseJobPlainText,
+  teamCapabilityWhyItMattersPlainText,
+} from "../src/lib/team-capability-thread-content";
+import {
+  CHANGE_MANAGEMENT_CONVERGE_DIAGRAM_ALT,
+  CHANGE_MANAGEMENT_THREAD,
+  changeManagementLeadPlainText,
+  changeManagementSectionsPlainText,
+  changeManagementWhoseJobPlainText,
+  changeManagementWhyItMattersPlainText,
+} from "../src/lib/change-management-thread-content";
 import {
   RELEASING_CHANGES_THREAD,
   releasingChangesSectionsPlainText,
@@ -257,9 +272,14 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: concat(
         ...(section.paragraphs ?? []),
+        section.bulletLead,
+        ...(section.continuationBullets ?? []),
         bulletText,
-        ...(section.paragraphsAfterBullets ?? []),
+        ...(section.paragraphsAfterBullets ?? []).map(contractingParagraphPlainText),
         ...(section.paragraphsAfterNote ?? []),
+        section.highlightedNote
+          ? concat(section.highlightedNote.lead, section.highlightedNote.body)
+          : "",
         section.contentTodo
           ? concat(
               section.contentTodo.title,
@@ -1159,6 +1179,197 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       lifecyclePhase: inferLifecyclePhase(pagePath),
       text: section.text,
       keywords: backlogKeywords,
+    });
+  }
+}
+
+// Team capability thread — section-level records.
+{
+  const pageTitle = TEAM_CAPABILITY_THREAD.title;
+  const pagePath = THREADS["team-capability"].path;
+
+  const teamCapabilityKeywords =
+    "multidisciplinary team product owner delivery manager digital talent in-house skills training";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: teamCapabilityLeadPlainText(TEAM_CAPABILITY_THREAD.lead),
+    keywords: teamCapabilityKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...TEAM_CAPABILITY_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: teamCapabilityWhyItMattersPlainText(TEAM_CAPABILITY_THREAD.whyItMatters),
+    },
+    {
+      sectionId: TEAM_CAPABILITY_THREAD.closerLook.id,
+      sectionHeading: TEAM_CAPABILITY_THREAD.closerLook.title,
+      text: concat(
+        ...TEAM_CAPABILITY_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, teamCapabilitySectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: teamCapabilityWhoseJobPlainText(TEAM_CAPABILITY_THREAD.whoseJob),
+    },
+    {
+      sectionId: TEAM_CAPABILITY_THREAD.twoWaysComparison.id,
+      sectionHeading: TEAM_CAPABILITY_THREAD.twoWaysComparison.title,
+      text: concat(
+        TEAM_CAPABILITY_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(TEAM_CAPABILITY_THREAD.twoWaysComparison.risky.items ?? []),
+        TEAM_CAPABILITY_THREAD.twoWaysComparison.risky.closing ?? "",
+        TEAM_CAPABILITY_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(TEAM_CAPABILITY_THREAD.twoWaysComparison.safe.items ?? []),
+        TEAM_CAPABILITY_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: TEAM_CAPABILITY_THREAD.byPhase.id,
+      sectionHeading: TEAM_CAPABILITY_THREAD.byPhase.title,
+      text: concat(
+        TEAM_CAPABILITY_THREAD.byPhase.intro,
+        ...TEAM_CAPABILITY_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${block.popupHeading ?? ""} ${teamCapabilitySectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: TEAM_CAPABILITY_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: teamCapabilityKeywords,
+    });
+  }
+}
+
+// Change management thread — section-level records.
+{
+  const pageTitle = CHANGE_MANAGEMENT_THREAD.title;
+  const pagePath = THREADS["change-management"].path;
+
+  const changeManagementKeywords =
+    "ADKAR adoption change strategy training reinforcement Kotter migration";
+
+  records.push({
+    id: recordId({ pagePath, sectionId: "" }),
+    pageTitle,
+    pagePath,
+    sectionId: "",
+    sectionHeading: pageTitle,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(
+      changeManagementLeadPlainText(CHANGE_MANAGEMENT_THREAD.lead),
+      CHANGE_MANAGEMENT_CONVERGE_DIAGRAM_ALT,
+      CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.title,
+      changeManagementSectionsPlainText(CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.sections),
+    ),
+    keywords: changeManagementKeywords,
+  });
+
+  const sections = [
+    {
+      sectionId: CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.id,
+      sectionHeading: CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.title,
+      text: changeManagementSectionsPlainText(CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.sections),
+    },
+    {
+      sectionId: "what-good-looks-like",
+      sectionHeading: "What good looks like",
+      text: concat(...CHANGE_MANAGEMENT_THREAD.whatGoodLooksLike.map((item) => item.text)),
+    },
+    {
+      sectionId: "why-it-matters",
+      sectionHeading: "Why it matters",
+      text: changeManagementWhyItMattersPlainText(CHANGE_MANAGEMENT_THREAD.whyItMatters),
+    },
+    {
+      sectionId: CHANGE_MANAGEMENT_THREAD.closerLook.id,
+      sectionHeading: CHANGE_MANAGEMENT_THREAD.closerLook.title,
+      text: concat(
+        CHANGE_MANAGEMENT_THREAD.closerLook.intro.text,
+        CHANGE_MANAGEMENT_THREAD.closerLook.exampleNote.title,
+        changeManagementSectionsPlainText(CHANGE_MANAGEMENT_THREAD.closerLook.exampleNote.sections),
+        ...CHANGE_MANAGEMENT_THREAD.closerLook.blocks.map((block) =>
+          concat(block.title, changeManagementSectionsPlainText(block.sections)),
+        ),
+      ),
+    },
+    {
+      sectionId: "whose-job",
+      sectionHeading: "Whose job it is",
+      text: changeManagementWhoseJobPlainText(CHANGE_MANAGEMENT_THREAD.whoseJob),
+    },
+    {
+      sectionId: CHANGE_MANAGEMENT_THREAD.twoWaysComparison.id,
+      sectionHeading: CHANGE_MANAGEMENT_THREAD.twoWaysComparison.title,
+      text: concat(
+        CHANGE_MANAGEMENT_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(CHANGE_MANAGEMENT_THREAD.twoWaysComparison.risky.items ?? []),
+        CHANGE_MANAGEMENT_THREAD.twoWaysComparison.risky.closing ?? "",
+        CHANGE_MANAGEMENT_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(CHANGE_MANAGEMENT_THREAD.twoWaysComparison.safe.items ?? []),
+        CHANGE_MANAGEMENT_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
+      sectionId: CHANGE_MANAGEMENT_THREAD.byPhase.id,
+      sectionHeading: CHANGE_MANAGEMENT_THREAD.byPhase.title,
+      text: concat(
+        CHANGE_MANAGEMENT_THREAD.byPhase.intro,
+        ...CHANGE_MANAGEMENT_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${block.popupHeading ?? ""} ${changeManagementSectionsPlainText(block.popup)}`,
+        ),
+      ),
+    },
+    {
+      sectionId: "further-reading",
+      sectionHeading: "Further reading",
+      text: CHANGE_MANAGEMENT_THREAD.furtherReading.text,
+    },
+    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
+  ];
+
+  for (const section of sections) {
+    records.push({
+      id: recordId({ pagePath, sectionId: section.sectionId }),
+      pageTitle,
+      pagePath,
+      sectionId: section.sectionId,
+      sectionHeading: section.sectionHeading,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: section.text,
+      keywords: changeManagementKeywords,
     });
   }
 }

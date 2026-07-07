@@ -125,7 +125,7 @@
     "sectionId": "",
     "sectionHeading": "Releasing changes",
     "lifecyclePhase": "thread",
-    "text": "Releasing changes means getting new features and fixes onto the live service, safely and often. The surprising part, for anyone who finds releases nerve-wracking, is that releasing small and often is safer than saving everything up for a big launch. Releasing changes pulls together four habits: release in small, frequent batches; run every change through an automated pipeline that tests it before it goes out; roll each change out gradually and watch how it behaves; and keep the ability to roll back quickly if something goes wrong.",
+    "text": "Releasing changes means getting new features and fixes onto the live service, safely and often. The surprising part, for anyone who finds releases nerve-wracking, is that releasing small and often is safer than saving everything up for a big launch. Releasing changes pulls together four habits: release in small, frequent batches; run every change through an automated pipeline that tests it before it goes out; roll each change out gradually and watch how it behaves; and keep the ability to roll back quickly if something goes wrong. The people side of the same change is change management.",
     "keywords": "releasing changes CI CD pipeline deployment canary rollback DORA metrics cloud guardrails"
   },
   {
@@ -204,7 +204,8 @@
     "sectionId": "",
     "sectionHeading": "Team capability",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "Every government service needs people to build it and keep it running: to work out what users need, design it, write the code, test it, watch it in production, and fix it when it breaks. Team capability is having the right mix of those skills, and holding enough of them inside the department so the service can be governed and moved even when a supplier does the building. Most digital work runs best as one multidisciplinary team, a single group that covers the skills a service needs from start to finish. The Government of Canada builds this capability in-house under the Directive on Digital Talent and the GC Digital Talent Strategy. In practice, most departments do not have deep digital teams of their own, and across the Government of Canada in-house capability is thin. Much of the building is done by suppliers. That makes the in-house side matter even more. Even a small service needs enough people, on the team or a short call away, who understand it well enough to steer it, judge the work, and step in if a supplier leaves. A capable team comes down to the right roles, knowing who else you need and keeping them close, and skills kept current.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
   },
   {
     "id": "/thread/backlog",
@@ -243,7 +244,8 @@
     "sectionId": "",
     "sectionHeading": "Change management",
     "lifecyclePhase": "thread",
-    "text": ""
+    "text": "When a service is new or changes, the people who use it, and the staff who work with it, have to change how they do things. Change management is the work of helping them make that shift, so the service is taken up and used, and does not stall because people carry on the old way. This is the people side of a change. The technical side, getting a change safely into production, is releasing changes. Change management is about making people aware of the change, willing to make it, able to do it, and supported to keep it going. The Government of Canada treats adoption as what makes or breaks a digital shift, set out in the GC Information Management Strategy. Diagram: Releasing the change and Change management converge on the people who use it; when both reach them, the change gets used. Two tracks, one outcome Releasing a change and managing a change are two different jobs aimed at the same people. Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never shipped, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
     "id": "/reference/soo-vs-sow",
@@ -279,7 +281,7 @@
     "sectionId": "",
     "sectionHeading": "What a good contract looks like",
     "lifecyclePhase": "thread",
-    "text": "When you buy or build a service with a supplier, the contract is where the promises live. The rest of the playbook keeps telling you to put things in the contract. This page puts them all in one place and shows them as a real contract would look, for our example service, the grant portal. This is a tour of a sample contract, not a legal template and not the authority. The rules that govern federal contracts sit with PSPC, the Directive on the Management of Procurement, and CanadaBuys. For how to run the buying itself, see the Procurement thread. This page is only about what a good agreement should contain. Everything below is written for the grant portal. The clauses, and the bracketed details like dates and percentages, are things you set for your own service. Treat this as a worked example to adapt, not text to copy."
+    "text": "When you buy or build a service with a supplier, the contract is where the promises live. The rest of the playbook keeps telling you to put things in the contract. This page puts them all in one place and shows them as a real contract would look, for our example service, the grant portal. This is a tour of a sample contract. It is not a legal template, and it does not set the rules. The rules that govern federal contracts sit with PSPC, the Directive on the Management of Procurement, and CanadaBuys. For how to run the buying itself, see the Procurement thread. This page is only about what a good agreement should contain. Everything below is written for the grant portal. The clauses, and the bracketed details like dates and percentages, are things you set for your own service. Treat this as a worked example to adapt, not text to copy."
   },
   {
     "id": "/practice/maturity-orientation",
@@ -432,7 +434,7 @@
     "sectionId": "playbook-becomes-spec",
     "sectionHeading": "The playbook becomes the spec",
     "lifecyclePhase": "thread",
-    "text": "This is the useful part. Every practice in this guide is something you can ask for in a contract, and the contract is where you say what the supplier has to deliver. So the playbook turns into the checklist you build that contract from. For each practice that matters, there are two moves: Name it. Put it in the contract as a real deliverable. Good clause: \"The supplier will run usability testing in each phase with at least five participants from the service's real user groups, including people who use assistive technology, and give the findings to the department.\" Bad clause: \"The supplier will do user research with real users.\" Govern it. Decide how you will see it being done. If you cannot check a practice, you cannot govern it. Ask for the proof: the research write-ups, the accessibility audit, the test results. Where you can, write the measure into the contract, and make it specific. “Pages load in under three seconds for almost everyone” is checkable. “The service will be fast” is not. It is the same idea as a good dashboard: the number has to be measured, not guessed. Those measures are what you hold the supplier to, and what you pay against."
+    "text": "This is the useful part. Every practice in this guide is something you can ask for in a contract, and the contract is where you say what the supplier has to deliver. So the playbook turns into the checklist you build that contract from. For each practice that matters, there are two moves: Name it. Put it in the contract as a real deliverable. Good clause: \"The supplier will run usability testing in each phase with at least five participants from the service's real user groups, including people who use assistive technology, and give the findings to the department.\" Bad clause: \"The supplier will do user research with real users.\" Govern it. Decide how you will see it being done. If you cannot check a practice, you cannot govern it. Ask for the proof: the research write-ups, the accessibility audit, the test results. Where you can, write the measure into the contract, and make it a good requirement, one that is specific, measurable, and testable. “Pages load in under three seconds for almost everyone” is checkable. “The service will be fast” is not. It is the same idea as a good dashboard: the number has to be measured. Those measures are what you hold the supplier to, and what you pay against."
   },
   {
     "id": "/thread/procurement/put-the-practices-in-the-contract#what-department-does",
@@ -450,7 +452,7 @@
     "sectionId": "build-the-way-you-code",
     "sectionHeading": "Build it the way you would code it",
     "lifecyclePhase": "thread",
-    "text": "If you were building the service yourself, you would not write the whole thing in one sitting. You would work out the shape of it, build a piece, check that it works, then build the next piece on top. Small steps you can test. You fix your course as you learn. Buying in pieces is the same habit applied to contracts. Instead of one big contract for the whole job, you write several smaller ones, each for a real piece of work. The architecture is a piece. Moving the data is a piece. Each part of the service is a piece. You buy them in an order where each one teaches you something before the next begins. Why bother, when one big contract feels simpler? Because small pieces show their value early, and their problems early too. If a supplier underperforms, you replace that piece, not the whole programme. If needs change, the next piece absorbs the change. Risk and cost stay in hand because nothing rides on a single, distant delivery. This helps because building a service is full of things you cannot know up front. Whether the technology fits. Whether it clashes with what you already run. Whether the problem turns out harder than it looked. A single big contract bets that you got all of that right before you started. You almost never do. Small contracts let you find out cheaply and change course."
+    "text": "If you were building the service yourself, you would not write the whole thing in one sitting. You would work out the shape of it, build a piece, check that it works, then build the next piece on top. Small steps you can test. You fix your course as you learn. Buying in pieces is the same habit applied to contracts. Instead of one big contract for the whole job, you write several smaller ones, each for a real piece of work. The architecture is a piece. Moving the data is a piece. Each part of the service is a piece. You buy them in an order where each one teaches you something before the next begins. Why bother, when one big contract feels simpler? Value and problems show early. Small pieces prove their worth soon, and surface their faults soon, while there is still time and money to act. You replace a piece, not the programme. If a supplier underperforms, you swap out that piece instead of losing the whole thing. Change is absorbed. If needs shift, the next piece takes the change, so nothing rides on a single, distant delivery. A single big contract bets you got everything right before you started. But building a service is full of things you cannot know up front, whether the technology fits, whether it clashes with what you already run, whether the problem is harder than it looked. Small contracts let you find out cheaply and change course."
   },
   {
     "id": "/thread/procurement/buy-in-small-pieces#modular-not-split",
@@ -459,7 +461,7 @@
     "sectionId": "modular-not-split",
     "sectionHeading": "Modular, not split: the line you cannot cross",
     "lifecyclePhase": "thread",
-    "text": "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about. Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule. Modular contracting is legal, and the Directive actually leans toward it: it favours contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand or fall on its own, often going to different suppliers, because that produces a better result. Nothing is hidden. Each piece is competed in the open at its real size. The fear to name out loud: this is not contract splitting. Splitting is taking the same work and slicing it to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine, separately useful increments is a different thing, and it is allowed. If the whole exceeds the level that needs a competition, the pieces still go to competition. You are changing the shape of the buying, not hiding its size. The test is simple. Would these pieces exist as separate work even if there were no dollar limit to dodge? If they would, because they are genuinely different deliverables, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones."
+    "text": "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about the two things people mix up: Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule. Modular contracting is legal, and the Directive leans toward it, favouring contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand on its own, competed in the open at its real size. Nothing is hidden. The test: would these pieces exist as separate work even if there were no dollar limit to dodge? If yes, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones."
   },
   {
     "id": "/thread/procurement/buy-in-small-pieces#write-objectives",
@@ -468,7 +470,7 @@
     "sectionId": "write-objectives",
     "sectionHeading": "Write objectives, not a fixed list",
     "lifecyclePhase": "thread",
-    "text": "How you write what the supplier must do decides whether buying in pieces is even workable. The usual way is a statement of work: a fixed list of exactly what gets built and how, written as if you already know everything. It reads like “the supplier shall build these screens, in this order, by this date.” That suits things that do not change. It suits digital work badly, because you do not know everything up front, and every time you learn something new you have to reopen the contract to change the list. A statement of objectives works better for digital. You write down the goals, and bring in people who can work out what to build to meet them. It reads like “here is what this service has to achieve, and who it is for.” The details can shift as you learn, because the contract is tied to the goal, not to a frozen list. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful."
+    "text": "How you write what the supplier must do decides whether buying in pieces is even workable. There are two ways to write it: A statement of work is a fixed list of exactly what gets built and how, written as if you already know everything: \"the supplier shall build these screens, in this order, by this date.\" It suits things that do not change, and digital work badly, because every time you learn something new you have to reopen the contract to change the list. A statement of objectives works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: \"here is what this service has to achieve, and who it is for.\" The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of objectives vs statement of work. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful."
   },
   {
     "id": "/thread/procurement/buy-in-small-pieces#worked-example",
@@ -486,7 +488,7 @@
     "sectionId": "honest-cost",
     "sectionHeading": "The honest cost of buying in pieces",
     "lifecyclePhase": "thread",
-    "text": "Buying in pieces is not free. It asks more of you, not less. There are more contracts to run, more suppliers to coordinate, and you need someone holding the whole picture so the pieces fit. This is real work, and it is why people reach for one big contract instead. What you get for the effort is this: the big contract feels easier, right up to the point where it fails, and then it fails all at once with the money already spent. Buying in pieces costs you more attention along the way and far less when something goes wrong. You are spending coordination now to avoid a much bigger bill later."
+    "text": "Buying in pieces costs effort up front. There are more contracts to run, more suppliers to coordinate, and someone has to hold the whole picture so the pieces fit. That work is why people reach for one big contract. The trade is still worth making. A big contract feels easier right until it fails, and by then the money is spent. Buying in pieces spreads the cost: steady attention as you go, and far less to lose when something breaks. You pay in coordination now to avoid a much bigger bill later."
   },
   {
     "id": "/thread/procurement/buy-in-small-pieces#common-worries",
@@ -513,7 +515,7 @@
     "sectionId": "why-customising-hurts",
     "sectionHeading": "Why customising hurts later",
     "lifecyclePhase": "thread",
-    "text": "The real cost shows up at upgrade time. The supplier ships a new version, with improvements you would have got for free. But your copy is full of your own changes. Before you can take the new version, you have to redo every one of those changes on top of it. So you either fall behind on an old version, or you pay, again and again, to carry your changes forward. Every upgrade becomes a project. Customise far enough and the thing can no longer be patched at all, and then a security fix you need is one you cannot take."
+    "text": "The real cost shows up at upgrade time. The supplier ships a new version with improvements you would have got for free, but your copy is full of your own changes. Before you can take the new version, you have to redo every change on top of it. So you either fall behind on an old version, or you pay again and again to carry your changes forward. Every upgrade becomes a project. Customise far enough and the software can no longer be patched at all, and a security fix you need becomes one you cannot take."
   },
   {
     "id": "/thread/procurement/avoid-over-customising#bend-process",
@@ -522,7 +524,7 @@
     "sectionId": "bend-process",
     "sectionHeading": "Bend the process, not the software",
     "lifecyclePhase": "thread",
-    "text": "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows. A migration is the moment to drop this. TBS's GCcase migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one."
+    "text": "When you buy, shape your process around the software. Your way of working can flex: you can change a form, a step, a habit. Keep the bought thing as close to standard as you can, because standard is what stays cheap to run, easy to patch, and safe to upgrade. Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows. A migration is the moment to drop this. TBS's GCcase migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one."
   },
   {
     "id": "/thread/procurement/avoid-lock-in#how-stuck-happens",
@@ -540,7 +542,7 @@
     "sectionId": "staying-free",
     "sectionHeading": "Staying free is a bundle, not one clause",
     "lifecyclePhase": "thread",
-    "text": "No single term keeps you free. Staying able to leave is a set of habits, each one shutting a different door: Own the intellectual property. Then you can hand it to another supplier or maintain it yourself. Go further than owning it on paper: make the supplier keep the code in a repository your department controls, from day one, not on their own machines. Code you hold and can read is code no supplier can sit on. Use open standards and open formats. So your data and your service stay portable, and more than one supplier can work on them. Avoid bespoke where something off-the-shelf will do. Standard things have a market of suppliers who know them. Bespoke things have a market of one. Keep contracts short. Short contracts bring the switching point around often, so being stuck cannot deepen without you noticing. Require off-boarding. Make the contract require the supplier to hand back your data in a usable, standard form and help you move, rather than holding it hostage. The UK builds this right into its buying: a supplier has to let you off-board to a competitor. Keep enough knowledge in-house. Even with every clause in place, you can only leave if someone on your side understands the service well enough to run the move."
+    "text": "No single term keeps you free. Staying able to leave is a set of habits, each one shutting a different door: Own the intellectual property. Then you can hand it to another supplier or maintain it yourself. Go further than owning it on paper: make the supplier keep the code in a repository your department controls from day one. Code you hold and can read is code no supplier can sit on. Use open standards and open formats. So your data and your service stay portable, and more than one supplier can work on them. Avoid bespoke where something off-the-shelf will do. Standard things have a market of suppliers who know them. Bespoke things have a market of one. Keep contracts short. Short contracts bring the switching point around often, so being stuck cannot deepen without you noticing. Require off-boarding. Make the contract require the supplier to hand back your data in a usable, standard form and help you move, rather than holding it hostage. The UK builds this right into its buying: a supplier has to let you off-board to a competitor. Keep enough knowledge in-house. Even with every clause in place, you can only leave if someone on your side understands the service well enough to run the move."
   },
   {
     "id": "/thread/procurement/avoid-lock-in#after-you-bought",
@@ -549,7 +551,7 @@
     "sectionId": "after-you-bought",
     "sectionHeading": "What changes once you have bought it",
     "lifecyclePhase": "thread",
-    "text": "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop. You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives."
+    "text": "Buying is only the start. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop. You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives."
   },
   {
     "id": "/thread/procurement/keep-capability-in-house#what-enough-means",
@@ -558,7 +560,7 @@
     "sectionId": "what-enough-means",
     "sectionHeading": "What enough means",
     "lifecyclePhase": "thread",
-    "text": "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else. Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who can read what the supplier delivers and tell whether it is good, who know where your data lives and how it moves, who understand the main design decisions and why they were made, and who would not be lost if the supplier left tomorrow."
+    "text": "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else. The same people-side picture is set out in team capability. Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who: can read what the supplier delivers and judge whether it is good; know where your data lives and how it moves; understand the main design decisions and why they were made; would not be lost if the supplier left tomorrow."
   },
   {
     "id": "/thread/procurement/keep-capability-in-house#why-it-matters",
@@ -1346,6 +1348,176 @@
     "lifecyclePhase": "thread",
     "text": "Sources and references.",
     "keywords": "product backlog prioritization user stories MoSCoW"
+  },
+  {
+    "id": "/thread/team-capability#what-good-looks-like",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "A named product owner is empowered to set priorities and make decisions for the service. The team covers the roles a digital service needs: product and delivery management, user research, design, development, and operations. Enough people in the department understand the service to govern it, judge a supplier's work, and run a move if one is needed. The team has the authority and the access to do the work, and the standing to make decisions. The department knows who it needs for the service, on the team or a call away, and can reach them. Skills are kept current, with time and budget set aside for training. More than one person understands each important part of the service, so no single departure leaves a gap.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#why-it-matters",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "Team capability is easy to skip. A supplier can be hired to do the work, and the service still launches. The cost shows up later, and it is steep: You get locked in. With no one inside who understands the service, the supplier holds every answer and sets the price at each renewal. This is the trap avoiding lock-in is about. You cannot govern the work. To judge whether a supplier's research, security, or design is any good, someone on the department's side has to know what good looks like. Without that, the department signs off on work it cannot check. You cannot leave. Moving a service to a new supplier, or bringing it back in-house, needs people who understand it. A department that kept no one loses that option. The department falls behind its own service. Knowledge fades, the service ages, and the department ends up unable to safely change the thing it is accountable for. The Government of Canada makes this a requirement in the Directive on Digital Talent, because a department that keeps no capability cannot govern its services, cannot leave a supplier, and cannot improve what it runs.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#a-closer-look",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "The roles a service needs. A digital service is built and run by a handful of roles working together: product manager, who decides what to build and why; delivery manager, who keeps the work moving; user researchers, who find out what people need; designers, who shape the service; developers, who build it; operations, who run it once it is live. On a small service one person may hold two roles, and that is fine as long as the skills are covered. The UK's guide to what each role does sets out each role and offers job descriptions to reuse. Core team and extended team. Think of the team in two rings. The core team lives the work day to day and stays together across the life of the service. The extended team is the wider group of specialists brought in when the work calls for them: a security specialist, an accessibility expert, a lawyer, a data architect. Australia's multidisciplinary-team guidance covers how to staff both rings, from discovery through to a running service. Know who you need, and keep them close. Most departments cannot staff every digital role themselves, and across the Government of Canada in-house capability is thin. The realistic aim is a small core the department holds, plus a clear map of who else the service needs. The department needs enough people who understand how the service works to govern it, question a bad change, judge a renewal, and, if it comes to it, move the service to someone else. Those people can be on the team, in another team, or in a shared community, as long as they are close enough to call on. Keeping them close is what stops a department falling behind its own service and getting locked in to one supplier. It is the same capability the buying side depends on, set out in keeping enough in-house when you buy. Keeping skills current. Skills fade when they are not used, and digital work changes fast. Government builds and renews this capability in three ways: the GC Digital Talent platform for finding and classifying digital roles; the CSPS Digital Academy for product, design, data, and operations training; hiring routes made for digital work. Set aside time and budget for this, the way the Government of Canada Digital Standards ask departments to empower and invest in their staff.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#whose-job",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "Team capability is shared across a department. The product owner or delivery lead runs the team day to day and sets what it works on next. Human resources and hiring managers recruit, classify, and staff the digital roles. The team members researchers, designers, developers, operations, do the work and keep their own skills current. The department's digital talent community is a shared resource the team draws on for recruitment routes and specialist skills. The business owner of the application makes sure the service has the people and skills it needs, holds enough capability in-house, and funds the training to keep it.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#two-ways-comparison",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "two-ways-comparison",
+    "sectionHeading": "Two ways to build a team",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They handed the whole permit system to one supplier and kept no one in-house who understood it: gave the build and the running of the service to a single supplier kept no product owner with the authority to set priorities let one contractor hold all the knowledge of how it worked put no time or budget into the department's own skills The result: at renewal the supplier held every answer and set the price, a small change took months, and no one inside could judge whether the work was any good. Meet Pax. They built a small multidisciplinary team around the permit system: kept a product owner, a developer, and a service designer in-house, and brought in specialists as needed wrote down the decisions that mattered and kept the documentation current rotated people through the work so more than one person understood each part set aside time for training through the CSPS Digital Academy The result: when the supplier changed, the service kept running, the team could read the new work and push back on a weak change, and a move stayed possible.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#by-phase",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Team capability looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Team capability changes shape across the life of a service. Create. Assemble the team. Assemble the team. The department works out which roles the service needs, and decides which capability to keep in-house and which to bring in. It gets a product owner in place with the authority to make decisions. Capability planned in now sets what the service can do for years. Live. Keep the team together. Keep the team together. Skills are kept current, and knowledge is spread across more than one person so a departure does not leave a gap. The team watches its own health and workload. A team that loses its people ages into one that cannot safely change the service. Sunset. Hold on to the people who understand it. Hold on to the people who understand it. Enough of the team is kept to run the move or the retirement, and the knowledge is transferred before people leave. The service is not left with no one who remembers how it works.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#further-reading",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "For setting up and running a multidisciplinary service team, with roles, contractors, and training, The team in the UK Service Manual is a full guide. Australia's Have a multidisciplinary team guidance covers how to staff a service across its life and which roles to keep in-house. For a runnable self-assessment a team can use to check its own health, Atlassian's Team Health Monitor walks through eight attributes.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/team-capability#sources",
+    "pageTitle": "Team capability",
+    "pagePath": "/thread/team-capability",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "multidisciplinary team product owner delivery manager digital talent in-house skills training"
+  },
+  {
+    "id": "/thread/change-management#two-tracks-one-outcome",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "two-tracks-one-outcome",
+    "sectionHeading": "Two tracks, one outcome",
+    "lifecyclePhase": "thread",
+    "text": "Releasing a change and managing a change are two different jobs aimed at the same people. Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never shipped, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#what-good-looks-like",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "what-good-looks-like",
+    "sectionHeading": "What good looks like",
+    "lifecyclePhase": "thread",
+    "text": "There is a change strategy with a clear purpose: what is changing, and why. The people affected are involved early, before the change reaches them. Users and staff know what the change means for them, in concrete terms. Training and support are in place so people can actually use the new way, with practice and help at hand. Adoption is measured, and the change is reinforced until the old way is gone. Someone owns the change, with named roles and a timeline.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#why-it-matters",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "why-it-matters",
+    "sectionHeading": "Why it matters",
+    "lifecyclePhase": "thread",
+    "text": "A change can be delivered perfectly and still fail, because the people it was built for carry on the old way. When the people side is skipped, the cost is real: The old way lingers. People keep using the system or process they know, and the change never takes hold. Two systems run at once. The old and the new run in parallel, at double the cost and effort, sometimes for years. The benefits never arrive. The service was funded to deliver an outcome; without adoption, the money is spent and the outcome does not come. Trust erodes. A botched rollout makes the next change harder, because people learned that change means disruption with no payoff. The Government of Canada treats adoption as what makes or breaks a digital shift, in the GC Information Management Strategy.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#a-closer-look",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "a-closer-look",
+    "sectionHeading": "A closer look",
+    "lifecyclePhase": "thread",
+    "text": "A change succeeds one person at a time. The widely used ADKAR model names the five stages each person moves through, and a change stalls at whichever one is skipped. Example: a new case screen for grants officers. A grants-and-contributions program is replacing the old case screen its officers use every day. Three groups are involved. The delivery team builds the new screen and releases it to production one Tuesday night. The grants officers are the users: the new screen is what they open on the Wednesday morning. Their manager, a change lead, and the delivery team are the ones who get them ready. The five stages below follow those officers. Awareness. People need to know a change is coming and why. State the reason in plain terms, from the point of view of the people it affects, before it arrives. A change sprung on people with no warning meets resistance before anyone understands it. the officers hear why the old screen is going, from their own manager, three weeks before the switch. Desire. Knowing about a change does not make people want it. Show what it does for them, involve them early so they help shape it, and be straight about what is hard. People who helped build a change are the ones who carry it. a few officers help test the new screen, so their colleagues hear it is better from people they trust. Knowledge. People need to know how to work the new way: what to do differently, and where to get help. This is training, guidance, and clear documentation, ready before the change goes live. the officers get a hands-on training session and a one-page guide before the new screen goes live. Ability. Knowing how is not the same as being able to. People need time to practise, support on hand while they find their feet, and the old obstacles removed so the new way is the easy one. the officers get a few days to practise with someone on hand to help, and their most common task is set up to be quicker in the new screen. Reinforcement. A change that is not reinforced slides back to the old way. Measure whether people have actually adopted it, keep supporting them, retire the old path so there is nothing to slip back to, and recognise the teams that made the switch. after go-live the old screen is switched off on a set date, usage is checked, and the first team to move across is thanked.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#whose-job",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "whose-job",
+    "sectionHeading": "Whose job it is",
+    "lifecyclePhase": "thread",
+    "text": "A change is delivered by several people, and it fails when no one owns the adoption. The change lead or sponsor plans the adoption, communicates it, and drives it through. Managers of the affected teams carry their own people through the change day to day. The service team builds the change and the supports around it: the training, the guidance, the smoother path. The department's change management community is a shared resource the team draws on for templates and lessons learned. The business owner of the application owns the outcome, funds the change work, and backs it visibly so people take it seriously.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#two-ways-comparison",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "two-ways-comparison",
+    "sectionHeading": "Two ways to manage a change",
+    "lifecyclePhase": "thread",
+    "text": "Meet Vell. They switched on a new case-management system and expected people to follow: announced the change by email a week before go-live ran no training and gave people no time to practise left the old system running as a fallback never checked whether anyone had actually moved across The result: staff kept using the old system and their own workarounds, the two ran in parallel for a year at double the cost, and the promised benefits never arrived. Meet Pax. They planned the people side of the change from the start: set a clear purpose and involved the affected teams while the system was still being shaped showed each team what changed for them, and trained them before go-live measured how many had moved across, and kept support on hand retired the old system on a set date once people were ready The result: the teams switched, the old way was gone, and the service delivered what it was meant to.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#by-phase",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "by-phase",
+    "sectionHeading": "What Change management looks like in each phase",
+    "lifecyclePhase": "thread",
+    "text": "Change management changes shape across the life of a service. Create. Plan the change early. Plan the change early. Work out who the change affects and what it means for them. Write a change strategy with a clear purpose and named roles, and involve the affected people while there is still time to shape it. A change planned in from the start is one people are ready for. Live. Win adoption. Win adoption. Communicate the change, train people, and support them while they find their feet. Measure how many have actually moved across, and reinforce it until the old way is gone. This is where a delivered change becomes a used one. Sunset. A retirement is a change too. A retirement is a change too. People who relied on the old service have to move to whatever comes next, and that move needs the same care. Tell them early, help them across, and manage the loss of the familiar. A migration succeeds or fails on whether people adopt the replacement.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#further-reading",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "further-reading",
+    "sectionHeading": "Further reading",
+    "lifecyclePhase": "thread",
+    "text": "For whether people will actually take up a change, stage by stage, Prosci's ADKAR model is the individual-adoption lens. Kotter's 8 Steps for Leading Change is the organisation-level companion: building urgency, a guiding coalition, and short-term wins. For a government, activity-level template, the US GSA M3 Playbook's task on defining a change-management approach sets up the work on a project.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
+  },
+  {
+    "id": "/thread/change-management#sources",
+    "pageTitle": "Change management",
+    "pagePath": "/thread/change-management",
+    "sectionId": "sources",
+    "sectionHeading": "Sources",
+    "lifecyclePhase": "thread",
+    "text": "Sources and references.",
+    "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
     "id": "/thread/joined-up-delivery#your-service-is-one-box-in-a-bigger-journey",

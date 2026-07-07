@@ -30,7 +30,10 @@ export const RELEASING_CHANGES_THREAD = {
 
   lead: {
     text:
-      "Releasing changes means getting new features and fixes onto the live service, safely and often. The surprising part, for anyone who finds releases nerve-wracking, is that releasing small and often is safer than saving everything up for a big launch. Releasing changes pulls together four habits: release in small, frequent batches; run every change through an automated pipeline that tests it before it goes out; roll each change out gradually and watch how it behaves; and keep the ability to roll back quickly if something goes wrong.",
+      "Releasing changes means getting new features and fixes onto the live service, safely and often. The surprising part, for anyone who finds releases nerve-wracking, is that releasing small and often is safer than saving everything up for a big launch. Releasing changes pulls together four habits: release in small, frequent batches; run every change through an automated pipeline that tests it before it goes out; roll each change out gradually and watch how it behaves; and keep the ability to roll back quickly if something goes wrong. The people side of the same change is change management.",
+    internalLinks: [
+      { phrase: "change management", to: THREADS["change-management"].path },
+    ] satisfies InternalPhraseLink[],
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [

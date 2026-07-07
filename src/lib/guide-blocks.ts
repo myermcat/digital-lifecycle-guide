@@ -20,7 +20,22 @@ export const EDITORIAL_NOTE_BLOCK = {
     "Editorial framing: who the page is for, background context, cautions. Not for practical how-to within the page.",
   visual:
     "Muted grey fill (bg-muted/40). Thick left bar in muted grey (border-l-muted-foreground/60). Tiny uppercase label in muted sans (guideCalloutLabel). Body in tight sans (guideProseTight). Caution tone uses red accent instead.",
-  examples: ['Home — "Who this is for"'],
+  examples: [
+    'Home — "Who this is for"',
+    'Worked examples — label "Example" (setup) or "In the example" (nested under a stage); always grey EditorialNote, never GuideCallout',
+    'Change management — grants-officers ADKAR setup + per-stage lines',
+    'Joined-up delivery — whole-journey example',
+    'Good contract — example note',
+    'Security — COVID Alert example inside a closer-look toggle',
+  ],
+} as const;
+
+/** Worked examples always use {@link EDITORIAL_NOTE_BLOCK} (grey), not callout (red). */
+export const WORKED_EXAMPLE_LABELS = {
+  /** Running scenario that sets up a list or toggle block. */
+  setup: "Example",
+  /** One line continuing that scenario under a stage or step. */
+  nested: "In the example",
 } as const;
 
 /** Callout — practical tips, tests, scope within a page. */

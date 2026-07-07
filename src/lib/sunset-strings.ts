@@ -147,7 +147,8 @@ export const SUNSET_STRINGS = {
         label: "Migrate",
         title: "Migrate.",
         leadIn: "Make the switch and close out the old.",
-        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, bring users across, and decommission the old service. A migration is a chance to simplify, so move what still creates value and leave the rest behind.",
+        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, bring users across, and decommission the old service. A migration succeeds only if people adopt the replacement, which is what change management is for. A migration is a chance to simplify, so move what still creates value and leave the rest behind.",
+        internalLinks: [{ phrase: "change management", to: "/thread/change-management" }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 5, Migrate and Common Migration Approaches — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {

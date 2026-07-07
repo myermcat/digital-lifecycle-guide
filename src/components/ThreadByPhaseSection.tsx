@@ -4,11 +4,10 @@ import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import {
   renderLinkedProse,
   renderThreadSections,
-  type ThreadContentSection,
   type ThreadLinkedProse,
   type ThreadPhasePreviewBlock,
 } from "@/lib/thread-rich-content";
-import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
 
 export type ThreadByPhaseBlock =
   | ThreadPhasePreviewBlock
@@ -25,13 +24,22 @@ export type ThreadByPhaseContent = {
   blocks: readonly ThreadByPhaseBlock[];
 };
 
-function renderPhasePopup(
-  popup: readonly ThreadContentSection[] | ThreadLinkedProse,
-): ReactNode {
-  if (Array.isArray(popup)) {
-    return renderThreadSections(popup);
+function isThreadPhaseSectionsPopup(block: ThreadByPhaseBlock): block is ThreadPhasePreviewBlock {
+  return Array.isArray(block.popup);
+}
+
+function renderPhasePopup(block: ThreadByPhaseBlock): ReactNode {
+  if (isThreadPhaseSectionsPopup(block)) {
+    return (
+      <div className="space-y-3">
+        {block.popupHeading ? (
+          <p className={`${guideProseTight} font-semibold text-foreground/90`}>{block.popupHeading}</p>
+        ) : null}
+        {renderThreadSections(block.popup)}
+      </div>
+    );
   }
-  return <p>{renderLinkedProse(popup)}</p>;
+  return <p className={guideProse}>{renderLinkedProse(block.popup)}</p>;
 }
 
 /** Full “What X looks like in each phase” section with folder tabs. */
@@ -61,7 +69,7 @@ export function ThreadByPhaseSection({ byPhase }: { byPhase: ThreadByPhaseConten
         ariaLabel={byPhase.title}
         panelId={phasePanelId}
       >
-        {renderPhasePopup(activePhaseBlock.popup)}
+        {renderPhasePopup(activePhaseBlock)}
       </GuideFolderTabs>
     </section>
   );

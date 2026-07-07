@@ -48,6 +48,7 @@ export function SupportCallout({
           {proseWithMixedLinks(body.text, {
             external: body.externalLinks,
             mailto: body.mailtoLinks,
+            placeholderGcNetwork: body.placeholderGcNetworkLinks,
             linkClassName: supportCalloutLink,
           })}
         </p>

@@ -10,13 +10,18 @@ import {
 } from "@/components/ThreadArticleSection";
 import { ThreadArticleLayout } from "@/components/ThreadArticleLayout";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import type { ContractingSubPage as ContractingSubPageContent } from "@/lib/contracting-subpages";
+import type {
+  ContractingSubPage as ContractingSubPageContent,
+  ContractingBullet,
+  ContractingParagraph,
+} from "@/lib/contracting-subpages";
+import { contractingParagraphPlainText } from "@/lib/contracting-subpages";
 import {
   guideArticleCalloutLift,
   guideAsideNote,
   guideArticleProse,
 } from "@/lib/guide-article";
-import { guideLink, guideProse } from "@/lib/guide-typography";
+import { guideLink, guideProse, guideListIndent } from "@/lib/guide-typography";
 
 function renderParagraph(
   paragraph: string,
@@ -73,6 +78,31 @@ function paragraphWithLink(
   );
 }
 
+function renderContractingParagraph(paragraph: ContractingParagraph) {
+  if (typeof paragraph === "string") {
+    return paragraph;
+  }
+
+  return proseWithMixedLinks(paragraph.text, {
+    external: paragraph.externalLinks,
+    bold: paragraph.bold,
+  });
+}
+
+function renderBulletBody(bullet: ContractingBullet) {
+  if (bullet.paragraphLink) {
+    return paragraphWithLink(bullet.body, bullet.paragraphLink);
+  }
+
+  if (bullet.externalLink) {
+    return proseWithExternalLinks(bullet.body, [
+      { phrase: bullet.externalLink.phrase, linkKey: bullet.externalLink.linkKey },
+    ]);
+  }
+
+  return bullet.body;
+}
+
 export function ContractingSubPage({ page }: { page: ContractingSubPageContent }) {
   const sectionNav = <ContractingSectionNav slug={page.slug} />;
 
@@ -118,21 +148,44 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
               {renderParagraph(paragraph, paragraphIndex, section)}
             </p>
           ))}
+          {section.bulletLead ? (
+            <p className="font-semibold text-foreground/90">{section.bulletLead}</p>
+          ) : null}
+          {section.continuationBullets ? (
+            <ul className={`list-disc space-y-1 ${guideListIndent} ${guideProse}`}>
+              {section.continuationBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
           {section.bullets && section.bulletsVariant === "qa" ? (
             <ThreadArticleQaList items={section.bullets} />
           ) : section.bullets && section.bulletsVariant === "ladder" ? (
             <OptionsLadder items={section.bullets} />
           ) : section.bullets ? (
-            <ThreadArticleLeadList items={section.bullets} />
+            <ThreadArticleLeadList
+              items={section.bullets.map((bullet) => ({
+                ...bullet,
+                body: renderBulletBody(bullet),
+              }))}
+            />
+          ) : null}
+          {section.highlightedNote ? (
+            <p className={guideAsideNote}>
+              <strong className="font-semibold text-foreground/60">
+                {section.highlightedNote.lead}
+              </strong>{" "}
+              {section.highlightedNote.body}
+            </p>
           ) : null}
           {section.paragraphsAfterBullets?.map((paragraph) => (
             <p
-              key={paragraph}
+              key={contractingParagraphPlainText(paragraph)}
               className={
                 section.paragraphsAfterBulletsVariant === "note" ? guideAsideNote : undefined
               }
             >
-              {paragraph}
+              {renderContractingParagraph(paragraph)}
             </p>
           ))}
           {section.paragraphsAfterNote?.map((paragraph) => (

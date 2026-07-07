@@ -131,6 +131,12 @@ export const EXTERNAL_LINKS = {
       "UK Home Office, Service design at the Home Office (Kate Tarling, 2016), Open Government Licence",
     accessibility: "public",
   },
+  "uk-gov-testable-requirements": {
+    url: "https://technology.blog.gov.uk/2015/03/04/creating-better-acceptance-criteria-for-user-stories/",
+    description:
+      "GOV.UK Technology in Government blog, Creating better acceptance criteria for user stories",
+    accessibility: "public",
+  },
   "uk-service-manual-whole-problem": {
     url: "https://www.gov.uk/service-manual/design/map-a-users-whole-problem",
     description: "UK Service Manual, Map and understand a user's whole problem",
@@ -1056,6 +1062,76 @@ export const EXTERNAL_LINKS = {
   "csps-cor433": {
     url: "https://catalogue.csps-efpc.gc.ca/product?catalog=COR433&cm_locale=en",
     description: "Introduction to the Planning and Management of Investments, COR433 (CSPS)",
+    accessibility: "public",
+  },
+  "directive-digital-talent": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32749",
+    description: "Directive on Digital Talent (TBS)",
+    accessibility: "public",
+  },
+  "gc-digital-talent-strategy": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-talent-strategy.html",
+    description: "GC Digital Talent Strategy (TBS OCIO)",
+    accessibility: "public",
+  },
+  "gc-digital-talent-platform": {
+    url: "https://talent.canada.ca/",
+    description: "GC Digital Talent platform (TBS)",
+    accessibility: "public",
+  },
+  "csps-digital-academy": {
+    url: "https://www.csps-efpc.gc.ca/digital-academy/index-eng.aspx",
+    description: "CSPS Digital Academy (Canada School of Public Service)",
+    accessibility: "public",
+  },
+  "uk-service-manual-what-each-role": {
+    url: "https://www.gov.uk/service-manual/the-team/what-each-role-does-in-a-service-team",
+    description: "What each role does in a service team (UK Service Manual)",
+    accessibility: "public",
+  },
+  "uk-service-manual-the-team": {
+    url: "https://www.gov.uk/service-manual/the-team",
+    description: "The team (UK Service Manual)",
+    accessibility: "public",
+  },
+  "dta-multidisciplinary-team": {
+    url: "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/2-have-multidisciplinary-team",
+    description: "Have a multidisciplinary team (Australia DTA)",
+    accessibility: "public",
+  },
+  "atlassian-team-health-monitor": {
+    url: "https://www.atlassian.com/team-playbook/health-monitor",
+    description: "Team Health Monitor (Atlassian)",
+    accessibility: "public",
+  },
+  "gc-information-management-strategy-storyline": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/information-management-strategy/storyline.html",
+    description: "GC Information Management Strategy, Storyline (TBS)",
+    accessibility: "public",
+  },
+  "csps-project-management-learning-path": {
+    url: "https://www.csps-efpc.gc.ca/learning-paths/project-management-eng.aspx",
+    description: "CSPS Project Management Learning Path, change strand",
+    accessibility: "public",
+  },
+  "prosci-adkar": {
+    url: "https://www.prosci.com/methodology/adkar",
+    description: "The ADKAR Model (Prosci)",
+    accessibility: "public",
+  },
+  "kotter-8-steps": {
+    url: "https://www.kotterinc.com/methodology/8-steps/",
+    description: "8 Steps for Leading Change (Kotter Inc.)",
+    accessibility: "public",
+  },
+  "gsa-m3-change-management-approach": {
+    url: "https://ussm.gsa.gov/1.7/",
+    description: "Define Change Management Approach, task 1.7 (US GSA M3 Playbook)",
+    accessibility: "public",
+  },
+  "iocn-change-network": {
+    url: "https://wiki.gccollab.ca/IOCN-RICO",
+    description: "Interdepartmental Organizational Change Network (IOCN, GCcollab)",
     accessibility: "public",
   },
 } as const satisfies Record<string, ExternalLinkEntry>;

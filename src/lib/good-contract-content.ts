@@ -65,7 +65,7 @@ export const GOOD_CONTRACT = {
     },
     {
       text:
-        "This is a tour of a sample contract, not a legal template and not the authority. The rules that govern federal contracts sit with PSPC, the Directive on the Management of Procurement, and CanadaBuys. For how to run the buying itself, see the Procurement thread. This page is only about what a good agreement should contain.",
+        "This is a tour of a sample contract. It is not a legal template, and it does not set the rules. The rules that govern federal contracts sit with PSPC, the Directive on the Management of Procurement, and CanadaBuys. For how to run the buying itself, see the Procurement thread. This page is only about what a good agreement should contain.",
       externalLinks: [
         { phrase: "Directive on the Management of Procurement", linkKey: "directive-procurement" },
         { phrase: "CanadaBuys", linkKey: "canadabuys" },
@@ -95,6 +95,12 @@ export const GOOD_CONTRACT = {
         text:
           "A good requirement is specific, measurable, and testable. Written in full, Schedule I's 'good order' would read more like this:",
         bold: [{ phrase: "specific, measurable, and testable" }],
+        externalLinks: [
+          {
+            phrase: "specific, measurable, and testable",
+            linkKey: "uk-gov-testable-requirements",
+          },
+        ] satisfies ExternalPhraseLink[],
       },
     ],
     exampleBlock: `Within 30 days of the end of the Agreement, the Supplier shall provide Canada with:

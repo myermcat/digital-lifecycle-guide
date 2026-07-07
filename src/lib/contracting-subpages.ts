@@ -22,10 +22,24 @@ export const CONTRACTING_SUBPAGE_SLUGS = PROCUREMENT_SUBPAGE_SLUGS;
 /** @deprecated Use ProcurementSubPageSlug */
 export type ContractingSubPageSlug = ProcurementSubPageSlug;
 
+export type ContractingLinkedParagraph = {
+  text: string;
+  bold?: { phrase: string }[];
+  externalLinks?: { phrase: string; linkKey: ExternalLinkKey }[];
+};
+
+export type ContractingParagraph = string | ContractingLinkedParagraph;
+
+export function contractingParagraphPlainText(paragraph: ContractingParagraph): string {
+  return typeof paragraph === "string" ? paragraph : paragraph.text;
+}
+
 export type ContractingBullet = {
   lead: string;
   body: string;
   bodyLines?: string[];
+  paragraphLink?: { phrase: string; to: string };
+  externalLink?: { phrase: string; linkKey: ExternalLinkKey };
 };
 
 export type ContractingExternalParagraphLink = {
@@ -54,7 +68,7 @@ export type ContractingSection = {
   paragraphLinks?: ContractingParagraphLink[];
   externalParagraphLinks?: ContractingExternalParagraphLink[];
   placeholderParagraphLinks?: ContractingPlaceholderParagraphLink[];
-  paragraphsAfterBullets?: string[];
+  paragraphsAfterBullets?: ContractingParagraph[];
   /** How text below a bullet list is rendered. */
   paragraphsAfterBulletsVariant?: "prose" | "note";
   paragraphsAfterNote?: string[];
@@ -64,6 +78,12 @@ export type ContractingSection = {
     note?: string;
   };
   bullets?: ContractingBullet[];
+  /** Short lead line rendered before bullets (e.g. a question heading into a list). */
+  bulletLead?: string;
+  /** Semicolon-ended lines that continue a lead sentence (plain list, no bold leads). */
+  continuationBullets?: string[];
+  /** Standout note below bullets — lead in semibold, body in muted aside style. */
+  highlightedNote?: { lead: string; body: string };
   /** How lead/body bullet lists are rendered. */
   bulletsVariant?: "inline" | "qa" | "ladder";
   caseStudy?: {
@@ -121,7 +141,17 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           },
         ],
         paragraphsAfterBullets: [
-          "Where you can, write the measure into the contract, and make it specific. “Pages load in under three seconds for almost everyone” is checkable. “The service will be fast” is not. It is the same idea as a good dashboard: the number has to be measured, not guessed. Those measures are what you hold the supplier to, and what you pay against.",
+          {
+            text:
+              "Where you can, write the measure into the contract, and make it a good requirement, one that is specific, measurable, and testable. “Pages load in under three seconds for almost everyone” is checkable. “The service will be fast” is not. It is the same idea as a good dashboard: the number has to be measured. Those measures are what you hold the supplier to, and what you pay against.",
+            bold: [{ phrase: "specific, measurable, and testable" }],
+            externalLinks: [
+              {
+                phrase: "specific, measurable, and testable",
+                linkKey: "uk-gov-testable-requirements",
+              },
+            ],
+          },
         ],
       },
       {
@@ -149,34 +179,70 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         paragraphs: [
           "If you were building the service yourself, you would not write the whole thing in one sitting. You would work out the shape of it, build a piece, check that it works, then build the next piece on top. Small steps you can test. You fix your course as you learn.",
           "Buying in pieces is the same habit applied to contracts. Instead of one big contract for the whole job, you write several smaller ones, each for a real piece of work. The architecture is a piece. Moving the data is a piece. Each part of the service is a piece. You buy them in an order where each one teaches you something before the next begins.",
-          "Why bother, when one big contract feels simpler? Because small pieces show their value early, and their problems early too. If a supplier underperforms, you replace that piece, not the whole programme. If needs change, the next piece absorbs the change. Risk and cost stay in hand because nothing rides on a single, distant delivery.",
-          "This helps because building a service is full of things you cannot know up front. Whether the technology fits. Whether it clashes with what you already run. Whether the problem turns out harder than it looked. A single big contract bets that you got all of that right before you started. You almost never do. Small contracts let you find out cheaply and change course.",
+        ],
+        bulletLead: "Why bother, when one big contract feels simpler?",
+        bullets: [
+          {
+            lead: "Value and problems show early.",
+            body: "Small pieces prove their worth soon, and surface their faults soon, while there is still time and money to act.",
+          },
+          {
+            lead: "You replace a piece, not the programme.",
+            body: "If a supplier underperforms, you swap out that piece instead of losing the whole thing.",
+          },
+          {
+            lead: "Change is absorbed.",
+            body: "If needs shift, the next piece takes the change, so nothing rides on a single, distant delivery.",
+          },
+        ],
+        paragraphsAfterBullets: [
+          "A single big contract bets you got everything right before you started. But building a service is full of things you cannot know up front, whether the technology fits, whether it clashes with what you already run, whether the problem is harder than it looked. Small contracts let you find out cheaply and change course.",
         ],
       },
       {
         id: "modular-not-split",
         title: "Modular, not split: the line you cannot cross",
         paragraphs: [
-          "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about.",
-          "Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule.",
-          "Modular contracting is legal, and the Directive actually leans toward it: it favours contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand or fall on its own, often going to different suppliers, because that produces a better result. Nothing is hidden. Each piece is competed in the open at its real size.",
-          "The fear to name out loud: this is not contract splitting. Splitting is taking the same work and slicing it to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine, separately useful increments is a different thing, and it is allowed. If the whole exceeds the level that needs a competition, the pieces still go to competition. You are changing the shape of the buying, not hiding its size.",
-          "The test is simple. Would these pieces exist as separate work even if there were no dollar limit to dodge? If they would, because they are genuinely different deliverables, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones.",
+          "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about the two things people mix up:",
         ],
-        externalParagraphLinks: [
-          { index: 2, phrase: "the Directive", linkKey: "directive-procurement" },
+        bullets: [
+          {
+            lead: "Contract splitting is illegal.",
+            body: "It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule.",
+          },
+          {
+            lead: "Modular contracting is legal,",
+            body: "and the Directive leans toward it, favouring contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand on its own, competed in the open at its real size. Nothing is hidden.",
+            externalLink: { phrase: "the Directive", linkKey: "directive-procurement" },
+          },
         ],
+        highlightedNote: {
+          lead: "The test:",
+          body: "would these pieces exist as separate work even if there were no dollar limit to dodge? If yes, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones.",
+        },
       },
       {
         id: "write-objectives",
         title: "Write objectives, not a fixed list",
         paragraphs: [
-          "How you write what the supplier must do decides whether buying in pieces is even workable.",
-          "The usual way is a statement of work: a fixed list of exactly what gets built and how, written as if you already know everything. It reads like “the supplier shall build these screens, in this order, by this date.” That suits things that do not change. It suits digital work badly, because you do not know everything up front, and every time you learn something new you have to reopen the contract to change the list.",
-          "A statement of objectives works better for digital. You write down the goals, and bring in people who can work out what to build to meet them. It reads like “here is what this service has to achieve, and who it is for.” The details can shift as you learn, because the contract is tied to the goal, not to a frozen list. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful.",
+          "How you write what the supplier must do decides whether buying in pieces is even workable. There are two ways to write it:",
         ],
-        paragraphLinks: [
-          { index: 2, phrase: "statement of objectives", to: SOO_VS_SOW_PATH },
+        bullets: [
+          {
+            lead: "A statement of work",
+            body: 'is a fixed list of exactly what gets built and how, written as if you already know everything: "the supplier shall build these screens, in this order, by this date." It suits things that do not change, and digital work badly, because every time you learn something new you have to reopen the contract to change the list.',
+          },
+          {
+            lead: "A statement of objectives",
+            body: 'works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: "here is what this service has to achieve, and who it is for." The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of objectives vs statement of work.',
+            paragraphLink: {
+              phrase: "statement of objectives vs statement of work",
+              to: SOO_VS_SOW_PATH,
+            },
+          },
+        ],
+        paragraphsAfterBullets: [
+          "That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful.",
         ],
       },
       {
@@ -201,7 +267,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
               "Name the real pieces: the architecture, the data move, each part of the service.",
               "Buy each piece as its own smaller contract, often to different suppliers.",
               "Each piece is due soon, so value shows up early and so do problems.",
-              "If one supplier underperforms, replace that piece, not the whole programme.",
+              "If one supplier underperforms, you replace that piece and the rest carries on.",
             ],
           },
         },
@@ -210,8 +276,8 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "honest-cost",
         title: "The honest cost of buying in pieces",
         paragraphs: [
-          "Buying in pieces is not free. It asks more of you, not less. There are more contracts to run, more suppliers to coordinate, and you need someone holding the whole picture so the pieces fit. This is real work, and it is why people reach for one big contract instead.",
-          "What you get for the effort is this: the big contract feels easier, right up to the point where it fails, and then it fails all at once with the money already spent. Buying in pieces costs you more attention along the way and far less when something goes wrong. You are spending coordination now to avoid a much bigger bill later.",
+          "Buying in pieces costs effort up front. There are more contracts to run, more suppliers to coordinate, and someone has to hold the whole picture so the pieces fit. That work is why people reach for one big contract.",
+          "The trade is still worth making. A big contract feels easier right until it fails, and by then the money is spent. Buying in pieces spreads the cost: steady attention as you go, and far less to lose when something breaks. You pay in coordination now to avoid a much bigger bill later.",
         ],
       },
       {
@@ -264,14 +330,15 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "why-customising-hurts",
         title: "Why customising hurts later",
         paragraphs: [
-          "The real cost shows up at upgrade time. The supplier ships a new version, with improvements you would have got for free. But your copy is full of your own changes. Before you can take the new version, you have to redo every one of those changes on top of it. So you either fall behind on an old version, or you pay, again and again, to carry your changes forward. Every upgrade becomes a project. Customise far enough and the thing can no longer be patched at all, and then a security fix you need is one you cannot take.",
+          "The real cost shows up at upgrade time. The supplier ships a new version with improvements you would have got for free, but your copy is full of your own changes. Before you can take the new version, you have to redo every change on top of it.",
+          "So you either fall behind on an old version, or you pay again and again to carry your changes forward. Every upgrade becomes a project. Customise far enough and the software can no longer be patched at all, and a security fix you need becomes one you cannot take.",
         ],
       },
       {
         id: "bend-process",
         title: "Bend the process, not the software",
         paragraphs: [
-          "When you buy, change your process to fit the software, not the other way round. Your way of working can flex. You can change a form, a step, a habit. The bought thing should stay as close to standard as you can keep it, because standard is what stays cheap to run, easy to patch, and safe to upgrade.",
+          "When you buy, shape your process around the software. Your way of working can flex: you can change a form, a step, a habit. Keep the bought thing as close to standard as you can, because standard is what stays cheap to run, easy to patch, and safe to upgrade.",
           "Sometimes a small change really is needed. When it is, make the smallest one you can, and write down why, so the next person knows what it cost. The goal is not zero changes at any price. It is to treat every change as a debt you will pay back at every upgrade, and to take on as little of it as the work allows.",
           "A migration is the moment to drop this. TBS's GCcase migration guidance advises against rebuilding the old solution as it was, since many customisations exist only because of an old platform's limits and are not needed in a modern one.",
         ],
@@ -328,7 +395,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         bullets: [
           {
             lead: "Own the intellectual property.",
-            body: "Then you can hand it to another supplier or maintain it yourself. Go further than owning it on paper: make the supplier keep the code in a repository your department controls, from day one, not on their own machines. Code you hold and can read is code no supplier can sit on.",
+            body: "Then you can hand it to another supplier or maintain it yourself. Go further than owning it on paper: make the supplier keep the code in a repository your department controls from day one. Code you hold and can read is code no supplier can sit on.",
           },
           {
             lead: "Use open standards and open formats.",
@@ -356,7 +423,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "after-you-bought",
         title: "What changes once you have bought it",
         paragraphs: [
-          "Buying is the start, not the finish. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop.",
+          "Buying is only the start. Once the service is live, most cycles are about keeping the lights on: patching, watching, making careful small changes. You are not adding big new features. Your job in this stretch changes shape, but it does not stop.",
           "You hold the supplier to what was agreed, and you watch for drift, the slow way a supplier's direction and your needs pull apart over renewals. And you keep half an eye on the exit you planned for at the start, because the day comes when a part of the service, or the supplier, or the whole thing reaches its end. Planning the exit early is what makes it calm when it arrives.",
         ],
       },
@@ -373,8 +440,18 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         id: "what-enough-means",
         title: "What enough means",
         paragraphs: [
-          "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else.",
-          "Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who can read what the supplier delivers and tell whether it is good, who know where your data lives and how it moves, who understand the main design decisions and why they were made, and who would not be lost if the supplier left tomorrow.",
+          "Hold on to enough understanding of how the service works that you could explain it, govern it, and, if you had to, move it to someone else. The same people-side picture is set out in team capability.",
+        ],
+        paragraphLinks: [
+          { index: 0, phrase: "team capability", to: "/thread/team-capability" },
+        ],
+        bulletLead:
+          "Enough does not mean you can do the supplier's job. It means you can stay in charge of it. You want people on your side who:",
+        continuationBullets: [
+          "can read what the supplier delivers and judge whether it is good;",
+          "know where your data lives and how it moves;",
+          "understand the main design decisions and why they were made;",
+          "would not be lost if the supplier left tomorrow.",
         ],
       },
       {

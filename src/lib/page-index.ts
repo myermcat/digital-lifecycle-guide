@@ -26,6 +26,11 @@ export type PageIndexEntry = {
 /**
  * Single source of truth for every page in the guide and its build status.
  * Update status here when a page moves forward.
+ *
+ * Thread order: list threads in the order they should appear when not in review.
+ * When a thread moves to in-review it floats to the top of the Threads table but
+ * keeps its place within the in-review block (so new in-review pages land at the
+ * end of that block, not in the middle).
  */
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
@@ -92,12 +97,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     type: "thread",
     status: "in-review",
   },
-  {
-    title: THREADS["team-capability"].title,
-    path: THREADS["team-capability"].path,
-    type: "thread",
-    status: "not-started",
-  },
   { title: THREADS.backlog.title, path: THREADS.backlog.path, type: "thread", status: "in-review" },
   {
     title: THREADS["joined-up-delivery"].title,
@@ -112,10 +111,16 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     status: "in-review",
   },
   {
+    title: THREADS["team-capability"].title,
+    path: THREADS["team-capability"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
     title: THREADS["change-management"].title,
     path: THREADS["change-management"].path,
     type: "thread",
-    status: "not-started",
+    status: "in-review",
   },
 
   { title: SOO_VS_SOW.title, path: SOO_VS_SOW_PATH, type: "reference", status: "in-review" },
@@ -180,19 +185,7 @@ export const PAGE_INDEX_TYPE_LABELS: Record<PageIndexType, string> = {
   other: "Other",
 };
 
-/** In-review threads float to the top of the Threads table in this order. */
-const THREAD_IN_REVIEW_DISPLAY_ORDER: string[] = [
-  THREADS.security.path,
-  THREADS.procurement.path,
-  THREADS.privacy.path,
-  THREADS["data-stewardship"].path,
-  THREADS.accessibility.path,
-  THREADS["user-research"].path,
-  THREADS["ethics-and-bias"].path,
-  THREADS.backlog.path,
-  THREADS["joined-up-delivery"].path,
-];
-
+/** In-review threads float to the top of the Threads table, in PAGE_INDEX order. */
 function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {
   return pages
     .map((page, index) => ({ page, index }))
@@ -200,13 +193,7 @@ function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {
       const aInReview = a.page.status === "in-review";
       const bInReview = b.page.status === "in-review";
 
-      if (aInReview && bInReview) {
-        const aOrder = THREAD_IN_REVIEW_DISPLAY_ORDER.indexOf(a.page.path);
-        const bOrder = THREAD_IN_REVIEW_DISPLAY_ORDER.indexOf(b.page.path);
-        const aRank = aOrder === -1 ? Number.MAX_SAFE_INTEGER : aOrder;
-        const bRank = bOrder === -1 ? Number.MAX_SAFE_INTEGER : bOrder;
-        if (aRank !== bRank) return aRank - bRank;
-      } else if (aInReview !== bInReview) {
+      if (aInReview !== bInReview) {
         return aInReview ? -1 : 1;
       }
 

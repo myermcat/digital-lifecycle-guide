@@ -21,6 +21,11 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
       to: "/thread/dependencies-and-standards",
       gloss: "what a release has to stay current with",
     },
+    {
+      label: "Change management",
+      to: "/thread/change-management",
+      gloss: "helping people adopt the change",
+    },
     { label: "Backlog", to: "/thread/backlog", gloss: "deciding what ships next" },
   ],
   "dependencies-and-standards": [
@@ -190,6 +195,11 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
       to: "/thread/team-capability",
       gloss: "the people who join it up",
     },
+    {
+      label: "Change management",
+      to: "/thread/change-management",
+      gloss: "helping people adopt a change across the journey",
+    },
   ],
   funding: [
     { label: "Procurement", to: "/thread/procurement", gloss: "the other half of buying" },
@@ -203,7 +213,7 @@ export const SEE_ALSO: Record<string, SeeAlsoItem[]> = {
     {
       label: "Joined-up delivery",
       to: "/thread/joined-up-delivery",
-      gloss: "change lands across the whole journey",
+      gloss: "a change reaches across the whole journey",
     },
     {
       label: "Team capability",

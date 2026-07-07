@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Georgia, 'Times New Roman', serif">
+<!-- LEFT station: releasing the change -->
+<circle cx="95" cy="120" r="26" fill="#F6F1E7" stroke="#A8492A" stroke-width="2"/><rect x="80" y="110" width="30" height="20" rx="3" fill="none" stroke="#A8492A" stroke-width="1.8"/><line x1="80" y1="116" x2="110" y2="116" stroke="#A8492A" stroke-width="1.8"/><circle cx="85" cy="113" r="1.4" fill="#A8492A"/><circle cx="90" cy="113" r="1.4" fill="#A8492A"/>
+<text x="95" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A3B2E">Releasing the change</text><text x="95" y="195" text-anchor="middle" font-size="12" font-style="italic" fill="#8C7B63">make the new thing exist</text>
+<line x1="150" y1="120" x2="344" y2="120" stroke="#A8492A" stroke-width="3"/><path d="M344,113 L358,120 L344,127 Z" fill="#A8492A"/>
+<!-- RIGHT station: change management -->
+<circle cx="805" cy="120" r="26" fill="#F6F1E7" stroke="#A8492A" stroke-width="2"/><rect x="790" y="110" width="30" height="18" rx="5" fill="none" stroke="#A8492A" stroke-width="1.8"/><path d="M797,128 L797,135 L805,128 Z" fill="#A8492A"/><line x1="795" y1="116" x2="815" y2="116" stroke="#A8492A" stroke-width="1.4"/><line x1="795" y1="121" x2="811" y2="121" stroke="#A8492A" stroke-width="1.4"/>
+<text x="805" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A3B2E">Change management</text><text x="805" y="195" text-anchor="middle" font-size="12" font-style="italic" fill="#8C7B63">make people ready</text>
+<line x1="750" y1="120" x2="556" y2="120" stroke="#A8492A" stroke-width="3"/><path d="M556,113 L542,120 L556,127 Z" fill="#A8492A"/>
+<!-- CENTER: the users -->
+<rect x="360" y="70" width="180" height="120" rx="16" fill="#F6F1E7" stroke="#A8492A" stroke-width="2.2"/><circle cx="432" cy="100" r="11" fill="#4A3B2E"/><path d="M416,134 a16,16 0 0 1 32,0 Z" fill="#4A3B2E"/><circle cx="468" cy="100" r="11" fill="#4A3B2E"/><path d="M452,134 a16,16 0 0 1 32,0 Z" fill="#4A3B2E"/><text x="450" y="170" text-anchor="middle" font-size="15" fill="#4A3B2E">The people who use it</text>
+<!-- DOWN to outcome -->
+<line x1="450" y1="190" x2="450" y2="242" stroke="#A8492A" stroke-width="3"/><path d="M443,242 L450,256 L457,242 Z" fill="#A8492A"/>
+<rect x="300" y="258" width="300" height="56" rx="12" fill="#F6F1E7" stroke="#A8492A" stroke-width="2"/><circle cx="360" cy="286" r="15" fill="none" stroke="#A8492A" stroke-width="2.4"/><path d="M352,287 l6,7 l11,-13" fill="none" stroke="#A8492A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="480" y="293" text-anchor="middle" font-size="16" fill="#4A3B2E">The change gets used</text>
+<text x="450" y="352" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">Both sides have to reach the same people. Then the change gets used.</text>
+</svg>
