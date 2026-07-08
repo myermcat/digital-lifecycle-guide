@@ -62,7 +62,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
       "Alpha ends when the risky parts have been tested. Two things can move a service out of it.",
     exits: [
       {
-        lead: "Forward to MVP,",
+        lead: "Forward to Beta,",
         rest: "when the riskiest parts have been tried and they hold, and you are ready to build the first real version.",
         href: "/create-mvp",
       },
@@ -75,7 +75,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     pills: [BUILD_IN_YOUR_EXIT_PILL],
   },
   mvp: {
-    phaseName: "MVP",
+    phaseName: "Beta",
     sectionId: "leaving-mvp",
     intro: "First delivery ends when the service is real and running. Two things can move it on.",
     exits: [

@@ -23,7 +23,7 @@ export type PhaseNavItem = SubphaseNavItem;
 export const CREATE_SUBPHASES: SubphaseNavItem[] = [
   { title: "Discovery", href: "/create-discovery", slug: "discovery" },
   { title: "Alpha", href: "/create-alpha", slug: "alpha" },
-  { title: "MVP", href: "/create-mvp", slug: "mvp" },
+  { title: "Beta", href: "/create-mvp", slug: "mvp" },
 ];
 
 export const LIVE_SUBPHASES: SubphaseNavItem[] = [
@@ -173,7 +173,7 @@ export const SUBPHASE_META: Record<
   mvp: {
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
-    subphase: "MVP",
+    subphase: "Beta",
     subtitle:
       "The first version built to last does only the essential thing, and goes live to a limited audience or for a narrow use case. The point is to replace test conditions with real ones: real users, real data, real failure modes. The team watches what happens, measures it, and uses what they learn to decide what to build next. A version that teaches the team what users actually need is doing exactly what it is supposed to do.",
     path: "/create-mvp",

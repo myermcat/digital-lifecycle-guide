@@ -65,10 +65,10 @@
   },
   {
     "id": "/create-mvp",
-    "pageTitle": "MVP",
+    "pageTitle": "Beta",
     "pagePath": "/create-mvp",
     "sectionId": "",
-    "sectionHeading": "MVP",
+    "sectionHeading": "Beta",
     "lifecyclePhase": "create",
     "text": ""
   },
@@ -759,7 +759,7 @@
     "sectionId": "working-through-create-in-detail",
     "sectionHeading": "Working through Create in detail",
     "lifecyclePhase": "create",
-    "text": "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and MVP."
+    "text": "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and Beta."
   },
   {
     "id": "/create#sources",

@@ -42,7 +42,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
 
   { title: "Discovery", path: "/create-discovery", type: "subphase", status: "not-started" },
   { title: "Alpha", path: "/create-alpha", type: "subphase", status: "not-started" },
-  { title: "MVP", path: "/create-mvp", type: "subphase", status: "not-started" },
+  { title: "Beta", path: "/create-mvp", type: "subphase", status: "not-started" },
   { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "not-started" },
   { title: "Growth", path: "/live-growth", type: "subphase", status: "not-started" },
   { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },

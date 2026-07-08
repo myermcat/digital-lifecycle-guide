@@ -110,7 +110,7 @@ export const CREATE_PHASE = {
     id: "working-through-create-in-detail",
     title: "Working through Create in detail",
     intro:
-      "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and MVP.",
+      "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and Beta.",
   },
 
   sources: [
