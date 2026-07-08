@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 330" font-family="Georgia, 'Times New Roman', serif">
+<!-- ISLAND 1: Create (cx 175) -->
+<ellipse cx="175" cy="250" rx="130" ry="13" fill="#EDE6D6"/>
+<g stroke="#DBD1BF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M120,264 q14,-6 28,0 t28,0 t28,0"/><path d="M150,274 q14,-6 28,0 t28,0"/></g>
+<path d="M57,248 C57,206 107,178 175,176 C243,178 293,206 293,248 Z" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<line x1="112" y1="205" x2="126" y2="205" stroke="#A8492A" stroke-width="2.4"/><path d="M126,199 L134,205 L126,211 Z" fill="#A8492A"/>
+<text x="145" y="212" text-anchor="start" font-size="23" font-weight="bold" fill="#A8492A">Create</text>
+<text x="175" y="234" text-anchor="middle" font-size="13.5" font-style="italic" fill="#8C7B63">build or buy it</text>
+
+<!-- ISLAND 2: Live (cx 540) -->
+<ellipse cx="540" cy="250" rx="130" ry="13" fill="#EDE6D6"/>
+<g stroke="#DBD1BF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M485,264 q14,-6 28,0 t28,0 t28,0"/><path d="M515,274 q14,-6 28,0 t28,0"/></g>
+<path d="M422,248 C422,206 472,178 540,176 C608,178 658,206 658,248 Z" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<circle cx="509" cy="205" r="5" fill="none" stroke="#A8492A" stroke-width="2.2"/><circle cx="519" cy="205" r="5" fill="none" stroke="#A8492A" stroke-width="2.2"/>
+<text x="533" y="212" text-anchor="start" font-size="23" font-weight="bold" fill="#A8492A">Live</text>
+<text x="540" y="234" text-anchor="middle" font-size="13.5" font-style="italic" fill="#8C7B63">run and improve it</text>
+
+<!-- ISLAND 3: Sunset (cx 905) -->
+<ellipse cx="905" cy="250" rx="130" ry="13" fill="#EDE6D6"/>
+<g stroke="#DBD1BF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M850,264 q14,-6 28,0 t28,0 t28,0"/><path d="M880,274 q14,-6 28,0 t28,0"/></g>
+<path d="M787,248 C787,206 837,178 905,176 C973,178 1023,206 1023,248 Z" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<line x1="843" y1="198" x2="843" y2="207" stroke="#A8492A" stroke-width="2.4"/><path d="M838,203 L843,211 L848,203 Z" fill="#A8492A"/><line x1="835" y1="215" x2="851" y2="215" stroke="#A8492A" stroke-width="2.4" stroke-linecap="round"/>
+<text x="862" y="212" text-anchor="start" font-size="23" font-weight="bold" fill="#A8492A">Sunset</text>
+<text x="905" y="234" text-anchor="middle" font-size="13.5" font-style="italic" fill="#8C7B63">retire it well</text>
+
+<!-- BRIDGE 1: Launch (Create -> Live) -->
+<path d="M286,216 Q357,196 429,216" fill="none" stroke="#A8492A" stroke-width="3.2"/>
+<path d="M292,207 Q357,189 423,207" fill="none" stroke="#A8492A" stroke-width="2"/>
+<line x1="316" y1="199" x2="316" y2="213" stroke="#A8492A" stroke-width="1.8"/>
+<line x1="357" y1="193" x2="357" y2="209" stroke="#A8492A" stroke-width="1.8"/>
+<line x1="398" y1="199" x2="398" y2="213" stroke="#A8492A" stroke-width="1.8"/>
+<text x="357" y="176" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#4A3B2E" letter-spacing="1">Launch</text>
+
+<!-- BRIDGE 2: Plan the exit (Live -> Sunset) -->
+<path d="M651,216 Q722,196 794,216" fill="none" stroke="#A8492A" stroke-width="3.2"/>
+<path d="M657,207 Q722,189 788,207" fill="none" stroke="#A8492A" stroke-width="2"/>
+<line x1="681" y1="199" x2="681" y2="213" stroke="#A8492A" stroke-width="1.8"/>
+<line x1="722" y1="193" x2="722" y2="209" stroke="#A8492A" stroke-width="1.8"/>
+<line x1="763" y1="199" x2="763" y2="213" stroke="#A8492A" stroke-width="1.8"/>
+<text x="722" y="176" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#4A3B2E" letter-spacing="1">Plan the exit</text>
+
+<text x="540" y="316" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">A service's life is three phases. The crossings between them are where the work is most often dropped.</text>
+</svg>

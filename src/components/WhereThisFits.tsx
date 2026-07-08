@@ -10,6 +10,9 @@ export function WhereThisFits({
   phaseVisual: lifecyclePhaseId,
   subphases,
 }: WhereThisFitsProps) {
+  const isPhaseLanding =
+    subphases.length > 0 && subphases.every((subphase) => !subphase.current);
+
   return (
     <div
       className="rounded-3xl p-5 md:p-7 shadow-inner"
@@ -23,30 +26,44 @@ export function WhereThisFits({
           {PHASE_ORDER.map((id, i) => (
             <span key={id} className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
               {i > 0 && <DashedArrow direction="right" />}
-              {id === lifecyclePhaseId ? (
-                <Link
-                  to={PHASES[id].href}
-                  aria-current="page"
-                  className="inline-flex shrink-0 items-center whitespace-nowrap hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
+                {id === lifecyclePhaseId ? (
+                  isPhaseLanding ? (
+                    <span className="inline-flex shrink-0 items-center" aria-current="page">
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
+                      >
+                        {phaseVisual(id as LifecyclePhaseId)}
+                      </span>
+                      <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
+                        {PHASES[id].title}
+                      </span>
+                    </span>
+                  ) : (
+                    <Link
+                      to={PHASES[id].href}
+                      aria-current="page"
+                      className="inline-flex shrink-0 items-center whitespace-nowrap hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
+                      >
+                        {phaseVisual(id as LifecyclePhaseId)}
+                      </span>
+                      <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5 underline decoration-dotted decoration-foreground/30 underline-offset-4">
+                        {PHASES[id].title}
+                      </span>
+                    </Link>
+                  )
+                ) : (
+                  <Link
+                    to={PHASES[id].href}
+                    className={`shrink-0 whitespace-nowrap text-sm ${guideLink}`}
                   >
-                    {phaseVisual(id as LifecyclePhaseId)}
-                  </span>
-                  <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
                     {PHASES[id].title}
-                  </span>
-                </Link>
-              ) : (
-                <Link
-                  to={PHASES[id].href}
-                  className={`shrink-0 whitespace-nowrap text-sm ${guideLink}`}
-                >
-                  {PHASES[id].title}
-                </Link>
-              )}
+                  </Link>
+                )}
             </span>
           ))}
         </div>
