@@ -125,7 +125,7 @@ function Index() {
           <img
             src={lifecycleIslands}
             alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
-            className="w-full h-auto max-w-3xl mx-auto mt-6"
+            className="w-full h-auto max-w-3xl mx-auto mt-3"
           />
           <GuideCallout title="Not sure which phase you are in?" className="my-10 md:my-14">
             The quickest test is where your feedback comes from. In Create it comes from
