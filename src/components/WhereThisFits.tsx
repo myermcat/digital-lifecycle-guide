@@ -24,7 +24,11 @@ export function WhereThisFits({
             <span key={id} className="inline-flex shrink-0 items-center gap-2 sm:gap-3">
               {i > 0 && <DashedArrow direction="right" />}
               {id === lifecyclePhaseId ? (
-                <span className="inline-flex shrink-0 items-center" aria-current="page">
+                <Link
+                  to={PHASES[id].href}
+                  aria-current="page"
+                  className="inline-flex shrink-0 items-center whitespace-nowrap hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded"
+                >
                   <span
                     aria-hidden="true"
                     className="pointer-events-none opacity-25 w-10 h-9 flex shrink-0 items-center justify-center -mr-1.5"
@@ -34,7 +38,7 @@ export function WhereThisFits({
                   <span className="font-serif text-2xl font-semibold tracking-tight text-foreground -ml-0.5">
                     {PHASES[id].title}
                   </span>
-                </span>
+                </Link>
               ) : (
                 <Link
                   to={PHASES[id].href}
