@@ -14,6 +14,7 @@ import { ArrowInVisual, InfinityVisual, ArrowOutVisual } from "@/components/Phas
 import { PHASES, THREADS } from "@/lib/guide-strings";
 import { CREATE_SUBPHASES, LIVE_SUBPHASES } from "@/lib/lifecycle-navigation";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "@/lib/site-meta";
+import { LifecycleThreeRegionsFigure } from "@/components/LifecycleThreeRegionsFigure";
 import lifecycleIslands from "@/assets/lifecycle_islands.svg?url";
 
 export const Route = createFileRoute("/")({
@@ -70,15 +71,7 @@ function Index() {
           </p>
         </section>
 
-        <figure className="mt-12 md:mt-14">
-          <img
-            src={lifecycleIslands}
-            alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
-            className="w-full h-auto"
-            width={900}
-            height={420}
-          />
-        </figure>
+        <LifecycleThreeRegionsFigure variant="featured" className="mt-12 md:mt-14" />
 
         <section className={`mt-10 md:mt-12 ${guideProseSpace}`}>
           <p>
@@ -129,6 +122,11 @@ function Index() {
             Growth, and Maturity. The phase is the chapter; the subphase is the page you are on
             within it.
           </p>
+          <img
+            src={lifecycleIslands}
+            alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
+            className="w-full h-auto max-w-3xl mx-auto mt-6"
+          />
           <GuideCallout title="Not sure which phase you are in?" className="my-10 md:my-14">
             The quickest test is where your feedback comes from. In Create it comes from
             sketches, prototypes, and conversations about what you might build. In Live it
