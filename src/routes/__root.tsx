@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import favicon from "@/assets/favicon.png?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "../lib/site-meta";
+import { GITHUB_PAGES_SPA_RESTORE_SCRIPT } from "../lib/github-pages-spa-fallback";
 import { THREADS } from "@/lib/guide-strings";
 import { DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH } from "@/lib/reference-paths";
 
@@ -98,6 +99,9 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: GITHUB_PAGES_SPA_RESTORE_SCRIPT }}
+        />
         <HeadContent />
       </head>
       <body>

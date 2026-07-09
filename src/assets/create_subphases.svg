@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" font-family="Georgia, 'Times New Roman', serif">
+<!-- Discovery -->
+<rect x="20" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<text x="140" y="88" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Discovery</text>
+<text x="140" y="114" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">understand the problem</text>
+<!-- arrow -->
+<line x1="272" y1="89" x2="312" y2="89" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M312,83 L322,89 L312,95 Z" fill="#A8492A"/>
+<!-- Alpha -->
+<rect x="330" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<text x="450" y="88" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Alpha</text>
+<text x="450" y="114" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">test the riskiest ideas</text>
+<!-- arrow -->
+<line x1="582" y1="89" x2="622" y2="89" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M622,83 L632,89 L622,95 Z" fill="#A8492A"/>
+<!-- Beta -->
+<rect x="640" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
+<text x="760" y="82" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Beta</text>
+<text x="760" y="108" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">build and prove</text>
+<text x="760" y="127" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">the real version</text>
+<text x="450" y="184" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">Create moves through three sub-phases, from understanding the problem to a real service ready to launch.</text>
+</svg>

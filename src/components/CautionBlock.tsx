@@ -7,7 +7,7 @@ import {
 
 export type CautionItem = {
   heading: string;
-  line: string;
+  line?: string;
 };
 
 export function CautionBlock({
@@ -23,9 +23,9 @@ export function CautionBlock({
   className?: string;
   label?: string;
   title: string;
-  lead: string;
+  lead?: string;
   items: CautionItem[];
-  closing: ReactNode;
+  closing?: ReactNode;
 }) {
   return (
     <section
@@ -39,7 +39,7 @@ export function CautionBlock({
         <p className={guideCalloutLabel}>{label}</p>
         <div>
           <h2 className={`${guideBlockTitle} mt-2 mb-1.5`}>{title}</h2>
-          <p className={guideProseTight}>{lead}</p>
+          {lead ? <p className={guideProseTight}>{lead}</p> : null}
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 list-none pl-0">
           {items.map((item) => (
@@ -50,13 +50,15 @@ export function CautionBlock({
               <p className="font-serif text-sm font-medium text-foreground leading-tight">
                 {item.heading}
               </p>
-              <p className="mt-1.5 font-sans text-[10px] leading-[1.35] text-foreground/55">
-                {item.line}
-              </p>
+              {item.line ? (
+                <p className="mt-1.5 font-sans text-[10px] leading-[1.35] text-foreground/55">
+                  {item.line}
+                </p>
+              ) : null}
             </li>
           ))}
         </ul>
-        <div className={guideProseTight}>{closing}</div>
+        {closing ? <div className={guideProseTight}>{closing}</div> : null}
       </div>
     </section>
   );

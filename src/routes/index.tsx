@@ -117,17 +117,17 @@ function Index() {
             </li>
           </ul>
           <p>
-            Each phase breaks into smaller stages, called subphases, so you can find the part that
+            Each phase breaks into smaller stages, called sub-phases, so you can find the part that
             matches where you are. Create has Discovery, Alpha, and Beta. Live has Stabilization,
-            Growth, and Maturity. The phase is the chapter; the subphase is the page you are on
+            Growth, and Maturity. The phase is the chapter; the sub-phase is the page you are on
             within it.
           </p>
           <img
             src={lifecycleIslands}
             alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
-            className="w-full h-auto max-w-3xl mx-auto mt-3"
+            className="w-full h-auto max-w-3xl mx-auto mt-1"
           />
-          <GuideCallout title="Not sure which phase you are in?" className="my-10 md:my-14">
+          <GuideCallout title="Not sure which phase you are in?" className="mt-4 md:mt-6 mb-10 md:mb-14">
             The quickest test is where your feedback comes from. In Create it comes from
             sketches, prototypes, and conversations about what you might build. In Live it
             comes from the running system: real users, real data, real bugs. In Sunset you

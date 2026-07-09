@@ -2,7 +2,7 @@ import type { LookingAheadPill } from "@/components/LookingAhead";
 import { eolOfPartsComingSoonHref } from "@/lib/placeholder-sources";
 
 export const LOOKING_AHEAD_INTRO =
-  "Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this subphase, and roughly when to begin.";
+  "Some things take a long time to prepare. Start before you are forced to. Here is what to keep an eye on from this sub-phase, and roughly when to begin.";
 
 export type PhaseLeavingExit = {
   lead: string;
@@ -13,7 +13,11 @@ export type PhaseLeavingExit = {
 export type PhaseLeavingContent = {
   phaseName: string;
   sectionId: string;
+  /** Override default "When you need to leave [phase]". */
+  sectionTitle?: string;
   intro: string;
+  /** Override default looking-ahead callout intro. */
+  lookingAheadIntro?: string;
   exits: PhaseLeavingExit[];
   pills: LookingAheadPill[];
 };
@@ -21,7 +25,7 @@ export type PhaseLeavingContent = {
 export type PhaseLeavingSlug =
   | "discovery"
   | "alpha"
-  | "mvp"
+  | "beta"
   | "stabilization"
   | "growth"
   | "maturity"
@@ -39,21 +43,22 @@ const BUILD_IN_YOUR_EXIT_PILL: LookingAheadPill = {
 export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent> = {
   discovery: {
     phaseName: "Discovery",
-    sectionId: "leaving-discovery",
+    sectionId: "how-you-know-discovery-is-finished",
+    sectionTitle: "How you know Discovery is finished",
     intro:
-      "Discovery ends when you know enough to act. Two things can move a service out of it.",
+      "Discovery is finished when you have decided whether or not to move on to Alpha. That decision weighs two things: whether there is a viable service worth building, and whether it is cost-effective to pursue.",
     exits: [
       {
         lead: "Forward to Alpha,",
-        rest: "when you have evidence the problem is real and worth solving, and you know enough to try a risky first build.",
+        rest: "when the problem is real and worth solving.",
         href: "/create-alpha",
       },
       {
         lead: "Stop or pause,",
-        rest: "when the evidence says this is not worth building. Stopping here is a success, not a failure.",
+        rest: "when the evidence says it is not worth building. Stopping here is a success, and it saves the money a wrong build would have cost.",
       },
     ],
-    pills: [BUILD_IN_YOUR_EXIT_PILL],
+    pills: [],
   },
   alpha: {
     phaseName: "Alpha",
@@ -64,7 +69,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
       {
         lead: "Forward to Beta,",
         rest: "when the riskiest parts have been tried and they hold, and you are ready to build the first real version.",
-        href: "/create-mvp",
+        href: "/create-beta",
       },
       {
         lead: "Back to Discovery,",
@@ -74,9 +79,9 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     ],
     pills: [BUILD_IN_YOUR_EXIT_PILL],
   },
-  mvp: {
+  beta: {
     phaseName: "Beta",
-    sectionId: "leaving-mvp",
+    sectionId: "leaving-beta",
     intro: "First delivery ends when the service is real and running. Two things can move it on.",
     exits: [
       {
@@ -166,7 +171,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     phaseName: "Maturity",
     sectionId: "leaving-maturity",
     intro:
-      "Maturity is the longest subphase, but not permanent. Three things can move a service out of it.",
+      "Maturity is the longest sub-phase, but not permanent. Three things can move a service out of it.",
     exits: [
       {
         lead: "Back to Growth,",
@@ -226,7 +231,7 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
     exits: [
       {
         lead: "Out of the lifecycle,",
-        rest: "when the service is retired or fully replaced, the data is moved, and the contract is closed. There is no next subphase.",
+        rest: "when the service is retired or fully replaced, the data is moved, and the contract is closed. There is no next sub-phase.",
       },
     ],
     pills: [

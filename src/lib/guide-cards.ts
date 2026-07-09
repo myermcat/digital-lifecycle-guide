@@ -15,3 +15,7 @@ export const guideClickableCardFillStyle = {
 
 /** Transparent surface for non-interactive bordered cards. */
 export const guideStaticCardClassName = "bg-transparent";
+
+/** Doorway block shell — Maturity orientation, Create in three parts, etc. */
+export const guideDoorwayCardClassName =
+  "rounded-lg border-2 border-primary/35 bg-background";

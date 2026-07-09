@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { guideProseTight, guideBlockTitle, guideLink, guideCalloutLabel } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 export function DoorwayBlock({
   id,
@@ -24,7 +26,10 @@ export function DoorwayBlock({
       id={id}
       className={
         className ??
-        "mt-10 md:mt-12 scroll-mt-24 rounded-lg border border-primary/35 bg-background px-6 py-6 md:px-8 md:py-7"
+        cn(
+          "mt-10 md:mt-12 scroll-mt-24 px-6 py-6 md:px-8 md:py-7",
+          guideDoorwayCardClassName,
+        )
       }
     >
       <p className={guideCalloutLabel}>{label}</p>

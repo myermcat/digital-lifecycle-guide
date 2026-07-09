@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   guideProse,
   guideProseSpace,
@@ -70,9 +71,9 @@ export function LinkedLeadSentence({
 }) {
   return (
     <p className={guideProse}>
-      <a href={href} className={`font-semibold text-foreground/90 ${guideLink}`}>
+      <Link to={href} className={`font-semibold text-foreground/90 ${guideLink}`}>
         {lead}
-      </a>{" "}
+      </Link>{" "}
       {rest}
     </p>
   );

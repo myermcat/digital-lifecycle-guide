@@ -9,17 +9,25 @@ export type CreateSpineStage = ThreadLinkedProse & {
   title: string;
 };
 
+export type CreateSubphaseRow = {
+  title: string;
+  description: string;
+  href: string;
+};
+
 export const CREATE_PHASE = {
   title: PHASES.create.title,
 
   lead: [
-    "Create is the first stretch of a service's life: from the first idea to the day it is ready to build and run. Before any code, a service has to be shaped, approved, and paid for, and that runs through a set order of stages, each owned by different people.",
-    "This page is the map of that order. Each stage below says what happens and points to the page that covers it in full. Not every service takes every stage, and the map says where one can be skipped.",
+    "Create is the first stretch of a service's life. It runs from the first idea to launch, the day the service goes live. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up.",
+    "Two kinds of work fill Create, side by side. The service is approved and funded, a set order of steps owned by different people. And it is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch.",
   ],
 
   stages: {
     id: "the-stages",
-    title: "The stages",
+    title: "Getting approved and funded",
+    intro:
+      "A service is approved and funded through a set order of steps, each owned by different people. Most services skip at least one; the steps that do not apply are left out.",
     items: [
       {
         title: "Make the case.",
@@ -32,12 +40,14 @@ export const CREATE_PHASE = {
       },
       {
         title: "Find the money.",
-        text: "Then comes where the money comes from. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more.",
+        text: "A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more.",
+        bold: [{ phrase: "source of funds" }],
         internalLinks: [{ phrase: "Funding", to: THREADS.funding.path }],
       },
       {
         title: "GC EARB, the architecture review.",
-        text: "For a digital service, the design is reviewed early, at the concept-case stage, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards.",
+        text: "For a digital service, the design is reviewed early, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards.",
+        bold: [{ phrase: "early, before a solution or a supplier is chosen" }],
         externalLinks: [
           {
             phrase: "GC Enterprise Architecture Review Board (GC EARB)",
@@ -47,17 +57,20 @@ export const CREATE_PHASE = {
       },
       {
         title: "Cost it.",
-        text: "A cost estimate is built for the whole life of the service: building it, running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing.",
+        text: "A cost estimate is built for the whole life of the service: standing it up (built or bought), running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing.",
+        bold: [{ phrase: "cost estimate" }],
         internalLinks: [{ phrase: "Funding", to: THREADS.funding.path }],
       },
       {
         title: "Get the authority: a Treasury Board submission.",
-        text: "If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this stage. Funding covers when a submission is needed and what to prepare.",
+        text: "If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this step. Funding covers when a submission is needed and what to prepare.",
+        bold: [{ phrase: "submission" }],
         internalLinks: [{ phrase: "Funding", to: THREADS.funding.path }],
       },
       {
         title: "Get project approval.",
-        text: "The project itself needs approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes.",
+        text: "The project itself needs project approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes.",
+        bold: [{ phrase: "project approval" }],
         externalLinks: [
           {
             phrase: "Directive on the Management of Projects and Programmes",
@@ -67,21 +80,23 @@ export const CREATE_PHASE = {
       },
       {
         title: "The money is released.",
-        text: "Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the build.",
+        text: "Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the work.",
+        bold: [{ phrase: "Parliament votes" }],
         externalLinks: [
           { phrase: "Estimates", linkKey: "lop-funding-new-government-initiatives" },
         ] satisfies ExternalPhraseLink[],
       },
       {
         title: "Buy and build.",
-        text: "With the money and the approvals in place, the department runs the procurement and starts building. Procurement covers the buying.",
+        text: "With the money and the approvals in place, the department runs the procurement, and delivery begins. The building or configuring itself happens across the three sub-phases below. All of it is still Create: a service is not Live until it launches, however much has already been built.",
+        bold: [{ phrase: "procurement" }],
         internalLinks: [{ phrase: "Procurement", to: THREADS.procurement.path }],
       },
     ] satisfies CreateSpineStage[],
   },
 
   notEveryStage:
-    "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval. The map is the full set of stages; a service takes the ones that apply to it.",
+    "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval.",
 
   whoseJob: {
     intro: "",
@@ -107,10 +122,32 @@ export const CREATE_PHASE = {
   } satisfies ThreadWhoseJobSection,
 
   workingThroughCreate: {
-    id: "working-through-create-in-detail",
-    title: "Working through Create in detail",
+    id: "create-in-three-sub-phases",
+    title: "Create in three sub-phases",
     intro:
-      "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and Beta.",
+      "Once it is approved and funded, Create is delivered in three sub-phases, each with its own page.",
+    subphases: [
+      {
+        title: "Discovery",
+        description:
+          "Work out whether the service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
+        href: "/create-discovery",
+      },
+      {
+        title: "Alpha",
+        description:
+          "Test the riskiest ideas with throwaway prototypes, before committing.",
+        href: "/create-alpha",
+      },
+      {
+        title: "Beta",
+        description:
+          "Stand up the real service and prove it with real users, before launch.",
+        href: "/create-beta",
+      },
+    ],
+    launchNote:
+      "Launch is the crossing into Live: the service goes live and becomes the real one people use, in place of whatever they did before.",
   },
 
   sources: [

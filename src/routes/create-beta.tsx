@@ -1,3 +1,4 @@
 import { createPhaseRoute } from "@/lib/create-phase-route";
 
-export const Route = createPhaseRoute("mvp");
+export const Route = createPhaseRoute("beta");
+

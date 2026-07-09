@@ -16,9 +16,9 @@ import { Route as LiveStabilizationRouteImport } from './routes/live-stabilizati
 import { Route as LiveMaturityRouteImport } from './routes/live-maturity'
 import { Route as LiveGrowthRouteImport } from './routes/live-growth'
 import { Route as LiveRouteImport } from './routes/live'
-import { Route as CreateMvpRouteImport } from './routes/create-mvp'
 import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
 import { Route as CreateDesignForTheWholeJourneyRouteImport } from './routes/create-design-for-the-whole-journey'
+import { Route as CreateBetaRouteImport } from './routes/create-beta'
 import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as AllPagesRouteImport } from './routes/all-pages'
@@ -82,11 +82,6 @@ const LiveRoute = LiveRouteImport.update({
   path: '/live',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CreateMvpRoute = CreateMvpRouteImport.update({
-  id: '/create-mvp',
-  path: '/create-mvp',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CreateDiscoveryRoute = CreateDiscoveryRouteImport.update({
   id: '/create-discovery',
   path: '/create-discovery',
@@ -98,6 +93,11 @@ const CreateDesignForTheWholeJourneyRoute =
     path: '/create-design-for-the-whole-journey',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CreateBetaRoute = CreateBetaRouteImport.update({
+  id: '/create-beta',
+  path: '/create-beta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CreateAlphaRoute = CreateAlphaRouteImport.update({
   id: '/create-alpha',
   path: '/create-alpha',
@@ -250,9 +250,9 @@ export interface FileRoutesByFullPath {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
-  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -289,9 +289,9 @@ export interface FileRoutesByTo {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
-  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -327,9 +327,9 @@ export interface FileRoutesById {
   '/all-pages': typeof AllPagesRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
+  '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
-  '/create-mvp': typeof CreateMvpRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -368,9 +368,9 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
-    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -407,9 +407,9 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
-    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -444,9 +444,9 @@ export interface FileRouteTypes {
     | '/all-pages'
     | '/create'
     | '/create-alpha'
+    | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
-    | '/create-mvp'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -484,9 +484,9 @@ export interface RootRouteChildren {
   AllPagesRoute: typeof AllPagesRoute
   CreateRoute: typeof CreateRoute
   CreateAlphaRoute: typeof CreateAlphaRoute
+  CreateBetaRoute: typeof CreateBetaRoute
   CreateDesignForTheWholeJourneyRoute: typeof CreateDesignForTheWholeJourneyRoute
   CreateDiscoveryRoute: typeof CreateDiscoveryRoute
-  CreateMvpRoute: typeof CreateMvpRoute
   LiveRoute: typeof LiveRoute
   LiveGrowthRoute: typeof LiveGrowthRoute
   LiveMaturityRoute: typeof LiveMaturityRoute
@@ -565,13 +565,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LiveRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/create-mvp': {
-      id: '/create-mvp'
-      path: '/create-mvp'
-      fullPath: '/create-mvp'
-      preLoaderRoute: typeof CreateMvpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/create-discovery': {
       id: '/create-discovery'
       path: '/create-discovery'
@@ -584,6 +577,13 @@ declare module '@tanstack/react-router' {
       path: '/create-design-for-the-whole-journey'
       fullPath: '/create-design-for-the-whole-journey'
       preLoaderRoute: typeof CreateDesignForTheWholeJourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/create-beta': {
+      id: '/create-beta'
+      path: '/create-beta'
+      fullPath: '/create-beta'
+      preLoaderRoute: typeof CreateBetaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create-alpha': {
@@ -811,9 +811,9 @@ const rootRouteChildren: RootRouteChildren = {
   AllPagesRoute: AllPagesRoute,
   CreateRoute: CreateRoute,
   CreateAlphaRoute: CreateAlphaRoute,
+  CreateBetaRoute: CreateBetaRoute,
   CreateDesignForTheWholeJourneyRoute: CreateDesignForTheWholeJourneyRoute,
   CreateDiscoveryRoute: CreateDiscoveryRoute,
-  CreateMvpRoute: CreateMvpRoute,
   LiveRoute: LiveRoute,
   LiveGrowthRoute: LiveGrowthRoute,
   LiveMaturityRoute: LiveMaturityRoute,

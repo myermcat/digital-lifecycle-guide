@@ -25,7 +25,7 @@
     "sectionId": "",
     "sectionHeading": "Create",
     "lifecyclePhase": "create",
-    "text": "Create is the first stretch of a service's life: from the first idea to the day it is ready to build and run. Before any code, a service has to be shaped, approved, and paid for, and that runs through a set order of stages, each owned by different people. This page is the map of that order. Each stage below says what happens and points to the page that covers it in full. Not every service takes every stage, and the map says where one can be skipped."
+    "text": "Create is the first stretch of a service's life. It runs from the first idea to launch, the day the service goes live. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Two kinds of work fill Create, side by side. The service is approved and funded, a set order of steps owned by different people. And it is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch."
   },
   {
     "id": "/live",
@@ -64,9 +64,9 @@
     "text": ""
   },
   {
-    "id": "/create-mvp",
+    "id": "/create-beta",
     "pageTitle": "Beta",
-    "pagePath": "/create-mvp",
+    "pagePath": "/create-beta",
     "sectionId": "",
     "sectionHeading": "Beta",
     "lifecyclePhase": "create",
@@ -730,9 +730,9 @@
     "pageTitle": "Create",
     "pagePath": "/create",
     "sectionId": "the-stages",
-    "sectionHeading": "The stages",
+    "sectionHeading": "Getting approved and funded",
     "lifecyclePhase": "create",
-    "text": "Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. Then comes where the money comes from. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, at the concept-case stage, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: building it, running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this stage. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the build. Buy and build. With the money and the approvals in place, the department runs the procurement and starts building. Procurement covers the buying."
+    "text": "Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: standing it up (built or bought), running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this step. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs project approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the work. Buy and build. With the money and the approvals in place, the department runs the procurement, and delivery begins. The building or configuring itself happens across the three sub-phases below. All of it is still Create: a service is not Live until it launches, however much has already been built."
   },
   {
     "id": "/create#not-every-stage",
@@ -741,7 +741,7 @@
     "sectionId": "not-every-stage",
     "sectionHeading": "Not every service takes every stage",
     "lifecyclePhase": "create",
-    "text": "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval. The map is the full set of stages; a service takes the ones that apply to it."
+    "text": "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval."
   },
   {
     "id": "/create#who-runs-the-stages",
@@ -753,13 +753,13 @@
     "text": "The business owner of the application drives the work: the problem, the options, the business case, and the approvals they sponsor. The finance team and the Chief Financial Officer (CFO) build and stand behind the cost estimate. The department's architecture review board and GC EARB judge the design. A Treasury Board Secretariat analyst guides the submission, and the responsible minister signs it."
   },
   {
-    "id": "/create#working-through-create-in-detail",
+    "id": "/create#create-in-three-sub-phases",
     "pageTitle": "Create",
     "pagePath": "/create",
-    "sectionId": "working-through-create-in-detail",
-    "sectionHeading": "Working through Create in detail",
+    "sectionId": "create-in-three-sub-phases",
+    "sectionHeading": "Create in three sub-phases",
     "lifecyclePhase": "create",
-    "text": "Create has three stages of delivery once the service is approved and funded, each with its own page: Discovery, Alpha, and Beta."
+    "text": "Once it is approved and funded, Create is delivered in three sub-phases, each with its own page."
   },
   {
     "id": "/create#sources",

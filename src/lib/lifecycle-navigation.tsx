@@ -23,7 +23,7 @@ export type PhaseNavItem = SubphaseNavItem;
 export const CREATE_SUBPHASES: SubphaseNavItem[] = [
   { title: "Discovery", href: "/create-discovery", slug: "discovery" },
   { title: "Alpha", href: "/create-alpha", slug: "alpha" },
-  { title: "Beta", href: "/create-mvp", slug: "mvp" },
+  { title: "Beta", href: "/create-beta", slug: "beta" },
 ];
 
 export const LIVE_SUBPHASES: SubphaseNavItem[] = [
@@ -165,19 +165,19 @@ export const SUBPHASE_META: Record<
     lifecyclePhaseHref: PHASES.create.href,
     subphase: "Alpha",
     subtitle:
-      "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, clickable mockups, and simple prototypes get put in front of real users to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this subphase is meant to last. It is meant to teach.",
+      "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, clickable mockups, and simple prototypes get put in front of real users to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this sub-phase is meant to last. It is meant to teach.",
     path: "/create-alpha",
     where: () => whereThisFitsForCreateSubphase("alpha"),
     showComingSoon: false,
   },
-  mvp: {
+  beta: {
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
     subphase: "Beta",
     subtitle:
       "The first version built to last does only the essential thing, and goes live to a limited audience or for a narrow use case. The point is to replace test conditions with real ones: real users, real data, real failure modes. The team watches what happens, measures it, and uses what they learn to decide what to build next. A version that teaches the team what users actually need is doing exactly what it is supposed to do.",
-    path: "/create-mvp",
-    where: () => whereThisFitsForCreateSubphase("mvp"),
+    path: "/create-beta",
+    where: () => whereThisFitsForCreateSubphase("beta"),
     showComingSoon: false,
   },
   stabilization: {

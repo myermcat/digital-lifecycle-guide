@@ -9,7 +9,10 @@ import {
   getPhaseLeavingContent,
   type PhaseLeavingSlug,
 } from "@/lib/phase-leaving-content";
-import { guideProseSpace } from "@/lib/guide-typography";
+import { OnRampChecklist } from "@/components/OnRampChecklist";
+import { SUBPHASE_CONTENT } from "@/lib/subphase-content";
+import { renderLinkedProse } from "@/lib/thread-rich-content";
+import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 interface PhasePlaceholderPageProps {
   id: string;
@@ -36,6 +39,8 @@ export function PhasePlaceholderPage({
   const leavingContent = subphaseLeavingSlug
     ? getPhaseLeavingContent(subphaseLeavingSlug)
     : null;
+  const body = subphaseLeavingSlug ? SUBPHASE_CONTENT[subphaseLeavingSlug] : null;
+  const renderIntro = !body;
 
   return (
     <GuideLayout id={id}>
@@ -45,16 +50,59 @@ export function PhasePlaceholderPage({
         subphase={subphase}
       />
 
-      <section className="mt-5 md:mt-6">
-        <WhereThisFits {...whereThisFits} />
-      </section>
+      {body ? (
+        <>
+          <section className={`${guideProseSpace} mt-8 md:mt-10`}>
+            <p>{body.lead}</p>
+          </section>
 
-      <section className={`${guideProseSpace} mt-8 md:mt-10`}>
-        <p>{intro}</p>
-        {showComingSoon ? (
-          <p className="italic text-foreground/60">Page content coming soon.</p>
-        ) : null}
-      </section>
+          <section className="mt-5 md:mt-6">
+            <WhereThisFits {...whereThisFits} />
+          </section>
+
+          <section className="mt-10 md:mt-12 scroll-mt-24" id="what-happens-here">
+            <h2 className={`${guideSectionTitle} mb-3`}>What happens here</h2>
+            <p className={guideProse}>{body.whatHappens.intro}</p>
+            <ul className="mt-4 space-y-3 list-none pl-0">
+              {body.whatHappens.points.map((point) => (
+                <li key={point.lead} className={guideProse}>
+                  <strong>{point.lead}</strong>{" "}
+                  {renderLinkedProse({
+                    text: point.text,
+                    internalLinks: point.internalLinks,
+                    externalLinks: point.externalLinks,
+                    placeholderLinks: point.placeholderLinks,
+                    placeholderGcNetworkLinks: point.placeholderGcNetworkLinks,
+                    bold: point.bold,
+                  })}
+                </li>
+              ))}
+            </ul>
+            <p className={`${guideProse} mt-4`}>{body.whatHappens.closing}</p>
+          </section>
+
+          <OnRampChecklist
+            title={body.onRamp.title}
+            intro={body.onRamp.intro}
+            items={body.onRamp.items}
+          />
+        </>
+      ) : null}
+
+      {renderIntro ? (
+        <>
+          <section className="mt-5 md:mt-6">
+            <WhereThisFits {...whereThisFits} />
+          </section>
+
+          <section className={`${guideProseSpace} mt-8 md:mt-10`}>
+            <p>{intro}</p>
+            {showComingSoon ? (
+              <p className="italic text-foreground/60">Page content coming soon.</p>
+            ) : null}
+          </section>
+        </>
+      ) : null}
 
       {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}
 

@@ -37,12 +37,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
 
   { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
-  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "not-started" },
+  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-review" },
   { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
-  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "not-started" },
+  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-review" },
   { title: "Alpha", path: "/create-alpha", type: "subphase", status: "not-started" },
-  { title: "Beta", path: "/create-mvp", type: "subphase", status: "not-started" },
+  { title: "Beta", path: "/create-beta", type: "subphase", status: "not-started" },
   { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "not-started" },
   { title: "Growth", path: "/live-growth", type: "subphase", status: "not-started" },
   { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
@@ -179,7 +179,7 @@ export const PAGE_INDEX_TYPE_ORDER: PageIndexType[] = [
 
 export const PAGE_INDEX_TYPE_LABELS: Record<PageIndexType, string> = {
   phase: "Phases",
-  subphase: "Subphases",
+  subphase: "Sub-phases",
   thread: "Threads",
   reference: "Reference",
   other: "Other",

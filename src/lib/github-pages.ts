@@ -22,12 +22,15 @@ import { SUPPORT_PATH } from "./support-path";
 /** Repo name on GitHub Pages project sites (https://user.github.io/repo-name/). */
 export const GITHUB_PAGES_BASE = "/digital-lifecycle-guide/";
 
+/** Path segments to keep before the SPA redirect query (one for project Pages sites). */
+export const GITHUB_PAGES_PATH_SEGMENTS = 1;
+
 const CORE_PATHS = [
   "/",
   "/create",
   "/create-discovery",
   "/create-alpha",
-  "/create-mvp",
+  "/create-beta",
   "/live",
   "/live-stabilization",
   "/live-growth",

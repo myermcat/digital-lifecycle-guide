@@ -54,7 +54,7 @@ function LiveMaturityPage() {
           Maturity is not maintenance only. You still improve it: you fix what users flag, tune
           performance, patch dependencies, and replace ageing parts over time, and you still
           deliver some new features, usually smaller ones. What sets Maturity apart from the
-          earlier subphases is that you are caring for an existing service rather than building
+          earlier sub-phases is that you are caring for an existing service rather than building
           a new one.
         </p>
       </section>

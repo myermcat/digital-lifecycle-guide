@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
@@ -112,12 +113,12 @@ export function ArrowLeadList({
           <div className={cn("min-w-0 flex-1", guideArrowLeadGroup)}>
             <p className="mb-0">
               {item.href ? (
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`font-serif text-base md:text-[1.05rem] leading-snug ${guideLink}`}
                 >
                   {item.lead}
-                </a>
+                </Link>
               ) : (
                 <span className={`${guideProse} font-medium text-primary leading-snug`}>
                   {item.lead}
@@ -150,9 +151,9 @@ export function CompactLinkedList({ items }: { items: CompactLinkedItem[] }) {
           className={`${guideProseTight} rounded-xl border border-border/80 px-4 py-3.5 ${guideStaticCardClassName}`}
         >
           <span className="font-semibold text-foreground/90">{item.title}</span> {item.body}{" "}
-          <a href={item.href} className={guideLink}>
+          <Link to={item.href} className={guideLink}>
             {item.linkLabel}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

@@ -8,7 +8,7 @@
     "generate:search-index": "tsx scripts/generate-search-index.ts",
     "build": "vite build",
     "prebuild": "npm run generate:search-index",
-    "build:pages": "GITHUB_PAGES=true npm run build && cp dist/client/index.html dist/client/404.html",
+    "build:pages": "GITHUB_PAGES=true npm run build",
     "preview:pages": "sh scripts/preview-github-pages.sh",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",

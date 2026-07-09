@@ -13,10 +13,14 @@ import {
 export function PhaseLeavingSection({ content }: { content: PhaseLeavingContent }) {
   return (
     <PhaseSection
-      title={`When you need to leave ${content.phaseName}`}
+      title={content.sectionTitle ?? `When you need to leave ${content.phaseName}`}
       sectionId={content.sectionId}
     >
-      <LookingAhead title="" intro={LOOKING_AHEAD_INTRO} pills={content.pills} />
+      <LookingAhead
+        title=""
+        intro={content.lookingAheadIntro ?? LOOKING_AHEAD_INTRO}
+        pills={content.pills}
+      />
       <p>{content.intro}</p>
       <CompactExitList items={content.exits} />
     </PhaseSection>
