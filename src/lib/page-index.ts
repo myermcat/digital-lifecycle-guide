@@ -36,12 +36,12 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
 
-  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-progress" },
+  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-review" },
   { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-review" },
   { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
   { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-review" },
-  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "not-started" },
+  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-review" },
   { title: "Beta", path: "/create-beta", type: "subphase", status: "not-started" },
   { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "not-started" },
   { title: "Growth", path: "/live-growth", type: "subphase", status: "not-started" },

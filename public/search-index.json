@@ -25,7 +25,7 @@
     "sectionId": "",
     "sectionHeading": "Create",
     "lifecyclePhase": "create",
-    "text": "Create is the first stretch of a service's life. It runs from the first idea to launch, the day the service goes live. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Two kinds of work fill Create, side by side. The service is approved and funded, a set order of steps owned by different people. And it is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch."
+    "text": "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here. Create is the project part of a service's life: the one stretch with a clear finish line. That finish is launch, the day the service goes live. It runs from the first idea to launch. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Create is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch. After launch the work does not end. It changes: the service stops being a project and becomes a product that has to be run and improved for years, which is Live."
   },
   {
     "id": "/live",
@@ -732,14 +732,14 @@
     "sectionId": "how-a-service-gets-approved-and-funded",
     "sectionHeading": "How a service gets approved and funded",
     "lifecyclePhase": "create",
-    "text": "A service is approved and funded through a set order of steps, from the business case to the money being released. See the whole path on the Funding page"
+    "text": "How a service gets approved and funded is a path of its own, and it lives on the Funding page."
   },
   {
-    "id": "/create#who-runs-the-stages",
+    "id": "/create#the-team-youll-need-for-create",
     "pageTitle": "Create",
     "pagePath": "/create",
-    "sectionId": "who-runs-the-stages",
-    "sectionHeading": "Who runs the steps",
+    "sectionId": "the-team-youll-need-for-create",
+    "sectionHeading": "The team you'll need for Create",
     "lifecyclePhase": "create",
     "text": "The business owner of the application drives the work: the problem, the options, the business case, and the approvals they sponsor. The finance team and the Chief Financial Officer (CFO) build and stand behind the cost estimate. The department's architecture review board and GC EARB judge the design. A Treasury Board Secretariat analyst guides the submission, and the responsible minister signs it."
   },

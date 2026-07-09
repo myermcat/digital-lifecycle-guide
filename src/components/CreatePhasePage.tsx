@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
@@ -9,7 +10,7 @@ import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
 import createToLiveVisual from "@/assets/lifecycle_create_to_live.svg?url";
 import { whereThisFitsForCreateSubphase } from "@/lib/lifecycle-navigation";
-import { renderThreadWhoseJob } from "@/lib/thread-rich-content";
+import { renderLinkedProse, renderThreadWhoseJob } from "@/lib/thread-rich-content";
 import {
   guideLink,
   guideProse,
@@ -20,7 +21,7 @@ import {
 } from "@/lib/guide-typography";
 
 export function CreatePhasePage() {
-  const { approvalPointer, whoseJob, workingThroughCreate, sources } = CREATE_PHASE;
+  const { approvalPointer, team, workingThroughCreate, sources } = CREATE_PHASE;
 
   return (
     <GuideLayout id="create">
@@ -33,43 +34,35 @@ export function CreatePhasePage() {
         <WhereThisFits {...whereThisFitsForCreateSubphase(null)} />
       </section>
 
+      <blockquote className="mt-6 md:mt-8 border-l-4 border-l-primary/35 pl-4 md:pl-5 font-serif text-lg md:text-xl text-foreground/90 leading-snug">
+        {CREATE_PHASE.oneLineDescription}
+      </blockquote>
+
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
-        <p>{CREATE_PHASE.lead[0]}</p>
-        <p>
-          Two kinds of work fill Create, side by side. The service is{" "}
-          <strong>approved and funded</strong>, a set order of steps owned by different people. And
-          it is delivered in three sub-phases,{" "}
-          <Link to={"/create-discovery" as string} className={guideLink}>
-            Discovery
-          </Link>
-          ,{" "}
-          <Link to={"/create-alpha" as string} className={guideLink}>
-            Alpha
-          </Link>
-          , and{" "}
-          <Link to={"/create-beta" as string} className={guideLink}>
-            Beta
-          </Link>
-          , from learning the need to a real service ready to launch.
-        </p>
+        {CREATE_PHASE.lead.map((paragraph) => (
+          <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+        ))}
       </section>
 
       <section
-        className="mt-10 md:mt-12 scroll-mt-24"
+        className="mt-10 md:mt-12 scroll-mt-24 text-center"
         id={approvalPointer.id}
       >
-        <h2 className={`${guideSectionTitle} mb-3`}>{approvalPointer.title}</h2>
-        <p className={guideProse}>
-          {approvalPointer.text}{" "}
-          <Link to={approvalPointer.linkTo as string} className={guideLink}>
-            {approvalPointer.linkText} →
-          </Link>
+        <Link
+          to={approvalPointer.href}
+          className="inline-flex text-primary/55 hover:text-primary/75 transition-colors"
+          aria-label="How a service gets approved and funded"
+        >
+          <HelpCircle className="size-32 md:size-40" strokeWidth={1.15} aria-hidden />
+        </Link>
+        <p className={`${guideCalloutLabel} mt-4 max-w-md mx-auto normal-case tracking-normal`}>
+          {renderLinkedProse(approvalPointer.caption)}
         </p>
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id="who-runs-the-steps">
-        <h2 className={`${guideSectionTitle} mb-3`}>Who runs the steps</h2>
-        {renderThreadWhoseJob(whoseJob)}
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={team.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{team.title}</h2>
+        {renderThreadWhoseJob(team)}
       </section>
 
       <section

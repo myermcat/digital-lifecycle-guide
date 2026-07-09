@@ -1,7 +1,7 @@
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
-import type { ThreadWhoseJobSection } from "@/lib/thread-rich-content";
+import type { ThreadLinkedProse, ThreadWhoseJobSection } from "@/lib/thread-rich-content";
 
 export type CreateSubphaseRow = {
   title: string;
@@ -12,20 +12,40 @@ export type CreateSubphaseRow = {
 export const CREATE_PHASE = {
   title: PHASES.create.title,
 
+  oneLineDescription:
+    "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here.",
+
   lead: [
-    "Create is the first stretch of a service's life. It runs from the first idea to launch, the day the service goes live. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up.",
-    "Two kinds of work fill Create, side by side. The service is approved and funded, a set order of steps owned by different people. And it is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch.",
-  ],
+    {
+      text: "Create is the project part of a service's life: the one stretch with a clear finish line. That finish is launch, the day the service goes live.",
+      bold: [{ phrase: "project" }],
+    },
+    {
+      text: "It runs from the first idea to launch. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Create is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch.",
+      internalLinks: [
+        { phrase: "Discovery", to: "/create-discovery" },
+        { phrase: "Alpha", to: "/create-alpha" },
+        { phrase: "Beta", to: "/create-beta" },
+      ],
+    },
+    {
+      text: "After launch the work does not end. It changes: the service stops being a project and becomes a product that has to be run and improved for years, which is Live.",
+      internalLinks: [{ phrase: "Live", to: PHASES.live.href }],
+    },
+  ] satisfies ThreadLinkedProse[],
 
   approvalPointer: {
     id: "how-a-service-gets-approved-and-funded",
-    title: "How a service gets approved and funded",
-    text: "A service is approved and funded through a set order of steps, from the business case to the money being released.",
-    linkText: "See the whole path on the Funding page",
-    linkTo: `${THREADS.funding.path}#how-a-service-gets-approved-and-funded`,
+    href: THREADS.funding.path,
+    caption: {
+      text: "How a service gets approved and funded is a path of its own, and it lives on the Funding page.",
+      internalLinks: [{ phrase: "Funding page", to: THREADS.funding.path }],
+    } satisfies ThreadLinkedProse,
   },
 
-  whoseJob: {
+  team: {
+    id: "the-team-youll-need-for-create",
+    title: "The team you'll need for Create",
     intro: "",
     roles: [
       {
@@ -46,7 +66,7 @@ export const CREATE_PHASE = {
         bold: [{ phrase: "responsible minister" }],
       },
     ],
-  } satisfies ThreadWhoseJobSection,
+  } satisfies ThreadWhoseJobSection & { id: string; title: string },
 
   workingThroughCreate: {
     id: "create-in-three-sub-phases",
@@ -57,19 +77,19 @@ export const CREATE_PHASE = {
       {
         title: "Discovery",
         description:
-          "Work out whether the service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
+          "work out whether the service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
         href: "/create-discovery",
       },
       {
         title: "Alpha",
         description:
-          "Test the riskiest ideas with throwaway prototypes, before committing.",
+          "test the riskiest ideas with throwaway prototypes, before committing.",
         href: "/create-alpha",
       },
       {
         title: "Beta",
         description:
-          "Stand up the real service and prove it with real users, before launch.",
+          "stand up the real service and prove it with real users, before launch.",
         href: "/create-beta",
       },
     ],
@@ -82,11 +102,10 @@ export const CREATE_PHASE = {
       label: "Governing instrument",
       linkKey: "guideline-service-digital" satisfies ExternalLinkKey,
     },
-    {
-      label: "Governing instrument",
-      linkKey: "tbs-directive-management-projects-programmes" satisfies ExternalLinkKey,
-    },
   ] satisfies SourceItem[],
 } as const;
 
-export const createPhaseLeadPlainText = CREATE_PHASE.lead.join(" ");
+export const createPhaseLeadPlainText = [
+  CREATE_PHASE.oneLineDescription,
+  ...CREATE_PHASE.lead.map((paragraph) => paragraph.text),
+].join(" ");

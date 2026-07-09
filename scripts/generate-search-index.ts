@@ -513,13 +513,13 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
   const sections = [
     {
       sectionId: CREATE_PHASE.approvalPointer.id,
-      sectionHeading: CREATE_PHASE.approvalPointer.title,
-      text: `${CREATE_PHASE.approvalPointer.text} ${CREATE_PHASE.approvalPointer.linkText}`,
+      sectionHeading: "How a service gets approved and funded",
+      text: CREATE_PHASE.approvalPointer.caption.text,
     },
     {
-      sectionId: "who-runs-the-stages",
-      sectionHeading: "Who runs the steps",
-      text: CREATE_PHASE.whoseJob.roles
+      sectionId: CREATE_PHASE.team.id,
+      sectionHeading: CREATE_PHASE.team.title,
+      text: CREATE_PHASE.team.roles
         .map((role) => `${role.role} ${role.text}`)
         .join(" "),
     },
