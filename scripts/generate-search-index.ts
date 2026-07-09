@@ -8,7 +8,8 @@ import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
-import { CREATE_PHASE, createPhaseLeadPlainText, createSpinePlainText } from "../src/lib/create-phase-content";
+import { CREATE_PHASE, createPhaseLeadPlainText } from "../src/lib/create-phase-content";
+import { createSpinePlainText } from "../src/lib/service-approval-funding-content";
 import { PHASES } from "../src/lib/guide-strings";
 import {
   GOOD_CONTRACT_PATH,
@@ -511,18 +512,13 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
 
   const sections = [
     {
-      sectionId: CREATE_PHASE.stages.id,
-      sectionHeading: CREATE_PHASE.stages.title,
-      text: createSpinePlainText(CREATE_PHASE.stages.items),
-    },
-    {
-      sectionId: "not-every-stage",
-      sectionHeading: "Not every service takes every stage",
-      text: CREATE_PHASE.notEveryStage,
+      sectionId: CREATE_PHASE.approvalPointer.id,
+      sectionHeading: CREATE_PHASE.approvalPointer.title,
+      text: `${CREATE_PHASE.approvalPointer.text} ${CREATE_PHASE.approvalPointer.linkText}`,
     },
     {
       sectionId: "who-runs-the-stages",
-      sectionHeading: "Who runs the stages",
+      sectionHeading: "Who runs the steps",
       text: CREATE_PHASE.whoseJob.roles
         .map((role) => `${role.role} ${role.text}`)
         .join(" "),
@@ -1802,6 +1798,15 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
           (item) => `${item.heading} ${item.text}`,
         ),
         FUNDING_THREAD.whereMoneyComesFrom.closing,
+      ),
+    },
+    {
+      sectionId: FUNDING_THREAD.approvalPath.id,
+      sectionHeading: FUNDING_THREAD.approvalPath.title,
+      text: concat(
+        ...FUNDING_THREAD.approvalPath.intro.map((paragraph) => paragraph.text),
+        createSpinePlainText(FUNDING_THREAD.approvalPath.items),
+        FUNDING_THREAD.approvalPath.notEveryStage,
       ),
     },
     {

@@ -1,6 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { CreateSpineSection } from "@/components/CreateSpineSection";
-import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
@@ -22,7 +20,7 @@ import {
 } from "@/lib/guide-typography";
 
 export function CreatePhasePage() {
-  const { stages, notEveryStage, whoseJob, workingThroughCreate, sources } = CREATE_PHASE;
+  const { approvalPointer, whoseJob, workingThroughCreate, sources } = CREATE_PHASE;
 
   return (
     <GuideLayout id="create">
@@ -56,16 +54,18 @@ export function CreatePhasePage() {
         </p>
       </section>
 
-      <CreateSpineSection
-        id={stages.id}
-        title={stages.title}
-        intro={stages.intro}
-        stages={stages.items}
-      />
-
-      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="Not every service takes every step">
-        <p>{notEveryStage}</p>
-      </EditorialNote>
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={approvalPointer.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>{approvalPointer.title}</h2>
+        <p className={guideProse}>
+          {approvalPointer.text}{" "}
+          <Link to={approvalPointer.linkTo as string} className={guideLink}>
+            {approvalPointer.linkText} →
+          </Link>
+        </p>
+      </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="who-runs-the-steps">
         <h2 className={`${guideSectionTitle} mb-3`}>Who runs the steps</h2>

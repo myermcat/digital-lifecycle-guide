@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { guideLink } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 export function SubphaseSectionNav({
   prev,
   next,
   className,
 }: {
-  prev: { href: string; label: string };
+  prev?: { href: string; label: string };
   next: { href: string; label: string };
   className?: string;
 }) {
@@ -15,11 +16,16 @@ export function SubphaseSectionNav({
   return (
     <nav
       aria-label="Subphases"
-      className={className ?? "mt-8 flex items-center justify-between gap-4 border-t border-border/60 pt-6"}
+      className={cn(
+        className ?? "mt-8 flex items-center gap-4 border-t border-border/60 pt-6",
+        prev ? "justify-between" : "justify-end",
+      )}
     >
-      <Link to={prev.href} className={linkClass}>
-        ← {prev.label}
-      </Link>
+      {prev ? (
+        <Link to={prev.href} className={linkClass}>
+          ← {prev.label}
+        </Link>
+      ) : null}
       <Link to={next.href} className={`${linkClass} text-right`}>
         {next.label} →
       </Link>

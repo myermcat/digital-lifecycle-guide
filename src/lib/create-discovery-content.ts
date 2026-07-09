@@ -37,7 +37,7 @@ export const DISCOVERY_EXTRACT_CLOSING: ThreadLinkedProse = {
 export const DISCOVERY_ON_RAMP = {
   title: "Before you start Discovery",
   intro:
-    "A discovery goes badly when the basics are not in place first. These are the things to have before you begin, not the things Discovery produces:",
+    "A discovery goes badly when the basics are not in place first. These are the things to have before you begin:",
   items: [
     {
       text: "A business owner sponsors the work and can act on what it finds.",
@@ -53,7 +53,7 @@ export const DISCOVERY_ON_RAMP = {
       internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
     },
     {
-      text: "The team is genuinely free to stop and conclude the service should not be built.",
+      text: "The team is genuinely free to stop, if what it finds points that way.",
       bold: [{ phrase: "genuinely free to stop" }],
     },
   ] satisfies readonly ThreadLinkedProse[],
@@ -63,15 +63,11 @@ export const DISCOVERY_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Reuse, buy, or build",
   body: {
-    text: "Most Government of Canada services are met by something that already exists: bought from a vendor, reused from another department, or configured from a platform the government already runs. Before any solution is named, Discovery weighs those options, and it makes sure the service will not duplicate one that already exists. Sometimes the best answer is not a service at all, but clearer information or a change to a form. Get this wrong and everything after it is built on the wrong foundation.",
+    text: "Most Government of Canada services are met by something that already exists: bought from a vendor, reused from another department, or configured from a platform the government already runs. Before any solution is named, Discovery weighs those options, and it makes sure the service will not duplicate one that already exists. Sometimes clearer information or a change to a form is enough, with no new service at all. Get this wrong and everything after it is built on the wrong foundation.",
     bold: [{ phrase: "something that already exists" }],
   } satisfies ThreadLinkedProse,
   href: "/reference/options-analysis",
   linkLabel: "See how to weigh the options →",
-  procurementNote: {
-    text: "Procurement covers the look-before-you-buy step.",
-    internalLinks: [{ phrase: "Procurement", to: "/thread/procurement" }],
-  } satisfies ThreadLinkedProse,
   icon: Scale,
 };
 
@@ -81,6 +77,11 @@ export type DiscoveryAccordionStage = {
   title: string;
   sections: readonly ThreadContentSection[];
 };
+
+export const DISCOVERY_ACCORDION = {
+  id: "what-to-find-out",
+  title: "What to find out in Discovery",
+} as const;
 
 export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
   {
@@ -117,7 +118,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     title: "Understand your users and their context.",
     sections: [
       {
-        text: "Through user research, learn what users are trying to achieve and how they go about it today. For a grants-and-contributions service, talk to:",
+        text: "Through user research, learn what users are trying to achieve and how they go about it today. For example, for a grants-and-contributions service, talk to:",
         internalLinks: [{ phrase: "user research", to: "/thread/user-research" }],
       },
       {
@@ -129,7 +130,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         ],
       },
       {
-        text: "The task is almost always one step in a longer journey, so map that whole journey across every channel and service it touches, drawn from the real journeys people describe. This is the start of joined-up delivery. The journey map is Discovery's key artefact; group the pain points you hear and agree the one or two worth solving.",
+        text: "What the user is trying to do is almost always one step in a longer journey, so map that whole journey across every channel and service it touches, drawn from the real journeys people describe. This is the start of joined-up delivery. The journey map is Discovery's key artefact; group the pain points you hear and agree the one or two worth solving.",
         bold: [{ phrase: "one step in a longer journey" }],
         internalLinks: [{ phrase: "joined-up delivery", to: "/thread/joined-up-delivery" }],
       },
@@ -154,7 +155,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     sections: [
       {
         text: "Work out the constraints you would face if you move on to the Alpha sub-phase: legislation, existing contracts, legacy technology, and established processes. Sort them into two kinds:",
-        bold: [{ phrase: "Alpha sub-phase" }],
+        internalLinks: [{ phrase: "Alpha sub-phase", to: "/create-alpha" }],
       },
       {
         type: "orderedList",
@@ -240,11 +241,11 @@ export const DISCOVERY_TEAM = {
 };
 
 export const DISCOVERY_CAUTION = {
-  title: "What a discovery going wrong looks like",
+  title: "When Discovery goes wrong",
   items: [
-    "The team starts from a solution and never reframes it as a problem.",
+    "The team runs with the solution it was handed and never asks what the real problem is.",
     "No goal was set, so the work drifts and never finishes.",
-    "The only people consulted are colleagues and stakeholders, not the people who live with the problem.",
+    "The people who actually live with the problem are never spoken to.",
     "Someone starts building, or picks a vendor, before the problem is understood.",
     "A constraint that would kill the idea surfaces late, after months of work.",
   ],
@@ -260,25 +261,49 @@ export const DISCOVERY_FINISH = {
   exits: [
     {
       lead: "Forward to Alpha,",
-      rest: "when the problem is real and worth solving.",
+      rest: {
+        text: "when the problem is real and worth solving.",
+      },
       href: "/create-alpha",
     },
     {
       lead: "Stop or pause,",
-      rest: "when the evidence says it is not worth building. Stopping here is a success, and it saves the money a wrong build would have cost.",
+      rest: {
+        text: "when the evidence says it is not worth building. Stopping here is a success, and it saves the money a wrong build would have cost.",
+        bold: [{ phrase: "success" }],
+      },
     },
   ],
-  readyIntro: "Before you move to Alpha, have ready:",
-  readyItems: [
-    "an understanding of the wider context and the other services and teams in the problem space",
-    "a short, ranked list of ideas to test in Alpha, and which one to test first",
-    "a rough idea of the team you will need for Alpha",
-    "how you will measure success",
-    "the funding path for Alpha lined up, because it takes time to arrange",
-  ],
+  offRamp: {
+    intro: {
+      text: "Before you move to Alpha, have ready:",
+      bold: [{ phrase: "Alpha" }],
+    } satisfies ThreadLinkedProse,
+    items: [
+      {
+        text: "The wider context. The other services and teams in the problem space.",
+        bold: [{ phrase: "The wider context." }],
+      },
+      {
+        text: "A ranked list of ideas to test in Alpha, and which one first.",
+        bold: [{ phrase: "A ranked list of ideas" }],
+      },
+      {
+        text: "A rough team for Alpha.",
+        bold: [{ phrase: "A rough team" }],
+      },
+      {
+        text: "A way to measure success.",
+        bold: [{ phrase: "A way to measure success." }],
+      },
+      {
+        text: "The funding path for Alpha, lined up early, since it takes time to arrange.",
+        bold: [{ phrase: "The funding path for Alpha," }],
+      },
+    ] satisfies readonly ThreadLinkedProse[],
+  },
 };
 
 export const DISCOVERY_SECTION_NAV = {
-  prev: { href: "/create", label: "Create" },
   next: { href: "/create-alpha", label: "Alpha" },
 };

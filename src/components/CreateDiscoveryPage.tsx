@@ -12,6 +12,7 @@ import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import type { SourceItem } from "@/components/SourcesBlock";
 import {
+  DISCOVERY_ACCORDION,
   DISCOVERY_ACCORDION_STAGES,
   DISCOVERY_CAUTION,
   DISCOVERY_EXTRACT,
@@ -76,14 +77,13 @@ export function CreateDiscoveryPage() {
         icon={PillarIcon}
         href={DISCOVERY_PILLAR.href}
         linkLabel={DISCOVERY_PILLAR.linkLabel}
-        footerNote={renderLinkedProse(DISCOVERY_PILLAR.procurementNote)}
       >
         <p>{renderLinkedProse(DISCOVERY_PILLAR.body)}</p>
       </PillarCallout>
 
       <IconAccordionSection
-        id="what-to-work-out"
-        title="What to work out in Discovery"
+        id={DISCOVERY_ACCORDION.id}
+        title={DISCOVERY_ACCORDION.title}
         stages={DISCOVERY_ACCORDION_STAGES.map((stage) => ({
           id: stage.id,
           icon: stage.icon,
@@ -112,18 +112,14 @@ export function CreateDiscoveryPage() {
         sectionId={DISCOVERY_FINISH.sectionId}
         intro={DISCOVERY_FINISH.intro}
         exits={DISCOVERY_FINISH.exits}
-        readyIntro={DISCOVERY_FINISH.readyIntro}
-        readyItems={DISCOVERY_FINISH.readyItems}
+        offRamp={DISCOVERY_FINISH.offRamp}
       />
 
       <PageFoot sources={DISCOVERY_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 
-      <SubphaseSectionNav
-        prev={DISCOVERY_SECTION_NAV.prev}
-        next={DISCOVERY_SECTION_NAV.next}
-      />
+      <SubphaseSectionNav next={DISCOVERY_SECTION_NAV.next} />
 
       <div className="h-24" />
     </GuideLayout>

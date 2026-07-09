@@ -9,22 +9,23 @@ export function OnRampChecklist({
   intro,
   items,
   className,
+  embedded = false,
 }: {
-  title: string;
-  intro?: string;
+  title?: string;
+  intro?: ReactNode;
   items: readonly ReactNode[];
   className?: string;
+  embedded?: boolean;
 }) {
   const [checked, setChecked] = useState<Record<number, boolean>>({});
 
-  return (
-    <section className={cn("mt-10 md:mt-12 scroll-mt-24", className)}>
-      <h2 className={`${guideSectionTitle} mb-4`}>{title}</h2>
-      {intro ? <p className={`${guideProse} mb-4`}>{intro}</p> : null}
+  const checklist = (
+    <>
+      {intro ? <div className={embedded ? "mb-4" : `${guideProse} mb-4`}>{intro}</div> : null}
       <div className="rounded-lg border border-border bg-card px-5 py-4 md:px-6 md:py-5">
         <ul className="list-none p-0 m-0 space-y-3">
           {items.map((content, idx) => {
-            const id = `onramp-${idx}`;
+            const id = `onramp-${embedded ? "embedded-" : ""}${idx}`;
             return (
               <li key={idx} className={`flex gap-3 ${guideProseTight}`}>
                 <span className="flex h-[1.35em] shrink-0 items-center">
@@ -47,6 +48,17 @@ export function OnRampChecklist({
           })}
         </ul>
       </div>
+    </>
+  );
+
+  if (embedded) {
+    return <div className={cn(className)}>{checklist}</div>;
+  }
+
+  return (
+    <section className={cn("mt-10 md:mt-12 scroll-mt-24", className)}>
+      {title ? <h2 className={`${guideSectionTitle} mb-4`}>{title}</h2> : null}
+      {checklist}
     </section>
   );
 }

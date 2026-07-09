@@ -16,6 +16,10 @@ import {
   type ThreadPhasePreviewBlock,
   type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
+import {
+  SERVICE_APPROVAL_FUNDING_NOT_EVERY_STAGE,
+  SERVICE_APPROVAL_FUNDING_STAGES,
+} from "@/lib/service-approval-funding-content";
 
 export const fundingLeadPlainText = (lead: readonly ThreadLinkedProse[]) =>
   lead.map((paragraph) => paragraph.text).join(" ");
@@ -99,6 +103,24 @@ export const FUNDING_THREAD = {
     ],
     closing:
       "So a Treasury Board submission does not invent money. It unlocks money the government has already earmarked and grants the permission to spend it. That is why every submission has to name where its money comes from: the money exists, and the submission releases it.",
+  },
+
+  approvalPath: {
+    id: "how-a-service-gets-approved-and-funded",
+    title: "How a service gets approved and funded",
+    intro: [
+      {
+        text:
+          "Before it goes live, a service is approved, costed, and funded through a set order of steps. Different people own different steps, and the whole path takes months, so it starts early.",
+      },
+      {
+        text:
+          "Early work comes first, and it is cheap. A team can research the problem and shape the business case using the department's existing operating budget, before any request for new money. That is why research comes before the big approvals: you research to make the case for the money. The approvals below come once the team knows what it is building.",
+        bold: [{ phrase: "existing operating budget" }],
+      },
+    ] satisfies ThreadLinkedProse[],
+    items: SERVICE_APPROVAL_FUNDING_STAGES,
+    notEveryStage: SERVICE_APPROVAL_FUNDING_NOT_EVERY_STAGE,
   },
 
   detailCards: {
@@ -236,10 +258,6 @@ export const FUNDING_THREAD = {
   ] satisfies ThreadLinkedProse[],
 
   sources: [
-    {
-      label: "Supporting reference",
-      linkKey: "lop-funding-new-government-initiatives" satisfies ExternalLinkKey,
-    },
     {
       label: "Supporting reference",
       linkKey: "tbs-tb-submissions-overview" satisfies ExternalLinkKey,

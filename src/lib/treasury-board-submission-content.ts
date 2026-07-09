@@ -1,6 +1,7 @@
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
+import { THREADS } from "@/lib/guide-strings";
 import { COSTING_A_SERVICE_PATH } from "@/lib/reference-paths";
 import {
   threadSectionsPlainText,
@@ -168,8 +169,13 @@ export const TREASURY_BOARD_SUBMISSION = {
     id: "a-submission-is-one-of-several-approvals",
     title: "A submission is one of several approvals",
     text:
-      "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Create page lays out the full path, from first idea to money in hand, in order.",
-    internalLinks: [{ phrase: "Create page", to: "/create" }],
+      "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Funding page lays out the full path, from first idea to money in hand, in order.",
+    internalLinks: [
+      {
+        phrase: "the full path, from first idea to money in hand, in order",
+        to: `${THREADS.funding.path}#how-a-service-gets-approved-and-funded`,
+      },
+    ],
   } satisfies ThreadLinkedProse,
 
   whoseJob: {

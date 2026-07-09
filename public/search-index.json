@@ -726,29 +726,20 @@
     "text": "Sources and references."
   },
   {
-    "id": "/create#the-stages",
+    "id": "/create#how-a-service-gets-approved-and-funded",
     "pageTitle": "Create",
     "pagePath": "/create",
-    "sectionId": "the-stages",
-    "sectionHeading": "Getting approved and funded",
+    "sectionId": "how-a-service-gets-approved-and-funded",
+    "sectionHeading": "How a service gets approved and funded",
     "lifecyclePhase": "create",
-    "text": "Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: standing it up (built or bought), running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this step. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs project approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the work. Buy and build. With the money and the approvals in place, the department runs the procurement, and delivery begins. The building or configuring itself happens across the three sub-phases below. All of it is still Create: a service is not Live until it launches, however much has already been built."
-  },
-  {
-    "id": "/create#not-every-stage",
-    "pageTitle": "Create",
-    "pagePath": "/create",
-    "sectionId": "not-every-stage",
-    "sectionHeading": "Not every service takes every stage",
-    "lifecyclePhase": "create",
-    "text": "A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval."
+    "text": "A service is approved and funded through a set order of steps, from the business case to the money being released. See the whole path on the Funding page"
   },
   {
     "id": "/create#who-runs-the-stages",
     "pageTitle": "Create",
     "pagePath": "/create",
     "sectionId": "who-runs-the-stages",
-    "sectionHeading": "Who runs the stages",
+    "sectionHeading": "Who runs the steps",
     "lifecyclePhase": "create",
     "text": "The business owner of the application drives the work: the problem, the options, the business case, and the approvals they sponsor. The finance team and the Chief Financial Officer (CFO) build and stand behind the cost estimate. The department's architecture review board and GC EARB judge the design. A Treasury Board Secretariat analyst guides the submission, and the responsible minister signs it."
   },
@@ -1861,6 +1852,16 @@
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
+    "id": "/thread/funding#how-a-service-gets-approved-and-funded",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "how-a-service-gets-approved-and-funded",
+    "sectionHeading": "How a service gets approved and funded",
+    "lifecyclePhase": "thread",
+    "text": "Before it goes live, a service is approved, costed, and funded through a set order of steps. Different people own different steps, and the whole path takes months, so it starts early. Early work comes first, and it is cheap. A team can research the problem and shape the business case using the department's existing operating budget, before any request for new money. That is why research comes before the big approvals: you research to make the case for the money. The approvals below come once the team knows what it is building. Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: standing it up (built or bought), running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this step. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs project approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the work. Buy and build. With the money and the approvals in place, the department runs the procurement, and delivery begins. The building or configuring itself happens across the three sub-phases below. All of it is still Create: a service is not Live until it launches, however much has already been built. A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
     "id": "/thread/funding#the-funding-work-in-detail",
     "pageTitle": "Funding",
     "pagePath": "/thread/funding",
@@ -1963,7 +1964,7 @@
     "sectionId": "a-submission-is-one-of-several-approvals",
     "sectionHeading": "A submission is one of several approvals",
     "lifecyclePhase": "thread",
-    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Create page lays out the full path, from first idea to money in hand, in order."
+    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Funding page lays out the full path, from first idea to money in hand, in order."
   },
   {
     "id": "/thread/funding/treasury-board-submission#whose-job",

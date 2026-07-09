@@ -1,6 +1,8 @@
 import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
+import { CreateSpineSection } from "@/components/CreateSpineSection";
+import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -70,6 +72,7 @@ export function FundingThreadPage() {
     title,
     lead,
     whereMoneyComesFrom,
+    approvalPath,
     detailCards,
     whoseJob,
     twoWaysComparison,
@@ -128,6 +131,23 @@ export function FundingThreadPage() {
         </ul>
         <p className={`${guideProse} mt-5`}>{whereMoneyComesFrom.closing}</p>
       </section>
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={approvalPath.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-4`}>{approvalPath.title}</h2>
+        <div className={guideProseSpace}>
+          {approvalPath.intro.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+        </div>
+        <CreateSpineSection stages={approvalPath.items} accordionOnly />
+      </section>
+
+      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="Not every service takes every step">
+        <p>{approvalPath.notEveryStage}</p>
+      </EditorialNote>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={detailCards.id}>
         <h2 className={`${guideSectionTitle} mb-5`}>{detailCards.title}</h2>

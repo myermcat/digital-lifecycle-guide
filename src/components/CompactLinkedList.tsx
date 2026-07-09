@@ -163,7 +163,7 @@ export function CompactLinkedList({ items }: { items: CompactLinkedItem[] }) {
 export function CompactExitList({
   items,
 }: {
-  items: { lead: string; rest: string; href?: string }[];
+  items: { lead: string; rest: ReactNode; href?: string }[];
 }) {
   return (
     <ArrowLeadList
