@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 12 900 186" font-family="Georgia, 'Times New Roman', serif">
 <!-- BLOCK 1: Create (x 15..295) -->
 <rect x="15" y="20" width="280" height="170" rx="10" fill="#F8F4E9" stroke="#C9BBA4" stroke-width="1.5"/>
-<rect x="15" y="20" width="280" height="80" rx="10" fill="#E9E0CF" stroke="none"/>
-<rect x="15" y="90" width="280" height="10" fill="#E9E0CF"/>
+<rect x="15" y="20" width="280" height="80" rx="10" fill="#ECDFCD" stroke="none"/>
+<rect x="15" y="90" width="280" height="10" fill="#ECDFCD"/>
 <line x1="15" y1="100" x2="295" y2="100" stroke="#C9BBA4" stroke-width="1.5"/>
 <text x="155" y="68" text-anchor="middle" font-size="23" font-weight="bold" fill="#A8492A">Create</text>
 <line x1="108.3" y1="100" x2="108.3" y2="190" stroke="#C9BBA4" stroke-width="1.2"/>
@@ -13,8 +13,8 @@
 
 <!-- BLOCK 2: Live (x 305..585) -->
 <rect x="305" y="20" width="280" height="170" rx="10" fill="#F8F4E9" stroke="#C9BBA4" stroke-width="1.5"/>
-<rect x="305" y="20" width="280" height="80" rx="10" fill="#E9E0CF" stroke="none"/>
-<rect x="305" y="90" width="280" height="10" fill="#E9E0CF"/>
+<rect x="305" y="20" width="280" height="80" rx="10" fill="#ECDFCD" stroke="none"/>
+<rect x="305" y="90" width="280" height="10" fill="#ECDFCD"/>
 <line x1="305" y1="100" x2="585" y2="100" stroke="#C9BBA4" stroke-width="1.5"/>
 <text x="445" y="68" text-anchor="middle" font-size="23" font-weight="bold" fill="#A8492A">Live</text>
 <line x1="398.3" y1="100" x2="398.3" y2="190" stroke="#C9BBA4" stroke-width="1.2"/>
@@ -24,6 +24,6 @@
 <text x="538.3" y="150" text-anchor="middle" font-size="12.5" fill="#4A3B2E">Maturity</text>
 
 <!-- BLOCK 3: Sunset (x 595..875), not split -->
-<rect x="595" y="20" width="280" height="170" rx="10" fill="#E9E0CF" stroke="#C9BBA4" stroke-width="1.5"/>
+<rect x="595" y="20" width="280" height="170" rx="10" fill="#ECDFCD" stroke="#C9BBA4" stroke-width="1.5"/>
 <text x="735" y="112" text-anchor="middle" font-size="23" font-weight="bold" fill="#A8492A">Sunset</text>
 </svg>

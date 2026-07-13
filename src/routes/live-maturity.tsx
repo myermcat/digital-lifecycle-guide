@@ -24,7 +24,6 @@ import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { guideProseSpace } from "@/lib/guide-typography";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
@@ -55,7 +54,7 @@ function LiveMaturityPage() {
         <WhereThisFits {...whereThisFitsForLiveSubphase("maturity")} />
       </section>
 
-      <SubphaseDescriptionPanel lifecyclePhase="Live" />
+      <SubphaseDescriptionPanel />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>
@@ -274,7 +273,7 @@ function LiveMaturityPage() {
           closing="This playbook is not enough on its own. It describes what to do; it cannot supply the judgement, the team, or the will to do it well. It assumes you bring those."
         />
 
-      <PageFoot lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
+      <PageFoot subphaseFootFor="Live" />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
     </GuideLayout>

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+<rect x="16" y="18" width="868" height="204" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="42" y="52" font-size="17" font-weight="bold" fill="#A8492A">The service dashboard</text>
+<rect x="42" y="68" width="196" height="132" rx="10" fill="#FBF7EF" stroke="#DCCFBB" stroke-width="1.2"/>
+<text x="56" y="92" font-size="10.5" font-family="Arial, Helvetica, sans-serif" letter-spacing="1" fill="#8C7B63">AVAILABILITY</text>
+<text x="56" y="126" font-size="25" font-weight="bold" fill="#4A3B2E">99.2%</text>
+<rect x="56" y="142" width="168" height="8" rx="4" fill="#DCCFBB"/>
+<rect x="56" y="142" width="155" height="8" rx="4" fill="#A8492A"/>
+<text x="56" y="172" font-size="11.5" font-style="italic" fill="#8C7B63">target 99.5%</text>
+<rect x="252" y="68" width="196" height="132" rx="10" fill="#FBF7EF" stroke="#DCCFBB" stroke-width="1.2"/>
+<text x="266" y="92" font-size="10.5" font-family="Arial, Helvetica, sans-serif" letter-spacing="1" fill="#8C7B63">CUSTOMER SATISFACTION</text>
+<text x="266" y="126" font-size="25" font-weight="bold" fill="#4A3B2E">82%</text>
+<rect x="266" y="142" width="168" height="8" rx="4" fill="#DCCFBB"/>
+<rect x="266" y="142" width="138" height="8" rx="4" fill="#A8492A"/>
+<text x="266" y="172" font-size="11.5" font-style="italic" fill="#8C7B63">target 85%</text>
+<rect x="462" y="68" width="196" height="132" rx="10" fill="#FBF7EF" stroke="#DCCFBB" stroke-width="1.2"/>
+<text x="476" y="92" font-size="10.5" font-family="Arial, Helvetica, sans-serif" letter-spacing="1" fill="#8C7B63">ERROR RATE</text>
+<text x="476" y="126" font-size="25" font-weight="bold" fill="#4A3B2E">0.04%</text>
+<rect x="476" y="142" width="168" height="8" rx="4" fill="#DCCFBB"/>
+<rect x="476" y="142" width="37" height="8" rx="4" fill="#A8492A"/>
+<text x="476" y="172" font-size="11.5" font-style="italic" fill="#8C7B63">target under 0.05%</text>
+<rect x="672" y="68" width="196" height="132" rx="10" fill="#FBF7EF" stroke="#DCCFBB" stroke-width="1.2"/>
+<text x="686" y="92" font-size="10.5" font-family="Arial, Helvetica, sans-serif" letter-spacing="1" fill="#8C7B63">COMPLETION RATE</text>
+<text x="686" y="126" font-size="25" font-weight="bold" fill="#4A3B2E">84%</text>
+<rect x="686" y="142" width="168" height="8" rx="4" fill="#DCCFBB"/>
+<rect x="686" y="142" width="141" height="8" rx="4" fill="#A8492A"/>
+<text x="686" y="172" font-size="11.5" font-style="italic" fill="#8C7B63">target 90%</text>
+<text x="450.0" y="252" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">Built in Beta, so the service can be watched from the day it goes live.</text>
+<text x="450.0" y="276" text-anchor="middle" font-size="13.5" fill="#8C7B63">Often built by the supplier, so it has to be written into the contract.</text>
+</svg>

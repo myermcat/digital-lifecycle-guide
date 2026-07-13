@@ -6,7 +6,6 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import {
   getPhaseLeavingContent,
   type PhaseLeavingSlug,
@@ -65,7 +64,7 @@ export function PhasePlaceholderPage({
             <WhereThisFits {...whereThisFits} />
           </section>
 
-          <SubphaseDescriptionPanel lifecyclePhase={lifecyclePhase} />
+          <SubphaseDescriptionPanel />
 
           <section className="mt-10 md:mt-12 scroll-mt-24" id="what-happens-here">
             <h2 className={`${guideSectionTitle} mb-3`}>What happens here</h2>
@@ -102,7 +101,7 @@ export function PhasePlaceholderPage({
             <WhereThisFits {...whereThisFits} />
           </section>
 
-          <SubphaseDescriptionPanel lifecyclePhase={lifecyclePhase} />
+          <SubphaseDescriptionPanel />
 
           <section className={`${guideProseSpace} mt-8 md:mt-10`}>
             <p>{intro}</p>
@@ -115,7 +114,7 @@ export function PhasePlaceholderPage({
 
       {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}
 
-      <PageFoot lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
+      <PageFoot subphaseFootFor={subphase ? lifecyclePhase : undefined} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

@@ -95,17 +95,6 @@ export const PHASE_LEAVING_CONTENT: Record<PhaseLeavingSlug, PhaseLeavingContent
         href: "/create-alpha",
       },
     ],
-    pills: [
-      {
-        label: "The first contract renewal",
-        intro:
-          "The contract you signed to build has an end date, and renewing has its own lead time.",
-        items: [
-          "Know when it ends and how long a renewal or re-competition takes in practice.",
-          "Decide early whether you are renewing, re-competing, or moving.",
-        ],
-      },
-    ],
   },
   stabilization: {
     phaseName: "Stabilization",

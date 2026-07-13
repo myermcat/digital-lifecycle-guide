@@ -24,8 +24,8 @@ export function PillarCallout({
   title: string;
   icon: LucideIcon;
   children: ReactNode;
-  href: string;
-  linkLabel: string;
+  href?: string;
+  linkLabel?: string;
   footerNote?: ReactNode;
   className?: string;
 }) {
@@ -51,11 +51,13 @@ export function PillarCallout({
               <h2 className={`${guideBlockTitle} mt-1`}>{title}</h2>
             </div>
             <div className={guideProseTight}>{children}</div>
-            <p>
-              <Link to={href} className={`text-sm ${guideLink}`}>
-                {linkLabel}
-              </Link>
-            </p>
+            {href && linkLabel ? (
+              <p>
+                <Link to={href} className={`text-sm ${guideLink}`}>
+                  {linkLabel}
+                </Link>
+              </p>
+            ) : null}
             {footerNote ? <p className={guideProseTight}>{footerNote}</p> : null}
           </div>
         </div>

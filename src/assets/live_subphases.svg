@@ -1,19 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 20 900 178" font-family="Georgia, 'Times New Roman', serif">
-<!-- Stabilization -->
-<rect x="20" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
-<text x="140" y="88" text-anchor="middle" font-size="21" font-weight="bold" fill="#A8492A">Stabilization</text>
-<text x="140" y="114" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">make it reliable</text>
-<!-- arrow -->
-<line x1="272" y1="89" x2="312" y2="89" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M312,83 L322,89 L312,95 Z" fill="#A8492A"/>
-<!-- Growth -->
-<rect x="330" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
-<text x="450" y="88" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Growth</text>
-<text x="450" y="114" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">extend and scale</text>
-<!-- arrow -->
-<line x1="582" y1="89" x2="622" y2="89" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M622,83 L632,89 L622,95 Z" fill="#A8492A"/>
-<!-- Maturity -->
-<rect x="640" y="30" width="240" height="118" rx="22" fill="#E9E0CF" stroke="#A8492A" stroke-width="2"/>
-<text x="760" y="88" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Maturity</text>
-<text x="760" y="114" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">keep it healthy</text>
-<text x="450" y="184" text-anchor="middle" font-size="15" font-style="italic" fill="#8C7B63">Live moves through three sub-phases, from a just-launched service to one kept healthy over the long term.</text>
+<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+<path d="M20,56 q0,-13 13,-13 H432 q13,0 13,-13 q0,13 13,13 H867 q13,0 13,13" fill="none" stroke="#A8492A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="20" y="66" width="250" height="112" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="145.0" y="110" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Stabilization</text>
+<text x="145.0" y="136" text-anchor="middle" font-size="14" font-style="italic" fill="#4A3B2E">make it reliable</text>
+<line x1="280" y1="122" x2="303" y2="122" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M303,116 L313,122 L303,128 Z" fill="#A8492A"/>
+<rect x="325" y="66" width="250" height="112" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="450.0" y="110" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Growth</text>
+<text x="450.0" y="136" text-anchor="middle" font-size="14" font-style="italic" fill="#4A3B2E">extend and scale</text>
+<line x1="585" y1="122" x2="608" y2="122" stroke="#A8492A" stroke-width="2.4" stroke-dasharray="5 5"/><path d="M608,116 L618,122 L608,128 Z" fill="#A8492A"/>
+<rect x="630" y="66" width="250" height="112" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="755.0" y="110" text-anchor="middle" font-size="22" font-weight="bold" fill="#A8492A">Maturity</text>
+<text x="755.0" y="136" text-anchor="middle" font-size="14" font-style="italic" fill="#4A3B2E">keep it healthy</text>
+<text x="450.0" y="216" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">Live moves through three sub-phases, from a just-launched service to one kept healthy over the long term.</text>
 </svg>

@@ -11,12 +11,14 @@ export function SubphaseFinishSection({
   title,
   sectionId,
   intro,
+  followUp,
   exits,
   offRamp,
 }: {
   title: string;
   sectionId: string;
   intro: ThreadLinkedProse;
+  followUp?: ThreadLinkedProse;
   exits: { lead: string; rest: ThreadLinkedProse; href?: string }[];
   offRamp: {
     intro: ThreadLinkedProse;
@@ -26,6 +28,7 @@ export function SubphaseFinishSection({
   return (
     <PhaseSection title={title} sectionId={sectionId}>
       <p>{renderLinkedProse(intro)}</p>
+      {followUp ? <p className="mt-4">{renderLinkedProse(followUp)}</p> : null}
       <CompactExitList
         items={exits.map((item) => ({
           lead: item.lead,

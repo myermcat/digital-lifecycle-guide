@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import { SeeAlso, type SeeAlsoItem } from "@/components/SeeAlso";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisual, LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { SourcesBlock, type SourceItem } from "@/components/SourcesBlock";
 import { SupportCallout } from "@/components/SupportCallout";
 import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
+import { subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { guideSectionTitle, guideProse } from "@/lib/guide-typography";
 
@@ -15,6 +16,7 @@ export function PageFoot({
   support = "generic",
   showSupportCallout = true,
   lifecycleVisual,
+  subphaseFootFor,
   furtherReading,
   seeAlso,
   sources,
@@ -22,7 +24,9 @@ export function PageFoot({
 }: {
   support?: SupportCalloutVariant;
   showSupportCallout?: boolean;
-  lifecycleVisual?: LifecycleVisualAsset;
+  lifecycleVisual?: LifecycleVisualAsset | LifecycleVisualAsset[];
+  /** Stacked phases + sub-phases foot visuals before the support callout. */
+  subphaseFootFor?: string;
   furtherReading?: ReactNode;
   seeAlso?: SeeAlsoItem[];
   sources?: SourceItem[];
@@ -31,10 +35,24 @@ export function PageFoot({
   const hasFurtherReading = furtherReading != null;
   const hasSeeAlso = seeAlso != null && seeAlso.length > 0;
   const hasSources = sources != null && sources.length > 0;
+  const lifecycleVisuals = lifecycleVisual == null
+    ? []
+    : Array.isArray(lifecycleVisual)
+      ? lifecycleVisual
+      : [lifecycleVisual];
 
   return (
     <div className={className ?? "mt-10 md:mt-12 space-y-10 md:space-y-12"}>
-      {lifecycleVisual ? <LifecycleVisual visual={lifecycleVisual} className="mt-0" /> : null}
+      {subphaseFootFor ? (
+        <LifecycleVisualStack
+          visuals={subphaseFootVisuals(subphaseFootFor)}
+          variant="subphaseFoot"
+        />
+      ) : lifecycleVisuals.length === 1 ? (
+        <LifecycleVisual visual={lifecycleVisuals[0]!} className="mt-0" />
+      ) : lifecycleVisuals.length > 1 ? (
+        <LifecycleVisualStack visuals={lifecycleVisuals} />
+      ) : null}
       {showSupportCallout ? <SupportCallout variant={support} /> : null}
       {hasFurtherReading ? (
         <section className="scroll-mt-24" id="further-reading">

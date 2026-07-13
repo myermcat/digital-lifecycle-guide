@@ -43,7 +43,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
 
   { title: SUBPHASE_PAGE_HEADINGS.discovery, path: "/create-discovery", type: "subphase", status: "in-review" },
   { title: SUBPHASE_PAGE_HEADINGS.alpha, path: "/create-alpha", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "not-started" },
+  { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "in-review" },
   { title: SUBPHASE_PAGE_HEADINGS.stabilization, path: "/live-stabilization", type: "subphase", status: "not-started" },
   { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "not-started" },
   { title: SUBPHASE_PAGE_HEADINGS.maturity, path: "/live-maturity", type: "subphase", status: "in-review" },

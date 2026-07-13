@@ -54,7 +54,7 @@ export function CreateDiscoveryPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <SubphaseDescriptionPanel lifecyclePhase="Create">
+      <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyDiscovery}>
         <div className={`${guideProse} space-y-3`}>
           <p>{renderLinkedProse(DISCOVERY_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
@@ -118,7 +118,7 @@ export function CreateDiscoveryPage() {
         offRamp={DISCOVERY_FINISH.offRamp}
       />
 
-      <PageFoot sources={DISCOVERY_SOURCES} lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
+      <PageFoot sources={DISCOVERY_SOURCES} subphaseFootFor="Create" />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

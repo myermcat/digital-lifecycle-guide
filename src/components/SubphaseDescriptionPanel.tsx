@@ -1,18 +1,18 @@
 import type { ReactNode } from "react";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
-import { subphaseVisualForLifecyclePhase } from "@/lib/lifecycle-visuals";
+import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { cn } from "@/lib/utils";
 
 export const subphaseDescriptionBoxClassName =
   "mt-5 md:mt-6 rounded-xl border-2 border-dashed border-primary/40 bg-background px-5 py-5 md:px-6 md:py-6";
 
-/** Dashed sub-phase description box with the phase-specific sub-phase visual directly beneath. */
+/** Dashed sub-phase description box with an optional key-things visual directly beneath. */
 export function SubphaseDescriptionPanel({
-  lifecyclePhase,
+  visual,
   children,
   className,
 }: {
-  lifecyclePhase: string;
+  visual?: LifecycleVisualAsset;
   children?: ReactNode;
   className?: string;
 }) {
@@ -27,7 +27,7 @@ export function SubphaseDescriptionPanel({
       >
         {children}
       </aside>
-      <LifecycleVisual visual={subphaseVisualForLifecyclePhase(lifecyclePhase)} />
+      {visual ? <LifecycleVisual visual={visual} /> : null}
     </>
   );
 }

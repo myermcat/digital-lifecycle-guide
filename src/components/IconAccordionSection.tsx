@@ -12,6 +12,7 @@ export type IconAccordionStage = {
   id: string;
   icon: LucideIcon;
   title: string;
+  headerContent?: ReactNode;
   children: ReactNode;
 };
 
@@ -46,6 +47,9 @@ export function IconAccordionSection({
                 </span>
               </AccordionTrigger>
               <AccordionContent className="px-5 pb-4">
+                {stage.headerContent ? (
+                  <div className="mb-4">{stage.headerContent}</div>
+                ) : null}
                 <div className={guideProseTight}>{stage.children}</div>
               </AccordionContent>
             </AccordionItem>

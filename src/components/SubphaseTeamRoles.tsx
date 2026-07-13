@@ -12,12 +12,16 @@ export function SubphaseTeamRoles({
   id,
   title,
   intro,
+  keepTeam,
+  rolesIntro,
   roles,
   closing,
 }: {
   id?: string;
   title: string;
   intro: ThreadLinkedProse;
+  keepTeam?: ThreadLinkedProse;
+  rolesIntro?: ThreadLinkedProse;
   roles: readonly SubphaseTeamRole[];
   closing?: ThreadLinkedProse;
 }) {
@@ -29,6 +33,8 @@ export function SubphaseTeamRoles({
       <h2 className={`${guideSectionTitle} mb-2`}>{title}</h2>
       <div className={guideProse}>
         <p>{renderLinkedProse(intro)}</p>
+        {keepTeam ? <p className="mt-4">{renderLinkedProse(keepTeam)}</p> : null}
+        {rolesIntro ? <p className="mt-4">{renderLinkedProse(rolesIntro)}</p> : null}
         <ul className="mt-5 space-y-5 list-none pl-0">
           {roles.map((item) => {
             const Icon = item.icon;
