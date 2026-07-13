@@ -1,4 +1,5 @@
 import type { CautionItem } from "@/components/CautionBlock";
+import type { PhaseQuoteContent } from "@/components/PhaseQuote";
 import type { BoldPhrase, ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import { PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
@@ -33,8 +34,21 @@ const GCCASE = GCCASE_MIGRATION_READINESS_GUIDE;
 
 /** Sunset phase landing copy — organized by page section. */
 export const SUNSET_STRINGS = {
+  quote: {
+    lead: "Where a service reaches its end and is retired or replaced cleanly. The team:",
+    leadBold: [{ phrase: "retired or replaced" }],
+    items: [
+      "plans the shutdown",
+      "moves or archives the data",
+      "brings users safely onto whatever comes next",
+    ],
+    takeaway:
+      "In the Government of Canada, replacing a service is far more common than shutting one down.",
+    takeawayBold: false,
+  } satisfies PhaseQuoteContent,
+
   intro: [
-    "Every service reaches a point where it has to move on. It might be replaced, folded into something else, or retired because the need has gone. Sunset is the work of that transition: deciding the path, moving or archiving the data, bringing users safely across, and shutting the old service down without disruption.",
+    "Sunset often runs in parallel with Create: while a replacement is being bought or built, the old service still has to keep running. The team plans the exit, funds it, and carries users and records through the change without leaving anyone stranded.",
     "A transition is more than a technical migration. It is the moment to reassess the process, drop the technical debt that has built up, improve the data, and re-confirm what the service is really for, so what comes next improves on the old rather than copying it.",
   ],
 

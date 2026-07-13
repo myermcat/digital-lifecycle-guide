@@ -1,13 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CreateDiscoveryPage } from "@/components/CreateDiscoveryPage";
-import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { PHASES } from "@/lib/guide-strings";
+import { LIFECYCLE_PHASE_META, SUBPHASE_META, subphasePageDocumentTitle } from "@/lib/lifecycle-navigation";
 
 export const Route = createFileRoute("/create-discovery")({
   head: () => ({
     meta: [
       {
-        title: `${SUBPHASE_META.discovery.subphase} — ${PHASES.create.title} — The Digital Lifecycle Guide`,
+        title: subphasePageDocumentTitle(
+          SUBPHASE_META.discovery.pageHeading,
+          LIFECYCLE_PHASE_META.create.title,
+        ),
       },
       { name: "description", content: SUBPHASE_META.discovery.subtitle },
     ],

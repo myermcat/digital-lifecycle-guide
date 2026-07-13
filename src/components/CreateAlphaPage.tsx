@@ -6,6 +6,7 @@ import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PillarCallout } from "@/components/PillarCallout";
+import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
@@ -24,6 +25,7 @@ import {
   ALPHA_TEAM,
 } from "@/lib/create-alpha-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -42,6 +44,7 @@ export function CreateAlphaPage() {
   return (
     <GuideLayout id="create-alpha">
       <PhaseBreadcrumb
+        pageHeading={meta.pageHeading}
         lifecyclePhase="Create"
         lifecyclePhaseHref="/create"
         subphase="Alpha"
@@ -51,7 +54,7 @@ export function CreateAlphaPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <aside className="mt-5 md:mt-6 rounded-xl border-2 border-dashed border-primary/40 bg-background px-5 py-5 md:px-6 md:py-6">
+      <SubphaseDescriptionPanel lifecyclePhase="Create">
         <div className={`${guideProse} space-y-3`}>
           <p>{renderLinkedProse(ALPHA_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
@@ -62,7 +65,7 @@ export function CreateAlphaPage() {
           <p>{renderLinkedProse(ALPHA_EXTRACT.closing)}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT_CLOSING)}</p>
         </div>
-      </aside>
+      </SubphaseDescriptionPanel>
 
       <OnRampChecklist
         title={ALPHA_ON_RAMP.title}
@@ -115,7 +118,7 @@ export function CreateAlphaPage() {
         offRamp={ALPHA_FINISH.offRamp}
       />
 
-      <PageFoot sources={ALPHA_SOURCES} />
+      <PageFoot sources={ALPHA_SOURCES} lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

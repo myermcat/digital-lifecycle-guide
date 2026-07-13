@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Accessibility,
   Activity,
   Briefcase,
   Code2,
@@ -98,11 +97,31 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Build throwaway prototypes, and try more than one approach.",
     sections: [
       {
-        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Start with paper or sketches, then work up to a clickable prototype as the research points the way. Try several approaches to the problem rather than polishing the first one.",
-        bold: [
-          { phrase: "paper or sketches" },
-          { phrase: "clickable prototype" },
+        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
+      },
+      {
+        text: "Work up in this order, stopping as soon as the idea is answered:",
+      },
+      {
+        type: "orderedList",
+        items: [
+          {
+            bold: "Paper or sketches.",
+            text: " The cheapest way to find out an idea is wrong.",
+          },
+          {
+            bold: "An AI (artificial intelligence) mock-up.",
+            text: " A number of tools now build a working front end from a written prompt in about ten minutes, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back.",
+          },
+          {
+            bold: "A clickable prototype.",
+            text: " once the research points the way.",
+          },
         ],
+      },
+      {
+        text: "Treat the AI mock-up exactly as you would treat paper: something to be thrown away. It is not the beginning of the real service, and no part of it should survive into the build. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in the air, and it shows quickly whether the idea works at all.",
+        bold: [{ phrase: "something to be thrown away" }],
       },
     ],
   },
@@ -134,12 +153,18 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
   },
   {
     id: "accessibility",
-    icon: Accessibility,
+    icon: Users,
     title: "Design for accessibility and inclusion.",
     sections: [
       {
-        text: "Understand the accessibility principles and include disabled people, and people with low digital confidence, in the research. A prototype cannot be fully audited, so line up the accessibility work for Beta now, since an auditor takes time to arrange. Accessibility covers the duty and how to meet it.",
-        bold: [{ phrase: "line up the accessibility work for Beta now" }],
+        text: "Understand the accessibility principles and include disabled people, neurodivergent people, and people with low digital confidence in the research. A prototype cannot be fully audited, so line up the accessibility work for Beta now, since an auditor takes time to arrange. Accessibility covers the duty and how to meet it.",
+        bold: [
+          {
+            phrase:
+              "disabled people, neurodivergent people, and people with low digital confidence",
+          },
+          { phrase: "line up the accessibility work for Beta now" },
+        ],
         internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
     ],

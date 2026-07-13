@@ -4,7 +4,9 @@ import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
+import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import type { WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import {
   getPhaseLeavingContent,
   type PhaseLeavingSlug,
@@ -16,6 +18,7 @@ import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typo
 
 interface PhasePlaceholderPageProps {
   id: string;
+  pageHeading: string;
   lifecyclePhase: string;
   lifecyclePhaseHref: string;
   subphase?: string;
@@ -28,6 +31,7 @@ interface PhasePlaceholderPageProps {
 
 export function PhasePlaceholderPage({
   id,
+  pageHeading,
   lifecyclePhase,
   lifecyclePhaseHref,
   subphase,
@@ -45,6 +49,7 @@ export function PhasePlaceholderPage({
   return (
     <GuideLayout id={id}>
       <PhaseBreadcrumb
+        pageHeading={pageHeading}
         lifecyclePhase={lifecyclePhase}
         lifecyclePhaseHref={lifecyclePhaseHref}
         subphase={subphase}
@@ -59,6 +64,8 @@ export function PhasePlaceholderPage({
           <section className="mt-5 md:mt-6">
             <WhereThisFits {...whereThisFits} />
           </section>
+
+          <SubphaseDescriptionPanel lifecyclePhase={lifecyclePhase} />
 
           <section className="mt-10 md:mt-12 scroll-mt-24" id="what-happens-here">
             <h2 className={`${guideSectionTitle} mb-3`}>What happens here</h2>
@@ -95,6 +102,8 @@ export function PhasePlaceholderPage({
             <WhereThisFits {...whereThisFits} />
           </section>
 
+          <SubphaseDescriptionPanel lifecyclePhase={lifecyclePhase} />
+
           <section className={`${guideProseSpace} mt-8 md:mt-10`}>
             <p>{intro}</p>
             {showComingSoon ? (
@@ -106,7 +115,7 @@ export function PhasePlaceholderPage({
 
       {leavingContent ? <PhaseLeavingSection content={leavingContent} /> : null}
 
-      <PageFoot />
+      <PageFoot lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

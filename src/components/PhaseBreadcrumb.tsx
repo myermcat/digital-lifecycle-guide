@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { guidePageTitle } from "@/lib/guide-typography";
 
 interface PhaseBreadcrumbProps {
+  pageHeading: string;
   lifecyclePhase: string;
   lifecyclePhaseHref: string;
   subphase?: string;
@@ -9,13 +10,12 @@ interface PhaseBreadcrumbProps {
 }
 
 export function PhaseBreadcrumb({
+  pageHeading,
   lifecyclePhase,
   lifecyclePhaseHref,
   subphase,
   className,
 }: PhaseBreadcrumbProps) {
-  const title = subphase ?? lifecyclePhase;
-
   return (
     <header className={className}>
       <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
@@ -39,9 +39,7 @@ export function PhaseBreadcrumb({
           <span className="text-foreground/80">{lifecyclePhase}</span>
         )}
       </nav>
-      <h1 className={`mt-4 ${guidePageTitle}`}>
-        {title}
-      </h1>
+      <h1 className={`mt-4 ${guidePageTitle}`}>{pageHeading}</h1>
     </header>
   );
 }

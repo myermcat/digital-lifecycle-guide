@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LivePhasePage } from "@/components/LivePhasePage";
-import { livePhaseLeadPlainText, LIVE_PHASE } from "@/lib/live-phase-content";
+import { livePhaseLeadPlainText } from "@/lib/live-phase-content";
+import { PHASES } from "@/lib/guide-strings";
+import { phasePageDocumentTitle } from "@/lib/lifecycle-navigation";
 
 export const Route = createFileRoute("/live")({
   head: () => ({
     meta: [
-      { title: `${LIVE_PHASE.title} — The Digital Lifecycle Guide` },
+      { title: phasePageDocumentTitle(PHASES.live.pageHeading) },
       { name: "description", content: livePhaseLeadPlainText },
     ],
   }),

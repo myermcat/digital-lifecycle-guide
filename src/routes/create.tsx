@@ -1,11 +1,13 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CreatePhasePage } from "@/components/CreatePhasePage";
-import { createPhaseLeadPlainText, CREATE_PHASE } from "@/lib/create-phase-content";
+import { createPhaseLeadPlainText } from "@/lib/create-phase-content";
+import { PHASES } from "@/lib/guide-strings";
+import { phasePageDocumentTitle } from "@/lib/lifecycle-navigation";
 
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: `${CREATE_PHASE.title} — The Digital Lifecycle Guide` },
+      { title: phasePageDocumentTitle(PHASES.create.pageHeading) },
       { name: "description", content: createPhaseLeadPlainText },
     ],
   }),

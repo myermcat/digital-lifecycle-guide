@@ -1,13 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CreateAlphaPage } from "@/components/CreateAlphaPage";
-import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { PHASES } from "@/lib/guide-strings";
+import { LIFECYCLE_PHASE_META, SUBPHASE_META, subphasePageDocumentTitle } from "@/lib/lifecycle-navigation";
 
 export const Route = createFileRoute("/create-alpha")({
   head: () => ({
     meta: [
       {
-        title: `${SUBPHASE_META.alpha.subphase} — ${PHASES.create.title} — The Digital Lifecycle Guide`,
+        title: subphasePageDocumentTitle(
+          SUBPHASE_META.alpha.pageHeading,
+          LIFECYCLE_PHASE_META.create.title,
+        ),
       },
       { name: "description", content: SUBPHASE_META.alpha.subtitle },
     ],

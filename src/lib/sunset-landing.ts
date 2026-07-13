@@ -10,7 +10,8 @@ export type SunsetJourneyStep =
 export type SunsetPath = "replace" | "retire";
 
 export const SUNSET_LANDING = {
-  title: PHASES.sunset.title,
+  title: PHASES.sunset.pageHeading,
+  quote: SUNSET_STRINGS.quote,
   intro: SUNSET_STRINGS.intro,
   scope: SUNSET_STRINGS.scope,
   fork: SUNSET_STRINGS.fork,

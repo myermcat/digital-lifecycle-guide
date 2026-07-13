@@ -1,4 +1,6 @@
 import type { SourceItem } from "@/components/SourcesBlock";
+import type { PhaseQuoteContent } from "@/components/PhaseQuote";
+import { phaseQuotePlainText } from "@/components/PhaseQuote";
 import { PHASES, THREADS, type ThreadSlug } from "@/lib/guide-strings";
 
 export type LiveSubphaseRow = {
@@ -8,11 +10,21 @@ export type LiveSubphaseRow = {
 };
 
 export const LIVE_PHASE = {
-  title: PHASES.live.title,
+  title: PHASES.live.pageHeading,
+
+  quote: {
+    lead: "The longest phase. The service is up and running, and the work is keeping it useful:",
+    items: [
+      "watching how it performs",
+      "fixing and improving it",
+      "adding capability as more people arrive",
+      "keeping it secure and funded, year after year",
+    ],
+  } satisfies PhaseQuoteContent,
 
   lead: [
-    "Live is the longest stretch of a service's life, and where most of it is spent. The service is launched and being used, and the work now is to keep it working and make it better, year after year.",
-    "This is where the idea that a service is a project that ends at launch falls apart. A live service has to be watched, funded, secured, and improved, from the day it goes live until the day it is replaced or retired. Live moves through three sub-phases: Stabilization, Growth, and Maturity.",
+    "This is where the idea of a service as a project that ends at launch falls apart. Launch is the moment the service starts costing money, drawing users, and ageing.",
+    "Live has no end date to plan towards. The work settles into a cycle that repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding before the money runs out. The three sub-phases below mark how that cycle changes as the service matures.",
   ],
 
   subphases: {
@@ -38,6 +50,89 @@ export const LIVE_PHASE = {
     ] satisfies LiveSubphaseRow[],
     leavingLine:
       "Leaving Live is the crossing into Sunset: the service is being replaced or retired, and the exit has to be planned and funded before the money runs out.",
+  },
+
+  workOfLive: {
+    id: "the-work-of-live",
+    title: "The work of Live",
+    introBold:
+      "Live is three kinds of work, running side by side for as long as the service is used.",
+    blocks: [
+      {
+        heading: "1. Keep it running.",
+        lead: "A live service has to stay reliable under real, full load.",
+        bullets: [
+          {
+            text: "The team watches it through monitoring and acts on what the signals show.",
+            internalLinks: [
+              { phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" },
+            ],
+          },
+          {
+            text: "Changes are released small and often, so fixes and improvements go out safely.",
+            internalLinks: [{ phrase: "released", to: "/thread/releasing-changes" }],
+          },
+          {
+            text: "Security work carries on: trouble is spotted and contained.",
+            internalLinks: [{ phrase: "Security", to: "/thread/security" }],
+          },
+          {
+            text: "Its dependencies are kept patched and current.",
+            internalLinks: [
+              { phrase: "dependencies", to: "/thread/dependencies-and-standards" },
+            ],
+          },
+        ],
+      },
+      {
+        heading: "2. Keep making it better.",
+        lead: "Real use is the best evidence a team ever gets about what to build next.",
+        bullets: [
+          {
+            text: "Fresh user research shows what to fix and what to add.",
+            internalLinks: [{ phrase: "user research", to: "/thread/user-research" }],
+          },
+          {
+            text: "The backlog is where those become prioritized work.",
+            internalLinks: [{ phrase: "backlog", to: "/thread/backlog" }],
+          },
+          {
+            text: "Change management wins the adoption that turns a delivered change into one people actually use.",
+            internalLinks: [{ phrase: "change management", to: "/thread/change-management" }],
+          },
+        ],
+      },
+      {
+        heading: "3. Keep it funded and within the rules.",
+        lead: "A live service does not run itself.",
+        bullets: [
+          {
+            text: "Its funding is renewed before the current money runs out.",
+            internalLinks: [{ phrase: "funding", to: "/thread/funding" }],
+          },
+          {
+            text: "Its privacy assessment is kept current as the service changes.",
+            internalLinks: [{ phrase: "privacy", to: "/thread/privacy" }],
+          },
+          {
+            text: "Its accessibility is held to standard.",
+            internalLinks: [{ phrase: "accessibility", to: "/thread/accessibility" }],
+          },
+          {
+            text: "Its data is retained and disposed of on schedule.",
+            internalLinks: [{ phrase: "data", to: "/thread/data-stewardship" }],
+          },
+          {
+            text: "The team that understands it is kept together.",
+            internalLinks: [{ phrase: "team", to: "/thread/team-capability" }],
+          },
+        ],
+      },
+    ],
+    closing: {
+      leadIn: "The work comes round again.",
+      text: "Live's checks recur: a security review on every release, the privacy assessment refreshed as the service changes, funding renewed before it runs out. Live settles into a rhythm and keeps going.",
+    },
   },
 
   whatRuns: {
@@ -91,5 +186,7 @@ export const LIVE_PHASE = {
   ] satisfies SourceItem[],
 } as const;
 
-export const livePhaseLeadPlainText = LIVE_PHASE.lead.join(" ");
-
+export const livePhaseLeadPlainText = [
+  phaseQuotePlainText(LIVE_PHASE.quote),
+  ...LIVE_PHASE.lead,
+].join(" ");

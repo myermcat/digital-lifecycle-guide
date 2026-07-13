@@ -117,9 +117,9 @@ function Index() {
             </li>
           </ul>
           <p>
-            Each phase breaks into smaller stages, called sub-phases, so you can find the part that
+            Each phase breaks into subphases, so you can find the part that
             matches where you are. Create has Discovery, Alpha, and Beta. Live has Stabilization,
-            Growth, and Maturity. The phase is the chapter; the sub-phase is the page you are on
+            Growth, and Maturity. The phase is the chapter; the subphase is the page you are on
             within it.
           </p>
           <img

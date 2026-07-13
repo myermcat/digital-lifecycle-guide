@@ -20,82 +20,82 @@
   },
   {
     "id": "/create",
-    "pageTitle": "Create",
+    "pageTitle": "How the Create phase works",
     "pagePath": "/create",
     "sectionId": "",
-    "sectionHeading": "Create",
+    "sectionHeading": "How the Create phase works",
     "lifecyclePhase": "create",
-    "text": "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here. Create is the project part of a service's life: the one stretch with a clear finish line. That finish is launch, the day the service goes live. It runs from the first idea to launch. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Create is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch. After launch the work does not end. It changes: the service stops being a project and becomes a product that has to be run and improved for years, which is Live."
+    "text": "Where a service goes from a problem to a working first version in users' hands. The team: works out what the problem actually is decides whether to reuse, buy, or build gets the service funded and approved delivers the first version Most of what shapes the service is decided here. Create is the project part of a service's life: the one stretch with a clear finish line. That finish is launch, the day the service goes live. It runs from the first idea to launch. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Create is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch. After launch the work does not end. It changes: the service stops being a project and becomes a product that has to be run and improved for years, which is Live."
   },
   {
     "id": "/live",
-    "pageTitle": "Live",
+    "pageTitle": "How the Live phase works",
     "pagePath": "/live",
     "sectionId": "",
-    "sectionHeading": "Live",
+    "sectionHeading": "How the Live phase works",
     "lifecyclePhase": "live",
     "text": ""
   },
   {
     "id": "/sunset",
-    "pageTitle": "Sunset",
+    "pageTitle": "How the Sunset phase works",
     "pagePath": "/sunset",
     "sectionId": "",
-    "sectionHeading": "Sunset",
+    "sectionHeading": "How the Sunset phase works",
     "lifecyclePhase": "sunset",
     "text": ""
   },
   {
     "id": "/create-discovery",
-    "pageTitle": "Discovery",
+    "pageTitle": "How the Discovery sub-phase works",
     "pagePath": "/create-discovery",
     "sectionId": "",
-    "sectionHeading": "Discovery",
+    "sectionHeading": "How the Discovery sub-phase works",
     "lifecyclePhase": "create",
     "text": ""
   },
   {
     "id": "/create-alpha",
-    "pageTitle": "Alpha",
+    "pageTitle": "How the Alpha sub-phase works",
     "pagePath": "/create-alpha",
     "sectionId": "",
-    "sectionHeading": "Alpha",
+    "sectionHeading": "How the Alpha sub-phase works",
     "lifecyclePhase": "create",
     "text": ""
   },
   {
     "id": "/create-beta",
-    "pageTitle": "Beta",
+    "pageTitle": "How the Beta sub-phase works",
     "pagePath": "/create-beta",
     "sectionId": "",
-    "sectionHeading": "Beta",
+    "sectionHeading": "How the Beta sub-phase works",
     "lifecyclePhase": "create",
     "text": ""
   },
   {
     "id": "/live-stabilization",
-    "pageTitle": "Stabilization",
+    "pageTitle": "How the Stabilization sub-phase works",
     "pagePath": "/live-stabilization",
     "sectionId": "",
-    "sectionHeading": "Stabilization",
+    "sectionHeading": "How the Stabilization sub-phase works",
     "lifecyclePhase": "live",
     "text": ""
   },
   {
     "id": "/live-growth",
-    "pageTitle": "Growth",
+    "pageTitle": "How the Growth sub-phase works",
     "pagePath": "/live-growth",
     "sectionId": "",
-    "sectionHeading": "Growth",
+    "sectionHeading": "How the Growth sub-phase works",
     "lifecyclePhase": "live",
     "text": ""
   },
   {
     "id": "/live-maturity",
-    "pageTitle": "Maturity",
+    "pageTitle": "How the Maturity sub-phase works",
     "pagePath": "/live-maturity",
     "sectionId": "",
-    "sectionHeading": "Maturity",
+    "sectionHeading": "How the Maturity sub-phase works",
     "lifecyclePhase": "live",
     "text": ""
   },
@@ -727,7 +727,7 @@
   },
   {
     "id": "/create#how-a-service-gets-approved-and-funded",
-    "pageTitle": "Create",
+    "pageTitle": "How the Create phase works",
     "pagePath": "/create",
     "sectionId": "how-a-service-gets-approved-and-funded",
     "sectionHeading": "How a service gets approved and funded",
@@ -735,17 +735,17 @@
     "text": "How a service gets approved and funded is a path of its own, and it lives on the Funding page."
   },
   {
-    "id": "/create#the-team-youll-need-for-create",
-    "pageTitle": "Create",
+    "id": "/create#the-work-of-create",
+    "pageTitle": "How the Create phase works",
     "pagePath": "/create",
-    "sectionId": "the-team-youll-need-for-create",
-    "sectionHeading": "The team you'll need for Create",
+    "sectionId": "the-work-of-create",
+    "sectionHeading": "The work of Create",
     "lifecyclePhase": "create",
-    "text": "The business owner of the application drives the work: the problem, the options, the business case, and the approvals they sponsor. The finance team and the Chief Financial Officer (CFO) build and stand behind the cost estimate. The department's architecture review board and GC EARB judge the design. A Treasury Board Secretariat analyst guides the submission, and the responsible minister signs it."
+    "text": "Create is three kinds of work, and it ends on the day the service goes live. 1. Work out what is needed. Most of Create is deciding, and the cheapest decision is the one to stop. User research finds out what people actually need, before anything is built. An options analysis works out whether to reuse, buy, or build. Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island. 2. Get it funded and approved. Nothing is built until the money and the sign-offs are in place. Funding sets out the whole approval path, from the business case to the Treasury Board submission. The department's architecture review board and GC EARB judge the design. These approvals are won once, before the build, and that is what gives Create a finish line. 3. Build it so it can be run, and left. What is settled here is what the service will be stuck with for years. Security and privacy are designed in while changing the design is still cheap. Accessibility is built in from the start. Procurement writes the requirements, and the exit, into the contract. The team that will run the service is put together. The work is done once. The business case is made once, the money is granted once, the design is signed off once. After launch those checks start coming round again, every release and every year."
   },
   {
     "id": "/create#create-in-three-sub-phases",
-    "pageTitle": "Create",
+    "pageTitle": "How the Create phase works",
     "pagePath": "/create",
     "sectionId": "create-in-three-sub-phases",
     "sectionHeading": "Create in three sub-phases",
@@ -754,7 +754,7 @@
   },
   {
     "id": "/create#sources",
-    "pageTitle": "Create",
+    "pageTitle": "How the Create phase works",
     "pagePath": "/create",
     "sectionId": "sources",
     "sectionHeading": "Sources",

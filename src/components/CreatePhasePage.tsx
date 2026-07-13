@@ -2,30 +2,36 @@ import { Link } from "@tanstack/react-router";
 import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
+import { PhaseQuote } from "@/components/PhaseQuote";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { CREATE_PHASE } from "@/lib/create-phase-content";
 import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
 import createToLiveVisual from "@/assets/lifecycle_create_to_live.svg?url";
 import { whereThisFitsForCreateSubphase } from "@/lib/lifecycle-navigation";
-import { renderLinkedProse, renderThreadWhoseJob } from "@/lib/thread-rich-content";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
   guideLink,
+  guideListIndent,
   guideProse,
   guideProseSpace,
   guideSectionTitle,
+  guideSubsectionTitle,
   guideCardHeading,
   guideCalloutLabel,
 } from "@/lib/guide-typography";
 
 export function CreatePhasePage() {
-  const { approvalPointer, team, workingThroughCreate, sources } = CREATE_PHASE;
+  const { approvalPointer, workOfCreate, workingThroughCreate, sources } = CREATE_PHASE;
 
   return (
     <GuideLayout id="create">
       <PhaseBreadcrumb
+        pageHeading={PHASES.create.pageHeading}
         lifecyclePhase={PHASES.create.title}
         lifecyclePhaseHref={PHASES.create.href}
       />
@@ -34,9 +40,9 @@ export function CreatePhasePage() {
         <WhereThisFits {...whereThisFitsForCreateSubphase(null)} />
       </section>
 
-      <blockquote className="mt-6 md:mt-8 border-l-4 border-l-primary/35 pl-4 md:pl-5 font-serif text-lg md:text-xl text-foreground/90 leading-snug">
-        {CREATE_PHASE.oneLineDescription}
-      </blockquote>
+      <PhaseQuote quote={CREATE_PHASE.quote} />
+
+      <LifecycleVisual visual={LIFECYCLE_VISUALS.phasesAndSubphases} />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {CREATE_PHASE.lead.map((paragraph) => (
@@ -48,21 +54,36 @@ export function CreatePhasePage() {
         className="mt-10 md:mt-12 scroll-mt-24 text-center"
         id={approvalPointer.id}
       >
-        <Link
-          to={approvalPointer.href}
-          className="inline-flex text-primary/55 hover:text-primary/75 transition-colors"
-          aria-label="How a service gets approved and funded"
-        >
-          <HelpCircle className="size-32 md:size-40" strokeWidth={1.15} aria-hidden />
-        </Link>
-        <p className={`${guideCalloutLabel} mt-4 max-w-md mx-auto normal-case tracking-normal`}>
-          {renderLinkedProse(approvalPointer.caption)}
-        </p>
+        <HelpCircle
+          className="inline-flex size-32 md:size-40 text-primary/55"
+          strokeWidth={1.15}
+          aria-hidden
+        />
       </section>
 
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={team.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{team.title}</h2>
-        {renderThreadWhoseJob(team)}
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfCreate.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{workOfCreate.title}</h2>
+        <div className={guideProseSpace}>
+          <p>
+            <strong>{workOfCreate.introBold}</strong>
+          </p>
+          <div className="mt-5 space-y-8">
+            {workOfCreate.blocks.map((block) => (
+              <div key={block.heading}>
+                <h3 className={guideSubsectionTitle}>{block.heading}</h3>
+                <p className="mt-2">{block.lead}</p>
+                <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
+                  {block.bullets.map((bullet) => (
+                    <li key={bullet.text}>{renderLinkedProse(bullet)}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6">
+            <strong>{workOfCreate.closing.leadIn}</strong> {workOfCreate.closing.text}
+          </p>
+        </div>
       </section>
 
       <section
@@ -88,7 +109,7 @@ export function CreatePhasePage() {
           </div>
         </div>
 
-        <p className={`${guideProse} mt-5 text-foreground/70`}>
+        <p className={`${guideProse} mt-5`}>
           Launch is the crossing into{" "}
           <Link to={PHASES.live.href} className={guideLink}>
             Live

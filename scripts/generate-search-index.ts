@@ -517,11 +517,18 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: CREATE_PHASE.approvalPointer.caption.text,
     },
     {
-      sectionId: CREATE_PHASE.team.id,
-      sectionHeading: CREATE_PHASE.team.title,
-      text: CREATE_PHASE.team.roles
-        .map((role) => `${role.role} ${role.text}`)
-        .join(" "),
+      sectionId: CREATE_PHASE.workOfCreate.id,
+      sectionHeading: CREATE_PHASE.workOfCreate.title,
+      text: [
+        CREATE_PHASE.workOfCreate.introBold,
+        ...CREATE_PHASE.workOfCreate.blocks.flatMap((block) => [
+          block.heading,
+          block.lead,
+          ...block.bullets.map((bullet) => bullet.text),
+        ]),
+        CREATE_PHASE.workOfCreate.closing.leadIn,
+        CREATE_PHASE.workOfCreate.closing.text,
+      ].join(" "),
     },
     {
       sectionId: CREATE_PHASE.workingThroughCreate.id,

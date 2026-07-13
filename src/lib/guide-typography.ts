@@ -1,10 +1,10 @@
-/** Body and headings — match Home feel; running text is lighter than headings. */
+/** Body and headings. */
 export const guideProse =
-  "font-serif text-base md:text-[1.05rem] leading-[1.45] text-foreground/75";
+  "font-serif text-base md:text-[1.05rem] leading-[1.45] text-foreground";
 
 /** Tighter leading inside bordered blocks and cards (block spacing unchanged). */
 export const guideProseTight =
-  "font-sans text-sm leading-[1.35] text-foreground/75";
+  "font-sans text-sm leading-[1.35] text-foreground";
 
 /** Subheading within thread body blocks — one step above guideProseTight, full foreground. */
 export const guideBodySubheading =

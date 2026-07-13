@@ -1,7 +1,9 @@
 import type { SourceItem } from "@/components/SourcesBlock";
+import type { PhaseQuoteContent } from "@/components/PhaseQuote";
+import { phaseQuotePlainText } from "@/components/PhaseQuote";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { PHASES, THREADS } from "@/lib/guide-strings";
-import type { ThreadLinkedProse, ThreadWhoseJobSection } from "@/lib/thread-rich-content";
+import type { ThreadLinkedProse } from "@/lib/thread-rich-content";
 
 export type CreateSubphaseRow = {
   title: string;
@@ -10,8 +12,21 @@ export type CreateSubphaseRow = {
 };
 
 export const CREATE_PHASE = {
-  title: PHASES.create.title,
+  title: PHASES.create.pageHeading,
 
+  quote: {
+    lead:
+      "Where a service goes from a problem to a working first version in users' hands. The team:",
+    items: [
+      "works out what the problem actually is",
+      "decides whether to reuse, buy, or build",
+      "gets the service funded and approved",
+      "delivers the first version",
+    ],
+    takeaway: "Most of what shapes the service is decided here.",
+  } satisfies PhaseQuoteContent,
+
+  /** @deprecated Use CREATE_PHASE.quote.text */
   oneLineDescription:
     "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here.",
 
@@ -43,30 +58,78 @@ export const CREATE_PHASE = {
     } satisfies ThreadLinkedProse,
   },
 
-  team: {
-    id: "the-team-youll-need-for-create",
-    title: "The team you'll need for Create",
-    intro: "",
-    roles: [
+  workOfCreate: {
+    id: "the-work-of-create",
+    title: "The work of Create",
+    introBold: "Create is three kinds of work, and it ends on the day the service goes live.",
+    blocks: [
       {
-        role: "The business owner of the application",
-        text: "drives the work: the problem, the options, the business case, and the approvals they sponsor.",
+        heading: "1. Work out what is needed.",
+        lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
+        bullets: [
+          {
+            text: "User research finds out what people actually need, before anything is built.",
+            internalLinks: [{ phrase: "user research", to: "/thread/user-research" }],
+          },
+          {
+            text: "An options analysis works out whether to reuse, buy, or build.",
+            internalLinks: [{ phrase: "options analysis", to: "/reference/options-analysis" }],
+          },
+          {
+            text: "Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island.",
+            internalLinks: [
+              { phrase: "Joined-up delivery", to: "/thread/joined-up-delivery" },
+            ],
+          },
+        ],
       },
       {
-        role: "The finance team and the Chief Financial Officer (CFO)",
-        text: "build and stand behind the cost estimate.",
+        heading: "2. Get it funded and approved.",
+        lead: "Nothing is built until the money and the sign-offs are in place.",
+        bullets: [
+          {
+            text: "Funding sets out the whole approval path, from the business case to the Treasury Board submission.",
+            internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
+          },
+          {
+            text: "The department's architecture review board and GC EARB judge the design.",
+          },
+          {
+            text: "These approvals are won once, before the build, and that is what gives Create a finish line.",
+          },
+        ],
       },
       {
-        role: "The department's architecture review board and GC EARB",
-        text: "judge the design.",
-      },
-      {
-        role: "A Treasury Board Secretariat analyst",
-        text: "guides the submission, and the responsible minister signs it.",
-        bold: [{ phrase: "responsible minister" }],
+        heading: "3. Build it so it can be run, and later replaced or retired.",
+        lead: "What is settled here is what the service will be stuck with for years.",
+        bullets: [
+          {
+            text: "Security and privacy are designed in while changing the design is still cheap.",
+            internalLinks: [
+              { phrase: "Security", to: "/thread/security" },
+              { phrase: "privacy", to: "/thread/privacy" },
+            ],
+          },
+          {
+            text: "Accessibility is built in from the start.",
+            internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
+          },
+          {
+            text: "Procurement writes the requirements, and the exit, into the contract.",
+            internalLinks: [{ phrase: "Procurement", to: "/thread/procurement" }],
+          },
+          {
+            text: "The team that will run the service is put together.",
+            internalLinks: [{ phrase: "team", to: "/thread/team-capability" }],
+          },
+        ],
       },
     ],
-  } satisfies ThreadWhoseJobSection & { id: string; title: string },
+    closing: {
+      leadIn: "The work is done once.",
+      text: "The business case is made once, the money is granted once, the design is signed off once. After launch those checks start coming round again, every release and every year.",
+    },
+  },
 
   workingThroughCreate: {
     id: "create-in-three-sub-phases",
@@ -106,6 +169,6 @@ export const CREATE_PHASE = {
 } as const;
 
 export const createPhaseLeadPlainText = [
-  CREATE_PHASE.oneLineDescription,
+  phaseQuotePlainText(CREATE_PHASE.quote),
   ...CREATE_PHASE.lead.map((paragraph) => paragraph.text),
 ].join(" ");

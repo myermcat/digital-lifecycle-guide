@@ -6,7 +6,11 @@ import { PracticeActivitiesPanel } from "@/components/PracticeActivitiesPanel";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
-import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
+import {
+  SUBPHASE_META,
+  subphasePageDocumentTitle,
+  whereThisFitsForLiveSubphase,
+} from "@/lib/lifecycle-navigation";
 import {
   COMPONENT_END_OF_LIFE_GUIDANCE,
   placeholderSourceHref,
@@ -18,13 +22,15 @@ import { ThreeReviewLevelsBlock } from "@/components/ThreeReviewLevelsBlock";
 import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
+import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { guideProseSpace } from "@/lib/guide-typography";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
 export const Route = createFileRoute("/live-maturity")({
   head: () => ({
     meta: [
-      { title: "Maturity — Live — The Digital Lifecycle Guide" },
+      { title: subphasePageDocumentTitle(SUBPHASE_META.maturity.pageHeading, "Live") },
       {
         name: "description",
         content:
@@ -38,11 +44,18 @@ export const Route = createFileRoute("/live-maturity")({
 function LiveMaturityPage() {
   return (
     <GuideLayout id="live-maturity">
-      <PhaseBreadcrumb lifecyclePhase="Live" lifecyclePhaseHref="/live" subphase="Maturity" />
+      <PhaseBreadcrumb
+        pageHeading={SUBPHASE_META.maturity.pageHeading}
+        lifecyclePhase="Live"
+        lifecyclePhaseHref="/live"
+        subphase="Maturity"
+      />
 
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...whereThisFitsForLiveSubphase("maturity")} />
       </section>
+
+      <SubphaseDescriptionPanel lifecyclePhase="Live" />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>
@@ -261,7 +274,7 @@ function LiveMaturityPage() {
           closing="This playbook is not enough on its own. It describes what to do; it cannot supply the judgement, the team, or the will to do it well. It assumes you bring those."
         />
 
-      <PageFoot />
+      <PageFoot lifecycleVisual={LIFECYCLE_VISUALS.phasesAndSubphases} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
     </GuideLayout>

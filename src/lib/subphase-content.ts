@@ -20,6 +20,18 @@ export type SubphaseBodyContent = {
   onRamp: SubphaseOnRampChecklist;
 };
 
+/** Reader-facing H1 on sub-phase pages only; nav and breadcrumbs keep the short title. */
+export const SUBPHASE_PAGE_HEADINGS = {
+  discovery: "How the Discovery sub-phase works",
+  alpha: "How the Alpha sub-phase works",
+  beta: "How the Beta sub-phase works",
+  stabilization: "How the Stabilization sub-phase works",
+  growth: "How the Growth sub-phase works",
+  maturity: "How the Maturity sub-phase works",
+} as const;
+
+export type SubphaseSlug = keyof typeof SUBPHASE_PAGE_HEADINGS;
+
 export const SUBPHASE_CONTENT: Partial<Record<string, SubphaseBodyContent>> = {
   discovery: {
     lead:

@@ -3,11 +3,14 @@ import { PhasePlaceholderPage } from "@/components/PhasePlaceholderPage";
 import {
   LIFECYCLE_PHASE_META,
   SUBPHASE_META,
+  phasePageDocumentTitle,
+  subphasePageDocumentTitle,
   whereThisFitsForCreateSubphase,
   whereThisFitsForLiveSubphase,
   whereThisFitsForSunsetPhaseLanding,
   type LifecyclePhaseId,
 } from "@/lib/lifecycle-navigation";
+import { PHASES } from "@/lib/guide-strings";
 import { phaseLeavingSlugOrNull } from "@/lib/phase-leaving-content";
 
 export function createSubphaseRoute(slug: keyof typeof SUBPHASE_META) {
@@ -18,7 +21,7 @@ export function createSubphaseRoute(slug: keyof typeof SUBPHASE_META) {
     head: () => ({
       meta: [
         {
-          title: `${meta.subphase} — ${lifecyclePhaseTitle} — The Digital Lifecycle Guide`,
+          title: subphasePageDocumentTitle(meta.pageHeading, lifecyclePhaseTitle),
         },
         { name: "description", content: meta.subtitle },
       ],
@@ -26,6 +29,7 @@ export function createSubphaseRoute(slug: keyof typeof SUBPHASE_META) {
     component: () => (
       <PhasePlaceholderPage
         id={meta.path.slice(1)}
+        pageHeading={meta.pageHeading}
         lifecyclePhase={lifecyclePhaseTitle}
         lifecyclePhaseHref={meta.lifecyclePhaseHref}
         subphase={meta.subphase}
@@ -54,7 +58,7 @@ export function createLifecyclePhaseRoute(lifecyclePhase: LifecyclePhaseId) {
     head: () => ({
       meta: [
         {
-          title: `${meta.title} — The Digital Lifecycle Guide`,
+          title: phasePageDocumentTitle(PHASES[lifecyclePhase].pageHeading),
         },
         { name: "description", content: meta.subtitle },
       ],
@@ -62,6 +66,7 @@ export function createLifecyclePhaseRoute(lifecyclePhase: LifecyclePhaseId) {
     component: () => (
       <PhasePlaceholderPage
         id={lifecyclePhase}
+        pageHeading={PHASES[lifecyclePhase].pageHeading}
         lifecyclePhase={meta.title}
         lifecyclePhaseHref={meta.href}
         intro={meta.subtitle}

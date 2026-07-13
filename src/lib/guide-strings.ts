@@ -10,6 +10,7 @@ export const PHASES = {
   create: {
     id: "create" as const,
     title: "Create",
+    pageHeading: "How the Create phase works",
     href: "/create",
     subtitle:
       "Figure out what to build and deliver the first version that will go live.",
@@ -20,6 +21,7 @@ export const PHASES = {
   live: {
     id: "live" as const,
     title: "Live",
+    pageHeading: "How the Live phase works",
     href: "/live",
     subtitle: "Run the service after it goes live.",
     expandedIntro:
@@ -29,6 +31,7 @@ export const PHASES = {
   sunset: {
     id: "sunset" as const,
     title: "Sunset",
+    pageHeading: "How the Sunset phase works",
     href: "/sunset",
     subtitle: "Shut down the service or move users to what comes next.",
     expandedIntro:

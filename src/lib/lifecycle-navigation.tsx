@@ -5,6 +5,28 @@ import {
   InfinityVisual,
 } from "@/components/PhaseVisuals";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
+import { SUBPHASE_PAGE_HEADINGS } from "@/lib/subphase-content";
+
+/** @deprecated Prefer PHASES[id].pageHeading */
+export function howThePhaseWorksTitle(phaseName: string): string {
+  return `How the ${phaseName} phase works`;
+}
+
+/** @deprecated Prefer SUBPHASE_PAGE_HEADINGS or SUBPHASE_META[slug].pageHeading */
+export function howTheSubphaseWorksTitle(subphaseName: string): string {
+  return `How the ${subphaseName} sub-phase works`;
+}
+
+export function phasePageDocumentTitle(pageHeading: string): string {
+  return `${pageHeading} — The Digital Lifecycle Guide`;
+}
+
+export function subphasePageDocumentTitle(
+  pageHeading: string,
+  lifecyclePhaseTitle: string,
+): string {
+  return `${pageHeading} — ${lifecyclePhaseTitle} — The Digital Lifecycle Guide`;
+}
 
 export type { LifecyclePhaseId };
 
@@ -144,6 +166,7 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: LifecyclePhaseId;
     lifecyclePhaseHref: string;
     subphase: string;
+    pageHeading: string;
     subtitle: string;
     path: string;
     where: () => WhereThisFitsConfig;
@@ -154,6 +177,7 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
     subphase: "Discovery",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.discovery,
     subtitle:
       "Before anything is designed or built, there is a period of structured listening. The team talks to the people who currently live with the problem, the applicants, the officers, the people caught in the middle, and maps what is actually happening, not what the process document says should happen. The goal is to understand the problem clearly enough that the right solution becomes obvious. The output is a problem statement the whole team agrees on, and enough evidence to justify spending public money on a new service.",
     path: "/create-discovery",
@@ -164,6 +188,7 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
     subphase: "Alpha",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.alpha,
     subtitle:
       "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, clickable mockups, and simple prototypes get put in front of real users to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this sub-phase is meant to last. It is meant to teach.",
     path: "/create-alpha",
@@ -174,6 +199,7 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
     subphase: "Beta",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.beta,
     subtitle:
       "The first version built to last does only the essential thing, and goes live to a limited audience or for a narrow use case. The point is to replace test conditions with real ones: real users, real data, real failure modes. The team watches what happens, measures it, and uses what they learn to decide what to build next. A version that teaches the team what users actually need is doing exactly what it is supposed to do.",
     path: "/create-beta",
@@ -184,6 +210,7 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: "live",
     lifecyclePhaseHref: PHASES.live.href,
     subphase: "Stabilization",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.stabilization,
     subtitle: "Stabilize the service right after it goes live.",
     path: "/live-stabilization",
     where: () => whereThisFitsForLiveSubphase("stabilization"),
@@ -192,9 +219,21 @@ export const SUBPHASE_META: Record<
     lifecyclePhase: "live",
     lifecyclePhaseHref: PHASES.live.href,
     subphase: "Growth",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.growth,
     subtitle: "Add capability as more users arrive.",
     path: "/live-growth",
     where: () => whereThisFitsForLiveSubphase("growth"),
+  },
+  maturity: {
+    lifecyclePhase: "live",
+    lifecyclePhaseHref: PHASES.live.href,
+    subphase: "Maturity",
+    pageHeading: SUBPHASE_PAGE_HEADINGS.maturity,
+    subtitle:
+      "The mature life of a digital service in the Live phase — operating and improving an existing service.",
+    path: "/live-maturity",
+    where: () => whereThisFitsForLiveSubphase("maturity"),
+    showComingSoon: false,
   },
 };
 

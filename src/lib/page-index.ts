@@ -9,6 +9,7 @@ import { SUPPORT_PAGE } from "./support-content";
 import { SUPPORT_PATH } from "./support-path";
 
 import { ALL_PAGES_PATH } from "./all-pages-path";
+import { SUBPHASE_PAGE_HEADINGS } from "./subphase-content";
 
 export { ALL_PAGES_PATH };
 
@@ -36,16 +37,16 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
 
-  { title: PHASES.create.title, path: PHASES.create.href, type: "phase", status: "in-review" },
-  { title: PHASES.live.title, path: PHASES.live.href, type: "phase", status: "in-review" },
-  { title: PHASES.sunset.title, path: PHASES.sunset.href, type: "phase", status: "in-review" },
+  { title: PHASES.create.pageHeading, path: PHASES.create.href, type: "phase", status: "in-review" },
+  { title: PHASES.live.pageHeading, path: PHASES.live.href, type: "phase", status: "in-review" },
+  { title: PHASES.sunset.pageHeading, path: PHASES.sunset.href, type: "phase", status: "in-review" },
 
-  { title: "Discovery", path: "/create-discovery", type: "subphase", status: "in-review" },
-  { title: "Alpha", path: "/create-alpha", type: "subphase", status: "in-review" },
-  { title: "Beta", path: "/create-beta", type: "subphase", status: "not-started" },
-  { title: "Stabilization", path: "/live-stabilization", type: "subphase", status: "not-started" },
-  { title: "Growth", path: "/live-growth", type: "subphase", status: "not-started" },
-  { title: "Maturity", path: "/live-maturity", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.discovery, path: "/create-discovery", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.alpha, path: "/create-alpha", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "not-started" },
+  { title: SUBPHASE_PAGE_HEADINGS.stabilization, path: "/live-stabilization", type: "subphase", status: "not-started" },
+  { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "not-started" },
+  { title: SUBPHASE_PAGE_HEADINGS.maturity, path: "/live-maturity", type: "subphase", status: "in-review" },
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
   {

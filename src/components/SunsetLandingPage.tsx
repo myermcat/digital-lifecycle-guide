@@ -2,8 +2,10 @@ import { useId, useState } from "react";
 import { CautionBlock } from "@/components/CautionBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { InlineArrowLeadList } from "@/lib/guide-lists";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
+import { PhaseQuote } from "@/components/PhaseQuote";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PageFoot } from "@/components/PageFoot";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
@@ -11,6 +13,7 @@ import { SunsetJourneySection } from "@/components/SunsetJourneySection";
 import { SunsetPathFork, sunsetJourneyCardBox } from "@/components/SunsetPathFork";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { whereThisFitsForSunsetPhaseLanding } from "@/lib/lifecycle-navigation";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import {
   SUNSET_LANDING,
   SUNSET_WHERE_NEXT_CARDS,
@@ -24,6 +27,7 @@ import {
   guideProseTight,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { PHASES } from "@/lib/guide-strings";
 
 export function SunsetLandingPage() {
   const [path, setPath] = useState<SunsetPath>("replace");
@@ -33,11 +37,19 @@ export function SunsetLandingPage() {
 
   return (
     <GuideLayout id="sunset">
-      <PhaseBreadcrumb lifecyclePhase="Sunset" lifecyclePhaseHref="/sunset" />
+      <PhaseBreadcrumb
+        pageHeading={PHASES.sunset.pageHeading}
+        lifecyclePhase={PHASES.sunset.title}
+        lifecyclePhaseHref={PHASES.sunset.href}
+      />
 
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...whereThisFitsForSunsetPhaseLanding()} />
       </section>
+
+      <PhaseQuote quote={landing.quote} />
+
+      <LifecycleVisual visual={LIFECYCLE_VISUALS.phasesAndSubphases} />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {landing.intro.map((paragraph) => (
