@@ -1,3 +1,4 @@
+import { EditorialNote } from "@/components/EditorialNote";
 import {
   Accordion,
   AccordionContent,
@@ -17,8 +18,8 @@ function JourneyStepNumber({ n }: { n: number }) {
 }
 
 export function ProcurementJourneySection({
-  sectionId = "how-a-procurement-goes",
-  heading = "How a procurement goes",
+  sectionId = "the-steps-of-a-procurement",
+  heading = "The steps of a procurement",
   intro,
   steps,
 }: {
@@ -65,6 +66,7 @@ export function ProcurementJourneySection({
                   internal: step.internalLinks,
                   anchor: step.anchorLinks,
                   placeholder: step.placeholderLinks,
+                  bold: step.leadInBold ?? [],
                 })}
               </p>
               {step.body ? (
@@ -74,8 +76,14 @@ export function ProcurementJourneySection({
                     internal: step.internalLinks,
                     anchor: step.anchorLinks,
                     placeholder: step.placeholderLinks,
+                    bold: step.bodyBold ?? [],
                   })}
                 </p>
+              ) : null}
+              {step.reviewNotice ? (
+                <EditorialNote label="UNDER REVIEW">
+                  <p>{step.reviewNotice}</p>
+                </EditorialNote>
               ) : null}
             </AccordionContent>
           </AccordionItem>

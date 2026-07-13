@@ -10,6 +10,7 @@ import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseW
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { WhatStaysYoursBlock } from "@/components/WhatStaysYoursBlock";
+import { WhatYouAreBuyingBlock } from "@/components/WhatYouAreBuyingBlock";
 import {
   PROCUREMENT_GOOD_LOOKS_CARDS,
   PROCUREMENT_LANDING,
@@ -57,6 +58,8 @@ export function ProcurementLandingPage() {
         items={landing.whatStaysYours.items}
         close={landing.whatStaysYours.close}
       />
+
+      <WhatYouAreBuyingBlock {...landing.whatYouAreBuying} />
 
       <ProcurementJourneySection intro={landing.journeyIntro} steps={landing.journeySteps} />
 

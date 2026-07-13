@@ -8,6 +8,7 @@ import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
 import { PracticeCardGroup } from "@/components/PracticeCard";
+import { TREASURY_BOARD_APPROVAL_UNDER_REVIEW } from "@/lib/treasury-board-approval-under-review";
 import {
   FUNDING_DETAIL_CARDS,
   FUNDING_HERO_ALT,
@@ -144,6 +145,10 @@ export function FundingThreadPage() {
         </div>
         <CreateSpineSection stages={approvalPath.items} accordionOnly />
       </section>
+
+      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="UNDER REVIEW">
+        <p>{TREASURY_BOARD_APPROVAL_UNDER_REVIEW}</p>
+      </EditorialNote>
 
       <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="Not every service takes every step">
         <p>{approvalPath.notEveryStage}</p>

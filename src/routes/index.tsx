@@ -56,7 +56,7 @@ function Index() {
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
             Canada. We do not know who you are. You might be in a small team or a big one.
-            You might build things yourselves or buy them from suppliers. You might have a
+            You might build in-house, contract a team to build, or buy from suppliers. You might have a
             lot of money or very little.
           </p>
           <p>
@@ -92,8 +92,9 @@ function Index() {
                 <span className="font-semibold text-foreground/90">Create.</span> It starts with
                 a problem to solve, well before any system exists. From &ldquo;we have a
                 problem&rdquo; to a working solution in real users&rsquo; hands, you are
-                figuring out what the problem really is, deciding how to solve it, and building
-                or buying that solution. Almost everything that follows is shaped here.
+                figuring out what the problem really is, deciding how to solve it, and standing up
+                that solution, whether by reusing, buying, building with a contracted team, or
+                building in-house. Almost everything that follows is shaped here.
               </p>
             </li>
             <li className="flex items-start gap-2.5">
@@ -125,9 +126,9 @@ function Index() {
           <img
             src={lifecycleIslands}
             alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
-            className="w-full h-auto max-w-3xl mx-auto mt-1"
+            className="mx-auto mt-8 md:mt-10 mb-6 md:mb-8 h-auto w-full max-w-3xl"
           />
-          <GuideCallout title="Not sure which phase you are in?" className="mt-4 md:mt-6 mb-10 md:mb-14">
+          <GuideCallout title="Not sure which phase you are in?" className="mb-10 md:mb-14">
             The quickest test is where your feedback comes from. In Create it comes from
             sketches, prototypes, and conversations about what you might build. In Live it
             comes from the running system: real users, real data, real bugs. In Sunset you

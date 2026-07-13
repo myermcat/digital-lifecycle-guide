@@ -61,7 +61,7 @@ export const GOOD_CONTRACT = {
   lead: [
     {
       text:
-        "When you buy or build a service with a supplier, the contract is where the promises live. The rest of the playbook keeps telling you to put things in the contract. This page puts them all in one place and shows them as a real contract would look, for our example service, the grant portal.",
+        "When a supplier builds or runs your service, or when you contract a team to build one, the contract is where the promises live. The rest of the playbook keeps telling you to put things in the contract. This page puts them all in one place and shows them as a real contract would look, for our example service, the grant portal.",
     },
     {
       text:

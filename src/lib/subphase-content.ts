@@ -51,7 +51,7 @@ export const SUBPHASE_CONTENT: Partial<Record<string, SubphaseBodyContent>> = {
         },
         {
           lead: "Weigh reuse, buy, or build.",
-          text: "Before any solution is named, the team checks whether something already exists to reuse or buy, since most government services are met that way. Options analysis sets out how to compare the choices, and procurement covers the look-before-you-buy step.",
+          text: "Before any solution is named, the team checks whether something already exists to reuse or buy, since most existing government services were met that way. Options analysis sets out how to compare the choices, and procurement covers the look-before-you-buy step.",
           internalLinks: [
             { phrase: "Options analysis", to: "/reference/options-analysis" },
             { phrase: "procurement", to: "/thread/procurement" },

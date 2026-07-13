@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 232" width="880" height="232" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#A8492A"/>
+    </marker>
+  </defs>
+
+  <!-- top route pills -->
+  <rect x="181" y="6" width="108" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="235" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Team</text>
+  <path d="M235 36 L235 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="479" y="6" width="120" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="539" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Solution</text>
+  <path d="M539 36 L539 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- the three sub-phases -->
+  <rect x="20" y="104" width="216" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="128" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Discovery</text>
+
+  <rect x="240" y="104" width="296" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="388" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Alpha</text>
+
+  <rect x="540" y="104" width="316" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="698" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Beta</text>
+
+  <!-- signature points on the boundaries -->
+  <circle cx="235" cy="130" r="7" fill="#A8492A"/>
+  <circle cx="539" cy="130" r="7" fill="#A8492A"/>
+
+  <!-- bottom route pill: arrow points UP, from the pill to the boundary -->
+  <path d="M539 190 L539 166" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="452" y="196" width="174" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="539" y="216" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Finished Product</text>
+</svg>

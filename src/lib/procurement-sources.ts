@@ -20,6 +20,8 @@ const PROCUREMENT_SOURCE_REFS = {
     { label: "Supporting reference", linkKey: "procurement-policies" },
     { label: "Supporting reference", linkKey: "procura-chatbot" },
     { label: "Supporting reference", linkKey: "professional-services-policy" },
+    { label: "Supporting reference", linkKey: "task-based-professional-services" },
+    { label: "Supporting reference", linkKey: "agile-challenge-based-procurement" },
     { label: "Supporting reference", linkKey: "agile-procurement-guide" },
   ],
 } as const satisfies {

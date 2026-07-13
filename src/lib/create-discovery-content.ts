@@ -17,6 +17,7 @@ import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 export const DISCOVERY_EXTRACT = {
   opening: {
     text: "Discovery is the first sub-phase of Create, and nothing is built in it. The team works out:",
+    internalLinks: [{ phrase: "Create", to: "/create" }],
   } satisfies ThreadLinkedProse,
   workOutItems: [
     "what the real problem is",
@@ -61,10 +62,52 @@ export const DISCOVERY_ON_RAMP = {
 export const DISCOVERY_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Reuse, buy, or build",
-  body: {
-    text: "Most Government of Canada services are met by something that already exists: bought from a vendor, reused from another department, or configured from a platform the government already runs. Before any solution is named, Discovery weighs those options, and it makes sure the service will not duplicate one that already exists. Sometimes clearer information or a change to a form is enough, with no new service at all. Get this wrong and everything after it is built on the wrong foundation.",
-    bold: [{ phrase: "something that already exists" }],
+  opening: {
+    text: "Most existing Government of Canada services were met by something that already existed:",
+    bold: [{ phrase: "existing" }],
   } satisfies ThreadLinkedProse,
+  options: [
+    {
+      text: "bought from a vendor",
+      bold: [{ phrase: "bought" }],
+    },
+    {
+      text: "reused from another department",
+      bold: [{ phrase: "reused" }],
+    },
+    {
+      text: "configured from a platform the government already runs",
+      bold: [{ phrase: "configured" }],
+    },
+  ] satisfies ThreadLinkedProse[],
+  weigh: {
+    text: "Before any solution is named, Discovery weighs those options, and makes sure the service will not duplicate one that already exists.",
+    internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+  } satisfies ThreadLinkedProse,
+  sometimes: {
+    text: "Sometimes the answer is not a service at all. Clearer information, or a change to a form, can be enough on its own.",
+    bold: [{ phrase: "Sometimes the answer is not a service at all." }],
+  } satisfies ThreadLinkedProse,
+  teamNote: {
+    title: {
+      text: "If the department is buying a Team, the competition happens here.",
+      bold: [
+        {
+          phrase: "If the department is buying a Team, the competition happens here.",
+        },
+      ],
+    } satisfies ThreadLinkedProse,
+    routes: {
+      text: "There are four buying routes: Team, Solution, Finished Product, and In-house or Reuse. Only Team is contracted this early, because the team is what does Alpha.",
+      internalLinks: [
+        { phrase: "four buying routes", to: "/thread/procurement" },
+        { phrase: "Alpha", to: "/create-alpha" },
+      ],
+    } satisfies ThreadLinkedProse,
+    competition: {
+      text: "The competition usually runs against an existing supply arrangement, which is a pre-competed list of approved suppliers, so it is faster than an open tender. The contract is signed at the end of Discovery.",
+    } satisfies ThreadLinkedProse,
+  },
   href: "/reference/options-analysis",
   linkLabel: "See how to weigh the options →",
   icon: Scale,

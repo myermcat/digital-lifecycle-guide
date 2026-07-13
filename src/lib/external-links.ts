@@ -40,6 +40,16 @@ export const EXTERNAL_LINKS = {
       "TBS policy on professional services procurement (guidance extracts more generally)",
     accessibility: "public",
   },
+  "task-based-professional-services": {
+    url: "https://www.tpsgc-pwgsc.gc.ca/app-acq/spc-cps/spcts-tsps-eng.html",
+    description: "PSPC Task and Statement Professional Services (TSPS/SPCS)",
+    accessibility: "public",
+  },
+  "agile-challenge-based-procurement": {
+    url: "https://www.canada.ca/en/public-services-procurement/services/acquisitions/better-buying/simplifying-procurement-process/agile.html",
+    description: "Simplifying the procurement process through agile procurement (PSPC)",
+    accessibility: "public",
+  },
   "agile-procurement-guide": {
     url: "https://www.gcpedia.gc.ca/gcwiki/images/f/fa/PSPC_Agile_Procurement_Guide_v1_EN.pdf",
     description: "PSPC Agile Procurement Guide",

@@ -36,6 +36,9 @@ import { guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typo
 
 const BETA_SOURCES: SourceItem[] = [
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
+  { label: "Supporting reference", linkKey: "directive-security-management" },
+  { label: "Supporting reference", linkKey: "itsg-33" },
+  { label: "Supporting reference", linkKey: "algorithmic-impact-assessment" },
 ];
 
 export function CreateBetaPage() {
@@ -93,12 +96,12 @@ export function CreateBetaPage() {
       >
         <p>{renderLinkedProse(BETA_PILLAR.bodyIntro)}</p>
         <p>{renderLinkedProse(BETA_PILLAR.listIntro)}</p>
-        <ul className={`list-disc space-y-1 ${guideListIndent}`}>
+        <ul className={`mt-4 md:mt-5 list-disc space-y-1 ${guideListIndent}`}>
           {BETA_PILLAR.listItems.map((item) => (
             <li key={item.text}>{renderLinkedProse(item)}</li>
           ))}
         </ul>
-        <p>{renderLinkedProse(BETA_PILLAR.closing)}</p>
+        <p className="mt-4 md:mt-5">{renderLinkedProse(BETA_PILLAR.closing)}</p>
       </PillarCallout>
 
       <IconAccordionSection

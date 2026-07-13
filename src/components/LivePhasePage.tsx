@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseQuote } from "@/components/PhaseQuote";
@@ -11,7 +11,7 @@ import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
 import createToSunsetVisual from "@/assets/lifecycle_live_to_sunset.svg?url";
 import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import { LIVE_PHASE } from "@/lib/live-phase-content";
 import type { SourceItem } from "@/components/SourcesBlock";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
@@ -47,7 +47,11 @@ export function LivePhasePage() {
 
       <PhaseQuote quote={quote} />
 
-      <LifecycleVisual visual={LIFECYCLE_VISUALS.phasesAndSubphases} />
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Live")}
+        variant="subphaseFoot"
+        className="mt-5 md:mt-6"
+      />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {lead.map((paragraph) => (

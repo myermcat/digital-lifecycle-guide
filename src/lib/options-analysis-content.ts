@@ -61,8 +61,9 @@ export const OPTIONS_ANALYSIS = {
         body: "If none of the above fits, you procure a solution, through an existing framework or your own procurement. And you can explain why when someone asks.",
       },
       {
-        lead: "Build it yourself.",
-        body: "Possible, but the in-house capability to build and run software is thin in most departments, so treat building as a rare exception rather than a default.",
+        lead: "Build it.",
+        body: "Rarely with the department's own staff, because in-house capability to build and run software is thin in most departments. Almost always it means contracting a team to build it, which is still a procurement. Building is a real option, but it leaves the department owning the most, for the longest, so treat it as a deliberate choice rather than a default.",
+        internalLinks: [{ phrase: "contracting a team", to: "/thread/procurement" }],
       },
       {
         lead: "Retire without replacing.",

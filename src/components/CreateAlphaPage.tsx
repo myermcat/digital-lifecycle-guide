@@ -2,6 +2,7 @@ import { CautionBlock } from "@/components/CautionBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -21,6 +22,7 @@ import {
   ALPHA_FINISH,
   ALPHA_ON_RAMP,
   ALPHA_PILLAR,
+  ALPHA_PROTOTYPE_QUOTE,
   ALPHA_SECTION_NAV,
   ALPHA_TEAM,
 } from "@/lib/create-alpha-content";
@@ -31,11 +33,15 @@ import {
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideListIndent, guideProse } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 const ALPHA_SOURCES: SourceItem[] = [
   { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
 ];
+
+const alphaQuoteClassName =
+  "mt-6 md:mt-8 border-l-4 border-l-primary/35 pl-4 md:pl-5 font-serif text-lg md:text-xl text-foreground/90 leading-snug";
 
 export function CreateAlphaPage() {
   const meta = SUBPHASE_META.alpha;
@@ -54,7 +60,7 @@ export function CreateAlphaPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyAlpha}>
+      <SubphaseDescriptionPanel>
         <div className={`${guideProse} space-y-3`}>
           <p>{renderLinkedProse(ALPHA_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
@@ -66,6 +72,17 @@ export function CreateAlphaPage() {
           <p>{renderLinkedProse(ALPHA_EXTRACT_CLOSING)}</p>
         </div>
       </SubphaseDescriptionPanel>
+
+      <blockquote className={cn(alphaQuoteClassName)}>
+        <p>
+          <strong className="font-semibold text-foreground">
+            {ALPHA_PROTOTYPE_QUOTE.title}
+          </strong>
+        </p>
+        <p className={`mt-2 ${guideProse}`}>{ALPHA_PROTOTYPE_QUOTE.body}</p>
+      </blockquote>
+
+      <LifecycleVisual visual={LIFECYCLE_VISUALS.subphaseKeyAlpha} />
 
       <OnRampChecklist
         title={ALPHA_ON_RAMP.title}
@@ -114,6 +131,7 @@ export function CreateAlphaPage() {
         title={ALPHA_FINISH.title}
         sectionId={ALPHA_FINISH.sectionId}
         intro={ALPHA_FINISH.intro}
+        followUp={ALPHA_FINISH.followUp}
         exits={ALPHA_FINISH.exits}
         offRamp={ALPHA_FINISH.offRamp}
       />

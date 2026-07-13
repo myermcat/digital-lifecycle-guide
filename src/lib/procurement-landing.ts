@@ -74,6 +74,9 @@ export type ProcurementJourneyStep = {
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
   placeholderLinks?: PlaceholderPhraseLink[];
+  leadInBold?: { phrase: string }[];
+  bodyBold?: { phrase: string }[];
+  reviewNotice?: string;
 };
 
 export type ComparisonRow = {
@@ -88,6 +91,7 @@ export const PROCUREMENT_LANDING = {
   title: S.title,
   intro: S.intro,
   whatStaysYours: S.whatWorkStaysYours,
+  whatYouAreBuying: S.whatYouAreBuying,
   goodContractCallout: S.goodContractCallout,
   journeyIntro: S.journey.intro,
   journeySteps: S.journey.steps satisfies ProcurementJourneyStep[],

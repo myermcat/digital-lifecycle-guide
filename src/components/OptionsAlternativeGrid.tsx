@@ -4,11 +4,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import type { InternalPhraseLink } from "@/components/ProseWithExternalLinks";
+import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { guideProseTight } from "@/lib/guide-typography";
 
 type OptionsAlternativeItem = {
   lead: string;
   body: string;
+  internalLinks?: InternalPhraseLink[];
 };
 
 /**
@@ -24,7 +27,9 @@ export function OptionsAlternativeGrid({ items }: { items: OptionsAlternativeIte
             <span className="font-serif text-base font-semibold text-primary">{item.lead}</span>
           </AccordionTrigger>
           <AccordionContent className="px-5 pb-4">
-            <p className={guideProseTight}>{item.body}</p>
+            <p className={guideProseTight}>
+              {proseWithMixedLinks(item.body, { internal: item.internalLinks ?? [] })}
+            </p>
           </AccordionContent>
         </AccordionItem>
       ))}

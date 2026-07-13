@@ -18,17 +18,29 @@ export function SubphaseFinishSection({
   title: string;
   sectionId: string;
   intro: ThreadLinkedProse;
-  followUp?: ThreadLinkedProse;
+  followUp?: ThreadLinkedProse | readonly ThreadLinkedProse[];
   exits: { lead: string; rest: ThreadLinkedProse; href?: string }[];
   offRamp: {
     intro: ThreadLinkedProse;
     items: readonly ThreadLinkedProse[];
   };
 }) {
+  const followUpParagraphs = followUp
+    ? Array.isArray(followUp)
+      ? followUp
+      : [followUp]
+    : [];
+
   return (
     <PhaseSection title={title} sectionId={sectionId}>
       <p>{renderLinkedProse(intro)}</p>
-      {followUp ? <p className="mt-4">{renderLinkedProse(followUp)}</p> : null}
+      {followUpParagraphs.length > 0 ? (
+        <div className="mt-4 space-y-3">
+          {followUpParagraphs.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+        </div>
+      ) : null}
       <CompactExitList
         items={exits.map((item) => ({
           lead: item.lead,

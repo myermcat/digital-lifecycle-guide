@@ -145,7 +145,7 @@ export const SUNSET_STRINGS = {
         label: "Buy/build",
         title: "Buy or build.",
         leadIn: "Get and prepare the new solution, by buying it or building it.",
-        body: "If you buy, run the procurement process; if you build, stand up the team and do the development work. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters.",
+        body: "If you buy, run the procurement process. If you build with a contracted team, stand up that team and do the development work. If you build in-house, stand up the department's own team. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters.",
         replaceOnly: true,
         internalLinks: [{ phrase: "the procurement process", to: PROCUREMENT_LANDING_PATH }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
@@ -161,8 +161,13 @@ export const SUNSET_STRINGS = {
         label: "Migrate",
         title: "Migrate.",
         leadIn: "Make the switch and close out the old.",
-        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, bring users across, and decommission the old service. A migration succeeds only if people adopt the replacement, which is what change management is for. A migration is a chance to simplify, so move what still creates value and leave the rest behind.",
+        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, and bring users across.\n\nDo not switch the old service off too early. It keeps running while the new service is in beta, both while that is invite-only and after it opens to the public, so anyone who has not moved across yet can still get what they need. The old service is decommissioned only once the new service is properly live.\n\nA migration succeeds only if people adopt the replacement, which is what change management is for. A migration is also a chance to simplify, so move what still creates value and leave the rest behind.",
         internalLinks: [{ phrase: "change management", to: "/thread/change-management" }],
+        boldPhrases: [
+          { phrase: "Make the switch and close out the old." },
+          { phrase: "Do not switch the old service off too early." },
+          { phrase: "A migration succeeds only if people adopt the replacement," },
+        ],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 5, Migrate and Common Migration Approaches — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -171,7 +176,7 @@ export const SUNSET_STRINGS = {
             part: "Step 5, Migrate and Common Migration Approaches",
           },
           {
-            phrase: "decommission",
+            phrase: "decommissioned",
             source: GCCASE,
             part: "Step 5, Migrate and Common Migration Approaches",
           },

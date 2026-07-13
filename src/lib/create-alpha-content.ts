@@ -12,12 +12,20 @@ import {
   Target,
   Users,
 } from "lucide-react";
+import {
+  ACCESSIBILITY_EXCLUSION_GROUPS,
+  ACCESSIBILITY_EXCLUSION_INTRO,
+} from "@/lib/accessibility-exclusion-groups";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const ALPHA_EXTRACT = {
   opening: {
     text: "Alpha is the second sub-phase of Create. The team takes the problem from Discovery and:",
+    internalLinks: [
+      { phrase: "Create", to: "/create" },
+      { phrase: "Discovery", to: "/create-discovery" },
+    ],
   } satisfies ThreadLinkedProse,
   workOutItems: [
     "tries several rough solutions",
@@ -33,6 +41,11 @@ export const ALPHA_EXTRACT_CLOSING: ThreadLinkedProse = {
   text: "A prototype that proves an idea wrong has done its job.",
   bold: [{ phrase: "A prototype that proves an idea wrong has done its job." }],
 };
+
+export const ALPHA_PROTOTYPE_QUOTE = {
+  title: "You do not need a supplier, or developers, to prototype.",
+  body: "The cheapest prototypes need a pen, or an afternoon with someone who knows a design tool.",
+} as const;
 
 export const ALPHA_ON_RAMP = {
   title: "Before you start Alpha",
@@ -126,6 +139,69 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     ],
   },
   {
+    id: "prototype-without-vendor",
+    icon: PenTool,
+    title: "You do not need a supplier, or developers, to prototype.",
+    sections: [
+      {
+        text: "This is the objection that stops teams from doing Alpha at all. It should not.",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "A paper prototype needs one person who can draw. Sketch the screens, put them in front of someone, and watch where they get stuck. It costs an afternoon and it will change what the service is.",
+            bold: [{ phrase: "A paper prototype needs one person who can draw." }],
+          },
+          {
+            text: "A clickable mockup needs a friend and a few hours. Find someone who knows a design tool, Figma, Penpot, Sketch, or one of the AI prototyping tools, explain what you want, and sit with them for an afternoon. No code is written and no supplier is involved.",
+            bold: [{ phrase: "A clickable mockup needs a friend and a few hours." }],
+          },
+          {
+            text: "If the department is buying a Team, the supplier is already there. That contract was signed at the end of Discovery, so the team prototypes alongside the department.",
+            bold: [{ phrase: "If the department is buying a Team, the supplier is already there." }],
+            internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+          },
+        ],
+      },
+      {
+        text: "Not every route needs a prototype from you. There are four buying routes, Team, Solution, Finished Product, and In-house or Reuse, and they do not all need the same thing.",
+        bold: [{ phrase: "Not every route needs a prototype from you." }],
+        internalLinks: [{ phrase: "four buying routes", to: "/thread/procurement" }],
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Buying a Solution: yes. The department has to show suppliers what it wants, and a prototype does that better than a written specification.",
+            bold: [{ phrase: "Buying a Solution: yes." }],
+          },
+          {
+            text: "Building in-house: yes. The department is the builder, so it prototypes for itself.",
+            bold: [{ phrase: "Building in-house: yes." }],
+          },
+          {
+            text: "Buying a Team: the team prototypes with you.",
+            bold: [{ phrase: "Buying a Team: the team prototypes with you." }],
+          },
+          {
+            text: "Buying a Finished Product: no. There is nothing to prototype, because the product already exists. The department evaluates real products instead.",
+            bold: [{ phrase: "Buying a Finished Product: no." }],
+          },
+        ],
+      },
+      {
+        text: "The prototype is the clearest requirements document a department will ever write. Whoever ends up building the service, a contracted team or the department's own staff, has to be told what is wanted. A thing they can hold and click beats a page of prose describing it.",
+        bold: [
+          {
+            phrase:
+              "The prototype is the clearest requirements document a department will ever write.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "joined-up",
     icon: Route,
     title: "Solve the whole problem, joined up.",
@@ -157,15 +233,21 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Design for accessibility and inclusion.",
     sections: [
       {
-        text: "Understand the accessibility principles and include disabled people, neurodivergent people, and people with low digital confidence in the research. A prototype cannot be fully audited, so line up the accessibility work for Beta now, since an auditor takes time to arrange. Accessibility covers the duty and how to meet it.",
-        bold: [
-          {
-            phrase:
-              "disabled people, neurodivergent people, and people with low digital confidence",
-          },
-          { phrase: "line up the accessibility work for Beta now" },
+        text: "Understand the accessibility principles and include the people most likely to be excluded in the research.",
+      },
+      {
+        text: ACCESSIBILITY_EXCLUSION_INTRO,
+      },
+      {
+        type: "unorderedList",
+        items: [...ACCESSIBILITY_EXCLUSION_GROUPS],
+      },
+      {
+        text: "A prototype is too rough to test for full conformance, so use Alpha to get the accessibility work ready for Beta, where the contract is signed. Work out which clauses of the standard the service has to meet, so they can go into the contract rather than be argued about later. Book the testing early. Automated checkers catch only a fraction of the problems. Accessibility covers the duty and how to meet it.",
+        internalLinks: [
+          { phrase: "Beta", to: "/create-beta" },
+          { phrase: "Accessibility", to: "/thread/accessibility" },
         ],
-        internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
     ],
   },
@@ -262,6 +344,22 @@ export const ALPHA_FINISH = {
     text: "Alpha is finished when you have a prototype substantial enough to decide, the riskiest assumptions have been tested, and you are confident you can build or buy something that meets the need and is cost-effective.",
     bold: [{ phrase: "riskiest assumptions have been tested" }],
   } satisfies ThreadLinkedProse,
+  followUp: [
+    {
+      text: "The competition to find a supplier runs during Alpha.",
+      bold: [{ phrase: "The competition to find a supplier runs during Alpha." }],
+    },
+    {
+      text: "This is the procurement competition. The requirements are written, the competition is published, bids come in, they are evaluated, and the work is awarded, and that takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
+      internalLinks: [
+        { phrase: "procurement", to: "/thread/procurement" },
+        { phrase: "Beta", to: "/create-beta" },
+      ],
+    },
+    {
+      text: "This does not apply if the department is building in-house or reusing an existing platform, because there is no supplier to find.",
+    },
+  ] satisfies ThreadLinkedProse[],
   exits: [
     {
       lead: "Forward to Beta,",
@@ -303,8 +401,8 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The budget and people for Beta," }],
       },
       {
-        text: "A plan for accessibility at Beta, with an auditor lined up.",
-        bold: [{ phrase: "A plan for accessibility" }],
+        text: "A plan for accessibility at Beta: the clauses of the standard the service must meet, ready to go into the contract, and the testing with the people most likely to be excluded booked.",
+        bold: [{ phrase: "A plan for accessibility at Beta:" }],
       },
       {
         text: "Sharpened success metrics, carried from Discovery.",

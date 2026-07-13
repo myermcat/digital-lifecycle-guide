@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseQuote } from "@/components/PhaseQuote";
@@ -12,7 +12,7 @@ import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
 import createToLiveVisual from "@/assets/lifecycle_create_to_live.svg?url";
 import { whereThisFitsForCreateSubphase } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
   guideLink,
@@ -42,7 +42,11 @@ export function CreatePhasePage() {
 
       <PhaseQuote quote={CREATE_PHASE.quote} />
 
-      <LifecycleVisual visual={LIFECYCLE_VISUALS.phasesAndSubphases} />
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Create")}
+        variant="subphaseFoot"
+        className="mt-5 md:mt-6"
+      />
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {CREATE_PHASE.lead.map((paragraph) => (
@@ -72,6 +76,9 @@ export function CreatePhasePage() {
               <div key={block.heading}>
                 <h3 className={guideSubsectionTitle}>{block.heading}</h3>
                 <p className="mt-2">{block.lead}</p>
+                {"afterLead" in block && block.afterLead ? (
+                  <p className="mt-2">{renderLinkedProse({ ...block.afterLead })}</p>
+                ) : null}
                 <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
                   {block.bullets.map((bullet) => (
                     <li key={bullet.text}>{renderLinkedProse(bullet)}</li>

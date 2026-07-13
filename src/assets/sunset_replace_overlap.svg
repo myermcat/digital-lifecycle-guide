@@ -1,50 +1,36 @@
-<svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Helvetica, Arial, sans-serif" style="">
-  <title id="t" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">The new service's Create overlaps the old service's Sunset from Decide onward</title>
-  <desc id="d" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">A bottom timeline shows the old service moving through five Sunset steps: Assess, Decide, Plan, Buy or build, Migrate. A top timeline shows the new service's Create starting above Decide as discover and decide, becoming build and deliver above Buy or build and Migrate, then continuing into Live. Decide through Migrate are shaded as the overlap, and at Migrate an arrow shows users and data moving up to the new service.</desc>
-
-  <defs>
-    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#b1432f"/>
-    </marker>
-  </defs>
-
-  <!-- overlap zone: Decide..Migrate -->
-  <rect x="264" y="44" width="456" height="162" rx="10" fill="#b1432f" opacity="0.07" style="fill:rgb(177, 67, 47);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.07;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="492" y="36" text-anchor="middle" font-size="11" fill="#9a8a7b" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">they run at the same time</text>
-
-  <!-- top lane: new service / Create -->
-  <text x="20" y="86" font-size="13" fill="#4a3b30" font-weight="600" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:13px;font-weight:600;text-anchor:start;dominant-baseline:auto">New service</text>
-  <text x="20" y="101" font-size="9.5" fill="#9a8a7b" letter-spacing="1.5" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:9.5px;font-weight:400;text-anchor:start;dominant-baseline:auto">CREATE</text>
-
-  <rect x="264" y="68" width="228" height="40" rx="8" fill="#f7e6df" stroke="#b1432f" stroke-width="1.3" stroke-dasharray="4 3" style="fill:rgb(247, 230, 223);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:1.3px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="378" y="92" text-anchor="middle" font-size="11" fill="#8f3a2a" style="fill:rgb(143, 58, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">discover and decide</text>
-
-  <rect x="492" y="68" width="228" height="40" rx="8" fill="#f1d8cd" stroke="#b1432f" stroke-width="1.5" style="fill:rgb(241, 216, 205);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="606" y="92" text-anchor="middle" font-size="11" fill="#8f3a2a" style="fill:rgb(143, 58, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">build and deliver</text>
-
-  <line x1="720" y1="88" x2="752" y2="88" stroke="#b1432f" stroke-width="1.5" marker-end="url(#ar)" style="fill:rgb(0, 0, 0);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="757" y="92" font-size="11" fill="#8f3a2a" style="fill:rgb(143, 58, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:start;dominant-baseline:auto">Live</text>
-
-  <!-- handoff arrow at migrate -->
-  <line x1="663" y1="150" x2="663" y2="110" stroke="#b1432f" stroke-width="1.5" marker-end="url(#ar)" style="fill:rgb(0, 0, 0);stroke:rgb(177, 67, 47);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-  <text x="671" y="134" font-size="9" fill="#b1432f" style="fill:rgb(177, 67, 47);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:9px;font-weight:400;text-anchor:start;dominant-baseline:auto">data and users move up</text>
-
-  <!-- bottom lane: old service / Sunset -->
-  <text x="20" y="168" font-size="13" fill="#4a3b30" font-weight="600" style="fill:rgb(74, 59, 48);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:13px;font-weight:600;text-anchor:start;dominant-baseline:auto">Old service</text>
-  <text x="20" y="183" font-size="9.5" fill="#9a8a7b" letter-spacing="1.5" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:9.5px;font-weight:400;text-anchor:start;dominant-baseline:auto">SUNSET</text>
-
-  <g font-size="10.5" fill="#5a4a3a" text-anchor="middle" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">
-    <rect x="150" y="150" width="114" height="40" rx="8" fill="#e7dcc6" stroke="#c9b99b" style="fill:rgb(231, 220, 198);stroke:rgb(201, 185, 155);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto"/>
-    <text x="207" y="174" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Assess</text>
-    <rect x="264" y="150" width="114" height="40" rx="8" fill="#e7dcc6" stroke="#c9b99b" style="fill:rgb(231, 220, 198);stroke:rgb(201, 185, 155);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto"/>
-    <text x="321" y="174" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Decide</text>
-    <rect x="378" y="150" width="114" height="40" rx="8" fill="#e7dcc6" stroke="#c9b99b" style="fill:rgb(231, 220, 198);stroke:rgb(201, 185, 155);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto"/>
-    <text x="435" y="174" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Plan</text>
-    <rect x="492" y="150" width="114" height="40" rx="8" fill="#ecdfc8" stroke="#c9b99b" style="fill:rgb(236, 223, 200);stroke:rgb(201, 185, 155);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto"/>
-    <text x="549" y="174" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Buy/build</text>
-    <rect x="606" y="150" width="114" height="40" rx="8" fill="#f2ebdb" stroke="#c9b99b" style="fill:rgb(242, 235, 219);stroke:rgb(201, 185, 155);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto"/>
-    <text x="663" y="174" style="fill:rgb(90, 74, 58);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:10.5px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Migrate</text>
-  </g>
-
-  <text x="720" y="208" text-anchor="middle" font-size="9" fill="#9a8a7b" style="fill:rgb(154, 138, 123);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Helvetica, Arial, sans-serif;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">old service shut down</text>
+<svg viewBox="0 0 1160 346" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+<rect x="286" y="58" width="550" height="228" rx="10" fill="#F7EFE4"/>
+<text x="561" y="48" text-anchor="middle" font-size="14" font-style="italic" fill="#8C7B63">they run at the same time</text>
+<text x="24" y="118" font-size="17" font-weight="bold" fill="#4A3B2E">New service</text>
+<text x="24" y="140" font-size="11.5" letter-spacing="2" fill="#8C7B63">CREATE, THEN LIVE</text>
+<text x="24" y="248" font-size="17" font-weight="bold" fill="#4A3B2E">Old service</text>
+<text x="24" y="270" font-size="11.5" letter-spacing="2" fill="#8C7B63">SUNSET</text>
+<rect x="286" y="86" width="130" height="66" rx="12" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="351.0" y="126" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Discovery</text>
+<rect x="422" y="86" width="130" height="66" rx="12" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="487.0" y="126" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Alpha</text>
+<rect x="558" y="86" width="142" height="66" rx="12" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="629.0" y="126" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Beta</text>
+<rect x="718" y="86" width="228" height="66" rx="12" fill="#ECDFCD" stroke="#A8492A" stroke-width="2.6"/>
+<text x="832.0" y="118" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Live</text>
+<text x="832.0" y="138" text-anchor="middle" font-size="12" font-style="italic" fill="#8C7B63">Stabilization</text>
+<line x1="706" y1="72" x2="706" y2="292" stroke="#A8492A" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="706" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#A8492A">launch</text>
+<rect x="150" y="212" width="130" height="60" rx="12" fill="#E7DCC6" stroke="#C9B99B" stroke-width="1.6"/>
+<text x="215.0" y="248" text-anchor="middle" font-size="14" fill="#4A3B2E">Assess</text>
+<rect x="286" y="212" width="130" height="60" rx="12" fill="#E7DCC6" stroke="#C9B99B" stroke-width="1.6"/>
+<text x="351.0" y="248" text-anchor="middle" font-size="14" fill="#4A3B2E">Decide</text>
+<rect x="422" y="212" width="130" height="60" rx="12" fill="#E7DCC6" stroke="#C9B99B" stroke-width="1.6"/>
+<text x="487.0" y="248" text-anchor="middle" font-size="14" fill="#4A3B2E">Plan</text>
+<rect x="558" y="212" width="130" height="60" rx="12" fill="#E7DCC6" stroke="#C9B99B" stroke-width="1.6"/>
+<text x="623.0" y="248" text-anchor="middle" font-size="14" fill="#4A3B2E">Buy / build</text>
+<rect x="694" y="212" width="142" height="60" rx="12" fill="#ECDFCD" stroke="#C9B99B" stroke-width="1.6"/>
+<text x="765.0" y="248" text-anchor="middle" font-size="14" fill="#4A3B2E">Migrate</text>
+<path d="M780,208 L780,158" stroke="#A8492A" stroke-width="2.4" fill="none"/>
+<path d="M774,162 L780,150 L786,162 Z" fill="#A8492A"/>
+<text x="792" y="186" font-size="12.5" fill="#A8492A">users and data move across</text>
+<path d="M872,232 L888,250 M888,232 L872,250" stroke="#A8492A" stroke-width="2.6" stroke-linecap="round"/>
+<text x="900" y="240" font-size="12.5" font-weight="bold" fill="#A8492A">switched off</text>
+<text x="900" y="258" font-size="11.5" font-style="italic" fill="#8C7B63">once the new one is live</text>
+<text x="580.0" y="330" text-anchor="middle" font-size="14" font-style="italic" fill="#8C7B63">The old service keeps running through the whole of Beta. It is switched off only once the new service is live.</text>
 </svg>

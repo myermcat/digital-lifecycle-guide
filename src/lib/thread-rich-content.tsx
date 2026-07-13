@@ -310,16 +310,16 @@ export function renderThreadWhyItMattersPitch(section: ThreadWhyItMattersPitch):
 
 export function renderThreadSections(sections: readonly ThreadContentSection[]): ReactNode {
   return (
-    <div className={`${guideProseTight} space-y-3`}>
+    <div className={`${guideProseTight} space-y-4`}>
       {sections.map((section, index) =>
         isOrderedList(section) ? (
-          <ol key={index} className={`list-decimal space-y-1 ${guideListIndent}`}>
+          <ol key={index} className={`list-decimal space-y-2.5 ${guideListIndent}`}>
             {section.items.map((item) => (
               <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
             ))}
           </ol>
         ) : isUnorderedList(section) ? (
-          <ul key={index} className={`list-disc space-y-1 ${guideListIndent}`}>
+          <ul key={index} className={`list-disc space-y-2.5 ${guideListIndent}`}>
             {section.items.map((item) => (
               <li key={orderedListItemPlainText(item)}>{renderOrderedListItem(item)}</li>
             ))}

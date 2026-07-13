@@ -1,4 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -81,8 +82,23 @@ export function CreateDiscoveryPage() {
         href={DISCOVERY_PILLAR.href}
         linkLabel={DISCOVERY_PILLAR.linkLabel}
       >
-        <p>{renderLinkedProse(DISCOVERY_PILLAR.body)}</p>
+        <p>{renderLinkedProse(DISCOVERY_PILLAR.opening)}</p>
+        <ul className={`mt-3 list-disc space-y-1.5 ${guideListIndent}`}>
+          {DISCOVERY_PILLAR.options.map((item) => (
+            <li key={item.text}>{renderLinkedProse(item)}</li>
+          ))}
+        </ul>
+        <p className="mt-3">{renderLinkedProse(DISCOVERY_PILLAR.weigh)}</p>
+        <p className="mt-3">{renderLinkedProse(DISCOVERY_PILLAR.sometimes)}</p>
       </PillarCallout>
+
+      <EditorialNote className="mt-5 md:mt-6" label="Note">
+        <div className="space-y-2.5">
+          <p>{renderLinkedProse(DISCOVERY_PILLAR.teamNote.title)}</p>
+          <p>{renderLinkedProse(DISCOVERY_PILLAR.teamNote.routes)}</p>
+          <p>{renderLinkedProse(DISCOVERY_PILLAR.teamNote.competition)}</p>
+        </div>
+      </EditorialNote>
 
       <IconAccordionSection
         id={DISCOVERY_ACCORDION.id}

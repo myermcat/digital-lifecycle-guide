@@ -1,22 +1,30 @@
+import type { LucideIcon } from "lucide-react";
+import { Banknote, Coins, CreditCard, Hammer } from "lucide-react";
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
+import type { ChoosingWhatToBuyContent } from "@/components/WhatYouAreBuyingBlock";
 import { GOOD_CONTRACT_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import { PHASES } from "@/lib/guide-strings";
+import { TREASURY_BOARD_APPROVAL_UNDER_REVIEW } from "@/lib/treasury-board-approval-under-review";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
+import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 
 export type ProcurementJourneyStepStrings = {
   label: string;
   title: string;
   leadIn: string;
+  leadInBold?: { phrase: string }[];
   body: string;
+  bodyBold?: { phrase: string }[];
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
   placeholderLinks?: PlaceholderPhraseLink[];
+  reviewNotice?: string;
 };
 
 export type WhatStaysYoursItemStrings = {
@@ -36,6 +44,26 @@ export type LinkedProseStrings = {
   externalLinks?: ExternalPhraseLink[];
   placeholderLinks?: PlaceholderPhraseLink[];
 };
+
+/** @deprecated Prefer ChoosingWhatToBuyContent */
+export type WhatYouAreBuyingRouteStrings = {
+  lead: string;
+  body: string;
+  externalLinks?: ExternalPhraseLink[];
+  boldPhrases?: { phrase: string }[];
+};
+
+/** @deprecated Prefer ChoosingWhatToBuyContent */
+export type WhatYouAreBuyingStrings = ChoosingWhatToBuyContent;
+
+type BuyingRouteDraft = {
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  sections: readonly ThreadContentSection[];
+  contractSigned: ThreadLinkedProse;
+};
+
 
 /** Procurement thread copy — organized by page section. */
 export const PROCUREMENT_STRINGS = {
@@ -83,6 +111,208 @@ export const PROCUREMENT_STRINGS = {
       "You do not need to be an expert. You need to stay in charge, and to ask when you are unsure.",
   },
 
+  whatYouAreBuying: {
+    heading: "Choosing what to buy",
+    lead: [
+      {
+        text: '"Procurement" sounds like one thing. It is a choice between four routes, and the department makes that choice back in Discovery, long before the money arrives. The route decides when the contract is signed, who does the prototyping, and how much leverage the department has at signature.',
+        internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+      },
+    ] satisfies ThreadLinkedProse[],
+    routes: [
+      {
+        id: "buy-a-team",
+        icon: Banknote,
+        title: "Buy a Team",
+        sections: [
+          {
+            text: "The department contracts people rather than a product, through task-based professional services. The team works to the department's direction, and it prototypes and builds alongside it.",
+            externalLinks: [
+              {
+                phrase: "task-based professional services",
+                linkKey: "task-based-professional-services",
+              },
+            ],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "This is the usual answer for a department with no developers of its own, which is most departments.",
+                bold: [
+                  {
+                    phrase:
+                      "This is the usual answer for a department with no developers of its own,",
+                  },
+                ],
+              },
+              {
+                text: "There is still a competition. It usually runs against an existing supply arrangement, which is a pre-competed list of approved suppliers, so it is faster than an open tender. It is not instant.",
+                bold: [{ phrase: "There is still a competition." }],
+              },
+              {
+                text: "The team is what does Alpha, so it has to be in place before Alpha starts.",
+                bold: [{ phrase: "The team is what does Alpha," }],
+                internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
+              },
+            ],
+          },
+          {
+            text: "Note that PSPC is moving toward outcomes-based contracting and narrowing task-based tools toward lower-value, routine work, so check what is currently open to you.",
+          },
+        ],
+        contractSigned: {
+          text: "at the end of Discovery, before Alpha begins.",
+          internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+        },
+      },
+      {
+        id: "buy-a-solution",
+        icon: Coins,
+        title: "Buy a Solution",
+        sections: [
+          {
+            text: "The department describes the problem and the outcome it needs, and suppliers propose how to solve it.",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: 'This is the route most people picture when they hear "procurement".',
+                bold: [
+                  {
+                    phrase:
+                      'This is the route most people picture when they hear "procurement".',
+                  },
+                ],
+              },
+              {
+                text: "Under agile and challenge-based procurement, more than one supplier can be paid to build and demonstrate before one is chosen.",
+                bold: [
+                  {
+                    phrase:
+                      "Under agile and challenge-based procurement, more than one supplier can be paid",
+                  },
+                ],
+                externalLinks: [
+                  {
+                    phrase: "agile and challenge-based procurement",
+                    linkKey: "agile-challenge-based-procurement",
+                  },
+                ],
+              },
+              {
+                text: "The department has to show suppliers what it wants. This is the route where the Alpha prototype earns its keep. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
+                bold: [{ phrase: "The department has to show suppliers what it wants." }],
+                internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
+              },
+            ],
+          },
+        ],
+        contractSigned: {
+          text: "at the start of Beta, when the competition ends.",
+          internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+        },
+      },
+      {
+        id: "buy-a-finished-product",
+        icon: CreditCard,
+        title: "Buy a Finished Product",
+        sections: [
+          {
+            text: "An existing tool, bought off a standing offer or a supply arrangement, which are pre-competed lists of approved suppliers and products.",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "Nobody prototypes a product that already exists. The department evaluates real products against what Discovery and Alpha found.",
+                bold: [{ phrase: "Nobody prototypes a product that already exists." }],
+              },
+              {
+                text: "It is the fastest route and the least flexible. The risk moves from building the wrong thing to configuring it into something the department can never leave.",
+                bold: [{ phrase: "It is the fastest route and the least flexible." }],
+              },
+            ],
+          },
+        ],
+        contractSigned: {
+          text: "at the start of Beta, before configuration begins.",
+          internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+        },
+      },
+      {
+        id: "build-in-house-or-reuse",
+        icon: Hammer,
+        title: "Build in-house, or reuse what the Government of Canada already runs",
+        sections: [
+          {
+            text: "There is no build contract at all.",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "This is rarer than it sounds. Building with the department's own staff needs capability most departments do not have.",
+                bold: [{ phrase: "This is rarer than it sounds." }],
+              },
+              {
+                text: "A build delivered by a contracted team is Buy a Team. This route is only for a build done by the department's own staff.",
+                bold: [
+                  {
+                    phrase: "A build delivered by a contracted team is Buy a Team.",
+                  },
+                ],
+              },
+              {
+                text: "Reuse means a platform the Government of Canada already runs. Nothing is bought.",
+                bold: [
+                  {
+                    phrase: "Reuse means a platform the Government of Canada already runs.",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        contractSigned: {
+          text: "never. There is no build contract.",
+        },
+      },
+    ] satisfies BuyingRouteDraft[],
+    combiningRoutes: {
+      heading: "Most services combine more than one route",
+      intro: "The routes are not walls.",
+      paragraphs: [
+        {
+          text: "The commonest shape is a Finished Product plus a Team. The department buys the product for the core of the service, and buys a team to configure it, integrate it with what the department already runs, and keep it working. Reuse behaves the same way: a Government of Canada platform costs nothing to reuse and still needs someone to configure it.",
+          bold: [{ phrase: "The commonest shape is a Finished Product plus a Team." }],
+        },
+        {
+          text: "Each contract keeps its own timing. A department buying a Team and a Finished Product signs twice, once at the end of Discovery for the team, and once at the start of Beta for the product.",
+          bold: [{ phrase: "Each contract keeps its own timing." }],
+          internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+        },
+        {
+          text: "There are still four routes. Combining two of them does not make a fifth.",
+          bold: [{ phrase: "There are still four routes." }],
+        },
+      ] satisfies ThreadLinkedProse[],
+    },
+    takeaway: {
+      text: "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet. Choosing the route late means choosing it under time pressure, which is how departments end up buying a product to solve a problem they have not finished understanding.",
+      bold: [
+        {
+          phrase:
+            "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet.",
+        },
+      ],
+    } satisfies ThreadLinkedProse,
+    closingNote: {
+      text: "The steps below run in all four routes. In Buy a Team they run early, during Discovery. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender. Only in Build in-house or Reuse do most of them fall away, because there is no competition to run.",
+    },
+  } satisfies ChoosingWhatToBuyContent,
+
   journey: {
     intro:
       "You might not run all of it yourself, but you should recognise every step.",
@@ -95,10 +325,11 @@ export const PROCUREMENT_STRINGS = {
         internalLinks: [{ phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
       },
       {
-        label: "Team",
-        title: "Build the team.",
+        label: "People",
+        title: "Assemble the people who will run the buy.",
         leadIn: "Buying well is a team sport from the start.",
-        body: "A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone.",
+        body: "This is not the same as buying a Team. These are the people inside government who run the purchase: you, the contracting authority, users, and subject-matter experts. Buying a Team means contracting a supplier to deliver the work, which is a route, not a step. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone.",
+        bodyBold: [{ phrase: "This is not the same as buying a Team." }],
       },
       {
         label: "Ask",
@@ -117,9 +348,14 @@ export const PROCUREMENT_STRINGS = {
       {
         label: "Strategy",
         title: "Choose the strategy.",
-        leadIn: "There are two ways to buy, and for digital, agile is the default.",
-        body: "There are two ways to buy: the traditional way and the agile way. For digital, agile is the recommended default going forward. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side.",
-        anchorLinks: [{ phrase: "comparison table below", hash: "traditional-vs-agile" }],
+        leadIn:
+          "This is where the route is chosen. Whether the department is buying a Team, a Solution, or a Finished Product, or building in-house, it is settled here, and it settles everything downstream. See \"Choosing what to buy\" above.",
+        leadInBold: [{ phrase: "This is where the route is chosen." }],
+        body: "There are two ways to shape a buy, the traditional way and the agile way. For digital, agile is the recommended default. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side.",
+        anchorLinks: [
+          { phrase: "comparison table below", hash: "traditional-vs-agile" },
+          { phrase: "Choosing what to buy", hash: "choosing-what-to-buy" },
+        ],
       },
       {
         label: "Approve",
@@ -130,6 +366,7 @@ export const PROCUREMENT_STRINGS = {
           { phrase: "engage Treasury Board", to: "/thread/funding" },
           { phrase: "the approval journey", to: PHASES.create.href },
         ],
+        reviewNotice: TREASURY_BOARD_APPROVAL_UNDER_REVIEW,
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning, procurement delays — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -198,7 +435,7 @@ export const PROCUREMENT_STRINGS = {
       },
     ] satisfies ComparisonRowStrings[],
     caption:
-      "Agile is not always faster. The payoff is confidence. You find the problems early, while they are still cheap to fix. And because the work comes in smaller pieces, you see its value earlier too.",
+      "Agile is not always faster. The payoff is confidence. You find the problems early, while they are still cheap to fix. And because the work comes in smaller pieces, you see its value earlier too. Traditional and agile describe the shape of a buy. They are a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
   },
 
   caseStudy: {

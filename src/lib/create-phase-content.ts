@@ -66,6 +66,13 @@ export const CREATE_PHASE = {
       {
         heading: "1. Work out what is needed.",
         lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
+        afterLead: {
+          text: "Replacing a service does not let you skip any of this. It is tempting to treat a replacement as a like-for-like rebuild, because the old service already tells you what it does. It does not tell you what people need now. The problem may have moved, the users may have changed, the law may have changed, and half of what the old service does may be worth leaving behind. A replacement goes through Discovery, Alpha and Beta exactly like a new service.",
+          bold: [
+            { phrase: "Replacing a service does not let you skip any of this." },
+            { phrase: "need now" },
+          ],
+        },
         bullets: [
           {
             text: "User research finds out what people actually need, before anything is built.",
