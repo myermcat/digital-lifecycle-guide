@@ -82,7 +82,6 @@ export const DISCOVERY_PILLAR = {
   ] satisfies ThreadLinkedProse[],
   weigh: {
     text: "Before any solution is named, Discovery weighs those options, and makes sure the service will not duplicate one that already exists.",
-    internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
   } satisfies ThreadLinkedProse,
   sometimes: {
     text: "Sometimes the answer is not a service at all. Clearer information, or a change to a form, can be enough on its own.",
@@ -197,7 +196,6 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     sections: [
       {
         text: "Work out the constraints you would face if you move on to the Alpha sub-phase: legislation, existing contracts, legacy technology, and established processes. Sort them into two kinds:",
-        internalLinks: [{ phrase: "Alpha sub-phase", to: "/create-alpha" }],
       },
       {
         type: "orderedList",

@@ -3,8 +3,8 @@ import { Banknote, Coins, CreditCard, Hammer } from "lucide-react";
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import type { ChoosingWhatToBuyContent } from "@/components/WhatYouAreBuyingBlock";
-import { GOOD_CONTRACT_PATH, MANAGING_WHAT_YOU_BOUGHT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
+import type { ChoosingWhatToBuyContent, CombiningRoutesParagraph } from "@/components/WhatYouAreBuyingBlock";
+import { GOOD_CONTRACT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import { PHASES } from "@/lib/guide-strings";
 import { TREASURY_BOARD_APPROVAL_UNDER_REVIEW } from "@/lib/treasury-board-approval-under-review";
 import {
@@ -74,11 +74,6 @@ export const PROCUREMENT_STRINGS = {
       "Most existing government applications are bought rather than built. Sometimes the whole thing, more often a part. Procurement is that buying: the whole journey from working out what you need, through choosing a supplier, to living with the contract for as long as the service runs. The contract is one part of it.",
       "Think of this thread as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
     ],
-    managingLink: {
-      lead: "Already running something you bought, or mixing a buy with managing it? That falls just outside this article.",
-      phrase: "See what changes",
-      to: MANAGING_WHAT_YOU_BOUGHT_PATH,
-    },
   },
 
   whatWorkStaysYours: {
@@ -153,7 +148,6 @@ export const PROCUREMENT_STRINGS = {
               {
                 text: "The team is what does Alpha, so it has to be in place before Alpha starts.",
                 bold: [{ phrase: "The team is what does Alpha," }],
-                internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
               },
             ],
           },
@@ -163,7 +157,6 @@ export const PROCUREMENT_STRINGS = {
         ],
         contractSigned: {
           text: "at the end of Discovery, before Alpha begins.",
-          internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
         },
       },
       {
@@ -238,7 +231,6 @@ export const PROCUREMENT_STRINGS = {
         ],
         contractSigned: {
           text: "at the start of Beta, before configuration begins.",
-          internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
         },
       },
       {
@@ -285,22 +277,22 @@ export const PROCUREMENT_STRINGS = {
       intro: "The routes are not walls.",
       paragraphs: [
         {
-          text: "The commonest shape is a Finished Product plus a Team. The department buys the product for the core of the service, and buys a team to configure it, integrate it with what the department already runs, and keep it working. Reuse behaves the same way: a Government of Canada platform costs nothing to reuse and still needs someone to configure it.",
-          bold: [{ phrase: "The commonest shape is a Finished Product plus a Team." }],
+          lead: "The commonest shape is a Finished Product plus a Team.",
+          pillPhrase: "Finished Product plus a Team",
+          body: {
+            text: "The department buys the product for the core of the service, and buys a team to configure it, integrate it with what the department already runs, and keep it working. Reuse behaves the same way: a Government of Canada platform costs nothing to reuse and still needs someone to configure it.",
+          },
         },
         {
-          text: "Each contract keeps its own timing. A department buying a Team and a Finished Product signs twice, once at the end of Discovery for the team, and once at the start of Beta for the product.",
-          bold: [{ phrase: "Each contract keeps its own timing." }],
-          internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+          lead: "Each contract keeps its own timing.",
+          body: {
+            text: "A department buying a Team and a Finished Product signs twice: once at the end of Discovery for the team, and once at the start of Beta for the product.",
+          },
         },
-        {
-          text: "There are still four routes. Combining two of them does not make a fifth.",
-          bold: [{ phrase: "There are still four routes." }],
-        },
-      ] satisfies ThreadLinkedProse[],
+      ] satisfies CombiningRoutesParagraph[],
     },
     takeaway: {
-      text: "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet. Choosing the route late means choosing it under time pressure, which is how departments end up buying a product to solve a problem they have not finished understanding.",
+      text: "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet.",
       bold: [
         {
           phrase:

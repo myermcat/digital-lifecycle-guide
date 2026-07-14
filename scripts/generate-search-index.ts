@@ -5,7 +5,6 @@ import { PAGE_INDEX } from "../src/lib/page-index";
 import { PROCUREMENT_STRINGS } from "../src/lib/procurement-strings";
 import { PROCUREMENT_SUBPAGES, contractingParagraphPlainText } from "../src/lib/contracting-subpages";
 import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
-import { MANAGING_WHAT_YOU_BOUGHT } from "../src/lib/managing-what-you-bought-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
 import { CREATE_PHASE, createPhaseLeadPlainText } from "../src/lib/create-phase-content";
@@ -13,7 +12,6 @@ import { createSpinePlainText } from "../src/lib/service-approval-funding-conten
 import { PHASES } from "../src/lib/guide-strings";
 import {
   GOOD_CONTRACT_PATH,
-  MANAGING_WHAT_YOU_BOUGHT_PATH,
   OPTIONS_ANALYSIS_PATH,
   SOO_VS_SOW_PATH,
 } from "../src/lib/reference-paths";
@@ -336,24 +334,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     lifecyclePhase: inferLifecyclePhase(pagePath),
     text: concat(...SOO_VS_SOW.workedExample.paragraphs),
   });
-}
-
-// Reference: Managing what you bought
-{
-  const pageTitle = MANAGING_WHAT_YOU_BOUGHT.title;
-  const pagePath = MANAGING_WHAT_YOU_BOUGHT_PATH;
-
-  for (const section of MANAGING_WHAT_YOU_BOUGHT.sections) {
-    records.push({
-      id: recordId({ pagePath, sectionId: section.id }),
-      pageTitle,
-      pagePath,
-      sectionId: section.id,
-      sectionHeading: section.title,
-      lifecyclePhase: inferLifecyclePhase(pagePath),
-      text: concat(...section.paragraphs),
-    });
-  }
 }
 
 // Reference: Options analysis

@@ -26,10 +26,7 @@ import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 export const BETA_EXTRACT = {
   opening: {
     text: "Beta is the third sub-phase of Create. The team takes the tested idea from Alpha and:",
-    internalLinks: [
-      { phrase: "Create", to: "/create" },
-      { phrase: "Alpha", to: "/create-alpha" },
-    ],
+    internalLinks: [{ phrase: "Create", to: "/create" }],
   } satisfies ThreadLinkedProse,
   workOutItems: [
     "signs the contract for the build.",
@@ -149,7 +146,6 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     sections: [
       {
         text: "Two of the four buying routes sign at the start of Beta. The other two do not sign here at all.",
-        internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
       },
       {
         type: "unorderedList",
@@ -162,7 +158,6 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
           {
             text: "Buying a Finished Product. The department evaluated real products against what Discovery and Alpha found. The contract is signed now, before configuration begins.",
             bold: [{ phrase: "Buying a Finished Product." }],
-            internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
           },
           {
             text: "Buying a Team, or building in-house. Nothing is signed in Beta. The Team contract was signed back in Discovery, and an in-house build has no contract at all.",

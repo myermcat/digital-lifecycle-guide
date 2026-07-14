@@ -160,7 +160,6 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
           {
             text: "If the department is buying a Team, the supplier is already there. That contract was signed at the end of Discovery, so the team prototypes alongside the department.",
             bold: [{ phrase: "If the department is buying a Team, the supplier is already there." }],
-            internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
           },
         ],
       },
@@ -244,10 +243,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
       },
       {
         text: "A prototype is too rough to test for full conformance, so use Alpha to get the accessibility work ready for Beta, where the contract is signed. Work out which clauses of the standard the service has to meet, so they can go into the contract rather than be argued about later. Book the testing early. Automated checkers catch only a fraction of the problems. Accessibility covers the duty and how to meet it.",
-        internalLinks: [
-          { phrase: "Beta", to: "/create-beta" },
-          { phrase: "Accessibility", to: "/thread/accessibility" },
-        ],
+        internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
     ],
   },

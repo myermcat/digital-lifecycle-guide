@@ -16,7 +16,7 @@ import {
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
 import { SEE_ALSO } from "@/lib/see-also";
-import { guideLink, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import { guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -43,13 +43,6 @@ export function ProcurementLandingPage() {
         {landing.intro.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p>
-          {landing.intro.managingLink.lead}{" "}
-          <Link to={landing.intro.managingLink.to} className={guideLink}>
-            {landing.intro.managingLink.phrase}
-          </Link>
-          .
-        </p>
       </section>
 
       <WhatStaysYoursBlock

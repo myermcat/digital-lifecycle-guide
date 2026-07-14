@@ -31,7 +31,6 @@ import { Route as ReferenceTreasuryBoardSubmissionRouteImport } from './routes/r
 import { Route as ReferenceStayingFundedRouteImport } from './routes/reference.staying-funded'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
 import { Route as ReferenceOptionsAnalysisRouteImport } from './routes/reference.options-analysis'
-import { Route as ReferenceManagingWhatYouBoughtRouteImport } from './routes/reference.managing-what-you-bought'
 import { Route as ReferenceFundingTheExitRouteImport } from './routes/reference.funding-the-exit'
 import { Route as ReferenceDesignForTheWholeJourneyRouteImport } from './routes/reference.design-for-the-whole-journey'
 import { Route as ReferenceCostingAServiceRouteImport } from './routes/reference.costing-a-service'
@@ -160,12 +159,6 @@ const ReferenceOptionsAnalysisRoute =
     path: '/reference/options-analysis',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ReferenceManagingWhatYouBoughtRoute =
-  ReferenceManagingWhatYouBoughtRouteImport.update({
-    id: '/reference/managing-what-you-bought',
-    path: '/reference/managing-what-you-bought',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ReferenceFundingTheExitRoute = ReferenceFundingTheExitRouteImport.update({
   id: '/reference/funding-the-exit',
   path: '/reference/funding-the-exit',
@@ -265,7 +258,6 @@ export interface FileRoutesByFullPath {
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
-  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
@@ -304,7 +296,6 @@ export interface FileRoutesByTo {
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
-  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
@@ -342,7 +333,6 @@ export interface FileRoutesById {
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
   '/reference/funding-the-exit': typeof ReferenceFundingTheExitRoute
-  '/reference/managing-what-you-bought': typeof ReferenceManagingWhatYouBoughtRoute
   '/reference/options-analysis': typeof ReferenceOptionsAnalysisRoute
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
@@ -383,7 +373,6 @@ export interface FileRouteTypes {
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
     | '/reference/funding-the-exit'
-    | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
@@ -422,7 +411,6 @@ export interface FileRouteTypes {
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
     | '/reference/funding-the-exit'
-    | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
@@ -459,7 +447,6 @@ export interface FileRouteTypes {
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
     | '/reference/funding-the-exit'
-    | '/reference/managing-what-you-bought'
     | '/reference/options-analysis'
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
@@ -499,7 +486,6 @@ export interface RootRouteChildren {
   ReferenceCostingAServiceRoute: typeof ReferenceCostingAServiceRoute
   ReferenceDesignForTheWholeJourneyRoute: typeof ReferenceDesignForTheWholeJourneyRoute
   ReferenceFundingTheExitRoute: typeof ReferenceFundingTheExitRoute
-  ReferenceManagingWhatYouBoughtRoute: typeof ReferenceManagingWhatYouBoughtRoute
   ReferenceOptionsAnalysisRoute: typeof ReferenceOptionsAnalysisRoute
   ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
   ReferenceStayingFundedRoute: typeof ReferenceStayingFundedRoute
@@ -670,13 +656,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferenceOptionsAnalysisRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/reference/managing-what-you-bought': {
-      id: '/reference/managing-what-you-bought'
-      path: '/reference/managing-what-you-bought'
-      fullPath: '/reference/managing-what-you-bought'
-      preLoaderRoute: typeof ReferenceManagingWhatYouBoughtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/reference/funding-the-exit': {
       id: '/reference/funding-the-exit'
       path: '/reference/funding-the-exit'
@@ -827,7 +806,6 @@ const rootRouteChildren: RootRouteChildren = {
   ReferenceDesignForTheWholeJourneyRoute:
     ReferenceDesignForTheWholeJourneyRoute,
   ReferenceFundingTheExitRoute: ReferenceFundingTheExitRoute,
-  ReferenceManagingWhatYouBoughtRoute: ReferenceManagingWhatYouBoughtRoute,
   ReferenceOptionsAnalysisRoute: ReferenceOptionsAnalysisRoute,
   ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
   ReferenceStayingFundedRoute: ReferenceStayingFundedRoute,

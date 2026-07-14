@@ -18,6 +18,15 @@ export type BuyingRouteContent = {
   contractSigned: ThreadLinkedProse;
 };
 
+export type CombiningRoutesParagraph = {
+  /** Bold lead line. */
+  lead: string;
+  /** Outline pill wrapping this phrase inside the lead. */
+  pillPhrase?: string;
+  /** Body prose on the line under the lead. */
+  body: ThreadLinkedProse;
+};
+
 export type ChoosingWhatToBuyContent = {
   heading: string;
   lead: readonly ThreadLinkedProse[];
@@ -25,11 +34,34 @@ export type ChoosingWhatToBuyContent = {
   combiningRoutes: {
     heading: string;
     intro: string;
-    paragraphs: readonly ThreadLinkedProse[];
+    paragraphs: readonly CombiningRoutesParagraph[];
   };
   takeaway: ThreadLinkedProse;
   closingNote: ThreadLinkedProse;
 };
+
+const outlinePillClassName =
+  "inline rounded-full border border-border px-2 py-0.5 font-semibold text-foreground/90";
+
+function renderCombiningLead(paragraph: CombiningRoutesParagraph) {
+  const { lead, pillPhrase } = paragraph;
+  if (!pillPhrase || !lead.includes(pillPhrase)) {
+    return <strong className="font-semibold text-foreground/90">{lead}</strong>;
+  }
+
+  const [before, after] = lead.split(pillPhrase);
+  return (
+    <>
+      {before ? (
+        <strong className="font-semibold text-foreground/90">{before}</strong>
+      ) : null}
+      <span className={outlinePillClassName}>{pillPhrase}</span>
+      {after ? (
+        <strong className="font-semibold text-foreground/90">{after}</strong>
+      ) : null}
+    </>
+  );
+}
 
 function ContractSignedSignpost({ when }: { when: ThreadLinkedProse }) {
   return (
@@ -79,13 +111,16 @@ export function WhatYouAreBuyingBlock({
         }))}
       />
 
-      <div className={`${guideProse} mt-8 space-y-3`} id="most-services-combine-routes">
+      <div className={`${guideProse} mt-8 space-y-5`} id="most-services-combine-routes">
         <h3 className={`${guideSubsectionTitle} mb-1`}>
           {combiningRoutes.heading}
         </h3>
         <p>{combiningRoutes.intro}</p>
         {combiningRoutes.paragraphs.map((paragraph) => (
-          <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          <div key={paragraph.lead} className="space-y-1">
+            <p>{renderCombiningLead(paragraph)}</p>
+            <p>{renderLinkedProse(paragraph.body)}</p>
+          </div>
         ))}
       </div>
 

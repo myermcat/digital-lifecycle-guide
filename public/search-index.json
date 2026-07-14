@@ -258,15 +258,6 @@
     "text": ""
   },
   {
-    "id": "/reference/managing-what-you-bought",
-    "pageTitle": "Managing what you bought, or a hybrid",
-    "pagePath": "/reference/managing-what-you-bought",
-    "sectionId": "",
-    "sectionHeading": "Managing what you bought, or a hybrid",
-    "lifecyclePhase": "reference",
-    "text": ""
-  },
-  {
     "id": "/reference/options-analysis",
     "pageTitle": "Options analysis",
     "pagePath": "/reference/options-analysis",
@@ -607,24 +598,6 @@
     "sectionHeading": "A worked example",
     "lifecyclePhase": "reference",
     "text": "Say a department needs an online way for people to apply for a benefit. A statement of work would list it out: build these eight screens, in this order, with these fields, connected to this system, delivered by this date. A statement of objectives would say: people who are eligible should be able to apply online, on their own, without help, in under fifteen minutes, including people who use assistive technology. How that gets built is for the supplier to propose and for the work to settle as it goes. The first locks the answer before anyone has tested it. The second fixes what matters and lets the answer be found."
-  },
-  {
-    "id": "/reference/managing-what-you-bought#managing-what-you-have",
-    "pageTitle": "Managing what you bought, or a hybrid",
-    "pagePath": "/reference/managing-what-you-bought",
-    "sectionId": "managing-what-you-have",
-    "sectionHeading": "Managing what you already have",
-    "lifecyclePhase": "reference",
-    "text": "Sometimes you are not buying anything new, you are running or extending a service you already bought. The procurement steps do not all apply, but the contract you signed still sets what you can do. Worked guidance to come."
-  },
-  {
-    "id": "/reference/managing-what-you-bought#hybrid",
-    "pageTitle": "Managing what you bought, or a hybrid",
-    "pagePath": "/reference/managing-what-you-bought",
-    "sectionId": "hybrid",
-    "sectionHeading": "A hybrid",
-    "lifecyclePhase": "reference",
-    "text": "Sometimes you buy part and manage part, for example buying a platform and hiring someone to run it. The procurement steps apply to the part you buy. Worked guidance to come."
   },
   {
     "id": "/reference/options-analysis#start-with-the-problem",
