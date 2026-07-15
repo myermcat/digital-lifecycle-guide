@@ -46,7 +46,7 @@ export const ACCESSIBILITY_THREAD = {
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
-    { text: "Accessibility is designed in from the start, not retrofitted before launch." },
+    { text: "Accessibility is designed in from the start, while the design is still cheap to change." },
     {
       text: "The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA.",
       externalLinks: [
@@ -55,7 +55,7 @@ export const ACCESSIBILITY_THREAD = {
       ] satisfies ExternalPhraseLink[],
     },
     {
-      text: "Digital documents and any mobile app meet the standard too, not only the website.",
+      text: "The standard covers digital documents and any mobile application, as well as the website.",
     },
     {
       text: "Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is.",
@@ -67,7 +67,7 @@ export const ACCESSIBILITY_THREAD = {
       ] satisfies ExternalPhraseLink[],
     },
     {
-      text: "The service is tested with real people, including people who use assistive technology, not only with automated tools.",
+      text: "The service is tested with real people, including people who use assistive technology. Automated tools find only some of the problems.",
       internalLinks: [
         { phrase: "tested with real people", to: THREADS["user-research"].path },
       ] satisfies InternalPhraseLink[],
@@ -145,7 +145,7 @@ export const ACCESSIBILITY_THREAD = {
             type: "orderedList",
             items: [
               { bold: "Perceivable", text: ", people can see or hear the content" },
-              { bold: "Operable", text: ", it works by keyboard, not only a mouse" },
+              { bold: "Operable", text: ", so it works by keyboard as well as a mouse" },
               { bold: "Understandable", text: ", it reads clearly and behaves predictably" },
               {
                 bold: "Robust",
@@ -180,7 +180,7 @@ export const ACCESSIBILITY_THREAD = {
         sections: [
           {
             text:
-              "Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use, so testing with people who have disabilities is part of the work.",
+              "Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use. Reach past the easy-to-reach users to the people most likely to be excluded: disabled people, neurodivergent people, people with low digital confidence or no reliable device, people served in the other official language or whose first language is neither, older people, and people with low literacy.",
             externalLinks: [
               { phrase: "Digital Accessibility Toolkit", linkKey: "a11y-toolkit-test-products" },
             ] satisfies ExternalPhraseLink[],
@@ -234,7 +234,7 @@ export const ACCESSIBILITY_THREAD = {
         popup: [
           {
             text:
-              "Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people who have disabilities is planned now, not left to the end.",
+              "Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end.",
             externalLinks: [
               { phrase: "EN 301 549", linkKey: "can-asc-en-301-549" },
             ] satisfies ExternalPhraseLink[],

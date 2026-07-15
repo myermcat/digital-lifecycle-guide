@@ -6,6 +6,46 @@
 export const GUIDE_ASSUMPTIONS_TEXT =
   "You are already working to the Government of Canada Digital Standards, design with users, iterate and improve frequently, work in the open, use open standards, address security and privacy, build in accessibility, empower staff, be good data stewards, design ethical services, and collaborate widely, and to the law on privacy, security, official languages, and accessibility. This guide builds on those.";
 
+/**
+ * Canonical Create / Live / Sunset descriptions — short paragraphs for readability.
+ * Home and any other page that describes a phase should read from here.
+ */
+export type PhaseDescriptionParagraph =
+  | string
+  | {
+      text: string;
+      bold?: readonly string[];
+    };
+
+export function phaseDescriptionPlainText(
+  paragraphs: readonly PhaseDescriptionParagraph[],
+): string {
+  return paragraphs
+    .map((paragraph) => (typeof paragraph === "string" ? paragraph : paragraph.text))
+    .join(" ");
+}
+
+export const PHASE_DESCRIPTIONS = {
+  create: [
+    "It starts with a problem to solve, well before any system exists.",
+    'From "we have a problem" to a working solution in real users\' hands, you are figuring out what the problem really is, deciding how to solve it, and standing up that solution, whether by reusing, buying, building with a contracted team, or building in-house.',
+    "Stopping is one of the outcomes, and it is a good one: the cheapest service is the one you worked out you did not need.",
+    "Almost everything that follows is shaped here.",
+  ],
+  live: [
+    "The longest phase by far.",
+    "The solution is running, and you are keeping it useful: watching how it performs, improving it, and meeting new needs as they arrive.",
+  ],
+  sunset: [
+    {
+      text: "The solution is reaching its end, and the work is figuring out how to retire or replace it cleanly.",
+      bold: ["retire or replace"],
+    },
+    "You plan the decommission, move or archive the data, and bring users safely onto whatever comes next.",
+    "You are out of Sunset when the old service is fully shut down and its data and people have a safe home. In government that home is usually a replacement, and the replacement was built while the old service was still running, so its Create began long before this.",
+  ],
+} as const satisfies Record<string, readonly PhaseDescriptionParagraph[]>;
+
 export const PHASES = {
   create: {
     id: "create" as const,
@@ -14,8 +54,7 @@ export const PHASES = {
     href: "/create",
     subtitle:
       "Figure out what to build and deliver the first version that will go live.",
-    expandedIntro:
-      "Where a service goes from a problem to a working first version in users' hands. The team works out what the problem actually is, decides whether to reuse, buy, or build, gets the service funded and approved, and delivers the first version. Most of what shapes the service is decided here.",
+    expandedIntro: phaseDescriptionPlainText(PHASE_DESCRIPTIONS.create),
     deepLinkLabel: "Go to the Create phase",
   },
   live: {
@@ -24,8 +63,7 @@ export const PHASES = {
     pageHeading: "How the Live phase works",
     href: "/live",
     subtitle: "Run the service after it goes live.",
-    expandedIntro:
-      "The longest phase, where the service is up and running and the work is keeping it useful: watching how it performs, fixing and improving it, adding capability as more people arrive, and keeping it secure and funded year after year.",
+    expandedIntro: phaseDescriptionPlainText(PHASE_DESCRIPTIONS.live),
     deepLinkLabel: "Go to the Live phase",
   },
   sunset: {
@@ -34,8 +72,7 @@ export const PHASES = {
     pageHeading: "How the Sunset phase works",
     href: "/sunset",
     subtitle: "Shut down the service or move users to what comes next.",
-    expandedIntro:
-      "Where a service reaches its end and is retired or replaced cleanly. The team plans the shutdown, moves or archives the data, and brings users safely onto whatever comes next. In government, replacing a service is far more common than shutting one down for good.",
+    expandedIntro: phaseDescriptionPlainText(PHASE_DESCRIPTIONS.sunset),
     deepLinkLabel: "Go to the Sunset phase",
   },
 } as const;

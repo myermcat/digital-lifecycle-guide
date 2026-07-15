@@ -195,7 +195,7 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "The department has to show suppliers what it wants. This is the route where the Alpha prototype earns its keep. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
+                text: "The department has to show suppliers what it wants. This is the route where the Alpha prototype does the most work. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
                 bold: [{ phrase: "The department has to show suppliers what it wants." }],
                 internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
               },

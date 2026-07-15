@@ -40,10 +40,10 @@ export function PillarCallout({
       <div className="border-l-[5px] border-l-primary px-6 py-6 md:px-8 md:py-7">
         <div className="flex gap-4 md:gap-5">
           <div
-            className="flex size-12 shrink-0 items-center justify-center text-primary/75 md:size-14"
+            className="flex size-10 shrink-0 items-center justify-center rounded-md border border-primary/25 bg-primary/8 text-primary/80 md:size-11"
             aria-hidden="true"
           >
-            <Icon className="size-7 md:size-8" strokeWidth={1.5} />
+            <Icon className="size-5 md:size-[1.35rem]" strokeWidth={1.5} />
           </div>
           <div className="min-w-0 space-y-4">
             <div>

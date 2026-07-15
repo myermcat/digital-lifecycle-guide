@@ -84,7 +84,7 @@ export const CHANGE_MANAGEMENT_THREAD = {
         ],
       },
       {
-        text: "The two run alongside each other, not one after the other.",
+        text: "The two run in parallel.",
       },
       {
         type: "subheading",
