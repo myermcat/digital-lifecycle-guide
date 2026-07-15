@@ -190,7 +190,7 @@ function Index() {
           id="who-this-is-for"
           className="scroll-mt-24 mt-8 md:mt-10 rounded-lg border border-primary/40 bg-background shadow-sm overflow-hidden"
           label="Who this is for"
-          title="You own a digital service, whether or not you call it that"
+          title="This guide is for you, whatever brought you here"
           icon={BadgeCheck}
         >
           <div className="space-y-3 text-[0.8125rem] leading-[1.4]">

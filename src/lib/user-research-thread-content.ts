@@ -77,7 +77,7 @@ export const USER_RESEARCH_THREAD = {
 
   whyItMatters: {
     text:
-      "Most government software that fails, fails because it was built on what a few people assumed users wanted, not on what users actually need. Research is the cheapest way to avoid building the wrong thing, which is why it is framed as risk reduction for the people who fund and own services. It is also required: the Design with users standard sets the expectation, and the Directive on Service and Digital makes the designated official responsible for ensuring client feedback and user-experience testing are collected and used to improve the service. The usual causes of failure are ordinary: guessing at needs, testing too late, and hearing only from stakeholders.",
+      "Most government software that fails, fails because it was built on what a few people assumed users wanted, rather than on what users need. Research is the cheapest way to avoid building the wrong thing, which is why it is framed as risk reduction for the people who fund and own services. It is also required: the Design with users standard sets the expectation, and the Directive on Service and Digital makes the designated official responsible for ensuring client feedback and user-experience testing are collected and used to improve the service. The usual causes of failure are ordinary: guessing at needs, testing too late, and hearing only from stakeholders.",
     externalLinks: [
       { phrase: "Design with users", linkKey: "design-with-users" },
       { phrase: "Directive on Service and Digital", linkKey: "guideline-service-digital" },
@@ -147,7 +147,7 @@ export const USER_RESEARCH_THREAD = {
         sections: [
           {
             text:
-              "Research is only as good as who is in it. Recruit a sample that reflects real users across disability, language, literacy, age, and distance, not just the easy-to-reach. Accommodations that help disabled participants take part, accessible materials, a tech check, flexible timing, tend to help everyone. Tie what you learn to people's needs and goals, not to any one person's disability. This is shared ground with accessibility, where building for everyone is the law.",
+              "Research is only as good as who is in it. Recruit a sample that reflects real users across disability, language, literacy, age, and distance, reaching past the easy-to-reach. Accommodations that help disabled participants take part, accessible materials, a tech check, flexible timing, tend to help everyone. Tie what you learn to people's needs and goals, rather than to any one person's disability. This is shared ground with accessibility, where building for everyone is the law.",
             internalLinks: [
               { phrase: "accessibility", to: THREADS.accessibility.path },
             ] satisfies InternalPhraseLink[],
