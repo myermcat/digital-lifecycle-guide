@@ -67,9 +67,9 @@ export const CREATE_PHASE = {
         heading: "1. Work out what is needed.",
         lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
         afterLead: {
-          text: "Replacing a service does not let you skip any of this. It is tempting to treat a replacement as a like-for-like rebuild, because the old service already tells you what it does. It does not tell you what people need now. The problem may have moved, the users may have changed, the law may have changed, and half of what the old service does may be worth leaving behind. A replacement goes through Discovery, Alpha and Beta exactly like a new service.",
+          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one rather than repeating it.",
           bold: [
-            { phrase: "Replacing a service does not let you skip any of this." },
+            { phrase: "A replacement still benefits from every sub-phase." },
             { phrase: "need now" },
           ],
         },
@@ -108,7 +108,7 @@ export const CREATE_PHASE = {
       },
       {
         heading: "3. Build it so it can be run, and later replaced or retired.",
-        lead: "What is settled here is what the service will be stuck with for years.",
+        lead: "What is settled here is what the service will live with for years, so it is worth getting right while it is still easy to change.",
         bullets: [
           {
             text: "Security and privacy are designed in while changing the design is still cheap.",

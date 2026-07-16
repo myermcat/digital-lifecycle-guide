@@ -210,7 +210,7 @@ export const SUNSET_STRINGS = {
 
   caution: {
     title: "The cost of leaving it late",
-    lead: "Sunset rewards starting early and punishes delay. The most common ways it goes wrong:",
+    lead: "Sunset goes much more smoothly when it starts early. The most common difficulties all come from leaving it late:",
     items: [
       {
         heading: "Procurement runs out of time.",

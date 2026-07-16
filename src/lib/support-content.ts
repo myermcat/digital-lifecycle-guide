@@ -20,7 +20,7 @@ export const SUPPORT_PAGE = {
   id: "support",
 
   lead:
-    "When part of this guide leaves you stuck, there is almost always a team, a community, or a mailbox that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is winding down), so a link may have changed since this was written.",
+    "When part of this guide leaves you stuck, there is almost always a team, a community, or a mailbox that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is being retired), so a link may have changed since this was written.",
 
   acrossLifecycle: {
     id: "across-the-whole-lifecycle",
@@ -128,7 +128,7 @@ export const SUPPORT_PAGE = {
   },
 
   furtherReading: {
-    text: "The GC Enterprise IT Portfolio wiki ties together the lifecycle communities and where they are moving to.",
+    text: "The GC Enterprise IT Portfolio wiki is the hub for the Government of Canada IT lifecycle reporting, tying together IT Expenditure, Application Portfolio Management, and the departmental IT Plan.",
     externalLinks: [
       { phrase: "GC Enterprise IT Portfolio", linkKey: "gc-enterprise-it-portfolio" },
     ] satisfies ExternalPhraseLink[],

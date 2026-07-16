@@ -23,8 +23,8 @@ export const LIVE_PHASE = {
   } satisfies PhaseQuoteContent,
 
   lead: [
-    "This is where the idea of a service as a project that ends at launch falls apart. Launch is the moment the service starts costing money, drawing users, and ageing.",
-    "Live has no end date to plan towards. The work settles into a cycle that repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding before the money runs out. The three sub-phases below mark how that cycle changes as the service matures.",
+    "This is where a service stops being a project and becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its costs begin, and where it needs steady care to stay useful.",
+    "Live has no end date to plan towards, and that is normal. The work settles into a cycle that repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding in good time. The three sub-phases below mark how that cycle changes as the service matures.",
   ],
 
   subphases: {
@@ -44,7 +44,7 @@ export const LIVE_PHASE = {
       },
       {
         title: "Maturity",
-        description: "Steady state; keep it healthy and resist decay.",
+        description: "Steady state; keep it healthy over the long term.",
         href: "/live-maturity",
       },
     ] satisfies LiveSubphaseRow[],
@@ -104,7 +104,7 @@ export const LIVE_PHASE = {
       },
       {
         heading: "3. Keep it funded and within the rules.",
-        lead: "A live service does not run itself.",
+        lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
             text: "Its funding is renewed before the current money runs out.",

@@ -523,12 +523,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-forms-assistance": {
-    url: "https://assistance.cds-snc.ca",
-    description: "GC Forms assistance",
+    url: "https://forms-formulaires.alpha.canada.ca/en/",
+    description: "GC Forms",
     accessibility: "public",
   },
   "gc-design-system": {
-    url: "https://wiki.gccollab.ca/GCDigital_design_system",
+    url: "https://design-system.canada.ca/",
     description: "GC Design System",
     accessibility: "public",
   },
