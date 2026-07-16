@@ -129,8 +129,8 @@ export const CREATE_PHASE = {
             internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
           },
           {
-            text: "Procurement writes the requirements, and the exit, into the contract.",
-            internalLinks: [{ phrase: "Procurement", to: "/thread/procurement" }],
+            text: "When technology is bought, procurement writes the requirements, and the exit, into the contract.",
+            internalLinks: [{ phrase: "procurement", to: "/thread/procurement" }],
           },
           {
             text: "The team that will run the service is put together.",

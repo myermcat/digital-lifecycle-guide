@@ -111,7 +111,7 @@ export const LIVE_PHASE = {
             internalLinks: [{ phrase: "funding", to: "/thread/funding" }],
           },
           {
-            text: "Its privacy assessment is kept current as the service changes.",
+            text: "If it handles personal information, its privacy assessment is kept current as the service changes.",
             internalLinks: [{ phrase: "privacy", to: "/thread/privacy" }],
           },
           {
