@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -22,7 +23,6 @@ import {
   guideProse,
   guideProseSpace,
   guideSectionTitle,
-  guideSubsectionTitle,
 } from "@/lib/guide-typography";
 
 export function LivePhasePage() {
@@ -64,18 +64,24 @@ export function LivePhasePage() {
           <p>
             <strong>{workOfLive.introBold}</strong>
           </p>
-          <div className="mt-5 space-y-8">
-            {workOfLive.blocks.map((block) => (
-              <div key={block.heading}>
-                <h3 className={guideSubsectionTitle}>{block.heading}</h3>
-                <p className="mt-2">{block.lead}</p>
-                <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
-                  {block.bullets.map((bullet) => (
-                    <li key={bullet.text}>{renderLinkedProse(bullet)}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="mt-5">
+            <IconAccordionSection
+              embedded
+              stages={workOfLive.blocks.map((block) => ({
+                id: block.heading,
+                title: block.heading,
+                children: (
+                  <>
+                    <p>{block.lead}</p>
+                    <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
+                      {block.bullets.map((bullet) => (
+                        <li key={bullet.text}>{renderLinkedProse(bullet)}</li>
+                      ))}
+                    </ul>
+                  </>
+                ),
+              }))}
+            />
           </div>
           <p className="mt-6">
             <strong>{workOfLive.closing.leadIn}</strong> {workOfLive.closing.text}

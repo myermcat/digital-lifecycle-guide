@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -19,7 +20,6 @@ import {
   guideProse,
   guideProseSpace,
   guideSectionTitle,
-  guideSubsectionTitle,
   guideCardHeading,
   guideCalloutLabel,
 } from "@/lib/guide-typography";
@@ -59,21 +59,27 @@ export function CreatePhasePage() {
           <p>
             <strong>{workOfCreate.introBold}</strong>
           </p>
-          <div className="mt-5 space-y-8">
-            {workOfCreate.blocks.map((block) => (
-              <div key={block.heading}>
-                <h3 className={guideSubsectionTitle}>{block.heading}</h3>
-                <p className="mt-2">{block.lead}</p>
-                {"afterLead" in block && block.afterLead ? (
-                  <p className="mt-2">{renderLinkedProse({ ...block.afterLead })}</p>
-                ) : null}
-                <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
-                  {block.bullets.map((bullet) => (
-                    <li key={bullet.text}>{renderLinkedProse(bullet)}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="mt-5">
+            <IconAccordionSection
+              embedded
+              stages={workOfCreate.blocks.map((block) => ({
+                id: block.heading,
+                title: block.heading,
+                children: (
+                  <>
+                    <p>{block.lead}</p>
+                    {"afterLead" in block && block.afterLead ? (
+                      <p className="mt-2">{renderLinkedProse({ ...block.afterLead })}</p>
+                    ) : null}
+                    <ul className={`mt-2 list-disc space-y-2 ${guideListIndent}`}>
+                      {block.bullets.map((bullet) => (
+                        <li key={bullet.text}>{renderLinkedProse(bullet)}</li>
+                      ))}
+                    </ul>
+                  </>
+                ),
+              }))}
+            />
           </div>
           <p className="mt-6">
             <strong>{workOfCreate.closing.leadIn}</strong> {workOfCreate.closing.text}

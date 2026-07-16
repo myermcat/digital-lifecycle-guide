@@ -206,7 +206,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
             internalLinks: [{ phrase: "release changes", to: "/thread/releasing-changes" }],
           },
           {
-            text: "Do the Privacy Impact Assessment before the service opens. Privacy covers what it involves.",
+            text: "If the service handles personal information, do the Privacy Impact Assessment before it opens. Privacy covers what it involves.",
             internalLinks: [{ phrase: "Privacy Impact Assessment", to: "/thread/privacy" }],
           },
           {
@@ -537,7 +537,7 @@ export const BETA_FINISH = {
         text: "The accessibility standard met, the testing done with the people most likely to be excluded and its findings fixed, and the accessibility statement published.",
       },
       {
-        text: "The Privacy Impact Assessment completed and acted on.",
+        text: "The Privacy Impact Assessment completed and acted on, if the service handles personal information.",
       },
       {
         text: "The security assessment and authorization complete, so the service is allowed to run in production.",

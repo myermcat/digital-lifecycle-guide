@@ -92,17 +92,24 @@ export const CREATE_PHASE = {
       },
       {
         heading: "2. Get it funded and approved.",
-        lead: "Nothing is built until the money and the sign-offs are in place.",
+        lead:
+          "Nothing is built until the money and the sign-offs are in place, and for most services that happens inside the department.",
         bullets: [
           {
-            text: "Funding sets out the whole approval path, from the business case to the Treasury Board submission.",
+            text: "Every project is costed and risk-assessed. That assessment is what decides the path it takes.",
+          },
+          {
+            text: "For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance and its own architecture review board.",
+          },
+          {
+            text: "Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not.",
+          },
+          {
+            text: "Funding sets out the whole path, and which one a given service takes.",
             internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
           },
           {
-            text: "The department's architecture review board and GC EARB judge the design.",
-          },
-          {
-            text: "These approvals are won once, before the build, and that is what gives Create a finish line.",
+            text: "Winning whichever approvals apply, before the build, is what gives Create its finish line.",
           },
         ],
       },
@@ -111,7 +118,7 @@ export const CREATE_PHASE = {
         lead: "What is settled here is what the service will live with for years, so it is worth getting right while it is still easy to change.",
         bullets: [
           {
-            text: "Security and privacy are designed in while changing the design is still cheap.",
+            text: "Security and privacy are designed in while changing the design is still cheap. If the service handles personal information used to make decisions about people, a Privacy Impact Assessment is done here.",
             internalLinks: [
               { phrase: "Security", to: "/thread/security" },
               { phrase: "privacy", to: "/thread/privacy" },
@@ -133,8 +140,8 @@ export const CREATE_PHASE = {
       },
     ],
     closing: {
-      leadIn: "The work is done once.",
-      text: "The business case is made once, the money is granted once, the design is signed off once. After launch those checks start coming round again, every release and every year.",
+      leadIn: "These are project decisions, made to get the service built.",
+      text: "The business case is made, the money for the build is committed, and the design is signed off. After launch those same checks start coming round again, every release and every year, and that recurring rhythm is what makes Live different.",
     },
   },
 
@@ -142,7 +149,7 @@ export const CREATE_PHASE = {
     id: "create-in-three-sub-phases",
     title: "Create in three sub-phases",
     intro:
-      "Once it is approved and funded, Create is delivered in three sub-phases, each with its own page.",
+      "Create is delivered in three sub-phases, each with its own page. Approval and funding are not settled all at once before they begin. They build up across the sub-phases, and the big commitment, the money and sign-offs for the build, comes before Beta.",
     subphases: [
       {
         title: "Discovery",

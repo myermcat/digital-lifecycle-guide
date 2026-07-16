@@ -13,7 +13,7 @@ type AccordionIcon = LucideIcon | ComponentType<SVGProps<SVGSVGElement>>;
 
 export type IconAccordionStage = {
   id: string;
-  icon: AccordionIcon;
+  icon?: AccordionIcon;
   title: string;
   /** Small-caps eyebrow above the title (e.g. EXAMPLE), same style as PillarCallout. */
   eyebrow?: string;
@@ -55,14 +55,16 @@ export function IconAccordionSection({
                   alignStart ? "items-start" : "items-center",
                 )}
               >
-                <Icon
-                  className={cn(
-                    "size-6 shrink-0 text-primary/70 md:size-7",
-                    alignStart ? "mt-0.5" : undefined,
-                  )}
-                  strokeWidth={1.75}
-                  aria-hidden="true"
-                />
+                {Icon ? (
+                  <Icon
+                    className={cn(
+                      "size-6 shrink-0 text-primary/70 md:size-7",
+                      alignStart ? "mt-0.5" : undefined,
+                    )}
+                    strokeWidth={1.75}
+                    aria-hidden="true"
+                  />
+                ) : null}
                 <span className="min-w-0">
                   {stage.eyebrow ? (
                     <span className={`mb-1 block ${guideCalloutLabel}`}>
