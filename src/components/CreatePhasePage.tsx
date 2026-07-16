@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { LifecycleVisualStack } from "@/components/LifecycleVisual";
@@ -26,7 +25,7 @@ import {
 } from "@/lib/guide-typography";
 
 export function CreatePhasePage() {
-  const { approvalPointer, workOfCreate, workingThroughCreate, sources } = CREATE_PHASE;
+  const { workOfCreate, workingThroughCreate, sources } = CREATE_PHASE;
 
   return (
     <GuideLayout id="create">
@@ -52,17 +51,6 @@ export function CreatePhasePage() {
         {CREATE_PHASE.lead.map((paragraph) => (
           <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
         ))}
-      </section>
-
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24 text-center"
-        id={approvalPointer.id}
-      >
-        <HelpCircle
-          className="inline-flex size-32 md:size-40 text-primary/55"
-          strokeWidth={1.15}
-          aria-hidden
-        />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfCreate.id}>

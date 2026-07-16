@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { HelpCircle } from "lucide-react";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { LifecycleVisualStack } from "@/components/LifecycleVisual";
@@ -57,14 +56,6 @@ export function LivePhasePage() {
         {lead.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24 text-center">
-        <HelpCircle
-          className="inline-flex size-32 md:size-40 text-primary/55"
-          strokeWidth={1.15}
-          aria-hidden
-        />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfLive.id}>
