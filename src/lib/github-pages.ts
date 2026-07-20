@@ -26,6 +26,7 @@ export const GITHUB_PAGES_PATH_SEGMENTS = 1;
 
 const CORE_PATHS = [
   "/",
+  "/gate-map",
   "/create",
   "/create-discovery",
   "/create-alpha",

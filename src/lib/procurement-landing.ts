@@ -2,7 +2,10 @@ import type { PracticeCardData } from "@/components/PracticeCard";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PROCUREMENT_SOURCES } from "@/lib/procurement-sources";
-import { PROCUREMENT_STRINGS } from "@/lib/procurement-strings";
+import {
+  PROCUREMENT_STRINGS,
+  type ProcurementJourneyBodyBlock,
+} from "@/lib/procurement-strings";
 import { OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 
 export type LinkedProse = {
@@ -68,14 +71,11 @@ export const CONTRACTING_GOOD_LOOKS_CARDS = PROCUREMENT_GOOD_LOOKS_CARDS;
 export type ProcurementJourneyStep = {
   label: string;
   title: string;
-  leadIn: string;
-  body: string;
+  blocks: ProcurementJourneyBodyBlock[];
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
   placeholderLinks?: PlaceholderPhraseLink[];
-  leadInBold?: { phrase: string }[];
-  bodyBold?: { phrase: string }[];
   reviewNotice?: string;
 };
 

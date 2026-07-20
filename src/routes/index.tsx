@@ -6,9 +6,11 @@ import {
   BookOpen,
   DoorClosed,
   FileWarning,
+  Map,
   UserX,
   Wrench,
 } from "lucide-react";
+import { guideStaticCardClassName } from "@/lib/guide-cards";
 import { SetupToggles } from "@/components/SetupToggles";
 import { GuideCallout } from "@/components/GuideCallout";
 import { EditorialNote } from "@/components/EditorialNote";
@@ -23,7 +25,6 @@ import {
   PhaseIconSunset,
 } from "@/components/PhaseLifecycleIcons";
 import { PillarCallout } from "@/components/PillarCallout";
-import { guideStaticCardClassName } from "@/lib/guide-cards";
 import {
   guideListIndent,
   guideProse,
@@ -239,6 +240,23 @@ function Index() {
               is switched off. This guide is for you.
             </p>
           </div>
+        </PillarCallout>
+
+        <PillarCallout
+          id="see-the-whole-path"
+          className="scroll-mt-24 mt-8 md:mt-10 rounded-lg border border-primary/40 bg-[var(--phase-group)] shadow-sm overflow-hidden"
+          label="See the whole path"
+          title="Who signs off on a new digital service, and when"
+          icon={Map}
+          href="/gate-map"
+          linkLabel="See the whole path →"
+        >
+          <p>
+            Before you open any one document, here is the whole journey on one page: every
+            official approval, review, and sign-off a service passes through, from the first
+            problem to retiring or replacing it, who owns each one, and roughly how long it
+            takes.
+          </p>
         </PillarCallout>
 
         <LifecycleThreeRegionsFigure variant="featured" className="mt-12 md:mt-14" />

@@ -16,6 +16,7 @@ import { Route as LiveStabilizationRouteImport } from './routes/live-stabilizati
 import { Route as LiveMaturityRouteImport } from './routes/live-maturity'
 import { Route as LiveGrowthRouteImport } from './routes/live-growth'
 import { Route as LiveRouteImport } from './routes/live'
+import { Route as GateMapRouteImport } from './routes/gate-map'
 import { Route as CreateDiscoveryRouteImport } from './routes/create-discovery'
 import { Route as CreateDesignForTheWholeJourneyRouteImport } from './routes/create-design-for-the-whole-journey'
 import { Route as CreateBetaRouteImport } from './routes/create-beta'
@@ -79,6 +80,11 @@ const LiveGrowthRoute = LiveGrowthRouteImport.update({
 const LiveRoute = LiveRouteImport.update({
   id: '/live',
   path: '/live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GateMapRoute = GateMapRouteImport.update({
+  id: '/gate-map',
+  path: '/gate-map',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreateDiscoveryRoute = CreateDiscoveryRouteImport.update({
@@ -246,6 +252,7 @@ export interface FileRoutesByFullPath {
   '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
+  '/gate-map': typeof GateMapRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -284,6 +291,7 @@ export interface FileRoutesByTo {
   '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
+  '/gate-map': typeof GateMapRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -321,6 +329,7 @@ export interface FileRoutesById {
   '/create-beta': typeof CreateBetaRoute
   '/create-design-for-the-whole-journey': typeof CreateDesignForTheWholeJourneyRoute
   '/create-discovery': typeof CreateDiscoveryRoute
+  '/gate-map': typeof GateMapRoute
   '/live': typeof LiveRoute
   '/live-growth': typeof LiveGrowthRoute
   '/live-maturity': typeof LiveMaturityRoute
@@ -361,6 +370,7 @@ export interface FileRouteTypes {
     | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
+    | '/gate-map'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -399,6 +409,7 @@ export interface FileRouteTypes {
     | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
+    | '/gate-map'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -435,6 +446,7 @@ export interface FileRouteTypes {
     | '/create-beta'
     | '/create-design-for-the-whole-journey'
     | '/create-discovery'
+    | '/gate-map'
     | '/live'
     | '/live-growth'
     | '/live-maturity'
@@ -474,6 +486,7 @@ export interface RootRouteChildren {
   CreateBetaRoute: typeof CreateBetaRoute
   CreateDesignForTheWholeJourneyRoute: typeof CreateDesignForTheWholeJourneyRoute
   CreateDiscoveryRoute: typeof CreateDiscoveryRoute
+  GateMapRoute: typeof GateMapRoute
   LiveRoute: typeof LiveRoute
   LiveGrowthRoute: typeof LiveGrowthRoute
   LiveMaturityRoute: typeof LiveMaturityRoute
@@ -549,6 +562,13 @@ declare module '@tanstack/react-router' {
       path: '/live'
       fullPath: '/live'
       preLoaderRoute: typeof LiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gate-map': {
+      id: '/gate-map'
+      path: '/gate-map'
+      fullPath: '/gate-map'
+      preLoaderRoute: typeof GateMapRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/create-discovery': {
@@ -793,6 +813,7 @@ const rootRouteChildren: RootRouteChildren = {
   CreateBetaRoute: CreateBetaRoute,
   CreateDesignForTheWholeJourneyRoute: CreateDesignForTheWholeJourneyRoute,
   CreateDiscoveryRoute: CreateDiscoveryRoute,
+  GateMapRoute: GateMapRoute,
   LiveRoute: LiveRoute,
   LiveGrowthRoute: LiveGrowthRoute,
   LiveMaturityRoute: LiveMaturityRoute,

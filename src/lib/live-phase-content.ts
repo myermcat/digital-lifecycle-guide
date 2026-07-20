@@ -24,13 +24,14 @@ export const LIVE_PHASE = {
 
   lead: [
     "This is where a service stops being a project and becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its costs begin, and where it needs steady care to stay useful.",
-    "Live has no end date to plan towards, and that is normal. The work settles into a cycle that repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding in good time. The three sub-phases below mark how that cycle changes as the service matures.",
+    "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle rather than a countdown to it. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
   ],
 
   subphases: {
     id: "live-in-three-sub-phases",
     title: "Live in three sub-phases",
-    intro: "Live moves through three sub-phases, each with its own page.",
+    intro:
+      "Live moves through three sub-phases. They mark how the work changes as the service matures: steadying it right after launch, growing it as more people arrive, and keeping it healthy over the long term.",
     rows: [
       {
         title: "Stabilization",

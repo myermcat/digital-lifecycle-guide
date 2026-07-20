@@ -5,21 +5,28 @@ import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ChoosingWhatToBuyContent, CombiningRoutesParagraph } from "@/components/WhatYouAreBuyingBlock";
 import { GOOD_CONTRACT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
-import { PHASES } from "@/lib/guide-strings";
-import { TREASURY_BOARD_APPROVAL_UNDER_REVIEW } from "@/lib/treasury-board-approval-under-review";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
   type PlaceholderPhraseLink,
 } from "@/lib/placeholder-sources";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 
+export type ProcurementJourneyBodyBlock =
+  | {
+      type: "p";
+      text: string;
+      bold?: { phrase: string }[];
+    }
+  | {
+      type: "ul";
+      items: readonly string[];
+    };
+
 export type ProcurementJourneyStepStrings = {
   label: string;
   title: string;
-  leadIn: string;
-  leadInBold?: { phrase: string }[];
-  body: string;
-  bodyBold?: { phrase: string }[];
+  /** Body under the accordion title: paragraphs and bullet lists. */
+  blocks: ProcurementJourneyBodyBlock[];
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: { phrase: string; to: string }[];
   anchorLinks?: { phrase: string; hash: string }[];
@@ -312,79 +319,161 @@ export const PROCUREMENT_STRINGS = {
       {
         label: "Look",
         title: "Look before you buy.",
-        leadIn: "The cheapest procurement is the one you do not have to run.",
-        body: "Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit.",
-        internalLinks: [{ phrase: "Options analysis", to: OPTIONS_ANALYSIS_PATH }],
+        blocks: [
+          {
+            type: "p",
+            text: "Before you reach for a contract, ask whether you should, and work out the real problem and whether buying is even the answer:",
+          },
+          {
+            type: "ul",
+            items: [
+              "Do you already own something that solves it?",
+              "Could you reuse, adapt, or build instead?",
+            ],
+          },
+          {
+            type: "p",
+            text: "This step is not in PSPC's guidance, which starts after the decision to buy, so it sits with the Policy on the Planning and Management of Investments.",
+          },
+        ],
+        externalLinks: [
+          {
+            phrase: "Policy on the Planning and Management of Investments",
+            linkKey: "policy-planning-investments",
+          },
+        ],
+        internalLinks: [
+          { phrase: "reuse, adapt, or build", to: OPTIONS_ANALYSIS_PATH },
+        ],
       },
       {
         label: "People",
         title: "Assemble the people who will run the buy.",
-        leadIn: "Buying well is a team sport from the start.",
-        body: "This is not the same as buying a Team. These are the people inside government who run the purchase: you, the contracting authority, users, and subject-matter experts. Buying a Team means contracting a supplier to deliver the work, which is a route, not a step. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone.",
-        bodyBold: [{ phrase: "This is not the same as buying a Team." }],
+        blocks: [
+          {
+            type: "p",
+            text: "This is not the same as buying a Team. These are the people inside government who run the purchase:",
+          },
+          {
+            type: "ul",
+            items: ["you", "the contracting authority", "users", "subject-matter experts"],
+          },
+          {
+            type: "p",
+            text: "Buying a Team means contracting a supplier to deliver the work, which is a route, not a step. A good procurement keeps this cross-functional team in the room the whole way, rather than handing the buy off.",
+          },
+        ],
       },
       {
         label: "Ask",
         title: "Say the problem, not the solution.",
-        leadIn: "Hand suppliers the problem and let them bring the solution.",
-        body: "Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one.",
-        // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 2, Confirm Requirements / Business Requirements Discovery Workbook — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
-        placeholderLinks: [
+        blocks: [
           {
-            phrase: "TBS's own migration guidance",
-            source: GCCASE_MIGRATION_READINESS_GUIDE,
-            part: "Step 2, Confirm Requirements / Business Requirements Discovery Workbook",
+            type: "p",
+            text: "Write a challenge statement: what, who, when, where, why, and no solution baked in. Then set out:",
+          },
+          {
+            type: "ul",
+            items: ["your desired outcomes", "the least you must have"],
+          },
+          {
+            type: "p",
+            text: "Asking for objectives, rather than dictating the work, lets suppliers offer answers better than the one you would have written.",
           },
         ],
       },
       {
         label: "Strategy",
         title: "Choose the strategy.",
-        leadIn:
-          "This is where the route is chosen. Whether the department is buying a Team, a Solution, or a Finished Product, or building in-house, it is settled here, and it settles everything downstream. See \"Choosing what to buy\" above.",
-        leadInBold: [{ phrase: "This is where the route is chosen." }],
-        body: "There are two ways to shape a buy, the traditional way and the agile way. For digital, agile is the recommended default. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side.",
+        blocks: [
+          {
+            type: "p",
+            text: 'This is where the route is chosen. Whether the department is buying a Team, a Solution, or a Finished Product, or building in-house, it is settled here, and it settles everything downstream (see "Choosing what to buy" above).',
+          },
+          {
+            type: "p",
+            text: "There are two ways to shape a buy: the traditional way and the agile way. For digital, agile is the recommended default. Break a large buy into smaller, tightly scoped pieces that build on each other, using:",
+          },
+          {
+            type: "ul",
+            items: [
+              "phased deliveries with go and no-go gates, or",
+              "contracts with task authorizations",
+            ],
+          },
+          {
+            type: "p",
+            text: "The case study just below shows the same programme bought two ways.",
+          },
+          {
+            type: "p",
+            text: "One thing to be clear about: this is not contract splitting. Splitting is slicing the same work to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine increments is allowed and encouraged.",
+          },
+        ],
         anchorLinks: [
-          { phrase: "comparison table below", hash: "traditional-vs-agile" },
           { phrase: "Choosing what to buy", hash: "choosing-what-to-buy" },
+          { phrase: "case study just below", hash: "case-study" },
         ],
       },
       {
         label: "Approve",
         title: "Get the approval level right, and check in at the right moment.",
-        leadIn: "The question everyone asks: when do you loop in Treasury Board?",
-        body: "It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. For the full map from idea to money-in-hand, see the approval journey. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity.",
-        internalLinks: [
-          { phrase: "engage Treasury Board", to: "/thread/funding" },
-          { phrase: "the approval journey", to: PHASES.create.href },
-        ],
-        reviewNotice: TREASURY_BOARD_APPROVAL_UNDER_REVIEW,
-        // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning, procurement delays — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
-        placeholderLinks: [
+        blocks: [
           {
-            phrase: "12 to 24 months",
-            source: GCCASE_MIGRATION_READINESS_GUIDE,
-            part: "Risks of Delayed Planning, procurement delays",
+            type: "p",
+            text: "Most services are approved and funded inside the department. What decides the path is the department's project-management capacity class and the project's Project Complexity and Risk Assessment (PCRA) score, and a concept case and the departmental architecture review board come first. If the project sits within the department's capacity, its own governance approves it, and that is roughly 95% of projects.",
           },
+          {
+            type: "p",
+            text: "Only the largest or most complex projects climb higher, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. If that is you, engage at the strategy stage, before you are committed. That path is a branch of its own; the Funding page sets out which path a given project takes, so most readers will not need the detail here.",
+          },
+        ],
+        internalLinks: [
+          { phrase: "Treasury Board submission", to: "/thread/funding" },
+          { phrase: "Funding", to: "/thread/funding" },
         ],
       },
       {
         label: "Engage",
         title: "Engage industry early, under clear rules.",
-        leadIn: "Talk to the market early, with the ground rules set first.",
-        body: "Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone.",
+        blocks: [
+          {
+            type: "p",
+            text: "Talk to the market early, with the ground rules set first.",
+          },
+          {
+            type: "p",
+            text: "Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone.",
+          },
+        ],
       },
       {
         label: "Award",
         title: "Solicit, evaluate, and award.",
-        leadIn: "Now you go out, compare what comes back, and choose.",
-        body: "Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise.",
+        blocks: [
+          {
+            type: "p",
+            text: "Now you go out, compare what comes back, and choose.",
+          },
+          {
+            type: "p",
+            text: "Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise.",
+          },
+        ],
       },
       {
         label: "Manage",
         title: "Manage the contract.",
-        leadIn: "Signing is where the real work begins.",
-        body: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases.",
+        blocks: [
+          {
+            type: "p",
+            text: "Signing is where the real work begins.",
+          },
+          {
+            type: "p",
+            text: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases.",
+          },
+        ],
         internalLinks: [
           { phrase: "Live", to: "/live" },
           { phrase: "Sunset", to: "/sunset" },

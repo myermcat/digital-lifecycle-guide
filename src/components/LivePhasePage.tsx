@@ -91,9 +91,7 @@ export function LivePhasePage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={subphases.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>The three sub-phases of Live</h2>
-        <p className={`${guideProse} mb-5`}>
-          Across its life, Live moves through three sub-phases, each with its own page.
-        </p>
+        <p className={`${guideProse} mb-5`}>{subphases.intro}</p>
 
         <div className={guideDoorwayCardClassName}>
           <div className="divide-y divide-primary/20">

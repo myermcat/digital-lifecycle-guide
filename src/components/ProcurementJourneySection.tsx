@@ -7,7 +7,12 @@ import {
 } from "@/components/ui/accordion";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import type { ProcurementJourneyStep } from "@/lib/procurement-landing";
-import { guideProse, guideProseTight, guideSectionTitle } from "@/lib/guide-typography";
+import {
+  guideListIndent,
+  guideProse,
+  guideProseTight,
+  guideSectionTitle,
+} from "@/lib/guide-typography";
 
 function JourneyStepNumber({ n }: { n: number }) {
   return (
@@ -51,43 +56,53 @@ export function ProcurementJourneySection({
       {intro ? <p className={`${guideProse} mb-5`}>{intro}</p> : null}
 
       <Accordion type="single" collapsible className="rounded-lg border border-border bg-card">
-        {steps.map((step, index) => (
-          <AccordionItem key={step.label} value={step.label}>
-            <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
-              <span className="flex min-w-0 flex-1 items-center gap-3">
-                <JourneyStepNumber n={index + 1} />
-                <span className="font-serif text-base font-semibold text-primary">{step.title}</span>
-              </span>
-            </AccordionTrigger>
-            <AccordionContent className="px-5 pb-4 space-y-3">
-              <p className={`${guideProseTight} font-medium text-foreground/85`}>
-                {proseWithMixedLinks(step.leadIn, {
-                  external: step.externalLinks,
-                  internal: step.internalLinks,
-                  anchor: step.anchorLinks,
-                  placeholder: step.placeholderLinks,
-                  bold: step.leadInBold ?? [],
-                })}
-              </p>
-              {step.body ? (
-                <p className={guideProseTight}>
-                  {proseWithMixedLinks(step.body, {
-                    external: step.externalLinks,
-                    internal: step.internalLinks,
-                    anchor: step.anchorLinks,
-                    placeholder: step.placeholderLinks,
-                    bold: step.bodyBold ?? [],
-                  })}
-                </p>
-              ) : null}
-              {step.reviewNotice ? (
-                <EditorialNote label="UNDER REVIEW">
-                  <p>{step.reviewNotice}</p>
-                </EditorialNote>
-              ) : null}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
+        {steps.map((step, index) => {
+          const linkOpts = {
+            external: step.externalLinks,
+            internal: step.internalLinks,
+            anchor: step.anchorLinks,
+            placeholder: step.placeholderLinks,
+          };
+
+          return (
+            <AccordionItem key={step.label} value={step.label}>
+              <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
+                <span className="flex min-w-0 flex-1 items-center gap-3">
+                  <JourneyStepNumber n={index + 1} />
+                  <span className="font-serif text-base font-semibold text-primary">
+                    {step.title}
+                  </span>
+                </span>
+              </AccordionTrigger>
+              <AccordionContent className="px-5 pb-4 space-y-3">
+                {step.blocks.map((block, blockIndex) =>
+                  block.type === "ul" ? (
+                    <ul
+                      key={`${step.label}-ul-${blockIndex}`}
+                      className={`list-disc space-y-1.5 ${guideListIndent} ${guideProseTight}`}
+                    >
+                      {block.items.map((item) => (
+                        <li key={item}>{proseWithMixedLinks(item, linkOpts)}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p key={`${step.label}-p-${blockIndex}`} className={guideProseTight}>
+                      {proseWithMixedLinks(block.text, {
+                        ...linkOpts,
+                        bold: block.bold ?? [],
+                      })}
+                    </p>
+                  ),
+                )}
+                {step.reviewNotice ? (
+                  <EditorialNote label="UNDER REVIEW">
+                    <p>{step.reviewNotice}</p>
+                  </EditorialNote>
+                ) : null}
+              </AccordionContent>
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </section>
   );
