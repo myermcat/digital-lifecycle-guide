@@ -115,7 +115,7 @@ export function WhatYouAreBuyingBlock({
         <h3 className={`${guideSubsectionTitle} mb-1`}>
           {combiningRoutes.heading}
         </h3>
-        <p>{combiningRoutes.intro}</p>
+        {combiningRoutes.intro ? <p>{combiningRoutes.intro}</p> : null}
         {combiningRoutes.paragraphs.map((paragraph) => (
           <div key={paragraph.lead} className="space-y-1">
             <p>{renderCombiningLead(paragraph)}</p>

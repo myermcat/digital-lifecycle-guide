@@ -105,8 +105,14 @@ export const CREATE_PHASE = {
             text: "Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not.",
           },
           {
-            text: "Funding sets out the whole path, and which one a given service takes.",
-            internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
+            text: "Funding sets out the whole path, and which one a given service takes. The official gates of a digital service lays out every official gate on one page.",
+            internalLinks: [
+              { phrase: "Funding", to: "/thread/funding" },
+              {
+                phrase: "The official gates of a digital service",
+                to: "/gate-map",
+              },
+            ],
           },
           {
             text: "Winning whichever approvals apply, before the build, is what gives Create its finish line.",

@@ -201,6 +201,12 @@ export const SUNSET_STRINGS = {
           'The full version of the "assess options" step, shared with Create.',
       },
       {
+        label: "The official gates of a digital service",
+        href: "/gate-map",
+        description:
+          "The map of official gates across Create, Live, and Sunset, including the records gate at exit.",
+      },
+      {
         label: "Procurement thread",
         href: PROCUREMENT_LANDING_PATH,
         description: "How the buying works if you are acquiring a replacement.",

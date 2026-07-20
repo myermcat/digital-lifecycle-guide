@@ -108,8 +108,14 @@ export const LIVE_PHASE = {
         lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
-            text: "Its funding is renewed before the current money runs out.",
-            internalLinks: [{ phrase: "funding", to: "/thread/funding" }],
+            text: "Its funding is renewed before the current money runs out. The official gates of a digital service shows which official gates still apply once the service is running.",
+            internalLinks: [
+              { phrase: "funding", to: "/thread/funding" },
+              {
+                phrase: "The official gates of a digital service",
+                to: "/gate-map",
+              },
+            ],
           },
           {
             text: "If it handles personal information, its privacy assessment is kept current as the service changes.",

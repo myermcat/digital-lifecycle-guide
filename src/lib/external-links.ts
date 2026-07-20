@@ -13,6 +13,21 @@ export const EXTERNAL_LINKS = {
       "Treasury Board Directive on the Management of Procurement (the binding instrument)",
     accessibility: "public",
   },
+  "pcra-tool": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/information-technology-project-management/project-management/project-complexity-risk-assessment-tool.html",
+    description: "Project Complexity and Risk Assessment (PCRA) tool (TBS)",
+    accessibility: "public",
+  },
+  "tbs-tb-submissions": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions.html",
+    description: "Treasury Board submissions (TBS)",
+    accessibility: "public",
+  },
+  "gc-enterprise-architecture-framework": {
+    url: "https://www.canada.ca/en/government/system/digital-government/policies-standards/government-canada-enterprise-architecture-framework.html",
+    description: "Government of Canada Enterprise Architecture Framework (includes GC EARB)",
+    accessibility: "public",
+  },
   "buyers-portal": {
     url: "https://canadabuys.canada.ca/en/buyer-s-portal",
     description:

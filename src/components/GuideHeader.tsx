@@ -4,6 +4,7 @@ import { HeaderSearch } from "@/components/HeaderSearch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { PHASES } from "@/lib/guide-strings";
+import type { OnThisPageItem } from "@/lib/on-this-page";
 import { cn } from "@/lib/utils";
 
 /**
@@ -12,14 +13,19 @@ import { cn } from "@/lib/utils";
  * the lifecycle phase links, and (when a `rootId` is provided) an inline
  * "On this page" nav drawn from the page's sections.
  */
-export function GuideHeader({ rootId }: { rootId?: string }) {
+export function GuideHeader({
+  rootId,
+  onThisPageItems,
+}: {
+  rootId?: string;
+  onThisPageItems?: readonly OnThisPageItem[];
+}) {
   const lifecyclePhases = [PHASES.create, PHASES.live, PHASES.sunset];
 
   return (
     <header className="sticky top-0 z-40 w-full">
       <div className="bg-background/85 backdrop-blur-md border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 h-14 flex items-center gap-6">
-          {/* Wordmark — links home */}
           <Link
             to="/"
             className="group flex items-baseline gap-2 shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
@@ -34,7 +40,6 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
             </span>
           </Link>
 
-          {/* Lifecycle phase nav — hides labels on small screens, keeps tappable */}
           <nav
             aria-label="Phases"
             className="hidden md:flex items-center gap-5 ml-2"
@@ -68,13 +73,13 @@ export function GuideHeader({ rootId }: { rootId?: string }) {
               }}
             >
               <List className="size-3.5 shrink-0 opacity-70" aria-hidden />
-              <span className="hidden sm:inline">All pages</span>
-              <span className="sr-only sm:hidden">All pages</span>
+              <span className="hidden sm:inline">Index</span>
+              <span className="sr-only sm:hidden">Index</span>
             </Link>
             <HeaderSearch />
-            {rootId ? (
+            {rootId || onThisPageItems?.length ? (
               <div className="lg:hidden">
-                <OnThisPageNav rootId={rootId} />
+                <OnThisPageNav rootId={rootId} items={onThisPageItems} />
               </div>
             ) : null}
           </div>

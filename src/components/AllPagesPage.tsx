@@ -154,14 +154,12 @@ export function AllPagesPage() {
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
           </span>
-          <span className="text-foreground/80">All pages</span>
+          <span className="text-foreground/80">Build status</span>
         </nav>
-        <h1 className={`mt-4 ${guidePageTitle}`}>
-          All pages
-        </h1>
+        <h1 className={`mt-4 ${guidePageTitle}`}>Build status</h1>
         <p className={`${guideProseTight} mt-3 text-foreground/65 max-w-xl`}>
-          Every page in the guide, including reference pages and stubs not linked from
-          normal navigation. Status is maintained here as the build tracker.
+          Internal build tracker for every page in the guide, including stubs not linked from
+          normal navigation. The reader-facing index is under Index in the header.
         </p>
         <div className="mt-4 h-px w-16 bg-border" />
       </header>

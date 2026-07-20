@@ -1,28 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AllPagesPage } from "@/components/AllPagesPage";
+import { GuideContentsPage } from "@/components/GuideContentsPage";
 import { GuideLayout } from "@/components/GuideLayout";
-import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
+import { GUIDE_CONTENTS } from "@/lib/guide-contents";
 
 export const Route = createFileRoute("/all-pages")({
   head: () => ({
     meta: [
-      { title: "All pages — The Digital Lifecycle Guide" },
+      { title: `${GUIDE_CONTENTS.title} — The Digital Lifecycle Guide` },
       {
         name: "description",
-        content: "A complete index of every page in the Digital Lifecycle Guide and its build status.",
+        content: GUIDE_CONTENTS.subtitle,
       },
     ],
   }),
-  component: AllPagesRoute,
+  component: GuideIndexRoute,
 });
 
-function AllPagesRoute() {
+function GuideIndexRoute() {
   return (
     <GuideLayout id="all-pages">
-      <AllPagesPage />
+      <GuideContentsPage />
       <PageFoot showSupportCallout={false} />
-      <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
     </GuideLayout>
   );
 }

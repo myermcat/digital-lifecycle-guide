@@ -281,7 +281,7 @@ export const PROCUREMENT_STRINGS = {
     ] satisfies BuyingRouteDraft[],
     combiningRoutes: {
       heading: "Most services combine more than one route",
-      intro: "The routes are not walls.",
+      intro: "",
       paragraphs: [
         {
           lead: "The commonest shape is a Finished Product plus a Team.",

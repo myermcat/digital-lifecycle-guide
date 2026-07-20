@@ -22,6 +22,7 @@ import { Route as CreateDesignForTheWholeJourneyRouteImport } from './routes/cre
 import { Route as CreateBetaRouteImport } from './routes/create-beta'
 import { Route as CreateAlphaRouteImport } from './routes/create-alpha'
 import { Route as CreateRouteImport } from './routes/create'
+import { Route as BuildStatusRouteImport } from './routes/build-status'
 import { Route as AllPagesRouteImport } from './routes/all-pages'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThreadProcurementRouteImport } from './routes/thread.procurement'
@@ -111,6 +112,11 @@ const CreateAlphaRoute = CreateAlphaRouteImport.update({
 const CreateRoute = CreateRouteImport.update({
   id: '/create',
   path: '/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildStatusRoute = BuildStatusRouteImport.update({
+  id: '/build-status',
+  path: '/build-status',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AllPagesRoute = AllPagesRouteImport.update({
@@ -247,6 +253,7 @@ const ThreadContractingPageRoute = ThreadContractingPageRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/all-pages': typeof AllPagesRoute
+  '/build-status': typeof BuildStatusRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-beta': typeof CreateBetaRoute
@@ -286,6 +293,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/all-pages': typeof AllPagesRoute
+  '/build-status': typeof BuildStatusRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-beta': typeof CreateBetaRoute
@@ -324,6 +332,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/all-pages': typeof AllPagesRoute
+  '/build-status': typeof BuildStatusRoute
   '/create': typeof CreateRoute
   '/create-alpha': typeof CreateAlphaRoute
   '/create-beta': typeof CreateBetaRoute
@@ -365,6 +374,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/all-pages'
+    | '/build-status'
     | '/create'
     | '/create-alpha'
     | '/create-beta'
@@ -404,6 +414,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/all-pages'
+    | '/build-status'
     | '/create'
     | '/create-alpha'
     | '/create-beta'
@@ -441,6 +452,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/all-pages'
+    | '/build-status'
     | '/create'
     | '/create-alpha'
     | '/create-beta'
@@ -481,6 +493,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AllPagesRoute: typeof AllPagesRoute
+  BuildStatusRoute: typeof BuildStatusRoute
   CreateRoute: typeof CreateRoute
   CreateAlphaRoute: typeof CreateAlphaRoute
   CreateBetaRoute: typeof CreateBetaRoute
@@ -604,6 +617,13 @@ declare module '@tanstack/react-router' {
       path: '/create'
       fullPath: '/create'
       preLoaderRoute: typeof CreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-status': {
+      id: '/build-status'
+      path: '/build-status'
+      fullPath: '/build-status'
+      preLoaderRoute: typeof BuildStatusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/all-pages': {
@@ -808,6 +828,7 @@ const ThreadProcurementRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AllPagesRoute: AllPagesRoute,
+  BuildStatusRoute: BuildStatusRoute,
   CreateRoute: CreateRoute,
   CreateAlphaRoute: CreateAlphaRoute,
   CreateBetaRoute: CreateBetaRoute,

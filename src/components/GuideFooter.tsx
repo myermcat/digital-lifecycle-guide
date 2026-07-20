@@ -6,7 +6,7 @@ import { SUPPORT_PATH } from "@/lib/support-path";
 /**
  * Site footer — Government of Canada–inflected, calm to match the guide.
  * Columns of links sit above a dark band carrying the Canada wordmark.
- * "All pages" is included as the index entry under Reference.
+ * "Index" is included as the contents entry under The guide.
  */
 export function GuideFooter() {
   const year = new Date().getFullYear();
@@ -31,7 +31,7 @@ export function GuideFooter() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
             <FooterColumn title="The guide">
               <FooterLink to="/">Home</FooterLink>
-              <FooterLink to={ALL_PAGES_PATH}>All pages</FooterLink>
+              <FooterLink to={ALL_PAGES_PATH}>Index</FooterLink>
               <FooterLink to={SUPPORT_PATH}>Support and communities</FooterLink>
               <FooterExternalLink href="https://github.com/myermcat/digital-lifecycle-guide">
                 GitHub

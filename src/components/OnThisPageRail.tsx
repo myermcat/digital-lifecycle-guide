@@ -1,27 +1,21 @@
 import { useEffect, useMemo, useState } from "react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
+import {
+  scrollToOnThisPageSection,
+  type OnThisPageItem,
+} from "@/lib/on-this-page";
 import { cn } from "@/lib/utils";
 
-/** Matches section `scroll-mt-24` (6rem) + a little air. */
-const HEADER_OFFSET_PX = 96 + 16;
-
-function getTargetScrollTop(element: HTMLElement) {
-  return element.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET_PX;
-}
-
-function scrollToSection(id: string) {
-  const target = document.getElementById(id);
-  if (!target) return;
-
-  const top = Math.max(0, getTargetScrollTop(target));
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  window.scrollTo({ top, behavior: prefersReduced ? "auto" : "smooth" });
-  history.replaceState(null, "", `#${id}`);
-}
-
-export function OnThisPageRail({ rootId }: { rootId?: string }) {
-  const items = useOnThisPageSections(rootId);
+export function OnThisPageRail({
+  rootId,
+  items: itemsProp,
+}: {
+  rootId?: string;
+  /** When set, used instead of auto-discovered section headings. */
+  items?: readonly OnThisPageItem[];
+}) {
+  const discovered = useOnThisPageSections(itemsProp ? undefined : rootId);
+  const items = itemsProp ?? discovered;
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const ids = useMemo(() => items.map((i) => i.id), [items]);
@@ -68,7 +62,7 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
       {
         root: null,
         threshold: 0,
-        rootMargin: `-${HEADER_OFFSET_PX}px 0px -70% 0px`,
+        rootMargin: `-112px 0px -70% 0px`,
       },
     );
 
@@ -99,7 +93,7 @@ export function OnThisPageRail({ rootId }: { rootId?: string }) {
                 <li key={item.id}>
                   <button
                     type="button"
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => scrollToOnThisPageSection(item.id)}
                     aria-current={active ? "true" : undefined}
                     className={cn(
                       "w-full text-left text-[13px] leading-relaxed transition-colors border-l pl-2.5 -ml-px",

@@ -15,6 +15,7 @@ import {
   FUNDING_THE_EXIT_LEGACY_PATH,
 } from "./reference-paths";
 import { ALL_PAGES_PATH } from "./all-pages-path";
+import { BUILD_STATUS_PATH } from "./build-status-path";
 import { SOURCE_COMING_SOON_PATH } from "./placeholder-sources";
 import { SUPPORT_PATH } from "./support-path";
 
@@ -82,6 +83,7 @@ export const STATIC_PRERENDER_PATHS = [
   DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
   DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH,
   ALL_PAGES_PATH,
+  BUILD_STATUS_PATH,
   SUPPORT_PATH,
   SOURCE_COMING_SOON_PATH,
 ] as const;

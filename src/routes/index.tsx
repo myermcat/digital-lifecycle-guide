@@ -246,7 +246,7 @@ function Index() {
           id="see-the-whole-path"
           className="scroll-mt-24 mt-8 md:mt-10 rounded-lg border border-primary/40 bg-[var(--phase-group)] shadow-sm overflow-hidden"
           label="See the whole path"
-          title="Who signs off on a new digital service, and when"
+          title="The official gates of a digital service"
           icon={Map}
           href="/gate-map"
           linkLabel="See the whole path →"

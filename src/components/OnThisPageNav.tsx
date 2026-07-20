@@ -1,34 +1,24 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, List } from "lucide-react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
+import {
+  scrollToOnThisPageSection,
+  type OnThisPageItem,
+} from "@/lib/on-this-page";
 
 export type { OnThisPageItem } from "@/lib/on-this-page";
 
-/** Matches section `scroll-mt-24` (6rem). */
-const SCROLL_OFFSET_PX = 96;
-
-function getTargetScrollTop(element: HTMLElement) {
-  return element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
-}
-
-function scrollToSection(id: string) {
-  const target = document.getElementById(id);
-  if (!target) return;
-
-  const top = Math.max(0, getTargetScrollTop(target));
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  window.scrollTo({ top, behavior: prefersReduced ? "auto" : "smooth" });
-  history.replaceState(null, "", `#${id}`);
-}
-
 export function OnThisPageNav({
   rootId,
+  items: itemsProp,
 }: {
   /** Page `main` id — nav links are built from `section[id]` + `h2` inside it. */
   rootId?: string;
+  /** When set, used instead of auto-discovered section headings. */
+  items?: readonly OnThisPageItem[];
 }) {
-  const items = useOnThisPageSections(rootId);
+  const discovered = useOnThisPageSections(itemsProp ? undefined : rootId);
+  const items = itemsProp ?? discovered;
   const [open, setOpen] = useState(false);
 
   if (items.length === 0) return null;
@@ -66,7 +56,7 @@ export function OnThisPageNav({
                 <button
                   type="button"
                   onClick={() => {
-                    scrollToSection(item.id);
+                    scrollToOnThisPageSection(item.id);
                     setOpen(false);
                   }}
                   className="w-full flex gap-2 rounded-md px-2 py-1.5 text-left text-xs leading-snug text-foreground/75 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"

@@ -2,6 +2,8 @@ export const SOO_VS_SOW_PATH = "/reference/soo-vs-sow";
 
 export const OPTIONS_ANALYSIS_PATH = "/reference/options-analysis";
 
+export const GATE_MAP_PATH = "/gate-map";
+
 /** @deprecated Redirects to /thread/joined-up-delivery; content lives on the Joined-up delivery thread page. */
 export const DESIGN_FOR_WHOLE_JOURNEY_PATH = "/reference/design-for-the-whole-journey";
 

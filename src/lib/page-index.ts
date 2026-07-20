@@ -1,6 +1,11 @@
 import { PHASES, THREADS, practicePath, reviewPath } from "./guide-strings";
 import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
-import { SOO_VS_SOW_PATH, OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH } from "./reference-paths";
+import {
+  SOO_VS_SOW_PATH,
+  OPTIONS_ANALYSIS_PATH,
+  GOOD_CONTRACT_PATH,
+  GATE_MAP_PATH,
+} from "./reference-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
 import { GOOD_CONTRACT } from "./good-contract-content";
@@ -34,7 +39,14 @@ export type PageIndexEntry = {
  */
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
+  {
+    title: "The official gates of a digital service",
+    path: GATE_MAP_PATH,
+    type: "other",
+    status: "in-review",
+  },
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
+  { title: "Index of the Digital Lifecycle Guide", path: ALL_PAGES_PATH, type: "other", status: "in-review" },
 
   { title: PHASES.create.pageHeading, path: PHASES.create.href, type: "phase", status: "in-review" },
   { title: PHASES.live.pageHeading, path: PHASES.live.href, type: "phase", status: "in-review" },
