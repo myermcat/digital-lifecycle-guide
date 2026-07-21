@@ -1,4 +1,5 @@
 import { GuideLayout } from "@/components/GuideLayout";
+import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseLeavingSection } from "@/components/PhaseLeavingSection";
 import { WhereThisFits } from "@/components/WhereThisFits";
@@ -14,6 +15,23 @@ import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { SUBPHASE_CONTENT } from "@/lib/subphase-content";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+
+function gateMapSeeAlsoForSubphase(lifecyclePhase: string, subphase?: string) {
+  if (!subphase) return null;
+  if (lifecyclePhase === "Live") {
+    return <GateMapSeeAlsoLink phaseLabel={subphase} hash="live" />;
+  }
+  if (lifecyclePhase === "Sunset") {
+    return <GateMapSeeAlsoLink phaseLabel={subphase} hash="sunset" />;
+  }
+  if (lifecyclePhase === "Create") {
+    const hash = subphase.toLowerCase();
+    if (hash === "discovery" || hash === "alpha" || hash === "beta") {
+      return <GateMapSeeAlsoLink phaseLabel={subphase} hash={hash} />;
+    }
+  }
+  return null;
+}
 
 interface PhasePlaceholderPageProps {
   id: string;
@@ -44,6 +62,7 @@ export function PhasePlaceholderPage({
     : null;
   const body = subphaseLeavingSlug ? SUBPHASE_CONTENT[subphaseLeavingSlug] : null;
   const renderIntro = !body;
+  const gateMapSeeAlso = gateMapSeeAlsoForSubphase(lifecyclePhase, subphase);
 
   return (
     <GuideLayout id={id}>
@@ -63,6 +82,8 @@ export function PhasePlaceholderPage({
           <section className="mt-5 md:mt-6">
             <WhereThisFits {...whereThisFits} />
           </section>
+
+          {gateMapSeeAlso}
 
           <SubphaseDescriptionPanel />
 
@@ -100,6 +121,8 @@ export function PhasePlaceholderPage({
           <section className="mt-5 md:mt-6">
             <WhereThisFits {...whereThisFits} />
           </section>
+
+          {gateMapSeeAlso}
 
           <SubphaseDescriptionPanel />
 

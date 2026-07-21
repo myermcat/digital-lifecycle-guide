@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import { CautionBlock } from "@/components/CautionBlock";
+import { GateMapPhaseCallout } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
@@ -56,6 +57,12 @@ export function SunsetLandingPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </section>
+
+      <GateMapPhaseCallout
+        text="See where Sunset's official gates sit in the whole path."
+        hash="sunset"
+        linkLabel="See the gates in Sunset →"
+      />
 
       <aside className="mt-8 rounded-lg border border-primary/30 bg-primary/5 px-6 py-5 md:px-7 md:py-6">
         <p className={guideCalloutLabel}>Scope</p>

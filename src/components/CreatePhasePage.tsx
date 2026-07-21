@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { GateMapPhaseCallout } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -52,6 +53,12 @@ export function CreatePhasePage() {
           <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
         ))}
       </section>
+
+      <GateMapPhaseCallout
+        text="Create is where most of the official gates fall. See where it sits in the whole path."
+        hash="discovery"
+        linkLabel="See the gates in Create →"
+      />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfCreate.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{workOfCreate.title}</h2>

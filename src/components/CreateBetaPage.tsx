@@ -1,4 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -57,6 +58,8 @@ export function CreateBetaPage() {
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...meta.where()} />
       </section>
+
+      <GateMapSeeAlsoLink phaseLabel="Beta" hash="beta" />
 
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyBeta}>
         <div className={`${guideProse} space-y-3`}>

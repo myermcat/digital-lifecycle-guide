@@ -285,9 +285,9 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "application-portfolio-management-community": {
-    url: "https://gcxgce.sharepoint.com/teams/0318",
-    description: "Application Portfolio Management community (GC network)",
-    accessibility: "gc-network-only",
+    url: "https://wiki.gccollab.ca/Application_Portfolio_Management_(APM)",
+    description: "Application Portfolio Management community (GCcollab wiki)",
+    accessibility: "public",
   },
   "it-plan-space": {
     url: "https://wiki.gccollab.ca/IT_Plan",
@@ -538,7 +538,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-forms-assistance": {
-    url: "https://forms-formulaires.alpha.canada.ca/en/",
+    url: "https://articles.alpha.canada.ca/forms-formulaires/",
     description: "GC Forms",
     accessibility: "public",
   },
@@ -550,6 +550,11 @@ export const EXTERNAL_LINKS = {
   "gc-open-source-community": {
     url: "https://github.com/canada-ca",
     description: "GC Open Source community (GitHub)",
+    accessibility: "public",
+  },
+  "open-government-portal": {
+    url: "https://open.canada.ca/en",
+    description: "Open Government Portal (Canada)",
     accessibility: "public",
   },
   "directive-automated-decision-making": {
@@ -565,6 +570,31 @@ export const EXTERNAL_LINKS = {
   "gba-plus": {
     url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus.html",
     description: "Gender-based Analysis Plus (Women and Gender Equality Canada)",
+    accessibility: "public",
+  },
+  "gc-information-management-community": {
+    url: "https://www.tbs-sct.canada.ca/im-gi/imc-cgi/imc-cgi-eng.asp",
+    description: "GC Information Management Community and IM Listserv (TBS)",
+    accessibility: "public",
+  },
+  "community-of-official-languages": {
+    url: "https://wiki.gccollab.ca/Community_of_Official_Languages",
+    description: "Community of Official Languages (GCcollab wiki)",
+    accessibility: "public",
+  },
+  "tbs-official-languages": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/topics/values-ethics/official-languages.html",
+    description: "Official languages (Treasury Board of Canada Secretariat)",
+    accessibility: "public",
+  },
+  "csps-inc101": {
+    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en",
+    description: "Introduction to Gender-based Analysis Plus, INC101 (CSPS)",
+    accessibility: "public",
+  },
+  "online-security-privacy-hub": {
+    url: "https://www.canada.ca/en/government/system/digital-government/online-security-privacy.html",
+    description: "Online security and privacy (Government of Canada)",
     accessibility: "public",
   },
   "responsible-use-ai-hub": {
@@ -727,6 +757,11 @@ export const EXTERNAL_LINKS = {
   "gc-design-community": {
     url: "https://wiki.gccollab.ca/GC_design_community",
     description: "GC design community (GCcollab wiki)",
+    accessibility: "public",
+  },
+  "gc-ux-network": {
+    url: "https://wiki.gccollab.ca/Government_of_Canada_UX_Network",
+    description: "Government of Canada UX Network (GCcollab wiki)",
     accessibility: "public",
   },
   "atlassian-scrum-backlogs": {
@@ -1100,13 +1135,18 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-digital-talent-platform": {
-    url: "https://talent.canada.ca/",
+    url: "https://talent.canada.ca/en",
     description: "GC Digital Talent platform (TBS)",
     accessibility: "public",
   },
   "csps-digital-academy": {
     url: "https://www.csps-efpc.gc.ca/digital-academy/index-eng.aspx",
     description: "CSPS Digital Academy (Canada School of Public Service)",
+    accessibility: "public",
+  },
+  "gc-data-community": {
+    url: "https://www.csps-efpc.gc.ca/partnerships/data-community-eng.aspx",
+    description: "GC Data Community (Canada School of Public Service)",
     accessibility: "public",
   },
   "uk-service-manual-what-each-role": {

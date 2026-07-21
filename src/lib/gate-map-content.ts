@@ -137,7 +137,7 @@ export const GATE_MAP_WHY_CREATE = {
 } as const;
 
 export const GATE_MAP_WHAT_TABLE = {
-  heading: "What this table is, and is not",
+  heading: "What this map covers",
   body: "It is an overview of the official gates only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the gates she has to pass through; the people she talks to give her the rest.",
   bold: ["official gates only"],
 } as const;
@@ -281,11 +281,11 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
         },
         response: {
           tags: ["dept"],
-          lead: "The departmental project-management office.",
+          lead: "The departmental project-management or investment office.",
           body: [
             {
               type: "p",
-              text: "It gives her team the Project Complexity and Risk Assessment (PCRA), a detailed multi-section questionnaire, and helps them complete it. Two things follow:",
+              text: "It helps her team complete the Project Complexity and Risk Assessment (PCRA), a detailed multi-section questionnaire (how this is organized varies by department).",
               bold: ["Project Complexity and Risk Assessment (PCRA)"],
             },
             {
@@ -302,7 +302,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     ],
     forkAfter: {
       title: "The fork that decides everything.",
-      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, the project needs Treasury Board approval: it goes up to GC EARB and a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under the line.",
+      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval: it goes up to GC EARB and a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under the line.",
       bold: ["within", "above"],
       gatePhrases: ["GC EARB", "Treasury Board submission"],
     },
@@ -528,20 +528,12 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
         },
         response: {
           tags: ["dept", "central"],
-          lead: "The ATIP / privacy office.",
+          lead: "The program area, with the ATIP / privacy office.",
           body: [
             {
               type: "p",
-              text: "Because the grants system handles personal information, the office:",
-            },
-            {
-              type: "ul",
-              items: [
-                "runs the Privacy Impact Assessment",
-                "sends it to the Office of the Privacy Commissioner and TBS before launch",
-                "registers the new Personal Information Bank in the department's Info Source listing",
-              ],
-              itemBold: [
+              text: "Because the grants system handles personal information, the program completes the Privacy Impact Assessment, with the ATIP office's support; it is sent to the Office of the Privacy Commissioner and TBS before launch; the Personal Information Bank is registered in the department's Info Source listing.",
+              bold: [
                 "Privacy Impact Assessment",
                 "Office of the Privacy Commissioner",
                 "Personal Information Bank",
@@ -751,7 +743,7 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
   },
   {
     term: "Departmental project-management office",
-    def: "Runs the PCRA and helps cost and score the project; supplies a project manager.",
+    def: "Helps the sponsor complete the PCRA, cost and score the project, and line up a project manager. How this is organized varies by department; the deputy head is accountable for the score.",
   },
   {
     term: "DARB",
@@ -771,11 +763,11 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
   },
   {
     term: "ATIP / privacy office",
-    def: "Runs the Privacy Impact Assessment, deals with the Office of the Privacy Commissioner, and registers the Personal Information Bank.",
+    def: "Supports the program in completing the Privacy Impact Assessment, coordinates with the Office of the Privacy Commissioner and TBS, and handles the Personal Information Bank registration. The program area owns the assessment.",
   },
   {
-    term: "Service-management office",
-    def: "Registers the service in the GC Service Inventory and Application Portfolio Management, and updates it when the service retires.",
+    term: "Service management function",
+    def: "Whoever owns the service inventory in your department (the name varies). Records the service in the departmental and GC Service Inventory and in Application Portfolio Management, and updates it when the service retires.",
   },
   {
     term: "Information management office",
@@ -818,15 +810,15 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       },
       {
         term: "Capacity class (OPMCA)",
-        def: "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, the project needs Treasury Board approval.",
+        def: "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, or the project's value exceeds the department's delegated limit, the project needs Treasury Board approval.",
       },
       {
         term: "Reuse / options check",
-        def: "Checking the GC shelf - the GC Reference Architectures and the enterprise solutions catalogue - before buying or building. A required step, not a suggestion.",
+        def: "Checking the GC shelf - the GC Reference Architectures and enterprise or shared solutions catalogues - before buying or building. GC policy expects reuse where possible, and the architecture review looks for it.",
       },
       {
         term: "Treasury Board submission",
-        def: "The ~5% path only: formal approval and expenditure authority from Treasury Board for a project above the department's capacity class. Can add six to twelve months. Nadia does not go here.",
+        def: "The small-minority path: formal approval and expenditure authority from Treasury Board, needed when a project's PCRA level exceeds the department's capacity class, or its value exceeds the department's delegated limit, or Treasury Board otherwise requires it. Can add six to twelve months or more.",
       },
     ],
   },
@@ -899,7 +891,7 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       },
       {
         term: "Privacy Impact Assessment",
-        def: "The assessment of privacy risk for a service that handles personal information, run by the ATIP office and sent to the Office of the Privacy Commissioner and TBS before launch.",
+        def: "The assessment of privacy risk for a service that handles personal information, completed by the program area with ATIP support, and sent to the Office of the Privacy Commissioner and TBS before launch.",
       },
       {
         term: "Personal Information Bank",

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
+import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PracticeActivitiesPanel } from "@/components/PracticeActivitiesPanel";
@@ -53,6 +54,8 @@ function LiveMaturityPage() {
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...whereThisFitsForLiveSubphase("maturity")} />
       </section>
+
+      <GateMapSeeAlsoLink phaseLabel="Maturity" hash="live" />
 
       <SubphaseDescriptionPanel />
 

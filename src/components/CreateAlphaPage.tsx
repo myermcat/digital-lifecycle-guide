@@ -1,4 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -59,6 +60,8 @@ export function CreateAlphaPage() {
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...meta.where()} />
       </section>
+
+      <GateMapSeeAlsoLink phaseLabel="Alpha" hash="alpha" />
 
       <SubphaseDescriptionPanel>
         <div className={`${guideProse} space-y-3`}>

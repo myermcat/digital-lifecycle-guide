@@ -1,5 +1,6 @@
 import { CautionBlock } from "@/components/CautionBlock";
 import { EditorialNote } from "@/components/EditorialNote";
+import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -54,6 +55,8 @@ export function CreateDiscoveryPage() {
       <section className="mt-5 md:mt-6">
         <WhereThisFits {...meta.where()} />
       </section>
+
+      <GateMapSeeAlsoLink phaseLabel="Discovery" hash="discovery" />
 
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyDiscovery}>
         <div className={`${guideProse} space-y-3`}>

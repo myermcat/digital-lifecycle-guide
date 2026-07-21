@@ -27,8 +27,10 @@ export const SUPPORT_PAGE = {
     title: "Across the whole lifecycle",
     bullets: [
       {
-        text: "The CIOB-ITD mailbox is the standing contact for the Government of Canada IT lifecycle program (application portfolio, IT expenditure, and the departmental IT plan).",
-        mailtoLinks: [{ phrase: "CIOB-ITD mailbox", href: CIOB_MAILBOX }],
+        text: "The GC Enterprise IT Portfolio team (CIOB IT Division) is the standing contact for the Government of Canada IT lifecycle program (application portfolio, IT expenditure, and the departmental IT plan).",
+        mailtoLinks: [
+          { phrase: "GC Enterprise IT Portfolio team (CIOB IT Division)", href: CIOB_MAILBOX },
+        ],
       },
       {
         text: "The Application Portfolio Management community (on the GC network) is where the application-portfolio work is run and shared.",
@@ -111,9 +113,96 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Data. The GC Data Community (ask through the CIOB mailbox for the current home).",
+        text: "Data. Your department's data or Chief Data Officer office, first. Government-wide, the GC Data Community (Canada School of Public Service) is the network of data practitioners you can join.",
         bold: [{ phrase: "Data." }],
-        mailtoLinks: [{ phrase: "CIOB mailbox", href: CIOB_MAILBOX }],
+        externalLinks: [
+          { phrase: "GC Data Community", linkKey: "gc-data-community" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Records and disposition. Your department's information-management or records office, first. They handle disposition of government records, the Sunset gate, with Library and Archives Canada.",
+        bold: [{ phrase: "Records and disposition." }],
+        externalLinks: [
+          {
+            phrase: "Library and Archives Canada",
+            linkKey: "lac-information-disposition-hub",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Service design and user research. The GC UX Network connects designers and researchers across government, and the CSPS Digital Academy runs service-design and user-research training.",
+        bold: [{ phrase: "Service design and user research." }],
+        externalLinks: [
+          { phrase: "GC UX Network", linkKey: "gc-ux-network" },
+          { phrase: "CSPS Digital Academy", linkKey: "csps-digital-academy" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Service policy and the service inventory. Your department's service or CIO office, first. They work with the TBS Service Policy team on how your service appears in the GC Service Inventory.",
+        bold: [{ phrase: "Service policy and the service inventory." }],
+      },
+      {
+        text: "Responsible AI and automated decisions. Your department's privacy, data, and legal teams, first, if your service automates a decision. Government-wide guidance is the Responsible use of AI in government hub.",
+        bold: [{ phrase: "Responsible AI and automated decisions." }],
+        externalLinks: [
+          {
+            phrase: "Responsible use of AI in government hub",
+            linkKey: "responsible-use-ai-hub",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Open government and open data. Your department's information-management or open-data lead publishes datasets to the Open Government Portal.",
+        bold: [{ phrase: "Open government and open data." }],
+        externalLinks: [
+          { phrase: "Open Government Portal", linkKey: "open-government-portal" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Information management. Your department's information-management office, first. Government-wide, the GC Information Management Community connects IM professionals.",
+        bold: [{ phrase: "Information management." }],
+        externalLinks: [
+          {
+            phrase: "GC Information Management Community",
+            linkKey: "gc-information-management-community",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Official languages. Your departmental Official Languages coordinator first; the Community of Official Languages and the TBS official languages pages.",
+        bold: [{ phrase: "Official languages." }],
+        externalLinks: [
+          {
+            phrase: "Community of Official Languages",
+            linkKey: "community-of-official-languages",
+          },
+          { phrase: "TBS official languages pages", linkKey: "tbs-official-languages" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "GBA Plus and inclusion. Your department's GBA Plus focal point first; the GBA Plus hub and CSPS course INC101.",
+        bold: [{ phrase: "GBA Plus and inclusion." }],
+        externalLinks: [
+          { phrase: "GBA Plus hub", linkKey: "gba-plus" },
+          { phrase: "INC101", linkKey: "csps-inc101" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Identity and sign-in. Your departmental CIO or security lead (they bring in the identity and access-management teams); the online security and privacy hub.",
+        bold: [{ phrase: "Identity and sign-in." }],
+        externalLinks: [
+          {
+            phrase: "online security and privacy hub",
+            linkKey: "online-security-privacy-hub",
+          },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Digital talent and hiring. GC Digital Talent, the government-wide recruitment platform for digital roles.",
+        bold: [{ phrase: "Digital talent and hiring." }],
+        externalLinks: [
+          { phrase: "GC Digital Talent", linkKey: "gc-digital-talent-platform" },
+        ] satisfies ExternalPhraseLink[],
       },
     ] satisfies SupportLinkedBullet[],
     closing: {

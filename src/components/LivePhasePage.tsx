@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { GateMapPhaseCallout } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -57,6 +58,12 @@ export function LivePhasePage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </section>
+
+      <GateMapPhaseCallout
+        text="See where Live's official gates sit in the whole path."
+        hash="live"
+        linkLabel="See the gates in Live →"
+      />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfLive.id}>
         <h2 className={`${guideSectionTitle} mb-3`}>{workOfLive.title}</h2>
@@ -133,4 +140,3 @@ export function LivePhasePage() {
     </GuideLayout>
   );
 }
-

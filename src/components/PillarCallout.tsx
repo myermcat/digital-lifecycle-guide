@@ -7,6 +7,7 @@ import {
   guideLink,
   guideProseTight,
 } from "@/lib/guide-typography";
+import { cn } from "@/lib/utils";
 
 export function PillarCallout({
   id,
@@ -15,19 +16,25 @@ export function PillarCallout({
   icon: Icon,
   children,
   href,
+  hash,
   linkLabel,
   footerNote,
   className,
+  compact = false,
 }: {
   id?: string;
   label: string;
-  title: string;
+  title?: string;
   icon: LucideIcon;
-  children: ReactNode;
+  children?: ReactNode;
   href?: string;
+  /** In-page hash when `href` is a route path (e.g. gate-map `#discovery`). */
+  hash?: string;
   linkLabel?: string;
   footerNote?: ReactNode;
   className?: string;
+  /** Eyebrow + short body + link; tighter padding and icon. */
+  compact?: boolean;
 }) {
   return (
     <section
@@ -37,23 +44,36 @@ export function PillarCallout({
         "scroll-mt-24 mt-10 md:mt-12 rounded-lg border border-primary/40 bg-background shadow-sm overflow-hidden"
       }
     >
-      <div className="border-l-[5px] border-l-primary px-6 py-6 md:px-8 md:py-7">
-        <div className="flex gap-4 md:gap-5">
+      <div
+        className={cn(
+          "border-l-[5px] border-l-primary",
+          compact ? "px-4 py-4 md:px-5 md:py-4" : "px-6 py-6 md:px-8 md:py-7",
+        )}
+      >
+        <div className={cn("flex", compact ? "gap-3" : "gap-4 md:gap-5")}>
           <div
-            className="flex size-10 shrink-0 items-center justify-center rounded-md border border-primary/25 bg-primary/8 text-primary/80 md:size-11"
+            className={cn(
+              "flex shrink-0 items-center justify-center rounded-md border border-primary/25 bg-primary/8 text-primary/80",
+              compact ? "size-8" : "size-10 md:size-11",
+            )}
             aria-hidden="true"
           >
-            <Icon className="size-5 md:size-[1.35rem]" strokeWidth={1.5} />
+            <Icon
+              className={compact ? "size-4" : "size-5 md:size-[1.35rem]"}
+              strokeWidth={1.5}
+            />
           </div>
-          <div className="min-w-0 space-y-4">
+          <div className={cn("min-w-0", compact ? "space-y-2" : "space-y-4")}>
             <div>
               <p className={guideCalloutLabel}>{label}</p>
-              <h2 className={`${guideBlockTitle} mt-1`}>{title}</h2>
+              {title ? (
+                <h2 className={`${guideBlockTitle} mt-1`}>{title}</h2>
+              ) : null}
             </div>
-            <div className={guideProseTight}>{children}</div>
+            {children ? <div className={guideProseTight}>{children}</div> : null}
             {href && linkLabel ? (
               <p>
-                <Link to={href} className={`text-sm ${guideLink}`}>
+                <Link to={href} hash={hash} className={`text-sm ${guideLink}`}>
                   {linkLabel}
                 </Link>
               </p>
