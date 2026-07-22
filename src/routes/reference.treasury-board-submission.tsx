@@ -1,8 +1,8 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import { TREASURY_BOARD_SUBMISSION_PATH } from "@/lib/reference-paths";
 
+/** Former /reference URL; Treasury Board path now lives on the gate map. */
 export const Route = createFileRoute("/reference/treasury-board-submission")({
   beforeLoad: () => {
-    throw redirect({ to: TREASURY_BOARD_SUBMISSION_PATH });
+    throw redirect({ to: "/gate-map" });
   },
 });

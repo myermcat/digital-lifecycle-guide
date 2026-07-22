@@ -23,7 +23,7 @@ function renderBullet(bullet: SupportLinkedBullet) {
 }
 
 export function SupportCommunitiesPage() {
-  const { title, lead, acrossLifecycle, byTopic, furtherReading, sources } = SUPPORT_PAGE;
+  const { title, lead, byTopic, furtherReading, sources } = SUPPORT_PAGE;
 
   return (
     <GuideLayout id={SUPPORT_PAGE.id}>
@@ -43,18 +43,6 @@ export function SupportCommunitiesPage() {
 
       <section className={guideProseSpace}>
         <p>{lead}</p>
-      </section>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={acrossLifecycle.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>{acrossLifecycle.title}</h2>
-        <ul className={guideArrowList}>
-          {acrossLifecycle.bullets.map((bullet) => (
-            <li key={bullet.text} className="flex items-start gap-2.5">
-              <GuideArrowBullet />
-              <p className={guideProse}>{renderBullet(bullet)}</p>
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={byTopic.id}>

@@ -1,45 +1,33 @@
-<svg viewBox="0 0 840 270" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
-  <!-- LEFT: Treasury Board building (icon band y 60..200, centred x=130) -->
-  <g fill="#A8492A">
-    <polygon points="130,60 58,100 202,100"/>
-    <rect x="58" y="100" width="144" height="12"/>
-    <rect x="72" y="112" width="14" height="72"/>
-    <rect x="106" y="112" width="14" height="72"/>
-    <rect x="140" y="112" width="14" height="72"/>
-    <rect x="174" y="112" width="14" height="72"/>
-    <rect x="50" y="184" width="160" height="16" rx="2"/>
-  </g>
+<svg viewBox="0 0 900 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Georgia, 'Times New Roman', serif">
+  <title id="t">Where a service's money comes from</title>
+  <desc id="d">The department is at the centre. For almost every service (about 95 percent) the department funds and approves it from money it already holds. For the exception (about 5 percent), when a service needs new money or is large or complex, the department asks the Treasury Board, which releases the money and grants permission.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#A8492A"/></marker>
+    <marker id="arb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B6A488"/></marker>
+  </defs>
 
-  <!-- CENTRE: the department (icon band y 60..200, centred x=420) -->
-  <g fill="#4A3B2E">
-    <circle cx="420" cy="95" r="33"/>
-    <path d="M 378 200 C 378 128, 462 128, 462 200 Z"/>
-  </g>
+  <!-- department (hub) -->
+  <rect x="60" y="128" width="180" height="76" rx="12" fill="#F1E7D6" stroke="#C9A85C" stroke-width="2"/>
+  <text x="150" y="160" text-anchor="middle" font-size="17" font-weight="700" fill="#4A3B2E">The department</text>
+  <text x="150" y="182" text-anchor="middle" font-size="12.5" font-family="Arial, sans-serif" fill="#8C7B63">spends money it already holds</text>
 
-  <!-- RIGHT: the service (icon band y 60..200, centred x=710) -->
-  <g>
-    <rect x="632" y="60" width="156" height="140" rx="12" fill="#EFE7D6" stroke="#C9BBA4" stroke-width="2.5"/>
-    <rect x="632" y="60" width="156" height="28" rx="12" fill="#C9BBA4"/>
-    <circle cx="650" cy="74" r="4" fill="#F6F1E7"/>
-    <circle cx="666" cy="74" r="4" fill="#F6F1E7"/>
-    <circle cx="682" cy="74" r="4" fill="#F6F1E7"/>
-    <rect x="652" y="112" width="116" height="11" rx="5.5" fill="#C9BBA4"/>
-    <rect x="652" y="138" width="116" height="11" rx="5.5" fill="#C9BBA4"/>
-    <rect x="652" y="164" width="74" height="11" rx="5.5" fill="#A8492A"/>
-  </g>
+  <!-- PRIMARY lane: department -> service -->
+  <path d="M240,150 C360,120 470,96 560,88" fill="none" stroke="#A8492A" stroke-width="2.4" marker-end="url(#ar)"/>
+  <rect x="316" y="100" width="168" height="23" rx="11.5" fill="#FFFFFF" stroke="#D9CBB0" stroke-width="1"/>
+  <text x="400" y="116" text-anchor="middle" font-size="13" font-family="Arial, sans-serif" font-weight="700" fill="#A8492A">funds and approves it</text>
+  <rect x="566" y="52" width="200" height="72" rx="12" fill="#FFFFFF" stroke="#C9BBA4" stroke-width="1.6"/>
+  <text x="666" y="86" text-anchor="middle" font-size="16" font-weight="700" fill="#4A3B2E">The service</text>
+  <text x="666" y="107" text-anchor="middle" font-size="11.5" font-family="Arial, sans-serif" fill="#8C7B63">built, run, retired</text>
+  <text x="666" y="44" text-anchor="middle" font-size="11.5" font-family="Arial, sans-serif" font-weight="700" letter-spacing="0.6" fill="#8C7B63">ALMOST EVERY SERVICE · ABOUT 95%</text>
 
-  <!-- ARROW 1: Treasury Board -> department (explicit head, centred in the gap, label well above) -->
-  <text x="294" y="111" text-anchor="middle" font-size="12" fill="#A8492A" font-style="italic">funding and permission</text>
-  <line x1="240" y1="130" x2="326" y2="130" stroke="#A8492A" stroke-width="4"/>
-  <polygon points="324,119 349,130 324,141" fill="#A8492A"/>
-
-  <!-- ARROW 2: department -> service (explicit head, centred in the gap) -->
-  <text x="547" y="111" text-anchor="middle" font-size="12" fill="#A8492A" font-style="italic">procurement</text>
-  <line x1="492" y1="130" x2="578" y2="130" stroke="#A8492A" stroke-width="4"/>
-  <polygon points="576,119 603,130 576,141" fill="#A8492A"/>
-
-  <!-- labels, all on one baseline -->
-  <text x="130" y="232" text-anchor="middle" font-size="19" fill="#4A3B2E">Treasury Board</text>
-  <text x="420" y="232" text-anchor="middle" font-size="19" fill="#4A3B2E">The department</text>
-  <text x="710" y="232" text-anchor="middle" font-size="19" fill="#4A3B2E">The service</text>
+  <!-- BRANCH lane: department -> Treasury Board -> back -->
+  <path d="M240,184 C360,214 470,238 560,246" fill="none" stroke="#B6A488" stroke-width="2" marker-end="url(#arb)"/>
+  <rect x="262" y="211" width="276" height="23" rx="11.5" fill="#FFFFFF" stroke="#D9CBB0" stroke-width="1"/>
+  <text x="400" y="227" text-anchor="middle" font-size="12" font-family="Arial, sans-serif" fill="#8C7B63">if it needs new money, or is large or complex</text>
+  <rect x="566" y="212" width="200" height="72" rx="12" fill="#FBF6EC" stroke="#C9BBA4" stroke-width="1.6"/>
+  <text x="666" y="246" text-anchor="middle" font-size="16" font-weight="700" fill="#7A5A3A">Treasury Board</text>
+  <text x="666" y="267" text-anchor="middle" font-size="11.5" font-family="Arial, sans-serif" fill="#8C7B63">releases money, grants permission</text>
+  <text x="666" y="304" text-anchor="middle" font-size="11.5" font-family="Arial, sans-serif" font-weight="700" letter-spacing="0.6" fill="#B6A488">THE EXCEPTION · ABOUT 5%</text>
+  <!-- return arrow TB -> department -->
+  <path d="M560,276 C410,322 300,312 240,200" fill="none" stroke="#B6A488" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arb)"/>
 </svg>

@@ -1,28 +1,49 @@
 import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Coins, LogOut, RefreshCw, type LucideIcon } from "lucide-react";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
-import { CreateSpineSection } from "@/components/CreateSpineSection";
-import { EditorialNote } from "@/components/EditorialNote";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { GuideCallout } from "@/components/GuideCallout";
 import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import { GuideLayout } from "@/components/GuideLayout";
+import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { PageFoot } from "@/components/PageFoot";
-import { PracticeCardGroup } from "@/components/PracticeCard";
-import { TREASURY_BOARD_APPROVAL_UNDER_REVIEW } from "@/lib/treasury-board-approval-under-review";
+import { StandoutIconCallout } from "@/components/StandoutIconCallout";
 import {
-  FUNDING_DETAIL_CARDS,
   FUNDING_HERO_ALT,
   FUNDING_THREAD,
+  type FundingDetailIcon,
 } from "@/lib/funding-thread-content";
-import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
   renderThreadSections,
   renderThreadWhoseJob,
 } from "@/lib/thread-rich-content";
-import { guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import {
+  guideFormulaLine,
+  guidePageTitle,
+  guideProse,
+  guideProseSpace,
+  guideProseTight,
+  guideSectionTitle,
+} from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 import fundingHero from "@/assets/funding_hero.svg?url";
+import fundingThreshold from "@/assets/funding_threshold.svg?url";
+
+const DETAIL_ICONS: Record<FundingDetailIcon, LucideIcon> = {
+  coins: Coins,
+  refresh: RefreshCw,
+  logout: LogOut,
+};
+
+function ToggleStepNumber({ n }: { n: number }) {
+  return (
+    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 font-sans text-xs font-semibold text-primary">
+      {n}
+    </span>
+  );
+}
 
 function FundingDollarMark({ className }: { className?: string }) {
   return (
@@ -73,8 +94,9 @@ export function FundingThreadPage() {
     title,
     lead,
     whereMoneyComesFrom,
-    approvalPath,
-    detailCards,
+    commonPath,
+    treasuryBoardException,
+    detailWork,
     whoseJob,
     twoWaysComparison,
     furtherReading,
@@ -133,30 +155,85 @@ export function FundingThreadPage() {
         <p className={`${guideProse} mt-5`}>{whereMoneyComesFrom.closing}</p>
       </section>
 
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24"
-        id={approvalPath.id}
-      >
-        <h2 className={`${guideSectionTitle} mb-4`}>{approvalPath.title}</h2>
+      <IconAccordionSection
+        id={detailWork.id}
+        title={detailWork.title}
+        stages={detailWork.items.map((item) => ({
+          id: item.id,
+          icon: DETAIL_ICONS[item.icon],
+          title: item.title,
+          children: (
+            <div className={guideProseSpace}>
+              {item.paragraphs.map((paragraph) => (
+                <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+              ))}
+              {item.formula ? (
+                <p
+                  className={`mt-1 rounded-md border border-border/80 bg-muted/35 px-3 py-2 text-center ${guideFormulaLine}`}
+                >
+                  {item.formula}
+                </p>
+              ) : null}
+              {item.afterFormula ? <p>{renderLinkedProse(item.afterFormula)}</p> : null}
+            </div>
+          ),
+        }))}
+      />
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={commonPath.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{commonPath.title}</h2>
         <div className={guideProseSpace}>
-          {approvalPath.intro.map((paragraph) => (
+          {commonPath.paragraphs.map((paragraph) => (
             <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
           ))}
         </div>
-        <CreateSpineSection stages={approvalPath.items} accordionOnly />
+        <ol className="mt-5 space-y-3.5 list-none pl-0 md:mt-6">
+          {commonPath.steps.map((item, index) => (
+            <li key={item.text} className="flex items-start gap-3">
+              <ToggleStepNumber n={index + 1} />
+              <p className={`${guideProse} min-w-0 pt-0.5`}>
+                {renderLinkedProse(item)}
+              </p>
+            </li>
+          ))}
+        </ol>
+        <StandoutIconCallout
+          className="mt-5 md:mt-6"
+          as="aside"
+          icon={Coins}
+          label={commonPath.planAheadCallout.label}
+          title={commonPath.planAheadCallout.title}
+          titleAs="p"
+        >
+          <p>{renderLinkedProse(commonPath.planAheadCallout.body)}</p>
+        </StandoutIconCallout>
+        <GuideCallout compact className="mt-5 md:mt-6 bg-muted/45">
+          <p>{commonPath.keyCallout}</p>
+        </GuideCallout>
       </section>
 
-      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="UNDER REVIEW">
-        <p>{TREASURY_BOARD_APPROVAL_UNDER_REVIEW}</p>
-      </EditorialNote>
-
-      <EditorialNote className="mt-10 md:mt-12 scroll-mt-24" label="Not every service takes every step">
-        <p>{approvalPath.notEveryStage}</p>
-      </EditorialNote>
-
-      <section className="mt-10 md:mt-12 scroll-mt-24" id={detailCards.id}>
-        <h2 className={`${guideSectionTitle} mb-5`}>{detailCards.title}</h2>
-        <PracticeCardGroup cards={FUNDING_DETAIL_CARDS} numbered />
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={treasuryBoardException.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>{treasuryBoardException.title}</h2>
+        <figure className="mb-5 md:mb-6">
+          <img
+            src={fundingThreshold}
+            alt={treasuryBoardException.thresholdFigure.alt}
+            className="w-full h-auto max-w-2xl"
+            width={760}
+            height={450}
+          />
+          <figcaption className={`${guideProseTight} mt-3 text-muted-foreground`}>
+            {treasuryBoardException.thresholdFigure.caption}
+          </figcaption>
+        </figure>
+        <div className={guideProseSpace}>
+          {treasuryBoardException.paragraphs.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+        </div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
@@ -184,7 +261,6 @@ export function FundingThreadPage() {
             ))}
           </ul>
         }
-        seeAlso={SEE_ALSO.funding}
         sources={sources}
       />
 

@@ -43,6 +43,9 @@ export function whoseJobIconForRole(role: string): LucideIcon {
   ) {
     return Coins;
   }
+  if (normalized.includes("corporate services")) {
+    return Users;
+  }
   if (normalized.includes("legal team") || normalized.includes("legal services")) {
     return Scale;
   }

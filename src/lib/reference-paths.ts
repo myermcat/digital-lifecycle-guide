@@ -7,33 +7,6 @@ export const GATE_MAP_PATH = "/gate-map";
 /** @deprecated Redirects to /thread/joined-up-delivery; content lives on the Joined-up delivery thread page. */
 export const DESIGN_FOR_WHOLE_JOURNEY_PATH = "/reference/design-for-the-whole-journey";
 
-export const TREASURY_BOARD_SUBMISSION_PATH = "/thread/funding/treasury-board-submission";
-
-export const COSTING_A_SERVICE_PATH = "/thread/funding/costing-a-service";
-
-export const STAYING_FUNDED_PATH = "/thread/funding/staying-funded";
-
-export const FUNDING_THE_EXIT_PATH = "/thread/funding/funding-the-exit";
-
-export const FUNDING_SUBPAGE_PATHS = [
-  TREASURY_BOARD_SUBMISSION_PATH,
-  COSTING_A_SERVICE_PATH,
-  STAYING_FUNDED_PATH,
-  FUNDING_THE_EXIT_PATH,
-] as const;
-
-/** @deprecated Former /reference/ URL; redirects to the Funding sub-page. */
-export const TREASURY_BOARD_SUBMISSION_LEGACY_PATH = "/reference/treasury-board-submission";
-
-/** @deprecated Former /reference/ URL; redirects to the Funding sub-page. */
-export const COSTING_A_SERVICE_LEGACY_PATH = "/reference/costing-a-service";
-
-/** @deprecated Former /reference/ URL; redirects to the Funding sub-page. */
-export const STAYING_FUNDED_LEGACY_PATH = "/reference/staying-funded";
-
-/** @deprecated Former /reference/ URL; redirects to the Funding sub-page. */
-export const FUNDING_THE_EXIT_LEGACY_PATH = "/reference/funding-the-exit";
-
 /** @deprecated Redirects to /create; approval journey content lives on the Create phase page. */
 export const APPROVAL_JOURNEY_PATH = "/reference/approval-journey";
 

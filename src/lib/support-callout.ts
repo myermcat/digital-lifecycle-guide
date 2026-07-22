@@ -3,8 +3,6 @@ import type { ExternalPhraseLink, MailtoPhraseLink, PlaceholderGcNetworkPhraseLi
 import type { ThreadSlug } from "@/lib/guide-strings";
 import { DIGITAL_SOLUTIONS_CHANGE_MANAGEMENT_PORTAL } from "@/lib/placeholder-sources";
 
-const CIOB_MAILBOX = "mailto:zzciobdp@tbs-sct.gc.ca";
-
 export type SupportCalloutVariant =
   | "generic"
   | "security"
@@ -21,8 +19,7 @@ export type SupportCalloutVariant =
   | "funding"
   | "team-capability"
   | "change-management"
-  | "monitoring-and-instrumentation"
-  | "treasury-board-submission";
+  | "monitoring-and-instrumentation";
 
 export type SupportCalloutBody = {
   text: string;
@@ -33,7 +30,7 @@ export type SupportCalloutBody = {
 
 export const SUPPORT_CALLOUT_BODIES = {
   generic: {
-    text: "You are not the first to work through this. There is a team, a community, or a mailbox for almost every part of it.",
+    text: "You are not the first to work through this. There is a team or community for almost every part of it.",
   },
   security: {
     text: "For security questions, your department's IT security team or departmental security officer is the first call, and the Canadian Centre for Cyber Security advises government institutions.",
@@ -142,9 +139,6 @@ export const SUPPORT_CALLOUT_BODIES = {
       },
       { phrase: "Canada.ca analytics", linkKey: "canada-ca-analytics" },
     ],
-  },
-  "treasury-board-submission": {
-    text: "For funding and Treasury Board submission questions, the department's finance branch and Chief Financial Officer, and the Treasury Board Secretariat analyst assigned to the submission, are the starting contacts.",
   },
 } as const satisfies Record<SupportCalloutVariant, SupportCalloutBody>;
 

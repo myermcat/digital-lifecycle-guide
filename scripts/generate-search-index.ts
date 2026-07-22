@@ -8,7 +8,6 @@ import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
 import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
 import { CREATE_PHASE, createPhaseLeadPlainText } from "../src/lib/create-phase-content";
-import { createSpinePlainText } from "../src/lib/service-approval-funding-content";
 import { PHASES } from "../src/lib/guide-strings";
 import {
   GOOD_CONTRACT_PATH,
@@ -75,25 +74,9 @@ import {
 } from "../src/lib/dependencies-and-standards-thread-content";
 import {
   FUNDING_THREAD,
-  FUNDING_DETAIL_CARDS,
   fundingLeadPlainText,
   fundingWhoseJobPlainText,
 } from "../src/lib/funding-thread-content";
-import {
-  TREASURY_BOARD_SUBMISSION,
-  treasuryBoardSubmissionLeadPlainText,
-  treasuryBoardSubmissionSectionsPlainText,
-  treasuryBoardSubmissionWhoseJobPlainText,
-} from "../src/lib/treasury-board-submission-content";
-import { COSTING_A_SERVICE } from "../src/lib/costing-a-service-content";
-import { STAYING_FUNDED } from "../src/lib/staying-funded-content";
-import { FUNDING_THE_EXIT } from "../src/lib/funding-the-exit-content";
-import {
-  COSTING_A_SERVICE_PATH,
-  FUNDING_THE_EXIT_PATH,
-  STAYING_FUNDED_PATH,
-  TREASURY_BOARD_SUBMISSION_PATH,
-} from "../src/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -1788,19 +1771,34 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       ),
     },
     {
-      sectionId: FUNDING_THREAD.approvalPath.id,
-      sectionHeading: FUNDING_THREAD.approvalPath.title,
+      sectionId: FUNDING_THREAD.commonPath.id,
+      sectionHeading: FUNDING_THREAD.commonPath.title,
       text: concat(
-        ...FUNDING_THREAD.approvalPath.intro.map((paragraph) => paragraph.text),
-        createSpinePlainText(FUNDING_THREAD.approvalPath.items),
-        FUNDING_THREAD.approvalPath.notEveryStage,
+        ...FUNDING_THREAD.commonPath.paragraphs.map((paragraph) => paragraph.text),
+        FUNDING_THREAD.commonPath.keyCallout,
       ),
     },
     {
-      sectionId: FUNDING_THREAD.detailCards.id,
-      sectionHeading: FUNDING_THREAD.detailCards.title,
+      sectionId: FUNDING_THREAD.treasuryBoardException.id,
+      sectionHeading: FUNDING_THREAD.treasuryBoardException.title,
       text: concat(
-        ...FUNDING_DETAIL_CARDS.map((card) => `${card.label} ${card.description}`),
+        ...FUNDING_THREAD.treasuryBoardException.paragraphs.map(
+          (paragraph) => paragraph.text,
+        ),
+      ),
+    },
+    {
+      sectionId: FUNDING_THREAD.detailWork.id,
+      sectionHeading: FUNDING_THREAD.detailWork.title,
+      text: concat(
+        ...FUNDING_THREAD.detailWork.items.map((item) =>
+          concat(
+            item.title,
+            ...item.paragraphs.map((paragraph) => paragraph.text),
+            item.formula,
+            item.afterFormula?.text,
+          ),
+        ),
       ),
     },
     {
@@ -1853,164 +1851,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
   }
 }
 
-// Reference: Treasury Board submission
-{
-  const pageTitle = TREASURY_BOARD_SUBMISSION.title;
-  const pagePath = TREASURY_BOARD_SUBMISSION_PATH;
-
-  records.push({
-    id: recordId({ pagePath, sectionId: "" }),
-    pageTitle,
-    pagePath,
-    sectionId: "",
-    sectionHeading: pageTitle,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: treasuryBoardSubmissionLeadPlainText(TREASURY_BOARD_SUBMISSION.lead),
-  });
-
-  const tbSections = [
-    {
-      sectionId: TREASURY_BOARD_SUBMISSION.whenNeeded.id,
-      sectionHeading: TREASURY_BOARD_SUBMISSION.whenNeeded.title,
-      text: treasuryBoardSubmissionSectionsPlainText(TREASURY_BOARD_SUBMISSION.whenNeeded.sections),
-    },
-    {
-      sectionId: TREASURY_BOARD_SUBMISSION.whatToPrepare.id,
-      sectionHeading: TREASURY_BOARD_SUBMISSION.whatToPrepare.title,
-      text: concat(
-        TREASURY_BOARD_SUBMISSION.whatToPrepare.intro,
-        ...TREASURY_BOARD_SUBMISSION.whatToPrepare.items.map(
-          (item) => `${item.title} ${item.text}`,
-        ),
-        TREASURY_BOARD_SUBMISSION.whatToPrepare.closing,
-      ),
-    },
-    {
-      sectionId: TREASURY_BOARD_SUBMISSION.howItGoes.id,
-      sectionHeading: TREASURY_BOARD_SUBMISSION.howItGoes.title,
-      text: concat(
-        TREASURY_BOARD_SUBMISSION.howItGoes.intro,
-        ...TREASURY_BOARD_SUBMISSION.howItGoes.items.map(
-          (item) => `${item.title} ${item.text}`,
-        ),
-      ),
-    },
-    {
-      sectionId: TREASURY_BOARD_SUBMISSION.oneOfSeveralApprovals.id,
-      sectionHeading: TREASURY_BOARD_SUBMISSION.oneOfSeveralApprovals.title,
-      text: TREASURY_BOARD_SUBMISSION.oneOfSeveralApprovals.text,
-    },
-    {
-      sectionId: "whose-job",
-      sectionHeading: "Whose job it is",
-      text: treasuryBoardSubmissionWhoseJobPlainText(TREASURY_BOARD_SUBMISSION.whoseJob),
-    },
-    { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
-  ];
-
-  for (const section of tbSections) {
-    records.push({
-      id: recordId({ pagePath, sectionId: section.sectionId }),
-      pageTitle,
-      pagePath,
-      sectionId: section.sectionId,
-      sectionHeading: section.sectionHeading,
-      lifecyclePhase: inferLifecyclePhase(pagePath),
-      text: section.text,
-    });
-  }
-}
-
-// Reference: Costing a service
-{
-  const pageTitle = COSTING_A_SERVICE.title;
-  const pagePath = COSTING_A_SERVICE_PATH;
-
-  records.push({
-    id: recordId({ pagePath, sectionId: "" }),
-    pageTitle,
-    pagePath,
-    sectionId: "",
-    sectionHeading: pageTitle,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...COSTING_A_SERVICE.lead),
-  });
-
-  records.push({
-    id: recordId({ pagePath, sectionId: COSTING_A_SERVICE.confidenceRange.id }),
-    pageTitle,
-    pagePath,
-    sectionId: COSTING_A_SERVICE.confidenceRange.id,
-    sectionHeading: COSTING_A_SERVICE.confidenceRange.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(
-      COSTING_A_SERVICE.confidenceRange.intro,
-      ...COSTING_A_SERVICE.confidenceRange.items.map((item) => `${item.lead} ${item.body}`),
-      COSTING_A_SERVICE.confidenceRange.closing,
-      COSTING_A_SERVICE.confidenceRange.formula,
-      COSTING_A_SERVICE.confidenceRange.guideClosing.text,
-    ),
-  });
-}
-
-// Reference: Staying funded
-{
-  const pageTitle = STAYING_FUNDED.title;
-  const pagePath = STAYING_FUNDED_PATH;
-
-  records.push({
-    id: recordId({ pagePath, sectionId: "" }),
-    pageTitle,
-    pagePath,
-    sectionId: "",
-    sectionHeading: pageTitle,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...STAYING_FUNDED.lead),
-  });
-
-  records.push({
-    id: recordId({ pagePath, sectionId: STAYING_FUNDED.whatThisTakes.id }),
-    pageTitle,
-    pagePath,
-    sectionId: STAYING_FUNDED.whatThisTakes.id,
-    sectionHeading: STAYING_FUNDED.whatThisTakes.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(
-      ...STAYING_FUNDED.whatThisTakes.items.map((item) => `${item.lead} ${item.body}`),
-      STAYING_FUNDED.whatThisTakes.closing,
-    ),
-  });
-}
-
-// Reference: Funding the exit
-{
-  const pageTitle = FUNDING_THE_EXIT.title;
-  const pagePath = FUNDING_THE_EXIT_PATH;
-
-  records.push({
-    id: recordId({ pagePath, sectionId: "" }),
-    pageTitle,
-    pagePath,
-    sectionId: "",
-    sectionHeading: pageTitle,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...FUNDING_THE_EXIT.lead),
-  });
-
-  records.push({
-    id: recordId({ pagePath, sectionId: FUNDING_THE_EXIT.whatCostsMoney.id }),
-    pageTitle,
-    pagePath,
-    sectionId: FUNDING_THE_EXIT.whatCostsMoney.id,
-    sectionHeading: FUNDING_THE_EXIT.whatCostsMoney.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(
-      ...FUNDING_THE_EXIT.whatCostsMoney.items.map((item) => `${item.lead} ${item.body}`),
-      FUNDING_THE_EXIT.whatCostsMoney.closing,
-    ),
-  });
-}
-
 // Support and communities — section-level records.
 {
   const pageTitle = SUPPORT_PAGE.title;
@@ -2021,13 +1861,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: "",
       sectionHeading: pageTitle,
       text: SUPPORT_PAGE.lead,
-    },
-    {
-      sectionId: SUPPORT_PAGE.acrossLifecycle.id,
-      sectionHeading: SUPPORT_PAGE.acrossLifecycle.title,
-      text: concat(
-        ...SUPPORT_PAGE.acrossLifecycle.bullets.map((bullet) => bullet.text),
-      ),
     },
     {
       sectionId: SUPPORT_PAGE.byTopic.id,

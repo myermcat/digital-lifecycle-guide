@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Archive,
   Briefcase,
   Code2,
   Compass,
@@ -388,6 +389,36 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
     ],
   },
+  {
+    id: "decide-records-disposition",
+    icon: Archive,
+    title: "Decide now what happens to the records.",
+    sections: [
+      {
+        text:
+          "The service's design is settled here and the contract is being signed. This is also when the team knows what information the service will hold. The decision about what happens to it at the end — which records get kept, transferred to Library and Archives Canada, or disposed of — should be made now, not at Sunset. By Sunset, the lead time is often too short and the options are fewer.",
+      },
+      {
+        text:
+          "Ask the department's information management (IM) office to confirm which Records Disposition Authorizations cover the records this service will hold. There are two kinds: Multi-Institution Disposition Authorizations (MIDAs) cover administrative records common across government; Institution-Specific Disposition Authorizations (ISDAs) cover records unique to a program. If no authorization covers the program records — grants decisions, assessments, case files — requesting one from Library and Archives Canada takes time. Starting now leaves options open.",
+      },
+      {
+        text: "Two things to do in Beta:",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          "Ask the IM office which disposition authorities apply to the records this service will hold, and flag any gaps.",
+          "If a supplier will hold or process the records, include the retention and disposition requirements in the contract.",
+        ],
+      },
+      {
+        text:
+          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement project — when the decision to replace is made — not 12 to 18 months before the old system is switched off.",
+        internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+      },
+    ],
+  },
 ];
 
 export const BETA_TEAM = {
@@ -557,6 +588,9 @@ export const BETA_FINISH = {
       {
         text: "If the service replaces an existing one, the old way still running, with a dated plan to retire it once the new service is properly live. It is not switched off in Beta. If the service is new, this does not apply.",
         bold: [{ phrase: "still running" }],
+      },
+      {
+        text: "The disposition authorities for the records the service will hold confirmed with the information management office, and any gaps flagged.",
       },
     ] satisfies readonly ThreadLinkedProse[],
   },

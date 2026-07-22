@@ -1,22 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { TreasuryBoardSubmissionPage } from "@/components/TreasuryBoardSubmissionPage";
-import { THREADS } from "@/lib/guide-strings";
-import {
-  TREASURY_BOARD_SUBMISSION,
-  treasuryBoardSubmissionLeadPlainText,
-} from "@/lib/treasury-board-submission-content";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
+/** Former Funding sub-page; Treasury Board path now lives on the gate map. */
 export const Route = createFileRoute("/thread/funding/treasury-board-submission")({
-  head: () => ({
-    meta: [
-      {
-        title: `${TREASURY_BOARD_SUBMISSION.title} — ${THREADS.funding.title} — The Digital Lifecycle Guide`,
-      },
-      {
-        name: "description",
-        content: treasuryBoardSubmissionLeadPlainText(TREASURY_BOARD_SUBMISSION.lead),
-      },
-    ],
-  }),
-  component: TreasuryBoardSubmissionPage,
+  beforeLoad: () => {
+    throw redirect({ to: "/gate-map" });
+  },
 });

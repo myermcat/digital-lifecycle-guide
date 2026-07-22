@@ -6,8 +6,6 @@ import type {
 } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 
-const CIOB_MAILBOX = "mailto:zzciobdp@tbs-sct.gc.ca";
-
 export type SupportLinkedBullet = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
@@ -20,33 +18,7 @@ export const SUPPORT_PAGE = {
   id: "support",
 
   lead:
-    "When part of this guide leaves you stuck, there is almost always a team, a community, or a mailbox that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is being retired), so a link may have changed since this was written.",
-
-  acrossLifecycle: {
-    id: "across-the-whole-lifecycle",
-    title: "Across the whole lifecycle",
-    bullets: [
-      {
-        text: "The GC Enterprise IT Portfolio team (CIOB IT Division) is the standing contact for the Government of Canada IT lifecycle program (application portfolio, IT expenditure, and the departmental IT plan).",
-        mailtoLinks: [
-          { phrase: "GC Enterprise IT Portfolio team (CIOB IT Division)", href: CIOB_MAILBOX },
-        ],
-      },
-      {
-        text: "The Application Portfolio Management community (on the GC network) is where the application-portfolio work is run and shared.",
-        externalLinks: [
-          {
-            phrase: "Application Portfolio Management community",
-            linkKey: "application-portfolio-management-community",
-          },
-        ] satisfies ExternalPhraseLink[],
-      },
-      {
-        text: "For questions about a department's IT plan, start at the IT Plan space.",
-        externalLinks: [{ phrase: "IT Plan space", linkKey: "it-plan-space" }] satisfies ExternalPhraseLink[],
-      },
-    ] satisfies SupportLinkedBullet[],
-  },
+    "When part of this guide leaves you stuck, there is almost always a team, a community, or an online resource that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is being retired), so a link may have changed since this was written.",
 
   byTopic: {
     id: "by-topic",

@@ -1,8 +1,8 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import { FUNDING_THE_EXIT_PATH } from "@/lib/reference-paths";
 
+/** Former Funding sub-page; content now lives on the Funding overview. */
 export const Route = createFileRoute("/reference/funding-the-exit")({
   beforeLoad: () => {
-    throw redirect({ to: FUNDING_THE_EXIT_PATH });
+    throw redirect({ to: "/thread/$slug", params: { slug: "funding" } });
   },
 });

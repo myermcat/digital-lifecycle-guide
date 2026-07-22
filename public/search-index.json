@@ -9,14 +9,32 @@
     "text": ""
   },
   {
+    "id": "/gate-map",
+    "pageTitle": "The official gates of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "",
+    "sectionHeading": "The official gates of a digital service",
+    "lifecyclePhase": "other",
+    "text": ""
+  },
+  {
     "id": "/support",
     "pageTitle": "Support and communities",
     "pagePath": "/support",
     "sectionId": "",
     "sectionHeading": "Support and communities",
     "lifecyclePhase": "other",
-    "text": "When part of this guide leaves you stuck, there is almost always a team, a community, or a mailbox that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is winding down), so a link may have changed since this was written.",
+    "text": "When part of this guide leaves you stuck, there is almost always a team, a community, or an online resource that can help. This page gathers them in one place. Most are open to anyone working in government; a few sit on the Government of Canada network. Some of these communities are moving between platforms right now (GCconnex is being retired), so a link may have changed since this was written.",
     "keywords": "support communities help contact mailbox"
+  },
+  {
+    "id": "/all-pages",
+    "pageTitle": "Index of the Digital Lifecycle Guide",
+    "pagePath": "/all-pages",
+    "sectionId": "",
+    "sectionHeading": "Index of the Digital Lifecycle Guide",
+    "lifecyclePhase": "other",
+    "text": ""
   },
   {
     "id": "/create",
@@ -215,7 +233,7 @@
     "sectionId": "",
     "sectionHeading": "Funding",
     "lifecyclePhase": "thread",
-    "text": "Every government service costs money, and someone has to approve spending it. Funding is how a service gets that money and the permission to spend it, across its whole life: getting it built, keeping it running, and paying to retire it at the end. It is the other half of buying. Procurement is how a service is bought; funding is how it is paid for and approved. A service can have a supplier ready to start and still go nowhere until the money and the permission are in place. Most of a service's funding is more routine than people expect, because it runs on money its department already has. The demanding part comes when a service needs new money, or permission to spend above what the department can approve on its own. That means a formal request to the Treasury Board, called a submission. It is one event in a service's money story, and the rest of that story matters too.",
+    "text": "Every government service costs money, and someone has to approve spending it. Funding is how a service gets that money and the permission to spend it, across its whole life: getting it built, keeping it running, and paying to retire it at the end. It is the other half of buying. Procurement is how a service is bought; funding is how it is paid for and approved. A service can have a supplier ready to start and still go nowhere until the money and the permission are in place. For most services this is more routine than people expect. About nineteen in twenty services are small enough that the department funds and approves them itself, from money it already holds, and they never go to the Treasury Board. This page covers that common path first. The exception, a service that needs new money or is large or complex enough to need the centre's approval, comes at the end.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -235,7 +253,7 @@
     "sectionId": "",
     "sectionHeading": "Change management",
     "lifecyclePhase": "thread",
-    "text": "When a service is new or changes, the people who use it, and the staff who work with it, have to change how they do things. Change management is the work of helping them make that shift, so the service is taken up and used, and does not stall because people carry on the old way. This is the people side of a change. The technical side, getting a change safely into production, is releasing changes. Change management is about making people aware of the change, willing to make it, able to do it, and supported to keep it going. The Government of Canada treats adoption as what makes or breaks a digital shift, set out in the GC Information Management Strategy. Diagram: Releasing the change and Change management converge on the people who use it; when both reach them, the change gets used. Two tracks, one outcome Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "text": "When a service is new or changes, the people who use it, and the staff who work with it, have to change how they do things. Change management is the work of helping them make that shift, so the service is taken up and used, and does not stall because people carry on the old way. This is the people side of a change. The technical side, getting a change safely into production, is releasing changes. Change management is about making people aware of the change, willing to make it, able to do it, and supported to keep it going. The Government of Canada treats adoption as what makes or breaks a digital shift, set out in the GC Information Management Strategy. Diagram: Releasing the change and Change management converge on the people who use it; when both reach them, the change gets used. Two tracks, one outcome Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run in parallel. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
@@ -327,7 +345,7 @@
     "sectionId": "how-a-procurement-goes",
     "sectionHeading": "How a procurement goes",
     "lifecyclePhase": "thread",
-    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. The cheapest procurement is the one you do not have to run. Before you reach for a contract, ask whether you should. Work out the real problem, and whether buying is even the answer. Do you already own something that solves it? Could you reuse or adapt instead? See Options analysis for how to widen and weigh your choices before you commit. Assemble the people who will run the buy. Buying well is a team sport from the start. This is not the same as buying a Team. These are the people inside government who run the purchase: you, the contracting authority, users, and subject-matter experts. Buying a Team means contracting a supplier to deliver the work, which is a route, not a step. A good procurement runs as a cross-functional team, and you stay involved the whole way: you the business owner, a procurement officer (the contracting authority), end-user representatives, and subject-matter experts. Think in two rings. The core team lives the work day to day. The extended team is the wider group who care about the outcome and may need the same thing you do, brought in to round out the use cases so the problem gets solved once for everyone. Say the problem, not the solution. Hand suppliers the problem and let them bring the solution. Write a challenge statement: what, who, when, where, why, and no solution baked in. Then your desired outcomes and the least you must have. Asking for objectives instead of dictating the work lets suppliers offer answers better than the one you would have written. TBS's own migration guidance makes the same point: separate the business need from the system's features, so you do not rebuild a legacy tool's quirks into the new one. Choose the strategy. This is where the route is chosen. Whether the department is buying a Team, a Solution, or a Finished Product, or building in-house, it is settled here, and it settles everything downstream. See \"Choosing what to buy\" above. There are two ways to shape a buy, the traditional way and the agile way. For digital, agile is the recommended default. It means breaking a large buy into smaller, tightly scoped pieces that build on each other, delivered in phases with go and no-go gates, or through contracts with task authorizations. The comparison table below sets the two approaches side by side. Get the approval level right, and check in at the right moment. The question everyone asks: when do you loop in Treasury Board? It comes down to authority. Do you have the expenditure authority to spend the money, the project approval to run the work, and the contract authority to sign? While the value stays inside your department's own authority, governance is in-house. When the total may exceed it, or the costs are still unknown, you engage Treasury Board at the strategy stage, before you are committed. Earlier than that there is little to judge, and later the cost of redoing the work climbs. Bring the best information you have and a plan for the unknowns. For the full map from idea to money-in-hand, see the approval journey. Exact value thresholds are in the PSPC Agile Procurement Guide (see Sources). For a cloud solution, procurement can run 12 to 24 months from start to contract award, depending on value and complexity. Engage industry early, under clear rules. Talk to the market early, with the ground rules set first. Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone. Solicit, evaluate, and award. Now you go out, compare what comes back, and choose. Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise. Manage the contract. Signing is where the real work begins. The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases."
+    "text": "You might not run all of it yourself, but you should recognise every step. Look before you buy. undefined undefined Assemble the people who will run the buy. undefined undefined Say the problem, not the solution. undefined undefined Choose the strategy. undefined undefined Get the approval level right, and check in at the right moment. undefined undefined Engage industry early, under clear rules. undefined undefined Solicit, evaluate, and award. undefined undefined Manage the contract. undefined undefined"
   },
   {
     "id": "/thread/procurement#traditional-vs-agile",
@@ -714,7 +732,7 @@
     "sectionId": "the-work-of-create",
     "sectionHeading": "The work of Create",
     "lifecyclePhase": "create",
-    "text": "Create is three kinds of work, and it ends on the day the service goes live. 1. Work out what is needed. Most of Create is deciding, and the cheapest decision is the one to stop. User research finds out what people actually need, before anything is built. An options analysis works out whether to reuse, buy, or build. Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island. 2. Get it funded and approved. Nothing is built until the money and the sign-offs are in place. Funding sets out the whole approval path, from the business case to the Treasury Board submission. The department's architecture review board and GC EARB judge the design. These approvals are won once, before the build, and that is what gives Create a finish line. 3. Build it so it can be run, and later replaced or retired. What is settled here is what the service will be stuck with for years. Security and privacy are designed in while changing the design is still cheap. Accessibility is built in from the start. Procurement writes the requirements, and the exit, into the contract. The team that will run the service is put together. The work is done once. The business case is made once, the money is granted once, the design is signed off once. After launch those checks start coming round again, every release and every year."
+    "text": "Create is three kinds of work, and it ends on the day the service goes live. 1. Work out what is needed. Most of Create is deciding, and the cheapest decision is the one to stop. User research finds out what people actually need, before anything is built. An options analysis works out whether to reuse, buy, or build. Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island. 2. Get it funded and approved. Nothing is built until the money and the sign-offs are in place, and for most services that happens inside the department. Every project is costed and risk-assessed. That assessment is what decides the path it takes. For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance and its own architecture review board. Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not. Funding sets out the whole path, and which one a given service takes. The official gates of a digital service lays out every official gate on one page. Winning whichever approvals apply, before the build, is what gives Create its finish line. 3. Build it so it can be run, and later replaced or retired. What is settled here is what the service will live with for years, so it is worth getting right while it is still easy to change. Security and privacy are designed in while changing the design is still cheap. If the service handles personal information used to make decisions about people, a Privacy Impact Assessment is done here. Accessibility is built in from the start. When technology is bought, procurement writes the requirements, and the exit, into the contract. The team that will run the service is put together. These are project decisions, made to get the service built. The business case is made, the money for the build is committed, and the design is signed off. After launch those same checks start coming round again, every release and every year, and that recurring rhythm is what makes Live different."
   },
   {
     "id": "/create#create-in-three-sub-phases",
@@ -723,7 +741,7 @@
     "sectionId": "create-in-three-sub-phases",
     "sectionHeading": "Create in three sub-phases",
     "lifecyclePhase": "create",
-    "text": "Once it is approved and funded, Create is delivered in three sub-phases, each with its own page."
+    "text": "Create is delivered in three sub-phases, each with its own page. Approval and funding are not settled all at once before they begin. They build up across the sub-phases, and the big commitment, the money and sign-offs for the build, comes before Beta."
   },
   {
     "id": "/create#sources",
@@ -981,7 +999,7 @@
     "sectionId": "what-good-looks-like",
     "sectionHeading": "What good looks like",
     "lifecyclePhase": "thread",
-    "text": "Accessibility is designed in from the start, not retrofitted before launch. The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA. Digital documents and any mobile app meet the standard too, not only the website. Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is. The service is tested with real people, including people who use assistive technology, not only with automated tools. A published accessibility statement says what is and is not accessible, and how to get help or an alternative. People who cannot use the service on their own can still get it done, by phone, in person, or with support. Staff who build, maintain, or buy digital technology have accessibility training.",
+    "text": "Accessibility is designed in from the start, while the design is still cheap to change. The service meets the standard the law requires, CAN/ASC-EN 301 549, which for the web means WCAG 2.1 Level AA. The standard covers digital documents and any mobile application, as well as the website. Accessibility requirements are written into the contract when technology is bought, and the supplier provides an Accessibility Conformance Report, a standard statement of how accessible their product is. The service is tested with real people, including people who use assistive technology. Automated tools find only some of the problems. A published accessibility statement says what is and is not accessible, and how to get help or an alternative. People who cannot use the service on their own can still get it done, by phone, in person, or with support. Staff who build, maintain, or buy digital technology have accessibility training.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1011,7 +1029,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "Build to the standard. The law points to one technical standard, CAN/ASC-EN 301 549, Canada's accessibility standard for information and communication technology. For a website, meeting it means meeting WCAG 2.1 Level AA, the international web content accessibility guidelines, which are organised around four ideas: Perceivable, people can see or hear the content Operable, it works by keyboard, not only a mouse Understandable, it reads clearly and behaves predictably Robust, it works with assistive technology such as screen readers The standard reaches past the website: digital documents like PDFs and Word files, and any mobile app, have to meet it too. WCAG has three levels, A, AA, and AAA; AA is the bar a government service builds to. Buy it accessible. Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage. Test with real people. Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use, so testing with people who have disabilities is part of the work.",
+    "text": "Build to the standard. The law points to one technical standard, CAN/ASC-EN 301 549, Canada's accessibility standard for information and communication technology. For a website, meeting it means meeting WCAG 2.1 Level AA, the international web content accessibility guidelines, which are organised around four ideas: Perceivable, people can see or hear the content Operable, so it works by keyboard as well as a mouse Understandable, it reads clearly and behaves predictably Robust, it works with assistive technology such as screen readers The standard reaches past the website: digital documents like PDFs and Word files, and any mobile app, have to meet it too. WCAG has three levels, A, AA, and AAA; AA is the bar a government service builds to. Buy it accessible. Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage. Test with real people. Automated checkers like a browser accessibility scanner catch only a portion of the problems, and they cannot tell whether the service actually works for someone. The Digital Accessibility Toolkit provides a web accessibility checklist and testing guidance, but the test that matters is people: someone navigating by keyboard, listening with a screen reader, or reading with the text enlarged. Meeting the standard is only the floor. A service can pass every automated check and still be hard to use. Reach past the easy-to-reach users to the people most likely to be excluded: disabled people, neurodivergent people, people with low digital confidence or no reliable device, people served in the other official language or whose first language is neither, older people, and people with low literacy.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1031,7 +1049,7 @@
     "sectionId": "by-phase",
     "sectionHeading": "What Accessibility looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "The accessibility work changes shape across the life of a service. Create. Design it in and set the standard. Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people who have disabilities is planned now, not left to the end. Live. Keep it accessible and tell people where it stands. Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current. Sunset. Keep the replacement accessible, and strand no one. When a service is retired or replaced, accessibility carries into what comes next: a replacement is built to the standard from the start, and content that moves keeps its accessible structure. While the old service is still running, its accessibility statement and feedback channel stay live. No one should be left without an accessible way to do the task during the change.",
+    "text": "The accessibility work changes shape across the life of a service. Create. Design it in and set the standard. Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end. Live. Keep it accessible and tell people where it stands. Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current. Sunset. Keep the replacement accessible, and strand no one. When a service is retired or replaced, accessibility carries into what comes next: a replacement is built to the standard from the start, and content that moves keeps its accessible structure. While the old service is still running, its accessibility statement and feedback channel stay live. No one should be left without an accessible way to do the task during the change.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1071,7 +1089,7 @@
     "sectionId": "why-it-matters",
     "sectionHeading": "Why it matters",
     "lifecyclePhase": "thread",
-    "text": "Most government software that fails, fails because it was built on what a few people assumed users wanted, not on what users actually need. Research is the cheapest way to avoid building the wrong thing, which is why it is framed as risk reduction for the people who fund and own services. It is also required: the Design with users standard sets the expectation, and the Directive on Service and Digital makes the designated official responsible for ensuring client feedback and user-experience testing are collected and used to improve the service. The usual causes of failure are ordinary: guessing at needs, testing too late, and hearing only from stakeholders.",
+    "text": "Most government software that fails, fails because it was built on what a few people assumed users wanted, rather than on what users need. Research is the cheapest way to avoid building the wrong thing, which is why it is framed as risk reduction for the people who fund and own services. It is also required: the Design with users standard sets the expectation, and the Directive on Service and Digital makes the designated official responsible for ensuring client feedback and user-experience testing are collected and used to improve the service. The usual causes of failure are ordinary: guessing at needs, testing too late, and hearing only from stakeholders.",
     "keywords": "usability testing design with users UX research"
   },
   {
@@ -1091,7 +1109,7 @@
     "sectionId": "a-closer-look",
     "sectionHeading": "A closer look",
     "lifecyclePhase": "thread",
-    "text": "Research is more than testing. User research is the umbrella: understanding who your users are and what they need across the whole service. Usability testing, watching real people attempt real tasks with your design, is one method inside it, the one you reach for to find and fix problems in something you have built or prototyped. The field of methods is wide, and the simplest way to choose is by the question: qualitative methods (interviews, usability testing) answer \"why\", and quantitative methods (analytics, A/B testing) answer \"how many\". Use the one that fits the decision in front of you. Test with real people, and few are enough. You do not need a big study. Testing with about five users in a group surfaces most of the common problems, and a small round can run in a few days. Tests can be moderated (someone guides the session) or unmoderated (a tool runs it), in person or remote. The point is to watch real people, including people who use assistive technology, try real tasks, because a service can look right to the team and still defeat the person using it. Usability testing is the plainest place to start. Include everyone. Research is only as good as who is in it. Recruit a sample that reflects real users across disability, language, literacy, age, and distance, not just the easy-to-reach. Accommodations that help disabled participants take part, accessible materials, a tech check, flexible timing, tend to help everyone. Tie what you learn to people's needs and goals, not to any one person's disability. This is shared ground with accessibility, where building for everyone is the law.",
+    "text": "Research is more than testing. User research is the umbrella: understanding who your users are and what they need across the whole service. Usability testing, watching real people attempt real tasks with your design, is one method inside it, the one you reach for to find and fix problems in something you have built or prototyped. The field of methods is wide, and the simplest way to choose is by the question: qualitative methods (interviews, usability testing) answer \"why\", and quantitative methods (analytics, A/B testing) answer \"how many\". Use the one that fits the decision in front of you. Test with real people, and few are enough. You do not need a big study. Testing with about five users in a group surfaces most of the common problems, and a small round can run in a few days. Tests can be moderated (someone guides the session) or unmoderated (a tool runs it), in person or remote. The point is to watch real people, including people who use assistive technology, try real tasks, because a service can look right to the team and still defeat the person using it. Usability testing is the plainest place to start. Include everyone. Research is only as good as who is in it. Recruit a sample that reflects real users across disability, language, literacy, age, and distance, reaching past the easy-to-reach. Accommodations that help disabled participants take part, accessible materials, a tech check, flexible timing, tend to help everyone. Tie what you learn to people's needs and goals, rather than to any one person's disability. This is shared ground with accessibility, where building for everyone is the law.",
     "keywords": "usability testing design with users UX research"
   },
   {
@@ -1401,7 +1419,7 @@
     "sectionId": "two-tracks-one-outcome",
     "sectionHeading": "Two tracks, one outcome",
     "lifecyclePhase": "thread",
-    "text": "Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run alongside each other, not one after the other. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
+    "text": "Releasing a change and managing a change are two different jobs aimed at the same people: Releasing the change is the technical side: getting the new thing built and running in production. Change management is the people side: getting the users ready and willing to work the new way. The two run in parallel. Both have to reach the same users, or the change does not take: Released, but not managed. The new screen goes live on the Wednesday, but the people who use it were never told, never trained, and carry on with their old workaround. The change exists and no one uses it. Managed, but not released. People are trained and ready for something that never went live, so there is nothing there to use. The change is only used when both sides reach the same people.",
     "keywords": "ADKAR adoption change strategy training reinforcement Kotter migration"
   },
   {
@@ -1821,17 +1839,27 @@
     "sectionId": "where-the-money-comes-from",
     "sectionHeading": "Where the money comes from",
     "lifecyclePhase": "thread",
-    "text": "A department does not hold one pot of money. A service is usually paid for from one or more of these: Money the department already has. The ongoing budget a department gets each year to run its existing programs, called its reference levels, or the A-base. Running a service from here, within the department's own limit, does not need a submission. New money from a federal Budget. When the government decides to pay for something new, it earmarks the money in the federal Budget. That money is promised, but it is not yet in the department's hands. Treasury Board has to release it, through a submission, before the department can spend it. Money moved from another priority. The department shifts money it already holds from one thing to this one. So a Treasury Board submission does not invent money. It unlocks money the government has already earmarked and grants the permission to spend it. That is why every submission has to name where its money comes from: the money exists, and the submission releases it.",
+    "text": "A department does not hold one pot of money. A service is usually paid for from one or more of these: Money the department already has. The ongoing budget a department gets each year to run its programs, called its reference levels, or the A-base. A service funded from here, within the department's own limit, is approved inside the department and needs nothing from the Treasury Board. New money from a federal Budget. When the government decides to pay for something new, it sets the money aside in a federal Budget. That money is promised, not yet in the department's hands. The Treasury Board has to release it before the department can spend it. Money moved from another priority. The department shifts money it already holds from one thing to this one. A Budget sets money aside; it does not hand it over. It is closer to an IOU (a written promise to pay). To turn the promise into money it can spend, a department has to produce a plan and take it to the Treasury Board. So new money always arrives in two steps: it is set aside, then it is released.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
-    "id": "/thread/funding#how-a-service-gets-approved-and-funded",
+    "id": "/thread/funding#the-common-path",
     "pageTitle": "Funding",
     "pagePath": "/thread/funding",
-    "sectionId": "how-a-service-gets-approved-and-funded",
-    "sectionHeading": "How a service gets approved and funded",
+    "sectionId": "the-common-path",
+    "sectionHeading": "The common path: almost every service",
     "lifecyclePhase": "thread",
-    "text": "Before it goes live, a service is approved, costed, and funded through a set order of steps. Different people own different steps, and the whole path takes months, so it starts early. Early work comes first, and it is cheap. A team can research the problem and shape the business case using the department's existing operating budget, before any request for new money. That is why research comes before the big approvals: you research to make the case for the money. The approvals below come once the team knows what it is building. Make the case. A service starts from a clear problem: who has it, and what a good outcome would look like. Before any solution is named, the choice of whether to reuse something that already exists, buy, or build is weighed. The problem, the options, and the reasoning come together as a business case, the document that justifies the service and feeds later funding requests. Options analysis sets out how to compare those choices, and Procurement covers the look-before-you-buy step. Find the money. A department does not hold one pot: a service runs on the budget the department already has, on new money set aside in a federal Budget, or on money moved from another priority. A request to spend cannot move forward until the source of funds is confirmed. Funding explains where the money comes from and how a department asks for more. GC EARB, the architecture review. For a digital service, the design is reviewed early, before a solution or a supplier is chosen, so it can still change. The department's own architecture review board sees it first, then the GC Enterprise Architecture Review Board (GC EARB) checks the design is sound and fits government-wide standards. Cost it. A cost estimate is built for the whole life of the service: standing it up (built or bought), running it, supporting it, and retiring it at the end. The finance team produces the numbers, and an early estimate is allowed to be rough as long as it says how rough. Funding covers costing. Get the authority: a Treasury Board submission. If the service needs new money, a new authority such as a new grants program, or approval above the department's own limit, it goes to the Treasury Board with a submission. A service that runs on existing budget and authority skips this step. Funding covers when a submission is needed and what to prepare. Get project approval. The project itself needs project approval to proceed, with the authority to spend against it, set out in the Directive on the Management of Projects and Programmes. The money is released. Approved funds reach the department through the government's yearly spending plans, the Estimates, which Parliament votes. Because the money is released on that yearly cycle, a request that starts late delays the work. Buy and build. With the money and the approvals in place, the department runs the procurement, and delivery begins. The building or configuring itself happens across the three sub-phases below. All of it is still Create: a service is not Live until it launches, however much has already been built. A small change paid for from money a department already holds skips the Treasury Board submission. A service with no digital build skips the GC EARB review. A project inside a department's own limit skips the central project approval.",
+    "text": "Most services stay inside the department. When a service runs on money the department already holds, and is not too large or complex for the department to manage on its own, the department costs it, confirms where the money will come from, and puts it on its own investment plan. The department approves it and funds it. There is no submission to the Treasury Board and no central sign-off. A team does not deal with the Treasury Board for this, and the first door is not the centre. It works with its own department's corporate services, the finance and planning people who cost the service, confirm the source of funds, and steer it onto the plan. Funding is staged, not handed over all at once: money is set for the work ahead, and confirmed again as the service moves from one part of its life to the next. Nineteen in twenty services never go to the Treasury Board. For most teams, funding is a conversation with their own department, not a trip to the centre.",
+    "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
+  },
+  {
+    "id": "/thread/funding#when-a-service-goes-to-the-treasury-board",
+    "pageTitle": "Funding",
+    "pagePath": "/thread/funding",
+    "sectionId": "when-a-service-goes-to-the-treasury-board",
+    "sectionHeading": "When a service goes to the Treasury Board",
+    "lifecyclePhase": "thread",
+    "text": "A service crosses into the exception when it needs new money the department does not have, a new authority (such as running a new grants program), or when it is too large or complex for the department to approve on its own. How large is too large is not one national number. Each department is trusted with a level of project it can manage on its own, set by its Organizational Project Management Capacity Assessment (OPMCA). Each project is sized by a Project Complexity and Risk Assessment (PCRA). When a project's PCRA is above the department's level, it goes to the Treasury Board; below it, the department decides on its own. Getting the money then means producing a plan, and that plan is a Treasury Board submission. A large service also passes a set of other checks along the way, from an early concept case to an architecture review, and the money is released only at the end, through the government's yearly spending plans, the Estimates, which Parliament votes on a fixed cycle. The full sequence, in order, with who signs off at each step, is laid out in the official gates of a digital service. Funding is one thread running through it.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1841,7 +1869,7 @@
     "sectionId": "the-funding-work-in-detail",
     "sectionHeading": "The funding work, in detail",
     "lifecyclePhase": "thread",
-    "text": "The Treasury Board submission The formal request for new money or a new authority, and the hardest part of funding to get right. Costing a service Building a whole-life cost estimate that holds up, and saying how firm each number is. Staying funded once it is live Running within the budget, and planning the next funding decision before the money runs out. Funding the exit Paying for the move, the wind-down, and the contracts when a service is retired.",
+    "text": "Costing a service Before a department can ask for money, or commit its own, it has to know how much the service will cost. A cost estimate is that figure, produced by the finance team, who stand behind it. The number that matters is the whole-life cost: building the service, running it, supporting it, keeping it secure, and retiring it at the end. A build-only figure looks cheaper, and it sets the service up to run short later. An early estimate is allowed to be rough, as long as it says how rough. A Rough Order of Magnitude (ROM) estimate can be up to 40 percent away from the real cost; an indicative estimate narrows that to about 25 percent; a substantive estimate to about 15 percent. Each estimate should say which kind it is, so an early figure is not read as a firm price. ROM ±40% → indicative ±25% → substantive ±15% The GC Guide to Costing sets out a seven-step method for building an estimate that holds up. Staying funded once it is live Getting a service funded is only the beginning. A running service has to stay funded, year after year, and that takes attention. Run within the budget: a live service runs on the money secured for it, tracked so it does not run short partway through the year. Plan renewals early: some funding is time-limited and runs out on a set date, and the next decision, a renewal or an expansion, has to start well before the money ends, because approval takes months. Adjust when priorities shift: a department can move money it already holds toward the service, or make a fresh request for more. Funding the exit Retiring or replacing a service is not free, and a department that has not budgeted for the exit can find itself stuck paying for a service it wants to leave. The exit costs money in three places: moving the data and standing up the replacement (the data side of the move is its own work), winding the old service down and running two in parallel during the switch, and closing the supplier contracts cleanly. The money for the exit is set aside before the current funding ends, so the move is planned rather than scrambled.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1851,7 +1879,7 @@
     "sectionId": "by-phase",
     "sectionHeading": "What Funding looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "Most of the funding work happens here. A department works out what the service needs, confirms a source of funds, costs the whole life of it, and makes a Treasury Board submission if one is needed. Funding approval takes months, so this starts early. A running service still has to stay funded. It runs on the budget secured for it, and that budget is watched and reported on. A renewal or an expansion needs its own funding decision, planned well before the current money runs out. Retiring a service also costs money. Moving the data, winding the service down, and closing contracts all need funding. The money for the exit is set aside before the current funding ends.",
+    "text": "Most of the funding work happens here. A department works out what the service needs, confirms a source of funds, and costs the whole life of it. A large or complex service also makes a Treasury Board submission. Funding approval takes months, so this starts early. A running service still has to stay funded. It runs on the budget secured for it, and that budget is watched and reported on. A renewal or an expansion needs its own funding decision, planned well before the current money runs out. Retiring a service also costs money. Moving the data, winding the service down, and closing contracts all need funding. The money for the exit is set aside before the current funding ends.",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1861,7 +1889,7 @@
     "sectionId": "whose-job",
     "sectionHeading": "Whose job it is",
     "lifecyclePhase": "thread",
-    "text": "Funding is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs and what it should cost. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and stand behind the numbers. The fuller set of roles for a Treasury Board submission, including legal, the Treasury Board Secretariat analyst, and the minister, is on the Treasury Board submission page.",
+    "text": "Funding is shared across a department: The department's corporate services are the first door: they walk a team through costing, the source of funds, and the investment plan. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and stand behind the numbers. The business owner of the application owns the business case and the decisions about what the service needs and what it should cost. (The fuller set of players for the exception, when a large or complex service goes to the Treasury Board, including legal, the Treasury Board Secretariat analyst, and the minister, is shown in order in the official gates of a digital service.)",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1881,7 +1909,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "thread",
-    "text": "Funding New Government Initiatives: From Announcement to Money Allocation (Library of Parliament) — a clear, neutral walk from a Budget announcement, through the Estimates, to money reaching a department. Introduction to the Planning and Management of Investments, COR433 (Canada School of Public Service) — a plain-language course on how government plans and approves investments.",
+    "text": "Introduction to the Planning and Management of Investments, COR433 (Canada School of Public Service)",
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
@@ -1895,140 +1923,13 @@
     "keywords": "Treasury Board submission TB funding cost estimate GBA Plus CFO attestation life-cycle cost"
   },
   {
-    "id": "/thread/funding/treasury-board-submission",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "",
-    "sectionHeading": "The Treasury Board submission",
-    "lifecyclePhase": "thread",
-    "text": "A Treasury Board submission is a formal request to the Treasury Board, a committee of Cabinet that controls government spending, for permission to act. Most often it asks to release funding that has been set aside, and to approve creating or changing a service. A submission is about authority as well as money. It is how a department gets permission to do things it cannot do on its own, such as start a new grants program or spend above its limit. The Government of Canada publishes full guidance on how to write one, the Treasury Board submissions overview and the Guidance for Drafters of Treasury Board Submissions. That guidance begins once a department already knows it needs a submission. This page covers what comes before: what one is, when it is needed, and what to prepare."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#when-a-service-needs-a-submission",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "when-a-service-needs-a-submission",
-    "sectionHeading": "When a service needs a submission",
-    "lifecyclePhase": "thread",
-    "text": "A department can approve much of its own spending. Up to a set limit, it decides on its own. Above that limit, it has to ask the Treasury Board. That limit is not one national number. It depends on the department, on how well its ability to manage projects has been assessed, and on the kind of work. A department judged to handle complex projects well is trusted with a higher limit, so the same project can fall within one department's authority and exceed another's. A service needs a submission when any of these is true: it needs new money that the government earmarked but has not yet released to the department; it needs a new authority, for example permission to run a new grants program; its cost is above the department's own approval limit. A service that runs on money the department already holds, and stays inside the limit, does not need a submission."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#what-to-prepare",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "what-to-prepare",
-    "sectionHeading": "What to prepare",
-    "lifecyclePhase": "thread",
-    "text": "A submission is built from a set of documents. A department puts these together before writing it: Cost estimate. A figure for the whole life of the service, produced by the finance team. Costing a service covers how this is built. Business case. The problem, the options that were considered, and why this one. This is shaped earlier, when the case for the service is first made. Gender-based Analysis Plus (GBA Plus). A look at who the service affects and what could make it harder for some people to use, beyond gender, at things like age, disability, language, income, and where people live. The submission has to show how this shaped the design. The free introductory course covers how to do one. Legal risk assessment. Written by the department's legal team. The required appendices. The submission template sets these out: a Financial appendix whenever money is involved, a Human Resources appendix when the work adds more than ten new staff, and others, for results, risks, service and digital, and official languages, when the work calls for them. One rule decides whether a submission goes anywhere: the department has to name a confirmed source of funds. The Treasury Board will not consider a request that cannot say which money will pay for it, because a submission releases money that is already earmarked, it does not conjure new money."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#how-it-goes-step-by-step",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "how-it-goes-step-by-step",
-    "sectionHeading": "How it goes, step by step",
-    "lifecyclePhase": "thread",
-    "text": "Once a department knows it needs a submission, the work runs in a fairly set order. Confirm the source of funds. Before anything else, the department has to know where the money will come from, a Budget allocation or its existing budget. The Treasury Board will not look at a submission that cannot name a confirmed source, so this comes first. Prepare the documents. The cost estimate, the business case, the Gender-based Analysis Plus, the legal risk assessment, and the appendices are pulled together. Each has its own owner in the department, and a missing one sends the submission back. Write and clear the submission. The department drafts the submission and gets its internal sign-offs: the Chief Financial Officer attests to the numbers, legal signs the risk assessment, and the department approves it before it goes up. Treasury Board decides. A Treasury Board Secretariat analyst reviews and challenges the submission, the responsible minister signs it, and it goes to the Board for a decision. The money is released. Once approved, the funds reach the department through the government's spending plans, the Estimates, which Parliament votes on a fixed yearly cycle. Because the money is released on that cycle, a request that starts late delays the build."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#a-submission-is-one-of-several-approvals",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "a-submission-is-one-of-several-approvals",
-    "sectionHeading": "A submission is one of several approvals",
-    "lifecyclePhase": "thread",
-    "text": "A submission is the money-and-authority gate. A digital service also passes through other gates run by different people: GC EARB (the Enterprise Architecture Review Board), which reviews the design, and the project approval, which checks the project is ready. The Funding page lays out the full path, from first idea to money in hand, in order."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#whose-job",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "whose-job",
-    "sectionHeading": "Whose job it is",
-    "lifecyclePhase": "thread",
-    "text": "Preparing a submission is shared across a department: The business owner of the application owns the business case and the decisions about what the service needs. The finance team and the Chief Financial Officer (CFO) produce the cost estimate and sign off that the numbers stand up. The legal team writes the legal risk assessment. A Treasury Board Secretariat analyst guides the submission and challenges it before it goes forward. The responsible minister signs the submission."
-  },
-  {
-    "id": "/thread/funding/treasury-board-submission#sources",
-    "pageTitle": "The Treasury Board submission",
-    "pagePath": "/thread/funding/treasury-board-submission",
-    "sectionId": "sources",
-    "sectionHeading": "Sources",
-    "lifecyclePhase": "thread",
-    "text": "Sources and references."
-  },
-  {
-    "id": "/thread/funding/costing-a-service",
-    "pageTitle": "Costing a service",
-    "pagePath": "/thread/funding/costing-a-service",
-    "sectionId": "",
-    "sectionHeading": "Costing a service",
-    "lifecyclePhase": "thread",
-    "text": "Before a department can ask for money, it has to know how much the service will cost. A cost estimate is that figure. The finance team produces it and stands behind it. The number that matters is the whole-life cost: building the service, running it, supporting it, keeping it secure, and retiring it at the end. A build-only figure looks cheaper, and it sets the service up to run short later."
-  },
-  {
-    "id": "/thread/funding/costing-a-service#an-estimate-has-a-confidence-range",
-    "pageTitle": "Costing a service",
-    "pagePath": "/thread/funding/costing-a-service",
-    "sectionId": "an-estimate-has-a-confidence-range",
-    "sectionHeading": "An estimate has a confidence range",
-    "lifecyclePhase": "thread",
-    "text": "An early estimate is allowed to be rough, as long as it says how rough. The range narrows as the work becomes clearer: Rough Order of Magnitude (ROM) estimate can be up to 40 percent away from the real cost; indicative estimate narrows that to about 25 percent; substantive estimate narrows it to about 15 percent. Each estimate should say which kind it is, so an early figure is not read as a firm price. ROM ±40% → indicative ±25% → substantive ±15% The GC Guide to Costing sets out a seven-step method for building an estimate that holds up."
-  },
-  {
-    "id": "/thread/funding/staying-funded",
-    "pageTitle": "Staying funded once a service is live",
-    "pagePath": "/thread/funding/staying-funded",
-    "sectionId": "",
-    "sectionHeading": "Staying funded once a service is live",
-    "lifecyclePhase": "thread",
-    "text": "Getting a service funded is only the beginning. A running service has to stay funded, year after year, and that takes attention."
-  },
-  {
-    "id": "/thread/funding/staying-funded#what-this-takes",
-    "pageTitle": "Staying funded once a service is live",
-    "pagePath": "/thread/funding/staying-funded",
-    "sectionId": "what-this-takes",
-    "sectionHeading": "What this takes",
-    "lifecyclePhase": "thread",
-    "text": "Run within the budget. A live service runs on the money secured for it. Spending is tracked against that budget so the service does not run short partway through the year. Plan renewals early. Some funding is time-limited and runs out on a set date. The next funding decision, a renewal or an expansion, has to be started well before the current money ends, because approval takes months. Adjust when priorities shift. If the work changes, a department can move money it already holds toward the service, or has to make a fresh request for more. A service that watches its funding stays ahead of the moment the money runs out. A service that does not often finds out too late, and has to cut features or pause work to get through the year."
-  },
-  {
-    "id": "/thread/funding/funding-the-exit",
-    "pageTitle": "Funding the exit",
-    "pagePath": "/thread/funding/funding-the-exit",
-    "sectionId": "",
-    "sectionHeading": "Funding the exit",
-    "lifecyclePhase": "thread",
-    "text": "Retiring or replacing a service is not free. The move costs money, and so does shutting the old service down cleanly. A department that has not budgeted for the exit can find itself stuck paying for a service it wants to leave."
-  },
-  {
-    "id": "/thread/funding/funding-the-exit#what-costs-money-at-the-end",
-    "pageTitle": "Funding the exit",
-    "pagePath": "/thread/funding/funding-the-exit",
-    "sectionId": "what-costs-money-at-the-end",
-    "sectionHeading": "What costs money at the end",
-    "lifecyclePhase": "thread",
-    "text": "Moving the data and the service. Getting the data out, moving it to whatever comes next, and standing up the replacement all take effort and money. The data side of the move is its own piece of work. Winding the old service down. Running two services in parallel during a transition, then decommissioning the old one, has a cost. Closing the contracts. Ending a supplier contract cleanly, and any transition support in it, is part of the bill. The money for the exit is set aside before the current funding ends, so the move is planned rather than scrambled. An exit left unfunded tends to stall, and the old service runs on at cost long after it should have gone."
-  },
-  {
-    "id": "/support#across-the-whole-lifecycle",
-    "pageTitle": "Support and communities",
-    "pagePath": "/support",
-    "sectionId": "across-the-whole-lifecycle",
-    "sectionHeading": "Across the whole lifecycle",
-    "lifecyclePhase": "other",
-    "text": "The CIOB-ITD mailbox is the standing contact for the Government of Canada IT lifecycle program (application portfolio, IT expenditure, and the departmental IT plan). The Application Portfolio Management community (on the GC network) is where the application-portfolio work is run and shared. For questions about a department's IT plan, start at the IT Plan space.",
-    "keywords": "support communities help contact mailbox"
-  },
-  {
     "id": "/support#by-topic",
     "pageTitle": "Support and communities",
     "pagePath": "/support",
     "sectionId": "by-topic",
     "sectionHeading": "By topic",
     "lifecyclePhase": "other",
-    "text": "Architecture. The Enterprise Architecture Community of Practice for architecture and review questions. Cloud. The GC Cloud Information Centre is the one stop for cloud adoption and migration help. Procurement. Start at the CanadaBuys Buyer's Portal, and ask a PSPC client account manager for help with a specific buy. Security. The Canadian Centre for Cyber Security answers security questions. Privacy. Talk to your own department's ATIP or Privacy Coordinator first (find yours through the Access to information and privacy hub); the Office of the Privacy Commissioner is the regulator. Accessibility. The Digital Accessibility Toolkit and its community directory. Building and platforms. The Canadian Digital Service runs shared platforms, GC Notify and GC Forms, and the GC Design System for a tested set of components. Data. The GC Data Community (ask through the CIOB mailbox for the current home). If your topic is not here, the GC Functional Communities directory lists the professional communities across government; one of them likely covers it.",
+    "text": "Architecture. The Enterprise Architecture Community of Practice for architecture and review questions. Cloud. The GC Cloud Information Centre is the one stop for cloud adoption and migration help. Procurement. Start at the CanadaBuys Buyer's Portal, and ask a PSPC client account manager for help with a specific buy. Security. The Canadian Centre for Cyber Security answers security questions. Privacy. Talk to your own department's ATIP or Privacy Coordinator first (find yours through the Access to information and privacy hub); the Office of the Privacy Commissioner is the regulator. Accessibility. The Digital Accessibility Toolkit and its community directory. Building and platforms. The Canadian Digital Service runs shared platforms, GC Notify and GC Forms, and the GC Design System for a tested set of components. Data. Your department's data or Chief Data Officer office, first. Government-wide, the GC Data Community (Canada School of Public Service) is the network of data practitioners you can join. Records and disposition. Your department's information-management or records office, first. They handle disposition of government records, the Sunset gate, with Library and Archives Canada. Service design and user research. The GC UX Network connects designers and researchers across government, and the CSPS Digital Academy runs service-design and user-research training. Service policy and the service inventory. Your department's service or CIO office, first. They work with the TBS Service Policy team on how your service appears in the GC Service Inventory. Responsible AI and automated decisions. Your department's privacy, data, and legal teams, first, if your service automates a decision. Government-wide guidance is the Responsible use of AI in government hub. Open government and open data. Your department's information-management or open-data lead publishes datasets to the Open Government Portal. Information management. Your department's information-management office, first. Government-wide, the GC Information Management Community connects IM professionals. Official languages. Your departmental Official Languages coordinator first; the Community of Official Languages and the TBS official languages pages. GBA Plus and inclusion. Your department's GBA Plus focal point first; the GBA Plus hub and CSPS course INC101. Identity and sign-in. Your departmental CIO or security lead (they bring in the identity and access-management teams); the online security and privacy hub. Digital talent and hiring. GC Digital Talent, the government-wide recruitment platform for digital roles. If your topic is not here, the GC Functional Communities directory lists the professional communities across government; one of them likely covers it.",
     "keywords": "support communities help contact mailbox"
   },
   {
@@ -2038,7 +1939,7 @@
     "sectionId": "further-reading",
     "sectionHeading": "Further reading",
     "lifecyclePhase": "other",
-    "text": "The GC Enterprise IT Portfolio wiki ties together the lifecycle communities and where they are moving to.",
+    "text": "The GC Enterprise IT Portfolio wiki is the hub for the Government of Canada IT lifecycle reporting, tying together IT Expenditure, Application Portfolio Management, and the departmental IT Plan.",
     "keywords": "support communities help contact mailbox"
   },
   {

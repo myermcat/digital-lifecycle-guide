@@ -1,8 +1,8 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import { COSTING_A_SERVICE_PATH } from "@/lib/reference-paths";
 
+/** Former Funding sub-page; content now lives on the Funding overview. */
 export const Route = createFileRoute("/reference/costing-a-service")({
   beforeLoad: () => {
-    throw redirect({ to: COSTING_A_SERVICE_PATH });
+    throw redirect({ to: "/thread/$slug", params: { slug: "funding" } });
   },
 });
