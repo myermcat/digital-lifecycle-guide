@@ -1,10 +1,8 @@
-import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Coins, LogOut, RefreshCw, type LucideIcon } from "lucide-react";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideCallout } from "@/components/GuideCallout";
-import { GuideFolderTabs } from "@/components/GuideFolderTabs";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { PageFoot } from "@/components/PageFoot";
@@ -16,7 +14,6 @@ import {
 } from "@/lib/funding-thread-content";
 import {
   renderLinkedProse,
-  renderThreadSections,
   renderThreadWhoseJob,
 } from "@/lib/thread-rich-content";
 import {
@@ -37,6 +34,10 @@ const DETAIL_ICONS: Record<FundingDetailIcon, LucideIcon> = {
   logout: LogOut,
 };
 
+/** Phase label above step groups — same family as callout eyebrows, larger and heavier. */
+const fundingStepPhaseLabel =
+  "font-sans text-xs md:text-[0.8125rem] font-semibold uppercase tracking-[0.22em] text-primary";
+
 function ToggleStepNumber({ n }: { n: number }) {
   return (
     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 font-sans text-xs font-semibold text-primary">
@@ -45,6 +46,7 @@ function ToggleStepNumber({ n }: { n: number }) {
   );
 }
 
+/** Large dollar-sign mark in front of a money source — not a bullet. */
 function FundingDollarMark({ className }: { className?: string }) {
   return (
     <span
@@ -53,39 +55,6 @@ function FundingDollarMark({ className }: { className?: string }) {
     >
       $
     </span>
-  );
-}
-
-function FundingByPhaseSection() {
-  const { byPhase } = FUNDING_THREAD;
-  const phasePanelId = useId();
-  const phaseTabOptions = byPhase.blocks.map((block) => ({
-    value: block.title,
-    label: (
-      <span className="inline-flex items-center justify-center gap-2">
-        <FundingDollarMark />
-        <span>{block.title.replace(/\.$/, "")}</span>
-      </span>
-    ),
-  }));
-  type PhaseTab = (typeof phaseTabOptions)[number]["value"];
-  const [activePhaseTab, setActivePhaseTab] = useState<PhaseTab>(phaseTabOptions[0].value);
-  const activePhaseBlock =
-    byPhase.blocks.find((block) => block.title === activePhaseTab) ?? byPhase.blocks[0];
-
-  return (
-    <section className="mt-10 md:mt-12 scroll-mt-24" id={byPhase.id}>
-      <h2 className={`${guideSectionTitle} mb-4`}>{byPhase.title}</h2>
-      <GuideFolderTabs
-        options={phaseTabOptions}
-        value={activePhaseTab}
-        onChange={setActivePhaseTab}
-        ariaLabel={byPhase.title}
-        panelId={phasePanelId}
-      >
-        {renderThreadSections(activePhaseBlock.popup)}
-      </GuideFolderTabs>
-    </section>
   );
 }
 
@@ -102,6 +71,17 @@ export function FundingThreadPage() {
     furtherReading,
     sources,
   } = FUNDING_THREAD;
+
+  const numberedStepGroups = (() => {
+    let n = 0;
+    return commonPath.stepGroups.map((group) => ({
+      phase: group.phase,
+      steps: group.steps.map((item) => {
+        n += 1;
+        return { item, number: n };
+      }),
+    }));
+  })();
 
   return (
     <GuideLayout id={`thread-${FUNDING_THREAD.slug}`}>
@@ -187,16 +167,23 @@ export function FundingThreadPage() {
             <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
           ))}
         </div>
-        <ol className="mt-5 space-y-3.5 list-none pl-0 md:mt-6">
-          {commonPath.steps.map((item, index) => (
-            <li key={item.text} className="flex items-start gap-3">
-              <ToggleStepNumber n={index + 1} />
-              <p className={`${guideProse} min-w-0 pt-0.5`}>
-                {renderLinkedProse(item)}
-              </p>
-            </li>
+        <div className="mt-5 space-y-6 md:mt-6">
+          {numberedStepGroups.map((group) => (
+            <div key={group.phase}>
+              <p className={`${fundingStepPhaseLabel} mb-3`}>{group.phase}</p>
+              <ol className="space-y-3.5 list-none pl-0" start={group.steps[0]?.number}>
+                {group.steps.map(({ item, number }) => (
+                  <li key={item.text} className="flex items-start gap-3">
+                    <ToggleStepNumber n={number} />
+                    <p className={`${guideProse} min-w-0 pt-0.5`}>
+                      {renderLinkedProse(item)}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           ))}
-        </ol>
+        </div>
         <StandoutIconCallout
           className="mt-5 md:mt-6"
           as="aside"
@@ -249,8 +236,6 @@ export function FundingThreadPage() {
         actual={twoWaysComparison.risky}
         alternative={twoWaysComparison.safe}
       />
-
-      <FundingByPhaseSection />
 
       <PageFoot
         support="funding"

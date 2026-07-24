@@ -1775,6 +1775,12 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: FUNDING_THREAD.commonPath.title,
       text: concat(
         ...FUNDING_THREAD.commonPath.paragraphs.map((paragraph) => paragraph.text),
+        ...FUNDING_THREAD.commonPath.stepGroups.flatMap((group) => [
+          group.phase,
+          ...group.steps.map((step) => step.text),
+        ]),
+        FUNDING_THREAD.commonPath.planAheadCallout.title,
+        FUNDING_THREAD.commonPath.planAheadCallout.body.text,
         FUNDING_THREAD.commonPath.keyCallout,
       ),
     },
@@ -1782,6 +1788,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionId: FUNDING_THREAD.treasuryBoardException.id,
       sectionHeading: FUNDING_THREAD.treasuryBoardException.title,
       text: concat(
+        FUNDING_THREAD.treasuryBoardException.thresholdFigure.caption,
         ...FUNDING_THREAD.treasuryBoardException.paragraphs.map(
           (paragraph) => paragraph.text,
         ),
@@ -1797,17 +1804,6 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
             ...item.paragraphs.map((paragraph) => paragraph.text),
             item.formula,
             item.afterFormula?.text,
-          ),
-        ),
-      ),
-    },
-    {
-      sectionId: FUNDING_THREAD.byPhase.id,
-      sectionHeading: FUNDING_THREAD.byPhase.title,
-      text: concat(
-        ...FUNDING_THREAD.byPhase.blocks.map((block) =>
-          threadSectionsPlainText(
-            Array.isArray(block.popup) ? block.popup : [block.popup],
           ),
         ),
       ),

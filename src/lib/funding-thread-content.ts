@@ -7,7 +7,6 @@ import { GATE_MAP_PATH } from "@/lib/reference-paths";
 import {
   threadWhoseJobPlainText,
   type ThreadLinkedProse,
-  type ThreadPhasePreviewBlock,
   type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
 
@@ -86,33 +85,51 @@ export const FUNDING_THREAD = {
           "The first call is the department's own corporate services, the finance and planning people who handle the money side. Across a service's whole life, the money story runs like this, mostly in their hands:",
       },
     ] satisfies ThreadLinkedProse[],
-    steps: [
+    stepGroups: [
       {
-        text:
-          "A whole-life cost. The finance team builds the estimate, including what it will cost to run year after year, not just to build.",
-        bold: [{ phrase: "A whole-life cost." }],
+        phase: "CREATE",
+        steps: [
+          {
+            text:
+              "A whole-life cost. The finance team builds the estimate, including what it will cost to run year after year, not just to build.",
+            bold: [{ phrase: "A whole-life cost." }],
+          },
+          {
+            text:
+              "A confirmed source of funds. Existing budget, or money moved from another priority.",
+            bold: [{ phrase: "A confirmed source of funds." }],
+          },
+          {
+            text:
+              "A place on the department's investment plan. The department's own governance approves the service and commits the budget.",
+            bold: [{ phrase: "A place on the department's investment plan." }],
+          },
+        ],
       },
       {
-        text:
-          "A confirmed source of funds. Existing budget, or money moved from another priority.",
-        bold: [{ phrase: "A confirmed source of funds." }],
+        phase: "LIVE",
+        steps: [
+          {
+            text:
+              "Funding that holds once it is live. The service keeps running on the budget secured for it, and any time-limited funding is renewed before it runs out.",
+            bold: [{ phrase: "Funding that holds once it is live." }],
+          },
+        ],
       },
       {
-        text:
-          "A place on the department's investment plan. The department's own governance approves the service and commits the budget.",
-        bold: [{ phrase: "A place on the department's investment plan." }],
+        phase: "SUNSET",
+        steps: [
+          {
+            text:
+              "Money set aside for the exit. Before the current funding ends, the department budgets for moving or retiring the service.",
+            bold: [{ phrase: "Money set aside for the exit." }],
+          },
+        ],
       },
-      {
-        text:
-          "Funding that holds once it is live. The service keeps running on the budget secured for it, and any time-limited funding is renewed before it runs out.",
-        bold: [{ phrase: "Funding that holds once it is live." }],
-      },
-      {
-        text:
-          "Money set aside for the exit. Before the current funding ends, the department budgets for moving or retiring the service.",
-        bold: [{ phrase: "Money set aside for the exit." }],
-      },
-    ] satisfies ThreadLinkedProse[],
+    ] satisfies ReadonlyArray<{
+      phase: string;
+      steps: readonly ThreadLinkedProse[];
+    }>,
     planAheadCallout: {
       label: "PLAN AHEAD",
       title: "Commit the money to run it early",
@@ -282,59 +299,6 @@ export const FUNDING_THREAD = {
       closing:
         "The result: the request cleared the first time, the budget matched the real cost, and the next year of funding was known in advance.",
     } satisfies CaseStudySide,
-  },
-
-  byPhase: {
-    id: "by-phase",
-    title: "What Funding looks like in each phase",
-    intro: "",
-    blocks: [
-      {
-        title: "Create.",
-        preview: "",
-        popup: [
-          {
-            text:
-              "Most of the funding work happens here. A department works out what the service needs, confirms a source of funds, and costs the whole life of it. A large or complex service also makes a Treasury Board submission. Funding approval takes months, so this starts early.",
-          },
-        ],
-      },
-      {
-        title: "Live.",
-        preview: "",
-        popup: [
-          {
-            text: "A running service still has to stay funded.",
-            bold: [{ phrase: "A running service still has to stay funded." }],
-          },
-          {
-            text:
-              "It runs on the budget secured for it, and that budget is watched and reported on.",
-          },
-          {
-            text:
-              "A renewal or an expansion needs its own funding decision, planned well before the current money runs out.",
-          },
-        ],
-      },
-      {
-        title: "Sunset.",
-        preview: "",
-        popup: [
-          {
-            text: "Retiring a service also costs money.",
-            bold: [{ phrase: "Retiring a service also costs money." }],
-          },
-          {
-            text:
-              "Moving the data, winding the service down, and closing contracts all need funding.",
-          },
-          {
-            text: "The money for the exit is set aside before the current funding ends.",
-          },
-        ],
-      },
-    ] satisfies ThreadPhasePreviewBlock[],
   },
 
   furtherReading: [
