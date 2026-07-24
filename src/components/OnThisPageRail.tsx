@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
 import {
+  ON_THIS_PAGE_RAIL_WIDTH,
+  onThisPageRailWidth,
   scrollToOnThisPageSection,
   type OnThisPageItem,
 } from "@/lib/on-this-page";
@@ -19,6 +21,7 @@ export function OnThisPageRail({
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const ids = useMemo(() => items.map((i) => i.id), [items]);
+  const railWidth = onThisPageRailWidth(items);
 
   useEffect(() => {
     if (ids.length === 0) {
@@ -79,7 +82,9 @@ export function OnThisPageRail({
   return (
     <nav
       aria-label="On this page"
-      className="hidden lg:block w-[240px] shrink-0 self-stretch"
+      className="hidden lg:block shrink-0 self-stretch"
+      style={{ width: ON_THIS_PAGE_RAIL_WIDTH[railWidth] }}
+      data-rail-width={railWidth}
     >
       <div className="sticky top-24">
         <div className="rounded-xl border border-border/35 bg-background/30 px-3 py-3">
@@ -89,6 +94,8 @@ export function OnThisPageRail({
           <ol className="list-none pl-0 space-y-1.5">
             {items.map((item) => {
               const active = item.id === activeId;
+              const depth = item.depth ?? 0;
+              const isSub = depth > 0;
               return (
                 <li key={item.id}>
                   <button
@@ -96,10 +103,17 @@ export function OnThisPageRail({
                     onClick={() => scrollToOnThisPageSection(item.id)}
                     aria-current={active ? "true" : undefined}
                     className={cn(
-                      "w-full text-left text-[13px] leading-relaxed transition-colors border-l pl-2.5 -ml-px",
+                      "w-full text-left leading-snug transition-colors border-l -ml-px",
+                      isSub
+                        ? "pl-2.5 ml-3 text-[11px] leading-snug"
+                        : "pl-2.5 text-[13px] leading-relaxed",
                       active
-                        ? "border-primary/80 text-primary/90 font-medium"
-                        : "border-transparent text-foreground/50 hover:text-foreground/70 hover:border-foreground/20",
+                        ? isSub
+                          ? "border-primary/60 text-primary/80 font-medium"
+                          : "border-primary/80 text-primary/90 font-medium"
+                        : isSub
+                          ? "border-transparent text-foreground/40 hover:text-foreground/60 hover:border-foreground/15"
+                          : "border-transparent text-foreground/50 hover:text-foreground/70 hover:border-foreground/20",
                       "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm",
                     )}
                   >

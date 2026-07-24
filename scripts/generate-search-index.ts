@@ -746,6 +746,77 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       ),
     },
     {
+      sectionId: DATA_STEWARDSHIP_THREAD.decidingWhatHappens.id,
+      sectionHeading: DATA_STEWARDSHIP_THREAD.decidingWhatHappens.title,
+      text: concat(
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.intro.map((p) => p.text),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.lifecycleFigure.caption,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.trapCallout.title,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.trapCallout.body,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.oneRule.title,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.oneRule.paragraphs.map(
+          (p) => p.text,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.title,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.intro.text,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.bullets.map(
+          (p) => p.text,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.title,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.intro,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.points.map(
+          (point) => `${point.lead}${point.body.text}`,
+        ),
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.askList,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.waitNote.bold,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.waitNote.text,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.title,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.intro.text,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.disposalRoutes.map(
+          (item) => `${item.lead}${item.text}`,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.irbv.term,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.irbv.definition,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.sharedWorkIntro,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.cleanupRoles.map(
+          (item) => `${item.lead}${item.text}`,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.contractDuty.text,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.reasonsLead.text,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.reasonCards.map(
+          (card) => `${card.heading} ${card.line}`,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.inPractice.body.text,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.title,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.intro.text,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.decisionPoints.map(
+          (p) => p.text,
+        ),
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.practices.map(
+          (p) => `${p.lead}${p.text}`,
+        ),
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.closing.text,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.copyrightNote.bold,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.copyrightNote.text,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whoYouTalkTo.title,
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whoYouTalkTo.bullets.map(
+          (p) => p.text,
+        ),
+      ),
+    },
+    {
+      sectionId: DATA_STEWARDSHIP_THREAD.twoWaysComparison.id,
+      sectionHeading: DATA_STEWARDSHIP_THREAD.twoWaysComparison.title,
+      text: concat(
+        DATA_STEWARDSHIP_THREAD.twoWaysComparison.risky.framing ?? "",
+        ...(DATA_STEWARDSHIP_THREAD.twoWaysComparison.risky.items ?? []),
+        DATA_STEWARDSHIP_THREAD.twoWaysComparison.risky.closing ?? "",
+        DATA_STEWARDSHIP_THREAD.twoWaysComparison.safe.framing ?? "",
+        ...(DATA_STEWARDSHIP_THREAD.twoWaysComparison.safe.items ?? []),
+        DATA_STEWARDSHIP_THREAD.twoWaysComparison.safe.closing ?? "",
+      ),
+    },
+    {
       sectionId: DATA_STEWARDSHIP_THREAD.byPhase.id,
       sectionHeading: DATA_STEWARDSHIP_THREAD.byPhase.title,
       text: concat(

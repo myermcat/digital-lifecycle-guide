@@ -1,7 +1,9 @@
+import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink, InternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { THREADS } from "@/lib/guide-strings";
+import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import {
   threadLeadPlainText,
   threadSectionsPlainText,
@@ -9,7 +11,6 @@ import {
   type ThreadCloserLookBlock,
   type ThreadLinkedProse,
   type ThreadLead,
-  type ThreadLinkedProse,
   type ThreadPhasePreviewBlock,
   type ThreadWhoseJobSection,
 } from "@/lib/thread-rich-content";
@@ -199,6 +200,322 @@ export const DATA_STEWARDSHIP_THREAD = {
     ] satisfies ThreadCloserLookBlock[],
   },
 
+  decidingWhatHappens: {
+    id: "deciding-what-happens-to-the-data",
+    title: "Deciding what happens to the data",
+    intro: [
+      {
+        text:
+          "Working out what happens to a service's data is one of the most-missed jobs in government. The rule itself is simple. The process behind it is rarely laid out, so a service can reach its end with no one sure who to ask, what to ask, or when. The work then starts as the service is being switched off, which is the hardest time to do it.",
+      },
+      {
+        text:
+          "It turns on timing: the data decisions are made early, and the clean-up and the move come later. Settle during the build and the running years what will be kept, moved, or destroyed, and retiring or replacing the service becomes a task to work through rather than a scramble at the end.",
+      },
+    ] satisfies ThreadLinkedProse[],
+    lifecycleFigure: {
+      caption:
+        "Set it up in Create, keep it clean through Live, move it or end it at Sunset.",
+      alt: "Three stages of the data lifecycle across Create, Live, and Sunset.",
+    },
+    trapCallout: {
+      title: "The trap is leaving it to the end.",
+      body:
+        "By the time a service is being switched off, the authority to destroy its records may not exist yet, and obtaining one can take months to years. The data decisions belong in the build and the running years.",
+    },
+    oneRule: {
+      id: "the-one-rule-that-governs-all-of-it",
+      title: "1. The one rule that governs all of it",
+      paragraphs: [
+        {
+          text:
+            "Under the Library and Archives of Canada Act, no government record may be destroyed without the written consent of the Librarian and Archivist. That consent is a disposition authority: the standing permission that lets a record be destroyed. Without one that covers the record, nothing is deleted, and a service cannot be cleaned up or shut down on its own schedule. The authority has to exist first, or be requested and granted.",
+          bold: [{ phrase: "disposition authority" }],
+          externalLinks: [
+            { phrase: "Library and Archives of Canada Act", linkKey: "laca" },
+          ] satisfies ExternalPhraseLink[],
+        },
+      ] satisfies ThreadLinkedProse[],
+    },
+    authorityCheck: {
+      id: "is-an-authority-already-in-place",
+      title: "2. Is an authority already in place?",
+      intro: {
+        text:
+          "An authority attaches to a department and a kind of record, not to a single project, so one may already be in place. Either way, the Information Management (IM) office confirms it.",
+        bold: [{ phrase: "department and a kind of record" }],
+      } satisfies ThreadLinkedProse,
+      figure: {
+        caption:
+          "Ask the IM office first. Usually the records are already covered; sometimes a new authority has to be requested.",
+        alt: "Ask the IM office first: usually the records are already covered; sometimes a new authority has to be requested.",
+      },
+      bullets: [
+        {
+          text:
+            "Usually, it is already covered. Common admin records (human resources, finance) sit under government-wide authorities every department already holds. The program's own records may be covered too, if the department obtained an authority for that kind of record before, or if they fall under a shared authority for operational case files. Then there is nothing to request, only to confirm.",
+          bold: [{ phrase: "Usually, it is already covered." }],
+        },
+        {
+          text:
+            "Sometimes, it is not. If the records are genuinely uncovered, the department requests a new authority for them, through the IM office. This is where to act early: there is no set timeline, and it can take months, sometimes years.",
+          bold: [{ phrase: "Sometimes, it is not." }],
+        },
+      ] satisfies ThreadLinkedProse[],
+    },
+    howToSort: {
+      id: "how-to-sort-it-out",
+      title: "3. How to sort it out: when, who, and what to ask",
+      intro: "Three things settle it.",
+      points: [
+        {
+          lead: "When.",
+          body: {
+            text:
+              " Early, in Beta, before the service launches. An authority is never refused, so this is not a pass-or-fail gate; the only risk is how long a new one takes, which is why it starts early.",
+            bold: [{ phrase: "Beta" }],
+          } satisfies ThreadLinkedProse,
+        },
+        {
+          lead: "Who.",
+          body: {
+            text:
+              " The Information Management (IM) office. They hold the authorities, know what covers the records, and request new ones from Library and Archives Canada through its Liaison Centre.",
+            bold: [{ phrase: "Information Management (IM) office" }],
+          } satisfies ThreadLinkedProse,
+        },
+        {
+          lead: "What to ask them.",
+          body: {
+            text: " Two questions:",
+          } satisfies ThreadLinkedProse,
+        },
+      ],
+      askList: [
+        "Is an authority already in place for these records, and if not, how is one requested and how long will it take?",
+        "What can be cleaned up on an ongoing basis once the service is live, and under which authority?",
+      ],
+      waitNote: {
+        bold: "Why a new authority can take so long.",
+        text:
+          " There is a process, but no published timeline for issuing one, and the system is backlogged: a 2014 Auditor General audit found most federal institutions were still working from disposition authorities that had not been renewed in years. Plan for months, sometimes longer.",
+      },
+    },
+    whileRunning: {
+      id: "while-the-service-runs",
+      title: "4. While the service runs: keep it cleaned up",
+      intro: {
+        text:
+          "A running service should not simply pile up data until it closes. Clearing records on schedule is allowed, and it uses the same authority each time: a disposition authority is standing permission, not a one-time ticket. As each record reaches the end of its retention period (how long it must be kept), it can be destroyed under the authority that already covers it.",
+        bold: [
+          { phrase: "same authority" },
+          { phrase: "retention period" },
+        ],
+      } satisfies ThreadLinkedProse,
+      disposalRoutes: [
+        {
+          icon: "fileX" as const,
+          lead: "Transitory records.",
+          text:
+            " Drafts, duplicates, and working notes with no lasting value can be destroyed at any time, under a standing government-wide authority made for them.",
+        },
+        {
+          icon: "clock" as const,
+          lead: "Records past their retention period.",
+          text:
+            " Once the period ends, the existing authority is the consent to destroy them.",
+        },
+        {
+          icon: "user" as const,
+          lead: "Personal information.",
+          text:
+            " The Privacy Act requires it to be disposed of once it is no longer needed, and at the latest two years after it was last used to decide about a person.",
+        },
+      ],
+      irbv: {
+        term: "Information Resource of Business Value (IRBV)",
+        definition:
+          "a record that documents a decision, a transaction, or an obligation. In a grants system: the application and assessment files, the funding agreements, payment and reconciliation records, and decision, approval, and monitoring records. All have retention periods and need an authority to destroy. Only genuine throwaways, like duplicate copies and superseded drafts, fall outside it.",
+      },
+      sharedWorkIntro:
+        "Deciding a record is no longer needed is not the same as being allowed to delete it. The work is shared:",
+      cleanupRoles: [
+        {
+          icon: "briefcase" as const,
+          lead: "The records' owner",
+          text: " approves that a set of records is no longer needed.",
+        },
+        {
+          icon: "lifebuoy" as const,
+          lead: "The IM office",
+          text:
+            " confirms an authority covers it, checks for legal holds or open access-to-information requests, destroys it securely, and records what was done.",
+        },
+        {
+          icon: "building" as const,
+          lead: "The supplier",
+          text: " carries out the technical deletion, where the contract requires it.",
+        },
+      ],
+      contractDuty: {
+        text:
+          "For a small team running a bought product, this only happens if the contract requires it: the duty to dispose on schedule, return the data, destroy copies securely, and show it was done. The data schedule of a good contract sets this out.",
+        internalLinks: [
+          {
+            phrase: "data schedule of a good contract",
+            to: GOOD_CONTRACT_PATH,
+          },
+        ] satisfies InternalPhraseLink[],
+      },
+      reasonsLead: {
+        text: "Why clear records as you go? Three reasons.",
+        bold: [{ phrase: "Why clear records as you go?" }],
+      } satisfies ThreadLinkedProse,
+    },
+    reasonCards: [
+      {
+        icon: "minimize" as const,
+        heading: "A smaller, safer Sunset.",
+        line:
+          "Less data at the end means less to migrate, less to dispose of, and less to work out whether an authority exists.",
+      },
+      {
+        icon: "shield" as const,
+        heading: "Privacy compliance.",
+        line:
+          "Holding personal information past its retention period is a Privacy Act problem in its own right.",
+      },
+      {
+        icon: "lock" as const,
+        heading: "A smaller target.",
+        line:
+          "Data kept is data to protect. (Storage cost can matter too, but only where the contract charges by usage; under a fixed fee the saving is mostly risk.)",
+      },
+    ],
+    inPractice: {
+      label: "In practice",
+      body: {
+        text:
+          "Once a year, organisations and individuals take part in Digital Cleanup Days, deleting data they no longer need. It was founded by the Estonian non-profit Let's Do It World, mainly for the carbon cost of storing unused data, and now runs in more than 170 countries. It is a voluntary campaign, not a records process, but it shows routine clean-up treated as a deliberate practice. Digital Cleanup Day",
+        bold: [{ phrase: "Digital Cleanup Days" }],
+        externalLinks: [
+          {
+            phrase: "Digital Cleanup Day",
+            linkKey: "digital-cleanup-day",
+          },
+        ] satisfies ExternalPhraseLink[],
+      } satisfies ThreadLinkedProse,
+    },
+    whenReplaced: {
+      id: "when-the-service-is-replaced-or-retired",
+      title: "5. When the service is replaced or retired",
+      intro: {
+        text:
+          "Retiring or replacing a service runs through its own steps: assess, decide, plan, then move. The data work splits across them.",
+      },
+      decisionPoints: [
+        {
+          text:
+            "The decision comes at the planning step, near the start. For each set of records, choose whether it is migrated to the new system, transferred to Library and Archives Canada, or destroyed under an existing authority. The migration plan depends on this, because the plan cannot be made without knowing what may be destroyed and what must be kept.",
+          bold: [
+            {
+              phrase:
+                "The decision comes at the planning step, near the start.",
+            },
+          ],
+        },
+        {
+          text:
+            "The move comes later, as the old service winds down, finishing only once the new service is live.",
+          bold: [{ phrase: "The move comes later" }],
+        },
+      ] satisfies ThreadLinkedProse[],
+      figure: {
+        caption:
+          "The records decision sits at the planning step, early. The move happens as the old service winds down.",
+        alt: "Annotated diagram: the records decision at planning, while the old and new services overlap as the old service winds down.",
+      },
+      practices: [
+        {
+          icon: "split" as const,
+          lead: "Run the data migration as its own project, ahead of decommission.",
+          text:
+            " Departmental decommissioning guides start the migration separately and hold the shutdown until it has finished.",
+        },
+        {
+          icon: "coins" as const,
+          lead: "Decide early.",
+          text:
+            " Data kept past need costs storage and effort, so the sooner what leaves is decided, the less is carried into the move.",
+        },
+      ],
+      closing: {
+        text:
+          "Records that are kept are cleaned first, because fixing quality before a migration costs less than after, and moved with their meaning intact. Records that are destroyed are destroyed securely. Nothing is destroyed without the authority that covers it.",
+      },
+      copyrightNote: {
+        bold: "Who owns the software matters too.",
+        text:
+          " Whether the application and its data can be disposed of can depend on who holds the copyright, set in the procurement contract: the Crown owns it when public servants built it; otherwise the contract decides.",
+      },
+    },
+    whoYouTalkTo: {
+      id: "who-you-talk-to",
+      title: "6. Who you talk to",
+      bullets: [
+        {
+          text:
+            "Information Management (IM) office — holds the authorities, knows what covers the records, requests new ones, tracks the schedule, and does and documents the disposal. First call.",
+          bold: [{ phrase: "Information Management (IM) office" }],
+        },
+        {
+          text:
+            "ATIP / privacy office — for the Privacy Act duty to dispose of personal information on time.",
+          bold: [{ phrase: "ATIP / privacy office" }],
+        },
+        {
+          text:
+            "Library and Archives Canada, through its Liaison Centre — where the department requests a new authority, reached through the IM office.",
+          bold: [
+            {
+              phrase: "Library and Archives Canada, through its Liaison Centre",
+            },
+          ],
+        },
+      ] satisfies ThreadLinkedProse[],
+    },
+  },
+
+  twoWaysComparison: {
+    id: "two-ways",
+    title: "Two ways to look after data",
+    risky: {
+      heading: "Vell",
+      framing:
+        "Meet Vell, a service manager. They let the grant portal's data look after itself:",
+      items: [
+        "no one owned the data, so no one set a retention period",
+        'kept every record forever, "just in case", and let duplicates and errors pile up',
+        "when the portal was replaced, dumped the old database to save time",
+      ],
+      closing:
+        "The result: caseworkers made decisions on stale, duplicated data, and records were destroyed with no disposition authority, which breaks the law.",
+    } satisfies CaseStudySide,
+    safe: {
+      heading: "Pax",
+      framing:
+        "Meet Pax, a service manager. They treated the grant portal's data as something owned and cared for:",
+      items: [
+        "named one person accountable for it",
+        "set a retention period for each kind of record (a length, a trigger, a reason), using Library and Archives Canada's Generic Valuation Tools as a starting point",
+        "kept the data clean, fixing duplicates and errors as they appeared",
+        "when the portal was replaced, migrated the data with its meaning intact and disposed of the rest on schedule",
+      ],
+      closing:
+        "The result: trustworthy records, decisions made on good data, and lawful disposal.",
+    } satisfies CaseStudySide,
+  },
+
   byPhase: {
     id: "by-phase",
     title: "What Data stewardship looks like in each phase",
@@ -295,19 +612,24 @@ export const DATA_STEWARDSHIP_THREAD = {
       label: "Governing instrument",
       linkKey: "directive-on-service-and-digital" satisfies ExternalLinkKey,
       description:
-        "Directive on Service and Digital (TBS) — https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601",
+        "Directive on Service and Digital s.4.4.8 (TBS) — https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601",
     },
     {
       label: "Governing instrument",
       linkKey: "laca" satisfies ExternalLinkKey,
       description:
-        "Library and Archives of Canada Act (S.C. 2004, c. 11) — https://laws-lois.justice.gc.ca/eng/acts/l-7.7/FullText.html",
+        "Library and Archives of Canada Act s.12(1) — https://laws-lois.justice.gc.ca/eng/acts/l-7.7/FullText.html",
     },
     {
       label: "Supporting reference",
       linkKey: "lac-documented-disposition" satisfies ExternalLinkKey,
       description:
         "LAC, Guidelines on Documented Disposition of Records (includes a sample disposition form)",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "lac-da-2016-001" satisfies ExternalLinkKey,
+      description: "Disposition Authorization 2016/001 (transitory records)",
     },
     {
       label: "Supporting reference",
@@ -346,6 +668,22 @@ export const DATA_STEWARDSHIP_THREAD = {
       linkKey: "aws-app-retirement" satisfies ExternalLinkKey,
       description:
         "AWS Prescriptive Guidance, Retiring applications before decommissioning infrastructure",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "oag-2014-ch7-documentary-heritage" satisfies ExternalLinkKey,
+      description:
+        "2014 OAG audit ch.7 — Documentary Heritage of the Government of Canada",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "cccs-itsm-50-104" satisfies ExternalLinkKey,
+      description: "CCCS ITSM.50.104 (contract clauses)",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "digital-cleanup-day" satisfies ExternalLinkKey,
+      description: "Let's Do It World Digital Cleanup Day",
     },
     {
       label: "Supporting reference",

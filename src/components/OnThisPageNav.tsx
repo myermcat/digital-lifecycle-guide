@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp, List } from "lucide-react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
 import {
+  onThisPageRailWidth,
   scrollToOnThisPageSection,
   type OnThisPageItem,
 } from "@/lib/on-this-page";
@@ -20,8 +21,16 @@ export function OnThisPageNav({
   const discovered = useOnThisPageSections(itemsProp ? undefined : rootId);
   const items = itemsProp ?? discovered;
   const [open, setOpen] = useState(false);
+  const wide = onThisPageRailWidth(items) === "wide";
 
   if (items.length === 0) return null;
+
+  let topLevelCount = 0;
+  const displayItems = items.map((item) => {
+    const isSub = (item.depth ?? 0) > 0;
+    if (!isSub) topLevelCount += 1;
+    return { item, isSub, number: topLevelCount };
+  });
 
   return (
     <div className="relative" aria-label="On this page">
@@ -41,7 +50,11 @@ export function OnThisPageNav({
       </button>
       {open ? (
         <nav
-          className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-border bg-card/95 backdrop-blur-sm shadow-lg p-3 animate-in fade-in slide-in-from-top-2 duration-200"
+          className={
+            wide
+              ? "absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(22rem,calc(100vw-2rem))] rounded-xl border border-border bg-card/95 backdrop-blur-sm shadow-lg p-3 animate-in fade-in slide-in-from-top-2 duration-200"
+              : "absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-border bg-card/95 backdrop-blur-sm shadow-lg p-3 animate-in fade-in slide-in-from-top-2 duration-200"
+          }
           aria-labelledby="on-this-page-heading"
         >
           <p
@@ -51,7 +64,7 @@ export function OnThisPageNav({
             On this page
           </p>
           <ol className="list-none pl-0 space-y-1">
-            {items.map((item, index) => (
+            {displayItems.map(({ item, isSub, number }) => (
               <li key={item.id}>
                 <button
                   type="button"
@@ -59,11 +72,21 @@ export function OnThisPageNav({
                     scrollToOnThisPageSection(item.id);
                     setOpen(false);
                   }}
-                  className="w-full flex gap-2 rounded-md px-2 py-1.5 text-left text-xs leading-snug text-foreground/75 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className={
+                    isSub
+                      ? "w-full flex gap-2 rounded-md pl-5 pr-2 py-1 text-left text-[11px] leading-snug text-foreground/60 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      : "w-full flex gap-2 rounded-md px-2 py-1.5 text-left text-xs leading-snug text-foreground/75 hover:bg-muted/80 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  }
                 >
-                  <span className="tabular-nums text-foreground/45 shrink-0 w-4">
-                    {index + 1}.
-                  </span>
+                  {!isSub ? (
+                    <span className="tabular-nums text-foreground/45 shrink-0 w-4">
+                      {number}.
+                    </span>
+                  ) : (
+                    <span className="shrink-0 w-3 text-foreground/35" aria-hidden>
+                      ·
+                    </span>
+                  )}
                   <span>{item.label}</span>
                 </button>
               </li>

@@ -1244,6 +1244,27 @@ export const EXTERNAL_LINKS = {
     description: "Network security logging and monitoring, ITSAP.80.085 (CCCS)",
     accessibility: "public",
   },
+  "lac-da-2016-001": {
+    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/records/multi-institution-disposition-authorizations/2016-001-da-transitory-records.html",
+    description: "Disposition Authorization 2016/001 (transitory records)",
+    accessibility: "public",
+  },
+  "oag-2014-ch7-documentary-heritage": {
+    url: "https://www.oag-bvg.gc.ca/internet/English/parl_oag_201411_07_e_39965.html",
+    description:
+      "2014 Fall Report of the Auditor General of Canada, Chapter 7 — Documentary Heritage of the Government of Canada",
+    accessibility: "public",
+  },
+  "cccs-itsm-50-104": {
+    url: "https://www.cyber.gc.ca/en/guidance/recommended-cyber-security-contract-clauses-cloud-services-itsm50104",
+    description: "CCCS ITSM.50.104 (recommended cyber security contract clauses)",
+    accessibility: "public",
+  },
+  "digital-cleanup-day": {
+    url: "https://www.digitalcleanupday.org/",
+    description: "Digital Cleanup Day (Let's Do It World)",
+    accessibility: "public",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

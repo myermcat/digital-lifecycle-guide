@@ -22,7 +22,24 @@ function getSectionHeading(section: HTMLElement): HTMLHeadingElement | null {
   return null;
 }
 
-/** Top-level sections: `section` with an `h2` that belongs to it (not h3 practice group titles). */
+/** How many ancestor sections (with their own h2) sit between this section and root. */
+function sectionDepth(section: HTMLElement, root: HTMLElement): number {
+  let depth = 0;
+  let parent = section.parentElement;
+  while (parent && parent !== root) {
+    if (
+      parent instanceof HTMLElement &&
+      parent.tagName === "SECTION" &&
+      getSectionHeading(parent)
+    ) {
+      depth += 1;
+    }
+    parent = parent.parentElement;
+  }
+  return depth;
+}
+
+/** Sections with an `h2` that belongs to them; nested sections get depth > 0. */
 export function discoverPageSections(root: HTMLElement): OnThisPageItem[] {
   const items: OnThisPageItem[] = [];
   const seen = new Set<string>();
@@ -53,7 +70,8 @@ export function discoverPageSections(root: HTMLElement): OnThisPageItem[] {
     if (seen.has(id)) return;
 
     seen.add(id);
-    items.push({ id, label });
+    const depth = sectionDepth(section, root);
+    items.push(depth > 0 ? { id, label, depth } : { id, label });
   });
 
   return items;

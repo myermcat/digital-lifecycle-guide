@@ -5,7 +5,12 @@ import { discoverPageSections } from "@/lib/discover-page-sections";
 function sectionsEqual(a: OnThisPageItem[], b: OnThisPageItem[]) {
   return (
     a.length === b.length &&
-    a.every((item, index) => item.id === b[index]?.id && item.label === b[index]?.label)
+    a.every(
+      (item, index) =>
+        item.id === b[index]?.id &&
+        item.label === b[index]?.label &&
+        (item.depth ?? 0) === (b[index]?.depth ?? 0),
+    )
   );
 }
 

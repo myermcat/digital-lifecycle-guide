@@ -58,7 +58,7 @@ export const SUNSET_STRINGS = {
   },
 
   fork: {
-    title: "The first fork: replace or retire?",
+    title: "The first decision: replace or retire?",
     intro: "Before anything else, answer one question: is the service still needed?",
     bullets: [
       {

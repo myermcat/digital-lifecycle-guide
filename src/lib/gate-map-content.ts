@@ -301,7 +301,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       },
     ],
     forkAfter: {
-      title: "The fork that decides everything.",
+      title: "The choice that decides everything.",
       text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval: it goes up to GC EARB and a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under the line.",
       bold: ["within", "above"],
       gatePhrases: ["GC EARB", "Treasury Board submission"],

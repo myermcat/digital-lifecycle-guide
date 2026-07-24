@@ -466,16 +466,28 @@ The handover is complete when Canada confirms the export restores into a test en
         },
         {
           label: "H.4",
+          text: "Throughout the Agreement, the Supplier shall dispose of records on Canada's retention schedule, and shall not keep data longer than Canada directs.",
+        },
+        {
+          label: "H.5",
           text: "At the end of this Agreement, the Supplier shall return the data and securely destroy its own copies.",
+        },
+        {
+          label: "H.6",
+          text: "When data is disposed of or returned, the Supplier shall give Canada evidence that all copies, including backups, were securely destroyed.",
         },
       ],
       whyHere: {
         text:
-          "Why this is here: the GC white paper on data sovereignty and the public cloud. More in the Data stewardship thread.",
+          "Why this is here: the GC white paper on data sovereignty and the public cloud. Writing retention, secure destruction, and proof of it into the contract follows the Cyber Centre's recommended cloud contract clauses. More in the Data stewardship thread.",
         externalLinks: [
           {
             phrase: "white paper on data sovereignty and the public cloud",
             linkKey: "gc-data-sovereignty-white-paper",
+          },
+          {
+            phrase: "Cyber Centre's recommended cloud contract clauses",
+            linkKey: "cccs-itsm-50-104",
           },
         ] satisfies ExternalPhraseLink[],
         internalLinks: [

@@ -1,0 +1,35 @@
+<svg viewBox="0 20 900 334" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="ac_ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8C7B63"/></marker>
+    <marker id="ac_arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#A8492A"/></marker>
+  </defs>
+
+  <!-- the one action you always do -->
+  <rect x="285" y="34" width="330" height="66" rx="12" fill="#FBF6EC" stroke="#A8492A" stroke-width="2"/>
+  <text x="450" y="61" text-anchor="middle" font-size="16" font-weight="700" fill="#A8492A">Ask your IM office</text>
+  <text x="450" y="83" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#6B5B49">"Is an authority already in place for these?"</text>
+
+  <!-- branch arrows -->
+  <path d="M380,100 C300,132 250,150 232,176" fill="none" stroke="#8C7B63" stroke-width="2" marker-end="url(#ac_ar)"/>
+  <path d="M520,100 C620,132 660,150 678,176" fill="none" stroke="#A8492A" stroke-width="2" marker-end="url(#ac_arR)"/>
+  <text x="270" y="132" text-anchor="end" font-size="13" font-family="Arial, sans-serif" font-weight="700" letter-spacing="0.5" fill="#8C7B63">USUALLY</text>
+  <text x="648" y="132" text-anchor="start" font-size="13" font-family="Arial, sans-serif" font-weight="700" letter-spacing="0.5" fill="#A8492A">SOMETIMES</text>
+
+  <!-- LEFT: already covered -->
+  <rect x="40" y="188" width="380" height="150" rx="12" fill="#F3ECDD" stroke="#C9B99B" stroke-width="1.8"/>
+  <circle cx="72" cy="217" r="11" fill="#7C8A5A"/><path d="M66,217 l4,4 l8,-9" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="92" y="222" font-size="16" font-weight="700" fill="#4A3B2E">Already covered</text>
+  <text x="62" y="253" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">A past authority the department already</text>
+  <text x="62" y="275" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">holds for this kind of record, or a shared</text>
+  <text x="62" y="297" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">authority for case files.</text>
+  <text x="62" y="322" font-size="14.5" font-family="Arial, sans-serif" font-weight="700" fill="#6B5B49">Nothing to request. Just confirm it.</text>
+
+  <!-- RIGHT: not covered -->
+  <rect x="480" y="188" width="380" height="150" rx="12" fill="#FBF1EA" stroke="#A8492A" stroke-width="1.8"/>
+  <circle cx="512" cy="217" r="11" fill="#A8492A"/><text x="512" y="222" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF" font-family="Arial, sans-serif">!</text>
+  <text x="532" y="222" font-size="16" font-weight="700" fill="#4A3B2E">Not covered</text>
+  <text x="502" y="253" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">Request a new authority for your program</text>
+  <text x="502" y="275" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">records, through your IM office.</text>
+  <text x="502" y="300" font-size="14.5" font-family="Arial, sans-serif" font-weight="700" fill="#A8492A">Start early</text><text x="590" y="300" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">— no set timeline;</text>
+  <text x="502" y="322" font-size="14.5" font-family="Arial, sans-serif" fill="#3A3229">it can take months to years.</text>
+</svg>

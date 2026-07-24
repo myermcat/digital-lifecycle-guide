@@ -36,7 +36,7 @@ export const guideSupportCalloutTitle =
   "font-serif text-lg md:text-xl font-semibold text-primary tracking-tight leading-tight";
 
 export const guideSubsectionTitle =
-  "font-serif text-lg md:text-xl font-semibold text-primary/75 tracking-tight leading-tight";
+  "font-serif text-xl md:text-2xl font-semibold text-primary/75 tracking-tight leading-tight";
 
 export const guideCardHeading =
   "font-serif text-base font-semibold text-primary leading-tight";
