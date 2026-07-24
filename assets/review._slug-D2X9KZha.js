@@ -1,0 +1,1 @@
+import{br as o,bn as a,j as r,bs as s}from"./index-BDcYwveM.js";import{P as i}from"./PracticeStubPage-BoMa0irU.js";function c(){const{slug:e}=o.useParams(),t=s[e];if(!t)throw a();return r.jsx(i,{id:`review-${e}`,title:t.title,body:t.body,backHref:"/live-maturity",backLabel:"Back to Maturity"})}export{c as component};

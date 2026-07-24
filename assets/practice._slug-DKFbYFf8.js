@@ -1,0 +1,1 @@
+import{bv as e,bn as s,j as a,bw as n}from"./index-BDcYwveM.js";import{P as r}from"./PracticeStubPage-BoMa0irU.js";function u(){const{slug:o}=e.useParams(),t=n[o];if(!t)throw s();return a.jsx(r,{id:`practice-${o}`,title:t.title,body:t.body})}export{u as component};
