@@ -2,12 +2,9 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import {
   AlertTriangle,
-  Briefcase,
-  Building,
   Clock,
   Coins,
   FileX,
-  LifeBuoy,
   Lock,
   Minimize,
   ShieldCheck,
@@ -71,12 +68,6 @@ const DISPOSAL_ICONS = {
   user: UserRound,
 } as const satisfies Record<string, LucideIcon>;
 
-const CLEANUP_ICONS = {
-  briefcase: Briefcase,
-  lifebuoy: LifeBuoy,
-  building: Building,
-} as const satisfies Record<string, LucideIcon>;
-
 const PRACTICE_ICONS = {
   split: Split,
   coins: Coins,
@@ -85,9 +76,23 @@ const PRACTICE_ICONS = {
 const iconTileClassName =
   "flex h-16 w-16 shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/[0.07] md:h-[4.25rem] md:w-[4.25rem]";
 
-function ToggleStepNumber({ n }: { n: number }) {
+function ToggleStepNumber({
+  n,
+  solid = false,
+}: {
+  n: number;
+  /** Filled rust circle with white number — matches data_lifecycle numbered badges. */
+  solid?: boolean;
+}) {
   return (
-    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 font-sans text-xs font-semibold text-primary">
+    <span
+      className={cn(
+        "flex shrink-0 items-center justify-center rounded-full font-sans text-xs font-semibold",
+        solid
+          ? "h-[26px] w-[26px] bg-primary text-primary-foreground"
+          : "h-7 w-7 bg-primary/15 text-primary",
+      )}
+    >
       {n}
     </span>
   );
@@ -385,13 +390,20 @@ export function DataStewardshipThreadPage() {
           <p className={`${guideProse} mt-5`}>
             {decidingWhatHappens.whileRunning.sharedWorkIntro}
           </p>
-          <IconLeadList
-            items={decidingWhatHappens.whileRunning.cleanupRoles.map((item) => ({
-              icon: CLEANUP_ICONS[item.icon],
-              lead: item.lead,
-              body: item.text,
-            }))}
-          />
+          <p className={`${guideProse} mt-4`}>
+            {decidingWhatHappens.whileRunning.cleanupRolesLead}
+          </p>
+          <ol className="mt-4 space-y-5 list-none pl-0">
+            {decidingWhatHappens.whileRunning.cleanupRoles.map((item, index) => (
+              <li key={item.lead} className="flex items-start gap-3.5">
+                <ToggleStepNumber n={index + 1} solid />
+                <p className={`${guideProse} min-w-0 pt-0.5`}>
+                  <strong className="font-semibold text-foreground/90">{item.lead}</strong>
+                  {item.text}
+                </p>
+              </li>
+            ))}
+          </ol>
           <p className={`${guideProse} mt-5`}>
             {renderLinkedProse(decidingWhatHappens.whileRunning.contractDuty)}
           </p>

@@ -778,6 +778,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.irbv.term,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.irbv.definition,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.sharedWorkIntro,
+        DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.cleanupRolesLead,
         ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whileRunning.cleanupRoles.map(
           (item) => `${item.lead}${item.text}`,
         ),

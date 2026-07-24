@@ -338,28 +338,26 @@ export const DATA_STEWARDSHIP_THREAD = {
           "a record that documents a decision, a transaction, or an obligation. In a grants system: the application and assessment files, the funding agreements, payment and reconciliation records, and decision, approval, and monitoring records. All have retention periods and need an authority to destroy. Only genuine throwaways, like duplicate copies and superseded drafts, fall outside it.",
       },
       sharedWorkIntro:
-        "Deciding a record is no longer needed is not the same as being allowed to delete it. The work is shared:",
+        "Deciding a record is no longer needed is not the same as being allowed to delete it.",
+      cleanupRolesLead: "Three parties share the work, in order:",
       cleanupRoles: [
         {
-          icon: "briefcase" as const,
           lead: "The records' owner",
           text: " approves that a set of records is no longer needed.",
         },
         {
-          icon: "lifebuoy" as const,
           lead: "The IM office",
           text:
             " confirms an authority covers it, checks for legal holds or open access-to-information requests, destroys it securely, and records what was done.",
         },
         {
-          icon: "building" as const,
           lead: "The supplier",
           text: " carries out the technical deletion, where the contract requires it.",
         },
       ],
       contractDuty: {
         text:
-          "For a small team running a bought product, this only happens if the contract requires it: the duty to dispose on schedule, return the data, destroy copies securely, and show it was done. The data schedule of a good contract sets this out.",
+          "For a small team running a bought product, the disposal does not happen on its own; it happens only where the contract requires it. So these duties belong in the contract from the start: dispose on schedule, return the data, destroy copies securely, and show it was done. They form the data schedule of a good contract, set when the service is bought.",
         internalLinks: [
           {
             phrase: "data schedule of a good contract",
