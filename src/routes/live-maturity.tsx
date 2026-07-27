@@ -24,6 +24,7 @@ import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
+import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { guideProseSpace } from "@/lib/guide-typography";
 import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
 import { practicePath, reviewPath, threadPath } from "@/lib/guide-strings";
@@ -279,6 +280,13 @@ function LiveMaturityPage() {
       <PageFoot subphaseFootFor="Live" />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
+
+      <SubphaseSectionNav
+        prev={SUBPHASE_META.maturity.sectionNav?.prev}
+        next={SUBPHASE_META.maturity.sectionNav?.next}
+      />
+
+      <div className="h-24" />
     </GuideLayout>
   );
 }

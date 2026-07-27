@@ -436,7 +436,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
       label: "Supporting reference",
       linkKey: "dta-service-design-delivery-process" satisfies ExternalLinkKey,
       description:
-        "Digital Transformation Agency (Australia), Service design and delivery process — https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
+        "Digital Transformation Agency (Australia), Service design and delivery process — https://www.digital.gov.au/policy/digital-experience/toolkit/service-design-and-delivery-process",
     },
   ] satisfies SourceItem[],
 } as const;

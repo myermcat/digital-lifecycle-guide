@@ -69,6 +69,7 @@ export function CreateBetaPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <p>{renderLinkedProse(BETA_EXTRACT.whatsNew)}</p>
           <p>{renderLinkedProse(BETA_EXTRACT.scoped)}</p>
           <p>{renderLinkedProse(BETA_EXTRACT_CLOSING)}</p>
         </div>

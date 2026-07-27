@@ -17,6 +17,7 @@ import {
   ACCESSIBILITY_EXCLUSION_INTRO,
 } from "@/lib/accessibility-exclusion-groups";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const ALPHA_EXTRACT = {
@@ -28,10 +29,13 @@ export const ALPHA_EXTRACT = {
     ],
   } satisfies ThreadLinkedProse,
   workOutItems: [
-    "tries several rough solutions",
-    "builds throwaway prototypes",
-    "tests them with real users",
+    "lists the assumptions most likely to kill the idea",
+    "builds quick, throwaway mock-ups (paper sketches, clickable screens) to test them",
+    "watches real users try them",
   ],
+  whatsNew: {
+    text: "New since Discovery: the team starts making things, and users start trying them.",
+  } satisfies ThreadLinkedProse,
   closing: {
     text: "Alpha builds nothing that lasts, and its prototypes are kept away from the public.",
   } satisfies ThreadLinkedProse,
@@ -43,7 +47,7 @@ export const ALPHA_EXTRACT_CLOSING: ThreadLinkedProse = {
 };
 
 export const ALPHA_PROTOTYPE_QUOTE = {
-  title: "You do not need a supplier, or developers, to prototype.",
+  title: "You do not need a supplier, or developers, to start prototyping.",
   body: "The cheapest prototypes need a pen, or an afternoon with someone who knows a design tool.",
 } as const;
 
@@ -61,8 +65,8 @@ export const ALPHA_ON_RAMP = {
       bold: [{ phrase: "ranked list of risky ideas" }],
     },
     {
-      text: "The same small team carried over from Discovery, to keep its context and momentum.",
-      bold: [{ phrase: "same small team" }],
+      text: "The Discovery team carried over, joined by a developer or technologist for the coded prototypes. The paper and clickable mock-ups before those need nobody technical. The same people keep the context and the momentum.",
+      bold: [{ phrase: "The Discovery team carried over," }],
     },
     {
       text: "Funding for the alpha, including a budget for user research.",
@@ -79,7 +83,7 @@ export const ALPHA_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Test the riskiest assumption first",
   body: {
-    text: "Every idea rests on assumptions that, if wrong, sink the whole service: that people can and will use it, that it can connect to the systems it has to, that a legal or policy constraint can be met. Find the assumptions that would kill the service, and test those first. Commit money to a build before the risky parts hold, and everything after it is at risk.",
+    text: "Every idea rests on assumptions that, if wrong, sink the whole service: that people can and will use it, that it can connect to the systems it has to, that a legal or policy constraint can be met. Find the assumptions that would kill the service, and test those first. Run the cheapest test that could prove each one false. An assumption that falls saves the cost of a wrong build, and that is a success. One that holds has earned the next test. Commit money to a build before the risky parts hold, and everything after it is at risk.",
     bold: [
       {
         phrase: "Find the assumptions that would kill the service, and test those first.",
@@ -141,7 +145,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
   {
     id: "prototype-without-vendor",
     icon: PenTool,
-    title: "You do not need a supplier, or developers, to prototype.",
+    title: "You do not need a supplier, or developers, to start prototyping.",
     sections: [
       {
         text: "This is the objection that stops teams from doing Alpha at all. It should not.",
@@ -389,6 +393,10 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The chosen approach" }],
       },
       {
+        text: "The smallest version, defined: the simplest thing that can be built or bought that meets the need. That definition scopes what Beta builds.",
+        bold: [{ phrase: "The smallest version, defined:" }],
+      },
+      {
         text: "A procurement plan for the build, with exit rights and data portability written into the contract.",
         bold: [{ phrase: "A procurement plan for the build," }],
       },
@@ -409,6 +417,6 @@ export const ALPHA_FINISH = {
 };
 
 export const ALPHA_SECTION_NAV = {
-  prev: { href: "/create-discovery", label: "Discovery" },
-  next: { href: "/create-beta", label: "Beta" },
-};
+  prev: { href: "/create-discovery", label: "Discovery sub-phase", level: "subphase" },
+  next: { href: "/create-beta", label: "Beta sub-phase", level: "subphase" },
+} satisfies { prev: SectionNavLink; next: SectionNavLink };

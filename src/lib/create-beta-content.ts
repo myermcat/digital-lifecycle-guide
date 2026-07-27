@@ -22,6 +22,7 @@ import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const BETA_EXTRACT = {
@@ -34,6 +35,9 @@ export const BETA_EXTRACT = {
     "builds or configures the real thing, at production quality.",
     "proves it with real people, in a private beta and then a public beta.",
   ],
+  whatsNew: {
+    text: "New since Alpha: the build is real, and the public starts using it.",
+  } satisfies ThreadLinkedProse,
   scoped: {
     text: "Beta is scoped to one department standing up one service, whether it is bought, reused, or built.",
   } satisfies ThreadLinkedProse,
@@ -597,6 +601,6 @@ export const BETA_FINISH = {
 };
 
 export const BETA_SECTION_NAV = {
-  prev: { href: "/create-alpha", label: "Alpha" },
-  next: { href: "/live-stabilization", label: "Stabilization" },
-};
+  prev: { href: "/create-alpha", label: "Alpha sub-phase", level: "subphase" },
+  next: { href: "/live", label: "Live phase", level: "phase" },
+} satisfies { prev: SectionNavLink; next: SectionNavLink };

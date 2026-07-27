@@ -7,6 +7,7 @@ import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseQuote } from "@/components/PhaseQuote";
+import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
@@ -135,6 +136,11 @@ export function LivePhasePage() {
       <PageFoot sources={sources} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
+
+      <SubphaseSectionNav
+        prev={{ href: "/create-beta", label: "Beta sub-phase (Create)", level: "subphase" }}
+        next={{ href: "/live-stabilization", label: "Stabilization sub-phase", level: "subphase" }}
+      />
 
       <div className="h-24" />
     </GuideLayout>

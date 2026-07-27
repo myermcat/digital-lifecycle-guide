@@ -71,6 +71,7 @@ export function CreateAlphaPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <p>{renderLinkedProse(ALPHA_EXTRACT.whatsNew)}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT.closing)}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT_CLOSING)}</p>
         </div>

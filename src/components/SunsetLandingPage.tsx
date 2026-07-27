@@ -6,6 +6,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { InlineArrowLeadList } from "@/lib/guide-lists";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
+import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { PhaseQuote } from "@/components/PhaseQuote";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PageFoot } from "@/components/PageFoot";
@@ -120,6 +121,10 @@ export function SunsetLandingPage() {
       <PageFoot sources={landing.sources} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
+
+      <SubphaseSectionNav
+        prev={{ href: "/live-maturity", label: "Maturity sub-phase (Live)", level: "subphase" }}
+      />
 
       <div className="h-24" />
     </GuideLayout>

@@ -311,7 +311,7 @@ export const USER_RESEARCH_THREAD = {
       label: "Supporting reference",
       linkKey: "australia-dta-understand-user-needs" satisfies ExternalLinkKey,
       description:
-        "DTA (Australia), Digital Service Standard, Criterion 1: Understand user needs — https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/1-understand-user-needs",
+        "Digital Service Standard, Criterion 2: Know your user (Australia) — https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-2",
     },
     {
       label: "Supporting reference",

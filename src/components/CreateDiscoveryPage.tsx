@@ -141,7 +141,10 @@ export function CreateDiscoveryPage() {
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 
-      <SubphaseSectionNav next={DISCOVERY_SECTION_NAV.next} />
+      <SubphaseSectionNav
+        prev={DISCOVERY_SECTION_NAV.prev}
+        next={DISCOVERY_SECTION_NAV.next}
+      />
 
       <div className="h-24" />
     </GuideLayout>

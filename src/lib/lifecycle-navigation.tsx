@@ -5,6 +5,7 @@ import {
   InfinityVisual,
 } from "@/components/PhaseVisuals";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
+import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import { SUBPHASE_PAGE_HEADINGS } from "@/lib/subphase-content";
 
 /** @deprecated Prefer PHASES[id].pageHeading */
@@ -171,6 +172,7 @@ export const SUBPHASE_META: Record<
     path: string;
     where: () => WhereThisFitsConfig;
     showComingSoon?: boolean;
+    sectionNav?: { prev?: SectionNavLink; next?: SectionNavLink };
   }
 > = {
   discovery: {
@@ -214,6 +216,10 @@ export const SUBPHASE_META: Record<
     subtitle: "Stabilize the service right after it goes live.",
     path: "/live-stabilization",
     where: () => whereThisFitsForLiveSubphase("stabilization"),
+    sectionNav: {
+      prev: { href: "/live", label: "Live phase", level: "phase" },
+      next: { href: "/live-growth", label: "Growth sub-phase", level: "subphase" },
+    },
   },
   growth: {
     lifecyclePhase: "live",
@@ -223,6 +229,10 @@ export const SUBPHASE_META: Record<
     subtitle: "Add capability as more users arrive.",
     path: "/live-growth",
     where: () => whereThisFitsForLiveSubphase("growth"),
+    sectionNav: {
+      prev: { href: "/live-stabilization", label: "Stabilization sub-phase", level: "subphase" },
+      next: { href: "/live-maturity", label: "Maturity sub-phase", level: "subphase" },
+    },
   },
   maturity: {
     lifecyclePhase: "live",
@@ -234,6 +244,10 @@ export const SUBPHASE_META: Record<
     path: "/live-maturity",
     where: () => whereThisFitsForLiveSubphase("maturity"),
     showComingSoon: false,
+    sectionNav: {
+      prev: { href: "/live-growth", label: "Growth sub-phase", level: "subphase" },
+      next: { href: "/sunset", label: "Sunset phase", level: "phase" },
+    },
   },
 };
 

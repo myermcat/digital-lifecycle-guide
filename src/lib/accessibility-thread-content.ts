@@ -234,13 +234,57 @@ export const ACCESSIBILITY_THREAD = {
         popup: [
           {
             text:
-              "Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end.",
+              "Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end. The work changes shape across Create's three sub-phases:",
             externalLinks: [
               { phrase: "EN 301 549", linkKey: "can-asc-en-301-549" },
             ] satisfies ExternalPhraseLink[],
             internalLinks: [
               { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
+          },
+          {
+            text: "In Discovery, learn who gets excluded.",
+            bold: [{ phrase: "In Discovery, learn who gets excluded." }],
+            internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "include people with visual, hearing, motor, or cognitive impairments in the research, and people with little digital access or confidence",
+              "learn where the current way of doing things shuts people out",
+              "nothing exists yet, so there is nothing to test",
+            ],
+          },
+          {
+            text: "In Alpha, make the mock-ups accessible, and test them with the people most likely to be excluded.",
+            bold: [
+              {
+                phrase:
+                  "In Alpha, make the mock-ups accessible, and test them with the people most likely to be excluded.",
+              },
+            ],
+            internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "check the designs against the accessibility principles",
+              "run the research sessions on the mock-ups with people with access needs",
+              "work out which clauses of the standard belong in the build contract",
+            ],
+          },
+          {
+            text: "In Beta, prove it on the real service.",
+            bold: [{ phrase: "In Beta, prove it on the real service." }],
+            internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "test with assistive technology, and with the people most likely to be excluded",
+              "fix what the testing finds before the public arrives",
+              "check the supplier's Accessibility Conformance Report against the contract",
+            ],
           },
         ],
       },

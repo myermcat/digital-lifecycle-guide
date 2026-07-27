@@ -363,10 +363,10 @@ export const TEAM_CAPABILITY_THREAD = {
 
   furtherReading: {
     text:
-      "For setting up and running a multidisciplinary service team, with roles, contractors, and training, The team in the UK Service Manual is a full guide. Australia's Have a multidisciplinary team guidance covers how to staff a service across its life and which roles to keep in-house. For a runnable self-assessment a team can use to check its own health, Atlassian's Team Health Monitor walks through eight attributes.",
+      "For setting up and running a multidisciplinary service team, with roles, contractors, and training, The team in the UK Service Manual is a full guide. Australia's Managing teams guidance covers how to staff a service across its life and which roles to keep in-house. For a runnable self-assessment a team can use to check its own health, Atlassian's Team Health Monitor walks through eight attributes.",
     externalLinks: [
       { phrase: "The team", linkKey: "uk-service-manual-the-team" },
-      { phrase: "Have a multidisciplinary team", linkKey: "dta-multidisciplinary-team" },
+      { phrase: "Managing teams", linkKey: "dta-multidisciplinary-team" },
       { phrase: "Team Health Monitor", linkKey: "atlassian-team-health-monitor" },
     ] satisfies ExternalPhraseLink[],
   },
@@ -405,7 +405,7 @@ export const TEAM_CAPABILITY_THREAD = {
       label: "Supporting reference",
       linkKey: "dta-multidisciplinary-team" satisfies ExternalLinkKey,
       description:
-        "Have a multidisciplinary team (Australia DTA) — https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/2-have-multidisciplinary-team",
+        "Managing teams (Australia, Digital Experience Toolkit) — https://www.digital.gov.au/policy/digital-experience/toolkit/managing-teams",
     },
     {
       label: "Supporting reference",

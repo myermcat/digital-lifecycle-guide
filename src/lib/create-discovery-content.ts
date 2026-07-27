@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const DISCOVERY_EXTRACT = {
@@ -39,6 +40,10 @@ export const DISCOVERY_ON_RAMP = {
   intro:
     "A discovery goes badly when the basics are not in place first. These are the things to have before you begin:",
   items: [
+    {
+      text: "A named problem. Something in the program is failing the people it serves: complaints, backlogs, workarounds, an aging system, a policy change. Written down in a sentence or two. A solution does not need to be chosen yet; noticing the pain is enough to start.",
+      bold: [{ phrase: "A named problem." }],
+    },
     {
       text: "A business owner sponsors the work and can act on what it finds.",
       bold: [{ phrase: "business owner" }],
@@ -180,10 +185,14 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
   {
     id: "accessibility",
     icon: Accessibility,
-    title: "Design for accessibility from the start.",
+    title: "Learn who the service could exclude.",
     sections: [
       {
-        text: "Learn enough about users' accessibility needs to know whether the problem space presents particular barriers. Accessibility is a legal duty for a Government of Canada service, and it is far cheaper to design in now than to add later. Accessibility covers the obligation and how to meet it.",
+        text: "Nothing is designed in Discovery, so the accessibility work here is research: include the people most likely to be excluded, and learn where the current way of doing things shuts them out.",
+        bold: [{ phrase: "include the people most likely to be excluded" }],
+      },
+      {
+        text: "That means talking with people with visual, hearing, motor, or cognitive impairments, and with people who have little digital access or confidence. What the research finds becomes the barriers the designs in Alpha will have to clear. Meeting the standard is a legal duty for a Government of Canada service, and it is far cheaper to plan for now than to fix later. Accessibility covers the obligation and how to meet it.",
         bold: [{ phrase: "legal duty" }],
         internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
@@ -219,7 +228,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
   {
     id: "measure-success",
     icon: Activity,
-    title: "Decide how you'll measure success.",
+    title: "Write down today's numbers, and what better would look like.",
     sections: [
       {
         text: 'Decide what "working" will mean, and record today\'s baselines, such as how long an application takes or how many fail, so later improvement can be seen. Monitoring and instrumentation covers the signals and targets.',
@@ -333,8 +342,8 @@ export const DISCOVERY_FINISH = {
         bold: [{ phrase: "A rough team" }],
       },
       {
-        text: "A way to measure success.",
-        bold: [{ phrase: "A way to measure success." }],
+        text: "Baselines and first success measures. What the problem costs today, and what better would look like in numbers. At the end of Alpha, the team's own decision to go on or stop is made with these.",
+        bold: [{ phrase: "Baselines and first success measures." }],
       },
       {
         text: "The funding path for Alpha, lined up early, since it takes time to arrange.",
@@ -345,5 +354,6 @@ export const DISCOVERY_FINISH = {
 };
 
 export const DISCOVERY_SECTION_NAV = {
-  next: { href: "/create-alpha", label: "Alpha" },
-};
+  prev: { href: "/create", label: "Create phase", level: "phase" },
+  next: { href: "/create-alpha", label: "Alpha sub-phase", level: "subphase" },
+} satisfies { prev: SectionNavLink; next: SectionNavLink };

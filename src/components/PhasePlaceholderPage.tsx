@@ -12,6 +12,10 @@ import {
   type PhaseLeavingSlug,
 } from "@/lib/phase-leaving-content";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
+import {
+  SubphaseSectionNav,
+  type SectionNavLink,
+} from "@/components/SubphaseSectionNav";
 import { SUBPHASE_CONTENT } from "@/lib/subphase-content";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
@@ -44,6 +48,7 @@ interface PhasePlaceholderPageProps {
   whereThisFits: WhereThisFitsConfig;
   subphaseLeavingSlug?: PhaseLeavingSlug;
   showComingSoon?: boolean;
+  sectionNav?: { prev?: SectionNavLink; next?: SectionNavLink };
 }
 
 export function PhasePlaceholderPage({
@@ -56,6 +61,7 @@ export function PhasePlaceholderPage({
   whereThisFits,
   subphaseLeavingSlug,
   showComingSoon = true,
+  sectionNav,
 }: PhasePlaceholderPageProps) {
   const leavingContent = subphaseLeavingSlug
     ? getPhaseLeavingContent(subphaseLeavingSlug)
@@ -140,6 +146,10 @@ export function PhasePlaceholderPage({
       <PageFoot subphaseFootFor={subphase ? lifecyclePhase : undefined} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
+
+      {sectionNav ? (
+        <SubphaseSectionNav prev={sectionNav.prev} next={sectionNav.next} />
+      ) : null}
 
       <div className="h-24" />
     </GuideLayout>

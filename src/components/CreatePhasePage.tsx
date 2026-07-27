@@ -7,6 +7,7 @@ import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PhaseQuote } from "@/components/PhaseQuote";
+import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { CREATE_PHASE } from "@/lib/create-phase-content";
 import { guideDoorwayCardClassName } from "@/lib/guide-cards";
@@ -136,6 +137,10 @@ export function CreatePhasePage() {
       <PageFoot sources={sources} />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
+
+      <SubphaseSectionNav
+        next={{ href: "/create-discovery", label: "Discovery sub-phase", level: "subphase" }}
+      />
 
       <div className="h-24" />
     </GuideLayout>

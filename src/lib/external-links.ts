@@ -141,8 +141,8 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "australia-dta-understand-user-needs": {
-    url: "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/1-understand-user-needs",
-    description: "DTA (Australia), Digital Service Standard, Criterion 1: Understand user needs",
+    url: "https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-2",
+    description: "Digital Service Standard, Criterion 2: Know your user (Australia)",
     accessibility: "public",
   },
   "uk-service-manual-user-research": {
@@ -915,8 +915,8 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "dta-service-design-delivery-process": {
-    url: "https://www.dta.gov.au/help-and-advice/build-and-improve-services/service-design-and-delivery-process",
-    description: "Australia DTA Service design and delivery process",
+    url: "https://www.digital.gov.au/policy/digital-experience/toolkit/service-design-and-delivery-process",
+    description: "Service design and delivery process (Australia, Digital Experience Toolkit)",
     accessibility: "public",
   },
   "design-canada-continuous-improvement": {
@@ -1160,8 +1160,8 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "dta-multidisciplinary-team": {
-    url: "https://www.dta.gov.au/help-and-advice/digital-service-standard/digital-service-standard-criteria/2-have-multidisciplinary-team",
-    description: "Have a multidisciplinary team (Australia DTA)",
+    url: "https://www.digital.gov.au/policy/digital-experience/toolkit/managing-teams",
+    description: "Managing teams (Australia, Digital Experience Toolkit)",
     accessibility: "public",
   },
   "atlassian-team-health-monitor": {
