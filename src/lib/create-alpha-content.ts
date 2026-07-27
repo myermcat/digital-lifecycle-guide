@@ -16,11 +16,14 @@ import {
   ACCESSIBILITY_EXCLUSION_GROUPS,
   ACCESSIBILITY_EXCLUSION_INTRO,
 } from "@/lib/accessibility-exclusion-groups";
+import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const ALPHA_EXTRACT = {
+  spine: "Alpha exists to break the idea while breaking is cheap.",
   opening: {
     text: "Alpha is the second sub-phase of Create. The team takes the problem from Discovery and:",
     internalLinks: [
@@ -34,8 +37,9 @@ export const ALPHA_EXTRACT = {
     "watches real users try them",
   ],
   whatsNew: {
-    text: "New since Discovery: the team starts making things, and users start trying them.",
-  } satisfies ThreadLinkedProse,
+    label: "New since Discovery",
+    text: "The team starts making things, and users start trying them.",
+  },
   closing: {
     text: "Alpha builds nothing that lasts, and its prototypes are kept away from the public.",
   } satisfies ThreadLinkedProse,
@@ -99,6 +103,7 @@ export type AlphaAccordionStage = {
   id: string;
   icon: LucideIcon;
   title: string;
+  headerVisual?: LifecycleVisualAsset;
   sections: readonly ThreadContentSection[];
 };
 
@@ -112,6 +117,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     id: "throwaway-prototypes",
     icon: PencilRuler,
     title: "Build throwaway prototypes, and try more than one approach.",
+    headerVisual: LIFECYCLE_VISUALS.alphaPrototypeLadder,
     sections: [
       {
         text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
@@ -127,18 +133,22 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             text: " The cheapest way to find out an idea is wrong.",
           },
           {
-            bold: "An AI (artificial intelligence) mock-up.",
-            text: " A number of tools now build a working front end from a written prompt in about ten minutes, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back.",
+            bold: "A clickable mock-up.",
+            text: " A number of AI (artificial intelligence) tools now build one from a written prompt in about ten minutes, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back.",
           },
           {
-            bold: "A clickable prototype.",
-            text: " once the research points the way.",
+            bold: "A coded prototype,",
+            text: " once the research points the way. A developer builds it, often straight from your mock-up.",
           },
         ],
       },
       {
         text: "Treat the AI mock-up exactly as you would treat paper: something to be thrown away. It is not the beginning of the real service, and no part of it should survive into the build. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in the air, and it shows quickly whether the idea works at all.",
         bold: [{ phrase: "something to be thrown away" }],
+      },
+      {
+        text: "Each round of testing is a research session: five or six people who look like the service's real users try the mock-up, and the team watches where they get stuck.",
+        bold: [{ phrase: "Each round of testing is a research session:" }],
       },
     ],
   },
@@ -341,7 +351,7 @@ export const ALPHA_FINISH = {
   title: "How you know Alpha is finished",
   sectionId: "how-you-know-alpha-is-finished",
   intro: {
-    text: "Alpha is finished when you have a prototype substantial enough to decide, the riskiest assumptions have been tested, and you are confident you can build or buy something that meets the need and is cost-effective.",
+    text: "Alpha is finished when you have a prototype substantial enough to decide, the riskiest assumptions have been tested, and you are confident you can build or buy something that meets the need and is cost-effective. What survives Alpha has earned the build.",
     bold: [{ phrase: "riskiest assumptions have been tested" }],
   } satisfies ThreadLinkedProse,
   followUp: [
@@ -384,8 +394,8 @@ export const ALPHA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Before you move to Beta, have ready:",
-      bold: [{ phrase: "Beta" }],
+      text: "The code dies; the learning lives. Before you move to Beta, have ready what Alpha learned:",
+      bold: [{ phrase: "The code dies; the learning lives." }],
     } satisfies ThreadLinkedProse,
     items: [
       {
@@ -395,6 +405,14 @@ export const ALPHA_FINISH = {
       {
         text: "The smallest version, defined: the simplest thing that can be built or bought that meets the need. That definition scopes what Beta builds.",
         bold: [{ phrase: "The smallest version, defined:" }],
+      },
+      {
+        text: "The tested design: the winning mock-ups, kept as the clearest requirements document the department will ever hand a builder.",
+        bold: [{ phrase: "The tested design:" }],
+      },
+      {
+        text: "The journey map from Discovery, updated with what the testing taught.",
+        bold: [{ phrase: "The journey map" }],
       },
       {
         text: "A procurement plan for the build, with exit rights and data portability written into the contract.",
@@ -411,6 +429,10 @@ export const ALPHA_FINISH = {
       {
         text: "Sharpened success metrics, carried from Discovery.",
         bold: [{ phrase: "Sharpened success metrics," }],
+      },
+      {
+        text: "The record of which ideas died, and why, so the next team does not pay to re-test them.",
+        bold: [{ phrase: "The record of which ideas died," }],
       },
     ] satisfies readonly ThreadLinkedProse[],
   },

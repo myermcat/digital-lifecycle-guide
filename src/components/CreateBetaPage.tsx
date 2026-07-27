@@ -1,4 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { Sparkles } from "lucide-react";
 import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -33,7 +34,7 @@ import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
-import { guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { guideBodySubheading, guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
 
 const BETA_SOURCES: SourceItem[] = [
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
@@ -63,13 +64,23 @@ export function CreateBetaPage() {
 
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyBeta}>
         <div className={`${guideProse} space-y-3`}>
+          <p className={guideBodySubheading}>{BETA_EXTRACT.spine}</p>
           <p>{renderLinkedProse(BETA_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
             {BETA_EXTRACT.workOutItems.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p>{renderLinkedProse(BETA_EXTRACT.whatsNew)}</p>
+          <p>
+            <Sparkles
+              className="mr-1.5 inline h-4 w-4 -translate-y-px text-primary/70"
+              aria-hidden
+            />
+            <span className="mr-2 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              {BETA_EXTRACT.whatsNew.label}
+            </span>
+            {BETA_EXTRACT.whatsNew.text}
+          </p>
           <p>{renderLinkedProse(BETA_EXTRACT.scoped)}</p>
           <p>{renderLinkedProse(BETA_EXTRACT_CLOSING)}</p>
         </div>

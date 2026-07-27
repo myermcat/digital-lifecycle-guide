@@ -2,6 +2,7 @@ import createSubphasesVisual from "@/assets/create_subphases.svg?url";
 import liveSubphasesVisual from "@/assets/live_subphases.svg?url";
 import phasesAndSubphasesVisual from "@/assets/phases_and_subphases.svg?url";
 import serviceDashboardVisual from "@/assets/service_dashboard.svg?url";
+import alphaPrototypeLadderVisual from "@/assets/alpha_prototype_ladder.svg?url";
 import subphaseKeyAlphaVisual from "@/assets/subphase_key_alpha.svg?url";
 import subphaseKeyBetaVisual from "@/assets/subphase_key_beta.svg?url";
 import subphaseKeyDiscoveryVisual from "@/assets/subphase_key_discovery.svg?url";
@@ -31,6 +32,10 @@ export const LIFECYCLE_VISUALS = {
   subphaseKeyAlpha: {
     src: subphaseKeyAlphaVisual,
     alt: "Test the riskiest idea first. Prototype cheaply and try more than one approach. Throw it away, the code and most of the ideas.",
+  },
+  alphaPrototypeLadder: {
+    src: alphaPrototypeLadderVisual,
+    alt: "The prototype ladder: a paper sketch you draw yourself or with a friend, then a clickable mock-up an AI tool makes in minutes, then a coded prototype a developer builds from your mock-up.",
   },
   subphaseKeyBeta: {
     src: subphaseKeyBetaVisual,

@@ -26,6 +26,7 @@ import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const BETA_EXTRACT = {
+  spine: "Beta exists to build the service for real, and prove it before it becomes official.",
   opening: {
     text: "Beta is the third sub-phase of Create. The team takes the tested idea from Alpha and:",
     internalLinks: [{ phrase: "Create", to: "/create" }],
@@ -36,8 +37,9 @@ export const BETA_EXTRACT = {
     "proves it with real people, in a private beta and then a public beta.",
   ],
   whatsNew: {
-    text: "New since Alpha: the build is real, and the public starts using it.",
-  } satisfies ThreadLinkedProse,
+    label: "New since Alpha",
+    text: "The build is real, and the public starts using it.",
+  },
   scoped: {
     text: "Beta is scoped to one department standing up one service, whether it is bought, reused, or built.",
   } satisfies ThreadLinkedProse,

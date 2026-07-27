@@ -16,6 +16,7 @@ import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
 export const DISCOVERY_EXTRACT = {
+  spine: "Discovery exists to understand the problem before anything is committed.",
   opening: {
     text: "Discovery is the first sub-phase of Create, and nothing is built in it. The team works out:",
     internalLinks: [{ phrase: "Create", to: "/create" }],

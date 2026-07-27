@@ -33,8 +33,9 @@ import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
-import { guideListIndent, guideProse } from "@/lib/guide-typography";
+import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { Sparkles } from "lucide-react";
 
 const ALPHA_SOURCES: SourceItem[] = [
   { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
@@ -65,13 +66,23 @@ export function CreateAlphaPage() {
 
       <SubphaseDescriptionPanel>
         <div className={`${guideProse} space-y-3`}>
+          <p className={guideBodySubheading}>{ALPHA_EXTRACT.spine}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
             {ALPHA_EXTRACT.workOutItems.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <p>{renderLinkedProse(ALPHA_EXTRACT.whatsNew)}</p>
+          <p>
+            <Sparkles
+              className="mr-1.5 inline h-4 w-4 -translate-y-px text-primary/70"
+              aria-hidden
+            />
+            <span className="mr-2 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              {ALPHA_EXTRACT.whatsNew.label}
+            </span>
+            {ALPHA_EXTRACT.whatsNew.text}
+          </p>
           <p>{renderLinkedProse(ALPHA_EXTRACT.closing)}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT_CLOSING)}</p>
         </div>
@@ -112,6 +123,9 @@ export function CreateAlphaPage() {
           id: stage.id,
           icon: stage.icon,
           title: stage.title,
+          headerContent: stage.headerVisual ? (
+            <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
+          ) : undefined,
           children: renderThreadSections(stage.sections),
         }))}
       />

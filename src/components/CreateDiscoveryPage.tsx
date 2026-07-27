@@ -32,7 +32,7 @@ import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
-import { guideListIndent, guideProse } from "@/lib/guide-typography";
+import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 
 const DISCOVERY_SOURCES: SourceItem[] = [
   { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
@@ -60,6 +60,7 @@ export function CreateDiscoveryPage() {
 
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyDiscovery}>
         <div className={`${guideProse} space-y-3`}>
+          <p className={guideBodySubheading}>{DISCOVERY_EXTRACT.spine}</p>
           <p>{renderLinkedProse(DISCOVERY_EXTRACT.opening)}</p>
           <ul className={`list-disc space-y-1 ${guideListIndent}`}>
             {DISCOVERY_EXTRACT.workOutItems.map((item) => (
