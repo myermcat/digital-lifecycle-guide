@@ -170,7 +170,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     heading: "Create · Discovery - work out what is needed",
     durationLabel: "Typical: weeks to a few months · varies",
     phaseNote:
-      "Funded from the department's existing operating budget. This is where the path is decided.",
+      "Funded from the department's existing operating budget. This is where the path is decided. Nadia has spotted a problem. Discovery is where she works out how serious it is, who needs to be brought in, and which path the project should take.",
     steps: [
       {
         n: 1,
@@ -310,25 +310,24 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       {
         n: 6,
         action: {
-          lead: "Decides whether to reuse, buy, or build.",
+          lead: "Asks the IT office whether anything on the GC shelf already does what she needs.",
           body: [
             {
               type: "p",
-              text: "Checks first whether another department already runs a grants system she could reuse.",
+              text: "Reuse comes first in GC policy. She is not the one who searches; she is the one who decides.",
             },
           ],
         },
         response: {
           tags: ["dept", "central"],
-          lead: "She looks on the shelf.",
+          lead: "The CIO or IT office does the looking.",
           body: [
-            { type: "p", text: "She checks a few places:" },
+            { type: "p", text: "They check:" },
             {
               type: "ul",
               items: [
                 "the GC Reference Architectures and the enterprise solutions catalogue (on the GC network)",
                 "the Enterprise Architecture Community of Practice",
-                "the CIO office",
                 "Shared Services Canada",
               ],
               itemBold: [
@@ -338,7 +337,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "If a fit exists, she reuses instead of buying.",
+              text: "If a fit exists, Nadia adopts it instead of buying.",
             },
           ],
         },
@@ -555,6 +554,11 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
               type: "p",
               text: "A small invited group uses the real service first (private Beta), then it opens to everyone (public Beta), with the old process still running until the new one is properly live.",
             },
+            {
+              type: "caution",
+              lead: "Before launch, confirm the operating budget.",
+              text: "The money to run the service year after year (flagged back in Discovery) has to be committed in principle by now, through the department's own governance. A service that launches without it can go live with no plan to keep it running.",
+            },
           ],
         },
       },
@@ -572,7 +576,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     heading: "Live - run it, and put it on the record",
     durationLabel: "Ongoing, for years · varies",
     phaseNote:
-      "Live is shown as a single section here because it has very few official gates - far fewer than Create. The full Live phase has its own sub-phases in the playbook. The work is a recurring cycle; the one filing that is easy to forget is getting the service onto the official registries.",
+      "Live is shown as a single section here because it has very few official gates - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier gates back.",
     steps: [
       {
         n: 15,
@@ -594,17 +598,17 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       {
         n: 16,
         action: {
-          lead: "Keeps it running.",
+          lead: "Keeps it running and improves it.",
           body: [
-            { type: "p", text: "Year after year:" },
+            { type: "p", text: "Live has three kinds of ongoing work:" },
             {
               type: "ul",
               items: [
-                "watches it and patches it",
-                "renews the funding before it runs out",
-                "refreshes the accessibility statement and the privacy assessment as it changes",
-                "names someone to manage the supplier",
+                "Stabilise (right after launch): fix bugs, respond to incidents, tune performance",
+                "Grow: add features and improve the service as user needs evolve",
+                "Mature (recurring): watch it and patch it; renew the funding before it runs out; keep the accessibility testing current, feeding the department's accessibility statement (required from December 2027); update the privacy assessment as the service changes; manage the supplier",
               ],
+              itemBold: ["Stabilise (right after launch):", "Grow:", "Mature (recurring):"],
             },
           ],
         },
@@ -615,6 +619,10 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
             {
               type: "p",
               text: 'Each carries their part for as long as the service is used. The money to run it comes from the department\'s own operating budget (its reference levels), set each year through the Estimates. If the original funding was time-limited (a "sunset" clause), it has to be renewed by a new funding decision before it runs out, and that lead time is easy to underestimate.',
+            },
+            {
+              type: "p",
+              text: "Adding a significant feature can bring earlier gates back: a feature that handles personal information may require an updated Privacy Impact Assessment; automating a decision triggers an Algorithmic Impact Assessment; major architectural changes go back to the DARB; a new or expanded capability may need a contract amendment or a new procurement.",
             },
             {
               type: "caution",
@@ -884,6 +892,10 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       {
         term: "Accessibility Conformance Report",
         def: "The supplier's statement of how accessible a specific version of the product is, tested against EN 301 549 (which includes WCAG 2.1 AA). Covers one version only - re-check on every significant update.",
+      },
+      {
+        term: "Departmental accessibility statement",
+        def: "Required by the amended Accessible Canada Regulations, phasing in from December 2027. The department publishes it, and one statement can cover many services. It reports where the ICT accessibility standard is not met and how to get help or an alternative; each service's testing results feed it.",
       },
       {
         term: "Security Assessment and Authorization → Authority to Operate",
