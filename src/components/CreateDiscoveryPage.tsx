@@ -56,8 +56,6 @@ export function CreateDiscoveryPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <GateMapSeeAlsoLink phaseLabel="Discovery" hash="discovery" />
-
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyDiscovery}>
         <div className={`${guideProse} space-y-3`}>
           <p className={guideBodySubheading}>{DISCOVERY_EXTRACT.spine}</p>
@@ -71,6 +69,8 @@ export function CreateDiscoveryPage() {
           <p>{renderLinkedProse(DISCOVERY_EXTRACT_CLOSING)}</p>
         </div>
       </SubphaseDescriptionPanel>
+
+      <GateMapSeeAlsoLink phaseLabel="Discovery" hash="discovery" />
 
       <OnRampChecklist
         title={DISCOVERY_ON_RAMP.title}

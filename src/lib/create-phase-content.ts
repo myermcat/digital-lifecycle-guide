@@ -160,7 +160,7 @@ export const CREATE_PHASE = {
       {
         title: "Discovery",
         description:
-          "work out whether the service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
+          "understand the problem, work out whether a service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
         href: "/create-discovery",
       },
       {

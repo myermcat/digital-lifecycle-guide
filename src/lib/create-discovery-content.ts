@@ -27,7 +27,7 @@ export const DISCOVERY_EXTRACT = {
     "whether a new service is even the right answer",
   ],
   closing: {
-    text: "Set a goal at the start so the work stays scoped.",
+    text: "Set a goal at the start: name what the discovery needs to find out. That is how the team knows when it is done.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -232,8 +232,20 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     title: "Write down today's numbers, and what better would look like.",
     sections: [
       {
-        text: 'Decide what "working" will mean, and record today\'s baselines, such as how long an application takes or how many fail, so later improvement can be seen. Monitoring and instrumentation covers the signals and targets.',
+        text: "Record today's baselines now, before anything changes, because they cannot be reconstructed later. Numbers worth writing down:",
         bold: [{ phrase: "baselines" }],
+      },
+      {
+        type: "unorderedList",
+        items: [
+          "how long the task takes today, end to end",
+          "how many people give up, fail, or phone for help",
+          "what one transaction costs in staff time",
+        ],
+      },
+      {
+        text: "Then sketch what better would look like: the two or three numbers that should move if the problem were solved, and by roughly how much. Those become the service's first success measures, and the decision to go on or stop leans on them at every step from here. Monitoring and instrumentation covers the signals and targets.",
+        bold: [{ phrase: "what better would look like" }],
         internalLinks: [
           {
             phrase: "Monitoring and instrumentation",
@@ -249,8 +261,25 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     title: "Work in the open.",
     sections: [
       {
-        text: "Unless confidentiality prevents it, share what you are learning through short show-and-tells and posts others can read. Working in the open is one of the Government of Canada's digital standards. It surfaces work already done elsewhere and makes reuse more likely.",
+        text: "Unless confidentiality prevents it, share what the team is learning while it learns. Two habits are enough:",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            bold: "A short show-and-tell",
+            text: " every few weeks, with the enabling branches and the teams on either side of the problem invited.",
+          },
+          {
+            bold: "Short posts where other public servants can find them,",
+            text: " on the department's internal channels or the GC-wide communities.",
+          },
+        ],
+      },
+      {
+        text: "Working in the open is one of the Government of Canada's digital standards, and it pays back quickly: someone who has already solved part of the problem finds you, and duplicate work surfaces before money is spent on it. The Support page lists the communities to share with.",
         externalLinks: [{ phrase: "digital standards", linkKey: "digital-standards" }],
+        internalLinks: [{ phrase: "Support page", to: "/support" }],
       },
     ],
   },
@@ -326,10 +355,18 @@ export const DISCOVERY_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Before you move to Alpha, have ready:",
-      bold: [{ phrase: "Alpha" }],
+      text: "Everything Discovery makes is knowledge, and all of it crosses over. Before you move to Alpha, have ready:",
+      bold: [{ phrase: "Everything Discovery makes is knowledge," }],
     } satisfies ThreadLinkedProse,
     items: [
+      {
+        text: "The problem, written down. One or two sentences the whole team agrees on, with the evidence behind them.",
+        bold: [{ phrase: "The problem, written down." }],
+      },
+      {
+        text: "The journey map. The as-is picture of how people get this done today, with the pain points marked. It is Discovery's key artefact, and Alpha tests ideas against it.",
+        bold: [{ phrase: "The journey map." }],
+      },
       {
         text: "The wider context. The other services and teams in the problem space.",
         bold: [{ phrase: "The wider context." }],

@@ -41,7 +41,7 @@ export const ALPHA_EXTRACT = {
     text: "The team starts making things, and users start trying them.",
   },
   closing: {
-    text: "Alpha builds nothing that lasts, and its prototypes are kept away from the public.",
+    text: "Alpha builds nothing that lasts. No code survives into Beta, and the prototypes are seen only by the handful of people who test them, never the public.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -52,7 +52,7 @@ export const ALPHA_EXTRACT_CLOSING: ThreadLinkedProse = {
 
 export const ALPHA_PROTOTYPE_QUOTE = {
   title: "You do not need a supplier, or developers, to start prototyping.",
-  body: "The cheapest prototypes need a pen, or an afternoon with someone who knows a design tool.",
+  body: "The cheapest prototypes need a pen, or half a day and an AI tool.",
 } as const;
 
 export const ALPHA_ON_RAMP = {
@@ -109,7 +109,7 @@ export type AlphaAccordionStage = {
 
 export const ALPHA_ACCORDION = {
   id: "what-to-find-out",
-  title: "What to find out in Alpha",
+  title: "What to do in Alpha",
 } as const;
 
 export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
@@ -134,7 +134,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
           },
           {
             bold: "A clickable mock-up.",
-            text: " A number of AI (artificial intelligence) tools now build one from a written prompt in about ten minutes, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back.",
+            text: " A number of AI (artificial intelligence) tools now build one from a written prompt, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back. Plan for about half a day all in, including learning the tool.",
           },
           {
             bold: "A coded prototype,",
@@ -168,8 +168,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             bold: [{ phrase: "A paper prototype needs one person who can draw." }],
           },
           {
-            text: "A clickable mockup needs a friend and a few hours. Find someone who knows a design tool, Figma, Penpot, Sketch, or one of the AI prototyping tools, explain what you want, and sit with them for an afternoon. No code is written and no supplier is involved.",
-            bold: [{ phrase: "A clickable mockup needs a friend and a few hours." }],
+            text: "A clickable mockup needs half a day, and you can make it yourself. The AI prototyping tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can do the same, though asking for half of someone's working day is a real ask.",
+            bold: [{ phrase: "A clickable mockup needs half a day, and you can make it yourself." }],
           },
           {
             text: "If the department is buying a Team, the supplier is already there. That contract was signed at the end of Discovery, so the team prototypes alongside the department.",

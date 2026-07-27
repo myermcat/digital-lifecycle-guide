@@ -62,8 +62,6 @@ export function CreateAlphaPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <GateMapSeeAlsoLink phaseLabel="Alpha" hash="alpha" />
-
       <SubphaseDescriptionPanel>
         <div className={`${guideProse} space-y-3`}>
           <p className={guideBodySubheading}>{ALPHA_EXTRACT.spine}</p>
@@ -73,6 +71,7 @@ export function CreateAlphaPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <p>{renderLinkedProse(ALPHA_EXTRACT.closing)}</p>
           <p>
             <Sparkles
               className="mr-1.5 inline h-4 w-4 -translate-y-px text-primary/70"
@@ -83,10 +82,11 @@ export function CreateAlphaPage() {
             </span>
             {ALPHA_EXTRACT.whatsNew.text}
           </p>
-          <p>{renderLinkedProse(ALPHA_EXTRACT.closing)}</p>
           <p>{renderLinkedProse(ALPHA_EXTRACT_CLOSING)}</p>
         </div>
       </SubphaseDescriptionPanel>
+
+      <GateMapSeeAlsoLink phaseLabel="Alpha" hash="alpha" />
 
       <blockquote className={cn(alphaQuoteClassName)}>
         <p>

@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowDownToLine, ArrowRight, Infinity as InfinityIcon } from "lucide-react";
 import { guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -9,11 +10,34 @@ export type SectionNavLink = {
   level: "phase" | "subphase";
 };
 
+/** Phase links carry the same icon the documents use for that phase. */
+function phaseIconFor(href: string) {
+  if (href.startsWith("/create")) return ArrowRight;
+  if (href.startsWith("/live")) return InfinityIcon;
+  if (href.startsWith("/sunset")) return ArrowDownToLine;
+  return null;
+}
+
 function sectionNavLinkClass(level: SectionNavLink["level"]) {
   return cn(
     guideLink,
     "font-sans",
     level === "phase" ? "text-base font-semibold" : "text-sm",
+  );
+}
+
+function NavLinkContent({ link, side }: { link: SectionNavLink; side: "prev" | "next" }) {
+  const PhaseIcon = link.level === "phase" ? phaseIconFor(link.href) : null;
+  const icon = PhaseIcon ? (
+    <PhaseIcon className="inline h-4 w-4 -translate-y-px" aria-hidden />
+  ) : null;
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      {side === "prev" ? <span aria-hidden>←</span> : null}
+      {icon}
+      <span>{link.label}</span>
+      {side === "next" ? <span aria-hidden>→</span> : null}
+    </span>
   );
 }
 
@@ -36,12 +60,12 @@ export function SubphaseSectionNav({
     >
       {prev ? (
         <Link to={prev.href} className={sectionNavLinkClass(prev.level)}>
-          ← {prev.label}
+          <NavLinkContent link={prev} side="prev" />
         </Link>
       ) : null}
       {next ? (
         <Link to={next.href} className={cn(sectionNavLinkClass(next.level), "text-right")}>
-          {next.label} →
+          <NavLinkContent link={next} side="next" />
         </Link>
       ) : null}
     </nav>

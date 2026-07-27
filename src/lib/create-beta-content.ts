@@ -78,18 +78,23 @@ export const BETA_ON_RAMP = {
   items: [
     {
       text: "A tested idea from Alpha, and evidence it works for real people.",
+      bold: [{ phrase: "A tested idea from Alpha," }],
     },
     {
       text: "A decision on whether to reuse, buy, or build, and the reasoning written down.",
+      bold: [{ phrase: "A decision on whether to reuse, buy, or build," }],
     },
     {
       text: "Funding and approval that cover the build as well as the research.",
+      bold: [{ phrase: "Funding and approval" }],
     },
     {
       text: "A named product owner with the authority to make decisions.",
+      bold: [{ phrase: "A named product owner" }],
     },
     {
       text: "The accessibility testing booked with the people most likely to be excluded, and the accessibility clauses of the standard identified so they can go into the contract.",
+      bold: [{ phrase: "The accessibility testing booked" }],
     },
   ] satisfies readonly ThreadLinkedProse[],
 };
@@ -273,6 +278,10 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
           {
             text: "Cap the volume. Keep control of how many transactions go through, so a fault costs a handful of people rather than a province.",
             bold: [{ phrase: "Cap the volume." }],
+          },
+          {
+            text: "Test in short rounds. Invite, watch, fix, invite again. The rounds get shorter as the service firms up.",
+            bold: [{ phrase: "Test in short rounds." }],
           },
           {
             text: "Find what is broken while the audience is small enough to apologise to.",
@@ -569,27 +578,35 @@ export const BETA_FINISH = {
     items: [
       {
         text: "The contract, whenever in the journey it was signed, with the exit rights, the data portability, and the code repository in it.",
+        bold: [{ phrase: "The contract," }],
       },
       {
         text: "The accessibility standard met, and the testing done with the people most likely to be excluded, with its findings fixed. No gate demands the testing; it is the only way to know the standard is met in practice.",
+        bold: [{ phrase: "The accessibility standard met," }],
       },
       {
         text: "The Privacy Impact Assessment completed and acted on, if the service handles personal information used to make decisions about people.",
+        bold: [{ phrase: "The Privacy Impact Assessment" }],
       },
       {
         text: "The security assessment and authorization complete, so the service is allowed to run in production.",
+        bold: [{ phrase: "The security assessment and authorization" }],
       },
       {
         text: "If the service automates a decision about a person, the Algorithmic Impact Assessment published.",
+        bold: [{ phrase: "the Algorithmic Impact Assessment published" }],
       },
       {
         text: "The dashboard live, and a named person who owns it.",
+        bold: [{ phrase: "The dashboard live," }],
       },
       {
         text: "The support model staffed and reachable.",
+        bold: [{ phrase: "The support model" }],
       },
       {
         text: "The team that will run the service named, and enough of it in-house to govern the work.",
+        bold: [{ phrase: "The team that will run the service" }],
       },
       {
         text: "If the service replaces an existing one, the old way still running, with a dated plan to retire it once the new service is properly live. It is not switched off in Beta. If the service is new, this does not apply.",
@@ -597,6 +614,7 @@ export const BETA_FINISH = {
       },
       {
         text: "The disposition authorities for the records the service will hold confirmed with the information management office, and any gaps flagged.",
+        bold: [{ phrase: "The disposition authorities" }],
       },
     ] satisfies readonly ThreadLinkedProse[],
   },

@@ -60,8 +60,6 @@ export function CreateBetaPage() {
         <WhereThisFits {...meta.where()} />
       </section>
 
-      <GateMapSeeAlsoLink phaseLabel="Beta" hash="beta" />
-
       <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyBeta}>
         <div className={`${guideProse} space-y-3`}>
           <p className={guideBodySubheading}>{BETA_EXTRACT.spine}</p>
@@ -71,6 +69,7 @@ export function CreateBetaPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <p>{renderLinkedProse(BETA_EXTRACT.scoped)}</p>
           <p>
             <Sparkles
               className="mr-1.5 inline h-4 w-4 -translate-y-px text-primary/70"
@@ -81,10 +80,11 @@ export function CreateBetaPage() {
             </span>
             {BETA_EXTRACT.whatsNew.text}
           </p>
-          <p>{renderLinkedProse(BETA_EXTRACT.scoped)}</p>
           <p>{renderLinkedProse(BETA_EXTRACT_CLOSING)}</p>
         </div>
       </SubphaseDescriptionPanel>
+
+      <GateMapSeeAlsoLink phaseLabel="Beta" hash="beta" />
 
       <section className="mt-10 md:mt-12 scroll-mt-24">
         <h2 className={`${guideSectionTitle} mb-4`}>{BETA_STAGES.title}</h2>
