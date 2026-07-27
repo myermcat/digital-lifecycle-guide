@@ -96,7 +96,7 @@ export const CREATE_PHASE = {
           "Nothing is built until the money and the sign-offs are in place, and for most services that happens inside the department.",
         bullets: [
           {
-            text: "Every project is costed and risk-assessed. That assessment is what decides the path it takes.",
+            text: "Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the project takes.",
           },
           {
             text: "For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance and its own architecture review board.",

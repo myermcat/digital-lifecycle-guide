@@ -405,8 +405,8 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The budget and people for Beta," }],
       },
       {
-        text: "A plan for accessibility at Beta: the clauses of the standard the service must meet, ready to go into the contract, and the testing with the people most likely to be excluded booked.",
-        bold: [{ phrase: "A plan for accessibility at Beta:" }],
+        text: "Accessibility, ready for Beta: the clauses of the standard the service must meet, ready to go into the contract, and the testing with the people most likely to be excluded booked.",
+        bold: [{ phrase: "Accessibility, ready for Beta:" }],
       },
       {
         text: "Sharpened success metrics, carried from Discovery.",

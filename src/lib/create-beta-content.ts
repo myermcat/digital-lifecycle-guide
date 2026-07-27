@@ -81,7 +81,7 @@ export const BETA_ON_RAMP = {
       text: "A decision on whether to reuse, buy, or build, and the reasoning written down.",
     },
     {
-      text: "Funding and approval for the build, not only for the research.",
+      text: "Funding and approval that cover the build as well as the research.",
     },
     {
       text: "A named product owner with the authority to make decisions.",
@@ -211,7 +211,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
             internalLinks: [{ phrase: "release changes", to: "/thread/releasing-changes" }],
           },
           {
-            text: "If the service handles personal information, do the Privacy Impact Assessment before it opens. Privacy covers what it involves.",
+            text: "If the service handles personal information used to make decisions about people, do the Privacy Impact Assessment before it opens. Privacy covers what it involves.",
             internalLinks: [{ phrase: "Privacy Impact Assessment", to: "/thread/privacy" }],
           },
           {
@@ -306,8 +306,8 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Fix what the accessibility testing found before you open, and publish the service's accessibility statement. Meeting the accessibility standard is a legal duty.",
-        bold: [{ phrase: "Fix what the accessibility testing found before you open," }],
+        text: "Fix what the accessibility testing found before you open. Meeting the accessibility standard is a legal duty. A published accessibility statement is also coming: under the amended Accessible Canada Regulations it phases in from December 2027, and it belongs to the department, so one statement can cover many services.",
+        bold: [{ phrase: "Fix what the accessibility testing found before you open." }],
         internalLinks: [{ phrase: "accessibility", to: "/thread/accessibility" }],
       },
       {
@@ -569,10 +569,10 @@ export const BETA_FINISH = {
         text: "The contract, whenever in the journey it was signed, with the exit rights, the data portability, and the code repository in it.",
       },
       {
-        text: "The accessibility standard met, the testing done with the people most likely to be excluded and its findings fixed, and the accessibility statement published.",
+        text: "The accessibility standard met, and the testing done with the people most likely to be excluded, with its findings fixed. No gate demands the testing; it is the only way to know the standard is met in practice.",
       },
       {
-        text: "The Privacy Impact Assessment completed and acted on, if the service handles personal information.",
+        text: "The Privacy Impact Assessment completed and acted on, if the service handles personal information used to make decisions about people.",
       },
       {
         text: "The security assessment and authorization complete, so the service is allowed to run in production.",

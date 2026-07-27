@@ -182,7 +182,7 @@ export const LIVE_PHASE = {
     id: "live-reviews-come-round-again",
     title: "Live's reviews come round again",
     text:
-      "Create runs through one-time approval gates. Live works differently: its checks recur. A security check on every release, the privacy assessment kept current as the service changes, renewal funding secured before the current money ends. The work does not finish; it comes round again.",
+      "Create runs through one-time approval gates. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. The work does not finish; it comes round again.",
   },
 
   sources: [

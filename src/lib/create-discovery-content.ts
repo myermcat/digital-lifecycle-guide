@@ -109,7 +109,7 @@ export const DISCOVERY_PILLAR = {
       ],
     } satisfies ThreadLinkedProse,
     competition: {
-      text: "The competition usually runs against an existing supply arrangement, which is a pre-competed list of approved suppliers, so it is faster than an open tender. The contract is signed at the end of Discovery.",
+      text: "The competition usually runs against an existing supply arrangement, which is a pre-competed list of approved suppliers, so it is faster than an open tender. Plan for the contract to be signed as Discovery ends.",
     } satisfies ThreadLinkedProse,
   },
   href: "/reference/options-analysis",

@@ -294,7 +294,7 @@ export const ACCESSIBILITY_THREAD = {
         popup: [
           {
             text:
-              "Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current.",
+              "Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. The statement is the department's to publish under the amended Accessible Canada Regulations, phasing in from December 2027, and one statement can cover many services. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current.",
             internalLinks: [
               {
                 phrase: "supported by phone or in person",
