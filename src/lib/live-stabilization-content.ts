@@ -22,7 +22,7 @@ export const STABILIZATION_EXTRACT: SubphaseExtract = {
   },
   workOutItems: [
     "watches the service every day, because full load finds what testing missed",
-    "fixes what breaks within days, with the builder still on call under the warranty",
+    "fixes what breaks within days, with the people who built it still on call",
     "clears the launch leftovers: the registrations, the knowledge handover, the old way retired on its date",
   ],
   scoped: {
@@ -39,7 +39,7 @@ export const STABILIZATION_EXTRACT: SubphaseExtract = {
 };
 
 export const STABILIZATION_LEAD: ThreadLinkedProse = {
-  text: "The first weeks are firefighting. Real, full load sets off problems that testing could not, and the team puts each one out while the builder is still close. Stabilization is the work of reaching the day when there is nothing left to put out.",
+  text: "The first weeks are firefighting. Real, full load sets off problems that testing could not, and the team puts each one out while the people who built the service are still close. Stabilization is the work of reaching the day when there is nothing left to put out.",
 };
 
 export const STABILIZATION_ON_RAMP = {
@@ -61,8 +61,8 @@ export const STABILIZATION_ON_RAMP = {
       bold: [{ phrase: "The running team named," }],
     },
     {
-      text: "The builder on call: the warranty window and its response times pinned down in the contract.",
-      bold: [{ phrase: "The builder on call:" }],
+      text: "The people who built it reachable. For a supplier build, the warranty, the after-launch period when the supplier fixes defects at no extra charge, pinned down in the contract with its response times; for an in-house build, the developers still assigned.",
+      bold: [{ phrase: "The people who built it reachable." }],
     },
     {
       text: "The exit test agreed: what steady will look like, in numbers, decided before launch.",
@@ -154,11 +154,15 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
   {
     id: "taper-the-builder",
     icon: Code2,
-    title: "Taper the builder out, and write the knowledge down.",
+    title: "Taper the build team out, and write the knowledge down.",
     sections: [
       {
-        text: "The builder stays reachable through the warranty, the period after acceptance when defects are fixed at no extra charge. Involvement tapers over the window, and the taper is agreed in the contract.",
+        text: "Most existing services were bought, so the build team is usually a supplier: it stays reachable through the warranty, and the taper is agreed in the contract. A service built in-house tapers by assignment instead, with the developers partly assigned until the running team stands on its own.",
         bold: [{ phrase: "warranty" }],
+      },
+      {
+        text: "The end of the warranty changes who pays for defect fixes. Support carries on under the contract's support terms, and the same supplier often returns in Growth, building new capability as new, paid work.",
+        bold: [{ phrase: "The end of the warranty changes who pays for defect fixes." }],
       },
       {
         text: "What must not taper is the knowledge. Runbooks, known errors, and workarounds are written down as they are learned, so the running team keeps what the builders know. The test: if the build team disappeared tomorrow, the running team would cope. The service team covers keeping that capability.",
@@ -239,9 +243,9 @@ export const STABILIZATION_TEAM = {
       body: { text: "helps people through, and reports what the calls are saying." },
     },
     {
-      role: "Developer or vendor on warranty",
+      role: "Supplier or in-house developers",
       icon: Code2,
-      body: { text: "fixes defects while the window lasts, and hands the knowledge over." },
+      body: { text: "fix defects while the warranty or the assignment lasts, and hand the knowledge over." },
     },
     {
       role: "Business owner of the application",
@@ -261,7 +265,7 @@ export const STABILIZATION_CAUTION = {
     "Launch was treated as the finish line, so nobody owns the running service.",
     "The old way is switched off before the new service holds.",
     "Support is overwhelmed, and what it hears never reaches the team.",
-    "The builder left on launch day, with no warranty and no handover.",
+    "The people who built it were gone on launch day: no warranty, no handover.",
     "The heightened support never ends, and constant patching hides the weaknesses it should fix.",
   ],
 };
@@ -270,7 +274,7 @@ export const STABILIZATION_FINISH = {
   title: "How you know Stabilization is finished",
   sectionId: "how-you-know-stabilization-is-finished",
   intro: {
-    text: "Stabilization is finished when the exit test agreed before launch is met, and the service has become boring: incidents are rare and routine, support volume has settled while use keeps growing, performance holds at full load, and the running team resolves and escalates without the builders.",
+    text: "Stabilization is finished when the exit test agreed before launch is met, and the service has become boring: incidents are rare and routine, support volume has settled while use keeps growing, performance holds at full load, and the running team resolves and escalates without the people who built it.",
     bold: [{ phrase: "the exit test agreed before launch is met" }],
   } satisfies ThreadLinkedProse,
   followUp: [
@@ -316,7 +320,7 @@ export const STABILIZATION_FINISH = {
         bold: [{ phrase: "The runbook and the known-errors list," }],
       },
       {
-        text: "The warranty closed out: open defects fixed or consciously accepted, each with a named owner.",
+        text: "The warranty closed out, for a supplier build: open defects fixed or consciously accepted, each with a named owner. Closing it settles who pays for fixes; the contract's support terms carry on.",
         bold: [{ phrase: "The warranty closed out:" }],
       },
       {

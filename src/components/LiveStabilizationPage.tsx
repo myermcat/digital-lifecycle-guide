@@ -66,8 +66,8 @@ export function LiveStabilizationPage() {
       <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
         <img
           src={stabilizationFireVisual}
-          alt="Three drops falling onto a flame"
-          className="w-20 shrink-0 md:w-24"
+          alt="A firefighter putting out a flame with a hose"
+          className="w-28 shrink-0 md:w-32"
         />
         <p className={guideProse}>{renderLinkedProse(STABILIZATION_LEAD)}</p>
       </section>
