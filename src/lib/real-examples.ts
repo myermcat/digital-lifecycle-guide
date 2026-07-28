@@ -24,7 +24,7 @@ export const REAL_EXAMPLES: Partial<
         bold: [{ phrase: "more than 500,000 mailboxes" }],
       },
       {
-        text: "By that date, about 3,000 had moved. The Auditor General found that clear, concrete expectations with the departments were never set, and that progress and savings could not be properly measured or tracked: the commitment had been made before the understanding existed. Counting what exists, and agreeing what good looks like, is Discovery's work, and no later phase can do it retroactively.",
+        text: "By that date, about 3,000 had moved. The Auditor General found that clear, concrete expectations with the departments were never set, and that progress and savings could not be properly measured or tracked: the commitment came before the understanding. Counting what exists, agreeing what good looks like, and asking whether the thing can be done at all: that is Discovery's work, and no later phase can do it retroactively.",
         bold: [{ phrase: "about 3,000 had moved" }],
         externalLinks: [{ phrase: "The Auditor General found", linkKey: "oag-it-shared-services" }],
       },
@@ -57,7 +57,7 @@ export const REAL_EXAMPLES: Partial<
         externalLinks: [{ phrase: "Phoenix", linkKey: "oag-phoenix-build" }],
       },
       {
-        text: "Every fault reached real paycheques at full volume, and the queue of broken pay files grew faster than anyone could clear it. This page's on-ramp exists because of launches like that one: the old way still running, on a dated retirement plan, and the people who understand the service still reachable.",
+        text: "Every fault reached real paycheques at full volume, and the queue of broken pay files grew faster than anyone could clear it. Stabilization's on-ramp exists because of launches like that one: the old way still running, on a dated retirement plan, and the people who understand the service still reachable.",
         bold: [{ phrase: "Every fault reached real paycheques at full volume" }],
       },
     ],
@@ -82,13 +82,13 @@ export const REAL_EXAMPLES: Partial<
     title: "The forced replacement was named Phoenix",
     paragraphs: [
       {
-        text: "The pay system Phoenix replaced had run for about 40 years. It worked, so the money for improving it went elsewhere, and by its final years it was a system few people understood and nobody could risk changing.",
+        text: "The pay system Phoenix replaced had run for about 40 years, and by the end, replacing it was no longer a choice the government could defer.",
         bold: [{ phrase: "had run for about 40 years" }],
         externalLinks: [{ phrase: "Phoenix", linkKey: "oag-phoenix-build" }],
       },
       {
-        text: "Replacement stopped being a choice and became an emergency with a fixed date, run under pressure to be fast and cheap, and the corners cut under that pressure became the Phoenix disaster. A service allowed to age into a forced replacement hands its problems on, multiplied, to whoever comes next.",
-        bold: [{ phrase: "Replacement stopped being a choice" }],
+        text: "A replacement that can no longer wait gets run as an emergency: a fixed date, and pressure to be fast and cheap. The corners cut under that pressure became the Phoenix disaster. Keeping a service improving while improving is still optional is what spares whoever comes next from inheriting its problems, multiplied.",
+        bold: [{ phrase: "A replacement that can no longer wait gets run as an emergency" }],
       },
     ],
   },

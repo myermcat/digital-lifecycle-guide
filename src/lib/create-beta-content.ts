@@ -558,7 +558,7 @@ export const BETA_FINISH = {
       bold: [{ phrase: "The last test" }],
     },
     {
-      text: "Write the go and no-go criteria down early, before anyone is invested in the launch date. Agreed in advance, they make stopping a pre-agreed outcome rather than an act of personal courage.",
+      text: "Write the go and no-go criteria down early, before anyone is invested in the launch date. Agreed in advance, they let the evidence deliver the bad news: stopping becomes a pre-agreed outcome instead of one person finding the courage to tell a room full of invested people that the launch is off.",
       bold: [{ phrase: "Write the go and no-go criteria down early," }],
     },
   ] satisfies ThreadLinkedProse[],
