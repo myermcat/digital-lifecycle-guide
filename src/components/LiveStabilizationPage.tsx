@@ -27,6 +27,7 @@ import {
 } from "@/lib/live-stabilization-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import stabilizationFireVisual from "@/assets/stabilization_fire.svg?url";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -62,8 +63,13 @@ export function LiveStabilizationPage() {
 
       <GateMapSeeAlsoLink phaseLabel="Stabilization" hash="live" />
 
-      <section className={`${guideProse} mt-8 md:mt-10`}>
-        <p>{renderLinkedProse(STABILIZATION_LEAD)}</p>
+      <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
+        <img
+          src={stabilizationFireVisual}
+          alt="Three drops falling onto a flame"
+          className="w-20 shrink-0 md:w-24"
+        />
+        <p className={guideProse}>{renderLinkedProse(STABILIZATION_LEAD)}</p>
       </section>
 
       <OnRampChecklist
