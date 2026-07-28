@@ -207,6 +207,9 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "simplest thing that meets the need, all the way through the journey" }],
       },
       {
+        text: "As the build starts:",
+      },
+      {
         type: "unorderedList",
         items: [
           {
@@ -227,34 +230,37 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
               { phrase: "dependencies", to: "/thread/dependencies-and-standards" },
             ],
           },
+        ],
+      },
+      {
+        text: "Two authorizations gate the way to production, and neither is quick:",
+      },
+      {
+        text: "The service cannot run in production until it is authorised to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate, signed by a senior official who is accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
+        bold: [
+          { phrase: "The service cannot run in production until it is authorised to." },
+          { phrase: "Security Assessment and Authorization" },
+          { phrase: "Authority to Operate" },
+        ],
+        externalLinks: [
           {
-            text: "The service cannot run in production until it is authorised to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate, signed by a senior official who is accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
-            bold: [
-              { phrase: "The service cannot run in production until it is authorised to." },
-              { phrase: "Security Assessment and Authorization" },
-              { phrase: "Authority to Operate" },
-            ],
-            externalLinks: [
-              {
-                phrase: "Directive on Security Management",
-                linkKey: "directive-security-management",
-              },
-              { phrase: "ITSG-33", linkKey: "itsg-33" },
-            ],
+            phrase: "Directive on Security Management",
+            linkKey: "directive-security-management",
           },
+          { phrase: "ITSG-33", linkKey: "itsg-33" },
+        ],
+      },
+      {
+        text: "If the service makes or supports an automated decision about a person, the Algorithmic Impact Assessment has to be completed, approved and published on the Open Government Portal before the system goes into production. Under the Directive on Automated Decision-Making this is a publication gate, and it is easy to miss.",
+        bold: [
+          { phrase: "If the service makes or supports an automated decision about a person," },
           {
-            text: "If the service makes or supports an automated decision about a person, the Algorithmic Impact Assessment has to be completed, approved and published on the Open Government Portal before the system goes into production. Under the Directive on Automated Decision-Making this is a publication gate, and it is easy to miss.",
-            bold: [
-              { phrase: "If the service makes or supports an automated decision about a person," },
-              {
-                phrase:
-                  "published on the Open Government Portal before the system goes into production",
-              },
-            ],
-            externalLinks: [
-              { phrase: "Algorithmic Impact Assessment", linkKey: "algorithmic-impact-assessment" },
-            ],
+            phrase:
+              "published on the Open Government Portal before the system goes into production",
           },
+        ],
+        externalLinks: [
+          { phrase: "Algorithmic Impact Assessment", linkKey: "algorithmic-impact-assessment" },
         ],
       },
     ],
@@ -429,8 +435,11 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement project, when the decision to replace is made, not 12 to 18 months before the old system is switched off.",
-        internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement project, when the decision to replace is made, not 12 to 18 months before the old system is switched off. Data stewardship covers deciding what happens to the data, in full.",
+        internalLinks: [
+          { phrase: "Discovery", to: "/create-discovery" },
+          { phrase: "Data stewardship", to: "/thread/data-stewardship" },
+        ],
       },
     ],
   },
