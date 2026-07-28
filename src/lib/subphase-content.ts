@@ -1,3 +1,4 @@
+import type { SubphaseExtract } from "@/components/SubphaseExtractCard";
 import type { ThreadLinkedProse } from "@/lib/thread-rich-content";
 
 export type SubphaseWhatHappensPoint = ThreadLinkedProse & {
@@ -31,6 +32,70 @@ export const SUBPHASE_PAGE_HEADINGS = {
 } as const;
 
 export type SubphaseSlug = keyof typeof SUBPHASE_PAGE_HEADINGS;
+
+/**
+ * The dashed extract cards for sub-phases whose full pages are not built yet
+ * (rendered on the placeholder), plus Maturity's card on its built page.
+ * Stabilization's card lives with its full page content in live-stabilization-content.ts.
+ */
+export const SUBPHASE_EXTRACTS: Partial<Record<SubphaseSlug, SubphaseExtract>> = {
+  growth: {
+    spine: "Growth exists to extend what the service does and who it serves, while it runs.",
+    opening: {
+      text: "Growth is the second sub-phase of Live. With the service steady, the team:",
+      internalLinks: [{ phrase: "Live", to: "/live" }],
+    },
+    workOutItems: [
+      "adds capability, running each significant feature through its own small Discovery, Alpha, and Beta",
+      "works on adoption until the people the service is for actually use it",
+      "scales the service, the support, and the contract as more people arrive",
+    ],
+    scoped: {
+      text: "Growth is a mode. A service leaves it when its scope settles, and returns to it with the next big addition.",
+    },
+    whatsNew: {
+      label: "New since Stabilization",
+      text: "Change is deliberate again. The team builds new things inside a running service.",
+    },
+    takeaway: {
+      text: "A significant new feature brings the earlier gates back: privacy, automation, architecture, procurement.",
+      bold: [
+        {
+          phrase:
+            "A significant new feature brings the earlier gates back: privacy, automation, architecture, procurement.",
+        },
+      ],
+    },
+  },
+  maturity: {
+    spine: "Maturity exists to keep a steady service healthy, year after year.",
+    opening: {
+      text: "Maturity is the third sub-phase of Live, and the longest. Year after year, the team:",
+      internalLinks: [{ phrase: "Live", to: "/live" }],
+    },
+    workOutItems: [
+      "keeps the health cycle turning: monitoring, patching, research, and the yearly filings",
+      "renews the funding and the contract before either runs out",
+      "watches for the signals that point to Sunset",
+    ],
+    scoped: {
+      text: "Maturity ends only by exit: back into Growth on a new mandate, or on to Sunset.",
+    },
+    whatsNew: {
+      label: "New since Growth",
+      text: "The scope has settled. The work turns from extending the service to sustaining it.",
+    },
+    takeaway: {
+      text: "The renewals are the trap: funding and contracts end on their own schedule, and the lead time is easy to underestimate.",
+      bold: [
+        {
+          phrase:
+            "The renewals are the trap: funding and contracts end on their own schedule, and the lead time is easy to underestimate.",
+        },
+      ],
+    },
+  },
+};
 
 export const SUBPHASE_CONTENT: Partial<Record<string, SubphaseBodyContent>> = {
   discovery: {

@@ -6,6 +6,7 @@ import alphaPrototypeLadderVisual from "@/assets/alpha_prototype_ladder.svg?url"
 import subphaseKeyAlphaVisual from "@/assets/subphase_key_alpha.svg?url";
 import subphaseKeyBetaVisual from "@/assets/subphase_key_beta.svg?url";
 import subphaseKeyDiscoveryVisual from "@/assets/subphase_key_discovery.svg?url";
+import subphaseKeyStabilizationVisual from "@/assets/subphase_key_stabilization.svg?url";
 
 export type LifecycleVisualAsset = {
   src: string;
@@ -40,6 +41,10 @@ export const LIFECYCLE_VISUALS = {
   subphaseKeyBeta: {
     src: subphaseKeyBetaVisual,
     alt: "Build it for real at production quality. Sign the contract, your exit is won here. Prove it, private beta then public beta.",
+  },
+  subphaseKeyStabilization: {
+    src: subphaseKeyStabilizationVisual,
+    alt: "Watch it daily, full load finds what testing missed. Fix it fast, the builder is still on call. Clear the leftovers: registrations, handover, the old way retired.",
   },
   serviceDashboard: {
     src: serviceDashboardVisual,

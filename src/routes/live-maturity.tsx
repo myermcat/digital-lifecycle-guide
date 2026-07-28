@@ -24,6 +24,8 @@ import { DoorwayBlock } from "@/components/DoorwayBlock";
 import { CautionBlock } from "@/components/CautionBlock";
 import { ProcurementCallout } from "@/components/ProcurementCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
+import { SubphaseExtractCard } from "@/components/SubphaseExtractCard";
+import { SUBPHASE_EXTRACTS } from "@/lib/subphase-content";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { guideProseSpace } from "@/lib/guide-typography";
 import { getPhaseLeavingContent } from "@/lib/phase-leaving-content";
@@ -58,7 +60,11 @@ function LiveMaturityPage() {
 
       <GateMapSeeAlsoLink phaseLabel="Maturity" hash="live" />
 
-      <SubphaseDescriptionPanel />
+      <SubphaseDescriptionPanel>
+        {SUBPHASE_EXTRACTS.maturity ? (
+          <SubphaseExtractCard extract={SUBPHASE_EXTRACTS.maturity} />
+        ) : null}
+      </SubphaseDescriptionPanel>
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         <p>

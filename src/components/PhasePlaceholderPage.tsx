@@ -12,11 +12,16 @@ import {
   type PhaseLeavingSlug,
 } from "@/lib/phase-leaving-content";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
+import { SubphaseExtractCard } from "@/components/SubphaseExtractCard";
 import {
   SubphaseSectionNav,
   type SectionNavLink,
 } from "@/components/SubphaseSectionNav";
-import { SUBPHASE_CONTENT } from "@/lib/subphase-content";
+import {
+  SUBPHASE_CONTENT,
+  SUBPHASE_EXTRACTS,
+  type SubphaseSlug,
+} from "@/lib/subphase-content";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
@@ -67,6 +72,8 @@ export function PhasePlaceholderPage({
     ? getPhaseLeavingContent(subphaseLeavingSlug)
     : null;
   const body = subphaseLeavingSlug ? SUBPHASE_CONTENT[subphaseLeavingSlug] : null;
+  const extractSlug = id.replace(/^(live|create)-/, "") as SubphaseSlug;
+  const extract = SUBPHASE_EXTRACTS[extractSlug];
   const renderIntro = !body;
   const gateMapSeeAlso = gateMapSeeAlsoForSubphase(lifecyclePhase, subphase);
 
@@ -91,7 +98,9 @@ export function PhasePlaceholderPage({
 
           {gateMapSeeAlso}
 
-          <SubphaseDescriptionPanel />
+          <SubphaseDescriptionPanel>
+            {extract ? <SubphaseExtractCard extract={extract} /> : null}
+          </SubphaseDescriptionPanel>
 
           <section className="mt-10 md:mt-12 scroll-mt-24" id="what-happens-here">
             <h2 className={`${guideSectionTitle} mb-3`}>What happens here</h2>
@@ -130,7 +139,9 @@ export function PhasePlaceholderPage({
 
           {gateMapSeeAlso}
 
-          <SubphaseDescriptionPanel />
+          <SubphaseDescriptionPanel>
+            {extract ? <SubphaseExtractCard extract={extract} /> : null}
+          </SubphaseDescriptionPanel>
 
           <section className={`${guideProseSpace} mt-8 md:mt-10`}>
             <p>{intro}</p>

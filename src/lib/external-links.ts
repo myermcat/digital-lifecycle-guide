@@ -394,6 +394,11 @@ export const EXTERNAL_LINKS = {
     description: "Directive on Service and Digital (TBS)",
     accessibility: "public",
   },
+  "service-fees-act": {
+    url: "https://laws-lois.justice.gc.ca/eng/acts/s-8.4/",
+    description: "Service Fees Act (Justice Laws)",
+    accessibility: "public",
+  },
   laca: {
     url: "https://laws-lois.justice.gc.ca/eng/acts/l-7.7/FullText.html",
     description: "Library and Archives of Canada Act (S.C. 2004, c. 11)",
