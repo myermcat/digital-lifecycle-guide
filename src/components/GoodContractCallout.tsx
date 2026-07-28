@@ -4,10 +4,7 @@ import { StandoutIconCallout } from "@/components/StandoutIconCallout";
 import { PROCUREMENT_LANDING } from "@/lib/procurement-landing";
 import { guideLink } from "@/lib/guide-typography";
 
-/**
- * Standalone good-contract callout on the Procurement thread — same visual weight
- * as {@link ProcurementCallout} on subphase pages.
- */
+/** Standalone good-contract callout on the Procurement thread. */
 export function GoodContractCallout({
   id = "good-contract",
   className,

@@ -7,6 +7,8 @@ import subphaseKeyAlphaVisual from "@/assets/subphase_key_alpha.svg?url";
 import subphaseKeyBetaVisual from "@/assets/subphase_key_beta.svg?url";
 import subphaseKeyDiscoveryVisual from "@/assets/subphase_key_discovery.svg?url";
 import subphaseKeyStabilizationVisual from "@/assets/subphase_key_stabilization.svg?url";
+import subphaseKeyMaturityVisual from "@/assets/subphase_key_maturity.svg?url";
+import subphaseKeyGrowthVisual from "@/assets/subphase_key_growth.svg?url";
 
 export type LifecycleVisualAsset = {
   src: string;
@@ -45,6 +47,14 @@ export const LIFECYCLE_VISUALS = {
   subphaseKeyStabilization: {
     src: subphaseKeyStabilizationVisual,
     alt: "Watch it daily, full load finds what testing missed. Fix it fast, the builder is still on call. Clear the leftovers: registrations, handover, the old way retired.",
+  },
+  subphaseKeyGrowth: {
+    src: subphaseKeyGrowthVisual,
+    alt: "Build in small lifecycles: each addition gets its own Discovery, Alpha, Beta. Bring the gates back: privacy, automation, architecture, procurement. Grow the users too: adoption, support, and scale rise together.",
+  },
+  subphaseKeyMaturity: {
+    src: subphaseKeyMaturityVisual,
+    alt: "Keep the cycle turning: monitoring, patching, research, filings. Renew before it ends: funding and contracts, months of runway. Watch for the exit: the signals that point to Sunset.",
   },
   serviceDashboard: {
     src: serviceDashboardVisual,

@@ -60,6 +60,24 @@ export const EXTERNAL_LINKS = {
     description: "PSPC Task and Statement Professional Services (TSPS/SPCS)",
     accessibility: "public",
   },
+  "aaact-program": {
+    url: "https://www.canada.ca/en/shared-services/services/employees-accessibility/aaact-program.html",
+    description:
+      "AAACT program (Shared Services Canada) — training, adaptive-technology testing, and procurement advice for building accessible products and services",
+    accessibility: "public",
+  },
+  "standard-at-risk-it": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32714",
+    description:
+      "Standard on At-Risk Information Technology (TBS) — keep applications current; unsupported technologies prohibited",
+    accessibility: "public",
+  },
+  "task-authorizations": {
+    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/manage/manage-contract/task-authorizations",
+    description:
+      "CanadaBuys buyer's guide — task authorizations (work authorized task by task under an existing contract)",
+    accessibility: "public",
+  },
   "agile-challenge-based-procurement": {
     url: "https://www.canada.ca/en/public-services-procurement/services/acquisitions/better-buying/simplifying-procurement-process/agile.html",
     description: "Simplifying the procurement process through agile procurement (PSPC)",

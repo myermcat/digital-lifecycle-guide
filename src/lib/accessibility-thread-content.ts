@@ -191,6 +191,17 @@ export const ACCESSIBILITY_THREAD = {
               },
             ] satisfies InternalPhraseLink[],
           },
+          {
+            text:
+              "There is a team to call for help. The Accessibility, Accommodation and Adaptive Computer Technology (AAACT) program at Shared Services Canada helps teams build accessibility into products, services, and content from the start: training sessions, testing with adaptive technology, and advice on whether a procurement has accessibility addressed.",
+            bold: [{ phrase: "There is a team to call for help." }],
+            externalLinks: [
+              {
+                phrase: "Accessibility, Accommodation and Adaptive Computer Technology (AAACT) program",
+                linkKey: "aaact-program",
+              },
+            ] satisfies ExternalPhraseLink[],
+          },
         ],
       },
     ] satisfies AccessibilityCloserLookBlock[],
@@ -360,6 +371,12 @@ export const ACCESSIBILITY_THREAD = {
       linkKey: "digital-accessibility-toolkit" satisfies ExternalLinkKey,
       description:
         "GC Digital Accessibility Toolkit (procurement, test your products, standards) — https://a11y.canada.ca/en/",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "aaact-program" satisfies ExternalLinkKey,
+      description:
+        "AAACT program, Shared Services Canada (training, adaptive-technology testing, procurement advice) — https://www.canada.ca/en/shared-services/services/employees-accessibility/aaact-program.html",
     },
     {
       label: "Supporting reference",

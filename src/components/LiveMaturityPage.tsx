@@ -15,84 +15,89 @@ import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
 import type { SourceItem } from "@/components/SourcesBlock";
 import {
-  STABILIZATION_ACCORDION,
-  STABILIZATION_ACCORDION_STAGES,
-  STABILIZATION_CAUTION,
-  STABILIZATION_EXTRACT,
-  STABILIZATION_FINISH,
-  STABILIZATION_LEAD,
-  STABILIZATION_ON_RAMP,
-  STABILIZATION_PILLAR,
-  STABILIZATION_TEAM,
-} from "@/lib/live-stabilization-content";
-import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
+  MATURITY_ACCORDION,
+  MATURITY_ACCORDION_STAGES,
+  MATURITY_CAUTION,
+  MATURITY_FINISH,
+  MATURITY_LEAD,
+  MATURITY_ON_RAMP,
+  MATURITY_PILLAR,
+  MATURITY_TEAM,
+} from "@/lib/live-maturity-content";
+import { SUBPHASE_EXTRACTS } from "@/lib/subphase-content";
+import {
+  SUBPHASE_META,
+  whereThisFitsForLiveSubphase,
+} from "@/lib/lifecycle-navigation";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
-import stabilizationFireVisual from "@/assets/stabilization_fire.svg?url";
+import maturityCalmVisual from "@/assets/maturity_calm.svg?url";
 import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideProse } from "@/lib/guide-typography";
 
-const STABILIZATION_SOURCES: SourceItem[] = [
+const MATURITY_SOURCES: SourceItem[] = [
   { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
+  { label: "Standard on At-Risk Information Technology (TBS)", linkKey: "standard-at-risk-it" },
   { label: "Service Fees Act", linkKey: "service-fees-act" },
 ];
 
-export function LiveStabilizationPage() {
-  const meta = SUBPHASE_META.stabilization;
-  const PillarIcon = STABILIZATION_PILLAR.icon;
+export function LiveMaturityPage() {
+  const meta = SUBPHASE_META.maturity;
+  const PillarIcon = MATURITY_PILLAR.icon;
+  const extract = SUBPHASE_EXTRACTS.maturity;
 
   return (
-    <GuideLayout id="live-stabilization">
+    <GuideLayout id="live-maturity">
       <PhaseBreadcrumb
         pageHeading={meta.pageHeading}
         lifecyclePhase="Live"
         lifecyclePhaseHref="/live"
-        subphase="Stabilization"
+        subphase="Maturity"
       />
 
       <section className="mt-5 md:mt-6">
-        <WhereThisFits {...meta.where()} />
+        <WhereThisFits {...whereThisFitsForLiveSubphase("maturity")} />
       </section>
 
-      <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyStabilization}>
-        <SubphaseExtractCard extract={STABILIZATION_EXTRACT} />
+      <SubphaseDescriptionPanel visual={LIFECYCLE_VISUALS.subphaseKeyMaturity}>
+        {extract ? <SubphaseExtractCard extract={extract} /> : null}
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Stabilization" hash="live" />
+      <GateMapSeeAlsoLink phaseLabel="Maturity" hash="live" />
 
       <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
         <img
-          src={stabilizationFireVisual}
-          alt="A person standing calmly in the fire"
+          src={maturityCalmVisual}
+          alt="A person standing calmly between two growing plants"
           className="w-36 shrink-0 md:w-44"
         />
-        <p className={guideProse}>{renderLinkedProse(STABILIZATION_LEAD)}</p>
+        <p className={guideProse}>{renderLinkedProse(MATURITY_LEAD)}</p>
       </section>
 
       <OnRampChecklist
-        title={STABILIZATION_ON_RAMP.title}
-        intro={STABILIZATION_ON_RAMP.intro}
-        items={STABILIZATION_ON_RAMP.items.map((item) => renderLinkedProse(item))}
+        title={MATURITY_ON_RAMP.title}
+        intro={MATURITY_ON_RAMP.intro}
+        items={MATURITY_ON_RAMP.items.map((item) => renderLinkedProse(item))}
       />
 
       <PillarCallout
-        id="agree-the-exit"
-        label={STABILIZATION_PILLAR.label}
-        title={STABILIZATION_PILLAR.title}
+        id="start-renewals-early"
+        label={MATURITY_PILLAR.label}
+        title={MATURITY_PILLAR.title}
         icon={PillarIcon}
-        href={STABILIZATION_PILLAR.href}
-        linkLabel={STABILIZATION_PILLAR.linkLabel}
+        href={MATURITY_PILLAR.href}
+        linkLabel={MATURITY_PILLAR.linkLabel}
       >
-        <p>{renderLinkedProse(STABILIZATION_PILLAR.body)}</p>
+        <p>{renderLinkedProse(MATURITY_PILLAR.body)}</p>
       </PillarCallout>
 
       <IconAccordionSection
-        id={STABILIZATION_ACCORDION.id}
-        title={STABILIZATION_ACCORDION.title}
-        stages={STABILIZATION_ACCORDION_STAGES.map((stage) => ({
+        id={MATURITY_ACCORDION.id}
+        title={MATURITY_ACCORDION.title}
+        stages={MATURITY_ACCORDION_STAGES.map((stage) => ({
           id: stage.id,
           icon: stage.icon,
           title: stage.title,
@@ -102,29 +107,29 @@ export function LiveStabilizationPage() {
 
       <SubphaseTeamRoles
         id="the-team-you-need"
-        title={STABILIZATION_TEAM.title}
-        intro={STABILIZATION_TEAM.intro}
-        roles={STABILIZATION_TEAM.roles}
-        closing={STABILIZATION_TEAM.closing}
+        title={MATURITY_TEAM.title}
+        intro={MATURITY_TEAM.intro}
+        roles={MATURITY_TEAM.roles}
+        closing={MATURITY_TEAM.closing}
       />
 
       <CautionBlock
-        id="when-stabilization-goes-wrong"
+        id="when-maturity-goes-wrong"
         className="mt-10 md:mt-12"
-        title={STABILIZATION_CAUTION.title}
-        items={STABILIZATION_CAUTION.items.map((item) => ({ heading: item }))}
+        title={MATURITY_CAUTION.title}
+        items={MATURITY_CAUTION.items.map((item) => ({ heading: item }))}
       />
 
       <SubphaseFinishSection
-        title={STABILIZATION_FINISH.title}
-        sectionId={STABILIZATION_FINISH.sectionId}
-        intro={STABILIZATION_FINISH.intro}
-        followUp={STABILIZATION_FINISH.followUp}
-        exits={STABILIZATION_FINISH.exits}
-        offRamp={STABILIZATION_FINISH.offRamp}
+        title={MATURITY_FINISH.title}
+        sectionId={MATURITY_FINISH.sectionId}
+        intro={MATURITY_FINISH.intro}
+        followUp={MATURITY_FINISH.followUp}
+        exits={MATURITY_FINISH.exits}
+        offRamp={MATURITY_FINISH.offRamp}
       />
 
-      <PageFoot sources={STABILIZATION_SOURCES} subphaseFootFor="Live" />
+      <PageFoot sources={MATURITY_SOURCES} subphaseFootFor="Live" />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

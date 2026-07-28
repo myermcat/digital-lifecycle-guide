@@ -197,14 +197,23 @@ The handover is complete when Canada confirms the export restores into a test en
           label: "A.3",
           text: "The Supplier shall provide the people and skills needed to run the service for the Term.",
         },
+        {
+          label: "A.4",
+          text:
+            "Canada may add work not named in this Schedule by issuing a task authorization: a written description of the task, priced at the rates in Schedule B, approved before the work starts. Every task must fall within the scope of this Agreement.",
+        },
       ],
       whyHere: {
         text:
-          "every contract names the work it is buying (the General Conditions of a Service Contract). More on this: statement of objectives vs statement of work.",
+          "every contract names the work it is buying (the General Conditions of a Service Contract). A.4 leaves room for the work nobody can name yet: PSPC signs contracts with task authorizations when there is a definite need for services but the exact tasks and their timing will only be known while the contract runs. New features in Live usually arrive this way, priced task by task instead of through a new procurement. More on this: statement of objectives vs statement of work.",
         externalLinks: [
           {
             phrase: "General Conditions of a Service Contract",
             linkKey: "psc-general-conditions-service-contract",
+          },
+          {
+            phrase: "contracts with task authorizations",
+            linkKey: "task-authorizations",
           },
         ] satisfies ExternalPhraseLink[],
         internalLinks: [
@@ -234,6 +243,10 @@ The handover is complete when Canada confirms the export restores into a test en
         {
           label: "B.3",
           text: "Paying an invoice does not waive Canada's right to later reject work that does not meet this Agreement.",
+        },
+        {
+          label: "B.4",
+          text: "Work added by task authorization is paid at the per-diem rates in this Schedule, and the total of all task authorizations shall not exceed the ceiling this Schedule sets for them.",
         },
       ],
       whyHere: {

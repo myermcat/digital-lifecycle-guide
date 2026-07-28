@@ -90,24 +90,6 @@ export const REGIONS = PHASES;
 /** @deprecated Use PHASE_ORDER */
 export const REGION_ORDER = PHASE_ORDER;
 
-export const REVIEW_LEVELS = {
-  "internal-team-review": {
-    title: "Internal team review",
-    tag: "FREQUENT · INTERNAL",
-    path: "/review/internal-team-review",
-  },
-  "external-peer-review": {
-    title: "External peer review",
-    tag: "OCCASIONAL · EXTERNAL",
-    path: "/review/external-peer-review",
-  },
-  "institutional-review": {
-    title: "Institutional review",
-    tag: "RARE · CENTRAL",
-    path: "/review/institutional-review",
-  },
-} as const;
-
 /** Cross-cutting threads — each covers a practice across the whole lifecycle. */
 export const THREADS = {
   "monitoring-and-instrumentation": {
@@ -188,14 +170,6 @@ export const THREADS = {
 } as const;
 
 export type ThreadSlug = keyof typeof THREADS;
-
-export function practicePath(slug: string) {
-  return `/practice/${slug}` as const;
-}
-
-export function reviewPath(slug: keyof typeof REVIEW_LEVELS) {
-  return REVIEW_LEVELS[slug].path;
-}
 
 export function threadPath(slug: ThreadSlug) {
   return THREADS[slug].path;

@@ -1,4 +1,3 @@
-import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
 import { PROCUREMENT_SUBPAGE_SLUGS } from "./procurement-subpage-slugs";
 import {
   DESIGN_FOR_WHOLE_JOURNEY_FLAT_LEGACY_PATH,
@@ -35,8 +34,6 @@ const CORE_PATHS = [
 ] as const;
 
 
-const PRACTICE_PATHS = Object.keys(PRACTICE_STUBS).map((slug) => `/practice/${slug}`);
-const REVIEW_PATHS = Object.keys(REVIEW_STUBS).map((slug) => `/review/${slug}`);
 const THREAD_PATHS = [
   "/thread/procurement",
   "/thread/security",
@@ -60,8 +57,6 @@ const LEGACY_CONTRACTING_PATHS = PROCUREMENT_SUBPAGE_SLUGS.map(
 /** All static app routes — used for prerender on GitHub Pages builds. */
 export const STATIC_PRERENDER_PATHS = [
   ...CORE_PATHS,
-  ...PRACTICE_PATHS,
-  ...REVIEW_PATHS,
   ...THREAD_PATHS,
   ...PROCUREMENT_SUB_PATHS,
   "/thread/contracting",

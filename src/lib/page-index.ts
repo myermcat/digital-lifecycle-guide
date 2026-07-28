@@ -1,5 +1,4 @@
-import { PHASES, THREADS, practicePath, reviewPath } from "./guide-strings";
-import { PRACTICE_STUBS, REVIEW_STUBS } from "./practice-stubs";
+import { PHASES, THREADS } from "./guide-strings";
 import {
   SOO_VS_SOW_PATH,
   OPTIONS_ANALYSIS_PATH,
@@ -56,7 +55,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: SUBPHASE_PAGE_HEADINGS.alpha, path: "/create-alpha", type: "subphase", status: "in-review" },
   { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "in-review" },
   { title: SUBPHASE_PAGE_HEADINGS.stabilization, path: "/live-stabilization", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "not-started" },
+  { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "in-review" },
   { title: SUBPHASE_PAGE_HEADINGS.maturity, path: "/live-maturity", type: "subphase", status: "in-review" },
 
   { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
@@ -147,31 +146,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     path: GOOD_CONTRACT_PATH,
     type: "reference",
     status: "in-review",
-  },
-
-  {
-    title: PRACTICE_STUBS["maturity-orientation"].title,
-    path: practicePath("maturity-orientation"),
-    type: "other",
-    status: "not-started",
-  },
-  {
-    title: REVIEW_STUBS["internal-team-review"].title,
-    path: reviewPath("internal-team-review"),
-    type: "other",
-    status: "not-started",
-  },
-  {
-    title: REVIEW_STUBS["external-peer-review"].title,
-    path: reviewPath("external-peer-review"),
-    type: "other",
-    status: "not-started",
-  },
-  {
-    title: REVIEW_STUBS["institutional-review"].title,
-    path: reviewPath("institutional-review"),
-    type: "other",
-    status: "not-started",
   },
 ];
 

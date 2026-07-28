@@ -28,7 +28,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThreadProcurementRouteImport } from './routes/thread.procurement'
 import { Route as ThreadContractingRouteImport } from './routes/thread.contracting'
 import { Route as ThreadSlugRouteImport } from './routes/thread.$slug'
-import { Route as ReviewSlugRouteImport } from './routes/review.$slug'
 import { Route as ReferenceTreasuryBoardSubmissionRouteImport } from './routes/reference.treasury-board-submission'
 import { Route as ReferenceStayingFundedRouteImport } from './routes/reference.staying-funded'
 import { Route as ReferenceSooVsSowRouteImport } from './routes/reference.soo-vs-sow'
@@ -37,7 +36,6 @@ import { Route as ReferenceFundingTheExitRouteImport } from './routes/reference.
 import { Route as ReferenceDesignForTheWholeJourneyRouteImport } from './routes/reference.design-for-the-whole-journey'
 import { Route as ReferenceCostingAServiceRouteImport } from './routes/reference.costing-a-service'
 import { Route as ReferenceApprovalJourneyRouteImport } from './routes/reference.approval-journey'
-import { Route as PracticeSlugRouteImport } from './routes/practice.$slug'
 import { Route as ThreadProcurementIndexRouteImport } from './routes/thread.procurement.index'
 import { Route as ThreadContractingIndexRouteImport } from './routes/thread.contracting.index'
 import { Route as ThreadProcurementGoodContractRouteImport } from './routes/thread.procurement.good-contract'
@@ -144,11 +142,6 @@ const ThreadSlugRoute = ThreadSlugRouteImport.update({
   path: '/thread/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReviewSlugRoute = ReviewSlugRouteImport.update({
-  id: '/review/$slug',
-  path: '/review/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ReferenceTreasuryBoardSubmissionRoute =
   ReferenceTreasuryBoardSubmissionRouteImport.update({
     id: '/reference/treasury-board-submission',
@@ -194,11 +187,6 @@ const ReferenceApprovalJourneyRoute =
     path: '/reference/approval-journey',
     getParentRoute: () => rootRouteImport,
   } as any)
-const PracticeSlugRoute = PracticeSlugRouteImport.update({
-  id: '/practice/$slug',
-  path: '/practice/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ThreadProcurementIndexRoute = ThreadProcurementIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -267,7 +255,6 @@ export interface FileRoutesByFullPath {
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
-  '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
@@ -276,7 +263,6 @@ export interface FileRoutesByFullPath {
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
   '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
-  '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
@@ -307,7 +293,6 @@ export interface FileRoutesByTo {
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
-  '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
@@ -316,7 +301,6 @@ export interface FileRoutesByTo {
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
   '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
-  '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting/$page': typeof ThreadContractingPageRoute
   '/thread/funding/costing-a-service': typeof ThreadFundingCostingAServiceRoute
@@ -346,7 +330,6 @@ export interface FileRoutesById {
   '/source-coming-soon': typeof SourceComingSoonRoute
   '/sunset': typeof SunsetRoute
   '/support': typeof SupportRoute
-  '/practice/$slug': typeof PracticeSlugRoute
   '/reference/approval-journey': typeof ReferenceApprovalJourneyRoute
   '/reference/costing-a-service': typeof ReferenceCostingAServiceRoute
   '/reference/design-for-the-whole-journey': typeof ReferenceDesignForTheWholeJourneyRoute
@@ -355,7 +338,6 @@ export interface FileRoutesById {
   '/reference/soo-vs-sow': typeof ReferenceSooVsSowRoute
   '/reference/staying-funded': typeof ReferenceStayingFundedRoute
   '/reference/treasury-board-submission': typeof ReferenceTreasuryBoardSubmissionRoute
-  '/review/$slug': typeof ReviewSlugRoute
   '/thread/$slug': typeof ThreadSlugRoute
   '/thread/contracting': typeof ThreadContractingRouteWithChildren
   '/thread/procurement': typeof ThreadProcurementRouteWithChildren
@@ -388,7 +370,6 @@ export interface FileRouteTypes {
     | '/source-coming-soon'
     | '/sunset'
     | '/support'
-    | '/practice/$slug'
     | '/reference/approval-journey'
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
@@ -397,7 +378,6 @@ export interface FileRouteTypes {
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
     | '/reference/treasury-board-submission'
-    | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
     | '/thread/procurement'
@@ -428,7 +408,6 @@ export interface FileRouteTypes {
     | '/source-coming-soon'
     | '/sunset'
     | '/support'
-    | '/practice/$slug'
     | '/reference/approval-journey'
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
@@ -437,7 +416,6 @@ export interface FileRouteTypes {
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
     | '/reference/treasury-board-submission'
-    | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting/$page'
     | '/thread/funding/costing-a-service'
@@ -466,7 +444,6 @@ export interface FileRouteTypes {
     | '/source-coming-soon'
     | '/sunset'
     | '/support'
-    | '/practice/$slug'
     | '/reference/approval-journey'
     | '/reference/costing-a-service'
     | '/reference/design-for-the-whole-journey'
@@ -475,7 +452,6 @@ export interface FileRouteTypes {
     | '/reference/soo-vs-sow'
     | '/reference/staying-funded'
     | '/reference/treasury-board-submission'
-    | '/review/$slug'
     | '/thread/$slug'
     | '/thread/contracting'
     | '/thread/procurement'
@@ -507,7 +483,6 @@ export interface RootRouteChildren {
   SourceComingSoonRoute: typeof SourceComingSoonRoute
   SunsetRoute: typeof SunsetRoute
   SupportRoute: typeof SupportRoute
-  PracticeSlugRoute: typeof PracticeSlugRoute
   ReferenceApprovalJourneyRoute: typeof ReferenceApprovalJourneyRoute
   ReferenceCostingAServiceRoute: typeof ReferenceCostingAServiceRoute
   ReferenceDesignForTheWholeJourneyRoute: typeof ReferenceDesignForTheWholeJourneyRoute
@@ -516,7 +491,6 @@ export interface RootRouteChildren {
   ReferenceSooVsSowRoute: typeof ReferenceSooVsSowRoute
   ReferenceStayingFundedRoute: typeof ReferenceStayingFundedRoute
   ReferenceTreasuryBoardSubmissionRoute: typeof ReferenceTreasuryBoardSubmissionRoute
-  ReviewSlugRoute: typeof ReviewSlugRoute
   ThreadSlugRoute: typeof ThreadSlugRoute
   ThreadContractingRoute: typeof ThreadContractingRouteWithChildren
   ThreadProcurementRoute: typeof ThreadProcurementRouteWithChildren
@@ -661,13 +635,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThreadSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/review/$slug': {
-      id: '/review/$slug'
-      path: '/review/$slug'
-      fullPath: '/review/$slug'
-      preLoaderRoute: typeof ReviewSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/reference/treasury-board-submission': {
       id: '/reference/treasury-board-submission'
       path: '/reference/treasury-board-submission'
@@ -722,13 +689,6 @@ declare module '@tanstack/react-router' {
       path: '/reference/approval-journey'
       fullPath: '/reference/approval-journey'
       preLoaderRoute: typeof ReferenceApprovalJourneyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/practice/$slug': {
-      id: '/practice/$slug'
-      path: '/practice/$slug'
-      fullPath: '/practice/$slug'
-      preLoaderRoute: typeof PracticeSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thread/procurement/': {
@@ -842,7 +802,6 @@ const rootRouteChildren: RootRouteChildren = {
   SourceComingSoonRoute: SourceComingSoonRoute,
   SunsetRoute: SunsetRoute,
   SupportRoute: SupportRoute,
-  PracticeSlugRoute: PracticeSlugRoute,
   ReferenceApprovalJourneyRoute: ReferenceApprovalJourneyRoute,
   ReferenceCostingAServiceRoute: ReferenceCostingAServiceRoute,
   ReferenceDesignForTheWholeJourneyRoute:
@@ -852,7 +811,6 @@ const rootRouteChildren: RootRouteChildren = {
   ReferenceSooVsSowRoute: ReferenceSooVsSowRoute,
   ReferenceStayingFundedRoute: ReferenceStayingFundedRoute,
   ReferenceTreasuryBoardSubmissionRoute: ReferenceTreasuryBoardSubmissionRoute,
-  ReviewSlugRoute: ReviewSlugRoute,
   ThreadSlugRoute: ThreadSlugRoute,
   ThreadContractingRoute: ThreadContractingRouteWithChildren,
   ThreadProcurementRoute: ThreadProcurementRouteWithChildren,
