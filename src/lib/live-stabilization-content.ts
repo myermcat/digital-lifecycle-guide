@@ -13,6 +13,7 @@ import {
 import type { SubphaseExtract } from "@/components/SubphaseExtractCard";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import { LIFECYCLE_VISUALS, type LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 
 export const STABILIZATION_EXTRACT: SubphaseExtract = {
   spine: "Stabilization exists to steady the service under real, full load.",
@@ -91,6 +92,7 @@ export type StabilizationAccordionStage = {
   id: string;
   icon: LucideIcon;
   title: string;
+  headerVisual?: LifecycleVisualAsset;
   sections: readonly ThreadContentSection[];
 };
 
@@ -104,6 +106,7 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
     id: "watch-it-every-day",
     icon: Eye,
     title: "Watch it every day.",
+    headerVisual: LIFECYCLE_VISUALS.serviceDashboard,
     sections: [
       {
         text: "The dashboard built in Beta is read every day now, because the first weeks under full load surface the faults that testing could not.",

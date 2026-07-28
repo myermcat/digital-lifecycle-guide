@@ -1,0 +1,95 @@
+import type { ThreadLinkedProse } from "@/lib/thread-rich-content";
+
+/**
+ * Documented Government of Canada failure examples, one per sub-phase where the
+ * record genuinely supports the rule. Every claim is checked against the linked
+ * report before it goes here; Alpha carries none because no documented case maps
+ * cleanly onto its rules.
+ */
+export type RealExample = {
+  id: string;
+  title: string;
+  paragraphs: readonly ThreadLinkedProse[];
+};
+
+export const REAL_EXAMPLES: Partial<
+  Record<"discovery" | "beta" | "stabilization" | "growth" | "maturity", RealExample>
+> = {
+  discovery: {
+    id: "real-example-eti",
+    title: "Three thousand mailboxes, of five hundred thousand",
+    paragraphs: [
+      {
+        text: "In 2011, Shared Services Canada took over email, data centres, and networks for 43 departments, and set out to fold the departmental email systems into one. The plan: more than 500,000 mailboxes moved to the new service by March 2015.",
+        bold: [{ phrase: "more than 500,000 mailboxes" }],
+      },
+      {
+        text: "By that date, about 3,000 had moved. The Auditor General found that clear, concrete expectations with the departments were never set, and that progress and savings could not be properly measured or tracked: the commitment had been made before the understanding existed. Counting what exists, and agreeing what good looks like, is Discovery's work, and no later phase can do it retroactively.",
+        bold: [{ phrase: "about 3,000 had moved" }],
+        externalLinks: [{ phrase: "The Auditor General found", linkKey: "oag-it-shared-services" }],
+      },
+    ],
+  },
+  beta: {
+    id: "real-example-phoenix-launch",
+    title: "Phoenix launched without the proving",
+    paragraphs: [
+      {
+        text: "In 2016, the Government of Canada replaced its 40-year-old pay system with Phoenix. To hold the date and the budget, the planned pilot, one department going first, was dropped, critical pay functions were removed, and system testing was cut short. The department knew about serious weaknesses, and Phoenix went live anyway, for everyone, in two waves.",
+        bold: [{ phrase: "the planned pilot, one department going first, was dropped" }],
+      },
+      {
+        text: "Within months, tens of thousands of public servants were paid wrong or not paid at all: wrong cheques, missed cheques, people checking their own stubs with a calculator. The backlog grew to hundreds of thousands of pay cases, and fixing the system has cost several times what building it did. The Auditor General called it an incomprehensible failure of project management and project oversight. The invited group, the capped volume, the gate out on evidence: what this page asks of Beta is what Phoenix skipped.",
+        bold: [{ phrase: "paid wrong or not paid at all" }],
+        externalLinks: [
+          { phrase: "The Auditor General called it", linkKey: "oag-phoenix-build" },
+        ],
+      },
+    ],
+  },
+  stabilization: {
+    id: "real-example-phoenix-launch-day",
+    title: "On launch day, there was no way back",
+    paragraphs: [
+      {
+        text: "When Phoenix went live, the old pay system was switched off, and hundreds of the compensation advisors who understood pay had already been let go. So when the first pay runs came out wrong, there was no old system to fall back on, and almost nobody left who could fix a pay file by hand.",
+        bold: [{ phrase: "there was no old system to fall back on" }],
+        externalLinks: [{ phrase: "Phoenix", linkKey: "oag-phoenix-build" }],
+      },
+      {
+        text: "Every fault reached real paycheques at full volume, and the queue of broken pay files grew faster than anyone could clear it. This page's on-ramp exists because of launches like that one: the old way still running, on a dated retirement plan, and the people who understand the service still reachable.",
+        bold: [{ phrase: "Every fault reached real paycheques at full volume" }],
+      },
+    ],
+  },
+  growth: {
+    id: "real-example-arrivecan",
+    title: "177 versions, and no way to add up the bill",
+    paragraphs: [
+      {
+        text: "ArriveCAN was built fast in an emergency, and speed is not what hurt it. The Canada Border Services Agency's records were so poor that the Auditor General could not determine what the app had cost; about $59.5 million was the estimate. The first contract was awarded through a non-competitive process the agency could barely document, and invoices often said too little to tell what work was billed against which task authorization.",
+        bold: [{ phrase: "could not determine what the app had cost" }],
+        externalLinks: [{ phrase: "the Auditor General", linkKey: "oag-arrivecan" }],
+      },
+      {
+        text: "The agency released 177 versions of the app, often with little or no documented testing. One update, in June 2022, wrongly told around 10,000 travellers to quarantine. A task described, priced, and approved; a release proven small first: the rules in this block are the discipline whose absence the audit describes.",
+        bold: [{ phrase: "wrongly told around 10,000 travellers to quarantine" }],
+      },
+    ],
+  },
+  maturity: {
+    id: "real-example-forced-replacement",
+    title: "The forced replacement was named Phoenix",
+    paragraphs: [
+      {
+        text: "The pay system Phoenix replaced had run for about 40 years. It worked, so the money for improving it went elsewhere, and by its final years it was a system few people understood and nobody could risk changing.",
+        bold: [{ phrase: "had run for about 40 years" }],
+        externalLinks: [{ phrase: "Phoenix", linkKey: "oag-phoenix-build" }],
+      },
+      {
+        text: "Replacement stopped being a choice and became an emergency with a fixed date, run under pressure to be fast and cheap, and the corners cut under that pressure became the Phoenix disaster. A service allowed to age into a forced replacement hands its problems on, multiplied, to whoever comes next.",
+        bold: [{ phrase: "Replacement stopped being a choice" }],
+      },
+    ],
+  },
+};

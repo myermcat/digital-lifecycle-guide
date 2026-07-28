@@ -142,7 +142,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
     title: "Buy the new work well.",
     sections: [
       {
-        text: "Nobody could name these features when the contract was signed, and a good contract expected that: new work arrives through task authorizations, each task described, priced at the contract's rates, and approved in writing before it starts, within the contract's scope and its ceiling. What a good contract looks like shows the clauses.",
+        text: "The features Growth builds could not be named when the contract was signed, and a good contract expected that: new work arrives through task authorizations, each task described, priced at the contract's rates, and approved in writing before it starts, within the contract's scope and its ceiling. What a good contract looks like shows the clauses.",
         bold: [{ phrase: "a good contract expected that" }],
         externalLinks: [
           { phrase: "task authorizations", linkKey: "task-authorizations" },

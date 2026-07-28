@@ -15,6 +15,7 @@ import {
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
+import { LIFECYCLE_VISUALS, type LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 
 export const MATURITY_LEAD: ThreadLinkedProse = {
   text: "A mature service runs every day because a team keeps it running. Parts age out of support, people change jobs, and the funding and the contract move toward their end dates, and none of it pauses because the service seems fine. The team stays ahead of it all on a cycle: watching, patching, researching, filing, renewing. Most of a service's life is spent in Maturity, and so is most of its work.",
@@ -57,11 +58,11 @@ export const MATURITY_PILLAR = {
       { phrase: "Put every end date on a calendar the team actually looks at" },
     ],
     internalLinks: [
-      { phrase: "re-competing a contract", to: "/thread/procurement" },
+      { phrase: "a new funding decision", to: "/thread/funding" },
     ],
   } satisfies ThreadLinkedProse,
-  href: "/thread/funding",
-  linkLabel: "See how funding renewals are planned →",
+  href: "/thread/procurement",
+  linkLabel: "See how contract renewals are planned →",
   icon: CalendarClock,
 };
 
@@ -69,6 +70,7 @@ export type MaturityAccordionStage = {
   id: string;
   icon: LucideIcon;
   title: string;
+  headerVisual?: LifecycleVisualAsset;
   sections: readonly ThreadContentSection[];
 };
 
@@ -82,6 +84,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
     id: "keep-it-working",
     icon: Activity,
     title: "Keep the service working.",
+    headerVisual: LIFECYCLE_VISUALS.serviceDashboard,
     sections: [
       {
         text: "The health cycle from the earlier sub-phases keeps turning, at a steadier pace. The dashboard is read on a cadence, small changes go out through the same pipeline, and updates are applied as they arrive. Monitoring and instrumentation and releasing changes carry the practice.",

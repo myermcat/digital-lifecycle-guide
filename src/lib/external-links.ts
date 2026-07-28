@@ -60,6 +60,23 @@ export const EXTERNAL_LINKS = {
     description: "PSPC Task and Statement Professional Services (TSPS/SPCS)",
     accessibility: "public",
   },
+  "oag-phoenix-build": {
+    url: "https://publications.gc.ca/site/eng/9.864945/publication.html",
+    description:
+      "OAG 2018 Spring Reports, Report 1 — Building and Implementing the Phoenix Pay System (Government of Canada Publications record)",
+    accessibility: "public",
+  },
+  "oag-it-shared-services": {
+    url: "https://publications.gc.ca/site/eng/9.804430/publication.html",
+    description:
+      "OAG Fall 2015 Reports, Report 4 — Information Technology Shared Services (Government of Canada Publications record)",
+    accessibility: "public",
+  },
+  "oag-arrivecan": {
+    url: "https://www.canada.ca/en/auditor-general/our-work/audit-reports/parl-oag-202402-01-e.html",
+    description: "OAG 2024 Reports, Report 1 — ArriveCAN",
+    accessibility: "public",
+  },
   "aaact-program": {
     url: "https://www.canada.ca/en/shared-services/services/employees-accessibility/aaact-program.html",
     description:

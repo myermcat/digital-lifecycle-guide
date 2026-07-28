@@ -552,10 +552,16 @@ export const BETA_FINISH = {
     text: "The finish criteria. Beta is done when the service has been through private beta and then public beta, has been used by real people at scale, and held. It delivers the whole journey, end to end. The service meets the accessibility standard and what the testing found has been fixed, the privacy assessment is done, the dashboard is live, and the support is staffed.",
     bold: [{ phrase: "The finish criteria." }],
   } satisfies ThreadLinkedProse,
-  followUp: {
-    text: "The last test is the one this guide exists for: the department can support the service, and keep improving it, every year until it is replaced or retired. If it cannot, the service is not ready to launch, however well it demos.",
-    bold: [{ phrase: "The last test" }],
-  } satisfies ThreadLinkedProse,
+  followUp: [
+    {
+      text: "The last test is the one this guide exists for: the department can support the service, and keep improving it, every year until it is replaced or retired. If it cannot, the service is not ready to launch, however well it demos.",
+      bold: [{ phrase: "The last test" }],
+    },
+    {
+      text: "Write the go and no-go criteria down early, before anyone is invested in the launch date. Agreed in advance, they make stopping a pre-agreed outcome rather than an act of personal courage.",
+      bold: [{ phrase: "Write the go and no-go criteria down early," }],
+    },
+  ] satisfies ThreadLinkedProse[],
   exits: [
     {
       lead: "Forward to Stabilization,",

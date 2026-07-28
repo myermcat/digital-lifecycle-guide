@@ -50,10 +50,11 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   accessibility: {
-    text: "For accessibility questions, the Digital Accessibility Toolkit is the Government of Canada starting point, and its community directory connects you to the accessibility community across departments.",
+    text: "For accessibility questions, the Digital Accessibility Toolkit is the Government of Canada starting point, and its community directory connects you to the accessibility community across departments. For hands-on help, training, adaptive-technology testing, and procurement advice, email the AAACT program at Shared Services Canada.",
     externalLinks: [
       { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
       { phrase: "community directory", linkKey: "a11y-community-directory" },
+      { phrase: "AAACT program", linkKey: "aaact-program" },
     ],
   },
   "user-research": {

@@ -1,4 +1,6 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { RealExampleCallout } from "@/components/RealExampleCallout";
+import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { EditorialNote } from "@/components/EditorialNote";
 import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
@@ -37,6 +39,7 @@ import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-ty
 const DISCOVERY_SOURCES: SourceItem[] = [
   { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
+  { label: "OAG Fall 2015 Reports, Report 4: Information Technology Shared Services", linkKey: "oag-it-shared-services" },
 ];
 
 export function CreateDiscoveryPage() {
@@ -129,6 +132,8 @@ export function CreateDiscoveryPage() {
         title={DISCOVERY_CAUTION.title}
         items={DISCOVERY_CAUTION.items.map((item) => ({ heading: item }))}
       />
+
+      <RealExampleCallout example={REAL_EXAMPLES.discovery!} className="mt-8 md:mt-10" />
 
       <SubphaseFinishSection
         title={DISCOVERY_FINISH.title}

@@ -68,12 +68,16 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Accessibility. The Digital Accessibility Toolkit and its community directory.",
+        text: "Accessibility. The Digital Accessibility Toolkit and its community directory, and a team you can email: the AAACT program at Shared Services Canada does training, adaptive-technology testing, and procurement advice (aaact-aatia@ssc-spc.gc.ca).",
         bold: [{ phrase: "Accessibility." }],
         externalLinks: [
           { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
           { phrase: "community directory", linkKey: "a11y-community-directory" },
+          { phrase: "AAACT program", linkKey: "aaact-program" },
         ] satisfies ExternalPhraseLink[],
+        mailtoLinks: [
+          { phrase: "aaact-aatia@ssc-spc.gc.ca", href: "mailto:aaact-aatia@ssc-spc.gc.ca" },
+        ],
       },
       {
         text: "Building and platforms. The Canadian Digital Service runs shared platforms, GC Notify and GC Forms, and the GC Design System for a tested set of components.",

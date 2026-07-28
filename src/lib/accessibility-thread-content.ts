@@ -164,10 +164,11 @@ export const ACCESSIBILITY_THREAD = {
         sections: [
           {
             text:
-              "Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage.",
+              "Most existing services run on technology that was bought rather than built in-house, so accessibility has to be a condition of the purchase. The Digital Accessibility Toolkit has a requirements generator that turns a description of what you are buying into the exact accessibility clauses to put in the contract, and the supplier provides an Accessibility Conformance Report stating how their product measures up. Where a product is not fully accessible, a remediation roadmap records what will be fixed and when. Getting the accessibility requirements written into the contract is where a business owner has the most leverage, and the AAACT program at Shared Services Canada advises on whether a procurement has accessibility addressed.",
             bold: [{ phrase: "Accessibility Conformance Report" }],
             externalLinks: [
               { phrase: "Digital Accessibility Toolkit", linkKey: "a11y-toolkit-procurement" },
+              { phrase: "AAACT program", linkKey: "aaact-program" },
             ] satisfies ExternalPhraseLink[],
             internalLinks: [
               { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
@@ -193,7 +194,7 @@ export const ACCESSIBILITY_THREAD = {
           },
           {
             text:
-              "There is a team to call for help. The Accessibility, Accommodation and Adaptive Computer Technology (AAACT) program at Shared Services Canada helps teams build accessibility into products, services, and content from the start: training sessions, testing with adaptive technology, and advice on whether a procurement has accessibility addressed.",
+              "There is a team to call for help. The Accessibility, Accommodation and Adaptive Computer Technology (AAACT) program at Shared Services Canada helps teams build accessibility into products, services, and content from the start, with training sessions and testing with adaptive technology.",
             bold: [{ phrase: "There is a team to call for help." }],
             externalLinks: [
               {

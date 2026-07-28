@@ -1,4 +1,6 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { RealExampleCallout } from "@/components/RealExampleCallout";
+import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -41,6 +43,7 @@ const GROWTH_SOURCES: SourceItem[] = [
   { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
   { label: "Directive on Automated Decision-Making (TBS)", linkKey: "directive-automated-decision-making" },
   { label: "Task authorizations (CanadaBuys buyer's guide)", linkKey: "task-authorizations" },
+  { label: "OAG 2024 Reports, Report 1: ArriveCAN", linkKey: "oag-arrivecan" },
 ];
 
 export function LiveGrowthPage() {
@@ -118,6 +121,8 @@ export function LiveGrowthPage() {
         title={GROWTH_CAUTION.title}
         items={GROWTH_CAUTION.items.map((item) => ({ heading: item }))}
       />
+
+      <RealExampleCallout example={REAL_EXAMPLES.growth!} className="mt-8 md:mt-10" />
 
       <SubphaseFinishSection
         title={GROWTH_FINISH.title}

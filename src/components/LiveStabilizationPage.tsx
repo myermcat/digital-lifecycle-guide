@@ -1,8 +1,11 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { RealExampleCallout } from "@/components/RealExampleCallout";
+import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -38,6 +41,7 @@ const STABILIZATION_SOURCES: SourceItem[] = [
   { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
   { label: "Service Fees Act", linkKey: "service-fees-act" },
+  { label: "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System", linkKey: "oag-phoenix-build" },
 ];
 
 export function LiveStabilizationPage() {
@@ -96,6 +100,9 @@ export function LiveStabilizationPage() {
           id: stage.id,
           icon: stage.icon,
           title: stage.title,
+          headerContent: stage.headerVisual ? (
+            <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
+          ) : undefined,
           children: renderThreadSections(stage.sections),
         }))}
       />
@@ -114,6 +121,8 @@ export function LiveStabilizationPage() {
         title={STABILIZATION_CAUTION.title}
         items={STABILIZATION_CAUTION.items.map((item) => ({ heading: item }))}
       />
+
+      <RealExampleCallout example={REAL_EXAMPLES.stabilization!} className="mt-8 md:mt-10" />
 
       <SubphaseFinishSection
         title={STABILIZATION_FINISH.title}

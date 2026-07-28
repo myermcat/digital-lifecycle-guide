@@ -1,4 +1,6 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { RealExampleCallout } from "@/components/RealExampleCallout";
+import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { Sparkles } from "lucide-react";
 import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
@@ -41,6 +43,7 @@ const BETA_SOURCES: SourceItem[] = [
   { label: "Supporting reference", linkKey: "directive-security-management" },
   { label: "Supporting reference", linkKey: "itsg-33" },
   { label: "Supporting reference", linkKey: "algorithmic-impact-assessment" },
+  { label: "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System", linkKey: "oag-phoenix-build" },
 ];
 
 export function CreateBetaPage() {
@@ -149,6 +152,8 @@ export function CreateBetaPage() {
         lead={BETA_CAUTION.lead}
         items={BETA_CAUTION.items}
       />
+
+      <RealExampleCallout example={REAL_EXAMPLES.beta!} className="mt-8 md:mt-10" />
 
       <SubphaseFinishSection
         title={BETA_FINISH.title}
