@@ -11,7 +11,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
         viewBox="0 0 900 194"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live and Sunset as open-ended"
+        aria-label="Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live with its sub-phases Stabilization, Growth, and Maturity, and Sunset, both open-ended"
         className="w-full h-auto block"
       >
         <text
@@ -161,12 +161,69 @@ export function GateMapTimeline({ className }: { className?: string }) {
         <rect
           x="418"
           y="84"
-          width="284"
+          width="86"
           height="40"
           rx="4"
           fill="url(#gate-map-hatch)"
           className="stroke-border"
         />
+        <text
+          x="461"
+          y="108"
+          textAnchor="middle"
+          className="fill-foreground"
+          style={{
+            fontFamily: "ui-sans-serif, system-ui, sans-serif",
+            fontSize: 9.5,
+            fontWeight: 700,
+          }}
+        >
+          Stabilization
+        </text>
+        <rect
+          x="508"
+          y="84"
+          width="86"
+          height="40"
+          rx="4"
+          fill="url(#gate-map-hatch)"
+          className="stroke-border"
+        />
+        <text
+          x="551"
+          y="108"
+          textAnchor="middle"
+          className="fill-foreground"
+          style={{
+            fontFamily: "ui-sans-serif, system-ui, sans-serif",
+            fontSize: 9.5,
+            fontWeight: 700,
+          }}
+        >
+          Growth
+        </text>
+        <rect
+          x="598"
+          y="84"
+          width="104"
+          height="40"
+          rx="4"
+          fill="url(#gate-map-hatch)"
+          className="stroke-border"
+        />
+        <text
+          x="650"
+          y="108"
+          textAnchor="middle"
+          className="fill-foreground"
+          style={{
+            fontFamily: "ui-sans-serif, system-ui, sans-serif",
+            fontSize: 9.5,
+            fontWeight: 700,
+          }}
+        >
+          Maturity
+        </text>
 
         <text
           x="800"

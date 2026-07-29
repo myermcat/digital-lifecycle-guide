@@ -97,7 +97,7 @@ export const GATE_MAP_SUBTITLE = {
 } as const;
 
 export const GATE_MAP_WORKING_NOTE = {
-  lead: "Working scheme, for figuring out the gates.",
+  lead: "Working scheme, for figuring out the checkpoints.",
   body: 'This traces one invented person, Nadia, through the real path a new service takes. Some mechanics (who chairs what, exact thresholds, how long each step runs) vary by department and are marked "varies."',
   disclaimer:
     "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.",
