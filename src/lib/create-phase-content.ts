@@ -71,7 +71,7 @@ export const CREATE_PHASE = {
         heading: "1. Work out what is needed.",
         lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
         afterLead: {
-          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one rather than repeating it.",
+          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha, and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one rather than repeating it.",
           bold: [
             { phrase: "A replacement still benefits from every sub-phase." },
             { phrase: "need now" },
@@ -97,19 +97,19 @@ export const CREATE_PHASE = {
       {
         heading: "2. Get it funded and approved.",
         lead:
-          "Nothing is built until the money and the sign-offs are in place, and for most services that happens inside the department.",
+          "The real service is not built until the money and the sign-offs are in place, and for most services that happens inside the department.",
         bullets: [
           {
-            text: "Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the project takes.",
+            text: "Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the service takes.",
           },
           {
-            text: "For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance and its own architecture review board.",
+            text: "For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance bodies and its own architecture review board.",
           },
           {
             text: "Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not.",
           },
           {
-            text: "Funding sets out the whole path, and which one a given service takes. The lifecycle of a digital service lays out every official gate on one page.",
+            text: "Funding sets out the whole path, and which one a given service takes. The lifecycle of a digital service lays out every official checkpoint on one page.",
             internalLinks: [
               { phrase: "Funding", to: "/thread/funding" },
               {
@@ -150,8 +150,8 @@ export const CREATE_PHASE = {
       },
     ],
     closing: {
-      leadIn: "These are project decisions, made to get the service built.",
-      text: "The business case is made, the money for the build is committed, and the design is signed off. After launch those same checks start coming round again, every release and every year, and that recurring rhythm is what makes Live different.",
+      leadIn: "These are one-time decisions, made to get the service built.",
+      text: "The business case is made, the money for building and running it is committed, and the design is signed off. After launch those same checks start coming round again, every release and every year, and that recurring rhythm is what makes Live different.",
     },
   },
 
@@ -164,7 +164,7 @@ export const CREATE_PHASE = {
       {
         title: "Discovery",
         description:
-          "understand the problem, work out whether a service is needed, and whether to reuse, buy, or build. Stopping here is a good outcome.",
+          "understand the problem, work out whether a service is needed, and whether to reuse, buy, or build. Stopping here can be a good outcome.",
         href: "/create-discovery",
       },
       {

@@ -27,7 +27,7 @@ export const STABILIZATION_EXTRACT: SubphaseExtract = {
     "clears the launch leftovers: the registrations, the knowledge handover, the old way retired on its date",
   ],
   scoped: {
-    text: "Stabilization is short, a few weeks to a couple of months. It comes once per launch, then briefly again after a major relaunch.",
+    text: "Stabilization is short: a few weeks to a couple of months. It comes once per launch, then briefly again after a major relaunch.",
   },
   whatsNew: {
     label: "New since Beta",
@@ -238,7 +238,7 @@ export const STABILIZATION_TEAM = {
     {
       role: "Operations",
       icon: Server,
-      body: { text: "keep the service up and patched, and release the fixes." },
+      body: { text: "keeps the service up and patched, and releases the fixes." },
     },
     {
       role: "Support lead",

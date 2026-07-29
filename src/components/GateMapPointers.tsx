@@ -19,7 +19,7 @@ export function GateMapPhaseCallout({ text, hash, linkLabel }: GateMapPhasePoint
     <PillarCallout
       compact
       className={gateMapCalloutClassName}
-      label="THE OFFICIAL GATES"
+      label="THE OFFICIAL CHECKPOINTS"
       icon={Map}
       href={GATE_MAP_PATH}
       hash={hash}

@@ -73,7 +73,7 @@ export const ALPHA_ON_RAMP = {
       bold: [{ phrase: "The Discovery team carried over," }],
     },
     {
-      text: "Funding for the alpha, including a budget for user research.",
+      text: "Funding for the alpha, often from the department's existing operating budget, including a budget for user research.",
       bold: [{ phrase: "Funding for the alpha" }],
     },
     {
@@ -123,7 +123,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
       },
       {
-        text: "Work up in this order, stopping as soon as the idea is answered:",
+        text: "Work up in this order, stopping as soon as the question is answered:",
       },
       {
         type: "orderedList",
@@ -143,7 +143,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Treat the AI mock-up exactly as you would treat paper: something to be thrown away. It is not the beginning of the real service, and no part of it should survive into the build. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in the air, and it shows quickly whether the idea works at all.",
+        text: "Treat the AI mock-up exactly as you would treat paper: something to be thrown away. It is not the beginning of the real service, and no part of it should survive into the build. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in words, and it shows quickly whether the idea works at all.",
         bold: [{ phrase: "something to be thrown away" }],
       },
       {
@@ -164,12 +164,12 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         type: "unorderedList",
         items: [
           {
-            text: "A paper prototype needs one person who can draw. Sketch the screens, put them in front of someone, and watch where they get stuck. It costs an afternoon and it will change what the service is.",
+            text: "A paper prototype needs one person who can draw. Sketch the screens, put them in front of someone, and watch where they get stuck. It costs an afternoon and it can change what the service is.",
             bold: [{ phrase: "A paper prototype needs one person who can draw." }],
           },
           {
-            text: "A clickable mockup needs half a day, and you can make it yourself. The AI prototyping tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can do the same, though asking for half of someone's working day is a real ask.",
-            bold: [{ phrase: "A clickable mockup needs half a day, and you can make it yourself." }],
+            text: "A clickable mock-up needs half a day, and you can make it yourself. The AI prototyping tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can do the same, though asking for half of someone's working day is a real ask.",
+            bold: [{ phrase: "A clickable mock-up needs half a day, and you can make it yourself." }],
           },
           {
             text: "If the department is buying a Team, the supplier is already there. That contract was signed at the end of Discovery, so the team prototypes alongside the department.",
@@ -190,8 +190,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             bold: [{ phrase: "Buying a Solution: yes." }],
           },
           {
-            text: "Building in-house: yes. The department is the builder, so it prototypes for itself.",
-            bold: [{ phrase: "Building in-house: yes." }],
+            text: "Building in-house or reusing a platform: yes. The department is the builder or the configurer, so it prototypes for itself.",
+            bold: [{ phrase: "Building in-house or reusing a platform: yes." }],
           },
           {
             text: "Buying a Team: the team prototypes with you.",
@@ -360,7 +360,7 @@ export const ALPHA_FINISH = {
       bold: [{ phrase: "The competition to find a supplier runs during Alpha." }],
     },
     {
-      text: "This is the procurement competition. The requirements are written, the competition is published, bids come in, they are evaluated, and the work is awarded, and that takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
+      text: "This is the procurement competition. The requirements are written, the competition is published, bids come in, they are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
       internalLinks: [
         { phrase: "procurement", to: "/thread/procurement" },
         { phrase: "Beta", to: "/create-beta" },

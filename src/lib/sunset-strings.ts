@@ -88,7 +88,7 @@ export const SUNSET_STRINGS = {
   },
 
   journey: {
-    intro: "You might not run all of it yourself, but you should recognise every step.",
+    intro: "You might not run all of it yourself, but you should recognize every step.",
     footer:
       "These steps are shown in order, but in practice they overlap and some repeat. While you acquire and migrate to the new solution, you are still shutting down the old one, so steps four and five run together. You are out of Sunset when the old service is fully shut down and its data and users have a safe home. If you replaced it, that new service has already begun its own Create.",
     steps: [
@@ -110,7 +110,7 @@ export const SUNSET_STRINGS = {
         label: "Decide",
         title: "Decide.",
         leadIn: "Work out what you need going forward, and how to get it.",
-        body: "Work out what you actually need going forward, and how to get it. The trap is recreating the old system feature for feature. Separate the business need from the current features, so you carry forward what creates value and drop what only exists because of the old platform's limits. Judge how complex the replacement really is, map the integrations (they are routinely underestimated), then do options analysis.",
+        body: "Work out what you actually need going forward, and how to get it. The trap is recreating the old service feature for feature. Separate the business need from the current features, so you carry forward what creates value and drop what only exists because of the old platform's limits. Judge how complex the replacement really is, map the integrations (they are routinely underestimated), then do options analysis.",
         internalLinks: [{ phrase: "do options analysis", to: OPTIONS_ANALYSIS_PATH }],
         boldPhrases: [{ phrase: "Separate the business need from the current features" }],
         example: {
@@ -121,7 +121,7 @@ export const SUNSET_STRINGS = {
           },
           right: {
             heading: "The old feature",
-            body: "The 47-field intake form, the three-tab approval routing, and the colour-coded status flags, rebuilt exactly as the old system had them.",
+            body: "The 47-field intake form, the three-tab approval routing, and the colour-coded status flags, rebuilt exactly as the old tool had them.",
           },
           caption:
             "The features are only how the old tool met the need. The new one may meet it better.",
@@ -131,7 +131,7 @@ export const SUNSET_STRINGS = {
         label: "Plan",
         title: "Plan.",
         leadIn: "Turn the decision into a plan.",
-        body: "Turn the decision into a plan that lines up people, money, and timing. Bring the right people in early: the users who live in the service, IM for records retention, IT and security, and whoever holds the budget and the approvals. Write the business case, plan the change for users (adoption makes or breaks a migration), set out who is responsible for what, and define what success looks like and how you will measure it.",
+        body: "Turn the decision into a plan that lines up people, money, and timing. Bring the right people in early: the users who live in the service, information management for records retention, IT and security, and whoever holds the budget and the approvals. Write the business case, plan the change for users (adoption makes or breaks a migration), set out who is responsible for what, and define what success looks like and how you will measure it.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 3, Business Case and Roles and Responsibilities — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {

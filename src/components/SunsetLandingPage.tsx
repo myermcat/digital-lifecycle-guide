@@ -62,7 +62,7 @@ export function SunsetLandingPage() {
       <GateMapPhaseCallout
         text="See where Sunset sits in the whole lifecycle."
         hash="sunset"
-        linkLabel="See the gates in Sunset →"
+        linkLabel="See the checkpoints in Sunset →"
       />
 
       <aside className="mt-8 rounded-lg border border-primary/30 bg-primary/5 px-6 py-5 md:px-7 md:py-6">

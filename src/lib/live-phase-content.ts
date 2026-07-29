@@ -23,8 +23,8 @@ export const LIVE_PHASE = {
   } satisfies PhaseQuoteContent,
 
   lead: [
-    "This is where the one-time work of standing the service up ends, and the service becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its costs begin, and where it needs steady care to stay useful.",
-    "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle rather than a countdown to it. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
+    "This is where the one-time work of standing the service up ends, and the service becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its running costs begin, and where it needs steady care to stay useful.",
+    "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle rather than a countdown to it. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep listening to the people who use it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
     "Think ahead to Sunset while you run. Every service ends, and the teams that end well are the ones that saw it coming: they watch the signals that point to retirement or replacement, keep the exit possible as contracts renew, and set the money aside before the current funding ends. The end of one service is usually the Create of the next, so that planning starts years before the last day.",
   ],
 
@@ -88,7 +88,7 @@ export const LIVE_PHASE = {
       },
       {
         heading: "2. Keep making it better.",
-        lead: "Real use is the best evidence a team ever gets about what to build next.",
+        lead: "Real use is some of the best evidence a team gets about what to build next.",
         bullets: [
           {
             text: "Fresh user research shows what to fix and what to add.",
@@ -109,7 +109,7 @@ export const LIVE_PHASE = {
         lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
-            text: "Its funding is renewed before the current money runs out. The lifecycle of a digital service shows which official gates still apply once the service is running.",
+            text: "Its funding is renewed before the current money runs out. The lifecycle of a digital service shows which checkpoints still apply once the service is running.",
             internalLinks: [
               { phrase: "funding", to: "/thread/funding" },
               {
@@ -139,7 +139,7 @@ export const LIVE_PHASE = {
     ],
     closing: {
       leadIn: "The work comes round again.",
-      text: "Live's checks recur: a security review on every release, the privacy assessment refreshed as the service changes, funding renewed before it runs out. Live settles into a rhythm and keeps going.",
+      text: "Live's checks recur: a security check on every release, the privacy assessment refreshed as the service changes, funding renewed before it runs out. Live settles into a rhythm and keeps going.",
     },
   },
 
@@ -176,12 +176,12 @@ export const LIVE_PHASE = {
       },
     ] satisfies readonly { slug: ThreadSlug; title: string; note: string }[],
     obligations:
-      "And the obligations that quietly recur here: Funding a renewal before the money runs out, keeping the privacy assessment current, holding the service to the accessibility standard, patching dependencies, retaining and disposing of data on schedule, and keeping the team together.",
+      "And the obligations that recur here: renewing funding before the money runs out, keeping the privacy assessment current, holding the service to the accessibility standard, patching dependencies, retaining and disposing of data on schedule, and keeping the team together.",
   },
 
   reviews: {
     id: "live-reviews-come-round-again",
-    title: "Live's reviews come round again",
+    title: "Live's checks come round again",
     text:
       "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. The work does not finish; it comes round again.",
   },

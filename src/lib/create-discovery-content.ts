@@ -50,7 +50,7 @@ export const DISCOVERY_ON_RAMP = {
       bold: [{ phrase: "business owner" }],
     },
     {
-      text: "A small, dedicated team is available, and its members are not split across other projects.",
+      text: "A small, dedicated team is available, and its members are not split across other work.",
       bold: [{ phrase: "small, dedicated team" }],
     },
     {
@@ -69,7 +69,7 @@ export const DISCOVERY_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Reuse, buy, or build",
   opening: {
-    text: "Most existing Government of Canada services were met by something that already existed:",
+    text: "The needs behind most existing Government of Canada services were met by something that already existed:",
     bold: [{ phrase: "existing" }],
   } satisfies ThreadLinkedProse,
   options: [
@@ -87,7 +87,7 @@ export const DISCOVERY_PILLAR = {
     },
   ] satisfies ThreadLinkedProse[],
   weigh: {
-    text: "Before any solution is named, Discovery weighs those options, and makes sure the service will not duplicate one that already exists.",
+    text: "Before any solution is named, Discovery weighs those options and makes sure the service will not duplicate one that already exists.",
   } satisfies ThreadLinkedProse,
   sometimes: {
     text: "Sometimes the answer is not a service at all. Clearer information, or a change to a form, can be enough on its own.",
@@ -205,7 +205,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
     title: "Understand the constraints.",
     sections: [
       {
-        text: "Work out the constraints you would face if you move on to the Alpha sub-phase: legislation, existing contracts, legacy technology, and established processes. Sort them into two kinds:",
+        text: "Work out the constraints you would face if you move on to the Alpha sub-phase: legislation, existing contracts, legacy technology, and established processes, among others. Sort them into two kinds:",
       },
       {
         type: "orderedList",

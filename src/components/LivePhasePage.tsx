@@ -63,7 +63,7 @@ export function LivePhasePage() {
       <GateMapPhaseCallout
         text="See where Live sits in the whole lifecycle."
         hash="live"
-        linkLabel="See the gates in Live →"
+        linkLabel="See the checkpoints in Live →"
       />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfLive.id}>

@@ -58,7 +58,7 @@ export function CreatePhasePage() {
       <GateMapPhaseCallout
         text="Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle."
         hash="discovery"
-        linkLabel="See the gates in Create →"
+        linkLabel="See the checkpoints in Create →"
       />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfCreate.id}>

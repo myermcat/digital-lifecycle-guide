@@ -85,7 +85,7 @@ export const BETA_ON_RAMP = {
       bold: [{ phrase: "A decision on whether to reuse, buy, or build," }],
     },
     {
-      text: "Funding and approval that cover the build as well as the research.",
+      text: "Funding and approval that cover the build as well as the research, and can fit within the department's existing operating budget.",
       bold: [{ phrase: "Funding and approval" }],
     },
     {
@@ -104,7 +104,7 @@ export const BETA_PILLAR = {
   title: "The contract you sign will outlive the service",
   icon: FileSignature,
   bodyIntro: {
-    text: "The contract, whenever in the journey it was signed, is what the department has to live with. Signature is the moment it has real leverage, because nothing has been committed yet.",
+    text: "The contract, whenever in the journey it was signed, is what the department has to live with. Signature is the moment the department has real leverage, because nothing has been committed yet.",
     bold: [{ phrase: "The contract, whenever in the journey it was signed," }],
   } satisfies ThreadLinkedProse,
   listIntro: {
@@ -365,13 +365,13 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         type: "unorderedList",
         items: [
           {
-            text: "Decide the few numbers that will tell you whether the service is working, and instrument the service to emit them. Monitoring covers what to measure and how.",
+            text: "Decide the few numbers that will tell you whether the service is working for the people using it, and instrument the service to emit them. Monitoring covers what to measure and how.",
             internalLinks: [
               { phrase: "Monitoring", to: "/thread/monitoring-and-instrumentation" },
             ],
           },
           {
-            text: "Name whose job the dashboard is. It is often the vendor who builds it, which means it has to be written into the contract, or it will not exist.",
+            text: "Name whose job the dashboard is. It is often the vendor who builds it, which means it has to be written into the contract, or it may never exist.",
             bold: [{ phrase: "Name whose job the dashboard is." }],
           },
           "Make sure the department can read the dashboard without asking the supplier.",
@@ -385,7 +385,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     title: "Get ready to run it.",
     sections: [
       {
-        text: "A service that nobody is staffed to operate will decay from its first week.",
+        text: "A service that nobody is staffed to operate can decay from its first week.",
       },
       {
         type: "unorderedList",
@@ -435,7 +435,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement project, when the decision to replace is made, not 12 to 18 months before the old system is switched off. Data stewardship covers deciding what happens to the data, in full.",
+          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement, when the decision to replace is made, not 12 to 18 months before the old service is switched off. Data stewardship covers deciding what happens to the data, in full.",
         internalLinks: [
           { phrase: "Discovery", to: "/create-discovery" },
           { phrase: "Data stewardship", to: "/thread/data-stewardship" },
@@ -516,7 +516,7 @@ export const BETA_TEAM = {
 
 export const BETA_CAUTION = {
   title: "When Beta goes wrong",
-  lead: "The signs to watch for:",
+  lead: "Some of the signs to watch for:",
   items: [
     {
       heading: "The prototype was promoted.",
@@ -549,7 +549,7 @@ export const BETA_FINISH = {
   title: "How you know Beta is finished",
   sectionId: "how-you-know-beta-is-finished",
   intro: {
-    text: "The finish criteria. Beta is done when the service has been through private beta and then public beta, has been used by real people at scale, and held. It delivers the whole journey, end to end. The service meets the accessibility standard and what the testing found has been fixed, the privacy assessment is done, the dashboard is live, and the support is staffed.",
+    text: "The finish criteria. Beta is done when the service has been through private beta and then public beta, has been used by real people at scale, and has held up. It delivers the whole journey, end to end. The service meets the accessibility standard and what the testing found has been fixed, the privacy assessment is done, the dashboard is live, and the support is staffed.",
     bold: [{ phrase: "The finish criteria." }],
   } satisfies ThreadLinkedProse,
   followUp: [

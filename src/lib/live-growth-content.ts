@@ -35,7 +35,7 @@ export const GROWTH_ON_RAMP = {
       bold: [{ phrase: "The addition named," }],
     },
     {
-      text: "The money for the new work. New capability is funded on its own, and the approval lead time is real.",
+      text: "The money for the new work. New capability is funded on its own, the approval lead time is real, and the running costs the addition brings must fit within the department's existing operating budget.",
       bold: [{ phrase: "The money for the new work." }],
     },
     {
@@ -51,9 +51,9 @@ export const GROWTH_ON_RAMP = {
 
 export const GROWTH_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
-  title: "Treat every significant addition as its own small project",
+  title: "Treat every significant addition as its own small lifecycle",
   body: {
-    text: "A live service makes building feel cheap: the platform exists, the users are there, and a new feature seems one release away. That feeling skips the work that made the service good the first time. A significant addition changes what the service is, so it gets its own small Discovery, Alpha, and Beta, sized to the feature, and it brings the earlier checkpoints back: privacy, automation, architecture, procurement.",
+    text: "A live service makes building feel cheap: the platform exists, the users are there, and a new feature seems one release away. That feeling skips the work that made the service good the first time. A significant addition changes what the service is, so it gets its own small Discovery, Alpha, and Beta, sized to the feature, and it brings the earlier checkpoints back: privacy, automation, architecture, procurement, among others.",
     bold: [{ phrase: "its own small Discovery, Alpha, and Beta" }],
   } satisfies ThreadLinkedProse,
   href: "/create",
@@ -80,7 +80,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
     title: "Build each addition through its own small lifecycle.",
     sections: [
       {
-        text: "The cycle that built the service builds each significant feature: a small discovery to learn who needs it and what problem it solves, throwaway prototypes while the idea is cheap to change, then a real build proven with a small group before everyone gets it. Size it to the feature: a small improvement needs a conversation and a sketch; a big one needs the full pass.",
+        text: "The cycle that built the service builds each significant feature: a small discovery to learn who needs it, what problem it solves, and whether anyone else has solved it already, throwaway prototypes while the idea is cheap to change, then a real build proven with a small group before everyone gets it. Size it to the feature: a small improvement needs a conversation and a sketch; a big one needs the full pass.",
         bold: [{ phrase: "Size it to the feature:" }],
       },
       {
@@ -120,7 +120,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         ],
       },
       {
-        text: "Two more things follow a significant addition. New code is new attack surface, so the security testing that ran before launch runs again for a major change. And a redesigned online service must give clients real-time application status, a requirement of the Directive on Service and Digital that every redesign re-invokes.",
+        text: "Two more things follow a significant addition. New code is new attack surface, so the security testing that ran before launch runs again for a major change. And a redesigned online service must give clients real-time application status, a requirement of the Directive on Service and Digital that comes back with every redesign.",
         bold: [{ phrase: "New code is new attack surface," }],
         internalLinks: [{ phrase: "security testing", to: "/thread/security" }],
         externalLinks: [
@@ -286,7 +286,7 @@ export const GROWTH_TEAM = {
     {
       role: "Operations",
       icon: Server,
-      body: { text: "keep the running service to its floor while the building happens." },
+      body: { text: "keeps the running service to its floor while the building happens." },
     },
     {
       role: "Support lead",
@@ -358,7 +358,7 @@ export const GROWTH_FINISH = {
         bold: [{ phrase: "The assessments current" }],
       },
       {
-        text: "The adoption where it should be, or the reason it is not written down.",
+        text: "The adoption where it should be, or a written reason why not.",
         bold: [{ phrase: "The adoption where it should be," }],
       },
       {

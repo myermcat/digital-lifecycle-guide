@@ -35,7 +35,7 @@ export const MATURITY_ON_RAMP = {
       bold: [{ phrase: "The running team named," }],
     },
     {
-      text: "A dashboard the team trusts, read on a cadence, with a named owner.",
+      text: "A dashboard the team trusts, read on a cadence, with a named owner, and a way of hearing from users directly.",
       bold: [{ phrase: "A dashboard the team trusts," }],
     },
     {
@@ -166,7 +166,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
             ],
           },
           {
-            text: "Automated decisions re-tested. If the service makes them, the bias testing recurs and the Algorithmic Impact Assessment is reviewed as the system changes. Ethics and bias covers the schedule.",
+            text: "Automated decisions re-tested. If the service makes them, the bias testing recurs and the Algorithmic Impact Assessment is reviewed as the service changes. Ethics and bias covers the schedule.",
             bold: [{ phrase: "Automated decisions re-tested." }],
             internalLinks: [
               { phrase: "Ethics and bias", to: "/thread/ethics-and-bias" },
@@ -259,7 +259,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         bold: [{ phrase: "at least once every five years" }],
       },
       {
-        text: "Five years is the floor. Teams that review more often see the signals earlier, and a light pass over the same questions once a year is enough. The signals worth watching:",
+        text: "Five years is the floor. Teams that review more often see the signals earlier, and a light pass over the same questions once a year is often enough. The signals worth watching:",
         bold: [{ phrase: "Five years is the floor." }],
       },
       {
@@ -298,7 +298,7 @@ export const MATURITY_TEAM = {
     {
       role: "Operations",
       icon: Server,
-      body: { text: "keep the service up, patched, and monitored, and release the fixes." },
+      body: { text: "keeps the service up, patched, and monitored, and releases the fixes." },
     },
     {
       role: "Support lead",
@@ -357,7 +357,7 @@ export const MATURITY_FINISH = {
     {
       lead: "Forward to Sunset,",
       rest: {
-        text: "when the signals hold: the need met elsewhere, the users leaving, the policy basis gone, or the platform ending. Retiring a service well is its own project, and it starts while the money is still there.",
+        text: "when the signals hold: the need met elsewhere, the users leaving, the policy basis gone, or the platform ending. Retiring a service well is its own piece of work, and it starts while the money is still there.",
       },
       href: "/sunset",
     },

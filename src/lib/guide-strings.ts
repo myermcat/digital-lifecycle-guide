@@ -35,7 +35,7 @@ export const PHASE_DESCRIPTIONS = {
   ],
   live: [
     "The longest phase by far.",
-    "The solution is running, and you are keeping it useful: watching how it performs, improving it, and meeting new needs as they arrive.",
+    "The solution is running, and you are keeping it useful: watching how it performs, improving it, and meeting new needs as they arrive, while thinking ahead to the day it will be retired or replaced.",
     "The care never pauses, and neither does the conversation: users keep shaping the service through feedback, support calls, and research, and they are told what is changing before it changes.",
   ],
   sunset: [

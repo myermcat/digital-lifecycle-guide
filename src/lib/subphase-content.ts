@@ -74,7 +74,7 @@ export const SUBPHASE_EXTRACTS: Partial<Record<SubphaseSlug, SubphaseExtract>> =
       internalLinks: [{ phrase: "Live", to: "/live" }],
     },
     workOutItems: [
-      "keeps the health cycle turning: monitoring, patching, research, and the yearly filings",
+      "keeps the health cycle turning: monitoring, patching, user research, and the yearly filings",
       "renews the funding and the contract before either runs out",
       "watches for the signals that point to Sunset",
     ],

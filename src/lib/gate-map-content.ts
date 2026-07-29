@@ -128,7 +128,7 @@ export const GATE_MAP_NADIA = {
 
 export const GATE_MAP_WHY_GCS = {
   heading: "Why G&Cs is the example",
-  body: "This journey is built around a grants and contributions system because it is a useful worked case: it touches almost every gate at once - public money, procurement, a security authorization, personal information, records, and a decision made about people. The guide as a whole is not limited to G&Cs; any service can be mapped through the same path.",
+  body: "This journey is built around a grants and contributions system because it is a useful worked case: it touches almost every checkpoint at once - public money, procurement, a security authorization, personal information, records, and a decision made about people. The guide as a whole is not limited to G&Cs; any service can be mapped through the same path.",
 } as const;
 
 export const GATE_MAP_WHY_CREATE = {
@@ -138,7 +138,7 @@ export const GATE_MAP_WHY_CREATE = {
 
 export const GATE_MAP_WHAT_TABLE = {
   heading: "What this map covers",
-  body: "It is an overview of the official checkpoints only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the gates she has to pass through; the people she talks to give her the rest.",
+  body: "It is an overview of the official checkpoints only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the checkpoints she has to pass through; the people she talks to give her the rest.",
   bold: ["official checkpoints only"],
 } as const;
 
@@ -565,7 +565,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "If the system automated a decision.",
-      text: 'Nadia\'s adjudicators decide by hand, so this gate does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply, and an Algorithmic Impact Assessment would be required before launch, published, with notice to applicants, a human in the loop, and an appeal route. Worth knowing, because a later "efficiency" feature can quietly trigger it.',
+      text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply, and an Algorithmic Impact Assessment would be required before launch, published, with notice to applicants, a human in the loop, and an appeal route. Worth knowing, because a later "efficiency" feature can trigger it without anyone noticing.',
       bold: ["Directive on Automated Decision-Making"],
       gatePhrases: ["Algorithmic Impact Assessment"],
     },
@@ -576,7 +576,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     heading: "Live - run it, and put it on the record",
     durationLabel: "Ongoing, for years · varies",
     phaseNote:
-      "Live is shown as a single section here because it has very few official checkpoints - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier gates back.",
+      "Live is shown as a single section here because it has very few official checkpoints - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier checkpoints back.",
     steps: [
       {
         n: 15,
@@ -622,7 +622,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "Adding a significant feature can bring earlier gates back: a feature that handles personal information may require an updated Privacy Impact Assessment; automating a decision triggers an Algorithmic Impact Assessment; major architectural changes go back to the DARB; a new or expanded capability may need a contract amendment or a new procurement.",
+              text: "Adding a significant feature can bring earlier checkpoints back: a feature that handles personal information may require an updated Privacy Impact Assessment; automating a decision triggers an Algorithmic Impact Assessment; major architectural changes go back to the DARB; a new or expanded capability may need a contract amendment or a new procurement.",
             },
             {
               type: "caution",
