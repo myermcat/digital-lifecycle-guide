@@ -23,8 +23,9 @@ export const LIVE_PHASE = {
   } satisfies PhaseQuoteContent,
 
   lead: [
-    "This is where a service stops being a project and becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its costs begin, and where it needs steady care to stay useful.",
+    "This is where the one-time work of standing the service up ends, and the service becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its costs begin, and where it needs steady care to stay useful.",
     "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle rather than a countdown to it. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
+    "Think ahead to Sunset while you run. Every service ends, and the teams that end well are the ones that saw it coming: they watch the signals that point to retirement or replacement, keep the exit possible as contracts renew, and set the money aside before the current funding ends. The end of one service is usually the Create of the next, so that planning starts years before the last day.",
   ],
 
   subphases: {
