@@ -47,7 +47,7 @@ export const GUIDE_CONTENTS = {
   },
   startHere: {
     heading: "Start here",
-    lede: "The home page explains what the guide is and who it is for. If you are not sure whether it is for you, start there. The gate map lays out the whole path of official approvals, reviews, and sign-offs on one page, so you can see the shape of it before opening anything.",
+    lede: "The home page explains what the guide is and who it is for. If you are not sure whether it is for you, start there. The lifecycle page lays out the whole path of official approvals, reviews, and sign-offs on one page, so you can see the shape of it before opening anything.",
     /** Display labels for Start here only; paths resolve titles from page-index where they match. */
     links: [
       { path: "/", label: SITE_NAME },

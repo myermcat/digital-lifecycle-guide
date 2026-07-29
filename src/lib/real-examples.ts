@@ -39,7 +39,7 @@ export const REAL_EXAMPLES: Partial<
         bold: [{ phrase: "the planned pilot, one department going first, was dropped" }],
       },
       {
-        text: "Within months, tens of thousands of public servants were paid wrong or not paid at all: wrong cheques, missed cheques, people checking their own stubs with a calculator. The backlog grew to hundreds of thousands of pay cases, and fixing the system has cost several times what building it did. The Auditor General called it an incomprehensible failure of project management and project oversight. The invited group, the capped volume, the gate out on evidence: what this page asks of Beta is what Phoenix skipped.",
+        text: "Within months, tens of thousands of public servants were paid wrong or not paid at all: wrong cheques, missed cheques, people checking their own stubs with a calculator. The backlog grew to hundreds of thousands of pay cases, and fixing the system has cost several times what building it did. The Auditor General called it an incomprehensible failure of project management and project oversight. The invited group, the capped volume, the go decision made on evidence: what this page asks of Beta is what Phoenix skipped.",
         bold: [{ phrase: "paid wrong or not paid at all" }],
         externalLinks: [
           { phrase: "The Auditor General called it", linkKey: "oag-phoenix-build" },

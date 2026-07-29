@@ -58,11 +58,11 @@ export const SUBPHASE_EXTRACTS: Partial<Record<SubphaseSlug, SubphaseExtract>> =
       text: "Change is deliberate again. The team builds new things inside a running service.",
     },
     takeaway: {
-      text: "A significant new feature brings the earlier gates back: privacy, automation, architecture, procurement.",
+      text: "A significant new feature brings the earlier checkpoints back: privacy, automation, architecture, procurement.",
       bold: [
         {
           phrase:
-            "A significant new feature brings the earlier gates back: privacy, automation, architecture, procurement.",
+            "A significant new feature brings the earlier checkpoints back: privacy, automation, architecture, procurement.",
         },
       ],
     },

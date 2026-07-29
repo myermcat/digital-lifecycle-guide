@@ -96,7 +96,7 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Records and disposition. Your department's information-management or records office, first. They handle disposition of government records, the Sunset gate, with Library and Archives Canada.",
+        text: "Records and disposition. Your department's information-management or records office, first. They handle disposition of government records, the Sunset checkpoint, with Library and Archives Canada.",
         bold: [{ phrase: "Records and disposition." }],
         externalLinks: [
           {

@@ -167,10 +167,10 @@ export const FUNDING_THREAD = {
       },
       {
         text:
-          "Getting the money then means producing a plan, and that plan is a Treasury Board submission. A large service also passes a set of other checks along the way, from an early concept case to an architecture review, and the money comes only at the end, on a fixed yearly cycle, so a large request that starts late waits for the next cycle. The full sequence, in order, with who signs off at each step, is laid out in the official gates of a digital service. Funding is one part of it.",
+          "Getting the money then means producing a plan, and that plan is a Treasury Board submission. A large service also passes a set of other checks along the way, from an early concept case to an architecture review, and the money comes only at the end, on a fixed yearly cycle, so a large request that starts late waits for the next cycle. The full sequence, in order, with who signs off at each step, is laid out in the lifecycle of a digital service. Funding is one part of it.",
         internalLinks: [
           {
-            phrase: "the official gates of a digital service",
+            phrase: "the lifecycle of a digital service",
             to: GATE_MAP_PATH,
           },
         ],
@@ -269,7 +269,7 @@ export const FUNDING_THREAD = {
       },
     ],
     closing: {
-      text: "(The fuller set of players for the exception, when a large or complex service goes to the Treasury Board, including legal, the Treasury Board Secretariat analyst, and the minister, is shown in order in the official gates of a digital service.)",
+      text: "(The fuller set of players for the exception, when a large or complex service goes to the Treasury Board, including legal, the Treasury Board Secretariat analyst, and the minister, is shown in order in the lifecycle of a digital service.)",
     },
   } satisfies ThreadWhoseJobSection,
 

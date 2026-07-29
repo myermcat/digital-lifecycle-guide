@@ -61,7 +61,7 @@ export function LivePhasePage() {
       </section>
 
       <GateMapPhaseCallout
-        text="See where Live's official gates sit in the whole path."
+        text="See where Live sits in the whole lifecycle."
         hash="live"
         linkLabel="See the gates in Live →"
       />

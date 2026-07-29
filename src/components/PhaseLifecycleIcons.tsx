@@ -14,13 +14,12 @@ const baseProps = {
   "aria-hidden": true as const,
 };
 
-/** Create: arrow planting into a line. */
+/** Create: forward arrow — matches the documents' ph_create icon. */
 export function PhaseIconCreate({ className, ...props }: PhaseIconProps) {
   return (
     <svg {...props} {...baseProps} className={className}>
-      <path d="M12 3v14" />
-      <path d="m6 11 6 6 6-6" />
-      <path d="M5 21h14" />
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
     </svg>
   );
 }

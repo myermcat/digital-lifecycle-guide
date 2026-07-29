@@ -60,7 +60,7 @@ export function SunsetLandingPage() {
       </section>
 
       <GateMapPhaseCallout
-        text="See where Sunset's official gates sit in the whole path."
+        text="See where Sunset sits in the whole lifecycle."
         hash="sunset"
         linkLabel="See the gates in Sunset →"
       />

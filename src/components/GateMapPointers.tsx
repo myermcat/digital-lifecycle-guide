@@ -41,7 +41,7 @@ export function GateMapSeeAlsoLink({
   return (
     <p className="mt-4 md:mt-5 text-sm">
       <Link to={GATE_MAP_PATH} hash={hash} className={guideLink}>
-        See where {phaseLabel}&apos;s official gates sit in the whole path →
+        See where {phaseLabel} sits in the whole lifecycle →
       </Link>
     </p>
   );

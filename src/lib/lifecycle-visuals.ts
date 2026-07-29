@@ -50,7 +50,7 @@ export const LIFECYCLE_VISUALS = {
   },
   subphaseKeyGrowth: {
     src: subphaseKeyGrowthVisual,
-    alt: "Build in small lifecycles: each addition gets its own Discovery, Alpha, Beta. Bring the gates back: privacy, automation, architecture, procurement. Grow the users too: adoption, support, and scale rise together.",
+    alt: "Build in small lifecycles: each addition gets its own Discovery, Alpha, Beta. The checkpoints return: privacy, automation, architecture, procurement. Grow the users too: adoption, support, and scale rise together.",
   },
   subphaseKeyMaturity: {
     src: subphaseKeyMaturityVisual,

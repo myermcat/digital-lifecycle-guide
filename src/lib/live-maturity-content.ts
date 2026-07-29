@@ -350,7 +350,7 @@ export const MATURITY_FINISH = {
     {
       lead: "Back to Growth,",
       rest: {
-        text: "when a new mandate or a significant new capability needs building. The earlier gates come back with it.",
+        text: "when a new mandate or a significant new capability needs building. The earlier checkpoints come back with it.",
       },
       href: "/live-growth",
     },

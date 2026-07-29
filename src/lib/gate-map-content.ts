@@ -89,11 +89,11 @@ export { GATE_MAP_PATH };
 
 export const GATE_MAP_EYEBROW = "See the whole path";
 
-export const GATE_MAP_TITLE = "The official gates of a digital service";
+export const GATE_MAP_TITLE = "The lifecycle of a digital service";
 
 export const GATE_MAP_SUBTITLE = {
-  text: "A worked example of the official gates, the approvals, reviews, and sign-offs a Government of Canada service has to pass through, from a first problem all the way to retiring or replacing it, and who owns each one.",
-  bold: ["official gates"],
+  text: "A worked example of the official checkpoints, the approvals, reviews, and sign-offs a Government of Canada service has to pass through, from the first problem definition all the way to retiring or replacing it, and who owns each one.",
+  bold: ["official checkpoints"],
 } as const;
 
 export const GATE_MAP_WORKING_NOTE = {
@@ -133,13 +133,13 @@ export const GATE_MAP_WHY_GCS = {
 
 export const GATE_MAP_WHY_CREATE = {
   heading: "Why the Create phase fills most of this table",
-  body: "The official gates are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the gates, not because there is less to do in them.",
+  body: "The official checkpoints are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the gates, not because there is less to do in them.",
 } as const;
 
 export const GATE_MAP_WHAT_TABLE = {
   heading: "What this map covers",
-  body: "It is an overview of the official gates only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the gates she has to pass through; the people she talks to give her the rest.",
-  bold: ["official gates only"],
+  body: "It is an overview of the official checkpoints only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the gates she has to pass through; the people she talks to give her the rest.",
+  bold: ["official checkpoints only"],
 } as const;
 
 export const GATE_MAP_COLKEY = {
@@ -576,7 +576,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     heading: "Live - run it, and put it on the record",
     durationLabel: "Ongoing, for years · varies",
     phaseNote:
-      "Live is shown as a single section here because it has very few official gates - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier gates back.",
+      "Live is shown as a single section here because it has very few official checkpoints - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier gates back.",
     steps: [
       {
         n: 15,
@@ -746,8 +746,16 @@ export const GATE_MAP_WHO_CAPTION =
 
 export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
   {
+    term: "The users",
+    def: "The people the service is for, inside or outside government. They are present at every step: research in Discovery, testing in Alpha and Beta, and the feedback and support of the live service.",
+  },
+  {
+    term: "Business owner of the application",
+    def: "The person accountable for the service from before it exists until after it is switched off. Owns the decisions, the money, and the assessments; reaches every other player on this list through corporate services.",
+  },
+  {
     term: "Corporate services",
-    def: "Her department's enabling branches: CIO/IT office, finance, procurement, security, ATIP (privacy), records. Her first stop, and where the contracting authority sits.",
+    def: "The department's enabling branches: CIO/IT office, finance, procurement, security, ATIP (privacy), records. The business owner's first stop, and where the contracting authority sits.",
   },
   {
     term: "Departmental project-management office",
@@ -755,7 +763,7 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
   },
   {
     term: "DARB",
-    def: "Departmental Architecture Review Board. Inside her department, chaired by the departmental CIO. Reviews the design.",
+    def: "Departmental Architecture Review Board. Inside the department, chaired by the departmental CIO. Reviews the design.",
   },
   {
     term: "GC EARB",
@@ -763,7 +771,7 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
   },
   {
     term: "Contracting authority",
-    def: "The procurement officer, in her department's contracting branch (or PSPC above the department's limit), who runs the competition and signs the contract. Not Nadia. She reaches them through corporate services.",
+    def: "The procurement officer, in the department's contracting branch (or PSPC above the department's limit), who runs the competition and signs the contract. Not the business owner, who reaches them through corporate services.",
   },
   {
     term: "Authorizing official",
@@ -787,10 +795,10 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
 /* The gates                                                              */
 /* ---------------------------------------------------------------------- */
 
-export const GATE_MAP_GATES_TITLE = "Official gates, by phase";
+export const GATE_MAP_GATES_TITLE = "Official checkpoints, by phase";
 
 export const GATE_MAP_GATES_CAPTION =
-  "Every formal approval, review, or sign-off named in the tables. Gates with an official home are linked.";
+  "Every formal approval, review, or sign-off named in the tables. Checkpoints with an official home are linked.";
 
 export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
   {

@@ -272,7 +272,7 @@ export const DATA_STEWARDSHIP_THREAD = {
           lead: "When.",
           body: {
             text:
-              " Early, in Beta, before the service launches. An authority is never refused, so this is not a pass-or-fail gate; the only risk is how long a new one takes, which is why it starts early.",
+              " Early, in Beta, before the service launches. An authority is never refused, so this is not a pass-or-fail checkpoint; the only risk is how long a new one takes, which is why it starts early.",
             bold: [{ phrase: "Beta" }],
           } satisfies ThreadLinkedProse,
         },

@@ -399,7 +399,7 @@ export const ACCESSIBILITY_THREAD = {
       label: "Supporting reference",
       linkKey: "section508-gov" satisfies ExternalLinkKey,
       description:
-        "Section508.gov (US) — accessibility as a procurement gate — https://www.section508.gov/",
+        "Section508.gov (US) — accessibility enforced at procurement — https://www.section508.gov/",
     },
     {
       label: "Supporting reference",
@@ -411,7 +411,7 @@ export const ACCESSIBILITY_THREAD = {
       label: "Supporting reference",
       linkKey: "australia-dta-leave-no-one-behind" satisfies ExternalLinkKey,
       description:
-        'Australia DTA, "Leave no one behind" (formerly Criterion 9) — phase-gated accessibility evidence — https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-3',
+        'Australia DTA, "Leave no one behind" (formerly Criterion 9) — accessibility evidence at each phase — https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-3',
     },
     {
       label: "Supporting reference",

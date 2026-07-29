@@ -397,7 +397,7 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "ul",
             items: [
-              "phased deliveries with go and no-go gates, or",
+              "phased deliveries with go and no-go decision points, or",
               "contracts with task authorizations",
             ],
           },

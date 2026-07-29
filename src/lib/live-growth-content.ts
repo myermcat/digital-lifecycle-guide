@@ -53,7 +53,7 @@ export const GROWTH_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Treat every significant addition as its own small project",
   body: {
-    text: "A live service makes building feel cheap: the platform exists, the users are there, and a new feature seems one release away. That feeling skips the work that made the service good the first time. A significant addition changes what the service is, so it gets its own small Discovery, Alpha, and Beta, sized to the feature, and it brings the earlier gates back: privacy, automation, architecture, procurement.",
+    text: "A live service makes building feel cheap: the platform exists, the users are there, and a new feature seems one release away. That feeling skips the work that made the service good the first time. A significant addition changes what the service is, so it gets its own small Discovery, Alpha, and Beta, sized to the feature, and it brings the earlier checkpoints back: privacy, automation, architecture, procurement.",
     bold: [{ phrase: "its own small Discovery, Alpha, and Beta" }],
   } satisfies ThreadLinkedProse,
   href: "/create",
@@ -84,7 +84,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         bold: [{ phrase: "Size it to the feature:" }],
       },
       {
-        text: "The gates come back with the significant ones:",
+        text: "The checkpoints come back with the significant ones:",
       },
       {
         type: "unorderedList",
@@ -312,7 +312,7 @@ export const GROWTH_TEAM = {
 export const GROWTH_CAUTION = {
   title: "When Growth goes wrong",
   items: [
-    "A significant feature goes live without its gates: the assessments still describe the service as it was.",
+    "A significant feature goes live without its checkpoints: the assessments still describe the service as it was.",
     "Growth by endless amendment: the contract stretches until leaving the supplier stops being possible.",
     "The build starves the running service: everyone is on the new feature, and the health cycle stops turning.",
     "Nobody asked the users: capability grows, adoption stands still, and the roadmap is a wish list.",

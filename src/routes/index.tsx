@@ -7,6 +7,7 @@ import {
   DoorClosed,
   FileWarning,
   Map,
+  SearchX,
   UserX,
   Wrench,
 } from "lucide-react";
@@ -171,7 +172,8 @@ function Index() {
         <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
-            Canada. We do not know who you are. You might be in a small team or a big one.
+            Canada. You could be anyone. You may hold any role in your organization, or come
+            from any background. You might be in a small team or a big one.
             You might build in-house, contract a team to build, or buy from suppliers. You might have a
             lot of money or very little.
           </p>
@@ -181,7 +183,7 @@ function Index() {
           </p>
           <p>
             We will not tell you exactly what to do. We do not know enough about your
-            situation to do that for you. We will tell you what to think about, what to
+            situation to do that for you. We will suggest what to think about, what to
             watch for, and what to do regardless of the rest. The shape of your work will
             be different from someone else&apos;s. The questions are the same.
           </p>
@@ -202,8 +204,8 @@ function Index() {
             </p>
             <p>
               Most do not. They think of themselves as running a program. A grant, a licence, a
-              benefit, an inspection regime. Each of those now runs on software, and someone is
-              accountable for the software.
+              benefit, an inspection regime. Each of those has a digital solution, and someone is
+              accountable for that solution.
             </p>
             <p>You might be:</p>
             <ul className={`list-disc space-y-1.5 ${guideListIndent}`}>
@@ -246,13 +248,13 @@ function Index() {
           id="see-the-whole-path"
           className="scroll-mt-24 mt-8 md:mt-10 rounded-lg border border-primary/40 bg-[var(--phase-group)] shadow-sm overflow-hidden"
           label="See the whole path"
-          title="The official gates of a digital service"
+          title="The lifecycle of a digital service"
           icon={Map}
           href="/gate-map"
           linkLabel="See the whole path →"
         >
           <p>
-            Before you open any one document, here is the whole journey on one page: every
+            Here is the entire lifecycle on one page: every
             official approval, review, and sign-off a service passes through, from the first
             problem to retiring or replacing it, who owns each one, and roughly how long it
             takes.
@@ -270,7 +272,7 @@ function Index() {
             service when you ask them.
           </p>
           <p>
-            That life falls into three phases: Create, Live, and Sunset. A phase is a big chapter
+            The lifecycle falls into three phases: Create, Live, and Sunset. A phase is a big chapter
             in the life of a service.
           </p>
 
@@ -349,9 +351,8 @@ function Index() {
           />
 
           <p>
-            Each phase breaks into smaller parts, called sub-phases, so you can find the part that
-            matches where you are. Create has Discovery, Alpha, and Beta. Live has Stabilization,
-            Growth, and Maturity. The phase is the chapter; the sub-phase is the page you are on
+            Each phase has smaller parts, called sub-phases. Create has Discovery, Alpha, and Beta. Live has Stabilization,
+            Growth, and Maturity. The phase is like the chapter of a book; the sub-phase is the page you are on
             within it.
           </p>
           <img
@@ -380,7 +381,7 @@ function Index() {
         </section>
 
         <section className="mt-16 md:mt-20" id="why-bother">
-          <h2 className={`${guideSectionTitle} mb-3`}>Why bother</h2>
+          <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
           <IconAccordionSection
             embedded
             stages={[
@@ -416,7 +417,8 @@ function Index() {
                         Her corporate services team tells her she can buy a grants management
                         system or build one. The project is scored for complexity and risk, and
                         the score comes in under what her department is trusted to approve on its
-                        own. No Treasury Board submission, and no appearance before the
+                        own, and the cost fits within the department&apos;s existing operating
+                        budget. No Treasury Board submission, and no appearance before the
                         Government of Canada Enterprise Architecture Review Board. Her own
                         director approves the budget.
                       </p>
@@ -435,7 +437,8 @@ function Index() {
                       className={`my-5 space-y-4 rounded-md border border-border px-4 py-3 ${guideStaticCardClassName}`}
                     >
                       <p className="font-semibold text-foreground">
-                        This is where the lifecycle starts mattering, and nobody told her.
+                        This is where the lifecycle starts mattering, and nobody told her. Among
+                        many other things:
                       </p>
 
                       <ul className="space-y-4">
@@ -491,6 +494,23 @@ function Index() {
                           </div>
                         </li>
                         <li className="flex items-start gap-3">
+                          <SearchX
+                            className="mt-0.5 size-5 shrink-0 text-primary/70"
+                            strokeWidth={1.75}
+                            aria-hidden="true"
+                          />
+                          <div className="min-w-0 space-y-1">
+                            <p className="font-semibold text-foreground">
+                              She never asked whether anyone else had already solved this
+                              problem.
+                            </p>
+                            <p>
+                              Another department may already run a grants system she could
+                              reuse. Nobody looked before the money moved.
+                            </p>
+                          </div>
+                        </li>
+                        <li className="flex items-start gap-3">
                           <UserX
                             className="mt-0.5 size-5 shrink-0 text-primary/70"
                             strokeWidth={1.75}
@@ -518,7 +538,7 @@ function Index() {
                       </p>
                       <p>
                         <strong className="font-semibold text-foreground">
-                          This is the ordinary case, and it is most of them.
+                          Nadia is not special: this happens more often than you would believe.
                         </strong>{" "}
                         The point of this guide is that the next Nadia knows all of it while she
                         can still do something about it.

@@ -170,7 +170,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
     intro: [
       "The most useful thing you can do when buying a service is to not buy all of it at once.",
       "You bought the work in small, separate pieces instead of one large block. Each piece is tightly scoped, due soon, and able to build on the one before.",
-      "There are two well-worn ways to do this. Phased deliveries break the work into stages with go and no-go gates, so you can stop or change course at each one. Contracts with task authorizations let you draw work down as and when you need it, in small, controlled amounts. You can mix them.",
+      "There are two well-worn ways to do this. Phased deliveries break the work into stages with go and no-go decision points, so you can stop or change course at each one. Contracts with task authorizations let you draw work down as and when you need it, in small, controlled amounts. You can mix them.",
     ],
     sections: [
       {

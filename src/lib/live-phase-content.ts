@@ -108,11 +108,11 @@ export const LIVE_PHASE = {
         lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
-            text: "Its funding is renewed before the current money runs out. The official gates of a digital service shows which official gates still apply once the service is running.",
+            text: "Its funding is renewed before the current money runs out. The lifecycle of a digital service shows which official gates still apply once the service is running.",
             internalLinks: [
               { phrase: "funding", to: "/thread/funding" },
               {
-                phrase: "The official gates of a digital service",
+                phrase: "The lifecycle of a digital service",
                 to: "/gate-map",
               },
             ],
@@ -182,7 +182,7 @@ export const LIVE_PHASE = {
     id: "live-reviews-come-round-again",
     title: "Live's reviews come round again",
     text:
-      "Create runs through one-time approval gates. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. The work does not finish; it comes round again.",
+      "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. The work does not finish; it comes round again.",
   },
 
   sources: [

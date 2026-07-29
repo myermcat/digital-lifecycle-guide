@@ -29,20 +29,22 @@ export const PHASE_DESCRIPTIONS = {
   create: [
     "It starts with a problem to solve, well before any system exists.",
     'From "we have a problem" to a working solution in real users\' hands, you are figuring out what the problem really is, deciding how to solve it, and standing up that solution, whether by reusing, buying, building with a contracted team, or building in-house.',
-    "Stopping is one of the outcomes, and it is a good one: the cheapest service is the one you worked out you did not need.",
+    "Stopping is one of the outcomes, and it is sometimes a good one: the cheapest service is the one you worked out you did not need.",
+    "The people the service is for are in it from the start: they are researched with, prototyped with, and tested with the whole way through, and they hear from the team as the work moves.",
     "Almost everything that follows is shaped here.",
   ],
   live: [
     "The longest phase by far.",
     "The solution is running, and you are keeping it useful: watching how it performs, improving it, and meeting new needs as they arrive.",
+    "The care never pauses, and neither does the conversation: users keep shaping the service through feedback, support calls, and research, and they are told what is changing before it changes.",
   ],
   sunset: [
     {
       text: "The solution is reaching its end, and the work is figuring out how to retire or replace it cleanly.",
       bold: ["retire or replace"],
     },
-    "You plan the decommission, move or archive the data, and bring users safely onto whatever comes next.",
-    "You are out of Sunset when the old service is fully shut down and its data and people have a safe home. In government that home is usually a replacement, and the replacement was built while the old service was still running, so its Create began long before this.",
+    "You plan to decommission, move or archive the data, and bring users safely onto whatever comes next. Users hear early, often, and in plain words: what is closing, when, and where to go instead.",
+    "You are out of Sunset when the service is fully shut down and its data and people have a safe home. In government that home is usually a replacement, and the replacement was built while the old service was still running, so its Create began long before this.",
   ],
 } as const satisfies Record<string, readonly PhaseDescriptionParagraph[]>;
 

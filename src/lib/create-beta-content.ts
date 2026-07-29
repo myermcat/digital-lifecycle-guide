@@ -233,7 +233,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Two authorizations gate the way to production, and neither is quick:",
+        text: "Two authorizations stand between the build and production, and neither is quick:",
       },
       {
         text: "The service cannot run in production until it is authorised to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate, signed by a senior official who is accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
@@ -251,7 +251,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "If the service makes or supports an automated decision about a person, the Algorithmic Impact Assessment has to be completed, approved and published on the Open Government Portal before the system goes into production. Under the Directive on Automated Decision-Making this is a publication gate, and it is easy to miss.",
+        text: "If the service makes or supports an automated decision about a person, the Algorithmic Impact Assessment has to be completed, approved and published on the Open Government Portal before the system goes into production. Under the Directive on Automated Decision-Making this is a publication requirement, and it is easy to miss.",
         bold: [
           { phrase: "If the service makes or supports an automated decision about a person," },
           {
@@ -296,8 +296,8 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "The gate out of private beta: the service works end to end, for a real person, without anyone stepping in behind the scenes to rescue it. Keep the private beta running until that is true.",
-        bold: [{ phrase: "The gate out of private beta:" }, { phrase: "end to end" }],
+        text: "The exit test for private beta: the service works end to end, for a real person, without anyone stepping in behind the scenes to rescue it. Keep the private beta running until that is true.",
+        bold: [{ phrase: "The exit test for private beta:" }, { phrase: "end to end" }],
       },
     ],
   },
@@ -596,7 +596,7 @@ export const BETA_FINISH = {
         bold: [{ phrase: "The contract," }],
       },
       {
-        text: "The accessibility standard met, and the testing done with the people most likely to be excluded, with its findings fixed. No gate demands the testing; it is the only way to know the standard is met in practice.",
+        text: "The accessibility standard met, and the testing done with the people most likely to be excluded, with its findings fixed. No official requirement demands the testing; it is the only way to know the standard is met in practice.",
         bold: [{ phrase: "The accessibility standard met," }],
       },
       {

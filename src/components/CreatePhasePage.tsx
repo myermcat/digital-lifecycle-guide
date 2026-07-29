@@ -56,7 +56,7 @@ export function CreatePhasePage() {
       </section>
 
       <GateMapPhaseCallout
-        text="Create is where most of the official gates fall. See where it sits in the whole path."
+        text="Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle."
         hash="discovery"
         linkLabel="See the gates in Create →"
       />
