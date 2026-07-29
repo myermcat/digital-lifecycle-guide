@@ -266,7 +266,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 12.5, fontWeight: 700 }}
         >
-          Create - the project part
+          Create - from problem to launch
         </text>
         <text
           x="213"

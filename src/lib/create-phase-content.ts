@@ -32,8 +32,8 @@ export const CREATE_PHASE = {
 
   lead: [
     {
-      text: "Create is the project part of a service's life: the one stretch with a clear finish line. That finish is launch, the day the service goes live.",
-      bold: [{ phrase: "project" }],
+      text: "Create is the part of a service's life with a clear finish line. That finish is launch, the day the service goes live.",
+      bold: [{ phrase: "a clear finish line" }],
     },
     {
       text: "It runs from the first idea to launch. In between, a team works out whether the service should exist at all, what it should be, and how to pay for it and stand it up. Create is delivered in three sub-phases, Discovery, Alpha, and Beta, from learning the need to a real service ready to launch.",
@@ -44,8 +44,12 @@ export const CREATE_PHASE = {
       ],
     },
     {
-      text: "After launch the work does not end. It changes: the service stops being a project and becomes a product that has to be run and improved for years, which is Live.",
+      text: "After launch the work does not end. It changes: the one-time work of standing the service up becomes the years-long work of running and improving it, which is Live.",
       internalLinks: [{ phrase: "Live", to: PHASES.live.href }],
+    },
+    {
+      text: "Think ahead to Live while you create. The service you are standing up will need to be kept running, growing, healthy, and responsive for years, and what that takes is decided now: the running team, the operating money, the support that answers for the service, and the room to keep improving it. The cheapest time to secure each of these is before the contract is signed and before the design settles.",
+      bold: [{ phrase: "Think ahead to Live while you create." }],
     },
   ] satisfies ThreadLinkedProse[],
 
