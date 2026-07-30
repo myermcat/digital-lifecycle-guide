@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { GateMapPhaseCallout } from "@/components/GateMapPointers";
+import { CautionBlock } from "@/components/CautionBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -132,6 +133,14 @@ export function LivePhasePage() {
           className="max-w-2xl mx-auto mt-4 w-full"
         />
       </section>
+
+      <CautionBlock
+        id="cost-of-leaving-it-late"
+        className="mt-10 md:mt-12"
+        title={LIVE_PHASE.costOfLate.title}
+        lead={LIVE_PHASE.costOfLate.lead}
+        items={[...LIVE_PHASE.costOfLate.items]}
+      />
 
       <PageFoot sources={sources} />
 

@@ -28,6 +28,33 @@ export const LIVE_PHASE = {
     "Think ahead to Sunset while you run. Every service ends, and the teams that end well are the ones that saw it coming: they watch the signals that point to retirement or replacement, keep the exit possible as contracts renew, and set the money aside before the current funding ends. The end of one service is usually the Create of the next, so that planning starts years before the last day.",
   ],
 
+  costOfLate: {
+    title: "The cost of leaving it late",
+    lead: "The recurring work is easy to defer, and every deferral has a price:",
+    items: [
+      {
+        heading: "The renewal starts late.",
+        line: "The only option left is an emergency extension on the supplier's terms, and the lock-in deepens.",
+      },
+      {
+        heading: "Improvement is deferred.",
+        line: "The service ages into a forced replacement, run as an emergency with a fixed date. The last famous one of those was named Phoenix.",
+      },
+      {
+        heading: "The exit money is never set aside.",
+        line: "The signals point to Sunset, and there is nothing to pay for the crossing.",
+      },
+      {
+        heading: "The assessments go stale.",
+        line: "A new feature waits on a privacy assessment that should have been kept current as the service changed.",
+      },
+      {
+        heading: "Support is scaled after the wave.",
+        line: "The users arrive before the help does, and people struggling alone becomes the service's reputation.",
+      },
+    ],
+  },
+
   subphases: {
     id: "live-in-three-sub-phases",
     title: "Live in three sub-phases",

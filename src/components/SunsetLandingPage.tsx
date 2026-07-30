@@ -55,7 +55,9 @@ export function SunsetLandingPage() {
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {landing.intro.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph.text}>
+            {proseWithMixedLinks(paragraph.text, { bold: paragraph.bold })}
+          </p>
         ))}
       </section>
 
@@ -73,6 +75,12 @@ export function SunsetLandingPage() {
           })}
         </p>
       </aside>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id="sunset-signals">
+        <h2 className={`${guideSectionTitle} mb-3`}>{landing.signals.title}</h2>
+        <p className={`${guideProse} mb-4`}>{landing.signals.intro}</p>
+        <InlineArrowLeadList items={landing.signals.bullets} />
+      </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="replace-or-retire">
         <h2 className={`${guideSectionTitle} mb-3`}>{landing.fork.title}</h2>

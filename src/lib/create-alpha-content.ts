@@ -87,7 +87,7 @@ export const ALPHA_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Test the riskiest assumption first",
   body: {
-    text: "Every idea rests on assumptions that, if wrong, sink the whole service: that people can and will use it, that it can connect to the systems it has to, that a legal or policy constraint can be met. Find the assumptions that would kill the service, and test those first. Run the cheapest test that could prove each one false. An assumption that falls saves the cost of a wrong build, and that is a success. One that holds has earned the next test. Commit money to a build before the risky parts hold, and everything after it is at risk.",
+    text: "Every idea rests on assumptions that, if wrong, sink the whole service: that people can and will use it, that it can connect to the systems it has to, that a legal or policy constraint can be met. Find the assumptions that would kill the service, and test those first. The killer is sometimes invisible in a demo: whether it can be made secure enough, fast enough under real load, or cheap enough to run. A prototype can test those too. Run the cheapest test that could prove each one false. An assumption that falls saves the cost of a wrong build, and that is a success. One that holds has earned the next test. Commit money to a build before the risky parts hold, and everything after it is at risk.",
     bold: [
       {
         phrase: "Find the assumptions that would kill the service, and test those first.",

@@ -83,6 +83,12 @@ export const EXTERNAL_LINKS = {
       "AAACT program (Shared Services Canada) — training, adaptive-technology testing, and procurement advice for building accessible products and services",
     accessibility: "public",
   },
+  "concept-case-procedures": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593&section=procedure&p=B",
+    description:
+      "Appendix B: Mandatory Procedures for Concept Cases for Digitally Enabled Projects (Policy on the Planning and Management of Investments)",
+    accessibility: "public",
+  },
   "standard-at-risk-it": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32714",
     description:

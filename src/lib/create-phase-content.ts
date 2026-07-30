@@ -53,6 +53,33 @@ export const CREATE_PHASE = {
     },
   ] satisfies ThreadLinkedProse[],
 
+  costOfLate: {
+    title: "The cost of leaving it late",
+    lead: "Everything in Create is cheapest the first time it comes up, and the price rises from there:",
+    items: [
+      {
+        heading: "Exit rights missed at signature.",
+        line: "The one moment of leverage passes, and the department rents its own service for a decade.",
+      },
+      {
+        heading: "Accessibility bolted on after the build.",
+        line: "In Canada the accessibility check happens when you buy, so a product bought without the clauses is paid for twice.",
+      },
+      {
+        heading: "The authorizations started late.",
+        line: "The security authorization and the privacy assessment each take months, and the launch waits on the slower one.",
+      },
+      {
+        heading: "The running team found after launch.",
+        line: "Nobody is staffed to operate the service, and it decays while the hiring catches up.",
+      },
+      {
+        heading: "The operating money discovered late.",
+        line: "The build was funded but the running was not, and year one becomes an emergency request.",
+      },
+    ],
+  },
+
   approvalPointer: {
     id: "how-a-service-gets-approved-and-funded",
     href: THREADS.funding.path,

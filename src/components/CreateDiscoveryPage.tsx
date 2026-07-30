@@ -40,6 +40,7 @@ const DISCOVERY_SOURCES: SourceItem[] = [
   { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
   { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
   { label: "OAG Fall 2015 Reports, Report 4: Information Technology Shared Services", linkKey: "oag-it-shared-services" },
+  { label: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS)", linkKey: "concept-case-procedures" },
 ];
 
 export function CreateDiscoveryPage() {

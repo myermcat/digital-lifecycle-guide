@@ -266,7 +266,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         type: "unorderedList",
         items: [
           {
-            bold: "The need moves.",
+            bold: "The need is gone, or served elsewhere.",
             text: " The policy behind the service changes, or another service absorbs what this one did.",
           },
           {
@@ -274,7 +274,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
             text: " The base shrinks until the cost of running the service stops matching the number it serves.",
           },
           {
-            bold: "The ground shifts.",
+            bold: "The technology loses its support.",
             text: " A platform or product the service stands on is ending its support, and replacing it would cost as much as starting fresh.",
           },
         ],

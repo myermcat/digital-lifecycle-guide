@@ -12,6 +12,7 @@ export type SunsetPath = "replace" | "retire";
 export const SUNSET_LANDING = {
   title: PHASES.sunset.pageHeading,
   quote: SUNSET_STRINGS.quote,
+  signals: SUNSET_STRINGS.signals,
   intro: SUNSET_STRINGS.intro,
   scope: SUNSET_STRINGS.scope,
   fork: SUNSET_STRINGS.fork,

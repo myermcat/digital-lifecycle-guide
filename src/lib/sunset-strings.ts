@@ -43,18 +43,51 @@ export const SUNSET_STRINGS = {
       "brings users safely onto whatever comes next",
     ],
     takeaway:
-      "In the Government of Canada, replacing a service is far more common than shutting one down.",
+      "In the Government of Canada, neither replacing a service nor shutting one down is very common, due to a lack of full digital lifecycle engagement.",
     takeawayBold: false,
   } satisfies PhaseQuoteContent,
 
   intro: [
-    "Sunset often runs in parallel with Create: while a replacement is being bought or built, the old service still has to keep running. The team plans the exit, funds it, and carries users and records through the change without leaving anyone stranded.",
-    "A transition is more than a technical migration. It is the moment to reassess the process, drop the technical debt that has built up, improve the data, and re-confirm what the service is really for, so what comes next improves on the old rather than copying it.",
+    {
+      text: "Sunset is the old service's side of the story. Being replaced is still an ending: the service you own is wound down, its data and users move somewhere safe, and what takes over is a new service with its own Create.",
+      bold: [{ phrase: "the old service's side of the story" }],
+    },
+    {
+      text: "Sunset often runs in parallel with Create: while a replacement is being bought or built, the sunsetting service still has to keep running. The team plans the exit, funds it, and carries users and records through the change without leaving anyone stranded.",
+      bold: [{ phrase: "runs in parallel with Create" }],
+    },
+    {
+      text: "A transition is more than a technical migration. It is the moment to reassess the process, drop the technical debt that has built up, improve the data, and re-confirm what the service is really for, so what comes next improves on the old.",
+      bold: [{ phrase: "more than a technical migration" }],
+    },
   ],
 
   scope: {
     text: "This page is about sunsetting a whole service. If it is one part reaching its end of life, a library, a dependency, or a bought product inside a larger service, see End of life of parts.",
     placeholderLinks: [{ phrase: "End of life of parts", source: EOL_OF_PARTS_SOURCE }],
+  },
+
+  signals: {
+    title: "What sends a service into Sunset",
+    intro: "None of these should come as a surprise: spotting them early is part of running the service, and Maturity covers how. Sunset starts when one or more of these is true:",
+    bullets: [
+      {
+        lead: "The need is gone, or served elsewhere.",
+        body: "The policy behind the service changes, or another service absorbs what this one did.",
+      },
+      {
+        lead: "The users leave.",
+        body: "The base shrinks until the cost of running the service stops matching the number it serves.",
+      },
+      {
+        lead: "The technology loses its support.",
+        body: "A platform or product the service stands on is ending its support, and replacing it would cost as much as starting fresh.",
+      },
+      {
+        lead: "The service cannot keep up.",
+        body: "Changes cost more and take longer every year, and the backlog of needs grows faster than the old platform can absorb.",
+      },
+    ],
   },
 
   fork: {
@@ -66,8 +99,8 @@ export const SUNSET_STRINGS = {
         body: "You still plan the shutdown, archive the records, and decommission, but you are not standing up a replacement.",
       },
       {
-        lead: "The need remains, so you replace it.",
-        body: "You assess what should come next, acquire it, and migrate across.",
+        lead: "The need remains, so you will replace it.",
+        body: "You will be starting a new Create phase.",
       },
     ],
     close:
@@ -77,7 +110,7 @@ export const SUNSET_STRINGS = {
       {
         path: "replace" as const,
         description:
-          "The need remains, so you replace it. You assess what should come next, acquire it, and migrate across.",
+          "The need remains, so you will replace it. You will be starting a new Create phase.",
       },
       {
         path: "retire" as const,
@@ -88,13 +121,13 @@ export const SUNSET_STRINGS = {
   },
 
   journey: {
-    intro: "You might not run all of it yourself, but you should recognize every step.",
+    intro: "You might not run all of it yourself, but you should recognize every step. For a replacement, the middle steps are not new inventions: they are the new service's Create, seen from the old service's side. Decide is its Discovery, Plan is its Alpha thinking, and Buy or build is its Beta.",
     footer:
       "These steps are shown in order, but in practice they overlap and some repeat. While you acquire and migrate to the new solution, you are still shutting down the old one, so steps four and five run together. You are out of Sunset when the old service is fully shut down and its data and users have a safe home. If you replaced it, that new service has already begun its own Create.",
     steps: [
       {
         label: "Assess",
-        title: "Assess.",
+        title: "Assess: take stock of the old service.",
         leadIn: "Build a clear picture of what you have.",
         body: "Build a clear picture of what you have before you change anything. Inventory the service: what it does, who uses it and how, what it connects to, what it costs to run, what data it holds, and how critical it is. Then ask the harder question for each application: is it still needed at all? Some are worth keeping and moving, others can be retired outright. Name the risks of touching it, especially anything that would disrupt users mid-cycle.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 1, Application Inventory Template — REPLACE WITH REAL LINK WHEN PUBLISHED
@@ -108,9 +141,9 @@ export const SUNSET_STRINGS = {
       },
       {
         label: "Decide",
-        title: "Decide.",
+        title: "Decide: what comes next, and how.",
         leadIn: "Work out what you need going forward, and how to get it.",
-        body: "Work out what you actually need going forward, and how to get it. The trap is recreating the old service feature for feature. Separate the business need from the current features, so you carry forward what creates value and drop what only exists because of the old platform's limits. Judge how complex the replacement really is, map the integrations (they are routinely underestimated), then do options analysis.",
+        body: "Work out what you actually need going forward, and how to get it. The trap is recreating the old service feature for feature. Separate the business need from the current features, so you carry forward what creates value and drop what only exists because of the old platform's limits. Judge how complex the replacement really is, map the integrations (they are routinely underestimated), then do options analysis. For a replacement, this step is its Discovery: understand the need before naming the solution.",
         internalLinks: [{ phrase: "do options analysis", to: OPTIONS_ANALYSIS_PATH }],
         boldPhrases: [{ phrase: "Separate the business need from the current features" }],
         example: {
@@ -129,9 +162,9 @@ export const SUNSET_STRINGS = {
       },
       {
         label: "Plan",
-        title: "Plan.",
+        title: "Plan: line up people, money, and timing.",
         leadIn: "Turn the decision into a plan.",
-        body: "Turn the decision into a plan that lines up people, money, and timing. Bring the right people in early: the users who live in the service, information management for records retention, IT and security, and whoever holds the budget and the approvals. Write the business case, plan the change for users (adoption makes or breaks a migration), set out who is responsible for what, and define what success looks like and how you will measure it.",
+        body: "Turn the decision into a plan that lines up people, money, and timing. Bring the right people in early: the users who live in the service, information management for records retention, IT and security, and whoever holds the budget and the approvals. Write the business case, plan the change for users (adoption makes or breaks a migration), set out who is responsible for what, and define what success looks like and how you will measure it. For a replacement, this is its Alpha thinking: the how is worked out while changing course is still cheap.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 3, Business Case and Roles and Responsibilities — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -143,9 +176,9 @@ export const SUNSET_STRINGS = {
       },
       {
         label: "Buy/build",
-        title: "Buy or build.",
+        title: "Buy or build: stand up the new solution.",
         leadIn: "Get and prepare the new solution, by buying it or building it.",
-        body: "If you buy, run the procurement process. If you build with a contracted team, stand up that team and do the development work. If you build in-house, stand up the department's own team. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters.",
+        body: "If you buy, run the procurement process. If you build with a contracted team, stand up that team and do the development work. If you build in-house, stand up the department's own team. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters. For a replacement, this is its Beta: the real solution is stood up and proven.",
         replaceOnly: true,
         internalLinks: [{ phrase: "the procurement process", to: PROCUREMENT_LANDING_PATH }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
@@ -159,7 +192,7 @@ export const SUNSET_STRINGS = {
       },
       {
         label: "Migrate",
-        title: "Migrate.",
+        title: "Migrate: bring data and users across.",
         leadIn: "Make the switch and close out the old.",
         body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, and bring users across.\n\nDo not switch the old service off too early. It keeps running while the new service is in beta, both while that is invite-only and after it opens to the public, so anyone who has not moved across yet can still get what they need. The old service is decommissioned only once the new service is properly live.\n\nA migration succeeds only if people adopt the replacement, which is what change management is for. A migration is also a chance to simplify, so move what still creates value and leave the rest behind.",
         internalLinks: [{ phrase: "change management", to: "/thread/change-management" }],
@@ -185,7 +218,7 @@ export const SUNSET_STRINGS = {
     ] satisfies SunsetJourneyStepStrings[],
     decommissionStep: {
       label: "Decommission",
-      title: "Decommission.",
+      title: "Decommission: the clean shutdown.",
       leadIn: "Wind the service down for good.",
       body: "There is no switch to a replacement, so the work is a clean shutdown: archive the records to their retention schedule, confirm nothing still depends on the service, and retire it.",
     } satisfies SunsetJourneyStepStrings,

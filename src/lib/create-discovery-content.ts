@@ -149,6 +149,20 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         bold: [{ phrase: "put a number on it" }],
       },
       {
+        text: "For a big enough project, the problem statement has an official form: the concept case. It is mandatory when a department is willing to invest at least $2.5 million, a floor that rises with the department's project-management capacity class, up to $25 million.",
+        bold: [{ phrase: "the concept case" }],
+      },
+      {
+        text: "The concept case describes the problem or the opportunity before any solution is chosen. It is approved at assistant deputy minister level or above, and goes to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of the Government of Canada. Discovery's problem work is what fills it; the Mandatory Procedures for Concept Cases for Digitally Enabled Projects set out the rest.",
+        bold: [{ phrase: "before any solution is chosen" }],
+        externalLinks: [
+          {
+            phrase: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects",
+            linkKey: "concept-case-procedures",
+          },
+        ],
+      },
+      {
         type: "editorialNote",
         label: "Example",
         paragraphs: [
@@ -219,6 +233,10 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
             text: " that feel fixed but can be changed, such as an internal process that makes things worse. Work on these directly rather than around them.",
           },
         ],
+      },
+      {
+        text: "Learn the built-in needs at the same time, because they shape which options are even possible: how sensitive the information is, so security is designed in from the start; how many people will need the service at once, so it performs under real load; and what it can afford to cost to run, so it stays efficient for years. Found in Discovery, these are requirements. Found after the build, they are rework.",
+        bold: [{ phrase: "Learn the built-in needs at the same time" }],
       },
       {
         text: "If a hard constraint means the service could never be better than what already exists, that is a strong signal to stop at the end of Discovery.",
