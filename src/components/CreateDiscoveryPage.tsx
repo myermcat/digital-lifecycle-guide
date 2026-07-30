@@ -63,6 +63,12 @@ const DISCOVERY_SOURCES: SourceItem[] = [
     linkKey: "gc-forms-assistance",
     description: "GC Forms (Canadian Digital Service): a form-building platform to configure before building one.",
   },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-open-resource-exchange",
+    description:
+      "Open Resource Exchange: the GC registry of reusable open-source solutions; search it before building, and register what you release.",
+  },
   { label: "Governing instrument", linkKey: "digital-standards", description: "Government of Canada Digital Standards (TBS)." },
   { label: "Governing instrument", linkKey: "guideline-service-digital", description: "Guideline on Service and Digital (TBS)." },
   {
@@ -76,9 +82,27 @@ const DISCOVERY_SOURCES: SourceItem[] = [
     description: "GC Enterprise Architecture Framework (TBS): the criteria the architecture reviews apply, reuse first.",
   },
   {
+    label: "Governing instrument",
+    linkKey: "policy-privacy-protection",
+    description:
+      "Policy on Privacy Protection (TBS): decide early, with your ATIP office, whether the service needs a Privacy Impact Assessment.",
+  },
+  {
     label: "Supporting reference",
     linkKey: "design-with-users",
     description: "Digital Standards, Design with users: the how-to for discovery research.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "gba-plus",
+    description:
+      "Gender-based Analysis Plus (Women and Gender Equality Canada): the GC process for finding who a service could exclude; required in Treasury Board submissions.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "open-government-portal",
+    description:
+      "Open Government Portal: the front door to existing GC datasets, for the reuse scan and for baseline numbers.",
   },
   {
     label: "Supporting reference",

@@ -143,7 +143,10 @@ export function CreatePhasePage() {
         items={[...CREATE_PHASE.costOfLate.items]}
       />
 
-      <PageFoot sources={sources} />
+      <PageFoot
+        sources={sources}
+        sourcesIntro="These are the phase-level references. The working references for each part of the phase are on its sub-phase pages."
+      />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 

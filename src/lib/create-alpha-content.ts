@@ -259,6 +259,14 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "A prototype is too rough to test for full conformance, so use Alpha to get the accessibility work ready for Beta, where the contract is signed. Work out which clauses of the standard the service has to meet, so they can go into the contract rather than be argued about later. Book the testing early. Automated checkers catch only a fraction of the problems. Accessibility covers the duty and how to meet it.",
         internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
+      {
+        text: "The standard has a name: CAN/ASC EN 301 549, which the Accessible Canada Regulations require new and updated web pages, applications, and digital documents to conform to. The Guidance on the Digital Technologies Accessibility Regulations says what must conform, and by when. The Digital Accessibility Toolkit shows how to build and test against it.",
+        externalLinks: [
+          { phrase: "CAN/ASC EN 301 549", linkKey: "en-301-549" },
+          { phrase: "Guidance on the Digital Technologies Accessibility Regulations", linkKey: "esdc-a11y-regulations-guidance" },
+          { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
+        ],
+      },
     ],
   },
   {
@@ -275,6 +283,13 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         internalLinks: [
           { phrase: "procurement", to: "/thread/procurement" },
           { phrase: "Funding", to: "/thread/funding" },
+        ],
+      },
+      {
+        text: "The chosen direction is also assessed: departmental architecture review boards weigh every digital initiative against the GC Enterprise Architecture Framework, reuse before buy before build, and the largest initiatives go on to the government-wide review board. Arrive with the reuse scan from Discovery in hand and the review goes quickly.",
+        bold: [{ phrase: "reuse before buy before build" }],
+        externalLinks: [
+          { phrase: "GC Enterprise Architecture Framework", linkKey: "gc-enterprise-architecture-framework" },
         ],
       },
     ],

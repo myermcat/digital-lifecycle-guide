@@ -87,7 +87,12 @@ export const DISCOVERY_PILLAR = {
     },
   ] satisfies ThreadLinkedProse[],
   weigh: {
-    text: "Before any solution is named, Discovery weighs those options and makes sure the service will not duplicate one that already exists.",
+    text: "Before any solution is named, Discovery weighs those options and makes sure the service will not duplicate one that already exists. Three public registries make the scan concrete: the GC Service Inventory lists existing services, the Open Resource Exchange lists open-source solutions other teams have released, and the Open Government Portal holds the government's published data.",
+    externalLinks: [
+      { phrase: "GC Service Inventory", linkKey: "gc-service-inventory" },
+      { phrase: "Open Resource Exchange", linkKey: "gc-open-resource-exchange" },
+      { phrase: "Open Government Portal", linkKey: "open-government-portal" },
+    ],
   } satisfies ThreadLinkedProse,
   sometimes: {
     text: "Sometimes the answer is not a service at all. Clearer information, or a change to a form, can be enough on its own.",
@@ -211,6 +216,10 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         bold: [{ phrase: "legal duty" }],
         internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
       },
+      {
+        text: "For exclusion beyond disability, Gender-based Analysis Plus is the Government of Canada's process: it asks who a service affects differently, and the Treasury Board submission that funds the build requires one.",
+        externalLinks: [{ phrase: "Gender-based Analysis Plus", linkKey: "gba-plus" }],
+      },
     ],
   },
   {
@@ -237,6 +246,11 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
       {
         text: "Learn the built-in needs at the same time, because they shape which options are even possible: how sensitive the information is, so security is designed in from the start; how many people will need the service at once, so it performs under real load; and what it can afford to cost to run, so it stays efficient for years. Found in Discovery, these are requirements. Found after the build, they are rework.",
         bold: [{ phrase: "Learn the built-in needs at the same time" }],
+      },
+      {
+        text: "One constraint has its own early question: personal information. If the service will use it, ask your department's ATIP office now whether a Privacy Impact Assessment is needed. The Policy on Privacy Protection requires one for new programs that use personal information to decide things about people, and the assessment is easiest while the design can still move.",
+        bold: [{ phrase: "Privacy Impact Assessment" }],
+        externalLinks: [{ phrase: "Policy on Privacy Protection", linkKey: "policy-privacy-protection" }],
       },
       {
         text: "If a hard constraint means the service could never be better than what already exists, that is a strong signal to stop at the end of Discovery.",

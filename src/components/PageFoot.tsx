@@ -20,6 +20,7 @@ export function PageFoot({
   furtherReading,
   seeAlso,
   sources,
+  sourcesIntro,
   className,
 }: {
   support?: SupportCalloutVariant;
@@ -30,6 +31,8 @@ export function PageFoot({
   furtherReading?: ReactNode;
   seeAlso?: SeeAlsoItem[];
   sources?: SourceItem[];
+  /** One-line note above the sources groups. */
+  sourcesIntro?: string;
   className?: string;
 }) {
   const hasFurtherReading = furtherReading != null;
@@ -61,7 +64,7 @@ export function PageFoot({
         </section>
       ) : null}
       {hasSeeAlso ? <SeeAlso items={seeAlso} className="mt-0" /> : null}
-      {hasSources ? <SourcesBlock items={sources} /> : null}
+      {hasSources ? <SourcesBlock items={sources} intro={sourcesIntro} /> : null}
     </div>
   );
 }

@@ -57,6 +57,12 @@ const ALPHA_SOURCES: SourceItem[] = [
       "GC Forms (Canadian Digital Service): a form-building platform for prototyping forms without writing code.",
   },
   {
+    label: "Templates and tools",
+    linkKey: "digital-accessibility-toolkit",
+    description:
+      "Digital Accessibility Toolkit (a11y.canada.ca): how-tos for designing, building, and testing accessible services.",
+  },
+  {
     label: "Governing instrument",
     linkKey: "digital-standards",
     description:
@@ -69,10 +75,28 @@ const ALPHA_SOURCES: SourceItem[] = [
       "Guideline on Service and Digital (TBS).",
   },
   {
+    label: "Governing instrument",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "GC Enterprise Architecture Framework (TBS): the criteria your departmental architecture review board assesses the build-or-buy direction against; the largest initiatives go to the GC-level board.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "en-301-549",
+    description:
+      "CAN/ASC - EN 301 549:2024 (Accessibility Standards Canada): the accessibility standard new web pages and applications must conform to under the Accessible Canada Regulations.",
+  },
+  {
     label: "Supporting reference",
     linkKey: "design-research",
     description:
       "Canada.ca design system, research and testing how-to: methods for testing prototypes with users.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "esdc-a11y-regulations-guidance",
+    description:
+      "Guidance on the Digital Technologies Accessibility Regulations (ESDC): what must conform, and by when.",
   },
   {
     label: "Communities",

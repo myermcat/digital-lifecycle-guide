@@ -128,6 +128,21 @@ export const EXTERNAL_LINKS = {
     description: "Access Working Group terms of reference (Digital Accessibility Toolkit)",
     accessibility: "public",
   },
+  "policy-privacy-protection": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=12510",
+    description: "Policy on Privacy Protection (TBS)",
+    accessibility: "public",
+  },
+  "en-301-549": {
+    url: "https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-en-301-5492024-accessibility-requirements-ict-products-and-services-en-301-5492021-idt",
+    description: "CAN/ASC - EN 301 549:2024, Accessibility requirements for ICT products and services (Accessibility Standards Canada)",
+    accessibility: "public",
+  },
+  "esdc-a11y-regulations-guidance": {
+    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/category-digital-technologies.html",
+    description: "Guidance on the Digital Technologies Accessibility Regulations (ESDC)",
+    accessibility: "public",
+  },
   "concept-case-procedures": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593&section=procedure&p=B",
     description:

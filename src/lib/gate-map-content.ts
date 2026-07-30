@@ -110,7 +110,7 @@ export const GATE_MAP_JUMP = [
   { label: "Live", href: "#live" },
   { label: "Sunset", href: "#sunset" },
   { label: "Who's who", href: "#whoswho" },
-  { label: "The gates", href: "#thegates" },
+  { label: "The checkpoints", href: "#thegates" },
 ] as const;
 
 /** On-this-page rail items for /gate-map (same targets as GATE_MAP_JUMP). */
@@ -133,7 +133,7 @@ export const GATE_MAP_WHY_GCS = {
 
 export const GATE_MAP_WHY_CREATE = {
   heading: "Why the Create phase fills most of this table",
-  body: "The official checkpoints are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the gates, not because there is less to do in them.",
+  body: "The official checkpoints are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the checkpoints, not because there is less to do in them.",
 } as const;
 
 export const GATE_MAP_WHAT_TABLE = {
@@ -161,7 +161,7 @@ export const GATE_MAP_FOOTER_DISCLAIMER =
   "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.";
 
 /* ---------------------------------------------------------------------- */
-/* Phase blocks (all 20 steps, forks, launch)                             */
+/* Phase blocks (all 21 steps, forks, launch)                             */
 /* ---------------------------------------------------------------------- */
 
 export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
@@ -581,6 +581,23 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       {
         n: 15,
         action: {
+          lead: "Closes the project, and reports what it delivered.",
+        },
+        response: {
+          tags: ["dept"],
+          lead: "The project sponsor, through the department's project governance.",
+          body: [
+            {
+              type: "p",
+              text: "The funded project ends with a close-out: the department confirms what was delivered, releases what remains of the budget, and tracks whether the promised benefits arrive, the benefits realization the Treasury Board submission committed to. The Directive on the Management of Projects and Programmes sets the duty; Nadia supplies the delivery record, and the project office files it.",
+              bold: ["close-out", "benefits realization"],
+            },
+          ],
+        },
+      },
+      {
+        n: 16,
+        action: {
           lead: "Gets the live service onto the official registries.",
         },
         response: {
@@ -596,7 +613,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
         },
       },
       {
-        n: 16,
+        n: 17,
         action: {
           lead: "Keeps it running and improves it.",
           body: [
@@ -639,10 +656,10 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     heading: "Sunset - retire or replace it, and account for the data",
     durationLabel: "Typical: months · varies",
     phaseNote:
-      "Fewer gates than Create, but two are strict: records cannot be destroyed without Library and Archives Canada's written consent, and the security authorization has to be closed, not just switched off.",
+      "Fewer checkpoints than Create, but two are strict: records cannot be destroyed without Library and Archives Canada's written consent, and the security authorization has to be closed, not just switched off.",
     steps: [
       {
-        n: 17,
+        n: 18,
         action: {
           lead: "Decides the service has to go.",
           body: [
@@ -664,7 +681,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
         },
       },
       {
-        n: 18,
+        n: 19,
         action: {
           lead: "Works out what happens to the records and the data.",
         },
@@ -689,12 +706,12 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
               ],
               itemBold: ["Library and Archives Canada"],
             },
-            { type: "p", text: "This is the real Sunset gate." },
+            { type: "p", text: "This is the real Sunset checkpoint." },
           ],
         },
       },
       {
-        n: 19,
+        n: 20,
         action: {
           lead: "Moves or disposes of the data.",
         },
@@ -711,7 +728,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
         },
       },
       {
-        n: 20,
+        n: 21,
         action: {
           lead: "Shuts the old system down cleanly.",
         },
@@ -919,7 +936,7 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       },
       {
         term: "Algorithmic Impact Assessment",
-        def: 'Required only if a decision about a person is automated, under the Directive on Automated Decision-Making. Nadia\'s adjudicators decide by hand, so this gate does not apply - but a later "efficiency" feature can quietly trigger it.',
+        def: 'Required only if a decision about a person is automated, under the Directive on Automated Decision-Making. Nadia\'s adjudicators decide by hand, so this checkpoint does not apply - but a later "efficiency" feature can quietly trigger it.',
       },
     ],
   },
@@ -931,8 +948,17 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
         linkKey: "policy-on-service-and-digital",
         icon: Layers,
       },
+      {
+        label: "Directive on the Management of Projects and Programmes",
+        linkKey: "directive-projects-programmes",
+        icon: Briefcase,
+      },
     ],
     entries: [
+      {
+        term: "Project close-out (benefits realization)",
+        def: "The formal end of the funded project: confirm what was delivered, release the remaining budget, and track whether the promised benefits arrive. Required by the Directive on the Management of Projects and Programmes; the project office files it.",
+      },
       {
         term: "GC Service Inventory + Application Portfolio Management",
         def: "The two registries a live service must be listed and rated in, approved by the deputy head and updated yearly. The CIO office does the registering; Nadia supplies the details.",
@@ -951,7 +977,7 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
     entries: [
       {
         term: "Disposition authority",
-        def: "Library and Archives Canada's written consent to keep, transfer, or destroy a government record. No record may be destroyed without it. The real Sunset gate.",
+        def: "Library and Archives Canada's written consent to keep, transfer, or destroy a government record. No record may be destroyed without it. The real Sunset checkpoint.",
       },
     ],
   },
