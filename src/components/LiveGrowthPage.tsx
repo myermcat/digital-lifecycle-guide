@@ -40,10 +40,66 @@ import {
 import { guideProse } from "@/lib/guide-typography";
 
 const GROWTH_SOURCES: SourceItem[] = [
-  { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
-  { label: "Directive on Automated Decision-Making (TBS)", linkKey: "directive-automated-decision-making" },
-  { label: "Task authorizations (CanadaBuys buyer's guide)", linkKey: "task-authorizations" },
-  { label: "OAG 2024 Reports, Report 1: ArriveCAN", linkKey: "oag-arrivecan" },
+  {
+    label: "Templates and tools",
+    linkKey: "pcra-tool",
+    description:
+      "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores a growth project.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "algorithmic-impact-assessment",
+    description:
+      "Algorithmic Impact Assessment tool (TBS): scores any automation the growth adds.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-automated-decision-making",
+    description:
+      "Directive on Automated Decision-Making (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "concept-case-procedures",
+    description:
+      "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS): a large addition may need its own concept case.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "GC Enterprise Architecture Framework (TBS): the criteria for changes that alter the architecture.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "task-authorizations",
+    description:
+      "Task authorizations (CanadaBuys buyer's guide).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "modify-contract",
+    description:
+      "Modifying a contract (CanadaBuys buyer's guide): the procedure for amendments that stay within scope.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-arrivecan",
+    description:
+      "OAG 2024 Reports, Report 1: ArriveCAN.",
+  },
+  {
+    label: "Communities",
+    linkKey: "gcdigital-community",
+    description:
+      "GCDigital community (TBS OCIO): the community for digital practitioners across government.",
+  },
 ];
 
 export function LiveGrowthPage() {

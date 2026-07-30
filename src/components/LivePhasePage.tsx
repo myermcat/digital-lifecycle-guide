@@ -31,9 +31,7 @@ import {
 export function LivePhasePage() {
   const { lead, quote, subphases, workOfLive } = LIVE_PHASE;
 
-  const sources: SourceItem[] = [
-    { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
-  ];
+  const sources: SourceItem[] = [...LIVE_PHASE.sources];
 
   return (
     <GuideLayout id="live">

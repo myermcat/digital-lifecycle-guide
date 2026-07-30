@@ -38,8 +38,48 @@ import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
 
 const ALPHA_SOURCES: SourceItem[] = [
-  { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
-  { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
+  {
+    label: "Templates and tools",
+    linkKey: "design-canada",
+    description:
+      "Canada.ca design system (design.canada.ca): user-tested styles, templates, and patterns to prototype with.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-design-system",
+    description:
+      "GC Design System (Canadian Digital Service): ready-made, accessible interface components.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-forms-assistance",
+    description:
+      "GC Forms (Canadian Digital Service): a form-building platform for prototyping forms without writing code.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "digital-standards",
+    description:
+      "Government of Canada Digital Standards (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "design-research",
+    description:
+      "Canada.ca design system, research and testing how-to: methods for testing prototypes with users.",
+  },
+  {
+    label: "Communities",
+    linkKey: "gc-ux-network",
+    description:
+      "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
+  },
 ];
 
 const alphaQuoteClassName =

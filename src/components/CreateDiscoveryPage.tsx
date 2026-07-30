@@ -37,10 +37,59 @@ import {
 import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 
 const DISCOVERY_SOURCES: SourceItem[] = [
-  { label: "Government of Canada digital standards (TBS)", linkKey: "digital-standards" },
-  { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
-  { label: "OAG Fall 2015 Reports, Report 4: Information Technology Shared Services", linkKey: "oag-it-shared-services" },
-  { label: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS)", linkKey: "concept-case-procedures" },
+  {
+    label: "Templates and tools",
+    description:
+      "Concept Case Template (TBS): the fill-in form the concept case procedures require; ask your project-management office for the current version.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "pcra-tool",
+    description: "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores the project.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-service-inventory",
+    description:
+      "GC Service Inventory (Open Government): the list of existing GC services, for checking a new one would not duplicate them.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-notify-contact",
+    description: "GC Notify (Canadian Digital Service): a notification platform to configure before building one.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-forms-assistance",
+    description: "GC Forms (Canadian Digital Service): a form-building platform to configure before building one.",
+  },
+  { label: "Governing instrument", linkKey: "digital-standards", description: "Government of Canada Digital Standards (TBS)." },
+  { label: "Governing instrument", linkKey: "guideline-service-digital", description: "Guideline on Service and Digital (TBS)." },
+  {
+    label: "Governing instrument",
+    linkKey: "concept-case-procedures",
+    description: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "gc-enterprise-architecture-framework",
+    description: "GC Enterprise Architecture Framework (TBS): the criteria the architecture reviews apply, reuse first.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "design-with-users",
+    description: "Digital Standards, Design with users: the how-to for discovery research.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-it-shared-services",
+    description: "OAG Fall 2015 Reports, Report 4: Information Technology Shared Services.",
+  },
+  {
+    label: "Communities",
+    linkKey: "gc-ux-network",
+    description: "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
+  },
 ];
 
 export function CreateDiscoveryPage() {

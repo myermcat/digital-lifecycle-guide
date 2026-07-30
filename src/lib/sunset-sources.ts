@@ -14,5 +14,11 @@ function sourceItem(linkKey: ExternalLinkKey, label: string): SourceItem {
 export const SUNSET_SOURCES: SourceItem[] = [
   sourceItem("directive-procurement", "Governing instrument"),
   sourceItem("policy-planning-investments", "Supporting reference"),
+  {
+    label: "Supporting reference",
+    linkKey: "lac-information-disposition-hub",
+    description:
+      "Library and Archives Canada, information disposition: what must happen to the records before shutdown.",
+  },
   gccaseComingSoonSourceItem(),
 ];

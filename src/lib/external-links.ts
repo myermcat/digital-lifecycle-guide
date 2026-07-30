@@ -83,6 +83,51 @@ export const EXTERNAL_LINKS = {
       "AAACT program (Shared Services Canada) — training, adaptive-technology testing, and procurement advice for building accessible products and services",
     accessibility: "public",
   },
+  "design-canada": {
+    url: "https://design.canada.ca/",
+    description: "Canada.ca design system: user-tested styles, templates, and patterns",
+    accessibility: "public",
+  },
+  "design-research": {
+    url: "https://design.canada.ca/continuous-improvement/research.html",
+    description: "Canada.ca design system: how to research and test content with users",
+    accessibility: "public",
+  },
+  "charging-directive": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32502",
+    description: "Directive on Charging and Special Financial Authorities (TBS)",
+    accessibility: "public",
+  },
+  "apm-gcwiki": {
+    url: "https://wiki.gccollab.ca/Application_Portfolio_Management_(APM)",
+    description: "Application Portfolio Management guidance hub (GCcollab wiki)",
+    accessibility: "public",
+  },
+  "apm-dataset": {
+    url: "https://open.canada.ca/data/en/dataset/46fc3f0a-1b34-4585-b993-dfb600805d24",
+    description: "GC Application Portfolio Details dataset (Open Government Portal)",
+    accessibility: "public",
+  },
+  "modify-contract": {
+    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/manage/modify-contract/procedural-elements-amending-contracts",
+    description: "CanadaBuys buyer's guide: modifying a contract, procedural elements",
+    accessibility: "public",
+  },
+  "gcdigital-community": {
+    url: "https://www.canada.ca/en/government/system/digital-government/gcdigital-community/gcdigital-community-about-us.html",
+    description: "GCDigital community (TBS OCIO): the community for GC digital practitioners",
+    accessibility: "public",
+  },
+  "directive-projects-programmes": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32594",
+    description: "Directive on the Management of Projects and Programmes (TBS)",
+    accessibility: "public",
+  },
+  "a11y-community-terms": {
+    url: "https://a11y.canada.ca/en/terms-of-reference/index.html",
+    description: "Access Working Group terms of reference (Digital Accessibility Toolkit)",
+    accessibility: "public",
+  },
   "concept-case-procedures": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593&section=procedure&p=B",
     description:
@@ -579,7 +624,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-notify-contact": {
-    url: "https://notification.canada.ca/en/contact",
+    url: "https://notification.canada.ca/",
     description: "GC Notify contact",
     accessibility: "public",
   },

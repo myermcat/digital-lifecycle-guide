@@ -39,11 +39,84 @@ import {
 import { guideBodySubheading, guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
 
 const BETA_SOURCES: SourceItem[] = [
-  { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
-  { label: "Supporting reference", linkKey: "directive-security-management" },
-  { label: "Supporting reference", linkKey: "itsg-33" },
-  { label: "Supporting reference", linkKey: "algorithmic-impact-assessment" },
-  { label: "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System", linkKey: "oag-phoenix-build" },
+  {
+    label: "Templates and tools",
+    linkKey: "algorithmic-impact-assessment",
+    description:
+      "Algorithmic Impact Assessment tool (TBS): the questionnaire that scores an automated decision system.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "a11y-toolkit-procurement",
+    description:
+      "Digital Accessibility Toolkit, procurement: generates the accessibility requirements for what you buy and build.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-notify-contact",
+    description:
+      "GC Notify (Canadian Digital Service): a notification platform to configure instead of building one.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-forms-assistance",
+    description:
+      "GC Forms (Canadian Digital Service): a form-building platform to configure instead of building one.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-design-system",
+    description:
+      "GC Design System (Canadian Digital Service): ready-made, accessible interface components.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-security-management",
+    description:
+      "Directive on Security Management (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-automated-decision-making",
+    description:
+      "Directive on Automated Decision-Making (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-privacy-practices",
+    description:
+      "Directive on Privacy Practices (TBS).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "itsg-33",
+    description:
+      "ITSG-33, IT security risk management (Canadian Centre for Cyber Security).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "lac-information-disposition-hub",
+    description:
+      "Library and Archives Canada, information disposition: where records-keeping duties come from.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-phoenix-build",
+    description:
+      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
+  },
+  {
+    label: "Communities",
+    linkKey: "a11y-community-terms",
+    description:
+      "Access Working Group: the interdepartmental accessibility community behind the Digital Accessibility Toolkit.",
+  },
 ];
 
 export function CreateBetaPage() {

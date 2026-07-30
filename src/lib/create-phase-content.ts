@@ -213,8 +213,31 @@ export const CREATE_PHASE = {
 
   sources: [
     {
+      label: "Templates and tools",
+      linkKey: "pcra-tool" satisfies ExternalLinkKey,
+      description:
+        "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores the project.",
+    },
+    {
       label: "Governing instrument",
       linkKey: "guideline-service-digital" satisfies ExternalLinkKey,
+      description: "Guideline on Service and Digital (TBS).",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "concept-case-procedures" satisfies ExternalLinkKey,
+      description: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS).",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "directive-projects-programmes" satisfies ExternalLinkKey,
+      description: "Directive on the Management of Projects and Programmes (TBS).",
+    },
+    {
+      label: "Communities",
+      linkKey: "gcdigital-community" satisfies ExternalLinkKey,
+      description:
+        "GCDigital community (TBS OCIO): the community for digital practitioners across government.",
     },
   ] satisfies SourceItem[],
 } as const;

@@ -38,10 +38,59 @@ import {
 import { guideProse } from "@/lib/guide-typography";
 
 const STABILIZATION_SOURCES: SourceItem[] = [
-  { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
-  { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
-  { label: "Service Fees Act", linkKey: "service-fees-act" },
-  { label: "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System", linkKey: "oag-phoenix-build" },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-service-inventory",
+    description:
+      "GC Service Inventory (Open Government): the dataset the new service must be registered in.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "apm-dataset",
+    description:
+      "GC Application Portfolio Details (Open Government): the dataset the department's application record feeds.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "service-fees-act",
+    description:
+      "Service Fees Act.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "charging-directive",
+    description:
+      "Directive on Charging and Special Financial Authorities (TBS): the rules behind fee remission.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "apm-gcwiki",
+    description:
+      "Application Portfolio Management guidance hub (GCcollab wiki).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-phoenix-build",
+    description:
+      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
+  },
+  {
+    label: "Communities",
+    description:
+      "Application Portfolio Management community: on GCXchange, search the name.",
+  },
 ];
 
 export function LiveStabilizationPage() {

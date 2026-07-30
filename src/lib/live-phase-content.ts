@@ -215,8 +215,20 @@ export const LIVE_PHASE = {
 
   sources: [
     {
+      label: "Templates and tools",
+      linkKey: "gc-service-inventory",
+      description:
+        "GC Service Inventory (Open Government): the dataset the running service is registered in.",
+    },
+    {
       label: "Governing instrument",
       linkKey: "guideline-service-digital",
+      description: "Guideline on Service and Digital (TBS).",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "apm-gcwiki",
+      description: "Application Portfolio Management guidance hub (GCcollab wiki).",
     },
   ] satisfies SourceItem[],
 } as const;

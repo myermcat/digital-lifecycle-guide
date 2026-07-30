@@ -41,11 +41,65 @@ import {
 import { guideProse } from "@/lib/guide-typography";
 
 const MATURITY_SOURCES: SourceItem[] = [
-  { label: "Directive on Service and Digital (TBS)", linkKey: "directive-on-service-and-digital" },
-  { label: "Guideline on Service and Digital (TBS)", linkKey: "guideline-service-digital" },
-  { label: "Standard on At-Risk Information Technology (TBS)", linkKey: "standard-at-risk-it" },
-  { label: "Service Fees Act", linkKey: "service-fees-act" },
-  { label: "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System", linkKey: "oag-phoenix-build" },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-service-inventory",
+    description:
+      "GC Service Inventory (Open Government): the dataset where the service's record is kept current.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "policy-on-service-and-digital",
+    description:
+      "Policy on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "standard-at-risk-it",
+    description:
+      "Standard on At-Risk Information Technology (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "service-fees-act",
+    description:
+      "Service Fees Act.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "charging-directive",
+    description:
+      "Directive on Charging and Special Financial Authorities (TBS): how service fees are set and reviewed.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "apm-gcwiki",
+    description:
+      "Application Portfolio Management guidance hub (GCcollab wiki).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-phoenix-build",
+    description:
+      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
+  },
+  {
+    label: "Communities",
+    description:
+      "Application Portfolio Management community: on GCXchange, search the name.",
+  },
 ];
 
 export function LiveMaturityPage() {
