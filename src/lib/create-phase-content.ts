@@ -216,7 +216,7 @@ export const CREATE_PHASE = {
       label: "Templates and tools",
       linkKey: "pcra-tool" satisfies ExternalLinkKey,
       description:
-        "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores the project.",
+        "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it.",
     },
     {
       label: "Governing instrument",

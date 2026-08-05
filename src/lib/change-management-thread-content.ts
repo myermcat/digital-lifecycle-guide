@@ -488,5 +488,17 @@ export const CHANGE_MANAGEMENT_THREAD = {
       comingSoon: true,
       gcNetworkOnly: true,
     },
+    {
+      label: "Governing instrument",
+      linkKey: "policy-communications-federal-identity",
+      description:
+        "Policy on Communications and Federal Identity (TBS): change communications run through the departmental head of communications.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "iocn-cm-tools-compendium",
+      description:
+        "IOCN Change Management Tools Compendium (GCcollab wiki): GC-contributed frameworks, guides, and templates.",
+    },
   ] satisfies SourceItem[],
 } as const;

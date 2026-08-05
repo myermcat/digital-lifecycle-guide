@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowDownToLine, ArrowRight, Infinity as InfinityIcon } from "lucide-react";
+import { ArrowDownToLine, Infinity as InfinityIcon } from "lucide-react";
 import { guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
@@ -10,9 +10,12 @@ export type SectionNavLink = {
   level: "phase" | "subphase";
 };
 
-/** Phase links carry the same icon the documents use for that phase. */
+/**
+ * Phase links carry the same icon the documents use for that phase.
+ * Create's icon is an arrow, which reads as a second direction marker
+ * next to the nav's own ← / →, so it is left out here.
+ */
 function phaseIconFor(href: string) {
-  if (href.startsWith("/create")) return ArrowRight;
   if (href.startsWith("/live")) return InfinityIcon;
   if (href.startsWith("/sunset")) return ArrowDownToLine;
   return null;

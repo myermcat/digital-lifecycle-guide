@@ -337,5 +337,23 @@ export const USER_RESEARCH_THREAD = {
       description:
         "Interaction Design Foundation, What is User Research? — https://www.interaction-design.org/literature/topics/user-research",
     },
+    {
+      label: "Supporting reference",
+      linkKey: "gba-plus",
+      description:
+        "Gender-based Analysis Plus (Women and Gender Equality Canada): who a service affects differently; required in Treasury Board submissions.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "design-research",
+      description:
+        "Canada.ca design system, research and testing how-to: methods for testing with users.",
+    },
+    {
+      label: "Communities",
+      linkKey: "gc-ux-network",
+      description:
+        "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
+    },
   ] satisfies SourceItem[],
 } as const;

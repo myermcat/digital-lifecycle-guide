@@ -423,5 +423,23 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
       description:
         "NIST SP 800-218, Secure Software Development Framework (SSDF) Version 1.1 — https://csrc.nist.gov/pubs/sp/800/218/final",
     },
+    {
+      label: "Governing instrument",
+      linkKey: "standard-at-risk-it",
+      description:
+        "Standard on At-Risk Information Technology (TBS): keeping applications current; unsupported technology is prohibited.",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "directive-on-service-and-digital",
+      description:
+        "Directive on Service and Digital (TBS): the open-standards and open-source duties in the enterprise architecture procedures.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "apm-gcwiki",
+      description:
+        "Application Portfolio Management guidance hub (GCcollab wiki): how the portfolio record behind the at-risk picture is kept.",
+    },
   ] satisfies SourceItem[],
 } as const;

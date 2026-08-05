@@ -32,7 +32,7 @@ export const ALPHA_EXTRACT = {
     ],
   } satisfies ThreadLinkedProse,
   workOutItems: [
-    "lists the assumptions most likely to kill the idea",
+    "lists the assumptions most likely to kill the idea, and tests them",
     "builds quick, throwaway mock-ups (paper sketches, clickable screens) to test them",
     "watches real users try them",
   ],

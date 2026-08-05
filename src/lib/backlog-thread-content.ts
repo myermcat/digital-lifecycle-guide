@@ -457,5 +457,17 @@ export const BACKLOG_THREAD = {
       description:
         "Marty Cagan (SVPG) Product vs Feature Teams — https://www.svpg.com/product-vs-feature-teams/",
     },
+    {
+      label: "Templates and tools",
+      linkKey: "gc-open-resource-exchange",
+      description:
+        "Open Resource Exchange: where GC open-source code is registered and found.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "guide-publishing-open-source",
+      description:
+        "Guide for Publishing Open Source Code (TBS): the GC how-to for releasing code in the open.",
+    },
   ] satisfies SourceItem[],
 } as const;

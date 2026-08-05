@@ -100,15 +100,15 @@ export const DISCOVERY_PILLAR = {
   } satisfies ThreadLinkedProse,
   teamNote: {
     title: {
-      text: "If the department is buying a Team, the competition happens here.",
+      text: "If the department is buying a Team, the competition happens at the end of Discovery.",
       bold: [
         {
-          phrase: "If the department is buying a Team, the competition happens here.",
+          phrase: "If the department is buying a Team, the competition happens at the end of Discovery.",
         },
       ],
     } satisfies ThreadLinkedProse,
     routes: {
-      text: "There are four buying routes: Team, Solution, Finished Product, and In-house or Reuse. Only Team is contracted this early, because the team is what does Alpha.",
+      text: "There are four buying routes: Team, Solution, Finished Product, and In-house or Reuse. Only Team is contracted this early, because the team is what does Alpha. Prepare the competition during Discovery, and award only once the decision is to continue, so the team is in place when Alpha starts.",
       internalLinks: [
         { phrase: "four buying routes", to: "/thread/procurement" },
         { phrase: "Alpha", to: "/create-alpha" },

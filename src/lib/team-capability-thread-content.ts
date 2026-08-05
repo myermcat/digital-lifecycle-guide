@@ -419,5 +419,11 @@ export const TEAM_CAPABILITY_THREAD = {
       description:
         "Team Health Monitor (Atlassian) — https://www.atlassian.com/team-playbook/health-monitor",
     },
+    {
+      label: "Communities",
+      linkKey: "gcdigital-community",
+      description:
+        "GCDigital community (TBS OCIO): the community for digital practitioners across government.",
+    },
   ] satisfies SourceItem[],
 } as const;

@@ -326,5 +326,29 @@ export const FUNDING_THREAD = {
       label: "Supporting reference",
       linkKey: "tbs-guide-costing" satisfies ExternalLinkKey,
     },
+    {
+      label: "Governing instrument",
+      linkKey: "concept-case-procedures",
+      description:
+        "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS): where digital project funding starts.",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "charging-directive",
+      description:
+        "Directive on Charging and Special Financial Authorities (TBS): how service fees are set, adjusted, and remitted.",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "service-fees-act",
+      description:
+        "Service Fees Act: the statutory duties of a fee-charging service.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "pcra-tool",
+      description:
+        "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it.",
+    },
   ] satisfies SourceItem[],
 } as const;

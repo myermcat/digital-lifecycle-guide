@@ -30,7 +30,7 @@ export function GateMapPhaseCallout({ text, hash, linkLabel }: GateMapPhasePoint
   );
 }
 
-/** Single-line see-also link for sub-phase pages. */
+/** Prose sentence pointing sub-phase readers at the lifecycle page. */
 export function GateMapSeeAlsoLink({
   phaseLabel,
   hash,
@@ -39,10 +39,11 @@ export function GateMapSeeAlsoLink({
   hash: string;
 }) {
   return (
-    <p className="mt-4 md:mt-5 text-sm">
+    <p className="mt-4 md:mt-5 text-[15px] leading-relaxed text-foreground/85">
       <Link to={GATE_MAP_PATH} hash={hash} className={guideLink}>
-        See where {phaseLabel} sits in the whole lifecycle →
-      </Link>
+        The lifecycle of a digital service
+      </Link>{" "}
+      shows where {phaseLabel} comes in the whole journey, checkpoint by checkpoint.
     </p>
   );
 }

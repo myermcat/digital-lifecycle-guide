@@ -379,5 +379,23 @@ export const ETHICS_AND_BIAS_THREAD = {
       description:
         "UK DSIT Introduction to AI assurance — https://www.gov.uk/government/publications/introduction-to-ai-assurance",
     },
+    {
+      label: "Governing instrument",
+      linkKey: "gc-ai-strategy",
+      description:
+        "AI Strategy for the Federal Public Service 2025-2027 (TBS): the umbrella for responsible AI adoption.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "guide-peer-review-ads",
+      description:
+        "Guide to Peer Review of Automated Decision Systems (TBS): the review that is mandatory at impact level 2 and above, published before production.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "guide-scope-dadm",
+      description:
+        "Guide on the Scope of the Directive on Automated Decision-Making (TBS): the first question, whether the directive applies at all.",
+    },
   ] satisfies SourceItem[],
 } as const;

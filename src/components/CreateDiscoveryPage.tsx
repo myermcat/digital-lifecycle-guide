@@ -45,13 +45,19 @@ const DISCOVERY_SOURCES: SourceItem[] = [
   {
     label: "Templates and tools",
     linkKey: "pcra-tool",
-    description: "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores the project.",
+    description: "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it.",
   },
   {
     label: "Templates and tools",
     linkKey: "gc-service-inventory",
     description:
       "GC Service Inventory (Open Government): the list of existing GC services, for checking a new one would not duplicate them.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-open-resource-exchange",
+    description:
+      "Open Resource Exchange: the GC registry of reusable open-source solutions; search it before building, and register what you release.",
   },
   {
     label: "Templates and tools",
@@ -62,12 +68,6 @@ const DISCOVERY_SOURCES: SourceItem[] = [
     label: "Templates and tools",
     linkKey: "gc-forms-assistance",
     description: "GC Forms (Canadian Digital Service): a form-building platform to configure before building one.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-open-resource-exchange",
-    description:
-      "Open Resource Exchange: the GC registry of reusable open-source solutions; search it before building, and register what you release.",
   },
   { label: "Governing instrument", linkKey: "digital-standards", description: "Government of Canada Digital Standards (TBS)." },
   { label: "Governing instrument", linkKey: "guideline-service-digital", description: "Guideline on Service and Digital (TBS)." },

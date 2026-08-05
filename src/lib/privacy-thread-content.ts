@@ -354,5 +354,11 @@ export const PRIVACY_THREAD = {
       linkKey: "nist-privacy-framework" satisfies ExternalLinkKey,
       description: "NIST Privacy Framework — https://www.nist.gov/privacy-framework",
     },
+    {
+      label: "Governing instrument",
+      linkKey: "policy-privacy-protection",
+      description:
+        "Policy on Privacy Protection (TBS): the parent instrument of the Privacy Impact Assessment duty since the PIA directive was rescinded in 2024.",
+    },
   ] satisfies SourceItem[],
 } as const;

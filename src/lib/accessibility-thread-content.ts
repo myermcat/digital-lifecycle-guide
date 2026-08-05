@@ -441,5 +441,23 @@ export const ACCESSIBILITY_THREAD = {
       linkKey: "webaim-keyboard-accessibility" satisfies ExternalLinkKey,
       description: "WebAIM Keyboard Accessibility — https://webaim.org/techniques/keyboard/",
     },
+    {
+      label: "Governing instrument",
+      linkKey: "cio-direction-ict-accessibility",
+      description:
+        "Direction on ICT Accessibility (CIO of Canada, March 2026): rescinded the Standard on Web Accessibility and sets the transition to the amended Accessible Canada Regulations.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "a11y-remediation-roadmap",
+      description:
+        "Accessibility remediation roadmap template (SSC): the plan for fixing what an Accessibility Conformance Report says does not conform yet.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "esdc-a11y-training-guidance",
+      description:
+        "Guidance for Providing Training on Digital Accessibility Fundamentals (ESDC): the training duty every digital team member carries from December 2027.",
+    },
   ] satisfies SourceItem[],
 } as const;

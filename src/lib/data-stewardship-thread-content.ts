@@ -700,6 +700,48 @@ export const DATA_STEWARDSHIP_THREAD = {
       linkKey: "go-fair-principles" satisfies ExternalLinkKey,
       description: "GO FAIR FAIR Principles — https://www.go-fair.org/fair-principles/",
     },
+    {
+      label: "Governing instrument",
+      linkKey: "directive-open-government",
+      description:
+        "Directive on Open Government (TBS): the instrument behind open by default.",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "standard-systems-manage-information",
+      description:
+        "Appendix J, Standard on Systems that Manage Information and Data (TBS): the mandatory requirements a system's records handling must meet.",
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "standard-managing-metadata",
+      description:
+        "Appendix L, Standard for Managing Metadata (TBS): which metadata standards apply, so data moves with its meaning intact.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "open-government-licence",
+      description:
+        "Open Government Licence, Canada: the licence every open release goes out under.",
+    },
+    {
+      label: "Templates and tools",
+      linkKey: "open-government-portal",
+      description:
+        "Open Government Portal: where the releases land.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "open-government-guidebook",
+      description:
+        "Open Government Guidebook (TBS): direction and tools for releasing data and information.",
+    },
+    {
+      label: "Supporting reference",
+      linkKey: "im-basics-guidance",
+      description:
+        "Information Management Basics (TBS): the plain-language guidance for every team member's records duties.",
+    },
   ] satisfies SourceItem[],
 } as const;
 

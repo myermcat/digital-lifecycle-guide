@@ -14,6 +14,9 @@ const PROCUREMENT_SOURCE_REFS = {
     { label: "Governing instrument", linkKey: "policy-planning-investments" },
   ],
   supporting: [
+    { label: "Templates and tools", linkKey: "a11y-toolkit-procurement" },
+    { label: "Supporting reference", linkKey: "task-authorizations" },
+    { label: "Supporting reference", linkKey: "modify-contract" },
     { label: "Supporting reference", linkKey: "supply-manual-chapter-6" },
     { label: "Supporting reference", linkKey: "contract-approval-authorities" },
     { label: "Supporting reference", linkKey: "buyers-portal" },

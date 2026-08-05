@@ -44,7 +44,7 @@ const GROWTH_SOURCES: SourceItem[] = [
     label: "Templates and tools",
     linkKey: "pcra-tool",
     description:
-      "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that scores a growth project.",
+      "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it; a significant addition can be a project of its own.",
   },
   {
     label: "Templates and tools",

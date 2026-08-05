@@ -32,7 +32,7 @@ export const BETA_EXTRACT = {
     internalLinks: [{ phrase: "Create", to: "/create" }],
   } satisfies ThreadLinkedProse,
   workOutItems: [
-    "signs the contract for the build.",
+    "signs the contract for the build, if buying.",
     "builds or configures the real thing, at production quality.",
     "proves it with real people, in a private beta and then a public beta.",
   ],
@@ -104,8 +104,8 @@ export const BETA_PILLAR = {
   title: "The contract you sign will outlive the service",
   icon: FileSignature,
   bodyIntro: {
-    text: "The contract, whenever in the journey it was signed, is what the department has to live with. Signature is the moment the department has real leverage, because nothing has been committed yet.",
-    bold: [{ phrase: "The contract, whenever in the journey it was signed," }],
+    text: "When you buy, the contract, whenever in the journey it was signed, is what the department has to live with. Signature is the moment the department has real leverage, because nothing has been committed yet.",
+    bold: [{ phrase: "the contract, whenever in the journey it was signed," }],
   } satisfies ThreadLinkedProse,
   listIntro: {
     text: "Everything that makes a service possible to leave later is won or lost at signature:",

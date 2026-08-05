@@ -143,6 +143,81 @@ export const EXTERNAL_LINKS = {
     description: "Guidance on the Digital Technologies Accessibility Regulations (ESDC)",
     accessibility: "public",
   },
+  "cio-direction-ict-accessibility": {
+    url: "https://www.canada.ca/en/government/system/digital-government/policies-standards/policy-service-digital-announcements/direction-information-communication-technologies-accessibility-towards-regulatory-implementation.html",
+    description: "Direction on ICT Accessibility: towards regulatory implementation (CIO of Canada, March 2026)",
+    accessibility: "public",
+  },
+  "esdc-a11y-training-guidance": {
+    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/training.html",
+    description: "Guidance for Providing Training on Digital Accessibility Fundamentals (ESDC)",
+    accessibility: "public",
+  },
+  "a11y-remediation-roadmap": {
+    url: "https://a11y.canada.ca/en/accessibility-remediation-roadmap-template/",
+    description: "Accessibility remediation roadmap template (SSC)",
+    accessibility: "public",
+  },
+  "guide-publishing-open-source": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-publishing-open-source-code.html",
+    description: "Guide for Publishing Open Source Code (TBS)",
+    accessibility: "public",
+  },
+  "policy-communications-federal-identity": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=30683",
+    description: "Policy on Communications and Federal Identity (TBS)",
+    accessibility: "public",
+  },
+  "iocn-cm-tools-compendium": {
+    url: "https://wiki.gccollab.ca/IOCN_-_CM_Tools_Compendium_/_Recueil_d'outils_de_GdC_-_RICO",
+    description: "IOCN Change Management Tools Compendium (GCcollab wiki)",
+    accessibility: "public",
+  },
+  "directive-open-government": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=28108",
+    description: "Directive on Open Government (TBS)",
+    accessibility: "public",
+  },
+  "standard-systems-manage-information": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32716",
+    description: "Appendix J: Standard on Systems that Manage Information and Data (TBS)",
+    accessibility: "public",
+  },
+  "standard-managing-metadata": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32786",
+    description: "Appendix L: Standard for Managing Metadata (TBS)",
+    accessibility: "public",
+  },
+  "open-government-licence": {
+    url: "https://open.canada.ca/en/open-government-licence-canada",
+    description: "Open Government Licence - Canada",
+    accessibility: "public",
+  },
+  "open-government-guidebook": {
+    url: "https://open.canada.ca/data/en/info/cf9ba695-59dc-4cc0-8a52-94ff6d9db665",
+    description: "Open Government Guidebook (TBS)",
+    accessibility: "public",
+  },
+  "im-basics-guidance": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16557",
+    description: "Guidance for Employees: Information Management Basics (TBS)",
+    accessibility: "public",
+  },
+  "guide-peer-review-ads": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-peer-review-automated-decision-systems.html",
+    description: "Guide to Peer Review of Automated Decision Systems (TBS)",
+    accessibility: "public",
+  },
+  "guide-scope-dadm": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html",
+    description: "Guide on the Scope of the Directive on Automated Decision-Making (TBS)",
+    accessibility: "public",
+  },
+  "gc-ai-strategy": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/gc-ai-strategy-overview.html",
+    description: "AI Strategy for the Federal Public Service 2025-2027 (TBS)",
+    accessibility: "public",
+  },
   "concept-case-procedures": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593&section=procedure&p=B",
     description:
