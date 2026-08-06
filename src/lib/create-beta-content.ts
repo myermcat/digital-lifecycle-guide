@@ -236,11 +236,10 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Two authorizations stand between the build and production, and neither is quick:",
       },
       {
-        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. For a service that sits inside one department, the person who signs it is normally the business owner, accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
+        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
         bold: [
           { phrase: "The service cannot run in production until it is authorized to." },
           { phrase: "Security Assessment and Authorization" },
-          { phrase: "the person who signs it is normally the business owner" },
         ],
         externalLinks: [
           {
@@ -251,12 +250,32 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Who signs it is not automatic. For a common or enterprise system, including one running on a Shared Services Canada platform, the Chief Information Officer of Canada signs instead. For a system two or more organizations share, the manager of that program or service signs. Find out which case this is in Alpha, because finding out in Beta means finding out under launch pressure.",
+        text: "Who signs it is not automatic. There are three cases:",
         bold: [{ phrase: "Who signs it is not automatic." }],
       },
       {
-        text: "What the authorization is built on is the second pass of the Threat and Risk Assessment. The first pass ran in Alpha against the design; this one runs against the system that was actually built, because the answer changes once the design is real, and its results go into the residual risk assessment. Security covers how the assessment is done.",
-        bold: [{ phrase: "this one runs against the system that was actually built" }],
+        type: "unorderedList",
+        items: [
+          {
+            text: "A service that belongs to one department. The business owner normally signs, accepting the risk on the department's behalf.",
+            bold: [{ phrase: "A service that belongs to one department." }],
+          },
+          {
+            text: "A common or enterprise system. The Chief Information Officer of Canada signs, including when the system runs on a Shared Services Canada platform.",
+            bold: [{ phrase: "A common or enterprise system." }],
+          },
+          {
+            text: "A system two or more organizations share. The manager of that program or service signs.",
+            bold: [{ phrase: "A system two or more organizations share." }],
+          },
+        ],
+      },
+      {
+        text: "Find out which case this is in Alpha. Leaving it to Beta means answering the question under launch pressure.",
+      },
+      {
+        text: "The authorization rests on a second pass of the Threat and Risk Assessment. The first pass ran in Alpha against the design. This one runs against the system that was actually built, because the answer changes once it is real. What it finds becomes the residual risk assessment, the record of the risk that is left for whoever signs to accept. Security covers how that work is done.",
+        bold: [{ phrase: "This one runs against the system that was actually built" }],
         externalLinks: [
           { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },
         ],
@@ -598,7 +617,7 @@ export const BETA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department. Everything on it has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
+      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department. Each item has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
       bold: [
         { phrase: "Off-ramp to-do." },
         { phrase: "This one is about the department." },
@@ -624,12 +643,12 @@ export const BETA_FINISH = {
         bold: [{ phrase: "The security assessment and authorization" }],
       },
       {
-        text: "The continuity arrangements in place: the recovery targets set in Alpha handed to the department's business continuity coordinator, and, if the service is critical, named in the departmental plan with its downtime limit and its recovery steps. Being covered in principle is not the same as being covered.",
-        bold: [{ phrase: "The continuity arrangements in place:" }],
+        text: "The continuity arrangements in place. The recovery targets set in Alpha are with the department's business continuity coordinator. If the service is critical, it is named in the departmental plan, with its downtime limit and the steps for getting it back.",
+        bold: [{ phrase: "The continuity arrangements in place." }],
       },
       {
-        text: "The restore tested at least once, not assumed. Backups nobody has restored from are a plan rather than a capability.",
-        bold: [{ phrase: "The restore tested at least once, not assumed." }],
+        text: "The restore tested at least once. Nobody knows whether a backup works until someone has used it to rebuild the service.",
+        bold: [{ phrase: "The restore tested at least once." }],
       },
       {
         text: "If the service automates a decision about a person, the Algorithmic Impact Assessment published.",

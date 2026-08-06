@@ -109,7 +109,12 @@ export function LivePhasePage() {
             </li>
           ))}
         </ul>
-        <p className={`${guideProse} mt-4`}>{whatRuns.obligations}</p>
+        <p className={`${guideProse} mt-4`}>{whatRuns.obligations.lead}</p>
+        <ul className={`${guideProse} mt-2 list-disc space-y-2 ${guideListIndent}`}>
+          {whatRuns.obligations.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={reviews.id}>

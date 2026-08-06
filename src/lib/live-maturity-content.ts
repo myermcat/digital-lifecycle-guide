@@ -159,7 +159,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
             internalLinks: [{ phrase: "Privacy", to: "/thread/privacy" }],
           },
           {
-            text: "Kept recoverable. How critical the service is, and how fast it has to come back, are re-asked on the department's own cycle, and the restore is tested rather than assumed. There is no interval set centrally: ask the department's business continuity coordinator what its cycle is, because that is the one you are held to.",
+            text: "Kept recoverable. How critical the service is, and how fast it has to come back, are re-asked on the department's own cycle, and the restore is tested rather than assumed. No interval is set centrally, so ask the department's business continuity coordinator how often this comes round. That answer is the one the service is held to.",
             bold: [{ phrase: "Kept recoverable." }],
           },
           {

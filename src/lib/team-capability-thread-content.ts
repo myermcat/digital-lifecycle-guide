@@ -239,13 +239,30 @@ export const TEAM_CAPABILITY_THREAD = {
           },
           {
             text:
-              "There is a named set of what those skills are. The Treasury Board of Canada Secretariat published six GC digital competencies for all public servants in 2025: digital literacy, continuous improvement, cyber security vigilance, information and data stewardship, digital responsibility, and inclusive interactions. The Government of Canada Digital Standards say how the government should work in the digital world. The competencies say what a person has to be able to do to work that way. They are for development, so nobody is scored against them, which makes them a plain checklist for working out what a team is missing.",
-            bold: [{ phrase: "The competencies say what a person has to be able to do to work that way." }],
+              "There is a named set of what those skills are. The Treasury Board of Canada Secretariat published six GC digital competencies for all public servants in 2025:",
             externalLinks: [
               {
                 phrase: "six GC digital competencies for all public servants",
                 linkKey: "gc-digital-competencies",
               },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              "digital literacy,",
+              "continuous improvement,",
+              "cyber security vigilance,",
+              "information and data stewardship,",
+              "digital responsibility,",
+              "inclusive interactions.",
+            ],
+          },
+          {
+            text:
+              "The Government of Canada Digital Standards say how the government should work in the digital world. The competencies say what a person has to be able to do to work that way. They are for development, so nobody is scored against them. That makes them a plain checklist for working out what a team is missing.",
+            bold: [{ phrase: "The competencies say what a person has to be able to do to work that way." }],
+            externalLinks: [
               {
                 phrase: "Government of Canada Digital Standards",
                 linkKey: "digital-standards",
@@ -254,7 +271,7 @@ export const TEAM_CAPABILITY_THREAD = {
           },
           {
             text:
-              "The Canada School of Public Service keeps a learning path organised under the same six headings. A deeper Playbook: GC Digital Competencies for all Public Servants sits on GCXchange, on the Government of Canada network, and is linked from the competencies page. A self-assessment tool that scores a person against the six and returns a reading list is being built alongside it, so look for it on the same GCXchange site rather than at a fixed address.",
+              "The Canada School of Public Service keeps a learning path organised under the same six headings. A longer companion, the Playbook: GC Digital Competencies for all Public Servants, is on GCXchange, inside the Government of Canada network. The competencies page links to it. A self-assessment tool is being built alongside the playbook. It scores a person against the six competencies and returns a reading list. Look for the tool on the same GCXchange site rather than at a fixed address.",
             externalLinks: [
               {
                 phrase: "learning path",

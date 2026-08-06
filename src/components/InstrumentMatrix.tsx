@@ -100,16 +100,18 @@ export function InstrumentMatrix() {
       </h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          One row per instrument. The first six columns say whether it applies
-          to you and who does what. The seven after them are the sub-phases of a
-          service's life, and a tag means something has to happen to that
-          instrument there. Click any row for the definition and the detail.
+          One row per instrument, the policy word for anything official a
+          service has to deal with. The first six columns say which services it
+          applies to and who does what. The seven after them are the sub-phases
+          of a service's life, and a tag means something has to happen to that
+          instrument there. Click any row for the definition and the sub-phase
+          notes.
         </p>
         <p className="text-muted-foreground">
           Placing an instrument in a sub-phase is this guide's own editorial
-          choice. No Government of Canada instrument uses these phase names, so
-          each placement is anchored on a real deadline or trigger in the source,
-          and the note says where it is judgement instead.
+          choice. No Government of Canada source uses these phase names. Each
+          placement is anchored on a real deadline or trigger in the instrument
+          itself, and where it is a judgement call instead, the row says so.
         </p>
       </div>
 

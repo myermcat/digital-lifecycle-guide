@@ -117,8 +117,8 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
         bold: [{ phrase: "Support is a signal too." }],
       },
       {
-        text: "The first real incidents are also the first honest test of the recovery targets set in Alpha. How long the service can be down and how much data it can afford to lose were a judgement then. Now they are a measurement, and if the restore takes twice as long as promised, that is worth knowing before anyone depends on the number.",
-        bold: [{ phrase: "the first honest test of the recovery targets set in Alpha" }],
+        text: "The first real incidents are also the first test of the recovery targets set in Alpha. How long the service can be down and how much data it can afford to lose were a judgement then. Now they are a measurement, and if the restore takes twice as long as promised, that is worth knowing before anyone depends on the number.",
+        bold: [{ phrase: "the first test of the recovery targets set in Alpha" }],
       },
       {
         text: "If the service charges fees, a rough first quarter has a statutory bill: under the Service Fees Act, a missed performance standard means remitting part of the fee the following year.",

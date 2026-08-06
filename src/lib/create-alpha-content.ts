@@ -42,7 +42,7 @@ export const ALPHA_EXTRACT = {
     text: "The team starts making things, and users start trying them.",
   },
   closing: {
-    text: "Nothing made in Alpha is carried into the build. The prototypes, whether they are paper sketches, an AI mock-up, or code, are archived when Alpha ends and become the requirements for what gets built. Only the handful of people who test them ever see them, never the public.",
+    text: "Nothing made in Alpha is carried into the build. Paper sketches, artificial intelligence (AI) mock-ups, and coded prototypes are archived when Alpha ends, and they become the requirements for what gets built. Only the handful of people who test them ever see them, never the public.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -135,7 +135,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
           },
           {
             bold: "A clickable mock-up.",
-            text: " A number of AI (artificial intelligence) tools now build one from a written prompt, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back. Plan for about half a day all in, including learning the tool.",
+            text: " A number of AI tools now build one from a written prompt, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back. Plan for about half a day all in, including learning the tool.",
           },
           {
             bold: "A coded prototype,",
@@ -144,7 +144,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Treat the AI mock-up exactly as you would treat paper: something to be archived rather than extended. No part of it should be carried into the build, and that holds when the department is building the service in-house, where the temptation to keep going from the prototype is strongest. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in words, and it shows quickly whether the idea works at all.",
+        text: "Treat the AI mock-up exactly like paper: something to be archived rather than extended. No part of it should be carried into the build. That holds hardest when the department is building the service in-house, where the temptation to keep going from the prototype is strongest. Its whole value is that a team can put an idea in front of colleagues and stakeholders instead of describing it in words. Their reaction shows quickly whether it holds up at all.",
         bold: [{ phrase: "something to be archived rather than extended" }],
       },
       {
@@ -276,7 +276,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Get ready to build or buy.",
     sections: [
       {
-        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. The tool that ranks them is a Threat and Risk Assessment, and Security covers how one is done. Funding covers paying for Beta.",
+        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them, and Security covers how one is done. Funding covers paying for Beta.",
         bold: [
           { phrase: "approach and the tooling" },
           { phrase: "exit rights and data portability" },
@@ -470,7 +470,7 @@ export const ALPHA_FINISH = {
       bold: [{ phrase: "Alpha is where the requirements get written." }],
     },
     {
-      text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the thing has to do. The request for proposals goes out at the start of Beta and it is built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day the competition is published stays vague in the contract.",
+      text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the service has to do. The request for proposals goes out at the start of Beta, built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day it is published stays vague in the contract.",
       bold: [{ phrase: "they have to be settled before Alpha closes" }],
     },
     {
@@ -478,7 +478,7 @@ export const ALPHA_FINISH = {
       bold: [{ phrase: "The competition to find a supplier runs during Alpha." }],
     },
     {
-      text: "This is the procurement competition. The requirements are written, the competition is published, bids come in, they are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
+      text: "This is the procurement competition: the requirements are written and advertised, bids come in and are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
       internalLinks: [
         { phrase: "procurement", to: "/thread/procurement" },
         { phrase: "Beta", to: "/create-beta" },
@@ -512,7 +512,7 @@ export const ALPHA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "The prototypes are archived; what they taught becomes the requirements. Before you move to Beta, have ready what Alpha learned:",
+      text: "The prototypes are archived; what they taught becomes the requirements. Have these ready before Beta starts:",
       bold: [{ phrase: "The prototypes are archived; what they taught becomes the requirements." }],
     } satisfies ThreadLinkedProse,
     items: [
@@ -529,8 +529,24 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The tested design:" }],
       },
       {
-        text: "The requirements, gathered in one place: what the service has to do, the sharpened metrics that say whether it worked, the accessibility clauses it has to meet, how the system has to behave (how fast, how available, how long it holds records), the data it has to hold and the metadata that describes it, and the recovery targets the exercise above produced, meaning how long the service can be down and how much data it can afford to lose. This is the material the request for proposals is written from, so each item is something a supplier can be held to.",
+        text: "The requirements, gathered in one place: the request for proposals is written from them, so each line has to be something a supplier can be held to.",
         bold: [{ phrase: "The requirements, gathered in one place:" }],
+      },
+      {
+        text: "What the service has to do, written out so a builder can act on it.",
+        bold: [{ phrase: "What the service has to do," }],
+      },
+      {
+        text: "How the system has to behave: how fast, how available, and how long it holds records.",
+        bold: [{ phrase: "How the system has to behave:" }],
+      },
+      {
+        text: "The data the service has to hold, and the metadata that describes it.",
+        bold: [{ phrase: "The data the service has to hold," }],
+      },
+      {
+        text: "The recovery targets the exercise above produced: how long the service can be down, and how much recent data it can afford to lose.",
+        bold: [{ phrase: "The recovery targets the exercise above produced:" }],
       },
       {
         text: "The journey map from Discovery, updated with what the testing taught.",

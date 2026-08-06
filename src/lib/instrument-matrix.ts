@@ -80,7 +80,7 @@ export const MATRIX_ACTIONS: Record<
   },
   close: {
     label: "Close out",
-    gloss: "Ended, disposed of, or marked retired. Not left to lapse.",
+    gloss: "Formally ended, disposed of, or marked retired.",
     className:
       "bg-stone-200 text-stone-800 border-stone-400 dark:bg-stone-800 dark:text-stone-200 dark:border-stone-600",
   },
@@ -151,11 +151,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "A rating of how much injury would result if the service's information leaked, if someone altered it, or if the service became unavailable. The three are judged separately, on four levels from low to very high, and the result decides the size of the security control set the build has to meet.",
     everyService: true,
     scope:
-      "Every service. Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one sits inside the business impact analysis requirement.",
+      "Every service. Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one is part of the business impact analysis requirement.",
     ownerDoes:
       "Makes the judgement about how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately. That judgement is in no document anywhere: it comes from knowing the program and its clients, which is exactly why the security team cannot supply it.",
     whoDoes:
-      "The departmental security team assigns it. The injury judgement behind it comes from the business, ideally with legal, access to information and privacy in the room.",
+      "The departmental security team assigns it. The injury judgement behind it comes from the business, ideally with legal and the access to information and privacy office in the room.",
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The result feeds the security assessment and the control set.",
     linkKey: "standard-on-security-categorization",
@@ -188,7 +188,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "The activity applies to all information systems that support departmental programs, services or activities. No dollar figure, no user count, no risk score. A standalone report is a different matter: producing one is neither recommended nor required, and the results are meant to go into the ordinary design documents.",
     ownerDoes:
-      "Makes the judgement about what could go wrong and how bad it would be. Both halves are the business owner's: what the threats are, and what the risk to the business is. A specialist can be asked to run the assessment, and the responsibility for it does not move when they do.",
+      "Makes the judgement about what could go wrong and how bad it would be for the business. Neither half can be looked up: both come from knowing the program and who depends on it.",
     whoDoes:
       "A security practitioner and a security assessor run the assessment, frequently a contractor. The instruments still put the business owner on the hook for the answer, so asking someone to do it is delegation rather than handover.",
     whereItEndsUp:
@@ -223,10 +223,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only if the service touches physical space: new accommodation, hardware in people's hands, kiosks, or software that operates doors, gates, lighting or heating. A cloud-hosted service with no hardware usually stays clear of it.",
     ownerDoes:
-      "Says whether the service touches physical space at all: hardware in people's hands, kiosks, accommodation, or software that operates doors, gates or heating. Comes from knowing what is actually being built.",
-    whoDoes: "Departmental physical security, using the RCMP's assessment guide.",
+      "Says whether the service touches physical space at all. That answer comes from knowing what is actually being built.",
+    whoDoes:
+      "Departmental physical security, using the Royal Canadian Mounted Police (RCMP) assessment guide.",
     whereItEndsUp:
-      "Stays inside the department. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
+      "Stays inside the department, so nobody outside will chase it. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
     cells: {
       alpha: {
         tags: ["check"],
@@ -252,7 +253,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The information technology security team assembles the package; a security assessor, often independent, does the assessment.",
     whereItEndsUp:
-      "Stays inside the department and is signed there, so the only person who will chase it is the authorizer. For common or enterprise systems including Shared Services Canada services, the Chief Information Officer of Canada is the authorizer instead; for systems shared by two or more organizations, the manager of the program or service.",
+      "Stays inside the department and is signed there, so the only person who will chase it is the authorizer. For common or enterprise systems, including Shared Services Canada services, the authorizer is the Chief Information Officer of Canada instead. Where two or more organizations share a system, it is the manager of the program or service.",
     linkKey: "directive-security-management",
     cells: {
       discovery: {
@@ -293,7 +294,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The exercise that works out who is harmed if the service stops, how quickly that harm becomes serious, and what the service depends on. Its outputs are the criticality judgement and four numbers: maximum allowable downtime, minimum service level, recovery time objective and recovery point objective.",
     everyService: true,
     scope:
-      "Every service should answer the question, because the answer is what decides whether anything further is owed. The directive's formal requirement is narrower: it scopes continuity requirement-setting to services and activities supporting availability of what is critical to the health, safety, security or economic well-being of Canadians or the effective functioning of government. Large departments are separately measured on holding an up-to-date analysis for every external and internal enterprise service.",
+      "Every service should answer the question, because the answer is what decides whether anything further is owed. The directive's formal requirement is narrower. It reaches only the services and activities that support the availability of what is critical to the health, safety, security or economic well-being of Canadians, or to the effective functioning of government. Large departments are separately measured on holding an up-to-date analysis for every external and internal enterprise service.",
     ownerDoes:
       "Makes the judgement about who is harmed if the service stops, how fast that harm escalates, and what the service depends on. None of it can be looked up: it comes from knowing the clients and the program calendar, which is why the continuity specialist cannot produce it alone.",
     whoDoes:
@@ -331,9 +332,9 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The written arrangements for keeping a critical service delivering at a minimum acceptable level during a disruption, and recovering it afterwards. There is one plan for the department. A critical service may have its own, sit inside a broader one, or be supported by several.",
     everyService: false,
     scope:
-      "Only if the business impact analysis marks the service critical, meaning disruption would cause a high or very high degree of injury. One department operationalizes that as needing to recover to minimum service levels within 72 hours.",
+      "Only if the business impact analysis marks the service critical, meaning disruption would cause a high or very high degree of injury. One department reads that as needing to recover to minimum service levels within 72 hours.",
     ownerDoes:
-      "Supplies the recovery steps and the workarounds, then tests them. Asks to be shown where this service appears in the departmental plan, with its downtime limit and its recovery steps, because being covered in principle is not the same as being covered.",
+      "Supplies the recovery steps and the workarounds, then tests them. Both come from the people who run it day to day. Asks the coordinator to point to where this service appears in the departmental plan, with its downtime limit.",
     whoDoes:
       "The departmental or branch business continuity coordinator drafts it on the departmental template. No instrument assigns the drafting to a service's business owner.",
     whereItEndsUp:
@@ -365,11 +366,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "A structured look at what personal information the service collects, why it is allowed to, where it flows, how long it is kept, and what happens to people if it goes wrong. A mandatory checklist comes first and decides whether a full assessment, a lighter privacy protocol, or neither is needed.",
     everyService: false,
     scope:
-      "Triggers are broad: a new or substantially modified program creating, collecting, using, disclosing, retaining or disposing of personal information; use for an administrative purpose; contracting out or transferring a program; new or modified information technologies that process personal information; involvement of third parties or contractors; and use of automated decision systems. No dollar or user-count threshold.",
+      "Triggers are broad. A new or substantially modified program that creates, collects, uses, discloses, retains or disposes of personal information brings it into scope. So does using it for an administrative purpose, contracting the program out or transferring it, bringing in a third party, changing the technology that processes it, or automating a decision. No dollar or user-count threshold.",
     ownerDoes:
       "Says what personal information the service will use and which decisions about people it will be used to make. Comes from the program design. The checklist step happens whether or not the answer turns out to be yes.",
     whoDoes:
-      "The program area drafts on the Treasury Board template; the access to information and privacy office reviews, iterates and owns the instrument.",
+      "The program area drafts it on the Treasury Board template; the access to information and privacy office reviews, iterates and owns the instrument.",
     whereItEndsUp:
       "The privacy office sends the completed assessment to the Treasury Board of Canada Secretariat and to the Office of the Privacy Commissioner at the same time, after the deputy head approves. A summary is published on the institution's website.",
     linkKey: "directive-privacy-practices",
@@ -408,11 +409,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only if the service makes or supports an automated decision about a person: scoring, ranking, recommending, or auto-approving. A later efficiency feature can trigger it without anyone noticing.",
     ownerDoes:
-      "Fills in the questionnaire, usually with the department's data or artificial intelligence people. It is self-administered, so nobody outside the department will write it for you.",
+      "Fills in the questionnaire, usually with the department's data or artificial intelligence people. The answers come from how the program works and what the decision does to people, so nobody outside can supply them.",
     whoDoes:
       "The department completes it itself, normally the program team with support from the data or chief information officer function. It is not an external audit.",
     whereItEndsUp:
-      "The assistant deputy minister responsible for the program, or another senior official named by the deputy head, completes, approves and publishes the results on the Open Government Portal before the system goes into production.",
+      "The results are published on the Open Government Portal before the system goes into production, where anyone outside the department can see them. The assistant deputy minister responsible for the program completes and approves them, or another senior official the deputy head names.",
     linkKey: "algorithmic-impact-assessment",
     cells: {
       alpha: {
