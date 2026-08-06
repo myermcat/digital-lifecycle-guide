@@ -11,6 +11,7 @@ import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
+import { SubphaseInstruments } from "@/components/SubphaseInstruments";
 import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
@@ -208,6 +209,9 @@ export function CreateDiscoveryPage() {
       />
 
       <RealExampleCallout example={REAL_EXAMPLES.discovery!} className="mt-8 md:mt-10" />
+
+      <SubphaseInstruments subPhase="discovery" />
+
 
       <SubphaseFinishSection
         title={DISCOVERY_FINISH.title}

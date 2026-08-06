@@ -11,6 +11,7 @@ import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseExtractCard } from "@/components/SubphaseExtractCard";
+import { SubphaseInstruments } from "@/components/SubphaseInstruments";
 import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
@@ -179,6 +180,9 @@ export function LiveGrowthPage() {
       />
 
       <RealExampleCallout example={REAL_EXAMPLES.growth!} className="mt-8 md:mt-10" />
+
+      <SubphaseInstruments subPhase="growth" />
+
 
       <SubphaseFinishSection
         title={GROWTH_FINISH.title}

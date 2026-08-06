@@ -9,6 +9,7 @@ import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
+import { SubphaseInstruments } from "@/components/SubphaseInstruments";
 import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
@@ -244,6 +245,9 @@ export function CreateAlphaPage() {
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.confusionNote)}</p>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.closing)}</p>
       </PillarCallout>
+
+      <SubphaseInstruments subPhase="alpha" />
+
 
       <SubphaseFinishSection
         title={ALPHA_FINISH.title}

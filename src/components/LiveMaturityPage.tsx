@@ -12,6 +12,7 @@ import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseExtractCard } from "@/components/SubphaseExtractCard";
+import { SubphaseInstruments } from "@/components/SubphaseInstruments";
 import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
@@ -182,6 +183,9 @@ export function LiveMaturityPage() {
       />
 
       <RealExampleCallout example={REAL_EXAMPLES.maturity!} className="mt-8 md:mt-10" />
+
+      <SubphaseInstruments subPhase="maturity" />
+
 
       <SubphaseFinishSection
         title={MATURITY_FINISH.title}

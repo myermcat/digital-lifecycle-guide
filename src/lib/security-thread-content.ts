@@ -229,6 +229,14 @@ export const SECURITY_THREAD = {
           },
           {
             text:
+              "It is not one event. ITSG-33 runs the assessment three times, and the sub-phase pages compress the first two into one for readability: once against the high-level design, again against the detailed design, and a third time against the system that was actually built. That third run produces the residual risk assessment, which is the record of what risk is left and the thing the authorizer signs against. Nothing here is filed outside the department. What forces the work is the Authority to Operate, because without an assessment there is nothing for the authorizer to accept.",
+            bold: [{ phrase: "It is not one event." }],
+            externalLinks: [
+              { phrase: "ITSG-33", linkKey: "itsg-33" },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text:
               "So protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
             bold: [{ phrase: "protect the few things that matter most" }],
           },
