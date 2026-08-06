@@ -153,7 +153,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service. Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one sits inside the business impact analysis requirement.",
     ownerDoes:
-      "Says how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately. That judgement is in no document anywhere: it comes from knowing the program and its clients, which is exactly why the security team cannot supply it.",
+      "Makes the judgement about how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately. That judgement is in no document anywhere: it comes from knowing the program and its clients, which is exactly why the security team cannot supply it.",
     whoDoes:
       "The departmental security team assigns it. The injury judgement behind it comes from the business, ideally with legal, access to information and privacy in the room.",
     whereItEndsUp:
@@ -188,9 +188,9 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "The activity applies to all information systems that support departmental programs, services or activities. No dollar figure, no user count, no risk score. A standalone report is a different matter: producing one is neither recommended nor required, and the results are meant to go into the ordinary design documents.",
     ownerDoes:
-      "Says what the business actually needs protected, and how much risk the department is willing to carry. Both come from the program rather than from a security document, and without them the assessment gets done against someone else's guess.",
+      "Makes the judgement about what could go wrong and how bad it would be. Both halves are the business owner's: what the threats are, and what the risk to the business is. A specialist can be asked to run the assessment, and the responsibility for it does not move when they do.",
     whoDoes:
-      "A security practitioner and a security assessor, frequently a contractor. Not the business owner.",
+      "A security practitioner and a security assessor run the assessment, frequently a contractor. The instruments still put the business owner on the hook for the answer, so asking someone to do it is delegation rather than handover.",
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
@@ -295,7 +295,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service should answer the question, because the answer is what decides whether anything further is owed. The directive's formal requirement is narrower: it scopes continuity requirement-setting to services and activities supporting availability of what is critical to the health, safety, security or economic well-being of Canadians or the effective functioning of government. Large departments are separately measured on holding an up-to-date analysis for every external and internal enterprise service.",
     ownerDoes:
-      "Says who is harmed if the service stops, how fast that harm escalates, and what the service depends on. None of it can be looked up: it comes from knowing the clients and the program calendar, which is why the continuity specialist cannot produce it alone.",
+      "Makes the judgement about who is harmed if the service stops, how fast that harm escalates, and what the service depends on. None of it can be looked up: it comes from knowing the clients and the program calendar, which is why the continuity specialist cannot produce it alone.",
     whoDoes:
       "The departmental business continuity management specialist, who is also the person responsible for identifying which services are critical.",
     whereItEndsUp:
@@ -1088,7 +1088,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Any service where people or businesses have accounts, sign in, or are identified. A worksheet under the authentication requirements guideline produces the level. At level three and above, multi-factor authentication follows.",
     ownerDoes:
-      "Says what harm results from getting someone's identity wrong. That judgement sets the assurance level, and the level constrains the design from the very start.",
+      "Makes the judgement about what harm results from getting someone's identity wrong. That judgement sets the assurance level, and the level constrains the design from the very start.",
     whoDoes:
       "The departmental identity management function with the security team; the business owner supplies the harm judgement.",
     whereItEndsUp: "Stays inside the department, so nobody outside will chase it.",
