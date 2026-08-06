@@ -89,7 +89,7 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 
-export const CHECKPOINT_MAP_TITLE = "The lifecycle of a digital service";
+export const CHECKPOINT_MAP_TITLE = "The official checkpoints of a digital service";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
   text: "A worked example of the official checkpoints, the approvals, reviews, and sign-offs a Government of Canada service has to pass through, from the first problem definition all the way to retiring or replacing it, and who owns each one.",
@@ -515,7 +515,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "The security team runs the Security Assessment and Authorization and hands the residual IT (cyber) security risk to the authorizing official for the program. That official signs the Authority to Operate, accepting the risk, under the Directive on Security Management and ITSG-33. For a service that sits inside one department, the authorizing official is normally the business owner: Nadia signs her own.",
+              text: "The security team runs the Security Assessment and Authorization and hands the residual IT (cyber) security risk to the authorizing official for the program. That official signs the Authority to Operate, accepting the risk, under the Policy on Government Security, its Directive on Security Management, and ITSG-33. For a service that sits inside one department, the authorizing official is normally the business owner: Nadia signs her own.",
               bold: [
                 "Security Assessment and Authorization",
                 "Authority to Operate",
@@ -524,8 +524,12 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. A standalone report is not required, and nothing is filed anywhere. The Authority to Operate is what enforces it, because without the assessment there is nothing for her to accept.",
-              bold: ["Threat and Risk Assessment", "nothing is filed anywhere"],
+              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. A first pass runs against the design back in Alpha, while the design can still change, and a second runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package rather than a report of its own. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
+              bold: [
+                "Threat and Risk Assessment",
+                "It does not start here.",
+                "A standalone report is not required.",
+              ],
             },
           ],
         },

@@ -39,7 +39,7 @@ export type PageIndexEntry = {
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   {
-    title: "The lifecycle of a digital service",
+    title: "The official checkpoints of a digital service",
     path: CHECKPOINT_MAP_PATH,
     type: "other",
     status: "in-review",

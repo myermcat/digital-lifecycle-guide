@@ -13,6 +13,21 @@
  * instrument uses Discovery / Alpha / Beta / Stabilization / Growth / Maturity /
  * Sunset. Each placement is anchored on a real deadline or trigger in the source,
  * and where it is judgement the note says so.
+ *
+ * CURRENCY RULES. Three instruments moved and must never be cited as current:
+ *  - Standard on Web Accessibility: rescinded 2 March 2026, with the Guideline on
+ *    Making Information Technology Usable by All. Cite the Accessible Canada
+ *    Regulations and CAN/ASC-EN 301 549 instead.
+ *  - Directive on the Management of Communications (2016) and the Procedures for
+ *    Publishing (2013): replaced 27 March 2025 by the Directive on the Management
+ *    of Communications and Federal Identity. Its Appendix D replaced the Mandatory
+ *    Procedures for Social Media and Web Communications.
+ *  - ITSG-33 Annexes 3A and 4A: superseded spring 2026 by ITSP.10.033 and
+ *    ITSP.10.033-01. Annexes 1 and 2 remain valid.
+ *
+ * Also rescinded 9 October 2024: the stand-alone Directive on Privacy Impact
+ * Assessment. The live instrument is Appendix C of the Directive on Privacy
+ * Practices.
  */
 
 import type { ExternalLinkKey } from "@/lib/external-links";

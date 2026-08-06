@@ -418,7 +418,7 @@ export const ALPHA_EXERCISE = {
     ],
   } satisfies ThreadLinkedProse,
   confusionNote: {
-    text: "This part is often misunderstood. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept. Teams routinely commission an expensive report nobody asked for and skip the design-stage thinking that was actually required.",
+    text: "This part is often misunderstood. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept.",
     bold: [
       { phrase: "The assessment is required for every service" },
       { phrase: "a standalone report is not" },

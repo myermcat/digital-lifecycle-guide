@@ -136,11 +136,11 @@ export const LIVE_PHASE = {
         lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
-            text: "Its funding is renewed before the current money runs out. The lifecycle of a digital service shows which checkpoints still apply once the service is running.",
+            text: "Its funding is renewed before the current money runs out. The official checkpoints of a digital service shows which checkpoints still apply once the service is running.",
             internalLinks: [
               { phrase: "funding", to: "/thread/funding" },
               {
-                phrase: "The lifecycle of a digital service",
+                phrase: "The official checkpoints of a digital service",
                 to: "/gate-map",
               },
             ],

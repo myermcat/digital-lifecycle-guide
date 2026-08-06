@@ -136,11 +136,11 @@ export const CREATE_PHASE = {
             text: "Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not.",
           },
           {
-            text: "Funding sets out the whole path, and which one a given service takes. The lifecycle of a digital service lays out every official checkpoint on one page.",
+            text: "Funding sets out the whole path, and which one a given service takes. The official checkpoints of a digital service lays out every official checkpoint on one page.",
             internalLinks: [
               { phrase: "Funding", to: "/thread/funding" },
               {
-                phrase: "The lifecycle of a digital service",
+                phrase: "The official checkpoints of a digital service",
                 to: "/gate-map",
               },
             ],

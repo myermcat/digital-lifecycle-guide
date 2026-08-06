@@ -77,6 +77,12 @@ const BETA_SOURCES: SourceItem[] = [
   },
   {
     label: "Governing instrument",
+    linkKey: "policy-government-security",
+    description:
+      "Policy on Government Security (TBS): the parent policy the security directive sits under, and where business continuity and critical services come from.",
+  },
+  {
+    label: "Governing instrument",
     linkKey: "directive-security-management",
     description:
       "Directive on Security Management (TBS).",

@@ -41,7 +41,7 @@ export function CheckpointMapSeeAlsoLink({
   return (
     <p className="mt-4 md:mt-5 text-[15px] leading-relaxed text-foreground/85">
       <Link to={CHECKPOINT_MAP_PATH} hash={hash} className={guideLink}>
-        The lifecycle of a digital service
+        The official checkpoints of a digital service
       </Link>{" "}
       shows where {phaseLabel} comes in the whole journey, checkpoint by checkpoint.
     </p>

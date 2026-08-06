@@ -1446,6 +1446,12 @@ export const EXTERNAL_LINKS = {
     description: "Digital Cleanup Day (Let's Do It World)",
     accessibility: "public",
   },
+  "policy-government-security": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16578",
+    description:
+      "Policy on Government Security (TBS): the parent policy behind the Directive on Security Management",
+    accessibility: "public",
+  },
   "gc-digital-competencies": {
     url: "https://www.canada.ca/en/treasury-board-secretariat/topics/professional-development/gc-digital-competencies-all-public-servants.html",
     description: "GC Digital Competencies for all public servants (TBS)",
