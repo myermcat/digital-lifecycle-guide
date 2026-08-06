@@ -276,6 +276,17 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Get ready to build or buy.",
     sections: [
       {
+        text: "Bring the departmental web team and the head of communications in before the first prototype. Anything published under the canada.ca brand has to use the mandatory templates, the set information architecture, the global header and footer, and the content style guide, and those constrain what a service can look like and where it can live. Teams usually meet them at Beta, when a custom-designed prototype reaches the web team for the first time and has to be rebuilt.",
+        bold: [{ phrase: "before the first prototype" }],
+      },
+      {
+        text: "The domain is a separate approval and it is not the department's to give. The Principal Publisher, which is Employment and Social Development Canada through Service Canada, controls canada.ca and has to approve every domain and sub-domain, and the request is filed by the departmental web account manager. Start it before any launch date is promised to anyone.",
+        bold: [{ phrase: "not the department's to give" }],
+      },
+      {
+        text: "Decide responsive web against a downloadable app here too, with evidence from research rather than preference. A downloadable app is tested, published and later retired centrally, so it adds a dependency the department does not control at launch or at retirement.",
+      },
+      {
         text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs more than once: against the high-level design here, again against the detailed design as the build is specified, and a third time against the finished system in Beta. Security covers how that work is done. Funding covers paying for Beta.",
         bold: [
           { phrase: "approach and the tooling" },

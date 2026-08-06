@@ -334,7 +334,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       stabilization: {
         tags: ["keep"],
-        note: "The first real incidents are the first honest measurement of whether the recovery targets promised in Alpha are achievable. Editorial placement, argued from what the sub-phase already does.",
+        note: "Measured against real incidents for the first time. Editorial placement, argued from what the sub-phase already does.",
       },
       growth: {
         tags: ["keep"],
@@ -514,7 +514,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     cells: {
       alpha: {
         tags: ["gather"],
-        note: "Include the people most likely to be excluded in the research, and book the testing early.",
+        note: "Book the testing, and budget for the fixes it will find.",
       },
       beta: {
         tags: ["fill", "submit"],
@@ -594,7 +594,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "All departmental digital initiatives. Two carve-outs: small departments and agencies, meaning reference levels under $300 million a year or so designated, are exempt; and Agents of Parliament are exempt.",
     ownerDoes:
-      "Presents the direction, and arrives with the reuse scan from Discovery in hand. Reach the board through the architecture team in the chief information officer's office.",
+      "Presents the direction, bringing the reuse scan Discovery produced. Reach the board through the architecture team in the chief information officer's office.",
     whoDoes:
       "The board reviews. The chief information officer's architecture team prepares the material and the project team usually presents.",
     whereItEndsUp: "Stays inside the department unless the initiative goes on to the government-wide board.",

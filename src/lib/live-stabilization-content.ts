@@ -133,6 +133,14 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
     title: "Fix fast, in small releases.",
     sections: [
       {
+        text: "Know before the first incident who to call, and how fast. A cyber security event is not only a technical problem: departmental plans and procedures for responding have to work in step with the government-wide Cyber Security Event Management Plan, and events get reported up through the department rather than by the team directly. The escalation route comes from departmental security operations, and the time to learn it is not at two in the morning.",
+        bold: [{ phrase: "Know before the first incident who to call, and how fast." }],
+      },
+      {
+        text: "If personal information is involved, a second route opens. The privacy office decides whether the breach is material, and a material breach is reported to the Office of the Privacy Commissioner of Canada and to the Treasury Board of Canada Secretariat, with affected people notified. That call is theirs, not the team's, so tell them what happened immediately rather than waiting until the technical picture is complete.",
+        internalLinks: [{ phrase: "privacy office", to: "/thread/privacy" }],
+      },
+      {
         text: "The release pipeline built in Beta runs from day one: small changes, released often, each easy to reverse. Releasing changes covers the practice.",
         bold: [{ phrase: "small changes, released often" }],
         internalLinks: [{ phrase: "Releasing changes", to: "/thread/releasing-changes" }],

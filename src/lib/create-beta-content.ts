@@ -207,6 +207,20 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "simplest thing that meets the need, all the way through the journey" }],
       },
       {
+        text: "Both official languages, from the first screen. A service available across Canada has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
+        bold: [{ phrase: "Both official languages, from the first screen." }],
+      },
+      {
+        text: "Retrofitting is where the cost lands. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research rather than checking the translation at the end.",
+      },
+      {
+        text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract. A supplier who is not contractually bound to deliver French will bill for it later as a change. The requirement comes from the business owner; the contracting authority writes the clauses.",
+        internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
+      },
+      {
+        text: "The route is the Official Languages Act, section 24(1)(b), together with section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations, which is what makes a service available nationally bilingual regardless of where the office sits. The operational rule a team is measured against is subsection 6.6.4.1 of the Directive on Official Languages for Communications and Services. Complaints go to the Commissioner of Official Languages. [Citation check pending: these three references were corrected once already and have not been re-verified since.]",
+      },
+      {
         text: "As the build starts:",
       },
       {
