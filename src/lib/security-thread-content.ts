@@ -465,8 +465,12 @@ export const SECURITY_THREAD = {
 
   furtherReading: {
     text:
-      "Security in the Government of Canada comes under the Directive on Security Management, which requires security to be managed across a system's whole life. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions. To see where your spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
+      "Security in the Government of Canada comes under the Policy on Government Security, and under its Directive on Security Management, which requires security to be managed across a system's whole life. The department gathers all of it into a departmental security plan, a three-year plan reviewed every year and approved by the deputy head, and a service's security posture, its residual risks and its continuity requirements all roll up into that plan. Its closest companion is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and the open OWASP Top 10 and NIST Secure Software Development Framework, translated to a business owner's decisions. To see where your spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
     externalLinks: [
+      {
+        phrase: "Policy on Government Security",
+        linkKey: "policy-government-security",
+      },
       {
         phrase: "Directive on Security Management",
         linkKey: "directive-security-management",
@@ -499,6 +503,12 @@ export const SECURITY_THREAD = {
       description: `${SECURE_APPLICATION_DEVELOPMENT_GUIDELINE} — the GC how-to this page points to.`,
       comingSoon: true,
       gcNetworkOnly: true,
+    },
+    {
+      label: "Governing instrument",
+      linkKey: "policy-government-security" satisfies ExternalLinkKey,
+      description:
+        "Policy on Government Security (TBS) — the parent policy: where the departmental security plan, business continuity management and critical services come from.",
     },
     {
       label: "Governing instrument",
