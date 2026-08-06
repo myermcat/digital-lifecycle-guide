@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
 import { CautionBlock } from "@/components/CautionBlock";
-import { GateMapPhaseCallout } from "@/components/GateMapPointers";
+import { CheckpointMapPhaseCallout } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
@@ -61,7 +61,7 @@ export function SunsetLandingPage() {
         ))}
       </section>
 
-      <GateMapPhaseCallout
+      <CheckpointMapPhaseCallout
         text="See where Sunset sits in the whole lifecycle."
         hash="sunset"
         linkLabel="See the checkpoints in Sunset →"

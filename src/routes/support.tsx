@@ -5,7 +5,7 @@ import { SUPPORT_PAGE } from "@/lib/support-content";
 export const Route = createFileRoute("/support")({
   head: () => ({
     meta: [
-      { title: `${SUPPORT_PAGE.title} — The Digital Lifecycle Guide` },
+      { title: `${SUPPORT_PAGE.title} — The 2026 Digital Lifecycle Guide` },
       { name: "description", content: SUPPORT_PAGE.lead },
     ],
   }),

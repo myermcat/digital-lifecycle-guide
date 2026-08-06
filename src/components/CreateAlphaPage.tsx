@@ -1,5 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
-import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
+import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -158,7 +158,7 @@ export function CreateAlphaPage() {
         </div>
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Alpha" hash="alpha" />
+      <CheckpointMapSeeAlsoLink phaseLabel="Alpha" hash="alpha" />
 
       <blockquote className={cn(alphaQuoteClassName)}>
         <p>

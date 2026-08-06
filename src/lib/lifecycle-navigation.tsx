@@ -19,14 +19,14 @@ export function howTheSubphaseWorksTitle(subphaseName: string): string {
 }
 
 export function phasePageDocumentTitle(pageHeading: string): string {
-  return `${pageHeading} — The Digital Lifecycle Guide`;
+  return `${pageHeading} — The 2026 Digital Lifecycle Guide`;
 }
 
 export function subphasePageDocumentTitle(
   pageHeading: string,
   lifecyclePhaseTitle: string,
 ): string {
-  return `${pageHeading} — ${lifecyclePhaseTitle} — The Digital Lifecycle Guide`;
+  return `${pageHeading} — ${lifecyclePhaseTitle} — The 2026 Digital Lifecycle Guide`;
 }
 
 export type { LifecyclePhaseId };

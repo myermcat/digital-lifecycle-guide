@@ -1,7 +1,7 @@
 import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
-import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
+import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -124,7 +124,7 @@ export function LiveGrowthPage() {
         {extract ? <SubphaseExtractCard extract={extract} /> : null}
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Growth" hash="live" />
+      <CheckpointMapSeeAlsoLink phaseLabel="Growth" hash="live" />
 
       <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
         <img

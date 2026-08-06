@@ -6,6 +6,6 @@ export const Route = createFileRoute("/reference/approval-journey")({
     throw redirect({ to: PHASES.create.href });
   },
   head: () => ({
-    meta: [{ title: `Create — The Digital Lifecycle Guide` }],
+    meta: [{ title: `Create — The 2026 Digital Lifecycle Guide` }],
   }),
 });

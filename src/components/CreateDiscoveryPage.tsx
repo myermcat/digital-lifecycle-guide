@@ -2,7 +2,7 @@ import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { EditorialNote } from "@/components/EditorialNote";
-import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
+import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -147,7 +147,7 @@ export function CreateDiscoveryPage() {
         </div>
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Discovery" hash="discovery" />
+      <CheckpointMapSeeAlsoLink phaseLabel="Discovery" hash="discovery" />
 
       <OnRampChecklist
         title={DISCOVERY_ON_RAMP.title}

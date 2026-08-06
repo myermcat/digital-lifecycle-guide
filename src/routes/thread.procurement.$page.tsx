@@ -17,13 +17,13 @@ export const Route = createFileRoute("/thread/procurement/$page")({
     return {
       meta: content
         ? [
-            { title: `${content.title} — Procurement — The Digital Lifecycle Guide` },
+            { title: `${content.title} — Procurement — The 2026 Digital Lifecycle Guide` },
             {
               name: "description",
               content: content.intro?.[0] ?? content.title,
             },
           ]
-        : [{ title: "Not found — The Digital Lifecycle Guide" }],
+        : [{ title: "Not found — The 2026 Digital Lifecycle Guide" }],
     };
   },
   component: ProcurementSubRoutePage,

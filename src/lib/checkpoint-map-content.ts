@@ -13,43 +13,43 @@ import {
   UserRound,
 } from "lucide-react";
 import type { ExternalLinkKey } from "@/lib/external-links";
-import { GATE_MAP_PATH } from "@/lib/reference-paths";
+import { CHECKPOINT_MAP_PATH } from "@/lib/reference-paths";
 
-export type GateMapWhoTag = "dept" | "central";
+export type CheckpointMapWhoTag = "dept" | "central";
 
-export type GateMapBodyPart =
+export type CheckpointMapBodyPart =
   | { type: "p"; text: string; bold?: readonly string[] }
   | { type: "ul"; items: readonly string[]; itemBold?: readonly string[] }
   | { type: "caution"; lead: string; text: string };
 
-export type GateMapCell = {
+export type CheckpointMapCell = {
   /** Bold lead-in for the cell. */
   lead: string;
-  body?: readonly GateMapBodyPart[];
+  body?: readonly CheckpointMapBodyPart[];
 };
 
-export type GateMapResponse = GateMapCell & {
+export type CheckpointMapResponse = CheckpointMapCell & {
   /** Empty for "Nothing yet." */
-  tags: readonly GateMapWhoTag[];
+  tags: readonly CheckpointMapWhoTag[];
 };
 
-export type GateMapStep = {
+export type CheckpointMapStep = {
   n: number;
-  action: GateMapCell;
-  response: GateMapResponse;
+  action: CheckpointMapCell;
+  response: CheckpointMapResponse;
 };
 
-export type GateMapFork = {
+export type CheckpointMapFork = {
   /** Bold opening phrase / title. */
   title: string;
   /** Rest of the fork body; may continue the title sentence. */
   text: string;
   bold?: readonly string[];
-  /** Phrases rendered in the primary "gate" weight. */
-  gatePhrases?: readonly string[];
+  /** Phrases rendered in the primary "checkpoint" weight. */
+  checkpointPhrases?: readonly string[];
 };
 
-export type GateMapPhaseBlock = {
+export type CheckpointMapPhaseBlock = {
   id: "discovery" | "alpha" | "beta" | "live" | "sunset";
   heading: string;
   /** Text inside the duration pill. */
@@ -57,114 +57,114 @@ export type GateMapPhaseBlock = {
   /** Rest of the phase note, after the pill. */
   phaseNote: string;
   /** Steps before any mid-phase fork. */
-  steps: readonly GateMapStep[];
+  steps: readonly CheckpointMapStep[];
   /** Fork that sits between steps (Discovery, after step 5). */
-  forkAfter?: GateMapFork;
+  forkAfter?: CheckpointMapFork;
   /** Steps after the mid-phase fork (Discovery 6-7). */
-  stepsAfterFork?: readonly GateMapStep[];
+  stepsAfterFork?: readonly CheckpointMapStep[];
   /** Fork after all steps (Alpha bigger project, Beta automated decision). */
-  forkEnd?: GateMapFork;
+  forkEnd?: CheckpointMapFork;
   showLaunchAfter?: boolean;
 };
 
-export type GateMapGateLink = {
+export type CheckpointMapLink = {
   label: string;
   linkKey: ExternalLinkKey;
   icon: LucideIcon;
 };
 
-export type GateMapGateGroup = {
+export type CheckpointMapGroup = {
   phaseLabel: string;
-  links: readonly GateMapGateLink[];
+  links: readonly CheckpointMapLink[];
   entries: readonly { term: string; def: string }[];
 };
 
-export type GateMapWhoEntry = { term: string; def: string };
+export type CheckpointMapWhoEntry = { term: string; def: string };
 
 /* ---------------------------------------------------------------------- */
 /* Page-level constants                                                   */
 /* ---------------------------------------------------------------------- */
 
-export { GATE_MAP_PATH };
+export { CHECKPOINT_MAP_PATH };
 
-export const GATE_MAP_EYEBROW = "See the whole path";
+export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 
-export const GATE_MAP_TITLE = "The lifecycle of a digital service";
+export const CHECKPOINT_MAP_TITLE = "The lifecycle of a digital service";
 
-export const GATE_MAP_SUBTITLE = {
+export const CHECKPOINT_MAP_SUBTITLE = {
   text: "A worked example of the official checkpoints, the approvals, reviews, and sign-offs a Government of Canada service has to pass through, from the first problem definition all the way to retiring or replacing it, and who owns each one.",
   bold: ["official checkpoints"],
 } as const;
 
-export const GATE_MAP_WORKING_NOTE = {
+export const CHECKPOINT_MAP_WORKING_NOTE = {
   lead: "Working scheme, for figuring out the checkpoints.",
   body: 'This traces one invented person, Nadia, through the real path a new service takes. Some mechanics (who chairs what, exact thresholds, how long each step runs) vary by department and are marked "varies."',
   disclaimer:
     "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.",
 } as const;
 
-export const GATE_MAP_JUMP = [
+export const CHECKPOINT_MAP_JUMP = [
   { label: "Discovery", href: "#discovery" },
   { label: "Alpha", href: "#alpha" },
   { label: "Beta", href: "#beta" },
   { label: "Live", href: "#live" },
   { label: "Sunset", href: "#sunset" },
   { label: "Who's who", href: "#whoswho" },
-  { label: "The checkpoints", href: "#thegates" },
+  { label: "The checkpoints", href: "#thecheckpoints" },
 ] as const;
 
-/** On-this-page rail items for /gate-map (same targets as GATE_MAP_JUMP). */
-export const GATE_MAP_ON_THIS_PAGE = GATE_MAP_JUMP.map((item) => ({
+/** On-this-page rail items for the checkpoint map (same targets as CHECKPOINT_MAP_JUMP). */
+export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.map((item) => ({
   id: item.href.slice(1),
   label: item.label,
 }));
 
-export const GATE_MAP_NADIA = {
+export const CHECKPOINT_MAP_NADIA = {
   heading: "Meet Nadia, a director general",
   body: "Her grants program has outgrown its spreadsheets, so she is buying a grants management system. Her project scores below her department's threshold, so it stays inside the department: no Treasury Board submission and no GC EARB. That is the ordinary case, roughly 95% of projects. Where a bigger project would branch upward is shown in the amber boxes.",
   bold: ["below"],
   amber: ["amber boxes"],
 } as const;
 
-export const GATE_MAP_WHY_GCS = {
+export const CHECKPOINT_MAP_WHY_GCS = {
   heading: "Why G&Cs is the example",
   body: "This journey is built around a grants and contributions system because it is a useful worked case: it touches almost every checkpoint at once - public money, procurement, a security authorization, personal information, records, and a decision made about people. The guide as a whole is not limited to G&Cs; any service can be mapped through the same path.",
 } as const;
 
-export const GATE_MAP_WHY_CREATE = {
+export const CHECKPOINT_MAP_WHY_CREATE = {
   heading: "Why the Create phase fills most of this table",
   body: "The official checkpoints are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the checkpoints, not because there is less to do in them.",
 } as const;
 
-export const GATE_MAP_WHAT_TABLE = {
+export const CHECKPOINT_MAP_WHAT_TABLE = {
   heading: "What this map covers",
   body: "It is an overview of the official checkpoints only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the checkpoints she has to pass through; the people she talks to give her the rest.",
   bold: ["official checkpoints only"],
 } as const;
 
-export const GATE_MAP_COLKEY = {
+export const CHECKPOINT_MAP_COLKEY = {
   left: "Left is what Nadia does.",
   right:
     "Right is who answers, and how. The tag on each response says whether the responder is her department or a central agency.",
   rightTags: { dept: "her department", central: "central agency" },
 } as const;
 
-export const GATE_MAP_LAUNCH = {
+export const CHECKPOINT_MAP_LAUNCH = {
   tag: "LAUNCH",
   text: "The service goes live here. Everything above is Create (the build); everything below is Live and Sunset (running it, then retiring or replacing it).",
 } as const;
 
-export const GATE_MAP_VARY_NOTE =
+export const CHECKPOINT_MAP_VARY_NOTE =
   "Departmental mechanics and timelines vary; confirm against your own department before treating any step as fixed.";
 
-export const GATE_MAP_FOOTER_DISCLAIMER =
+export const CHECKPOINT_MAP_FOOTER_DISCLAIMER =
   "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.";
 
 /* ---------------------------------------------------------------------- */
 /* Phase blocks (all 21 steps, forks, launch)                             */
 /* ---------------------------------------------------------------------- */
 
-export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
+export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   {
     id: "discovery",
     heading: "Create · Discovery - work out what is needed",
@@ -304,7 +304,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       title: "The choice that decides everything.",
       text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval: it goes up to GC EARB and a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under the line.",
       bold: ["within", "above"],
-      gatePhrases: ["GC EARB", "Treasury Board submission"],
+      checkpointPhrases: ["GC EARB", "Treasury Board submission"],
     },
     stepsAfterFork: [
       {
@@ -427,7 +427,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       title: "If the project were bigger",
       text: ", the departmental CIO would take it up to GC EARB, the Government of Canada Enterprise Architecture Review Board, co-chaired by the CTO of Canada (TBS) and the CTO of Shared Services Canada. Departments go there when a project crosses the investment or capacity thresholds, uses emerging technology, needs a policy exception, or runs on something other than public cloud. The department submits, not the individual: the CIO's architecture team prepares the material and the project team usually attends to present it. GC EARB reviews only the large or complex ones.",
       bold: ["department"],
-      gatePhrases: ["GC EARB"],
+      checkpointPhrases: ["GC EARB"],
     },
   },
   {
@@ -577,7 +577,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
       title: "If the system automated a decision.",
       text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply. The Algorithmic Impact Assessment would then have to be completed, approved and published on the Open Government Portal before the system goes into production, with notice to applicants, a human in the loop, and an appeal route. At impact level two and above a peer review is also required, and its findings published before launch. Worth knowing, because a later "efficiency" feature can trigger all of it without anyone noticing.',
       bold: ["Directive on Automated Decision-Making"],
-      gatePhrases: ["Algorithmic Impact Assessment"],
+      checkpointPhrases: ["Algorithmic Impact Assessment"],
     },
     showLaunchAfter: true,
   },
@@ -766,12 +766,12 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
 /* Who's who                                                              */
 /* ---------------------------------------------------------------------- */
 
-export const GATE_MAP_WHO_TITLE = "People in this journey";
+export const CHECKPOINT_MAP_WHO_TITLE = "People in this journey";
 
-export const GATE_MAP_WHO_CAPTION =
+export const CHECKPOINT_MAP_WHO_CAPTION =
   "The people and bodies that appear in the tables above, and what role they play.";
 
-export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
+export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   {
     term: "The users",
     def: "The people the service is for, inside or outside government. They are present at every step: research in Discovery, testing in Alpha and Beta, and the feedback and support of the live service.",
@@ -819,19 +819,29 @@ export const GATE_MAP_WHO: readonly GateMapWhoEntry[] = [
 ];
 
 /* ---------------------------------------------------------------------- */
-/* The gates                                                              */
+/* The checkpoints                                                              */
 /* ---------------------------------------------------------------------- */
 
-export const GATE_MAP_GATES_TITLE = "Official checkpoints, by phase";
+export const CHECKPOINT_MAP_CHECKPOINTS_TITLE = "Official checkpoints, by phase";
 
-export const GATE_MAP_GATES_CAPTION =
+export const CHECKPOINT_MAP_CHECKPOINTS_CAPTION =
   "Every formal approval, review, or sign-off named in the tables. Checkpoints with an official home are linked.";
 
-export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
+export const CHECKPOINT_MAP_CHECKPOINTS: readonly CheckpointMapGroup[] = [
   {
     phaseLabel: "Create · Discovery",
     links: [
       { label: "PCRA tool", linkKey: "pcra-tool", icon: BarChart3 },
+      {
+        label: "Concept case procedures",
+        linkKey: "concept-case-procedures",
+        icon: BookOpen,
+      },
+      {
+        label: "Policy on the Planning and Management of Investments",
+        linkKey: "policy-planning-investments",
+        icon: Briefcase,
+      },
       {
         label: "TB submission (5% path)",
         linkKey: "tbs-tb-submissions",
@@ -905,6 +915,26 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       },
       { label: "ITSG-33 (Authority to Operate)", linkKey: "itsg-33", icon: Lock },
       {
+        label: "Directive on Security Management",
+        linkKey: "directive-security-management",
+        icon: ShieldCheck,
+      },
+      {
+        label: "Threat and Risk Assessment methodology",
+        linkKey: "harmonized-tra-methodology",
+        icon: ShieldCheck,
+      },
+      {
+        label: "Algorithmic Impact Assessment tool",
+        linkKey: "algorithmic-impact-assessment",
+        icon: Bot,
+      },
+      {
+        label: "CAN/ASC-EN 301 549 (accessibility standard)",
+        linkKey: "en-301-549",
+        icon: Accessibility,
+      },
+      {
         label: "Directive on Privacy Practices",
         linkKey: "directive-privacy-practices",
         icon: UserRound,
@@ -954,6 +984,16 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
     phaseLabel: "Live",
     links: [
       {
+        label: "GC Service Inventory",
+        linkKey: "gc-service-inventory",
+        icon: LayoutGrid,
+      },
+      {
+        label: "Directive on Service and Digital",
+        linkKey: "directive-on-service-and-digital",
+        icon: Layers,
+      },
+      {
         label: "Policy on Service and Digital (Service Inventory)",
         linkKey: "policy-on-service-and-digital",
         icon: Layers,
@@ -978,6 +1018,11 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
   {
     phaseLabel: "Sunset",
     links: [
+      {
+        label: "Library and Archives Canada, information disposition",
+        linkKey: "lac-information-disposition-hub",
+        icon: BookOpen,
+      },
       {
         label: "Library and Archives of Canada Act",
         linkKey: "laca",

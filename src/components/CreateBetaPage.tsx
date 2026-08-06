@@ -2,7 +2,7 @@ import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { Sparkles } from "lucide-react";
-import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
+import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -166,7 +166,7 @@ export function CreateBetaPage() {
         </div>
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Beta" hash="beta" />
+      <CheckpointMapSeeAlsoLink phaseLabel="Beta" hash="beta" />
 
       <section className="mt-10 md:mt-12 scroll-mt-24">
         <h2 className={`${guideSectionTitle} mb-4`}>{BETA_STAGES.title}</h2>

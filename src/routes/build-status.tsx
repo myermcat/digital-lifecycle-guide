@@ -10,7 +10,7 @@ import { guideLink, guideProseTight } from "@/lib/guide-typography";
 export const Route = createFileRoute("/build-status")({
   head: () => ({
     meta: [
-      { title: "Build status — The Digital Lifecycle Guide" },
+      { title: "Build status — The 2026 Digital Lifecycle Guide" },
       {
         name: "description",
         content:

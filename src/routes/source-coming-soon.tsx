@@ -15,7 +15,7 @@ export const Route = createFileRoute("/source-coming-soon")({
     const name = search.source?.trim() || "Source";
     return {
       meta: [
-        { title: `${name} — coming soon — The Digital Lifecycle Guide` },
+        { title: `${name} — coming soon — The 2026 Digital Lifecycle Guide` },
         {
           name: "description",
           content: `${name} is still being written. We will add the link when it goes live.`,

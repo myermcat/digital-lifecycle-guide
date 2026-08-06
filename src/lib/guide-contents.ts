@@ -24,7 +24,7 @@ import {
   GOOD_CONTRACT_PATH,
   OPTIONS_ANALYSIS_PATH,
   SOO_VS_SOW_PATH,
-  GATE_MAP_PATH,
+  CHECKPOINT_MAP_PATH,
 } from "@/lib/reference-paths";
 import { SUPPORT_PATH } from "@/lib/support-path";
 import { SITE_NAME } from "@/lib/site-meta";
@@ -51,7 +51,7 @@ export const GUIDE_CONTENTS = {
     /** Display labels for Start here only; paths resolve titles from page-index where they match. */
     links: [
       { path: "/", label: SITE_NAME },
-      { path: GATE_MAP_PATH },
+      { path: CHECKPOINT_MAP_PATH },
       { path: SUPPORT_PATH },
     ] as const,
   },

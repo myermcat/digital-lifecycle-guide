@@ -3,7 +3,7 @@ import {
   SOO_VS_SOW_PATH,
   OPTIONS_ANALYSIS_PATH,
   GOOD_CONTRACT_PATH,
-  GATE_MAP_PATH,
+  CHECKPOINT_MAP_PATH,
 } from "./reference-paths";
 import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
@@ -40,7 +40,7 @@ export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   {
     title: "The lifecycle of a digital service",
-    path: GATE_MAP_PATH,
+    path: CHECKPOINT_MAP_PATH,
     type: "other",
     status: "in-review",
   },

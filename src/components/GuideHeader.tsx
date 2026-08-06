@@ -36,7 +36,7 @@ export function GuideHeader({
               style={{ backgroundColor: "var(--gc-red)" }}
             />
             <span className="font-serif text-base md:text-lg font-semibold tracking-tight text-foreground leading-none">
-              The Digital Lifecycle Guide
+              The 2026 Digital Lifecycle Guide
             </span>
           </Link>
 

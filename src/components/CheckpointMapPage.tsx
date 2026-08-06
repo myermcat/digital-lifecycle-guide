@@ -7,37 +7,37 @@ import {
 } from "@/components/ui/accordion";
 import { EditorialNote } from "@/components/EditorialNote";
 import { ExternalLink } from "@/components/ExternalLink";
-import { GateMapTimeline } from "@/components/GateMapTimeline";
+import { CheckpointMapTimeline } from "@/components/CheckpointMapTimeline";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
 import {
-  GATE_MAP_COLKEY,
-  GATE_MAP_EYEBROW,
-  GATE_MAP_FOOTER_DISCLAIMER,
-  GATE_MAP_GATES,
-  GATE_MAP_LAUNCH,
-  GATE_MAP_NADIA,
-  GATE_MAP_PHASES,
-  GATE_MAP_SUBTITLE,
-  GATE_MAP_TITLE,
-  GATE_MAP_VARY_NOTE,
-  GATE_MAP_WHAT_TABLE,
-  GATE_MAP_WHO,
-  GATE_MAP_WHO_TITLE,
-  GATE_MAP_GATES_TITLE,
-  GATE_MAP_GATES_CAPTION,
-  GATE_MAP_WHO_CAPTION,
-  GATE_MAP_WHY_CREATE,
-  GATE_MAP_WHY_GCS,
-  GATE_MAP_WORKING_NOTE,
-  type GateMapBodyPart,
-  type GateMapCell,
-  type GateMapFork,
-  type GateMapPhaseBlock,
-  type GateMapResponse,
-  type GateMapStep,
-  type GateMapWhoTag,
-} from "@/lib/gate-map-content";
+  CHECKPOINT_MAP_COLKEY,
+  CHECKPOINT_MAP_EYEBROW,
+  CHECKPOINT_MAP_FOOTER_DISCLAIMER,
+  CHECKPOINT_MAP_CHECKPOINTS,
+  CHECKPOINT_MAP_LAUNCH,
+  CHECKPOINT_MAP_NADIA,
+  CHECKPOINT_MAP_PHASES,
+  CHECKPOINT_MAP_SUBTITLE,
+  CHECKPOINT_MAP_TITLE,
+  CHECKPOINT_MAP_VARY_NOTE,
+  CHECKPOINT_MAP_WHAT_TABLE,
+  CHECKPOINT_MAP_WHO,
+  CHECKPOINT_MAP_WHO_TITLE,
+  CHECKPOINT_MAP_CHECKPOINTS_TITLE,
+  CHECKPOINT_MAP_CHECKPOINTS_CAPTION,
+  CHECKPOINT_MAP_WHO_CAPTION,
+  CHECKPOINT_MAP_WHY_CREATE,
+  CHECKPOINT_MAP_WHY_GCS,
+  CHECKPOINT_MAP_WORKING_NOTE,
+  type CheckpointMapBodyPart,
+  type CheckpointMapCell,
+  type CheckpointMapFork,
+  type CheckpointMapPhaseBlock,
+  type CheckpointMapResponse,
+  type CheckpointMapStep,
+  type CheckpointMapWhoTag,
+} from "@/lib/checkpoint-map-content";
 import {
   guideCalloutLabel,
   guideListIndent,
@@ -48,7 +48,7 @@ import {
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
-const GATE_MAP_PHASE_IDS = GATE_MAP_PHASES.map((phase) => phase.id);
+const CHECKPOINT_MAP_PHASE_IDS = CHECKPOINT_MAP_PHASES.map((phase) => phase.id);
 
 function boldPhrases(text: string, phrases: readonly string[] = []): ReactNode {
   if (!phrases.length) return text;
@@ -87,17 +87,17 @@ function boldPhrases(text: string, phrases: readonly string[] = []): ReactNode {
   return parts;
 }
 
-function gateStyledText(
+function checkpointStyledText(
   text: string,
-  opts: { bold?: readonly string[]; gatePhrases?: readonly string[] } = {},
+  opts: { bold?: readonly string[]; checkpointPhrases?: readonly string[] } = {},
 ): ReactNode {
   const markers = [
-    ...(opts.gatePhrases ?? []).map((phrase) => ({ phrase, kind: "gate" as const })),
+    ...(opts.checkpointPhrases ?? []).map((phrase) => ({ phrase, kind: "checkpoint" as const })),
     ...(opts.bold ?? []).map((phrase) => ({ phrase, kind: "bold" as const })),
   ];
   if (!markers.length) return text;
 
-  type Hit = { start: number; end: number; phrase: string; kind: "gate" | "bold" };
+  type Hit = { start: number; end: number; phrase: string; kind: "checkpoint" | "bold" };
   const hits: Hit[] = [];
   for (const marker of markers) {
     let from = 0;
@@ -127,7 +127,7 @@ function gateStyledText(
   for (const hit of chosen) {
     if (hit.start > at) parts.push(text.slice(at, hit.start));
     parts.push(
-      hit.kind === "gate" ? (
+      hit.kind === "checkpoint" ? (
         <span key={`${hit.start}-g`} className="font-semibold text-primary">
           {hit.phrase}
         </span>
@@ -143,7 +143,7 @@ function gateStyledText(
   return parts;
 }
 
-function WhoTag({ tag }: { tag: GateMapWhoTag }) {
+function WhoTag({ tag }: { tag: CheckpointMapWhoTag }) {
   return (
     <span
       className={cn(
@@ -169,7 +169,7 @@ function CautionPill({ lead, text }: { lead: string; text: string }) {
   );
 }
 
-function BodyParts({ parts }: { parts: readonly GateMapBodyPart[] }) {
+function BodyParts({ parts }: { parts: readonly CheckpointMapBodyPart[] }) {
   return (
     <>
       {parts.map((part, index) => {
@@ -198,7 +198,7 @@ function BodyParts({ parts }: { parts: readonly GateMapBodyPart[] }) {
   );
 }
 
-function ActionCell({ cell }: { cell: GateMapCell }) {
+function ActionCell({ cell }: { cell: CheckpointMapCell }) {
   return (
     <div className="bg-primary/[0.06] px-3.5 py-2.5 md:px-4 border-t border-border">
       <p className={`${guideProseTight}`}>
@@ -209,7 +209,7 @@ function ActionCell({ cell }: { cell: GateMapCell }) {
   );
 }
 
-function ResponseCell({ cell }: { cell: GateMapResponse }) {
+function ResponseCell({ cell }: { cell: CheckpointMapResponse }) {
   return (
     <div className="bg-muted/25 px-3.5 py-2.5 md:px-4 border-t border-border">
       <div className={`${guideProseTight}`}>
@@ -223,7 +223,7 @@ function ResponseCell({ cell }: { cell: GateMapResponse }) {
   );
 }
 
-function StepGrid({ steps }: { steps: readonly GateMapStep[] }) {
+function StepGrid({ steps }: { steps: readonly CheckpointMapStep[] }) {
   return (
     <div className="mb-3 overflow-hidden rounded-md border border-border">
       <div className="hidden sm:grid sm:grid-cols-[2.25rem_1fr_1.3fr]">
@@ -255,12 +255,12 @@ function StepGrid({ steps }: { steps: readonly GateMapStep[] }) {
   );
 }
 
-function ForkCallout({ fork }: { fork: GateMapFork }) {
+function ForkCallout({ fork }: { fork: CheckpointMapFork }) {
   return (
     <aside className="my-3 rounded-md border border-amber-600/35 border-l-[5px] border-l-amber-600/70 bg-amber-500/10 px-4 py-3 md:px-5 text-[0.8125rem] leading-snug text-foreground/90">
       <p>
         <strong className="font-semibold text-amber-950/80">{fork.title}</strong>{" "}
-        {gateStyledText(fork.text, { bold: fork.bold, gatePhrases: fork.gatePhrases })}
+        {checkpointStyledText(fork.text, { bold: fork.bold, checkpointPhrases: fork.checkpointPhrases })}
       </p>
     </aside>
   );
@@ -270,9 +270,9 @@ function LaunchBar() {
   return (
     <div className="my-5 flex flex-col gap-2 rounded-lg border border-primary/40 bg-primary/[0.07] px-4 py-3 md:flex-row md:items-center md:gap-3 md:px-5">
       <span className="inline-flex w-fit shrink-0 rounded bg-primary px-2.5 py-1 font-sans text-[11px] font-semibold uppercase tracking-[0.1em] text-primary-foreground">
-        {GATE_MAP_LAUNCH.tag}
+        {CHECKPOINT_MAP_LAUNCH.tag}
       </span>
-      <p className="font-serif text-[0.9375rem] leading-snug text-primary">{GATE_MAP_LAUNCH.text}</p>
+      <p className="font-serif text-[0.9375rem] leading-snug text-primary">{CHECKPOINT_MAP_LAUNCH.text}</p>
     </div>
   );
 }
@@ -330,7 +330,7 @@ function NadiaFigure() {
   );
 }
 
-function PhaseAccordionBody({ phase }: { phase: GateMapPhaseBlock }) {
+function PhaseAccordionBody({ phase }: { phase: CheckpointMapPhaseBlock }) {
   return (
     <div className="space-y-3">
       <p className={`${guideProseTight} text-muted-foreground`}>{phase.phaseNote}</p>
@@ -342,7 +342,7 @@ function PhaseAccordionBody({ phase }: { phase: GateMapPhaseBlock }) {
   );
 }
 
-function PhaseAccordionItem({ phase }: { phase: GateMapPhaseBlock }) {
+function PhaseAccordionItem({ phase }: { phase: CheckpointMapPhaseBlock }) {
   return (
     <AccordionItem value={phase.id} id={phase.id} className="scroll-mt-24">
       <AccordionTrigger className="gap-3 px-5 py-4 text-left hover:no-underline">
@@ -362,15 +362,15 @@ function PhaseAccordionItem({ phase }: { phase: GateMapPhaseBlock }) {
   );
 }
 
-function GateMapPhaseAccordions() {
+function CheckpointMapPhaseAccordions() {
   const [openPhase, setOpenPhase] = useState<string | undefined>(
-    GATE_MAP_PHASE_IDS[0],
+    CHECKPOINT_MAP_PHASE_IDS[0],
   );
 
   useEffect(() => {
     const openFromHash = () => {
       const hash = window.location.hash.replace(/^#/, "");
-      if (!GATE_MAP_PHASE_IDS.includes(hash as (typeof GATE_MAP_PHASE_IDS)[number])) {
+      if (!CHECKPOINT_MAP_PHASE_IDS.includes(hash as (typeof CHECKPOINT_MAP_PHASE_IDS)[number])) {
         return;
       }
       setOpenPhase(hash);
@@ -397,7 +397,7 @@ function GateMapPhaseAccordions() {
       onValueChange={(value) => setOpenPhase(value || undefined)}
       className="mb-8 md:mb-10 rounded-lg border border-border bg-card"
     >
-      {GATE_MAP_PHASES.flatMap((phase) => {
+      {CHECKPOINT_MAP_PHASES.flatMap((phase) => {
         const item = <PhaseAccordionItem key={phase.id} phase={phase} />;
         if (!phase.showLaunchAfter) return [item];
         return [
@@ -441,45 +441,45 @@ function DefinitionBlock({
   );
 }
 
-export function GateMapPage() {
+export function CheckpointMapPage() {
   return (
     <GuideLayout>
       <EditorialNote className="mb-6 md:mb-8">
         <p>
-          <strong className="font-semibold text-foreground">{GATE_MAP_WORKING_NOTE.lead}</strong>{" "}
-          {GATE_MAP_WORKING_NOTE.body}
+          <strong className="font-semibold text-foreground">{CHECKPOINT_MAP_WORKING_NOTE.lead}</strong>{" "}
+          {CHECKPOINT_MAP_WORKING_NOTE.body}
         </p>
-        <p className="mt-2 italic text-muted-foreground">{GATE_MAP_WORKING_NOTE.disclaimer}</p>
+        <p className="mt-2 italic text-muted-foreground">{CHECKPOINT_MAP_WORKING_NOTE.disclaimer}</p>
       </EditorialNote>
 
       <header className="mb-6 md:mb-8">
-        <p className={guideCalloutLabel}>{GATE_MAP_EYEBROW}</p>
-        <h1 className={`${guidePageTitle} mt-2`}>{GATE_MAP_TITLE}</h1>
+        <p className={guideCalloutLabel}>{CHECKPOINT_MAP_EYEBROW}</p>
+        <h1 className={`${guidePageTitle} mt-2`}>{CHECKPOINT_MAP_TITLE}</h1>
         <div className="mt-5 h-px w-16 bg-border" />
         <p className={`${guideProse} mt-5 max-w-[84ch] text-muted-foreground`}>
-          {boldPhrases(GATE_MAP_SUBTITLE.text, GATE_MAP_SUBTITLE.bold)}
+          {boldPhrases(CHECKPOINT_MAP_SUBTITLE.text, CHECKPOINT_MAP_SUBTITLE.bold)}
         </p>
       </header>
 
-      <GateMapTimeline />
+      <CheckpointMapTimeline />
 
       <section className="mb-6 md:mb-8">
-        <h2 className={`${guideSubsectionTitle} mb-3`}>{GATE_MAP_NADIA.heading}</h2>
+        <h2 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_NADIA.heading}</h2>
         <div className="flex items-start gap-4 md:gap-5">
           <NadiaFigure />
           <p className={`${guideProseTight} flex-1`}>
             {(() => {
-              const text = GATE_MAP_NADIA.body;
-              const phrase = GATE_MAP_NADIA.amber[0];
+              const text = CHECKPOINT_MAP_NADIA.body;
+              const phrase = CHECKPOINT_MAP_NADIA.amber[0];
               const index = text.indexOf(phrase);
-              if (index === -1) return boldPhrases(text, GATE_MAP_NADIA.bold);
+              if (index === -1) return boldPhrases(text, CHECKPOINT_MAP_NADIA.bold);
               return (
                 <>
-                  {boldPhrases(text.slice(0, index), GATE_MAP_NADIA.bold)}
+                  {boldPhrases(text.slice(0, index), CHECKPOINT_MAP_NADIA.bold)}
                   <span className="rounded-sm border border-amber-600/40 bg-amber-500/15 px-1.5 py-0.5 font-semibold text-amber-950/80">
                     {phrase}
                   </span>
-                  {boldPhrases(text.slice(index + phrase.length), GATE_MAP_NADIA.bold)}
+                  {boldPhrases(text.slice(index + phrase.length), CHECKPOINT_MAP_NADIA.bold)}
                 </>
               );
             })()}
@@ -488,12 +488,12 @@ export function GateMapPage() {
       </section>
 
       <section className="mb-5">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{GATE_MAP_WHY_GCS.heading}</h3>
-        <p className={guideProseTight}>{GATE_MAP_WHY_GCS.body}</p>
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_GCS.heading}</h3>
+        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_GCS.body}</p>
         <div className="mt-3 overflow-hidden rounded-md border border-border max-w-[84ch]">
           <div className="grid sm:grid-cols-[30%_1fr]">
             <p className={`${guideProseTight} border-b sm:border-b-0 sm:border-r border-border bg-muted/40 px-3.5 py-2.5 font-semibold`}>
-              {GATE_MAP_COLKEY.left}
+              {CHECKPOINT_MAP_COLKEY.left}
             </p>
             <p className={`${guideProseTight} px-3.5 py-2.5 text-muted-foreground`}>
               Right is who answers, and how. The tag on each response says whether the responder is{" "}
@@ -504,42 +504,42 @@ export function GateMapPage() {
       </section>
 
       <section className="mb-5">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{GATE_MAP_WHY_CREATE.heading}</h3>
-        <p className={guideProseTight}>{GATE_MAP_WHY_CREATE.body}</p>
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_CREATE.heading}</h3>
+        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_CREATE.body}</p>
       </section>
 
       <section className="mb-8 md:mb-10">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{GATE_MAP_WHAT_TABLE.heading}</h3>
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHAT_TABLE.heading}</h3>
         <p className={guideProseTight}>
-          {boldPhrases(GATE_MAP_WHAT_TABLE.body, GATE_MAP_WHAT_TABLE.bold)}
+          {boldPhrases(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold)}
         </p>
       </section>
 
-      <GateMapPhaseAccordions />
+      <CheckpointMapPhaseAccordions />
 
       <DefinitionBlock
         id="whoswho"
-        title={GATE_MAP_WHO_TITLE}
-        cap={GATE_MAP_WHO_CAPTION}
-        entries={GATE_MAP_WHO}
+        title={CHECKPOINT_MAP_WHO_TITLE}
+        cap={CHECKPOINT_MAP_WHO_CAPTION}
+        entries={CHECKPOINT_MAP_WHO}
       />
 
       <section
-        id="thegates"
+        id="thecheckpoints"
         className="mt-8 md:mt-10 scroll-mt-24 rounded-lg border border-border bg-[var(--phase-group)]/50 px-5 py-5 md:px-6 md:py-6"
       >
-        <h2 className={`${guideSubsectionTitle} text-foreground`}>{GATE_MAP_GATES_TITLE}</h2>
+        <h2 className={`${guideSubsectionTitle} text-foreground`}>{CHECKPOINT_MAP_CHECKPOINTS_TITLE}</h2>
         <p className={`${guideProseTight} mt-1 mb-1 text-muted-foreground`}>
-          {GATE_MAP_GATES_CAPTION}
+          {CHECKPOINT_MAP_CHECKPOINTS_CAPTION}
         </p>
         <Accordion
           type="multiple"
-          defaultValue={GATE_MAP_GATES.map((group) =>
+          defaultValue={CHECKPOINT_MAP_CHECKPOINTS.map((group) =>
             group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
           )}
           className="bg-transparent"
         >
-          {GATE_MAP_GATES.map((group) => {
+          {CHECKPOINT_MAP_CHECKPOINTS.map((group) => {
             const value = group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-");
             return (
               <AccordionItem
@@ -595,9 +595,9 @@ export function GateMapPage() {
         </Accordion>
       </section>
 
-      <p className={`${guideProseTight} mt-5 text-muted-foreground`}>{GATE_MAP_VARY_NOTE}</p>
+      <p className={`${guideProseTight} mt-5 text-muted-foreground`}>{CHECKPOINT_MAP_VARY_NOTE}</p>
       <p className={`${guideProseTight} mt-4 text-muted-foreground`}>
-        {GATE_MAP_FOOTER_DISCLAIMER}
+        {CHECKPOINT_MAP_FOOTER_DISCLAIMER}
       </p>
 
       <PageFoot className="mt-10 md:mt-12" />

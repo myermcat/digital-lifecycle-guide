@@ -1,5 +1,5 @@
 /** Horizontal Create → Live → Sunset duration map in the guide warm palette. */
-export function GateMapTimeline({ className }: { className?: string }) {
+export function CheckpointMapTimeline({ className }: { className?: string }) {
   return (
     <div
       className={
@@ -30,7 +30,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
         </text>
         <defs>
           <pattern
-            id="gate-map-hatch"
+            id="checkpoint-map-hatch"
             width="8"
             height="8"
             patternTransform="rotate(45)"
@@ -164,7 +164,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
           width="86"
           height="40"
           rx="4"
-          fill="url(#gate-map-hatch)"
+          fill="url(#checkpoint-map-hatch)"
           className="stroke-border"
         />
         <text
@@ -186,7 +186,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
           width="86"
           height="40"
           rx="4"
-          fill="url(#gate-map-hatch)"
+          fill="url(#checkpoint-map-hatch)"
           className="stroke-border"
         />
         <text
@@ -208,7 +208,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
           width="104"
           height="40"
           rx="4"
-          fill="url(#gate-map-hatch)"
+          fill="url(#checkpoint-map-hatch)"
           className="stroke-border"
         />
         <text
@@ -249,7 +249,7 @@ export function GateMapTimeline({ className }: { className?: string }) {
           width="180"
           height="40"
           rx="4"
-          fill="url(#gate-map-hatch)"
+          fill="url(#checkpoint-map-hatch)"
           className="stroke-border"
         />
 

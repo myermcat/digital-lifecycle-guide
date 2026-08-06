@@ -5,7 +5,7 @@ import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
 export const Route = createFileRoute("/reference/options-analysis")({
   head: () => ({
     meta: [
-      { title: `${OPTIONS_ANALYSIS.title} — The Digital Lifecycle Guide` },
+      { title: `${OPTIONS_ANALYSIS.title} — The 2026 Digital Lifecycle Guide` },
       { name: "description", content: OPTIONS_ANALYSIS.intro[0] },
     ],
   }),

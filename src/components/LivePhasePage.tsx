@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { GateMapPhaseCallout } from "@/components/GateMapPointers";
+import { CheckpointMapPhaseCallout } from "@/components/CheckpointMapPointers";
 import { CautionBlock } from "@/components/CautionBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -59,7 +59,7 @@ export function LivePhasePage() {
         ))}
       </section>
 
-      <GateMapPhaseCallout
+      <CheckpointMapPhaseCallout
         text="See where Live sits in the whole lifecycle."
         hash="live"
         linkLabel="See the checkpoints in Live →"

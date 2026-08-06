@@ -47,7 +47,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "procurement") {
       return {
         meta: [
-          { title: `${PROCUREMENT_LANDING.title} — The Digital Lifecycle Guide` },
+          { title: `${PROCUREMENT_LANDING.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: PROCUREMENT_LANDING.intro.paragraphs[0] },
         ],
       };
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "security") {
       return {
         meta: [
-          { title: `${SECURITY_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${SECURITY_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: SECURITY_THREAD.lead },
         ],
       };
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "privacy") {
       return {
         meta: [
-          { title: `${PRIVACY_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${PRIVACY_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(PRIVACY_THREAD.lead) },
         ],
       };
@@ -74,7 +74,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "data-stewardship") {
       return {
         meta: [
-          { title: `${DATA_STEWARDSHIP_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${DATA_STEWARDSHIP_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(DATA_STEWARDSHIP_THREAD.lead) },
         ],
       };
@@ -83,7 +83,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "accessibility") {
       return {
         meta: [
-          { title: `${ACCESSIBILITY_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${ACCESSIBILITY_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(ACCESSIBILITY_THREAD.lead) },
         ],
       };
@@ -92,7 +92,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "user-research") {
       return {
         meta: [
-          { title: `${USER_RESEARCH_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${USER_RESEARCH_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(USER_RESEARCH_THREAD.lead) },
         ],
       };
@@ -101,7 +101,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "ethics-and-bias") {
       return {
         meta: [
-          { title: `${ETHICS_AND_BIAS_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${ETHICS_AND_BIAS_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(ETHICS_AND_BIAS_THREAD.lead) },
         ],
       };
@@ -110,7 +110,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "backlog") {
       return {
         meta: [
-          { title: `${BACKLOG_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${BACKLOG_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           { name: "description", content: threadLeadPlainText(BACKLOG_THREAD.lead) },
         ],
       };
@@ -119,7 +119,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "joined-up-delivery") {
       return {
         meta: [
-          { title: `${JOINED_UP_DELIVERY_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${JOINED_UP_DELIVERY_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           {
             name: "description",
             content: threadLeadPlainText(JOINED_UP_DELIVERY_THREAD.lead),
@@ -131,7 +131,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "releasing-changes") {
       return {
         meta: [
-          { title: `${RELEASING_CHANGES_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${RELEASING_CHANGES_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           {
             name: "description",
             content: threadLeadPlainText(RELEASING_CHANGES_THREAD.lead),
@@ -144,7 +144,7 @@ export const Route = createFileRoute("/thread/$slug")({
       return {
         meta: [
           {
-            title: `${DEPENDENCIES_AND_STANDARDS_THREAD.title} — The Digital Lifecycle Guide`,
+            title: `${DEPENDENCIES_AND_STANDARDS_THREAD.title} — The 2026 Digital Lifecycle Guide`,
           },
           {
             name: "description",
@@ -157,7 +157,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "funding") {
       return {
         meta: [
-          { title: `${FUNDING_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${FUNDING_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           {
             name: "description",
             content: fundingLeadPlainText(FUNDING_THREAD.lead),
@@ -169,7 +169,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "team-capability") {
       return {
         meta: [
-          { title: `${TEAM_CAPABILITY_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${TEAM_CAPABILITY_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           {
             name: "description",
             content: teamCapabilityLeadPlainText(TEAM_CAPABILITY_THREAD.lead),
@@ -181,7 +181,7 @@ export const Route = createFileRoute("/thread/$slug")({
     if (params.slug === "change-management") {
       return {
         meta: [
-          { title: `${CHANGE_MANAGEMENT_THREAD.title} — The Digital Lifecycle Guide` },
+          { title: `${CHANGE_MANAGEMENT_THREAD.title} — The 2026 Digital Lifecycle Guide` },
           {
             name: "description",
             content: changeManagementLeadPlainText(CHANGE_MANAGEMENT_THREAD.lead),
@@ -194,7 +194,7 @@ export const Route = createFileRoute("/thread/$slug")({
       return {
         meta: [
           {
-            title: `${MONITORING_THREAD.title} — The Digital Lifecycle Guide`,
+            title: `${MONITORING_THREAD.title} — The 2026 Digital Lifecycle Guide`,
           },
           {
             name: "description",
@@ -208,10 +208,10 @@ export const Route = createFileRoute("/thread/$slug")({
     return {
       meta: content
         ? [
-            { title: `${content.title} — The Digital Lifecycle Guide` },
+            { title: `${content.title} — The 2026 Digital Lifecycle Guide` },
             { name: "description", content: content.stakes },
           ]
-        : [{ title: "Not found — The Digital Lifecycle Guide" }],
+        : [{ title: "Not found — The 2026 Digital Lifecycle Guide" }],
     };
   },
   beforeLoad: ({ params }) => {

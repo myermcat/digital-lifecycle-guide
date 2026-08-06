@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { GateMapPhaseCallout } from "@/components/GateMapPointers";
+import { CheckpointMapPhaseCallout } from "@/components/CheckpointMapPointers";
 import { CautionBlock } from "@/components/CautionBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -56,7 +56,7 @@ export function CreatePhasePage() {
         ))}
       </section>
 
-      <GateMapPhaseCallout
+      <CheckpointMapPhaseCallout
         text="Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle."
         hash="discovery"
         linkLabel="See the checkpoints in Create →"

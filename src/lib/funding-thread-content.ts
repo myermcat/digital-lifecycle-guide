@@ -3,7 +3,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import { THREADS } from "@/lib/guide-strings";
-import { GATE_MAP_PATH } from "@/lib/reference-paths";
+import { CHECKPOINT_MAP_PATH } from "@/lib/reference-paths";
 import {
   threadWhoseJobPlainText,
   type ThreadLinkedProse,
@@ -171,7 +171,7 @@ export const FUNDING_THREAD = {
         internalLinks: [
           {
             phrase: "the lifecycle of a digital service",
-            to: GATE_MAP_PATH,
+            to: CHECKPOINT_MAP_PATH,
           },
         ],
       },

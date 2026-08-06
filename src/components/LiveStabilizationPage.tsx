@@ -1,7 +1,7 @@
 import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
-import { GateMapSeeAlsoLink } from "@/components/GateMapPointers";
+import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
@@ -114,7 +114,7 @@ export function LiveStabilizationPage() {
         <SubphaseExtractCard extract={STABILIZATION_EXTRACT} />
       </SubphaseDescriptionPanel>
 
-      <GateMapSeeAlsoLink phaseLabel="Stabilization" hash="live" />
+      <CheckpointMapSeeAlsoLink phaseLabel="Stabilization" hash="live" />
 
       <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
         <img

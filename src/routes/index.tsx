@@ -155,9 +155,9 @@ function Index() {
             Government of Canada
           </p>
           <h1 className="mt-4 font-serif text-5xl md:text-6xl font-semibold tracking-tight text-foreground leading-[1.05]">
-            The Digital
+            The 2026
             <br />
-            Lifecycle Guide
+            Digital Lifecycle Guide
           </h1>
           <div className="mx-auto mt-6 h-px w-16 bg-border" />
         </header>

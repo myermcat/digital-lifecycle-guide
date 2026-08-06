@@ -28,7 +28,7 @@ export function PillarCallout({
   icon: LucideIcon;
   children?: ReactNode;
   href?: string;
-  /** In-page hash when `href` is a route path (e.g. gate-map `#discovery`). */
+  /** In-page hash when `href` is a route path (e.g. the checkpoint map `#discovery`). */
   hash?: string;
   linkLabel?: string;
   footerNote?: ReactNode;

@@ -1,18 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { GateMapPage } from "@/components/GateMapPage";
-import { GATE_MAP_SUBTITLE, GATE_MAP_TITLE } from "@/lib/gate-map-content";
+import { CheckpointMapPage } from "@/components/CheckpointMapPage";
+import { CHECKPOINT_MAP_SUBTITLE, CHECKPOINT_MAP_TITLE } from "@/lib/checkpoint-map-content";
 
 export const Route = createFileRoute("/gate-map")({
   head: () => ({
     meta: [
       {
-        title: `${GATE_MAP_TITLE} — The Digital Lifecycle Guide`,
+        title: `${CHECKPOINT_MAP_TITLE} — The 2026 Digital Lifecycle Guide`,
       },
       {
         name: "description",
-        content: GATE_MAP_SUBTITLE.text,
+        content: CHECKPOINT_MAP_SUBTITLE.text,
       },
     ],
   }),
-  component: GateMapPage,
+  component: CheckpointMapPage,
 });

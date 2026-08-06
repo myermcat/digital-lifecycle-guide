@@ -7,7 +7,7 @@ import { GUIDE_CONTENTS } from "@/lib/guide-contents";
 export const Route = createFileRoute("/all-pages")({
   head: () => ({
     meta: [
-      { title: `${GUIDE_CONTENTS.title} — The Digital Lifecycle Guide` },
+      { title: `${GUIDE_CONTENTS.title} — The 2026 Digital Lifecycle Guide` },
       {
         name: "description",
         content: GUIDE_CONTENTS.subtitle,
