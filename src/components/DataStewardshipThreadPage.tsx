@@ -24,6 +24,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideCallout } from "@/components/GuideCallout";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import {
   practiceCardGridCols,
   practiceCardStaticClassName,
@@ -514,6 +515,9 @@ export function DataStewardshipThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={DATA_STEWARDSHIP_THREAD.slug} threadTitle={DATA_STEWARDSHIP_THREAD.title} />
+
 
       <PageFoot
         support="data-stewardship"

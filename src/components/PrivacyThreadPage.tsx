@@ -8,6 +8,7 @@ import {
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
@@ -113,6 +114,9 @@ export function PrivacyThreadPage() {
       </section>
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={PRIVACY_THREAD.slug} threadTitle={PRIVACY_THREAD.title} />
+
 
       <PageFoot
         support="privacy"

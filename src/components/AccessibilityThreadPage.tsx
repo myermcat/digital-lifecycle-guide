@@ -11,6 +11,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ACCESSIBILITY_THREAD } from "@/lib/accessibility-thread-content";
@@ -130,6 +131,9 @@ export function AccessibilityThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={ACCESSIBILITY_THREAD.slug} threadTitle={ACCESSIBILITY_THREAD.title} />
+
 
       <PageFoot
         support="accessibility"

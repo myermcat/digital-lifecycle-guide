@@ -10,6 +10,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { TEAM_CAPABILITY_THREAD } from "@/lib/team-capability-thread-content";
@@ -128,6 +129,9 @@ export function TeamCapabilityThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={TEAM_CAPABILITY_THREAD.slug} threadTitle={TEAM_CAPABILITY_THREAD.title} />
+
 
       <PageFoot
         support="team-capability"

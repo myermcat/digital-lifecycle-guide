@@ -11,6 +11,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { ETHICS_AND_BIAS_THREAD } from "@/lib/ethics-and-bias-thread-content";
@@ -132,6 +133,9 @@ export function EthicsAndBiasThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={ETHICS_AND_BIAS_THREAD.slug} threadTitle={ETHICS_AND_BIAS_THREAD.title} />
+
 
       <PageFoot
         support="ethics-and-bias"

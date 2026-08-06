@@ -276,7 +276,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Get ready to build or buy.",
     sections: [
       {
-        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them, and Security covers how one is done. Funding covers paying for Beta.",
+        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs more than once: against the high-level design here, again against the detailed design as the build is specified, and a third time against the finished system in Beta. Security covers how that work is done. Funding covers paying for Beta.",
         bold: [
           { phrase: "approach and the tooling" },
           { phrase: "exit rights and data portability" },

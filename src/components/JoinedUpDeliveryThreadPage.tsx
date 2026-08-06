@@ -11,6 +11,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { JOINED_UP_DELIVERY_THREAD } from "@/lib/joined-up-delivery-thread-content";
@@ -154,6 +155,9 @@ export function JoinedUpDeliveryThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={JOINED_UP_DELIVERY_THREAD.slug} threadTitle={JOINED_UP_DELIVERY_THREAD.title} />
+
 
       <PageFoot
         support="joined-up-delivery"

@@ -10,6 +10,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { DEPENDENCIES_AND_STANDARDS_THREAD } from "@/lib/dependencies-and-standards-thread-content";
@@ -124,6 +125,9 @@ export function DependenciesAndStandardsThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={DEPENDENCIES_AND_STANDARDS_THREAD.slug} threadTitle={DEPENDENCIES_AND_STANDARDS_THREAD.title} />
+
 
       <PageFoot
         support="dependencies-and-standards"

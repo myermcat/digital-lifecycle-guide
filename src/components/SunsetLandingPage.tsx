@@ -10,6 +10,7 @@ import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { PhaseQuote } from "@/components/PhaseQuote";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { PageFoot } from "@/components/PageFoot";
+import { SubphaseInstruments } from "@/components/SubphaseInstruments";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { SunsetJourneySection } from "@/components/SunsetJourneySection";
 import { SunsetPathFork, sunsetJourneyCardBox } from "@/components/SunsetPathFork";
@@ -125,6 +126,9 @@ export function SunsetLandingPage() {
           placeholder: landing.caution.closingCitation.placeholderLinks,
         })}
       />
+
+      <SubphaseInstruments subPhase="sunset" />
+
 
       <PageFoot sources={landing.sources} />
 

@@ -10,6 +10,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
   MONITORING_BLIND_VS_SEEING_DIAGRAM_ALT,
@@ -161,6 +162,9 @@ export function MonitoringAndInstrumentationThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={MONITORING_THREAD.slug} threadTitle={MONITORING_THREAD.title} />
+
 
       <PageFoot
         support="monitoring-and-instrumentation"

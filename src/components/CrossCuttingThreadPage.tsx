@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { GuideLayout } from "@/components/GuideLayout";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import { supportCalloutVariantForThread } from "@/lib/support-callout";
 import { SEE_ALSO } from "@/lib/see-also";
@@ -102,6 +103,9 @@ export function CrossCuttingThreadPage({
       ) : null}
 
       {children}
+
+      <ThreadInstruments thread={content.slug} threadTitle={content.title} />
+
 
       <PageFoot
         support={supportCalloutVariantForThread(content.slug)}

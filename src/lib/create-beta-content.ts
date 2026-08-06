@@ -274,7 +274,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Find out which case this is in Alpha. Leaving it to Beta means answering the question under launch pressure.",
       },
       {
-        text: "The authorization rests on a second pass of the Threat and Risk Assessment. The first pass ran in Alpha against the design. This one runs against the system that was actually built, because the answer changes once it is real. What it finds becomes the residual risk assessment, the record of the risk that is left for whoever signs to accept. Security covers how that work is done.",
+        text: "The authorization rests on the last pass of the Threat and Risk Assessment. The earlier ones ran against the design, first at a high level in Alpha and again against the detailed design. This one runs against the system that was actually built, because the answer changes once it is real. What it finds becomes the residual risk assessment, the record of the risk that is left for whoever signs to accept. Security covers how that work is done.",
         bold: [{ phrase: "This one runs against the system that was actually built" }],
         externalLinks: [
           { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },

@@ -6,6 +6,7 @@ import { GuideCallout } from "@/components/GuideCallout";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { StandoutIconCallout } from "@/components/StandoutIconCallout";
 import {
   FUNDING_HERO_ALT,
@@ -236,6 +237,9 @@ export function FundingThreadPage() {
         actual={twoWaysComparison.risky}
         alternative={twoWaysComparison.safe}
       />
+
+      <ThreadInstruments thread={FUNDING_THREAD.slug} threadTitle={FUNDING_THREAD.title} />
+
 
       <PageFoot
         support="funding"

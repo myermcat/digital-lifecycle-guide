@@ -11,6 +11,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
@@ -154,6 +155,9 @@ export function ChangeManagementThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={CHANGE_MANAGEMENT_THREAD.slug} threadTitle={CHANGE_MANAGEMENT_THREAD.title} />
+
 
       <PageFoot
         support="change-management"

@@ -12,6 +12,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { BACKLOG_THREAD } from "@/lib/backlog-thread-content";
@@ -157,6 +158,9 @@ export function BacklogThreadPage() {
           }))}
         />
       </section>
+
+      <ThreadInstruments thread={BACKLOG_THREAD.slug} threadTitle={BACKLOG_THREAD.title} />
+
 
       <PageFoot
         support="backlog"

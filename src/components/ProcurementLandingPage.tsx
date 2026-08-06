@@ -6,6 +6,7 @@ import { PracticeCardGroup } from "@/components/PracticeCard";
 import { GoodContractCallout } from "@/components/GoodContractCallout";
 import { ProcurementJourneySection } from "@/components/ProcurementJourneySection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
@@ -97,6 +98,9 @@ export function ProcurementLandingPage() {
       </section>
 
       <ThreadByPhaseSection byPhase={landing.byPhase} />
+
+      <ThreadInstruments thread="procurement" threadTitle="Procurement" />
+
 
       <PageFoot
         support="procurement"

@@ -135,6 +135,8 @@ export type MatrixInstrument = {
   whoDoes: string;
   whereItEndsUp: string;
   linkKey?: ExternalLinkKey;
+  /** Thread pages that own this instrument's subject. Never rendered in the table. */
+  threads?: readonly string[];
   /** Flagged where the research is thin. */
   caveat?: string;
   cells: Partial<Record<MatrixSubPhase, MatrixCell>>;
@@ -174,6 +176,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The result feeds the security assessment and the control set.",
     linkKey: "standard-on-security-categorization",
+    threads: ["security"],
     cells: {
       discovery: {
         tags: ["gather"],
@@ -209,6 +212,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
+    threads: ["security"],
     cells: {
       alpha: {
         tags: ["gather", "fill"],
@@ -243,6 +247,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Departmental physical security, using the Royal Canadian Mounted Police (RCMP) assessment guide.",
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
+    threads: ["security"],
     cells: {
       alpha: {
         tags: ["check"],
@@ -270,6 +275,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Stays inside the department and is signed there, so the only person who will chase it is the authorizer. For common or enterprise systems, including Shared Services Canada services, the authorizer is the Chief Information Officer of Canada instead. Where two or more organizations share a system, it is the manager of the program or service.",
     linkKey: "directive-security-management",
+    threads: ["security"],
     cells: {
       discovery: {
         tags: ["gather", "sign"],
@@ -316,6 +322,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The departmental business continuity management specialist, who is also the person responsible for identifying which services are critical.",
     whereItEndsUp:
       "The department reports its identified critical services to the Treasury Board of Canada Secretariat on a regular basis or when asked. The analysis itself stays in the department.",
+    threads: ["security"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -354,6 +361,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The departmental or branch business continuity coordinator drafts it on the departmental template. No instrument assigns the drafting to a service's business owner.",
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The senior official for the program area approves it.",
+    threads: ["security"],
     cells: {
       beta: {
         tags: ["gather"],
@@ -391,6 +399,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     linkKey: "directive-privacy-practices",
     caveat:
       "The stand-alone Directive on Privacy Impact Assessment was rescinded on 9 October 2024. The live instrument is Appendix C of the Directive on Privacy Practices.",
+    threads: ["privacy"],
     cells: {
       discovery: {
         tags: ["check"],
@@ -430,6 +439,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The results are published on the Open Government Portal before the system goes into production, where anyone outside the department can see them. The assistant deputy minister responsible for the program completes and approves them, or another senior official the deputy head names.",
     linkKey: "algorithmic-impact-assessment",
+    threads: ["ethics-and-bias", "privacy"],
     cells: {
       alpha: {
         tags: ["check"],
@@ -469,6 +479,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The supplier provides it at contract award. The department verifies it, tests independently, and requires a remediation roadmap for every gap.",
     linkKey: "a11y-toolkit-procurement",
+    threads: ["accessibility", "procurement"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -499,6 +510,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department publishes the statement, reachable from a prominent location on each page it covers.",
     linkKey: "en-301-549",
+    threads: ["accessibility"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -536,6 +548,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department sends it to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of Canada.",
     linkKey: "concept-case-procedures",
+    threads: ["funding"],
     cells: {
       discovery: {
         tags: ["check", "fill", "submit"],
@@ -559,6 +572,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "It stays in the department, and goes to the Treasury Board of Canada Secretariat with a submission where one is needed.",
     linkKey: "pcra-tool",
+    threads: ["funding"],
     cells: {
       discovery: {
         tags: ["check", "gather", "fill"],
@@ -585,6 +599,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The board reviews. The chief information officer's architecture team prepares the material and the project team usually presents.",
     whereItEndsUp: "Stays inside the department unless the initiative goes on to the government-wide board.",
     linkKey: "gc-enterprise-architecture-framework",
+    threads: ["dependencies-and-standards"],
     cells: {
       alpha: {
         tags: ["submit", "sign"],
@@ -611,6 +626,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department submits, not the individual. It comes after the departmental board has reviewed, after the concept case review, and before a Treasury Board submission or departmental business case.",
     linkKey: "gc-enterprise-architecture-framework",
+    threads: ["dependencies-and-standards"],
     cells: {
       alpha: {
         tags: ["check", "submit"],
@@ -631,6 +647,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes: "The department writes it; the chief financial officer attests.",
     whereItEndsUp: "The minister signs and it goes to the Treasury Board.",
     linkKey: "tbs-tb-submissions",
+    threads: ["funding"],
     cells: {
       discovery: {
         tags: ["check"],
@@ -656,6 +673,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Filed through the department's own project governance. Projects of $25 million or more also report to the Office of the Comptroller General at approval, expenditure authority, each amendment, and close-out.",
     linkKey: "directive-projects-programmes",
+    threads: ["funding", "monitoring-and-instrumentation"],
     cells: {
       discovery: {
         tags: ["fill"],
@@ -689,6 +707,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department publishes through the open government portal; the deputy head approves the inventory and its annual updates.",
     linkKey: "gc-service-inventory",
+    threads: ["data-stewardship"],
     cells: {
       stabilization: {
         tags: ["submit"],
@@ -721,6 +740,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The department transmits to the Treasury Board of Canada Secretariat annually; the public dataset refreshes twice a year.",
     caveat:
       "The numeric weighting behind the business value and technical condition scores is documented only on Government of Canada network guides and is unverified here.",
+    threads: ["data-stewardship", "dependencies-and-standards"],
     cells: {
       stabilization: {
         tags: ["submit"],
@@ -751,6 +771,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department requests a new authority from Library and Archives Canada where none covers the records.",
     linkKey: "lac-information-disposition-hub",
+    threads: ["data-stewardship"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -789,6 +810,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The evidence is the tested restore, held by the team.",
     linkKey: "directive-security-management",
+    threads: ["security", "releasing-changes"],
     cells: {
       beta: {
         tags: ["fill"],
@@ -819,6 +841,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department reports to the Canadian Centre for Cyber Security and the Treasury Board of Canada Secretariat through the routes the government-wide plan sets. The business owner does not report government-wide themselves.",
     linkKey: "directive-on-service-and-digital",
+    threads: ["security", "monitoring-and-instrumentation"],
     cells: {
       beta: {
         tags: ["fill"],
@@ -852,6 +875,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The access to information and privacy office assesses materiality and prepares the report; the service team supplies what happened.",
     whereItEndsUp:
       "The institution reports to the Office of the Privacy Commissioner and the Treasury Board of Canada Secretariat, and notifies affected individuals.",
+    threads: ["privacy", "security"],
     cells: {
       beta: {
         tags: ["check"],
@@ -887,6 +911,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Nothing routine is filed. One artefact is real: any initiative going to the Treasury Board carries a completed Official Languages Appendix screening it against Parts IV, V, VI and VII, plus an impact analysis if any answer is yes.",
     caveat:
       "A first-pass research answer cited Official Languages Act section 22(a) and section 36(1)(a) here. Both were wrong and have been corrected. Bill C-13 also changed language-of-work duties effective 20 June 2025.",
+    threads: ["joined-up-delivery", "change-management"],
     cells: {
       discovery: {
         tags: ["check"],
@@ -923,6 +948,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The business owner states the requirement; the contracting authority writes the clauses.",
     whereItEndsUp: "Stays inside the department. It lives in the solicitation and the signed contract.",
+    threads: ["procurement"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -959,6 +985,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The contracting authority moves it with the requisition. It has to be settled before the solicitation is released or the contract awarded, and the approved check list is annexed to both. The project authority signs one block of it.",
     caveat:
       "A first-pass answer said this goes straight to the Contract Security Program before the requisition, and that the business owner completes and submits it. Both were overstated: the citable deadline is before release of the solicitation or award, and the document travels with the requisition form.",
+    threads: ["procurement", "security"],
     cells: {
       discovery: {
         tags: ["check"],
@@ -1002,6 +1029,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Bidders submit a registration application with their bid, which the buyer forwards to the program. The program confirms in writing, before award, that the successful bidder meets the requirements.",
     caveat:
       "A first-pass answer said organization screening covers only Protected A and B, which would push a reader toward an unnecessary facility clearance and a much longer schedule. It covers Protected C too.",
+    threads: ["procurement", "security"],
     cells: {
       alpha: {
         tags: ["check"],
@@ -1042,6 +1070,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     caveat:
       "The in-force citation for the non-public-cloud trigger is subsection 4.3.2.4 of the Directive on Service and Digital. A first-pass answer cited 4.1.1.2.4, which belongs to a version archived in 2022 and still circulates on wiki pages.",
     linkKey: "directive-on-service-and-digital",
+    threads: ["dependencies-and-standards"],
     cells: {
       alpha: {
         tags: ["check", "submit"],
@@ -1072,6 +1101,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Stays inside the department beyond the hosting route. The authorization is signed there, as for any other service.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["dependencies-and-standards", "security"],
     cells: {
       alpha: {
         tags: ["check", "gather"],
@@ -1109,6 +1139,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The departmental identity management function with the security team; the business owner supplies the harm judgement.",
     whereItEndsUp: "Stays inside the department, so nobody outside will chase it.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["security", "user-research"],
     cells: {
       discovery: {
         tags: ["check"],
@@ -1139,6 +1170,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department onboards through the platform's process, including an attestation.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["dependencies-and-standards"],
     cells: {
       alpha: {
         tags: ["check"],
@@ -1174,6 +1206,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The department requests the domain from the Principal Publisher. For a downloadable mobile application, the mandated publishing entity independently tests, publishes and later retires it, so the department does not control its own app store presence.",
     caveat:
       "The governing instrument changed on 27 March 2025: the Directive on the Management of Communications and Federal Identity replaced the 2016 communications directive, and its Appendix D replaced the former mandatory procedures for social media and web communications. Anything citing the older instrument is citing an archived one.",
+    threads: ["accessibility", "change-management"],
     cells: {
       alpha: {
         tags: ["check", "gather"],
@@ -1211,6 +1244,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Nothing for a responsive service. A downloadable app is handed to the mandated publishing entity, which tests, publishes and retires it.",
     caveat:
       "The in-force status of the 2013 mobile standard and the 2011 usability standard could not be confirmed directly. Neither carries a rescission notice, but their practical content now runs through the canada.ca specifications. Re-check both before publishing. The Standard on Web Accessibility, by contrast, was confirmed rescinded on 2 March 2026.",
+    threads: ["accessibility"],
     cells: {
       alpha: {
         tags: ["check"],
@@ -1249,6 +1283,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department responds to requests, and publishes summaries of completed requests on the open government portal.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["data-stewardship"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -1279,6 +1314,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department publishes on the open government portal, on a quarterly cycle for contracts.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["data-stewardship"],
     cells: {
       beta: {
         tags: ["submit"],
@@ -1303,6 +1339,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes: "The departmental open government and information management functions.",
     whereItEndsUp: "The department publishes on the open government portal.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
+    threads: ["data-stewardship"],
     cells: {
       alpha: {
         tags: ["check"],

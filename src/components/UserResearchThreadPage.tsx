@@ -10,6 +10,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { ThreadCoreStrip } from "@/components/ThreadCoreStrip";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { USER_RESEARCH_THREAD } from "@/lib/user-research-thread-content";
@@ -124,6 +125,9 @@ export function UserResearchThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={USER_RESEARCH_THREAD.slug} threadTitle={USER_RESEARCH_THREAD.title} />
+
 
       <PageFoot
         support="user-research"

@@ -11,6 +11,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { SecurityLifecycleStrip } from "@/components/SecurityLifecycleStrip";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
+import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { GuideArrowBullet } from "@/lib/guide-lists";
 import { securityLifecycleIconForLabel } from "@/lib/security-lifecycle-icons";
 import {
@@ -163,6 +164,9 @@ export function SecurityThreadPage() {
       />
 
       <ThreadByPhaseSection byPhase={byPhase} />
+
+      <ThreadInstruments thread={SECURITY_THREAD.slug} threadTitle={SECURITY_THREAD.title} />
+
 
       <PageFoot
         support="security"
