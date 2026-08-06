@@ -29,7 +29,7 @@ import {
 } from "@/lib/guide-typography";
 
 export function LivePhasePage() {
-  const { lead, quote, subphases, workOfLive } = LIVE_PHASE;
+  const { lead, quote, subphases, workOfLive, whatRuns, reviews } = LIVE_PHASE;
 
   const sources: SourceItem[] = [...LIVE_PHASE.sources];
 
@@ -94,6 +94,27 @@ export function LivePhasePage() {
             <strong>{workOfLive.closing.leadIn}</strong> {workOfLive.closing.text}
           </p>
         </div>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={whatRuns.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{whatRuns.title}</h2>
+        <p className={`${guideProse} mb-4`}>{whatRuns.intro}</p>
+        <ul className={`${guideProse} space-y-2`}>
+          {whatRuns.coreThreads.map((thread) => (
+            <li key={thread.slug}>
+              <Link to="/thread/$slug" params={{ slug: thread.slug }} className={guideLink}>
+                {thread.title}
+              </Link>
+              <span className="text-muted-foreground"> {thread.note}</span>
+            </li>
+          ))}
+        </ul>
+        <p className={`${guideProse} mt-4`}>{whatRuns.obligations}</p>
+      </section>
+
+      <section className="mt-10 md:mt-12 scroll-mt-24" id={reviews.id}>
+        <h2 className={`${guideSectionTitle} mb-3`}>{reviews.title}</h2>
+        <p className={guideProse}>{reviews.text}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={subphases.id}>

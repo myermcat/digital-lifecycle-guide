@@ -4,7 +4,7 @@
  */
 
 export const GUIDE_ASSUMPTIONS_TEXT =
-  "You are already working to the Government of Canada Digital Standards, design with users, iterate and improve frequently, work in the open, use open standards, address security and privacy, build in accessibility, empower staff, be good data stewards, design ethical services, and collaborate widely, and to the law on privacy, security, official languages, and accessibility. This guide builds on those.";
+  "You are already working to the Government of Canada Digital Standards, design with users, iterate and improve frequently, work in the open, use open standards, address security and privacy, build in accessibility, empower staff, be good data stewards, design ethical services, and collaborate widely, and to the law on privacy, security, official languages, and accessibility. The standards say how the government works in the digital world; the six GC digital competencies for all public servants say what a person has to be able to do to work that way, and the team page covers them. This guide builds on those.";
 
 /**
  * Canonical Create / Live / Sunset descriptions — short paragraphs for readability.

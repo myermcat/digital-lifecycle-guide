@@ -363,7 +363,9 @@ function PhaseAccordionItem({ phase }: { phase: GateMapPhaseBlock }) {
 }
 
 function GateMapPhaseAccordions() {
-  const [openPhase, setOpenPhase] = useState<string | undefined>(undefined);
+  const [openPhase, setOpenPhase] = useState<string | undefined>(
+    GATE_MAP_PHASE_IDS[0],
+  );
 
   useEffect(() => {
     const openFromHash = () => {
@@ -530,7 +532,13 @@ export function GateMapPage() {
         <p className={`${guideProseTight} mt-1 mb-1 text-muted-foreground`}>
           {GATE_MAP_GATES_CAPTION}
         </p>
-        <Accordion type="single" collapsible className="bg-transparent">
+        <Accordion
+          type="multiple"
+          defaultValue={GATE_MAP_GATES.map((group) =>
+            group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+          )}
+          className="bg-transparent"
+        >
           {GATE_MAP_GATES.map((group) => {
             const value = group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-");
             return (

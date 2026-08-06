@@ -203,14 +203,14 @@ export const LIVE_PHASE = {
       },
     ] satisfies readonly { slug: ThreadSlug; title: string; note: string }[],
     obligations:
-      "And the obligations that recur here: renewing funding before the money runs out, keeping the privacy assessment current, holding the service to the accessibility standard, patching dependencies, retaining and disposing of data on schedule, and keeping the team together.",
+      "And the obligations that recur here: renewing funding before the money runs out, keeping the privacy assessment current, holding the service to the accessibility standard, patching dependencies, retaining and disposing of data on schedule, re-testing that the service can actually be recovered in the time it promised, and keeping the team together.",
   },
 
   reviews: {
     id: "live-reviews-come-round-again",
     title: "Live's checks come round again",
     text:
-      "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. The work does not finish; it comes round again.",
+      "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. How critical the service is and how fast it has to come back are re-asked here too: Stabilization tests whether the recovery targets set in Alpha are achievable, Growth reopens them when the service changes, and Maturity re-runs them on the department's own cycle. The work does not finish; it comes round again.",
   },
 
   sources: [

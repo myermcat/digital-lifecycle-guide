@@ -414,6 +414,11 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
               text: "Chaired by her departmental CIO, it reviews the design and confirms it lines up with GC architecture standards. For a project her size, architecture review stops here.",
               bold: ["stops here"],
             },
+            {
+              type: "p",
+              text: "Every department has its own board and there is no national page for one. The architecture team in the CIO's office is the door: they prepare the material and they know when the board sits.",
+              bold: ["The architecture team in the CIO's office is the door"],
+            },
           ],
         },
       },
@@ -510,12 +515,17 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "The security team runs the Security Assessment and Authorization and hands the residual IT (cyber) security risk to a senior departmental executive, the authorizing official for the program. That executive signs the Authority to Operate, accepting the risk, under the Directive on Security Management and ITSG-33.",
+              text: "The security team runs the Security Assessment and Authorization and hands the residual IT (cyber) security risk to the authorizing official for the program. That official signs the Authority to Operate, accepting the risk, under the Directive on Security Management and ITSG-33. For a service that sits inside one department, the authorizing official is normally the business owner: Nadia signs her own.",
               bold: [
                 "Security Assessment and Authorization",
-                "senior departmental executive",
                 "Authority to Operate",
+                "Nadia signs her own",
               ],
+            },
+            {
+              type: "p",
+              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. A standalone report is not required, and nothing is filed anywhere. The Authority to Operate is what enforces it, because without the assessment there is nothing for her to accept.",
+              bold: ["Threat and Risk Assessment", "nothing is filed anywhere"],
             },
           ],
         },
@@ -565,7 +575,7 @@ export const GATE_MAP_PHASES: readonly GateMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "If the system automated a decision.",
-      text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply, and an Algorithmic Impact Assessment would be required before launch, published, with notice to applicants, a human in the loop, and an appeal route. Worth knowing, because a later "efficiency" feature can trigger it without anyone noticing.',
+      text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply. The Algorithmic Impact Assessment would then have to be completed, approved and published on the Open Government Portal before the system goes into production, with notice to applicants, a human in the loop, and an appeal route. At impact level two and above a peer review is also required, and its findings published before launch. Worth knowing, because a later "efficiency" feature can trigger all of it without anyone noticing.',
       bold: ["Directive on Automated Decision-Making"],
       gatePhrases: ["Algorithmic Impact Assessment"],
     },
@@ -831,7 +841,7 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
     entries: [
       {
         term: "Concept case",
-        def: "A short write-up of the problem and rough size, used to get the initiative onto the departmental plan. An internal document - no standard GC template.",
+        def: "A short write-up of the problem and rough size, used to get the initiative onto the departmental plan. Below the threshold it is an internal document with no standard template. Above it, the concept case is mandatory, approved at assistant deputy minister level or higher, and reviewed by the Chief Information Officer of Canada at the Treasury Board of Canada Secretariat. The threshold is $2.5 million where the department has no approved capacity class or class 1, $5 million at class 2, $10 million at class 3, $15 million for National Defence, and $25 million at class 4.",
       },
       {
         term: "Departmental investment plan",
@@ -895,7 +905,7 @@ export const GATE_MAP_GATES: readonly GateMapGateGroup[] = [
       },
       { label: "ITSG-33 (Authority to Operate)", linkKey: "itsg-33", icon: Lock },
       {
-        label: "Directive on Privacy Impact Assessment",
+        label: "Directive on Privacy Practices",
         linkKey: "directive-privacy-practices",
         icon: UserRound,
       },

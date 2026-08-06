@@ -18,6 +18,7 @@ import {
   ALPHA_ACCORDION,
   ALPHA_ACCORDION_STAGES,
   ALPHA_CAUTION,
+  ALPHA_EXERCISE,
   ALPHA_EXTRACT,
   ALPHA_EXTRACT_CLOSING,
   ALPHA_FINISH,
@@ -99,6 +100,12 @@ const ALPHA_SOURCES: SourceItem[] = [
       "Guidance on the Digital Technologies Accessibility Regulations (ESDC): what must conform, and by when.",
   },
   {
+    label: "Supporting reference",
+    linkKey: "harmonized-tra-methodology",
+    description:
+      "Harmonized Threat and Risk Assessment methodology (Canadian Centre for Cyber Security): how the threats to a service are listed and ranked.",
+  },
+  {
     label: "Communities",
     linkKey: "gc-ux-network",
     description:
@@ -112,6 +119,7 @@ const alphaQuoteClassName =
 export function CreateAlphaPage() {
   const meta = SUBPHASE_META.alpha;
   const PillarIcon = ALPHA_PILLAR.icon;
+  const ExerciseIcon = ALPHA_EXERCISE.icon;
 
   return (
     <GuideLayout id="create-alpha">
@@ -208,6 +216,34 @@ export function CreateAlphaPage() {
         title={ALPHA_CAUTION.title}
         items={ALPHA_CAUTION.items.map((item) => ({ heading: item }))}
       />
+
+      <PillarCallout
+        id={ALPHA_EXERCISE.sectionId}
+        label={ALPHA_EXERCISE.label}
+        title={ALPHA_EXERCISE.title}
+        icon={ExerciseIcon}
+        href={ALPHA_EXERCISE.href}
+        linkLabel={ALPHA_EXERCISE.linkLabel}
+      >
+        <p>{renderLinkedProse(ALPHA_EXERCISE.bodyIntro)}</p>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.threatsIntro)}</p>
+        <ul className={`mt-2 list-disc space-y-1 ${guideListIndent}`}>
+          {ALPHA_EXERCISE.threatItems.map((item) => (
+            <li key={item.text}>{renderLinkedProse(item)}</li>
+          ))}
+        </ul>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.threatsClosing)}</p>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.listIntro)}</p>
+        <ul className={`mt-2 list-disc space-y-1 ${guideListIndent}`}>
+          {ALPHA_EXERCISE.listItems.map((item) => (
+            <li key={item.text}>{renderLinkedProse(item)}</li>
+          ))}
+        </ul>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.scaleNote)}</p>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.ownershipNote)}</p>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.confusionNote)}</p>
+        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.closing)}</p>
+      </PillarCallout>
 
       <SubphaseFinishSection
         title={ALPHA_FINISH.title}

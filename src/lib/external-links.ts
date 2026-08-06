@@ -1446,6 +1446,23 @@ export const EXTERNAL_LINKS = {
     description: "Digital Cleanup Day (Let's Do It World)",
     accessibility: "public",
   },
+  "gc-digital-competencies": {
+    url: "https://www.canada.ca/en/treasury-board-secretariat/topics/professional-development/gc-digital-competencies-all-public-servants.html",
+    description: "GC Digital Competencies for all public servants (TBS)",
+    accessibility: "public",
+  },
+  "csps-digital-competencies-learning-path": {
+    url: "https://www.csps-efpc.gc.ca/learning-paths/digital-competencies-eng.aspx",
+    description:
+      "Digital competencies learning path (Canada School of Public Service)",
+    accessibility: "public",
+  },
+  "gc-digital-competencies-playbook": {
+    url: "https://gcxgce.sharepoint.com/teams/10001173/SitePages/Digital-Competencies-for-All-Playbook.aspx",
+    description:
+      "Playbook: GC Digital Competencies for all Public Servants (TBS, on GCXchange)",
+    accessibility: "gc-network-only",
+  },
 } as const satisfies Record<string, ExternalLinkEntry>;
 
 export type ExternalLinkKey = keyof typeof EXTERNAL_LINKS;

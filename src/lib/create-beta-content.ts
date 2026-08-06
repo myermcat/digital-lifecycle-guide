@@ -236,11 +236,11 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Two authorizations stand between the build and production, and neither is quick:",
       },
       {
-        text: "The service cannot run in production until it is authorised to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate, signed by a senior official who is accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
+        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. For a service that sits inside one department, the person who signs it is normally the business owner, accepting the risk on the department's behalf. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
         bold: [
-          { phrase: "The service cannot run in production until it is authorised to." },
+          { phrase: "The service cannot run in production until it is authorized to." },
           { phrase: "Security Assessment and Authorization" },
-          { phrase: "Authority to Operate" },
+          { phrase: "the person who signs it is normally the business owner" },
         ],
         externalLinks: [
           {
@@ -249,6 +249,18 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
           },
           { phrase: "ITSG-33", linkKey: "itsg-33" },
         ],
+      },
+      {
+        text: "Who signs it is not automatic. For a common or enterprise system, including one running on a Shared Services Canada platform, the Chief Information Officer of Canada signs instead. For a system two or more organizations share, the manager of that program or service signs. Find out which case this is in Alpha, because finding out in Beta means finding out under launch pressure.",
+        bold: [{ phrase: "Who signs it is not automatic." }],
+      },
+      {
+        text: "What the authorization is built on is the second pass of the Threat and Risk Assessment. The first pass ran in Alpha against the design; this one runs against the system that was actually built, because the answer changes once the design is real, and its results go into the residual risk assessment. Security covers how the assessment is done.",
+        bold: [{ phrase: "this one runs against the system that was actually built" }],
+        externalLinks: [
+          { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },
+        ],
+        internalLinks: [{ phrase: "Security", to: "/thread/security" }],
       },
       {
         text: "If the service makes or supports an automated decision about a person, the Algorithmic Impact Assessment has to be completed, approved and published on the Open Government Portal before the system goes into production. Under the Directive on Automated Decision-Making this is a publication requirement, and it is easy to miss.",
@@ -586,8 +598,12 @@ export const BETA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Off-ramp to-do. Before you move to Stabilization, have ready:",
-      bold: [{ phrase: "Off-ramp to-do." }, { phrase: "Stabilization" }],
+      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department. Everything on it has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
+      bold: [
+        { phrase: "Off-ramp to-do." },
+        { phrase: "This one is about the department." },
+        { phrase: "Stabilization" },
+      ],
       internalLinks: [{ phrase: "Stabilization", to: "/live-stabilization" }],
     } satisfies ThreadLinkedProse,
     items: [
@@ -606,6 +622,14 @@ export const BETA_FINISH = {
       {
         text: "The security assessment and authorization complete, so the service is allowed to run in production.",
         bold: [{ phrase: "The security assessment and authorization" }],
+      },
+      {
+        text: "The continuity arrangements in place: the recovery targets set in Alpha handed to the department's business continuity coordinator, and, if the service is critical, named in the departmental plan with its downtime limit and its recovery steps. Being covered in principle is not the same as being covered.",
+        bold: [{ phrase: "The continuity arrangements in place:" }],
+      },
+      {
+        text: "The restore tested at least once, not assumed. Backups nobody has restored from are a plan rather than a capability.",
+        bold: [{ phrase: "The restore tested at least once, not assumed." }],
       },
       {
         text: "If the service automates a decision about a person, the Algorithmic Impact Assessment published.",

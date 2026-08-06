@@ -101,6 +101,12 @@ const BETA_SOURCES: SourceItem[] = [
   },
   {
     label: "Supporting reference",
+    linkKey: "harmonized-tra-methodology",
+    description:
+      "Harmonized Threat and Risk Assessment methodology (Canadian Centre for Cyber Security): the assessment the security authorization is built on.",
+  },
+  {
+    label: "Supporting reference",
     linkKey: "lac-information-disposition-hub",
     description:
       "Library and Archives Canada, information disposition: where records-keeping duties come from.",

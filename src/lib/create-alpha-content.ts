@@ -8,6 +8,7 @@ import {
   PenTool,
   Route,
   Shield,
+  ShieldAlert,
   ShoppingCart,
   Target,
   Users,
@@ -41,7 +42,7 @@ export const ALPHA_EXTRACT = {
     text: "The team starts making things, and users start trying them.",
   },
   closing: {
-    text: "Alpha builds nothing that lasts. No code survives into Beta, and the prototypes are seen only by the handful of people who test them, never the public.",
+    text: "Nothing made in Alpha is carried into the build. The prototypes, whether they are paper sketches, an AI mock-up, or code, are archived when Alpha ends and become the requirements for what gets built. Only the handful of people who test them ever see them, never the public.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -143,8 +144,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Treat the AI mock-up exactly as you would treat paper: something to be thrown away. It is not the beginning of the real service, and no part of it should survive into the build. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in words, and it shows quickly whether the idea works at all.",
-        bold: [{ phrase: "something to be thrown away" }],
+        text: "Treat the AI mock-up exactly as you would treat paper: something to be archived rather than extended. No part of it should be carried into the build, and that holds when the department is building the service in-house, where the temptation to keep going from the prototype is strongest. Its whole value is that it lets a team show an idea to colleagues or stakeholders instead of describing it in words, and it shows quickly whether the idea works at all.",
+        bold: [{ phrase: "something to be archived rather than extended" }],
       },
       {
         text: "Each round of testing is a research session: five or six people who look like the service's real users try the mock-up, and the team watches where they get stuck.",
@@ -275,14 +276,18 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Get ready to build or buy.",
     sections: [
       {
-        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Start thinking about the threats the service will face and how it will be kept secure. Funding covers paying for Beta.",
+        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. The tool that ranks them is a Threat and Risk Assessment, and Security covers how one is done. Funding covers paying for Beta.",
         bold: [
           { phrase: "approach and the tooling" },
           { phrase: "exit rights and data portability" },
         ],
         internalLinks: [
           { phrase: "procurement", to: "/thread/procurement" },
+          { phrase: "Security", to: "/thread/security" },
           { phrase: "Funding", to: "/thread/funding" },
+        ],
+        externalLinks: [
+          { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },
         ],
       },
       {
@@ -351,6 +356,96 @@ export const ALPHA_TEAM = {
   } satisfies ThreadLinkedProse,
 };
 
+export const ALPHA_EXERCISE = {
+  label: "THE EXERCISE",
+  title: "Every service goes down eventually, and how long it stays down is decided now",
+  icon: ShieldAlert,
+  sectionId: "what-could-go-wrong",
+  bodyIntro: {
+    text: "Two questions decide most of what the service has to be built to withstand. What could stop it or harm the people who use it, and how long it can be down before real harm starts. Both are worked out at the end of Alpha, while the design can still absorb the answer, and both feed the contract signed at the start of Beta.",
+    bold: [{ phrase: "how long it can be down before real harm starts" }],
+  } satisfies ThreadLinkedProse,
+  threatsIntro: {
+    text: "Threats come in three kinds, and the Government of Canada's own guidance warns which ones teams forget:",
+  } satisfies ThreadLinkedProse,
+  threatItems: [
+    {
+      text: "deliberate: theft, tampering, an insider, a coordinated attack",
+      bold: [{ phrase: "deliberate:" }],
+    },
+    {
+      text: "accidental: human error, a contractor pulling the wrong cable, a software fault, mechanical or electrical damage",
+      bold: [{ phrase: "accidental:" }],
+    },
+    {
+      text: "natural: flood, fire, storm, earthquake, a pandemic",
+      bold: [{ phrase: "natural:" }],
+    },
+  ] satisfies readonly ThreadLinkedProse[],
+  threatsClosing: {
+    text: "The RCMP's assessment guide puts it plainly: it can be easy to overlook natural and accidental threats with the greatest attention being paid to deliberate ones. Most teams picture an attacker and forget the flood.",
+    bold: [{ phrase: "it can be easy to overlook natural and accidental threats" }],
+  } satisfies ThreadLinkedProse,
+  listIntro: {
+    text: "Half a day with the right people in a room produces four things:",
+  } satisfies ThreadLinkedProse,
+  listItems: [
+    {
+      text: "the maximum allowable downtime (MAD): how long the service can be unavailable before a high degree of injury results",
+      bold: [{ phrase: "the maximum allowable downtime (MAD)" }],
+    },
+    {
+      text: "the minimum service level: what counts as good enough during a disruption, which is often a manual or paper route rather than the digital service",
+      bold: [{ phrase: "the minimum service level" }],
+    },
+    {
+      text: "the recovery time objective (RTO): how fast it has to be back, which is a target set inside the maximum allowable downtime rather than the same number",
+      bold: [{ phrase: "the recovery time objective (RTO)" }],
+    },
+    {
+      text: "the recovery point objective (RPO): how much recent data can be lost, measured as time since the last usable copy",
+      bold: [{ phrase: "the recovery point objective (RPO)" }],
+    },
+  ] satisfies readonly ThreadLinkedProse[],
+  scaleNote: {
+    text: "A four-hour maximum allowable downtime and a two-week one buy completely different architectures and completely different hosting bills. This is a spending decision made under a security-policy label, which is why it belongs here and not in a form filled in later.",
+    bold: [{ phrase: "a spending decision made under a security-policy label" }],
+  } satisfies ThreadLinkedProse,
+  ownershipNote: {
+    text: "There is one business continuity plan for the whole department. There is not a second one for this service. What the team hands over is the impact judgement, the four numbers, and the list of what this service falls over with, and it goes to the department's business continuity coordinator. What stays with the team is the recovery of this particular service and the testing that proves the recovery works.",
+    bold: [
+      { phrase: "There is one business continuity plan for the whole department." },
+    ],
+  } satisfies ThreadLinkedProse,
+  confusionNote: {
+    text: "One thing trips almost everyone. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept. Teams routinely commission an expensive report nobody asked for and skip the design-stage thinking that was actually required.",
+    bold: [
+      { phrase: "The assessment is required for every service" },
+      { phrase: "a standalone report is not" },
+    ],
+  } satisfies ThreadLinkedProse,
+  closing: {
+    text: "Security covers how the assessment is done, and the official instruments underneath it: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down.",
+    internalLinks: [{ phrase: "Security", to: "/thread/security" }],
+    externalLinks: [
+      {
+        phrase: "harmonized Threat and Risk Assessment methodology",
+        linkKey: "harmonized-tra-methodology",
+      },
+      {
+        phrase: "Standard on Security Categorization",
+        linkKey: "standard-on-security-categorization",
+      },
+      {
+        phrase: "Directive on Security Management",
+        linkKey: "directive-security-management",
+      },
+    ],
+  } satisfies ThreadLinkedProse,
+  href: "/thread/security",
+  linkLabel: "See how the assessment is done →",
+};
+
 export const ALPHA_CAUTION = {
   title: "When Alpha goes wrong",
   items: [
@@ -370,6 +465,14 @@ export const ALPHA_FINISH = {
     bold: [{ phrase: "riskiest assumptions have been tested" }],
   } satisfies ThreadLinkedProse,
   followUp: [
+    {
+      text: "Alpha is where the requirements get written.",
+      bold: [{ phrase: "Alpha is where the requirements get written." }],
+    },
+    {
+      text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the thing has to do. The request for proposals goes out at the start of Beta and it is built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day the competition is published stays vague in the contract.",
+      bold: [{ phrase: "they have to be settled before Alpha closes" }],
+    },
     {
       text: "The competition to find a supplier runs during Alpha.",
       bold: [{ phrase: "The competition to find a supplier runs during Alpha." }],
@@ -409,8 +512,8 @@ export const ALPHA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "The code dies; the learning lives. Before you move to Beta, have ready what Alpha learned:",
-      bold: [{ phrase: "The code dies; the learning lives." }],
+      text: "The prototypes are archived; what they taught becomes the requirements. Before you move to Beta, have ready what Alpha learned:",
+      bold: [{ phrase: "The prototypes are archived; what they taught becomes the requirements." }],
     } satisfies ThreadLinkedProse,
     items: [
       {
@@ -424,6 +527,10 @@ export const ALPHA_FINISH = {
       {
         text: "The tested design: the winning mock-ups, kept as the clearest requirements document the department will ever hand a builder.",
         bold: [{ phrase: "The tested design:" }],
+      },
+      {
+        text: "The requirements, gathered in one place: what the service has to do, the sharpened metrics that say whether it worked, the accessibility clauses it has to meet, how the system has to behave (how fast, how available, how long it holds records), the data it has to hold and the metadata that describes it, and the recovery targets the exercise above produced, meaning how long the service can be down and how much data it can afford to lose. This is the material the request for proposals is written from, so each item is something a supplier can be held to.",
+        bold: [{ phrase: "The requirements, gathered in one place:" }],
       },
       {
         text: "The journey map from Discovery, updated with what the testing taught.",

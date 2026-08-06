@@ -19,6 +19,7 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { InstrumentMatrix } from "@/components/InstrumentMatrix";
 import { PageFoot } from "@/components/PageFoot";
 import {
   PhaseIconCreate,
@@ -559,6 +560,8 @@ function Index() {
 
           <SetupToggles className="mt-6" />
         </section>
+
+        <InstrumentMatrix />
 
         <PageFoot />
 
