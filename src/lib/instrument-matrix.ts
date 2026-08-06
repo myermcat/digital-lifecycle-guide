@@ -188,9 +188,9 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "The activity applies to all information systems that support departmental programs, services or activities. No dollar figure, no user count, no risk score. A standalone report is a different matter: producing one is neither recommended nor required, and the results are meant to go into the ordinary design documents.",
     ownerDoes:
-      "Makes the judgement about what could go wrong and how bad it would be for the business. Neither half can be looked up: both come from knowing the program and who depends on it.",
+      "Approves the work plan before the assessment starts, and states in advance how much left-over risk is acceptable. Supplies what the service is worth to the business and what it depends on. Accepts or refuses the left-over risk at the end. Does not write the assessment.",
     whoDoes:
-      "A security practitioner and a security assessor run the assessment, frequently a contractor. The instruments still put the business owner on the hook for the answer, so asking someone to do it is delegation rather than handover.",
+      "A security practitioner works with the system designers during design, and a security assessor, often a contractor, assesses the built system. The business owner sits on the assessment team as the program authority rather than as its author.",
     whereItEndsUp:
       "Stays inside the department, so nobody outside will chase it. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",

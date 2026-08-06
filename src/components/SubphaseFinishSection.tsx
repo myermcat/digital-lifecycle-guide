@@ -22,7 +22,9 @@ export function SubphaseFinishSection({
   exits: { lead: string; rest: ThreadLinkedProse; href?: string }[];
   offRamp: {
     intro: ThreadLinkedProse;
-    items: readonly ThreadLinkedProse[];
+    items: readonly (ThreadLinkedProse & {
+      subItems?: readonly ThreadLinkedProse[];
+    })[];
   };
 }) {
   const followUpParagraphs = followUp
@@ -53,7 +55,14 @@ export function SubphaseFinishSection({
         intro={
           <p className={guideBodySubheading}>{renderLinkedProse(offRamp.intro)}</p>
         }
-        items={offRamp.items.map((item) => renderLinkedProse(item))}
+        items={offRamp.items.map((item) =>
+          "subItems" in item && item.subItems
+            ? {
+                content: renderLinkedProse(item),
+                subItems: item.subItems.map((sub) => renderLinkedProse(sub)),
+              }
+            : renderLinkedProse(item),
+        )}
         className="mt-6"
       />
     </PhaseSection>

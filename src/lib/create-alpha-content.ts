@@ -418,7 +418,7 @@ export const ALPHA_EXERCISE = {
     ],
   } satisfies ThreadLinkedProse,
   confusionNote: {
-    text: "One thing trips almost everyone. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept. Teams routinely commission an expensive report nobody asked for and skip the design-stage thinking that was actually required.",
+    text: "This part is often misunderstood. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept. Teams routinely commission an expensive report nobody asked for and skip the design-stage thinking that was actually required.",
     bold: [
       { phrase: "The assessment is required for every service" },
       { phrase: "a standalone report is not" },
@@ -529,24 +529,28 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The tested design:" }],
       },
       {
-        text: "The requirements, gathered in one place: the request for proposals is written from them, so each line has to be something a supplier can be held to.",
-        bold: [{ phrase: "The requirements, gathered in one place:" }],
-      },
-      {
-        text: "What the service has to do, written out so a builder can act on it.",
-        bold: [{ phrase: "What the service has to do," }],
-      },
-      {
-        text: "How the system has to behave: how fast, how available, and how long it holds records.",
-        bold: [{ phrase: "How the system has to behave:" }],
-      },
-      {
-        text: "The data the service has to hold, and the metadata that describes it.",
-        bold: [{ phrase: "The data the service has to hold," }],
-      },
-      {
-        text: "The recovery targets the exercise above produced: how long the service can be down, and how much recent data it can afford to lose.",
-        bold: [{ phrase: "The recovery targets the exercise above produced:" }],
+        text: "The requirements, gathered in one place. The request for proposals is written from them, so each line has to be something a supplier can be held to:",
+        bold: [{ phrase: "The requirements, gathered in one place." }],
+        subItems: [
+          {
+            text: "what the service has to do, written out so a builder can act on it",
+          },
+          {
+            text: "the sharpened metrics that say whether it worked",
+          },
+          {
+            text: "the accessibility clauses the service has to meet",
+          },
+          {
+            text: "how the system has to behave: how fast, how available, and how long it holds records",
+          },
+          {
+            text: "the data the service has to hold, and the metadata that describes it",
+          },
+          {
+            text: "the recovery targets the exercise above produced: how long the service can be down, and how much recent data it can afford to lose",
+          },
+        ] satisfies readonly ThreadLinkedProse[],
       },
       {
         text: "The journey map from Discovery, updated with what the testing taught.",
@@ -572,7 +576,9 @@ export const ALPHA_FINISH = {
         text: "The record of which ideas died, and why, so the next team does not pay to re-test them.",
         bold: [{ phrase: "The record of which ideas died," }],
       },
-    ] satisfies readonly ThreadLinkedProse[],
+    ] satisfies readonly (ThreadLinkedProse & {
+      subItems?: readonly ThreadLinkedProse[];
+    })[],
   },
 };
 
