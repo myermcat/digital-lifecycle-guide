@@ -207,7 +207,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "simplest thing that meets the need, all the way through the journey" }],
       },
       {
-        text: "Both official languages, from the first screen. A service available across Canada has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
+        text: "Both official languages, from the first screen. A public-facing digital service has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
         bold: [{ phrase: "Both official languages, from the first screen." }],
       },
       {
@@ -218,7 +218,13 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
       },
       {
-        text: "The route is the Official Languages Act, section 24(1)(b), together with section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations, which is what makes a service available nationally bilingual regardless of where the office sits. The operational rule a team is measured against is subsection 6.6.4.1 of the Directive on Official Languages for Communications and Services. Complaints go to the Commissioner of Official Languages. [Citation check pending: these three references were corrected once already and have not been re-verified since.]",
+        text: "The duty follows from how the service is delivered, not from how much of the country it reaches. Section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual, and section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them: communications and services made available through an automated system accessible to the public. A digital service is such a system, so a service used in one region is caught on the same terms as a national one. Reach does matter elsewhere in the same regulation, at section 11(a), but only for correspondence and telephone services.",
+      },
+      {
+        text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out shipping English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
+      },
+      {
+        text: "Where a supplier delivers the service on the department's behalf, section 25 of the Act carries the duty across to them, so buying delivery does not buy out of the obligation.",
       },
       {
         text: "As the build starts:",
