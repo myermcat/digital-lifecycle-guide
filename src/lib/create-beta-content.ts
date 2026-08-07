@@ -22,6 +22,7 @@ import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
@@ -91,6 +92,10 @@ export const BETA_ON_RAMP = {
     {
       text: "A named product owner with the authority to make decisions.",
       bold: [{ phrase: "A named product owner" }],
+    },
+    {
+      text: "The go and no-go criteria for launch, written down and agreed. Do this before a launch date exists and before anyone is attached to one. Agreed in advance, the criteria let the evidence deliver the bad news, so stopping is a decision the department already made instead of one person finding the courage to tell a room full of invested people that the launch is off.",
+      bold: [{ phrase: "The go and no-go criteria for launch," }],
     },
     {
       text: "The accessibility testing booked with the people most likely to be excluded, and the accessibility clauses of the standard identified so they can go into the contract.",
@@ -603,16 +608,28 @@ export const BETA_FINISH = {
     text: "The finish criteria. Beta is done when the service has been through private beta and then public beta, has been used by real people at scale, and has held up. It delivers the whole journey, end to end. The service meets the accessibility standard and what the testing found has been fixed, the privacy assessment is done, the dashboard is live, and the support is staffed.",
     bold: [{ phrase: "The finish criteria." }],
   } satisfies ThreadLinkedProse,
-  followUp: [
+  blocks: [
     {
-      text: "The last test is the one this guide exists for: the department can support the service, and keep improving it, every year until it is replaced or retired. If it cannot, the service is not ready to launch, however well it demos.",
-      bold: [{ phrase: "The last test" }],
+      heading: "The department can carry it after launch",
+      paragraphs: [
+        {
+          text: "This is the test the guide exists for. The department can support the service and keep improving it, every year, until it is replaced or retired. If it cannot, the service is not ready to launch, however well it demos.",
+        },
+        {
+          text: "Support means named people with time in their week, money in a budget that renews, and somewhere for a user to go when the service fails them. A launch with none of those produces a service that degrades from its first day and has nobody whose job it is to notice.",
+        },
+      ],
     },
     {
-      text: "Write the go and no-go criteria down early, before anyone is invested in the launch date. Agreed in advance, they let the evidence deliver the bad news: stopping becomes a pre-agreed outcome instead of one person finding the courage to tell a room full of invested people that the launch is off.",
-      bold: [{ phrase: "Write the go and no-go criteria down early," }],
+      heading: "The launch decision runs against the criteria you already wrote",
+      paragraphs: [
+        {
+          text: "The go and no-go criteria were agreed at the start of Beta, before a launch date existed. The decision at the end of Beta is reading the evidence against them, and that is all it should be. Rewriting the criteria once the date is in a minister's calendar defeats the point of having written them.",
+          internalLinks: [{ phrase: "start of Beta", to: "/create-beta" }],
+        },
+      ],
     },
-  ] satisfies ThreadLinkedProse[],
+  ] satisfies FinishBlock[],
   exits: [
     {
       lead: "Forward to Stabilization,",
@@ -637,7 +654,7 @@ export const BETA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department. Each item has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
+      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department, and by that the guide means commitments no supplier can make on the department's behalf: people with the service in their objectives, budget that renews without anyone arguing for it again, and authorizations that belong to a named official. Each item has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
       bold: [
         { phrase: "Off-ramp to-do." },
         { phrase: "This one is about the department." },

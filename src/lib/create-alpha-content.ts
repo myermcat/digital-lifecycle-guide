@@ -20,6 +20,7 @@ import {
 import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
@@ -509,53 +510,61 @@ export const ALPHA_FINISH = {
     text: "Alpha is finished when you have a prototype substantial enough to decide, the riskiest assumptions have been tested, and you are confident you can build or buy something that meets the need and is cost-effective. What survives Alpha has earned the build.",
     bold: [{ phrase: "riskiest assumptions have been tested" }],
   } satisfies ThreadLinkedProse,
-  followUp: [
+  blocks: [
     {
-      text: "Alpha is where the requirements get written.",
-      bold: [{ phrase: "Alpha is where the requirements get written." }],
-    },
-    {
-      text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the service has to do. The request for proposals goes out at the start of Beta, built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day it is published stays vague in the contract.",
-      bold: [{ phrase: "they have to be settled before Alpha closes" }],
-    },
-    {
-      text: "There is no Government of Canada name for this, and no template.",
-      bold: [{ phrase: "There is no Government of Canada name for this, and no template." }],
-    },
-    {
-      text: "Departments often call it a business requirements document. The term is common practice borrowed from industry, and it appears in no Treasury Board policy, directive or standard, so nobody can be made to produce one and nobody will ask for it by that name. The requirements matter for every service, whatever they are called.",
-    },
-    {
-      text: "The concept case is what Canada names for the stage before this one. It covers the problem rather than the solution, and it applies to digitally enabled projects above a threshold: $2.5 million for a department with no approved capacity class or class 1, rising to $25 million at class 4. Below that nobody asks for one, though the template is worth using anyway.",
-      bold: [{ phrase: "The concept case" }],
-    },
-    {
-      text: "The statement of work is what Canada names for the stage after. It belongs to the contract, so it applies only if the department is buying. An in-house build never writes one.",
-      bold: [{ phrase: "The statement of work" }],
-    },
-    {
-      text: "The requirements themselves sit between those two, which is why the guide keeps calling them requirements and nothing more. They matter for every service, whatever the department calls them.",
-      bold: [{ phrase: "The requirements themselves sit between those two" }],
-    },
-    {
-      text: "One place the activity is checked: the Project Complexity and Risk Assessment asks whether the business requirements were validated with users, by walkthrough, workshop or independent review, and the answer feeds the score that decides who is allowed to approve the project. It applies only to projects above the same kind of threshold, so a small service never meets the question. Where it does apply, requirements written without users cost more than rework.",
-      bold: [{ phrase: "One place the activity is checked:" }],
-    },
-    {
-      text: "The competition to find a supplier runs during Alpha.",
-      bold: [{ phrase: "The competition to find a supplier runs during Alpha." }],
-    },
-    {
-      text: "This is the procurement competition: the requirements are written and advertised, bids come in and are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
-      internalLinks: [
-        { phrase: "procurement", to: "/thread/procurement" },
-        { phrase: "Beta", to: "/create-beta" },
+      heading: "The requirements are written and settled",
+      paragraphs: [
+        {
+          text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the service has to do.",
+        },
+        {
+          text: "The deadline is real, and it comes from the contract. The request for proposals goes out at the start of Beta and is built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day it is published stays vague in the contract, and changing it later costs a contract amendment.",
+          bold: [{ phrase: "they have to be settled before Alpha closes" }],
+        },
+        {
+          text: "Write them with the people who will use the service in the room. The Project Complexity and Risk Assessment (PCRA), the scoring tool that decides who is allowed to approve a project, asks directly whether the business requirements were validated with users, by walkthrough, workshop or independent review, and the answer moves the score. That question only reaches projects above a threshold, starting at $2.5 million for a department with no approved capacity class, so a small service never meets it and should do it anyway. Requirements written without users produce rework, and rework in Beta is paid for at contract rates.",
+          bold: [{ phrase: "Write them with the people who will use the service in the room." }],
+        },
       ],
     },
     {
-      text: "This does not apply if the department is building in-house or reusing an existing platform, because there is no supplier to find.",
+      heading: "The competition to find a supplier has begun",
+      onlyIf: "Only if buying",
+      paragraphs: [
+        {
+          text: "This is the procurement competition: the requirements are written and advertised, bids come in and are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
+          internalLinks: [
+            { phrase: "procurement", to: "/thread/procurement" },
+            { phrase: "Beta", to: "/create-beta" },
+          ],
+        },
+        {
+          text: "A department building in-house, or reusing a platform that already exists, has no supplier to find and skips this entirely.",
+        },
+      ],
     },
-  ] satisfies ThreadLinkedProse[],
+  ] satisfies FinishBlock[],
+  aside: {
+    heading: "What to call the requirements",
+    paragraphs: [
+      {
+        text: "The Government of Canada has an official name for what comes before the requirements, and an official name for what comes after. It has no name for the requirements themselves. That gap is why this guide keeps calling them requirements and nothing more, and it is worth knowing about, because colleagues will use all three words as if they meant the same thing.",
+        bold: [{ phrase: "It has no name for the requirements themselves." }],
+      },
+      {
+        text: "Before: the concept case, a short early write-up of the problem, the rough size of the investment, and the direction being considered. It describes the problem and the business need, and stops short of choosing a solution. It is mandatory for digitally enabled projects where the department is willing to invest at least $2.5 million with no approved capacity class or class 1, rising to $25 million at class 4. Below the threshold nobody asks for one, though the template is worth using anyway.",
+        bold: [{ phrase: "the concept case" }],
+      },
+      {
+        text: "After: the statement of work, the description of the work being bought. It belongs to the contract, so it exists only if the department is buying. An in-house build never writes one.",
+        bold: [{ phrase: "the statement of work" }],
+      },
+      {
+        text: "In between: nothing official. Departments often say business requirements document, a term borrowed from industry that appears in no Treasury Board policy, directive or standard. If a colleague asks for one, they mean the requirements, so write what the service has to do and give it whatever name the department uses. There is no template to follow and nowhere to file it, and no one outside the department will ever ask for it.",
+        bold: [{ phrase: "business requirements document" }],
+      },
+    ],
+  },
   exits: [
     {
       lead: "Forward to Beta,",

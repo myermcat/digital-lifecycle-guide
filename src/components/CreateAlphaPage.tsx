@@ -246,17 +246,18 @@ export function CreateAlphaPage() {
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.closing)}</p>
       </PillarCallout>
 
-      <SubphaseInstruments subPhase="alpha" />
-
-
       <SubphaseFinishSection
         title={ALPHA_FINISH.title}
         sectionId={ALPHA_FINISH.sectionId}
         intro={ALPHA_FINISH.intro}
-        followUp={ALPHA_FINISH.followUp}
+        blocks={ALPHA_FINISH.blocks}
+        aside={ALPHA_FINISH.aside}
         exits={ALPHA_FINISH.exits}
         offRamp={ALPHA_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="alpha" />
 
       <PageFoot sources={ALPHA_SOURCES} subphaseFootFor="Create" />
 

@@ -241,17 +241,17 @@ export function CreateBetaPage() {
 
       <RealExampleCallout example={REAL_EXAMPLES.beta!} className="mt-8 md:mt-10" />
 
-      <SubphaseInstruments subPhase="beta" />
-
-
       <SubphaseFinishSection
         title={BETA_FINISH.title}
         sectionId={BETA_FINISH.sectionId}
         intro={BETA_FINISH.intro}
-        followUp={BETA_FINISH.followUp}
+        blocks={BETA_FINISH.blocks}
         exits={BETA_FINISH.exits}
         offRamp={BETA_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="beta" />
 
       <PageFoot sources={BETA_SOURCES} subphaseFootFor="Create" />
 

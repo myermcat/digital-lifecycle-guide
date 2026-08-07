@@ -174,9 +174,6 @@ export function LiveStabilizationPage() {
 
       <RealExampleCallout example={REAL_EXAMPLES.stabilization!} className="mt-8 md:mt-10" />
 
-      <SubphaseInstruments subPhase="stabilization" />
-
-
       <SubphaseFinishSection
         title={STABILIZATION_FINISH.title}
         sectionId={STABILIZATION_FINISH.sectionId}
@@ -185,6 +182,9 @@ export function LiveStabilizationPage() {
         exits={STABILIZATION_FINISH.exits}
         offRamp={STABILIZATION_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="stabilization" />
 
       <PageFoot sources={STABILIZATION_SOURCES} subphaseFootFor="Live" />
 

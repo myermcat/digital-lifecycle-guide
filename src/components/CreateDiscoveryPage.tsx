@@ -210,9 +210,6 @@ export function CreateDiscoveryPage() {
 
       <RealExampleCallout example={REAL_EXAMPLES.discovery!} className="mt-8 md:mt-10" />
 
-      <SubphaseInstruments subPhase="discovery" />
-
-
       <SubphaseFinishSection
         title={DISCOVERY_FINISH.title}
         sectionId={DISCOVERY_FINISH.sectionId}
@@ -220,6 +217,9 @@ export function CreateDiscoveryPage() {
         exits={DISCOVERY_FINISH.exits}
         offRamp={DISCOVERY_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="discovery" />
 
       <PageFoot sources={DISCOVERY_SOURCES} subphaseFootFor="Create" />
 

@@ -181,9 +181,6 @@ export function LiveGrowthPage() {
 
       <RealExampleCallout example={REAL_EXAMPLES.growth!} className="mt-8 md:mt-10" />
 
-      <SubphaseInstruments subPhase="growth" />
-
-
       <SubphaseFinishSection
         title={GROWTH_FINISH.title}
         sectionId={GROWTH_FINISH.sectionId}
@@ -192,6 +189,9 @@ export function LiveGrowthPage() {
         exits={GROWTH_FINISH.exits}
         offRamp={GROWTH_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="growth" />
 
       <PageFoot sources={GROWTH_SOURCES} subphaseFootFor="Live" />
 

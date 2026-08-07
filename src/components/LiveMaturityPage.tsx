@@ -184,9 +184,6 @@ export function LiveMaturityPage() {
 
       <RealExampleCallout example={REAL_EXAMPLES.maturity!} className="mt-8 md:mt-10" />
 
-      <SubphaseInstruments subPhase="maturity" />
-
-
       <SubphaseFinishSection
         title={MATURITY_FINISH.title}
         sectionId={MATURITY_FINISH.sectionId}
@@ -195,6 +192,9 @@ export function LiveMaturityPage() {
         exits={MATURITY_FINISH.exits}
         offRamp={MATURITY_FINISH.offRamp}
       />
+
+
+      <SubphaseInstruments subPhase="maturity" />
 
       <PageFoot sources={MATURITY_SOURCES} subphaseFootFor="Live" />
 
