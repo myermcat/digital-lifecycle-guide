@@ -31,8 +31,8 @@ export function ReusablePieces() {
         <p className="text-muted-foreground">
           Choosing to make your own instead breaks no rule. The enterprise
           architecture framework does ask teams to look at reuse first, so a
-          departmental architecture review board will ask what was considered and why
-          it was not used. Having an answer ready is easier than being asked for one.
+          departmental architecture review board is likely to ask which of these were
+          considered and why none of them fitted.
         </p>
       </div>
 

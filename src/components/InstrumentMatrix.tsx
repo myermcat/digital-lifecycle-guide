@@ -125,8 +125,7 @@ export function InstrumentMatrix() {
           to run, boards to attend, registers to appear in, and duties that carry
           on for as long as the service does. Which ones apply depends on what
           the service does and how much is being spent, so no two services take
-          the same path. There is no single list of them anywhere, and this is an
-          attempt at one.
+          the same path.
         </p>
         <p>
           Read a row across: what it is, whether it applies to you, what you have
