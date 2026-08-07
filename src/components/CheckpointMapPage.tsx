@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Link } from "@tanstack/react-router";
 import { EditorialNote } from "@/components/EditorialNote";
 import { ExternalLink } from "@/components/ExternalLink";
 import { CheckpointMapTimeline } from "@/components/CheckpointMapTimeline";
@@ -457,6 +458,15 @@ export function CheckpointMapPage() {
             {line}
           </p>
         ))}
+        <p className="mt-2.5 text-[0.9rem] leading-snug">
+          <Link
+            to="/"
+            hash="instrument-matrix"
+            className="font-medium text-destructive underline underline-offset-4 hover:text-destructive/80"
+          >
+            Go to the table of official instruments →
+          </Link>
+        </p>
       </aside>
 
       <EditorialNote className="mb-6 md:mb-8">
