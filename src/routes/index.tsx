@@ -50,14 +50,15 @@ import lifecycleIslands from "@/assets/lifecycle_islands.svg?url";
 /** Hidden for now: phases read as distinct enough without this test. */
 const SHOW_PHASE_TEST_CALLOUT = false;
 
+/** Document order. A nav that does not match the page reads as broken. */
 const HOME_ON_THIS_PAGE = [
   { id: "who-this-is-for", label: "Who this is for" },
-  { id: "the-questions", label: "The questions every service meets" },
-  { id: "see-the-whole-path", label: "See the whole path" },
+  { id: "see-the-whole-path", label: "The official checkpoints" },
+  { id: "the-three-phases", label: "The three phases" },
   { id: "why-bother", label: "Why it matters" },
-  { id: "your-setup", label: "Your setup" },
+  { id: "your-setup", label: "Set the guide to your situation" },
   { id: "instrument-matrix", label: "Every official thing a service has to do" },
-  { id: "reusable-pieces", label: "Pieces you can reuse" },
+  { id: "reusable-pieces", label: "Reuse before you buy or build" },
 ] as const;
 
 export const Route = createFileRoute("/")({
@@ -275,7 +276,8 @@ function Index() {
 
         <LifecycleThreeRegionsFigure variant="featured" className="mt-12 md:mt-14" />
 
-        <section id="the-questions" className="mt-10 md:mt-12 scroll-mt-24">
+        <section id="the-three-phases" className="mt-10 md:mt-12 scroll-mt-24">
+          <h2 className={`${guideSectionTitle} mb-3`}>The three phases</h2>
           <p>
             Every digital service, whatever it does, runs into the same handful of questions
             over its life. What problem are we solving, and for whom. Is the solution working
@@ -564,6 +566,7 @@ function Index() {
         </section>
 
         <section id="your-setup" className="mt-16 md:mt-20 scroll-mt-24">
+          <h2 className={`${guideSectionTitle} mb-3`}>Set the guide to your situation</h2>
           <p className={guideProse}>
             This guide has two settings that change what you see throughout. Pick what
             fits your situation. You can change your mind later.
