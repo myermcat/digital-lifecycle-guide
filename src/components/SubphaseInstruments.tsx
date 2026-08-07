@@ -2,12 +2,19 @@ import { ExternalLink } from "@/components/ExternalLink";
 import {
   INSTRUMENT_MATRIX,
   MATRIX_ACTIONS,
+  MATRIX_KINDS,
   MATRIX_SUBPHASES,
   type MatrixAction,
   type MatrixSubPhase,
 } from "@/lib/instrument-matrix";
 import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+
+/** The opening sentence of the registry definition, so the block never assumes the name is known. */
+function firstSentence(text: string) {
+  const end = text.indexOf(". ");
+  return end === -1 ? text : text.slice(0, end + 1);
+}
 
 /**
  * The official instruments active in one sub-phase, rendered from the same
@@ -96,6 +103,9 @@ export function SubphaseInstruments({
                         </span>
                       ) : null}
                     </span>
+                    <span className="rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">
+                      {MATRIX_KINDS[row.kind].label}
+                    </span>
                     {cell.tags.map((tag) => (
                       <ActionChip key={tag} action={tag} />
                     ))}
@@ -108,6 +118,9 @@ export function SubphaseInstruments({
                       </ExternalLink>
                     ) : null}
                   </div>
+                  <p className="mt-1 text-[0.85rem] leading-snug text-foreground/75">
+                    {firstSentence(row.whatItIs)}
+                  </p>
                   <p className="mt-1 text-[0.85rem] leading-snug text-muted-foreground">
                     {cell.note}
                   </p>

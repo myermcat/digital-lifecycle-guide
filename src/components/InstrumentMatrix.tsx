@@ -4,6 +4,7 @@ import {
   INSTRUMENT_MATRIX,
   MATRIX_ACTIONS,
   MATRIX_FAMILIES,
+  MATRIX_KINDS,
   MATRIX_SUBPHASES,
   type MatrixAction,
   type MatrixInstrument,
@@ -61,6 +62,21 @@ function Legend() {
           </li>
         ))}
       </ul>
+      <p className="mt-4 mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        What kind of thing each one is
+      </p>
+      <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+        {(Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]).map((key) => (
+          <li key={key} className="flex gap-2.5 text-[0.8rem] leading-snug">
+            <span className="pt-[0.1rem]">
+              <span className="whitespace-nowrap rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">
+                {MATRIX_KINDS[key].label}
+              </span>
+            </span>
+            <span className="text-muted-foreground">{MATRIX_KINDS[key].gloss}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -72,6 +88,10 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
       {row.acronym ? (
         <span className="text-muted-foreground"> ({row.acronym})</span>
       ) : null}
+      {" "}
+      <span className="whitespace-nowrap rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">
+        {MATRIX_KINDS[row.kind].label}
+      </span>
       {row.linkKey ? (
         <>
           {" "}
@@ -100,9 +120,11 @@ export function InstrumentMatrix() {
       </h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          One row per instrument, the policy word for anything official a
-          service has to deal with. The first six columns say which services it
-          applies to and who does what. The seven after them are the sub-phases
+          One row per instrument, meaning anything official a service has to
+          deal with. Each carries a label saying what kind of thing it is, an
+          assessment, an authorization, a register, a standing duty, and so on,
+          because they are not all the same shape. The first six columns say
+          which services it applies to and who does what. The seven after them are the sub-phases
           of a service's life, and a tag means something has to happen to that
           instrument there. Click any row for the definition and the sub-phase
           notes.

@@ -41,6 +41,52 @@ export type MatrixSubPhase =
   | "maturity"
   | "sunset";
 
+/** What kind of thing an instrument is, so a reader knows what to expect of it. */
+export type MatrixKind =
+  | "assessment"
+  | "authorization"
+  | "review"
+  | "submission"
+  | "register"
+  | "plan"
+  | "duty"
+  | "filing";
+
+export const MATRIX_KINDS: Record<MatrixKind, { label: string; gloss: string }> = {
+  assessment: {
+    label: "Assessment",
+    gloss: "Work that ends in a judgement: how bad, how likely, how critical.",
+  },
+  authorization: {
+    label: "Authorization",
+    gloss: "Permission to proceed, signed by a named person who accepts the risk.",
+  },
+  review: {
+    label: "Review",
+    gloss: "A board or committee looks at the work and decides.",
+  },
+  submission: {
+    label: "Submission",
+    gloss: "A document sent up for a decision, usually about money or authority.",
+  },
+  register: {
+    label: "Register",
+    gloss: "A record the service is entered in and kept current.",
+  },
+  plan: {
+    label: "Plan",
+    gloss: "Arrangements written down in advance and tested.",
+  },
+  duty: {
+    label: "Standing duty",
+    gloss: "A standard the service has to meet for as long as it runs.",
+  },
+  filing: {
+    label: "Filing",
+    gloss: "Something sent or published, on a cycle or when an event triggers it.",
+  },
+};
+
 export type MatrixAction =
   | "check"
   | "gather"
@@ -126,6 +172,7 @@ export type MatrixInstrument = {
   /** Plain definition for someone who has never heard of it. */
   whatItIs: string;
   family: string;
+  kind: MatrixKind;
   /** true when it applies to every service with no threshold. */
   everyService: boolean;
   /** What brings it into scope. For universal ones, the scope statement. */
@@ -164,6 +211,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Security categorization",
     family: "Security",
+    kind: "assessment",
     whatItIs:
       "A rating of how much injury would result if the service's information leaked, if someone altered it, or if the service became unavailable. The three are judged separately, on four levels from low to very high, and the result decides the size of the security control set the build has to meet.",
     everyService: true,
@@ -174,7 +222,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The departmental security team assigns it. The injury judgement behind it comes from the business, ideally with legal and the access to information and privacy office in the room.",
     whereItEndsUp:
-      "Stays inside the department, so nobody outside will chase it. The result feeds the security assessment and the control set.",
+      "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The result feeds the security assessment and the control set.",
     linkKey: "standard-on-security-categorization",
     threads: ["security"],
     cells: {
@@ -184,7 +232,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       alpha: {
         tags: ["fill"],
-        note: "The category is assigned. It decides the size of the control set the contract then has to buy, so a vague injury statement hands that decision to someone else's guess.",
+        note: "The category is assigned. It decides the size of the control set the contract then has to buy, so a vague injury statement leaves that decision to someone else's estimate.",
       },
       growth: {
         tags: ["keep"],
@@ -200,6 +248,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Threat and risk assessment",
     acronym: "TRA",
     family: "Security",
+    kind: "assessment",
     whatItIs:
       "The exercise that lists what could go wrong, ranks each by how likely it is and how much damage it would do, and states the risk left over after safeguards. By doctrine it covers deliberate, accidental and natural threats alike, so it is not a cybersecurity-only exercise, though in practice the information technology one runs narrower because natural hazards are routed into continuity instead.",
     everyService: true,
@@ -210,7 +259,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "A security practitioner works with the system designers during design, and a security assessor, often a contractor, assesses the built system. The business owner sits on the assessment team as the program authority rather than as its author.",
     whereItEndsUp:
-      "Stays inside the department, so nobody outside will chase it. The results feed the authorization package.",
+      "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
     threads: ["security"],
     cells: {
@@ -236,6 +285,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Physical security assessment and Authority to Occupy Facility",
     acronym: "ATOF",
     family: "Security",
+    kind: "authorization",
     whatItIs:
       "The second, parallel security track, for buildings, equipment and physical space rather than systems. It uses the same harmonized method, run by different people, ending in a different signature.",
     everyService: false,
@@ -246,7 +296,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "Departmental physical security, using the Royal Canadian Mounted Police (RCMP) assessment guide.",
     whereItEndsUp:
-      "Stays inside the department, so nobody outside will chase it. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
+      "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
     threads: ["security"],
     cells: {
       alpha: {
@@ -263,6 +313,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Security assessment and authorization, ending in the Authority to Operate",
     acronym: "SA&A, ATO",
     family: "Security",
+    kind: "authorization",
     whatItIs:
       "The formal permission for the service to run. Someone with the authority reads what the security work found, accepts the risk that is left, and signs. For a departmental system that signer is normally the program or service delivery manager, which is to say the business owner.",
     everyService: true,
@@ -273,7 +324,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The information technology security team assembles the package; a security assessor, often independent, does the assessment.",
     whereItEndsUp:
-      "Stays inside the department and is signed there, so the only person who will chase it is the authorizer. For common or enterprise systems, including Shared Services Canada services, the authorizer is the Chief Information Officer of Canada instead. Where two or more organizations share a system, it is the manager of the program or service.",
+      "Held within the department and signed there. The authorizer is the only person waiting on it. For common or enterprise systems, including Shared Services Canada services, the authorizer is the Chief Information Officer of Canada instead. Where two or more organizations share a system, it is the manager of the program or service.",
     linkKey: "directive-security-management",
     threads: ["security"],
     cells: {
@@ -311,6 +362,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Business impact analysis",
     acronym: "BIA",
     family: "Continuity and incidents",
+    kind: "assessment",
     whatItIs:
       "The exercise that works out who is harmed if the service stops, how quickly that harm becomes serious, and what the service depends on. Its outputs are the criticality judgement and four numbers: maximum allowable downtime, minimum service level, recovery time objective and recovery point objective.",
     everyService: true,
@@ -330,7 +382,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       beta: {
         tags: ["gather"],
-        note: "Hand over the dependency list: the systems, suppliers, staff, facilities and partner services this one falls over with, including where another organization is relied on.",
+        note: "Hand over the dependency list: the systems, suppliers, staff, facilities and partner services this one depends on, including where another organization is relied on.",
       },
       stabilization: {
         tags: ["keep"],
@@ -350,6 +402,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Business continuity plan",
     acronym: "BCP",
     family: "Continuity and incidents",
+    kind: "plan",
     whatItIs:
       "The written arrangements for keeping a critical service delivering at a minimum acceptable level during a disruption, and recovering it afterwards. There is one plan for the department. A critical service may have its own, sit inside a broader one, or be supported by several.",
     everyService: false,
@@ -360,7 +413,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The departmental or branch business continuity coordinator drafts it on the departmental template. No instrument assigns the drafting to a service's business owner.",
     whereItEndsUp:
-      "Stays inside the department, so nobody outside will chase it. The senior official for the program area approves it.",
+      "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The senior official for the program area approves it.",
     threads: ["security"],
     cells: {
       beta: {
@@ -385,6 +438,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Privacy checklist and privacy impact assessment",
     acronym: "PIA",
     family: "Privacy and automated decisions",
+    kind: "assessment",
     whatItIs:
       "A structured look at what personal information the service collects, why it is allowed to, where it flows, how long it is kept, and what happens to people if it goes wrong. A mandatory checklist comes first and decides whether a full assessment, a lighter privacy protocol, or neither is needed.",
     everyService: false,
@@ -427,6 +481,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Algorithmic impact assessment",
     acronym: "AIA",
     family: "Privacy and automated decisions",
+    kind: "assessment",
     whatItIs:
       "A questionnaire the department fills in about itself, scoring how much an automated decision could affect people's rights, health, economic interests or the ongoing sustainability of an ecosystem. The score sets obligations for explanation, human involvement, testing and recourse.",
     everyService: false,
@@ -467,6 +522,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Accessibility conformance report",
     acronym: "ACR",
     family: "Accessibility",
+    kind: "assessment",
     whatItIs:
       "A supplier's written statement of how far their product meets the accessibility standard, clause by clause, with the gaps named. It is a claim to be tested, not a certificate.",
     everyService: false,
@@ -498,6 +554,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Accessibility conformance and the accessibility statement",
     family: "Accessibility",
+    kind: "duty",
     whatItIs:
       "Conformance of the service itself to the Canadian accessibility standard for information and communication technology, plus a published statement that names what does not conform, what the alternatives are, and when the gaps close.",
     everyService: true,
@@ -537,6 +594,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Concept case",
     family: "Approvals and money",
+    kind: "submission",
     whatItIs:
       "A short, early write-up of the problem, the rough size of the investment, and the direction being considered, produced before a business case and before any solution is chosen.",
     everyService: false,
@@ -560,6 +618,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Project complexity and risk assessment",
     acronym: "PCRA",
     family: "Approvals and money",
+    kind: "assessment",
     whatItIs:
       "A 64-question scoring tool that rates a project from level 1, sustaining, to level 4, transformational. The score decides who is allowed to approve the project: the minister, or the Treasury Board.",
     everyService: false,
@@ -588,6 +647,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Departmental architecture review board",
     acronym: "DARB",
     family: "Approvals and money",
+    kind: "review",
     whatItIs:
       "The department's own board, chaired by its chief information officer, that reviews a digital initiative's design against the government-wide architecture framework: reuse before buy before build, open standards, data, security and privacy.",
     everyService: true,
@@ -597,7 +657,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Presents the direction, bringing the reuse scan Discovery produced. Reach the board through the architecture team in the chief information officer's office.",
     whoDoes:
       "The board reviews. The chief information officer's architecture team prepares the material and the project team usually presents.",
-    whereItEndsUp: "Stays inside the department unless the initiative goes on to the government-wide board.",
+    whereItEndsUp: "Held within the department unless the initiative goes on to the government-wide board.",
     linkKey: "gc-enterprise-architecture-framework",
     threads: ["dependencies-and-standards"],
     cells: {
@@ -615,6 +675,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Government of Canada Enterprise Architecture Review Board",
     acronym: "GC EARB",
     family: "Approvals and money",
+    kind: "review",
     whatItIs:
       "The government-wide architecture board, co-chaired by the Chief Technology Officer of Canada and the Chief Technology Officer of Shared Services Canada, which reviews only the large or unusual initiatives.",
     everyService: false,
@@ -637,6 +698,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Treasury Board submission",
     family: "Approvals and money",
+    kind: "submission",
     whatItIs:
       "The formal request to the Treasury Board for authority and money when the project is beyond what the minister can approve alone. It carries a chief financial officer attestation and commits the department to specific benefits.",
     everyService: false,
@@ -662,6 +724,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Benefits realization plan and project close-out report",
     family: "Approvals and money",
+    kind: "submission",
     whatItIs:
       "The written statement of what good this project is supposed to do, and the later report confirming what was actually delivered and whether the promised benefits arrived.",
     everyService: false,
@@ -696,6 +759,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "GC Service Inventory",
     family: "Registries and records",
+    kind: "register",
     whatItIs:
       "The government-wide register of what services exist, who they serve, how digital they are, and how much volume they handle. Its 70 published fields include nothing about criticality, recovery or continuity.",
     everyService: true,
@@ -727,13 +791,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Application Portfolio Management",
     acronym: "APM",
     family: "Registries and records",
+    kind: "register",
     whatItIs:
       "The register of the applications behind the services, rated for business value, technical condition, support cost and criticality, and sorted into tolerate, innovate, mitigate or eliminate. This is where criticality actually gets recorded, since the service inventory has no field for it.",
     everyService: true,
     scope:
       "Every business application behind a service. No dollar threshold, though the system is in practice used by a subset of departments.",
     ownerDoes:
-      "Supplies the application's criticality and its condition. This is the only register that records criticality at all, so leaving it blank means nobody government-wide knows the service matters.",
+      "Supplies the application's criticality and its condition. This is the only register that records criticality at all, so leaving it blank means no government-wide record shows the service as critical.",
     whoDoes:
       "A departmental portfolio delegate holds the inventory and coordinates entry; the substantive ratings depend on the business application owner.",
     whereItEndsUp:
@@ -759,6 +824,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Records retention and disposition authority",
     family: "Registries and records",
+    kind: "register",
     whatItIs:
       "The written consent from Library and Archives Canada without which no government record may be destroyed, plus the department's own schedule saying how long each kind of record is kept. The authority is permission to dispose. It is not an instruction to dispose, and it does not set retention periods.",
     everyService: true,
@@ -798,6 +864,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Information technology continuity management",
     family: "Continuity and incidents",
+    kind: "plan",
     whatItIs:
       "The service team's own recovery arrangements: how this system gets back up, in what order its parts are restored, and proof from testing that the restore actually works. This is the part the team owns, as distinct from the departmental business continuity plan, which is the department's.",
     everyService: true,
@@ -808,7 +875,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The team running the service, with information technology operations and the hosting provider.",
     whereItEndsUp:
-      "Stays inside the department, so nobody outside will chase it. The evidence is the tested restore, held by the team.",
+      "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The evidence is the tested restore, held by the team.",
     linkKey: "directive-security-management",
     threads: ["security", "releasing-changes"],
     cells: {
@@ -822,13 +889,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       maturity: {
         tags: ["keep"],
-        note: "Re-tested on the department's cycle. An untested backup is a plan, not a capability.",
+        note: "Re-tested on the department's cycle. An untested backup has not been shown to work.",
       },
     },
   },
   {
     name: "Cyber security event response and reporting",
     family: "Continuity and incidents",
+    kind: "plan",
     whatItIs:
       "The duty to have a way of spotting, containing and reporting a cyber incident before one happens, and to report it up the government-wide chain when it does. The government-wide plan sets who is told, in what order, and how an event escalates into a coordinated response.",
     everyService: true,
@@ -864,6 +932,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Material privacy breach report",
     family: "Continuity and incidents",
+    kind: "filing",
     whatItIs:
       "The report a department must make when personal information is lost, accessed or disclosed in a way that could reasonably be expected to cause serious injury. It goes to the Office of the Privacy Commissioner of Canada and to the Treasury Board of Canada Secretariat, and affected people are notified.",
     everyService: false,
@@ -898,13 +967,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Service in both official languages",
     family: "Official languages",
+    kind: "duty",
     whatItIs:
       "The duty to offer and deliver the service in English and French, equally and at the same time. For a digital service this covers the interface, the content, notifications, error messages, and the human support behind it. Quality has to be equal, so a translated afterthought does not meet it.",
     everyService: true,
     scope:
       "In practice yes for a national digital service. The route is the Official Languages Act section 24(1)(b) with section 11(b) of the regulations, which is what makes a service available across Canada bilingual regardless of where the office sits. The operational rule a team is measured against is subsection 6.6.4.1 of the Directive on Official Languages for Communications and Services.",
     ownerDoes:
-      "Funds and schedules both languages from the first prototype, and tests with francophone users. Retrofitting French into an English-shaped interface is where the cost lands.",
+      "Funds and schedules both languages from the first prototype, and tests with francophone users. Retrofitting French into an interface built around English is where the cost arises.",
     whoDoes:
       "The service team builds it bilingual; the departmental official languages champion or adviser sets the obligations; communications owns the content standards.",
     whereItEndsUp:
@@ -919,7 +989,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       alpha: {
         tags: ["gather"],
-        note: "Design and test in both languages from the first prototype. Retrofitting French into an English-shaped interface is where the cost lands.",
+        note: "Design and test in both languages from the first prototype. Retrofitting French into an interface built around English is where the cost arises.",
       },
       beta: {
         tags: ["fill", "submit"],
@@ -938,16 +1008,17 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Official languages in what you buy",
     family: "Official languages",
+    kind: "duty",
     whatItIs:
       "The obligation to write official languages requirements into the contract, so a supplier is contractually bound to deliver both languages rather than being asked for French later as a change request.",
     everyService: false,
     scope:
       "Whenever a supplier delivers, hosts or supports any part of a service that reaches the public, or produces content on the department's behalf. Guidance is set through a contracting policy notice.",
     ownerDoes:
-      "States the requirement so the contracting authority can write the clauses. A supplier not contractually bound to deliver French will bill for it later as a change.",
+      "States the requirement so the contracting authority can write the clauses. A supplier not contractually bound to deliver French will charge for it later as a contract change.",
     whoDoes:
       "The business owner states the requirement; the contracting authority writes the clauses.",
-    whereItEndsUp: "Stays inside the department. It lives in the solicitation and the signed contract.",
+    whereItEndsUp: "Held within the department. It appears in the solicitation and in the signed contract.",
     threads: ["procurement"],
     cells: {
       alpha: {
@@ -972,6 +1043,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     name: "Security Requirements Check List",
     acronym: "SRCL, form TBS/SCT 350-103",
     family: "Contracts and suppliers",
+    kind: "submission",
     whatItIs:
       "A short form that states, for one specific contract, exactly what security the supplier and its people need: what level of information they will touch, what screening each role needs, and whether the company may hold government information at its own offices. It is what turns a vague sense that a contract is sensitive into the clauses that actually go into the solicitation.",
     everyService: false,
@@ -989,7 +1061,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     cells: {
       discovery: {
         tags: ["check"],
-        note: "Work out whether a supplier will be involved at all, and whether they would touch protected information. Editorial placement.",
+        note: "Work out whether a supplier will be involved at all, and whether they would have access to protected information. Editorial placement.",
       },
       alpha: {
         tags: ["fill"],
@@ -1016,13 +1088,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Supplier organization and personnel security screening",
     family: "Contracts and suppliers",
+    kind: "authorization",
     whatItIs:
       "The clearances a company and its individual staff must hold before touching sensitive government work. Departments do not clear suppliers themselves; a single federal program does it, and confirms in writing that a supplier may be awarded the work.",
     everyService: false,
     scope:
       "Every procurement whose Security Requirements Check List identifies a security requirement, and the same applies to subcontractors at every tier. Organization screening covers Protected A, B and C; a facility clearance is for Classified.",
     ownerDoes:
-      "Finds out early what clearance level the work needs, because screening sets the schedule more than the procurement does.",
+      "Finds out early what clearance level the work needs, because screening timelines often exceed the procurement timelines.",
     whoDoes:
       "The Contract Security Program screens. The supplier appoints a company security officer. Individual staff apply through their employer.",
     whereItEndsUp:
@@ -1045,7 +1118,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       maturity: {
         tags: ["keep"],
-        note: "Clearances expire and are renewed. Lapsed screening stops work.",
+        note: "Clearances expire and are renewed. Work cannot continue on lapsed screening.",
       },
     },
   },
@@ -1056,6 +1129,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Application hosting decision, and the public cloud default",
     family: "Hosting and cloud",
+    kind: "review",
     whatItIs:
       "The decision about where the service runs, made against a government-wide preference order rather than a local preference. Software as a service before platform before infrastructure; public cloud before hybrid before private before non-cloud. Departing from it needs a case, not a preference.",
     everyService: true,
@@ -1089,6 +1163,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Cloud security profile, guardrails, and the cloud authorization",
     family: "Hosting and cloud",
+    kind: "authorization",
     whatItIs:
       "The extra security work a cloud-hosted service carries: a ready-made control profile to build against, a set of guardrails to be in place within the first days of a new cloud environment, and a security assessment that has to account for what the cloud provider does versus what the department does.",
     everyService: false,
@@ -1099,7 +1174,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The departmental security team, with the cloud team. The provider's own assessment is inherited.",
     whereItEndsUp:
-      "Stays inside the department beyond the hosting route. The authorization is signed there, as for any other service.",
+      "Held within the department beyond the hosting route. The authorization is signed there, as for any other service.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
     threads: ["dependencies-and-standards", "security"],
     cells: {
@@ -1128,6 +1203,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Identity and credential assurance levels",
     family: "Identity and sign-in",
+    kind: "assessment",
     whatItIs:
       "Two ratings, from one to four, of how sure the service has to be about who someone is, and how strong the sign-in has to be. They are set from the harm that would result from getting it wrong, and they decide what the sign-in has to do, so they constrain the design from the beginning.",
     everyService: false,
@@ -1137,7 +1213,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Makes the judgement about what harm results from getting someone's identity wrong. That judgement sets the assurance level, and the level constrains the design from the very start.",
     whoDoes:
       "The departmental identity management function with the security team; the business owner supplies the harm judgement.",
-    whereItEndsUp: "Stays inside the department, so nobody outside will chase it.",
+    whereItEndsUp: "Held within the department. Nothing outside is waiting on it, so the timing is the department's own.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
     threads: ["security", "user-research"],
     cells: {
@@ -1158,13 +1234,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Government of Canada credential and sign-in services",
     family: "Identity and sign-in",
+    kind: "duty",
     whatItIs:
       "The shared sign-in services a department uses instead of building its own: the government-branded credential service, the commercial bank-based option, and the newer federated sign-in platform. Using them is the default rather than a choice, and building a bespoke sign-in is the thing that needs justifying.",
     everyService: false,
     scope:
       "Any external-facing service where clients sign in. Onboarding to the federated platform involves a compliance attestation and testing in a client acceptance environment.",
     ownerDoes:
-      "Picks the credential route before the prototype hard-codes a sign-in of its own, and books the onboarding time into the schedule.",
+      "Picks the credential route before the prototype hard-codes a sign-in of its own, and allows for the onboarding time in the schedule.",
     whoDoes:
       "The departmental identity and integration teams, with the platform's onboarding team.",
     whereItEndsUp:
@@ -1193,6 +1270,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Publishing under the canada.ca brand",
     family: "Publishing on canada.ca",
+    kind: "duty",
     whatItIs:
       "The rules for anything the public sees: the domain, the global header and footer, the Government of Canada signature and wordmark, the mandatory page templates, the information architecture, and the content style guide. They are mandatory, and they constrain what a service can look like and where it can live.",
     everyService: false,
@@ -1233,6 +1311,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Mobile: responsive by default, native app by justification",
     family: "Publishing on canada.ca",
+    kind: "duty",
     whatItIs:
       "The rule that a public-facing service works properly on a phone, and that building a downloadable app instead of a responsive web page has to be justified. A native app also adds a central publishing step the department does not control.",
     everyService: false,
@@ -1271,6 +1350,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Access to information readiness, and the duty to document",
     family: "Access to information and openness",
+    kind: "duty",
     whatItIs:
       "Everything the service records is subject to an access request, and decisions of business value have to be documented in the first place. That shapes what gets written down, what the system keeps, and whether records can be retrieved and released when someone asks.",
     everyService: true,
@@ -1302,13 +1382,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Proactive publication",
     family: "Access to information and openness",
+    kind: "filing",
     whatItIs:
       "Publication that happens without anyone asking. For a procured digital service the live ones are contracts over $10,000, grants and contributions over $25,000, and titles of briefing materials. It is a statutory duty, not a courtesy.",
     everyService: false,
     scope:
       "Triggered by what the service does rather than by its size. Any contract over $10,000 triggers contract publication; a grants or contributions program triggers the other.",
     ownerDoes:
-      "Supplies the contract data. Publication happens on a cycle whether or not anyone on the team remembers it.",
+      "Supplies the contract data. Publication runs on a fixed cycle, independently of the team.",
     whoDoes:
       "The department's proactive publication function, with the contracting authority supplying contract data.",
     whereItEndsUp:
@@ -1329,6 +1410,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   {
     name: "Open data and open information",
     family: "Access to information and openness",
+    kind: "filing",
     whatItIs:
       "The expectation that data and information of business value are released openly by default, in reusable formats, unless something specific stops it. Info Source separately describes what information the institution holds.",
     everyService: true,

@@ -133,7 +133,7 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
     title: "Fix fast, in small releases.",
     sections: [
       {
-        text: "Know before the first incident who to call, and how fast. A cyber security event is not only a technical problem: departmental plans and procedures for responding have to work in step with the government-wide Cyber Security Event Management Plan, and events get reported up through the department rather than by the team directly. The escalation route comes from departmental security operations, and the time to learn it is not at two in the morning.",
+        text: "Know before the first incident who to call, and how fast. A cyber security event is not only a technical problem: departmental plans and procedures for responding have to work in step with the government-wide Cyber Security Event Management Plan, and events get reported up through the department rather than by the team directly. The escalation route comes from departmental security operations, and it should be established before an incident rather than during one.",
         bold: [{ phrase: "Know before the first incident who to call, and how fast." }],
       },
       {
