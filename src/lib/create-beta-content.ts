@@ -211,7 +211,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "Both official languages, from the first screen." }],
       },
       {
-        text: "Retrofitting is where the cost lands. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research rather than checking the translation at the end.",
+        text: "Retrofitting is where the cost arises. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research rather than checking the translation at the end.",
       },
       {
         text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract. A supplier who is not contractually bound to deliver French will bill for it later as a change. The requirement comes from the business owner; the contracting authority writes the clauses.",
@@ -221,7 +221,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "The duty follows from how the service is delivered, not from how much of the country it reaches. Section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual, and section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them: communications and services made available through an automated system accessible to the public. A digital service is such a system, so a service used in one region is caught on the same terms as a national one. Reach does matter elsewhere in the same regulation, at section 11(a), but only for correspondence and telephone services.",
       },
       {
-        text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out shipping English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
+        text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
       },
       {
         text: "Where a supplier delivers the service on the department's behalf, section 25 of the Act carries the duty across to them, so buying delivery does not buy out of the obligation.",

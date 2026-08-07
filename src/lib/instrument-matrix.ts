@@ -257,7 +257,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ownerDoes:
       "Approves the work plan before the assessment starts, and states in advance how much left-over risk is acceptable. Supplies what the service is worth to the business and what it depends on. Accepts or refuses the left-over risk at the end. Does not write the assessment.",
     whoDoes:
-      "A security practitioner works with the system designers during design, and a security assessor, often a contractor, assesses the built system. The business owner sits on the assessment team as the program authority rather than as its author.",
+      "A security practitioner works with the system designers during design, and a security assessor, often a contractor, assesses the built system. The business owner joins the assessment team as the program authority rather than as its author.",
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
@@ -301,7 +301,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     cells: {
       alpha: {
         tags: ["check"],
-        note: "Work out whether the service touches physical space at all. Editorial placement: the guide's own timing, chosen so the answer lands before the solicitation.",
+        note: "Work out whether the service touches physical space at all. Editorial placement: the guide's own timing, chosen so the answer arrives before the solicitation.",
       },
       beta: {
         tags: ["fill", "sign"],
@@ -625,7 +625,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Required at: $2.5 million with no approved capacity class or class 0; $5 million at class 1; $10 million at class 2; $25 million at class 3; $50 million at class 4, all tax included. Note this ladder differs from the architecture review board ladder as written.",
     ownerDoes:
-      "Answers the business-risk questions, including how ready the organization actually is to adopt the thing. Only the program can answer that honestly, and the score decides who is allowed to approve the project.",
+      "Answers the business-risk questions, including how ready the organization actually is to adopt the thing. Only the program can answer that with any accuracy, and the score decides who is allowed to approve the project.",
     whoDoes:
       "The departmental project management office authors it; the project sponsor is responsible for ensuring it is completed; the deputy head is responsible for its accuracy.",
     whereItEndsUp:
@@ -837,7 +837,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department requests a new authority from Library and Archives Canada where none covers the records.",
     linkKey: "lac-information-disposition-hub",
-    threads: ["data-stewardship"],
+    threads: ["data-stewardship", "privacy"],
     cells: {
       alpha: {
         tags: ["gather"],
@@ -1019,7 +1019,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoDoes:
       "The business owner states the requirement; the contracting authority writes the clauses.",
     whereItEndsUp: "Held within the department. It appears in the solicitation and in the signed contract.",
-    threads: ["procurement"],
+    threads: ["procurement", "accessibility"],
     cells: {
       alpha: {
         tags: ["gather"],

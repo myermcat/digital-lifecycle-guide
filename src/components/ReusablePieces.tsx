@@ -19,13 +19,14 @@ const CELL = "align-top border-b border-border/60 px-3 py-3 text-[0.8rem] leadin
 export function ReusablePieces() {
   return (
     <section className="mt-12 md:mt-14" id="reusable-pieces">
-      <h2 className={guideSectionTitle}>Pieces you can reuse instead of building</h2>
+      <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          Nothing in this table is an obligation. These are platforms and components
-          another part of the Government of Canada already runs and maintains, so a
-          team can configure rather than build. The table above is what a service has
-          to deal with. This is what it can avoid having to make.
+          Reuse before buy before build is the order the Government of Canada asks
+          teams to work in. These are the pieces already built and maintained by
+          another part of government, so a team configures rather than makes its own.
+          The table above is what a service has to deal with. This is what it can
+          avoid having to make.
         </p>
         <p className="text-muted-foreground">
           Choosing to build your own instead breaks no rule. The enterprise
@@ -35,7 +36,7 @@ export function ReusablePieces() {
         </p>
       </div>
 
-      <div className="mt-6 overflow-x-auto rounded-lg border border-border">
+      <div className="mt-6 max-h-[75vh] overflow-auto rounded-lg border border-border">
         <table className="w-full min-w-[62rem] border-collapse text-left">
           <thead>
             <tr className="bg-muted/60">
@@ -50,7 +51,7 @@ export function ReusablePieces() {
                 <th
                   key={label}
                   className={cn(
-                    "border-b border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
+                    "sticky top-0 z-20 border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
                     width,
                   )}
                 >

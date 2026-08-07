@@ -50,6 +50,16 @@ import lifecycleIslands from "@/assets/lifecycle_islands.svg?url";
 /** Hidden for now: phases read as distinct enough without this test. */
 const SHOW_PHASE_TEST_CALLOUT = false;
 
+const HOME_ON_THIS_PAGE = [
+  { id: "who-this-is-for", label: "Who this is for" },
+  { id: "the-questions", label: "The questions every service meets" },
+  { id: "see-the-whole-path", label: "See the whole path" },
+  { id: "why-bother", label: "Why it matters" },
+  { id: "your-setup", label: "Your setup" },
+  { id: "instrument-matrix", label: "Every official thing a service has to do" },
+  { id: "reusable-pieces", label: "Pieces you can reuse" },
+] as const;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -150,7 +160,7 @@ function PhaseDeepLink({
 
 function Index() {
   return (
-    <GuideLayout>
+    <GuideLayout onThisPageItems={HOME_ON_THIS_PAGE}>
         <header className="mb-14 md:mb-20 text-center">
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
             Government of Canada
@@ -265,7 +275,7 @@ function Index() {
 
         <LifecycleThreeRegionsFigure variant="featured" className="mt-12 md:mt-14" />
 
-        <section className={`mt-10 md:mt-12 ${guideProseSpace}`}>
+        <section id="the-questions" className="mt-10 md:mt-12 scroll-mt-24">
           <p>
             Every digital service, whatever it does, runs into the same handful of questions
             over its life. What problem are we solving, and for whom. Is the solution working
@@ -382,7 +392,7 @@ function Index() {
           </p>
         </section>
 
-        <section className="mt-16 md:mt-20" id="why-bother">
+        <section className="mt-16 md:mt-20 scroll-mt-24" id="why-bother">
           <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
           <IconAccordionSection
             embedded
@@ -553,7 +563,7 @@ function Index() {
           />
         </section>
 
-        <section className="mt-16 md:mt-20">
+        <section id="your-setup" className="mt-16 md:mt-20 scroll-mt-24">
           <p className={guideProse}>
             This guide has two settings that change what you see throughout. Pick what
             fits your situation. You can change your mind later.

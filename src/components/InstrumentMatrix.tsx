@@ -139,43 +139,43 @@ export function InstrumentMatrix() {
 
       <Legend />
 
-      <div className="mt-6 overflow-x-auto rounded-lg border border-border">
+      <div className="mt-6 max-h-[80vh] overflow-auto rounded-lg border border-border">
         <table className="w-full min-w-[94rem] border-collapse text-left">
           <thead>
             <tr className="bg-muted/60">
               <th
                 rowSpan={2}
-                className="sticky left-0 z-10 min-w-[15rem] bg-muted/60 border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sticky left-0 top-0 z-40 min-w-[15rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 Instrument
               </th>
               <th
                 rowSpan={2}
-                className="min-w-[7rem] border-b border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sticky top-0 z-20 min-w-[7rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 Every service?
               </th>
               <th
                 rowSpan={2}
-                className="min-w-[16rem] border-b border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sticky top-0 z-20 min-w-[16rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 What brings it into scope
               </th>
               <th
                 rowSpan={2}
-                className="min-w-[18rem] border-b border-border bg-primary/5 px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80"
+                className="sticky top-0 z-20 min-w-[18rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80"
               >
                 What the business owner does
               </th>
               <th
                 rowSpan={2}
-                className="min-w-[14rem] border-b border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sticky top-0 z-20 min-w-[14rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 Who does the work
               </th>
               <th
                 rowSpan={2}
-                className="min-w-[13rem] border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sticky top-0 z-20 min-w-[13rem] border-b border-r border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 Where it ends up
               </th>
@@ -183,7 +183,7 @@ export function InstrumentMatrix() {
                 <th
                   key={span.phase}
                   colSpan={span.count}
-                  className="border-b border-l border-border px-3 py-1.5 text-center text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
+                  className="sticky top-0 z-20 border-b border-l border-border bg-muted px-3 py-1.5 text-center text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
                 >
                   {span.phase}
                 </th>
@@ -194,7 +194,7 @@ export function InstrumentMatrix() {
                 <th
                   key={sub.key}
                   className={cn(
-                    "min-w-[7.5rem] border-b border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
+                    "sticky top-[2.15rem] z-20 min-w-[7.5rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
                     (i === 0 || i === 3 || i === 6) && "border-l",
                   )}
                 >
