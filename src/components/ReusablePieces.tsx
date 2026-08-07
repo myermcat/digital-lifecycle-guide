@@ -23,11 +23,11 @@ export function ReusablePieces() {
       <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          Reuse before buy before build is the order the Government of Canada asks
-          teams to work in. These are the pieces already built and maintained by
-          another part of government, so a team configures rather than makes its own.
-          The table above is what a service has to deal with. This is what it can
-          avoid having to make.
+          The Government of Canada asks teams to look for something to reuse before
+          buying, and to buy before building their own. These are the pieces already
+          built and maintained by another part of government, so a team can configure
+          rather than make. The table above is what a service has to deal with. This
+          is what it can avoid having to make.
         </p>
         <p className="text-muted-foreground">
           Choosing to build your own instead breaks no rule. The enterprise

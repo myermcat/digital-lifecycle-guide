@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, List } from "lucide-react";
+import { AlignLeft, ChevronDown, ChevronUp } from "lucide-react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
 import {
   onThisPageRailWidth,
@@ -38,9 +38,11 @@ export function OnThisPageNav({
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
+        aria-label="On this page"
+        title="On this page"
         className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/80 backdrop-blur-sm px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] font-sans text-foreground/70 hover:bg-muted/60 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
-        <List className="size-3.5 shrink-0 opacity-70" aria-hidden />
+        <AlignLeft className="size-3.5 shrink-0 opacity-70" aria-hidden />
         <span className="hidden sm:inline">On this page</span>
         {open ? (
           <ChevronUp className="size-3.5 shrink-0 opacity-60" aria-hidden />

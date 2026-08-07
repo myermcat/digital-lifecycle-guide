@@ -25,18 +25,19 @@ export function GuideHeader({
   return (
     <header className="w-full">
       <div className="bg-background/85 backdrop-blur-md border-b border-border/60">
-        <div className="mx-auto max-w-5xl px-6 h-14 flex items-center gap-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 h-14 flex items-center gap-3 sm:gap-6">
           <Link
             to="/"
-            className="group flex items-baseline gap-2 shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
+            className="group flex min-w-0 items-baseline gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
           >
             <span
               aria-hidden="true"
               className="inline-block h-2.5 w-2.5 translate-y-[1px]"
               style={{ backgroundColor: "var(--gc-red)" }}
             />
-            <span className="font-serif text-base md:text-lg font-semibold tracking-tight text-foreground leading-none">
-              The 2026 Digital Lifecycle Guide
+            <span className="truncate font-serif text-base md:text-lg font-semibold tracking-tight text-foreground leading-none">
+              <span className="sm:hidden">The 2026 Guide</span>
+              <span className="hidden sm:inline">The 2026 Digital Lifecycle Guide</span>
             </span>
           </Link>
 
@@ -56,7 +57,7 @@ export function GuideHeader({
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-2.5 md:gap-3">
+          <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-2.5 md:gap-3">
             <div
               aria-hidden="true"
               className="hidden md:block h-4 w-px bg-border/60 mr-0.5"
