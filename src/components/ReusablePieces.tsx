@@ -23,17 +23,16 @@ export function ReusablePieces() {
       <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          The Government of Canada asks teams to look for something to reuse before
-          buying, and to buy before building their own. These are the pieces already
-          built and maintained by another part of government, so a team can configure
-          rather than make. The table above is what a service has to deal with. This
-          is what it can avoid having to make.
+          Look for something to reuse before making your own. These are the pieces
+          already built and maintained by another part of government, so a team can
+          configure rather than make. The table above is what a service has to deal
+          with. This is what it can avoid having to make.
         </p>
         <p className="text-muted-foreground">
-          Choosing to build your own instead breaks no rule. The enterprise
-          architecture framework does ask teams to look at reuse before buying or
-          building, so an architecture review board will ask what was considered and
-          why it was not used. Having an answer is easier than having a reason.
+          Choosing to make your own instead breaks no rule. The enterprise
+          architecture framework does ask teams to look at reuse first, so a
+          departmental architecture review board will ask what was considered and why
+          it was not used. Having an answer ready is easier than being asked for one.
         </p>
       </div>
 

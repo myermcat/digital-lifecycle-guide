@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { Maximize2, X } from "lucide-react";
+import { Maximize2, RotateCcw, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -67,6 +67,14 @@ export function ExpandableTable({
 
   return (
     <div className={cn("relative", className)}>
+      <p className="mb-2 flex items-start gap-2 rounded-md border border-border bg-muted/40 px-3 py-2 text-[0.78rem] leading-snug text-muted-foreground sm:hidden">
+        <RotateCcw className="mt-[0.15rem] h-3.5 w-3.5 shrink-0" aria-hidden />
+        <span>
+          This table is wide. Turn the phone sideways to read it, or open it full
+          screen. Scroll sideways inside the table to reach the later columns.
+        </span>
+      </p>
+
       <div className="mb-2 flex justify-end">
         <button
           ref={openerRef}

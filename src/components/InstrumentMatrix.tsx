@@ -150,7 +150,7 @@ export function InstrumentMatrix() {
             <tr className="bg-muted/60">
               <th
                 rowSpan={2}
-                className="sticky left-0 z-40 min-w-[15rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
+                className="sm:sticky sm:left-0 z-40 min-w-[11rem] sm:min-w-[15rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 Instrument
               </th>
@@ -261,7 +261,7 @@ function FamilyGroup({
               <td
                 className={cn(
                   CELL_BASE,
-                  "sticky left-0 z-10 border-r bg-background",
+                  "sm:sticky sm:left-0 z-10 border-r bg-background",
                 )}
               >
                 <InstrumentName row={row} />
