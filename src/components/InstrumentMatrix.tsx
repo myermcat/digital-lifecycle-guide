@@ -121,20 +121,23 @@ export function InstrumentMatrix() {
       </h2>
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          One row per instrument, meaning anything official a service has to
-          deal with. Each carries a label saying what kind of thing it is, an
-          assessment, an authorization, a register, a standing duty, and so on,
-          because they are not all the same shape. The first six columns say
-          which services it applies to and who does what. The seven after them are the sub-phases
-          of a service's life, and a tag means something has to happen to that
-          instrument there. Click any row for the definition and the sub-phase
-          notes.
+          Getting a service live means passing official checkpoints: assessments
+          to run, boards to attend, registers to appear in, and duties that carry
+          on for as long as the service does. Which ones apply depends on what
+          the service does and how much is being spent, so no two services take
+          the same path. There is no single list of them anywhere, and this is an
+          attempt at one.
+        </p>
+        <p>
+          Read a row across: what it is, whether it applies to you, what you have
+          to do about it, and what happens to it in each sub-phase of the
+          service&apos;s life. Click a row for the full definition.
         </p>
         <p className="text-muted-foreground">
-          Placing an instrument in a sub-phase is this guide's own editorial
-          choice. No Government of Canada source uses these phase names. Each
-          placement is anchored on a real deadline or trigger in the instrument
-          itself, and where it is a judgement call instead, the row says so.
+          One caution. Which sub-phase an instrument sits in is this guide&apos;s
+          own judgement, because no Government of Canada source uses these phase
+          names. Where a placement follows a real deadline in the instrument, the
+          row says so. Where it does not, the row says that too.
         </p>
       </div>
 
