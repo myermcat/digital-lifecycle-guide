@@ -216,7 +216,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "A rating of how much injury would result if the service's information leaked, if someone altered it, or if the service became unavailable. The three are judged separately, on four levels from low to very high, and the result decides the size of the security control set the build has to meet.",
     everyService: true,
     scope:
-      "Every service. Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one is part of the business impact analysis requirement.",
+      "Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one is part of the business impact analysis requirement.",
     ownerDoes:
       "Makes the judgement about how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately. That judgement is in no document anywhere: it comes from knowing the program and its clients, which is exactly why the security team cannot supply it.",
     whoDoes:
@@ -901,7 +901,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The duty to have a way of spotting, containing and reporting a cyber incident before one happens, and to report it up the government-wide chain when it does. The government-wide plan sets who is told, in what order, and how an event escalates into a coordinated response.",
     everyService: true,
     scope:
-      "Every service. Departmental plans and procedures for responding to cyber events must operate in accordance with the Government of Canada Cyber Security Event Management Plan, and security events are reported under the security event reporting standard.",
+      "Departmental plans and procedures for responding to cyber events must operate in accordance with the Government of Canada Cyber Security Event Management Plan, and security events are reported under the security event reporting standard.",
     ownerDoes:
       "Knows before launch who to call and how fast, and reports an incident rather than sitting on it. The escalation route comes from the departmental security operations team.",
     whoDoes:

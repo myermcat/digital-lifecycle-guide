@@ -311,6 +311,40 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     ],
   },
   {
+    id: "write-the-requirements",
+    icon: Briefcase,
+    title: "Write down what the service has to do, and know which parts will move.",
+    sections: [
+      {
+        text: "Requirements come in three kinds. They are worth separating, because they age at different speeds and only some of them belong in a contract.",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Business requirements say what the organization needs and why, in the language of the program. An applicant can check their status without phoning. These change slowly, because what people need from a service outlasts any particular version of it. Safe to commit to.",
+            bold: [{ phrase: "Business requirements" }],
+          },
+          {
+            text: "Functional requirements say what the system must do. The status appears within two seconds of signing in. These are the volatile ones. They change as soon as real users touch the thing, which is what Alpha is for, so pinning them into a contract is how a department ends up paying for a service nobody wanted.",
+            bold: [{ phrase: "Functional requirements" }],
+          },
+          {
+            text: "Non-functional requirements say how the service has to behave: how fast, how available, how long it holds records, which accessibility standard it meets, how quickly it recovers. These are stable and testable, which makes them exactly what a contract should hold a supplier to.",
+            bold: [{ phrase: "Non-functional requirements" }],
+          },
+        ],
+      },
+      {
+        text: "The rule that follows: contract the outcomes and the properties, and leave the screens free. A supplier held to the business need and the service levels can still be told the design was wrong. A supplier held to a screen layout agreed before anyone tested it will build that layout and charge for the change.",
+        bold: [{ phrase: "contract the outcomes and the properties, and leave the screens free" }],
+      },
+      {
+        text: "This is also why the guide does not ask for a single requirements document written up front and signed off. That habit comes from a way of working where the whole thing was specified before anything was built. What replaces it is the tested design, which carries the functional half as something a builder can see rather than argue about, alongside the business and non-functional halves written down.",
+      },
+    ],
+  },
+  {
     id: "measure-success",
     icon: Activity,
     title: "Sharpen how you'll measure success.",

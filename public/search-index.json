@@ -267,15 +267,6 @@
     "keywords": "instrumentation dashboard OpenTelemetry task success DORA KPI signals SLO"
   },
   {
-    "id": "/reference/soo-vs-sow",
-    "pageTitle": "Statement of requirement vs statement of work",
-    "pagePath": "/reference/soo-vs-sow",
-    "sectionId": "",
-    "sectionHeading": "Statement of requirement vs statement of work",
-    "lifecyclePhase": "reference",
-    "text": ""
-  },
-  {
     "id": "/reference/options-analysis",
     "pageTitle": "Options analysis",
     "pagePath": "/reference/options-analysis",

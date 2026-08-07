@@ -1,3 +1,4 @@
+/** @deprecated Redirects to the Procurement thread; the content lives there now. */
 export const SOO_VS_SOW_PATH = "/reference/soo-vs-sow";
 
 export const OPTIONS_ANALYSIS_PATH = "/reference/options-analysis";

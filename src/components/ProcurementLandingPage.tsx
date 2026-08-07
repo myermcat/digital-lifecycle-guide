@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
+import { DescribingWhatYouBuy } from "@/components/DescribingWhatYouBuy";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
@@ -58,6 +59,8 @@ export function ProcurementLandingPage() {
       <ProcurementJourneySection intro={landing.journeyIntro} steps={landing.journeySteps} />
 
       <GoodContractCallout />
+
+      <DescribingWhatYouBuy />
 
       <TraditionalAgileComparison
         rows={landing.comparisonRows}

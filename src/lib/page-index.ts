@@ -1,11 +1,9 @@
 import { PHASES, THREADS } from "./guide-strings";
 import {
-  SOO_VS_SOW_PATH,
   OPTIONS_ANALYSIS_PATH,
   GOOD_CONTRACT_PATH,
   CHECKPOINT_MAP_PATH,
 } from "./reference-paths";
-import { SOO_VS_SOW } from "./soo-vs-sow-content";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
 import { GOOD_CONTRACT } from "./good-contract-content";
 import { SUPPORT_PAGE } from "./support-content";
@@ -134,7 +132,6 @@ export const PAGE_INDEX: PageIndexEntry[] = [
     status: "in-review",
   },
 
-  { title: SOO_VS_SOW.title, path: SOO_VS_SOW_PATH, type: "reference", status: "in-review" },
   {
     title: OPTIONS_ANALYSIS.title,
     path: OPTIONS_ANALYSIS_PATH,

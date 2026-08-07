@@ -23,7 +23,6 @@ import { PHASES } from "@/lib/guide-strings";
 import {
   GOOD_CONTRACT_PATH,
   OPTIONS_ANALYSIS_PATH,
-  SOO_VS_SOW_PATH,
   CHECKPOINT_MAP_PATH,
 } from "@/lib/reference-paths";
 import { SUPPORT_PATH } from "@/lib/support-path";
@@ -143,7 +142,6 @@ export const GUIDE_CONTENTS = {
     items: [
       { path: OPTIONS_ANALYSIS_PATH, icon: GitBranch },
       { path: GOOD_CONTRACT_PATH, icon: FileCheck },
-      { path: SOO_VS_SOW_PATH, icon: ClipboardList },
     ] satisfies ContentsDocLink[],
   },
   newToThis: {

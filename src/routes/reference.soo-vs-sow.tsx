@@ -1,13 +1,16 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { SooVsSowPage } from "@/components/SooVsSowPage";
-import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { THREADS } from "@/lib/guide-strings";
 
+/**
+ * Was a standalone reference page. Folded into the Procurement thread, because one
+ * distinction does not need a page of its own. The URL stays alive because it is
+ * linked from documents already on GCXchange.
+ */
 export const Route = createFileRoute("/reference/soo-vs-sow")({
-  head: () => ({
-    meta: [
-      { title: `${SOO_VS_SOW.title} — The 2026 Digital Lifecycle Guide` },
-      { name: "description", content: SOO_VS_SOW.opening },
-    ],
-  }),
-  component: SooVsSowPage,
+  beforeLoad: () => {
+    throw redirect({
+      to: THREADS.procurement.path,
+      hash: "describing-what-you-buy",
+    });
+  },
 });

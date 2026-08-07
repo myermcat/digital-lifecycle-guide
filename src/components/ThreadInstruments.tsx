@@ -82,16 +82,14 @@ export function ThreadInstruments({
                     </span>
                   ) : null}
                 </span>
-                <span
-                  className={cn(
-                    "rounded-full border px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide",
-                    row.everyService
-                      ? "border-emerald-300 bg-emerald-100 text-emerald-900 dark:border-emerald-800/70 dark:bg-emerald-950 dark:text-emerald-200"
-                      : "border-amber-300 bg-amber-100 text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200",
-                  )}
-                >
-                  {row.everyService ? "Every service" : "Only if"}
-                </span>
+                {/* Applying to every service is the normal case, so it carries no
+                    badge. Only the conditional ones are marked, which is what a
+                    reader needs to see. */}
+                {row.everyService ? null : (
+                  <span className="rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
+                    Only if
+                  </span>
+                )}
                 {row.linkKey ? (
                   <ExternalLink
                     linkKey={row.linkKey}
