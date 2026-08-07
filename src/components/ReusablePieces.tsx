@@ -43,7 +43,7 @@ export function ReusablePieces() {
         maxHeight="75vh"
       >
         <table className="w-full min-w-[62rem] border-collapse text-left">
-          <thead>
+          <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
             <tr className="bg-muted/60">
               {[
                 ["Piece", "min-w-[12rem]"],
@@ -56,7 +56,7 @@ export function ReusablePieces() {
                 <th
                   key={label}
                   className={cn(
-                    "sticky top-0 z-20 border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
+                    "border-b border-border bg-muted px-3 py-2.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
                     width,
                   )}
                 >

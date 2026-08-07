@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { Maximize2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,6 +28,9 @@ export function ExpandableTable({
   maxHeight?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
 
@@ -77,31 +81,36 @@ export function ExpandableTable({
 
       {scrollBox}
 
-      {expanded ? (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={title}
-          className="fixed inset-0 z-[60] flex flex-col bg-background"
-        >
-          <div className="flex shrink-0 items-center justify-between gap-4 border-b border-border px-4 py-2.5 md:px-6">
-            <p className="truncate text-sm font-semibold text-foreground">{title}</p>
-            <button
-              ref={closeRef}
-              type="button"
-              onClick={() => setExpanded(false)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-[0.72rem] font-medium text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      {expanded && mounted
+        ? createPortal(
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label={title}
+              className="fixed inset-0 z-[9999] flex flex-col bg-background"
             >
-              <X className="h-3.5 w-3.5" aria-hidden />
-              Close
-              <span className="ml-1 rounded border border-border px-1 text-[0.62rem] uppercase tracking-wide text-muted-foreground/80">
-                esc
-              </span>
-            </button>
-          </div>
-          <div className="min-h-0 flex-1 overflow-auto">{children}</div>
-        </div>
-      ) : null}
+              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-border bg-background px-4 py-3 md:px-6">
+                <p className="truncate text-sm font-semibold text-foreground">
+                  {title}
+                </p>
+                <button
+                  ref={closeRef}
+                  type="button"
+                  onClick={() => setExpanded(false)}
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-[0.78rem] font-medium text-foreground transition-colors hover:border-foreground/40 hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <X className="h-4 w-4" aria-hidden />
+                  Close
+                  <span className="ml-1 rounded border border-border px-1 text-[0.62rem] uppercase tracking-wide text-muted-foreground/80">
+                    esc
+                  </span>
+                </button>
+              </div>
+              <div className="min-h-0 flex-1 overflow-auto">{children}</div>
+            </div>,
+            document.body,
+          )
+        : null}
     </div>
   );
 }
