@@ -645,35 +645,8 @@ export const ALPHA_FINISH = {
       label: "Official checkpoints of Alpha met",
       items: [
         {
-          text: "Security categorization assigned, so the size of the control set the contract has to buy is settled.",
-          bold: [{ phrase: "Security categorization assigned," }],
-        },
-        {
-          text: "The departmental architecture review board has assessed the chosen direction.",
-          bold: [{ phrase: "The departmental architecture review board" }],
-        },
-        {
-          text: "The hosting decision taken to that same board, with the reasoning if it is anything other than public cloud.",
-          bold: [{ phrase: "The hosting decision" }],
-        },
-        {
-          text: "The authorizer has approved the initial security assurance requirements, the control set, and the high-level design. These are three of the seven points where they sign.",
-          bold: [{ phrase: "The authorizer has approved" }],
-        },
-        {
-          text: "The Government of Canada Enterprise Architecture Review Board cleared, or confirmed as not applicable. Check all six triggers, not the dollar one alone.",
-          bold: [{ phrase: "The Government of Canada Enterprise Architecture Review Board" }],
-          onlyIf: "a trigger is met",
-        },
-        {
-          text: "The Treasury Board submission written and filed. It takes months, and a gender-based analysis plus goes with it.",
-          bold: [{ phrase: "The Treasury Board submission" }],
-          onlyIf: "over the department's capacity class",
-        },
-        {
-          text: "The Security Requirements Check List drafted, because the clauses it produces have to be in the solicitation before anyone bids.",
-          bold: [{ phrase: "The Security Requirements Check List" }],
-          onlyIf: "the supplier touches protected information",
+          text: "Every official checkpoint that Alpha reaches is done: the assessments started or finished, the boards attended, the approvals given. The table below this section names each one, what stage it reaches in Alpha, and who does the work, so it is not repeated here.",
+          bold: [{ phrase: "Every official checkpoint that Alpha reaches is done" }],
         },
       ] satisfies readonly (ThreadLinkedProse & { onlyIf?: string })[],
     },

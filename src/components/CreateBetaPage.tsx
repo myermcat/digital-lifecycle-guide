@@ -252,10 +252,9 @@ export function CreateBetaPage() {
       />
 
 
-      <LifecycleVisual
-        visual={LIFECYCLE_VISUALS.subphaseKeyBeta}
-        className="mt-10 md:mt-12"
-      />
+      <section className="mt-10 md:mt-12">
+        <WhereThisFits {...meta.where()} />
+      </section>
 
       <LaunchCallout className="mt-6 md:mt-8" />
 

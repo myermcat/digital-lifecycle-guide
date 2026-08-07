@@ -269,10 +269,9 @@ export function CreateAlphaPage() {
       />
 
 
-      <LifecycleVisual
-        visual={LIFECYCLE_VISUALS.subphaseKeyAlpha}
-        className="mt-10 md:mt-12"
-      />
+      <section className="mt-10 md:mt-12">
+        <WhereThisFits {...meta.where()} />
+      </section>
 
       <SubphaseInstruments subPhase="alpha" />
 
