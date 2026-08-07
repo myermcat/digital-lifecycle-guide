@@ -20,6 +20,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { InstrumentMatrix } from "@/components/InstrumentMatrix";
+import { ReusablePieces } from "@/components/ReusablePieces";
 import { PageFoot } from "@/components/PageFoot";
 import {
   PhaseIconCreate,
@@ -562,6 +563,8 @@ function Index() {
         </section>
 
         <InstrumentMatrix />
+
+        <ReusablePieces />
 
         <PageFoot />
 
