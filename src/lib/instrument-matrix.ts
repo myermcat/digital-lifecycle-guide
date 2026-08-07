@@ -649,7 +649,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     family: "Approvals and money",
     kind: "review",
     whatItIs:
-      "The department's own board, chaired by its chief information officer, that reviews a digital initiative's design against the government-wide architecture framework: reuse before buy before build, open standards, data, security and privacy.",
+      "The department's own board, chaired by its chief information officer, that reviews a digital initiative's design against the government-wide architecture framework: look for something that already exists before buying or building, open standards, data, security and privacy.",
     everyService: true,
     scope:
       "All departmental digital initiatives. Two carve-outs: small departments and agencies, meaning reference levels under $300 million a year or so designated, are exempt; and Agents of Parliament are exempt.",

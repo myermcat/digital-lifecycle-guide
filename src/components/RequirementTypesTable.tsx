@@ -15,19 +15,22 @@ import { guideProseTight } from "@/lib/guide-typography";
 const ROWS = [
   {
     kind: "Business",
-    says: "What the organization needs, and why, in the language of the program. An applicant can check their status without phoning.",
+    says: "What the organization needs, and why, in the language of the program.",
+    example: "An applicant can find out where their application stands without phoning anyone.",
     ages: "Slowly. What people need from a service outlasts any particular version of it, so these are safe to commit to.",
     tone: "stable" as const,
   },
   {
     kind: "Functional",
-    says: "What the system must do. The status appears within two seconds of signing in.",
+    says: "What the system must do, screen by screen and step by step.",
+    example: "The status page shows the current stage and the date it changed, within two seconds of signing in.",
     ages: "Fast. These change as soon as real users touch the service, which is what Alpha is for. Pinning them into a contract is how a department pays for a service nobody wanted.",
     tone: "volatile" as const,
   },
   {
     kind: "Non-functional",
     says: "How the service has to behave: how fast, how available, how long it holds records, which accessibility standard it meets, how quickly it recovers.",
+    example: "Available 99.5 per cent of the month, meets EN 301 549, back up within four hours of an outage.",
     ages: "Slowly, and it can be tested. This is what a contract should hold a supplier to.",
     tone: "stable" as const,
   },
@@ -81,6 +84,9 @@ export function RequirementTypesTable() {
               </th>
               <td className={`${guideProseTight} w-[38%] py-3 pr-4 text-foreground/80`}>
                 {row.says}
+                <span className="mt-1.5 block italic text-muted-foreground">
+                  {row.example}
+                </span>
               </td>
               <td className={`${guideProseTight} py-3 text-foreground/80`}>
                 {row.ages}
@@ -107,6 +113,9 @@ export function RequirementTypesTable() {
               </span>
             </div>
             <p className={`${guideProseTight} text-foreground/80`}>{row.says}</p>
+            <p className={`${guideProseTight} mt-1 italic text-muted-foreground`}>
+              {row.example}
+            </p>
             <p className={`${guideProseTight} mt-1.5 text-muted-foreground`}>
               <span className="font-semibold uppercase tracking-[0.1em] text-[0.6rem]">
                 How it ages.

@@ -146,6 +146,13 @@ export type BetaAccordionStage = {
   id: string;
   icon: LucideIcon;
   title: string;
+  /**
+   * One line under the title, readable while the row is closed.
+   *
+   * Seven closed rows of full sentences give a reader no way to tell which one
+   * holds what they came for, so each row says what is inside it.
+   */
+  triggerNote?: string;
   headerVisual?: LifecycleVisualAsset;
   sections: readonly ThreadContentSection[];
 };
@@ -160,6 +167,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "when-contract-signed",
     icon: FileSignature,
     title: "The contract, if there is one, is signed here, before any building.",
+    triggerNote: "What you are signing, and what has to be in it before you do.",
     sections: [
       {
         text: "Two of the four buying routes sign at the start of Beta. The other two do not sign here at all.",
@@ -202,6 +210,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "build-smallest-real-thing",
     icon: Wrench,
     title: "Build the smallest real thing that works end to end.",
+    triggerNote: "One complete journey, built for real, with every other feature left out.",
     sections: [
       {
         text: "This is the first code, or the first configuration, meant to survive. Most existing Government of Canada services were bought, reused, or configured rather than written from scratch, and Beta is where that product is actually stood up.",
@@ -325,6 +334,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "private-beta",
     icon: UserCheck,
     title: "Private beta: prove it with a few real people.",
+    triggerNote: "An invited group, a capped volume, and what you watch for.",
     sections: [
       {
         text: "A private beta is invite-only. It is not a soft launch, and it is not announced.",
@@ -361,6 +371,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "public-beta",
     icon: Users,
     title: "Public beta: open it to anyone who needs it.",
+    triggerNote: "Opening up, holding the old service open beside it, and when to stop.",
     sections: [
       {
         text: "Public beta is the real service, available to the public. If the service replaces an existing one, it runs alongside the old way until launch.",
@@ -412,6 +423,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "build-dashboard",
     icon: Gauge,
     title: "Build the dashboard, and decide who owns it.",
+    triggerNote: "The four measures every service reports, and who keeps them current.",
     headerVisual: LIFECYCLE_VISUALS.serviceDashboard,
     sections: [
       {
@@ -439,6 +451,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "ready-to-run",
     icon: Server,
     title: "Get ready to run it.",
+    triggerNote: "Support, the people, and the budget that has to renew.",
     sections: [
       {
         text: "A service that nobody is staffed to operate can decay from its first week.",
@@ -470,6 +483,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     id: "decide-records-disposition",
     icon: Archive,
     title: "Decide now what happens to the records.",
+    triggerNote: "Retention and disposition, settled while the system is still being built.",
     sections: [
       {
         text:

@@ -28,11 +28,11 @@ export function EditorialNote({
 
   const toneClasses = isCaution
     ? "border-destructive/30 border-l-destructive bg-destructive/8"
-    : "border-border border-l-muted-foreground/60 bg-muted/40";
+    : "border-border border-l-primary/70 bg-muted/70";
 
   const labelClasses = isCaution
     ? `${guideCalloutLabel} text-destructive`
-    : `${guideCalloutLabel} text-muted-foreground`;
+    : `${guideCalloutLabel} text-primary/85`;
 
   return (
     <aside

@@ -216,6 +216,7 @@ export function CreateBetaPage() {
           id: stage.id,
           icon: stage.icon,
           title: stage.title,
+          triggerNote: stage.triggerNote,
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,

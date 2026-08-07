@@ -81,6 +81,11 @@ const ALLOW = [
   { rule: "sits", match: "website-sits", why: "identifier, never rendered" },
   { rule: "land", match: "Newfoundland", why: "place name" },
   { rule: "land", match: "landing", why: "route and variable names only; checked separately below" },
+  {
+    rule: "delve-tapestry",
+    match: "the department has leverage",
+    why: "noun, meaning bargaining power at signature. The banned sense is the verb.",
+  },
 ];
 
 const SKIP_DIRS = new Set(["node_modules", "dist", ".git", "components/ui"]);

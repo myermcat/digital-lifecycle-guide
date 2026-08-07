@@ -303,8 +303,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "The chosen direction is also assessed: departmental architecture review boards weigh every digital initiative against the GC Enterprise Architecture Framework, reuse before buy before build, and the largest initiatives go on to the government-wide review board. Arrive with the reuse scan from Discovery in hand and the review goes quickly.",
-        bold: [{ phrase: "reuse before buy before build" }],
+        text: "The chosen direction is also assessed: departmental architecture review boards weigh every digital initiative against the Government of Canada Enterprise Architecture Framework, which asks teams to look for something that already exists before buying or building anything new. The largest initiatives go on to the government-wide review board. Arrive with the reuse scan from Discovery in hand and the review goes quickly.",
+        bold: [{ phrase: "look for something that already exists before buying or building anything new" }],
         externalLinks: [
           { phrase: "GC Enterprise Architecture Framework", linkKey: "gc-enterprise-architecture-framework" },
         ],
@@ -320,8 +320,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Requirements come in three kinds. They are worth separating, because they age at different speeds, and only the slow ones belong in a contract.",
       },
       {
-        text: "The rule that follows: contract the outcomes and the properties, and leave the screens free. A supplier held to the business need and the service levels can still be told the design was wrong. A supplier held to a screen layout agreed before anyone tested it will build that layout and charge for the change.",
-        bold: [{ phrase: "contract the outcomes and the properties, and leave the screens free" }],
+        text: "So put the business and non-functional requirements in the contract, and keep the functional ones out of it. A supplier held to the business need and the service levels can be told partway through that a screen is wrong, and fixing it is part of the job. A supplier held to a screen layout agreed before anyone tested it will build that layout, and every change to it costs a contract amendment.",
+        bold: [{ phrase: "put the business and non-functional requirements in the contract, and keep the functional ones out of it" }],
       },
       {
         type: "editorialNote",
@@ -346,7 +346,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "This is also why the guide does not ask for a single requirements document written up front and signed off. That habit comes from a way of working where the whole thing was specified before anything was built. What replaces it is the tested design, which carries the functional half as something a builder can see rather than argue about, alongside the business and non-functional halves written down.",
+        text: "Nothing in Treasury Board policy requires a single requirements document, written up front and signed off. No directive or standard names one, there is no template for it, and there is nowhere to file it. So the requirements do not have to be one document, and they are more useful when they are not: the tested mock-ups already carry the functional half in a form a builder can act on, and the business and non-functional halves are written down beside them.",
+        bold: [{ phrase: "Nothing in Treasury Board policy requires a single requirements document" }],
       },
     ],
   },
@@ -476,8 +477,22 @@ export const ALPHA_EXERCISE = {
     ],
   } satisfies ThreadLinkedProse,
   closing: {
-    text: "Three instruments sit underneath this exercise: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done and links each one.",
+    text: "Three instruments sit underneath this exercise: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done.",
     internalLinks: [{ phrase: "Security", to: "/thread/security" }],
+    externalLinks: [
+      {
+        phrase: "harmonized Threat and Risk Assessment methodology",
+        linkKey: "harmonized-tra-methodology",
+      },
+      {
+        phrase: "Standard on Security Categorization",
+        linkKey: "standard-on-security-categorization",
+      },
+      {
+        phrase: "Directive on Security Management",
+        linkKey: "directive-security-management",
+      },
+    ],
   } satisfies ThreadLinkedProse,
   href: "/thread/security",
   linkLabel: "See how the assessment is done →",
@@ -509,7 +524,7 @@ export const ALPHA_FINISH = {
           text: "Discovery handed over the problem, the people who have it, and what success would look like. Alpha turns that into what the service has to do.",
         },
         {
-          text: "The deadline is real, and it comes from the contract. The request for proposals goes out at the start of Beta and is built from these requirements, so they have to be settled before Alpha closes. A requirement that is still vague on the day it is published stays vague in the contract, and changing it later costs a contract amendment.",
+          text: "The deadline is real, and it comes from the contract. The request for proposals is written from these requirements and goes out during Alpha, so they have to be settled early enough to publish. A requirement that is still vague on the day it is published stays vague in the contract, and changing it later costs a contract amendment.",
           bold: [{ phrase: "they have to be settled before Alpha closes" }],
         },
         {
@@ -523,7 +538,8 @@ export const ALPHA_FINISH = {
       onlyIf: "Only if buying",
       paragraphs: [
         {
-          text: "This is the procurement competition: the requirements are written and advertised, bids come in and are evaluated, and the work is awarded. That takes months. If it has not begun by the end of Alpha, Beta cannot start on time.",
+          text: "The competition runs inside Alpha: the requirements are advertised, bids come in, and they are evaluated. It takes months, which is why it starts while the prototyping is still going on. The contract is signed at the start of Beta, when the competition ends, so Beta opens with a supplier already under contract and can begin building at once. A competition that has not started by the end of Alpha pushes that signature, and Beta waits.",
+          bold: [{ phrase: "Beta opens with a supplier already under contract" }],
           internalLinks: [
             { phrase: "procurement", to: "/thread/procurement" },
             { phrase: "Beta", to: "/create-beta" },
@@ -624,19 +640,14 @@ export const ALPHA_FINISH = {
         text: "The record of which ideas died, and why, so the next team does not pay to re-test them.",
         bold: [{ phrase: "The record of which ideas died," }],
       },
+      {
+        text: "Every official checkpoint that Alpha reaches is done: the assessments started or finished, the boards attended, the approvals given. The table below names each one, what stage it reaches in Alpha, and who does the work.",
+        bold: [{ phrase: "Every official checkpoint that Alpha reaches is done" }],
+      },
     ] satisfies readonly (ThreadLinkedProse & {
       subItems?: readonly ThreadLinkedProse[];
       onlyIf?: string;
     })[],
-    group: {
-      label: "Official checkpoints of Alpha met",
-      items: [
-        {
-          text: "Every official checkpoint that Alpha reaches is done: the assessments started or finished, the boards attended, the approvals given. The table below this section names each one, what stage it reaches in Alpha, and who does the work, so it is not repeated here.",
-          bold: [{ phrase: "Every official checkpoint that Alpha reaches is done" }],
-        },
-      ] satisfies readonly (ThreadLinkedProse & { onlyIf?: string })[],
-    },
   },
 };
 
