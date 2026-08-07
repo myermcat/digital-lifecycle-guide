@@ -6,6 +6,7 @@ import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { LaunchCallout } from "@/components/LaunchCallout";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
@@ -250,6 +251,13 @@ export function CreateBetaPage() {
         offRamp={BETA_FINISH.offRamp}
       />
 
+
+      <LifecycleVisual
+        visual={LIFECYCLE_VISUALS.subphaseKeyBeta}
+        className="mt-10 md:mt-12"
+      />
+
+      <LaunchCallout className="mt-6 md:mt-8" />
 
       <SubphaseInstruments subPhase="beta" />
 

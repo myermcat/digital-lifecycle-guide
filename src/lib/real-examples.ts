@@ -32,7 +32,7 @@ export const REAL_EXAMPLES: Partial<
   },
   beta: {
     id: "real-example-phoenix-launch",
-    title: "Phoenix launched without the proving",
+    title: "Phoenix skipped the pilot and launched for everyone at once",
     paragraphs: [
       {
         text: "In 2016, the Government of Canada replaced its 40-year-old pay system with Phoenix. To hold the date and the budget, the planned pilot, one department going first, was dropped, critical pay functions were removed, and system testing was cut short. The department knew about serious weaknesses, and Phoenix went live anyway, for everyone, in two waves.",

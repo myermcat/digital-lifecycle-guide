@@ -4,6 +4,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { RequirementTypesTable } from "@/components/RequirementTypesTable";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -199,7 +200,18 @@ export function CreateAlphaPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children: renderThreadSections(stage.sections),
+          children:
+            // The table has to arrive between the sentence that sets it up and
+            // the rule that reads off it, so this one stage renders in halves.
+            stage.id === "write-the-requirements" ? (
+              <>
+                {renderThreadSections(stage.sections.slice(0, 1))}
+                <RequirementTypesTable />
+                {renderThreadSections(stage.sections.slice(1))}
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 
@@ -256,6 +268,11 @@ export function CreateAlphaPage() {
         offRamp={ALPHA_FINISH.offRamp}
       />
 
+
+      <LifecycleVisual
+        visual={LIFECYCLE_VISUALS.subphaseKeyAlpha}
+        className="mt-10 md:mt-12"
+      />
 
       <SubphaseInstruments subPhase="alpha" />
 

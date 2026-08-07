@@ -317,24 +317,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Write down what the service has to do, and know which parts will move.",
     sections: [
       {
-        text: "Requirements come in three kinds. They are worth separating, because they age at different speeds and only some of them belong in a contract.",
-      },
-      {
-        type: "unorderedList",
-        items: [
-          {
-            text: "Business requirements say what the organization needs and why, in the language of the program. An applicant can check their status without phoning. These change slowly, because what people need from a service outlasts any particular version of it. Safe to commit to.",
-            bold: [{ phrase: "Business requirements" }],
-          },
-          {
-            text: "Functional requirements say what the system must do. The status appears within two seconds of signing in. These are the volatile ones. They change as soon as real users touch the thing, which is what Alpha is for, so pinning them into a contract is how a department ends up paying for a service nobody wanted.",
-            bold: [{ phrase: "Functional requirements" }],
-          },
-          {
-            text: "Non-functional requirements say how the service has to behave: how fast, how available, how long it holds records, which accessibility standard it meets, how quickly it recovers. These are stable and testable, which makes them exactly what a contract should hold a supplier to.",
-            bold: [{ phrase: "Non-functional requirements" }],
-          },
-        ],
+        text: "Requirements come in three kinds. They are worth separating, because they age at different speeds, and only the slow ones belong in a contract.",
       },
       {
         text: "The rule that follows: contract the outcomes and the properties, and leave the screens free. A supplier held to the business need and the service levels can still be told the design was wrong. A supplier held to a screen layout agreed before anyone tested it will build that layout and charge for the change.",
@@ -636,6 +619,7 @@ export const ALPHA_FINISH = {
       {
         text: "A procurement plan for the build, with exit rights and data portability written into the contract.",
         bold: [{ phrase: "A procurement plan for the build," }],
+        onlyIf: "buying",
       },
       {
         text: "The budget and people for Beta, including a research budget.",
@@ -655,7 +639,44 @@ export const ALPHA_FINISH = {
       },
     ] satisfies readonly (ThreadLinkedProse & {
       subItems?: readonly ThreadLinkedProse[];
+      onlyIf?: string;
     })[],
+    group: {
+      label: "Official checkpoints of Alpha met",
+      items: [
+        {
+          text: "Security categorization assigned, so the size of the control set the contract has to buy is settled.",
+          bold: [{ phrase: "Security categorization assigned," }],
+        },
+        {
+          text: "The departmental architecture review board has assessed the chosen direction.",
+          bold: [{ phrase: "The departmental architecture review board" }],
+        },
+        {
+          text: "The hosting decision taken to that same board, with the reasoning if it is anything other than public cloud.",
+          bold: [{ phrase: "The hosting decision" }],
+        },
+        {
+          text: "The authorizer has approved the initial security assurance requirements, the control set, and the high-level design. These are three of the seven points where they sign.",
+          bold: [{ phrase: "The authorizer has approved" }],
+        },
+        {
+          text: "The Government of Canada Enterprise Architecture Review Board cleared, or confirmed as not applicable. Check all six triggers, not the dollar one alone.",
+          bold: [{ phrase: "The Government of Canada Enterprise Architecture Review Board" }],
+          onlyIf: "a trigger is met",
+        },
+        {
+          text: "The Treasury Board submission written and filed. It takes months, and a gender-based analysis plus goes with it.",
+          bold: [{ phrase: "The Treasury Board submission" }],
+          onlyIf: "over the department's capacity class",
+        },
+        {
+          text: "The Security Requirements Check List drafted, because the clauses it produces have to be in the solicitation before anyone bids.",
+          bold: [{ phrase: "The Security Requirements Check List" }],
+          onlyIf: "the supplier touches protected information",
+        },
+      ] satisfies readonly (ThreadLinkedProse & { onlyIf?: string })[],
+    },
   },
 };
 

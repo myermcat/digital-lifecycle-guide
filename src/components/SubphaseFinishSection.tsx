@@ -52,6 +52,22 @@ export type FinishAside = {
   paragraphs: readonly ThreadLinkedProse[];
 };
 
+/** One off-ramp entry, with its sub-items and its condition carried through. */
+function toChecklistItem(
+  item: ThreadLinkedProse & {
+    subItems?: readonly ThreadLinkedProse[];
+    onlyIf?: string;
+  },
+) {
+  return {
+    content: renderLinkedProse(item),
+    subItems: item.subItems
+      ? item.subItems.map((sub) => renderLinkedProse(sub))
+      : undefined,
+    onlyIf: item.onlyIf,
+  };
+}
+
 export function SubphaseFinishSection({
   title,
   sectionId,
@@ -74,7 +90,13 @@ export function SubphaseFinishSection({
     intro: ThreadLinkedProse;
     items: readonly (ThreadLinkedProse & {
       subItems?: readonly ThreadLinkedProse[];
+      onlyIf?: string;
     })[];
+    /** The official checkpoints, set apart below the rest. */
+    group?: {
+      label: string;
+      items: readonly (ThreadLinkedProse & { onlyIf?: string })[];
+    };
   };
 }) {
   const followUpParagraphs = followUp
@@ -85,9 +107,11 @@ export function SubphaseFinishSection({
 
   return (
     <PhaseSection title={title} sectionId={sectionId}>
-      {/* The test. Set a step above the body so the answer to the section's
-          own question is the first thing the eye reaches. */}
-      <p className={cn(guideLead, "text-[1.1rem] md:text-[1.2rem] leading-[1.5] font-medium")}>
+      {/* The test, and the only thing at full weight and full colour. Everything
+          below it steps down: block bodies are smaller and lighter, the aside
+          smaller and lighter again. Contrast comes from demoting the support,
+          because inflating every level flattens the difference. */}
+      <p className={cn(guideLead, "font-medium")}>
         {renderLinkedProse(intro)}
       </p>
 
@@ -107,14 +131,14 @@ export function SubphaseFinishSection({
               className="border-l-2 border-primary/25 pl-4 md:pl-5"
             >
               <div className="mb-2 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className={cn(guideBlockTitle, "text-[1.15rem] md:text-[1.25rem]")}>{block.heading}</h3>
+                <h3 className={cn(guideBlockTitle, "text-[1rem] md:text-[1.05rem] uppercase tracking-[0.06em]")}>{block.heading}</h3>
                 {block.onlyIf ? (
                   <span className="rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
                     {block.onlyIf}
                   </span>
                 ) : null}
               </div>
-              <div className={`${guideProse} space-y-3`}>
+              <div className={cn(guideProse, "space-y-3 text-[0.95rem] md:text-[1rem] text-foreground/80")}>
                 {block.paragraphs.map((paragraph) => (
                   <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
                 ))}
@@ -131,7 +155,7 @@ export function SubphaseFinishSection({
           >
             {aside.heading}
           </p>
-          <div className="space-y-2.5 font-serif text-[0.95rem] leading-[1.45] text-muted-foreground">
+          <div className="space-y-2.5 font-serif text-[0.875rem] md:text-[0.9rem] leading-[1.45] text-muted-foreground/85">
             {aside.paragraphs.map((paragraph) => (
               <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
             ))}
@@ -151,14 +175,15 @@ export function SubphaseFinishSection({
         intro={
           <p className={guideBodySubheading}>{renderLinkedProse(offRamp.intro)}</p>
         }
-        items={offRamp.items.map((item) =>
-          "subItems" in item && item.subItems
+        items={offRamp.items.map(toChecklistItem)}
+        group={
+          offRamp.group
             ? {
-                content: renderLinkedProse(item),
-                subItems: item.subItems.map((sub) => renderLinkedProse(sub)),
+                label: offRamp.group.label,
+                items: offRamp.group.items.map(toChecklistItem),
               }
-            : renderLinkedProse(item),
-        )}
+            : undefined
+        }
         className="mt-6"
       />
     </PhaseSection>

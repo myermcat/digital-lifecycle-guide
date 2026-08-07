@@ -159,7 +159,9 @@ export function SourcesBlock({
   /** One-line note shown above the groups, e.g. pointing phase readers to sub-phase pages. */
   intro?: string;
 }) {
-  const [open, setOpen] = useState(true);
+  // Collapsed by default. The sources are for checking a claim, and a reader who
+  // wants one will open it; expanded, the list buries the end of every page.
+  const [open, setOpen] = useState(false);
   const panelId = useId();
   const sections = groupSourceSections(items);
 
