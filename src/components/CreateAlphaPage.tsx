@@ -263,7 +263,6 @@ export function CreateAlphaPage() {
         sectionId={ALPHA_FINISH.sectionId}
         intro={ALPHA_FINISH.intro}
         blocks={ALPHA_FINISH.blocks}
-        aside={ALPHA_FINISH.aside}
         exits={ALPHA_FINISH.exits}
         offRamp={ALPHA_FINISH.offRamp}
       />

@@ -314,7 +314,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
   {
     id: "write-the-requirements",
     icon: Briefcase,
-    title: "Write down what the service has to do, and know which parts will move.",
+    title: "Write the requirements, and know which ones are safe to contract.",
     sections: [
       {
         text: "Requirements come in three kinds. They are worth separating, because they age at different speeds, and only the slow ones belong in a contract.",
@@ -322,6 +322,28 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
       {
         text: "The rule that follows: contract the outcomes and the properties, and leave the screens free. A supplier held to the business need and the service levels can still be told the design was wrong. A supplier held to a screen layout agreed before anyone tested it will build that layout and charge for the change.",
         bold: [{ phrase: "contract the outcomes and the properties, and leave the screens free" }],
+      },
+      {
+        type: "editorialNote",
+        label: "What to call them",
+        paragraphs: [
+          {
+            text: "The Government of Canada has an official name for what comes before the requirements, and an official name for what comes after. It has no name for the requirements themselves.",
+            bold: [{ phrase: "It has no name for the requirements themselves." }],
+          },
+          {
+            text: "Before: the concept case, a short early write-up of the problem, the rough size of the investment, and the direction being considered. It describes the problem and the business need, and stops short of choosing a solution. It is mandatory for digitally enabled projects where the department is willing to invest at least $2.5 million with no approved capacity class or class 1, rising to $25 million at class 4. Below the threshold nobody asks for one, though the template is worth using anyway.",
+            bold: [{ phrase: "the concept case" }],
+          },
+          {
+            text: "After: the statement of work, the description of the work being bought. It belongs to the contract, so it exists only if the department is buying. An in-house build never writes one.",
+            bold: [{ phrase: "the statement of work" }],
+          },
+          {
+            text: "In between: nothing official. Departments often say business requirements document, a term borrowed from industry that appears in no Treasury Board policy, directive or standard. If a colleague asks for one, they mean the requirements, so write what the service has to do and give it whatever name the department uses. There is no template to follow, nowhere to file it, and nobody outside the department will ask for it.",
+            bold: [{ phrase: "business requirements document" }],
+          },
+        ],
       },
       {
         text: "This is also why the guide does not ask for a single requirements document written up front and signed off. That habit comes from a way of working where the whole thing was specified before anything was built. What replaces it is the tested design, which carries the functional half as something a builder can see rather than argue about, alongside the business and non-functional halves written down.",
@@ -387,7 +409,7 @@ export const ALPHA_TEAM = {
 
 export const ALPHA_EXERCISE = {
   label: "THE EXERCISE",
-  title: "Every service goes down eventually, and how long it stays down is decided now",
+  title: "How long it can be down is decided now",
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
   bodyIntro: {
@@ -454,22 +476,8 @@ export const ALPHA_EXERCISE = {
     ],
   } satisfies ThreadLinkedProse,
   closing: {
-    text: "Security covers how the assessment is done, and the official instruments underneath it: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down.",
+    text: "Three instruments sit underneath this exercise: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done and links each one.",
     internalLinks: [{ phrase: "Security", to: "/thread/security" }],
-    externalLinks: [
-      {
-        phrase: "harmonized Threat and Risk Assessment methodology",
-        linkKey: "harmonized-tra-methodology",
-      },
-      {
-        phrase: "Standard on Security Categorization",
-        linkKey: "standard-on-security-categorization",
-      },
-      {
-        phrase: "Directive on Security Management",
-        linkKey: "directive-security-management",
-      },
-    ],
   } satisfies ThreadLinkedProse,
   href: "/thread/security",
   linkLabel: "See how the assessment is done →",
@@ -527,27 +535,6 @@ export const ALPHA_FINISH = {
       ],
     },
   ] satisfies FinishBlock[],
-  aside: {
-    heading: "What to call the requirements",
-    paragraphs: [
-      {
-        text: "The Government of Canada has an official name for what comes before the requirements, and an official name for what comes after. It has no name for the requirements themselves. That gap is why this guide keeps calling them requirements and nothing more, and it is worth knowing about, because colleagues will use all three words as if they meant the same thing.",
-        bold: [{ phrase: "It has no name for the requirements themselves." }],
-      },
-      {
-        text: "Before: the concept case, a short early write-up of the problem, the rough size of the investment, and the direction being considered. It describes the problem and the business need, and stops short of choosing a solution. It is mandatory for digitally enabled projects where the department is willing to invest at least $2.5 million with no approved capacity class or class 1, rising to $25 million at class 4. Below the threshold nobody asks for one, though the template is worth using anyway.",
-        bold: [{ phrase: "the concept case" }],
-      },
-      {
-        text: "After: the statement of work, the description of the work being bought. It belongs to the contract, so it exists only if the department is buying. An in-house build never writes one.",
-        bold: [{ phrase: "the statement of work" }],
-      },
-      {
-        text: "In between: nothing official. Departments often say business requirements document, a term borrowed from industry that appears in no Treasury Board policy, directive or standard. If a colleague asks for one, they mean the requirements, so write what the service has to do and give it whatever name the department uses. There is no template to follow and nowhere to file it, and no one outside the department will ever ask for it.",
-        bold: [{ phrase: "business requirements document" }],
-      },
-    ],
-  },
   exits: [
     {
       lead: "Forward to Beta,",
