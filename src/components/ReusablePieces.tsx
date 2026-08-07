@@ -1,3 +1,4 @@
+import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
   REUSABLE_CATEGORIES,
@@ -36,7 +37,11 @@ export function ReusablePieces() {
         </p>
       </div>
 
-      <div className="mt-6 max-h-[75vh] overflow-auto rounded-lg border border-border">
+      <ExpandableTable
+        title="Reuse before you buy or build"
+        className="mt-6"
+        maxHeight="75vh"
+      >
         <table className="w-full min-w-[62rem] border-collapse text-left">
           <thead>
             <tr className="bg-muted/60">
@@ -107,7 +112,7 @@ export function ReusablePieces() {
             })}
           </tbody>
         </table>
-      </div>
+      </ExpandableTable>
     </section>
   );
 }

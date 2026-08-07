@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
   INSTRUMENT_MATRIX,
@@ -139,7 +140,11 @@ export function InstrumentMatrix() {
 
       <Legend />
 
-      <div className="mt-6 max-h-[80vh] overflow-auto rounded-lg border border-border">
+      <ExpandableTable
+        title="Every official thing a service has to do, by sub-phase"
+        className="mt-6"
+        maxHeight="80vh"
+      >
         <table className="w-full min-w-[94rem] border-collapse text-left">
           <thead>
             <tr className="bg-muted/60">
@@ -219,7 +224,7 @@ export function InstrumentMatrix() {
             })}
           </tbody>
         </table>
-      </div>
+      </ExpandableTable>
     </section>
   );
 }

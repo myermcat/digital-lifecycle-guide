@@ -31,7 +31,7 @@ export function GuideLayout({
       id={id}
       className="relative isolate flex min-h-screen flex-col bg-background"
     >
-      <div className="relative z-30 w-full pointer-events-auto">
+      <div className="sticky top-0 z-40 w-full pointer-events-auto">
         <GuideHeader rootId={id} onThisPageItems={onThisPageItems} />
       </div>
       <div className="relative z-10 w-full flex-1 px-6 pt-12 md:pt-16 pointer-events-auto">

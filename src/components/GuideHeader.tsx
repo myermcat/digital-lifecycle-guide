@@ -23,7 +23,7 @@ export function GuideHeader({
   const lifecyclePhases = [PHASES.create, PHASES.live, PHASES.sunset];
 
   return (
-    <header className="sticky top-0 z-40 w-full">
+    <header className="w-full">
       <div className="bg-background/85 backdrop-blur-md border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 h-14 flex items-center gap-6">
           <Link
