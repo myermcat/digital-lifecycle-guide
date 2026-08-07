@@ -205,7 +205,7 @@ The handover is complete when Canada confirms the export restores into a test en
       ],
       whyHere: {
         text:
-          "every contract names the work it is buying (the General Conditions of a Service Contract). A.4 leaves room for the work nobody can name yet: PSPC signs contracts with task authorizations when there is a definite need for services but the exact tasks and their timing will only be known while the contract runs. New features in Live usually arrive this way, priced task by task instead of through a new procurement. More on this: statement of objectives vs statement of work.",
+          "every contract names the work it is buying (the General Conditions of a Service Contract). A.4 leaves room for the work nobody can name yet: PSPC signs contracts with task authorizations when there is a definite need for services but the exact tasks and their timing will only be known while the contract runs. New features in Live usually arrive this way, priced task by task instead of through a new procurement. More on this: statement of requirement vs statement of work.",
         externalLinks: [
           {
             phrase: "General Conditions of a Service Contract",
@@ -218,7 +218,7 @@ The handover is complete when Canada confirms the export restores into a test en
         ] satisfies ExternalPhraseLink[],
         internalLinks: [
           {
-            phrase: "statement of objectives vs statement of work",
+            phrase: "statement of requirement vs statement of work",
             to: SOO_VS_SOW_PATH,
           },
         ] satisfies InternalPhraseLink[],

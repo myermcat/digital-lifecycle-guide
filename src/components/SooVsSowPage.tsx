@@ -1,5 +1,6 @@
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
+import { EditorialNote } from "@/components/EditorialNote";
 import { ThreadArticleSection } from "@/components/ThreadArticleSection";
 import { guideArticleCalloutLift } from "@/lib/guide-article";
 import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
@@ -17,6 +18,10 @@ export function SooVsSowPage() {
       <section className={guideProseSpace}>
         <p>{SOO_VS_SOW.opening}</p>
       </section>
+
+      <EditorialNote className="mt-6">
+        <p>{SOO_VS_SOW.termNote}</p>
+      </EditorialNote>
 
       <ThreadArticleSection
         title={SOO_VS_SOW.whatEachOneIs.title}

@@ -233,10 +233,10 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
             body: 'is a fixed list of exactly what gets built and how, written as if you already know everything: "the supplier shall build these screens, in this order, by this date." It suits things that do not change, and digital work badly, because every time you learn something new you have to reopen the contract to change the list.',
           },
           {
-            lead: "A statement of objectives",
-            body: 'works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: "here is what this service has to achieve, and who it is for." The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of objectives vs statement of work.',
+            lead: "A statement of requirement",
+            body: 'works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: "here is what this service has to achieve, and who it is for." The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of requirement vs statement of work.',
             paragraphLink: {
-              phrase: "statement of objectives vs statement of work",
+              phrase: "statement of requirement vs statement of work",
               to: SOO_VS_SOW_PATH,
             },
           },

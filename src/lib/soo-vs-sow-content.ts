@@ -2,17 +2,19 @@ import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 
 export const SOO_VS_SOW = {
-  title: "Statement of objectives vs statement of work",
+  title: "Statement of requirement vs statement of work",
   opening:
     "Every contract needs a description of the work being bought. It is usually written one of two ways, and the choice shapes whether the work can change as you learn.",
+  termNote:
+    "A note on the name. This page used to be called \"statement of objectives vs statement of work\", and that first term is worth dropping. A search of the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual and the whole CanadaBuys Buyer's Guide found no use of it anywhere: it is United States federal procurement vocabulary that circulates in Canadian conversation. What the Government of Canada names is the statement of work, which the Directive puts on the business owner to develop, and the statement of requirement, used where the need is written as requirements to be met rather than tasks to be performed. The distinction below is real either way. Only the label changed.",
   whatEachOneIs: {
     id: "what-each-one-is",
     title: "What each one is",
-    body: "A statement of work spells out exactly what gets built and how, written as if all the requirements are known up front and will not change. A statement of objectives describes what the service has to achieve and who it is for, and leaves the supplier room to work out how. One fixes the steps. The other fixes the goal.",
+    body: "A statement of work spells out exactly what gets built and how, written as if all the requirements are known up front and will not change. A statement of requirement describes what the service has to achieve and who it is for, and leaves the supplier room to work out how. One fixes the steps. The other fixes the goal.",
   },
   comparison: {
     actualLabel: "Statement of work",
-    alternativeLabel: "Statement of objectives",
+    alternativeLabel: "Statement of requirement",
     sow: {
       heading: "Statement of work",
       items: [
@@ -24,7 +26,7 @@ export const SOO_VS_SOW = {
       ],
     } satisfies CaseStudySide,
     soo: {
-      heading: "Statement of objectives",
+      heading: "Statement of requirement",
       items: [
         "States the goals and who the service is for, not the steps.",
         "Assumes you will learn as you go, and leaves room for it.",
@@ -37,7 +39,7 @@ export const SOO_VS_SOW = {
   workTogether: {
     id: "they-work-together",
     title: "They work together",
-    body: "The two are not enemies. A common pattern is that the department writes the statement of objectives, and suppliers respond with their own statement of work that turns those objectives into concrete tasks. So you are not throwing the detail away. You are deciding who writes it, and when. The department sets the goal. The supplier proposes how to meet it.",
+    body: "The two are not enemies. A common pattern is that the department writes the statement of requirement, and suppliers respond with their own statement of work that turns those objectives into concrete tasks. So you are not throwing the detail away. You are deciding who writes it, and when. The department sets the goal. The supplier proposes how to meet it.",
   },
   workedExample: {
     id: "a-worked-example",
@@ -45,7 +47,7 @@ export const SOO_VS_SOW = {
     paragraphs: [
       "Say a department needs an online way for people to apply for a benefit.",
       "A statement of work would list it out: build these eight screens, in this order, with these fields, connected to this system, delivered by this date.",
-      "A statement of objectives would say: people who are eligible should be able to apply online, on their own, without help, in under fifteen minutes, including people who use assistive technology. How that gets built is for the supplier to propose and for the work to settle as it goes.",
+      "A statement of requirement would say: people who are eligible should be able to apply online, on their own, without help, in under fifteen minutes, including people who use assistive technology. How that gets built is for the supplier to propose and for the work to settle as it goes.",
       "The first locks the answer before anyone has tested it. The second fixes what matters and lets the answer be found.",
     ],
   },
