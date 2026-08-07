@@ -54,7 +54,9 @@ export function GuideFooter() {
                 </p>
                 <p className="text-xs leading-relaxed text-muted-foreground/60 mt-3">
                   This guide is a work in progress. Spotted something off, or have
-                  feedback?{" "}
+                  feedback?
+                </p>
+                <p className="text-xs leading-relaxed text-muted-foreground/60 mt-1.5">
                   <a
                     href="https://github.com/myermcat/digital-lifecycle-guide/issues"
                     target="_blank"
@@ -63,7 +65,6 @@ export function GuideFooter() {
                   >
                     Open an issue on GitHub
                   </a>
-                  .
                 </p>
               </div>
             </FooterColumn>

@@ -37,8 +37,18 @@ function useAxisLockedScroll<T extends HTMLElement>() {
     let startLeft = 0;
     let startTop = 0;
     let axis: "x" | "y" | null = null;
+    let glideId: number | null = null;
+    // last few samples, so the throw speed comes from the end of the gesture
+    // rather than its average
+    let samples: { pos: number; at: number }[] = [];
+
+    const stopGlide = () => {
+      if (glideId !== null) cancelAnimationFrame(glideId);
+      glideId = null;
+    };
 
     const onStart = (event: TouchEvent) => {
+      stopGlide();
       const touch = event.touches[0];
       if (!touch) return;
       startX = touch.clientX;
@@ -46,6 +56,7 @@ function useAxisLockedScroll<T extends HTMLElement>() {
       startLeft = el.scrollLeft;
       startTop = el.scrollTop;
       axis = null;
+      samples = [];
     };
 
     const onMove = (event: TouchEvent) => {
@@ -59,24 +70,67 @@ function useAxisLockedScroll<T extends HTMLElement>() {
         axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
       }
 
-      if (axis === "x") {
+      if (axis === "y") {
+        const next = startTop + dy;
+        // at either end, let the page take the gesture
+        if (next < 0 || next > el.scrollHeight - el.clientHeight) return;
+        event.preventDefault();
+        el.scrollTop = next;
+      } else {
         event.preventDefault();
         el.scrollLeft = startLeft + dx;
-        return;
       }
 
-      const next = startTop + dy;
-      const atEnd = next < 0 || next > el.scrollHeight - el.clientHeight;
-      if (atEnd) return; // let the page take over at the ends
-      event.preventDefault();
-      el.scrollTop = next;
+      const pos = axis === "x" ? el.scrollLeft : el.scrollTop;
+      samples.push({ pos, at: event.timeStamp });
+      if (samples.length > 5) samples.shift();
+    };
+
+    // A finger lift should throw the table, the way native scrolling does.
+    // Driving the scroll by hand costs us the browser's momentum, so it is
+    // measured from the last few samples and replayed with friction.
+    const onEnd = () => {
+      if (axis === null || samples.length < 2) return;
+      const first = samples[0];
+      const last = samples[samples.length - 1];
+      const elapsed = last.at - first.at;
+      if (elapsed <= 0) return;
+
+      let velocity = ((last.pos - first.pos) / elapsed) * 16; // pixels per frame
+      if (Math.abs(velocity) < 0.6) return;
+      velocity = Math.max(-90, Math.min(90, velocity));
+
+      const horizontal = axis === "x";
+      const max = horizontal
+        ? el.scrollWidth - el.clientWidth
+        : el.scrollHeight - el.clientHeight;
+
+      const step = () => {
+        velocity *= 0.95;
+        const current = horizontal ? el.scrollLeft : el.scrollTop;
+        const next = Math.max(0, Math.min(max, current + velocity));
+        if (horizontal) el.scrollLeft = next;
+        else el.scrollTop = next;
+        const stuck = next === 0 || next === max;
+        if (Math.abs(velocity) < 0.4 || stuck) {
+          glideId = null;
+          return;
+        }
+        glideId = requestAnimationFrame(step);
+      };
+      glideId = requestAnimationFrame(step);
     };
 
     el.addEventListener("touchstart", onStart, { passive: true });
     el.addEventListener("touchmove", onMove, { passive: false });
+    el.addEventListener("touchend", onEnd, { passive: true });
+    el.addEventListener("touchcancel", stopGlide, { passive: true });
     cleanupRef.current = () => {
+      stopGlide();
       el.removeEventListener("touchstart", onStart);
       el.removeEventListener("touchmove", onMove);
+      el.removeEventListener("touchend", onEnd);
+      el.removeEventListener("touchcancel", stopGlide);
     };
   }, []);
 }

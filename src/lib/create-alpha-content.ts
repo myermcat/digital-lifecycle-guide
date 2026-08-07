@@ -492,27 +492,20 @@ export const ALPHA_FINISH = {
       text: "Departments often call it a business requirements document. The term is common practice borrowed from industry, and it appears in no Treasury Board policy, directive or standard, so nobody can be made to produce one and nobody will ask for it by that name. The requirements matter for every service, whatever they are called.",
     },
     {
-      text: "What the Government of Canada does name, and who has to care:",
+      text: "The concept case is what Canada names for the stage before this one. It covers the problem rather than the solution, and it applies to digitally enabled projects above a threshold: $2.5 million for a department with no approved capacity class or class 1, rising to $25 million at class 4. Below that nobody asks for one, though the template is worth using anyway.",
+      bold: [{ phrase: "The concept case" }],
     },
     {
-      type: "unorderedList",
-      items: [
-        {
-          text: "The concept case comes earlier and covers the problem rather than the solution. Only for digitally enabled projects above a threshold, which is $2.5 million for a department with no approved capacity class or class 1, rising to $25 million at class 4. Below that nobody asks for one, though the template is worth using anyway.",
-          bold: [{ phrase: "The concept case" }],
-        },
-        {
-          text: "The statement of work comes later and belongs to the contract. Only if the department is buying. An in-house build never writes one.",
-          bold: [{ phrase: "The statement of work" }],
-        },
-        {
-          text: "The Project Complexity and Risk Assessment asks whether the business requirements were validated with users, by walkthrough, workshop or independent review, and the answer feeds the score that decides who is allowed to approve the project. Only for projects above the same kind of threshold, so a small service never meets this question. Where it does apply, requirements written without users cost more than rework.",
-          bold: [{ phrase: "The Project Complexity and Risk Assessment" }],
-        },
-      ],
+      text: "The statement of work is what Canada names for the stage after. It belongs to the contract, so it applies only if the department is buying. An in-house build never writes one.",
+      bold: [{ phrase: "The statement of work" }],
     },
     {
-      text: "The requirements themselves sit between the concept case and the statement of work, which is why the guide keeps calling them requirements and nothing more.",
+      text: "The requirements themselves sit between those two, which is why the guide keeps calling them requirements and nothing more. They matter for every service, whatever the department calls them.",
+      bold: [{ phrase: "The requirements themselves sit between those two" }],
+    },
+    {
+      text: "One place the activity is checked: the Project Complexity and Risk Assessment asks whether the business requirements were validated with users, by walkthrough, workshop or independent review, and the answer feeds the score that decides who is allowed to approve the project. It applies only to projects above the same kind of threshold, so a small service never meets the question. Where it does apply, requirements written without users cost more than rework.",
+      bold: [{ phrase: "One place the activity is checked:" }],
     },
     {
       text: "The competition to find a supplier runs during Alpha.",
