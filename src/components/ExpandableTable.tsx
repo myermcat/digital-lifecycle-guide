@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { Maximize2, RotateCcw, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -25,10 +25,11 @@ import { cn } from "@/lib/utils";
  * when the container reaches its vertical end so the page can carry on scrolling.
  */
 function useAxisLockedScroll<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
+  const cleanupRef = useRef<(() => void) | null>(null);
 
-  useEffect(() => {
-    const el = ref.current;
+  return useCallback((el: T | null) => {
+    cleanupRef.current?.();
+    cleanupRef.current = null;
     if (!el) return;
 
     let startX = 0;
@@ -73,13 +74,11 @@ function useAxisLockedScroll<T extends HTMLElement>() {
 
     el.addEventListener("touchstart", onStart, { passive: true });
     el.addEventListener("touchmove", onMove, { passive: false });
-    return () => {
+    cleanupRef.current = () => {
       el.removeEventListener("touchstart", onStart);
       el.removeEventListener("touchmove", onMove);
     };
   }, []);
-
-  return ref;
 }
 
 export function ExpandableTable({

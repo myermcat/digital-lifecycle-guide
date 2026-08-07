@@ -96,6 +96,15 @@ export const CHECKPOINT_MAP_SUBTITLE = {
   bold: ["official checkpoints"],
 } as const;
 
+/** Shown at the very top of the page, in the caution tone, before anything else. */
+export const CHECKPOINT_MAP_STATUS_BANNER = {
+  label: "Work in progress",
+  lines: [
+    "This page is unfinished and may not survive. It carries 17 of the 35 official instruments the guide now knows about, because it was written before that list existed.",
+    "The complete list is the table on the home page, which is kept up to date. This page may end up folded into it, or rewritten as a worked example that points at it. Use the table for completeness and this page for the shape of the journey.",
+  ],
+} as const;
+
 export const CHECKPOINT_MAP_WORKING_NOTE = {
   lead: "Working scheme, for figuring out the checkpoints.",
   body: 'This traces one invented person, Nadia, through the real path a new service takes. Some mechanics (who chairs what, exact thresholds, how long each step runs) vary by department and are marked "varies."',

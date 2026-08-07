@@ -29,6 +29,7 @@ import {
   CHECKPOINT_MAP_WHO_CAPTION,
   CHECKPOINT_MAP_WHY_CREATE,
   CHECKPOINT_MAP_WHY_GCS,
+  CHECKPOINT_MAP_STATUS_BANNER,
   CHECKPOINT_MAP_WORKING_NOTE,
   type CheckpointMapBodyPart,
   type CheckpointMapCell,
@@ -444,6 +445,20 @@ function DefinitionBlock({
 export function CheckpointMapPage() {
   return (
     <GuideLayout>
+      <aside className="mb-6 rounded-lg border-2 border-destructive/60 bg-destructive/10 px-4 py-3 md:mb-8 md:px-5 md:py-4">
+        <p className="mb-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-destructive">
+          {CHECKPOINT_MAP_STATUS_BANNER.label}
+        </p>
+        {CHECKPOINT_MAP_STATUS_BANNER.lines.map((line, i) => (
+          <p
+            key={line}
+            className={`text-[0.9rem] leading-snug text-foreground/85 ${i > 0 ? "mt-2" : ""}`}
+          >
+            {line}
+          </p>
+        ))}
+      </aside>
+
       <EditorialNote className="mb-6 md:mb-8">
         <p>
           <strong className="font-semibold text-foreground">{CHECKPOINT_MAP_WORKING_NOTE.lead}</strong>{" "}

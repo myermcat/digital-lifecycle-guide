@@ -270,11 +270,11 @@ function FamilyGroup({
               </td>
               <td className={CELL_BASE}>
                 {row.everyService ? (
-                  <span className="rounded-full border border-emerald-300 bg-emerald-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-emerald-900 dark:border-emerald-800/70 dark:bg-emerald-950 dark:text-emerald-200">
+                  <span className="[box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-full border border-emerald-300 bg-emerald-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-emerald-900 dark:border-emerald-800/70 dark:bg-emerald-950 dark:text-emerald-200">
                     Every service
                   </span>
                 ) : (
-                  <span className="rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
+                  <span className="[box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
                     Only if
                   </span>
                 )}
