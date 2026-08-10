@@ -317,8 +317,14 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Write the requirements, and know which ones are safe to contract.",
     sections: [
       {
-        text: "Requirements come in three kinds, and separating them decides what a later change costs. Change a requirement that is not in the contract and someone redraws it in an afternoon. Change one that is in the signed contract and it becomes a contract amendment: a risk assessment scored on everything you have amended so far, an approval at director general, assistant deputy minister or Treasury Board level depending on the running total, a price quoted by the only supplier in the room, and a public entry if the value moves by more than $10,000.",
+        text: "Requirements come in three kinds, and separating them decides what a later change costs. Change a requirement that is still in a prototype and someone redraws it in an afternoon. Change one that is written into a signed contract and it becomes a contract amendment, priced by the only supplier in the room. Expected amendments count inside the contract value that has to stay under the department's approval limit, and crossing that limit sends the change to Treasury Board before it can be made at all.",
         bold: [{ phrase: "separating them decides what a later change costs" }],
+        externalLinks: [
+          {
+            phrase: "contract amendment",
+            linkKey: "directive-procurement",
+          },
+        ],
       },
       {
         text: "Where they go is the answer to what they are for. The statement of work is written from them, and the statement of work is an annex to the contract, which makes it the thing the supplier is actually held to. Business requirements become the objective and background of that statement of work. Non-functional requirements become its service levels, and they are also what the bids are scored against. Nobody files the requirements themselves, because by the time anyone outside the department sees them they have become the contract.",

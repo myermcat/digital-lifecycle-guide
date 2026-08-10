@@ -226,7 +226,7 @@ export const PROCUREMENT_STRINGS = {
             type: "unorderedList",
             items: [
               {
-                text: "Nobody prototypes a product that already exists. The department evaluates real products against what Discovery and Alpha found.",
+                text: "Nobody prototypes a product that already exists. The evaluation of real products runs during Alpha, compressed, against a standing offer or supply arrangement, and the contract is signed at the start of Beta. The department evaluates real products against what Discovery and Alpha found.",
                 bold: [{ phrase: "Nobody prototypes a product that already exists." }],
               },
               {
@@ -264,7 +264,7 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "Reuse means a platform the Government of Canada already runs. Nothing is bought.",
+                text: "Reuse means a platform the Government of Canada already runs, so there is no build contract. Something is still bought: hosting, licences and tooling for an in-house build, and usually a team to configure either one. Reusing another department\u2019s platform is normally set up through an interdepartmental service agreement.",
                 bold: [
                   {
                     phrase: "Reuse means a platform the Government of Canada already runs.",
