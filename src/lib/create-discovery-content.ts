@@ -346,7 +346,7 @@ export const DISCOVERY_TEAM = {
     },
   ] satisfies readonly SubphaseTeamRole[],
   closing: {
-    text: "In the Government of Canada the team is usually assembled from a mix of public servants and vendors. A discovery is short: four to eight weeks is typical. The Buy a Team route is the exception, because the competition for that team runs during Discovery and a competition takes months, so start it the moment Discovery opens, or accept that this Discovery will run long.",
+    text: "In the Government of Canada the team is usually assembled from a mix of public servants and vendors. A discovery is short: four to eight weeks is typical. The Buy a Team route is the exception, because the competition for that team runs during Discovery and a competition takes months. It cannot start on day one, since Discovery opens by establishing that there is a problem worth a team at all. Start it as soon as that much is clear, and accept that this Discovery runs long or the award arrives at the start of Alpha. The award is safe even though Alpha can end in stop: the contract covers Alpha's piece of work, so stopping then spends only what Alpha cost.",
     bold: [{ phrase: "four to eight weeks" }],
   } satisfies ThreadLinkedProse,
 };

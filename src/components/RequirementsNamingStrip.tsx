@@ -3,10 +3,10 @@ import { guideProseTight } from "@/lib/guide-typography";
 /**
  * What the requirements are called, before and after.
  *
- * The point is a gap, and a gap is easier to see than to read: Canada names the
- * thing before the requirements and the thing after, and names nothing in
- * between. Laid out in order, with the middle one visibly empty of an official
- * name, a reader can take that in without reading a word of the prose under it.
+ * The point is a gap, and a gap is easier to see than to read. The requirements
+ * are mandatory and every buying document descends from them, yet they are the
+ * one thing in the row with no template and no form. The dashed card carries
+ * that: required, and unshaped.
  *
  * Each entry says who it is mandatory for, because that is the question a reader
  * actually has when they meet one of these names in a meeting.
@@ -22,12 +22,12 @@ const STEPS = [
     alsoUseful: "Below the threshold nobody asks for one, and the template is still worth using.",
   },
   {
-    when: "The requirements",
-    name: "No official name",
+    when: "In between",
+    name: "The requirements",
     official: false,
     what: "What the service has to do, what the organization needs, and how the service has to behave.",
-    who: "Defining them is mandatory, the procurement directive puts it on the business owner, but no instrument names a document or gives a template. Departments often say business requirements document, borrowed from industry.",
-    alsoUseful: "The statement of work is written from them, so a vague line here is a vague line in the contract.",
+    who: "Mandatory for every purchase. The procurement directive puts defining them on the business owner, with no dollar floor. What does not exist is a template: no instrument says what they have to look like, which is why this page explains how to write them.",
+    alsoUseful: "The statement of work is written from them. Above $40,000 of professional services, the contracting authority gets a written statement of work before award, with a signed confirmation. Below that, the buying is lighter and the contract is still written from them.",
   },
   {
     when: "After",

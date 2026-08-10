@@ -340,8 +340,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         bold: [{ phrase: "put the business and non-functional requirements in the contract, and keep the functional ones out of it" }],
       },
       {
-        text: "No instrument anywhere names a document called the requirements, so there is no template to follow and no form to fill in. Writing the requirements down is required all the same: the Directive on the Management of Procurement puts defining them on the business owner, and for professional services over $40,000 Appendix F says they must be documented by the business owner. What is required is that they exist and are clear, and nothing says they have to be one file.",
-        bold: [{ phrase: "Writing the requirements down is required all the same" }],
+        text: "The requirements are the official artifact here, and defining them is mandatory: the Directive on the Management of Procurement puts it on the business owner, for every purchase, with no dollar floor. What no instrument provides is a template or a form, which is why this page spends its time on how to write them. Above $40,000 of professional services the duty gets a shape: the contracting authority gets a written statement of work before award, and the business owner signs a confirmation. Below that the buying is lighter, low-dollar contracts and purchase orders, and it is still written from the requirements.",
+        bold: [{ phrase: "defining them is mandatory" }],
         externalLinks: [
           {
             phrase: "Directive on the Management of Procurement",
