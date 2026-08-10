@@ -26,8 +26,8 @@ const STEPS = [
     name: "No official name",
     official: false,
     what: "What the service has to do, what the organization needs, and how the service has to behave.",
-    who: "Required by nobody, under no name. Departments often say business requirements document, borrowed from industry.",
-    alsoUseful: "Write them anyway. The solicitation is built from them, and a vague line here is a vague line in the contract.",
+    who: "Defining them is mandatory, the procurement directive puts it on the business owner, but no instrument names a document or gives a template. Departments often say business requirements document, borrowed from industry.",
+    alsoUseful: "The statement of work is written from them, so a vague line here is a vague line in the contract.",
   },
   {
     when: "After",

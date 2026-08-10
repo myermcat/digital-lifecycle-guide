@@ -142,7 +142,7 @@ export function SubphaseInstruments({
                     {cell.note}
                   </p>
                   {!row.everyService ? (
-                    <p className="mt-1.5 text-[0.8rem] leading-snug text-foreground/80">
+                    <p className="mt-1.5 text-[0.75rem] leading-snug text-muted-foreground/75">
                       <span className="font-semibold uppercase tracking-[0.08em] text-[0.68rem] text-primary/90">
                         {moneyGated(row) ? (
                           <CircleDollarSign

@@ -321,7 +321,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         bold: [{ phrase: "separating them decides what a later change costs" }],
         externalLinks: [
           {
-            phrase: "contract amendment",
+            phrase: "Expected amendments count inside the contract value",
             linkKey: "directive-procurement",
           },
         ],
@@ -330,6 +330,10 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Where they go is the answer to what they are for. The statement of work is written from them, and the statement of work is an annex to the contract, which makes it the thing the supplier is actually held to. Business requirements become the objective and background of that statement of work. Non-functional requirements become its service levels, and they are also what the bids are scored against. Nobody files the requirements themselves, because by the time anyone outside the department sees them they have become the contract.",
         bold: [{ phrase: "The statement of work is written from them" }],
         internalLinks: [{ phrase: "statement of work", to: "/thread/procurement" }],
+      },
+      {
+        text: "The tested design can travel with the contract too. A mock-up can be attached to the statement of work as an appendix, and that is worth doing, because it shows a bidder what is wanted better than any paragraph. Attaching it explains; it does not oblige. Nothing binds the supplier unless the contract says so, so if a page of the design must be built as drawn, an acceptance criterion has to name it.",
+        bold: [{ phrase: "Attaching it explains; it does not oblige." }],
       },
       {
         text: "So put the business and non-functional requirements in the contract, and keep the functional ones out of it. A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs a contract amendment.",
@@ -534,7 +538,7 @@ export const ALPHA_FINISH = {
       onlyIf: "Only if buying",
       paragraphs: [
         {
-          text: "The competition runs inside Alpha: the requirements are advertised, bids come in, and they are evaluated. It takes months, which is why it starts while the prototyping is still going on. The contract is signed at the start of Beta, when the competition ends, so Beta opens with a supplier already under contract and can begin building at once. A competition that has not started by the end of Alpha pushes that signature, and Beta waits.",
+          text: "The competition runs inside Alpha: the requirements are advertised, bids come in, and they are evaluated. It takes months, which is why it starts while the prototyping is still going on. The contract is signed at the start of Beta, when the competition ends, so Beta opens with a supplier already under contract and can begin building at once. The signature waits for Beta on purpose: Alpha can still end in stop, or in back to Discovery, and a contract signed before that decision commits money to a build that might not happen. A competition that has not started by the end of Alpha pushes that signature, and Beta waits.",
           bold: [{ phrase: "Beta opens with a supplier already under contract" }],
           internalLinks: [
             { phrase: "procurement", to: "/thread/procurement" },

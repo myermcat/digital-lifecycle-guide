@@ -86,8 +86,8 @@ export const BETA_ON_RAMP = {
       bold: [{ phrase: "A decision on whether to reuse, buy, or build," }],
     },
     {
-      text: "The contract signed, if the department is buying a solution or a product. The competition ran through Alpha and ends here, which is why Beta can start building at once. A department building in-house or reusing an existing platform has no contract to sign and skips this.",
-      bold: [{ phrase: "The contract signed," }],
+      text: "The competition finished and the contract ready to sign, if the department is buying a solution or a product. The competition ran through Alpha; signing the contract is Beta's first act, before any building. A department building in-house or reusing an existing platform has no contract to sign and skips this.",
+      bold: [{ phrase: "The competition finished and the contract ready to sign," }],
     },
     {
       text: "Funding and approval that cover the build as well as the research, and can fit within the department's existing operating budget.",
