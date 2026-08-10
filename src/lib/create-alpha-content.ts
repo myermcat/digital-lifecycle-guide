@@ -317,15 +317,27 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Write the requirements, and know which ones are safe to contract.",
     sections: [
       {
-        text: "Requirements come in three kinds. They are worth separating, because they age at different speeds, and only the slow ones belong in a contract.",
+        text: "Requirements come in three kinds, and separating them decides what a later change costs. Change a requirement that is not in the contract and someone redraws it in an afternoon. Change one that is in the signed contract and it becomes a contract amendment: a risk assessment scored on everything you have amended so far, an approval at director general, assistant deputy minister or Treasury Board level depending on the running total, a price quoted by the only supplier in the room, and a public entry if the value moves by more than $10,000.",
+        bold: [{ phrase: "separating them decides what a later change costs" }],
       },
       {
-        text: "So put the business and non-functional requirements in the contract, and keep the functional ones out of it. A supplier held to the business need and the service levels can be told partway through that a screen is wrong, and fixing it is part of the job. A supplier held to a screen layout agreed before anyone tested it will build that layout, and every change to it costs a contract amendment.",
+        text: "Where they go is the answer to what they are for. The statement of work is written from them, and the statement of work is an annex to the contract, which makes it the thing the supplier is actually held to. Business requirements become the objective and background of that statement of work. Non-functional requirements become its service levels, and they are also what the bids are scored against. Nobody files the requirements themselves, because by the time anyone outside the department sees them they have become the contract.",
+        bold: [{ phrase: "The statement of work is written from them" }],
+        internalLinks: [{ phrase: "statement of work", to: "/thread/procurement" }],
+      },
+      {
+        text: "So put the business and non-functional requirements in the contract, and keep the functional ones out of it. A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs a contract amendment.",
         bold: [{ phrase: "put the business and non-functional requirements in the contract, and keep the functional ones out of it" }],
       },
       {
-        text: "Nothing in Treasury Board policy requires a single requirements document, written up front and signed off. No directive or standard names one, there is no template for it, and there is nowhere to file it. So the requirements do not have to be one document, and they are more useful when they are not: the tested mock-ups already carry the functional half in a form a builder can act on, and the business and non-functional halves are written down beside them.",
-        bold: [{ phrase: "Nothing in Treasury Board policy requires a single requirements document" }],
+        text: "No instrument anywhere names a document called the requirements, so there is no template to follow and no form to fill in. Writing the requirements down is required all the same: the Directive on the Management of Procurement puts defining them on the business owner, and for professional services over $40,000 Appendix F says they must be documented by the business owner. What is required is that they exist and are clear, and nothing says they have to be one file.",
+        bold: [{ phrase: "Writing the requirements down is required all the same" }],
+        externalLinks: [
+          {
+            phrase: "Directive on the Management of Procurement",
+            linkKey: "directive-procurement",
+          },
+        ],
       },
     ],
   },
@@ -388,7 +400,7 @@ export const ALPHA_TEAM = {
 
 export const ALPHA_EXERCISE = {
   label: "THE EXERCISE",
-  title: "What could stop the service, and how long it can be down",
+  title: "What could take the service down, and how long it can stay down",
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
   bodyIntro: {
@@ -598,9 +610,9 @@ export const ALPHA_FINISH = {
         bold: [{ phrase: "The journey map" }],
       },
       {
-        text: "A procurement plan for the build, with exit rights and data portability written into the contract.",
-        bold: [{ phrase: "A procurement plan for the build," }],
-        onlyIf: "buying",
+        text: "The competition run and the contract ready to sign, with the exit rights and the data portability in it. Beta opens with the signature, so anything still being negotiated is time Beta spends waiting.",
+        bold: [{ phrase: "The competition run and the contract ready to sign," }],
+        onlyIf: "buying a solution or a product",
       },
       {
         text: "The budget and people for Beta, including a research budget.",

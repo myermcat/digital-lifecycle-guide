@@ -178,7 +178,7 @@ export const CREATE_PHASE = {
     ],
     closing: {
       leadIn: "These are one-time decisions, made to get the service built.",
-      text: "The business case is made, the money for building and running it is committed, and the design is signed off. After launch those same checks start coming round again, every release and every year, and that recurring rhythm is what makes Live different.",
+      text: "The business case is made, the money for building and running it is committed, and the design is signed off. Most of them come round again after launch, each on its own cycle: some at every release, some once a year, some only when something about the service changes. That recurring rhythm is what makes Live different.",
     },
   },
 

@@ -7,7 +7,7 @@ import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { LaunchCallout } from "@/components/LaunchCallout";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisual, LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -33,7 +33,7 @@ import {
   BETA_TEAM,
 } from "@/lib/create-beta-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -253,15 +253,17 @@ export function CreateBetaPage() {
       />
 
 
-      <section className="mt-10 md:mt-12">
-        <WhereThisFits {...meta.where()} />
-      </section>
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Create")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
 
       <LaunchCallout className="mt-6 md:mt-8" />
 
       <SubphaseInstruments subPhase="beta" />
 
-      <PageFoot sources={BETA_SOURCES} subphaseFootFor="Create" />
+      <PageFoot sources={BETA_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

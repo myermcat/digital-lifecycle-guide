@@ -1309,7 +1309,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     },
   },
   {
-    name: "Mobile: responsive by default, native app by justification",
+    name: "Responsive web, or a native mobile app",
     family: "Publishing on canada.ca",
     kind: "duty",
     whatItIs:

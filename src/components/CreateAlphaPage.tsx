@@ -3,7 +3,7 @@ import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisual, LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { RequirementTypesTable } from "@/components/RequirementTypesTable";
 import { RequirementsNamingStrip } from "@/components/RequirementsNamingStrip";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
@@ -32,7 +32,7 @@ import {
   ALPHA_TEAM,
 } from "@/lib/create-alpha-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -270,13 +270,15 @@ export function CreateAlphaPage() {
       />
 
 
-      <section className="mt-10 md:mt-12">
-        <WhereThisFits {...meta.where()} />
-      </section>
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Create")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
 
       <SubphaseInstruments subPhase="alpha" />
 
-      <PageFoot sources={ALPHA_SOURCES} subphaseFootFor="Create" />
+      <PageFoot sources={ALPHA_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

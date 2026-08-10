@@ -1,3 +1,4 @@
+import { CircleDollarSign } from "lucide-react";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
   INSTRUMENT_MATRIX,
@@ -40,6 +41,20 @@ function ActionChip({ action }: { action: MatrixAction }) {
   );
 }
 
+/**
+ * Does this instrument turn on because of how much the project costs?
+ *
+ * A reader can tell straight away whether their service automates a decision or
+ * touches personal information. Whether it crosses a dollar threshold depends on
+ * a number and a departmental capacity class they may not have yet, so those
+ * entries go last and carry a coin so the eye can skip them.
+ */
+function moneyGated(row: { scope: string }) {
+  return /\$[\d,.]+\s?(million|M\b)|capacity class|approved capacity/i.test(row.scope)
+    ? 1
+    : 0;
+}
+
 export function SubphaseInstruments({
   subPhase,
   className,
@@ -57,7 +72,9 @@ export function SubphaseInstruments({
   if (rows.length === 0) return null;
 
   const universal = rows.filter(({ row }) => row.everyService);
-  const conditional = rows.filter(({ row }) => !row.everyService);
+  const conditional = rows
+    .filter(({ row }) => !row.everyService)
+    .sort((a, b) => moneyGated(a.row) - moneyGated(b.row));
 
   return (
     <section
@@ -125,8 +142,16 @@ export function SubphaseInstruments({
                     {cell.note}
                   </p>
                   {!row.everyService ? (
-                    <p className="mt-1 text-[0.8rem] leading-snug text-muted-foreground/80">
-                      <span className="font-medium">Applies when:</span>{" "}
+                    <p className="mt-1.5 text-[0.8rem] leading-snug text-foreground/80">
+                      <span className="font-semibold uppercase tracking-[0.08em] text-[0.68rem] text-primary/90">
+                        {moneyGated(row) ? (
+                          <CircleDollarSign
+                            className="mr-1 inline-block h-3.5 w-3.5 align-[-0.15em]"
+                            aria-hidden
+                          />
+                        ) : null}
+                        {moneyGated(row) ? "Applies above" : "Applies when"}
+                      </span>{" "}
                       {row.scope}
                     </p>
                   ) : null}
