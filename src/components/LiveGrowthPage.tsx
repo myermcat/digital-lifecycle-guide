@@ -185,7 +185,8 @@ export function LiveGrowthPage() {
         title={GROWTH_FINISH.title}
         sectionId={GROWTH_FINISH.sectionId}
         intro={GROWTH_FINISH.intro}
-        followUp={GROWTH_FINISH.followUp}
+        blocks={GROWTH_FINISH.blocks}
+        aside={GROWTH_FINISH.aside}
         exits={GROWTH_FINISH.exits}
         offRamp={GROWTH_FINISH.offRamp}
       />

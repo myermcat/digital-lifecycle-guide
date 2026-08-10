@@ -13,6 +13,7 @@ import {
 import type { SubphaseExtract } from "@/components/SubphaseExtractCard";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import { LIFECYCLE_VISUALS, type LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 
 export const STABILIZATION_EXTRACT: SubphaseExtract = {
@@ -292,11 +293,47 @@ export const STABILIZATION_FINISH = {
     text: "Stabilization is finished when the exit test agreed before launch is met, and the service has become boring: incidents are rare and routine, support volume has settled while use keeps growing, performance holds at full load, and the running team resolves and escalates without the people who built it.",
     bold: [{ phrase: "the exit test agreed before launch is met" }],
   } satisfies ThreadLinkedProse,
-  followUp: [
+  blocks: [
     {
-      text: "Boring does not mean perfect. What remains broken is understood, owned, and consciously accepted.",
+      heading: "What is still broken is owned and accepted",
+      paragraphs: [
+        {
+          text: "Boring does not mean perfect. The exit test tolerates open faults, provided each one is diagnosed, has a named owner, and stays open because someone decided it could.",
+        },
+        {
+          text: "The rule for the open list was agreed before launch, as part of the exit test. Apply it at the close: whatever is accepted moves onto the running team's known-errors list, and whoever pays for its eventual fix is named.",
+        },
+      ],
     },
-  ] satisfies ThreadLinkedProse[],
+    {
+      heading: "The build team is closed out, and the knowledge is kept",
+      paragraphs: [
+        {
+          text: "For a supplier build, accepting the open list is the close-out of the warranty, the after-launch period when the supplier fixes defects at no extra charge. Each remaining defect is fixed under the warranty or accepted with a named owner, and closing the warranty settles who pays for fixes from then on: the free defect-fixing ends, and the contract's support terms carry on.",
+        },
+        {
+          text: "A service built in-house has no warranty to close. The developers' assignment winds down once the running team handles incidents without them.",
+        },
+        {
+          text: "The knowledge stays. By the close, the runbook and the known-errors list belong to the running team, and the recent incidents are the proof: resolved and escalated without a call to the people who built the service.",
+        },
+      ],
+    },
+  ] satisfies FinishBlock[],
+  aside: {
+    heading: "The two registers on the closing checklist",
+    paragraphs: [
+        {
+          text: "The checklist asks for two registrations, and neither register is held by the team, so this is what each one is, who files it, and what the team supplies.",
+        },
+        {
+          text: "The GC Service Inventory is the government-wide register of what services exist, who they serve, how digital they are, and how much volume they handle. The designated official for service registers the service once it is live, and the business owner supplies the details. The published inventory refreshes at an annual update, and nobody chases the entry in between, which is why this is the registration that gets forgotten.",
+        },
+        {
+          text: "Application Portfolio Management (APM) is the register of the applications behind the services, where each application is rated for business value, technical condition, support cost and criticality. It is the only register that records criticality at all, so a blank entry means no government-wide record shows the service as critical. A departmental portfolio delegate holds the register; the ratings come from the business owner of the application.",
+        },
+    ],
+  },
   exits: [
     {
       lead: "Forward to Growth,",

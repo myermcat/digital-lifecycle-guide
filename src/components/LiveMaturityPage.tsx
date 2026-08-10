@@ -188,7 +188,8 @@ export function LiveMaturityPage() {
         title={MATURITY_FINISH.title}
         sectionId={MATURITY_FINISH.sectionId}
         intro={MATURITY_FINISH.intro}
-        followUp={MATURITY_FINISH.followUp}
+        blocks={MATURITY_FINISH.blocks}
+        aside={MATURITY_FINISH.aside}
         exits={MATURITY_FINISH.exits}
         offRamp={MATURITY_FINISH.offRamp}
       />

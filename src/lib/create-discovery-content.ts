@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
@@ -369,6 +370,54 @@ export const DISCOVERY_FINISH = {
     text: "Discovery is finished when you have decided whether or not to move on to Alpha. That decision weighs two things: whether there is a viable service worth building, and whether it is cost-effective to pursue.",
     bold: [{ phrase: "decided whether or not to move on to Alpha" }],
   } satisfies ThreadLinkedProse,
+  blocks: [
+    {
+      heading: "The goal set at the start has its answer",
+      paragraphs: [
+        {
+          text: "Discovery opened by naming what it needed to find out, and that goal is now the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan turn up something that already exists and meets the need. The first three are under What to find out in Discovery above; the reuse scan is under Reuse, buy, or build.",
+        },
+        {
+          text: "The decision itself is made from those findings, and it has an owner: the business owner, named in The team you need above, decides to go on or stop. Answer any question still open before deciding, either by extending the research or by letting the gap join the case for stopping.",
+        },
+      ],
+    },
+    {
+      heading: "The concept case is approved and sent",
+      onlyIf: "Only from $2.5 million",
+      paragraphs: [
+        {
+          text: "Send the concept case before the sub-phase closes. What it is, and the investment floor that makes it mandatory, are under Set a goal, and define the problem above; the deadline is the only new thing here. It is built from Discovery's evidence, and a thin Discovery produces a thin concept case.",
+        },
+        {
+          text: "The deadline comes from the queue: the departmental architecture review board submission (the department's own review of the design direction) and any Treasury Board submission (the formal request for the authority and money to build) both happen in Alpha, and the concept case precedes them. A concept case still unsent when Discovery ends holds both of them up.",
+        },
+      ],
+    },
+    {
+      heading: "The competition for the Alpha team has run",
+      onlyIf: "Only if buying a team",
+      paragraphs: [
+        {
+          text: "Run the competition inside Discovery so that, at the close, the award waits on one thing, the decision to continue. Signing then puts the team in place for the first day of Alpha. The four buying routes, and why only the Team route is contracted this early, are under Reuse, buy, or build above.",
+        },
+        {
+          text: "Award after the decision, since a contract awarded earlier commits money to an Alpha that may never run. If the competition cannot finish in time, The team you need above gives the accepted fallback: Discovery runs long, or the award arrives as Alpha starts.",
+        },
+      ],
+    },
+  ] satisfies FinishBlock[],
+  aside: {
+    heading: "Who signs off that Discovery is over",
+    paragraphs: [
+        {
+          text: "This note exists because teams at this point ask who, outside the team, certifies the end of Discovery. The answer is nobody, and that is why the test above is the team's own decision.",
+        },
+        {
+          text: "No Government of Canada instrument uses the names Discovery, Alpha, or Beta; they are this guide's names for the sub-phases, and no official checkpoint is defined as the end of Discovery. The instruments with something due during Discovery are in the table below, with what has to happen to each one; who does the work is in the full table on the home page.",
+        },
+    ],
+  },
   exits: [
     {
       lead: "Forward to Alpha,",

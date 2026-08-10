@@ -214,6 +214,8 @@ export function CreateDiscoveryPage() {
         title={DISCOVERY_FINISH.title}
         sectionId={DISCOVERY_FINISH.sectionId}
         intro={DISCOVERY_FINISH.intro}
+        blocks={DISCOVERY_FINISH.blocks}
+        aside={DISCOVERY_FINISH.aside}
         exits={DISCOVERY_FINISH.exits}
         offRamp={DISCOVERY_FINISH.offRamp}
       />

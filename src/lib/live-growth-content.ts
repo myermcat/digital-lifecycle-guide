@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 
 export const GROWTH_LEAD: ThreadLinkedProse = {
@@ -327,11 +328,55 @@ export const GROWTH_FINISH = {
     text: "Growth is finished when the scope settles: the roadmap holds no significant addition worth building next, and the work in front of the team is sustaining, improving in small steps, and renewing.",
     bold: [{ phrase: "Growth is finished when the scope settles:" }],
   } satisfies ThreadLinkedProse,
-  followUp: [
+  blocks: [
     {
-      text: "A service can return to Growth later. The next mandate reopens it the same way it opened the first time: a named addition, evidence, money, and room in the contract.",
+      heading: "The assessments describe the service as it now is",
+      paragraphs: [
+        {
+          text: "Growth changed what the service is, and the paperwork has to say so before the sub-phase closes. Each significant addition updated its own assessments while it was built; the closing check reads the whole set against the service as it now runs.",
+        },
+        {
+          text: "The security assessment covers every change, with the major ones approved by the authorizer (the official who authorized the service to operate). The accessibility statement covers the pages the additions created or changed. An addition that handled personal information has the privacy assessment updated to cover what the service now uses. An addition that automated a decision has its Algorithmic Impact Assessment updated and approved.",
+        },
+      ],
     },
-  ] satisfies ThreadLinkedProse[],
+    {
+      heading: "Adoption is where it should be, or the shortfall is written down",
+      paragraphs: [
+        {
+          text: "Growth's work included the people, and closing it includes the judgement on whether they arrived. Put the use the service has beside the use it was built to reach.",
+        },
+        {
+          text: "A shortfall does not keep Growth open. It closes with a written reason: what was promoted, what the numbers did, and the judgement that more building would not move them. Maturity improves in small steps, so that record is what the running team hands to whoever asks, years later, why use is where it is.",
+        },
+      ],
+    },
+    {
+      heading: "The handover to the running team is written down",
+      paragraphs: [
+        {
+          text: "Build capacity leaves when Growth closes, and what it knows leaves too unless it is written down first. Three things go into the handover, and the people best placed to write them are on the team today.",
+        },
+        {
+          text: "The contract picture: what the ceiling, the option years, and the support terms still hold after everything Growth consumed. With it the renewal calendar, every end date with its start-by date beside it, because a renewal that begins at its end date leaves extension on the supplier's terms as the only option.",
+        },
+        {
+          text: "The knowledge: what each addition changed, written into the runbooks and the decision record while the people who built it can still be asked.",
+        },
+      ],
+    },
+  ] satisfies FinishBlock[],
+  aside: {
+    heading: "Coming back to Growth",
+    paragraphs: [
+        {
+          text: "This note is here for the team that hesitates to close Growth in case something big arrives later; nothing about closing now makes reopening harder.",
+        },
+        {
+          text: "A service can return to Growth. The next mandate reopens it the same way it opened the first time: a named addition, evidence it is needed, money for the new work, and room in the contract. The on-ramp at the top of this page is the same one, however many times it is used.",
+        },
+    ],
+  },
   exits: [
     {
       lead: "Onward to Maturity,",

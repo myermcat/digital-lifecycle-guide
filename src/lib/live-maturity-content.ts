@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
+import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import { LIFECYCLE_VISUALS, type LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 
@@ -346,10 +347,55 @@ export const MATURITY_FINISH = {
   title: "How you know Maturity is finished",
   sectionId: "how-you-know-maturity-is-finished",
   intro: {
-    text: "Maturity has no finish line of its own. It ends when something outside the routine changes: a new mandate arrives, or the signals say the service's time is ending.",
+    text: "Maturity has no finish line of its own. It ends when something outside the routine changes: a new mandate arrives, or the signals say the service's time is ending. Whichever exit is taken, the crossing is a decision with work attached, and the work starts while the current money and the current team are still in place.",
     bold: [{ phrase: "Maturity has no finish line of its own." }],
   } satisfies ThreadLinkedProse,
-  followUp: [] satisfies ThreadLinkedProse[],
+  blocks: [
+    {
+      heading: "The decision to leave is made on evidence and written down",
+      paragraphs: [
+        {
+          text: "The routine already produces the evidence: the dashboard, the running costs, and the findings of the review with clients, partners and stakeholders that comes round at least once every five years. When the signals hold, the case for leaving is assembled from records the team already keeps.",
+        },
+        {
+          text: "The business owner of the application makes the call that Maturity is ending and records the reason, with the review findings, the dashboard and the costs attached. That record is what the request for the next money is built on, and it is the first thing whoever inherits the service reads.",
+        },
+      ],
+    },
+    {
+      heading: "The money for what follows is set aside before the current funding ends",
+      paragraphs: [
+        {
+          text: "The next piece of work costs money: a return to Growth needs a new funding decision for the build, and a retirement is months of funded work in its own right. Neither can be paid for out of a funding envelope that has already ended.",
+        },
+        {
+          text: "Start the request while the current envelope is still paying for the service. A funding decision moves at the speed of approvals, and extensions bought in the meantime are bought on the supplier's terms.",
+        },
+      ],
+    },
+    {
+      heading: "The knowledge and the registers are ready to hand over",
+      paragraphs: [
+        {
+          text: "Whoever follows, a Growth build team or the team that retires the service, inherits it through what was written down. Bring the runbooks, the known errors, the record of decisions and the contract's end-of-term obligations up to date before the crossing, because the people who hold the unwritten version move on with the exit.",
+        },
+        {
+          text: "The service's entries in the two registers, the GC Service Inventory and Application Portfolio Management, have to match reality at the crossing, because whoever follows will close or transfer them. At Sunset the inventory entry is updated to show the service retired, and the application record is marked retired.",
+        },
+      ],
+    },
+  ] satisfies FinishBlock[],
+  aside: {
+    heading: "Why no checkpoint closes Maturity",
+    paragraphs: [
+        {
+          text: "This exists to answer a question the blocks above raise: where is the checkpoint that closes Maturity? There is none, and the reason shapes the whole section.",
+        },
+        {
+          text: "Each official instrument that reaches Maturity reaches it as a keeping duty: filings refreshed, authorizations maintained, reviews recurring on their own cycles. The closing actions, marking a register entry retired or formally ending an authorization, belong to Sunset. So no approval ends Maturity; the business owner of the application reads the evidence and decides, and the blocks above are what that decision requires.",
+        },
+    ],
+  },
   exits: [
     {
       lead: "Back to Growth,",

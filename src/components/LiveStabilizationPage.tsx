@@ -178,7 +178,8 @@ export function LiveStabilizationPage() {
         title={STABILIZATION_FINISH.title}
         sectionId={STABILIZATION_FINISH.sectionId}
         intro={STABILIZATION_FINISH.intro}
-        followUp={STABILIZATION_FINISH.followUp}
+        blocks={STABILIZATION_FINISH.blocks}
+        aside={STABILIZATION_FINISH.aside}
         exits={STABILIZATION_FINISH.exits}
         offRamp={STABILIZATION_FINISH.offRamp}
       />
