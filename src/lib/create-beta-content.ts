@@ -686,12 +686,11 @@ export const BETA_FINISH = {
         bold: [{ phrase: "The accessibility standard met," }],
       },
       {
-        text: "The Privacy Impact Assessment completed and acted on, if the service handles personal information used to make decisions about people.",
-        bold: [{ phrase: "The Privacy Impact Assessment" }],
-      },
-      {
-        text: "The security assessment and authorization complete, so the service is allowed to run in production.",
-        bold: [{ phrase: "The security assessment and authorization" }],
+        text: "Every official checkpoint that Beta reaches is done. The table below this section names each one, what stage it reaches, and who does the work, so they are not listed here. One of them decides whether the service can launch at all: without the Authority to Operate the service is not allowed to run in production.",
+        bold: [
+          { phrase: "Every official checkpoint that Beta reaches is done." },
+          { phrase: "without the Authority to Operate the service is not allowed to run in production" },
+        ],
       },
       {
         text: "The continuity arrangements in place. The recovery targets set in Alpha are with the department's business continuity coordinator. If the service is critical, it is named in the departmental plan, with its downtime limit and the steps for getting it back.",
@@ -700,10 +699,6 @@ export const BETA_FINISH = {
       {
         text: "The restore tested at least once. Nobody knows whether a backup works until someone has used it to rebuild the service.",
         bold: [{ phrase: "The restore tested at least once." }],
-      },
-      {
-        text: "If the service automates a decision about a person, the Algorithmic Impact Assessment published.",
-        bold: [{ phrase: "the Algorithmic Impact Assessment published" }],
       },
       {
         text: "The dashboard live, and a named person who owns it.",

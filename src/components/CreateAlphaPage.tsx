@@ -5,6 +5,7 @@ import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { RequirementTypesTable } from "@/components/RequirementTypesTable";
+import { RequirementsNamingStrip } from "@/components/RequirementsNamingStrip";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -208,6 +209,7 @@ export function CreateAlphaPage() {
                 {renderThreadSections(stage.sections.slice(0, 1))}
                 <RequirementTypesTable />
                 {renderThreadSections(stage.sections.slice(1))}
+                <RequirementsNamingStrip />
               </>
             ) : (
               renderThreadSections(stage.sections)

@@ -324,28 +324,6 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         bold: [{ phrase: "put the business and non-functional requirements in the contract, and keep the functional ones out of it" }],
       },
       {
-        type: "editorialNote",
-        label: "What to call them",
-        paragraphs: [
-          {
-            text: "The Government of Canada has an official name for what comes before the requirements, and an official name for what comes after. It has no name for the requirements themselves.",
-            bold: [{ phrase: "It has no name for the requirements themselves." }],
-          },
-          {
-            text: "Before: the concept case, a short early write-up of the problem, the rough size of the investment, and the direction being considered. It describes the problem and the business need, and stops short of choosing a solution. It is mandatory for digitally enabled projects where the department is willing to invest at least $2.5 million with no approved capacity class or class 1, rising to $25 million at class 4. Below the threshold nobody asks for one, though the template is worth using anyway.",
-            bold: [{ phrase: "the concept case" }],
-          },
-          {
-            text: "After: the statement of work, the description of the work being bought. It belongs to the contract, so it exists only if the department is buying. An in-house build never writes one.",
-            bold: [{ phrase: "the statement of work" }],
-          },
-          {
-            text: "In between: nothing official. Departments often say business requirements document, a term borrowed from industry that appears in no Treasury Board policy, directive or standard. If a colleague asks for one, they mean the requirements, so write what the service has to do and give it whatever name the department uses. There is no template to follow, nowhere to file it, and nobody outside the department will ask for it.",
-            bold: [{ phrase: "business requirements document" }],
-          },
-        ],
-      },
-      {
         text: "Nothing in Treasury Board policy requires a single requirements document, written up front and signed off. No directive or standard names one, there is no template for it, and there is nowhere to file it. So the requirements do not have to be one document, and they are more useful when they are not: the tested mock-ups already carry the functional half in a form a builder can act on, and the business and non-functional halves are written down beside them.",
         bold: [{ phrase: "Nothing in Treasury Board policy requires a single requirements document" }],
       },
@@ -410,7 +388,7 @@ export const ALPHA_TEAM = {
 
 export const ALPHA_EXERCISE = {
   label: "THE EXERCISE",
-  title: "How long it can be down is decided now",
+  title: "What could stop the service, and how long it can be down",
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
   bodyIntro: {

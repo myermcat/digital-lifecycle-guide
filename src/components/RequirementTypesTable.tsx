@@ -84,7 +84,7 @@ export function RequirementTypesTable() {
               </th>
               <td className={`${guideProseTight} w-[38%] py-3 pr-4 text-foreground/80`}>
                 {row.says}
-                <span className="mt-1.5 block italic text-muted-foreground">
+                <span className="mt-1.5 block text-[0.78rem] italic leading-snug text-muted-foreground/70">
                   {row.example}
                 </span>
               </td>
@@ -113,7 +113,7 @@ export function RequirementTypesTable() {
               </span>
             </div>
             <p className={`${guideProseTight} text-foreground/80`}>{row.says}</p>
-            <p className={`${guideProseTight} mt-1 italic text-muted-foreground`}>
+            <p className="mt-1 text-[0.78rem] italic leading-snug text-muted-foreground/70">
               {row.example}
             </p>
             <p className={`${guideProseTight} mt-1.5 text-muted-foreground`}>
