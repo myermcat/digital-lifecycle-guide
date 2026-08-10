@@ -6,7 +6,7 @@ export const SOO_VS_SOW = {
   opening:
     "Every contract needs a description of the work being bought. It is usually written one of two ways, and the choice shapes whether the work can change as you learn.",
   termNote:
-    "A note on the name. This was once called a \"statement of objectives\", and that term is worth dropping: it appears nowhere in the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual or the CanadaBuys Buyer's Guide. It is United States federal procurement vocabulary that circulates in Canadian conversation. What the Government of Canada names is the statement of work and the statement of requirement. The distinction is real either way. Only the label changed.",
+    "A note on the name. This was once called a \"statement of objectives\", and that term is worth dropping: it appears nowhere in the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual, the CanadaBuys Buyer's Guide or the PSPC Agile Procurement Guide. It is United States federal procurement vocabulary that circulates in Canadian conversation. What the Government of Canada names is the statement of work and the statement of requirement. The distinction is real either way. Only the label changed.",
   whatEachOneIs: {
     id: "what-each-one-is",
     title: "What each one is",
