@@ -195,7 +195,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
             bold: [{ phrase: "Buying a Finished Product." }],
           },
           {
-            text: "Buying a Team, or building in-house. Nothing is signed in Beta. The Team contract was signed back in Discovery, and an in-house build has no contract at all.",
+            text: "Buying a Team, or building in-house. Nothing is signed in Beta. The Team contract was signed as Alpha opened, and an in-house build has no contract at all.",
             bold: [{ phrase: "Buying a Team, or building in-house." }],
             internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
           },
@@ -257,8 +257,8 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         type: "unorderedList",
         items: [
           {
-            text: "Do not polish the Alpha prototype into the real thing. It was built to be thrown away and it carries every shortcut that was taken on that understanding. Start again, properly.",
-            bold: [{ phrase: "Do not polish the Alpha prototype into the real thing." }],
+            text: "The Alpha prototype is rarely the right thing to polish into the real one. It was built to be thrown away, and it carries every shortcut that was taken on that understanding. Where the team cannot account for what is inside it, starting again is usually cheaper than untangling it.",
+            bold: [{ phrase: "The Alpha prototype is rarely the right thing to polish into the real one." }],
           },
           {
             text: "Set up the pipeline that will release changes safely, small and often, because it is needed from the first day the service is live.",
@@ -424,7 +424,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Proving is not launching. Launch is when the service becomes the official one for everyone, and the old way is finally retired when there is one. That is what ends Beta. A service that goes straight from prototype to everyone has never actually been tested.",
+        text: "Proving and launching are separate moments. Launch is when the service becomes the official one for everyone, and where there was an older way, that is when it is retired. That is what ends Beta. A service that goes straight from prototype to everyone arrives without ever having been tested.",
         bold: [{ phrase: "Proving is not launching." }, { phrase: "the official one for everyone" }],
       },
     ],

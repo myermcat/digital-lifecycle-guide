@@ -181,8 +181,8 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
         bold: [{ phrase: "The end of the warranty changes who pays for defect fixes." }],
       },
       {
-        text: "What must not taper is the knowledge. Runbooks, known errors, and workarounds are written down as they are learned, so the running team keeps what the builders know. The test: if the build team disappeared tomorrow, the running team would cope. The service team covers keeping that capability.",
-        bold: [{ phrase: "What must not taper is the knowledge." }],
+        text: "The knowledge is the one thing worth holding on to. Runbooks, known errors, and workarounds are written down as they are learned, so the running team keeps what the builders know. A useful test: if the build team disappeared tomorrow, the running team would cope. The service team covers keeping that capability.",
+        bold: [{ phrase: "The knowledge is the one thing worth holding on to." }],
         internalLinks: [{ phrase: "The service team", to: "/thread/team-capability" }],
       },
     ],

@@ -202,6 +202,7 @@ export function CreateAlphaPage() {
             <li key={item.text}>{renderLinkedProse(item)}</li>
           ))}
         </ul>
+        <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.ratioNote)}</p>
         <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.technicalNote)}</p>
         <p className="mt-4 font-semibold">
           {renderLinkedProse(ALPHA_PILLAR.closingWarning)}

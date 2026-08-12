@@ -14,10 +14,10 @@ import { guideProseTight } from "@/lib/guide-typography";
 
 const STEPS = [
   {
-    when: "Before",
+    when: "Before, back in Discovery",
     name: "Concept case",
     official: true,
-    what: "The problem, the rough size of the investment, and the direction being considered. Stops short of choosing a solution.",
+    what: "A Discovery artifact, written before Alpha begins. It sets out the problem, the rough size of the investment, and the direction being considered, and stops short of choosing a solution.",
     who: "Mandatory for digitally enabled projects at $2.5M with no approved capacity class or class 1, rising to $25M at class 4.",
     alsoUseful: "Below the threshold nobody asks for one, and the template is still worth using.",
   },

@@ -43,7 +43,7 @@ export const ALPHA_EXTRACT = {
     text: "The team starts making things, and users start trying them.",
   },
   closing: {
-    text: "Alpha makes sketches, mock-ups and prototypes. Whether any of that becomes part of the service people eventually use depends on how it was built. A sketch or a mock-up never becomes code: it becomes the requirements, and then it is archived. A prototype built in an afternoon with artificial intelligence (AI), that nobody on the team can explain, goes the same way. A prototype built carefully, that the team understands and would defend, can be built on. What carries forward in every case is the decision, what the team learned, and the approach it picked. Only the handful of people who try any of it ever see it, never the public.",
+    text: "Alpha makes sketches, mock-ups and prototypes. Whether any of it becomes part of the finished service depends on how it was built, and that question is worked through further down this page. What carries forward in every case is the decision, what the team learned, and the approach it picked. Only the handful of people who try any of it ever see it, and never the public.",
     bold: [{ phrase: "depends on how it was built" }],
   } satisfies ThreadLinkedProse,
 };
@@ -108,6 +108,10 @@ export const ALPHA_PILLAR = {
     { text: "The people it is for will not use this channel." },
     { text: "Another department owns a step, and will not change it." },
   ] satisfies readonly ThreadLinkedProse[],
+  ratioNote: {
+    text: "Roughly speaking, nine times out of ten the thing that sinks a service is on that list rather than in the software. Teams tend to spend their Alpha the other way round, testing the build because the build is the part they can see. Worth saying honestly, though: sometimes the prototype really is the dealbreaker, and a technical answer of no ends the idea on the spot. The point is not to skip the technical tests. It is to notice that they are the smaller risk.",
+    bold: [{ phrase: "nine times out of ten" }],
+  } satisfies ThreadLinkedProse,
   technicalNote: {
     text: "Technical killers are real too, and Alpha can only take them so far. Alpha answers whether a thing is possible: can the system of record be connected to at all, is the data really there, will security ever accept this approach. Whether it is fast enough under real load, or cheap enough to run, is not knowable until Beta. Plan for those. Do not claim to have tested them.",
     bold: [{ phrase: "Alpha answers whether a thing is possible" }],
@@ -160,7 +164,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "A prototype can be interactive and still have nothing behind it, because interaction is not computation. Press Submit and it shows you the confirmation screen somebody drew earlier. That is enough to see where people get stuck, and not enough to tell you whether the rules are right or whether it holds up under load. Alpha rules things out; Beta finds out whether what survived actually works.",
+        text: "A prototype can be interactive and still have nothing behind it, because interaction is not computation. Press Submit and it shows you the confirmation screen somebody drew earlier. Nothing has been submitted anywhere, no application exists, and there is nobody at the other end to process one. That is enough to see where people get stuck, and not enough to tell you whether the rules are right or whether it holds up under load. Alpha rules things out, and Beta finds out whether what survived actually works.",
         bold: [{ phrase: "interaction is not computation" }],
       },
       {
@@ -174,8 +178,8 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         type: "orderedList",
         items: [
           {
-            bold: "Paper or sketches.",
-            text: " The cheapest way to find out an idea is wrong.",
+            bold: "Paper, sketches and wireframes.",
+            text: " The cheapest way to explain an idea to someone, and the cheapest way to find out it is wrong. A wireframe is the tidied-up version: boxes and labels showing what goes on a page and in what order, with no colour and no branding.",
           },
           {
             bold: "A mock-up.",
@@ -713,9 +717,6 @@ export const ALPHA_FINISH = {
         {
           text: "Either way, a competition that has not started by the end of Alpha pushes the date, and Beta waits.",
           internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
-        },
-        {
-          text: "A department building in-house, or reusing a platform that already exists, has no supplier to find and skips this entirely.",
         },
       ],
     },
