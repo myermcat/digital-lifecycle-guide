@@ -5,6 +5,7 @@ import {
   Code2,
   Compass,
   FileSignature,
+  Languages,
   Gauge,
   PencilRuler,
   Route,
@@ -233,7 +234,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     sections: [
       {
         type: "subheading",
-        text: "Smallest, and end to end",
+        text: "When something has to go, cut a feature and not a stage",
       },
       {
         text: "This is the first code, or the first configuration, meant to survive. Most existing Government of Canada services were bought, reused, or configured rather than written from scratch, and Beta is where that product is actually stood up.",
@@ -246,63 +247,6 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       {
         text: "So when something has to go, drop a feature rather than a stage of the journey. Fewer things the service can do is survivable. A journey that stops halfway is not.",
         bold: [{ phrase: "drop a feature rather than a stage of the journey" }],
-      },
-      {
-        type: "subheading",
-        text: "Both official languages, from the first screen",
-      },
-      {
-        text: "A public-facing digital service has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
-        bold: [{ phrase: "equally and at the same time" }],
-      },
-      {
-        text: "Retrofitting is where the cost arises, and it is a design problem before it is a translation problem. French runs roughly a fifth longer than English, so buttons, labels, headings and navigation all need room the English version does not. Sometimes a component that works in English has to be laid out differently in French: a menu that fits on one line, a table column that has to wrap, a button whose label no longer sits inside it. Design for the longer language and the shorter one always fits.",
-        bold: [{ phrase: "a design problem before it is a translation problem" }],
-      },
-      {
-        text: "Build and test in both from the start, and include francophone users in the research.",
-      },
-      {
-        text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract, and it belongs there as one deliverable rather than two. French is not an addition to the service; it is the other half of the same service. A supplier who is not contractually bound to deliver it will price it later as a change, which is how a department ends up paying twice for one thing it was always required to have. The requirement comes from the business owner; the contracting authority writes the clauses.",
-        bold: [{ phrase: "it is the other half of the same service" }],
-        internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
-      },
-      {
-        type: "subheading",
-        text: "A small service is not exempt",
-      },
-      {
-        text: "Teams often assume the duty scales with the size of the audience, and it does not. What triggers it is how the service is delivered, so a service used by one region, or by a few hundred people, is caught on exactly the same terms as a national one.",
-        bold: [{ phrase: "the duty scales with the size of the audience, and it does not" }],
-      },
-      {
-        text: "If someone asks you to show your working, it is three steps:",
-      },
-      {
-        type: "orderedList",
-        items: [
-          {
-            bold: "The Official Languages Act, section 24(1)(b),",
-            text: " says regulations may name the circumstances that oblige an office to work in both languages.",
-          },
-          {
-            bold: "The Communications with and Services to the Public Regulations, section 11(b),",
-            text: " names one of those circumstances: anything offered through an automated system that the public can reach.",
-          },
-          {
-            bold: "A digital service is an automated system the public can reach,",
-            text: " so the duty applies. Nothing in that chain asks how many people use it or where they live.",
-          },
-        ],
-      },
-      {
-        text: "The belief that a small service is exempt usually comes from section 11(a) of the same regulation, which does turn on how many people are served. It governs correspondence and telephone services, and not this.",
-      },
-      {
-        text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
-      },
-      {
-        text: "Where a supplier delivers the service on the department's behalf, section 25 of the Act carries the duty across to them, so buying delivery does not buy out of the obligation.",
       },
       {
         type: "subheading",
@@ -396,6 +340,84 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         externalLinks: [
           { phrase: "Algorithmic Impact Assessment", linkKey: "algorithmic-impact-assessment" },
         ],
+      },
+    ],
+  },
+  {
+    id: "both-official-languages",
+    icon: Languages,
+    title: "Deliver it in English and French at the same time.",
+    triggerNote: "Equal quality, both languages, from launch day. Not a translation step at the end.",
+    sections: [
+      {
+        type: "subheading",
+        text: "What the duty actually requires",
+      },
+      {
+        text: "A public-facing digital service has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
+        bold: [{ phrase: "equally and at the same time" }],
+      },
+      {
+        text: "The Directive on Official Languages for Communications and Services sets out how that is done. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing in English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service tells people, in both languages, that it is available in both.",
+        bold: [{ phrase: "available at the same time and to be of equal quality" }],
+      },
+      {
+        type: "subheading",
+        text: "French is longer, so the design has to give",
+      },
+      {
+        text: "Retrofitting is where the cost arises, and it is a design problem before it is a translation problem. French runs roughly a fifth longer than English, so buttons, labels, headings and navigation all need room the English version does not. Sometimes a component that works in English has to be laid out differently in French: a menu that fits on one line, a table column that has to wrap, a button whose label no longer sits inside it. Design for the longer language and the shorter one always fits.",
+        bold: [{ phrase: "a design problem before it is a translation problem" }],
+      },
+      {
+        text: "Build and test in both from the start, and include francophone users in the research.",
+      },
+      {
+        type: "subheading",
+        text: "Put it in the contract as one deliverable, not two",
+      },
+      {
+        text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract, and it belongs there as one deliverable rather than two. French is not an addition to the service; it is the other half of the same service. A supplier who is not contractually bound to deliver it will price it later as a change, which is how a department ends up paying twice for one thing it was always required to have. The requirement comes from the business owner; the contracting authority writes the clauses.",
+        bold: [{ phrase: "it is the other half of the same service" }],
+        internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
+      },
+      {
+        text: "Contracting out does not move the duty. Section 25 of the Official Languages Act carries it across to anyone acting on the department's behalf, so the department answers for a supplier's French as if it were its own.",
+        bold: [{ phrase: "Contracting out does not move the duty." }],
+      },
+      {
+        type: "subheading",
+        text: "A service with few users is not exempt from this",
+      },
+      {
+        text: "Teams often assume the language duty scales with the size of the audience, and it does not. What triggers it is how the service is delivered, so a service used by one region, or by a few hundred people, is caught on exactly the same terms as a national one.",
+        bold: [{ phrase: "the language duty scales with the size of the audience, and it does not" }],
+      },
+      {
+        text: "If a colleague pushes back on that, here is the reasoning in three steps:",
+      },
+      {
+        type: "orderedList",
+        items: [
+          {
+            bold: "The Official Languages Act, section 24(1)(b),",
+            text: " says regulations may name the circumstances that oblige an office to work in both languages.",
+          },
+          {
+            bold: "The Communications with and Services to the Public Regulations, section 11(b),",
+            text: " names one of those circumstances: anything offered through an automated system that the public can reach.",
+          },
+          {
+            bold: "A digital service is an automated system the public can reach,",
+            text: " so the duty applies. Nothing in that chain asks how many people use it or where they live.",
+          },
+        ],
+      },
+      {
+        text: "The belief that a small service is exempt usually comes from section 11(a) of the same regulation, which does turn on how many people are served. It governs correspondence and telephone services, and it does not reach a digital service.",
+      },
+      {
+        text: "If the service falls short in French once it is live, complaints about it go to the Commissioner of Official Languages, who can investigate the department.",
       },
     ],
   },

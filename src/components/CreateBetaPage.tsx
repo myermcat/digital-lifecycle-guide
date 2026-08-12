@@ -231,14 +231,14 @@ export function CreateBetaPage() {
           children:
             // The French and English screens have to arrive on the sentence
             // that says equal quality, not at the top of the stage.
-            stage.id === "build-smallest-real-thing" ? (
+            stage.id === "both-official-languages" ? (
               <>
-                {renderThreadSections(stage.sections.slice(0, 6))}
+                {renderThreadSections(stage.sections.slice(0, 3))}
                 <LifecycleVisual
                   visual={LIFECYCLE_VISUALS.bothOfficialLanguages}
                   className="mt-4"
                 />
-                {renderThreadSections(stage.sections.slice(6))}
+                {renderThreadSections(stage.sections.slice(3))}
               </>
             ) : (
               renderThreadSections(stage.sections)
