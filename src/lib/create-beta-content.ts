@@ -5,7 +5,7 @@ import {
   Code2,
   Compass,
   FileSignature,
-  Columns2,
+  Globe,
   Gauge,
   PencilRuler,
   Route,
@@ -283,10 +283,10 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Neither is quick, and neither can be started the week before launch.",
       },
       {
-        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. The deadline is earlier than most teams expect. It is not launch, and it is not the end of Beta. Private beta already puts real people's real work through the service, holding real records, so at that point the service is running in production in the sense that matters here: it is live and the data in it is real, whatever else is still unfinished. So the authority has to be in hand before private beta opens, which is part-way through Beta. Work back from that date, and start the assessment as the build starts.",
+        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. Production is the environment where the real service runs on real data, as opposed to the development and test environments the team builds in. It is about where the service is running, not about whether it is finished. Private beta runs in production: a handful of invited people, doing real work, creating real records. So the authority has to be in hand before private beta opens, which is part-way through Beta, not at launch and not at the end of it. Work back from that date, and start the assessment as the build starts.",
         bold: [
           { phrase: "The service cannot run in production until it is authorized to." },
-          { phrase: "the authority has to be in hand before private beta opens" },
+          { phrase: "Private beta runs in production" },
         ],
         externalLinks: [
           {
@@ -346,7 +346,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
   },
   {
     id: "both-official-languages",
-    icon: Columns2,
+    icon: Globe,
     title: "Deliver it in English and French at the same time.",
     triggerNote: "Equal quality, both languages, from launch day. Not a translation step at the end.",
     sections: [
