@@ -38,7 +38,7 @@ export const LIFECYCLE_VISUALS = {
   },
   alphaPrototypeLadder: {
     src: alphaPrototypeLadderVisual,
-    alt: "The prototype ladder: a paper sketch you draw yourself or with a friend, then a clickable mock-up an AI tool makes in minutes, then a coded prototype a developer builds from your mock-up.",
+    alt: "The prototype ladder: a paper sketch you draw yourself or with a friend, then a mock-up of the screens, then a clickable prototype an AI tool builds in minutes, then a coded prototype a developer builds from it.",
   },
   subphaseKeyBeta: {
     src: subphaseKeyBetaVisual,

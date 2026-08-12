@@ -76,6 +76,12 @@ export function SubphaseInstruments({
     .filter(({ row }) => !row.everyService)
     .sort((a, b) => moneyGated(a.row) - moneyGated(b.row));
 
+  // Only the tags that actually appear in this sub-phase, so the legend never
+  // explains a tag the reader cannot see on the page.
+  const usedActions = (Object.keys(MATRIX_ACTIONS) as MatrixAction[]).filter(
+    (action) => rows.some(({ cell }) => cell.tags.includes(action)),
+  );
+
   return (
     <section
       id="official-instruments"
@@ -94,9 +100,25 @@ export function SubphaseInstruments({
           Placing an instrument in a sub-phase is this guide&apos;s own editorial
           choice, anchored where possible on a real deadline in the instrument
           itself. The full detail, including who does the work and what the
-          business owner personally does, is in the table on the home page.
+          business owner personally does, is in the full instruments table.
         </p>
       </div>
+
+      <dl className="mb-5 max-w-3xl space-y-2 rounded-md border border-border bg-muted/30 p-4">
+        <p className="mb-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          What the tags mean
+        </p>
+        {usedActions.map((action) => (
+          <div key={action} className="flex flex-wrap items-baseline gap-x-2">
+            <dt>
+              <ActionChip action={action} />
+            </dt>
+            <dd className="text-[0.85rem] leading-snug text-foreground/75">
+              {MATRIX_ACTIONS[action].gloss}
+            </dd>
+          </div>
+        ))}
+      </dl>
 
       {[
         { title: "Every service", items: universal },

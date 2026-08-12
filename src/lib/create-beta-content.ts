@@ -54,7 +54,13 @@ export const BETA_EXTRACT_CLOSING: ThreadLinkedProse = {
 export const BETA_STAGES = {
   title: "Private Beta and Public Beta",
   opening: {
-    text: "There are two parts to Beta: private and public.",
+    text: "There are two parts to Beta: private and public. Before either, be exact about what changed. People were trying things in Alpha too, so their arrival is not what moved. What moved is that the service is real, and what people do in it counts. Somebody's application exists afterwards. That is the line. It is why a prototype tested with five real users is still Alpha, and why the smallest version that works end to end belongs here.",
+    bold: [
+      {
+        phrase:
+          "What moved is that the service is real, and what people do in it counts.",
+      },
+    ],
   } satisfies ThreadLinkedProse,
   privateBeta: {
     text: "Private beta. Beta starts private. A limited number of people are invited to use the real service, so the team can get feedback and improve it while the audience is still small enough to apologise to.",
@@ -68,7 +74,7 @@ export const BETA_STAGES = {
     text: "If the service is replacing an existing one, keep the old service running until the new one is properly live. Beta is not the moment to switch it off. If the service is new, there is nothing to keep running, and this does not apply.",
   } satisfies ThreadLinkedProse,
   notLaunch: {
-    text: "Neither private beta nor public beta is a launch. Launch is when the service becomes the official one for everyone, and the old way is retired when there is one. That is what ends Beta.",
+    text: "Neither private beta nor public beta is a launch. Launch is when the service becomes the official one for everyone. If there was an older way of doing this, that is when it is retired, and the older way is whatever people were actually using before: a paper form, a phone line, an inbox, or an application that has been running for fifteen years. If the service is new, there is nothing to retire. Either way, launch is what ends Beta.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -174,7 +180,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     triggerNote: "What you are signing, and what has to be in it before you do.",
     sections: [
       {
-        text: "Two of the four buying routes sign at the start of Beta. The other two do not sign here at all.",
+        text: "Where the contract falls depends on the route. Under the multi-supplier model PSPC sets out, it was signed as Alpha opened, and what happens at this boundary is an amendment exercising the option to build.",
       },
       {
         type: "unorderedList",
@@ -236,7 +242,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
       },
       {
-        text: "The duty follows from how the service is delivered, not from how much of the country it reaches. Section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual, and section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them: communications and services made available through an automated system accessible to the public. A digital service is such a system, so a service used in one region is caught on the same terms as a national one. Reach does matter elsewhere in the same regulation, at section 11(a), but only for correspondence and telephone services.",
+        text: "How the service is delivered is what triggers the duty. How much of the country it reaches does not. Section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual. Section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them: communications and services made available through an automated system accessible to the public. A digital service is such a system. So a service used in one region is caught on the same terms as a national one. Reach does appear elsewhere in the same regulation, at section 11(a), but only for correspondence and telephone services.",
       },
       {
         text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",

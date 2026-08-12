@@ -5,7 +5,7 @@ import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisual, LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -33,7 +33,7 @@ import {
   SUBPHASE_META,
   whereThisFitsForLiveSubphase,
 } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import maturityCalmVisual from "@/assets/maturity_calm.svg?url";
 import {
   renderLinkedProse,
@@ -163,7 +163,15 @@ export function LiveMaturityPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children: renderThreadSections(stage.sections),
+          children:
+            stage.id === "keep-it-working" ? (
+              <>
+                {renderThreadSections(stage.sections)}
+                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 
@@ -195,9 +203,15 @@ export function LiveMaturityPage() {
       />
 
 
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Live")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
+
       <SubphaseInstruments subPhase="maturity" />
 
-      <PageFoot sources={MATURITY_SOURCES} subphaseFootFor="Live" />
+      <PageFoot sources={MATURITY_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

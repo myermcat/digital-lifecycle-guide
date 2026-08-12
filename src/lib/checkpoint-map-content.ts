@@ -404,7 +404,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "A designer (or a colleague who knows Figma, or an AI tool) makes a clickable mockup with her. No contract needed for this.",
+              text: "A designer (or a colleague who knows Figma, or an AI tool) makes a clickable prototype with her. No contract needed for this.",
             },
           ],
         },

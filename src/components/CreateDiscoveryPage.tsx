@@ -4,8 +4,10 @@ import { REAL_EXAMPLES } from "@/lib/real-examples";
 import { EditorialNote } from "@/components/EditorialNote";
 import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { GuideCallout } from "@/components/GuideCallout";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -30,7 +32,7 @@ import {
   DISCOVERY_TEAM,
 } from "@/lib/create-discovery-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -201,6 +203,18 @@ export function CreateDiscoveryPage() {
         closing={DISCOVERY_TEAM.closing}
       />
 
+      <GuideCallout
+        compact
+        className="mt-5 md:mt-6"
+        title={DISCOVERY_TEAM.buyATeamNote.heading}
+      >
+        {DISCOVERY_TEAM.buyATeamNote.body.map((para, i) => (
+          <p key={para.text} className={i === 0 ? undefined : "mt-2"}>
+            {renderLinkedProse(para)}
+          </p>
+        ))}
+      </GuideCallout>
+
       <CautionBlock
         id="what-bad-looks-like"
         className="mt-10 md:mt-12"
@@ -221,9 +235,15 @@ export function CreateDiscoveryPage() {
       />
 
 
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Create")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
+
       <SubphaseInstruments subPhase="discovery" />
 
-      <PageFoot sources={DISCOVERY_SOURCES} subphaseFootFor="Create" />
+      <PageFoot sources={DISCOVERY_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

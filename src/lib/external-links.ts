@@ -133,6 +133,12 @@ export const EXTERNAL_LINKS = {
     description: "Policy on Privacy Protection (TBS)",
     accessibility: "public",
   },
+  "miro-mockup-vs-prototype": {
+    url: "https://miro.com/mockup/mockup-vs-prototype/",
+    description:
+      "Mockups vs Prototypes: Clarifying Design Terms (Miro). A design-tool vendor, cited here as a clear statement of how the design industry uses these words, not as an authority.",
+    accessibility: "public",
+  },
   "en-301-549": {
     url: "https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-en-301-5492024-accessibility-requirements-ict-products-and-services-en-301-5492021-idt",
     description: "CAN/ASC - EN 301 549:2024, Accessibility requirements for ICT products and services (Accessibility Standards Canada)",

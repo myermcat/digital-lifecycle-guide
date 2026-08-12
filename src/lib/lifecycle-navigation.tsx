@@ -192,7 +192,7 @@ export const SUBPHASE_META: Record<
     subphase: "Alpha",
     pageHeading: SUBPHASE_PAGE_HEADINGS.alpha,
     subtitle:
-      "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, clickable mockups, and simple prototypes get put in front of real users to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this sub-phase is meant to last. It is meant to teach.",
+      "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, mock-ups of the screens, and clickable prototypes get put in front of people to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this sub-phase is meant to last. It is meant to teach.",
     path: "/create-alpha",
     where: () => whereThisFitsForCreateSubphase("alpha"),
     showComingSoon: false,

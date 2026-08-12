@@ -35,15 +35,16 @@ export const ALPHA_EXTRACT = {
   } satisfies ThreadLinkedProse,
   workOutItems: [
     "lists the assumptions most likely to kill the idea, and tests them",
-    "builds quick, throwaway mock-ups (paper sketches, clickable screens) to test them",
-    "watches real users try them",
+    "makes something to test them with: a sketch or a mock-up if the question is what it should look like, a clickable prototype if the question is how it should work, or, when the department is buying, prototypes suppliers build under contract",
+    "puts it in front of people who are not on the team, and watches where they get stuck",
   ],
   whatsNew: {
     label: "New since Discovery",
     text: "The team starts making things, and users start trying them.",
   },
   closing: {
-    text: "Nothing made in Alpha is carried into the build. Paper sketches, artificial intelligence (AI) mock-ups, and coded prototypes are archived when Alpha ends, and they become the requirements for what gets built. Only the handful of people who test them ever see them, never the public.",
+    text: "Alpha makes sketches, mock-ups and prototypes. Whether any of that becomes part of the service people eventually use depends on how it was built. A sketch or a mock-up never becomes code: it becomes the requirements, and then it is archived. A prototype built in an afternoon with artificial intelligence (AI), that nobody on the team can explain, goes the same way. A prototype built carefully, that the team understands and would defend, can be built on. What carries forward in every case is the decision, what the team learned, and the approach it picked. Only the handful of people who try any of it ever see it, never the public.",
+    bold: [{ phrase: "depends on how it was built" }],
   } satisfies ThreadLinkedProse,
 };
 
@@ -71,7 +72,7 @@ export const ALPHA_ON_RAMP = {
       bold: [{ phrase: "ranked list of risky ideas" }],
     },
     {
-      text: "The Discovery team carried over, joined by a developer or technologist for the coded prototypes. The paper and clickable mock-ups before those need nobody technical. The same people keep the context and the momentum.",
+      text: "The Discovery team carried over, joined by a developer or technologist for the coded prototypes. The sketches and the AI-built prototypes before those need nobody technical. The same people keep the context and the momentum.",
       bold: [{ phrase: "The Discovery team carried over," }],
     },
     {
@@ -89,12 +90,30 @@ export const ALPHA_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Test the riskiest assumption first",
   body: {
-    text: "Every idea rests on assumptions that, if wrong, sink the whole service: that people can and will use it, that it can connect to the systems it has to, that a legal or policy constraint can be met. Find the assumptions that would kill the service, and test those first. The killer is sometimes invisible in a demo: whether it can be made secure enough, fast enough under real load, or cheap enough to run. A prototype can test those too. Run the cheapest test that could prove each one false. An assumption that falls saves the cost of a wrong build, and that is a success. One that holds has earned the next test. Commit money to a build before the risky parts hold, and everything after it is at risk.",
+    text: "Find the assumptions that would kill the service, and test those first. Run the cheapest test that could prove each one false. An assumption that falls saves the cost of a wrong build, and that is a success. One that holds has earned the next test.",
     bold: [
       {
         phrase: "Find the assumptions that would kill the service, and test those first.",
       },
     ],
+  } satisfies ThreadLinkedProse,
+  killersIntro: {
+    text: "Most services are not killed by their software. The usual killers:",
+    bold: [{ phrase: "Most services are not killed by their software." }],
+  } satisfies ThreadLinkedProse,
+  killers: [
+    { text: "Policy does not allow it." },
+    { text: "Nobody has the legal authority to do it." },
+    { text: "The data the service depends on does not exist." },
+    { text: "The people it is for will not use this channel." },
+    { text: "Another department owns a step, and will not change it." },
+  ] satisfies readonly ThreadLinkedProse[],
+  technicalNote: {
+    text: "Technical killers are real too, and Alpha can only take them so far. Alpha answers whether a thing is possible: can the system of record be connected to at all, is the data really there, will security ever accept this approach. Whether it is fast enough under real load, or cheap enough to run, is not knowable until Beta. Plan for those. Do not claim to have tested them.",
+    bold: [{ phrase: "Alpha answers whether a thing is possible" }],
+  } satisfies ThreadLinkedProse,
+  closingWarning: {
+    text: "Commit money to a build before the risky parts hold, and everything after it is at risk.",
   } satisfies ThreadLinkedProse,
   href: "/thread/user-research",
   linkLabel: "See how to test with users →",
@@ -125,7 +144,59 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
       },
       {
-        text: "Work up in this order, stopping as soon as the question is answered:",
+        type: "subheading",
+        text: "What to call the thing you made",
+      },
+      {
+        text: "Three words get used for what you make, and nobody agrees on them. No Government of Canada instrument defines them, the withdrawn international standard that once covered mock-ups and prototypes was retired in 2013, and the technical community argues about them in good faith. So this guide says what it means by each one, here and wherever else it uses them. What the thing is matters. What it is called does not.",
+        bold: [{ phrase: "nobody agrees on them" }],
+      },
+      {
+        text: "The design industry draws the line at behaviour, and it is the most useful line there is: mock-ups show what a product looks like, prototypes show how it works.",
+        bold: [
+          {
+            phrase:
+              "mock-ups show what a product looks like, prototypes show how it works",
+          },
+        ],
+        externalLinks: [
+          { phrase: "The design industry", linkKey: "miro-mockup-vs-prototype" },
+        ],
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "A wireframe is structure only: boxes, placeholder text, no colour and no brand. It answers what goes on this page, and in what order.",
+            bold: [{ phrase: "A wireframe is structure only" }],
+          },
+          {
+            text: "A mock-up is that with the design applied. Real colours, real words, and it looks like the finished thing. It is static, with no interactivity, and it does nothing.",
+            bold: [{ phrase: "A mock-up is that with the design applied." }],
+          },
+          {
+            text: "A prototype is interactive. You can move through it, which is what makes it worth putting in front of someone for usability testing and what makes it a real test of a design decision. It can have no back end at all, a faked one, or a rough real one. None of that changes what it is.",
+            bold: [{ phrase: "A prototype is interactive." }],
+          },
+          {
+            text: "A minimum viable product works, it is real, and you intend to keep it. That is Beta, not Alpha. The difference is not how finished it looks, it is whether what people do in it counts.",
+            bold: [{ phrase: "A minimum viable product works, it is real, and you intend to keep it." }],
+          },
+        ],
+      },
+      {
+        text: "Choose by what you are trying to find out. A mock-up is the right tool while the question is still about the visual design and whether people understand it. A prototype is the right tool once the question is about how people move through the thing. Neither is a stage you are obliged to pass through, and nothing in policy requires either.",
+      },
+      {
+        text: "A prototype can be interactive and still have nothing behind it, because interaction is not computation. Press Submit and it shows you the confirmation screen somebody drew earlier. That is enough to find out where people get stuck, what they misread, and what they cannot find. It is not enough to find out whether the rules are right, whether the integration works, or whether it holds up under load. Alpha rules things out; Beta finds out whether what survived actually works.",
+        bold: [{ phrase: "interaction is not computation" }],
+      },
+      {
+        type: "subheading",
+        text: "What to make, in what order",
+      },
+      {
+        text: "Work up this ladder, stopping as soon as the question is answered:",
       },
       {
         type: "orderedList",
@@ -135,8 +206,12 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             text: " The cheapest way to find out an idea is wrong.",
           },
           {
-            bold: "A clickable mock-up.",
-            text: " A number of AI tools now build one from a written prompt, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back. Plan for about half a day all in, including learning the tool.",
+            bold: "A mock-up.",
+            text: " The screens drawn properly, in a design tool or by a colleague who has one. It looks like the service and it still does nothing.",
+          },
+          {
+            bold: "A prototype built with AI.",
+            text: " A number of tools now build a working, clickable one from a written prompt, among them Lovable, Cursor, Claude Code, v0, Bolt, and Replit, with more arriving all the time. It takes no technical skill: describe the idea in plain words and look at what comes back. Plan for about half a day all in, including learning the tool.",
           },
           {
             bold: "A coded prototype,",
@@ -145,12 +220,15 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Treat the AI mock-up exactly like paper: something to be archived rather than extended. No part of it should be carried into the build. That holds hardest when the department is building the service in-house, where the temptation to keep going from the prototype is strongest. Its whole value is that a team can put an idea in front of colleagues and stakeholders instead of describing it in words. Their reaction shows quickly whether it holds up at all.",
-        bold: [{ phrase: "something to be archived rather than extended" }],
+        text: "The value of the AI-built one is that a team can put an idea in front of colleagues and stakeholders instead of describing it in words. Their reaction shows quickly whether it holds up at all.",
       },
       {
-        text: "Each round of testing is a research session: five or six people who look like the service's real users try the mock-up, and the team watches where they get stuck.",
-        bold: [{ phrase: "Each round of testing is a research session:" }],
+        type: "subheading",
+        text: "Who to put it in front of",
+      },
+      {
+        text: "Who you show it to depends on what you have made. A paper sketch goes in front of a colleague or a stakeholder, and the only question worth asking is whether they understood what the service would be. Once something is clickable, it earns a research session: five or six people who look like the service's real users try it, and the team watches where they get stuck.",
+        bold: [{ phrase: "Who you show it to depends on what you have made." }],
       },
     ],
   },
@@ -166,53 +244,22 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         type: "unorderedList",
         items: [
           {
-            text: "A paper prototype needs one person who can draw. Sketch the screens, put them in front of someone, and watch where they get stuck. It costs an afternoon and it can change what the service is.",
-            bold: [{ phrase: "A paper prototype needs one person who can draw." }],
+            text: "A paper sketch needs one person who can draw. Sketch the screens, put them in front of a colleague, and ask whether they understood what the service is meant to do. Paper cannot tell you where a user would get stuck, because they will get stuck on the paper. It costs an afternoon and it can still change what the service is.",
+            bold: [{ phrase: "A paper sketch needs one person who can draw." }],
           },
           {
-            text: "A clickable mock-up needs half a day, and you can make it yourself. The AI prototyping tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can do the same, though asking for half of someone's working day is a real ask.",
-            bold: [{ phrase: "A clickable mock-up needs half a day, and you can make it yourself." }],
+            text: "A clickable prototype needs half a day, and you can make it yourself. The AI tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can build a mock-up the same way, though asking for half of someone's working day is a real ask.",
+            bold: [{ phrase: "A clickable prototype needs half a day, and you can make it yourself." }],
           },
           {
-            text: "If the department is buying a Team, the supplier is already there. That contract was signed at the end of Discovery, so the team prototypes alongside the department.",
+            text: "If the department is buying a Team, the supplier is already there. That contract is signed as Alpha opens, because the team is what does Alpha, so it prototypes alongside the department.",
             bold: [{ phrase: "If the department is buying a Team, the supplier is already there." }],
           },
         ],
       },
       {
-        text: "Not every route needs a prototype from you. There are four buying routes, Team, Solution, Finished Product, and In-house or Reuse, and they do not all need the same thing.",
-        bold: [{ phrase: "Not every route needs a prototype from you." }],
-        internalLinks: [{ phrase: "four buying routes", to: "/thread/procurement" }],
-      },
-      {
-        type: "unorderedList",
-        items: [
-          {
-            text: "Buying a Solution: yes. The department has to show suppliers what it wants, and a prototype does that better than a written specification.",
-            bold: [{ phrase: "Buying a Solution: yes." }],
-          },
-          {
-            text: "Building in-house or reusing a platform: yes. The department is the builder or the configurer, so it prototypes for itself.",
-            bold: [{ phrase: "Building in-house or reusing a platform: yes." }],
-          },
-          {
-            text: "Buying a Team: the team prototypes with you.",
-            bold: [{ phrase: "Buying a Team: the team prototypes with you." }],
-          },
-          {
-            text: "Buying a Finished Product: no. There is nothing to prototype, because the product already exists. The department evaluates real products instead.",
-            bold: [{ phrase: "Buying a Finished Product: no." }],
-          },
-        ],
-      },
-      {
-        text: "The prototype is the clearest requirements document a department will ever write. Whoever ends up building the service, a contracted team or the department's own staff, has to be told what is wanted. A thing they can hold and click beats a page of prose describing it.",
-        bold: [
-          {
-            phrase:
-              "The prototype is the clearest requirements document a department will ever write.",
-          },
-        ],
+        text: "Whoever ends up building the service has to be told what is wanted, and a thing they can hold and click says it better than a page of prose. It does not replace the requirements. What a mock-up can and cannot carry into a contract is set out under writing the requirements, further down this page.",
+        bold: [{ phrase: "It does not replace the requirements." }],
       },
     ],
   },
@@ -277,27 +324,57 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     title: "Get ready to build or buy.",
     sections: [
       {
-        text: "Bring the departmental web team and the head of communications in before the first prototype. Anything published under the canada.ca brand has to use the mandatory templates, the set information architecture, the global header and footer, and the content style guide, and those constrain what a service can look like and where it can live. Teams usually meet them at Beta, when a custom-designed prototype reaches the web team for the first time and has to be rebuilt.",
+        type: "subheading",
+        text: "Three things to settle before the first prototype",
+      },
+      {
+        text: "Bring the departmental web team and the head of communications in now. Anything published under the canada.ca brand has to use the mandatory templates, the set information architecture, the global header and footer, and the content style guide. Those constrain what a service can look like and where it can live. Teams usually meet them at Beta, when a custom-designed prototype reaches the web team for the first time and has to be rebuilt.",
         bold: [{ phrase: "before the first prototype" }],
       },
       {
-        text: "The domain is a separate approval and it is not the department's to give. The Principal Publisher, which is Employment and Social Development Canada through Service Canada, controls canada.ca and has to approve every domain and sub-domain, and the request is filed by the departmental web account manager. Start it before any launch date is promised to anyone.",
+        text: "The domain is a separate approval, and it is not the department's to give. The Principal Publisher controls canada.ca and has to approve every domain and sub-domain. That is Employment and Social Development Canada, through Service Canada, and the request is filed by the departmental web account manager. Start it before any launch date is promised to anyone.",
         bold: [{ phrase: "not the department's to give" }],
       },
       {
-        text: "Decide responsive web against a downloadable app here too, with evidence from research rather than preference. A downloadable app is tested, published and later retired centrally, so it adds a dependency the department does not control at launch or at retirement.",
+        text: "Decide responsive web against a downloadable app here too, on evidence from research. A downloadable app is tested, published and later retired centrally, which adds a dependency the department does not control at launch or at retirement.",
       },
       {
-        text: "Decide the approach and the tooling for Beta, and whether it offers value for money. Alpha is where the team gets ready to procure the build, so start early: procurement covers the buying, and this is where exit rights and data portability belong in the contract. Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs more than once: against the high-level design here, again against the detailed design as the build is specified, and a third time against the finished system in Beta. Security covers how that work is done. Funding covers paying for Beta.",
+        type: "subheading",
+        text: "Then get ready to buy",
+      },
+      {
+        text: "Decide the approach and the tooling for Beta, and whether they offer value for money. Alpha is where the team gets ready to procure the build, so start early. Procurement covers the buying. This is where exit rights and data portability belong in the contract, along with the mechanisms that let Canada change course later:",
         bold: [
           { phrase: "approach and the tooling" },
           { phrase: "exit rights and data portability" },
         ],
-        internalLinks: [
-          { phrase: "procurement", to: "/thread/procurement" },
-          { phrase: "Security", to: "/thread/security" },
-          { phrase: "Funding", to: "/thread/funding" },
+        internalLinks: [{ phrase: "procurement", to: "/thread/procurement" }],
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Off-ramps: Canada declines to exercise an option, or stops issuing further work.",
+            bold: [{ phrase: "Off-ramps:" }],
+          },
+          {
+            text: "Gates: work cannot pass a decision point without approval.",
+            bold: [{ phrase: "Gates:" }],
+          },
+          {
+            text: "The pivot: the work moves to a back-up supplier already under contract.",
+            bold: [{ phrase: "The pivot:" }],
+          },
         ],
+      },
+      {
+        text: "Get the money approved for the whole path. Where a prototype contract carries an option to build, the value that matters for approval is the total the path could reach. Contracts must not be split to stay under an approval limit. Where the total may exceed what the department can approve on its own, start that conversation at strategy stage, while there is still time to shape the procurement around the answer. Funding covers how the money is raised and kept.",
+        bold: [{ phrase: "Get the money approved for the whole path." }],
+        internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
+      },
+      {
+        text: "Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs more than once: against the high-level design here, again against the detailed design as the build is specified, and a third time against the finished system in Beta. Security covers how that work is done.",
+        internalLinks: [{ phrase: "Security", to: "/thread/security" }],
         externalLinks: [
           { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },
         ],
@@ -327,25 +404,73 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Where they go is the answer to what they are for. The statement of work is written from them, and the statement of work is an annex to the contract, which makes it the thing the supplier is actually held to. Business requirements become the objective and background of that statement of work. Non-functional requirements become its service levels, and they are also what the bids are scored against. Nobody files the requirements themselves, because by the time anyone outside the department sees them they have become the contract.",
+        text: "Where they go is the answer to what they are for. The statement of work is written from them, and it is an annex to the contract, which makes it the thing the supplier is actually held to.",
         bold: [{ phrase: "The statement of work is written from them" }],
         internalLinks: [{ phrase: "statement of work", to: "/thread/procurement" }],
       },
       {
-        text: "The tested design can travel with the contract too. A mock-up can be attached to the statement of work as an appendix, and that is worth doing, because it shows a bidder what is wanted better than any paragraph. Attaching it explains; it does not oblige. Nothing binds the supplier unless the contract says so, so if a page of the design must be built as drawn, an acceptance criterion has to name it.",
-        bold: [{ phrase: "Attaching it explains; it does not oblige." }],
+        type: "unorderedList",
+        items: [
+          {
+            text: "Business requirements become the objective and the background of the statement of work.",
+            bold: [{ phrase: "Business requirements" }],
+          },
+          {
+            text: "Non-functional requirements become its service levels, and they are what the bids are scored against.",
+            bold: [{ phrase: "Non-functional requirements" }],
+          },
+          {
+            text: "Functional requirements stay out of the contract. The prototype and the design carry those.",
+            bold: [{ phrase: "Functional requirements" }],
+          },
+        ],
       },
       {
-        text: "So put the business and non-functional requirements in the contract, and keep the functional ones out of it. A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs a contract amendment.",
-        bold: [{ phrase: "put the business and non-functional requirements in the contract, and keep the functional ones out of it" }],
+        text: "Nobody files the requirements themselves. By the time anyone outside the department sees them, they have become the contract.",
       },
       {
-        text: "The requirements are the official artifact here, and defining them is mandatory: the Directive on the Management of Procurement puts it on the business owner, for every purchase, with no dollar floor. What no instrument provides is a template or a form, which is why this page spends its time on how to write them. Above $40,000 of professional services the duty gets a shape: the contracting authority gets a written statement of work before award, and the business owner signs a confirmation. Below that the buying is lighter, low-dollar contracts and purchase orders, and it is still written from the requirements.",
+        text: "None of this is only for departments that are buying. A team building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. Buying adds a mandated shape and a signature. It does not add the need, and the need cannot be skipped either way. A statement of work is not required for an in-house build, but writing one anyway is often easier than starting cold, because it comes with a template.",
+        bold: [{ phrase: "None of this is only for departments that are buying." }],
+      },
+      {
+        type: "subheading",
+        text: "The design can travel with the contract",
+      },
+      {
+        text: "A mock-up can be attached to the statement of work as an appendix, and that is worth doing, because it shows a bidder what is wanted better than any paragraph can. Attaching it explains. It does not oblige. Nothing binds the supplier unless the contract says so, so if a page must be built as drawn, an acceptance criterion has to name it.",
+        bold: [{ phrase: "Attaching it explains." }],
+      },
+      {
+        type: "subheading",
+        text: "What goes in, and what stays out",
+      },
+      {
+        text: "Put the business and non-functional requirements in the contract. Keep the functional ones out.",
+        bold: [{ phrase: "Put the business and non-functional requirements in the contract." }],
+      },
+      {
+        text: "A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change costs a contract amendment.",
+      },
+      {
+        text: "The requirements are the official artifact here, and defining them is mandatory: the Directive on the Management of Procurement puts it on the business owner, for every purchase, with no dollar floor. What no instrument provides is a template or a form, which is why this page spends its time on how to write them. The dollar value changes the paperwork, not the duty:",
         bold: [{ phrase: "defining them is mandatory" }],
         externalLinks: [
           {
             phrase: "Directive on the Management of Procurement",
             linkKey: "directive-procurement",
+          },
+        ],
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Above $40,000 of professional services, the contracting authority gets a written statement of work before award, and the business owner signs a confirmation that the requirements were defined.",
+            bold: [{ phrase: "Above $40,000 of professional services" }],
+          },
+          {
+            text: "Below it, the buying is lighter: low-dollar contracts and purchase orders, with no mandated statement of work. The requirements still have to exist, because the order is written from them.",
+            bold: [{ phrase: "Below it, the buying is lighter" }],
           },
         ],
       },
@@ -414,9 +539,26 @@ export const ALPHA_EXERCISE = {
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
   bodyIntro: {
-    text: "Two questions decide most of what the service has to be built to withstand. What could stop it or harm the people who use it, and how long it can be down before real harm starts. Both are worked out at the end of Alpha, while the design can still absorb the answer, and both feed the contract signed at the start of Beta.",
-    bold: [{ phrase: "how long it can be down before real harm starts" }],
+    text: "Two answers decide how much this service costs to run and how much engineering has to go underneath it. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
+    bold: [
+      {
+        phrase:
+          "Two answers decide how much this service costs to run and how much engineering has to go underneath it.",
+      },
+    ],
   } satisfies ThreadLinkedProse,
+  bodyQuestions: [
+    {
+      text: "What could stop the service, or harm the people who use it?",
+    },
+    {
+      text: "How long can it be down before real harm starts?",
+    },
+  ] satisfies readonly ThreadLinkedProse[],
+  bodyAfterQuestions: {
+    text: "Do it at the end of Alpha, while the design can still absorb the answers.",
+  } satisfies ThreadLinkedProse,
+  threatsHeading: "First, name what could go wrong",
   threatsIntro: {
     text: "Threats come in three kinds, and the Government of Canada's own guidance warns which ones teams forget:",
   } satisfies ThreadLinkedProse,
@@ -438,46 +580,59 @@ export const ALPHA_EXERCISE = {
     text: "The RCMP's assessment guide puts it plainly: it can be easy to overlook natural and accidental threats with the greatest attention being paid to deliberate ones. Most teams picture an attacker and forget the flood.",
     bold: [{ phrase: "it can be easy to overlook natural and accidental threats" }],
   } satisfies ThreadLinkedProse,
+  numbersHeading: "Then put four numbers on it",
   listIntro: {
-    text: "Half a day with the right people in a room produces four things:",
+    text: "These are the four the rest of the work hangs off. They have official names and unofficial ones, and the unofficial ones are what you will actually say out loud.",
   } satisfies ThreadLinkedProse,
-  listItems: [
+  numbers: [
     {
-      text: "the maximum allowable downtime (MAD): how long the service can be unavailable before a high degree of injury results",
-      bold: [{ phrase: "the maximum allowable downtime (MAD)" }],
+      term: "Maximum allowable downtime",
+      acronym: "MAD",
+      plain: "How long before this really hurts someone?",
+      gloss:
+        "How long the service can be unavailable before a high degree of injury results. It is a ceiling. Aim well inside it.",
     },
     {
-      text: "the minimum service level: what counts as good enough during a disruption, which is often a manual or paper route rather than the digital service",
-      bold: [{ phrase: "the minimum service level" }],
+      term: "Minimum service level",
+      plain: "What are we doing in the meantime?",
+      gloss:
+        "What counts as good enough while the service is down. Often a paper form, or a phone line.",
     },
     {
-      text: "the recovery time objective (RTO): how fast it has to be back, which is a target set inside the maximum allowable downtime rather than the same number",
-      bold: [{ phrase: "the recovery time objective (RTO)" }],
+      term: "Recovery time objective",
+      acronym: "RTO",
+      plain: "How fast are we aiming to be back?",
+      gloss:
+        "The target for restoring the service. It is set inside the maximum allowable downtime, so the two numbers are not the same number.",
     },
     {
-      text: "the recovery point objective (RPO): how much recent data can be lost, measured as time since the last usable copy",
-      bold: [{ phrase: "the recovery point objective (RPO)" }],
+      term: "Recovery point objective",
+      acronym: "RPO",
+      plain: "How much recent work can we afford to lose?",
+      gloss:
+        "How far back the last usable copy of the data can be. An hour of lost applications is a different service from a week of them.",
     },
-  ] satisfies readonly ThreadLinkedProse[],
+  ],
   scaleNote: {
-    text: "A four-hour maximum allowable downtime and a two-week one buy completely different architectures and completely different hosting bills. This is a spending decision made under a security-policy label, which is why it belongs here and not in a form filled in later.",
-    bold: [{ phrase: "a spending decision made under a security-policy label" }],
+    text: "Four hours and two weeks are not two settings of the same service. They buy different architectures and different hosting bills. So this is really a spending decision, even though it arrives wearing a security-policy label. Answer it here, with the people who know what the service is for. Leave it to a form somebody fills in later, and the budget gets set by whoever happens to be holding the form.",
+    bold: [{ phrase: "this is really a spending decision" }],
   } satisfies ThreadLinkedProse,
+  handoverHeading: "Then hand it over",
   ownershipNote: {
-    text: "There is one business continuity plan for the whole department. There is not a second one for this service. What the team hands over is the impact judgement, the four numbers, and the list of what this service falls over with, and it goes to the department's business continuity coordinator. What stays with the team is the recovery of this particular service and the testing that proves the recovery works.",
+    text: "There is one business continuity plan for the whole department, and there is not a second one for this service. So the numbers leave the team. What goes to the department's business continuity coordinator is the impact judgement, the four numbers, and the list of what this service falls over with. What stays with the team is recovering this particular service, and the testing that proves the recovery actually works.",
     bold: [
-      { phrase: "There is one business continuity plan for the whole department." },
+      { phrase: "There is one business continuity plan for the whole department" },
     ],
   } satisfies ThreadLinkedProse,
   confusionNote: {
-    text: "This part is often misunderstood. The assessment is required for every service, with no threshold of any kind, but a standalone report is not: the guidance says producing one is neither recommended nor required, and nothing is submitted anywhere. What enforces it is the Authority to Operate, because without the assessment the person signing has nothing to accept.",
+    text: "Doing the assessment is required for every service, at any size, with no threshold. Writing it up as a report is not. The guidance says a standalone report is neither recommended nor required, and there is nowhere to submit one, so nothing will chase you for it. What makes it real is the Authority to Operate at the end of Beta. The person who signs that is accepting the risk, and without the assessment there is nothing for them to accept.",
     bold: [
       { phrase: "The assessment is required for every service" },
       { phrase: "a standalone report is not" },
     ],
   } satisfies ThreadLinkedProse,
   closing: {
-    text: "Three instruments sit underneath this exercise: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done.",
+    text: "Three instruments sit underneath the half-day: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done.",
     internalLinks: [{ phrase: "Security", to: "/thread/security" }],
     externalLinks: [
       {
@@ -497,6 +652,20 @@ export const ALPHA_EXERCISE = {
   href: "/thread/security",
   linkLabel: "See how the assessment is done →",
 };
+
+export const ALPHA_BUYER_BEWARE = {
+  label: "IF SOMEONE ELSE IS BUILDING IT",
+  title: "A polished prototype is not a nearly-finished product.",
+  body: "When a supplier demonstrates something that clicks, animates and looks finished, what you are watching is the surface. The rules, the integrations, the security, and everything that has to happen when a person does the wrong thing may not exist at all, and building them can take longer than everything in the demonstration. This is not usually anybody lying to you. It is what a prototype is for, and it is why fidelity is dangerous: the better it looks, the more everyone in the room assumes it is a week from done. Ask what is real behind each screen, and ask about the parts nobody showed you.",
+  bodyBold: "Ask what is real behind each screen, and ask about the parts nobody showed you.",
+} as const;
+
+export const ALPHA_AI_CALLOUT = {
+  label: "AI BUILDS",
+  title: "Treat an AI-built prototype exactly like paper.",
+  body: "The tools make something convincing in half a day, which is their whole value and their whole risk. It is there to be archived, not extended. If nobody on the team can explain what is inside it, no part of it should be carried into the build, and that holds hardest when the department is building in-house and the temptation to keep going is strongest.",
+  bodyBold: "It is there to be archived, not extended.",
+} as const;
 
 export const ALPHA_CAUTION = {
   title: "When Alpha goes wrong",
@@ -528,8 +697,12 @@ export const ALPHA_FINISH = {
           bold: [{ phrase: "they have to be settled before Alpha closes" }],
         },
         {
-          text: "Write them with the people who will use the service in the room. The Project Complexity and Risk Assessment (PCRA), the scoring tool that decides who is allowed to approve a project, asks directly whether the business requirements were validated with users, by walkthrough, workshop or independent review, and the answer moves the score. That question only reaches projects above a threshold, starting at $2.5 million for a department with no approved capacity class, so a small service never meets it and should do it anyway. Requirements written without users produce rework, and rework in Beta is paid for at contract rates.",
+          text: "Write them with the people who will use the service in the room. Requirements written without them produce rework, and rework in Beta is paid for at contract rates.",
           bold: [{ phrase: "Write them with the people who will use the service in the room." }],
+        },
+        {
+          text: "There is a scoring tool that agrees. The Project Complexity and Risk Assessment (PCRA) decides who is allowed to approve a project, and it asks directly whether the business requirements were validated with users, by walkthrough, workshop or independent review. The answer moves the score. It only reaches projects above a threshold, starting at $2.5 million for a department with no approved capacity class, so a small service is never asked the question. Write the requirements with users anyway.",
+          bold: [{ phrase: "Write the requirements with users anyway." }],
         },
       ],
     },
@@ -538,12 +711,24 @@ export const ALPHA_FINISH = {
       onlyIf: "Only if buying",
       paragraphs: [
         {
-          text: "The competition runs inside Alpha: the requirements are advertised, bids come in, and they are evaluated. It takes months, which is why it starts while the prototyping is still going on. The contract is signed at the start of Beta, when the competition ends, so Beta opens with a supplier already under contract and can begin building at once. The signature waits for Beta on purpose: Alpha can still end in stop, or in back to Discovery, and a contract signed before that decision commits money to a build that might not happen. A competition that has not started by the end of Alpha pushes that signature, and Beta waits.",
-          bold: [{ phrase: "Beta opens with a supplier already under contract" }],
-          internalLinks: [
-            { phrase: "procurement", to: "/thread/procurement" },
-            { phrase: "Beta", to: "/create-beta" },
-          ],
+          text: "The competition runs inside Alpha. The requirements are advertised, bids come in, and they are evaluated. It takes months, which is why it starts while the prototyping is still going on.",
+          bold: [{ phrase: "The competition runs inside Alpha." }],
+        },
+        {
+          text: "When the contract is signed depends on the route, and the two common answers sit on either side of this boundary.",
+        },
+        {
+          text: "Buying a finished solution: signature waits for the start of Beta. That is deliberate. Alpha can still end in stop, or in back to Discovery, and a contract signed before that decision commits money to a build that might not happen.",
+          bold: [{ phrase: "Buying a finished solution:" }],
+        },
+        {
+          text: "The multi-supplier model PSPC sets out: signature comes earlier, as Alpha opens, because the prototypes are themselves built under contract. What happens at this boundary is an amendment exercising the option to build.",
+          bold: [{ phrase: "The multi-supplier model PSPC sets out:" }],
+          internalLinks: [{ phrase: "procurement", to: "/thread/procurement" }],
+        },
+        {
+          text: "Either way, a competition that has not started by the end of Alpha pushes the date, and Beta waits.",
+          internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
         },
         {
           text: "A department building in-house, or reusing a platform that already exists, has no supplier to find and skips this entirely.",

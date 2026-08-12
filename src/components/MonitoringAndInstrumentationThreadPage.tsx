@@ -8,6 +8,7 @@ import {
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
+import { LifecycleVisual } from "@/components/LifecycleVisual";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadInstruments } from "@/components/ThreadInstruments";
@@ -17,6 +18,7 @@ import {
   MONITORING_INSTRUMENT_SEE_ACT_DIAGRAM_ALT,
   MONITORING_THREAD,
 } from "@/lib/monitoring-and-instrumentation-thread-content";
+import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import { SEE_ALSO } from "@/lib/see-also";
 import {
   renderLinkedProse,
@@ -146,6 +148,8 @@ export function MonitoringAndInstrumentationThreadPage() {
           ))}
         </Accordion>
       </section>
+
+      <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
         <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>

@@ -5,6 +5,7 @@ import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -32,7 +33,7 @@ import {
   SUBPHASE_META,
   whereThisFitsForLiveSubphase,
 } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import growthRisingVisual from "@/assets/growth_rising.svg?url";
 import {
   renderLinkedProse,
@@ -192,9 +193,15 @@ export function LiveGrowthPage() {
       />
 
 
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Live")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
+
       <SubphaseInstruments subPhase="growth" />
 
-      <PageFoot sources={GROWTH_SOURCES} subphaseFootFor="Live" />
+      <PageFoot sources={GROWTH_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

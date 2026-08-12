@@ -109,7 +109,7 @@ export const DISCOVERY_PILLAR = {
       ],
     } satisfies ThreadLinkedProse,
     routes: {
-      text: "There are four buying routes: Team, Solution, Finished Product, and In-house or Reuse. Only Team is contracted this early, because the team is what does Alpha. Prepare the competition during Discovery, and award only once the decision is to continue, so the team is in place when Alpha starts.",
+      text: "Some of the routes are Team, Solution, Finished Product, and In-house or Reuse; there are others, and a department can be right to take one of them. Nothing is bought in Discovery. Only the Team route is even prepared this early, because the team is what does Alpha: run the competition during Discovery, and award once the decision is to continue, so the team is in place on Alpha's first day.",
       internalLinks: [
         { phrase: "four buying routes", to: "/thread/procurement" },
         { phrase: "Alpha", to: "/create-alpha" },
@@ -347,9 +347,24 @@ export const DISCOVERY_TEAM = {
     },
   ] satisfies readonly SubphaseTeamRole[],
   closing: {
-    text: "In the Government of Canada the team is usually assembled from a mix of public servants and vendors. A discovery is short: four to eight weeks is typical. The Buy a Team route is the exception, because the competition for that team runs during Discovery and a competition takes months. It cannot start on day one, since Discovery opens by establishing that there is a problem worth a team at all. Start it as soon as that much is clear, and accept that this Discovery runs long or the award arrives at the start of Alpha. The award is safe even though Alpha can end in stop: the contract covers Alpha's piece of work, so stopping then spends only what Alpha cost.",
+    text: "In the Government of Canada the team is usually a mix of public servants and vendors. A discovery is short: four to eight weeks is typical.",
     bold: [{ phrase: "four to eight weeks" }],
   } satisfies ThreadLinkedProse,
+  buyATeamNote: {
+    heading: "Unless you are buying the team",
+    body: [
+      {
+        text: "A competition takes months, and it cannot start on day one, because Discovery opens by establishing that there is a problem worth a team at all. Start it as soon as that much is clear. Then one of two things happens, and both are fine:",
+      },
+      {
+        text: "this Discovery runs long, or the award lands at the start of Alpha.",
+      },
+      {
+        text: "Awarding is safe even though Alpha can end in a decision to stop. The contract covers Alpha's piece of work, so stopping there spends only what Alpha cost.",
+        bold: [{ phrase: "Awarding is safe even though Alpha can end in a decision to stop." }],
+      },
+    ] satisfies readonly ThreadLinkedProse[],
+  },
 };
 
 export const DISCOVERY_CAUTION = {
@@ -375,10 +390,10 @@ export const DISCOVERY_FINISH = {
       heading: "The goal set at the start has its answer",
       paragraphs: [
         {
-          text: "Discovery opened by naming what it needed to find out, and that goal is now the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan turn up something that already exists and meets the need. The first three are under What to find out in Discovery above; the reuse scan is under Reuse, buy, or build.",
+          text: "Discovery named what it needed to find out, and that goal is now the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan turn up something that already exists and meets the need. The first three are under What to find out in Discovery above; the reuse scan is under Reuse, buy, or build.",
         },
         {
-          text: "The decision itself is made from those findings, and it has an owner: the business owner, named in The team you need above, decides to go on or stop. Answer any question still open before deciding, either by extending the research or by letting the gap join the case for stopping.",
+          text: "The business owner decides, and decides from those findings rather than from enthusiasm. Answer any question still open first, either by extending the research or by letting the gap join the case for stopping.",
         },
       ],
     },
@@ -414,7 +429,7 @@ export const DISCOVERY_FINISH = {
           text: "This note exists because teams at this point ask who, outside the team, certifies the end of Discovery. The answer is nobody, and that is why the test above is the team's own decision.",
         },
         {
-          text: "No Government of Canada instrument uses the names Discovery, Alpha, or Beta; they are this guide's names for the sub-phases, and no official checkpoint is defined as the end of Discovery. The instruments with something due during Discovery are in the table below, with what has to happen to each one; who does the work is in the full table on the home page.",
+          text: "No Government of Canada instrument uses the names Discovery, Alpha, or Beta; they are this guide's names for the sub-phases, and no official checkpoint is defined as the end of Discovery. The instruments with something due during Discovery are in the table below, with what has to happen to each one, and who does the work is in the full instruments table.",
         },
     ],
   },

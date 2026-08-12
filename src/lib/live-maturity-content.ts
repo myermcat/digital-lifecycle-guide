@@ -54,7 +54,7 @@ export const MATURITY_PILLAR = {
   label: "THE MAKE-OR-BREAK QUESTION",
   title: "Start every renewal before it feels urgent",
   body: {
-    text: "Nothing in Maturity fails as predictably as a renewal started late. Funding envelopes end on a date, contracts end on a date, and both need months of lead time: a new funding decision moves at the speed of approvals, and re-competing a contract takes longer still. A renewal begun late leaves one option, extending with the current supplier on the current terms, and every emergency extension deepens the lock-in. Put every end date on a calendar the team actually looks at, with the start-by date beside it.",
+    text: "Nothing in Maturity fails as predictably as a renewal started late. Funding envelopes end on a date. Contracts end on a date. Both need months of lead time, because a funding decision moves at the speed of approvals and re-competing a contract takes longer still. Start late and you have one option left: extend with the current supplier on the current terms. Every emergency extension deepens the lock-in. Put every end date on a calendar the team actually looks at, with the start-by date beside it.",
     bold: [
       { phrase: "Put every end date on a calendar the team actually looks at" },
     ],

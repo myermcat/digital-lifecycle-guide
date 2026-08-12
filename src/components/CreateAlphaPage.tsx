@@ -1,4 +1,5 @@
 import { CautionBlock } from "@/components/CautionBlock";
+import { GuideCallout } from "@/components/GuideCallout";
 import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -20,6 +21,8 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import {
   ALPHA_ACCORDION,
   ALPHA_ACCORDION_STAGES,
+  ALPHA_AI_CALLOUT,
+  ALPHA_BUYER_BEWARE,
   ALPHA_CAUTION,
   ALPHA_EXERCISE,
   ALPHA_EXTRACT,
@@ -119,6 +122,10 @@ const ALPHA_SOURCES: SourceItem[] = [
 const alphaQuoteClassName =
   "mt-6 md:mt-8 border-l-4 border-l-primary/35 pl-4 md:pl-5 font-serif text-lg md:text-xl text-foreground/90 leading-snug";
 
+/** Step headings inside the threat-and-continuity exercise, so it reads as three moves. */
+const exerciseStepHeading =
+  "mt-6 mb-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/90";
+
 export function CreateAlphaPage() {
   const meta = SUBPHASE_META.alpha;
   const PillarIcon = ALPHA_PILLAR.icon;
@@ -189,6 +196,16 @@ export function CreateAlphaPage() {
         linkLabel={ALPHA_PILLAR.linkLabel}
       >
         <p>{renderLinkedProse(ALPHA_PILLAR.body)}</p>
+        <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.killersIntro)}</p>
+        <ul className={`mt-2 list-disc space-y-1 ${guideListIndent}`}>
+          {ALPHA_PILLAR.killers.map((item) => (
+            <li key={item.text}>{renderLinkedProse(item)}</li>
+          ))}
+        </ul>
+        <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.technicalNote)}</p>
+        <p className="mt-4 font-semibold">
+          {renderLinkedProse(ALPHA_PILLAR.closingWarning)}
+        </p>
       </PillarCallout>
 
       <IconAccordionSection
@@ -210,6 +227,42 @@ export function CreateAlphaPage() {
                 <RequirementTypesTable />
                 {renderThreadSections(stage.sections.slice(1))}
                 <RequirementsNamingStrip />
+              </>
+            ) : stage.id === "measure-success" ? (
+              <>
+                {renderThreadSections(stage.sections)}
+                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
+              </>
+            ) : stage.id === "throwaway-prototypes" ? (
+              // The AI warning has to land on the AI step, and the
+              // buyer-beware warning after the whole ladder, so this stage
+              // renders in halves too.
+              <>
+                {renderThreadSections(stage.sections.slice(0, 11))}
+                <GuideCallout
+                  compact
+                  className="my-5 md:my-6"
+                  label={ALPHA_AI_CALLOUT.label}
+                  title={ALPHA_AI_CALLOUT.title}
+                >
+                  <p>
+                    {ALPHA_AI_CALLOUT.body.split(ALPHA_AI_CALLOUT.bodyBold)[0]}
+                    <strong>{ALPHA_AI_CALLOUT.bodyBold}</strong>
+                    {ALPHA_AI_CALLOUT.body.split(ALPHA_AI_CALLOUT.bodyBold)[1]}
+                  </p>
+                </GuideCallout>
+                {renderThreadSections(stage.sections.slice(11))}
+                <GuideCallout
+                  compact
+                  className="mt-5 md:mt-6"
+                  label={ALPHA_BUYER_BEWARE.label}
+                  title={ALPHA_BUYER_BEWARE.title}
+                >
+                  <p>
+                    {ALPHA_BUYER_BEWARE.body.split(ALPHA_BUYER_BEWARE.bodyBold)[0]}
+                    <strong>{ALPHA_BUYER_BEWARE.bodyBold}</strong>
+                  </p>
+                </GuideCallout>
               </>
             ) : (
               renderThreadSections(stage.sections)
@@ -241,21 +294,61 @@ export function CreateAlphaPage() {
         linkLabel={ALPHA_EXERCISE.linkLabel}
       >
         <p>{renderLinkedProse(ALPHA_EXERCISE.bodyIntro)}</p>
-        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.threatsIntro)}</p>
+        <ol className="mt-4 space-y-3">
+          {ALPHA_EXERCISE.bodyQuestions.map((item, index) => (
+            <li key={item.text} className="flex gap-3">
+              <span
+                aria-hidden="true"
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-foreground/10 text-sm font-semibold leading-none"
+              >
+                {index + 1}
+              </span>
+              <span className="font-semibold leading-6">
+                {renderLinkedProse(item)}
+              </span>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-4">{renderLinkedProse(ALPHA_EXERCISE.bodyAfterQuestions)}</p>
+
+        <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.threatsHeading}</h3>
+        <p>{renderLinkedProse(ALPHA_EXERCISE.threatsIntro)}</p>
         <ul className={`mt-2 list-disc space-y-1 ${guideListIndent}`}>
           {ALPHA_EXERCISE.threatItems.map((item) => (
             <li key={item.text}>{renderLinkedProse(item)}</li>
           ))}
         </ul>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.threatsClosing)}</p>
-        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.listIntro)}</p>
-        <ul className={`mt-2 list-disc space-y-1 ${guideListIndent}`}>
-          {ALPHA_EXERCISE.listItems.map((item) => (
-            <li key={item.text}>{renderLinkedProse(item)}</li>
+
+        <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.numbersHeading}</h3>
+        <p>{renderLinkedProse(ALPHA_EXERCISE.listIntro)}</p>
+        <dl className="mt-3 space-y-3">
+          {ALPHA_EXERCISE.numbers.map((n) => (
+            <div
+              key={n.term}
+              className="rounded-md border border-border/70 bg-background/50 px-3.5 py-3"
+            >
+              <dt className="flex flex-wrap items-baseline gap-x-2">
+                <span className="font-semibold text-foreground">{n.term}</span>
+                {n.acronym ? (
+                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                    {n.acronym}
+                  </span>
+                ) : null}
+              </dt>
+              <dd className="mt-0.5">
+                <p className="italic text-foreground/80">{n.plain}</p>
+                <p className="mt-1 text-[0.9rem] leading-snug text-muted-foreground">
+                  {n.gloss}
+                </p>
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.scaleNote)}</p>
-        <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.ownershipNote)}</p>
+
+        <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.handoverHeading}</h3>
+        <p>{renderLinkedProse(ALPHA_EXERCISE.ownershipNote)}</p>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.confusionNote)}</p>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.closing)}</p>
       </PillarCallout>

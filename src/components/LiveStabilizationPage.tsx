@@ -5,7 +5,7 @@ import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
-import { LifecycleVisual } from "@/components/LifecycleVisual";
+import { LifecycleVisual, LifecycleVisualStack } from "@/components/LifecycleVisual";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
@@ -30,7 +30,7 @@ import {
   STABILIZATION_TEAM,
 } from "@/lib/live-stabilization-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
-import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import stabilizationFireVisual from "@/assets/stabilization_fire.svg?url";
 import {
   renderLinkedProse,
@@ -153,7 +153,15 @@ export function LiveStabilizationPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children: renderThreadSections(stage.sections),
+          children:
+            stage.id === "watch-it-every-day" ? (
+              <>
+                {renderThreadSections(stage.sections)}
+                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 
@@ -185,9 +193,15 @@ export function LiveStabilizationPage() {
       />
 
 
+      <LifecycleVisualStack
+        visuals={subphaseFootVisuals("Live")}
+        variant="subphaseFoot"
+        className="mt-10 md:mt-12"
+      />
+
       <SubphaseInstruments subPhase="stabilization" />
 
-      <PageFoot sources={STABILIZATION_SOURCES} subphaseFootFor="Live" />
+      <PageFoot sources={STABILIZATION_SOURCES} />
 
       <GuideAssumptions className="mt-10 md:mt-12 max-w-xl" />
 

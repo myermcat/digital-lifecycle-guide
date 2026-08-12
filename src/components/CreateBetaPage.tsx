@@ -220,7 +220,15 @@ export function CreateBetaPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children: renderThreadSections(stage.sections),
+          children:
+            stage.id === "build-dashboard" ? (
+              <>
+                {renderThreadSections(stage.sections)}
+                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 

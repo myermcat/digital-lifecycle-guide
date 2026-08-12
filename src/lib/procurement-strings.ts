@@ -117,8 +117,19 @@ export const PROCUREMENT_STRINGS = {
     heading: "Choosing what to buy",
     lead: [
       {
-        text: '"Procurement" sounds like one thing. It is a choice between four routes, and the department makes that choice back in Discovery, long before the money arrives. The route decides when the contract is signed, who does the prototyping, and how much leverage the department has at signature.',
+        text: '"Procurement" sounds like one thing. It is a choice between routes, and the department makes that choice back in Discovery, long before the money arrives. The route decides when the contract is signed, who does the prototyping, and how much leverage the department has at signature.',
         internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+      },
+      {
+        text: "Below are some of the routes, not all of them. They are the ones a digital service most often takes, and a department can end up somewhere else entirely and be right to.",
+        bold: [{ phrase: "some of the routes, not all of them" }],
+      },
+      {
+        text: "First, three words that get used interchangeably and should not be. The solicitation is the competition, not the contract: it is the published package that invites suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold. So when this page says the solicitation opens with the challenge statement, it means the competition document leads with the problem rather than with a specification. A bid is what one supplier sends back in response. The contract comes later, and only for whoever wins.",
+        bold: [
+          { phrase: "The solicitation is the competition, not the contract" },
+          { phrase: "A bid is what one supplier sends back in response." },
+        ],
       },
     ] satisfies ThreadLinkedProse[],
     routes: [
@@ -153,8 +164,12 @@ export const PROCUREMENT_STRINGS = {
                 bold: [{ phrase: "There is still a competition." }],
               },
               {
-                text: "The team is what does Alpha, so it has to be in place before Alpha starts.",
+                text: "The team is what does Alpha, so it has to be in place as Alpha opens. Nothing is bought in Discovery, so the competition runs there and the award waits on the decision to continue.",
                 bold: [{ phrase: "The team is what does Alpha," }],
+              },
+              {
+                text: "The timeline is the same shape as buying a Solution: a competition, then a contract, then work under it. What differs is what the contract is for, people rather than an outcome, and how much direction stays with the department.",
+                bold: [{ phrase: "The timeline is the same shape as buying a Solution" }],
               },
             ],
           },
@@ -163,7 +178,7 @@ export const PROCUREMENT_STRINGS = {
           },
         ],
         contractSigned: {
-          text: "at the end of Discovery, before Alpha begins.",
+          text: "as Alpha opens, once the decision to continue is made.",
         },
       },
       {
@@ -187,11 +202,11 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "Under agile and challenge-based procurement, more than one supplier can be paid to build and demonstrate before one is chosen.",
+                text: "Under agile and challenge-based procurement, more than one supplier is paid to build and demonstrate before one is chosen. That is not a footnote to this route. In the shape PSPC's own guide sets out, it is the route.",
                 bold: [
                   {
                     phrase:
-                      "Under agile and challenge-based procurement, more than one supplier can be paid",
+                      "more than one supplier is paid to build and demonstrate before one is chosen",
                   },
                 ],
                 externalLinks: [
@@ -202,16 +217,69 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "The department has to show suppliers what it wants. This is the route where the Alpha prototype does the most work. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
+                text: "The department has to show suppliers what it wants. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
                 bold: [{ phrase: "The department has to show suppliers what it wants." }],
                 internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
               },
             ],
           },
+          {
+            text: "The PSPC agile procurement guide suggests running it like this, and it is worth following the shape closely, because it is the most fully described route Canada has written down:",
+            bold: [{ phrase: "The PSPC agile procurement guide suggests running it like this" }],
+          },
+          {
+            type: "orderedList",
+            items: [
+              {
+                bold: "One solicitation goes out.",
+                text: " It carries the challenge statement, the outcomes, the criteria the prototypes will be judged against, and the terms for building the real thing afterwards. All of that has to be in it up front, because criteria applied after award have to be published before award.",
+              },
+              {
+                bold: "Suppliers bid on paper.",
+                text: " Written proposals, not prototypes. In the guide's worked example, nine bids came in.",
+              },
+              {
+                bold: "Several contracts are awarded at once,",
+                text: " to the top-ranked bidders. In the example, four of the nine.",
+              },
+              {
+                bold: "Each supplier builds a prototype under its contract,",
+                text: " and the prototypes are assessed against the criteria that were in the solicitation. This is the real competition, and it happens after signature.",
+              },
+              {
+                bold: "The winner's contract is amended",
+                text: " to exercise an option to build the production solution. There is no second competition and no second contract. The other contracts sit dormant as back-ups, which is how Canada pivoted to the runner-up when the first choice failed to deliver.",
+              },
+            ],
+          },
+          {
+            text: "That sequence is the one PSPC works through in detail, but it is not the only permitted shape. Prototypes and demonstrations can also come earlier, before anyone is under contract:",
+          },
+          {
+            type: "unorderedList",
+            items: [
+              {
+                text: "At pre-qualification, a supplier can be asked to demonstrate a potential solution, or part of one, to help work out which approaches conceptually meet the need before the solicitation goes out.",
+                bold: [{ phrase: "At pre-qualification" }],
+              },
+              {
+                text: "At solicitation, suppliers can be asked for demonstrations, proofs of concept, prototypes or samples alongside their written proposals, so the choice rests on something tangible rather than prose alone.",
+                bold: [{ phrase: "At solicitation" }],
+              },
+            ],
+          },
+          {
+            text: "The difference matters for who pays. A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and it is a real cost to the suppliers who take part.",
+            bold: [{ phrase: "The difference matters for who pays." }],
+          },
+          {
+            text: "How long this takes is the obvious question and PSPC declines to answer it. Their words: agile procurement is not always faster, the extra engagement takes time, and the iterative strategy may lengthen the overall procurement process. What they argue is that it surfaces problems sooner and avoids the failures that cause the worst delays. Plan for it to be no quicker.",
+            bold: [{ phrase: "agile procurement is not always faster" }],
+          },
         ],
         contractSigned: {
-          text: "at the start of Beta, when the competition ends.",
-          internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+          text: "at the start of Alpha, before the prototypes are built. The build is an option inside that same contract, exercised at the Alpha and Beta boundary.",
+          internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
         },
       },
       {
@@ -308,7 +376,7 @@ export const PROCUREMENT_STRINGS = {
       ],
     } satisfies ThreadLinkedProse,
     closingNote: {
-      text: "The steps below run in all four routes. In Buy a Team they run early, during Discovery. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender. Only in Build in-house or Reuse do most of them fall away, because there is no competition to run.",
+      text: "The steps below run in all of these routes. In Buy a Team they run early, during Discovery. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender. Only in Build in-house or Reuse do most of them fall away, because there is no competition to run.",
     },
   } satisfies ChoosingWhatToBuyContent,
 
@@ -380,6 +448,26 @@ export const PROCUREMENT_STRINGS = {
             type: "p",
             text: "Asking for objectives, rather than dictating the work, lets suppliers offer answers better than the one you would have written.",
           },
+          {
+            type: "p",
+            text: "Underneath the challenge statement sit the requirements, and they come in three kinds. Which kind a requirement is decides where it goes, and where it goes decides what changing it later costs you. Change one that is still in a prototype and someone redraws it in an afternoon. Change one that is written into a signed contract and it becomes an amendment, priced by the only supplier in the room.",
+          },
+          {
+            type: "ul",
+            items: [
+              "Business requirements: what the service has to achieve and why. These become the objective and the background of the statement of work. Put them in the contract.",
+              "Non-functional requirements: how well it has to perform, how available it has to be, how secure. These become the service levels, and they are what the bids get scored against. Put them in the contract.",
+              "Functional requirements: how a particular screen or step should work. Keep these out of the contract. The prototype and the design carry them, and they will change once someone tests them.",
+            ],
+          },
+          {
+            type: "p",
+            text: "A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs an amendment.",
+          },
+          {
+            type: "p",
+            text: "None of this is only for buyers. A department building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. What buying adds is a mandated shape and a signature.",
+          },
         ],
       },
       {
@@ -444,6 +532,29 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "p",
             text: "Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone.",
+          },
+          {
+            type: "p",
+            text: "This is also the answer for a department that wants to ask industry whether something is even feasible without committing to buy anything. It has two names:",
+          },
+          {
+            type: "ul",
+            items: [
+              "A Request for Information, which is defined in the Supply Manual.",
+              "A Review and Refine Requirements process, which is not formally defined anywhere but is widely used. Canada shares drafts of its requirements and asks suppliers for feedback to sharpen them before the solicitation.",
+            ],
+          },
+          {
+            type: "p",
+            text: "Neither ends in a contract, and you can run several of each. PSPC describes them as waves: brainstorm the challenge statement and the outcomes, then take market feedback on the minimum you must have, then on the draft statement of work and evaluation grid, then on the draft pricing and the solicitation itself. Engagement is optional everywhere except the formal pre-qualification and solicitation steps.",
+          },
+          {
+            type: "p",
+            text: "Nobody is paid for any of it, so it costs the department time rather than money. It is not free of cost to suppliers, though. Responding takes real effort from them, and PSPC's own advice is to make participation worthwhile and not to burn goodwill you will need later. Run as many rounds as the requirement genuinely needs, and no more.",
+          },
+          {
+            type: "p",
+            text: "One rule attaches to it. If supplier feedback makes you change draft requirements or draft evaluation criteria, go back to all of the suppliers before you do, so nobody ends up looking advantaged.",
           },
         ],
       },

@@ -121,7 +121,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         ],
       },
       {
-        text: "Three more things follow a significant addition. New code is new attack surface, so the security testing that ran before launch runs again for a major change. Growth also reopens how critical the service is: a new capability can change what the service is critical for. Rising volume alone can raise its security category, because a great many low-sensitivity records in one place are not automatically still low sensitivity. And a redesigned online service must give clients real-time application status, a requirement of the Directive on Service and Digital that comes back with every redesign.",
+        text: "Three things follow a significant addition. New code is new attack surface, so the security testing that ran before launch runs again. How critical the service is reopens too: a new capability can change what it is critical for, and rising volume alone can raise its security category, because a great many low-sensitivity records in one place are not automatically still low sensitivity. And a redesigned online service must give clients real-time application status, a requirement of the Directive on Service and Digital that returns with every redesign.",
         bold: [{ phrase: "New code is new attack surface," }],
         internalLinks: [{ phrase: "security testing", to: "/thread/security" }],
         externalLinks: [
