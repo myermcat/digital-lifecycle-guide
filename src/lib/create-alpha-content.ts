@@ -327,6 +327,11 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         internalLinks: [{ phrase: "procurement", to: "/thread/procurement" }],
       },
       {
+        text: "If your route signs as Alpha opens, rather than as Beta opens, then anything that has to be in the contract has to be settled here. That includes what happens to the records the service will hold: retention and disposition belong in the contract, so a route that signs early has to answer that question early. Beta covers what the decision involves.",
+        bold: [{ phrase: "anything that has to be in the contract has to be settled here" }],
+        internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+      },
+      {
         type: "unorderedList",
         items: [
           {
@@ -527,7 +532,7 @@ export const ALPHA_EXERCISE = {
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
   bodyIntro: {
-    text: "Two answers decide how much this service costs to run and how much engineering has to go underneath it. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
+    text: "Two answers do more than any others to set how much this service costs to run and how much engineering has to go underneath it. They are not the only inputs, but they are the ones most often left until it is too late to act on them. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
     bold: [
       {
         phrase:

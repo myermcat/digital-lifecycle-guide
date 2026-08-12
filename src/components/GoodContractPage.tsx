@@ -19,6 +19,7 @@ import {
 } from "@/lib/good-contract-content";
 import { THREADS } from "@/lib/guide-strings";
 import {
+  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
@@ -186,6 +187,26 @@ export function GoodContractPage() {
           </p>
         ))}
         <EditorialNote label="Example">{GOOD_CONTRACT.exampleNote}</EditorialNote>
+      </section>
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={GOOD_CONTRACT.contractParts.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>
+          {GOOD_CONTRACT.contractParts.heading}
+        </h2>
+        <p className={`${guideProse} mb-4`}>{GOOD_CONTRACT.contractParts.intro}</p>
+        <ol className={`${guideProse} list-decimal space-y-2 ${guideListIndent}`}>
+          {GOOD_CONTRACT.contractParts.parts.map((part) => (
+            <li key={part.term}>
+              <span className="font-semibold text-foreground">{part.term}.</span>{" "}
+              {part.text}
+            </li>
+          ))}
+        </ol>
+        <p className={`${guideProse} mt-4`}>{GOOD_CONTRACT.contractParts.order}</p>
+        <p className={`${guideProse} mt-3`}>{GOOD_CONTRACT.contractParts.close}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="how-to-read">

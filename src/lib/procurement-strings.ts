@@ -413,11 +413,12 @@ export const PROCUREMENT_STRINGS = {
           "Mock it up yourself, absolutely. But the thing that answers can it hold at volume, can it integrate, can it meet Protected B, is real software built by people who do that for a living.",
       },
     ],
-    testIntro: "The test is three questions, and none of them is about money:",
+    testIntro:
+      "The test is three questions, and none of them is about money or about how many people use it:",
     test: [
       {
-        term: "Who does it serve?",
-        text: "Colleagues, or the public. A service the public depends on carries obligations an internal tool does not: both official languages, the accessibility standard, an authority to operate.",
+        term: "What duties attach to it?",
+        text: "A service the public can reach owes both official languages, the accessibility standard, and an authority to operate. An internal tool owes fewer of those. This question is about obligations, not importance.",
       },
       {
         term: "What does it hold?",
@@ -425,52 +426,13 @@ export const PROCUREMENT_STRINGS = {
       },
       {
         term: "What happens when it fails?",
-        text: "Inconvenience, or harm. This is the same question the threat and continuity exercise asks in Alpha, and the answer decides how much engineering has to sit underneath it.",
+        text: "Inconvenience, or harm. This is the same question the threat and continuity exercise asks in Alpha, and the answer decides how much engineering has to sit underneath the service.",
       },
     ],
     close:
       "Three cheap answers, and you can probably make the thing yourself. One expensive answer, and no budget will make a drawing answer it for you.",
-  },
-
-  contractParts: {
-    id: "what-a-contract-is-made-of",
-    heading: "What a federal contract is made of",
-    intro:
-      "A contract is not one document. It is a stack, and knowing the order matters because the top of the stack wins when two parts disagree.",
-    parts: [
-      {
-        term: "The articles of agreement",
-        text: "The front matter: who is contracting with whom, for what, for how long, and for how much. Short, and the part everyone reads.",
-      },
-      {
-        term: "The general conditions",
-        text: "Standard clauses that apply to whole classes of contract, pulled in by number rather than written out. They cover things like liability, termination and intellectual property.",
-      },
-      {
-        term: "The supplemental general conditions",
-        text: "Additional standard sets that attach when the subject matter calls for them, such as those covering software or the handling of protected information.",
-      },
-      {
-        term: "The statement of work",
-        text: "The description of the work, written from your requirements. This is the part the department actually writes, and the part a supplier is held to day to day.",
-      },
-      {
-        term: "The basis of payment",
-        text: "What gets paid, when, and against what. Firm price, ceiling price, rates by labour category, or a mix.",
-      },
-      {
-        term: "The annexes",
-        text: "Everything attached: the security requirements checklist, the accessibility clauses, service levels, and any mock-up or design provided for illustration.",
-      },
-      {
-        term: "The options",
-        text: "Work described and priced now that Canada may call on later, including the build that can follow a prototype.",
-      },
-    ],
-    order:
-      "Where two parts contradict each other, the order of precedence set out in the contract decides which wins, and the articles of agreement normally sit at the top. It is worth reading that clause once, because it tells you whether the statement of work you wrote can be overridden by a standard condition you never read.",
-    close:
-      "The department writes the statement of work, the requirements behind it, and the annexes that carry the service levels and the security and accessibility clauses. The contracting authority assembles the rest.",
+    caution:
+      "Serving colleagues rather than the public lowers the duties, and it does not lower the stakes. Phoenix served public servants, and the damage it did is the reason a good deal of this guide exists. The third question is the one that decides how serious a service is, and an internal service can answer it as expensively as any other.",
   },
 
   aiCaveat: {

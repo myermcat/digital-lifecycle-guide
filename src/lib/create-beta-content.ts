@@ -269,34 +269,34 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         type: "subheading",
-        text: "It applies however small your service is",
+        text: "A small service is not exempt",
       },
       {
-        text: "How the service is delivered is what triggers the duty. How much of the country it reaches does not, so a service used in one region is caught on the same terms as a national one.",
-        bold: [{ phrase: "How much of the country it reaches does not" }],
+        text: "Teams often assume the duty scales with the size of the audience, and it does not. What triggers it is how the service is delivered, so a service used by one region, or by a few hundred people, is caught on exactly the same terms as a national one.",
+        bold: [{ phrase: "the duty scales with the size of the audience, and it does not" }],
       },
       {
-        text: "The chain, for anyone who has to show their working:",
+        text: "If someone asks you to show your working, it is three steps:",
       },
       {
         type: "orderedList",
         items: [
           {
-            bold: "Official Languages Act, section 24(1)(b).",
-            text: " Lets regulations name the circumstances that make an office bilingual.",
+            bold: "The Official Languages Act, section 24(1)(b),",
+            text: " says regulations may name the circumstances that oblige an office to work in both languages.",
           },
           {
-            bold: "The Communications with and Services to the Public Regulations, section 11(b).",
-            text: " Names one of those circumstances: communications and services made available through an automated system accessible to the public.",
+            bold: "The Communications with and Services to the Public Regulations, section 11(b),",
+            text: " names one of those circumstances: anything offered through an automated system that the public can reach.",
           },
           {
-            bold: "Your service is such a system.",
-            text: " That is the whole argument. Nothing in it turns on how many people use it or where they live.",
+            bold: "A digital service is an automated system the public can reach,",
+            text: " so the duty applies. Nothing in that chain asks how many people use it or where they live.",
           },
         ],
       },
       {
-        text: "Reach does appear in the same regulation, at section 11(a), but only for correspondence and telephone services, which is the source of the common belief that a small digital service is exempt.",
+        text: "The belief that a small service is exempt usually comes from section 11(a) of the same regulation, which does turn on how many people are served. It governs correspondence and telephone services, and not this.",
       },
       {
         text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
@@ -305,14 +305,15 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Where a supplier delivers the service on the department's behalf, section 25 of the Act carries the duty across to them, so buying delivery does not buy out of the obligation.",
       },
       {
-        text: "As the build starts:",
+        type: "subheading",
+        text: "Four things to set up as the build starts",
       },
       {
         type: "unorderedList",
         items: [
           {
-            text: "The Alpha prototype is rarely the right thing to polish into the real one. It was built to be thrown away, and it carries every shortcut that was taken on that understanding. Where the team cannot account for what is inside it, starting again is usually cheaper than untangling it.",
-            bold: [{ phrase: "The Alpha prototype is rarely the right thing to polish into the real one." }],
+            text: "Decide honestly whether the Alpha prototype can be built on. If the team understands what is inside it and would defend it, carrying it forward can save real money. If it was thrown together to answer one question, it carries every shortcut taken on that understanding, and starting again is usually cheaper than untangling it.",
+            bold: [{ phrase: "Decide honestly whether the Alpha prototype can be built on." }],
           },
           {
             text: "Set up the pipeline that will release changes safely, small and often, because it is needed from the first day the service is live.",
@@ -331,7 +332,11 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Two authorizations stand between the build and production, and neither is quick:",
+        type: "subheading",
+        text: "Two authorizations stand between the build and production",
+      },
+      {
+        text: "Neither is quick, and neither can be started the week before launch.",
       },
       {
         text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
@@ -352,7 +357,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "Who signs it is not automatic." }],
       },
       {
-        type: "unorderedList",
+        type: "orderedList",
         items: [
           {
             text: "A service that belongs to one department. The business owner normally signs, accepting the risk on the department's behalf.",

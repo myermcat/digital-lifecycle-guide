@@ -76,6 +76,47 @@ export const GOOD_CONTRACT = {
     },
   ],
 
+  contractParts: {
+    id: "the-parts",
+    heading: "The parts a contract is assembled from",
+    intro:
+      "Before the tour, it helps to know that a Government of Canada contract is not one document. It is a stack, assembled from standard parts plus the ones the department writes itself.",
+    parts: [
+      {
+        term: "The articles of agreement",
+        text: "The front matter: who is contracting with whom, for what, for how long, and for how much. Short, and the part everyone reads.",
+      },
+      {
+        term: "The general conditions",
+        text: "Standard clauses that apply to whole classes of contract, pulled in by number rather than written out. They cover things like liability, termination and intellectual property.",
+      },
+      {
+        term: "The supplemental general conditions",
+        text: "Additional standard sets that attach when the subject matter calls for them, such as those covering software or the handling of protected information.",
+      },
+      {
+        term: "The statement of work",
+        text: "The description of the work, written from your requirements. This is the part the department actually writes, and the part a supplier is held to day to day.",
+      },
+      {
+        term: "The basis of payment",
+        text: "What gets paid, when, and against what. Firm price, ceiling price, rates by labour category, or a mix.",
+      },
+      {
+        term: "The annexes",
+        text: "Everything attached: the security requirements checklist, the accessibility clauses, service levels, and any mock-up or design provided for illustration.",
+      },
+      {
+        term: "The options",
+        text: "Work described and priced now that Canada may call on later, including the build that can follow a prototype.",
+      },
+    ],
+    order:
+      "Where two parts contradict each other, the order of precedence set out in the contract decides which wins, and the articles of agreement normally sit at the top. It is worth reading that clause once, because it tells you whether the statement of work you wrote can be overridden by a standard condition you never read.",
+    close:
+      "The department writes the statement of work, the requirements behind it, and the annexes that carry the service levels and the security and accessibility clauses. The contracting authority assembles the rest.",
+  },
+
   exampleNote:
     "Everything below is written for the grant portal. The clauses, and the bracketed details like dates and percentages, are things you set for your own service. Treat this as a worked example to adapt, not text to copy.",
 

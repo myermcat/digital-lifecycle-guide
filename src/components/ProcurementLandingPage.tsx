@@ -118,26 +118,9 @@ export function ProcurementLandingPage() {
         <p className={`${guideProse} mt-4 font-semibold`}>
           {landing.workedExamples.close}
         </p>
-      </section>
-
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24"
-        id={landing.contractParts.id}
-      >
-        <h2 className={`${guideSectionTitle} mb-3`}>
-          {landing.contractParts.heading}
-        </h2>
-        <p className={`${guideProse} mb-4`}>{landing.contractParts.intro}</p>
-        <ol className={`${guideProse} list-decimal space-y-2 ${guideListIndent}`}>
-          {landing.contractParts.parts.map((part) => (
-            <li key={part.term}>
-              <span className="font-semibold text-foreground">{part.term}.</span>{" "}
-              {part.text}
-            </li>
-          ))}
-        </ol>
-        <p className={`${guideProse} mt-4`}>{landing.contractParts.order}</p>
-        <p className={`${guideProse} mt-3`}>{landing.contractParts.close}</p>
+        <GuideCallout compact className="mt-5" label="One caution">
+          <p>{landing.workedExamples.caution}</p>
+        </GuideCallout>
       </section>
 
       <section
