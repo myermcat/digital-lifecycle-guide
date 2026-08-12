@@ -327,9 +327,9 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         internalLinks: [{ phrase: "procurement", to: "/thread/procurement" }],
       },
       {
-        text: "If your route signs as Alpha opens, rather than as Beta opens, then anything that has to be in the contract has to be settled here. That includes what happens to the records the service will hold: retention and disposition belong in the contract, so a route that signs early has to answer that question early. Beta covers what the decision involves.",
+        text: "If your route signs as Alpha opens, rather than as Beta opens, then anything that has to be in the contract has to be settled here. One of those is easy to miss: what happens at the end to the records the service will hold, meaning the applications, decisions, case files and correspondence it creates. How long each kind is kept, and whether it is eventually transferred to Library and Archives Canada or destroyed, has to be written into the contract when a supplier will hold or process any of it. Data stewardship covers how that decision is made.",
         bold: [{ phrase: "anything that has to be in the contract has to be settled here" }],
-        internalLinks: [{ phrase: "Beta", to: "/create-beta" }],
+        internalLinks: [{ phrase: "Data stewardship", to: "/thread/data-stewardship" }],
       },
       {
         type: "unorderedList",
@@ -354,7 +354,11 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         internalLinks: [{ phrase: "Funding", to: "/thread/funding" }],
       },
       {
-        text: "Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs more than once: against the high-level design here, again against the detailed design as the build is specified, and a third time against the finished system in Beta. Security covers how that work is done.",
+        text: "Work out the threats the service will face and how it will be kept secure. A Threat and Risk Assessment lists and ranks them. It runs three times: here against the high-level design, again against the detailed design as the build is specified, and a third time against the finished system in Beta, which is the pass the authority to operate rests on.",
+      },
+      {
+        text: "Find out now who will sign that authority, because it is not automatic. It is normally the business owner for a service belonging to one department, the Chief Information Officer of Canada for a common or enterprise system, and the manager of the programme for a system two or more organizations share. Beta needs the answer before private beta opens, and it is a cheap question here and an expensive one then. Security covers how the assessment work is done.",
+        bold: [{ phrase: "Find out now who will sign that authority" }],
         internalLinks: [{ phrase: "Security", to: "/thread/security" }],
         externalLinks: [
           { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },

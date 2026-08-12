@@ -58,6 +58,17 @@ export const guideLead = `${guideProse}`;
 export const guideLink =
   "font-medium text-primary/80 underline decoration-primary/35 underline-offset-4 hover:text-primary/65 hover:decoration-primary/50 transition-colors";
 
+/**
+ * The name of an official instrument, mentioned in prose.
+ *
+ * Instrument titles are long and there are a lot of them, so at full link
+ * weight they pull the eye away from the sentence that explains what the thing
+ * actually does. Paler, with a lighter underline: still obviously a link, no
+ * longer the loudest thing in the paragraph.
+ */
+export const guideLinkInstrument =
+  "font-normal text-foreground/55 underline decoration-foreground/20 underline-offset-4 hover:text-primary/70 hover:decoration-primary/40 transition-colors";
+
 /** External links reachable only on the GC network — paler, dotted underline. */
 export const guideLinkGcNetwork =
   "font-medium text-muted-foreground/50 underline decoration-dotted decoration-muted-foreground/35 underline-offset-4 hover:text-muted-foreground/65 transition-colors";

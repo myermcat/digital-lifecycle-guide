@@ -432,7 +432,7 @@ export const PROCUREMENT_STRINGS = {
     close:
       "Three cheap answers, and you can probably make the thing yourself. One expensive answer, and no budget will make a drawing answer it for you.",
     caution:
-      "Serving colleagues rather than the public lowers the duties, and it does not lower the stakes. Phoenix served public servants, and the damage it did is the reason a good deal of this guide exists. The third question is the one that decides how serious a service is, and an internal service can answer it as expensively as any other.",
+      "Serving colleagues rather than the public changes which duties attach, and it changes nothing about how serious the service is. An internal service is outside the language duty that catches anything the public can reach, and outside the canada.ca publishing rules and the domain approval that goes with them. It still carries security, privacy, accessibility, and language obligations towards employees in designated bilingual regions. And the third question is the one that decides how much is at stake: Phoenix served public servants, and its answer to what happens when it fails was as bad as any service in this guide.",
   },
 
   aiCaveat: {

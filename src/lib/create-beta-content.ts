@@ -253,7 +253,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Four things to set up as the build starts",
       },
       {
-        type: "unorderedList",
+        type: "orderedList",
         items: [
           {
             text: "Decide honestly whether the Alpha prototype can be built on. If the team understands what is inside it and would defend it, carrying it forward can save real money. If it was thrown together to answer one question, it carries every shortcut taken on that understanding, and starting again is usually cheaper than untangling it.",
@@ -283,10 +283,10 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Neither is quick, and neither can be started the week before launch.",
       },
       {
-        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. It is not a formality and it is not quick, so start it early.",
+        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. The deadline is earlier than most teams expect: private beta puts real people's real work through the service, which is production, so the authority has to be in hand before private beta opens, not before launch. Work back from that date and start it as the build starts.",
         bold: [
           { phrase: "The service cannot run in production until it is authorized to." },
-          { phrase: "Security Assessment and Authorization" },
+          { phrase: "the authority has to be in hand before private beta opens" },
         ],
         externalLinks: [
           {
@@ -318,10 +318,11 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Find out which case this is in Alpha. Leaving it to Beta means answering the question under launch pressure.",
+        text: "Alpha says to find out which case this is, and if that was done there is nothing to do here but confirm it. If it was not, do it now rather than in the week before private beta opens.",
+        internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
       },
       {
-        text: "The authorization rests on the last pass of the Threat and Risk Assessment. The earlier ones ran against the design, first at a high level in Alpha and again against the detailed design. This one runs against the system that was actually built, because the answer changes once it is real. What it finds becomes the residual risk assessment, the record of the risk that is left for whoever signs to accept. Security covers how that work is done.",
+        text: "The authorization rests on the last pass of the Threat and Risk Assessment, which is the third. The first ran in Alpha against the high-level design, and the second against the detailed design as the build was specified. This one runs against the system that was actually built, because the answer changes once it is real. What it finds becomes the residual risk assessment, the record of the risk that is left for whoever signs to accept. Security covers how that work is done.",
         bold: [{ phrase: "This one runs against the system that was actually built" }],
         externalLinks: [
           { phrase: "Threat and Risk Assessment", linkKey: "harmonized-tra-methodology" },
