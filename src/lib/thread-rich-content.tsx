@@ -8,7 +8,6 @@ import type {
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { EditorialNote } from "@/components/EditorialNote";
-import { DashboardBlock, type DashboardBlockVariant } from "@/components/DashboardBlock";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
 import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine, guideBlockSubheading } from "@/lib/guide-typography";
 
@@ -60,19 +59,13 @@ export type ThreadSubheadingSection = {
   text: string;
 };
 
-export type ThreadDashboardMockSection = {
-  type: "dashboardMock";
-  variant: DashboardBlockVariant;
-};
-
 export type ThreadContentSection =
   | ThreadLinkedProse
   | ThreadOrderedListSection
   | ThreadUnorderedListSection
   | ThreadEditorialNoteSection
   | ThreadFormulaSection
-  | ThreadSubheadingSection
-  | ThreadDashboardMockSection;
+  | ThreadSubheadingSection;
 
 export type ThreadCloserLookBlock = {
   title: string;
@@ -195,9 +188,7 @@ export function threadSectionsPlainText(sections: readonly ThreadContentSection[
             ? section.text
             : "type" in section && section.type === "subheading"
               ? section.text
-              : "type" in section && section.type === "dashboardMock"
-                ? "Dashboard mock"
-                : section.text,
+              : section.text,
     )
     .join(" ");
 }
@@ -208,10 +199,6 @@ function isFormula(section: ThreadContentSection): section is ThreadFormulaSecti
 
 function isSubheading(section: ThreadContentSection): section is ThreadSubheadingSection {
   return "type" in section && section.type === "subheading";
-}
-
-function isDashboardMock(section: ThreadContentSection): section is ThreadDashboardMockSection {
-  return "type" in section && section.type === "dashboardMock";
 }
 
 function isEditorialNote(section: ThreadContentSection): section is ThreadEditorialNoteSection {
@@ -335,8 +322,7 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
           <p key={index} className={guideBlockSubheading}>
             {section.text}
           </p>
-        ) : isDashboardMock(section) ? (
-          <DashboardBlock key={index} variant={section.variant} />
+
         ) : isEditorialNote(section) ? (
           <EditorialNote key={index} label={section.label ?? "Example"}>
             <div className="space-y-2">

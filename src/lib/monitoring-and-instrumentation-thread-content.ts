@@ -219,10 +219,6 @@ export const MONITORING_THREAD = {
               { phrase: "Canada.ca analytics", linkKey: "canada-ca-analytics" },
             ] satisfies ExternalPhraseLink[],
           },
-          {
-            type: "dashboardMock",
-            variant: "monitoring",
-          },
         ],
       },
       {
