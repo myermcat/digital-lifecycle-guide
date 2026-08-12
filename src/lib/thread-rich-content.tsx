@@ -10,7 +10,7 @@ import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
 import { EditorialNote } from "@/components/EditorialNote";
 import { DashboardBlock, type DashboardBlockVariant } from "@/components/DashboardBlock";
 import { ThreadWhoseJobIconList } from "@/components/ThreadWhoseJobIconList";
-import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine, guideBodySubheading } from "@/lib/guide-typography";
+import { guideListIndent, guideProse, guideProseSpace, guideProseTight, guideFormulaLine, guideBlockSubheading } from "@/lib/guide-typography";
 
 /** Body enumerations with fewer than four items stay inline prose; four or more become a list. */
 export const guideListMinCount = 4;
@@ -332,7 +332,7 @@ export function renderThreadSections(sections: readonly ThreadContentSection[]):
             {section.text}
           </p>
         ) : isSubheading(section) ? (
-          <p key={index} className={guideBodySubheading}>
+          <p key={index} className={guideBlockSubheading}>
             {section.text}
           </p>
         ) : isDashboardMock(section) ? (

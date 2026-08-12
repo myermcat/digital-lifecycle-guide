@@ -10,6 +10,18 @@ export const guideProseTight =
 export const guideBodySubheading =
   "font-sans text-[0.9375rem] md:text-[15px] font-semibold text-foreground leading-snug";
 
+/**
+ * Subheading that opens a new topic inside a body block.
+ *
+ * It has to read as a heading at a glance, and it has to belong to what follows
+ * it. The parent blocks use `space-y-*`, which would otherwise leave it sitting
+ * an equal distance from the paragraph above and the paragraph below, so it
+ * reads as unattached bold text. The overrides pull it away from what came
+ * before and close it up against what comes after.
+ */
+export const guideBlockSubheading =
+  "!mt-8 !mb-0 [&+*]:!mt-1.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/90";
+
 /** Monospace formula — same size and leading as guideProseTight. */
 export const guideFormulaLine =
   "font-mono text-sm leading-[1.35] text-foreground/75 uppercase tracking-[0.05em]";

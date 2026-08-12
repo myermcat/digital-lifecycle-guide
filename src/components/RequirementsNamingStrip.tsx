@@ -26,16 +26,16 @@ const STEPS = [
     name: "The requirements",
     official: false,
     what: "What the service has to do, what the organization needs, and how the service has to behave.",
-    who: "Mandatory for every purchase. The procurement directive puts defining them on the business owner, with no dollar floor. What does not exist is a template: no instrument says what they have to look like, which is why this page explains how to write them.",
-    alsoUseful: "The statement of work is written from them. Above $40,000 of professional services, the contracting authority gets a written statement of work before award, with a signed confirmation. Below that, the buying is lighter and the contract is still written from them.",
+    who: "The business owner, for every purchase, with no dollar floor.",
+    alsoUseful: "Just as necessary when nobody is buying anything, since it is how the team knows what to build.",
   },
   {
     when: "After",
     name: "Statement of work",
     official: true,
     what: "The description of the work being bought, written from the requirements.",
-    who: "Only if the department is buying. It belongs to the contract, so an in-house build never writes one.",
-    alsoUseful: "",
+    who: "Required only when the department is buying, because it belongs to the contract.",
+    alsoUseful: "An in-house team is welcome to write one anyway. It comes with a template, and a template is easier to start from than a blank page.",
   },
 ];
 

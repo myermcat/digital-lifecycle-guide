@@ -238,7 +238,7 @@ export function CreateAlphaPage() {
               // buyer-beware warning after the whole ladder, so this stage
               // renders in halves too.
               <>
-                {renderThreadSections(stage.sections.slice(0, 11))}
+                {renderThreadSections(stage.sections.slice(0, 8))}
                 <GuideCallout
                   compact
                   className="my-5 md:my-6"
@@ -251,7 +251,7 @@ export function CreateAlphaPage() {
                     {ALPHA_AI_CALLOUT.body.split(ALPHA_AI_CALLOUT.bodyBold)[1]}
                   </p>
                 </GuideCallout>
-                {renderThreadSections(stage.sections.slice(11))}
+                {renderThreadSections(stage.sections.slice(8))}
                 <GuideCallout
                   compact
                   className="mt-5 md:mt-6"

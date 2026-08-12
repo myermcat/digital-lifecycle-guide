@@ -145,50 +145,22 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
       },
       {
         type: "subheading",
-        text: "What to call the thing you made",
+        text: "Mock-up or prototype: the only bit worth knowing",
       },
       {
-        text: "Three words get used for what you make, and nobody agrees on them. No Government of Canada instrument defines them, the withdrawn international standard that once covered mock-ups and prototypes was retired in 2013, and the technical community argues about them in good faith. So this guide says what it means by each one, here and wherever else it uses them. What the thing is matters. What it is called does not.",
-        bold: [{ phrase: "nobody agrees on them" }],
-      },
-      {
-        text: "The design industry draws the line at behaviour, and it is the most useful line there is: mock-ups show what a product looks like, prototypes show how it works.",
+        text: "Mock-ups show what a service looks like. Prototypes show how it works. Nothing official defines either word, so the useful question is which one answers what you are trying to find out: a mock-up while the question is whether people understand the thing, a prototype once the question is how they move through it.",
         bold: [
           {
             phrase:
-              "mock-ups show what a product looks like, prototypes show how it works",
+              "Mock-ups show what a service looks like. Prototypes show how it works.",
           },
         ],
         externalLinks: [
-          { phrase: "The design industry", linkKey: "miro-mockup-vs-prototype" },
+          { phrase: "Nothing official defines either word", linkKey: "miro-mockup-vs-prototype" },
         ],
       },
       {
-        type: "unorderedList",
-        items: [
-          {
-            text: "A wireframe is structure only: boxes, placeholder text, no colour and no brand. It answers what goes on this page, and in what order.",
-            bold: [{ phrase: "A wireframe is structure only" }],
-          },
-          {
-            text: "A mock-up is that with the design applied. Real colours, real words, and it looks like the finished thing. It is static, with no interactivity, and it does nothing.",
-            bold: [{ phrase: "A mock-up is that with the design applied." }],
-          },
-          {
-            text: "A prototype is interactive. You can move through it, which is what makes it worth putting in front of someone for usability testing and what makes it a real test of a design decision. It can have no back end at all, a faked one, or a rough real one. None of that changes what it is.",
-            bold: [{ phrase: "A prototype is interactive." }],
-          },
-          {
-            text: "A minimum viable product works, it is real, and you intend to keep it. That is Beta, not Alpha. The difference is not how finished it looks, it is whether what people do in it counts.",
-            bold: [{ phrase: "A minimum viable product works, it is real, and you intend to keep it." }],
-          },
-        ],
-      },
-      {
-        text: "Choose by what you are trying to find out. A mock-up is the right tool while the question is still about the visual design and whether people understand it. A prototype is the right tool once the question is about how people move through the thing. Neither is a stage you are obliged to pass through, and nothing in policy requires either.",
-      },
-      {
-        text: "A prototype can be interactive and still have nothing behind it, because interaction is not computation. Press Submit and it shows you the confirmation screen somebody drew earlier. That is enough to find out where people get stuck, what they misread, and what they cannot find. It is not enough to find out whether the rules are right, whether the integration works, or whether it holds up under load. Alpha rules things out; Beta finds out whether what survived actually works.",
+        text: "A prototype can be interactive and still have nothing behind it, because interaction is not computation. Press Submit and it shows you the confirmation screen somebody drew earlier. That is enough to see where people get stuck, and not enough to tell you whether the rules are right or whether it holds up under load. Alpha rules things out; Beta finds out whether what survived actually works.",
         bold: [{ phrase: "interaction is not computation" }],
       },
       {
@@ -358,7 +330,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             bold: [{ phrase: "Off-ramps:" }],
           },
           {
-            text: "Gates: work cannot pass a decision point without approval.",
+            text: "Gates: points in the contract where work cannot continue until Canada says so. These are contract gates, written by you, and separate from the official checkpoints the service has to clear anyway.",
             bold: [{ phrase: "Gates:" }],
           },
           {
@@ -404,6 +376,10 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
+        type: "subheading",
+        text: "Where each kind ends up",
+      },
+      {
         text: "Where they go is the answer to what they are for. The statement of work is written from them, and it is an annex to the contract, which makes it the thing the supplier is actually held to.",
         bold: [{ phrase: "The statement of work is written from them" }],
         internalLinks: [{ phrase: "statement of work", to: "/thread/procurement" }],
@@ -426,11 +402,15 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         ],
       },
       {
-        text: "Nobody files the requirements themselves. By the time anyone outside the department sees them, they have become the contract.",
+        text: "The requirements themselves are not filed anywhere. By the time anyone outside the department sees them, they have become the contract.",
       },
       {
-        text: "None of this is only for departments that are buying. A team building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. Buying adds a mandated shape and a signature. It does not add the need, and the need cannot be skipped either way. A statement of work is not required for an in-house build, but writing one anyway is often easier than starting cold, because it comes with a template.",
-        bold: [{ phrase: "None of this is only for departments that are buying." }],
+        type: "subheading",
+        text: "If you are not buying anything",
+      },
+      {
+        text: "A team building the service itself still needs all three kinds of requirement in front of it, because that is how anyone knows what to build. Buying adds a mandated shape and a signature; it does not create the need. A statement of work is not required for an in-house build, though writing one can be easier than starting from a blank page, since it comes with a template.",
+        bold: [{ phrase: "still needs all three kinds of requirement in front of it" }],
       },
       {
         type: "subheading",
@@ -452,8 +432,12 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change costs a contract amendment.",
       },
       {
-        text: "The requirements are the official artifact here, and defining them is mandatory: the Directive on the Management of Procurement puts it on the business owner, for every purchase, with no dollar floor. What no instrument provides is a template or a form, which is why this page spends its time on how to write them. The dollar value changes the paperwork, not the duty:",
-        bold: [{ phrase: "defining them is mandatory" }],
+        type: "subheading",
+        text: "What is actually required of you",
+      },
+      {
+        text: "Defining the requirements is mandatory, and the Directive on the Management of Procurement places that on the business owner. No instrument provides a template or a form, which is why this page spends its time on how to write them. The dollar value changes the paperwork rather than the duty:",
+        bold: [{ phrase: "Defining the requirements is mandatory" }],
         externalLinks: [
           {
             phrase: "Directive on the Management of Procurement",
