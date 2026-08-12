@@ -19,7 +19,7 @@ import {
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
 import { SEE_ALSO } from "@/lib/see-also";
-import { guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import { guideListIndent, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -76,6 +76,69 @@ export function ProcurementLandingPage() {
       <GoodContractCallout />
 
       <DescribingWhatYouBuy />
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={landing.workedExamples.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>
+          {landing.workedExamples.heading}
+        </h2>
+        <p className={`${guideProse} mb-4`}>{landing.workedExamples.intro}</p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {landing.workedExamples.cases.map((example) => (
+            <div
+              key={example.title}
+              className="rounded-lg border border-border bg-card px-4 py-3.5"
+            >
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                {example.label}
+              </p>
+              <p className="mt-1.5 font-semibold text-foreground">{example.title}</p>
+              <ul className={`${guideProse} mt-2 list-disc space-y-1 ${guideListIndent}`}>
+                {example.facts.map((fact) => (
+                  <li key={fact}>{fact}</li>
+                ))}
+              </ul>
+              <p className={`${guideProse} mt-2.5 text-foreground/80`}>
+                {example.verdict}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className={`${guideProse} mt-5`}>{landing.workedExamples.testIntro}</p>
+        <dl className="mt-3 space-y-3">
+          {landing.workedExamples.test.map((entry) => (
+            <div key={entry.term}>
+              <dt className="font-semibold text-foreground">{entry.term}</dt>
+              <dd className={`${guideProse} mt-0.5 text-foreground/80`}>{entry.text}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className={`${guideProse} mt-4 font-semibold`}>
+          {landing.workedExamples.close}
+        </p>
+      </section>
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={landing.contractParts.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>
+          {landing.contractParts.heading}
+        </h2>
+        <p className={`${guideProse} mb-4`}>{landing.contractParts.intro}</p>
+        <ol className={`${guideProse} list-decimal space-y-2 ${guideListIndent}`}>
+          {landing.contractParts.parts.map((part) => (
+            <li key={part.term}>
+              <span className="font-semibold text-foreground">{part.term}.</span>{" "}
+              {part.text}
+            </li>
+          ))}
+        </ol>
+        <p className={`${guideProse} mt-4`}>{landing.contractParts.order}</p>
+        <p className={`${guideProse} mt-3`}>{landing.contractParts.close}</p>
+      </section>
 
       <section
         className="mt-10 md:mt-12 scroll-mt-24"

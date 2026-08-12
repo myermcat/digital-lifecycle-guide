@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { EditorialNote } from "@/components/EditorialNote";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
+import { RouteTimingTable } from "@/components/RouteTimingTable";
 import {
   renderLinkedProse,
   renderThreadSections,
@@ -129,6 +130,8 @@ export function WhatYouAreBuyingBlock({
       <p className={`${guideProse} mt-6`}>
         {renderLinkedProse(takeaway)}
       </p>
+
+      <RouteTimingTable />
 
       <EditorialNote className="mt-5" label="Note">
         <p>{renderLinkedProse(closingNote)}</p>

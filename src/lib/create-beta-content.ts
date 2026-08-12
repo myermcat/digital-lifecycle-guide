@@ -530,8 +530,13 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "If a supplier will hold or process the records, this has to be settled before the contract is signed, not after, because the retention and disposition requirements belong in it. Where the signature falls at the start of Beta, that makes this one of the first things Beta does. Where the contract was signed earlier, it belongs in the amendment.",
-        bold: [{ phrase: "settled before the contract is signed" }],
+          "If a supplier will hold or process the records, settle it before the contract is signed, wherever the signature falls for your route, because the retention and disposition requirements belong in it. For most routes that means doing this early in Beta; for the ones that signed as Alpha opened, it should already be done.",
+        bold: [{ phrase: "settle it before the contract is signed" }],
+      },
+      {
+        text:
+          "If the authorization simply is not there yet and the request is sitting with Library and Archives Canada, that is a normal position to be in. Say so in the contract, and add the specifics by amendment when the answer arrives. What causes trouble is signing as though the question had been asked when nobody has asked it.",
+        bold: [{ phrase: "that is a normal position to be in" }],
       },
       {
         text:
