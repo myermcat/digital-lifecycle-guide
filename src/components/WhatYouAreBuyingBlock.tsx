@@ -38,6 +38,7 @@ export type ChoosingWhatToBuyContent = {
   };
   takeaway: ThreadLinkedProse;
   closingNote: ThreadLinkedProse;
+  closingNoteSecond?: ThreadLinkedProse;
 };
 
 const outlinePillClassName =
@@ -79,6 +80,7 @@ export function WhatYouAreBuyingBlock({
   combiningRoutes,
   takeaway,
   closingNote,
+  closingNoteSecond,
 }: ChoosingWhatToBuyContent) {
   return (
     <section className="mt-10 md:mt-12 scroll-mt-24" id="choosing-what-to-buy">
@@ -130,6 +132,9 @@ export function WhatYouAreBuyingBlock({
 
       <EditorialNote className="mt-5" label="Note">
         <p>{renderLinkedProse(closingNote)}</p>
+        {closingNoteSecond ? (
+          <p className="mt-2">{renderLinkedProse(closingNoteSecond)}</p>
+        ) : null}
       </EditorialNote>
     </section>
   );

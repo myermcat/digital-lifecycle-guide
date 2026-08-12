@@ -141,7 +141,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
   {
     id: "throwaway-prototypes",
     icon: PencilRuler,
-    title: "Build throwaway prototypes, and try more than one approach.",
+    title: "Make cheap, throwaway things, and try more than one approach.",
     headerVisual: LIFECYCLE_VISUALS.alphaPrototypeLadder,
     sections: [
       {
@@ -702,7 +702,8 @@ export const ALPHA_FINISH = {
           bold: [{ phrase: "The competition runs inside Alpha." }],
         },
         {
-          text: "When the contract is signed depends on the route, and the two common answers sit on either side of this boundary.",
+          text: "The rule underneath it: the competition runs in the sub-phase before the signature. So where the signature falls tells you where the competition ran, and the two common answers sit on either side of this boundary.",
+          bold: [{ phrase: "the competition runs in the sub-phase before the signature" }],
         },
         {
           text: "Buying a finished solution: signature waits for the start of Beta. That is deliberate. Alpha can still end in stop, or in back to Discovery, and a contract signed before that decision commits money to a build that might not happen.",

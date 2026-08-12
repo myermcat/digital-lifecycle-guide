@@ -111,7 +111,7 @@ export const DISCOVERY_PILLAR = {
     routes: {
       text: "Some of the routes are Team, Solution, Finished Product, and In-house or Reuse; there are others, and a department can be right to take one of them. Nothing is bought in Discovery. Only the Team route is even prepared this early, because the team is what does Alpha: run the competition during Discovery, and award once the decision is to continue, so the team is in place on Alpha's first day.",
       internalLinks: [
-        { phrase: "four buying routes", to: "/thread/procurement" },
+        { phrase: "Some of the routes", to: "/thread/procurement" },
         { phrase: "Alpha", to: "/create-alpha" },
       ],
     } satisfies ThreadLinkedProse,

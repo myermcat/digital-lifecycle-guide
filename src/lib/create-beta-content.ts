@@ -94,12 +94,12 @@ export const BETA_ON_RAMP = {
       bold: [{ phrase: "A tested idea from Alpha," }],
     },
     {
-      text: "The route settled, with the reasoning written down: reuse, buy, or build, and which way of buying.",
-      bold: [{ phrase: "The route settled, with the reasoning written down" }],
+      text: "The reasoning behind the route written down, since the route itself was chosen back in Discovery and the record of why is what an auditor, a successor, or a review board will ask for.",
+      bold: [{ phrase: "The reasoning behind the route written down" }],
     },
     {
-      text: "The competition finished, if there was one. It ran through Alpha. Whether the contract is signed as Beta opens, or was signed earlier and now gets amended, depends on the route, and Whether anything gets signed here below sets out which is which.",
-      bold: [{ phrase: "The competition finished, if there was one." }],
+      text: "Any competition finished. Where it ran depends on the route, and so does whether Beta opens with a signature or with an amendment to a contract you already hold. Whether anything gets signed here, below, sets out which is which.",
+      bold: [{ phrase: "Any competition finished." }],
     },
     {
       text: "Funding and approval that cover the build as well as the research, and can fit within the department's existing operating budget.",
@@ -186,22 +186,23 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     triggerNote: "Some routes sign now. Others signed earlier, or never.",
     sections: [
       {
-        text: "The competition itself ran through Alpha in every route that has one. What differs is when the department puts its name to something.",
+        text: "The rule underneath all of this is simple: the competition runs in the sub-phase before the signature. So where the signature falls tells you where the competition ran.",
+        bold: [{ phrase: "the competition runs in the sub-phase before the signature" }],
       },
       {
         type: "unorderedList",
         items: [
           {
-            text: "Buying a Solution, or a Finished Product. The contract is signed now, before any building or configuring begins.",
+            text: "Buying a Solution, or a Finished Product. Competition through Alpha, signature now, before any building or configuring begins.",
             bold: [{ phrase: "Buying a Solution, or a Finished Product." }],
             internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
           },
           {
-            text: "The multi-supplier model PSPC sets out. The contract was signed as Alpha opened, because the prototypes were built under it. What happens at this boundary is an amendment exercising the option to build, not a fresh signature.",
+            text: "The multi-supplier model PSPC sets out. Competition through Discovery, signature as Alpha opened, because the prototypes are built under that contract. What happens at this boundary is an amendment exercising the option to build, not a fresh signature.",
             bold: [{ phrase: "The multi-supplier model PSPC sets out." }],
           },
           {
-            text: "Buying a Team. Also signed as Alpha opened, since the team is what does Alpha.",
+            text: "Buying a Team. Competition through Discovery, signature as Alpha opened, since the team is what does Alpha.",
             bold: [{ phrase: "Buying a Team." }],
           },
         ],
@@ -219,7 +220,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Procurement sets out the four routes and how each one runs.",
+        text: "Procurement sets out the routes and how each one runs.",
         internalLinks: [{ phrase: "Procurement", to: "/thread/procurement" }],
       },
     ],
@@ -525,11 +526,16 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     sections: [
       {
         text:
-          "Beta is the first moment the team knows exactly what information the service will hold, and the design and the contract are both still open enough to accommodate the answer. So this is where to decide what happens to those records at the end: which get kept, which transfer to Library and Archives Canada, and which are disposed of.",
+          "By the time Beta opens the team knows exactly what information the service will hold, which is what makes the question answerable. Decide here what happens to those records at the end: which get kept, which transfer to Library and Archives Canada, and which are disposed of.",
       },
       {
         text:
-          "Leaving it to Sunset is the common mistake, and it costs. If the records turn out to need an authorization that does not exist yet, obtaining one takes months, and by Sunset there are rarely months left. Deciding now also means the retention rules can be built into the system while it is being built, rather than reconstructed from it later.",
+          "If a supplier will hold or process the records, this has to be settled before the contract is signed, not after, because the retention and disposition requirements belong in it. Where the signature falls at the start of Beta, that makes this one of the first things Beta does. Where the contract was signed earlier, it belongs in the amendment.",
+        bold: [{ phrase: "settled before the contract is signed" }],
+      },
+      {
+        text:
+          "Leaving it to Sunset is the common mistake, and it costs. If the records turn out to need an authorization that does not exist yet, obtaining one takes months, and by Sunset there are rarely months left. Deciding now also means the retention rules get built into the system while it is being built, rather than reconstructed from it later.",
         bold: [{ phrase: "Leaving it to Sunset is the common mistake" }],
       },
       {

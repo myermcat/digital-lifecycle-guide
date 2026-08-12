@@ -376,7 +376,11 @@ export const PROCUREMENT_STRINGS = {
       ],
     } satisfies ThreadLinkedProse,
     closingNote: {
-      text: "The steps below run in all of these routes. In Buy a Team they run early, during Discovery. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender. Only in Build in-house or Reuse do most of them fall away, because there is no competition to run.",
+      text: "One rule fixes all of this in place: the competition runs in the sub-phase before the signature. Buy a Team and the PSPC multi-supplier model sign as Alpha opens, so their competitions run through Discovery. Buy a Solution and Buy a Finished Product sign as Beta opens, so theirs run through Alpha. Build in-house or Reuse signs nothing, and most of the steps below fall away.",
+      bold: [{ phrase: "the competition runs in the sub-phase before the signature" }],
+    },
+    closingNoteSecond: {
+      text: "Otherwise the steps below run in all of these routes. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender.",
     },
   } satisfies ChoosingWhatToBuyContent,
 
