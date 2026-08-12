@@ -235,7 +235,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "Both official languages, from the first screen." }],
       },
       {
-        text: "Retrofitting is where the cost arises. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research rather than checking the translation at the end.",
+        text: "Retrofitting is where the cost arises. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research.",
       },
       {
         text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract. A supplier who is not contractually bound to deliver French will bill for it later as a change. The requirement comes from the business owner; the contracting authority writes the clauses.",
@@ -437,7 +437,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     headerVisual: LIFECYCLE_VISUALS.serviceDashboard,
     sections: [
       {
-        text: "The service needs to be watchable from the day it goes live, so the dashboard is built here rather than after.",
+        text: "The service needs to be watchable from the day it goes live, so the dashboard is built here.",
       },
       {
         type: "unorderedList",

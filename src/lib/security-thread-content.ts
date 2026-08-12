@@ -338,6 +338,20 @@ export const SECURITY_THREAD = {
             text:
               "Recover brings the service and its data back after an incident, then closes the gap that let it happen. The lesson feeds back into Identify and Protect, so the same failure does not return. That is what makes the lifecycle a cycle rather than a line.",
           },
+          {
+            type: "subheading",
+            text: "Where the recovery numbers live",
+          },
+          {
+            text:
+              "Four numbers describe what recovery has to achieve: how long the service can be unavailable before real harm starts, what counts as good enough while it is down, how fast it should be back, and how much recent data can be lost. The service team works them out at the end of Alpha, because they change what gets built and what it costs to run.",
+            internalLinks: [{ phrase: "end of Alpha", to: "/create-alpha" }],
+          },
+          {
+            text:
+              "They do not stay with the team. There is one business continuity plan for the whole department, and no separate one for an individual service, so the impact judgement, the four numbers, and the list of what this service falls over with all go to the department's business continuity coordinator. What stays with the team is recovering this particular service, and the testing that proves the recovery works.",
+            bold: [{ phrase: "There is one business continuity plan for the whole department" }],
+          },
         ],
       },
     ] satisfies SecurityCloserLookBlock[],

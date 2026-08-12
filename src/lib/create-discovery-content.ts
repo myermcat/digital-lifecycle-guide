@@ -240,7 +240,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
           },
           {
             bold: "Soft constraints",
-            text: " that feel fixed but can be changed, such as an internal process that makes things worse. Work on these directly rather than around them.",
+            text: " that feel fixed but can be changed, such as an internal process that makes things worse. Work on these directly.",
           },
         ],
       },
@@ -387,7 +387,7 @@ export const DISCOVERY_FINISH = {
   } satisfies ThreadLinkedProse,
   blocks: [
     {
-      heading: "The goal set at the start has its answer",
+      heading: "The question has an answer",
       paragraphs: [
         {
           text: "Discovery named what it needed to find out, and that goal is now the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan turn up something that already exists and meets the need. The first three are under What to find out in Discovery above; the reuse scan is under Reuse, buy, or build.",
@@ -398,7 +398,7 @@ export const DISCOVERY_FINISH = {
       ],
     },
     {
-      heading: "The concept case is approved and sent",
+      heading: "The concept case is sent",
       onlyIf: "Only from $2.5 million",
       paragraphs: [
         {
@@ -410,7 +410,7 @@ export const DISCOVERY_FINISH = {
       ],
     },
     {
-      heading: "The competition for the Alpha team has run",
+      heading: "The Alpha team is ready",
       onlyIf: "Only if buying a team",
       paragraphs: [
         {

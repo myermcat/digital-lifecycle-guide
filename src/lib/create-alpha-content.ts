@@ -145,7 +145,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     headerVisual: LIFECYCLE_VISUALS.alphaPrototypeLadder,
     sections: [
       {
-        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
+        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem.",
       },
       {
         type: "subheading",
@@ -607,10 +607,9 @@ export const ALPHA_EXERCISE = {
   } satisfies ThreadLinkedProse,
   handoverHeading: "Then hand it over",
   ownershipNote: {
-    text: "There is one business continuity plan for the whole department, and there is not a second one for this service. So the numbers leave the team. What goes to the department's business continuity coordinator is the impact judgement, the four numbers, and the list of what this service falls over with. What stays with the team is recovering this particular service, and the testing that proves the recovery actually works.",
-    bold: [
-      { phrase: "There is one business continuity plan for the whole department" },
-    ],
+    text: "The numbers do not stay with the team once they are set. They go to the department's business continuity coordinator, because the department keeps one continuity plan covering everything it runs. Security explains what is handed over and what the team keeps.",
+    bold: [{ phrase: "The numbers do not stay with the team once they are set." }],
+    internalLinks: [{ phrase: "Security", to: "/thread/security" }],
   } satisfies ThreadLinkedProse,
   confusionNote: {
     text: "Doing the assessment is required for every service, at any size, with no threshold. Writing it up as a report is not. The guidance says a standalone report is neither recommended nor required, and there is nowhere to submit one, so nothing will chase you for it. What makes it real is the Authority to Operate at the end of Beta. The person who signs that is accepting the risk, and without the assessment there is nothing for them to accept.",

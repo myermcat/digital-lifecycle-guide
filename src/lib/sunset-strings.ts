@@ -178,7 +178,7 @@ export const SUNSET_STRINGS = {
         label: "Buy/build",
         title: "Buy or build: stand up the new solution.",
         leadIn: "Get and prepare the new solution, by buying it or building it.",
-        body: "If you buy, run the procurement process. If you build with a contracted team, stand up that team and do the development work. If you build in-house, stand up the department's own team. Either way, configure it to the requirements rather than to the old system's habits, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters. For a replacement, this is its Beta: the real solution is stood up and proven.",
+        body: "If you buy, run the procurement process. If you build with a contracted team, stand up that team and do the development work. If you build in-house, stand up the department's own team. Either way, configure it to the requirements from the Decide step, choose your migration approach (all at once, or phased with pilots), clean the data before you move it, and train people. Buying can run 12 to 24 months on the procurement alone, so starting early matters. For a replacement, this is its Beta: the real solution is stood up and proven.",
         replaceOnly: true,
         internalLinks: [{ phrase: "the procurement process", to: PROCUREMENT_LANDING_PATH }],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED

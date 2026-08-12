@@ -98,7 +98,7 @@ export const CREATE_PHASE = {
         heading: "1. Work out what is needed.",
         lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
         afterLead: {
-          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha, and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one rather than repeating it.",
+          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha, and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one.",
           bold: [
             { phrase: "A replacement still benefits from every sub-phase." },
             { phrase: "need now" },

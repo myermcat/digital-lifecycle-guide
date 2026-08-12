@@ -358,7 +358,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "A budget outline, not the full picture. This covers getting from here to launch.",
+              text: "A budget outline. This covers getting from here to launch.",
             },
           ],
         },
@@ -533,7 +533,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. A first pass runs against the design back in Alpha, while the design can still change, and a second runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package rather than a report of its own. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
+              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. A first pass runs against the design back in Alpha, while the design can still change, and a second runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
               bold: [
                 "Threat and Risk Assessment",
                 "It does not start here.",
