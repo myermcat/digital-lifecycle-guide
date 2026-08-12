@@ -173,7 +173,7 @@ export function SubphaseFinishSection({
       <OnRampChecklist
         embedded
         intro={
-          <p className={guideBodySubheading}>{renderLinkedProse(offRamp.intro)}</p>
+          <p>{renderLinkedProse(offRamp.intro)}</p>
         }
         items={offRamp.items.map(toChecklistItem)}
         group={

@@ -33,7 +33,7 @@ export const BETA_EXTRACT = {
     internalLinks: [{ phrase: "Create", to: "/create" }],
   } satisfies ThreadLinkedProse,
   workOutItems: [
-    "signs the contract for the build, if buying.",
+    "signs the contract for the build, or amends the one it already has, if buying.",
     "builds or configures the real thing, at production quality.",
     "proves it with real people, in a private beta and then a public beta.",
   ],
@@ -80,7 +80,7 @@ export const BETA_STAGES = {
     text: "If the service is replacing an existing one, keep the old service running until the new one is properly live. Beta is not the moment to switch it off. If the service is new, there is nothing to keep running, and this does not apply.",
   } satisfies ThreadLinkedProse,
   notLaunch: {
-    text: "Neither private beta nor public beta is a launch. Launch is when the service becomes the official one for everyone. If there was an older way of doing this, that is when it is retired, and the older way is whatever people were actually using before: a paper form, a phone line, an inbox, or an application that has been running for fifteen years. If the service is new, there is nothing to retire. Either way, launch is what ends Beta.",
+    text: "Neither private beta nor public beta is a launch. Launch is when the service becomes the official one for the people it serves. If there was an older way of doing this, that is when it is retired, and the older way is whatever people were actually using before: a paper form, a phone line, an inbox, or an application that has been running for fifteen years. If the service is new, there is nothing to retire. Either way, launch is what ends Beta.",
   } satisfies ThreadLinkedProse,
 };
 
@@ -94,12 +94,12 @@ export const BETA_ON_RAMP = {
       bold: [{ phrase: "A tested idea from Alpha," }],
     },
     {
-      text: "A decision on whether to reuse, buy, or build, and the reasoning written down.",
-      bold: [{ phrase: "A decision on whether to reuse, buy, or build," }],
+      text: "The route settled, with the reasoning written down: reuse, buy, or build, and which way of buying.",
+      bold: [{ phrase: "The route settled, with the reasoning written down" }],
     },
     {
-      text: "The competition finished and the contract ready to sign, if the department is buying a solution or a product. The competition ran through Alpha; signing the contract is Beta's first act, before any building. A department building in-house or reusing an existing platform has no contract to sign and skips this.",
-      bold: [{ phrase: "The competition finished and the contract ready to sign," }],
+      text: "The competition finished, if there was one. It ran through Alpha. Whether the contract is signed as Beta opens, or was signed earlier and now gets amended, depends on the route, and Whether anything gets signed here below sets out which is which.",
+      bold: [{ phrase: "The competition finished, if there was one." }],
     },
     {
       text: "Funding and approval that cover the build as well as the research, and can fit within the department's existing operating budget.",
@@ -182,30 +182,32 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
   {
     id: "when-contract-signed",
     icon: FileSignature,
-    title: "The contract, if there is one, is signed here, before any building.",
-    triggerNote: "What you are signing, and what has to be in it before you do.",
+    title: "Whether anything gets signed here depends on the route.",
+    triggerNote: "Some routes sign now. Others signed earlier, or never.",
     sections: [
       {
-        text: "Where the contract falls depends on the route. Under the multi-supplier model PSPC sets out, it was signed as Alpha opened, and what happens at this boundary is an amendment exercising the option to build.",
+        text: "The competition itself ran through Alpha in every route that has one. What differs is when the department puts its name to something.",
       },
       {
         type: "unorderedList",
         items: [
           {
-            text: "Buying a Solution. The competition ran through Alpha, and suppliers proposed how to solve the problem. The contract for the real build is signed now, before any building.",
-            bold: [{ phrase: "Buying a Solution." }],
+            text: "Buying a Solution, or a Finished Product. The contract is signed now, before any building or configuring begins.",
+            bold: [{ phrase: "Buying a Solution, or a Finished Product." }],
             internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
           },
           {
-            text: "Buying a Finished Product. The department evaluated real products against what Discovery and Alpha found. The contract is signed now, before configuration begins.",
-            bold: [{ phrase: "Buying a Finished Product." }],
+            text: "The multi-supplier model PSPC sets out. The contract was signed as Alpha opened, because the prototypes were built under it. What happens at this boundary is an amendment exercising the option to build, not a fresh signature.",
+            bold: [{ phrase: "The multi-supplier model PSPC sets out." }],
           },
           {
-            text: "Buying a Team, or building in-house. Nothing is signed in Beta. The Team contract was signed as Alpha opened, and an in-house build has no contract at all.",
-            bold: [{ phrase: "Buying a Team, or building in-house." }],
-            internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
+            text: "Buying a Team. Also signed as Alpha opened, since the team is what does Alpha.",
+            bold: [{ phrase: "Buying a Team." }],
           },
         ],
+      },
+      {
+        text: "A department building in-house, or reusing a platform it already runs, has nothing to sign at all.",
       },
       {
         text: "If a contract is signed here, this is the moment the department has leverage, because nothing has been committed yet. Everything in the pillar callout above is won at that signature, or it is not won at all.",
@@ -229,12 +231,20 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     triggerNote: "One complete journey, built for real, with every other feature left out.",
     sections: [
       {
-        text: "This is the first code, or the first configuration, meant to survive. Most existing Government of Canada services were bought, reused, or configured rather than written from scratch, and Beta is where that product is actually stood up.",
-        bold: [{ phrase: "existing" }],
+        type: "subheading",
+        text: "Smallest, and end to end",
       },
       {
-        text: "Build the simplest thing that meets the need, all the way through the journey. A service that works beautifully right up to the point where someone has to upload a document, and then cannot, has not helped that person at all.",
-        bold: [{ phrase: "simplest thing that meets the need, all the way through the journey" }],
+        text: "This is the first code, or the first configuration, meant to survive. Most existing Government of Canada services were bought, reused, or configured rather than written from scratch, and Beta is where that product is actually stood up.",
+        bold: [{ phrase: "the first code, or the first configuration, meant to survive" }],
+      },
+      {
+        text: "Smallest means the fewest features. End to end means the whole journey, from the first screen to whatever confirms the thing actually happened. Those pull in opposite directions, and end to end wins: a service that works beautifully right up to the point where someone has to upload a document, and then cannot, has not helped that person at all.",
+        bold: [{ phrase: "end to end wins" }],
+      },
+      {
+        text: "So cut features, not steps.",
+        bold: [{ phrase: "So cut features, not steps." }],
       },
       {
         type: "subheading",
@@ -442,8 +452,8 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         ],
       },
       {
-        text: "Proving and launching are separate moments. Launch is when the service becomes the official one for everyone, and where there was an older way, that is when it is retired. That is what ends Beta. A service that goes straight from prototype to everyone arrives without ever having been tested.",
-        bold: [{ phrase: "Proving is not launching." }, { phrase: "the official one for everyone" }],
+        text: "Proving and launching are separate moments. Launch is when the service becomes the official one for the people it serves, and where there was an older way, that is when it is retired. That is what ends Beta. A service that goes straight from prototype to everyone arrives without ever having been tested.",
+        bold: [{ phrase: "Proving and launching are separate moments." }],
       },
     ],
   },
@@ -515,7 +525,12 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
     sections: [
       {
         text:
-          "The service's design is settled here and the contract is being signed. This is also when the team knows what information the service will hold. The decision about what happens to it at the end, which records get kept, transferred to Library and Archives Canada, or disposed of, should be made now, not at Sunset. By Sunset, the lead time is often too short and the options are fewer.",
+          "Beta is the first moment the team knows exactly what information the service will hold, and the design and the contract are both still open enough to accommodate the answer. So this is where to decide what happens to those records at the end: which get kept, which transfer to Library and Archives Canada, and which are disposed of.",
+      },
+      {
+        text:
+          "Leaving it to Sunset is the common mistake, and it costs. If the records turn out to need an authorization that does not exist yet, obtaining one takes months, and by Sunset there are rarely months left. Deciding now also means the retention rules can be built into the system while it is being built, rather than reconstructed from it later.",
+        bold: [{ phrase: "Leaving it to Sunset is the common mistake" }],
       },
       {
         text:
@@ -550,7 +565,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "If the service is replacing an existing one, this conversation should start at Discovery of the replacement, when the decision to replace is made, not 12 to 18 months before the old service is switched off. Data stewardship covers deciding what happens to the data, in full.",
+          "Data stewardship covers deciding what happens to the data, in full.",
         internalLinks: [
           { phrase: "Discovery", to: "/create-discovery" },
           { phrase: "Data stewardship", to: "/thread/data-stewardship" },
@@ -693,7 +708,7 @@ export const BETA_FINISH = {
     {
       lead: "Forward to Stabilization,",
       rest: {
-        text: "when the service launches and becomes the official one for everyone. The work turns from building it to steadying it.",
+        text: "when the service launches and becomes the official one for the people it serves. The work turns from building it to steadying it.",
       },
       href: "/live-stabilization",
     },
