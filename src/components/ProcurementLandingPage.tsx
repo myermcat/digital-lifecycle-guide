@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { DescribingWhatYouBuy } from "@/components/DescribingWhatYouBuy";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
+import { GuideCallout } from "@/components/GuideCallout";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { GoodContractCallout } from "@/components/GoodContractCallout";
@@ -56,11 +57,54 @@ export function ProcurementLandingPage() {
 
       <WhatYouAreBuyingBlock {...landing.whatYouAreBuying} />
 
+      <GuideCallout
+        className="mt-10 md:mt-12"
+        label={landing.aiCaveat.label}
+        title={landing.aiCaveat.heading}
+      >
+        <div className="space-y-3">
+          <p className="font-semibold text-foreground">{landing.aiCaveat.lead}</p>
+          {landing.aiCaveat.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="font-semibold text-foreground">{landing.aiCaveat.close}</p>
+        </div>
+      </GuideCallout>
+
       <ProcurementJourneySection intro={landing.journeyIntro} steps={landing.journeySteps} />
 
       <GoodContractCallout />
 
       <DescribingWhatYouBuy />
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={landing.glossary.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>{landing.glossary.heading}</h2>
+        <p className={`${guideProse} mb-4`}>{landing.glossary.intro}</p>
+        <dl className="space-y-3">
+          {landing.glossary.terms.map((entry) => (
+            <div
+              key={entry.term}
+              className="rounded-md border border-border/70 bg-background/50 px-3.5 py-3"
+            >
+              <dt className="flex flex-wrap items-baseline gap-x-2">
+                <span className="font-semibold text-foreground">{entry.term}</span>
+                {"short" in entry && entry.short ? (
+                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                    {entry.short}
+                  </span>
+                ) : null}
+              </dt>
+              <dd className="mt-1 text-[0.9rem] leading-snug text-foreground/80">
+                {entry.text}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p className={`${guideProse} mt-4`}>{landing.glossary.close}</p>
+      </section>
 
       <TraditionalAgileComparison
         rows={landing.comparisonRows}

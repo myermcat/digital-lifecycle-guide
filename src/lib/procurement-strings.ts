@@ -380,6 +380,82 @@ export const PROCUREMENT_STRINGS = {
     },
   } satisfies ChoosingWhatToBuyContent,
 
+  aiCaveat: {
+    id: "what-if-we-just-build-it",
+    label: "BEFORE YOU DECIDE NOT TO BUY",
+    heading: "What if we just build it ourselves?",
+    lead: "One person can build the thing now. That is real, and it is not the whole question.",
+    paragraphs: [
+      "A grants and contributions application was built inside government by one person working alone with artificial intelligence tools. It worked. Anyone who has watched a demonstration like that has had the same thought: why are we running a procurement at all?",
+      "It is a fair thought, and for a prototype it is often the right answer. The cheapest thing that answers the riskiest question is exactly what Alpha is for, and if that is an afternoon with an AI tool, spend the afternoon.",
+      "What changes is the moment the thing serves people outside the team. Then it needs somewhere to run and someone paying for that. It needs an authority to operate, which means a security assessment behind it. It needs a privacy assessment if it touches personal information. It has to meet the accessibility standard, and be tested with the people most likely to be excluded. It has to work in both official languages. Somebody has to answer the phone when it breaks. And somebody has to still understand it in five years, when the person who built it has moved on.",
+      "None of that is an argument against building it yourself. Departments do, successfully. It is an argument for knowing what you are taking on, because every item on that list is work whether a supplier does it or you do, and a build that skipped them is not finished, it is unfinished in ways that only show up later.",
+    ],
+    close:
+      "So the honest version of the question is not build or buy. It is: who is going to do these things, and have we counted them?",
+  },
+
+  glossary: {
+    id: "the-words",
+    heading: "The words you will meet",
+    intro:
+      "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the ones a business owner runs into, in the order they tend to appear.",
+    terms: [
+      {
+        term: "Request for Information",
+        short: "RFI",
+        text: "A question to the market with no contract at the end of it. You describe what you are trying to do and ask suppliers what is possible. Nobody is paid, and nobody is committed.",
+      },
+      {
+        term: "Review and Refine Requirements",
+        short: "RRR",
+        text: "The same idea, one step further on: you share your draft requirements and ask suppliers to tell you where they are unclear or unbuildable, before the competition opens.",
+      },
+      {
+        term: "Invitation to Qualify",
+        short: "ITQ",
+        text: "A first round that shortlists who may bid, on things like security clearance, capacity and relevant experience. It is not the competition itself.",
+      },
+      {
+        term: "Solicitation",
+        text: "The competition. It is the published package inviting suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold.",
+      },
+      {
+        term: "Request for Proposals",
+        short: "RFP",
+        text: "The document inside the solicitation that sets out the problem and asks suppliers to propose how they would solve it.",
+      },
+      {
+        term: "Bid",
+        text: "What one supplier sends back. A bid is a proposal, not an agreement.",
+      },
+      {
+        term: "Statement of work",
+        short: "SOW",
+        text: "The description of the work being bought, written from your requirements. It is an annex to the contract, which makes it the thing the supplier is actually held to.",
+      },
+      {
+        term: "Option",
+        text: "Work described and priced in the contract at signature, which Canada may or may not call on later. The build that follows a prototype is often an option, which is why exercising it needs no new competition.",
+      },
+      {
+        term: "Amendment",
+        text: "A formal change to a signed contract, agreed by both sides. Exercising an option is done by amendment. So is anything you failed to ask for at the start, which is why an amendment is usually priced by the only supplier in the room.",
+      },
+      {
+        term: "Task authorization",
+        short: "TA",
+        text: "A way of releasing work in pieces under a contract that is already signed. Each piece is authorized on its own, so the department can stop issuing them without terminating anything.",
+      },
+      {
+        term: "Off-ramp",
+        text: "Any point where Canada can decide the work goes no further: declining to exercise an option, stopping task authorizations, or holding work at a gate.",
+      },
+    ],
+    close:
+      "None of these describe a special agile process. They are the ordinary machinery of federal buying, and knowing the names is most of what it takes to follow a conversation about your own service.",
+  },
+
   journey: {
     intro:
       "You might not run all of it yourself, but you should recognise every step.",

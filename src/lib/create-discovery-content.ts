@@ -387,13 +387,13 @@ export const DISCOVERY_FINISH = {
   } satisfies ThreadLinkedProse,
   blocks: [
     {
-      heading: "The question has an answer",
+      heading: "The goal set at the start has its answer",
       paragraphs: [
         {
-          text: "Discovery named what it needed to find out, and that goal is now the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan turn up something that already exists and meets the need. The first three are under What to find out in Discovery above; the reuse scan is under Reuse, buy, or build.",
+          text: "The goal Discovery set is the yardstick. Check the findings against it: is the problem understood and costed, did the research reach the people who have it, are the hard constraints known, and did the reuse scan find something that already meets the need.",
         },
         {
-          text: "The business owner decides, and decides from those findings rather than from enthusiasm. Answer any question still open first, either by extending the research or by letting the gap join the case for stopping.",
+          text: "The business owner decides, from those findings rather than from enthusiasm. Answer anything still open first, by extending the research or by letting the gap join the case for stopping.",
         },
       ],
     },
@@ -402,22 +402,26 @@ export const DISCOVERY_FINISH = {
       onlyIf: "Only from $2.5 million",
       paragraphs: [
         {
-          text: "Send the concept case before the sub-phase closes. What it is, and the investment floor that makes it mandatory, are under Set a goal, and define the problem above; the deadline is the only new thing here. It is built from Discovery's evidence, and a thin Discovery produces a thin concept case.",
+          text: "Send it before the sub-phase closes. It is built from Discovery's evidence, so a thin Discovery produces a thin concept case. What it is, and the investment floor that makes it mandatory, are under Set a goal, and define the problem above.",
         },
         {
-          text: "The deadline comes from the queue: the departmental architecture review board submission (the department's own review of the design direction) and any Treasury Board submission (the formal request for the authority and money to build) both happen in Alpha, and the concept case precedes them. A concept case still unsent when Discovery ends holds both of them up.",
+          text: "The deadline comes from what queues behind it. The departmental architecture review board submission and any Treasury Board submission both happen in Alpha, and the concept case comes first, so one left unsent holds up both.",
         },
       ],
     },
     {
       heading: "The Alpha team is ready",
-      onlyIf: "Only if buying a team",
       paragraphs: [
         {
-          text: "Run the competition inside Discovery so that, at the close, the award waits on one thing, the decision to continue. Signing then puts the team in place for the first day of Alpha. The four buying routes, and why only the Team route is contracted this early, are under Reuse, buy, or build above.",
+          text: "Alpha needs people who can make things, and Discovery closes with them lined up. Where they come from is the department's choice: the Discovery team carrying on, colleagues borrowed from elsewhere, developers the department already employs, or a team brought in under contract. Any of those is fine. What matters is that somebody can start making things on Alpha's first day.",
+          bold: [{ phrase: "somebody can start making things on Alpha's first day" }],
         },
         {
-          text: "Award after the decision, since a contract awarded earlier commits money to an Alpha that may never run. If the competition cannot finish in time, The team you need above gives the accepted fallback: Discovery runs long, or the award arrives as Alpha starts.",
+          text: "The sketches and the AI-built prototypes need nobody technical, so a team without a developer can still open Alpha. A developer is needed by the time a coded prototype is, which is usually a few weeks in.",
+        },
+        {
+          text: "If the team is being bought, that takes the longest and it is the one to start early. Run the competition inside Discovery so the award waits on a single thing at the close: the decision to continue. Award only after that decision, since a contract signed earlier commits money to an Alpha that may never run. If the competition cannot finish in time, the accepted fallback is under The team you need above: Discovery runs long, or the award arrives as Alpha starts.",
+          bold: [{ phrase: "If the team is being bought, that takes the longest" }],
         },
       ],
     },

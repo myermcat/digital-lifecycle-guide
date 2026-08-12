@@ -145,7 +145,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     headerVisual: LIFECYCLE_VISUALS.alphaPrototypeLadder,
     sections: [
       {
-        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem.",
+        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
       },
       {
         type: "subheading",
