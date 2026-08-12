@@ -2,6 +2,7 @@ import createSubphasesVisual from "@/assets/create_subphases.svg?url";
 import liveSubphasesVisual from "@/assets/live_subphases.svg?url";
 import phasesAndSubphasesVisual from "@/assets/phases_and_subphases.svg?url";
 import serviceDashboardVisual from "@/assets/service_dashboard.svg?url";
+import bothOfficialLanguagesVisual from "@/assets/both_official_languages.svg?url";
 import alphaPrototypeLadderVisual from "@/assets/alpha_prototype_ladder.svg?url";
 import subphaseKeyAlphaVisual from "@/assets/subphase_key_alpha.svg?url";
 import subphaseKeyBetaVisual from "@/assets/subphase_key_beta.svg?url";
@@ -55,6 +56,10 @@ export const LIFECYCLE_VISUALS = {
   subphaseKeyMaturity: {
     src: subphaseKeyMaturityVisual,
     alt: "Keep the cycle turning: monitoring, patching, research, filings. Renew before it ends: funding and contracts, months of runway. Watch for the exit: the signals that point to Sunset.",
+  },
+  bothOfficialLanguages: {
+    src: bothOfficialLanguagesVisual,
+    alt: "The same screen in English and in French, side by side, marked equal: same day, same quality. The French labels and the French button are visibly longer than the English ones, and a note says French runs roughly a fifth longer, so a layout built around English strings has to give.",
   },
   serviceDashboard: {
     src: serviceDashboardVisual,

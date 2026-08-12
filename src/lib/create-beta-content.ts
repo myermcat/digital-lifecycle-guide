@@ -240,12 +240,12 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "the first code, or the first configuration, meant to survive" }],
       },
       {
-        text: "Smallest means the fewest features. End to end means the whole journey, from the first screen to whatever confirms the thing actually happened. Those pull in opposite directions, and end to end wins: a service that works beautifully right up to the point where someone has to upload a document, and then cannot, has not helped that person at all.",
-        bold: [{ phrase: "end to end wins" }],
+        text: "Smallest means the fewest features. End to end means the whole journey, from the first screen to whatever confirms the thing actually happened. Often those sit together comfortably. Where they do not, end to end wins: a service that works beautifully right up to the point where someone has to upload a document, and then cannot, has not helped that person at all.",
+        bold: [{ phrase: "Where they do not, end to end wins" }],
       },
       {
-        text: "So cut features, not steps.",
-        bold: [{ phrase: "So cut features, not steps." }],
+        text: "So when something has to go, drop a feature rather than a stage of the journey. Fewer things the service can do is survivable. A journey that stops halfway is not.",
+        bold: [{ phrase: "drop a feature rather than a stage of the journey" }],
       },
       {
         type: "subheading",
@@ -256,10 +256,15 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "equally and at the same time" }],
       },
       {
-        text: "Retrofitting is where the cost arises. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research.",
+        text: "Retrofitting is where the cost arises, and it is a design problem before it is a translation problem. French runs roughly a fifth longer than English, so buttons, labels, headings and navigation all need room the English version does not. Sometimes a component that works in English has to be laid out differently in French: a menu that fits on one line, a table column that has to wrap, a button whose label no longer sits inside it. Design for the longer language and the shorter one always fits.",
+        bold: [{ phrase: "a design problem before it is a translation problem" }],
       },
       {
-        text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract. A supplier who is not contractually bound to deliver French will bill for it later as a change. The requirement comes from the business owner; the contracting authority writes the clauses.",
+        text: "Build and test in both from the start, and include francophone users in the research.",
+      },
+      {
+        text: "Where a supplier builds, hosts, supports, or writes content for any part of the service, the obligation belongs in the contract, and it belongs there as one deliverable rather than two. French is not an addition to the service; it is the other half of the same service. A supplier who is not contractually bound to deliver it will price it later as a change, which is how a department ends up paying twice for one thing it was always required to have. The requirement comes from the business owner; the contracting authority writes the clauses.",
+        bold: [{ phrase: "it is the other half of the same service" }],
         internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
       },
       {
@@ -271,7 +276,27 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "How much of the country it reaches does not" }],
       },
       {
-        text: "The chain, for anyone who needs to show it: section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual, and section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them, communications and services made available through an automated system accessible to the public. A digital service is such a system. Reach does appear in the same regulation at section 11(a), but only for correspondence and telephone services.",
+        text: "The chain, for anyone who has to show their working:",
+      },
+      {
+        type: "orderedList",
+        items: [
+          {
+            bold: "Official Languages Act, section 24(1)(b).",
+            text: " Lets regulations name the circumstances that make an office bilingual.",
+          },
+          {
+            bold: "The Communications with and Services to the Public Regulations, section 11(b).",
+            text: " Names one of those circumstances: communications and services made available through an automated system accessible to the public.",
+          },
+          {
+            bold: "Your service is such a system.",
+            text: " That is the whole argument. Nothing in it turns on how many people use it or where they live.",
+          },
+        ],
+      },
+      {
+        text: "Reach does appear in the same regulation, at section 11(a), but only for correspondence and telephone services, which is the source of the common belief that a small digital service is exempt.",
       },
       {
         text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",

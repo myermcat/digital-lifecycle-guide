@@ -228,7 +228,21 @@ export function CreateBetaPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children: renderThreadSections(stage.sections),
+          children:
+            // The French and English screens have to arrive on the sentence
+            // that says equal quality, not at the top of the stage.
+            stage.id === "build-smallest-real-thing" ? (
+              <>
+                {renderThreadSections(stage.sections.slice(0, 6))}
+                <LifecycleVisual
+                  visual={LIFECYCLE_VISUALS.bothOfficialLanguages}
+                  className="mt-4"
+                />
+                {renderThreadSections(stage.sections.slice(6))}
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 
