@@ -4,7 +4,49 @@ import { ExternalLink } from "@/components/ExternalLink";
 import type { ExternalLinkKey } from "@/lib/external-links";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { PlaceholderGcNetworkLink } from "@/components/PlaceholderGcNetworkLink";
-import { guideLink } from "@/lib/guide-typography";
+import { guideInstrumentName, guideLink } from "@/lib/guide-typography";
+
+/**
+ * Titles of official instruments, wherever they appear in prose.
+ *
+ * A page can name half a dozen directives and standards in a paragraph, and at
+ * full body weight the titles crowd out the sentence explaining what each one
+ * does. They are set paler so the eye passes over them and lands on the point.
+ * Instrument titles that are also links get the same treatment in ExternalLink.
+ *
+ * Matched on the shapes a Government of Canada instrument title actually takes,
+ * so nothing has to be tagged by hand in the content files.
+ */
+const INSTRUMENT_IN_PROSE = new RegExp(
+  [
+    "\\b(?:Directive|Policy|Standard|Guideline|Guide|Direction|Mandatory Procedures)\\s+(?:on|for)\\s+(?:the\\s+)?[A-Z][\\w'’-]*(?:\\s+(?:and|of|for|on|the|to|in)\\s+[A-Z][\\w'’-]*|\\s+[A-Z][\\w'’-]*)*",
+    "\\b[A-Z][\\w'’-]*(?:\\s+[A-Z][\\w'’-]*)*\\s+(?:Act|Regulations)\\b",
+  ].join("|"),
+  "g",
+);
+
+function withMutedInstrumentNames(text: string, keyPrefix = "") {
+  if (!INSTRUMENT_IN_PROSE.test(text)) {
+    INSTRUMENT_IN_PROSE.lastIndex = 0;
+    return text;
+  }
+  INSTRUMENT_IN_PROSE.lastIndex = 0;
+
+  const out: ReactNode[] = [];
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = INSTRUMENT_IN_PROSE.exec(text)) !== null) {
+    if (match.index > last) out.push(text.slice(last, match.index));
+    out.push(
+      <span key={`${keyPrefix}-instrument-${match.index}`} className={guideInstrumentName}>
+        {match[0]}
+      </span>,
+    );
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return <>{out}</>;
+}
 
 export type { PlaceholderPhraseLink };
 
@@ -83,7 +125,7 @@ export function proseWithMixedLinks(
   ];
 
   if (links.length === 0) {
-    return text;
+    return withMutedInstrumentNames(text);
   }
 
   const sorted = [...links].sort((a, b) => text.indexOf(a.phrase) - text.indexOf(b.phrase));
@@ -97,7 +139,7 @@ export function proseWithMixedLinks(
     }
 
     if (start > cursor) {
-      parts.push(text.slice(cursor, start));
+      parts.push(withMutedInstrumentNames(text.slice(cursor, start), `gap-${start}`));
     }
 
     parts.push(
@@ -148,7 +190,7 @@ export function proseWithMixedLinks(
   }
 
   if (cursor < text.length) {
-    parts.push(text.slice(cursor));
+    parts.push(withMutedInstrumentNames(text.slice(cursor), "tail"));
   }
 
   return parts.length === 1 ? parts[0] : <>{parts}</>;

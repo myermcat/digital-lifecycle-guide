@@ -5,7 +5,7 @@ import {
   Code2,
   Compass,
   FileSignature,
-  Languages,
+  Columns2,
   Gauge,
   PencilRuler,
   Route,
@@ -283,7 +283,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Neither is quick, and neither can be started the week before launch.",
       },
       {
-        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. The deadline is earlier than most teams expect: private beta puts real people's real work through the service, which is production, so the authority has to be in hand before private beta opens, not before launch. Work back from that date and start it as the build starts.",
+        text: "The service cannot run in production until it is authorized to. This is the Security Assessment and Authorization, and it ends in an Authority to Operate. It comes from the Treasury Board Directive on Security Management and the controls in ITSG-33. The deadline is earlier than most teams expect. It is not launch, and it is not the end of Beta. Private beta already puts real people's real work through the service, holding real records, so at that point the service is running in production in the sense that matters here: it is live and the data in it is real, whatever else is still unfinished. So the authority has to be in hand before private beta opens, which is part-way through Beta. Work back from that date, and start the assessment as the build starts.",
         bold: [
           { phrase: "The service cannot run in production until it is authorized to." },
           { phrase: "the authority has to be in hand before private beta opens" },
@@ -346,7 +346,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
   },
   {
     id: "both-official-languages",
-    icon: Languages,
+    icon: Columns2,
     title: "Deliver it in English and French at the same time.",
     triggerNote: "Equal quality, both languages, from launch day. Not a translation step at the end.",
     sections: [

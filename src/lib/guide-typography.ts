@@ -66,6 +66,9 @@ export const guideLink =
  * actually does. Paler, with a lighter underline: still obviously a link, no
  * longer the loudest thing in the paragraph.
  */
+/** An instrument title mentioned in prose without being a link. */
+export const guideInstrumentName = "text-foreground/55";
+
 export const guideLinkInstrument =
   "font-normal text-foreground/55 underline decoration-foreground/20 underline-offset-4 hover:text-primary/70 hover:decoration-primary/40 transition-colors";
 

@@ -432,7 +432,7 @@ export const PROCUREMENT_STRINGS = {
     close:
       "Three cheap answers, and you can probably make the thing yourself. One expensive answer, and no budget will make a drawing answer it for you.",
     caution:
-      "Serving colleagues rather than the public changes which duties attach, and it changes nothing about how serious the service is. An internal service is outside the language duty that catches anything the public can reach, and outside the canada.ca publishing rules and the domain approval that goes with them. It still carries security, privacy, accessibility, and language obligations towards employees in designated bilingual regions. And the third question is the one that decides how much is at stake: Phoenix served public servants, and its answer to what happens when it fails was as bad as any service in this guide.",
+      "Serving colleagues rather than the public changes which duties attach. It does not switch them off, and it says nothing at all about how serious the service is. A booking tool for one branch is not published under canada.ca, so the publishing rules and the domain approval do not reach it, and the particular language rule that catches anything the public can reach is not the one that applies. Official languages still apply, through the rules covering language of work and services to employees, and so do security, privacy and accessibility. Phoenix is the case worth remembering: it served public servants, not the public, and its answer to what happens when it fails was as bad as any service in this guide.",
   },
 
   aiCaveat: {
