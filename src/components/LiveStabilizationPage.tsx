@@ -153,15 +153,7 @@ export function LiveStabilizationPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children:
-            stage.id === "watch-it-every-day" ? (
-              <>
-                {renderThreadSections(stage.sections)}
-                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
-              </>
-            ) : (
-              renderThreadSections(stage.sections)
-            ),
+          children: renderThreadSections(stage.sections),
         }))}
       />
 

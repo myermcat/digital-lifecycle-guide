@@ -38,7 +38,7 @@ import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
-import { guideBodySubheading, guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { guideBlockSubheading, guideBodySubheading, guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
 
 const BETA_SOURCES: SourceItem[] = [
   {
@@ -179,11 +179,19 @@ export function CreateBetaPage() {
       <section className="mt-10 md:mt-12 scroll-mt-24">
         <h2 className={`${guideSectionTitle} mb-4`}>{BETA_STAGES.title}</h2>
         <div className={`${guideProse} space-y-3`}>
+          <p className={guideBlockSubheading}>
+            {BETA_STAGES.whatChangedHeading}
+          </p>
           <p>{renderLinkedProse(BETA_STAGES.opening)}</p>
+          <p>{renderLinkedProse(BETA_STAGES.openingSecond)}</p>
+
+          <p className={guideBlockSubheading}>{BETA_STAGES.twoPartsHeading}</p>
           <p>{renderLinkedProse(BETA_STAGES.privateBeta)}</p>
           <p>{renderLinkedProse(BETA_STAGES.publicBeta)}</p>
-          <p>{renderLinkedProse(BETA_STAGES.keepOldService)}</p>
+
+          <p className={guideBlockSubheading}>{BETA_STAGES.notLaunchHeading}</p>
           <p>{renderLinkedProse(BETA_STAGES.notLaunch)}</p>
+          <p>{renderLinkedProse(BETA_STAGES.keepOldService)}</p>
         </div>
       </section>
 
@@ -220,15 +228,7 @@ export function CreateBetaPage() {
           headerContent: stage.headerVisual ? (
             <LifecycleVisual visual={stage.headerVisual} className="mt-0" />
           ) : undefined,
-          children:
-            stage.id === "build-dashboard" ? (
-              <>
-                {renderThreadSections(stage.sections)}
-                <LifecycleVisual visual={LIFECYCLE_VISUALS.serviceDashboard} className="mt-5" />
-              </>
-            ) : (
-              renderThreadSections(stage.sections)
-            ),
+          children: renderThreadSections(stage.sections),
         }))}
       />
 

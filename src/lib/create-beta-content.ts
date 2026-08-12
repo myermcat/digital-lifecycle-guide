@@ -53,14 +53,20 @@ export const BETA_EXTRACT_CLOSING: ThreadLinkedProse = {
 
 export const BETA_STAGES = {
   title: "Private Beta and Public Beta",
+  whatChangedHeading: "What changed since Alpha",
+  twoPartsHeading: "The two parts",
+  notLaunchHeading: "Neither one is a launch",
   opening: {
-    text: "There are two parts to Beta: private and public. Before either, be exact about what changed. People were trying things in Alpha too, so their arrival is not what moved. What moved is that the service is real, and what people do in it counts. Somebody's application exists afterwards. That is the line. It is why a prototype tested with five real users is still Alpha, and why the smallest version that works end to end belongs here.",
+    text: "What moved is that the service is real, and what people do in it counts. Somebody's application exists afterwards.",
     bold: [
       {
         phrase:
-          "What moved is that the service is real, and what people do in it counts.",
+          "the service is real, and what people do in it counts",
       },
     ],
+  } satisfies ThreadLinkedProse,
+  openingSecond: {
+    text: "People were trying things in Alpha too, so their arrival is not the change. That is why a prototype tested with five real users is still Alpha, and why the smallest version that works end to end belongs here.",
   } satisfies ThreadLinkedProse,
   privateBeta: {
     text: "Private beta. Beta starts private. A limited number of people are invited to use the real service, so the team can get feedback and improve it while the audience is still small enough to apologise to.",
@@ -231,8 +237,12 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         bold: [{ phrase: "simplest thing that meets the need, all the way through the journey" }],
       },
       {
-        text: "Both official languages, from the first screen. A public-facing digital service has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
-        bold: [{ phrase: "Both official languages, from the first screen." }],
+        type: "subheading",
+        text: "Both official languages, from the first screen",
+      },
+      {
+        text: "A public-facing digital service has to be offered and delivered in English and French, equally and at the same time. That covers the interface, the content, the notifications, the error messages, and the people answering the phone behind it. Equal quality is the test, so a French version that arrives a sprint later, or reads like a translation of an English idea, does not meet it.",
+        bold: [{ phrase: "equally and at the same time" }],
       },
       {
         text: "Retrofitting is where the cost arises. French text runs longer than English, so a layout designed around English strings breaks when the real content arrives. Build and test in both from the start, and include francophone users in the research.",
@@ -242,7 +252,15 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         internalLinks: [{ phrase: "contracting authority", to: "/thread/procurement" }],
       },
       {
-        text: "How the service is delivered is what triggers the duty. How much of the country it reaches does not. Section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual. Section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them: communications and services made available through an automated system accessible to the public. A digital service is such a system. So a service used in one region is caught on the same terms as a national one. Reach does appear elsewhere in the same regulation, at section 11(a), but only for correspondence and telephone services.",
+        type: "subheading",
+        text: "It applies however small your service is",
+      },
+      {
+        text: "How the service is delivered is what triggers the duty. How much of the country it reaches does not, so a service used in one region is caught on the same terms as a national one.",
+        bold: [{ phrase: "How much of the country it reaches does not" }],
+      },
+      {
+        text: "The chain, for anyone who needs to show it: section 24(1)(b) of the Official Languages Act lets regulations name the circumstances that make an office bilingual, and section 11(b) of the Official Languages (Communications with and Services to the Public) Regulations names one of them, communications and services made available through an automated system accessible to the public. A digital service is such a system. Reach does appear in the same regulation at section 11(a), but only for correspondence and telephone services.",
       },
       {
         text: "Once the service is bilingual, the Directive on Official Languages for Communications and Services sets how. Subsection 6.6.4.1 requires web content in both languages to be available at the same time and to be of equal quality, which is what rules out releasing English first and following with French. Subsections 6.2.1 and 6.2.2 cover the active offer, meaning the service says in both languages that it is available in both. Complaints go to the Commissioner of Official Languages.",
@@ -501,7 +519,24 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "Ask the department's information management (IM) office to confirm which Records Disposition Authorizations cover the records this service will hold. There are two kinds: Multi-Institution Disposition Authorizations (MIDAs) cover administrative records common across government; Institution-Specific Disposition Authorizations (ISDAs) cover records unique to a program. If no authorization covers the program records, grants decisions, assessments, case files, requesting one from Library and Archives Canada takes time. Starting now leaves options open.",
+          "Ask the department's information management office to confirm which Records Disposition Authorizations cover what this service will hold. There are two kinds:",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Multi-Institution Disposition Authorizations (MIDAs) cover administrative records common across government.",
+            bold: [{ phrase: "Multi-Institution Disposition Authorizations (MIDAs)" }],
+          },
+          {
+            text: "Institution-Specific Disposition Authorizations (ISDAs) cover records unique to a programme, such as grants decisions, assessments and case files.",
+            bold: [{ phrase: "Institution-Specific Disposition Authorizations (ISDAs)" }],
+          },
+        ],
+      },
+      {
+        text:
+          "If no authorization covers the programme records, requesting one from Library and Archives Canada takes time, which is the reason to ask now.",
       },
       {
         text: "Two things to do in Beta:",
@@ -678,12 +713,8 @@ export const BETA_FINISH = {
   ],
   offRamp: {
     intro: {
-      text: "Off-ramp to-do. Alpha's list was about the build: everything on it was something a supplier could be asked to deliver. This one is about the department, and by that the guide means commitments no supplier can make on the department's behalf: people with the service in their objectives, budget that renews without anyone arguing for it again, and authorizations that belong to a named official. Each item has to be true on the day the service stops being a project and becomes someone's long-term responsibility. Before you move to Stabilization, have ready:",
-      bold: [
-        { phrase: "Off-ramp to-do." },
-        { phrase: "This one is about the department." },
-        { phrase: "Stabilization" },
-      ],
+      text: "Off-ramp to-do. Alpha's list was about the build, and everything on it was something a supplier could be asked to deliver. This one is about the department: people with the service in their objectives, budget that renews without anyone arguing for it again, and authorizations that belong to a named official. No supplier can make those commitments for you, and each has to be true on the day the service stops being a project and becomes somebody's long-term responsibility. Before moving to Stabilization, have ready:",
+      bold: [{ phrase: "This one is about the department" }],
       internalLinks: [{ phrase: "Stabilization", to: "/live-stabilization" }],
     } satisfies ThreadLinkedProse,
     items: [
