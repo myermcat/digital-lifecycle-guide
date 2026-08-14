@@ -19,10 +19,10 @@ const ROWS = [
     why: "The team is what does Alpha, so it has to be there on the first day.",
   },
   {
-    route: "The PSPC multi-supplier model",
+    route: "The agile procurement model",
     competition: "Discovery",
     signature: "As Alpha opens",
-    why: "The prototypes are built under the contract, so the contract comes first. The build is an option inside it, exercised by amendment.",
+    why: "This is the shape PSPC sets out. The prototypes are built under contract, so the contracts come first, with several suppliers signed at once. The build is an option inside the winner's contract, exercised by amendment.",
   },
   {
     route: "Buy a Solution",

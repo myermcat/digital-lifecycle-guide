@@ -65,35 +65,6 @@ export function ProcurementLandingPage() {
 
       <WhatYouAreBuyingBlock {...landing.whatYouAreBuying} />
 
-      <GuideCallout
-        className="mt-10 md:mt-12"
-        label={landing.aiCaveat.label}
-        title={landing.aiCaveat.heading}
-      >
-        <div className="space-y-3">
-          <p className="font-semibold text-foreground">{landing.aiCaveat.lead}</p>
-          {landing.aiCaveat.blocks.map((block, index) =>
-            block.type === "subheading" ? (
-              <p key={`ai-${index}`} className={guideBlockSubheading}>
-                {block.text}
-              </p>
-            ) : block.type === "ul" ? (
-              <ul
-                key={`ai-${index}`}
-                className={`list-disc space-y-1.5 ${guideListIndent}`}
-              >
-                {block.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : (
-              <p key={`ai-${index}`}>{block.text}</p>
-            ),
-          )}
-          <p className="font-semibold text-foreground">{landing.aiCaveat.close}</p>
-        </div>
-      </GuideCallout>
-
       <ProcurementJourneySection intro={landing.journeyIntro} steps={landing.journeySteps} />
 
       <GoodContractCallout />

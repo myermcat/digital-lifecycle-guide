@@ -11,11 +11,6 @@ import {
 } from "@/lib/placeholder-sources";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 
-export type AiCaveatBlock =
-  | { type: "p"; text: string }
-  | { type: "subheading"; text: string }
-  | { type: "ul"; items: readonly string[] };
-
 export type ProcurementJourneyBodyBlock =
   | {
       type: "p";
@@ -131,15 +126,15 @@ export const PROCUREMENT_STRINGS = {
     heading: "Choosing what to buy",
     lead: [
       {
-        text: '"Procurement" sounds like one thing. It is a choice between routes, and the department makes that choice back in Discovery, long before the money arrives. The route decides when the contract is signed, who does the prototyping, and how much leverage the department has at signature.',
+        text: "Buying is not one thing. There are several routes, and the department picks one back in Discovery, long before any money moves. Which route it picks decides when the contract is signed, who builds the prototypes, and how much room the department still has to change its mind at that point.",
         internalLinks: [{ phrase: "Discovery", to: "/create-discovery" }],
       },
       {
-        text: "Below are some of the routes, not all of them. They are the ones a digital service most often takes, and a department can end up somewhere else entirely and be right to.",
-        bold: [{ phrase: "some of the routes, not all of them" }],
+        text: "Below are some of the routes. They are the ones a digital service most often takes, and a department can end up somewhere else entirely and be right to.",
+        bold: [{ phrase: "some of the routes" }],
       },
       {
-        text: "Three words get used as if they meant the same thing, and the rest of this page is hard to follow if they blur together:",
+        text: "Three words come up all through this page, and they are easy to mix up. It helps to have them straight first:",
       },
     ] satisfies ThreadLinkedProse[],
     threeWords: {
@@ -147,13 +142,13 @@ export const PROCUREMENT_STRINGS = {
       rows: [
         {
           term: "Solicitation",
-          when: "Before anyone is chosen",
-          text: "The competition, not the contract. It is the published package inviting suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold.",
+          when: "Opens the competition",
+          text: "The package of documents Canada publishes to invite suppliers to compete. It holds the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will carry. People often say \"the solicitation\" when they mean the competition itself.",
         },
         {
           term: "Bid",
-          when: "In answer to the solicitation",
-          text: "What one supplier sends back. A proposal, not an agreement, and most bids lose.",
+          when: "While the competition is open",
+          text: "A proposal a supplier sends back in answer to the solicitation.",
         },
         {
           term: "Contract",
@@ -309,7 +304,7 @@ export const PROCUREMENT_STRINGS = {
           },
         ],
         contractSigned: {
-          text: "depends on which shape you run. In the familiar shape the department prototypes first and signs as Beta opens, once it can say what it wants. In the PSPC multi-supplier shape above, the contracts are signed a sub-phase earlier, as Alpha opens, because the prototypes are built under them, and the build is an option inside the winner's contract.",
+          text: "depends on which shape you run. In the familiar shape the department prototypes first and signs as Beta opens, once it can say what it wants. In the agile procurement shape above, the one PSPC sets out, the contracts are signed a sub-phase earlier, as Alpha opens, because the prototypes are built under them, and the build is an option inside the winner's contract.",
           internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
         },
       },
@@ -383,7 +378,7 @@ export const PROCUREMENT_STRINGS = {
       intro: "",
       paragraphs: [
         {
-          lead: "The commonest shape is a Finished Product plus a Team.",
+          lead: "A common shape is a Finished Product plus a Team.",
           pillPhrase: "Finished Product plus a Team",
           body: {
             text: "The department buys the product for the core of the service, and buys a team to configure it, integrate it with what the department already runs, and keep it working. Reuse behaves the same way: a Government of Canada platform costs nothing to reuse and still needs someone to configure it.",
@@ -407,8 +402,10 @@ export const PROCUREMENT_STRINGS = {
       ],
     } satisfies ThreadLinkedProse,
     closingNote: {
-      text: "One rule fixes all of this in place: the competition runs in the sub-phase before the signature. That is why the two columns in the table move together, and why choosing a route in Discovery decides when the department is committed. Build in-house or Reuse signs no build contract at all, and most of the steps below fall away.",
-      bold: [{ phrase: "the competition runs in the sub-phase before the signature" }],
+      heading: "The competition runs in the sub-phase before the signature",
+      body: {
+        text: "That is why the two columns in the table move together, one sub-phase apart. It also means the route a department chooses in Discovery decides when it is committed, so the choice is worth making deliberately. It is easy to inherit whatever was done last time without noticing that a decision was made. Build in-house or Reuse signs no build contract at all, and most of the steps below fall away.",
+      },
     },
     closingNoteSecond: {
       text: "Otherwise the steps below run in all of these routes. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender.",
@@ -471,53 +468,6 @@ export const PROCUREMENT_STRINGS = {
         "Phoenix is the case worth remembering. It served public servants, not the public, and its answer to what happens when it fails was as bad as any service in this guide.",
       ],
     },
-  },
-
-  aiCaveat: {
-    id: "what-if-we-just-build-it",
-    label: "BEFORE YOU DECIDE NOT TO BUY",
-    heading: "What if we just build it ourselves?",
-    lead: "Building it yourself is a real option now. The cost is not in the building.",
-    blocks: ([
-      {
-        type: "p",
-        text: "A grants and contributions application was built inside government by one person working alone with artificial intelligence tools. It worked. Anyone who has watched a demonstration like that has had the same thought: why are we running a procurement at all?",
-      },
-      {
-        type: "p",
-        text: "For a prototype, that thought is usually right. The cheapest thing that answers the riskiest question is exactly what Alpha is for, and if that is an afternoon with an AI tool, spend the afternoon.",
-      },
-      {
-        type: "subheading",
-        text: "What changes when it serves people outside the team",
-      },
-      {
-        type: "p",
-        text: "At that point the same list arrives that arrives for anything else the government runs:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Somewhere to run, and a budget line paying for it.",
-          "An authority to operate, which means a security assessment behind it.",
-          "A privacy assessment, if it touches personal information.",
-          "The accessibility standard met, and tested with the people most likely to be shut out.",
-          "Both official languages, at the same time and the same quality.",
-          "Somebody who answers the phone when it breaks.",
-          "Somebody who still understands it in five years, when whoever built it has moved on.",
-        ],
-      },
-      {
-        type: "subheading",
-        text: "Why this is not an argument against building it yourself",
-      },
-      {
-        type: "p",
-        text: "Departments build their own services and do it well. The point is that every line on that list is work whether a supplier does it or you do. A build that skipped them is not finished early; it is unfinished in ways that surface later, usually when somebody outside the team is depending on it.",
-      },
-    ] satisfies AiCaveatBlock[]) as readonly AiCaveatBlock[],
-    close:
-      "So the question is not build or buy. It is who is going to do these things, and whether anyone has counted them.",
   },
 
   glossary: {
@@ -716,7 +666,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "There are two ways to shape a buy: the traditional way and the agile way. For digital, agile is the recommended default. Break a large buy into smaller, tightly scoped pieces that build on each other, using:",
+            text: "The other decision made here is the shape of the buy: one large contract, or several smaller pieces that build on each other. For digital work the smaller pieces are the recommended default, and there are two well-worn ways to do it:",
           },
           {
             type: "ul",
@@ -727,7 +677,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "The case study just below shows the same programme bought two ways.",
+            text: "Traditional and agile sets out what changes between the two shapes, and the case study just below shows the same programme bought each way.",
           },
           {
             type: "p",
@@ -736,6 +686,7 @@ export const PROCUREMENT_STRINGS = {
         ],
         anchorLinks: [
           { phrase: "Choosing what to buy", hash: "choosing-what-to-buy" },
+          { phrase: "Traditional and agile", hash: "traditional-vs-agile" },
           { phrase: "case study just below", hash: "case-study" },
         ],
       },

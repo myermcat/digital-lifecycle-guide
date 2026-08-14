@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { EditorialNote } from "@/components/EditorialNote";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
 import { RouteTimingTable } from "@/components/RouteTimingTable";
 import {
@@ -46,7 +45,7 @@ export type ChoosingWhatToBuyContent = {
     paragraphs: readonly CombiningRoutesParagraph[];
   };
   takeaway: ThreadLinkedProse;
-  closingNote: ThreadLinkedProse;
+  closingNote: { heading: string; body: ThreadLinkedProse };
   closingNoteSecond?: ThreadLinkedProse;
 };
 
@@ -117,7 +116,7 @@ export function WhatYouAreBuyingBlock({
 
       <img
         src={whereContractSignedVisual}
-        alt="Where the contract is signed across Discovery, Alpha and Beta. Team and the PSPC multi-supplier model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. A note says building in-house or reusing signs no build contract at all."
+        alt="Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. A note says building in-house or reusing signs no build contract at all."
         className="mx-auto mb-3 mt-1 w-full max-w-3xl"
       />
 
@@ -155,12 +154,13 @@ export function WhatYouAreBuyingBlock({
 
       <RouteTimingTable />
 
-      <EditorialNote className="mt-5" label="Note">
-        <p>{renderLinkedProse(closingNote)}</p>
+      <div className={`${guideProse} mt-8`} id="competition-before-signature">
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{closingNote.heading}</h3>
+        <p>{renderLinkedProse(closingNote.body)}</p>
         {closingNoteSecond ? (
           <p className="mt-2">{renderLinkedProse(closingNoteSecond)}</p>
         ) : null}
-      </EditorialNote>
+      </div>
     </section>
   );
 }
