@@ -31,11 +31,11 @@ import {
 import { PillarCallout } from "@/components/PillarCallout";
 import {
   guideArrowList,
-  guideBlockSubheading,
   guideCalloutLabel,
   guideListIndent,
   guideProse,
   guideProseSpace,
+  guideSubsectionTitle,
   guideLink,
   guideSectionTitle,
 } from "@/lib/guide-typography";
@@ -198,7 +198,7 @@ function Index() {
             any size.
           </p>
 
-          <p className={guideBlockSubheading}>What this guide is</p>
+          <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>What this guide is</h3>
           <p>
             It describes{" "}
             <strong className="font-semibold text-foreground">
@@ -265,9 +265,9 @@ function Index() {
 
         <section className={`${guideProseSpace} mt-8 md:mt-10`}>
 
-          <p className={guideBlockSubheading}>
+          <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>
             One thing that catches people whichever route they take
-          </p>
+          </h3>
           <p>
             If the new service is replacing something, keep the old one running until the
             new one has carried real volume for a while and held. It is tempting to switch
@@ -286,7 +286,7 @@ function Index() {
             much of it a department pays for both.
           </p>
 
-          <p className={guideBlockSubheading}>The one thing worth holding on to</p>
+          <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>The one thing worth holding on to</h3>
           <p>
             <strong className="font-semibold text-foreground">It stays your service.</strong>{" "}
             You can hand the building to a supplier, and much of the time that is the sensible
@@ -690,7 +690,7 @@ function Index() {
             later, here is what would have been useful to know at the start.
           </p>
 
-          <p className={guideBlockSubheading}>Why we could not simply follow the UK and Australia</p>
+          <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>Why we could not simply follow the UK and Australia</h3>
           <p className={guideProse}>
             The two guides we looked at most were the{" "}
             <ExternalLink linkKey="uk-service-manual">
@@ -741,7 +741,7 @@ function Index() {
             guide describes each sub-phase more loosely than the guides it learned from.
           </p>
 
-          <p className={guideBlockSubheading}>And the part that is not really about the guide</p>
+          <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>And the part that is not really about the guide</h3>
           <p className={guideProse}>
             No guide can tell a department how its particular service will go. What it can
             do is leave the reader harder to surprise. If the next version of this does one

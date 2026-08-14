@@ -104,6 +104,17 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
           </ExternalLink>
         </>
       ) : null}
+      {row.moreLinks?.map((linkKey) => (
+        <span key={linkKey}>
+          {" "}
+          <ExternalLink
+            linkKey={linkKey}
+            className="text-[0.7rem] underline underline-offset-2 text-muted-foreground/80 hover:text-foreground"
+          >
+            also
+          </ExternalLink>
+        </span>
+      ))}
     </>
   );
 }

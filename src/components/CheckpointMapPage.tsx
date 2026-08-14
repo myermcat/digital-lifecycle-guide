@@ -16,7 +16,6 @@ import {
   CHECKPOINT_MAP_COLKEY,
   CHECKPOINT_MAP_EYEBROW,
   CHECKPOINT_MAP_FOOTER_DISCLAIMER,
-  CHECKPOINT_MAP_CHECKPOINTS,
   CHECKPOINT_MAP_LAUNCH,
   CHECKPOINT_MAP_ANNEX_ONE,
   CHECKPOINT_MAP_ANNEX_TWO,
@@ -24,17 +23,18 @@ import {
   CHECKPOINT_MAP_PHASES,
   CHECKPOINT_MAP_SUBTITLE,
   CHECKPOINT_MAP_TITLE,
-  CHECKPOINT_MAP_VARY_NOTE,
   CHECKPOINT_MAP_WHAT_TABLE,
   CHECKPOINT_MAP_WHO,
   CHECKPOINT_MAP_WHO_TITLE,
-  CHECKPOINT_MAP_CHECKPOINTS_TITLE,
-  CHECKPOINT_MAP_CHECKPOINTS_CAPTION,
+  CHECKPOINT_MAP_TERMS,
+  CHECKPOINT_MAP_TERMS_TITLE,
+  CHECKPOINT_MAP_TERMS_CAPTION,
   CHECKPOINT_MAP_WHO_CAPTION,
   CHECKPOINT_MAP_WHY_CREATE,
   CHECKPOINT_MAP_WHY_GCS,
   CHECKPOINT_MAP_STATUS_BANNER,
-  CHECKPOINT_MAP_WORKING_NOTE,
+  CHECKPOINT_MAP_HOW_TO_USE,
+  CHECKPOINT_MAP_VARIES,
   type CheckpointMapBodyPart,
   type CheckpointMapCell,
   type CheckpointMapFork,
@@ -450,14 +450,6 @@ function DefinitionBlock({
 export function CheckpointMapPage() {
   return (
     <GuideLayout>
-      <EditorialNote className="mb-6 md:mb-8">
-        <p>
-          <strong className="font-semibold text-foreground">{CHECKPOINT_MAP_WORKING_NOTE.lead}</strong>{" "}
-          {CHECKPOINT_MAP_WORKING_NOTE.body}
-        </p>
-        <p className="mt-2 italic text-muted-foreground">{CHECKPOINT_MAP_WORKING_NOTE.disclaimer}</p>
-      </EditorialNote>
-
       <header className="mb-6 md:mb-8">
         <p className={guideCalloutLabel}>{CHECKPOINT_MAP_EYEBROW}</p>
         <h1 className={`${guidePageTitle} mt-2`}>{CHECKPOINT_MAP_TITLE}</h1>
@@ -466,8 +458,6 @@ export function CheckpointMapPage() {
           {boldPhrases(CHECKPOINT_MAP_SUBTITLE.text, CHECKPOINT_MAP_SUBTITLE.bold)}
         </p>
       </header>
-
-      <CheckpointMapTimeline />
 
       <section id="what-this-covers" className="mb-5 scroll-mt-24">
         <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHAT_TABLE.heading}</h3>
@@ -481,83 +471,33 @@ export function CheckpointMapPage() {
         <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_CREATE.body}</p>
       </section>
 
-      <DefinitionBlock
-        id="whoswho"
-        title={CHECKPOINT_MAP_WHO_TITLE}
-        cap={CHECKPOINT_MAP_WHO_CAPTION}
-        entries={CHECKPOINT_MAP_WHO}
-      />
-
-      <section
-        id="thecheckpoints"
-        className="mt-8 md:mt-10 scroll-mt-24 rounded-lg border border-border bg-[var(--phase-group)]/50 px-5 py-5 md:px-6 md:py-6"
-      >
-        <h2 className={`${guideSubsectionTitle} text-foreground`}>{CHECKPOINT_MAP_CHECKPOINTS_TITLE}</h2>
-        <p className={`${guideProseTight} mt-1 mb-1 text-muted-foreground`}>
-          {CHECKPOINT_MAP_CHECKPOINTS_CAPTION}
-        </p>
-        <Accordion
-          type="multiple"
-          defaultValue={CHECKPOINT_MAP_CHECKPOINTS.map((group) =>
-            group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-          )}
-          className="bg-transparent"
-        >
-          {CHECKPOINT_MAP_CHECKPOINTS.map((group) => {
-            const value = group.phaseLabel.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-            return (
-              <AccordionItem
-                key={group.phaseLabel}
-                value={value}
-                className="border-border bg-transparent shadow-none"
-              >
-                <AccordionTrigger
-                  className={cn(
-                    "gap-3 px-0 py-3.5 text-left hover:no-underline",
-                    "bg-transparent hover:bg-transparent data-[state=open]:bg-transparent",
-                    "[&>svg]:text-primary/70",
-                  )}
-                >
-                  <span className={guideCalloutLabel}>{group.phaseLabel}</span>
-                </AccordionTrigger>
-                <AccordionContent className="bg-transparent px-0 pb-4">
-                  {group.links.length ? (
-                    <div className="mb-3 flex flex-wrap gap-2">
-                      {group.links.map((link) => {
-                        const Icon = link.icon;
-                        return (
-                          <ExternalLink
-                            key={link.linkKey}
-                            linkKey={link.linkKey}
-                            className="inline-flex items-center gap-2 rounded-md border border-border bg-background/80 px-3 py-1.5 text-sm font-semibold no-underline hover:border-primary/40 hover:bg-muted/40"
-                          >
-                            <Icon
-                              className="size-[15px] shrink-0 opacity-80"
-                              strokeWidth={1.8}
-                              aria-hidden
-                            />
-                            {link.label}
-                          </ExternalLink>
-                        );
-                      })}
-                    </div>
-                  ) : null}
-                  <dl className="grid gap-x-4 gap-y-2.5 md:grid-cols-[minmax(12rem,14rem)_1fr]">
-                    {group.entries.map((entry) => (
-                      <div key={entry.term} className="contents">
-                        <dt className={`${guideProseTight} font-semibold text-primary`}>
-                          {entry.term}
-                        </dt>
-                        <dd className={guideProseTight}>{entry.def}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </AccordionContent>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
+      <section className="mb-8 md:mb-10">
+        <h3 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_HOW_TO_USE.heading}</h3>
+        <ul className={`${guideProseTight} list-disc space-y-2 ${guideListIndent}`}>
+          {CHECKPOINT_MAP_HOW_TO_USE.items.map((item) => (
+            <li key={item.lead}>
+              <strong className="font-semibold text-foreground">{item.lead}</strong>{" "}
+              {item.body}
+            </li>
+          ))}
+        </ul>
       </section>
+
+      <section className="mb-8 md:mb-10 rounded-lg border border-border bg-card px-5 py-5 md:px-6 md:py-6">
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_VARIES.heading}</h3>
+        <div className={`${guideProseTight} space-y-2.5`}>
+          {CHECKPOINT_MAP_VARIES.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <DefinitionBlock
+        id="thecheckpoints"
+        title={CHECKPOINT_MAP_TERMS_TITLE}
+        cap={CHECKPOINT_MAP_TERMS_CAPTION}
+        entries={CHECKPOINT_MAP_TERMS}
+      />
 
       <section id={CHECKPOINT_MAP_ANNEX_ONE.id} className="mt-14 scroll-mt-24 md:mt-20">
         <div className="border-t border-border pt-8 md:pt-10">
@@ -581,7 +521,17 @@ export function CheckpointMapPage() {
             {CHECKPOINT_MAP_ANNEX_TWO.pathNote}
           </p>
         </div>
+        <DefinitionBlock
+        id="whoswho"
+        title={CHECKPOINT_MAP_WHO_TITLE}
+        cap={CHECKPOINT_MAP_WHO_CAPTION}
+        entries={CHECKPOINT_MAP_WHO}
+      />
         <div className="mt-6">
+          <CheckpointMapTimeline />
+          <p className={`${guideProseTight} -mt-4 mb-6 text-muted-foreground md:mb-8`}>
+            {CHECKPOINT_MAP_ANNEX_TWO.timelineNote}
+          </p>
       <section id="what-this-covers" className="mb-6 scroll-mt-24 md:mb-8">
         <h2 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_NADIA.heading}</h2>
         <div className="flex items-start gap-4 md:gap-5">
@@ -625,8 +575,7 @@ export function CheckpointMapPage() {
         </div>
       </section>
 
-      <p className={`${guideProseTight} mt-5 text-muted-foreground`}>{CHECKPOINT_MAP_VARY_NOTE}</p>
-      <p className={`${guideProseTight} mt-4 text-muted-foreground`}>
+      <p className={`${guideProseTight} mt-8 text-muted-foreground`}>
         {CHECKPOINT_MAP_FOOTER_DISCLAIMER}
       </p>
 

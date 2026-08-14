@@ -182,6 +182,8 @@ export type MatrixInstrument = {
   whoDoes: string;
   whereItEndsUp: string;
   linkKey?: ExternalLinkKey;
+  /** Further official homes for this instrument, shown when the row is opened. */
+  moreLinks?: readonly ExternalLinkKey[];
   /** Thread pages that own this instrument's subject. Never rendered in the table. */
   threads?: readonly string[];
   /** Flagged where the research is thin. */
@@ -261,6 +263,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
+    moreLinks: ["itsg-33"],
     threads: ["security"],
     cells: {
       alpha: {
@@ -494,6 +497,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The results are published on the Open Government Portal before the system goes into production, where anyone outside the department can see them. The assistant deputy minister responsible for the program completes and approves them, or another senior official the deputy head names.",
     linkKey: "algorithmic-impact-assessment",
+    moreLinks: ["directive-automated-decision-making"],
     threads: ["ethics-and-bias", "privacy"],
     cells: {
       alpha: {
@@ -535,6 +539,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The supplier provides it at contract award. The department verifies it, tests independently, and requires a remediation roadmap for every gap.",
     linkKey: "a11y-toolkit-procurement",
+    moreLinks: ["a11y-ict-procurement-guide"],
     threads: ["accessibility", "procurement"],
     cells: {
       alpha: {
@@ -606,6 +611,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department sends it to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of Canada.",
     linkKey: "concept-case-procedures",
+    moreLinks: ["policy-planning-investments"],
     threads: ["funding"],
     cells: {
       discovery: {
@@ -771,6 +777,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department publishes through the open government portal; the deputy head approves the inventory and its annual updates.",
     linkKey: "gc-service-inventory",
+    moreLinks: ["policy-on-service-and-digital"],
     threads: ["data-stewardship"],
     cells: {
       stabilization: {
@@ -837,6 +844,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "The department requests a new authority from Library and Archives Canada where none covers the records.",
     linkKey: "lac-information-disposition-hub",
+    moreLinks: ["laca"],
     threads: ["data-stewardship", "privacy"],
     cells: {
       alpha: {
@@ -1057,6 +1065,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "The contracting authority moves it with the requisition. It has to be settled before the solicitation is released or the contract awarded, and the approved check list is annexed to both. The project authority signs one block of it.",
     caveat:
       "A first-pass answer said this goes straight to the Contract Security Program before the requisition, and that the business owner completes and submits it. Both were overstated: the citable deadline is before release of the solicitation or award, and the document travels with the requisition form.",
+    linkKey: "pspc-security-requirements-contracting",
     threads: ["procurement", "security"],
     cells: {
       discovery: {
@@ -1102,6 +1111,8 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Bidders submit a registration application with their bid, which the buyer forwards to the program. The program confirms in writing, before award, that the successful bidder meets the requirements.",
     caveat:
       "A first-pass answer said organization screening covers only Protected A and B, which would push a reader toward an unnecessary facility clearance and a much longer schedule. It covers Protected C too.",
+    linkKey: "pspc-security-requirements-contracting",
+    moreLinks: ["directive-procurement"],
     threads: ["procurement", "security"],
     cells: {
       alpha: {

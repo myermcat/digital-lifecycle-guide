@@ -105,16 +105,35 @@ export const CHECKPOINT_MAP_STATUS_BANNER = {
   ],
 } as const;
 
-export const CHECKPOINT_MAP_WORKING_NOTE = {
-  lead: "Working scheme, for figuring out the checkpoints.",
-  body: 'This traces one invented person, Nadia, through the real path a new service takes. Some mechanics (who chairs what, exact thresholds, how long each step runs) vary by department and are marked "varies."',
-  disclaimer:
-    "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.",
+export const CHECKPOINT_MAP_HOW_TO_USE = {
+  heading: "How to use this page",
+  items: [
+    {
+      lead: "To find out what applies to your service, use Annex 1.",
+      body: "It has a row for every official instrument a Government of Canada digital service can meet, with what it is, what brings it into scope, and what the business owner personally has to do about it. Read down the scope column and rule out what does not apply to you.",
+    },
+    {
+      lead: "To get a feel for the order and the people, use Annex 2.",
+      body: "It follows one invented service from the first sign of trouble to the day it is replaced, showing what its director general does at each step and who answers. It is a worked example of one route, not a template.",
+    },
+    {
+      lead: "To understand a single instrument properly, follow it to its thread page.",
+      body: "Each subject, security, privacy, accessibility, procurement, has a page of its own in the guide that explains the reasoning. This page is the index, not the explanation.",
+    },
+  ],
+} as const;
+
+export const CHECKPOINT_MAP_VARIES = {
+  heading: "Nearly everything on this page varies",
+  paragraphs: [
+    "The checkpoints themselves are real and they are set out in Government of Canada instruments. Almost everything around them is not fixed. Which ones apply depends on what the service does and how much is being spent. Who chairs a board, what a department's thresholds are, who signs, and how each step is run in practice differ from one department to the next.",
+    "Timing varies most of all. Nothing here says how long a step takes, because that depends on the department's capacity, the queue in front of you, and what else is happening that year. Where this page gives a duration, treat it as one team's experience rather than a planning figure, and confirm it against your own department.",
+    "The order varies too. The sequence a service meets these checkpoints in follows the route it takes: buying a finished product, contracting a team, running an agile procurement and building in-house all rearrange them, and some fall away entirely.",
+  ],
 } as const;
 
 export const CHECKPOINT_MAP_JUMP = [
   { label: "What this page covers", href: "#what-this-covers" },
-  { label: "Who's who", href: "#whoswho" },
   { label: "Annex 1: every official thing", href: "#annex-instruments" },
   { label: "Annex 2: one service's path", href: "#annex-nadia" },
 ] as const;
@@ -137,6 +156,8 @@ export const CHECKPOINT_MAP_ANNEX_TWO = {
   id: "annex-nadia",
   label: "ANNEX 2",
   heading: "One service's path, step by step",
+  timelineNote:
+    "The durations below are what this one service experienced. They are not a planning figure, and Create in particular can run considerably shorter or longer.",
   intro:
     "Annex 1 says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
   pathNote:
@@ -797,48 +818,48 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
 export const CHECKPOINT_MAP_WHO_TITLE = "People in this journey";
 
 export const CHECKPOINT_MAP_WHO_CAPTION =
-  "The people and bodies that appear in the tables above, and what role they play.";
+  "Who the annexes keep referring to. One line each, because what each of them does about a particular instrument is in the annex row for that instrument.";
 
 export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   {
     term: "The users",
-    def: "The people the service is for, inside or outside government. They are present at every step: research in Discovery, testing in Alpha and Beta, and the feedback and support of the live service.",
+    def: "The people the service is for, inside or outside government, present at every step from research to support.",
   },
   {
     term: "Business owner of the application",
-    def: "The person accountable for the service from before it exists until after it is switched off. Owns the decisions, the money, and the assessments; reaches every other player on this list through corporate services.",
+    def: "Accountable for the service from before it exists until after it is switched off, and reaches everyone else here through corporate services.",
   },
   {
     term: "Corporate services",
-    def: "The department's enabling branches: CIO/IT office, finance, procurement, security, ATIP (privacy), records. The business owner's first stop, and where the contracting authority sits.",
+    def: "The department's enabling branches: the CIO or IT office, finance, procurement, security, privacy, records. The first stop for everything.",
   },
   {
     term: "Departmental project-management office",
-    def: "Helps the sponsor complete the PCRA, cost and score the project, and line up a project manager. How this is organized varies by department; the deputy head is accountable for the score.",
+    def: "Helps score and cost the project and find a project manager. How it is organized varies; the deputy head is accountable for the score.",
   },
   {
     term: "DARB",
-    def: "Departmental Architecture Review Board. Inside the department, chaired by the departmental CIO. Reviews the design.",
+    def: "Departmental Architecture Review Board. Inside the department, chaired by its CIO, and it reviews the design.",
   },
   {
     term: "GC EARB",
-    def: "Government of Canada Enterprise Architecture Review Board. Government-wide, co-chaired by the CTO of Canada (TBS) and the CTO of Shared Services Canada. Only for large or complex projects.",
+    def: "Government of Canada Enterprise Architecture Review Board. Government-wide, and only for large or complex projects.",
   },
   {
     term: "Contracting authority",
-    def: "The procurement officer, in the department's contracting branch (or PSPC above the department's limit), who runs the competition and signs the contract. Not the business owner, who reaches them through corporate services.",
+    def: "The procurement officer who runs the competition and signs the contract. Never the business owner.",
   },
   {
     term: "Authorizing official",
-    def: "The senior departmental executive who signs the Authority to Operate, accepting the residual IT (cyber) security risk.",
+    def: "The senior executive who signs the Authority to Operate and accepts the security risk that is left.",
   },
   {
-    term: "ATIP / privacy office",
-    def: "Supports the program in completing the Privacy Impact Assessment, coordinates with the Office of the Privacy Commissioner and TBS, and handles the Personal Information Bank registration. The program area owns the assessment.",
+    term: "ATIP or privacy office",
+    def: "Supports the privacy assessment and the registrations that follow it. The program area still owns the assessment.",
   },
   {
     term: "Service management function",
-    def: "Whoever owns the service inventory in your department (the name varies). Records the service in the departmental and GC Service Inventory and in Application Portfolio Management, and updates it when the service retires.",
+    def: "Whoever owns the service inventory in your department, under whatever name. Registers the service and updates it when it retires.",
   },
   {
     term: "Information management office",
@@ -846,222 +867,40 @@ export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   },
 ];
 
-/* ---------------------------------------------------------------------- */
-/* The checkpoints                                                              */
-/* ---------------------------------------------------------------------- */
+export const CHECKPOINT_MAP_TERMS_TITLE = "Terms the annex does not have a row for";
 
-export const CHECKPOINT_MAP_CHECKPOINTS_TITLE = "Official checkpoints, by phase";
+export const CHECKPOINT_MAP_TERMS_CAPTION =
+  "Annex 1 has a row for every instrument with an official home of its own. These six come up throughout both annexes and do not have one, so they are defined here.";
 
-export const CHECKPOINT_MAP_CHECKPOINTS_CAPTION =
-  "Every formal approval, review, or sign-off named in the tables. Checkpoints with an official home are linked.";
-
-export const CHECKPOINT_MAP_CHECKPOINTS: readonly CheckpointMapGroup[] = [
+export const CHECKPOINT_MAP_TERMS: readonly CheckpointMapWhoEntry[] = [
   {
-    phaseLabel: "Create · Discovery",
-    links: [
-      { label: "PCRA tool", linkKey: "pcra-tool", icon: BarChart3 },
-      {
-        label: "Concept case procedures",
-        linkKey: "concept-case-procedures",
-        icon: BookOpen,
-      },
-      {
-        label: "Policy on the Planning and Management of Investments",
-        linkKey: "policy-planning-investments",
-        icon: Briefcase,
-      },
-      {
-        label: "TB submission (5% path)",
-        linkKey: "tbs-tb-submissions",
-        icon: Building2,
-      },
-    ],
-    entries: [
-      {
-        term: "Concept case",
-        def: "A short write-up of the problem and rough size, used to get the initiative onto the departmental plan. Below the threshold it is an internal document with no standard template. Above it, the concept case is mandatory, approved at assistant deputy minister level or higher, and reviewed by the Chief Information Officer of Canada at the Treasury Board of Canada Secretariat. The threshold is $2.5 million where the department has no approved capacity class or class 1, $5 million at class 2, $10 million at class 3, $15 million for National Defence, and $25 million at class 4.",
-      },
-      {
-        term: "Departmental investment plan",
-        def: "The department's list of planned investments, approved by the deputy head. A project has to be on it before it can proceed.",
-      },
-      {
-        term: "PCRA - Project Complexity and Risk Assessment",
-        def: "A detailed questionnaire that rates how big and risky a project is. The score is compared against the department's approved capacity class to decide the path.",
-      },
-      {
-        term: "Capacity class (OPMCA)",
-        def: "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, or the project's value exceeds the department's delegated limit, the project needs Treasury Board approval.",
-      },
-      {
-        term: "Reuse / options check",
-        def: "Checking the GC shelf - the GC Reference Architectures and enterprise or shared solutions catalogues - before buying or building. GC policy expects reuse where possible, and the architecture review looks for it.",
-      },
-      {
-        term: "Treasury Board submission",
-        def: "The small-minority path: formal approval and expenditure authority from Treasury Board, needed when a project's PCRA level exceeds the department's capacity class, or its value exceeds the department's delegated limit, or Treasury Board otherwise requires it. Can add six to twelve months or more.",
-      },
-    ],
+    term: "Departmental investment plan",
+    def:
+      "The department's list of planned investments, approved by the deputy head. A project has to be on it before it can proceed.",
   },
   {
-    phaseLabel: "Create · Alpha",
-    links: [
-      {
-        label: "GC EARB (5% path)",
-        linkKey: "gc-enterprise-architecture-framework",
-        icon: LayoutGrid,
-      },
-    ],
-    entries: [
-      {
-        term: "DARB - Departmental Architecture Review Board",
-        def: "Architecture review inside the department, chaired by the departmental CIO. Confirms the design lines up with GC standards. For Nadia's size of project, this is where architecture review stops.",
-      },
-      {
-        term: "GC EARB - Government of Canada Enterprise Architecture Review Board",
-        def: "Government-wide review for large or complex projects only: above investment or capacity thresholds, using emerging technology, needing a policy exception, or running on non-public cloud. Nadia does not go here.",
-      },
-    ],
+    term: "Capacity class (OPMCA)",
+    def:
+      "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, or the project's value exceeds the department's delegated limit, the project needs Treasury Board approval.",
   },
   {
-    phaseLabel: "Create · Beta",
-    links: [
-      {
-        label: "Directive on Management of Procurement",
-        linkKey: "directive-procurement",
-        icon: Briefcase,
-      },
-      {
-        label: "Contract Security Program",
-        linkKey: "pspc-security-requirements-contracting",
-        icon: ShieldCheck,
-      },
-      {
-        label: "Accessibility Conformance Report guide",
-        linkKey: "a11y-ict-procurement-guide",
-        icon: Accessibility,
-      },
-      { label: "ITSG-33 (Authority to Operate)", linkKey: "itsg-33", icon: Lock },
-      {
-        label: "Directive on Security Management",
-        linkKey: "directive-security-management",
-        icon: ShieldCheck,
-      },
-      {
-        label: "Threat and Risk Assessment methodology",
-        linkKey: "harmonized-tra-methodology",
-        icon: ShieldCheck,
-      },
-      {
-        label: "Algorithmic Impact Assessment tool",
-        linkKey: "algorithmic-impact-assessment",
-        icon: Bot,
-      },
-      {
-        label: "CAN/ASC-EN 301 549 (accessibility standard)",
-        linkKey: "en-301-549",
-        icon: Accessibility,
-      },
-      {
-        label: "Directive on Privacy Practices",
-        linkKey: "directive-privacy-practices",
-        icon: UserRound,
-      },
-      {
-        label: "Directive on Automated Decision-Making",
-        linkKey: "directive-automated-decision-making",
-        icon: Bot,
-      },
-    ],
-    entries: [
-      {
-        term: "Procurement / contract",
-        def: "The competition and award, run by the contracting authority under the Directive on the Management of Procurement. The contracting authority signs; Nadia does not.",
-      },
-      {
-        term: "Contract Security Program",
-        def: "PSPC screening of the supplier's organization and personnel when the contract involves protected or classified information.",
-      },
-      {
-        term: "Accessibility Conformance Report",
-        def: "The supplier's statement of how accessible a specific version of the product is, tested against EN 301 549 (which includes WCAG 2.1 AA). Covers one version only - re-check on every significant update.",
-      },
-      {
-        term: "Departmental accessibility statement",
-        def: "Required by the amended Accessible Canada Regulations, phasing in from December 2027. The department publishes it, and one statement can cover many services. It reports where the ICT accessibility standard is not met and how to get help or an alternative; each service's testing results feed it.",
-      },
-      {
-        term: "Security Assessment and Authorization → Authority to Operate",
-        def: "The IT security team runs the assessment, then a senior departmental executive signs the Authority to Operate, accepting the residual security risk. Required before the system goes live.",
-      },
-      {
-        term: "Privacy Impact Assessment",
-        def: "The assessment of privacy risk for a service that handles personal information, completed by the program area with ATIP support, and sent to the Office of the Privacy Commissioner and TBS before launch.",
-      },
-      {
-        term: "Personal Information Bank",
-        def: "The registered description of the personal information the service holds, published in the department's Info Source listing. Created alongside the Privacy Impact Assessment.",
-      },
-      {
-        term: "Algorithmic Impact Assessment",
-        def: 'Required only if a decision about a person is automated, under the Directive on Automated Decision-Making. Nadia\'s adjudicators decide by hand, so this checkpoint does not apply - but a later "efficiency" feature can quietly trigger it.',
-      },
-    ],
+    term: "Reuse / options check",
+    def:
+      "Checking the GC shelf - the GC Reference Architectures and enterprise or shared solutions catalogues - before buying or building. GC policy expects reuse where possible, and the architecture review looks for it.",
   },
   {
-    phaseLabel: "Live",
-    links: [
-      {
-        label: "GC Service Inventory",
-        linkKey: "gc-service-inventory",
-        icon: LayoutGrid,
-      },
-      {
-        label: "Directive on Service and Digital",
-        linkKey: "directive-on-service-and-digital",
-        icon: Layers,
-      },
-      {
-        label: "Policy on Service and Digital (Service Inventory)",
-        linkKey: "policy-on-service-and-digital",
-        icon: Layers,
-      },
-      {
-        label: "Directive on the Management of Projects and Programmes",
-        linkKey: "directive-projects-programmes",
-        icon: Briefcase,
-      },
-    ],
-    entries: [
-      {
-        term: "Project close-out (benefits realization)",
-        def: "The formal end of the funded project: confirm what was delivered, release the remaining budget, and track whether the promised benefits arrive. Required by the Directive on the Management of Projects and Programmes; the project office files it.",
-      },
-      {
-        term: "GC Service Inventory + Application Portfolio Management",
-        def: "The two registries a live service must be listed and rated in, approved by the deputy head and updated yearly. The CIO office does the registering; Nadia supplies the details.",
-      },
-    ],
+    term: "Procurement / contract",
+    def:
+      "The competition and award, run by the contracting authority under the Directive on the Management of Procurement. The contracting authority signs; Nadia does not.",
   },
   {
-    phaseLabel: "Sunset",
-    links: [
-      {
-        label: "Library and Archives Canada, information disposition",
-        linkKey: "lac-information-disposition-hub",
-        icon: BookOpen,
-      },
-      {
-        label: "Library and Archives of Canada Act",
-        linkKey: "laca",
-        icon: BookOpen,
-      },
-    ],
-    entries: [
-      {
-        term: "Disposition authority",
-        def: "Library and Archives Canada's written consent to keep, transfer, or destroy a government record. No record may be destroyed without it. The real Sunset checkpoint.",
-      },
-    ],
+    term: "Contract Security Program",
+    def:
+      "PSPC screening of the supplier's organization and personnel when the contract involves protected or classified information.",
+  },
+  {
+    term: "Personal Information Bank",
+    def:
+      "The registered description of the personal information the service holds, published in the department's Info Source listing. Created alongside the Privacy Impact Assessment.",
   },
 ];
