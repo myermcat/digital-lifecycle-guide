@@ -184,6 +184,8 @@ export type MatrixInstrument = {
   linkKey?: ExternalLinkKey;
   /** Further official homes for this instrument, shown when the row is opened. */
   moreLinks?: readonly ExternalLinkKey[];
+  /** Phrases in ownerDoes to bold, so the column can be skimmed for the verb. */
+  ownerBold?: readonly string[];
   /** Thread pages that own this instrument's subject. Never rendered in the table. */
   threads?: readonly string[];
   /** Flagged where the research is thin. */
@@ -220,9 +222,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service. Three separate requirements point at the same standard: for assets, for information, and for services and activities. The service-level one is part of the business impact analysis requirement.",
     ownerDoes:
-      "Makes the judgement about how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately. That judgement is in no document anywhere: it comes from knowing the program and its clients, which is exactly why the security team cannot supply it.",
+      "Makes the judgement about how bad it would be if this information leaked, if someone changed it, or if the service stopped, judging the three separately.",
     whoDoes:
-      "The departmental security team assigns it. The injury judgement behind it comes from the business, ideally with legal and the access to information and privacy office in the room.",
+      "The departmental security team assigns the category, ideally with legal and the access to information and privacy office in the room.",
+    ownerBold: ["Makes the judgement", "judging the three separately"],
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The result feeds the security assessment and the control set.",
     linkKey: "standard-on-security-categorization",
@@ -257,9 +260,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "The activity applies to all information systems that support departmental programs, services or activities. No dollar figure, no user count, no risk score. A standalone report is a different matter: producing one is neither recommended nor required, and the results are meant to go into the ordinary design documents.",
     ownerDoes:
-      "Approves the work plan before the assessment starts, and states in advance how much left-over risk is acceptable. Supplies what the service is worth to the business and what it depends on. Accepts or refuses the left-over risk at the end. Does not write the assessment.",
+      "Approves the work plan before the assessment starts, and states in advance how much left-over risk is acceptable. Supplies what the service is worth to the business and what it depends on. Accepts or refuses the left-over risk at the end.",
     whoDoes:
-      "A security practitioner works with the system designers during design, and a security assessor, often a contractor, assesses the built system. The business owner joins the assessment team as the program authority rather than as its author.",
+      "A security practitioner works with the system designers during design; a security assessor, often a contractor, assesses the built system. The business owner sits on the assessment team as the program authority.",
+    ownerBold: ["Approves the work plan", "states in advance how much left-over risk is acceptable", "Accepts or refuses the left-over risk"],
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The results feed the authorization package.",
     linkKey: "harmonized-tra-methodology",
@@ -295,9 +299,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only if the service touches physical space: new accommodation, hardware in people's hands, kiosks, or software that operates doors, gates, lighting or heating. A cloud-hosted service with no hardware usually stays clear of it.",
     ownerDoes:
-      "Says whether the service touches physical space at all. That answer comes from knowing what is actually being built.",
+      "Says whether the service touches physical space at all, early enough for the answer to reach the solicitation.",
     whoDoes:
       "Departmental physical security, using the Royal Canadian Mounted Police (RCMP) assessment guide.",
+    ownerBold: ["Says whether the service touches physical space"],
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The chief security officer or their delegate signs the assessment report; the delegated authority approves the Authority to Occupy Facility.",
     threads: ["security"],
@@ -323,9 +328,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every information system, before operations commence. Each department defines its own documented practice for how it is done, which is why identical systems get different treatment in different departments.",
     ownerDoes:
-      "Gets the conditions for authorization in writing before the design starts, then reads the package and decides: authorize, authorize with conditions, or refuse. The conditions come from the departmental security plan, or from the authorizer directly where the plan does not record them.",
+      "Gets the conditions for authorization in writing before the design starts, from the departmental security plan or from the authorizer directly. Reads the package and decides: authorize, authorize with conditions, or refuse.",
     whoDoes:
       "The information technology security team assembles the package; a security assessor, often independent, does the assessment.",
+    ownerBold: ["Gets the conditions for authorization in writing", "Reads the package and decides"],
     whereItEndsUp:
       "Held within the department and signed there. The authorizer is the only person waiting on it. For common or enterprise systems, including Shared Services Canada services, the authorizer is the Chief Information Officer of Canada instead. Where two or more organizations share a system, it is the manager of the program or service.",
     linkKey: "directive-security-management",
@@ -372,9 +378,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service should answer the question, because the answer is what decides whether anything further is owed. The directive's formal requirement is narrower. It reaches only the services and activities that support the availability of what is critical to the health, safety, security or economic well-being of Canadians, or to the effective functioning of government. Large departments are separately measured on holding an up-to-date analysis for every external and internal enterprise service.",
     ownerDoes:
-      "Makes the judgement about who is harmed if the service stops, how fast that harm escalates, and what the service depends on. None of it can be looked up: it comes from knowing the clients and the program calendar, which is why the continuity specialist cannot produce it alone.",
+      "Makes the judgement about who is harmed if the service stops, how fast that harm escalates, and what the service depends on.",
     whoDoes:
       "The departmental business continuity management specialist, who is also the person responsible for identifying which services are critical.",
+    ownerBold: ["Makes the judgement"],
     whereItEndsUp:
       "The department reports its identified critical services to the Treasury Board of Canada Secretariat on a regular basis or when asked. The analysis itself stays in the department.",
     threads: ["security"],
@@ -412,9 +419,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only if the business impact analysis marks the service critical, meaning disruption would cause a high or very high degree of injury. One department reads that as needing to recover to minimum service levels within 72 hours.",
     ownerDoes:
-      "Supplies the recovery steps and the workarounds, then tests them. Both come from the people who run it day to day. Asks the coordinator to point to where this service appears in the departmental plan, with its downtime limit.",
+      "Supplies the recovery steps and the workarounds, then tests them. Asks the coordinator where this service appears in the departmental plan, and with what downtime limit.",
     whoDoes:
-      "The departmental or branch business continuity coordinator drafts it on the departmental template. No instrument assigns the drafting to a service's business owner.",
+      "The departmental or branch business continuity coordinator drafts it on the departmental template.",
+    ownerBold: ["Supplies the recovery steps", "tests them", "Asks the coordinator"],
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The senior official for the program area approves it.",
     threads: ["security"],
@@ -448,9 +456,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Triggers are broad. A new or substantially modified program that creates, collects, uses, discloses, retains or disposes of personal information brings it into scope. So does using it for an administrative purpose, contracting the program out or transferring it, bringing in a third party, changing the technology that processes it, or automating a decision. No dollar or user-count threshold.",
     ownerDoes:
-      "Says what personal information the service will use and which decisions about people it will be used to make. Comes from the program design. The checklist step happens whether or not the answer turns out to be yes.",
+      "Completes the checklist, even where the answer turns out to be no. Says what personal information the service will use and which decisions about people it will be used to make.",
     whoDoes:
       "The program area drafts it on the Treasury Board template; the access to information and privacy office reviews, iterates and owns the instrument.",
+    ownerBold: ["Completes the checklist", "Says what personal information the service will use"],
     whereItEndsUp:
       "The privacy office sends the completed assessment to the Treasury Board of Canada Secretariat and to the Office of the Privacy Commissioner at the same time, after the deputy head approves. A summary is published on the institution's website.",
     linkKey: "directive-privacy-practices",
@@ -491,9 +500,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only if the service makes or supports an automated decision about a person: scoring, ranking, recommending, or auto-approving. A later efficiency feature can trigger it without anyone noticing.",
     ownerDoes:
-      "Fills in the questionnaire, usually with the department's data or artificial intelligence people. The answers come from how the program works and what the decision does to people, so nobody outside can supply them.",
+      "Fills in the questionnaire, answering from how the program works and what the decision does to people.",
     whoDoes:
-      "The department completes it itself, normally the program team with support from the data or chief information officer function. It is not an external audit.",
+      "The department completes it itself, normally the program team with support from the data or chief information officer function.",
+    ownerBold: ["Fills in the questionnaire"],
     whereItEndsUp:
       "The results are published on the Open Government Portal before the system goes into production, where anyone outside the department can see them. The assistant deputy minister responsible for the program completes and approves them, or another senior official the deputy head names.",
     linkKey: "algorithmic-impact-assessment",
@@ -533,9 +543,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only when buying. An in-house build has no supplier and no report; the equivalent duty is the department's own conformance assessment against the standard.",
     ownerDoes:
-      "Says which clauses of the standard the service has to meet, so they go into the solicitation, then reads the supplier's report instead of trusting it.",
+      "Says which clauses of the standard the service has to meet, so they go into the solicitation, then reads the supplier's report and checks its claims against the product.",
     whoDoes:
       "The supplier, through a third party or a qualified in-house accessibility expert.",
+    ownerBold: ["Says which clauses", "reads the supplier's report"],
     whereItEndsUp:
       "The supplier provides it at contract award. The department verifies it, tests independently, and requires a remediation roadmap for every gap.",
     linkKey: "a11y-toolkit-procurement",
@@ -566,9 +577,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "By 5 December 2027, every web page, public-facing and employee-facing, created or updated on or after that date, plus the published statement. Mobile applications, digital documents, and the procurement conformity assessment follow on 5 December 2028. Legally the duty sits on the department through its deputy head.",
     ownerDoes:
-      "Includes the people most likely to be excluded in the research, books the testing early, and funds the fixes. Who is excluded comes from research, not from an automated checker, which catches only a fraction.",
+      "Includes the people most likely to be excluded in the research, books the testing early, and funds the fixes.",
     whoDoes:
-      "The service team, with testing done with people with disabilities. Automated checkers catch only a fraction.",
+      "The service team, testing with people with disabilities. Automated checkers catch only a fraction of the barriers.",
+    ownerBold: ["Includes the people most likely to be excluded", "books the testing early", "funds the fixes"],
     whereItEndsUp:
       "The department publishes the statement, reachable from a prominent location on each page it covers.",
     linkKey: "en-301-549",
@@ -606,8 +618,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Mandatory for digitally enabled projects where the department is willing to invest at least: $2.5 million with no approved capacity class or class 1; $5 million at class 2; $10 million at class 3; $15 million for National Defence; $25 million at class 4.",
     ownerDoes:
-      "Writes the problem and the rough size, and gets assistant deputy minister approval. It is built from Discovery's evidence, so a thin Discovery produces a thin concept case.",
-    whoDoes: "The department, approved at assistant deputy minister level or above.",
+      "Writes the problem and the rough size from Discovery's evidence, then takes it up for approval.",
+    whoDoes:
+      "The department, approved at assistant deputy minister level or above.",
+    ownerBold: ["Writes the problem and the rough size", "takes it up for approval"],
     whereItEndsUp:
       "The department sends it to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of Canada.",
     linkKey: "concept-case-procedures",
@@ -631,9 +645,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Required at: $2.5 million with no approved capacity class or class 0; $5 million at class 1; $10 million at class 2; $25 million at class 3; $50 million at class 4, all tax included. Note this ladder differs from the architecture review board ladder as written.",
     ownerDoes:
-      "Answers the business-risk questions, including how ready the organization actually is to adopt the thing. Only the program can answer that with any accuracy, and the score decides who is allowed to approve the project.",
+      "Answers the business-risk questions, including how ready the organization actually is to adopt the thing.",
     whoDoes:
       "The departmental project management office authors it; the project sponsor is responsible for ensuring it is completed; the deputy head is responsible for its accuracy.",
+    ownerBold: ["Answers the business-risk questions"],
     whereItEndsUp:
       "It stays in the department, and goes to the Treasury Board of Canada Secretariat with a submission where one is needed.",
     linkKey: "pcra-tool",
@@ -660,9 +675,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "All departmental digital initiatives. Two carve-outs: small departments and agencies, meaning reference levels under $300 million a year or so designated, are exempt; and Agents of Parliament are exempt.",
     ownerDoes:
-      "Presents the direction, bringing the reuse scan Discovery produced. Reach the board through the architecture team in the chief information officer's office.",
+      "Presents the direction, bringing the reuse scan Discovery produced.",
     whoDoes:
-      "The board reviews. The chief information officer's architecture team prepares the material and the project team usually presents.",
+      "The board reviews. The chief information officer's architecture team books the slot and prepares the material.",
+    ownerBold: ["Presents the direction", "bringing the reuse scan"],
     whereItEndsUp: "Held within the department unless the initiative goes on to the government-wide board.",
     linkKey: "gc-enterprise-architecture-framework",
     threads: ["dependencies-and-standards"],
@@ -688,8 +704,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Any one of these is enough. The department is willing to invest $2.5 million with no class or class 1, $5 million at class 2, $10 million at class 3, $15 million for National Defence, $25 million at class 4. Or the initiative involves emerging technologies. Or it needs an exception under the directive. Or it is categorized at Protected B or below and uses a deployment model other than public cloud. Or it extends or creates custom support to stop a technology becoming unsupported. Or the Chief Information Officer of Canada directs it.",
     ownerDoes:
-      "Checks all six triggers rather than only the money one, then supports the departmental chief information officer's submission. A small initiative can qualify on emerging technology or hosting alone.",
-    whoDoes: "The departmental chief information officer submits; the project team usually attends.",
+      "Checks all six triggers, since a small initiative can qualify on emerging technology or hosting alone, then supplies the material for the departmental chief information officer's submission.",
+    whoDoes:
+      "The departmental chief information officer submits; the project team usually attends.",
+    ownerBold: ["Checks all six triggers", "supplies the material"],
     whereItEndsUp:
       "The department submits, not the individual. It comes after the departmental board has reviewed, after the concept case review, and before a Treasury Board submission or departmental business case.",
     linkKey: "gc-enterprise-architecture-framework",
@@ -711,8 +729,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "When the project's complexity level exceeds the department's approved capacity class, or the department has no class and the project is over $2.5 million. Plus all programmes. Plus procurement or real property above their own approval limits.",
     ownerDoes:
-      "Supplies what the service is for, what it will cost, and what benefits it promises. The promises get tracked afterwards, so they are worth being careful about.",
-    whoDoes: "The department writes it; the chief financial officer attests.",
+      "Supplies what the service is for, what it will cost, and what benefits it promises. Those promises are tracked after approval.",
+    whoDoes:
+      "The department writes it; the chief financial officer attests.",
+    ownerBold: ["Supplies what the service is for", "what benefits it promises"],
     whereItEndsUp: "The minister signs and it goes to the Treasury Board.",
     linkKey: "tbs-tb-submissions",
     threads: ["funding"],
@@ -737,8 +757,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Universal for anything that counts as a project under the projects and programmes directive, with no dollar trigger. Baseline reporting to the Office of the Comptroller General starts at $25 million.",
     ownerDoes:
-      "Names the benefits when the money is sought, then supplies the delivery record at close-out. Both come from the program's own evidence.",
-    whoDoes: "The project sponsor and the departmental project office.",
+      "Names the benefits when the money is sought, then supplies the delivery record at close-out.",
+    whoDoes:
+      "The project sponsor and the departmental project office.",
+    ownerBold: ["Names the benefits", "supplies the delivery record"],
     whereItEndsUp:
       "Filed through the department's own project governance. Projects of $25 million or more also report to the Office of the Comptroller General at approval, expenditure authority, each amendment, and close-out.",
     linkKey: "directive-projects-programmes",
@@ -772,8 +794,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every external service and every internal enterprise service, meaning one department serving other departments government-wide. Purely internal departmental services are out of scope. A department with no services files a deputy minister declaration.",
     ownerDoes:
-      "Supplies the service details to whoever holds the inventory. Name the service in language its clients would recognise rather than in program shorthand, because this is the public record of it.",
-    whoDoes: "The designated official for service registers it; the business owner supplies the details.",
+      "Names the service in words its clients would recognise, and supplies the details for the register entry.",
+    whoDoes:
+      "The designated official for service registers it.",
+    ownerBold: ["Names the service", "supplies the details"],
     whereItEndsUp:
       "The department publishes through the open government portal; the deputy head approves the inventory and its annual updates.",
     linkKey: "gc-service-inventory",
@@ -805,9 +829,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every business application behind a service. No dollar threshold, though the system is in practice used by a subset of departments.",
     ownerDoes:
-      "Supplies the application's criticality and its condition. This is the only register that records criticality at all, so leaving it blank means no government-wide record shows the service as critical.",
+      "Rates the application's criticality, business value and condition. Left blank, no government-wide record shows the service as critical.",
     whoDoes:
-      "A departmental portfolio delegate holds the inventory and coordinates entry; the substantive ratings depend on the business application owner.",
+      "A departmental portfolio delegate holds the inventory and coordinates entry.",
+    ownerBold: ["Rates the application's criticality"],
     whereItEndsUp:
       "The department transmits to the Treasury Board of Canada Secretariat annually; the public dataset refreshes twice a year.",
     caveat:
@@ -838,9 +863,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "All information and data. Library and Archives Canada issues either an institution-specific or a multi-institution authority; the department confirms which one covers its records and sets the retention periods itself.",
     ownerDoes:
-      "Tells the information management office what records and data the service will create and hold, and sets the retention periods, because Library and Archives Canada will not set them.",
+      "Tells the information management office what records and data the service will create and hold, and sets how long each kind is kept.",
     whoDoes:
       "The information management function under the departmental chief information officer.",
+    ownerBold: ["Tells the information management office", "sets how long each kind is kept"],
     whereItEndsUp:
       "The department requests a new authority from Library and Archives Canada where none covers the records.",
     linkKey: "lac-information-disposition-hub",
@@ -879,9 +905,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "All information systems. Recovery strategies are set in accordance with the department's business continuity requirements, so the recovery targets come down from the business impact analysis and this is where they get met.",
     ownerDoes:
-      "Makes sure the restore is actually tested rather than assumed, and that the recovery target the business impact analysis set is the one the build was designed to meet.",
+      "Confirms the restore has been tested at least once before launch, and that the build meets the recovery target set by the business impact analysis.",
     whoDoes:
       "The team running the service, with information technology operations and the hosting provider.",
+    ownerBold: ["Confirms the restore has been tested", "meets the recovery target"],
     whereItEndsUp:
       "Held within the department. Nothing outside is waiting on it, so the timing is the department's own. The evidence is the tested restore, held by the team.",
     linkKey: "directive-security-management",
@@ -911,9 +938,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service. Departmental plans and procedures for responding to cyber events must operate in accordance with the Government of Canada Cyber Security Event Management Plan, and security events are reported under the security event reporting standard.",
     ownerDoes:
-      "Knows before launch who to call and how fast, and reports an incident rather than sitting on it. The escalation route comes from the departmental security operations team.",
+      "Knows before launch who to call and how fast, and passes an incident to them as soon as the team spots one.",
     whoDoes:
-      "The departmental security operations function and the designated official for cyber security. The service team detects, contains and supplies the facts.",
+      "The departmental security operations function sets the escalation route, with the designated official for cyber security. The service team detects, contains and supplies the facts.",
+    ownerBold: ["Knows before launch who to call", "passes an incident to them"],
     whereItEndsUp:
       "The department reports to the Canadian Centre for Cyber Security and the Treasury Board of Canada Secretariat through the routes the government-wide plan sets. The business owner does not report government-wide themselves.",
     linkKey: "directive-on-service-and-digital",
@@ -947,9 +975,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only when a breach involving personal information is judged material, on sensitivity of the information, number of people affected, and whether it is a systemic problem. A cyber incident touching personal information can trigger both this and the cyber reporting route at once.",
     ownerDoes:
-      "Tells the privacy office immediately what happened and what information was involved. They make the materiality call and the report, not you.",
+      "Tells the privacy office immediately what happened and what information was involved.",
     whoDoes:
-      "The access to information and privacy office assesses materiality and prepares the report; the service team supplies what happened.",
+      "The access to information and privacy office assesses materiality and prepares the report.",
+    ownerBold: ["Tells the privacy office immediately"],
     whereItEndsUp:
       "The institution reports to the Office of the Privacy Commissioner and the Treasury Board of Canada Secretariat, and notifies affected individuals.",
     threads: ["privacy", "security"],
@@ -982,9 +1011,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "In practice yes for a national digital service. The route is the Official Languages Act section 24(1)(b) with section 11(b) of the regulations, which is what makes a service available across Canada bilingual regardless of where the office sits. The operational rule a team is measured against is subsection 6.6.4.1 of the Directive on Official Languages for Communications and Services.",
     ownerDoes:
-      "Funds and schedules both languages from the first prototype, and tests with francophone users. Retrofitting French into an interface built around English is where the cost arises.",
+      "Funds and schedules both languages from the first prototype, and tests with francophone users.",
     whoDoes:
       "The service team builds it bilingual; the departmental official languages champion or adviser sets the obligations; communications owns the content standards.",
+    ownerBold: ["Funds and schedules both languages", "tests with francophone users"],
     whereItEndsUp:
       "Nothing routine is filed. One artefact is real: any initiative going to the Treasury Board carries a completed Official Languages Appendix screening it against Parts IV, V, VI and VII, plus an impact analysis if any answer is yes.",
     caveat:
@@ -1023,9 +1053,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Whenever a supplier delivers, hosts or supports any part of a service that reaches the public, or produces content on the department's behalf. Guidance is set through a contracting policy notice.",
     ownerDoes:
-      "States the requirement so the contracting authority can write the clauses. A supplier not contractually bound to deliver French will charge for it later as a contract change.",
+      "States the bilingual requirement in the statement of work before the solicitation goes out. Left out, French becomes a priced contract amendment later.",
     whoDoes:
-      "The business owner states the requirement; the contracting authority writes the clauses.",
+      "The contracting authority writes the clauses into the solicitation and the contract.",
+    ownerBold: ["States the bilingual requirement"],
     whereItEndsUp: "Held within the department. It appears in the solicitation and in the signed contract.",
     threads: ["procurement", "accessibility"],
     cells: {
@@ -1058,9 +1089,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only where the supplier or its people will access Protected or Classified information or assets, enter restricted sites, or connect electronically to departmental systems, which includes any access to personal information the department holds. Where there are no security requirements, no check list is produced and the department certifies that instead.",
     ownerDoes:
-      "Describes what the supplier will actually do and touch, then signs their block. The description comes from the statement of work, and a vague one produces clauses that block the work.",
+      "Drafts the check list from the statement of work, saying what the supplier will do and touch, and signs the project authority block. A vague description produces clauses that block the work.",
     whoDoes:
-      "The client department's project authority, meaning the business or program area that owns the requirement, drafts it. The departmental security officer advises on the levels. Public Services and Procurement Canada's Contract Security Program reviews it and derives the clauses.",
+      "The departmental security officer advises on the levels. Public Services and Procurement Canada's Contract Security Program reviews it and derives the clauses.",
+    ownerBold: ["Drafts the check list", "signs the project authority block"],
     whereItEndsUp:
       "The contracting authority moves it with the requisition. It has to be settled before the solicitation is released or the contract awarded, and the approved check list is annexed to both. The project authority signs one block of it.",
     caveat:
@@ -1104,9 +1136,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every procurement whose Security Requirements Check List identifies a security requirement, and the same applies to subcontractors at every tier. Organization screening covers Protected A, B and C; a facility clearance is for Classified.",
     ownerDoes:
-      "Finds out early what clearance level the work needs, because screening timelines often exceed the procurement timelines.",
+      "Finds out early what clearance level the work needs. Screening often runs longer than the procurement.",
     whoDoes:
       "The Contract Security Program screens. The supplier appoints a company security officer. Individual staff apply through their employer.",
+    ownerBold: ["Finds out early what clearance level"],
     whereItEndsUp:
       "Bidders submit a registration application with their bid, which the buyer forwards to the program. The program confirms in writing, before award, that the successful bidder meets the requirements.",
     caveat:
@@ -1147,9 +1180,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every service has to make the decision. The trigger is specific: an initiative categorized at Protected B or below that uses a deployment model other than public cloud for hosting, deployment or development must go to the Government of Canada Enterprise Architecture Review Board. There is no dollar floor on that trigger.",
     ownerDoes:
-      "States what the service needs so the hosting choice can be made against the government-wide preference order, and takes the case to the board when the answer is anything other than public cloud.",
+      "States what the service needs from its hosting, and makes the case where the answer is anything other than public cloud.",
     whoDoes:
-      "The departmental architecture and hosting functions, with the business owner setting the requirements. A departmental architecture review board approval is mandatory on application hosting initiatives.",
+      "The departmental architecture and hosting functions decide. A departmental architecture review board approval is mandatory on application hosting initiatives.",
+    ownerBold: ["States what the service needs", "makes the case"],
     whereItEndsUp:
       "Hosting submissions go to Shared Services Canada through its hosting services portal. Where the trigger is met, the departmental chief information officer submits to the government-wide board.",
     caveat:
@@ -1181,9 +1215,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Only for cloud-hosted services. The Protected B control profile is the usual starting point. The Cyber Centre separately assesses cloud service providers, so a department inherits that assessment rather than repeating it, and assesses only its own configuration and use.",
     ownerDoes:
-      "Says what the service holds so the right control profile is picked, and understands which parts the provider covers and which the department still owns.",
+      "Says what the service holds, so the right control profile is picked.",
     whoDoes:
-      "The departmental security team, with the cloud team. The provider's own assessment is inherited.",
+      "The departmental security team, with the cloud team, works out the split of responsibility with the provider; the provider's own assessment is inherited.",
+    ownerBold: ["Says what the service holds"],
     whereItEndsUp:
       "Held within the department beyond the hosting route. The authorization is signed there, as for any other service.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
@@ -1221,9 +1256,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Any service where people or businesses have accounts, sign in, or are identified. A worksheet under the authentication requirements guideline produces the level. At level three and above, multi-factor authentication follows.",
     ownerDoes:
-      "Makes the judgement about what harm results from getting someone's identity wrong. That judgement sets the assurance level, and the level constrains the design from the very start.",
+      "Makes the judgement about what harm results from getting someone's identity wrong.",
     whoDoes:
-      "The departmental identity management function with the security team; the business owner supplies the harm judgement.",
+      "The departmental identity management function sets the level, with the security team.",
+    ownerBold: ["Makes the judgement about what harm results"],
     whereItEndsUp: "Held within the department. Nothing outside is waiting on it, so the timing is the department's own.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
     threads: ["security", "user-research"],
@@ -1255,6 +1291,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Picks the credential route before the prototype hard-codes a sign-in of its own, and allows for the onboarding time in the schedule.",
     whoDoes:
       "The departmental identity and integration teams, with the platform's onboarding team.",
+    ownerBold: ["Picks the credential route", "allows for the onboarding time"],
     whereItEndsUp:
       "The department onboards through the platform's process, including an attestation.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
@@ -1288,9 +1325,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Every external-facing website and web application. Two sign-offs: inside the department the head of communications is accountable for external-facing sites, and outside it the Principal Publisher, which is Employment and Social Development Canada through Service Canada, controls the canada.ca domain and must approve every domain and sub-domain.",
     ownerDoes:
-      "Brings the departmental web team and the head of communications in before the first prototype, and starts the domain request before promising anyone a launch date.",
+      "Brings the departmental web team and the head of communications in before the first prototype, and asks for the domain before any launch date is promised.",
     whoDoes:
-      "The departmental web team and content designers, under the communications organization. The domain request is filed by the departmental web account manager, not by the business owner directly.",
+      "The departmental web team and content designers, under the communications organization. The departmental web account manager files the domain request.",
+    ownerBold: ["Brings the departmental web team", "asks for the domain"],
     whereItEndsUp:
       "The department requests the domain from the Principal Publisher. For a downloadable mobile application, the mandated publishing entity independently tests, publishes and later retires it, so the department does not control its own app store presence.",
     caveat:
@@ -1328,8 +1366,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     everyService: false,
     scope: "Every public-facing website and web application.",
     ownerDoes:
-      "Decides responsive web against a downloadable app with evidence from user research, knowing a downloadable app adds a publishing step the department does not control, at launch and at retirement.",
-    whoDoes: "The service team and the departmental web team.",
+      "Decides between responsive web and a downloadable app, with evidence from user research.",
+    whoDoes:
+      "The service team and the departmental web team.",
+    ownerBold: ["Decides between responsive web and a downloadable app", "evidence from user research"],
     whereItEndsUp:
       "Nothing for a responsive service. A downloadable app is handed to the mandated publishing entity, which tests, publishes and retires it.",
     caveat:
@@ -1368,9 +1408,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "All records under the department's control. Systems that manage information and data carry their own standard, which sets what a system has to be able to do with records.",
     ownerDoes:
-      "Says what decisions the service makes and what evidence should be kept, so the system produces a record that can actually be found and released.",
+      "Says what decisions the service makes and what evidence should be kept.",
     whoDoes:
-      "The access to information and privacy office handles requests; the service team has to have made the records findable and retrievable.",
+      "The service team builds the records so they can be found and released; the access to information and privacy office handles requests.",
+    ownerBold: ["Says what decisions the service makes", "what evidence should be kept"],
     whereItEndsUp:
       "The department responds to requests, and publishes summaries of completed requests on the open government portal.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
@@ -1400,9 +1441,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Triggered by what the service does rather than by its size. Any contract over $10,000 triggers contract publication; a grants or contributions program triggers the other.",
     ownerDoes:
-      "Supplies the contract data. Publication runs on a fixed cycle, independently of the team.",
+      "Tells the contracting authority which contracts and grants cross the thresholds.",
     whoDoes:
-      "The department's proactive publication function, with the contracting authority supplying contract data.",
+      "The department's proactive publication function publishes; the contracting authority supplies the contract data.",
+    ownerBold: ["Tells the contracting authority"],
     whereItEndsUp:
       "The department publishes on the open government portal, on a quarterly cycle for contracts.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
@@ -1428,8 +1470,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Applies by default. What is actually released depends on privacy, security and legal restrictions, so the work is deciding what can be opened rather than whether the duty exists.",
     ownerDoes:
-      "Says what the service will hold that could be released, and what stops it. That comes from knowing the data, not from the open government office.",
-    whoDoes: "The departmental open government and information management functions.",
+      "Says what the service will hold that could be released, and what stops it.",
+    whoDoes:
+      "The departmental open government and information management functions.",
+    ownerBold: ["Says what the service will hold", "what stops it"],
     whereItEndsUp: "The department publishes on the open government portal.",
     caveat: "Research on this family is newer and thinner than the rest. Re-check before publishing.",
     threads: ["data-stewardship"],

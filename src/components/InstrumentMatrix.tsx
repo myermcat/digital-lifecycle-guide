@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, type ReactNode } from "react";
 import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
@@ -205,6 +205,28 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
 }
 
 /** The sub-phases where something happens, one per line, instead of seven columns of dots. */
+/** ownerDoes with its key verbs picked out, so the column can be skimmed. */
+function BoldedOwnerDoes({ row }: { row: MatrixInstrument }) {
+  const phrases = (row.ownerBold ?? []).filter((p) => row.ownerDoes.includes(p));
+  if (phrases.length === 0) return <>{row.ownerDoes}</>;
+
+  const parts: ReactNode[] = [];
+  let rest = row.ownerDoes;
+  for (const phrase of phrases) {
+    const at = rest.indexOf(phrase);
+    if (at === -1) continue;
+    if (at > 0) parts.push(rest.slice(0, at));
+    parts.push(
+      <strong key={phrase} className="font-semibold text-foreground">
+        {phrase}
+      </strong>,
+    );
+    rest = rest.slice(at + phrase.length);
+  }
+  if (rest) parts.push(rest);
+  return <>{parts}</>;
+}
+
 function WhenItComesUp({ row }: { row: MatrixInstrument }) {
   const active = MATRIX_SUBPHASES.filter((s) => row.cells[s.key]);
   if (active.length === 0) {
@@ -265,7 +287,7 @@ function FamilyGroup({
                 {row.scope}
               </td>
               <td className={cn(CELL_BASE, "bg-primary/5 text-foreground/90")}>
-                {row.ownerDoes}
+                <BoldedOwnerDoes row={row} />
               </td>
               <td className={cn(CELL_BASE, "border-r text-muted-foreground")}>
                 {row.whoDoes}
