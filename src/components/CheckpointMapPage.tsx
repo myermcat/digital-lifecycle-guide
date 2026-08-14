@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { Link } from "@tanstack/react-router";
 import { EditorialNote } from "@/components/EditorialNote";
+import { InstrumentMatrix } from "@/components/InstrumentMatrix";
 import { ExternalLink } from "@/components/ExternalLink";
 import { CheckpointMapTimeline } from "@/components/CheckpointMapTimeline";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -17,6 +18,8 @@ import {
   CHECKPOINT_MAP_FOOTER_DISCLAIMER,
   CHECKPOINT_MAP_CHECKPOINTS,
   CHECKPOINT_MAP_LAUNCH,
+  CHECKPOINT_MAP_ANNEX_ONE,
+  CHECKPOINT_MAP_ANNEX_TWO,
   CHECKPOINT_MAP_NADIA,
   CHECKPOINT_MAP_PHASES,
   CHECKPOINT_MAP_SUBTITLE,
@@ -46,6 +49,7 @@ import {
   guidePageTitle,
   guideProse,
   guideProseTight,
+  guideSectionTitle,
   guideSubsectionTitle,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
@@ -446,29 +450,6 @@ function DefinitionBlock({
 export function CheckpointMapPage() {
   return (
     <GuideLayout>
-      <aside className="mb-6 rounded-lg border-2 border-destructive/60 bg-destructive/10 px-4 py-3 md:mb-8 md:px-5 md:py-4">
-        <p className="mb-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-destructive">
-          {CHECKPOINT_MAP_STATUS_BANNER.label}
-        </p>
-        {CHECKPOINT_MAP_STATUS_BANNER.lines.map((line, i) => (
-          <p
-            key={line}
-            className={`text-[0.9rem] leading-snug text-foreground/85 ${i > 0 ? "mt-2" : ""}`}
-          >
-            {line}
-          </p>
-        ))}
-        <p className="mt-2.5 text-[0.9rem] leading-snug">
-          <Link
-            to="/"
-            hash="instrument-matrix"
-            className="font-medium text-destructive underline underline-offset-4 hover:text-destructive/80"
-          >
-            Go to the table of official instruments →
-          </Link>
-        </p>
-      </aside>
-
       <EditorialNote className="mb-6 md:mb-8">
         <p>
           <strong className="font-semibold text-foreground">{CHECKPOINT_MAP_WORKING_NOTE.lead}</strong>{" "}
@@ -488,59 +469,17 @@ export function CheckpointMapPage() {
 
       <CheckpointMapTimeline />
 
-      <section className="mb-6 md:mb-8">
-        <h2 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_NADIA.heading}</h2>
-        <div className="flex items-start gap-4 md:gap-5">
-          <NadiaFigure />
-          <p className={`${guideProseTight} flex-1`}>
-            {(() => {
-              const text = CHECKPOINT_MAP_NADIA.body;
-              const phrase = CHECKPOINT_MAP_NADIA.amber[0];
-              const index = text.indexOf(phrase);
-              if (index === -1) return boldPhrases(text, CHECKPOINT_MAP_NADIA.bold);
-              return (
-                <>
-                  {boldPhrases(text.slice(0, index), CHECKPOINT_MAP_NADIA.bold)}
-                  <span className="rounded-sm border border-amber-600/40 bg-amber-500/15 px-1.5 py-0.5 font-semibold text-amber-950/80">
-                    {phrase}
-                  </span>
-                  {boldPhrases(text.slice(index + phrase.length), CHECKPOINT_MAP_NADIA.bold)}
-                </>
-              );
-            })()}
-          </p>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_GCS.heading}</h3>
-        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_GCS.body}</p>
-        <div className="mt-3 overflow-hidden rounded-md border border-border max-w-[84ch]">
-          <div className="grid sm:grid-cols-[30%_1fr]">
-            <p className={`${guideProseTight} border-b sm:border-b-0 sm:border-r border-border bg-muted/40 px-3.5 py-2.5 font-semibold`}>
-              {CHECKPOINT_MAP_COLKEY.left}
-            </p>
-            <p className={`${guideProseTight} px-3.5 py-2.5 text-muted-foreground`}>
-              Right is who answers, and how. The tag on each response says whether the responder is{" "}
-              <WhoTag tag="dept" /> or a <WhoTag tag="central" />.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-5">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_CREATE.heading}</h3>
-        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_CREATE.body}</p>
-      </section>
-
-      <section className="mb-8 md:mb-10">
+      <section id="what-this-covers" className="mb-5 scroll-mt-24">
         <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHAT_TABLE.heading}</h3>
         <p className={guideProseTight}>
           {boldPhrases(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold)}
         </p>
       </section>
 
-      <CheckpointMapPhaseAccordions />
+      <section className="mb-8 md:mb-10">
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_CREATE.heading}</h3>
+        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_CREATE.body}</p>
+      </section>
 
       <DefinitionBlock
         id="whoswho"
@@ -618,6 +557,72 @@ export function CheckpointMapPage() {
             );
           })}
         </Accordion>
+      </section>
+
+      <section id={CHECKPOINT_MAP_ANNEX_ONE.id} className="mt-14 scroll-mt-24 md:mt-20">
+        <div className="border-t border-border pt-8 md:pt-10">
+          <p className={guideCalloutLabel}>{CHECKPOINT_MAP_ANNEX_ONE.label}</p>
+          <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
+            {CHECKPOINT_MAP_ANNEX_ONE.heading}
+          </h2>
+          <p className={`${guideProse} mb-5 max-w-[84ch]`}>{CHECKPOINT_MAP_ANNEX_ONE.intro}</p>
+        </div>
+        <InstrumentMatrix embedded />
+      </section>
+
+      <section id={CHECKPOINT_MAP_ANNEX_TWO.id} className="mt-14 scroll-mt-24 md:mt-20">
+        <div className="border-t border-border pt-8 md:pt-10">
+          <p className={guideCalloutLabel}>{CHECKPOINT_MAP_ANNEX_TWO.label}</p>
+          <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
+            {CHECKPOINT_MAP_ANNEX_TWO.heading}
+          </h2>
+          <p className={`${guideProse} max-w-[84ch]`}>{CHECKPOINT_MAP_ANNEX_TWO.intro}</p>
+          <p className="mt-4 max-w-[84ch] border-l-2 border-border pl-4 font-sans text-[0.85rem] leading-relaxed text-muted-foreground">
+            {CHECKPOINT_MAP_ANNEX_TWO.pathNote}
+          </p>
+        </div>
+        <div className="mt-6">
+      <section id="what-this-covers" className="mb-6 scroll-mt-24 md:mb-8">
+        <h2 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_NADIA.heading}</h2>
+        <div className="flex items-start gap-4 md:gap-5">
+          <NadiaFigure />
+          <p className={`${guideProseTight} flex-1`}>
+            {(() => {
+              const text = CHECKPOINT_MAP_NADIA.body;
+              const phrase = CHECKPOINT_MAP_NADIA.amber[0];
+              const index = text.indexOf(phrase);
+              if (index === -1) return boldPhrases(text, CHECKPOINT_MAP_NADIA.bold);
+              return (
+                <>
+                  {boldPhrases(text.slice(0, index), CHECKPOINT_MAP_NADIA.bold)}
+                  <span className="rounded-sm border border-amber-600/40 bg-amber-500/15 px-1.5 py-0.5 font-semibold text-amber-950/80">
+                    {phrase}
+                  </span>
+                  {boldPhrases(text.slice(index + phrase.length), CHECKPOINT_MAP_NADIA.bold)}
+                </>
+              );
+            })()}
+          </p>
+        </div>
+      </section>
+
+      <section className="mb-5">
+        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHY_GCS.heading}</h3>
+        <p className={guideProseTight}>{CHECKPOINT_MAP_WHY_GCS.body}</p>
+        <div className="mt-3 overflow-hidden rounded-md border border-border max-w-[84ch]">
+          <div className="grid sm:grid-cols-[30%_1fr]">
+            <p className={`${guideProseTight} border-b sm:border-b-0 sm:border-r border-border bg-muted/40 px-3.5 py-2.5 font-semibold`}>
+              {CHECKPOINT_MAP_COLKEY.left}
+            </p>
+            <p className={`${guideProseTight} px-3.5 py-2.5 text-muted-foreground`}>
+              Right is who answers, and how. The tag on each response says whether the responder is{" "}
+              <WhoTag tag="dept" /> or a <WhoTag tag="central" />.
+            </p>
+          </div>
+        </div>
+      </section>
+          <CheckpointMapPhaseAccordions />
+        </div>
       </section>
 
       <p className={`${guideProseTight} mt-5 text-muted-foreground`}>{CHECKPOINT_MAP_VARY_NOTE}</p>

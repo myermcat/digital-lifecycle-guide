@@ -108,35 +108,38 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
   );
 }
 
-export function InstrumentMatrix() {
+export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = {}) {
   const [openRow, setOpenRow] = useState<string | null>(null);
 
   return (
-    <section className="mt-14 md:mt-16" id="instrument-matrix">
-      <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-destructive">
-        Working material, to be removed
-      </p>
-      <h2 className={guideSectionTitle}>
-        Every official thing a service has to do, by sub-phase
-      </h2>
+    <section className={embedded ? "" : "mt-14 md:mt-16"} id="instrument-matrix">
+      {embedded ? null : (
+        <>
+          <h2 className={guideSectionTitle}>
+            Every official thing a service has to do, by sub-phase
+          </h2>
+          <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
+            <p>
+              Getting a service live means passing official checkpoints:
+              assessments to run, boards to attend, registers to appear in, and
+              duties that carry on for as long as the service does. Which ones
+              apply depends on what the service does and how much is being spent,
+              so no two services take the same path.
+            </p>
+          </div>
+        </>
+      )}
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
-        <p>
-          Getting a service live means passing official checkpoints: assessments
-          to run, boards to attend, registers to appear in, and duties that carry
-          on for as long as the service does. Which ones apply depends on what
-          the service does and how much is being spent, so no two services take
-          the same path.
-        </p>
         <p>
           Read a row across: what it is, whether it applies to you, what you have
           to do about it, and what happens to it in each sub-phase of the
           service&apos;s life. Click a row for the full definition.
         </p>
         <p className="text-muted-foreground">
-          One caution. Which sub-phase an instrument sits in is this guide&apos;s
-          own judgement, because no Government of Canada source uses these phase
-          names. Where a placement follows a real deadline in the instrument, the
-          row says so. Where it does not, the row says that too.
+          One caution. Which sub-phase an instrument belongs to is this
+          guide&apos;s own judgement, because no Government of Canada source uses
+          these phase names. Where a placement follows a real deadline in the
+          instrument, the row says so. Where it does not, the row says that too.
         </p>
       </div>
 

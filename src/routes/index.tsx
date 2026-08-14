@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import {
   BadgeCheck,
   BookOpen,
+  ShieldCheck,
   Building2,
   DoorClosed,
   FileWarning,
@@ -20,7 +21,6 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideLayout } from "@/components/GuideLayout";
 import { IconAccordionSection } from "@/components/IconAccordionSection";
-import { InstrumentMatrix } from "@/components/InstrumentMatrix";
 import { ReusablePieces } from "@/components/ReusablePieces";
 import { PageFoot } from "@/components/PageFoot";
 import {
@@ -30,7 +30,9 @@ import {
 } from "@/components/PhaseLifecycleIcons";
 import { PillarCallout } from "@/components/PillarCallout";
 import {
+  guideArrowList,
   guideBlockSubheading,
+  guideCalloutLabel,
   guideListIndent,
   guideProse,
   guideProseSpace,
@@ -59,7 +61,6 @@ const HOME_ON_THIS_PAGE = [
   { id: "the-three-phases", label: "The three phases" },
   { id: "why-bother", label: "Why it matters" },
   { id: "your-setup", label: "Set the guide to your situation" },
-  { id: "instrument-matrix", label: "Every official thing a service has to do" },
   { id: "reusable-pieces", label: "Reuse before you buy or build" },
 ] as const;
 
@@ -187,14 +188,14 @@ function Index() {
         <section className={guideProseSpace}>
           <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
-            Canada. You could be anyone. You may hold any role in your organization, or come
-            from any background. You might be in a small team or a big one. You might build
-            in-house, contract a team to build, or buy from suppliers. Your budget might be
-            generous or almost nothing.
+            Canada. You could be anyone: any role, any background, a small team or a large
+            one.
           </p>
           <p>
-            That is fine. This guide is not about who you are. It is about the practices
-            that matter for any digital work, at any size.
+            You might build in-house, contract a team to build, or buy from a supplier. Your
+            budget might be generous or almost nothing. None of that changes what follows,
+            because this guide is about the practices that matter for any digital work, at
+            any size.
           </p>
 
           <p className={guideBlockSubheading}>What this guide is</p>
@@ -203,43 +204,66 @@ function Index() {
             <strong className="font-semibold text-foreground">
               a few ways of building a digital service
             </strong>
-            . It is not a description of the only correct way, because there is not one.
+            , not the only correct way, because there is not one.
           </p>
           <p>
-            Take a department that has money for a service, no technical staff of its own,
-            and a date somebody else set: a minister has announced it, or the legislation
-            names it. Going to a large supplier and paying them to
-            work out most of the detail may genuinely be its best option. That skips almost
-            everything described here, and it can still be the right decision for that
-            department.
+            Take a department with money for a service, no technical staff of its own, and a
+            date somebody else set, because a minister announced it or the legislation names
+            it. Going to a large supplier and paying them to work out most of the detail may
+            genuinely be its best option. That skips almost everything described here, and it
+            can still be the right decision.
           </p>
           <p>
-            So the guide stops short of telling you exactly what to do, because the right
-            answer depends on things only you can see: your deadline, your budget, who you
-            have, and what your department is already committed to. What it offers instead
-            is what to think about, what tends to go wrong, and what will reach you
-            whichever way you go.
+            So the guide stops short of telling you exactly what to do. The right answer
+            depends on things only you can see: your deadline, your budget, who you have, and
+            what your department is already committed to.
           </p>
+        </section>
 
-          <p className={guideBlockSubheading}>What is here for you whichever way you go</p>
-          <ul className={`list-disc space-y-1.5 ${guideListIndent}`}>
-            <li>
-              <strong className="font-semibold text-foreground">The security practices.</strong>{" "}
-              Every service needs them, whether it was built in-house, bought whole, or
-              assembled from something that already existed.
+        <section className="mt-8 md:mt-10 rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8 md:py-7">
+          <p className={guideCalloutLabel}>What is here for you, whichever way you go</p>
+          <ul className={`${guideArrowList} mt-4 !pl-0`}>
+            <li className="flex items-start gap-3">
+              <ShieldCheck
+                aria-hidden="true"
+                className="mt-1 h-[1.15rem] w-[1.15rem] shrink-0 text-primary/70"
+                strokeWidth={1.6}
+              />
+              <p className={guideProse}>
+                <strong className="font-semibold text-foreground">The security practices.</strong>{" "}
+                Every service needs them, whether it was built in-house, bought whole, or
+                assembled from something that already existed.
+              </p>
             </li>
-            <li>
-              <strong className="font-semibold text-foreground">The official checkpoints.</strong>{" "}
-              The assessments, approvals and authorizations a Government of Canada service
-              has to clear. They will find you whichever route you take, and each one is
-              cheaper to prepare for than to be surprised by.
+            <li className="flex items-start gap-3">
+              <BadgeCheck
+                aria-hidden="true"
+                className="mt-1 h-[1.15rem] w-[1.15rem] shrink-0 text-primary/70"
+                strokeWidth={1.6}
+              />
+              <p className={guideProse}>
+                <strong className="font-semibold text-foreground">The official checkpoints.</strong>{" "}
+                The assessments, approvals and authorizations a Government of Canada service
+                has to clear. They will find you whichever route you take, and each one is
+                cheaper to prepare for than to be surprised by.
+              </p>
             </li>
-            <li>
-              <strong className="font-semibold text-foreground">A picture of what is coming.</strong>{" "}
-              Which decisions arrive in roughly what order, who else has to be involved, and
-              which of them are expensive to reverse later.
+            <li className="flex items-start gap-3">
+              <Map
+                aria-hidden="true"
+                className="mt-1 h-[1.15rem] w-[1.15rem] shrink-0 text-primary/70"
+                strokeWidth={1.6}
+              />
+              <p className={guideProse}>
+                <strong className="font-semibold text-foreground">A picture of what is coming.</strong>{" "}
+                Which decisions arrive in roughly what order, who else has to be involved, and
+                which of them are expensive to reverse later.
+              </p>
             </li>
           </ul>
+        </section>
+
+        <section className={`${guideProseSpace} mt-8 md:mt-10`}>
 
           <p className={guideBlockSubheading}>
             One thing that catches people whichever route they take
@@ -726,7 +750,6 @@ function Index() {
           </p>
         </section>
 
-        <InstrumentMatrix />
 
         <ReusablePieces />
 

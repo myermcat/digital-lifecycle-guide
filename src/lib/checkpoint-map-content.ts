@@ -113,13 +113,10 @@ export const CHECKPOINT_MAP_WORKING_NOTE = {
 } as const;
 
 export const CHECKPOINT_MAP_JUMP = [
-  { label: "Discovery", href: "#discovery" },
-  { label: "Alpha", href: "#alpha" },
-  { label: "Beta", href: "#beta" },
-  { label: "Live", href: "#live" },
-  { label: "Sunset", href: "#sunset" },
+  { label: "What this page covers", href: "#what-this-covers" },
   { label: "Who's who", href: "#whoswho" },
-  { label: "The checkpoints", href: "#thecheckpoints" },
+  { label: "Annex 1: every official thing", href: "#annex-instruments" },
+  { label: "Annex 2: one service's path", href: "#annex-nadia" },
 ] as const;
 
 /** On-this-page rail items for the checkpoint map (same targets as CHECKPOINT_MAP_JUMP). */
@@ -127,6 +124,24 @@ export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.map((item) => ({
   id: item.href.slice(1),
   label: item.label,
 }));
+
+export const CHECKPOINT_MAP_ANNEX_ONE = {
+  id: "annex-instruments",
+  label: "ANNEX 1",
+  heading: "Every official thing a service has to do",
+  intro:
+    "One row per instrument: what it is, when in a service's life it comes up, and what the business owner personally has to do about it. Nothing here is specific to one department or one kind of service, so this is the list to check your own service against.",
+} as const;
+
+export const CHECKPOINT_MAP_ANNEX_TWO = {
+  id: "annex-nadia",
+  label: "ANNEX 2",
+  heading: "One service's path, step by step",
+  intro:
+    "Annex 1 says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
+  pathNote:
+    "Nadia took one path, and the steps below are in the order that path produced. A department that buys a finished product, or builds in-house, or runs an agile procurement, meets the same checkpoints in a different order. Even where the contract is signed moves by a whole sub-phase depending on the route chosen, so treat the sub-phase headings here as this service's sequence rather than as the sequence.",
+} as const;
 
 export const CHECKPOINT_MAP_NADIA = {
   heading: "Meet Nadia, a director general",
