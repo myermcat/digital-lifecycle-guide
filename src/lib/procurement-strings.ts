@@ -1,5 +1,15 @@
 import type { LucideIcon } from "lucide-react";
-import { Banknote, Coins, CreditCard, Hammer } from "lucide-react";
+import {
+  Banknote,
+  BookOpen,
+  Boxes,
+  CalendarClock,
+  Coins,
+  CreditCard,
+  Hammer,
+  Signpost,
+  UserCheck,
+} from "lucide-react";
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
@@ -94,22 +104,27 @@ export const PROCUREMENT_STRINGS = {
     keyPoints: [
       {
         lead: "The buy outlives the contract.",
+        icon: CalendarClock,
         body: "What gets signed decides what the service costs to run, whether it can be changed, and whether the department can ever move off it. Those consequences last for as long as the service does.",
       },
       {
         lead: "You stay responsible for the result.",
+        icon: UserCheck,
         body: "A supplier can build the service and run it. When it does not work for somebody, it is still the department that answers for it, and that part cannot be contracted out.",
       },
       {
         lead: "The route decides when you are committed.",
+        icon: Signpost,
         body: "Buying a team, buying a solution and buying a finished product each sign at a different point in Create. Before signature you have room to change your mind. After it, changes are negotiated with one supplier.",
       },
       {
         lead: "Small pieces are easier to recover from than one large contract.",
+        icon: Boxes,
         body: "If a piece goes wrong you replace the piece. If a single large contract goes wrong, years of work and most of the money go with it.",
       },
       {
         lead: "Most of the difficulty is vocabulary, and that part is fixable.",
+        icon: BookOpen,
         body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. The Procurement glossary further down has them all.",
       },
     ],
@@ -360,7 +375,7 @@ export const PROCUREMENT_STRINGS = {
     heading: "Agile procurement",
     intro: [
       {
-        text: "You have probably met agile development by now, and it is easy to see why teams prefer it to a plan written in full before anyone has built anything. Then the question arrives: how is that supposed to work when the work is bought? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Working out the answer as you go and being bound by a document written in advance look like opposites.",
+        text: "Agile development works by building a little, showing it to people, and changing the plan when they tell you something you did not know. Then the question arrives: how is that supposed to work when the work is bought? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Learning as you go and being bound by a document written in advance look like opposites.",
       },
       {
         text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. This appendix is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one, read PSPC's guide itself.",

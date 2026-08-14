@@ -1,4 +1,5 @@
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
+import requirementToSow from "@/assets/requirement_to_statement_of_work.svg?url";
 import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
@@ -16,6 +17,20 @@ export function DescribingWhatYouBuy() {
 
       <div className={guideProseSpace}>
         {SOO_VS_SOW.summary.map((paragraph) => (
+          <p key={paragraph} className={guideProse}>
+            {paragraph}
+          </p>
+        ))}
+      </div>
+
+      <img
+        src={requirementToSow}
+        alt="Three boxes in a row. Challenge statement, the problem and who has it with no solution named, leads to Requirements, what the service has to achieve and how well, which leads to Statement of work, the work being bought, written from the two before it. A dashed line from the statement of work reads: goes into the solicitation, then annexed to the contract. A caption says Canada writes all three."
+        className="mx-auto mt-6 w-full max-w-3xl"
+      />
+
+      <div className={`${guideProseSpace} mt-6`}>
+        {SOO_VS_SOW.afterVisual.map((paragraph) => (
           <p key={paragraph} className={guideProse}>
             {paragraph}
           </p>

@@ -10,6 +10,7 @@ import { RequirementsNamingStrip } from "@/components/RequirementsNamingStrip";
 import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
+import { GuideTable } from "@/components/GuideTable";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseInstruments } from "@/components/SubphaseInstruments";
@@ -298,6 +299,15 @@ export function CreateAlphaPage() {
         href={ALPHA_EXERCISE.href}
         linkLabel={ALPHA_EXERCISE.linkLabel}
       >
+        <h3 className={`${exerciseStepHeading} !mt-0`}>{ALPHA_EXERCISE.sizingHeading}</h3>
+        <p>{renderLinkedProse(ALPHA_EXERCISE.sizingIntro)}</p>
+        <GuideTable
+          className="mt-3"
+          columns={ALPHA_EXERCISE.sizingColumns}
+          rows={ALPHA_EXERCISE.sizingRows}
+        />
+
+        <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.halfDayHeading}</h3>
         <p>{renderLinkedProse(ALPHA_EXERCISE.bodyIntro)}</p>
         <ol className="mt-4 space-y-3">
           {ALPHA_EXERCISE.bodyQuestions.map((item, index) => (

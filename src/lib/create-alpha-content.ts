@@ -532,6 +532,7 @@ export const ALPHA_EXERCISE = {
   title: "What could take the service down, and how long it can stay down",
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
+  halfDayHeading: "Then spend half a day on the third question",
   bodyIntro: {
     text: "Two answers do more than any others to set how much this service costs to run and how much engineering has to go underneath it. They are not the only inputs, but they are the ones most often left until it is too late to act on them. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
     bold: [
@@ -552,6 +553,31 @@ export const ALPHA_EXERCISE = {
   bodyAfterQuestions: {
     text: "Do it at the end of Alpha, while the design can still absorb the answers.",
   } satisfies ThreadLinkedProse,
+  sizingHeading: "Three questions that size everything else",
+  sizingIntro: {
+    text: "Before the half-day, three questions settle how much service this is. None of them is about the budget or about how many people will use it, and the answers decide how much of the rest of this guide applies to you at all.",
+  } satisfies ThreadLinkedProse,
+  sizingColumns: ["Question", "What the answer decides"],
+  sizingRows: [
+    {
+      term: "What duties attach to it?",
+      cells: [
+        "A service the public can reach owes both official languages, the accessibility standard, and an authority to operate. An internal tool owes fewer of those. This one is about obligations, not importance.",
+      ],
+    },
+    {
+      term: "What does it hold?",
+      cells: [
+        "Nothing sensitive, or personal and financial information. The second answer brings a privacy assessment, a security categorisation, and rules about where the data may live.",
+      ],
+    },
+    {
+      term: "What happens when it fails?",
+      cells: [
+        "Inconvenience, or harm. This is the question the half-day below works out in detail, and the answer decides how much engineering has to go underneath the service.",
+      ],
+    },
+  ],
   threatsHeading: "First, name what could go wrong",
   threatsIntro: {
     text: "Threats come in three kinds, and the Government of Canada's own guidance warns which ones teams forget:",
