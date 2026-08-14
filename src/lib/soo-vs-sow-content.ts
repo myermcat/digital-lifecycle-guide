@@ -7,7 +7,7 @@ export const SOO_VS_SOW = {
   ],
   afterVisual: [
     "The statement of work is the one that counts in the end. It goes into the solicitation, so suppliers bid against it, and it is annexed to the contract, which makes it the thing the supplier is held to.",
-    "The choice you have is how much of the how to write into it. Keep it high-level and tied to outcomes, and the supplier can be told partway through that a page is wrong and fixing it is part of the job. Fill it with screen designs agreed before anyone tested them and the supplier will build those, with every change costing an amendment.",
+    "What you decide is how much detail to put in it. Write it at the level of what the service has to achieve, and when testing later shows that a screen is wrong, fixing that screen is part of the job the supplier was already hired to do. Write it as a set of screen designs agreed before anyone tested them, and the supplier will build those designs; changing one then means amending the contract, priced by the only supplier in the room.",
   ],
   comparison: {
     actualLabel: "Written tightly",

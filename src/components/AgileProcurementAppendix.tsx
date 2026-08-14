@@ -38,6 +38,10 @@ export function AgileProcurementAppendix() {
         ))}
       </div>
 
+      <p className="mt-5 border-l-2 border-border pl-4 font-sans text-[0.85rem] font-normal leading-relaxed text-muted-foreground">
+        {renderLinkedProse(appendix.introNote)}
+      </p>
+
       <h3 className={`${guideSubsectionTitle} mt-9 mb-3`}>{appendix.whatItIsHeading}</h3>
       <p className={`${guideProse} mb-4`}>{renderLinkedProse(appendix.whatItIs)}</p>
       <div className="rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8">
@@ -105,7 +109,18 @@ export function AgileProcurementAppendix() {
           </li>
         ))}
       </ul>
-      <p className={`${guideProse} mt-4`}>{renderLinkedProse(appendix.close)}</p>
+
+      <h3 className={`${guideSubsectionTitle} mt-10 mb-3`}>{appendix.worthItHeading}</h3>
+      <ul className={`${guideProse} list-disc space-y-2 ${guideListIndent}`}>
+        {appendix.worthIt.map((item) => (
+          <li key={item.lead}>
+            <strong className="font-semibold text-foreground">{item.lead}</strong>{" "}
+            {item.body}
+          </li>
+        ))}
+      </ul>
+      <p className={`${guideProse} mt-4`}>{renderLinkedProse(appendix.partialNote)}</p>
+      <p className={`${guideProse} mt-3`}>{renderLinkedProse(appendix.close)}</p>
     </section>
   );
 }

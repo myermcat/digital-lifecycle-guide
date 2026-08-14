@@ -126,6 +126,7 @@ export const PROCUREMENT_STRINGS = {
         lead: "Most of the difficulty is vocabulary, and that part is fixable.",
         icon: BookOpen,
         body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. The Procurement glossary further down has them all.",
+        anchorLinks: [{ phrase: "Procurement glossary", hash: "the-words" }],
       },
     ],
   },
@@ -375,18 +376,18 @@ export const PROCUREMENT_STRINGS = {
     heading: "Agile procurement",
     intro: [
       {
-        text: "Agile development works by building a little, showing it to people, and changing the plan when they tell you something you did not know. Then the question arrives: how is that supposed to work when the work is bought? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Learning as you go and being bound by a document written in advance look like opposites.",
+        text: "Agile development works by building a little, showing it to people, and changing the plan when they tell you something you did not know. Then the question arrives: how does that work when a supplier is doing the building? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Learning as you go and being bound by a document written in advance look like opposites.",
       },
       {
-        text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. This appendix is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one, read PSPC's guide itself.",
+        text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. What follows is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one of these, the guide itself is worth the hour it takes to read.",
         externalLinks: [
           { phrase: "Agile Procurement Guide", linkKey: "agile-procurement-guide" },
         ] satisfies ExternalPhraseLink[],
       },
-      {
-        text: "Two things about that guide are worth knowing before you open it. It is written for PSPC procurement officers rather than for departments, and it says of itself that it is informational and not prescriptive: officers may use other approaches. So it describes shapes that have worked, not a method you have to follow.",
-      },
     ] satisfies ThreadLinkedProse[],
+    introNote: {
+      text: "Two things about that guide are worth knowing before you open it. It is written for PSPC procurement officers rather than for departments, and it says of itself that it is informational and not prescriptive: officers may use other approaches. So it describes shapes that have worked, not a method you have to follow.",
+    } satisfies ThreadLinkedProse,
     whatItIsHeading: "What PSPC means by agile procurement",
     whatItIs: {
       text: "Its definition rests on four things, and none of them is about software:",
@@ -423,8 +424,8 @@ export const PROCUREMENT_STRINGS = {
         text: " Written proposals, not prototypes. In the example, nine bids came in.",
       },
       {
-        bold: "Several contracts are awarded at once,",
-        text: " to the top-ranked bidders. In the example, four of the nine.",
+        bold: "Several prototype contracts are awarded at once,",
+        text: " to the top-ranked bidders. Each one buys a prototype and holds an option for building the real thing later, so nobody is yet under contract to deliver the service itself. In the example, four of the nine bidders were awarded one.",
       },
       {
         bold: "Each supplier builds a prototype under its contract,",
@@ -462,11 +463,11 @@ export const PROCUREMENT_STRINGS = {
     comparisonHeading: "How it differs from the traditional way",
     comparisonIntro:
       "The two shapes differ in almost every part of the process, not only in when the contract is signed. Below that, the same programme bought each way, with what each buys you and what it costs.",
-    cautionsHeading: "What it costs you, and when it is worth it",
+    cautionsHeading: "What it costs you",
     cautions: [
       {
         lead: "It is not a faster way to buy.",
-        body: "PSPC says so itself: the extra engagement takes time, and an iterative strategy may lengthen the whole procurement. What it argues is that problems surface sooner, which avoids the failures that cause the worst delays. Plan the schedule on the basis that it will be no quicker.",
+        body: "PSPC says so itself: the extra engagement takes time, and an iterative strategy may lengthen the whole procurement. Plan the schedule on the basis that it will be no quicker.",
       },
       {
         lead: "It is resource-intensive.",
@@ -476,14 +477,33 @@ export const PROCUREMENT_STRINGS = {
         lead: "The flexibility has to be written in advance.",
         body: "Change requests, off-ramps, the clause that lets Canada move to the next-ranked supplier, and the criteria for choosing later all have to be in the solicitation. None of it can be added once the contract is signed, which is the whole reason the shape matters.",
       },
+    ],
+    worthItHeading: "If it is that much work, why go through it?",
+    worthIt: [
       {
-        lead: "You do not have to take all of it.",
-        body: "The guide says most procurements can adopt some agile elements. Engaging the market early, or keeping the statement of work high-level, are worth doing on their own.",
+        lead: "You choose on something built rather than on a written promise.",
+        body: "Prototypes and demonstrations show you what a supplier can actually do, which a proposal document cannot.",
+      },
+      {
+        lead: "A wrong turn costs one piece instead of the programme.",
+        body: "Smaller contracts running alongside each other mean a supplier who cannot deliver is replaced rather than salvaged, and there is no catastrophic restart at the end of two years.",
+      },
+      {
+        lead: "The price firms up as the design does.",
+        body: "Costs are refined while the work is under way rather than guessed at proposal stage, which is when nobody yet knows enough to guess well.",
+      },
+      {
+        lead: "Problems surface while they are still cheap.",
+        body: "That is the trade for the extra time: the delays agile procurement avoids are the failure-driven ones, which are the expensive kind.",
       },
     ],
+    partialNote: {
+      text: "You do not have to take all of it. PSPC says most procurements can adopt some agile elements, and engaging the market early, or keeping the statement of work high-level, are worth doing on their own.",
+      bold: [{ phrase: "You do not have to take all of it." }],
+    } satisfies ThreadLinkedProse,
     close: {
-      text: "It suits a purchase where the solution is genuinely unknown, where the options are changing quickly, or where what people need is likely to move while the work is under way. Where the thing being bought is well understood, the ordinary route is the right one.",
-    },
+      text: "The whole shape suits a purchase where the solution is genuinely unknown, where the options are changing quickly, or where what people need is likely to move while the work is under way. Where the thing being bought is well understood, the ordinary route is the right one.",
+    } satisfies ThreadLinkedProse,
   },
 
   glossary: {

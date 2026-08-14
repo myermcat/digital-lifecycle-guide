@@ -11,6 +11,11 @@ import { OnRampChecklist } from "@/components/OnRampChecklist";
 import { PageFoot } from "@/components/PageFoot";
 import { PhaseBreadcrumb } from "@/components/PhaseBreadcrumb";
 import { GuideTable } from "@/components/GuideTable";
+import requirementToSow from "@/assets/requirement_to_statement_of_work.svg?url";
+
+/** Same chain the Procurement page shows; this is the sub-phase where the middle box gets written. */
+const REQUIREMENT_CHAIN_ALT =
+  "Three boxes in a row. Challenge statement, the problem and who has it with no solution named, leads to Requirements, what the service has to achieve and how well, which leads to Statement of work, the work being bought, written from the two before it. A dashed line from the statement of work reads: goes into the solicitation, then annexed to the contract. A caption says Canada writes all three.";
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseInstruments } from "@/components/SubphaseInstruments";
@@ -230,6 +235,13 @@ export function CreateAlphaPage() {
             stage.id === "write-the-requirements" ? (
               <>
                 {renderThreadSections(stage.sections.slice(0, 1))}
+                <figure className="mt-5">
+                  <img
+                    src={requirementToSow}
+                    alt={REQUIREMENT_CHAIN_ALT}
+                    className="w-full max-w-2xl mx-auto"
+                  />
+                </figure>
                 <RequirementTypesTable />
                 {renderThreadSections(stage.sections.slice(1))}
                 <RequirementsNamingStrip />
