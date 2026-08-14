@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 258" width="880" height="258" font-family="Georgia, 'Times New Roman', serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 232" width="880" height="232" font-family="Georgia, 'Times New Roman', serif">
   <defs>
     <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
       <path d="M0 0 L7 4 L0 8 Z" fill="#A8492A"/>
@@ -39,5 +39,5 @@
   <rect x="451" y="196" width="174" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
   <text x="538" y="216" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Finished Product</text>
 
-  <text x="440" y="248" text-anchor="middle" font-size="14" font-style="italic" fill="#8C7B63">Where the contract is signed, route by route.</text>
+  <text x="20" y="216" font-size="13" font-style="italic" fill="#8C7B63">Where the contract is signed, route by route.</text>
 </svg>

@@ -220,6 +220,10 @@ export const PROCUREMENT_STRINGS = {
             text: "The department describes the problem and the outcome it needs, and suppliers propose how to solve it.",
           },
           {
+            type: "subheading",
+            text: "Three things to know before choosing this route",
+          },
+          {
             type: "unorderedList",
             items: [
               {
@@ -232,7 +236,7 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "Under agile and challenge-based procurement, more than one supplier is paid to build and demonstrate before one is chosen. That is not a footnote to this route. In the shape PSPC's own guide sets out, it is the route.",
+                text: "More than one supplier can be paid to build something before one of them is chosen. That is agile and challenge-based procurement, and the next part sets out how it runs.",
                 bold: [
                   {
                     phrase:
@@ -253,8 +257,12 @@ export const PROCUREMENT_STRINGS = {
             ],
           },
           {
-            text: "The PSPC agile procurement guide suggests running it like this, and it is worth following the shape closely, because it is the most fully described route Canada has written down:",
-            bold: [{ phrase: "The PSPC agile procurement guide suggests running it like this" }],
+            type: "subheading",
+            text: "The agile procurement model, which is the shape PSPC sets out",
+          },
+          {
+            text: "This is the version of Buy a Solution that Canada has written down most fully, so it is worth following its shape closely. PSPC's agile procurement guide suggests running it in five steps:",
+            bold: [{ phrase: "the version of Buy a Solution that Canada has written down most fully" }],
           },
           {
             type: "orderedList",
@@ -277,12 +285,16 @@ export const PROCUREMENT_STRINGS = {
               },
               {
                 bold: "The winner's contract is amended",
-                text: " to exercise an option to build the production solution. There is no second competition and no second contract. The other contracts sit dormant as back-ups, which is how Canada pivoted to the runner-up when the first choice failed to deliver.",
+                text: " to exercise an option to build the production solution. There is no second competition and no second contract. The other contracts stay dormant as back-ups, which is how Canada pivoted to the runner-up when the first choice failed to deliver.",
               },
             ],
           },
           {
-            text: "That sequence is the one PSPC works through in detail, but it is not the only permitted shape. Prototypes and demonstrations can also come earlier, before anyone is under contract:",
+            type: "subheading",
+            text: "Prototypes can also come earlier, before anyone is under contract",
+          },
+          {
+            text: "That five-step sequence is the one PSPC works through in detail, and it is not the only shape the rules allow. A department can ask to see something built at two earlier points:",
           },
           {
             type: "unorderedList",
@@ -298,11 +310,19 @@ export const PROCUREMENT_STRINGS = {
             ],
           },
           {
-            text: "The difference matters for who pays. A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and it is a real cost to the suppliers who take part.",
-            bold: [{ phrase: "The difference matters for who pays." }],
+            type: "subheading",
+            text: "Who pays for the prototype depends on when it happens",
           },
           {
-            text: "How long this takes is the obvious question and PSPC declines to answer it. Their words: agile procurement is not always faster, the extra engagement takes time, and the iterative strategy may lengthen the overall procurement process. What they argue is that it surfaces problems sooner and avoids the failures that cause the worst delays. Plan for it to be no quicker.",
+            text: "A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and building one is a real cost to every supplier who takes part, including the ones who will lose. That is worth weighing before asking for it.",
+            bold: [{ phrase: "A prototype built after award is paid work under a contract." }],
+          },
+          {
+            type: "subheading",
+            text: "It is not a faster way to buy",
+          },
+          {
+            text: "PSPC says so itself: agile procurement is not always faster, the extra engagement with suppliers takes time, and the iterative strategy may lengthen the overall procurement process. What it does argue is that problems surface sooner, which avoids the failures that cause the worst delays. Plan the schedule on the basis that it will be no quicker.",
             bold: [{ phrase: "agile procurement is not always faster" }],
           },
         ],
