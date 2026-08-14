@@ -178,6 +178,10 @@ export const PROCUREMENT_STRINGS = {
             ],
           },
           {
+            type: "subheading",
+            text: "Summary",
+          },
+          {
             type: "unorderedList",
             items: [
               {
@@ -190,15 +194,15 @@ export const PROCUREMENT_STRINGS = {
                 ],
               },
               {
-                text: "There is still a competition. It usually runs against an existing supply arrangement, which is a pre-competed list of approved suppliers, so it is faster than an open tender. It is not instant.",
+                text: "There is still a competition, usually against a pre-competed list of approved suppliers, so it is faster than an open tender but not instant.",
                 bold: [{ phrase: "There is still a competition." }],
               },
               {
-                text: "The team is what does Alpha, so it has to be in place as Alpha opens. Nothing is bought in Discovery, so the competition runs there and the award waits on the decision to continue.",
+                text: "The team is what does Alpha, so it has to be there on day one. The competition runs through Discovery and the award waits on the decision to continue.",
                 bold: [{ phrase: "The team is what does Alpha," }],
               },
               {
-                text: "The timeline is the same shape as buying a Solution: a competition, then a contract, then work under it. What differs is what the contract is for, people rather than an outcome, and how much direction stays with the department.",
+                text: "Same timeline shape as buying a Solution. What differs is that the contract buys people rather than an outcome, so more of the direction stays with the department.",
                 bold: [{ phrase: "The timeline is the same shape as buying a Solution" }],
               },
             ],
@@ -217,117 +221,39 @@ export const PROCUREMENT_STRINGS = {
         title: "Buy a Solution",
         sections: [
           {
-            text: "The department describes the problem and the outcome it needs, and suppliers propose how to solve it.",
-          },
-          {
             type: "subheading",
-            text: "Three things to know before choosing this route",
+            text: "Summary",
           },
           {
             type: "unorderedList",
             items: [
               {
-                text: 'This is the route most people picture when they hear "procurement".',
-                bold: [
-                  {
-                    phrase:
-                      'This is the route most people picture when they hear "procurement".',
-                  },
-                ],
+                text: "The route most people picture when they hear \"procurement\".",
               },
               {
-                text: "More than one supplier can be paid to build something before one of them is chosen. That is agile and challenge-based procurement, and the next part sets out how it runs.",
-                bold: [
-                  {
-                    phrase:
-                      "more than one supplier is paid to build and demonstrate before one is chosen",
-                  },
-                ],
-                externalLinks: [
-                  {
-                    phrase: "agile and challenge-based procurement",
-                    linkKey: "agile-challenge-based-procurement",
-                  },
-                ],
+                text: "The department describes the problem and the outcome it needs. Suppliers propose how to solve it.",
               },
               {
-                text: "The department has to show suppliers what it wants. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
-                bold: [{ phrase: "The department has to show suppliers what it wants." }],
+                text: "The clearer the department is early, the fewer changes it pays for later.",
+              },
+              {
+                text: "It runs two ways, traditional or agile, and the two sign at different points.",
               },
             ],
           },
           {
             type: "subheading",
-            text: "The agile procurement model, which is the shape PSPC sets out",
+            text: "Two ways to run it",
           },
           {
-            text: "This is the version of Buy a Solution that Canada has written down most fully, so it is worth following its shape closely. PSPC's agile procurement guide suggests running it in five steps:",
-            bold: [{ phrase: "the version of Buy a Solution that Canada has written down most fully" }],
-          },
-          {
-            type: "orderedList",
-            items: [
-              {
-                bold: "One solicitation goes out.",
-                text: " It carries the challenge statement, the outcomes, the criteria the prototypes will be judged against, and the terms for building the real thing afterwards. All of that has to be in it up front, because criteria applied after award have to be published before award.",
-              },
-              {
-                bold: "Suppliers bid on paper.",
-                text: " Written proposals, not prototypes. In the guide's worked example, nine bids came in.",
-              },
-              {
-                bold: "Several contracts are awarded at once,",
-                text: " to the top-ranked bidders. In the example, four of the nine.",
-              },
-              {
-                bold: "Each supplier builds a prototype under its contract,",
-                text: " and the prototypes are assessed against the criteria that were in the solicitation. This is the real competition, and it happens after signature.",
-              },
-              {
-                bold: "The winner's contract is amended",
-                text: " to exercise an option to build the production solution. There is no second competition and no second contract. The other contracts stay dormant as back-ups, which is how Canada pivoted to the runner-up when the first choice failed to deliver.",
-              },
+            text: "Run traditionally, the department writes the requirement first and asks suppliers to price it. Run the agile way, suppliers are engaged early and more than one is paid to build something before one of them is chosen. That is why Buy a Solution appears twice in the table below, signing at a different point in each shape. Appendix 1 sets out how the agile shape runs and what it costs.",
+            anchorLinks: [
+              { phrase: "Appendix 1", hash: "appendix-agile-procurement" },
             ],
-          },
-          {
-            type: "subheading",
-            text: "Prototypes can also come earlier, before anyone is under contract",
-          },
-          {
-            text: "That five-step sequence is the one PSPC works through in detail, and it is not the only shape the rules allow. A department can ask to see something built at two earlier points:",
-          },
-          {
-            type: "unorderedList",
-            items: [
-              {
-                text: "At pre-qualification, a supplier can be asked to demonstrate a potential solution, or part of one, to help work out which approaches conceptually meet the need before the solicitation goes out.",
-                bold: [{ phrase: "At pre-qualification" }],
-              },
-              {
-                text: "At solicitation, suppliers can be asked for demonstrations, proofs of concept, prototypes or samples alongside their written proposals, so the choice rests on something tangible rather than prose alone.",
-                bold: [{ phrase: "At solicitation" }],
-              },
-            ],
-          },
-          {
-            type: "subheading",
-            text: "Who pays for the prototype depends on when it happens",
-          },
-          {
-            text: "A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and building one is a real cost to every supplier who takes part, including the ones who will lose. That is worth weighing before asking for it.",
-            bold: [{ phrase: "A prototype built after award is paid work under a contract." }],
-          },
-          {
-            type: "subheading",
-            text: "It is not a faster way to buy",
-          },
-          {
-            text: "PSPC says so itself: agile procurement is not always faster, the extra engagement with suppliers takes time, and the iterative strategy may lengthen the overall procurement process. What it does argue is that problems surface sooner, which avoids the failures that cause the worst delays. Plan the schedule on the basis that it will be no quicker.",
-            bold: [{ phrase: "agile procurement is not always faster" }],
           },
         ],
         contractSigned: {
-          text: "depends on which shape you run. In the familiar shape the department prototypes first and signs as Beta opens, once it can say what it wants. In the agile procurement shape above, the one PSPC sets out, the contracts are signed a sub-phase earlier, as Alpha opens, because the prototypes are built under them, and the build is an option inside the winner's contract.",
+          text: "depends on the shape. Run traditionally, the department prototypes first and signs as Beta opens, once it can say what it wants. Run the agile way, the contracts are signed a sub-phase earlier, as Alpha opens, because the prototypes are built under them.",
           internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
         },
       },
@@ -338,6 +264,10 @@ export const PROCUREMENT_STRINGS = {
         sections: [
           {
             text: "An existing tool, bought off a standing offer or a supply arrangement, which are pre-competed lists of approved suppliers and products.",
+          },
+          {
+            type: "subheading",
+            text: "Summary",
           },
           {
             type: "unorderedList",
@@ -364,6 +294,10 @@ export const PROCUREMENT_STRINGS = {
         sections: [
           {
             text: "There is no build contract at all.",
+          },
+          {
+            type: "subheading",
+            text: "Summary",
           },
           {
             type: "unorderedList",
@@ -427,13 +361,128 @@ export const PROCUREMENT_STRINGS = {
     closingNote: {
       heading: "The competition runs in the sub-phase before the signature",
       body: {
-        text: "That is why the two columns in the table move together, one sub-phase apart. It also means the route a department chooses in Discovery decides when it is committed, so the choice is worth making deliberately. It is easy to inherit whatever was done last time without noticing that a decision was made. Build in-house or Reuse signs no build contract at all, and most of the steps below fall away.",
+        text: "Read the table one row at a time and the same gap shows up in every route: whatever sub-phase the competition runs in, the signature lands at the start of the next one. So the route a department chooses back in Discovery is also choosing the moment it stops being able to change its mind cheaply. That is worth deciding on purpose. It is easy to inherit whatever was done last time without noticing a decision was made at all.",
       },
     },
     closingNoteSecond: {
       text: "Otherwise the steps below run in all of these routes. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender.",
     },
   } satisfies ChoosingWhatToBuyContent,
+
+
+  agileAppendix: {
+    id: "appendix-agile-procurement",
+    label: "APPENDIX 1",
+    heading: "Agile procurement",
+    intro: [
+      {
+        text: "You have probably met agile development by now, and it is easy to see why teams prefer it to a plan written in full before anyone has built anything. Then the question arrives: how is that supposed to work when the work is bought? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Working out the answer as you go and being bound by a document written in advance look like opposites.",
+      },
+      {
+        text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. This appendix is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one, read PSPC's guide itself.",
+        externalLinks: [
+          { phrase: "Agile Procurement Guide", linkKey: "agile-procurement-guide" },
+        ] satisfies ExternalPhraseLink[],
+      },
+      {
+        text: "Two things about that guide are worth knowing before you open it. It is written for PSPC procurement officers rather than for departments, and it says of itself that it is informational and not prescriptive: officers may use other approaches. So it describes shapes that have worked, not a method you have to follow.",
+      },
+    ] satisfies ThreadLinkedProse[],
+    whatItIsHeading: "What PSPC means by agile procurement",
+    whatItIs: {
+      text: "Its definition rests on four things, and none of them is about software:",
+    },
+    pillars: [
+      {
+        lead: "Cross-functional teams.",
+        body: "Procurement officers, the business owner and their technical people, representatives of the people who will use the service, and whichever specialists the purchase needs.",
+      },
+      {
+        lead: "Engagement, early and continuous.",
+        body: "With suppliers, with end users and with stakeholders, starting long before a solicitation is drafted rather than after the requirement is finished.",
+      },
+      {
+        lead: "A flexible approach.",
+        body: "Requirements that can scale, contract terms written for this purchase rather than lifted from a template, and mechanisms to change course built in from the start.",
+      },
+      {
+        lead: "An iterative process.",
+        body: "Progress in increments, often through several contracts running in parallel or in series rather than one large one.",
+      },
+    ],
+    exampleHeading: "The example the guide works through",
+    exampleIntro: {
+      text: "The clearest picture in the guide is a worked example rather than a prescribed method, and it runs like this:",
+    },
+    exampleSteps: [
+      {
+        bold: "One solicitation goes out.",
+        text: " It carries the challenge statement, the outcomes, the criteria the prototypes will be judged against, and the terms for building the real thing afterwards. All of that has to be there up front, because criteria applied after award have to be in the solicitation.",
+      },
+      {
+        bold: "Suppliers bid on paper.",
+        text: " Written proposals, not prototypes. In the example, nine bids came in.",
+      },
+      {
+        bold: "Several contracts are awarded at once,",
+        text: " to the top-ranked bidders. In the example, four of the nine.",
+      },
+      {
+        bold: "Each supplier builds a prototype under its contract,",
+        text: " and the prototypes are assessed against the criteria that were in the solicitation. This is where the real choosing happens, and it happens after signature.",
+      },
+      {
+        bold: "The winner's contract is amended",
+        text: " to exercise an option to build the production solution. There is no second competition and no second contract. In the example the first choice later failed to meet the requirements, and Canada moved to the next-best prototype, because those contracts were still alive.",
+      },
+    ],
+    exampleClose: {
+      text: "That is one shape among several the guide describes. Others break the work into phases with go and no-go gates between them, or release it task by task under contracts with task authorizations, or run a series of overlapping competitions, one per part of the problem, each opened once the previous part had found its direction.",
+      externalLinks: [
+        { phrase: "task authorizations", linkKey: "task-authorizations" },
+      ] satisfies ExternalPhraseLink[],
+    },
+    earlierHeading: "Prototypes can also come before anyone is under contract",
+    earlierIntro: {
+      text: "In that example nobody builds anything until contracts are signed. The guide allows two earlier points as well:",
+    },
+    earlierItems: [
+      {
+        lead: "At pre-qualification.",
+        body: "A supplier can be asked to demonstrate a potential solution, or part of one, to help work out which approaches conceptually meet the need before the solicitation goes out.",
+      },
+      {
+        lead: "At solicitation.",
+        body: "Suppliers can be asked for demonstrations, proofs of concept, prototypes or samples alongside their written proposals, so the choice rests on something tangible.",
+      },
+    ],
+    paysNote: {
+      text: "When it happens decides who pays. A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and preparing one is a real cost to every supplier who takes part, including all the ones who will lose. PSPC's own advice is to make taking part worthwhile and not to burn goodwill you will need later.",
+      bold: [{ phrase: "When it happens decides who pays." }],
+    },
+    cautionsHeading: "What it costs you, and when it is worth it",
+    cautions: [
+      {
+        lead: "It is not a faster way to buy.",
+        body: "PSPC says so itself: the extra engagement takes time, and an iterative strategy may lengthen the whole procurement. What it argues is that problems surface sooner, which avoids the failures that cause the worst delays. Plan the schedule on the basis that it will be no quicker.",
+      },
+      {
+        lead: "It is resource-intensive.",
+        body: "It needs dedicated people from both the department and procurement, and a governance structure decided for this purchase. That is a senior-management decision, not something a project team can adopt quietly.",
+      },
+      {
+        lead: "The flexibility has to be written in advance.",
+        body: "Change requests, off-ramps, the clause that lets Canada move to the next-ranked supplier, and the criteria for choosing later all have to be in the solicitation. None of it can be added once the contract is signed, which is the whole reason the shape matters.",
+      },
+      {
+        lead: "You do not have to take all of it.",
+        body: "The guide says most procurements can adopt some agile elements. Engaging the market early, or keeping the statement of work high-level, are worth doing on their own.",
+      },
+    ],
+    close: {
+      text: "It suits a purchase where the solution is genuinely unknown, where the options are changing quickly, or where what people need is likely to move while the work is under way. Where the thing being bought is well understood, the ordinary route is the right one.",
+    },
+  },
 
   workedExamples: {
     id: "which-side-are-you-on",
@@ -587,7 +636,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "This step is not in PSPC's guidance, which starts after the decision to buy, so it sits with the Policy on the Planning and Management of Investments.",
+            text: "Procurement guidance starts after the decision to buy has been made, so it will not help you here. Working out whether to buy at all is your own step, and the rules for it are in the Policy on the Planning and Management of Investments.",
           },
         ],
         externalLinks: [
@@ -610,7 +659,12 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "ul",
-            items: ["you", "the contracting authority", "users", "subject-matter experts"],
+            items: [
+              "you, as the business owner of the service",
+              "the contracting authority, who runs the buying",
+              "people who will use the service",
+              "subject-matter experts, for whatever the service touches",
+            ],
           },
           {
             type: "p",
@@ -623,8 +677,12 @@ export const PROCUREMENT_STRINGS = {
         title: "Say the problem, not the solution.",
         blocks: [
           {
+            type: "subheading",
+            text: "Start with a challenge statement",
+          },
+          {
             type: "p",
-            text: "Write a challenge statement. It says what the problem is, who has it, when and where it shows up, and why it matters, and it stops short of naming the answer. Then set out two more things:",
+            text: "A challenge statement is a short, high-level description of the problem being solved, or the goal of the whole purchase, and it deliberately does not describe or presume a solution. PSPC's example for a real purchase reads: acquire individual meal solutions for the Canadian Armed Forces' deployed personnel. Cover what, who, when, where and why, and stop before naming the answer. Then set out two more things:",
           },
           {
             type: "ul",
@@ -632,7 +690,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "Suppliers who are told the objective can offer answers better than the one you would have written yourself. Suppliers who are handed a specification will build the specification, including the parts of it that turn out to be wrong.",
+            text: "The reason to describe the problem instead of the answer is that suppliers do this work all day. Given the problem, one of them may propose something better than what you had in mind. Given a specification, they will build the specification, including the parts of it that turn out to be wrong.",
           },
           {
             type: "subheading",
@@ -673,10 +731,7 @@ export const PROCUREMENT_STRINGS = {
             type: "p",
             text: "A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs an amendment.",
           },
-          {
-            type: "p",
-            text: "This is not only a buyer's problem. A department building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. What buying adds is a mandated shape and a signature.",
-          },
+
         ],
       },
       {
@@ -704,7 +759,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "One thing to be clear about: this is not contract splitting. Splitting is slicing the same work to slip under a threshold or dodge an approval, and it is against the rules. Buying in genuine increments is allowed and encouraged.",
+            text: "One thing to be clear about: buying in pieces is not contract splitting. Splitting is slicing the same work up to slip under a threshold or dodge an approval, and it is against the rules. Breaking a large purchase into smaller, tightly scoped pieces is something PSPC recommends. The rule that stays in force is that contracts must not be split in order to avoid the approval the whole thing would need.",
           },
         ],
         anchorLinks: [
@@ -722,12 +777,27 @@ export const PROCUREMENT_STRINGS = {
             text: "Most services are approved and funded inside the department, and roughly 95% of projects never go higher than that.",
           },
           {
-            type: "p",
-            text: "Two things decide which path a project takes: the department's approved project-management capacity class, and the project's score on the Project Complexity and Risk Assessment. If the project scores within the department's capacity, the department's own governance approves it. A concept case and the departmental architecture review board come first either way.",
+            type: "subheading",
+            text: "Two things decide how high the approval goes",
+          },
+          {
+            type: "ul",
+            items: [
+              "The department's approved project-management capacity class, which is how much project the department is trusted to run on its own authority.",
+              "The project's score on the Project Complexity and Risk Assessment, which is how much project this one is.",
+            ],
           },
           {
             type: "p",
-            text: "Only the largest or most complex projects climb higher, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. If that is you, start the conversation at the strategy stage, while there is still room to change the plan. The Funding page sets out which path a given project takes, so most readers will not need the detail here.",
+            text: "Score within the department's capacity and the department's own governance approves it. Score above it and the project climbs to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Either way, a concept case and the departmental architecture review board come first.",
+          },
+          {
+            type: "subheading",
+            text: "If you are on the higher path, start early",
+          },
+          {
+            type: "p",
+            text: "Bring it up at the strategy stage, while there is still room to change the plan. The same applies if the purchase is a series of smaller contracts whose total may exceed what the department can approve: the total is what counts, not the individual contracts. The Funding page sets out which path a given project takes, so most readers will not need the detail here.",
           },
         ],
         internalLinks: [
@@ -854,7 +924,7 @@ export const PROCUREMENT_STRINGS = {
       },
     ] satisfies ComparisonRowStrings[],
     caption:
-      "Agile is not always faster. What it buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. Note that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
+      "What the agile shape buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. It is not a faster way to buy, and Appendix 1 sets out what it costs. Note also that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
   },
 
   caseStudy: {

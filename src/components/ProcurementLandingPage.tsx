@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { AgileProcurementAppendix } from "@/components/AgileProcurementAppendix";
 import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { DescribingWhatYouBuy } from "@/components/DescribingWhatYouBuy";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
@@ -202,6 +203,8 @@ export function ProcurementLandingPage() {
       </section>
 
       <ThreadByPhaseSection byPhase={landing.byPhase} />
+
+      <AgileProcurementAppendix />
 
       <ThreadInstruments thread="procurement" threadTitle="Procurement" />
 

@@ -6,11 +6,7 @@ export const SOO_VS_SOW = {
   opening:
     "Every contract needs a description of the work being bought. It is usually written one of two ways, and the choice shapes whether the work can change as you learn.",
   termNote: {
-    heading: "If you hear it called a statement of objectives",
-    paragraphs: [
-      "That term is worth dropping. It appears in none of the Canadian instruments: not the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual, the CanadaBuys Buyer's Guide, or the PSPC Agile Procurement Guide.",
-      "It is United States federal procurement vocabulary that circulates in Canadian conversation. What the Government of Canada names is the statement of work and the statement of requirement. The distinction described here is real either way; only the label changed.",
-    ],
+    text: "One naming note, because it comes up. Some people call the second one a \"statement of objectives\". That is United States federal procurement vocabulary, and it appears in none of the Canadian instruments: not the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual, the CanadaBuys Buyer's Guide, or the PSPC Agile Procurement Guide. The Canadian names are statement of work and statement of requirement.",
   },
   whatEachOneIs: {
     id: "what-each-one-is",
