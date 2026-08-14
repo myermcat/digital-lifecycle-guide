@@ -492,23 +492,18 @@ export function CheckpointMapPage() {
         </div>
       </section>
 
+      <section id={CHECKPOINT_MAP_ANNEX_ONE.id} className="mt-10 scroll-mt-24 md:mt-12">
+        <h2 className={`${guideSectionTitle} mb-3`}>{CHECKPOINT_MAP_ANNEX_ONE.heading}</h2>
+        <p className={`${guideProse} mb-5 max-w-[84ch]`}>{CHECKPOINT_MAP_ANNEX_ONE.intro}</p>
+        <InstrumentMatrix embedded />
+      </section>
+
       <DefinitionBlock
         id="thecheckpoints"
         title={CHECKPOINT_MAP_TERMS_TITLE}
         cap={CHECKPOINT_MAP_TERMS_CAPTION}
         entries={CHECKPOINT_MAP_TERMS}
       />
-
-      <section id={CHECKPOINT_MAP_ANNEX_ONE.id} className="mt-14 scroll-mt-24 md:mt-20">
-        <div className="border-t border-border pt-8 md:pt-10">
-          <p className={guideCalloutLabel}>{CHECKPOINT_MAP_ANNEX_ONE.label}</p>
-          <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
-            {CHECKPOINT_MAP_ANNEX_ONE.heading}
-          </h2>
-          <p className={`${guideProse} mb-5 max-w-[84ch]`}>{CHECKPOINT_MAP_ANNEX_ONE.intro}</p>
-        </div>
-        <InstrumentMatrix embedded />
-      </section>
 
       <section id={CHECKPOINT_MAP_ANNEX_TWO.id} className="mt-14 scroll-mt-24 md:mt-20">
         <div className="border-t border-border pt-8 md:pt-10">

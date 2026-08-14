@@ -109,11 +109,11 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
   heading: "How to use this page",
   items: [
     {
-      lead: "To find out what applies to your service, use Annex 1.",
+      lead: "To find out what applies to your service, read the table.",
       body: "It has a row for every official instrument a Government of Canada digital service can meet, with what it is, what brings it into scope, and what the business owner personally has to do about it. Read down the scope column and rule out what does not apply to you.",
     },
     {
-      lead: "To get a feel for the order and the people, use Annex 2.",
+      lead: "To get a feel for the order and the people, read the annex.",
       body: "It follows one invented service from the first sign of trouble to the day it is replaced, showing what its director general does at each step and who answers. It is a worked example of one route, not a template.",
     },
     {
@@ -134,8 +134,9 @@ export const CHECKPOINT_MAP_VARIES = {
 
 export const CHECKPOINT_MAP_JUMP = [
   { label: "What this page covers", href: "#what-this-covers" },
-  { label: "Annex 1: every official thing", href: "#annex-instruments" },
-  { label: "Annex 2: one service's path", href: "#annex-nadia" },
+  { label: "Every official thing", href: "#annex-instruments" },
+  { label: "Glossary", href: "#thecheckpoints" },
+  { label: "Annex: one service's path", href: "#annex-nadia" },
 ] as const;
 
 /** On-this-page rail items for the checkpoint map (same targets as CHECKPOINT_MAP_JUMP). */
@@ -146,20 +147,20 @@ export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.map((item) => ({
 
 export const CHECKPOINT_MAP_ANNEX_ONE = {
   id: "annex-instruments",
-  label: "ANNEX 1",
+  label: "THE TABLE",
   heading: "Every official thing a service has to do",
   intro:
-    "One row per instrument: what it is, when in a service's life it comes up, and what the business owner personally has to do about it. Nothing here is specific to one department or one kind of service, so this is the list to check your own service against.",
+    "This is the substance of the page. One row per instrument: what it is, what brings it into scope, when in a service's life it comes up, and what the business owner personally has to do about it. Nothing in it is specific to one department or one kind of service, so it is the list to check your own service against.",
 } as const;
 
 export const CHECKPOINT_MAP_ANNEX_TWO = {
   id: "annex-nadia",
-  label: "ANNEX 2",
+  label: "ANNEX",
   heading: "One service's path, step by step",
   timelineNote:
-    "The durations below are what this one service experienced. They are not a planning figure, and Create in particular can run considerably shorter or longer.",
+    "This is Nadia's timeline, not a general one. It is what this one invented service experienced, and Create in particular can run considerably shorter or longer. Do not plan against it.",
   intro:
-    "Annex 1 says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
+    "The table above says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
   pathNote:
     "Nadia took one path, and the steps below are in the order that path produced. A department that buys a finished product, or builds in-house, or runs an agile procurement, meets the same checkpoints in a different order. Even where the contract is signed moves by a whole sub-phase depending on the route chosen, so treat the sub-phase headings here as this service's sequence rather than as the sequence.",
 } as const;
@@ -867,10 +868,10 @@ export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   },
 ];
 
-export const CHECKPOINT_MAP_TERMS_TITLE = "Terms the annex does not have a row for";
+export const CHECKPOINT_MAP_TERMS_TITLE = "Glossary";
 
 export const CHECKPOINT_MAP_TERMS_CAPTION =
-  "Annex 1 has a row for every instrument with an official home of its own. These six come up throughout both annexes and do not have one, so they are defined here.";
+  "The table above has a row for every instrument with an official home of its own. These six terms come up throughout this page without being instruments themselves, so they are defined here.";
 
 export const CHECKPOINT_MAP_TERMS: readonly CheckpointMapWhoEntry[] = [
   {
