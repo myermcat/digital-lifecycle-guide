@@ -532,7 +532,7 @@ export const ALPHA_EXERCISE = {
   title: "What could take the service down, and how long it can stay down",
   icon: ShieldAlert,
   sectionId: "what-could-go-wrong",
-  halfDayHeading: "Then spend half a day on the third question",
+  halfDayHeading: "Then give the third question half a day",
   bodyIntro: {
     text: "Two answers do more than any others to set how much this service costs to run and how much engineering has to go underneath it. They are not the only inputs, but they are the ones most often left until it is too late to act on them. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
     bold: [
@@ -553,9 +553,10 @@ export const ALPHA_EXERCISE = {
   bodyAfterQuestions: {
     text: "Do it at the end of Alpha, while the design can still absorb the answers.",
   } satisfies ThreadLinkedProse,
-  sizingHeading: "Three questions that size everything else",
+  sizingHeading: "Start with three questions about criticality",
   sizingIntro: {
-    text: "Before the half-day, three questions settle how much service this is. None of them is about the budget or about how many people will use it, and the answers decide how much of the rest of this guide applies to you at all.",
+    text: "Criticality is how much harm follows if this service is unavailable, wrong, or breached. It is not a judgement about how important the work feels, and it has nothing to do with the size of the budget or the number of users. Sit down with the people who know what the service is for and answer three questions. What comes out of them decides which official obligations reach the service, how much protection its information needs, and how much engineering has to go underneath it.",
+    bold: [{ phrase: "Criticality is how much harm follows if this service is unavailable, wrong, or breached." }],
   } satisfies ThreadLinkedProse,
   sizingColumns: ["Question", "What the answer decides"],
   sizingRows: [
@@ -574,7 +575,7 @@ export const ALPHA_EXERCISE = {
     {
       term: "What happens when it fails?",
       cells: [
-        "Inconvenience, or harm. This is the question the half-day below works out in detail, and the answer decides how much engineering has to go underneath the service.",
+        "Inconvenience, or harm. This is the one that takes real work to answer, so the rest of this block is about it.",
       ],
     },
   ],
