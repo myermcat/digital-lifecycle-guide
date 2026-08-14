@@ -23,9 +23,9 @@ export const STABILIZATION_EXTRACT: SubphaseExtract = {
     internalLinks: [{ phrase: "Live", to: "/live" }],
   },
   workOutItems: [
-    "watches the service every day, because full load finds what testing missed",
+    "watches the whole service every day, not just the software: whether applications actually get processed, and whether the people doing that can keep up",
     "fixes what breaks within days, with the people who built it still on call",
-    "clears the launch leftovers: the registrations, the knowledge handover, the old way retired on its date",
+    "clears the launch leftovers: registering the service, and closing out the handover from the build team",
   ],
   scoped: {
     text: "Stabilization is short: a few weeks to a couple of months. It comes once per launch, then briefly again after a major relaunch.",
@@ -41,13 +41,35 @@ export const STABILIZATION_EXTRACT: SubphaseExtract = {
 };
 
 export const STABILIZATION_LEAD: ThreadLinkedProse = {
-  text: "The first weeks are firefighting. Real, full load sets off problems that testing could not, and the team puts each one out while the people who built the service are still close. Stabilization is the work of reaching the day when there is nothing left to put out.",
+  text: "The first weeks are firefighting. Stabilization is the work of reaching the day when there are no fires left to put out.",
+  bold: [{ phrase: "no fires left to put out" }],
+};
+
+/** The two things that change at launch, as a labelled pair rather than a paragraph. */
+export const STABILIZATION_WHAT_CHANGED = {
+  heading: "Two things change on launch day",
+  items: [
+    {
+      lead: "The volume is real.",
+      body: "Everyone the service is for can reach it, so what arrives is whatever the real world sends, not what a research session arranged.",
+    },
+    {
+      lead: "What people do now counts.",
+      body: "In Create, somebody filled in a form and nothing happened next, because nothing was meant to. Now an application has to be received, assessed by a person, decided, recorded where it can be found again, and answered. If a grant was promised, the money has to reach somebody's account.",
+    },
+  ],
+};
+
+/** What Live tests that Create could not: the service, not the software. */
+export const STABILIZATION_WHOLE_SERVICE: ThreadLinkedProse = {
+  text: "So this is the first time anyone finds out whether the whole service holds, and not just the software: whether the team handling the applications is large enough for the volume arriving, and whether anyone has been left out of the arrangement altogether.",
+  bold: [{ phrase: "the whole service holds, and not just the software" }],
 };
 
 export const STABILIZATION_ON_RAMP = {
   title: "Before you start Stabilization",
   intro:
-    "Stabilization starts the moment Beta ends, so its on-ramp is Beta's off-ramp. Have these ready on launch day:",
+    "Have these ready on launch day:",
   items: [
     {
       text: "The dashboard live, with a named owner, built in Beta.",
@@ -71,7 +93,7 @@ export const STABILIZATION_ON_RAMP = {
       bold: [{ phrase: "The exit test agreed:" }],
     },
     {
-      text: "If the service replaces an existing one, the old way still running, with its dated retirement plan. If the service is new, this does not apply.",
+      text: "If the service replaces an existing one, the old way still running, and a plan for retiring it in Growth. If the service is new, this does not apply.",
       bold: [{ phrase: "the old way still running," }],
     },
   ] satisfies readonly ThreadLinkedProse[],
@@ -110,12 +132,23 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
     headerVisual: LIFECYCLE_VISUALS.serviceDashboard,
     sections: [
       {
-        text: "The dashboard built in Beta is read every day now, because the first weeks under full load surface the faults that testing could not.",
+        text: "The dashboard built in Beta is read every day now, because the first weeks under full load surface the faults that testing could not. Monitoring and instrumentation covers what a dashboard is for and how to build one.",
         bold: [{ phrase: "read every day" }],
+        internalLinks: [
+          { phrase: "Monitoring and instrumentation", to: "/thread/monitoring-and-instrumentation" },
+        ],
+      },
+      {
+        type: "subheading",
+        text: "Support tells you things the dashboard cannot",
       },
       {
         text: "Support is a signal too. What people phone about, and where they give up, points at the next fix before the dashboard shows it.",
         bold: [{ phrase: "Support is a signal too." }],
+      },
+      {
+        type: "subheading",
+        text: "The recovery targets stop being a guess",
       },
       {
         text: "The first real incidents are also the first test of the recovery targets set in Alpha. How long the service can be down and how much data it can afford to lose were a judgement then. Now they are a measurement, and if the restore takes twice as long as promised, that is worth knowing before anyone depends on the number.",
@@ -138,8 +171,16 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
         bold: [{ phrase: "Know before the first incident who to call, and how fast." }],
       },
       {
+        type: "subheading",
+        text: "If personal information was involved, a second route opens",
+      },
+      {
         text: "If personal information is involved, a second route opens. The privacy office decides whether the breach is material, and a material breach is reported to the Office of the Privacy Commissioner of Canada and to the Treasury Board of Canada Secretariat, with affected people notified. That call is theirs, so tell them what happened immediately, even before the technical picture is complete.",
         internalLinks: [{ phrase: "privacy office", to: "/thread/privacy" }],
+      },
+      {
+        type: "subheading",
+        text: "Fixes go out small and often",
       },
       {
         text: "The release pipeline built in Beta runs from day one: small changes, released often, each easy to reverse. Releasing changes covers the practice.",
@@ -147,7 +188,11 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
         internalLinks: [{ phrase: "Releasing changes", to: "/thread/releasing-changes" }],
       },
       {
-        text: "Not every early problem is code. Many are people finding their way: a confusing step, a letter that reads wrong, a process that needs a tweak. Those fixes belong on the same list and move just as fast.",
+        type: "subheading",
+        text: "Some early problems are not in the software at all",
+      },
+      {
+        text: "Not every early problem is code. Many are people finding their way: a confusing step, a letter that goes out to applicants and reads as though they have done something wrong, a process that needs a tweak. Those fixes belong on the same list and move just as fast.",
         bold: [{ phrase: "Not every early problem is code." }],
       },
     ],
@@ -170,10 +215,10 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
   {
     id: "taper-the-builder",
     icon: Code2,
-    title: "Taper the build team out, and write the knowledge down.",
+    title: "Hand over from the build team gradually, and write down what they know.",
     sections: [
       {
-        text: "Most existing services were bought, so the build team is usually a supplier: it stays reachable through the warranty, and the taper is agreed in the contract. A service built in-house tapers by assignment instead, with the developers partly assigned until the running team stands on its own.",
+        text: "Tapering means releasing the people who built the service a few at a time, rather than all on one day, so the team running it is never left without somebody who understands how it works. Most existing services were bought, so the build team is usually a supplier: it stays reachable through the warranty, and the taper is agreed in the contract. A service built in-house tapers by assignment instead, with the developers partly assigned until the running team stands on its own.",
         bold: [{ phrase: "warranty" }],
       },
       {
@@ -203,8 +248,8 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
             text: " Into the GC Service Inventory at the next annual update, and the application rated in Application Portfolio Management. The team supplies the details; the CIO office registers.",
           },
           {
-            bold: "Retire the old way,",
-            text: " if the service replaced one, on the dated plan made in Beta, once the new service holds. If the service is new, this does not apply.",
+            bold: "Keep the old way running.",
+            text: " If the service replaced one, this is not the moment to switch it off. Nothing before launch tested real volume, and Stabilization is where you find out whether the new service can carry it. While you are still putting fires out, the old service is the way back, and a way back is worth the cost of running two things for a few weeks. It gets retired in Growth, once the new service has been boring for a while. If the service is new, none of this applies.",
           },
           {
             bold: "Close out the handover.",
@@ -279,7 +324,7 @@ export const STABILIZATION_CAUTION = {
   title: "When Stabilization goes wrong",
   items: [
     "Launch was treated as the finish line, so nobody owns the running service.",
-    "The old way is switched off before the new service holds.",
+    "The old way is switched off while the new service is still surprising people, so there is no way back.",
     "Support is overwhelmed, and what it hears never reaches the team.",
     "The people who built it were gone on launch day: no warranty, no handover.",
     "The heightened support never ends, and constant patching hides the weaknesses it should fix.",
@@ -309,13 +354,13 @@ export const STABILIZATION_FINISH = {
       heading: "The build team is closed out, and the knowledge is kept",
       paragraphs: [
         {
-          text: "For a supplier build, accepting the open list is the close-out of the warranty, the after-launch period when the supplier fixes defects at no extra charge. Each remaining defect is fixed under the warranty or accepted with a named owner, and closing the warranty settles who pays for fixes from then on: the free defect-fixing ends, and the contract's support terms carry on.",
+          text: "For a supplier build, accepting the open list closes out the warranty, the after-launch period when the supplier fixes defects at no extra charge. Each remaining defect is either fixed under it or accepted with a named owner. Closing it settles who pays from then on: the free fixing ends and the support terms take over.",
         },
         {
           text: "A service built in-house has no warranty to close. The developers' assignment winds down once the running team handles incidents without them.",
         },
         {
-          text: "The knowledge stays. By the close, the runbook and the known-errors list belong to the running team, and the recent incidents are the proof: resolved and escalated without a call to the people who built the service.",
+          text: "The knowledge stays with the running team. The runbook and the known-errors list are theirs by the close, and recent incidents are the proof: handled without a call to the people who built it.",
         },
       ],
     },
@@ -324,13 +369,13 @@ export const STABILIZATION_FINISH = {
     heading: "The two registers on the closing checklist",
     paragraphs: [
         {
-          text: "The checklist asks for two registrations, and neither register is held by the team, so this is what each one is, who files it, and what the team supplies.",
+          text: "Neither register belongs to the team, so here is what each is and who files it.",
         },
         {
-          text: "The GC Service Inventory is the government-wide register of what services exist, who they serve, how digital they are, and how much volume they handle. The designated official for service registers the service once it is live, and the business owner supplies the details. The published inventory refreshes at an annual update, and nobody chases the entry in between, which is why this is the registration that gets forgotten.",
+          text: "The GC Service Inventory records what services exist and how much volume they handle. The designated official for service files it; the business owner supplies the details. It refreshes once a year and nobody chases it in between, which is why it is the registration that gets forgotten.",
         },
         {
-          text: "Application Portfolio Management (APM) is the register of the applications behind the services, where each application is rated for business value, technical condition, support cost and criticality. It is the only register that records criticality at all, so a blank entry means no government-wide record shows the service as critical. A departmental portfolio delegate holds the register; the ratings come from the business owner of the application.",
+          text: "Application Portfolio Management records the applications behind those services, rated for business value, condition, cost and criticality. It is the only register that captures criticality, so a blank entry means nothing government-wide shows the service as critical. A portfolio delegate holds it; the ratings come from the business owner.",
         },
     ],
   },
@@ -373,15 +418,15 @@ export const STABILIZATION_FINISH = {
       },
       {
         text: "The warranty closed out, for a supplier build: open defects fixed or consciously accepted, each with a named owner. Closing it settles who pays for fixes; the contract's support terms carry on.",
-        bold: [{ phrase: "The warranty closed out:" }],
+        bold: [{ phrase: "The warranty closed out," }],
       },
       {
         text: "The registrations done: the service in the GC Service Inventory, the application rated in Application Portfolio Management.",
         bold: [{ phrase: "The registrations done:" }],
       },
       {
-        text: "The old way retired, if there was one.",
-        bold: [{ phrase: "The old way retired," }],
+        text: "The old way still running, if there was one. It is retired early in Growth, not here, so that a way back exists for as long as the new service is still surprising people.",
+        bold: [{ phrase: "The old way still running," }],
       },
       {
         text: "A dashboard the team trusts, showing the numbers it actually runs the service by.",

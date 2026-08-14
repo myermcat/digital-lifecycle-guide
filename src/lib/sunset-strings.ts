@@ -194,7 +194,7 @@ export const SUNSET_STRINGS = {
         label: "Migrate",
         title: "Migrate: bring data and users across.",
         leadIn: "Make the switch and close out the old.",
-        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, and bring users across.\n\nDo not switch the old service off too early. It keeps running while the new service is in beta, both while that is invite-only and after it opens to the public, so anyone who has not moved across yet can still get what they need. The old service is decommissioned only once the new service is properly live.\n\nA migration succeeds only if people adopt the replacement, which is what change management is for. A migration is also a chance to simplify, so move what still creates value and leave the rest behind.",
+        body: "Make the switch and close out the old. Move the data, archive the historical records to their retention schedule, and bring users across.\n\nDo not switch the old service off too early. It keeps running through the new service's beta, through launch, and through Stabilization, so anyone who has not moved across yet can still get what they need. The old service is decommissioned early in the new service's Growth, once the new one has carried real volume and held.\n\nA migration succeeds only if people adopt the replacement, which is what change management is for. A migration is also a chance to simplify, so move what still creates value and leave the rest behind.",
         internalLinks: [{ phrase: "change management", to: "/thread/change-management" }],
         boldPhrases: [
           { phrase: "Make the switch and close out the old." },

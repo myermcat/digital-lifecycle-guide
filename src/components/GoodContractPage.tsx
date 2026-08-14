@@ -19,6 +19,7 @@ import {
 } from "@/lib/good-contract-content";
 import { THREADS } from "@/lib/guide-strings";
 import {
+  guideBlockSubheading,
   guideListIndent,
   guidePageTitle,
   guideProse,
@@ -255,6 +256,21 @@ export function GoodContractPage() {
             {GOOD_CONTRACT.schedulesClosing}
           </p>
         </article>
+
+        <div className={`${guideProseSpace} mt-8`}>
+          <p className={guideBlockSubheading}>{GOOD_CONTRACT.articlesNote.heading}</p>
+          {GOOD_CONTRACT.articlesNote.paragraphs.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProseBlock(paragraph)}</p>
+          ))}
+          <p className={guideBlockSubheading}>
+            {GOOD_CONTRACT.articlesNote.checksHeading}
+          </p>
+          <ol className={`${guideProse} list-decimal space-y-2 ${guideListIndent}`}>
+            {GOOD_CONTRACT.articlesNote.checks.map((check) => (
+              <li key={check.text}>{renderLinkedProseBlock(check)}</li>
+            ))}
+          </ol>
+        </div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="the-schedules">

@@ -59,7 +59,7 @@ export const MATURITY_PILLAR = {
       { phrase: "Put every end date on a calendar the team actually looks at" },
     ],
     internalLinks: [
-      { phrase: "a new funding decision", to: "/thread/funding" },
+      { phrase: "a funding decision", to: "/thread/funding" },
     ],
   } satisfies ThreadLinkedProse,
   href: "/thread/procurement",
@@ -96,11 +96,19 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         ],
       },
       {
+        type: "subheading",
+        text: "Parts go out of support on their own schedule",
+      },
+      {
         text: "Parts age on their own schedule. The libraries, platforms, and bought products the service is built on each have an end-of-support date, and a part past that date stops receiving security fixes. Track the dates, and plan each replacement before its support ends. Dependencies and standards covers the watch.",
         bold: [{ phrase: "Parts age on their own schedule." }],
         internalLinks: [
           { phrase: "Dependencies and standards", to: "/thread/dependencies-and-standards" },
         ],
+      },
+      {
+        type: "subheading",
+        text: "Somebody outside the team is watching this",
       },
       {
         text: "The Government of Canada tracks this too: each application's health is recorded in the department's Application Portfolio Management tool, and running unsupported technology is prohibited under the Standard on At-Risk Information Technology. The CIO office reports; the team keeps its application's record true.",
@@ -125,9 +133,17 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         ],
       },
       {
-        text: "Accessibility drifts when nobody tests it. Standards move, assistive technologies update, and small releases add small barriers. Test on a cadence, with assistive technology and with the people most likely to be excluded, and fix what the testing finds. From December 2027 each service's results also feed the department's accessibility statement.",
-        bold: [{ phrase: "Accessibility drifts when nobody tests it." }],
-        internalLinks: [{ phrase: "Accessibility", to: "/thread/accessibility" }],
+        type: "subheading",
+        text: "Accessibility slips back unless somebody retests it",
+      },
+      {
+        text: "Standards move, assistive technologies update, and small releases add small barriers. Test on a cadence, with assistive technology and with the people most likely to be excluded, and fix what the testing finds. From December 2027 each service's results also feed the department's accessibility statement. Accessibility covers how the testing is done.",
+        bold: [{ phrase: "small releases add small barriers" }],
+        internalLinks: [{ phrase: "Accessibility covers how the testing is done", to: "/thread/accessibility" }],
+      },
+      {
+        type: "subheading",
+        text: "The services either side of yours keep changing",
       },
       {
         text: "The service is one step in a longer journey. As it changes, keep the services on either side and the other channels in step: call centre scripts updated, operations staff retrained, partner teams told. Joined-up delivery covers the craft.",
@@ -289,6 +305,21 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         bold: [{ phrase: "planned and paid for while the current money is still there" }],
         internalLinks: [{ phrase: "Sunset", to: "/sunset" }],
       },
+      {
+        type: "subheading",
+        text: "If something is replacing this service, start counting backwards now",
+      },
+      {
+        text: "This is the part that catches departments out, and it is worth working through with a calendar. The old service does not switch off when the new one launches. It stays available until the new one has been steady for a while, which is early in the replacement's Growth. Everything before that has to happen first: the replacement's Discovery, its Alpha, a competition if anything is being bought, its Beta, and then its Stabilization.",
+        bold: [{ phrase: "The old service does not switch off when the new one launches." }],
+      },
+      {
+        text: "Counted backwards from the day you would like this service gone, that is years, not months. And for most of it you are paying for two things at once: this service still running and still needing its patches and its filings, and the replacement being funded, competed and built beside it.",
+        bold: [{ phrase: "that is years, not months" }],
+      },
+      {
+        text: "So the money and the people have to be planned for both, and the team has to expect a stretch where it is winding one service down and standing another one up in the same weeks. Neither job gets easier by being started late.",
+      },
     ],
   },
 ];
@@ -347,7 +378,7 @@ export const MATURITY_FINISH = {
   title: "How you know Maturity is finished",
   sectionId: "how-you-know-maturity-is-finished",
   intro: {
-    text: "Maturity has no finish line of its own. It ends when something outside the routine changes: a new mandate arrives, or the signals say the service's time is ending. Whichever exit is taken, the crossing is a decision with work attached, and the work starts while the current money and the current team are still in place.",
+    text: "Maturity has no finish line of its own. It ends when something outside the routine changes: a new mandate arrives, or the signals say the service's time is ending. Either way the crossing is work, and it starts while the current money and team are still there.",
     bold: [{ phrase: "Maturity has no finish line of its own." }],
   } satisfies ThreadLinkedProse,
   blocks: [
@@ -355,10 +386,10 @@ export const MATURITY_FINISH = {
       heading: "The decision to leave is made on evidence and written down",
       paragraphs: [
         {
-          text: "The routine already produces the evidence: the dashboard, the running costs, and the findings of the review with clients, partners and stakeholders that comes round at least once every five years. When the signals hold, the case for leaving is assembled from records the team already keeps.",
+          text: "The evidence already exists: the dashboard, the running costs, and the review with clients and partners that comes round at least once every five years. The case for leaving is assembled from records the team already keeps.",
         },
         {
-          text: "The business owner of the application makes the call that Maturity is ending and records the reason, with the review findings, the dashboard and the costs attached. That record is what the request for the next money is built on, and it is the first thing whoever inherits the service reads.",
+          text: "The business owner of the application makes the call and records the reason, with the review findings, the dashboard and the costs attached. That record is what the next funding request is built on, and the first thing whoever inherits the service reads.",
         },
       ],
     },
@@ -366,7 +397,7 @@ export const MATURITY_FINISH = {
       heading: "The money for what follows is set aside before the current funding ends",
       paragraphs: [
         {
-          text: "The next piece of work costs money: a return to Growth needs a new funding decision for the build, and a retirement is months of funded work in its own right. Neither can be paid for out of a funding envelope that has already ended.",
+          text: "The next piece of work costs money. A return to Growth needs a new funding decision for the build; a retirement is months of funded work in its own right. Neither can be paid for out of an envelope that has already ended.",
         },
         {
           text: "Start the request while the current envelope is still paying for the service. A funding decision moves at the speed of approvals, and extensions bought in the meantime are bought on the supplier's terms.",
@@ -377,10 +408,10 @@ export const MATURITY_FINISH = {
       heading: "The knowledge and the registers are ready to hand over",
       paragraphs: [
         {
-          text: "Whoever follows, a Growth build team or the team that retires the service, inherits it through what was written down. Bring the runbooks, the known errors, the record of decisions and the contract's end-of-term obligations up to date before the crossing, because the people who hold the unwritten version move on with the exit.",
+          text: "Whoever follows inherits the service through what was written down. Bring the runbooks, the known errors, the decisions and the contract's end-of-term obligations up to date before the crossing, because the people holding the unwritten version leave with it.",
         },
         {
-          text: "The service's entries in the two registers, the GC Service Inventory and Application Portfolio Management, have to match reality at the crossing, because whoever follows will close or transfer them. At Sunset the inventory entry is updated to show the service retired, and the application record is marked retired.",
+          text: "Both register entries have to match reality at the crossing, because whoever follows will close or transfer them. The closing itself happens at Sunset.",
         },
       ],
     },
@@ -392,7 +423,7 @@ export const MATURITY_FINISH = {
           text: "This exists to answer a question the blocks above raise: where is the checkpoint that closes Maturity? There is none, and the reason shapes the whole section.",
         },
         {
-          text: "Each official instrument that reaches Maturity reaches it as a keeping duty: filings refreshed, authorizations maintained, reviews recurring on their own cycles. The closing actions, marking a register entry retired or formally ending an authorization, belong to Sunset. So no approval ends Maturity; the business owner of the application reads the evidence and decides, and the blocks above are what that decision requires.",
+          text: "Every instrument that reaches Maturity arrives as a keeping duty: filings refreshed, authorizations maintained, reviews recurring. The closing actions belong to Sunset. So no approval ends Maturity. The business owner reads the evidence and decides, and the blocks above are what that decision needs.",
         },
     ],
   },

@@ -3,6 +3,7 @@ import liveSubphasesVisual from "@/assets/live_subphases.svg?url";
 import phasesAndSubphasesVisual from "@/assets/phases_and_subphases.svg?url";
 import serviceDashboardVisual from "@/assets/service_dashboard.svg?url";
 import bothOfficialLanguagesVisual from "@/assets/both_official_languages.svg?url";
+import whatKillsAServiceVisual from "@/assets/what_kills_a_service.svg?url";
 import alphaPrototypeLadderVisual from "@/assets/alpha_prototype_ladder.svg?url";
 import subphaseKeyAlphaVisual from "@/assets/subphase_key_alpha.svg?url";
 import subphaseKeyBetaVisual from "@/assets/subphase_key_beta.svg?url";
@@ -47,7 +48,7 @@ export const LIFECYCLE_VISUALS = {
   },
   subphaseKeyStabilization: {
     src: subphaseKeyStabilizationVisual,
-    alt: "Watch it daily, full load finds what testing missed. Fix it fast, the builder is still on call. Clear the leftovers: registrations, handover, the old way retired.",
+    alt: "Watch it daily, full load finds what testing missed. Fix it fast, the builder is still on call. Clear the leftovers: registrations, handover, the old way still running.",
   },
   subphaseKeyGrowth: {
     src: subphaseKeyGrowthVisual,
@@ -56,6 +57,10 @@ export const LIFECYCLE_VISUALS = {
   subphaseKeyMaturity: {
     src: subphaseKeyMaturityVisual,
     alt: "Keep the cycle turning: monitoring, patching, research, filings. Renew before it ends: funding and contracts, months of runway. Watch for the exit: the signals that point to Sunset.",
+  },
+  whatKillsAService: {
+    src: whatKillsAServiceVisual,
+    alt: "Where the risk usually is: policy does not allow it, nobody has the legal authority, the data does not exist, people will not use this channel, another department owns a step. None of these are in the software. Where teams usually spend Alpha: building and testing the prototype, because it is the part you can see. An arrow between the two is labelled the mismatch.",
   },
   bothOfficialLanguages: {
     src: bothOfficialLanguagesVisual,

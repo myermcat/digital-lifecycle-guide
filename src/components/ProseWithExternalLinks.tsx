@@ -135,6 +135,18 @@ export function proseWithMixedLinks(
   for (const link of sorted) {
     const start = text.indexOf(link.phrase, cursor);
     if (start === -1) {
+      // A phrase that does not appear in its own text is silently dropped, so a
+      // link or a bold simply never renders and nothing says so. Surfaced in
+      // development because it is invisible in review otherwise.
+      //
+      // Expect noise: several blocks share one link array across their
+      // paragraphs, so a phrase legitimately absent here may render in a
+      // sibling. Check whether it renders anywhere on the page before fixing.
+      if (import.meta.env.DEV) {
+        console.warn(
+          `[guide] phrase not in this text — "${link.phrase}" — check it renders somewhere on the page. Text: ${text.slice(0, 80)}…`,
+        );
+      }
       continue;
     }
 

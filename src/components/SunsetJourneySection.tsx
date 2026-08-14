@@ -54,7 +54,7 @@ function SunsetJourneyStepExample({ example }: { example: SunsetJourneyStepExamp
 }
 
 const SUNSET_REPLACE_OVERLAP_ALT =
-  "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then Live. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Migrate crosses the launch line, and an arrow shows users and data moving across into Live. The old service is switched off only once the new service is live.";
+  "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Migrate crosses the launch line, and an arrow shows users and data moving across into Live. The old service is marked switched off early in Growth, once the new one is live and steady, not at launch.";
 
 export function SunsetJourneySection({
   intro,

@@ -134,10 +134,7 @@ export const SUPPORT_CALLOUT_BODIES = {
   "monitoring-and-instrumentation": {
     text: "For performance measurement and web analytics, the Government of Canada's performance measurement and web analytics community, and the analytics tooling and guidance at design.canada.ca and Canada.ca analytics, are starting points.",
     externalLinks: [
-      {
-        phrase: "Monitoring and measuring task success",
-        linkKey: "monitoring-measuring-task-success",
-      },
+      { phrase: "design.canada.ca", linkKey: "monitoring-measuring-task-success" },
       { phrase: "Canada.ca analytics", linkKey: "canada-ca-analytics" },
     ],
   },

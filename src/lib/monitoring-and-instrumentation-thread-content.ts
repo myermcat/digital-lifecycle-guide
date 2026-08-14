@@ -222,6 +222,59 @@ export const MONITORING_THREAD = {
         ],
       },
       {
+        title: "Pick the numbers.",
+        sections: [
+          {
+            text: "Most dashboards carry too many numbers, because it is easier to add one than to argue for leaving it off. A useful measure is one that would change what somebody does.",
+            bold: [{ phrase: "one that would change what somebody does" }],
+          },
+          {
+            text: "The test is short. If this number moved, who would act, and what would they do? If nobody can answer, it belongs in a report rather than on the dashboard.",
+          },
+          {
+            type: "subheading",
+            text: "Four kinds, and usually one of each is enough",
+          },
+          {
+            type: "orderedList",
+            items: [
+              {
+                bold: "Does it work?",
+                text: " The share of people who finish what they came to do. This is the one that matters most and the one most often missing, because it is harder to collect than page views.",
+              },
+              {
+                bold: "Is it fast enough for the person using it?",
+                text: " Measured from where they sit, on the connection and the device they actually have, not from inside the data centre.",
+              },
+              {
+                bold: "How often does it fail, and what does failure look like from outside?",
+                text: " An error rate, plus at least one measure of what happens next: the people who abandon, or who end up phoning.",
+              },
+              {
+                bold: "What does it cost to run?",
+                text: " Per transaction, or per month against volume. Nobody asks for this until the funding conversation, by which point it is a year late.",
+              },
+            ],
+          },
+          {
+            type: "subheading",
+            text: "Set the target before you can see the result",
+          },
+          {
+            text: "A target chosen after the first month is whatever the first month produced. Agree each one in Alpha or Beta, while it is still a judgement about what good would look like, and write down where the baseline came from: the old service, a comparable one elsewhere, or an honest guess labelled as a guess.",
+            bold: [{ phrase: "write down where the baseline came from" }],
+          },
+          {
+            type: "subheading",
+            text: "Name who reads it, and how often",
+          },
+          {
+            text: "A number nobody reads is not a measure, it is a chart. Say who looks, how often, and what happens when a number goes the wrong way for two readings in a row. In Stabilization that is daily; by Maturity it is usually monthly.",
+            bold: [{ phrase: "A number nobody reads is not a measure, it is a chart." }],
+          },
+        ],
+      },
+      {
         title: "Act on it.",
         sections: [
           {

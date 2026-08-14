@@ -217,6 +217,36 @@ The handover is complete when Canada confirms the export restores into a test en
 
   schedulesClosing: "The Schedules attached form part of this Agreement.",
 
+  articlesNote: {
+    heading: "Why the Term has option years",
+    paragraphs: [
+      {
+        text:
+          "Three years with two optional one-year extensions is a common shape, and each part of it is doing a job. The three years are what Canada commits to. The two extension years are Canada's to take or leave, one at a time. Taking one is an amendment to the contract that already exists, so it can be done in weeks.",
+      },
+      {
+        text:
+          "That is what makes them worth writing in. Running a fresh competition takes the better part of a year once the requirement, the solicitation, the evaluation and the approvals are counted. If the contract simply ends and nothing has been started, the only quick way to keep the service running is an emergency extension negotiated from a weak position. An option year buys the time to run the next competition properly, or to move the service somewhere else.",
+      },
+    ] satisfies readonly GoodContractLinkedProse[],
+    checksHeading: "Two things to check before counting on them",
+    checks: [
+      {
+        text:
+          "The choice has to be Canada's alone. A clause where the supplier can decline the extension, or reprice at it, is not the protection it looks like. The rates for the option years belong in Schedule B alongside the rest of the price.",
+        anchorLinks: [{ phrase: "Schedule B", hash: "schedule-b" }],
+      },
+      {
+        text:
+          "An option year buys time, not room for new work. New work arrives through task authorizations (A.4), paid at the contract's rates and capped by their own ceiling (B.4). Growth and Maturity both spend from that ceiling, so check what is left of it before promising anyone a date.",
+        internalLinks: [
+          { phrase: "Growth", to: "/live-growth" },
+          { phrase: "Maturity", to: "/live-maturity" },
+        ] satisfies InternalPhraseLink[],
+      },
+    ] satisfies readonly GoodContractLinkedProse[],
+  },
+
   schedules: [
     {
       id: "schedule-a",

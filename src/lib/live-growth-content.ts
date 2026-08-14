@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Archive,
   Briefcase,
   Code2,
   Compass,
@@ -76,6 +77,47 @@ export const GROWTH_ACCORDION = {
 
 export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
   {
+    id: "retire-the-old-way",
+    icon: Archive,
+    title: "Retire the old way, if the service replaced one.",
+    sections: [
+      {
+        text: "Stabilization kept the old service running on purpose, because while the new one was still surprising people, it was the way back. Growth starts when the new service has stopped surprising anyone, and that is the point at which the way back is no longer worth paying for.",
+        bold: [{ phrase: "it was the way back" }],
+      },
+      {
+        type: "subheading",
+        text: "What has to be true before you switch off",
+      },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "The new service has carried real volume through a full cycle of whatever it does: a full month, a full intake, a full reporting period, whichever is the honest test for this service.",
+            bold: [{ phrase: "carried real volume through a full cycle" }],
+          },
+          {
+            text: "The people who used the old way have moved to the new service. For the ones who have not, the team knows who they are and has contacted them, instead of hoping they will move on their own. Change management covers bringing people across.",
+            bold: [{ phrase: "the team knows who they are and has contacted them" }],
+            internalLinks: [{ phrase: "Change management", to: "/thread/change-management" }],
+          },
+          {
+            text: "You know what happens to the old service's records, and you are allowed to do it. Which ones move into the new service, which go to Library and Archives Canada, and which are destroyed, all under the retention schedule settled in Beta. The moving and destroying happen as part of switching off, not before, but the answer has to exist first, because obtaining a missing disposition authority takes months.",
+            bold: [{ phrase: "You know what happens to the old service's records, and you are allowed to do it." }],
+          },
+        ],
+      },
+      {
+        text: "There will be pressure to switch off sooner, and it is easy to see why. Running both is visibly expensive: two services, two sets of licences, sometimes two teams, and somebody is paying for all of it. Switching off early is expensive too, but none of that cost shows up until it is too late to avoid. If the new service turns out not to work, everyone has already moved, the old one is gone, and the department is asking a supplier for changes it has no way of walking away from.",
+        bold: [{ phrase: "none of that cost shows up until it is too late to avoid" }],
+      },
+      {
+        text: "Switching the old service off is the start of its own Sunset, which covers doing it properly.",
+        internalLinks: [{ phrase: "Sunset", to: "/sunset" }],
+      },
+    ],
+  },
+  {
     id: "build-in-small-lifecycles",
     icon: Layers,
     title: "Build each addition through its own small lifecycle.",
@@ -83,6 +125,10 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
       {
         text: "The cycle that built the service builds each significant feature: a small discovery to learn who needs it, what problem it solves, and whether anyone else has solved it already, throwaway prototypes while the idea is cheap to change, then a real build proven with a small group before everyone gets it. Size it to the feature: a small improvement needs a conversation and a sketch; a big one needs the full pass.",
         bold: [{ phrase: "Size it to the feature:" }],
+      },
+      {
+        type: "subheading",
+        text: "The checkpoints you cleared once come back",
       },
       {
         text: "The checkpoints come back with the significant ones:",
@@ -121,6 +167,10 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         ],
       },
       {
+        type: "subheading",
+        text: "Three things a significant addition drags with it",
+      },
+      {
         text: "Three things follow a significant addition. New code is new attack surface, so the security testing that ran before launch runs again. How critical the service is reopens too: a new capability can change what it is critical for, and rising volume alone can raise its security category, because a great many low-sensitivity records in one place are not automatically still low sensitivity. And a redesigned online service must give clients real-time application status, a requirement of the Directive on Service and Digital that returns with every redesign.",
         bold: [{ phrase: "New code is new attack surface," }],
         internalLinks: [{ phrase: "security testing", to: "/thread/security" }],
@@ -143,13 +193,12 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
     title: "Buy the new work well.",
     sections: [
       {
-        text: "The features Growth builds could not be named when the contract was signed, and a good contract expected that: new work arrives through task authorizations, each task described, priced at the contract's rates, and approved in writing before it starts, within the contract's scope and its ceiling. What a good contract looks like shows the clauses.",
+        text: "The features Growth builds could not be named when the contract was signed, and a good contract expected that: new work arrives through task authorizations, each task described, priced at the contract's rates, and approved in writing before it starts, within the contract's scope and its ceiling.",
         bold: [{ phrase: "a good contract expected that" }],
         externalLinks: [
           { phrase: "task authorizations", linkKey: "task-authorizations" },
         ],
         internalLinks: [
-          { phrase: "What a good contract looks like", to: GOOD_CONTRACT_PATH },
         ],
       },
       {
@@ -336,7 +385,7 @@ export const GROWTH_FINISH = {
           text: "Growth changed what the service is, and the paperwork has to say so before the sub-phase closes. Each significant addition updated its own assessments while it was built; the closing check reads the whole set against the service as it now runs.",
         },
         {
-          text: "The security assessment covers every change, with the major ones approved by the authorizer (the official who authorized the service to operate). The accessibility statement covers the pages the additions created or changed. An addition that handled personal information has the privacy assessment updated to cover what the service now uses. An addition that automated a decision has its Algorithmic Impact Assessment updated and approved.",
+          text: "The security assessment covers every change, with the major ones approved by whoever authorized the service to operate. The accessibility statement covers the new and changed pages. Anything that touched personal information has the privacy assessment updated; anything that automated a decision has its Algorithmic Impact Assessment updated and approved.",
         },
       ],
     },
@@ -344,10 +393,10 @@ export const GROWTH_FINISH = {
       heading: "Adoption is where it should be, or the shortfall is written down",
       paragraphs: [
         {
-          text: "Growth's work included the people, and closing it includes the judgement on whether they arrived. Put the use the service has beside the use it was built to reach.",
+          text: "Growth set out to reach more people, so closing it means saying whether they came. Compare the numbers using the service now against the numbers Growth was aiming for.",
         },
         {
-          text: "A shortfall does not keep Growth open. It closes with a written reason: what was promoted, what the numbers did, and the judgement that more building would not move them. Maturity improves in small steps, so that record is what the running team hands to whoever asks, years later, why use is where it is.",
+          text: "A shortfall does not keep Growth open. It closes with a written reason: what was promoted, what the numbers did, and why more building would not move them. That record is what answers the question years later.",
         },
       ],
     },
@@ -355,13 +404,13 @@ export const GROWTH_FINISH = {
       heading: "The handover to the running team is written down",
       paragraphs: [
         {
-          text: "Build capacity leaves when Growth closes, and what it knows leaves too unless it is written down first. Three things go into the handover, and the people best placed to write them are on the team today.",
+          text: "Build capacity leaves when Growth closes, and what it knows leaves with it unless it is written down first. Two things go into the handover, and the people best placed to write them are on the team today.",
         },
         {
-          text: "The contract picture: what the ceiling, the option years, and the support terms still hold after everything Growth consumed. With it the renewal calendar, every end date with its start-by date beside it, because a renewal that begins at its end date leaves extension on the supplier's terms as the only option.",
+          text: "1. The contract picture: what the ceiling, the option years and the support terms still hold after everything Growth used up. With it a renewal calendar, every end date with its start-by date beside it.",
         },
         {
-          text: "The knowledge: what each addition changed, written into the runbooks and the decision record while the people who built it can still be asked.",
+          text: "2. The knowledge: what each addition changed, written into the runbooks and the decision record while the people who built it can still be asked.",
         },
       ],
     },
@@ -373,7 +422,7 @@ export const GROWTH_FINISH = {
           text: "This note is here for the team that hesitates to close Growth in case something big arrives later; nothing about closing now makes reopening harder.",
         },
         {
-          text: "A service can return to Growth. The next mandate reopens it the same way it opened the first time: a named addition, evidence it is needed, money for the new work, and room in the contract. The on-ramp at the top of this page is the same one, however many times it is used.",
+          text: "A service can return to Growth. The next mandate reopens it the same way: a named addition, evidence it is needed, money, and room in the contract. The on-ramp at the top of this page is the same one every time.",
         },
     ],
   },
@@ -398,6 +447,10 @@ export const GROWTH_FINISH = {
       bold: [{ phrase: "have ready" }],
     } satisfies ThreadLinkedProse,
     items: [
+      {
+        text: "The old service dealt with, if this one replaced something. Usually that means switched off, with its records moved or disposed of on the schedule settled in Beta. If there is still a real reason to keep it available, keep it, and write down what the reason is and what would end it. Running it longer costs money, which somebody is tracking. Switching it off too early costs the only way back, which nobody notices until it is needed.",
+        bold: [{ phrase: "The old service dealt with," }],
+      },
       {
         text: "The assessments current for the service as it now is: privacy, security, and the accessibility testing, each covering the additions.",
         bold: [{ phrase: "The assessments current" }],

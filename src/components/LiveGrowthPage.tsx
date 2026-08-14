@@ -35,11 +35,17 @@ import {
 } from "@/lib/lifecycle-navigation";
 import { LIFECYCLE_VISUALS, subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import growthRisingVisual from "@/assets/growth_rising.svg?url";
+import sunsetReplaceOverlap from "@/assets/sunset_replace_overlap.svg?url";
+
 import {
   renderLinkedProse,
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideProse } from "@/lib/guide-typography";
+/** Same timeline the Sunset page uses, shown here because this is where the old service goes. */
+const SUNSET_OVERLAP_ALT =
+  "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Users and data move across at launch. The old service is marked switched off early in Growth, once the new one is steady.";
+
 
 const GROWTH_SOURCES: SourceItem[] = [
   {
@@ -161,7 +167,26 @@ export function LiveGrowthPage() {
           id: stage.id,
           icon: stage.icon,
           title: stage.title,
-          children: renderThreadSections(stage.sections),
+          children:
+            // The overlap timeline belongs on the retirement stage, since it is
+            // the picture of exactly when the old service goes.
+            stage.id === "retire-the-old-way" ? (
+              <>
+                {renderThreadSections(stage.sections.slice(0, 1))}
+                <figure className="mt-4">
+                  <img
+                    src={sunsetReplaceOverlap}
+                    alt={SUNSET_OVERLAP_ALT}
+                    className="w-full h-auto"
+                    width={1160}
+                    height={384}
+                  />
+                </figure>
+                {renderThreadSections(stage.sections.slice(1))}
+              </>
+            ) : (
+              renderThreadSections(stage.sections)
+            ),
         }))}
       />
 

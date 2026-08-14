@@ -25,6 +25,8 @@ import {
   STABILIZATION_EXTRACT,
   STABILIZATION_FINISH,
   STABILIZATION_LEAD,
+  STABILIZATION_WHAT_CHANGED,
+  STABILIZATION_WHOLE_SERVICE,
   STABILIZATION_ON_RAMP,
   STABILIZATION_PILLAR,
   STABILIZATION_TEAM,
@@ -125,6 +127,24 @@ export function LiveStabilizationPage() {
         />
         <p className={guideProse}>{renderLinkedProse(STABILIZATION_LEAD)}</p>
       </section>
+
+      <div className="mt-6 rounded-lg border border-border bg-card px-5 py-4">
+        <p className="mb-3 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/90">
+          {STABILIZATION_WHAT_CHANGED.heading}
+        </p>
+        <ul className="list-none space-y-3 p-0 m-0">
+          {STABILIZATION_WHAT_CHANGED.items.map((item) => (
+            <li key={item.lead} className={guideProse}>
+              <strong className="font-semibold text-foreground">{item.lead}</strong>{" "}
+              {item.body}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <p className={`${guideProse} mt-5`}>
+        {renderLinkedProse(STABILIZATION_WHOLE_SERVICE)}
+      </p>
 
       <OnRampChecklist
         title={STABILIZATION_ON_RAMP.title}

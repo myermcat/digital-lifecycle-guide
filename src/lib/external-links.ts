@@ -327,6 +327,16 @@ export const EXTERNAL_LINKS = {
     description: "Digital Service Standard, Criterion 2: Know your user (Australia)",
     accessibility: "public",
   },
+  "uk-service-manual": {
+    url: "https://www.gov.uk/service-manual",
+    description: "Service Manual (United Kingdom, Government Digital Service): the UK guide to designing and running government services.",
+    accessibility: "public",
+  },
+  "australia-service-process": {
+    url: "https://www.digital.gov.au/policy/digital-experience/toolkit/service-design-and-delivery-process",
+    description: "Service design and delivery process (Australia, Digital Transformation Agency): the Australian phase model for building government services.",
+    accessibility: "public",
+  },
   "uk-service-manual-user-research": {
     url: "https://www.gov.uk/service-manual/user-research",
     description: "UK Service Manual, User research",

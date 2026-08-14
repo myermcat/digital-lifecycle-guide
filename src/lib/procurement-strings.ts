@@ -219,7 +219,6 @@ export const PROCUREMENT_STRINGS = {
               {
                 text: "The department has to show suppliers what it wants. The faster a supplier understands what is needed, the less back and forth there is, the fewer changes get paid for, and the sooner the thing gets built. A few days of prototyping can save millions.",
                 bold: [{ phrase: "The department has to show suppliers what it wants." }],
-                internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
               },
             ],
           },
@@ -335,7 +334,7 @@ export const PROCUREMENT_STRINGS = {
                 text: "Reuse means a platform the Government of Canada already runs, so there is no build contract. Something is still bought: hosting, licences and tooling for an in-house build, and usually a team to configure either one. Reusing another department\u2019s platform is normally set up through an interdepartmental service agreement.",
                 bold: [
                   {
-                    phrase: "Reuse means a platform the Government of Canada already runs.",
+                    phrase: "Reuse means a platform the Government of Canada already runs",
                   },
                 ],
               },

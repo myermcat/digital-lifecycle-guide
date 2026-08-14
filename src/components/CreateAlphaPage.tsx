@@ -202,6 +202,10 @@ export function CreateAlphaPage() {
             <li key={item.text}>{renderLinkedProse(item)}</li>
           ))}
         </ul>
+        <LifecycleVisual
+          visual={LIFECYCLE_VISUALS.whatKillsAService}
+          className="mt-5"
+        />
         <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.ratioNote)}</p>
         <p className="mt-4">{renderLinkedProse(ALPHA_PILLAR.technicalNote)}</p>
         <p className="mt-4 font-semibold">
@@ -321,31 +325,7 @@ export function CreateAlphaPage() {
         </ul>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.threatsClosing)}</p>
 
-        <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.numbersHeading}</h3>
-        <p>{renderLinkedProse(ALPHA_EXERCISE.listIntro)}</p>
-        <dl className="mt-3 space-y-3">
-          {ALPHA_EXERCISE.numbers.map((n) => (
-            <div
-              key={n.term}
-              className="rounded-md border border-border/70 bg-background/50 px-3.5 py-3"
-            >
-              <dt className="flex flex-wrap items-baseline gap-x-2">
-                <span className="font-semibold text-foreground">{n.term}</span>
-                {n.acronym ? (
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                    {n.acronym}
-                  </span>
-                ) : null}
-              </dt>
-              <dd className="mt-0.5">
-                <p className="italic text-foreground/80">{n.plain}</p>
-                <p className="mt-1 text-[0.9rem] leading-snug text-muted-foreground">
-                  {n.gloss}
-                </p>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <p className="mt-4">{renderLinkedProse(ALPHA_EXERCISE.numbersPointer)}</p>
         <p className="mt-3">{renderLinkedProse(ALPHA_EXERCISE.scaleNote)}</p>
 
         <h3 className={exerciseStepHeading}>{ALPHA_EXERCISE.handoverHeading}</h3>

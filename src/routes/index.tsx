@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import {
   BadgeCheck,
   BookOpen,
+  Building2,
   DoorClosed,
   FileWarning,
   Map,
@@ -29,6 +30,7 @@ import {
 } from "@/components/PhaseLifecycleIcons";
 import { PillarCallout } from "@/components/PillarCallout";
 import {
+  guideBlockSubheading,
   guideListIndent,
   guideProse,
   guideProseSpace,
@@ -183,22 +185,99 @@ function Index() {
         </EditorialNote>
 
         <section className={guideProseSpace}>
-          <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:leading-none first-letter:text-primary">
+          <p className="first-letter:font-serif first-letter:text-5xl first-letter:font-semibold first-letter:float-left first-letter:mr-2 first-letter:-mt-5 first-letter:text-primary">
             This is a guide for people who work on digital services for the Government of
             Canada. You could be anyone. You may hold any role in your organization, or come
-            from any background. You might be in a small team or a big one.
-            You might build in-house, contract a team to build, or buy from suppliers. You might have a
-            lot of money or very little.
+            from any background. You might be in a small team or a big one. You might build
+            in-house, contract a team to build, or buy from suppliers. Your budget might be
+            generous or almost nothing.
           </p>
           <p>
             That is fine. This guide is not about who you are. It is about the practices
             that matter for any digital work, at any size.
           </p>
+
+          <p className={guideBlockSubheading}>What this guide is</p>
           <p>
-            We will not tell you exactly what to do. We do not know enough about your
-            situation to do that for you. We will suggest what to think about, what to
-            watch for, and what to do regardless of the rest. The shape of your work will
-            be different from someone else&apos;s. The questions are the same.
+            It describes{" "}
+            <strong className="font-semibold text-foreground">
+              a few ways of building a digital service
+            </strong>
+            . It is not a description of the only correct way, because there is not one.
+          </p>
+          <p>
+            Take a department that has money for a service, no technical staff of its own,
+            and a deadline it did not choose. Going to a large supplier and paying them to
+            work out most of the detail may genuinely be its best option. That skips almost
+            everything described here, and it can still be the right decision for that
+            department.
+          </p>
+          <p>
+            So the guide stops short of telling you exactly what to do, because the right
+            answer depends on things only you can see: your deadline, your budget, who you
+            have, and what your department is already committed to. What it offers instead
+            is what to think about, what tends to go wrong, and what will reach you
+            whichever way you go.
+          </p>
+
+          <p className={guideBlockSubheading}>What is here for you whichever way you go</p>
+          <ul className={`list-disc space-y-1.5 ${guideListIndent}`}>
+            <li>
+              <strong className="font-semibold text-foreground">The security practices.</strong>{" "}
+              Every service needs them, whether it was built in-house, bought whole, or
+              assembled from something that already existed.
+            </li>
+            <li>
+              <strong className="font-semibold text-foreground">The official checkpoints.</strong>{" "}
+              The assessments, approvals and authorizations a Government of Canada service
+              has to clear. They will find you whichever route you take, and each one is
+              cheaper to prepare for than to be surprised by.
+            </li>
+            <li>
+              <strong className="font-semibold text-foreground">A picture of what is coming.</strong>{" "}
+              Which decisions arrive in roughly what order, who else has to be involved, and
+              which of them are expensive to reverse later.
+            </li>
+          </ul>
+
+          <p className={guideBlockSubheading}>
+            One thing that catches people whichever route they take
+          </p>
+          <p>
+            If the new service is replacing something, keep the old one running until the
+            new one has carried real volume for a while and held. It is tempting to switch
+            off early, because running two things is awkward and somebody is usually asking
+            when it will stop. But nothing before launch tests real volume, people need time
+            to move across, and once everyone has moved there is no way back. If the new
+            service then struggles, the department finds itself negotiating changes with a
+            supplier it can no longer walk away from, which is an expensive place to be
+            standing.
+          </p>
+          <p>
+            The same thing read backwards is a planning problem. If something is going to
+            replace a service you already run, the replacement has to be funded, competed,
+            built and steadied before the old one can be switched off. Counted backwards
+            from the day you would like the old service gone, that is usually years, and for
+            much of it a department pays for both.
+          </p>
+
+          <p className={guideBlockSubheading}>The one thing worth holding on to</p>
+          <p>
+            <strong className="font-semibold text-foreground">It stays your service.</strong>{" "}
+            You can hand the building to a supplier, and much of the time that is the sensible
+            thing to do. What does not transfer with it is the answering for it. When a
+            service does not work, the person who cannot get their application in never
+            hears about the procurement contract behind it, and would not care if they did.
+            They experience it as the Government of Canada failing them, and it is the
+            department that answers for that, publicly and afterwards.
+          </p>
+          <p>
+            Which is why it is worth the effort to understand what you actually want, and
+            what you are buying, well enough to say both plainly. A supplier given a vague description will build
+            something roughly as vague, in much the way a vague prompt to an artificial
+            intelligence tool returns something you did not quite ask for. Neither is anyone
+            behaving badly. It is just what happens when the description was not clear
+            enough to build from.
           </p>
         </section>
 
@@ -244,6 +323,10 @@ function Index() {
               </li>
               <li>
                 someone who has just been told there is money to buy a system
+              </li>
+              <li>
+                or in any of the other positions people find themselves in when a service
+                becomes their responsibility. The list is not meant to be complete.
               </li>
             </ul>
             <p>
@@ -573,6 +656,73 @@ function Index() {
           </p>
 
           <SetupToggles className="mt-6" />
+        </section>
+
+        <section id="next-guide" className="mt-16 md:mt-20 scroll-mt-24">
+          <h2 className={`${guideSectionTitle} mb-3`}>A guide for the next guide</h2>
+          <p className={guideProse}>
+            This is a first attempt, written in a few months. If somebody picks the work up
+            later, here is what would have been useful to know at the start.
+          </p>
+
+          <p className={guideBlockSubheading}>Why we could not simply follow the UK and Australia</p>
+          <p className={guideProse}>
+            The two guides we looked at most were the{" "}
+            <ExternalLink linkKey="uk-service-manual">
+              United Kingdom&apos;s Service Manual
+            </ExternalLink>{" "}
+            and{" "}
+            <ExternalLink linkKey="australia-service-process">
+              Australia&apos;s service design and delivery process
+            </ExternalLink>
+            . Both draw firm lines between phases, and both can, because each is written
+            for one situation: a small team of public servants building a service
+            themselves, on shared infrastructure and reusable components their government
+            has already built for that purpose.
+          </p>
+          <p className={guideProse}>
+            Most existing Government of Canada services were bought rather than built by the
+            department itself, and how you buy changes when things happen. Three examples:
+          </p>
+          <ul className={`${guideProse} my-5 list-disc space-y-3 ${guideListIndent}`}>
+            <li>
+              <strong className="font-semibold text-foreground">
+                A department that contracts a team.
+              </strong>{" "}
+              It runs the competition during Discovery and signs as Alpha begins, because
+              the contracted team is who builds the prototypes.
+            </li>
+            <li>
+              <strong className="font-semibold text-foreground">
+                A department that buys a finished product.
+              </strong>{" "}
+              It competes during Alpha and signs as Beta begins, and never builds a
+              prototype at all, because the product already exists.
+            </li>
+            <li>
+              <strong className="font-semibold text-foreground">
+                A department following the agile approach Public Services and Procurement
+                Canada sets out.
+              </strong>{" "}
+              It competes during Discovery, signs with several suppliers at once as Alpha
+              begins, and each of them builds a prototype under that contract. The winner is
+              chosen by amending their contract rather than by running a second competition.
+            </li>
+          </ul>
+          <p className={`${guideProse} mt-5`}>
+            The competition, the signature and the first real build are the same three
+            events in all three cases. Where they land moves by a whole sub-phase, and the
+            only thing that moved them is how the department chose to buy. That is why this
+            guide describes each sub-phase more loosely than the guides it learned from.
+          </p>
+
+          <p className={guideBlockSubheading}>And the part that is not really about the guide</p>
+          <p className={guideProse}>
+            No guide can tell a department how its particular service will go. What it can
+            do is leave the reader harder to surprise. If the next version of this does one
+            thing better, we would like it to be that: fewer people finding out about a
+            decision at the point where it has already been made for them.
+          </p>
         </section>
 
         <InstrumentMatrix />

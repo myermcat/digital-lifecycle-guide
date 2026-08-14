@@ -631,7 +631,6 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text:
           "Data stewardship covers deciding what happens to the data, in full.",
         internalLinks: [
-          { phrase: "Discovery", to: "/create-discovery" },
           { phrase: "Data stewardship", to: "/thread/data-stewardship" },
         ],
       },

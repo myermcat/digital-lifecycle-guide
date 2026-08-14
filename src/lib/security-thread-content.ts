@@ -347,6 +347,27 @@ export const SECURITY_THREAD = {
               "Four numbers describe what recovery has to achieve: how long the service can be unavailable before real harm starts, what counts as good enough while it is down, how fast it should be back, and how much recent data can be lost. The service team works them out at the end of Alpha, because they change what gets built and what it costs to run.",
             internalLinks: [{ phrase: "end of Alpha", to: "/create-alpha" }],
           },
+      {
+        type: "unorderedList",
+        items: [
+          {
+            text: "Maximum allowable downtime (MAD). How long before this really hurts someone? How long the service can be unavailable before a high degree of injury results. It is a ceiling. Aim well inside it.",
+            bold: [{ phrase: "Maximum allowable downtime (MAD)." }],
+          },
+          {
+            text: "Minimum service level. What are we doing in the meantime? What counts as good enough while the service is down. Often a paper form, or a phone line.",
+            bold: [{ phrase: "Minimum service level." }],
+          },
+          {
+            text: "Recovery time objective (RTO). How fast are we aiming to be back? The target for restoring the service. It is set inside the maximum allowable downtime, so the two numbers are not the same number.",
+            bold: [{ phrase: "Recovery time objective (RTO)." }],
+          },
+          {
+            text: "Recovery point objective (RPO). How much recent work can we afford to lose? How far back the last usable copy of the data can be. An hour of lost applications is a different service from a week of them.",
+            bold: [{ phrase: "Recovery point objective (RPO)." }],
+          },
+        ],
+      },
           {
             text:
               "They do not stay with the team. There is one business continuity plan for the whole department, and no separate one for an individual service, so the impact judgement, the four numbers, and the list of what this service falls over with all go to the department's business continuity coordinator. What stays with the team is recovering this particular service, and the testing that proves the recovery works.",

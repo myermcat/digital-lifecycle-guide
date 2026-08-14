@@ -48,7 +48,7 @@ export const CREATE_PHASE = {
       internalLinks: [{ phrase: "Live", to: PHASES.live.href }],
     },
     {
-      text: "Think ahead to Live while you create. The service you are standing up will need to be kept running, growing, healthy, and responsive for years, and what that takes is decided now: the running team, the operating money, the support that answers for the service, and the room to keep improving it. The cheapest time to secure each of these is before the contract is signed and before the design settles.",
+      text: "Think ahead to Live while you create. Four things decide whether the service can be kept running for years: the running team, the operating money, the support that answers for it, and the room to keep improving it. Each is cheapest to secure now, before the contract is signed and before the design settles.",
       bold: [{ phrase: "Think ahead to Live while you create." }],
     },
   ] satisfies ThreadLinkedProse[],
@@ -98,7 +98,7 @@ export const CREATE_PHASE = {
         heading: "1. Work out what is needed.",
         lead: "Most of Create is deciding, and the cheapest decision is the one to stop.",
         afterLead: {
-          text: "A replacement still benefits from every sub-phase. When a service is replacing an existing one, it can feel like much of the work is already done, since the old service shows what it did. What it cannot show is what people need now. The problem may have shifted, the users may have changed, the rules may be different, and some of what the old service did may no longer be worth carrying forward. Going through Discovery, Alpha, and Beta with the same care as a new service is what helps a team notice those changes, so the new service improves on the old one.",
+          text: "A replacement still benefits from every sub-phase. Replacing an existing service can feel like most of the work is done, because the old one shows what it did. What it cannot show is what people need now: the problem may have shifted, the users may have changed, the rules may be different. Going through Discovery, Alpha and Beta with the same care as a new service is what lets a team notice.",
           bold: [
             { phrase: "A replacement still benefits from every sub-phase." },
             { phrase: "need now" },
