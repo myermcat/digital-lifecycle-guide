@@ -201,7 +201,12 @@ export function GoodContractPage() {
         <ol className={`${guideProse} list-decimal space-y-2 ${guideListIndent}`}>
           {GOOD_CONTRACT.contractParts.parts.map((part) => (
             <li key={part.term}>
-              <span className="font-semibold text-foreground">{part.term}.</span>{" "}
+              <span className="font-semibold text-foreground">{part.term}.</span>
+              {"optional" in part && part.optional ? (
+                <span className="ml-1.5 align-middle text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                  optional
+                </span>
+              ) : null}{" "}
               {part.text}
             </li>
           ))}

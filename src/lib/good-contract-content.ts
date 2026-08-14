@@ -104,7 +104,12 @@ export const GOOD_CONTRACT = {
       },
       {
         term: "The annexes",
-        text: "Everything attached: the security requirements checklist, the accessibility clauses, service levels, and any mock-up or design provided for illustration.",
+        text: "Everything attached: the security requirements checklist, the accessibility clauses, and the service levels.",
+      },
+      {
+        term: "A mock-up or design, if you attach one",
+        optional: true,
+        text: "Not a required part, and worth a moment's thought before adding. Anything annexed forms part of the agreement, so a design attached without qualification is something the supplier can be held to, and something you pay an amendment to change. If it is there to show intent rather than to be built to, say so in the annex itself.",
       },
       {
         term: "The options",

@@ -75,24 +75,24 @@ export const SECURITY_THREAD = {
     heading: "Summary",
     items: [
       {
-        lead: "Security is a cycle, not a stage you clear.",
+        lead: "Security keeps coming round.",
         icon: RotateCw,
-        body: "The five functions come round again for as long as the service runs. A service that was secure at launch and never touched since is not a secure service.",
+        body: "The five functions repeat for as long as the service runs. A service that was secure the day it launched, and has not been looked at since, has quietly stopped being one.",
       },
       {
-        lead: "What actually goes wrong is usually mundane.",
+        lead: "What goes wrong is usually something ordinary.",
         icon: KeyRound,
-        body: "An unpatched component, a default password, a permission left too wide. The dramatic attacks make the news; these are what causes most of the harm.",
+        body: "An unpatched component, a default password, a permission left wider than it needed to be. The dramatic attacks are the ones that make the news, but these are where most of the harm comes from.",
       },
       {
-        lead: "Guard the few things that would really hurt.",
+        lead: "Guard the few things that would do real harm.",
         icon: Gem,
-        body: "Protecting everything to the same high standard costs more than a department can afford and usually ends in protection thin enough to help nowhere. Work out what would cause real harm, and protect that properly.",
+        body: "Protecting everything to the same high standard costs more than most departments can afford, and it tends to end in protection spread too thin to help anywhere. Work out which parts would cause real harm if they failed, and protect those properly.",
       },
       {
         lead: "It is far cheaper in the design than in production.",
         icon: PencilRuler,
-        body: "A weakness caught while somebody is still drawing the service costs a fraction of the same weakness found once people are using it. If a supplier is building it, that means the security work belongs in the contract.",
+        body: "A weakness caught while somebody is still drawing the service costs a fraction of what the same weakness costs once people are using it. If a supplier is building it, that is the argument for putting the security work in the contract.",
       },
     ],
   },
