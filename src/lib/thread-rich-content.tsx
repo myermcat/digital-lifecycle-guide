@@ -18,6 +18,8 @@ export type ThreadLinkedProse = {
   text: string;
   externalLinks?: ExternalPhraseLink[];
   internalLinks?: InternalPhraseLink[];
+  /** Links to another block on the same page, by element id. */
+  anchorLinks?: { phrase: string; hash: string }[];
   placeholderLinks?: PlaceholderPhraseLink[];
   placeholderGcNetworkLinks?: PlaceholderGcNetworkPhraseLink[];
   bold?: BoldPhrase[];
@@ -221,6 +223,7 @@ export function renderLinkedProse({
   text,
   externalLinks,
   internalLinks,
+  anchorLinks,
   placeholderLinks,
   placeholderGcNetworkLinks,
   bold,
@@ -228,6 +231,7 @@ export function renderLinkedProse({
   return proseWithMixedLinks(text, {
     external: externalLinks,
     internal: internalLinks,
+    anchor: anchorLinks,
     placeholder: placeholderLinks,
     placeholderGcNetwork: placeholderGcNetworkLinks,
     bold,

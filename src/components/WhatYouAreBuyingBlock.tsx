@@ -9,7 +9,6 @@ import {
 } from "@/lib/thread-rich-content";
 import { guideProse, guideSectionTitle, guideSubsectionTitle } from "@/lib/guide-typography";
 import whereContractSignedVisual from "@/assets/where_contract_signed.svg?url";
-import { GuideTable } from "@/components/GuideTable";
 
 export type BuyingRouteContent = {
   id: string;
@@ -28,16 +27,10 @@ export type CombiningRoutesParagraph = {
   body: ThreadLinkedProse;
 };
 
-export type ThreeWordsContent = {
-  columns: readonly string[];
-  rows: readonly { term: string; when: string; text: string }[];
-  close: string;
-};
-
 export type ChoosingWhatToBuyContent = {
   heading: string;
   lead: readonly ThreadLinkedProse[];
-  threeWords?: ThreeWordsContent;
+  routesHeading: string;
   routes: readonly BuyingRouteContent[];
   combiningRoutes: {
     heading: string;
@@ -84,7 +77,7 @@ function ContractSignedSignpost({ when }: { when: ThreadLinkedProse }) {
 export function WhatYouAreBuyingBlock({
   heading,
   lead,
-  threeWords,
+  routesHeading,
   routes,
   combiningRoutes,
   takeaway,
@@ -101,24 +94,14 @@ export function WhatYouAreBuyingBlock({
         ))}
       </div>
 
-      {threeWords ? (
-        <div className="mb-5">
-          <GuideTable
-            columns={threeWords.columns}
-            rows={threeWords.rows.map((row) => ({
-              term: row.term,
-              cells: [row.text, row.when],
-            }))}
-          />
-          <p className={`${guideProse} mt-3`}>{threeWords.close}</p>
-        </div>
-      ) : null}
 
       <img
         src={whereContractSignedVisual}
-        alt="Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. A note says building in-house or reusing signs no build contract at all."
+        alt="Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. The caption reads: where the contract is signed, route by route."
         className="mx-auto mb-3 mt-1 w-full max-w-3xl"
       />
+
+      <h3 className={`${guideSubsectionTitle} mt-8 mb-3`}>{routesHeading}</h3>
 
       <IconAccordionSection
         embedded

@@ -133,23 +133,6 @@ export function ProcurementLandingPage() {
         </GuideCallout>
       </section>
 
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24"
-        id={landing.glossary.id}
-      >
-        <h2 className={`${guideSectionTitle} mb-3`}>{landing.glossary.heading}</h2>
-        <p className={`${guideProse} mb-4`}>{landing.glossary.intro}</p>
-        <GuideTable
-          columns={landing.glossary.columns}
-          rows={landing.glossary.terms.map((entry) => ({
-            term: entry.term,
-            short: "short" in entry ? entry.short : undefined,
-            cells: [entry.when, entry.text],
-          }))}
-        />
-        <p className={`${guideProse} mt-4`}>{landing.glossary.close}</p>
-      </section>
-
       <TraditionalAgileComparison
         rows={landing.comparisonRows}
         caption={landing.comparisonCaption}
@@ -199,6 +182,23 @@ export function ProcurementLandingPage() {
             placeholder: landing.whoseJobSplit.placeholderLinks,
           })}
         </p>
+      </section>
+
+      <section
+        className="mt-10 md:mt-12 scroll-mt-24"
+        id={landing.glossary.id}
+      >
+        <h2 className={`${guideSectionTitle} mb-3`}>{landing.glossary.heading}</h2>
+        <p className={`${guideProse} mb-4`}>{landing.glossary.intro}</p>
+        <GuideTable
+          columns={landing.glossary.columns}
+          rows={landing.glossary.terms.map((entry) => ({
+            term: entry.term,
+            short: "short" in entry ? entry.short : undefined,
+            cells: [entry.when, entry.text],
+          }))}
+        />
+        <p className={`${guideProse} mt-4`}>{landing.glossary.close}</p>
       </section>
 
       <ThreadByPhaseSection byPhase={landing.byPhase} />

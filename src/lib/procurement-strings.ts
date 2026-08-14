@@ -110,7 +110,7 @@ export const PROCUREMENT_STRINGS = {
       },
       {
         lead: "Most of the difficulty is vocabulary, and that part is fixable.",
-        body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. There is a table of them further down.",
+        body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. The Procurement glossary further down has them all.",
       },
     ],
   },
@@ -157,31 +157,11 @@ export const PROCUREMENT_STRINGS = {
         bold: [{ phrase: "some of the routes" }],
       },
       {
-        text: "Three words come up all through this page, and they are easy to mix up. It helps to have them straight first:",
+        text: "One word is worth settling before the routes make sense. A solicitation is the package of documents Canada publishes to invite suppliers to compete; it is not the contract, which comes later and only for whoever wins. So when this page says the solicitation opens with the challenge statement, it means the competition document leads with the problem rather than with a specification of the answer. The rest of the vocabulary is in the Procurement glossary further down.",
+        anchorLinks: [{ phrase: "Procurement glossary", hash: "the-words" }],
       },
     ] satisfies ThreadLinkedProse[],
-    threeWords: {
-      columns: ["Word", "What it is", "When"],
-      rows: [
-        {
-          term: "Solicitation",
-          when: "Opens the competition",
-          text: "The package of documents Canada publishes to invite suppliers to compete. It holds the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will carry. People often say \"the solicitation\" when they mean the competition itself.",
-        },
-        {
-          term: "Bid",
-          when: "While the competition is open",
-          text: "A proposal a supplier sends back in answer to the solicitation.",
-        },
-        {
-          term: "Contract",
-          when: "After the choice is made",
-          text: "The signed agreement, and only with whoever wins.",
-        },
-      ],
-      close:
-        "So when this page says the solicitation opens with the challenge statement, it means the competition document leads with the problem rather than with a specification of the answer.",
-    },
+    routesHeading: "What each route is, and how it runs",
     routes: [
       {
         id: "buy-a-team",
@@ -416,11 +396,11 @@ export const PROCUREMENT_STRINGS = {
       ] satisfies CombiningRoutesParagraph[],
     },
     takeaway: {
-      text: "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet.",
+      text: "The route decides when the department signs, and the signature is the moment that matters. Up to it, nothing is committed and the department can still ask for what it needs. After it, everything is a negotiation with one supplier.",
       bold: [
         {
           phrase:
-            "The route decides when the department signs, and signature is the moment it has leverage, because nothing has been committed yet.",
+            "The route decides when the department signs, and the signature is the moment that matters.",
         },
       ],
     } satisfies ThreadLinkedProse,
@@ -495,9 +475,9 @@ export const PROCUREMENT_STRINGS = {
 
   glossary: {
     id: "the-words",
-    heading: "The words you will hear, and what they mean",
+    heading: "Procurement glossary",
     intro:
-      "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the words a business owner runs into, in the order they tend to appear.",
+      "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the words a business owner runs into, in the order they tend to turn up.",
     columns: ["Word", "When it turns up", "What it means"],
     terms: [
       {
@@ -521,7 +501,7 @@ export const PROCUREMENT_STRINGS = {
       {
         term: "Solicitation",
         when: "The competition itself",
-        text: "The competition. It is the published package inviting suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold.",
+        text: "The package of documents Canada publishes to invite suppliers to compete. It carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold. People often say \"the solicitation\" when they mean the competition itself.",
       },
       {
         term: "Request for Proposals",
@@ -532,7 +512,7 @@ export const PROCUREMENT_STRINGS = {
       {
         term: "Bid",
         when: "What comes back",
-        text: "What one supplier sends back. A bid is a proposal, not an agreement.",
+        text: "A proposal a supplier sends back in answer to the solicitation. Most bids lose.",
       },
       {
         term: "Statement of work",
