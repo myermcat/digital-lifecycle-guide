@@ -394,9 +394,9 @@ export const PROCUREMENT_STRINGS = {
         body: "Progress in increments, often through several contracts running in parallel or in series rather than one large one.",
       },
     ],
-    exampleHeading: "The example the guide works through",
+    exampleHeading: "How it runs in practice",
     exampleIntro: {
-      text: "The clearest picture in the guide is a worked example rather than a prescribed method, and it runs like this:",
+      text: "The clearest picture of it is the example PSPC works through, which is an example rather than a prescribed method. It runs like this:",
     },
     exampleSteps: [
       {
@@ -513,10 +513,16 @@ export const PROCUREMENT_STRINGS = {
         text: "A proposal a supplier sends back in answer to the solicitation. Most bids lose.",
       },
       {
+        term: "Statement of requirement",
+        when: "Written before the solicitation goes out",
+        short: "SOR",
+        text: "What the service has to achieve, who it is for, and how well it has to perform, without saying how to build it.",
+      },
+      {
         term: "Statement of work",
-        when: "Written before award, annexed to the contract",
+        when: "Goes into the solicitation, annexed to the contract",
         short: "SOW",
-        text: "The description of the work being bought, written from your requirements. It is an annex to the contract, which makes it the thing the supplier is actually held to.",
+        text: "The description of the work being bought. Canada writes it, it forms part of the solicitation, and it ends up annexed to the contract, which makes it the thing the supplier is held to. In an agile purchase it is kept high-level and refined with supplier feedback before the solicitation goes out.",
       },
       {
         term: "Option",
@@ -565,7 +571,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "Procurement guidance starts after the decision to buy has been made, so it will not help you here. Working out whether to buy at all is your own step, and the rules for it are in the Policy on the Planning and Management of Investments.",
+            text: "Government procurement guidance usually starts after the decision to buy has been made, so it will not help you here. Working out whether to buy at all is your own step, and the rules for it are in the Policy on the Planning and Management of Investments.",
           },
         ],
         externalLinks: [

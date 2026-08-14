@@ -1,3 +1,4 @@
+import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
 
@@ -20,6 +21,14 @@ export function DescribingWhatYouBuy() {
           </p>
         ))}
       </div>
+
+      <CaseStudyBlock
+        className="mt-6"
+        actual={SOO_VS_SOW.comparison.sow}
+        alternative={SOO_VS_SOW.comparison.soo}
+        actualLabel={SOO_VS_SOW.comparison.actualLabel}
+        alternativeLabel={SOO_VS_SOW.comparison.alternativeLabel}
+      />
     </section>
   );
 }

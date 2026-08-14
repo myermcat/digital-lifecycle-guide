@@ -41,7 +41,7 @@ export function AgileProcurementAppendix() {
       <h3 className={`${guideSubsectionTitle} mt-9 mb-3`}>{appendix.whatItIsHeading}</h3>
       <p className={`${guideProse} mb-4`}>{renderLinkedProse(appendix.whatItIs)}</p>
       <div className="rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8">
-        <ul className={guideArrowList}>
+        <ul className={`${guideArrowList} !pl-0`}>
           {appendix.pillars.map((pillar) => (
             <li key={pillar.lead} className="flex items-start gap-2.5">
               <GuideArrowBullet />
@@ -57,7 +57,7 @@ export function AgileProcurementAppendix() {
       <h3 className={`${guideSubsectionTitle} mt-10 mb-3`}>{appendix.exampleHeading}</h3>
       <p className={`${guideProse} mb-4`}>{renderLinkedProse(appendix.exampleIntro)}</p>
       <ol
-        className={`${guideProse} rounded-lg border border-border/70 bg-muted/25 px-6 py-5 list-decimal space-y-2.5 md:px-8 ${guideListIndent}`}
+        className={`${guideProse} rounded-lg border border-border/70 bg-muted/25 px-6 py-5 pl-10 list-decimal space-y-2.5 md:px-8 md:pl-12`}
       >
         {appendix.exampleSteps.map((step) => (
           <li key={step.bold}>

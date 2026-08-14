@@ -60,7 +60,7 @@ export function ProcurementLandingPage() {
 
       <section className="mt-8 md:mt-10 rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8 md:py-7">
         <p className={guideCalloutLabel}>{landing.intro.keyPointsHeading}</p>
-        <ul className={`${guideArrowList} mt-4`}>
+        <ul className={`${guideArrowList} mt-4 !pl-0`}>
           {landing.intro.keyPoints.map((point) => (
             <li key={point.lead} className="flex items-start gap-2.5">
               <GuideArrowBullet />
