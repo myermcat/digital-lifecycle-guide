@@ -207,7 +207,8 @@ function Index() {
           </p>
           <p>
             Take a department that has money for a service, no technical staff of its own,
-            and a deadline it did not choose. Going to a large supplier and paying them to
+            and a date somebody else set: a minister has announced it, or the legislation
+            names it. Going to a large supplier and paying them to
             work out most of the detail may genuinely be its best option. That skips almost
             everything described here, and it can still be the right decision for that
             department.
