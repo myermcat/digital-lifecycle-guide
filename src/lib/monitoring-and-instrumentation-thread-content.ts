@@ -136,9 +136,17 @@ export const MONITORING_THREAD = {
         title: "Instrument it.",
         sections: [
           {
+            type: "subheading",
+            text: "What instrumentation is, and why it is cheap now and dear later",
+          },
+          {
             text:
               "Instrumentation is building the service so it records what happens as people use it: each key step attempted and completed, each error, how long each step takes. Done as the service is built, this is cheap and accurate. Added afterward, it is expensive and full of gaps.",
             bold: [{ phrase: "records what happens" }],
+          },
+          {
+            type: "subheading",
+            text: "Instrument in a standard way, or the signals belong to the tool",
           },
           {
             text:
@@ -208,14 +216,39 @@ export const MONITORING_THREAD = {
             ],
           },
           {
+            type: "subheading",
+            text: "Every signal needs a target, or the number cannot be judged",
+          },
+          {
             text:
-              "A signal also needs a target beside it, or the number cannot be judged. GC services publish these as service standards, a public promise of the performance a client can expect, with the results reported each year in the GC service inventory. For the shape of a small target set, the clearest example is the United Kingdom's four key performance indicators, or KPIs (how to set performance metrics for your service): completion rate, digital take-up, user satisfaction, and cost per transaction. A lot of the GC web signal already sits in Canada.ca analytics.",
+              "A number on its own says nothing: 82% is good or bad depending on what you promised. Government of Canada services publish their targets as service standards, which are a public promise of the performance a client can expect, and the results are reported each year in the GC service inventory.",
             externalLinks: [
               { phrase: "GC service inventory", linkKey: "gc-service-inventory" },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            text:
+              "For the shape of a small target set, the clearest published example is the United Kingdom's four key performance indicators, set out in how to set performance metrics for your service:",
+            externalLinks: [
               {
                 phrase: "how to set performance metrics for your service",
                 linkKey: "uk-service-manual-performance-metrics",
               },
+            ] satisfies ExternalPhraseLink[],
+          },
+          {
+            type: "unorderedList",
+            items: [
+              { text: "completion rate" },
+              { text: "digital take-up" },
+              { text: "user satisfaction" },
+              { text: "cost per transaction" },
+            ],
+          },
+          {
+            text:
+              "A lot of the web signal for a Government of Canada service is already being collected in Canada.ca analytics, so check there before commissioning anything new.",
+            externalLinks: [
               { phrase: "Canada.ca analytics", linkKey: "canada-ca-analytics" },
             ] satisfies ExternalPhraseLink[],
           },
@@ -233,7 +266,10 @@ export const MONITORING_THREAD = {
           },
           {
             type: "subheading",
-            text: "Four kinds, and usually one of each is enough",
+            text: "Four questions, and usually one number each is enough",
+          },
+          {
+            text: "These are the questions to choose by. The named signals listed under See it are what the answers usually turn out to be for a Government of Canada service.",
           },
           {
             type: "orderedList",
@@ -314,7 +350,16 @@ export const MONITORING_THREAD = {
           },
           {
             text:
-              "Healthy numbers and vanity metrics become nothing, and that is correct: an all-green dashboard generates no work. One kind of signal goes elsewhere. Unusual or suspicious activity is a security signal, handled through detection and response on the security thread.",
+              "Healthy numbers become nothing, and that is correct. An all-green dashboard is allowed to generate no work at all.",
+            bold: [{ phrase: "An all-green dashboard is allowed to generate no work at all." }],
+          },
+          {
+            type: "subheading",
+            text: "One kind of signal goes somewhere else",
+          },
+          {
+            text:
+              "Unusual or suspicious activity is not a backlog item. It is a security signal, and it is handled through detection and response on the security thread.",
             internalLinks: [{ phrase: "security", to: THREADS.security.path }] satisfies InternalPhraseLink[],
           },
         ],

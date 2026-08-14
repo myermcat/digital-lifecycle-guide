@@ -108,7 +108,11 @@ export function SecurityThreadPage() {
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
         <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
-        <p className={guideProse}>{renderLinkedProse(whyItMatters)}</p>
+        <div className={`${guideProse} space-y-3`}>
+          {whyItMatters.paragraphs.map((paragraph) => (
+            <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+          ))}
+        </div>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
@@ -170,7 +174,13 @@ export function SecurityThreadPage() {
 
       <PageFoot
         support="security"
-        furtherReading={renderLinkedProse(furtherReading)}
+        furtherReading={
+          <div className="space-y-3">
+            {furtherReading.paragraphs.map((paragraph) => (
+              <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
+            ))}
+          </div>
+        }
         seeAlso={SEE_ALSO.security}
         sources={sources}
       />

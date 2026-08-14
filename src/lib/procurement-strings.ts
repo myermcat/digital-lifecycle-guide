@@ -11,6 +11,11 @@ import {
 } from "@/lib/placeholder-sources";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 
+export type AiCaveatBlock =
+  | { type: "p"; text: string }
+  | { type: "subheading"; text: string }
+  | { type: "ul"; items: readonly string[] };
+
 export type ProcurementJourneyBodyBlock =
   | {
       type: "p";
@@ -20,6 +25,15 @@ export type ProcurementJourneyBodyBlock =
   | {
       type: "ul";
       items: readonly string[];
+    }
+  | {
+      type: "subheading";
+      text: string;
+    }
+  | {
+      type: "table";
+      columns: readonly string[];
+      rows: readonly { term: string; cells: readonly string[] }[];
     };
 
 export type ProcurementJourneyStepStrings = {
@@ -125,13 +139,31 @@ export const PROCUREMENT_STRINGS = {
         bold: [{ phrase: "some of the routes, not all of them" }],
       },
       {
-        text: "First, three words that get used interchangeably and should not be. The solicitation is the competition, not the contract: it is the published package that invites suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold. So when this page says the solicitation opens with the challenge statement, it means the competition document leads with the problem rather than with a specification. A bid is what one supplier sends back in response. The contract comes later, and only for whoever wins.",
-        bold: [
-          { phrase: "The solicitation is the competition, not the contract" },
-          { phrase: "A bid is what one supplier sends back in response." },
-        ],
+        text: "Three words get used as if they meant the same thing, and the rest of this page is hard to follow if they blur together:",
       },
     ] satisfies ThreadLinkedProse[],
+    threeWords: {
+      columns: ["Word", "What it is", "When"],
+      rows: [
+        {
+          term: "Solicitation",
+          when: "Before anyone is chosen",
+          text: "The competition, not the contract. It is the published package inviting suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold.",
+        },
+        {
+          term: "Bid",
+          when: "In answer to the solicitation",
+          text: "What one supplier sends back. A proposal, not an agreement, and most bids lose.",
+        },
+        {
+          term: "Contract",
+          when: "After the choice is made",
+          text: "The signed agreement, and only with whoever wins.",
+        },
+      ],
+      close:
+        "So when this page says the solicitation opens with the challenge statement, it means the competition document leads with the problem rather than with a specification of the answer.",
+    },
     routes: [
       {
         id: "buy-a-team",
@@ -277,7 +309,7 @@ export const PROCUREMENT_STRINGS = {
           },
         ],
         contractSigned: {
-          text: "at the start of Alpha, before the prototypes are built. The build is an option inside that same contract, exercised at the Alpha and Beta boundary.",
+          text: "depends on which shape you run. In the familiar shape the department prototypes first and signs as Beta opens, once it can say what it wants. In the PSPC multi-supplier shape above, the contracts are signed a sub-phase earlier, as Alpha opens, because the prototypes are built under them, and the build is an option inside the winner's contract.",
           internalLinks: [{ phrase: "Alpha", to: "/create-alpha" }],
         },
       },
@@ -375,7 +407,7 @@ export const PROCUREMENT_STRINGS = {
       ],
     } satisfies ThreadLinkedProse,
     closingNote: {
-      text: "One rule fixes all of this in place: the competition runs in the sub-phase before the signature. Buy a Team and the PSPC multi-supplier model sign as Alpha opens, so their competitions run through Discovery. Buy a Solution and Buy a Finished Product sign as Beta opens, so theirs run through Alpha. Build in-house or Reuse signs nothing, and most of the steps below fall away.",
+      text: "One rule fixes all of this in place: the competition runs in the sub-phase before the signature. That is why the two columns in the table move together, and why choosing a route in Discovery decides when the department is committed. Build in-house or Reuse signs no build contract at all, and most of the steps below fall away.",
       bold: [{ phrase: "the competition runs in the sub-phase before the signature" }],
     },
     closingNoteSecond: {
@@ -430,79 +462,130 @@ export const PROCUREMENT_STRINGS = {
     ],
     close:
       "Three cheap answers, and you can probably make the thing yourself. One expensive answer, and no budget will make a drawing answer it for you.",
-    caution:
-      "Serving colleagues rather than the public changes which duties attach. It does not switch them off, and it says nothing at all about how serious the service is. A booking tool for one branch is not published under canada.ca, so the publishing rules and the domain approval do not reach it, and the particular language rule that catches anything the public can reach is not the one that applies. Official languages still apply, through the rules covering language of work and services to employees, and so do security, privacy and accessibility. Phoenix is the case worth remembering: it served public servants, not the public, and its answer to what happens when it fails was as bad as any service in this guide.",
+    caution: {
+      lead: "An internal service has fewer duties, not fewer consequences.",
+      paragraphs: [
+        "Serving colleagues instead of the public changes which duties attach. It does not switch them off, and it says nothing about how serious the service is.",
+        "What genuinely falls away is narrow. A booking tool for one branch is not published under canada.ca, so the publishing rules and the domain approval do not reach it, and the particular language rule that catches anything the public can reach is not the one that applies.",
+        "What still applies is most of it. Official languages reach an internal service through the rules covering language of work and services to employees, and security, privacy and accessibility apply as they would anywhere else.",
+        "Phoenix is the case worth remembering. It served public servants, not the public, and its answer to what happens when it fails was as bad as any service in this guide.",
+      ],
+    },
   },
 
   aiCaveat: {
     id: "what-if-we-just-build-it",
     label: "BEFORE YOU DECIDE NOT TO BUY",
     heading: "What if we just build it ourselves?",
-    lead: "One person can build the thing now. That is real, and it is not the whole question.",
-    paragraphs: [
-      "A grants and contributions application was built inside government by one person working alone with artificial intelligence tools. It worked. Anyone who has watched a demonstration like that has had the same thought: why are we running a procurement at all?",
-      "It is a fair thought, and for a prototype it is often the right answer. The cheapest thing that answers the riskiest question is exactly what Alpha is for, and if that is an afternoon with an AI tool, spend the afternoon.",
-      "What changes is the moment the thing serves people outside the team. Then it needs somewhere to run and someone paying for that. It needs an authority to operate, which means a security assessment behind it. It needs a privacy assessment if it touches personal information. It has to meet the accessibility standard, and be tested with the people most likely to be excluded. It has to work in both official languages. Somebody has to answer the phone when it breaks. And somebody has to still understand it in five years, when the person who built it has moved on.",
-      "None of that is an argument against building it yourself. Departments do, successfully. It is an argument for knowing what you are taking on, because every item on that list is work whether a supplier does it or you do, and a build that skipped them is not finished, it is unfinished in ways that only show up later.",
-    ],
+    lead: "Building it yourself is a real option now. The cost is not in the building.",
+    blocks: ([
+      {
+        type: "p",
+        text: "A grants and contributions application was built inside government by one person working alone with artificial intelligence tools. It worked. Anyone who has watched a demonstration like that has had the same thought: why are we running a procurement at all?",
+      },
+      {
+        type: "p",
+        text: "For a prototype, that thought is usually right. The cheapest thing that answers the riskiest question is exactly what Alpha is for, and if that is an afternoon with an AI tool, spend the afternoon.",
+      },
+      {
+        type: "subheading",
+        text: "What changes when it serves people outside the team",
+      },
+      {
+        type: "p",
+        text: "At that point the same list arrives that arrives for anything else the government runs:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Somewhere to run, and a budget line paying for it.",
+          "An authority to operate, which means a security assessment behind it.",
+          "A privacy assessment, if it touches personal information.",
+          "The accessibility standard met, and tested with the people most likely to be shut out.",
+          "Both official languages, at the same time and the same quality.",
+          "Somebody who answers the phone when it breaks.",
+          "Somebody who still understands it in five years, when whoever built it has moved on.",
+        ],
+      },
+      {
+        type: "subheading",
+        text: "Why this is not an argument against building it yourself",
+      },
+      {
+        type: "p",
+        text: "Departments build their own services and do it well. The point is that every line on that list is work whether a supplier does it or you do. A build that skipped them is not finished early; it is unfinished in ways that surface later, usually when somebody outside the team is depending on it.",
+      },
+    ] satisfies AiCaveatBlock[]) as readonly AiCaveatBlock[],
     close:
-      "So the honest version of the question is not build or buy. It is: who is going to do these things, and have we counted them?",
+      "So the question is not build or buy. It is who is going to do these things, and whether anyone has counted them.",
   },
 
   glossary: {
     id: "the-words",
     heading: "The words you will meet",
     intro:
-      "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the ones a business owner runs into, in the order they tend to appear.",
+      "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the words a business owner runs into, in the order they tend to appear.",
+    columns: ["Word", "When it turns up", "What it means"],
     terms: [
       {
         term: "Request for Information",
+        when: "Before the competition",
         short: "RFI",
         text: "A question to the market with no contract at the end of it. You describe what you are trying to do and ask suppliers what is possible. Nobody is paid, and nobody is committed.",
       },
       {
         term: "Review and Refine Requirements",
+        when: "Before the competition",
         short: "RRR",
         text: "The same idea, one step further on: you share your draft requirements and ask suppliers to tell you where they are unclear or unbuildable, before the competition opens.",
       },
       {
         term: "Invitation to Qualify",
+        when: "Opening the competition",
         short: "ITQ",
         text: "A first round that shortlists who may bid, on things like security clearance, capacity and relevant experience. It is not the competition itself.",
       },
       {
         term: "Solicitation",
+        when: "The competition itself",
         text: "The competition. It is the published package inviting suppliers to compete, and it carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold.",
       },
       {
         term: "Request for Proposals",
+        when: "Inside the solicitation",
         short: "RFP",
         text: "The document inside the solicitation that sets out the problem and asks suppliers to propose how they would solve it.",
       },
       {
         term: "Bid",
+        when: "What comes back",
         text: "What one supplier sends back. A bid is a proposal, not an agreement.",
       },
       {
         term: "Statement of work",
+        when: "Written before award, annexed to the contract",
         short: "SOW",
         text: "The description of the work being bought, written from your requirements. It is an annex to the contract, which makes it the thing the supplier is actually held to.",
       },
       {
         term: "Option",
+        when: "Agreed at signature, called on later",
         text: "Work described and priced in the contract at signature, which Canada may or may not call on later. The build that follows a prototype is often an option, which is why exercising it needs no new competition.",
       },
       {
         term: "Amendment",
+        when: "Any time after signature",
         text: "A formal change to a signed contract, agreed by both sides. Exercising an option is done by amendment. So is anything you failed to ask for at the start, which is why an amendment is usually priced by the only supplier in the room.",
       },
       {
         term: "Task authorization",
+        when: "While the contract runs",
         short: "TA",
         text: "A way of releasing work in pieces under a contract that is already signed. Each piece is authorized on its own, so the department can stop issuing them without terminating anything.",
       },
       {
         term: "Off-ramp",
+        when: "Any point where work can stop",
         text: "Any point where Canada can decide the work goes no further: declining to exercise an option, stopping task authorizations, or holding work at a gate.",
       },
     ],
@@ -579,15 +662,38 @@ export const PROCUREMENT_STRINGS = {
             text: "Asking for objectives, rather than dictating the work, lets suppliers offer answers better than the one you would have written.",
           },
           {
-            type: "p",
-            text: "Underneath the challenge statement sit the requirements, and they come in three kinds. Which kind a requirement is decides where it goes, and where it goes decides what changing it later costs you. Change one that is still in a prototype and someone redraws it in an afternoon. Change one that is written into a signed contract and it becomes an amendment, priced by the only supplier in the room.",
+            type: "subheading",
+            text: "Three kinds of requirement, and why the difference costs money",
           },
           {
-            type: "ul",
-            items: [
-              "Business requirements: what the service has to achieve and why. These become the objective and the background of the statement of work. Put them in the contract.",
-              "Non-functional requirements: how well it has to perform, how available it has to be, how secure. These become the service levels, and they are what the bids get scored against. Put them in the contract.",
-              "Functional requirements: how a particular screen or step should work. Keep these out of the contract. The prototype and the design carry them, and they will change once someone tests them.",
+            type: "p",
+            text: "The challenge statement says what you want. The requirements say what it has to do, and they come in three kinds. Which kind a requirement is decides where it goes, and where it goes decides what changing it later costs. Change one that is still in a prototype and somebody redraws it in an afternoon. Change one written into a signed contract and it becomes an amendment, priced by the only supplier in the room.",
+          },
+          {
+            type: "table",
+            columns: ["Kind", "What it covers", "Where it goes"],
+            rows: [
+              {
+                term: "Business",
+                cells: [
+                  "What the service has to achieve, and why.",
+                  "In the contract, as the objective and background of the statement of work.",
+                ],
+              },
+              {
+                term: "Non-functional",
+                cells: [
+                  "How well it has to perform, how available it has to be, how secure.",
+                  "In the contract, as the service levels. This is also what the bids are scored against.",
+                ],
+              },
+              {
+                term: "Functional",
+                cells: [
+                  "How a particular screen or step should work.",
+                  "Out of the contract. The prototype and the design carry these, and they change once somebody tests them.",
+                ],
+              },
             ],
           },
           {
@@ -596,7 +702,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "None of this is only for buyers. A department building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. What buying adds is a mandated shape and a signature.",
+            text: "This is not only a buyer's problem. A department building the service itself needs the same three kinds in front of it, because that is how anyone knows what to build. What buying adds is a mandated shape and a signature.",
           },
         ],
       },
@@ -657,15 +763,15 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Talk to the market early, with the ground rules set first.",
+            text: "Talking to suppliers early makes your requirement sharper and your market clearer. Do it with the ground rules written down first, so it stays fair to everyone.",
+          },
+          {
+            type: "subheading",
+            text: "Two ways to ask industry a question without buying anything",
           },
           {
             type: "p",
-            text: "Talking to suppliers early makes your requirement sharper and your market clearer. Do it with ground rules written down first, so it stays fair to everyone.",
-          },
-          {
-            type: "p",
-            text: "This is also the answer for a department that wants to ask industry whether something is even feasible without committing to buy anything. It has two names:",
+            text: "If you want to know whether something is even feasible before committing to buy, there are two named ways to ask:",
           },
           {
             type: "ul",
@@ -676,15 +782,36 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "Neither ends in a contract, and you can run several of each. PSPC describes them as waves: brainstorm the challenge statement and the outcomes, then take market feedback on the minimum you must have, then on the draft statement of work and evaluation grid, then on the draft pricing and the solicitation itself. Engagement is optional everywhere except the formal pre-qualification and solicitation steps.",
+            text: "Neither ends in a contract, and you can run several of each. PSPC describes them as waves, each one narrower than the last:",
+          },
+          {
+            type: "ul",
+            items: [
+              "brainstorm the challenge statement and the outcomes",
+              "take market feedback on the minimum you must have",
+              "then on the draft statement of work and evaluation grid",
+              "then on the draft pricing and the solicitation itself",
+            ],
           },
           {
             type: "p",
-            text: "Nobody is paid for any of it, so it costs the department time rather than money. It is not free of cost to suppliers, though. Responding takes real effort from them, and PSPC's own advice is to make participation worthwhile and not to burn goodwill you will need later. Run as many rounds as the requirement genuinely needs, and no more.",
+            text: "Engagement is optional everywhere except the formal pre-qualification and solicitation steps.",
+          },
+          {
+            type: "subheading",
+            text: "It is free for you and not free for them",
           },
           {
             type: "p",
-            text: "One rule attaches to it. If supplier feedback makes you change draft requirements or draft evaluation criteria, go back to all of the suppliers before you do, so nobody ends up looking advantaged.",
+            text: "Nobody is paid for any of this, so it costs the department time rather than money. Responding takes real effort from suppliers, though, and PSPC's own advice is to make taking part worthwhile and not to burn goodwill you will need later. Run as many rounds as the requirement genuinely needs, and no more.",
+          },
+          {
+            type: "subheading",
+            text: "If the feedback changes your draft, go back to everyone",
+          },
+          {
+            type: "p",
+            text: "If supplier feedback makes you change draft requirements or draft evaluation criteria, return to all of the suppliers before you do, so nobody ends up looking advantaged.",
           },
         ],
       },
@@ -694,11 +821,7 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Now you go out, compare what comes back, and choose.",
-          },
-          {
-            type: "p",
-            text: "Publish, assess, choose. The agile twist: you can judge real things, prototypes, demonstrations, tested increments, not just a written promise.",
+            text: "Publish the solicitation, assess what comes back, and choose. What agile procurement adds here is that you can judge real things, prototypes, demonstrations, tested increments, rather than a written promise alone.",
           },
         ],
       },
@@ -708,11 +831,7 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Signing is where the real work begins.",
-          },
-          {
-            type: "p",
-            text: "The signature is the starting line, not the finish. What happens next lives in the Live and Sunset phases.",
+            text: "The signature is the starting line, not the finish. Holding the supplier to what the contract promised runs for as long as the service does, and what that looks like lives in the Live and Sunset phases.",
           },
         ],
         internalLinks: [
@@ -757,7 +876,7 @@ export const PROCUREMENT_STRINGS = {
       },
     ] satisfies ComparisonRowStrings[],
     caption:
-      "Agile is not always faster. The payoff is confidence. You find the problems early, while they are still cheap to fix. And because the work comes in smaller pieces, you see its value earlier too. Traditional and agile describe the shape of a buy. They are a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
+      "Agile is not always faster. What it buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. Note that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
   },
 
   caseStudy: {
@@ -856,14 +975,37 @@ export const PROCUREMENT_STRINGS = {
   ],
 
   whoseJob: {
-    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you. If the service lets a user down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement says it in plainer policy terms. Your department is the business owner, accountable for the outcomes from start to finish. A procurement specialist, the contracting authority, runs the buying. You own the result. Keep that split in mind at every step along the way. TBS's GCcase migration guidance sets out the same split: departments are accountable for the decision and outcomes, TBS provides enterprise direction and standards, PSPC runs the service, and EARB reviews the architecture.",
+    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you, and if the service lets somebody down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement puts the same thing in policy terms.",
     externalLinks: [
       {
         phrase: "Treasury Board Directive on the Management of Procurement",
         linkKey: "directive-procurement",
       },
     ],
+  } satisfies LinkedProseStrings,
+
+  whoseJobSplit: {
+    intro: "Four parties, and the split between them holds for the whole buy:",
+    roles: [
+      {
+        who: "Your department",
+        does: "The business owner. Accountable for the decision and for the outcomes, from the first idea to the last day the service runs.",
+      },
+      {
+        who: "The contracting authority",
+        does: "A procurement specialist who runs the buying itself: the solicitation, the evaluation, the award, and the amendments afterwards.",
+      },
+      {
+        who: "TBS",
+        does: "Sets enterprise direction and standards, and reviews the architecture through the enterprise architecture review board.",
+      },
+      {
+        who: "PSPC",
+        does: "Runs the common procurement services and the enterprise tools departments buy through.",
+      },
+    ],
     // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Roles and Responsibilities — REPLACE WITH REAL LINK (AND ANCHOR IF AVAILABLE) WHEN PUBLISHED
+    close: "TBS's GCcase migration guidance sets out the same split.",
     placeholderLinks: [
       {
         phrase: "TBS's GCcase migration guidance",
@@ -871,7 +1013,7 @@ export const PROCUREMENT_STRINGS = {
         part: "Roles and Responsibilities",
       },
     ],
-  } satisfies LinkedProseStrings,
+  },
 
   goodContractCallout: {
     label: "A GOOD CONTRACT",

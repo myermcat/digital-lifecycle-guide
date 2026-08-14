@@ -104,6 +104,7 @@ export const PROCUREMENT_LANDING = {
   goodLooksIntro: S.goodLooksIntro,
   whyItMatters: S.whyItMatters,
   whoseJob: S.whoseJob satisfies LinkedProse,
+  whoseJobSplit: S.whoseJobSplit,
   byPhase: S.byPhase,
   furtherReading: S.furtherReading satisfies LinkedProse,
   sources: PROCUREMENT_SOURCES,

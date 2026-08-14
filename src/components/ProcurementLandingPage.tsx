@@ -3,6 +3,7 @@ import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { DescribingWhatYouBuy } from "@/components/DescribingWhatYouBuy";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideCallout } from "@/components/GuideCallout";
+import { GuideTable } from "@/components/GuideTable";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PracticeCardGroup } from "@/components/PracticeCard";
 import { GoodContractCallout } from "@/components/GoodContractCallout";
@@ -19,7 +20,14 @@ import {
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
 import { SEE_ALSO } from "@/lib/see-also";
-import { guideListIndent, guidePageTitle, guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import {
+  guideBlockSubheading,
+  guideListIndent,
+  guidePageTitle,
+  guideProse,
+  guideProseSpace,
+  guideSectionTitle,
+} from "@/lib/guide-typography";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -64,9 +72,24 @@ export function ProcurementLandingPage() {
       >
         <div className="space-y-3">
           <p className="font-semibold text-foreground">{landing.aiCaveat.lead}</p>
-          {landing.aiCaveat.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          {landing.aiCaveat.blocks.map((block, index) =>
+            block.type === "subheading" ? (
+              <p key={`ai-${index}`} className={guideBlockSubheading}>
+                {block.text}
+              </p>
+            ) : block.type === "ul" ? (
+              <ul
+                key={`ai-${index}`}
+                className={`list-disc space-y-1.5 ${guideListIndent}`}
+              >
+                {block.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p key={`ai-${index}`}>{block.text}</p>
+            ),
+          )}
           <p className="font-semibold text-foreground">{landing.aiCaveat.close}</p>
         </div>
       </GuideCallout>
@@ -119,7 +142,14 @@ export function ProcurementLandingPage() {
           {landing.workedExamples.close}
         </p>
         <GuideCallout compact className="mt-5" label="One caution">
-          <p>{landing.workedExamples.caution}</p>
+          <div className="space-y-2.5">
+            <p className="font-semibold text-foreground">
+              {landing.workedExamples.caution.lead}
+            </p>
+            {landing.workedExamples.caution.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
         </GuideCallout>
       </section>
 
@@ -129,26 +159,14 @@ export function ProcurementLandingPage() {
       >
         <h2 className={`${guideSectionTitle} mb-3`}>{landing.glossary.heading}</h2>
         <p className={`${guideProse} mb-4`}>{landing.glossary.intro}</p>
-        <dl className="space-y-3">
-          {landing.glossary.terms.map((entry) => (
-            <div
-              key={entry.term}
-              className="rounded-md border border-border/70 bg-background/50 px-3.5 py-3"
-            >
-              <dt className="flex flex-wrap items-baseline gap-x-2">
-                <span className="font-semibold text-foreground">{entry.term}</span>
-                {"short" in entry && entry.short ? (
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                    {entry.short}
-                  </span>
-                ) : null}
-              </dt>
-              <dd className="mt-1 text-[0.9rem] leading-snug text-foreground/80">
-                {entry.text}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <GuideTable
+          columns={landing.glossary.columns}
+          rows={landing.glossary.terms.map((entry) => ({
+            term: entry.term,
+            short: "short" in entry ? entry.short : undefined,
+            cells: [entry.when, entry.text],
+          }))}
+        />
         <p className={`${guideProse} mt-4`}>{landing.glossary.close}</p>
       </section>
 
@@ -185,7 +203,20 @@ export function ProcurementLandingPage() {
         <p className={guideProse}>
           {proseWithMixedLinks(landing.whoseJob.text, {
             external: landing.whoseJob.externalLinks,
-            placeholder: landing.whoseJob.placeholderLinks,
+          })}
+        </p>
+        <p className={`${guideProse} mt-3`}>{landing.whoseJobSplit.intro}</p>
+        <GuideTable
+          className="mt-3"
+          columns={["Who", "What they are on the hook for"]}
+          rows={landing.whoseJobSplit.roles.map((role) => ({
+            term: role.who,
+            cells: [role.does],
+          }))}
+        />
+        <p className={`${guideProse} mt-3`}>
+          {proseWithMixedLinks(landing.whoseJobSplit.close, {
+            placeholder: landing.whoseJobSplit.placeholderLinks,
           })}
         </p>
       </section>

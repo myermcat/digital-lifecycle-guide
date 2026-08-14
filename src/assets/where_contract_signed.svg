@@ -5,14 +5,20 @@
     </marker>
   </defs>
 
-  <!-- top route pills -->
-  <rect x="181" y="6" width="108" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
-  <text x="235" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Team</text>
-  <path d="M235 36 L235 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <!-- routes that sign as Alpha opens -->
+  <rect x="100" y="6" width="104" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="152" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Team</text>
 
-  <rect x="479" y="6" width="120" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
-  <text x="539" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Solution</text>
-  <path d="M539 36 L539 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="246" y="6" width="152" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="322" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">PSPC model</text>
+
+  <path d="M152 36 L152 70 L322 70 L322 36" fill="none" stroke="#A8492A" stroke-width="1.6"/>
+  <path d="M237 70 L237 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- route that signs as Beta opens -->
+  <rect x="478" y="6" width="120" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="538" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Solution</text>
+  <path d="M538 36 L538 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
 
   <!-- the three sub-phases -->
   <rect x="20" y="104" width="216" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
@@ -25,11 +31,13 @@
   <text x="698" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Beta</text>
 
   <!-- signature points on the boundaries -->
-  <circle cx="235" cy="130" r="7" fill="#A8492A"/>
-  <circle cx="539" cy="130" r="7" fill="#A8492A"/>
+  <circle cx="237" cy="130" r="7" fill="#A8492A"/>
+  <circle cx="538" cy="130" r="7" fill="#A8492A"/>
 
-  <!-- bottom route pill: arrow points UP, from the pill to the boundary -->
-  <path d="M539 190 L539 166" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
-  <rect x="452" y="196" width="174" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
-  <text x="539" y="216" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Finished Product</text>
+  <!-- the other route that signs as Beta opens -->
+  <path d="M538 190 L538 166" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="451" y="196" width="174" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="538" y="216" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Finished Product</text>
+
+  <text x="20" y="216" font-size="13" font-style="italic" fill="#8C7B63">Build in-house or Reuse: no build contract at all.</text>
 </svg>

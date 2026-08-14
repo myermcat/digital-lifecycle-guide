@@ -46,7 +46,10 @@ export function DescribingWhatYouBuy() {
       </div>
 
       <EditorialNote className="mt-6">
-        <p>{SOO_VS_SOW.termNote}</p>
+        <p className="font-semibold text-foreground">{SOO_VS_SOW.termNote.heading}</p>
+        {SOO_VS_SOW.termNote.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </EditorialNote>
     </section>
   );

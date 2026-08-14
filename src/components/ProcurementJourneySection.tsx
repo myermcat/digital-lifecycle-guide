@@ -6,8 +6,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
+import { GuideTable } from "@/components/GuideTable";
 import type { ProcurementJourneyStep } from "@/lib/procurement-landing";
 import {
+  guideBlockSubheading,
   guideListIndent,
   guideProse,
   guideProseTight,
@@ -76,7 +78,20 @@ export function ProcurementJourneySection({
               </AccordionTrigger>
               <AccordionContent className="px-5 pb-4 space-y-3">
                 {step.blocks.map((block, blockIndex) =>
-                  block.type === "ul" ? (
+                  block.type === "subheading" ? (
+                    <p
+                      key={`${step.label}-h-${blockIndex}`}
+                      className={guideBlockSubheading}
+                    >
+                      {block.text}
+                    </p>
+                  ) : block.type === "table" ? (
+                    <GuideTable
+                      key={`${step.label}-t-${blockIndex}`}
+                      columns={block.columns}
+                      rows={block.rows}
+                    />
+                  ) : block.type === "ul" ? (
                     <ul
                       key={`${step.label}-ul-${blockIndex}`}
                       className={`list-disc space-y-1.5 ${guideListIndent} ${guideProseTight}`}

@@ -551,7 +551,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "why-it-matters",
       sectionHeading: "Why it matters",
-      text: SECURITY_THREAD.whyItMatters.text,
+      text: SECURITY_THREAD.whyItMatters.paragraphs.map((p) => p.text).join(" "),
     },
     {
       sectionId: "whose-job",
@@ -600,7 +600,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "further-reading",
       sectionHeading: "Further reading",
-      text: SECURITY_THREAD.furtherReading.text,
+      text: SECURITY_THREAD.furtherReading.paragraphs.map((p) => p.text).join(" "),
     },
     { sectionId: "sources", sectionHeading: "Sources", text: "Sources and references." },
   ];
