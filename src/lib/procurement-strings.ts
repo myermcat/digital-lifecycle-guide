@@ -123,9 +123,9 @@ export const PROCUREMENT_STRINGS = {
         body: "If a piece goes wrong you replace the piece. If a single large contract goes wrong, years of work and most of the money go with it.",
       },
       {
-        lead: "Most of the difficulty is vocabulary, and that part is fixable.",
+        lead: "You can follow the conversation once you know the words.",
         icon: BookOpen,
-        body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. The Procurement glossary further down has them all.",
+        body: "Solicitation, statement of work, option, task authorization: ordinary procurement vocabulary, and rarely explained to the person whose service is being bought. The Procurement glossary further down sets them out.",
         anchorLinks: [{ phrase: "Procurement glossary", hash: "the-words" }],
       },
     ],
@@ -379,14 +379,14 @@ export const PROCUREMENT_STRINGS = {
         text: "Agile development works by building a little, showing it to people, and changing the plan when they tell you something you did not know. Then the question arrives: how does that work when a supplier is doing the building? A contract fixes what gets delivered and when, and it is signed before anyone has learned very much. Learning as you go and being bound by a document written in advance look like opposites.",
       },
       {
-        text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. What follows is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one of these, the guide itself is worth the hour it takes to read.",
+        text: "There is an answer, and PSPC has written it down. The Agile Procurement Guide sets out how to run a purchase that expects to learn as it goes. What follows is the short version, kept to what a business owner needs in order to follow the conversation. If you are running one of these, PSPC's guide itself is worth reading.",
         externalLinks: [
           { phrase: "Agile Procurement Guide", linkKey: "agile-procurement-guide" },
         ] satisfies ExternalPhraseLink[],
       },
     ] satisfies ThreadLinkedProse[],
     introNote: {
-      text: "Two things about that guide are worth knowing before you open it. It is written for PSPC procurement officers rather than for departments, and it says of itself that it is informational and not prescriptive: officers may use other approaches. So it describes shapes that have worked, not a method you have to follow.",
+      text: "Two things about PSPC's guide are worth knowing before you open it. It is written for PSPC procurement officers rather than for departments, and it says of itself that it is informational and not prescriptive: officers may use other approaches. So it describes shapes that have worked, not a method you have to follow.",
     } satisfies ThreadLinkedProse,
     whatItIsHeading: "What PSPC means by agile procurement",
     whatItIs: {
@@ -481,7 +481,7 @@ export const PROCUREMENT_STRINGS = {
     worthItHeading: "If it is that much work, why go through it?",
     worthIt: [
       {
-        lead: "You choose on something built rather than on a written promise.",
+        lead: "You choose based on something built, not on a written promise.",
         body: "Prototypes and demonstrations show you what a supplier can actually do, which a proposal document cannot.",
       },
       {

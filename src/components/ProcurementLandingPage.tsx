@@ -71,7 +71,7 @@ export function ProcurementLandingPage() {
                 />
                 <p className={guideProse}>
                   <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
-                  {point.body}
+                  {proseWithMixedLinks(point.body, { anchor: point.anchorLinks })}
                 </p>
               </li>
             );

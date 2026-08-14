@@ -555,7 +555,7 @@ export const ALPHA_EXERCISE = {
   } satisfies ThreadLinkedProse,
   sizingHeading: "Start with three questions about criticality",
   sizingIntro: {
-    text: "Criticality is how much harm follows if this service is unavailable, wrong, or breached. It is not a judgement about how important the work feels, and it has nothing to do with the size of the budget or the number of users. Sit down with the people who know what the service is for and answer three questions. What comes out of them decides which official obligations reach the service, how much protection its information needs, and how much engineering has to go underneath it.",
+    text: "Criticality is how much harm follows if this service is unavailable, wrong, or breached. It is not a judgement about how important the work feels, and a large budget does not make a service critical. User numbers count only through the harm they carry: a service used by millions usually does more damage when it fails, and a service used by a few hundred can be just as critical if what it does for them is urgent. Sit down with the people who know what the service is for and answer three questions. What comes out of them decides which official obligations reach the service, how much protection its information needs, and how much engineering has to go underneath it.",
     bold: [{ phrase: "Criticality is how much harm follows if this service is unavailable, wrong, or breached." }],
   } satisfies ThreadLinkedProse,
   sizingColumns: ["Question", "What the answer decides"],
