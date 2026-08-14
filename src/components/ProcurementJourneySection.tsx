@@ -97,7 +97,12 @@ export function ProcurementJourneySection({
                       className={`list-disc space-y-1.5 ${guideListIndent} ${guideProseTight}`}
                     >
                       {block.items.map((item) => (
-                        <li key={item}>{proseWithMixedLinks(item, linkOpts)}</li>
+                        <li key={item}>
+                          {proseWithMixedLinks(item, {
+                            ...linkOpts,
+                            bold: block.bold ?? [],
+                          })}
+                        </li>
                       ))}
                     </ul>
                   ) : (

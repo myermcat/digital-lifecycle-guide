@@ -1,62 +1,10 @@
-import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 
 export const SOO_VS_SOW = {
   title: "Statement of requirement vs statement of work",
-  opening:
-    "Every contract needs a description of the work being bought. It is usually written one of two ways, and the choice shapes whether the work can change as you learn.",
-  termNote: {
-    text: "One naming note, because it comes up. Some people call the second one a \"statement of objectives\". That is United States federal procurement vocabulary, and it appears in none of the Canadian instruments: not the Directive on the Management of Procurement, the Supply Manual, the Standard Acquisition Clauses and Conditions Manual, the CanadaBuys Buyer's Guide, or the PSPC Agile Procurement Guide. The Canadian names are statement of work and statement of requirement.",
-  },
-  whatEachOneIs: {
-    id: "what-each-one-is",
-    title: "What each one is",
-    body: "A statement of work spells out exactly what gets built and how, written as if all the requirements are known up front and will not change. A statement of requirement describes what the service has to achieve and who it is for, and leaves the supplier room to work out how. One fixes the steps. The other fixes the goal.",
-  },
-  comparison: {
-    actualLabel: "Statement of work",
-    alternativeLabel: "Statement of requirement",
-    sow: {
-      heading: "Statement of work",
-      items: [
-        "Lists the exact things to build, in order, with set dates.",
-        "Assumes the requirements are known and will not change.",
-        "Reads like \"the supplier shall build these screens, in this order, by this date.\"",
-        "Fits work that is well understood and stable.",
-        "When you learn something new, you reopen the contract to change the list.",
-      ],
-    } satisfies CaseStudySide,
-    soo: {
-      heading: "Statement of requirement",
-      items: [
-        "States the goals and who the service is for, not the steps.",
-        "Assumes you will learn as you go, and leaves room for it.",
-        "Reads like \"here is what this service has to achieve, and who it is for.\"",
-        "Fits digital work, where the problem is not fully known up front.",
-        "The work can change without a new contract, because it is tied to the goal.",
-      ],
-    } satisfies CaseStudySide,
-  },
-  workTogether: {
-    id: "they-work-together",
-    title: "They work together",
-    body: "The two are not enemies. A common pattern is that the department writes the statement of requirement, and suppliers respond with their own statement of work that turns those objectives into concrete tasks. So you are not throwing the detail away. You are deciding who writes it, and when. The department sets the goal. The supplier proposes how to meet it.",
-  },
-  workedExample: {
-    id: "a-worked-example",
-    title: "A worked example",
-    paragraphs: [
-      "Say a department needs an online way for people to apply for a benefit.",
-      "A statement of work would list it out: build these eight screens, in this order, with these fields, connected to this system, delivered by this date.",
-      "A statement of requirement would say: people who are eligible should be able to apply online, on their own, without help, in under fifteen minutes, including people who use assistive technology. How that gets built is for the supplier to propose and for the work to settle as it goes.",
-      "The first locks the answer before anyone has tested it. The second fixes what matters and lets the answer be found.",
-    ],
-  },
-  sources: [
-    {
-      label: "Used for inspiration",
-      description: "Skylight Agile Procurement Playbook",
-      href: "https://skylight.digital/work/toolkits/agile-procurement-playbook/",
-    },
-  ] satisfies SourceItem[],
-};
+  summary: [
+    "Every contract needs a written description of the work being bought, and in practice two documents do that job. You write a statement of requirement: what the service has to achieve, who it is for, and how well it has to perform, without specifying how it should be built. Suppliers answer with their own statement of work, which turns those requirements into concrete tasks and deliverables, and the winning one is annexed to the contract.",
+    "So you are not choosing between them. The detail still gets written down; you are deciding who writes it and when. Keeping the how out of your side is what leaves room for the work to change as people learn, because the supplier is held to what the service must achieve rather than to a screen design agreed before anyone tested it.",
+  ],
+  sources: [] satisfies SourceItem[],
+} as const;

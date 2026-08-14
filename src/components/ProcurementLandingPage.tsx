@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { AgileProcurementAppendix } from "@/components/AgileProcurementAppendix";
-import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import { DescribingWhatYouBuy } from "@/components/DescribingWhatYouBuy";
 import { GuideAssumptions } from "@/components/GuideAssumptions";
 import { GuideCallout } from "@/components/GuideCallout";
@@ -12,7 +11,6 @@ import { ProcurementJourneySection } from "@/components/ProcurementJourneySectio
 import { PageFoot } from "@/components/PageFoot";
 import { ThreadInstruments } from "@/components/ThreadInstruments";
 import { proseWithExternalLinks, proseWithMixedLinks } from "@/components/ProseWithExternalLinks";
-import { TraditionalAgileComparison } from "@/components/TraditionalAgileComparison";
 import { ThreadByPhaseSection } from "@/components/ThreadByPhaseSection";
 import { WhatStaysYoursBlock } from "@/components/WhatStaysYoursBlock";
 import { WhatYouAreBuyingBlock } from "@/components/WhatYouAreBuyingBlock";
@@ -21,8 +19,11 @@ import {
   PROCUREMENT_LANDING,
 } from "@/lib/procurement-landing";
 import { SEE_ALSO } from "@/lib/see-also";
+import { GuideArrowBullet } from "@/lib/guide-lists";
 import {
+  guideArrowList,
   guideBlockSubheading,
+  guideCalloutLabel,
   guideListIndent,
   guidePageTitle,
   guideProse,
@@ -55,12 +56,18 @@ export function ProcurementLandingPage() {
         {landing.intro.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p>{landing.intro.keyPointsIntro}</p>
-        <ul className={`list-disc space-y-2 ${guideListIndent}`}>
+      </section>
+
+      <section className="mt-8 md:mt-10 rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8 md:py-7">
+        <p className={guideCalloutLabel}>{landing.intro.keyPointsHeading}</p>
+        <ul className={`${guideArrowList} mt-4`}>
           {landing.intro.keyPoints.map((point) => (
-            <li key={point.lead}>
-              <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
-              {point.body}
+            <li key={point.lead} className="flex items-start gap-2.5">
+              <GuideArrowBullet />
+              <p className={guideProse}>
+                <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
+                {point.body}
+              </p>
             </li>
           ))}
         </ul>
@@ -80,72 +87,6 @@ export function ProcurementLandingPage() {
       <GoodContractCallout />
 
       <DescribingWhatYouBuy />
-
-      <section
-        className="mt-10 md:mt-12 scroll-mt-24"
-        id={landing.workedExamples.id}
-      >
-        <h2 className={`${guideSectionTitle} mb-3`}>
-          {landing.workedExamples.heading}
-        </h2>
-        <p className={`${guideProse} mb-4`}>{landing.workedExamples.intro}</p>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {landing.workedExamples.cases.map((example) => (
-            <div
-              key={example.title}
-              className="rounded-lg border border-border bg-card px-4 py-3.5"
-            >
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                {example.label}
-              </p>
-              <p className="mt-1.5 font-semibold text-foreground">{example.title}</p>
-              <ul className={`${guideProse} mt-2 list-disc space-y-1 ${guideListIndent}`}>
-                {example.facts.map((fact) => (
-                  <li key={fact}>{fact}</li>
-                ))}
-              </ul>
-              <p className={`${guideProse} mt-2.5 text-foreground/80`}>
-                {example.verdict}
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className={`${guideProse} mt-5`}>{landing.workedExamples.testIntro}</p>
-        <dl className="mt-3 space-y-3">
-          {landing.workedExamples.test.map((entry) => (
-            <div key={entry.term}>
-              <dt className="font-semibold text-foreground">{entry.term}</dt>
-              <dd className={`${guideProse} mt-0.5 text-foreground/80`}>{entry.text}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className={`${guideProse} mt-4 font-semibold`}>
-          {landing.workedExamples.close}
-        </p>
-        <GuideCallout compact className="mt-5" label="One caution">
-          <div className="space-y-2.5">
-            <p className="font-semibold text-foreground">
-              {landing.workedExamples.caution.lead}
-            </p>
-            {landing.workedExamples.caution.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        </GuideCallout>
-      </section>
-
-      <TraditionalAgileComparison
-        rows={landing.comparisonRows}
-        caption={landing.comparisonCaption}
-      />
-
-      <CaseStudyBlock
-        className="mt-8"
-        id="case-study"
-        title={landing.caseStudy.title}
-        actual={landing.caseStudy.risky}
-        alternative={landing.caseStudy.safer}
-      />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
         <h2 className={`${guideSectionTitle} mb-2`}>What good looks like</h2>

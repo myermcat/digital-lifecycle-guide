@@ -93,7 +93,6 @@ export const PROCUREMENT_LANDING = {
   whatStaysYours: S.whatWorkStaysYours,
   whatYouAreBuying: S.whatYouAreBuying,
   goodContractCallout: S.goodContractCallout,
-  workedExamples: S.workedExamples,
   glossary: S.glossary,
   journeyIntro: S.journey.intro,
   journeySteps: S.journey.steps satisfies ProcurementJourneyStep[],

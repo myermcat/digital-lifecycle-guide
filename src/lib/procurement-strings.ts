@@ -20,6 +20,7 @@ export type ProcurementJourneyBodyBlock =
   | {
       type: "ul";
       items: readonly string[];
+      bold?: { phrase: string }[];
     }
   | {
       type: "subheading";
@@ -88,9 +89,8 @@ export const PROCUREMENT_STRINGS = {
   intro: {
     paragraphs: [
       "Most existing government applications are bought rather than built. Sometimes the whole thing, more often a part. Procurement is that buying: the whole journey from working out what you need, through choosing a supplier, to living with the contract for as long as the service runs. The contract is one part of it.",
-      "Think of this page as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
     ],
-    keyPointsIntro: "If you read nothing else here, these are the five things the page is trying to get across:",
+    keyPointsHeading: "Summary",
     keyPoints: [
       {
         lead: "The buy outlives the contract.",
@@ -178,10 +178,6 @@ export const PROCUREMENT_STRINGS = {
             ],
           },
           {
-            type: "subheading",
-            text: "Summary",
-          },
-          {
             type: "unorderedList",
             items: [
               {
@@ -220,10 +216,6 @@ export const PROCUREMENT_STRINGS = {
         icon: Coins,
         title: "Buy a Solution",
         sections: [
-          {
-            type: "subheading",
-            text: "Summary",
-          },
           {
             type: "unorderedList",
             items: [
@@ -266,15 +258,11 @@ export const PROCUREMENT_STRINGS = {
             text: "An existing tool, bought off a standing offer or a supply arrangement, which are pre-competed lists of approved suppliers and products.",
           },
           {
-            type: "subheading",
-            text: "Summary",
-          },
-          {
             type: "unorderedList",
             items: [
               {
-                text: "Nobody prototypes a product that already exists. The evaluation of real products runs during Alpha, compressed, against a standing offer or supply arrangement, and the contract is signed at the start of Beta. The department evaluates real products against what Discovery and Alpha found.",
-                bold: [{ phrase: "Nobody prototypes a product that already exists." }],
+                text: "The evaluation of real products runs during Alpha, compressed, against a standing offer or supply arrangement, and the contract is signed at the start of Beta. What the department is judging them against is what Discovery and Alpha found.",
+                bold: [{ phrase: "The evaluation" }],
               },
               {
                 text: "It is the fastest route and the least flexible. The risk moves from building the wrong thing to configuring it into something the department can never leave.",
@@ -294,10 +282,6 @@ export const PROCUREMENT_STRINGS = {
         sections: [
           {
             text: "There is no build contract at all.",
-          },
-          {
-            type: "subheading",
-            text: "Summary",
           },
           {
             type: "unorderedList",
@@ -460,6 +444,9 @@ export const PROCUREMENT_STRINGS = {
       text: "When it happens decides who pays. A prototype built after award is paid work under a contract. A demonstration asked for during a competition is not, and preparing one is a real cost to every supplier who takes part, including all the ones who will lose. PSPC's own advice is to make taking part worthwhile and not to burn goodwill you will need later.",
       bold: [{ phrase: "When it happens decides who pays." }],
     },
+    comparisonHeading: "How it differs from the traditional way",
+    comparisonIntro:
+      "The two shapes differ in almost every part of the process, not only in when the contract is signed. Below that, the same programme bought each way, with what each buys you and what it costs.",
     cautionsHeading: "What it costs you, and when it is worth it",
     cautions: [
       {
@@ -481,64 +468,6 @@ export const PROCUREMENT_STRINGS = {
     ],
     close: {
       text: "It suits a purchase where the solution is genuinely unknown, where the options are changing quickly, or where what people need is likely to move while the work is under way. Where the thing being bought is well understood, the ordinary route is the right one.",
-    },
-  },
-
-  workedExamples: {
-    id: "which-side-are-you-on",
-    heading: "Two services, and the test that separates them",
-    intro:
-      "The honest question is not how big the budget is. It is what the thing you make has to survive. Here are two services at opposite ends, and what each one can get away with.",
-    cases: [
-      {
-        label: "Small enough to make yourself",
-        title: "An internal form for booking a specialised meeting room",
-        facts: [
-          "Serves a few hundred public servants inside one department.",
-          "Holds a name, a date and a room number. No personal information beyond what a calendar already holds.",
-          "If it fails, people go back to email for a week and somebody is mildly annoyed.",
-        ],
-        verdict:
-          "Sketch it, build a clickable prototype in an afternoon, show six colleagues, and build the real one in-house. A competition would cost more than the service.",
-      },
-      {
-        label: "Too large to make yourself",
-        title: "An application system for a grants programme",
-        facts: [
-          "Serves the public, at volume, at a deadline everyone hits in the same week.",
-          "Holds financial and personal information, and has to reach the department's system of record.",
-          "If it fails, applications are lost, money does not reach people who need it, and the failure is a matter of public record.",
-        ],
-        verdict:
-          "Mock it up yourself, absolutely. But the thing that answers can it hold at volume, can it integrate, can it meet Protected B, is real software built by people who do that for a living.",
-      },
-    ],
-    testIntro:
-      "The test is three questions, and none of them is about money or about how many people use it:",
-    test: [
-      {
-        term: "What duties attach to it?",
-        text: "A service the public can reach owes both official languages, the accessibility standard, and an authority to operate. An internal tool owes fewer of those. This question is about obligations, not importance.",
-      },
-      {
-        term: "What does it hold?",
-        text: "Nothing sensitive, or personal and financial information. The second answer brings a privacy assessment, a security categorisation, and rules about where the data may live.",
-      },
-      {
-        term: "What happens when it fails?",
-        text: "Inconvenience, or harm. This is the same question the threat and continuity exercise asks in Alpha, and the answer decides how much engineering has to sit underneath the service.",
-      },
-    ],
-    close:
-      "Three cheap answers, and you can probably make the thing yourself. One expensive answer, and no budget will make a drawing answer it for you.",
-    caution: {
-      lead: "An internal service has fewer duties, not fewer consequences.",
-      paragraphs: [
-        "Serving colleagues instead of the public changes which duties attach. It does not switch them off, and it says nothing about how serious the service is.",
-        "What genuinely falls away is narrow. A booking tool for one branch is not published under canada.ca, so the publishing rules and the domain approval do not reach it, and the particular language rule that catches anything the public can reach is not the one that applies.",
-        "What still applies is most of it. Official languages reach an internal service through the rules covering language of work and services to employees, and security, privacy and accessibility apply as they would anywhere else.",
-        "Phoenix is the case worth remembering. It served public servants, not the public, and its answer to what happens when it fails was as bad as any service in this guide.",
-      ],
     },
   },
 
@@ -793,11 +722,11 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "subheading",
-            text: "If you are on the higher path, start early",
+            text: "If you are on the EARB path, start early",
           },
           {
             type: "p",
-            text: "Bring it up at the strategy stage, while there is still room to change the plan. The same applies if the purchase is a series of smaller contracts whose total may exceed what the department can approve: the total is what counts, not the individual contracts. The Funding page sets out which path a given project takes, so most readers will not need the detail here.",
+            text: "Bring it up at the strategy stage, while there is still room to change the plan. The same applies if the purchase is a series of smaller contracts whose total may exceed what the department can approve: the total is what counts, not the individual contracts. The Funding page sets out which path a given project takes.",
           },
         ],
         internalLinks: [
@@ -830,15 +759,21 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "Neither ends in a contract, and you can run several of each. PSPC describes them as waves, each one narrower than the last:",
+            text: "Neither ends in a contract, and you can run several of each. PSPC describes them as waves, and each wave asks about something more settled than the one before it:",
           },
           {
             type: "ul",
+            bold: [
+              { phrase: "Wave 1." },
+              { phrase: "Wave 2." },
+              { phrase: "Wave 3." },
+              { phrase: "Wave 4." },
+            ],
             items: [
-              "brainstorm the challenge statement and the outcomes",
-              "take market feedback on the minimum you must have",
-              "then on the draft statement of work and evaluation grid",
-              "then on the draft pricing and the solicitation itself",
+              "Wave 1. Brainstorm the challenge statement and the outcomes, while nothing is written down yet.",
+              "Wave 2. Take market feedback on the minimum you must have.",
+              "Wave 3. Then on the draft statement of work and the evaluation grid.",
+              "Wave 4. Then on the draft pricing and the solicitation document itself.",
             ],
           },
           {
@@ -847,11 +782,11 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "subheading",
-            text: "It is free for you and not free for them",
+            text: "It costs you time, and it costs suppliers money",
           },
           {
             type: "p",
-            text: "Nobody is paid for any of this, so it costs the department time rather than money. Responding takes real effort from suppliers, though, and PSPC's own advice is to make taking part worthwhile and not to burn goodwill you will need later. Run as many rounds as the requirement genuinely needs, and no more.",
+            text: "Nobody is paid for any of this. For the department that means staff time and calendar weeks. For the suppliers who answer, it means real work with no contract at the end of it, and most of them will never win anything. PSPC's own advice is to make taking part worthwhile and not to burn goodwill you will need later, so run as many rounds as the requirement genuinely needs and no more.",
           },
           {
             type: "subheading",

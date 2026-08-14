@@ -285,37 +285,14 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
 
 // Reference: SOO vs SOW
 {
-  const pageTitle = SOO_VS_SOW.title;
-  const pagePath = SOO_VS_SOW_PATH;
-
   records.push({
-    id: recordId({ pagePath, sectionId: SOO_VS_SOW.whatEachOneIs.id }),
-    pageTitle,
-    pagePath,
-    sectionId: SOO_VS_SOW.whatEachOneIs.id,
-    sectionHeading: SOO_VS_SOW.whatEachOneIs.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(SOO_VS_SOW.opening, SOO_VS_SOW.whatEachOneIs.body),
-  });
-
-  records.push({
-    id: recordId({ pagePath, sectionId: SOO_VS_SOW.workTogether.id }),
-    pageTitle,
-    pagePath,
-    sectionId: SOO_VS_SOW.workTogether.id,
-    sectionHeading: SOO_VS_SOW.workTogether.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: SOO_VS_SOW.workTogether.body,
-  });
-
-  records.push({
-    id: recordId({ pagePath, sectionId: SOO_VS_SOW.workedExample.id }),
-    pageTitle,
-    pagePath,
-    sectionId: SOO_VS_SOW.workedExample.id,
-    sectionHeading: SOO_VS_SOW.workedExample.title,
-    lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...SOO_VS_SOW.workedExample.paragraphs),
+    id: recordId({ pagePath: "/thread/procurement", sectionId: "describing-what-you-buy" }),
+    pageTitle: "Procurement",
+    pagePath: "/thread/procurement",
+    sectionId: "describing-what-you-buy",
+    sectionHeading: "Describing what you buy",
+    lifecyclePhase: inferLifecyclePhase("/thread/procurement"),
+    text: concat(...SOO_VS_SOW.summary),
   });
 }
 
