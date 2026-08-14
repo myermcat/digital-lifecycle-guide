@@ -29,6 +29,7 @@ import {
 import {
   guideArrowList,
   guideKeyCallout,
+  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
@@ -91,6 +92,15 @@ export function MonitoringAndInstrumentationThreadPage() {
         {lead.map((paragraph) => (
           <p key={paragraph.text}>{renderLinkedProse(paragraph)}</p>
         ))}
+        <p>{MONITORING_THREAD.keyPoints.intro}</p>
+        <ul className={`list-disc space-y-2 ${guideListIndent}`}>
+          {MONITORING_THREAD.keyPoints.items.map((point) => (
+            <li key={point.lead}>
+              <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
+              {point.body}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <figure className="mt-8 md:mt-10 mb-8 md:mb-10">

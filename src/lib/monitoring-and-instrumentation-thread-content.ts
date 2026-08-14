@@ -67,6 +67,28 @@ export const MONITORING_THREAD = {
     },
   ] satisfies ThreadLinkedProse[],
 
+  keyPoints: {
+    intro: "If you read nothing else here, these are the four things the page is trying to get across:",
+    items: [
+      {
+        lead: "Build the recording in before launch.",
+        body: "A service can only report what it was built to record. Adding that afterwards is expensive, and what you get back is full of gaps, so this is one of the few things that genuinely has to happen early.",
+      },
+      {
+        lead: "A few numbers, chosen on purpose.",
+        body: "A useful number is one that would change what somebody does. If nobody can say who would act on it, it belongs in a report rather than on the dashboard.",
+      },
+      {
+        lead: "Agree the target before you can see the result.",
+        body: "A number on its own cannot be judged. Eighty-two per cent is good or bad depending on what was promised, so the target is agreed in Alpha or Beta and written down with where it came from.",
+      },
+      {
+        lead: "Collecting is the easy half.",
+        body: "The signals have to turn into work at the backlog review, or the dashboard is decoration. An all-green dashboard is allowed to produce nothing, and that is the point of having targets.",
+      },
+    ],
+  },
+
   whatGoodLooksLike: [
     {
       text: "Signals come from the service itself, generated as people use it, rather than typed into a spreadsheet by hand.",
@@ -137,7 +159,7 @@ export const MONITORING_THREAD = {
         sections: [
           {
             type: "subheading",
-            text: "What instrumentation is, and why it is cheap now and dear later",
+            text: "What instrumentation is, and why doing it later costs more",
           },
           {
             text:

@@ -88,14 +88,37 @@ export const PROCUREMENT_STRINGS = {
   intro: {
     paragraphs: [
       "Most existing government applications are bought rather than built. Sometimes the whole thing, more often a part. Procurement is that buying: the whole journey from working out what you need, through choosing a supplier, to living with the contract for as long as the service runs. The contract is one part of it.",
-      "Think of this thread as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
+      "Think of this page as a guided tour. At each stop it tells you what happens, what only you can decide, and where to go for the binding detail.",
+    ],
+    keyPointsIntro: "If you read nothing else here, these are the five things the page is trying to get across:",
+    keyPoints: [
+      {
+        lead: "The buy outlives the contract.",
+        body: "What gets signed decides what the service costs to run, whether it can be changed, and whether the department can ever move off it. Those consequences last for as long as the service does.",
+      },
+      {
+        lead: "You stay responsible for the result.",
+        body: "A supplier can build the service and run it. When it does not work for somebody, it is still the department that answers for it, and that part cannot be contracted out.",
+      },
+      {
+        lead: "The route decides when you are committed.",
+        body: "Buying a team, buying a solution and buying a finished product each sign at a different point in Create. Before signature you have room to change your mind. After it, changes are negotiated with one supplier.",
+      },
+      {
+        lead: "Small pieces are easier to recover from than one large contract.",
+        body: "If a piece goes wrong you replace the piece. If a single large contract goes wrong, years of work and most of the money go with it.",
+      },
+      {
+        lead: "Most of the difficulty is vocabulary, and that part is fixable.",
+        body: "Solicitation, statement of work, option, task authorization: these are ordinary words in procurement and are rarely explained to the person whose service is being bought. There is a table of them further down.",
+      },
     ],
   },
 
   whatWorkStaysYours: {
-    heading: "What work stays yours",
+    heading: "The parts you cannot hand to a supplier",
     intro:
-      "Whatever your role here, some of the work is yours to carry. Here is what usually lands on your side.",
+      "Whoever else is involved, some of this work stays with you. Here is what usually does.",
     items: [
       {
         lead: "How long it takes.",
@@ -110,12 +133,12 @@ export const PROCUREMENT_STRINGS = {
         body: "Every checkpoint along the way expects something from you, a document, a number, a sign-off, and the work waits until it has it.",
       },
       {
-        lead: "The accountability.",
-        body: "You can hand a supplier the work, but the result is still yours to answer for. When the service stumbles, the responsibility lands on your desk.",
+        lead: "Answering for it.",
+        body: "You can hand a supplier the work. You cannot hand over the answering. When the service stumbles, it is your department that explains why, and the question comes back to you.",
       },
       {
-        lead: "The long shadow of the buy.",
-        body: "Today's contract shapes the whole later life of the service: what it costs, whether you can change it, and whether you can ever move off it.",
+        lead: "What you sign today is still binding in ten years.",
+        body: "The contract shapes the whole later life of the service: what it costs, whether you can change it, and whether you can ever move off it. None of that is easy to revisit once it is signed.",
       },
     ],
     close:
@@ -472,7 +495,7 @@ export const PROCUREMENT_STRINGS = {
 
   glossary: {
     id: "the-words",
-    heading: "The words you will meet",
+    heading: "The words you will hear, and what they mean",
     intro:
       "Procurement has its own vocabulary, and most of it is never explained to the person whose service is being bought. These are the words a business owner runs into, in the order they tend to appear.",
     columns: ["Word", "When it turns up", "What it means"],
@@ -553,7 +576,7 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Before you reach for a contract, ask whether you should, and work out the real problem and whether buying is even the answer:",
+            text: "Before reaching for a contract, work out what the real problem is and whether buying is the answer to it. Two questions settle most of that:",
           },
           {
             type: "ul",
@@ -601,7 +624,7 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Write a challenge statement: what, who, when, where, why, and no solution baked in. Then set out:",
+            text: "Write a challenge statement. It says what the problem is, who has it, when and where it shows up, and why it matters, and it stops short of naming the answer. Then set out two more things:",
           },
           {
             type: "ul",
@@ -609,7 +632,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             type: "p",
-            text: "Asking for objectives, rather than dictating the work, lets suppliers offer answers better than the one you would have written.",
+            text: "Suppliers who are told the objective can offer answers better than the one you would have written yourself. Suppliers who are handed a specification will build the specification, including the parts of it that turn out to be wrong.",
           },
           {
             type: "subheading",
@@ -696,11 +719,15 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "Most services are approved and funded inside the department. What decides the path is the department's project-management capacity class and the project's Project Complexity and Risk Assessment (PCRA) score, and a concept case and the departmental architecture review board come first. If the project sits within the department's capacity, its own governance approves it, and that is roughly 95% of projects.",
+            text: "Most services are approved and funded inside the department, and roughly 95% of projects never go higher than that.",
           },
           {
             type: "p",
-            text: "Only the largest or most complex projects climb higher, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. If that is you, engage at the strategy stage, before you are committed. That path is a branch of its own; the Funding page sets out which path a given project takes, so most readers will not need the detail here.",
+            text: "Two things decide which path a project takes: the department's approved project-management capacity class, and the project's score on the Project Complexity and Risk Assessment. If the project scores within the department's capacity, the department's own governance approves it. A concept case and the departmental architecture review board come first either way.",
+          },
+          {
+            type: "p",
+            text: "Only the largest or most complex projects climb higher, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. If that is you, start the conversation at the strategy stage, while there is still room to change the plan. The Funding page sets out which path a given project takes, so most readers will not need the detail here.",
           },
         ],
         internalLinks: [

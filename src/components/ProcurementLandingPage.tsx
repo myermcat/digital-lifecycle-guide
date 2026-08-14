@@ -54,6 +54,15 @@ export function ProcurementLandingPage() {
         {landing.intro.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+        <p>{landing.intro.keyPointsIntro}</p>
+        <ul className={`list-disc space-y-2 ${guideListIndent}`}>
+          {landing.intro.keyPoints.map((point) => (
+            <li key={point.lead}>
+              <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
+              {point.body}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <WhatStaysYoursBlock
@@ -179,7 +188,7 @@ export function ProcurementLandingPage() {
         <p className={`${guideProse} mt-3`}>{landing.whoseJobSplit.intro}</p>
         <GuideTable
           className="mt-3"
-          columns={["Who", "What they are on the hook for"]}
+          columns={["Who", "What they are responsible for"]}
           rows={landing.whoseJobSplit.roles.map((role) => ({
             term: role.who,
             cells: [role.does],

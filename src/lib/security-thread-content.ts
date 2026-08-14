@@ -70,6 +70,28 @@ export const SECURITY_THREAD = {
     },
   } satisfies SecurityLifecycleContent,
 
+  keyPoints: {
+    intro: "If you read nothing else here, these are the four things the page is trying to get across:",
+    items: [
+      {
+        lead: "Security is a cycle, not a stage you clear.",
+        body: "The five functions come round again for as long as the service runs. A service that was secure at launch and never touched since is not a secure service.",
+      },
+      {
+        lead: "What actually goes wrong is usually mundane.",
+        body: "An unpatched component, a default password, a permission left too wide. The dramatic attacks make the news; these are what causes most of the harm.",
+      },
+      {
+        lead: "Guard the few things that would really hurt.",
+        body: "Protecting everything to the same high standard costs more than a department can afford and usually ends in protection thin enough to help nowhere. Work out what would cause real harm, and protect that properly.",
+      },
+      {
+        lead: "It is far cheaper in the design than in production.",
+        body: "A weakness caught while somebody is still drawing the service costs a fraction of the same weakness found once people are using it. If a supplier is building it, that means the security work belongs in the contract.",
+      },
+    ],
+  },
+
   whatGoodLooksLike: [
     {
       text: "Security is planned and funded from the start, with the risks worked out before any code is written.",
@@ -155,8 +177,8 @@ export const SECURITY_THREAD = {
         text: "run and monitor the service once it is live.",
       },
       {
-        role: "The business owner",
-        text: "of the application makes sure security is planned and paid for from the start, approves the plan for handling threats, accepts the risk that remains after the fixes, and gives the deploy go-ahead (the formal approval that lets a service go live).",
+        role: "The business owner of the application",
+        text: "makes sure security is planned and paid for from the start, approves the plan for handling threats, accepts the risk that remains after the fixes, and gives the deploy go-ahead (the formal approval that lets a service go live).",
       },
     ],
   },
@@ -406,19 +428,19 @@ export const SECURITY_THREAD = {
         type: "unorderedList",
         items: [
           {
-            text: "Maximum allowable downtime (MAD). How long before this really hurts someone? How long the service can be unavailable before a high degree of injury results. It is a ceiling. Aim well inside it.",
+            text: "Maximum allowable downtime (MAD). How long the service can be unavailable before somebody is seriously harmed. It is a ceiling rather than a target, so the recovery plan should aim comfortably inside it.",
             bold: [{ phrase: "Maximum allowable downtime (MAD)." }],
           },
           {
-            text: "Minimum service level. What are we doing in the meantime? What counts as good enough while the service is down. Often a paper form, or a phone line.",
+            text: "Minimum service level. What counts as good enough while the service is down, which is often a paper form or a phone line. Somebody has to have arranged it in advance for it to exist on the day.",
             bold: [{ phrase: "Minimum service level." }],
           },
           {
-            text: "Recovery time objective (RTO). How fast are we aiming to be back? The target for restoring the service. It is set inside the maximum allowable downtime, so the two numbers are not the same number.",
+            text: "Recovery time objective (RTO). How fast the team is aiming to have the service back. It is set inside the maximum allowable downtime, so the two are deliberately not the same number.",
             bold: [{ phrase: "Recovery time objective (RTO)." }],
           },
           {
-            text: "Recovery point objective (RPO). How much recent work can we afford to lose? How far back the last usable copy of the data can be. An hour of lost applications is a different service from a week of them.",
+            text: "Recovery point objective (RPO). How much recent work the service can afford to lose, measured by how far back the last usable copy of the data goes. An hour of lost applications is a different service from a week of them.",
             bold: [{ phrase: "Recovery point objective (RPO)." }],
           },
         ],

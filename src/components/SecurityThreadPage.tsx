@@ -27,6 +27,7 @@ import {
 } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
+  guideListIndent,
   guidePageTitle,
   guideProse,
   guideProseSpace,
@@ -90,7 +91,18 @@ export function SecurityThreadPage() {
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
 
-      <section className={guideProseSpace}>{renderThreadLead(lead)}</section>
+      <section className={guideProseSpace}>
+        {renderThreadLead(lead)}
+        <p>{SECURITY_THREAD.keyPoints.intro}</p>
+        <ul className={`list-disc space-y-2 ${guideListIndent}`}>
+          {SECURITY_THREAD.keyPoints.items.map((point) => (
+            <li key={point.lead}>
+              <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
+              {point.body}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <SecurityLifecycleStrip content={securityLifecycle} />
 
