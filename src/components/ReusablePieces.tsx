@@ -17,16 +17,18 @@ import { cn } from "@/lib/utils";
 
 const CELL = "align-top border-b border-border/60 px-3 py-3 text-[0.8rem] leading-snug";
 
-export function ReusablePieces() {
+export function ReusablePieces({ embedded = false }: { embedded?: boolean } = {}) {
   return (
-    <section className="mt-12 md:mt-14" id="reusable-pieces">
-      <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>
+    <section className={embedded ? "" : "mt-12 md:mt-14"} id="reusable-pieces">
+      {embedded ? null : (
+        <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>
+      )}
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
           Look for something to reuse before making your own. These are the pieces
           already built and maintained by another part of government, so a team can
-          configure rather than make. The table above is what a service has to deal
-          with. This is what it can avoid having to make.
+          configure rather than make. The table of official instruments is what a
+          service has to deal with. This is what it can avoid having to make.
         </p>
         <p className="text-muted-foreground">
           Choosing to make your own instead breaks no rule. The enterprise
@@ -41,7 +43,7 @@ export function ReusablePieces() {
         className="mt-6"
         maxHeight="75vh"
       >
-        <table className="w-full min-w-[62rem] border-collapse text-left">
+        <table className="w-full min-w-[56rem] border-collapse text-left">
           <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
             <tr className="bg-muted/60">
               {[

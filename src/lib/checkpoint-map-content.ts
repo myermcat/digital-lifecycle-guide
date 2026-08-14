@@ -136,7 +136,8 @@ export const CHECKPOINT_MAP_JUMP = [
   { label: "What this page covers", href: "#what-this-covers" },
   { label: "Every official thing", href: "#annex-instruments" },
   { label: "Glossary", href: "#thecheckpoints" },
-  { label: "Annex: one service's path", href: "#annex-nadia" },
+  { label: "Appendix 1: one service's path", href: "#annex-nadia" },
+  { label: "Appendix 2: reuse first", href: "#annex-reuse" },
 ] as const;
 
 /** On-this-page rail items for the checkpoint map (same targets as CHECKPOINT_MAP_JUMP). */
@@ -153,9 +154,15 @@ export const CHECKPOINT_MAP_ANNEX_ONE = {
     "This is the substance of the page. One row per instrument: what it is, what brings it into scope, when in a service's life it comes up, and what the business owner personally has to do about it. Nothing in it is specific to one department or one kind of service, so it is the list to check your own service against.",
 } as const;
 
+export const CHECKPOINT_MAP_ANNEX_THREE = {
+  id: "annex-reuse",
+  label: "APPENDIX 2",
+  heading: "Reuse before you buy or build",
+} as const;
+
 export const CHECKPOINT_MAP_ANNEX_TWO = {
   id: "annex-nadia",
-  label: "ANNEX",
+  label: "APPENDIX 1",
   heading: "One service's path, step by step",
   timelineNote:
     "This is Nadia's timeline, not a general one. It is what this one invented service experienced, and Create in particular can run considerably shorter or longer. Do not plan against it.",

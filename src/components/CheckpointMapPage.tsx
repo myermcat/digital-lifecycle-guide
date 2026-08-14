@@ -8,6 +8,7 @@ import {
 import { Link } from "@tanstack/react-router";
 import { EditorialNote } from "@/components/EditorialNote";
 import { InstrumentMatrix } from "@/components/InstrumentMatrix";
+import { ReusablePieces } from "@/components/ReusablePieces";
 import { ExternalLink } from "@/components/ExternalLink";
 import { CheckpointMapTimeline } from "@/components/CheckpointMapTimeline";
 import { GuideLayout } from "@/components/GuideLayout";
@@ -18,6 +19,7 @@ import {
   CHECKPOINT_MAP_FOOTER_DISCLAIMER,
   CHECKPOINT_MAP_LAUNCH,
   CHECKPOINT_MAP_ANNEX_ONE,
+  CHECKPOINT_MAP_ANNEX_THREE,
   CHECKPOINT_MAP_ANNEX_TWO,
   CHECKPOINT_MAP_NADIA,
   CHECKPOINT_MAP_PHASES,
@@ -527,7 +529,7 @@ export function CheckpointMapPage() {
           <p className={`${guideProseTight} -mt-4 mb-6 text-muted-foreground md:mb-8`}>
             {CHECKPOINT_MAP_ANNEX_TWO.timelineNote}
           </p>
-      <section id="what-this-covers" className="mb-6 scroll-mt-24 md:mb-8">
+      <section className="mb-6 md:mb-8">
         <h2 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_NADIA.heading}</h2>
         <div className="flex items-start gap-4 md:gap-5">
           <NadiaFigure />
@@ -568,6 +570,16 @@ export function CheckpointMapPage() {
       </section>
           <CheckpointMapPhaseAccordions />
         </div>
+      </section>
+
+      <section id={CHECKPOINT_MAP_ANNEX_THREE.id} className="mt-14 scroll-mt-24 md:mt-20">
+        <div className="border-t border-border pt-8 md:pt-10">
+          <p className={guideCalloutLabel}>{CHECKPOINT_MAP_ANNEX_THREE.label}</p>
+          <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
+            {CHECKPOINT_MAP_ANNEX_THREE.heading}
+          </h2>
+        </div>
+        <ReusablePieces embedded />
       </section>
 
       <p className={`${guideProseTight} mt-8 text-muted-foreground`}>

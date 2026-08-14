@@ -22,14 +22,8 @@ import { cn } from "@/lib/utils";
  * into the sub-phase pages.
  */
 
-const PHASE_SPANS = [
-  { phase: "Create", count: 3 },
-  { phase: "Live", count: 3 },
-  { phase: "Sunset", count: 1 },
-] as const;
-
 const CELL_BASE =
-  "align-top border-b border-border/60 px-3 py-3 text-[0.8rem] leading-snug";
+  "align-top border-b border-border px-3 py-2.5 text-[0.82rem] leading-snug";
 
 function ActionChip({ action }: { action: MatrixAction }) {
   const meta = MATRIX_ACTIONS[action];
@@ -89,6 +83,14 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
       {row.acronym ? (
         <span className="text-muted-foreground"> ({row.acronym})</span>
       ) : null}
+      {row.everyService ? null : (
+        <>
+          {" "}
+          <span className="whitespace-nowrap rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.62rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
+            Only if
+          </span>
+        </>
+      )}
       {" "}
       <span className="whitespace-nowrap rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">
         {MATRIX_KINDS[row.kind].label}
@@ -161,67 +163,24 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
         className="mt-6"
         maxHeight="80vh"
       >
-        <table className="w-full min-w-[94rem] border-collapse text-left">
+        <table className="w-full min-w-[58rem] border-collapse text-left">
           <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
             <tr className="bg-muted/60">
-              <th
-                rowSpan={2}
-                className="sm:sticky sm:left-0 z-40 min-w-[11rem] sm:min-w-[15rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
+              <th className="sm:sticky sm:left-0 z-40 min-w-[13rem] sm:min-w-[16rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 Instrument
               </th>
-              <th
-                rowSpan={2}
-                className="min-w-[7rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
-                Every service?
-              </th>
-              <th
-                rowSpan={2}
-                className="min-w-[16rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
+              <th className="min-w-[15rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 What brings it into scope
               </th>
-              <th
-                rowSpan={2}
-                className="min-w-[18rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80"
-              >
+              <th className="min-w-[17rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80">
                 What the business owner does
               </th>
-              <th
-                rowSpan={2}
-                className="min-w-[14rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
+              <th className="min-w-[13rem] border-b border-r border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 Who does the work
               </th>
-              <th
-                rowSpan={2}
-                className="min-w-[13rem] border-b border-r border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground"
-              >
-                Where it ends up
+              <th className="min-w-[12rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                When it comes up
               </th>
-              {PHASE_SPANS.map((span) => (
-                <th
-                  key={span.phase}
-                  colSpan={span.count}
-                  className="border-b border-l border-border bg-muted px-3 py-1.5 text-center text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground"
-                >
-                  {span.phase}
-                </th>
-              ))}
-            </tr>
-            <tr className="bg-muted/40">
-              {MATRIX_SUBPHASES.map((sub, i) => (
-                <th
-                  key={sub.key}
-                  className={cn(
-                    "min-w-[7.5rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground",
-                    (i === 0 || i === 3 || i === 6) && "border-l",
-                  )}
-                >
-                  {sub.label}
-                </th>
-              ))}
             </tr>
           </thead>
           <tbody>
@@ -245,6 +204,26 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
   );
 }
 
+/** The sub-phases where something happens, one per line, instead of seven columns of dots. */
+function WhenItComesUp({ row }: { row: MatrixInstrument }) {
+  const active = MATRIX_SUBPHASES.filter((s) => row.cells[s.key]);
+  if (active.length === 0) {
+    return <span className="text-muted-foreground/40">·</span>;
+  }
+  return (
+    <ul className="space-y-1 list-none pl-0">
+      {active.map((s) => (
+        <li key={s.key} className="leading-snug">
+          <span className="text-foreground/70">{s.label}</span>{" "}
+          <span className="font-semibold text-primary">
+            {row.cells[s.key]!.tags.map((t) => MATRIX_ACTIONS[t].label).join(", ")}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function FamilyGroup({
   family,
   rows,
@@ -260,7 +239,7 @@ function FamilyGroup({
     <>
       <tr>
         <td
-          colSpan={13}
+          colSpan={5}
           className="sticky left-0 bg-[var(--phase-group)]/70 border-y border-border px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-foreground/80"
         >
           {family}
@@ -282,56 +261,23 @@ function FamilyGroup({
               >
                 <InstrumentName row={row} />
               </td>
-              <td className={CELL_BASE}>
-                {row.everyService ? (
-                  <span className="[box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-full border border-emerald-300 bg-emerald-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-emerald-900 dark:border-emerald-800/70 dark:bg-emerald-950 dark:text-emerald-200">
-                    Every service
-                  </span>
-                ) : (
-                  <span className="[box-decoration-break:clone] [-webkit-box-decoration-break:clone] rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.68rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
-                    Only if
-                  </span>
-                )}
-              </td>
               <td className={cn(CELL_BASE, "text-muted-foreground")}>
                 {row.scope}
               </td>
               <td className={cn(CELL_BASE, "bg-primary/5 text-foreground/90")}>
                 {row.ownerDoes}
               </td>
-              <td className={cn(CELL_BASE, "text-muted-foreground")}>
+              <td className={cn(CELL_BASE, "border-r text-muted-foreground")}>
                 {row.whoDoes}
               </td>
-              <td className={cn(CELL_BASE, "border-r text-muted-foreground")}>
-                {row.whereItEndsUp}
+              <td className={CELL_BASE}>
+                <WhenItComesUp row={row} />
               </td>
-              {MATRIX_SUBPHASES.map((sub, i) => {
-                const cell = row.cells[sub.key];
-                return (
-                  <td
-                    key={sub.key}
-                    className={cn(
-                      CELL_BASE,
-                      (i === 0 || i === 3 || i === 6) && "border-l",
-                    )}
-                  >
-                    {cell ? (
-                      <span className="flex flex-wrap gap-1">
-                        {cell.tags.map((t) => (
-                          <ActionChip key={t} action={t} />
-                        ))}
-                      </span>
-                    ) : (
-                      <span className="text-muted-foreground/30">·</span>
-                    )}
-                  </td>
-                );
-              })}
             </tr>
             {isOpen ? (
               <tr className="bg-muted/25">
                 <td
-                  colSpan={13}
+                  colSpan={5}
                   className="border-b border-border px-4 py-4 text-[0.82rem] leading-relaxed"
                 >
                   <div className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
