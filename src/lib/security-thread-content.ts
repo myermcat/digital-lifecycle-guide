@@ -1,3 +1,4 @@
+import { Gem, KeyRound, PencilRuler, RotateCw } from "lucide-react";
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { SourceItem } from "@/components/SourcesBlock";
 import type {
@@ -71,22 +72,26 @@ export const SECURITY_THREAD = {
   } satisfies SecurityLifecycleContent,
 
   keyPoints: {
-    intro: "If you read nothing else here, these are the four things the page is trying to get across:",
+    heading: "Summary",
     items: [
       {
         lead: "Security is a cycle, not a stage you clear.",
+        icon: RotateCw,
         body: "The five functions come round again for as long as the service runs. A service that was secure at launch and never touched since is not a secure service.",
       },
       {
         lead: "What actually goes wrong is usually mundane.",
+        icon: KeyRound,
         body: "An unpatched component, a default password, a permission left too wide. The dramatic attacks make the news; these are what causes most of the harm.",
       },
       {
         lead: "Guard the few things that would really hurt.",
+        icon: Gem,
         body: "Protecting everything to the same high standard costs more than a department can afford and usually ends in protection thin enough to help nowhere. Work out what would cause real harm, and protect that properly.",
       },
       {
         lead: "It is far cheaper in the design than in production.",
+        icon: PencilRuler,
         body: "A weakness caught while somebody is still drawing the service costs a fraction of the same weakness found once people are using it. If a supplier is building it, that means the security work belongs in the contract.",
       },
     ],

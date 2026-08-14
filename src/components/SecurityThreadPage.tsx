@@ -27,6 +27,7 @@ import {
 } from "@/lib/thread-rich-content";
 import {
   guideArrowList,
+  guideCalloutLabel,
   guideListIndent,
   guidePageTitle,
   guideProse,
@@ -93,14 +94,27 @@ export function SecurityThreadPage() {
 
       <section className={guideProseSpace}>
         {renderThreadLead(lead)}
-        <p>{SECURITY_THREAD.keyPoints.intro}</p>
-        <ul className={`list-disc space-y-2 ${guideListIndent}`}>
-          {SECURITY_THREAD.keyPoints.items.map((point) => (
-            <li key={point.lead}>
-              <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
-              {point.body}
-            </li>
-          ))}
+      </section>
+
+      <section className="mt-8 md:mt-10 rounded-lg border border-border bg-card px-6 py-6 shadow-sm md:px-8 md:py-7">
+        <p className={guideCalloutLabel}>{SECURITY_THREAD.keyPoints.heading}</p>
+        <ul className={`${guideArrowList} mt-4 !pl-0`}>
+          {SECURITY_THREAD.keyPoints.items.map((point) => {
+            const Icon = point.icon;
+            return (
+              <li key={point.lead} className="flex items-start gap-3">
+                <Icon
+                  aria-hidden="true"
+                  className="mt-1 h-[1.15rem] w-[1.15rem] shrink-0 text-primary/70"
+                  strokeWidth={1.6}
+                />
+                <p className={guideProse}>
+                  <strong className="font-semibold text-foreground">{point.lead}</strong>{" "}
+                  {point.body}
+                </p>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
