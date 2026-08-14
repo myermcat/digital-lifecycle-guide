@@ -207,7 +207,7 @@ export const CHECKPOINT_MAP_FOOTER_DISCLAIMER =
   "Nadia is invented, and so is her program. Any resemblance to real persons or programs is coincidental.";
 
 /* ---------------------------------------------------------------------- */
-/* Phase blocks (all 21 steps, forks, launch)                             */
+/* Phase blocks (all 22 steps, forks, launch)                             */
 /* ---------------------------------------------------------------------- */
 
 export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
@@ -301,7 +301,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "A short concept case describing the problem and roughly what it would take.",
+              text: "A short write-up of the problem and roughly what it would take, in whatever form her department's project intake asks for.",
             },
           ],
         },
@@ -348,7 +348,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkAfter: {
       title: "The choice that decides everything.",
-      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval: it goes up to GC EARB and a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under the line.",
+      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval, and that means a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under that line. Money decides one more thing here. A concept case, which is an official instrument approved at assistant deputy minister level and sent to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of Canada, becomes mandatory from $2.5 million where the department has no approved capacity class or is class 1, rising to $5 million at class 2, $10 million at class 3, $15 million for National Defence, and $25 million at class 4. Nadia is under that floor too, so her write-up stays inside the department. GC EARB is a separate gate again, and an architecture one rather than a money one, which the Alpha block sets out.",
       bold: ["within", "above"],
       checkpointPhrases: ["GC EARB", "Treasury Board submission"],
     },
@@ -405,7 +405,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Her director commits the budget to proceed - from the department's existing funds, through the department's own governance. No Treasury Board submission. This covers Discovery, Alpha, and the Beta build.",
+              text: "The department's own governance commits the budget to proceed, from existing funds and under its delegated financial authority. No Treasury Board submission. This covers Discovery, Alpha, and the Beta build.",
             },
             {
               type: "p",
@@ -424,24 +424,33 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "alpha",
-    heading: "Create · Alpha - test the idea, and clear architecture review",
-    durationLabel: "Typical: a few weeks · varies",
+    heading: "Create · Alpha - test the idea, clear architecture review, and go to market",
+    durationLabel: "Typical: six to twelve weeks · varies",
     phaseNote:
-      "A prototype needs no vendor: a paper or Figma sketch is enough to show suppliers what she wants.",
+      "A prototype needs no vendor: a paper or Figma sketch is enough to show suppliers what she wants. The buying starts here too, because a competition runs into months and Beta opens with the signature.",
     steps: [
       {
         n: 8,
         action: {
-          lead: "Tests the riskiest ideas with a cheap prototype.",
-          body: [{ type: "p", text: "Before committing any real money." }],
-        },
-        response: {
-          tags: ["dept"],
-          lead: "A designer and her team.",
+          lead: "Tests the assumptions that could kill the service, before committing real money.",
           body: [
             {
               type: "p",
-              text: "A designer (or a colleague who knows Figma, or an AI tool) makes a clickable prototype with her. No contract needed for this.",
+              text: "A cheap prototype answers one kind of question: how people move through the design. The assumptions most likely to end the project are the other kind. Whether policy allows it, who has the legal authority to decide, whether the data the service depends on exists, and whether another department will change a step it owns.",
+            },
+          ],
+        },
+        response: {
+          tags: ["dept"],
+          lead: "A designer for the prototype, and people outside the team for the rest.",
+          body: [
+            {
+              type: "p",
+              text: "A designer (or a colleague who knows Figma, or an AI tool) makes a clickable prototype with her, and five or six people who look like real applicants try it. No contract needed for this.",
+            },
+            {
+              type: "p",
+              text: "The other questions she cannot answer from inside her team. She takes the authority question to the policy team in her program area and to departmental legal services, the data question to whoever owns the system the grants data would come from, and any step another department owns to that department. None of these is a checkpoint with a form, and each one can end the idea.",
             },
           ],
         },
@@ -457,36 +466,21 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Chaired by her departmental CIO, it reviews the design and confirms it lines up with GC architecture standards. For a project her size, architecture review stops here.",
+              text: "Chaired by her departmental CIO, it reviews the design and confirms it lines up with GC architecture standards. Her team checks the GC EARB triggers too, and none of them catch her: she is under the investment and capacity thresholds, she is using nothing that counts as emerging technology, she needs no exception under the directive, and the system will run on public cloud. Architecture review stops here.",
               bold: ["stops here"],
             },
             {
               type: "p",
-              text: "Every department has its own board and there is no national page for one. The architecture team in the CIO's office is the door: they prepare the material and they know when the board sits.",
+              text: "Most departments have their own board and there is no national page for one. Small departments and agencies and Agents of Parliament are exempt, so they may have no board of their own. The architecture team in the CIO's office is the door: they prepare the material and they know when the board sits.",
               bold: ["The architecture team in the CIO's office is the door"],
             },
           ],
         },
       },
-    ],
-    forkEnd: {
-      title: "If the project were bigger",
-      text: ", the departmental CIO would take it up to GC EARB, the Government of Canada Enterprise Architecture Review Board, co-chaired by the CTO of Canada (TBS) and the CTO of Shared Services Canada. Departments go there when a project crosses the investment or capacity thresholds, uses emerging technology, needs a policy exception, or runs on something other than public cloud. The department submits, not the individual: the CIO's architecture team prepares the material and the project team usually attends to present it. GC EARB reviews only the large or complex ones.",
-      bold: ["department"],
-      checkpointPhrases: ["GC EARB"],
-    },
-  },
-  {
-    id: "beta",
-    heading: "Create · Beta - buy it, secure it, and prove it",
-    durationLabel: "Typical: several months · varies",
-    phaseNote:
-      "The contract, the security authorization, and the privacy assessment all land here. Procurement alone is often a few months, longer for a full competitive tender.",
-    steps: [
       {
         n: 10,
         action: {
-          lead: "Writes the requirements and helps choose the supplier.",
+          lead: "Settles the requirements and starts the competition.",
           body: [
             { type: "p", text: "What the system has to do:" },
             {
@@ -500,7 +494,8 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "Nadia writes or approves the requirements, sits on the evaluation committee when bids are scored (often as chair), and endorses the final supplier choice. She does not run the competition - but she is in the room when the supplier is chosen.",
+              text: "Nadia writes or approves the requirements, and the solicitation is written from them, so a line still vague on the day it is posted stays vague in the contract. This runs alongside the prototyping rather than after it, because advertising, bidding and evaluation take months, and Beta cannot open until the contract is ready to sign.",
+              bold: ["alongside the prototyping rather than after it"],
             },
           ],
         },
@@ -516,20 +511,69 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
               type: "ul",
               items: [
                 "advise on which procurement vehicle to use (standing offer, supply arrangement, open tender)",
-                "draft the solicitation documents and post the competition",
+                "draft the solicitation documents and post the competition, with the accessibility clauses and the security requirements already settled so they are in it from the start",
+                "if the supplier will handle protected information, start the Contract Security Program (PSPC) screening now, because personnel and organization clearances often take longer than the competition itself",
+              ],
+              itemBold: ["Contract Security Program"],
+            },
+          ],
+        },
+      },
+    ],
+    forkEnd: {
+      title: "If any one of the triggers were met",
+      text: ", the departmental CIO would take it up to GC EARB, the Government of Canada Enterprise Architecture Review Board, co-chaired by the CTO of Canada (TBS) and the CTO of Shared Services Canada. Six triggers send a department there, and any one of them is enough: the project crosses the investment or capacity thresholds, it uses emerging technology, it needs an exception under the directive, it is categorized at Protected B or below and uses a deployment model other than public cloud, it extends or creates custom support to stop a technology becoming unsupported, or the Chief Information Officer of Canada directs it. The five that are not about money are the ones teams miss, because a small initiative can qualify on emerging technology or hosting alone. The department submits, not the individual: the CIO's architecture team prepares the material and the project team usually attends to present it. GC EARB reviews only the large or unusual ones.",
+      bold: ["department"],
+      checkpointPhrases: ["GC EARB"],
+    },
+  },
+  {
+    id: "beta",
+    heading: "Create · Beta - buy it, secure it, and prove it",
+    durationLabel: "Typical: several months · varies",
+    phaseNote:
+      "The signature, the security authorization, and the privacy assessment all land here. The competition itself ran through Alpha, because a full competitive tender is often a few months and Beta would otherwise spend them waiting.",
+    steps: [
+      {
+        n: 11,
+        action: {
+          lead: "Helps choose the supplier, and the contract is signed.",
+          body: [
+            {
+              type: "p",
+              text: "The competition ran through Alpha, so what lands here is the end of it. Nadia sits on the evaluation committee when bids are scored (often as chair) and endorses the final supplier choice. She does not run the competition and she does not sign, but she is in the room when the supplier is chosen.",
+              bold: ["The competition ran through Alpha"],
+            },
+          ],
+        },
+        response: {
+          tags: ["dept"],
+          lead: "The contracting authority awards and signs.",
+          body: [
+            {
+              type: "p",
+              text: "The same procurement officer, or Public Services and Procurement Canada above the department's contract limit. They:",
+            },
+            {
+              type: "ul",
+              items: [
                 "manage the evaluation process and award the contract under the Directive on the Management of Procurement; the contracting authority signs, not Nadia",
-                "if the supplier will handle protected information, also run it through the Contract Security Program (PSPC) for personnel and organization clearances",
+                "confirm before award that the successful bidder holds the personnel and organization clearances the Contract Security Program requires, and annex the approved Security Requirements Check List to the contract",
               ],
               itemBold: [
                 "Directive on the Management of Procurement",
                 "Contract Security Program",
               ],
             },
+            {
+              type: "p",
+              text: "Signature is the moment the department has the most room to negotiate, because nothing has been committed yet. The exit rights, the data portability, the end date and the accessibility clauses are won here or not at all.",
+            },
           ],
         },
       },
       {
-        n: 11,
+        n: 12,
         action: {
           lead: "Requires an accessibility report from the supplier, and checks it.",
         },
@@ -551,7 +595,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 12,
+        n: 13,
         action: {
           lead: "Gets the system cleared to run in production.",
         },
@@ -570,7 +614,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. A first pass runs against the design back in Alpha, while the design can still change, and a second runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
+              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. Earlier passes run against the design back in Alpha, while the design can still change, and the last pass runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
               bold: [
                 "Threat and Risk Assessment",
                 "It does not start here.",
@@ -581,7 +625,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 13,
+        n: 14,
         action: {
           lead: "Deals with the personal information the service will hold.",
         },
@@ -602,7 +646,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 14,
+        n: 15,
         action: {
           lead: "Proves it with real users, then launches.",
         },
@@ -625,7 +669,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "If the system automated a decision.",
-      text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply. The Algorithmic Impact Assessment would then have to be completed, approved and published on the Open Government Portal before the system goes into production, with notice to applicants, a human in the loop, and an appeal route. At impact level two and above a peer review is also required, and its findings published before launch. Worth knowing, because a later "efficiency" feature can trigger all of it without anyone noticing.',
+      text: 'Nadia\'s adjudicators decide by hand, so this checkpoint does not apply to her. But if the grants system scored, ranked, or auto-approved applications, the Directive on Automated Decision-Making would apply. The Algorithmic Impact Assessment would then have to be completed, approved and published on the Open Government Portal before the system goes into production, with notice to applicants, an appeal route, and human oversight scaled to the impact level. At impact level two and above a peer review is also required, and its findings published before launch. Worth knowing, because a later "efficiency" feature can trigger all of it without anyone noticing.',
       bold: ["Directive on Automated Decision-Making"],
       checkpointPhrases: ["Algorithmic Impact Assessment"],
     },
@@ -639,7 +683,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
       "Live is shown as a single section here because it has very few official checkpoints - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier checkpoints back.",
     steps: [
       {
-        n: 15,
+        n: 16,
         action: {
           lead: "Closes the project, and reports what it delivered.",
         },
@@ -649,14 +693,14 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "The funded project ends with a close-out: the department confirms what was delivered, releases what remains of the budget, and tracks whether the promised benefits arrive, the benefits realization the Treasury Board submission committed to. The Directive on the Management of Projects and Programmes sets the duty; Nadia supplies the delivery record, and the project office files it.",
+              text: "The funded project ends with a close-out: the department confirms what was delivered, releases what remains of the budget, and tracks whether the promised benefits arrive, the benefits realization named when the department committed the funding. The Directive on the Management of Projects and Programmes sets the duty; Nadia supplies the delivery record, and the project office files it.",
               bold: ["close-out", "benefits realization"],
             },
           ],
         },
       },
       {
-        n: 16,
+        n: 17,
         action: {
           lead: "Gets the live service onto the official registries.",
         },
@@ -673,7 +717,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 17,
+        n: 18,
         action: {
           lead: "Keeps it running and improves it.",
           body: [
@@ -719,7 +763,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
       "Fewer checkpoints than Create, but two are strict: records cannot be destroyed without Library and Archives Canada's written consent, and the security authorization has to be closed, not just switched off.",
     steps: [
       {
-        n: 18,
+        n: 19,
         action: {
           lead: "Decides the service has to go.",
           body: [
@@ -741,7 +785,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 19,
+        n: 20,
         action: {
           lead: "Works out what happens to the records and the data.",
         },
@@ -771,7 +815,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 20,
+        n: 21,
         action: {
           lead: "Moves or disposes of the data.",
         },
@@ -788,17 +832,17 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
       },
       {
-        n: 21,
+        n: 22,
         action: {
           lead: "Shuts the old system down cleanly.",
         },
         response: {
           tags: ["dept"],
-          lead: "Security, contracting, and the service-management office each close their part.",
+          lead: "The authorizing official, security, contracting, and the service-management office each close their part.",
           body: [
             {
               type: "p",
-              text: "The IT security team ends the Authority to Operate and securely wipes the decommissioned storage; the contracting authority closes the contract; the service-management office updates the GC Service Inventory and Application Portfolio Management to show the service retired.",
+              text: "The authorizing official who signed the Authority to Operate formally ends it, and the IT security team securely wipes the decommissioned storage; the contracting authority closes the contract; the service-management office updates the GC Service Inventory and Application Portfolio Management to show the service retired.",
               bold: [
                 "Authority to Operate",
                 "GC Service Inventory",
