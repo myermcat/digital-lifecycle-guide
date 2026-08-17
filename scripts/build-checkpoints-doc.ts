@@ -224,7 +224,7 @@ function img(file: string, w: number, h: number, alt: string) {
 
 /** A numbered or named section heading, bookmarked so the contents can link to it. */
 function H1D(label: string, title: string, id: string, pageBreak = true) {
-  const number = /^\d+$/.test(label) ? `${label}.` : label;
+  const number = /^(\d+|Appendix \d+)$/.test(label) ? `${label}.` : label;
   return new Paragraph({
     heading: HeadingLevel.HEADING_1,
     keepNext: true,
@@ -688,33 +688,60 @@ function reuseTable() {
   return new Table({ width: { size: CW, type: WidthType.DXA }, columnWidths: REUSE_COLS, rows });
 }
 
+/**
+ * A term-and-definition list. Used for the glossary and for the people list.
+ *
+ * Horizontal rules only, and the term column shaded, because the full grid it
+ * had before made a plain two-column list look like a data table.
+ */
 function definitionTable(entries: readonly { term: string; def: string }[]) {
-  const w = [2900, CW - 2900];
+  const w = [2860, CW - 2860];
+  const NONE = { style: BorderStyle.NONE };
+  const rule = { style: BorderStyle.SINGLE, size: 2, color: TAN };
   return new Table({
     width: { size: CW, type: WidthType.DXA },
     columnWidths: w,
+    borders: {
+      top: rule,
+      bottom: rule,
+      left: NONE,
+      right: NONE,
+      insideHorizontal: rule,
+      insideVertical: NONE,
+    },
     rows: entries.map(
       (entry) =>
         new TableRow({
           cantSplit: true,
           children: [
-            cell(
-              [
+            new TableCell({
+              width: { size: w[0], type: WidthType.DXA },
+              shading: { fill: "F3F7FB", type: ShadingType.CLEAR },
+              verticalAlign: VerticalAlign.TOP,
+              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+              margins: { top: 110, bottom: 110, left: 140, right: 180 },
+              children: [
                 new Paragraph({
+                  spacing: { after: 0, line: 268 },
                   children: [
                     new TextRun({
                       text: entry.term,
                       font: SANS,
                       bold: true,
-                      color: RUST,
-                      size: 21,
+                      color: BROWN,
+                      size: 20,
                     }),
                   ],
                 }),
               ],
-              { width: w[0] },
-            ),
-            cell([P(entry.def, { after: 0, size: 20 })], { width: w[1] }),
+            }),
+            new TableCell({
+              width: { size: w[1], type: WidthType.DXA },
+              verticalAlign: VerticalAlign.TOP,
+              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+              margins: { top: 110, bottom: 110, left: 0, right: 0 },
+              children: [P(entry.def, { after: 0, size: 20 })],
+            }),
           ],
         }),
     ),
@@ -894,6 +921,140 @@ function figure(label: string, title: string, file: string, w: number, h: number
   ];
 }
 
+/**
+ * A figure to the left of the text it belongs to, the way the page sets it.
+ *
+ * A borderless two-cell table, because a floating image in a Word document
+ * reflows unpredictably once the text around it changes length.
+ */
+function figureBeside(
+  label: string,
+  title: string,
+  file: string,
+  w: number,
+  h: number,
+  beside: Paragraph[],
+) {
+  figures.push({ label, title });
+  const NONE = { style: BorderStyle.NONE };
+  const imgW = Math.round(w * 15 + 400);
+  return new Table({
+    width: { size: CW, type: WidthType.DXA },
+    columnWidths: [imgW, CW - imgW],
+    borders: {
+      top: NONE,
+      bottom: NONE,
+      left: NONE,
+      right: NONE,
+      insideHorizontal: NONE,
+      insideVertical: NONE,
+    },
+    rows: [
+      new TableRow({
+        cantSplit: true,
+        children: [
+          new TableCell({
+            width: { size: imgW, type: WidthType.DXA },
+            verticalAlign: VerticalAlign.TOP,
+            borders: { top: NONE, bottom: NONE, left: NONE, right: NONE },
+            margins: { top: 0, bottom: 0, left: 0, right: 220 },
+            children: [
+              new Paragraph({ spacing: { after: 60 }, children: [img(file, w, h, title)] }),
+              new Paragraph({
+                spacing: { after: 0 },
+                children: [text(`${label}  ${title}`, { italics: true, color: MUTED, size: 16 })],
+              }),
+            ],
+          }),
+          new TableCell({
+            width: { size: CW - imgW, type: WidthType.DXA },
+            verticalAlign: VerticalAlign.TOP,
+            borders: { top: NONE, bottom: NONE, left: NONE, right: NONE },
+            margins: { top: 0, bottom: 0, left: 0, right: 0 },
+            children: beside,
+          }),
+        ],
+      }),
+    ],
+  });
+}
+
+/** The legend chips, coloured the way the page colours them. */
+const ACTION_FILL: Record<string, string> = {
+  check: "FBEED5",
+  gather: "D6EFEC",
+  fill: "E6DEF5",
+  sign: "F7DFE4",
+  submit: "D9EFE1",
+  keep: "D9E9F6",
+  close: "E4E2DF",
+};
+const ACTION_INK: Record<string, string> = {
+  check: "7A4E12",
+  gather: "14544E",
+  fill: "402C6B",
+  sign: "7A2036",
+  submit: "1B5133",
+  keep: "1C4C71",
+  close: "3E3A35",
+};
+
+function chipTable(items: { label: string; gloss: string; fill: string; ink: string }[]) {
+  const w = [2400, CW - 2400];
+  const NONE = { style: BorderStyle.NONE };
+  const rule = { style: BorderStyle.SINGLE, size: 2, color: TAN };
+  return new Table({
+    width: { size: CW, type: WidthType.DXA },
+    columnWidths: w,
+    borders: {
+      top: NONE,
+      bottom: NONE,
+      left: NONE,
+      right: NONE,
+      insideHorizontal: rule,
+      insideVertical: NONE,
+    },
+    rows: items.map(
+      (item) =>
+        new TableRow({
+          cantSplit: true,
+          children: [
+            new TableCell({
+              width: { size: w[0], type: WidthType.DXA },
+              verticalAlign: VerticalAlign.CENTER,
+              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+              margins: { top: 70, bottom: 70, left: 0, right: 160 },
+              children: [
+                new Paragraph({
+                  shading: { fill: item.fill, type: ShadingType.CLEAR },
+                  spacing: { before: 30, after: 30 },
+                  indent: { left: 90, right: 90 },
+                  children: [
+                    new TextRun({
+                      text: item.label.toUpperCase(),
+                      font: SANS,
+                      bold: true,
+                      color: item.ink,
+                      size: 16,
+                      characterSpacing: 20,
+                    }),
+                  ],
+                }),
+              ],
+            }),
+            new TableCell({
+              width: { size: w[1], type: WidthType.DXA },
+              verticalAlign: VerticalAlign.CENTER,
+              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+              margins: { top: 70, bottom: 70, left: 0, right: 0 },
+              children: [P(item.gloss, { after: 0, size: 20 })],
+            }),
+          ],
+        }),
+    ),
+  });
+}
+
 function tableCaption(label: string, title: string) {
   tables.push({ label, title });
   return caption(`${label}  ${title}`);
@@ -927,7 +1088,7 @@ body.push(
 body.push(backToTop());
 
 /* 2. How to use this document */
-body.push(H1D(SECTIONS.howToUse, "How to use this document", "how-to-use"));
+body.push(H1D(SECTIONS.howToUse, "How to use this document", "how-to-use", false));
 for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
   body.push(
     new Paragraph({
@@ -943,7 +1104,7 @@ for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
 body.push(backToTop());
 
 /* 3. Nearly everything here varies */
-body.push(H1D(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies"));
+body.push(H1D(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies", false));
 body.push(
   callout(
     CHECKPOINT_MAP_VARIES.paragraphs.map((paragraph, index) =>
@@ -954,7 +1115,7 @@ body.push(
 body.push(backToTop());
 
 /* 4. Glossary */
-body.push(H1D(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints"));
+body.push(H1D(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints", false));
 body.push(P(CHECKPOINT_MAP_TERMS_CAPTION));
 body.push(definitionTable(CHECKPOINT_MAP_TERMS));
 body.push(tableCaption(`Table ${SECTIONS.glossary}-1`, "Words the tables use and do not define"));
@@ -964,13 +1125,28 @@ body.push(backToTop());
 body.push(H1D(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
 body.push(P(CHECKPOINT_MAP_TABLE_SECTION.intro));
 body.push(H3("What the tags mean"));
-for (const key of Object.keys(MATRIX_ACTIONS) as (keyof typeof MATRIX_ACTIONS)[]) {
-  body.push(bullet(`${MATRIX_ACTIONS[key].label}. ${MATRIX_ACTIONS[key].gloss}`));
-}
+body.push(
+  chipTable(
+    (Object.keys(MATRIX_ACTIONS) as (keyof typeof MATRIX_ACTIONS)[]).map((key) => ({
+      label: MATRIX_ACTIONS[key].label,
+      gloss: MATRIX_ACTIONS[key].gloss,
+      fill: ACTION_FILL[key],
+      ink: ACTION_INK[key],
+    })),
+  ),
+);
 body.push(H3("What kind of thing each one is"));
-for (const key of Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]) {
-  body.push(bullet(`${MATRIX_KINDS[key].label}. ${MATRIX_KINDS[key].gloss}`));
-}
+body.push(
+  chipTable(
+    (Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]).map((key) => ({
+      label: MATRIX_KINDS[key].label,
+      gloss: MATRIX_KINDS[key].gloss,
+      fill: SURF,
+      ink: BROWN,
+    })),
+  ),
+);
+body.push(new Paragraph({ spacing: { after: 140 }, children: [] }));
 body.push(
   P(
     "An amber ONLY IF tag marks an instrument that does not apply to every service. Everything without one applies to all of them.",
@@ -998,7 +1174,7 @@ for (const section of MATRIX_FAMILY_SECTIONS) {
 }
 
 /* 6. Conclusion and next steps */
-body.push(H1D(SECTIONS.conclusion, "Conclusion and next steps", "conclusion"));
+body.push(H1D(SECTIONS.conclusion, "Conclusion and next steps", "conclusion", false));
 body.push(
   P(
     "The list is long, and no service meets all of it. The step that saves the most time is the cheapest one: read down the scope column of each topic that matches what your service does, and rule out what does not apply, before anyone starts planning around it. What is left is usually smaller than a team expects, and most of it belongs to somebody else to do.",
@@ -1112,20 +1288,17 @@ body.push(
     { fill: AMBERFILL, border: AMBER },
   ),
 );
+body.push(new Paragraph({ spacing: { after: 260 }, children: [] }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.intro, { after: 130 }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.pathNote));
 
 body.push(H2D("Appendix 2.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
 body.push(
-  ...figure(
-    "Figure A2-1",
-    "Nadia, a director general, and the service she is buying",
-    "gate_map_nadia.png",
-    300,
-    190,
-  ),
+  figureBeside("Figure A2-1", "Nadia, a director general", "gate_map_nadia.png", 104, 126, [
+    boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold, { after: 0 }),
+  ]),
 );
-body.push(boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold));
+body.push(new Paragraph({ spacing: { after: 200 }, children: [] }));
 body.push(P(CHECKPOINT_MAP_WHY_GCS.body));
 body.push(H3(CHECKPOINT_MAP_WHY_CREATE.heading));
 body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
@@ -1155,6 +1328,7 @@ body.push(
     `${CHECKPOINT_MAP_COLKEY.left} The right-hand column is who answers, and how. The tag on each response says whether the responder is inside her department or central.`,
   ),
 );
+body.push(backToTop());
 
 let phaseIndex = 4;
 for (const phase of CHECKPOINT_MAP_PHASES) {
