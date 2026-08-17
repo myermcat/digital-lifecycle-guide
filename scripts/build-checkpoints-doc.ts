@@ -147,7 +147,10 @@ function text(t: string, opts: Record<string, unknown> = {}) {
   return new TextRun({ text: t, font: SANS, size: 21, color: BODY, ...opts });
 }
 
-function P(t: string, opts: { after?: number; size?: number; color?: string; italics?: boolean } = {}) {
+function P(
+  t: string,
+  opts: { after?: number; size?: number; color?: string; italics?: boolean } = {},
+) {
   return new Paragraph({
     spacing: { after: opts.after ?? 150, line: 278 },
     children: [
@@ -358,7 +361,9 @@ function whenItComesUp(row: MatrixInstrument): string {
   const active = MATRIX_SUBPHASES.filter((s) => row.cells[s.key]);
   if (active.length === 0) return "";
   return active
-    .map((s) => `${s.label} ${row.cells[s.key]!.tags.map((t) => MATRIX_ACTIONS[t].label).join(", ")}`)
+    .map(
+      (s) => `${s.label} ${row.cells[s.key]!.tags.map((t) => MATRIX_ACTIONS[t].label).join(", ")}`,
+    )
     .join("  ·  ");
 }
 
@@ -574,7 +579,16 @@ function reuseTable() {
               [
                 boldedP(
                   piece.lookAtItIn,
-                  ["Discovery", "Alpha", "Beta", "Stabilization", "Growth", "Maturity", "Live", "Sunset"],
+                  [
+                    "Discovery",
+                    "Alpha",
+                    "Beta",
+                    "Stabilization",
+                    "Growth",
+                    "Maturity",
+                    "Live",
+                    "Sunset",
+                  ],
                   { after: 0 },
                 ),
               ],
@@ -737,15 +751,16 @@ function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlo
               new Paragraph({
                 spacing: { after: step.response.body ? 90 : 0, line: 272 },
                 children: [
-                  ...step.response.tags.map((tag) =>
-                    new TextRun({
-                      text: tag === "dept" ? "HER DEPARTMENT  " : "CENTRAL  ",
-                      font: SANS,
-                      bold: true,
-                      color: tag === "dept" ? RUST : AMBER,
-                      size: 14,
-                      characterSpacing: 20,
-                    }),
+                  ...step.response.tags.map(
+                    (tag) =>
+                      new TextRun({
+                        text: tag === "dept" ? "HER DEPARTMENT  " : "CENTRAL  ",
+                        font: SANS,
+                        bold: true,
+                        color: tag === "dept" ? RUST : AMBER,
+                        size: 14,
+                        characterSpacing: 20,
+                      }),
                   ),
                   new TextRun({
                     text: step.response.lead,
@@ -867,7 +882,11 @@ body.push(
   ),
 );
 body.push(reuseTable());
-body.push(caption(`Table ${checkpointMapSectionNumber(CHECKPOINT_MAP_APPENDIX_REUSE.id)}  What is already built`));
+body.push(
+  caption(
+    `Table ${checkpointMapSectionNumber(CHECKPOINT_MAP_APPENDIX_REUSE.id)}  What is already built`,
+  ),
+);
 body.push(backToTop());
 
 // 7 Appendix 2
