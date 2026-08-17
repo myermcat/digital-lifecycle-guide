@@ -1,5 +1,6 @@
 import { Fragment, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { checkpointMapSectionNumber } from "@/lib/checkpoint-map-content";
 import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
@@ -162,7 +163,12 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
                 strokeWidth={1.75}
                 aria-hidden
               />
-              {section.family}
+              <span>
+                <span className="mr-2 font-normal text-muted-foreground/70 tabular-nums">
+                  {checkpointMapSectionNumber(section.id)}
+                </span>
+                {section.family}
+              </span>
             </h3>
             <p className={cn(guideProse, "mt-2 mb-1 max-w-[80ch]")}>
               {section.introLink

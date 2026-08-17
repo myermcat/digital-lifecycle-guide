@@ -317,14 +317,14 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     icon: Archive,
     introLink: { phrase: "Data stewardship thread", to: "/thread/data-stewardship" },
     intro:
-      "Registers are how the service becomes visible to the rest of government, and records are the information it keeps. Neither is difficult, and both are easy to overlook because they arrive after launch, when the project team has usually moved on. Two things worth knowing. Only one of the two registers has anywhere to say the service is critical. And no record may be destroyed without written consent from Library and Archives Canada, which is the one thing on this page that cannot be put right afterwards: a record destroyed is gone. This topic covers keeping information and disposing of it. How data is modelled, described and kept usable is the subject of the Data stewardship thread.",
+      "Registers are how the service becomes visible to the rest of government, and records are the information it keeps. Neither is difficult, and both are easy to overlook because they arrive after launch, when the project team has usually moved on. Two things worth knowing. Only one of the two registers has anywhere to say the service is critical. And nothing may be destroyed without written consent from Library and Archives Canada: everything else in these tables can be fixed late at some cost, and a destroyed record cannot, because it is gone. The last row is the one to read before buying anything, since it says what the system itself has to be able to do with records. How data is modelled, described and kept usable is the subject of the Data stewardship thread.",
   },
   {
     family: "Access to information and openness",
     id: "topic-openness",
     icon: BookOpen,
     intro:
-      "Two duties, and neither one is about disposal, which is the topic above. Anyone at all can ask a federal institution for its records, and the institution then has to find them and release whatever the law allows, so plan on the basis that what this service records may one day be asked for by someone outside it. Separately, some information is published on a schedule with nobody asking for it: contracts over $10,000, and grants and contributions over $25,000. Both change what the service should record, and how easily one record can be found among thousands while the service is running, which makes them build decisions and not paperwork.",
+      "Anyone at all can ask a federal institution for its records, and the institution then has to find them and release whatever the law allows. So plan on the basis that what this service records may one day be read by someone outside it. A second duty runs on a clock: contracts over $10,000, and grants and contributions over $25,000, are published every quarter whether or not anyone has asked to see them, and it is the department that has to remember, because no request arrives to prompt it. Both duties change what the service should record while it is running, and how quickly one record can be pulled out of thousands, which is something the build has to allow for.",
   },
 ];
 
@@ -1037,6 +1037,41 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* ------------------------------------------------------------------ */
   /* Continuity and incidents, second batch                              */
   /* ------------------------------------------------------------------ */
+  {
+    name: "Systems that manage information and data",
+    family: "Registries and records",
+    kind: "duty",
+    whatItIs:
+      "A set of things any system holding government information has to be able to do: apply retention and disposition rules in a way that can be audited, carry metadata, support the department's classification structures, work with other systems, and export in bulk in open formats.",
+    everyService: true,
+    scope:
+      "All systems, in force since 4 May 2022. Anything built or bought before that had 24 months to transition, and anything treated as legacy had 24 months to produce a plan. The capabilities can be met by one system or by several used together.",
+    ownerDoes:
+      "Puts these into the requirements before anything is bought, above all bulk export in open formats and the ability to apply a retention rule. A product that cannot do those two cannot be made to later without replacing it.",
+    ownerBold: ["Puts these into the requirements before anything is bought"],
+    whoDoes:
+      "The information management function says what is needed; the service team or the supplier builds it.",
+    whoBold: ["information management function"],
+    whereItEndsUp:
+      "Held within the department. Nothing is filed. It shows up as clauses in the solicitation and as things to check on acceptance.",
+    linkKey: "standard-systems-manage-information",
+    moreLinks: ["standard-managing-metadata"],
+    threads: ["data-stewardship"],
+    cells: {
+      alpha: {
+        tags: ["gather"],
+        note: "These become requirements here, while the solicitation is still being written.",
+      },
+      beta: {
+        tags: ["check"],
+        note: "Confirm the built or bought system actually does them. Bulk export is the one most often missing and the most expensive to discover late.",
+      },
+      sunset: {
+        tags: ["close"],
+        note: "Bulk export in open formats is what makes a migration possible when the service is replaced.",
+      },
+    },
+  },
   {
     name: "Information technology continuity management",
     family: "Continuity and incidents",

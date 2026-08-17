@@ -36,6 +36,7 @@ import {
   CHECKPOINT_MAP_WHY_GCS,
   CHECKPOINT_MAP_HOW_TO_USE,
   CHECKPOINT_MAP_ON_THIS_PAGE,
+  checkpointMapSectionNumber,
   CHECKPOINT_MAP_VARIES,
   type CheckpointMapBodyPart,
   type CheckpointMapCell,
@@ -419,6 +420,13 @@ function CheckpointMapPhaseAccordions() {
   );
 }
 
+/** The section number, set slightly back from the heading it belongs to. */
+function SectionNumber({ id }: { id: string }) {
+  const number = checkpointMapSectionNumber(id);
+  if (!number) return null;
+  return <span className="mr-2 font-normal text-muted-foreground/70 tabular-nums">{number}</span>;
+}
+
 function DefinitionBlock({
   id,
   title,
@@ -435,7 +443,10 @@ function DefinitionBlock({
       id={id}
       className="mt-8 md:mt-10 scroll-mt-24 rounded-lg border border-border bg-[var(--phase-group)]/50 px-5 py-5 md:px-6 md:py-6"
     >
-      <h2 className={`${guideSubsectionTitle} text-foreground`}>{title}</h2>
+      <h2 className={`${guideSubsectionTitle} text-foreground`}>
+        <SectionNumber id={id} />
+        {title}
+      </h2>
       <p className={`${guideProseTight} mt-1 mb-4 text-muted-foreground`}>{cap}</p>
       <dl className="mt-3 grid gap-x-4 gap-y-2.5 md:grid-cols-[minmax(12rem,14rem)_1fr]">
         {entries.map((entry) => (
@@ -462,14 +473,20 @@ export function CheckpointMapPage() {
       </header>
 
       <section id="what-this-covers" className="mb-5 scroll-mt-24">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_WHAT_TABLE.heading}</h3>
+        <h3 className={`${guideSubsectionTitle} mb-2`}>
+          <SectionNumber id="what-this-covers" />
+          {CHECKPOINT_MAP_WHAT_TABLE.heading}
+        </h3>
         <p className={guideProseTight}>
           {boldPhrases(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold)}
         </p>
       </section>
 
-      <section className="mb-8 md:mb-10">
-        <h3 className={`${guideSubsectionTitle} mb-3`}>{CHECKPOINT_MAP_HOW_TO_USE.heading}</h3>
+      <section id="how-to-use" className="mb-8 scroll-mt-24 md:mb-10">
+        <h3 className={`${guideSubsectionTitle} mb-3`}>
+          <SectionNumber id="how-to-use" />
+          {CHECKPOINT_MAP_HOW_TO_USE.heading}
+        </h3>
         <ul className={`${guideProseTight} list-disc space-y-2 ${guideListIndent}`}>
           {CHECKPOINT_MAP_HOW_TO_USE.items.map((item) => (
             <li key={item.lead}>
@@ -479,8 +496,14 @@ export function CheckpointMapPage() {
         </ul>
       </section>
 
-      <section className="mb-8 md:mb-10 rounded-lg border border-border bg-card px-5 py-5 md:px-6 md:py-6">
-        <h3 className={`${guideSubsectionTitle} mb-2`}>{CHECKPOINT_MAP_VARIES.heading}</h3>
+      <section
+        id="everything-varies"
+        className="mb-8 scroll-mt-24 md:mb-10 rounded-lg border border-border bg-card px-5 py-5 md:px-6 md:py-6"
+      >
+        <h3 className={`${guideSubsectionTitle} mb-2`}>
+          <SectionNumber id="everything-varies" />
+          {CHECKPOINT_MAP_VARIES.heading}
+        </h3>
         <div className={`${guideProseTight} space-y-2.5`}>
           {CHECKPOINT_MAP_VARIES.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -497,7 +520,10 @@ export function CheckpointMapPage() {
       />
 
       <section id={CHECKPOINT_MAP_TABLE_SECTION.id} className="mt-10 scroll-mt-24 md:mt-12">
-        <h2 className={`${guideSectionTitle} mb-3`}>{CHECKPOINT_MAP_TABLE_SECTION.heading}</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>
+          <SectionNumber id={CHECKPOINT_MAP_TABLE_SECTION.id} />
+          {CHECKPOINT_MAP_TABLE_SECTION.heading}
+        </h2>
         <p className={`${guideProse} mb-5 max-w-[84ch]`}>{CHECKPOINT_MAP_TABLE_SECTION.intro}</p>
         <InstrumentMatrix embedded />
       </section>
@@ -507,6 +533,7 @@ export function CheckpointMapPage() {
         <div className="border-t border-border pt-8 md:pt-10">
           <p className={guideCalloutLabel}>{CHECKPOINT_MAP_APPENDIX_REUSE.label}</p>
           <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
+            <SectionNumber id={CHECKPOINT_MAP_APPENDIX_REUSE.id} />
             {CHECKPOINT_MAP_APPENDIX_REUSE.heading}
           </h2>
         </div>
@@ -517,6 +544,7 @@ export function CheckpointMapPage() {
         <div className="border-t border-border pt-8 md:pt-10">
           <p className={guideCalloutLabel}>{CHECKPOINT_MAP_APPENDIX_PATH.label}</p>
           <h2 className={`${guideSectionTitle} mt-1.5 mb-3`}>
+            <SectionNumber id={CHECKPOINT_MAP_APPENDIX_PATH.id} />
             {CHECKPOINT_MAP_APPENDIX_PATH.heading}
           </h2>
           <p className={`${guideProse} max-w-[84ch]`}>{CHECKPOINT_MAP_APPENDIX_PATH.intro}</p>

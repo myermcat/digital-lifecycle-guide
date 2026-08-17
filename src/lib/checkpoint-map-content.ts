@@ -116,7 +116,7 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
 } as const;
 
 export const CHECKPOINT_MAP_VARIES = {
-  heading: "Nearly everything on this page varies",
+  heading: "Nearly everything here varies",
   paragraphs: [
     "The checkpoints themselves are real and they are set out in Government of Canada instruments. Almost everything around them is not fixed. Which ones apply depends on what the service does and how much is being spent. Who chairs a board, what a department's thresholds are, who signs, and how each step is run in practice differ from one department to the next.",
     "Timing varies most of all. Nothing here says how long a step takes, because that depends on the department's capacity, the queue in front of you, and what else is happening that year. Where this page gives a duration, treat it as one team's experience rather than a planning figure, and confirm it against your own department.",
@@ -126,6 +126,8 @@ export const CHECKPOINT_MAP_VARIES = {
 
 export const CHECKPOINT_MAP_JUMP = [
   { label: "What this page covers", href: "#what-this-covers" },
+  { label: "How to use this page", href: "#how-to-use" },
+  { label: "Nearly everything here varies", href: "#everything-varies" },
   { label: "Glossary", href: "#thecheckpoints" },
   { label: "Every official thing", href: "#annex-instruments" },
   { label: "Appendix 1: reuse first", href: "#annex-reuse" },
@@ -133,19 +135,34 @@ export const CHECKPOINT_MAP_JUMP = [
 ] as const;
 
 /**
+ * The section number for a heading, so the page and the rail agree.
+ *
+ * The rail is the only way to reach one topic on a page this long, and a rail
+ * numbered 5.7 pointing at an unnumbered heading makes the reader count.
+ */
+export function checkpointMapSectionNumber(id: string): string {
+  const top = CHECKPOINT_MAP_JUMP.findIndex((item) => item.href === `#${id}`);
+  if (top !== -1) return `${top + 1}.`;
+  const sub = MATRIX_FAMILY_SECTIONS.findIndex((section) => section.id === id);
+  if (sub === -1) return "";
+  const parent = CHECKPOINT_MAP_JUMP.findIndex((item) => item.href === "#annex-instruments");
+  return `${parent + 1}.${sub + 1}`;
+}
+
+/**
  * On-this-page rail items, with the twelve topic tables nested under the tables
  * section. The rail is the only way to reach one topic directly on a page this
  * long, so the nesting is worth the extra dozen lines.
  */
-export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item, index) => {
-  const number = index + 1;
-  const parent = { id: item.href.slice(1), label: `${number}. ${item.label}` };
-  if (parent.id !== "annex-instruments") return [parent];
+export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) => {
+  const id = item.href.slice(1);
+  const parent = { id, label: `${checkpointMapSectionNumber(id)} ${item.label}` };
+  if (id !== "annex-instruments") return [parent];
   return [
     parent,
-    ...MATRIX_FAMILY_SECTIONS.map((section, subIndex) => ({
+    ...MATRIX_FAMILY_SECTIONS.map((section) => ({
       id: section.id,
-      label: `${number}.${subIndex + 1} ${section.family}`,
+      label: `${checkpointMapSectionNumber(section.id)} ${section.family}`,
       depth: 1,
     })),
   ];
