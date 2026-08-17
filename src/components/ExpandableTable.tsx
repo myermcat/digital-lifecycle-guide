@@ -1,18 +1,14 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import { createPortal } from "react-dom";
-import { Maximize2, RotateCcw, X } from "lucide-react";
+import { useCallback, useRef, type ReactNode } from "react";
+import { RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Wraps a wide table so it can be opened over the whole window.
+ * Wraps a wide table in a scroll box that keeps its sticky header and sticky
+ * first column.
  *
- * The tables in this guide are wider than the prose measure and taller than a
- * screen, which makes them awkward to read in the column. Expanding gives the
- * table the whole viewport, and the table keeps its own sticky header and sticky
- * first column inside.
- *
- * Escape closes it, as does the button. Page scrolling is held while it is open,
- * so closing returns the reader to the same place on the page.
+ * There was a full-screen mode here. It went on 17 August: the tables are split
+ * by topic now, so each one is short enough to read in the column, and a button
+ * on every table was more furniture than help.
  */
 
 /**
@@ -101,9 +97,7 @@ function useAxisLockedScroll<T extends HTMLElement>() {
       velocity = Math.max(-90, Math.min(90, velocity));
 
       const horizontal = axis === "x";
-      const max = horizontal
-        ? el.scrollWidth - el.clientWidth
-        : el.scrollHeight - el.clientHeight;
+      const max = horizontal ? el.scrollWidth - el.clientWidth : el.scrollHeight - el.clientHeight;
 
       const step = () => {
         velocity *= 0.95;
@@ -141,110 +135,35 @@ export function ExpandableTable({
   className,
   maxHeight = "80vh",
 }: {
-  /** Named on the bar while expanded, so the reader knows what they opened. */
+  /** Names the scroll region for anyone reading with a screen reader. */
   title: string;
   children: ReactNode;
   className?: string;
-  /** Height of the scroll box when not expanded. */
+  /** Height of the scroll box. */
   maxHeight?: string;
 }) {
-  const [expanded, setExpanded] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
   const inlineScrollRef = useAxisLockedScroll<HTMLDivElement>();
-  const expandedScrollRef = useAxisLockedScroll<HTMLDivElement>();
-  const closeRef = useRef<HTMLButtonElement>(null);
-  const openerRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!expanded) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setExpanded(false);
-    };
-    document.addEventListener("keydown", onKeyDown);
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    closeRef.current?.focus();
-
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      openerRef.current?.focus();
-    };
-  }, [expanded]);
-
-  const scrollBox = (
-    <div
-      ref={inlineScrollRef}
-      className={cn(
-        "overflow-auto rounded-lg border border-border",
-        expanded ? "h-full rounded-none border-0" : null,
-      )}
-      style={expanded ? undefined : { maxHeight }}
-    >
-      {children}
-    </div>
-  );
 
   return (
     <div className={cn("relative", className)}>
       <p className="mb-2 flex items-start gap-2 rounded-md border border-border bg-muted/40 px-3 py-2 text-[0.78rem] leading-snug text-muted-foreground sm:hidden">
         <RotateCcw className="mt-[0.15rem] h-3.5 w-3.5 shrink-0" aria-hidden />
         <span>
-          This table is wide. Turn the phone sideways to read it, or open it full
-          screen. Scroll sideways inside the table to reach the later columns.
+          This table is wide. Turn the phone sideways to read it, and scroll sideways inside the
+          table to reach the later columns.
         </span>
       </p>
 
-      <div className="mb-2 flex justify-end">
-        <button
-          ref={openerRef}
-          type="button"
-          onClick={() => setExpanded(true)}
-          className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-2.5 py-1 text-[0.72rem] font-medium text-muted-foreground transition-colors hover:border-foreground/40 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          <Maximize2 className="h-3.5 w-3.5" aria-hidden />
-          Open full screen
-        </button>
+      <div
+        ref={inlineScrollRef}
+        role="region"
+        aria-label={title}
+        tabIndex={0}
+        className="overflow-auto rounded-lg border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        style={{ maxHeight }}
+      >
+        {children}
       </div>
-
-      {scrollBox}
-
-      {expanded && mounted
-        ? createPortal(
-            <div
-              role="dialog"
-              aria-modal="true"
-              aria-label={title}
-              className="fixed inset-0 z-[9999] flex flex-col bg-background"
-            >
-              <div className="flex shrink-0 items-center justify-between gap-4 border-b border-border bg-background px-4 py-3 md:px-6">
-                <p className="truncate text-sm font-semibold text-foreground">
-                  {title}
-                </p>
-                <button
-                  ref={closeRef}
-                  type="button"
-                  onClick={() => setExpanded(false)}
-                  className="inline-flex shrink-0 items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-[0.78rem] font-medium text-foreground transition-colors hover:border-foreground/40 hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  <X className="h-4 w-4" aria-hidden />
-                  Close
-                  <span className="ml-1 rounded border border-border px-1 text-[0.62rem] uppercase tracking-wide text-muted-foreground/80">
-                    esc
-                  </span>
-                </button>
-              </div>
-              <div ref={expandedScrollRef} className="min-h-0 flex-1 overflow-auto">
-                {children}
-              </div>
-            </div>,
-            document.body,
-          )
-        : null}
     </div>
   );
 }

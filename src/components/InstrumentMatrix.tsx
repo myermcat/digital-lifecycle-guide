@@ -1,16 +1,16 @@
-import { Fragment, useState, type ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
   INSTRUMENT_MATRIX,
   MATRIX_ACTIONS,
-  MATRIX_FAMILIES,
+  MATRIX_FAMILY_SECTIONS,
   MATRIX_KINDS,
   MATRIX_SUBPHASES,
   type MatrixAction,
   type MatrixInstrument,
 } from "@/lib/instrument-matrix";
-import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { guideProse, guideSectionTitle, guideSubsectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,8 +22,7 @@ import { cn } from "@/lib/utils";
  * into the sub-phase pages.
  */
 
-const CELL_BASE =
-  "align-top border-b border-border px-3 py-2.5 text-[0.82rem] leading-snug";
+const CELL_BASE = "align-top border-b border-border px-3 py-2.5 text-[0.82rem] leading-snug";
 
 function ActionChip({ action }: { action: MatrixAction }) {
   const meta = MATRIX_ACTIONS[action];
@@ -51,9 +50,7 @@ function Legend() {
             <span className="pt-[0.1rem]">
               <ActionChip action={key} />
             </span>
-            <span className="text-muted-foreground">
-              {MATRIX_ACTIONS[key].gloss}
-            </span>
+            <span className="text-muted-foreground">{MATRIX_ACTIONS[key].gloss}</span>
           </li>
         ))}
       </ul>
@@ -80,9 +77,7 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
   return (
     <>
       <span className="font-semibold text-foreground">{row.name}</span>
-      {row.acronym ? (
-        <span className="text-muted-foreground"> ({row.acronym})</span>
-      ) : null}
+      {row.acronym ? <span className="text-muted-foreground"> ({row.acronym})</span> : null}
       {row.everyService ? null : (
         <>
           {" "}
@@ -90,8 +85,7 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
             Only if
           </span>
         </>
-      )}
-      {" "}
+      )}{" "}
       <span className="whitespace-nowrap rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">
         {MATRIX_KINDS[row.kind].label}
       </span>
@@ -122,8 +116,6 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
 }
 
 export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = {}) {
-  const [openRow, setOpenRow] = useState<string | null>(null);
-
   return (
     <section className={embedded ? "" : "mt-14 md:mt-16"} id="instrument-matrix">
       {embedded ? null : (
@@ -133,10 +125,9 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
           </h2>
           <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
             <p>
-              Getting a service live means passing official checkpoints:
-              assessments to run, boards to attend, registers to appear in, and
-              duties that carry on for as long as the service does. Which ones
-              apply depends on what the service does and how much is being spent,
+              Getting a service live means passing official checkpoints: assessments to run, boards
+              to attend, registers to appear in, and duties that carry on for as long as the service
+              does. Which ones apply depends on what the service does and how much is being spent,
               so no two services take the same path.
             </p>
           </div>
@@ -144,211 +135,170 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
       )}
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          Read a row across: what it is, whether it applies to you, what you have
-          to do about it, and what happens to it in each sub-phase of the
-          service&apos;s life. Click a row for the full definition.
+          One table per topic below, and every instrument in them takes two rows. The top row says
+          what brings it into scope, what you personally have to do about it, and who does the rest.
+          The row underneath says what the thing is, and when in the service&apos;s life it comes
+          up.
         </p>
         <p className="text-muted-foreground">
-          One caution. Which sub-phase an instrument belongs to is this
-          guide&apos;s own judgement, because no Government of Canada source uses
-          these phase names. Where a placement follows a real deadline in the
-          instrument, the row says so. Where it does not, the row says that too.
+          One caution. Which sub-phase an instrument belongs to is this guide&apos;s own judgement,
+          because no Government of Canada source uses these phase names. Where a placement follows a
+          real deadline in the instrument, the row says so. Where it does not, the row says that
+          too.
         </p>
       </div>
 
       <Legend />
 
-      <ExpandableTable
-        title="Every official thing a service has to do, by sub-phase"
-        className="mt-6"
-        maxHeight="80vh"
-      >
-        <table className="w-full min-w-[58rem] border-collapse text-left">
-          <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
-            <tr className="bg-muted/60">
-              <th className="sm:sticky sm:left-0 z-40 min-w-[13rem] sm:min-w-[16rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                Instrument
-              </th>
-              <th className="min-w-[15rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                What brings it into scope
-              </th>
-              <th className="min-w-[17rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80">
-                What the business owner does
-              </th>
-              <th className="min-w-[13rem] border-b border-r border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                Who does the work
-              </th>
-              <th className="min-w-[12rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                When it comes up
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {MATRIX_FAMILIES.map((family) => {
-              const rows = INSTRUMENT_MATRIX.filter((r) => r.family === family);
-              if (rows.length === 0) return null;
-              return (
-                <FamilyGroup
-                  key={family}
-                  family={family}
-                  rows={rows}
-                  openRow={openRow}
-                  setOpenRow={setOpenRow}
-                />
-              );
-            })}
-          </tbody>
-        </table>
-      </ExpandableTable>
+      {MATRIX_FAMILY_SECTIONS.map((section) => {
+        const rows = INSTRUMENT_MATRIX.filter((r) => r.family === section.family);
+        if (rows.length === 0) return null;
+        return (
+          <section key={section.family} id={section.id} className="mt-10 scroll-mt-24 md:mt-12">
+            <h3 className={cn(guideSubsectionTitle, "flex items-center gap-2.5 text-foreground")}>
+              <section.icon
+                className="h-[1.15em] w-[1.15em] shrink-0 text-primary"
+                strokeWidth={1.75}
+                aria-hidden
+              />
+              {section.family}
+            </h3>
+            <p className={cn(guideProse, "mt-2 mb-1 max-w-[80ch]")}>{section.intro}</p>
+            <TopicTable family={section.family} rows={rows} />
+          </section>
+        );
+      })}
     </section>
   );
 }
 
-/** The sub-phases where something happens, one per line, instead of seven columns of dots. */
-/** ownerDoes with its key verbs picked out, so the column can be skimmed. */
-function BoldedOwnerDoes({ row }: { row: MatrixInstrument }) {
-  const phrases = (row.ownerBold ?? []).filter((p) => row.ownerDoes.includes(p));
-  if (phrases.length === 0) return <>{row.ownerDoes}</>;
+/** One topic's instruments. Same four columns in every table, so they read as one. */
+function TopicTable({ family, rows }: { family: string; rows: MatrixInstrument[] }) {
+  return (
+    <ExpandableTable title={family} className="mt-4" maxHeight="70vh">
+      <table className="w-full min-w-[46rem] border-collapse text-left">
+        <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
+          <tr className="bg-muted/60">
+            <th className="sm:sticky sm:left-0 z-40 min-w-[13rem] sm:min-w-[16rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+              Instrument
+            </th>
+            <th className="min-w-[15rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+              What brings it into scope
+            </th>
+            <th className="min-w-[17rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80">
+              What the business owner does
+            </th>
+            <th className="min-w-[13rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+              Who does the work
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <InstrumentRows rows={rows} />
+        </tbody>
+      </table>
+    </ExpandableTable>
+  );
+}
+
+/**
+ * Picks the given phrases out in bold, so a column can be skimmed.
+ *
+ * Every match is found first and then the earliest non-overlapping ones are
+ * kept, so the phrases do not have to be listed in the order they appear. An
+ * earlier version walked the string once per phrase and silently dropped any
+ * phrase that came before the one already matched.
+ */
+function boldPhrases(text: string, phrases: readonly string[] = []): ReactNode {
+  const hits: { start: number; end: number; phrase: string }[] = [];
+  for (const phrase of phrases) {
+    const at = text.indexOf(phrase);
+    if (at !== -1) hits.push({ start: at, end: at + phrase.length, phrase });
+  }
+  if (hits.length === 0) return text;
+  hits.sort((a, b) => a.start - b.start || b.end - a.end);
 
   const parts: ReactNode[] = [];
-  let rest = row.ownerDoes;
-  for (const phrase of phrases) {
-    const at = rest.indexOf(phrase);
-    if (at === -1) continue;
-    if (at > 0) parts.push(rest.slice(0, at));
+  let cursor = 0;
+  for (const hit of hits) {
+    if (hit.start < cursor) continue;
+    if (hit.start > cursor) parts.push(text.slice(cursor, hit.start));
     parts.push(
-      <strong key={phrase} className="font-semibold text-foreground">
-        {phrase}
+      <strong key={`${hit.start}-${hit.phrase}`} className="font-semibold text-foreground">
+        {hit.phrase}
       </strong>,
     );
-    rest = rest.slice(at + phrase.length);
+    cursor = hit.end;
   }
-  if (rest) parts.push(rest);
+  if (cursor < text.length) parts.push(text.slice(cursor));
   return <>{parts}</>;
 }
 
+/** When in a service's life it comes up, on the definition row rather than in a column. */
 function WhenItComesUp({ row }: { row: MatrixInstrument }) {
   const active = MATRIX_SUBPHASES.filter((s) => row.cells[s.key]);
-  if (active.length === 0) {
-    return <span className="text-muted-foreground/40">·</span>;
-  }
+  if (active.length === 0) return null;
   return (
-    <ul className="space-y-1 list-none pl-0">
-      {active.map((s) => (
-        <li key={s.key} className="leading-snug">
+    <span className="mt-1.5 block">
+      <span className="mr-2 align-[0.08rem] text-[0.66rem] font-semibold uppercase tracking-wide text-foreground/55">
+        When it comes up
+      </span>
+      {active.map((s, index) => (
+        <span key={s.key}>
+          {index > 0 ? <span className="text-muted-foreground/50"> · </span> : null}
           <span className="text-foreground/70">{s.label}</span>{" "}
           <span className="font-semibold text-primary">
             {row.cells[s.key]!.tags.map((t) => MATRIX_ACTIONS[t].label).join(", ")}
           </span>
-        </li>
+        </span>
       ))}
-    </ul>
+    </span>
   );
 }
 
-function FamilyGroup({
-  family,
-  rows,
-  openRow,
-  setOpenRow,
-}: {
-  family: string;
-  rows: MatrixInstrument[];
-  openRow: string | null;
-  setOpenRow: (v: string | null) => void;
-}) {
+/** The topic heading above each table replaced the in-table family header row. */
+function InstrumentRows({ rows }: { rows: MatrixInstrument[] }) {
   return (
     <>
-      <tr>
-        <td
-          colSpan={5}
-          className="sticky left-0 bg-[var(--phase-group)]/70 border-y border-border px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-foreground/80"
-        >
-          {family}
-        </td>
-      </tr>
-      {rows.map((row) => {
-        const isOpen = openRow === row.name;
-        return (
-          <Fragment key={row.name}>
-            <tr
-              className="cursor-pointer hover:bg-muted/30"
-              onClick={() => setOpenRow(isOpen ? null : row.name)}
+      {rows.map((row) => (
+        <Fragment key={row.name}>
+          <tr className="hover:bg-muted/30">
+            <td
+              className={cn(
+                CELL_BASE,
+                "sm:sticky sm:left-0 z-10 border-r border-b-0 bg-background",
+              )}
             >
-              <td
-                className={cn(
-                  CELL_BASE,
-                  "sm:sticky sm:left-0 z-10 border-r bg-background",
-                )}
-              >
-                <InstrumentName row={row} />
-              </td>
-              <td className={cn(CELL_BASE, "text-muted-foreground")}>
-                {row.scope}
-              </td>
-              <td className={cn(CELL_BASE, "bg-primary/5 text-foreground/90")}>
-                <BoldedOwnerDoes row={row} />
-              </td>
-              <td className={cn(CELL_BASE, "border-r text-muted-foreground")}>
-                {row.whoDoes}
-              </td>
-              <td className={CELL_BASE}>
-                <WhenItComesUp row={row} />
-              </td>
-            </tr>
-            {isOpen ? (
-              <tr className="bg-muted/25">
-                <td
-                  colSpan={5}
-                  className="border-b border-border px-4 py-4 text-[0.82rem] leading-relaxed"
-                >
-                  <div className="grid gap-4 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-                    <div>
-                      <p className="mb-1 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                        What it is
-                      </p>
-                      <p>{row.whatItIs}</p>
-                      <p className="mt-3 mb-1 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                        Where it ends up
-                      </p>
-                      <p className="text-muted-foreground">{row.whereItEndsUp}</p>
-                      {row.caveat ? (
-                        <p className="mt-3 border-l-2 border-destructive/50 pl-3 text-muted-foreground">
-                          {row.caveat}
-                        </p>
-                      ) : null}
-                    </div>
-                    <div>
-                      <p className="mb-1 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                        Sub-phase by sub-phase
-                      </p>
-                      <ul className="space-y-2">
-                        {MATRIX_SUBPHASES.filter((s) => row.cells[s.key]).map(
-                          (s) => (
-                            <li key={s.key} className="flex flex-wrap gap-2">
-                              <span className="min-w-[6.5rem] font-semibold">
-                                {s.label}
-                              </span>
-                              <span className="flex flex-wrap gap-1">
-                                {row.cells[s.key]!.tags.map((t) => (
-                                  <ActionChip key={t} action={t} />
-                                ))}
-                              </span>
-                              <span className="w-full text-muted-foreground sm:w-auto sm:flex-1">
-                                {row.cells[s.key]!.note}
-                              </span>
-                            </li>
-                          ),
-                        )}
-                      </ul>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            ) : null}
-          </Fragment>
-        );
-      })}
+              <InstrumentName row={row} />
+            </td>
+            <td className={cn(CELL_BASE, "border-b-0 text-muted-foreground")}>{row.scope}</td>
+            <td className={cn(CELL_BASE, "border-b-0 bg-primary/5 text-foreground/90")}>
+              {boldPhrases(row.ownerDoes, row.ownerBold)}
+            </td>
+            <td className={cn(CELL_BASE, "border-b-0 text-muted-foreground")}>
+              {boldPhrases(row.whoDoes, row.whoBold)}
+            </td>
+          </tr>
+          {/* The definition, on its own row under the one it belongs to. */}
+          <tr>
+            <td
+              colSpan={4}
+              className="border-b border-border bg-muted/20 px-3.5 pb-2.5 pt-1 text-[0.8rem] leading-snug text-muted-foreground"
+            >
+              <span className="mr-2 align-[0.08rem] text-[0.66rem] font-semibold uppercase tracking-wide text-foreground/55">
+                What it is
+              </span>
+              {row.whatItIs}
+              <WhenItComesUp row={row} />
+              {row.caveat ? (
+                <span className="mt-1.5 block border-l-2 border-destructive/50 pl-2.5">
+                  {row.caveat}
+                </span>
+              ) : null}
+            </td>
+          </tr>
+        </Fragment>
+      ))}
     </>
   );
 }

@@ -3,10 +3,16 @@ import { dirname } from "node:path";
 
 import { PAGE_INDEX } from "../src/lib/page-index";
 import { PROCUREMENT_STRINGS } from "../src/lib/procurement-strings";
-import { PROCUREMENT_SUBPAGES, contractingParagraphPlainText } from "../src/lib/contracting-subpages";
+import {
+  PROCUREMENT_SUBPAGES,
+  contractingParagraphPlainText,
+} from "../src/lib/contracting-subpages";
 import { SOO_VS_SOW } from "../src/lib/soo-vs-sow-content";
 import { OPTIONS_ANALYSIS } from "../src/lib/options-analysis-content";
-import { GOOD_CONTRACT, goodContractSimplificationNoteText } from "../src/lib/good-contract-content";
+import {
+  GOOD_CONTRACT,
+  goodContractSimplificationNoteText,
+} from "../src/lib/good-contract-content";
 import { CREATE_PHASE, createPhaseLeadPlainText } from "../src/lib/create-phase-content";
 import { PHASES } from "../src/lib/guide-strings";
 import {
@@ -32,10 +38,7 @@ import {
   ETHICS_AND_BIAS_THREAD,
   ethicsAndBiasSectionsPlainText,
 } from "../src/lib/ethics-and-bias-thread-content";
-import {
-  BACKLOG_THREAD,
-  backlogSectionsPlainText,
-} from "../src/lib/backlog-thread-content";
+import { BACKLOG_THREAD, backlogSectionsPlainText } from "../src/lib/backlog-thread-content";
 import {
   JOINED_UP_DELIVERY_THREAD,
   joinedUpDeliverySectionsPlainText,
@@ -85,6 +88,15 @@ import {
 import { SUPPORT_PAGE } from "../src/lib/support-content";
 import { SUPPORT_PATH } from "../src/lib/support-path";
 import { THREADS } from "../src/lib/guide-strings";
+import {
+  CHECKPOINT_MAP_PATH,
+  CHECKPOINT_MAP_TITLE,
+  CHECKPOINT_MAP_APPENDIX_PATH,
+  CHECKPOINT_MAP_APPENDIX_REUSE,
+  CHECKPOINT_MAP_TABLE_SECTION,
+} from "../src/lib/checkpoint-map-content";
+import { INSTRUMENT_MATRIX, MATRIX_FAMILY_SECTIONS } from "../src/lib/instrument-matrix";
+import { REUSABLE_PIECES } from "../src/lib/reusable-pieces";
 
 type SearchIndexRecord = {
   id: string;
@@ -107,7 +119,9 @@ function inferLifecyclePhase(path: string) {
 }
 
 function collapseWhitespace(text: string) {
-  return String(text ?? "").replace(/\s+/g, " ").trim();
+  return String(text ?? "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function concat(...parts: Array<string | undefined>) {
@@ -346,9 +360,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: OPTIONS_ANALYSIS.byPhase.id,
       sectionHeading: OPTIONS_ANALYSIS.byPhase.title,
-      text: concat(
-        ...OPTIONS_ANALYSIS.byPhase.cards.map((c) => c.body),
-      ),
+      text: concat(...OPTIONS_ANALYSIS.byPhase.cards.map((c) => c.body)),
     },
     {
       sectionId: OPTIONS_ANALYSIS.whyThisMatters.id,
@@ -383,7 +395,10 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     sectionId: "",
     sectionHeading: pageTitle,
     lifecyclePhase: inferLifecyclePhase(pagePath),
-    text: concat(...GOOD_CONTRACT.lead.map((paragraph) => paragraph.text), GOOD_CONTRACT.exampleNote),
+    text: concat(
+      ...GOOD_CONTRACT.lead.map((paragraph) => paragraph.text),
+      GOOD_CONTRACT.exampleNote,
+    ),
   });
 
   const sections = [
@@ -515,9 +530,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: "The security lifecycle",
       text: concat(
         SECURITY_THREAD.securityLifecycle.framing.text,
-        ...SECURITY_THREAD.securityLifecycle.tiles.map(
-          (tile) => `${tile.label} ${tile.gloss}`,
-        ),
+        ...SECURITY_THREAD.securityLifecycle.tiles.map((tile) => `${tile.label} ${tile.gloss}`),
       ),
     },
     {
@@ -565,12 +578,11 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: SECURITY_THREAD.byPhase.title,
       text: concat(
         SECURITY_THREAD.byPhase.intro,
-        ...SECURITY_THREAD.byPhase.blocks.map((block) =>
-          `${block.title} ${block.preview} ${
-            Array.isArray(block.popup)
-              ? threadSectionsPlainText(block.popup)
-              : block.popup.text
-          }`,
+        ...SECURITY_THREAD.byPhase.blocks.map(
+          (block) =>
+            `${block.title} ${block.preview} ${
+              Array.isArray(block.popup) ? threadSectionsPlainText(block.popup) : block.popup.text
+            }`,
         ),
       ),
     },
@@ -635,10 +647,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: PRIVACY_THREAD.closerLook.title,
       text: concat(
         ...PRIVACY_THREAD.closerLook.blocks.map((block) =>
-          concat(
-            block.title,
-            privacySectionsPlainText(block.sections),
-          ),
+          concat(block.title, privacySectionsPlainText(block.sections)),
         ),
       ),
     },
@@ -648,8 +657,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: concat(
         PRIVACY_THREAD.byPhase.intro,
         ...PRIVACY_THREAD.byPhase.blocks.map(
-          (block) =>
-            `${block.title} ${block.preview} ${privacySectionsPlainText(block.popup)}`,
+          (block) => `${block.title} ${block.preview} ${privacySectionsPlainText(block.popup)}`,
         ),
       ),
     },
@@ -731,14 +739,10 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.trapCallout.title,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.trapCallout.body,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.oneRule.title,
-        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.oneRule.paragraphs.map(
-          (p) => p.text,
-        ),
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.oneRule.paragraphs.map((p) => p.text),
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.title,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.intro.text,
-        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.bullets.map(
-          (p) => p.text,
-        ),
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.authorityCheck.bullets.map((p) => p.text),
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.title,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.intro,
         ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.howToSort.points.map(
@@ -777,9 +781,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.copyrightNote.bold,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whenReplaced.copyrightNote.text,
         DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whoYouTalkTo.title,
-        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whoYouTalkTo.bullets.map(
-          (p) => p.text,
-        ),
+        ...DATA_STEWARDSHIP_THREAD.decidingWhatHappens.whoYouTalkTo.bullets.map((p) => p.text),
       ),
     },
     {
@@ -1171,8 +1173,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       text: concat(
         BACKLOG_THREAD.byPhase.intro,
         ...BACKLOG_THREAD.byPhase.blocks.map(
-          (block) =>
-            `${block.title} ${block.preview} ${backlogSectionsPlainText(block.popup)}`,
+          (block) => `${block.title} ${block.preview} ${backlogSectionsPlainText(block.popup)}`,
         ),
       ),
     },
@@ -1324,7 +1325,9 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.id,
       sectionHeading: CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.title,
-      text: changeManagementSectionsPlainText(CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.sections),
+      text: changeManagementSectionsPlainText(
+        CHANGE_MANAGEMENT_THREAD.twoTracksOneOutcome.sections,
+      ),
     },
     {
       sectionId: "what-good-looks-like",
@@ -1621,9 +1624,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
-      text: concat(
-        ...RELEASING_CHANGES_THREAD.whatGoodLooksLike.map((item) => item.text),
-      ),
+      text: concat(...RELEASING_CHANGES_THREAD.whatGoodLooksLike.map((item) => item.text)),
     },
     {
       sectionId: "why-it-matters",
@@ -1661,8 +1662,8 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: RELEASING_CHANGES_THREAD.byPhase.title,
       text: concat(
         RELEASING_CHANGES_THREAD.byPhase.intro,
-        ...RELEASING_CHANGES_THREAD.byPhase.blocks.map(
-          (block) => concat(block.title, block.preview, releasingChangesSectionsPlainText(block.popup)),
+        ...RELEASING_CHANGES_THREAD.byPhase.blocks.map((block) =>
+          concat(block.title, block.preview, releasingChangesSectionsPlainText(block.popup)),
         ),
       ),
     },
@@ -1711,9 +1712,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
     {
       sectionId: "what-good-looks-like",
       sectionHeading: "What good looks like",
-      text: concat(
-        ...DEPENDENCIES_AND_STANDARDS_THREAD.whatGoodLooksLike.map((item) => item.text),
-      ),
+      text: concat(...DEPENDENCIES_AND_STANDARDS_THREAD.whatGoodLooksLike.map((item) => item.text)),
     },
     {
       sectionId: "why-it-matters",
@@ -1732,10 +1731,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: DEPENDENCIES_AND_STANDARDS_THREAD.closerLook.title,
       text: concat(
         ...DEPENDENCIES_AND_STANDARDS_THREAD.closerLook.blocks.map((block) =>
-          concat(
-            block.title,
-            dependenciesAndStandardsSectionsPlainText(block.sections),
-          ),
+          concat(block.title, dependenciesAndStandardsSectionsPlainText(block.sections)),
         ),
       ),
     },
@@ -1756,13 +1752,12 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.title,
       text: concat(
         DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.intro,
-        ...DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.blocks.map(
-          (block) =>
-            concat(
-              block.title,
-              block.preview,
-              dependenciesAndStandardsSectionsPlainText(block.popup),
-            ),
+        ...DEPENDENCIES_AND_STANDARDS_THREAD.byPhase.blocks.map((block) =>
+          concat(
+            block.title,
+            block.preview,
+            dependenciesAndStandardsSectionsPlainText(block.popup),
+          ),
         ),
       ),
     },
@@ -1813,9 +1808,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: FUNDING_THREAD.whereMoneyComesFrom.title,
       text: concat(
         FUNDING_THREAD.whereMoneyComesFrom.intro,
-        ...FUNDING_THREAD.whereMoneyComesFrom.items.map(
-          (item) => `${item.heading} ${item.text}`,
-        ),
+        ...FUNDING_THREAD.whereMoneyComesFrom.items.map((item) => `${item.heading} ${item.text}`),
         FUNDING_THREAD.whereMoneyComesFrom.closing,
       ),
     },
@@ -1838,9 +1831,7 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
       sectionHeading: FUNDING_THREAD.treasuryBoardException.title,
       text: concat(
         FUNDING_THREAD.treasuryBoardException.thresholdFigure.caption,
-        ...FUNDING_THREAD.treasuryBoardException.paragraphs.map(
-          (paragraph) => paragraph.text,
-        ),
+        ...FUNDING_THREAD.treasuryBoardException.paragraphs.map((paragraph) => paragraph.text),
       ),
     },
     {
@@ -1937,6 +1928,61 @@ for (const slug of Object.keys(PROCUREMENT_SUBPAGES) as Array<keyof typeof PROCU
   }
 }
 
+// The official checkpoints page — one record per topic table, so a search for an
+// instrument by name reaches the topic that holds it.
+{
+  const pageTitle = CHECKPOINT_MAP_TITLE;
+  const pagePath = CHECKPOINT_MAP_PATH;
+
+  records.push({
+    id: recordId({ pagePath, sectionId: CHECKPOINT_MAP_TABLE_SECTION.id }),
+    pageTitle,
+    pagePath,
+    sectionId: CHECKPOINT_MAP_TABLE_SECTION.id,
+    sectionHeading: CHECKPOINT_MAP_TABLE_SECTION.heading,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: collapseWhitespace(CHECKPOINT_MAP_TABLE_SECTION.intro),
+  });
+
+  for (const section of MATRIX_FAMILY_SECTIONS) {
+    const rows = INSTRUMENT_MATRIX.filter((row) => row.family === section.family);
+    records.push({
+      id: recordId({ pagePath, sectionId: section.id }),
+      pageTitle,
+      pagePath,
+      sectionId: section.id,
+      sectionHeading: section.family,
+      lifecyclePhase: inferLifecyclePhase(pagePath),
+      text: concat(section.intro, ...rows.map((row) => concat(row.name, row.whatItIs))),
+      keywords: collapseWhitespace(
+        rows.map((row) => [row.name, row.acronym].filter(Boolean).join(" ")).join(" "),
+      ),
+    });
+  }
+
+  records.push({
+    id: recordId({ pagePath, sectionId: CHECKPOINT_MAP_APPENDIX_REUSE.id }),
+    pageTitle,
+    pagePath,
+    sectionId: CHECKPOINT_MAP_APPENDIX_REUSE.id,
+    sectionHeading: CHECKPOINT_MAP_APPENDIX_REUSE.heading,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: concat(...REUSABLE_PIECES.map((piece) => concat(piece.name, piece.whatItIs))),
+    keywords: "reuse shared platform existing component configure",
+  });
+
+  records.push({
+    id: recordId({ pagePath, sectionId: CHECKPOINT_MAP_APPENDIX_PATH.id }),
+    pageTitle,
+    pagePath,
+    sectionId: CHECKPOINT_MAP_APPENDIX_PATH.id,
+    sectionHeading: CHECKPOINT_MAP_APPENDIX_PATH.heading,
+    lifecyclePhase: inferLifecyclePhase(pagePath),
+    text: collapseWhitespace(CHECKPOINT_MAP_APPENDIX_PATH.intro),
+    keywords: "Nadia worked example grants director general order sequence",
+  });
+}
+
 function recordSearchWeight(record: SearchIndexRecord) {
   return record.text.length + (record.keywords?.length ?? 0);
 }
@@ -1956,4 +2002,3 @@ await mkdir(dirname(outPath.pathname), { recursive: true });
 await writeFile(outPath, JSON.stringify(deduped, null, 2) + "\n", "utf8");
 
 console.log(`Wrote ${deduped.length} records to public/search-index.json`);
-

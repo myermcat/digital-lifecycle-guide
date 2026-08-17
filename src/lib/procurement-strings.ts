@@ -13,7 +13,10 @@ import {
 import type { CaseStudySide } from "@/components/CaseStudyBlock";
 import type { ThreadByPhaseContent } from "@/components/ThreadByPhaseSection";
 import type { ExternalPhraseLink } from "@/components/ProseWithExternalLinks";
-import type { ChoosingWhatToBuyContent, CombiningRoutesParagraph } from "@/components/WhatYouAreBuyingBlock";
+import type {
+  ChoosingWhatToBuyContent,
+  CombiningRoutesParagraph,
+} from "@/components/WhatYouAreBuyingBlock";
 import { GOOD_CONTRACT_PATH, OPTIONS_ANALYSIS_PATH } from "@/lib/reference-paths";
 import {
   GCCASE_MIGRATION_READINESS_GUIDE,
@@ -91,7 +94,6 @@ type BuyingRouteDraft = {
   contractSigned: ThreadLinkedProse;
 };
 
-
 /** Procurement thread copy — organized by page section. */
 export const PROCUREMENT_STRINGS = {
   title: "Procurement",
@@ -133,8 +135,7 @@ export const PROCUREMENT_STRINGS = {
 
   whatWorkStaysYours: {
     heading: "The parts you cannot hand to a supplier",
-    intro:
-      "Whoever else is involved, some of this work stays with you. Here is what usually does.",
+    intro: "Whoever else is involved, some of this work stays with you. Here is what usually does.",
     items: [
       {
         lead: "How long it takes.",
@@ -236,7 +237,7 @@ export const PROCUREMENT_STRINGS = {
             type: "unorderedList",
             items: [
               {
-                text: "The route most people picture when they hear \"procurement\".",
+                text: 'The route most people picture when they hear "procurement".',
               },
               {
                 text: "The department describes the problem and the outcome it needs. Suppliers propose how to solve it.",
@@ -255,9 +256,7 @@ export const PROCUREMENT_STRINGS = {
           },
           {
             text: "Run traditionally, the department writes the requirement first and asks suppliers to price it. Run the agile way, suppliers are engaged early and more than one is paid to build something before one of them is chosen. That is why Buy a Solution appears twice in the table below, signing at a different point in each shape. Appendix 1 sets out how the agile shape runs and what it costs.",
-            anchorLinks: [
-              { phrase: "Appendix 1", hash: "appendix-agile-procurement" },
-            ],
+            anchorLinks: [{ phrase: "Appendix 1", hash: "appendix-agile-procurement" }],
           },
         ],
         contractSigned: {
@@ -368,7 +367,6 @@ export const PROCUREMENT_STRINGS = {
       text: "Otherwise the steps below run in all of these routes. In Buy a Finished Product they run compressed, against an existing standing offer or supply arrangement rather than an open tender.",
     },
   } satisfies ChoosingWhatToBuyContent,
-
 
   agileAppendix: {
     id: "appendix-agile-procurement",
@@ -534,7 +532,7 @@ export const PROCUREMENT_STRINGS = {
       {
         term: "Solicitation",
         when: "The competition itself",
-        text: "The package of documents Canada publishes to invite suppliers to compete. It carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold. People often say \"the solicitation\" when they mean the competition itself.",
+        text: 'The package of documents Canada publishes to invite suppliers to compete. It carries the request for proposals, the instructions to bidders, the statement of work, the evaluation criteria, and the terms the eventual contract will hold. People often say "the solicitation" when they mean the competition itself.',
       },
       {
         term: "Request for Proposals",
@@ -586,8 +584,7 @@ export const PROCUREMENT_STRINGS = {
   },
 
   journey: {
-    intro:
-      "You might not run all of it yourself, but you should recognise every step.",
+    intro: "You might not run all of it yourself, but you should recognise every step.",
     steps: [
       {
         label: "Look",
@@ -615,9 +612,7 @@ export const PROCUREMENT_STRINGS = {
             linkKey: "policy-planning-investments",
           },
         ],
-        internalLinks: [
-          { phrase: "reuse, adapt, or build", to: OPTIONS_ANALYSIS_PATH },
-        ],
+        internalLinks: [{ phrase: "reuse, adapt, or build", to: OPTIONS_ANALYSIS_PATH }],
       },
       {
         label: "People",
@@ -701,7 +696,6 @@ export const PROCUREMENT_STRINGS = {
             type: "p",
             text: "A supplier held to the business need and the service levels can be told partway through that a page is wrong, and fixing it is part of the job. A supplier held to a page design agreed before anyone tested it will build that design, and every change to it costs an amendment.",
           },
-
         ],
       },
       {
@@ -794,7 +788,7 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "ul",
             items: [
-              "A Request for Information, which is defined in the Supply Manual.",
+              "A Request for Information, which the archived Supply Manual defined and which CanadaBuys now carries.",
               "A Review and Refine Requirements process, which is not formally defined anywhere but is widely used. Canada shares drafts of its requirements and asks suppliers for feedback to sharpen them before the solicitation.",
             ],
           },
@@ -975,7 +969,7 @@ export const PROCUREMENT_STRINGS = {
         },
         {
           lead: "Keeping pieces small takes discipline.",
-          body: "A \"small\" piece drifts back into a monolith if no one holds the line.",
+          body: 'A "small" piece drifts back into a monolith if no one holds the line.',
         },
         {
           lead: "It needs more procurement attention up front.",
@@ -989,17 +983,16 @@ export const PROCUREMENT_STRINGS = {
     } satisfies CaseStudySide,
   },
 
-  goodLooksIntro:
-    "A handful of things, all of which you can check. Each one has its own page.",
+  goodLooksIntro: "A handful of things, all of which you can check. Each one has its own page.",
 
   whyItMatters: [
     "The contract decides the future of your service. What it costs over its life. Whether you can change it. Whether you can ever move off it. Most of that is settled the day you sign, and undoing it later is slow and expensive.",
     "A good buy leaves your options open. A bad one closes them over time, for as long as the service runs, often without anyone noticing until it is too late.",
-    "Buying the agile way lowers the worst risk of all, the two-year effort that ends in \"start over.\" When you can correct course along the way, you are never far from solid ground.",
+    'Buying the agile way lowers the worst risk of all, the two-year effort that ends in "start over." When you can correct course along the way, you are never far from solid ground.',
   ],
 
   whoseJob: {
-    text: "Your department's. You can give the building to a supplier, but the responsibility stays with you, and if the service lets somebody down, \"the contractor did it\" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement puts the same thing in policy terms.",
+    text: 'Your department\'s. You can give the building to a supplier, but the responsibility stays with you, and if the service lets somebody down, "the contractor did it" is not an answer anyone will accept. The Treasury Board Directive on the Management of Procurement puts the same thing in policy terms.',
     externalLinks: [
       {
         phrase: "Treasury Board Directive on the Management of Procurement",
@@ -1065,12 +1058,10 @@ export const PROCUREMENT_STRINGS = {
             bold: [{ phrase: "This is where procurement weighs the most." }],
           },
           {
-            text:
-              "You work out the real problem, choose whether to reuse or buy, set the strategy, go to market, and award the contract.",
+            text: "You work out the real problem, choose whether to reuse or buy, set the strategy, go to market, and award the contract.",
           },
           {
-            text:
-              "Almost every decision that will bind the service for years is made here, so it is worth slowing down to get right.",
+            text: "Almost every decision that will bind the service for years is made here, so it is worth slowing down to get right.",
           },
         ],
       },
@@ -1083,12 +1074,10 @@ export const PROCUREMENT_STRINGS = {
             bold: [{ phrase: "The buying has stopped, but the work has not." }],
           },
           {
-            text:
-              "You hold the supplier to what the contract promised, and watch the service levels and the relationship for drift.",
+            text: "You hold the supplier to what the contract promised, and watch the service levels and the relationship for drift.",
           },
           {
-            text:
-              "Keep the service improving too, so it does not age into a forced replacement, and start lining up the next contract well before this one ends.",
+            text: "Keep the service improving too, so it does not age into a forced replacement, and start lining up the next contract well before this one ends.",
           },
         ],
       },
@@ -1101,12 +1090,10 @@ export const PROCUREMENT_STRINGS = {
             bold: [{ phrase: "Leaving takes longer than people expect." }],
           },
           {
-            text:
-              "Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time.",
+            text: "Plan the re-compete or the retirement well before the contract ends, because the move itself takes real time.",
           },
           {
-            text:
-              "Data has to move, knowledge has to transfer, and what you bought is retired or replaced.",
+            text: "Data has to move, knowledge has to transfer, and what you bought is retired or replaced.",
           },
         ],
       },

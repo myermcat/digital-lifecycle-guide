@@ -13,6 +13,7 @@ import {
   UserRound,
 } from "lucide-react";
 import type { ExternalLinkKey } from "@/lib/external-links";
+import { MATRIX_FAMILY_SECTIONS } from "@/lib/instrument-matrix";
 import { CHECKPOINT_MAP_PATH } from "@/lib/reference-paths";
 
 export type CheckpointMapWhoTag = "dept" | "central";
@@ -92,33 +93,24 @@ export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 export const CHECKPOINT_MAP_TITLE = "The official checkpoints of a digital service";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
-  text: "A worked example of the official checkpoints, the approvals, reviews, and sign-offs a Government of Canada service has to pass through, from the first problem definition all the way to retiring or replacing it, and who owns each one.",
-  bold: ["official checkpoints"],
-} as const;
-
-/** Shown at the very top of the page, in the caution tone, before anything else. */
-export const CHECKPOINT_MAP_STATUS_BANNER = {
-  label: "Work in progress",
-  lines: [
-    "This page is unfinished and may not survive. It carries 17 of the 35 official instruments the guide now knows about, because it was written before that list existed.",
-    "The complete list is the table on the home page, which is kept up to date. This page may end up folded into it, or rewritten as a worked example that points at it. Use the table for completeness and this page for the shape of the journey.",
-  ],
+  text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service through the lot, in order.",
+  bold: ["official checkpoint"],
 } as const;
 
 export const CHECKPOINT_MAP_HOW_TO_USE = {
   heading: "How to use this page",
   items: [
     {
-      lead: "To find out what applies to your service, read the table.",
-      body: "It has a row for every official instrument a Government of Canada digital service can meet, with what it is, what brings it into scope, and what the business owner personally has to do about it. Read down the scope column and rule out what does not apply to you.",
+      lead: "To find out what applies to your service, read the tables.",
+      body: "There is one table per topic, and a row for every official instrument a Government of Canada digital service can meet. Start with the topics that match what your service does, read down the scope column, and rule out what does not apply to you.",
     },
     {
-      lead: "To get a feel for the order and the people, read the annex.",
-      body: "It follows one invented service from the first sign of trouble to the day it is replaced, showing what its director general does at each step and who answers. It is a worked example of one route, not a template.",
+      lead: "To get a feel for the order and the people, read Appendix 2.",
+      body: "It follows one invented service from the first sign of trouble to the day it is replaced, showing what its director general does at each step and who answers. It is a worked example of one route through these tables, and no two services take the same one.",
     },
     {
       lead: "To understand a single instrument properly, follow it to its thread page.",
-      body: "Each subject, security, privacy, accessibility, procurement, has a page of its own in the guide that explains the reasoning. This page is the index, not the explanation.",
+      body: "Security, privacy, accessibility and procurement each have a page of their own in the guide that explains the reasoning. This page is the index; the thread pages carry the explanation.",
     },
   ],
 } as const;
@@ -134,36 +126,48 @@ export const CHECKPOINT_MAP_VARIES = {
 
 export const CHECKPOINT_MAP_JUMP = [
   { label: "What this page covers", href: "#what-this-covers" },
-  { label: "Every official thing", href: "#annex-instruments" },
   { label: "Glossary", href: "#thecheckpoints" },
-  { label: "Appendix 1: one service's path", href: "#annex-nadia" },
-  { label: "Appendix 2: reuse first", href: "#annex-reuse" },
+  { label: "Every official thing", href: "#annex-instruments" },
+  { label: "Appendix 1: reuse first", href: "#annex-reuse" },
+  { label: "Appendix 2: a worked example", href: "#annex-nadia" },
 ] as const;
 
-/** On-this-page rail items for the checkpoint map (same targets as CHECKPOINT_MAP_JUMP). */
-export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.map((item) => ({
-  id: item.href.slice(1),
-  label: item.label,
-}));
+/**
+ * On-this-page rail items, with the twelve topic tables nested under the tables
+ * section. The rail is the only way to reach one topic directly on a page this
+ * long, so the nesting is worth the extra dozen lines.
+ */
+export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) => {
+  const parent = { id: item.href.slice(1), label: item.label };
+  if (parent.id !== "annex-instruments") return [parent];
+  return [
+    parent,
+    ...MATRIX_FAMILY_SECTIONS.map((section) => ({
+      id: section.id,
+      label: section.family,
+      depth: 1,
+    })),
+  ];
+});
 
-export const CHECKPOINT_MAP_ANNEX_ONE = {
+export const CHECKPOINT_MAP_TABLE_SECTION = {
   id: "annex-instruments",
   label: "THE TABLE",
   heading: "Every official thing a service has to do",
   intro:
-    "This is the substance of the page. One row per instrument: what it is, what brings it into scope, when in a service's life it comes up, and what the business owner personally has to do about it. Nothing in it is specific to one department or one kind of service, so it is the list to check your own service against.",
+    "The substance of the page, split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service.",
 } as const;
 
-export const CHECKPOINT_MAP_ANNEX_THREE = {
+export const CHECKPOINT_MAP_APPENDIX_REUSE = {
   id: "annex-reuse",
-  label: "APPENDIX 2",
+  label: "APPENDIX 1",
   heading: "Reuse before you buy or build",
 } as const;
 
-export const CHECKPOINT_MAP_ANNEX_TWO = {
+export const CHECKPOINT_MAP_APPENDIX_PATH = {
   id: "annex-nadia",
-  label: "APPENDIX 1",
-  heading: "One service's path, step by step",
+  label: "APPENDIX 2",
+  heading: "A worked example: one service's path, step by step",
   timelineNote:
     "This is Nadia's timeline, not a general one. It is what this one invented service experienced, and Create in particular can run considerably shorter or longer. Do not plan against it.",
   intro:
@@ -174,8 +178,8 @@ export const CHECKPOINT_MAP_ANNEX_TWO = {
 
 export const CHECKPOINT_MAP_NADIA = {
   heading: "Meet Nadia, a director general",
-  body: "Her grants program has outgrown its spreadsheets, so she is buying a grants management system. Her project scores below her department's threshold, so it stays inside the department: no Treasury Board submission and no GC EARB. That is the ordinary case, roughly 95% of projects. Where a bigger project would branch upward is shown in the amber boxes.",
-  bold: ["below"],
+  body: "Her grants program has outgrown its spreadsheets, so she is buying a grants management system. Her project scores below her department's threshold, so no Treasury Board submission is needed. GC EARB is a separate question: six triggers send a department there and money is only one of them, so her team checks all six in Alpha and none of them fires. Both together are the ordinary case, roughly 95% of projects. Where another project would branch upward is shown in the amber boxes.",
+  bold: ["below", "six triggers send a department there and money is only one of them"],
   amber: ["amber boxes"],
 } as const;
 
@@ -185,13 +189,13 @@ export const CHECKPOINT_MAP_WHY_GCS = {
 } as const;
 
 export const CHECKPOINT_MAP_WHY_CREATE = {
-  heading: "Why the Create phase fills most of this table",
-  body: "The official checkpoints are front-loaded. Almost every formal approval, review, and sign-off happens before launch, so Create carries most of the rows. Live and Sunset look shorter here only because this table follows the checkpoints, not because there is less to do in them.",
+  heading: "Why Create fills most of this appendix",
+  body: "The official checkpoints are front-loaded. Almost every formal approval, review and sign-off happens before launch, so Create carries most of the steps. Live and Sunset look shorter here only because this appendix follows the checkpoints, and not because there is less work in them.",
 } as const;
 
 export const CHECKPOINT_MAP_WHAT_TABLE = {
-  heading: "What this map covers",
-  body: "It is an overview of the official checkpoints only, the formal approvals, reviews, and sign-offs, laid out across the whole journey from the first problem to retiring or replacing the service. It is not the whole journey, and it does not tell Nadia how to do the work inside each step. That detail lives in the phase and sub-phase documents. This is the map of the checkpoints she has to pass through; the people she talks to give her the rest.",
+  heading: "What this page covers",
+  body: "The official checkpoints only: the formal approvals, reviews, sign-offs and standing duties that come from Government of Canada instruments. Each one gets what it is, what pulls it into scope, and what the business owner personally has to do. It does not cover how to do the work inside each step, which is what the phase and sub-phase pages are for. Read it as the list to check your own service against.",
   bold: ["official checkpoints only"],
 } as const;
 
@@ -328,9 +332,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         n: 5,
         action: {
           lead: "Gets the project sized, risk-rated, and costed.",
-          body: [
-            { type: "p", text: "How big is this really, and how risky?" },
-          ],
+          body: [{ type: "p", text: "How big is this really, and how risky?" }],
         },
         response: {
           tags: ["dept"],
@@ -338,14 +340,14 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "It helps her team complete the Project Complexity and Risk Assessment (PCRA), a detailed multi-section questionnaire (how this is organized varies by department).",
+              text: "It helps her team complete the Project Complexity and Risk Assessment (PCRA). How that is organized varies by department.",
               bold: ["Project Complexity and Risk Assessment (PCRA)"],
             },
             {
               type: "ul",
               items: [
                 "the deputy head is accountable for an accurate score",
-                "that score is compared against the department's approved project-management capacity class (set by an Organizational Project Management Capacity Assessment)",
+                "that score is compared against the department's approved project-management capacity class",
               ],
               itemBold: ["deputy head", "project-management capacity class"],
             },
@@ -355,7 +357,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkAfter: {
       title: "The choice that decides everything.",
-      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval, and that means a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under that line. Money decides one more thing here. A concept case, which is an official instrument approved at assistant deputy minister level and sent to the Treasury Board of Canada Secretariat for review by the Chief Information Officer of Canada, becomes mandatory from $2.5 million where the department has no approved capacity class or is class 1, rising to $5 million at class 2, $10 million at class 3, $15 million for National Defence, and $25 million at class 4. Nadia is under that floor too, so her write-up stays inside the department. GC EARB is a separate gate again, and an architecture one rather than a money one, which the Alpha block sets out.",
+      text: "If the PCRA level lands within the department's capacity class, the department approves and funds the project itself, which is Nadia's path. If it lands above the class, or its cost exceeds the department's delegated limit, the project needs Treasury Board approval, and that means a Treasury Board submission. That is the other ~5%, and it can add six to twelve months or more. Nadia is under that line. A bigger project would also owe a concept case, a separate instrument with its own threshold and its own reviewers. Nadia is under that floor as well, so the write-up in step 4 stays inside the department and is not one. GC EARB is a separate question again, an architecture one, and the Alpha block sets it out.",
       bold: ["within", "above"],
       checkpointPhrases: ["GC EARB", "Treasury Board submission"],
     },
@@ -473,12 +475,12 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Chaired by her departmental CIO, it reviews the design and confirms it lines up with GC architecture standards. Her team checks the GC EARB triggers too, and none of them catch her: she is under the investment and capacity thresholds, she is using nothing that counts as emerging technology, she needs no exception under the directive, and the system will run on public cloud. Architecture review stops here.",
+              text: "It reviews the design and confirms it lines up with GC architecture standards. Her team checks the GC EARB triggers too, and none of them catch her: she is under the investment and capacity thresholds, she is using nothing that counts as emerging technology, she needs no exception under the directive, and the system will run on public cloud. Architecture review stops here.",
               bold: ["stops here"],
             },
             {
               type: "p",
-              text: "Most departments have their own board and there is no national page for one. Small departments and agencies and Agents of Parliament are exempt, so they may have no board of their own. The architecture team in the CIO's office is the door: they prepare the material and they know when the board sits.",
+              text: "Most departments have their own board and there is no national page for one, so the architecture team in the CIO's office is the door. They prepare the material and they know when the board meets.",
               bold: ["The architecture team in the CIO's office is the door"],
             },
           ],
@@ -529,7 +531,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "If any one of the triggers were met",
-      text: ", the departmental CIO would take it up to GC EARB, the Government of Canada Enterprise Architecture Review Board, co-chaired by the CTO of Canada (TBS) and the CTO of Shared Services Canada. Six triggers send a department there, and any one of them is enough: the project crosses the investment or capacity thresholds, it uses emerging technology, it needs an exception under the directive, it is categorized at Protected B or below and uses a deployment model other than public cloud, it extends or creates custom support to stop a technology becoming unsupported, or the Chief Information Officer of Canada directs it. The five that are not about money are the ones teams miss, because a small initiative can qualify on emerging technology or hosting alone. The department submits, not the individual: the CIO's architecture team prepares the material and the project team usually attends to present it. GC EARB reviews only the large or unusual ones.",
+      text: ", the departmental CIO would take it up to GC EARB, the Government of Canada Enterprise Architecture Review Board. Six triggers send a department there and any one of them is enough; the table above lists all six. The five that have nothing to do with money are the ones teams miss, because a small initiative can qualify on emerging technology or hosting alone. The department submits, and the CIO's architecture team prepares the material with the project team usually attending to present it.",
       bold: ["department"],
       checkpointPhrases: ["GC EARB"],
     },
@@ -567,10 +569,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
                 "manage the evaluation process and award the contract under the Directive on the Management of Procurement; the contracting authority signs, not Nadia",
                 "confirm before award that the successful bidder holds the personnel and organization clearances the Contract Security Program requires, and annex the approved Security Requirements Check List to the contract",
               ],
-              itemBold: [
-                "Directive on the Management of Procurement",
-                "Contract Security Program",
-              ],
+              itemBold: ["Directive on the Management of Procurement", "Contract Security Program"],
             },
             {
               type: "p",
@@ -590,7 +589,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "It states how accessible one specific version of the product is, tested against the EN 301 549 standard (which includes WCAG 2.1 AA).",
+              text: "It covers one specific version of the product, tested against the EN 301 549 standard, which includes WCAG 2.1 AA.",
               bold: ["version"],
             },
             {
@@ -621,7 +620,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "What she is signing against is the Threat and Risk Assessment: what could go wrong, ranked by how likely each one is and how much damage it would do. It covers deliberate, accidental and natural causes alike, and it is required for every system. It does not start here. Earlier passes run against the design back in Alpha, while the design can still change, and the last pass runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
+              text: "What she is signing against is the Threat and Risk Assessment, and it does not start here. Earlier passes run against the design back in Alpha, while the design can still change, and the last pass runs against the system that was actually built. A standalone report is not required. The results go into the design documents and then into the residual risk assessment inside the authorization package, so what she reads is that package. The Authority to Operate is what enforces the work, because without the assessment there is nothing for her to accept.",
               bold: [
                 "Threat and Risk Assessment",
                 "It does not start here.",
@@ -687,7 +686,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     heading: "Live - run it, and put it on the record",
     durationLabel: "Ongoing, for years · varies",
     phaseNote:
-      "Live is shown as a single section here because it has very few official checkpoints - far fewer than Create. The full Live phase has its own sub-phases in the playbook, from stabilising after launch, through growing the service, to the long maturity cycle. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier checkpoints back.",
+      "Live is shown as a single section here because it has very few official checkpoints, far fewer than Create. It has its own sub-phases in the playbook, and the steps below cover what they owe. The one filing that is easy to forget is getting the service onto the official registries. Adding a significant feature can also bring earlier checkpoints back.",
     steps: [
       {
         n: 16,
@@ -717,7 +716,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "She gives the details; they register the service in the GC Service Inventory (approved by the deputy head, updated yearly) and rate the application in Application Portfolio Management. She feeds the information in; the CIO office does the registering.",
+              text: "She gives the details; they register the service in the GC Service Inventory and rate the application in Application Portfolio Management. She feeds the information in; the CIO office does the registering.",
               bold: ["GC Service Inventory", "Application Portfolio Management"],
             },
           ],
@@ -803,10 +802,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "p",
               text: "Under the Library and Archives of Canada Act, no government record may be destroyed without the written consent of the Librarian and Archivist. Each record is:",
-              bold: [
-                "Library and Archives of Canada Act",
-                "Librarian and Archivist",
-              ],
+              bold: ["Library and Archives of Canada Act", "Librarian and Archivist"],
             },
             {
               type: "ul",
@@ -922,37 +918,23 @@ export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
 export const CHECKPOINT_MAP_TERMS_TITLE = "Glossary";
 
 export const CHECKPOINT_MAP_TERMS_CAPTION =
-  "The table above has a row for every instrument with an official home of its own. These six terms come up throughout this page without being instruments themselves, so they are defined here.";
+  "Four things the tables name without giving them a row of their own.";
 
 export const CHECKPOINT_MAP_TERMS: readonly CheckpointMapWhoEntry[] = [
   {
     term: "Departmental investment plan",
-    def:
-      "The department's list of planned investments, approved by the deputy head. A project has to be on it before it can proceed.",
+    def: "The department's list of planned investments, approved by the deputy head. A project has to be on it before it can proceed.",
   },
   {
     term: "Capacity class (OPMCA)",
-    def:
-      "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, or the project's value exceeds the department's delegated limit, the project needs Treasury Board approval.",
-  },
-  {
-    term: "Reuse / options check",
-    def:
-      "Checking the GC shelf - the GC Reference Architectures and enterprise or shared solutions catalogues - before buying or building. GC policy expects reuse where possible, and the architecture review looks for it.",
-  },
-  {
-    term: "Procurement / contract",
-    def:
-      "The competition and award, run by the contracting authority under the Directive on the Management of Procurement. The contracting authority signs; Nadia does not.",
+    def: "The department's approved project-management capacity, set by an Organizational Project Management Capacity Assessment. If the PCRA level is above it, or the project's value exceeds the department's delegated limit, the project needs Treasury Board approval.",
   },
   {
     term: "Contract Security Program",
-    def:
-      "PSPC screening of the supplier's organization and personnel when the contract involves protected or classified information.",
+    def: "PSPC screening of the supplier's organization and personnel when the contract involves protected or classified information.",
   },
   {
     term: "Personal Information Bank",
-    def:
-      "The registered description of the personal information the service holds, published in the department's Info Source listing. Created alongside the Privacy Impact Assessment.",
+    def: "The registered description of the personal information the service holds, published in the department's Info Source listing. Created alongside the Privacy Impact Assessment.",
   },
 ];

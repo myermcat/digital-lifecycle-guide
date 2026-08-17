@@ -37,6 +37,8 @@ export type ReusablePiece = {
   whatItIs: string;
   /** The thing a team would otherwise build or buy. */
   insteadOfBuilding: string;
+  /** Phrases in insteadOfBuilding to bold, so the column can be skimmed. */
+  insteadBold?: readonly string[];
   runBy: string;
   /** How a team actually gets it. */
   howToGetIt: string;
@@ -52,11 +54,12 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     category: "Finding what exists",
     whatItIs:
       "A catalogue of software, code and reusable components that Government of Canada organizations have published for others to use.",
-    insteadOfBuilding: "Starting from nothing, or rebuilding what another department already wrote.",
+    insteadOfBuilding:
+      "Starting from nothing, or rebuilding what another department already wrote.",
+    insteadBold: ["rebuilding what another department already wrote"],
     runBy: "Treasury Board of Canada Secretariat.",
     howToGetIt: "Public website. Search it before writing a requirement.",
-    lookAtItIn:
-      "Discovery, as part of the reuse scan an architecture review board will ask about.",
+    lookAtItIn: "Discovery, as part of the reuse scan an architecture review board will ask about.",
     linkKey: "gc-open-resource-exchange",
   },
   {
@@ -66,6 +69,7 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
       "A notification service that sends email and text messages to the people using a service, with templates, delivery tracking and bilingual support built in.",
     insteadOfBuilding:
       "An email and text sending system, its templates, its retry logic, and its delivery reporting.",
+    insteadBold: ["An email and text sending system"],
     runBy: "Canadian Digital Service.",
     howToGetIt: "Request an account. Free to Government of Canada teams.",
     lookAtItIn:
@@ -77,7 +81,9 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     category: "Collecting information",
     whatItIs:
       "A form builder that produces accessible, bilingual online forms without writing code, and delivers the responses securely.",
-    insteadOfBuilding: "A form, its validation, its accessibility work, and somewhere safe to put the answers.",
+    insteadOfBuilding:
+      "A form, its validation, its accessibility work, and somewhere safe to put the answers.",
+    insteadBold: ["A form, its validation"],
     runBy: "Canadian Digital Service.",
     howToGetIt: "Request access. Free to Government of Canada teams.",
     lookAtItIn:
@@ -90,6 +96,7 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     whatItIs:
       "Ready-made interface components, buttons, inputs, error messages and the rest, already tested for accessibility and available in both official languages.",
     insteadOfBuilding: "Interface components, and the accessibility testing of each one.",
+    insteadBold: ["Interface components"],
     runBy: "Canadian Digital Service.",
     howToGetIt: "Public. Use the components in the build.",
     lookAtItIn: "Alpha for the prototype, Beta for the real build.",
@@ -101,7 +108,8 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     whatItIs:
       "The user-tested page templates, patterns and content styles for anything published under the canada.ca brand.",
     insteadOfBuilding: "Page layouts, navigation patterns, and the research behind them.",
-    runBy: "Treasury Board of Canada Secretariat, with the Principal Publisher.",
+    insteadBold: ["Page layouts, navigation patterns"],
+    runBy: "Treasury Board of Canada Secretariat, with the canada.ca publishing team.",
     howToGetIt: "Public. The mandatory parts are covered by the publishing rules, not by choice.",
     lookAtItIn: "Alpha, before the first prototype fixes a look the web team will not accept.",
     linkKey: "design-canada",
@@ -113,7 +121,9 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     category: "How it looks",
     whatItIs:
       "How-to guidance for designing, building, testing and buying accessible services, including the wording to put in a contract.",
-    insteadOfBuilding: "Working out the accessibility requirements and testing approach from scratch.",
+    insteadOfBuilding:
+      "Working out the accessibility requirements and testing approach from scratch.",
+    insteadBold: ["Working out the accessibility requirements"],
     runBy: "The interdepartmental Access Working Group.",
     howToGetIt: "Public website.",
     lookAtItIn: "Alpha, where the accessibility clauses are written for the solicitation.",
@@ -125,8 +135,10 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     whatItIs:
       "Shared sign-in services that identify the people using a service, so a department does not run its own username and password system.",
     insteadOfBuilding: "Accounts, passwords, multi-factor authentication, and account recovery.",
+    insteadBold: ["Accounts, passwords, multi-factor authentication"],
     runBy: "Shared Services Canada and the Canadian Digital Service.",
-    howToGetIt: "Onboard through the platform's own process, which includes testing and an attestation.",
+    howToGetIt:
+      "Onboard through the platform's own process, which includes testing and an attestation.",
     lookAtItIn: "Alpha, before a prototype hard-codes a sign-in of its own.",
     caveat:
       "Closer to expected than optional. Reusing a credential service rather than building sign-in is treated as the default, so this one also appears in the instrument table.",
@@ -137,6 +149,7 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     whatItIs:
       "Where Government of Canada data and information are published openly, and where several things a service owes are filed.",
     insteadOfBuilding: "A publishing route for open data, and the licence terms that go with it.",
+    insteadBold: ["A publishing route for open data"],
     runBy: "Treasury Board of Canada Secretariat.",
     howToGetIt: "Through the department's open government contact.",
     lookAtItIn: "Live, once the service is producing data worth releasing.",

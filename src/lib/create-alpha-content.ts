@@ -145,7 +145,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
     headerVisual: LIFECYCLE_VISUALS.alphaPrototypeLadder,
     sections: [
       {
-        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem rather than polishing the first one.",
+        text: "Make just enough to test an idea, well short of production quality, and expect to throw the code and most of the ideas away. Try several approaches to the problem.",
       },
       {
         type: "subheading",
@@ -155,8 +155,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Mock-ups show what a service looks like. Prototypes show how it works. Nothing official defines either word, so the useful question is which one answers what you are trying to find out: a mock-up while the question is whether people understand the thing, a prototype once the question is how they move through it.",
         bold: [
           {
-            phrase:
-              "Mock-ups show what a service looks like. Prototypes show how it works.",
+            phrase: "Mock-ups show what a service looks like. Prototypes show how it works.",
           },
         ],
         externalLinks: [
@@ -225,11 +224,15 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
           },
           {
             text: "A clickable prototype needs half a day, and you can make it yourself. The AI tools take a written description and build one; allow the half day to include learning the tool. A colleague who knows Figma or Penpot can build a mock-up the same way, though asking for half of someone's working day is a real ask.",
-            bold: [{ phrase: "A clickable prototype needs half a day, and you can make it yourself." }],
+            bold: [
+              { phrase: "A clickable prototype needs half a day, and you can make it yourself." },
+            ],
           },
           {
             text: "If the department is buying a Team, the supplier is already there. That contract is signed as Alpha opens, because the team is what does Alpha, so it prototypes alongside the department.",
-            bold: [{ phrase: "If the department is buying a Team, the supplier is already there." }],
+            bold: [
+              { phrase: "If the department is buying a Team, the supplier is already there." },
+            ],
           },
         ],
       },
@@ -288,7 +291,10 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "The standard has a name: CAN/ASC EN 301 549, which the Accessible Canada Regulations require new and updated web pages, applications, and digital documents to conform to. The Guidance on the Digital Technologies Accessibility Regulations says what must conform, and by when. The Digital Accessibility Toolkit shows how to build and test against it.",
         externalLinks: [
           { phrase: "CAN/ASC EN 301 549", linkKey: "en-301-549" },
-          { phrase: "Guidance on the Digital Technologies Accessibility Regulations", linkKey: "esdc-a11y-regulations-guidance" },
+          {
+            phrase: "Guidance on the Digital Technologies Accessibility Regulations",
+            linkKey: "esdc-a11y-regulations-guidance",
+          },
           { phrase: "Digital Accessibility Toolkit", linkKey: "digital-accessibility-toolkit" },
         ],
       },
@@ -305,11 +311,13 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
       },
       {
         text: "Bring the departmental web team and the head of communications in now. Anything published under the canada.ca brand has to use the mandatory templates, the set information architecture, the global header and footer, and the content style guide. Those constrain what a service can look like and where it can live. Teams usually meet them at Beta, when a custom-designed prototype reaches the web team for the first time and has to be rebuilt.",
-        bold: [{ phrase: "Bring the departmental web team and the head of communications in now." }],
+        bold: [
+          { phrase: "Bring the departmental web team and the head of communications in now." },
+        ],
       },
       {
-        text: "The domain is a separate approval, and it is not the department's to give. The Principal Publisher controls canada.ca and has to approve every domain and sub-domain. That is Employment and Social Development Canada, through Service Canada, and the request is filed by the departmental web account manager. Start it before any launch date is promised to anyone.",
-        bold: [{ phrase: "not the department's to give" }],
+        text: "The web address is not the service team's to decide. It is settled through the departmental web team, who file whatever request the canada.ca domain needs, and it can take a while. Start it before any launch date is promised to anyone.",
+        bold: [{ phrase: "not the service team's to decide" }],
       },
       {
         text: "Decide responsive web against a downloadable app here too, on evidence from research. A downloadable app is tested, published and later retired centrally, which adds a dependency the department does not control at launch or at retirement.",
@@ -363,9 +371,16 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
       },
       {
         text: "The chosen direction is also assessed: departmental architecture review boards weigh every digital initiative against the Government of Canada Enterprise Architecture Framework, which asks teams to look for something that already exists before buying or building anything new. The largest initiatives go on to the government-wide review board. Arrive with the reuse scan from Discovery in hand and the review goes quickly.",
-        bold: [{ phrase: "look for something that already exists before buying or building anything new" }],
+        bold: [
+          {
+            phrase: "look for something that already exists before buying or building anything new",
+          },
+        ],
         externalLinks: [
-          { phrase: "Government of Canada Enterprise Architecture Framework", linkKey: "gc-enterprise-architecture-framework" },
+          {
+            phrase: "Government of Canada Enterprise Architecture Framework",
+            linkKey: "gc-enterprise-architecture-framework",
+          },
         ],
       },
     ],
@@ -537,8 +552,7 @@ export const ALPHA_EXERCISE = {
     text: "Two answers do more than any others to set how much this service costs to run and how much engineering has to go underneath it. They are not the only inputs, but they are the ones most often left until it is too late to act on them. Get them wrong in one direction and you gold-plate a service nobody would miss for a fortnight. Get them wrong in the other and people are harmed within hours of an outage nobody planned for. Half a day with the right people settles both:",
     bold: [
       {
-        phrase:
-          "Two answers do more than any others",
+        phrase: "Two answers do more than any others",
       },
     ],
   } satisfies ThreadLinkedProse,
@@ -556,7 +570,12 @@ export const ALPHA_EXERCISE = {
   sizingHeading: "Start with three questions about criticality",
   sizingIntro: {
     text: "Criticality is how much harm follows if this service is unavailable, wrong, or breached. It is not a judgement about how important the work feels, and a large budget does not make a service critical. User numbers count only through the harm they carry: a service used by millions usually does more damage when it fails, and a service used by a few hundred can be just as critical if what it does for them is urgent. Sit down with the people who know what the service is for and answer three questions. What comes out of them decides which official obligations reach the service, how much protection its information needs, and how much engineering has to go underneath it.",
-    bold: [{ phrase: "Criticality is how much harm follows if this service is unavailable, wrong, or breached." }],
+    bold: [
+      {
+        phrase:
+          "Criticality is how much harm follows if this service is unavailable, wrong, or breached.",
+      },
+    ],
   } satisfies ThreadLinkedProse,
   sizingColumns: ["Question", "What the answer decides"],
   sizingRows: [
@@ -625,7 +644,9 @@ export const ALPHA_EXERCISE = {
   } satisfies ThreadLinkedProse,
   closing: {
     text: "Three instruments sit underneath the half-day: the harmonized Threat and Risk Assessment methodology for what could go wrong, the Standard on Security Categorization for how sensitive the information is, and Appendix D of the Directive on Security Management for how critical the service is and how long it can be down. Security explains how the assessment is done.",
-    internalLinks: [{ phrase: "Security explains how the assessment is done", to: "/thread/security" }],
+    internalLinks: [
+      { phrase: "Security explains how the assessment is done", to: "/thread/security" },
+    ],
     externalLinks: [
       {
         phrase: "harmonized Threat and Risk Assessment methodology",

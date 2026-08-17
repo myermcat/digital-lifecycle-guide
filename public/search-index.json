@@ -1898,5 +1898,154 @@
     "lifecyclePhase": "other",
     "text": "Sources and references.",
     "keywords": "support communities help contact mailbox"
+  },
+  {
+    "id": "/gate-map#annex-instruments",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "annex-instruments",
+    "sectionHeading": "Every official thing a service has to do",
+    "lifecyclePhase": "other",
+    "text": "The substance of the page, split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service."
+  },
+  {
+    "id": "/gate-map#topic-security",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-security",
+    "sectionHeading": "Security",
+    "lifecyclePhase": "other",
+    "text": "These four run in order, and each one feeds the next. The categorization decides how large the set of security controls has to be. The threat and risk assessment looks at what could still go wrong once those controls are in place. The Authority to Operate is the signature that lets the service run in production, and for a service that lives inside one department the person who signs it is usually the business owner. Security categorization A rating of how much injury would follow a leak, an unwanted change to the information, or an outage. It is set on four levels, from low to very high, and the result decides how large a set of security controls the build has to meet. Threat and risk assessment The exercise that lists what could go wrong, ranks each one by how likely it is and how much damage it would do, and states the risk left over once the safeguards are in place. It covers deliberate, accidental and natural threats alike, so it is wider than a cybersecurity exercise. Physical security assessment and Authority to Occupy Facility The second security track, running in parallel and covering buildings, equipment and physical space. It uses the same harmonized method as the systems assessment, run by different people and ending in a different signature. Security assessment and authorization, ending in the Authority to Operate The formal permission for the service to run in production. Someone with the authority reads what the security work found, accepts the risk that is left, and signs. For a departmental system that signer is normally the business owner.",
+    "keywords": "Security categorization Threat and risk assessment TRA Physical security assessment and Authority to Occupy Facility ATOF Security assessment and authorization, ending in the Authority to Operate SA&A, ATO"
+  },
+  {
+    "id": "/gate-map#topic-continuity",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-continuity",
+    "sectionHeading": "Continuity and incidents",
+    "lifecyclePhase": "other",
+    "text": "This is about how long the service can be unavailable before it matters, and who is told when something goes wrong. Every service is worth asking the question, because the answer decides whether anything else here applies. The formal requirement for a business impact analysis is narrower than that: it reaches services supporting something critical to the health, safety, security or economic well-being of Canadians, or to the functioning of government. A continuity plan follows only where the analysis marks the service critical. The recovery numbers are worth settling early, because a four-hour limit and a two-week one lead to different designs and different costs. Business impact analysis The exercise that decides how critical the service is, and produces four numbers with it: maximum allowable downtime, minimum service level, recovery time objective and recovery point objective. Business continuity plan The written arrangements for keeping a critical service delivering at a minimum acceptable level during a disruption, and recovering it afterwards. There is one plan for the department, and this service either has its own section in that plan or is covered by several. Information technology continuity management The service team's own recovery arrangements: how this system gets back up, in what order its parts are restored, and proof from testing that the restore works. The departmental business continuity plan belongs to the department; this is the part the team owns. Cyber security event response and reporting The duty to have a way of spotting, containing and reporting a cyber incident before one happens, and to report it up the government-wide chain when it does. The government-wide plan sets who is told, in what order, and how an event escalates into a coordinated response. Material privacy breach report The report a department must make when personal information is lost, accessed or disclosed in a way that could reasonably be expected to cause serious injury. It goes to the Office of the Privacy Commissioner of Canada and to the Treasury Board of Canada Secretariat, and the people affected are notified.",
+    "keywords": "Business impact analysis BIA Business continuity plan BCP Information technology continuity management Cyber security event response and reporting Material privacy breach report"
+  },
+  {
+    "id": "/gate-map#topic-privacy",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-privacy",
+    "sectionHeading": "Privacy and automated decisions",
+    "lifecyclePhase": "other",
+    "text": "The checklist comes first, and it is worth completing even where the answer is that no assessment is needed, because having asked is itself part of the requirement. The automated-decision half applies only if the service decides something about a person without someone making the call, including scoring and ranking. A service can acquire that later, when a feature is added to save time, so it is worth looking again whenever the service changes. Privacy checklist and privacy impact assessment A structured look at what personal information the service collects, why it is allowed to, where it flows, how long it is kept, and what could happen to people if it goes wrong. A mandatory checklist comes first, and it decides whether a full assessment, a lighter privacy protocol, or neither is needed. Algorithmic impact assessment A scored questionnaire about how much an automated decision could affect a person's rights, health or economic interests, or the ongoing sustainability of an ecosystem. The score sets what the service then owes on explanation, human involvement, testing and recourse.",
+    "keywords": "Privacy checklist and privacy impact assessment PIA Algorithmic impact assessment AIA"
+  },
+  {
+    "id": "/gate-map#topic-accessibility",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-accessibility",
+    "sectionHeading": "Accessibility",
+    "lifecyclePhase": "other",
+    "text": "Two related duties. A supplier's conformance report exists only if you are buying something, and it describes one version of their product. The department's own conformance is about the service as people meet it, so a good report from a supplier is a starting point and not the finish. The dates to plan against are 5 December 2027 for web pages, and 5 December 2028 for mobile applications, digital documents and the conformity assessment used in buying. Accessibility conformance report A supplier's written statement of how far their product meets the accessibility standard, clause by clause, with the gaps named. It is a claim to be tested. Accessibility conformance and the accessibility statement Conformance of the service itself to the Canadian accessibility standard for information and communication technology, plus a published statement that names what does not conform, what the alternatives are, and when the gaps close.",
+    "keywords": "Accessibility conformance report ACR Accessibility conformance and the accessibility statement"
+  },
+  {
+    "id": "/gate-map#topic-official-languages",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-official-languages",
+    "sectionHeading": "Official languages",
+    "lifecyclePhase": "other",
+    "text": "This applies to every service the public can use online. It has no form, no board and nothing to file, which is why it is often noticed late. Two things help: design and test in both languages from the first prototype, and put the requirement in the contract where a supplier is involved, because French added afterwards is priced as a change. Service in both official languages The duty to offer and deliver the service in English and French at the same time and to the same standard. For a digital service that covers the interface, the content, notifications, error messages, and the human support behind it, so a translated afterthought does not meet it. Official languages in what you buy The obligation to write official languages requirements into the contract, so the supplier is contractually bound to deliver both languages.",
+    "keywords": "Service in both official languages Official languages in what you buy"
+  },
+  {
+    "id": "/gate-map#topic-approvals",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-approvals",
+    "sectionHeading": "Approvals and money",
+    "lifecyclePhase": "other",
+    "text": "These decide how much of the rest of this page applies to you. Two different measures are at work and they are easy to mix up. The project's complexity score, compared with the department's approved capacity class, decides whether the Treasury Board has to approve it. Separate investment thresholds decide whether a concept case is needed. Most projects are under both and stay inside the department. Concept case A short, early write-up of the problem and the rough size of the investment, produced before a business case and before any solution is chosen. Project complexity and risk assessment A 64-question scoring tool that rates a project from level 1, sustaining, to level 4, transformational. The score decides who is allowed to approve the project: the minister, or the Treasury Board. Departmental architecture review board The department's own board, which reviews a digital initiative's design against the government-wide architecture framework: look for something that already exists before buying or building, open standards, data, security and privacy. Government of Canada Enterprise Architecture Review Board The government-wide architecture board, co-chaired by the Chief Technology Officer of Canada and the Chief Technology Officer of Shared Services Canada. Six separate triggers can send an initiative to it, and the size of the investment is only one of them. Treasury Board submission The formal request to the Treasury Board for authority and money when the project is beyond what the minister can approve alone. It commits the department to specific benefits. Benefits realization plan and project close-out report The written statement of what good this project is supposed to do, and the later report confirming what was actually delivered and whether the promised benefits arrived.",
+    "keywords": "Concept case Project complexity and risk assessment PCRA Departmental architecture review board DARB Government of Canada Enterprise Architecture Review Board GC EARB Treasury Board submission Benefits realization plan and project close-out report"
+  },
+  {
+    "id": "/gate-map#topic-contracts",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-contracts",
+    "sectionHeading": "Contracts and suppliers",
+    "lifecyclePhase": "other",
+    "text": "Both of these apply only where a supplier will handle sensitive information, and both run on the procurement timetable, which makes them earlier than they look. The security requirements check list has to be settled before the solicitation goes out, because the security clauses in the solicitation come from it. Screening a supplier's people can take longer than the competition itself, so it helps to start as soon as the work is known to be sensitive. Security Requirements Check List A short form that states, for one contract, exactly what security the supplier and its people need: what level of information they will touch, what screening each role needs, and whether the company may hold government information at its own offices. Supplier organization and personnel security screening The clearances a company and its individual staff must hold before touching sensitive government work. A department cannot issue them itself, and the work cannot be awarded until the clearance is confirmed in writing.",
+    "keywords": "Security Requirements Check List SRCL, form TBS/SCT 350-103 Supplier organization and personnel security screening"
+  },
+  {
+    "id": "/gate-map#topic-hosting",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-hosting",
+    "sectionHeading": "Hosting and cloud",
+    "lifecyclePhase": "other",
+    "text": "Where the service runs is worth deciding deliberately, because otherwise it is decided by whoever sets up the first environment. There is a government-wide order of preference to work through, and choosing something else is allowed with a case for it. One thing to watch: a service categorized at Protected B or below that runs on anything other than public cloud goes to the government-wide architecture board, whatever it costs. The cloud security work in the second row applies only to a cloud-hosted service. Application hosting decision, and the public cloud default The decision about where the service runs, made against a government-wide preference order: software as a service before platform before infrastructure, and public cloud before hybrid before private before non-cloud. Departing from that order needs a case. Cloud security profile, guardrails, and the cloud authorization The extra security work a cloud-hosted service carries: a ready-made control profile to build against, guardrails that have to be in place within the first days of a new cloud environment, and a security assessment that accounts for the split between what the provider does and what the department does.",
+    "keywords": "Application hosting decision, and the public cloud default Cloud security profile, guardrails, and the cloud authorization"
+  },
+  {
+    "id": "/gate-map#topic-identity",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-identity",
+    "sectionHeading": "Identity and sign-in",
+    "lifecyclePhase": "other",
+    "text": "This applies where people or businesses have accounts, sign in, or are identified. Both rows follow from what would happen if the service got someone's identity wrong, and both shape the design early. The shared government sign-in services are the expected route, and building your own is the choice that needs explaining. Joining a shared service takes time, so it is worth asking about early. Identity and credential assurance levels Two ratings, from one to four, of how sure the service has to be about who someone is and how strong the sign-in has to be. They constrain the design from the beginning, because they decide what the sign-in has to do before anyone builds it. Government of Canada credential and sign-in services The shared sign-in services a department can use in place of building its own: the government-branded credential service, the commercial bank-based option, and the newer federated sign-in platform. Using one of them is the default, and a sign-in built from scratch is what needs justifying.",
+    "keywords": "Identity and credential assurance levels Government of Canada credential and sign-in services"
+  },
+  {
+    "id": "/gate-map#topic-publishing",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-publishing",
+    "sectionHeading": "Publishing on canada.ca",
+    "lifecyclePhase": "other",
+    "text": "If the service is public-facing, a good deal of how it looks is decided for you: the page templates, the information architecture and the content style are all set centrally. Those are easier to work with than to work around, so it helps to bring the departmental web team and communications in while the design can still change, and not at Beta when it has already been built. Publishing under the canada.ca brand The rules for anything the public sees: the domain, the global header and footer, the Government of Canada signature and wordmark, the mandatory page templates, the information architecture, and the content style guide. They are mandatory, and they constrain how a service can look and where it can live. Responsive web, or a native mobile app The rule that a public-facing service works properly on a phone, and that choosing a downloadable app over a responsive web page has to be justified. A downloadable app also adds a central publishing step the department does not control.",
+    "keywords": "Publishing under the canada.ca brand Responsive web, or a native mobile app"
+  },
+  {
+    "id": "/gate-map#topic-registries",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-registries",
+    "sectionHeading": "Registries and records",
+    "lifecyclePhase": "other",
+    "text": "Registers are how the service becomes visible to the rest of government, and records are the information it keeps. Neither is difficult, and both are easy to overlook because they arrive after launch, when the project team has usually moved on. Two things worth knowing: only one of the two registers has anywhere to say the service is critical, and records cannot be destroyed without written consent, which makes that the one step here that cannot be undone. This covers keeping and disposing of information. How data is modelled, described and kept usable is the subject of the Data stewardship thread. GC Service Inventory The government-wide register of what services exist, who they serve, how digital they are, and how much volume they handle. Its 70 published fields include nothing about criticality, recovery or continuity. Application Portfolio Management The register of the applications behind the services, rated for business value, technical condition, support cost and criticality, and sorted into tolerate, innovate, mitigate or eliminate. This is where criticality actually gets recorded, since the service inventory has no field for it. Records retention and disposition authority The written consent from Library and Archives Canada without which no government record may be destroyed. The authority is permission to dispose. It does not order anyone to dispose, and it does not set retention periods; the department's own schedule does that.",
+    "keywords": "GC Service Inventory Application Portfolio Management APM Records retention and disposition authority"
+  },
+  {
+    "id": "/gate-map#topic-openness",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "topic-openness",
+    "sectionHeading": "Access to information and openness",
+    "lifecyclePhase": "other",
+    "text": "Work on the basis that anything the service records can be asked for, and that some of it is published without anyone asking. That affects what the service should record and how easily a record can be found again, which makes it a design question as much as a legal one. It is far cheaper to settle early than to change the data later. Access to information readiness, and the duty to document Everything the service records can be asked for under an access request, and decisions of business value have to be documented in the first place. That shapes what gets written down, what the system keeps, and whether records can be found and released when someone asks. Proactive publication Publication that happens without anyone asking, as a statutory duty. For a procured digital service the live ones are contracts over $10,000, grants and contributions over $25,000, and the titles of briefing materials. Open data and open information The expectation that data and information of business value are released openly by default, in reusable formats, unless something specific stops it. Info Source separately describes what information the institution holds.",
+    "keywords": "Access to information readiness, and the duty to document Proactive publication Open data and open information"
+  },
+  {
+    "id": "/gate-map#annex-reuse",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "annex-reuse",
+    "sectionHeading": "Reuse before you buy or build",
+    "lifecyclePhase": "other",
+    "text": "Open Resource Exchange A catalogue of software, code and reusable components that Government of Canada organizations have published for others to use. GC Notify A notification service that sends email and text messages to the people using a service, with templates, delivery tracking and bilingual support built in. GC Forms A form builder that produces accessible, bilingual online forms without writing code, and delivers the responses securely. GC Design System Ready-made interface components, buttons, inputs, error messages and the rest, already tested for accessibility and available in both official languages. Canada.ca design system The user-tested page templates, patterns and content styles for anything published under the canada.ca brand. Digital Accessibility Toolkit How-to guidance for designing, building, testing and buying accessible services, including the wording to put in a contract. GCKey and Sign In Canada Shared sign-in services that identify the people using a service, so a department does not run its own username and password system. Open Government Portal Where Government of Canada data and information are published openly, and where several things a service owes are filed.",
+    "keywords": "reuse shared platform existing component configure"
+  },
+  {
+    "id": "/gate-map#annex-nadia",
+    "pageTitle": "The official checkpoints of a digital service",
+    "pagePath": "/gate-map",
+    "sectionId": "annex-nadia",
+    "sectionHeading": "A worked example: one service's path, step by step",
+    "lifecyclePhase": "other",
+    "text": "The table above says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
+    "keywords": "Nadia worked example grants director general order sequence"
   }
 ]

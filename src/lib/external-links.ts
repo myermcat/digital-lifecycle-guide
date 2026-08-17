@@ -30,11 +30,10 @@ export const EXTERNAL_LINKS = {
   },
   "buyers-portal": {
     url: "https://canadabuys.canada.ca/en/buyer-s-portal",
-    description:
-      "PSPC Buyer's Portal, the official source for the federal acquisitions program",
+    description: "PSPC Buyer's Portal, the official source for the federal acquisitions program",
     accessibility: "public",
   },
-  "canadabuys": {
+  canadabuys: {
     url: "https://canadabuys.canada.ca/en",
     description: "CanadaBuys — federal opportunities and procurement guidance",
     accessibility: "public",
@@ -141,7 +140,8 @@ export const EXTERNAL_LINKS = {
   },
   "en-301-549": {
     url: "https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-en-301-5492024-accessibility-requirements-ict-products-and-services-en-301-5492021-idt",
-    description: "CAN/ASC - EN 301 549:2024, Accessibility requirements for ICT products and services (Accessibility Standards Canada)",
+    description:
+      "CAN/ASC - EN 301 549:2024, Accessibility requirements for ICT products and services (Accessibility Standards Canada)",
     accessibility: "public",
   },
   "esdc-a11y-regulations-guidance": {
@@ -151,7 +151,8 @@ export const EXTERNAL_LINKS = {
   },
   "cio-direction-ict-accessibility": {
     url: "https://www.canada.ca/en/government/system/digital-government/policies-standards/policy-service-digital-announcements/direction-information-communication-technologies-accessibility-towards-regulatory-implementation.html",
-    description: "Direction on ICT Accessibility: towards regulatory implementation (CIO of Canada, March 2026)",
+    description:
+      "Direction on ICT Accessibility: towards regulatory implementation (CIO of Canada, March 2026)",
     accessibility: "public",
   },
   "esdc-a11y-training-guidance": {
@@ -172,6 +173,36 @@ export const EXTERNAL_LINKS = {
   "policy-communications-federal-identity": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=30683",
     description: "Policy on Communications and Federal Identity (TBS)",
+    accessibility: "public",
+  },
+  "directive-identity-management": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16577",
+    description:
+      "Directive on Identity Management (TBS). In force 1 July 2019. Its Appendix A is the Standard on Identity and Credential Assurance, which replaced the stand-alone 2013 standard when that was archived on 28 June 2019.",
+    accessibility: "public",
+  },
+  "guideline-authentication-requirements": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26262",
+    description:
+      "Guideline on Defining Authentication Requirements (TBS). Sets out the four assurance levels and how to work out which one a service needs.",
+    accessibility: "public",
+  },
+  "gc-cloud-security-control-profile": {
+    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-security-control-profile-cloud-based-it-services.html",
+    description:
+      "Government of Canada Security Control Profile for Cloud-based GC Services. The baseline controls for Protected B, medium integrity, medium availability, and which of them the cloud provider implements against which the department implements.",
+    accessibility: "public",
+  },
+  "access-to-information-act": {
+    url: "https://laws-lois.justice.gc.ca/eng/acts/A-1/FullText.html",
+    description:
+      "Access to Information Act. Part 2 sets the proactive publication duties, including contracts over $10,000 and grants and contributions over $25,000.",
+    accessibility: "public",
+  },
+  "directive-communications-federal-identity": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=30682",
+    description:
+      "Directive on the Management of Communications and Federal Identity (TBS). In force 27 March 2025, replacing the 2016 directive and the 2013 Procedures for Publishing. Appendix D is the Standard on External-facing Websites and Mobile Applications.",
     accessibility: "public",
   },
   "iocn-cm-tools-compendium": {
@@ -329,12 +360,14 @@ export const EXTERNAL_LINKS = {
   },
   "uk-service-manual": {
     url: "https://www.gov.uk/service-manual",
-    description: "Service Manual (United Kingdom, Government Digital Service): the UK guide to designing and running government services.",
+    description:
+      "Service Manual (United Kingdom, Government Digital Service): the UK guide to designing and running government services.",
     accessibility: "public",
   },
   "australia-service-process": {
     url: "https://www.digital.gov.au/policy/digital-experience/toolkit/service-design-and-delivery-process",
-    description: "Service design and delivery process (Australia, Digital Transformation Agency): the Australian phase model for building government services.",
+    description:
+      "Service design and delivery process (Australia, Digital Transformation Agency): the Australian phase model for building government services.",
     accessibility: "public",
   },
   "uk-service-manual-user-research": {
@@ -377,7 +410,7 @@ export const EXTERNAL_LINKS = {
   "supply-manual-chapter-6": {
     url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
     description:
-      "Supply Manual, Chapter 6, Approvals and authorities (contract approval, signing authorities, and contract splitting)",
+      "Supply Manual, Chapter 6, Approvals and authorities (contract approval, signing authorities, and contract splitting). Archived 30 January 2026; the CanadaBuys Buyer's Portal is the current source.",
     accessibility: "public",
   },
   "contract-approval-authorities": {
@@ -423,7 +456,8 @@ export const EXTERNAL_LINKS = {
   },
   "standard-on-security-categorization": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614",
-    description: "Standard on Security Categorization (Directive on Security Management, Appendix J, TBS)",
+    description:
+      "Standard on Security Categorization (Directive on Security Management, Appendix J, TBS)",
     accessibility: "public",
   },
   "harmonized-tra-methodology": {
@@ -821,7 +855,8 @@ export const EXTERNAL_LINKS = {
   },
   "opc-generative-ai-principles": {
     url: "https://www.priv.gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/",
-    description: "OPC, Principles for responsible, trustworthy and privacy-protective generative AI",
+    description:
+      "OPC, Principles for responsible, trustworthy and privacy-protective generative AI",
     accessibility: "public",
   },
   "statcan-ai": {
@@ -1178,12 +1213,14 @@ export const EXTERNAL_LINKS = {
   },
   "cccs-software-supply-chain-itsm10071": {
     url: "https://www.cyber.gc.ca/en/guidance/protecting-your-organization-software-supply-chain-threats-itsm10071",
-    description: "CCCS, Protecting your organization from software supply chain threats (ITSM.10.071)",
+    description:
+      "CCCS, Protecting your organization from software supply chain threats (ITSM.10.071)",
     accessibility: "public",
   },
   "cccs-cyber-supply-chain-smb-itsap00070": {
     url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-security-small-medium-sized-organizations-itsap00070",
-    description: "CCCS, Cyber supply chain security for small and medium organizations (ITSAP.00.070)",
+    description:
+      "CCCS, Cyber supply chain security for small and medium organizations (ITSAP.00.070)",
     accessibility: "public",
   },
   "cccs-log4j-alert": {
@@ -1313,7 +1350,8 @@ export const EXTERNAL_LINKS = {
   },
   "lop-funding-new-government-initiatives": {
     url: "https://lop.parl.ca/sites/PublicWebsite/default/en_CA/ResearchPublications/202132E",
-    description: "Funding New Government Initiatives: From Announcement to Money Allocation (Library of Parliament)",
+    description:
+      "Funding New Government Initiatives: From Announcement to Money Allocation (Library of Parliament)",
     accessibility: "public",
   },
   "csps-cor433": {
@@ -1421,7 +1459,7 @@ export const EXTERNAL_LINKS = {
     description: "How to set performance metrics for your service (UK Service Manual)",
     accessibility: "public",
   },
-  "opentelemetry": {
+  opentelemetry: {
     url: "https://opentelemetry.io/docs/what-is-opentelemetry/",
     description: "What is OpenTelemetry? (CNCF)",
     accessibility: "public",
@@ -1475,14 +1513,12 @@ export const EXTERNAL_LINKS = {
   },
   "csps-digital-competencies-learning-path": {
     url: "https://www.csps-efpc.gc.ca/learning-paths/digital-competencies-eng.aspx",
-    description:
-      "Digital competencies learning path (Canada School of Public Service)",
+    description: "Digital competencies learning path (Canada School of Public Service)",
     accessibility: "public",
   },
   "gc-digital-competencies-playbook": {
     url: "https://gcxgce.sharepoint.com/teams/10001173/SitePages/Digital-Competencies-for-All-Playbook.aspx",
-    description:
-      "Playbook: GC Digital Competencies for all Public Servants (TBS, on GCXchange)",
+    description: "Playbook: GC Digital Competencies for all Public Servants (TBS, on GCXchange)",
     accessibility: "gc-network-only",
   },
 } as const satisfies Record<string, ExternalLinkEntry>;
