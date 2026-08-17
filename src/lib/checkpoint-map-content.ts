@@ -93,7 +93,7 @@ export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 export const CHECKPOINT_MAP_TITLE = "The official checkpoints of a digital service";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
-  text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service through the lot, in order.",
+  text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service from its first sign of trouble to the day it is replaced, meeting the checkpoints in the order that service met them.",
   bold: ["official checkpoint"],
 } as const;
 
@@ -119,7 +119,7 @@ export const CHECKPOINT_MAP_VARIES = {
   heading: "Nearly everything here varies",
   paragraphs: [
     "The checkpoints themselves are real and they are set out in Government of Canada instruments. Almost everything around them is not fixed. Which ones apply depends on what the service does and how much is being spent. Who chairs a board, what a department's thresholds are, who signs, and how each step is run in practice differ from one department to the next.",
-    "Timing varies most of all. Nothing here says how long a step takes, because that depends on the department's capacity, the queue in front of you, and what else is happening that year. Where this page gives a duration, treat it as one team's experience rather than a planning figure, and confirm it against your own department.",
+    "Timing varies most of all. Nothing here says how long a step takes, because that depends on the department's capacity, the queue in front of you, and what else is happening that year. Where a duration is given, treat it as one team's experience rather than a planning figure, and confirm it against your own department.",
     "The order varies too. The sequence a service meets these checkpoints in follows the route it takes: buying a finished product, contracting a team, running an agile procurement and building in-house all rearrange them, and some fall away entirely.",
   ],
 } as const;
@@ -141,6 +141,9 @@ export const CHECKPOINT_MAP_JUMP = [
  * numbered 5.7 pointing at an unnumbered heading makes the reader count.
  */
 export function checkpointMapSectionNumber(id: string): string {
+  // The two appendices are named rather than numbered, on the page and in the
+  // document, so the numbered run stops at the last ordinary section.
+  if (id === "annex-reuse" || id === "annex-nadia") return "";
   const top = CHECKPOINT_MAP_JUMP.findIndex((item) => item.href === `#${id}`);
   if (top !== -1) return `${top + 1}.`;
   const sub = MATRIX_FAMILY_SECTIONS.findIndex((section) => section.id === id);
@@ -156,7 +159,8 @@ export function checkpointMapSectionNumber(id: string): string {
  */
 export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) => {
   const id = item.href.slice(1);
-  const parent = { id, label: `${checkpointMapSectionNumber(id)} ${item.label}` };
+  const number = checkpointMapSectionNumber(id);
+  const parent = { id, label: number ? `${number} ${item.label}` : item.label };
   if (id !== "annex-instruments") return [parent];
   return [
     parent,
@@ -173,7 +177,7 @@ export const CHECKPOINT_MAP_TABLE_SECTION = {
   label: "THE TABLE",
   heading: "Every official thing a service has to do",
   intro:
-    "The substance of the page, split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service.",
+    "Split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service.",
 } as const;
 
 export const CHECKPOINT_MAP_APPENDIX_REUSE = {
@@ -189,7 +193,7 @@ export const CHECKPOINT_MAP_APPENDIX_PATH = {
   timelineNote:
     "This is Nadia's timeline, not a general one. It is what this one invented service experienced, and Create in particular can run considerably shorter or longer. Do not plan against it.",
   intro:
-    "The table above says what exists. This annex puts it in order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence and for who Nadia has to talk to at each point, not as a second list of instruments.",
+    "The tables above say what exists. This appendix puts them in an order, by following one invented service from the first sign of trouble to the day it is replaced. Read it for the sequence, and for who Nadia has to talk to at each point. It is not a second list of instruments.",
   pathNote:
     "Nadia took one path, and the steps below are in the order that path produced. A department that buys a finished product, or builds in-house, or runs an agile procurement, meets the same checkpoints in a different order. Even where the contract is signed moves by a whole sub-phase depending on the route chosen, so treat the sub-phase headings here as this service's sequence rather than as the sequence.",
 } as const;
@@ -892,7 +896,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
 export const CHECKPOINT_MAP_WHO_TITLE = "People in this journey";
 
 export const CHECKPOINT_MAP_WHO_CAPTION =
-  "Who the annexes keep referring to. One line each, because what each of them does about a particular instrument is in the annex row for that instrument.";
+  "Who the steps below keep referring to. One line each, because what any of them does about a particular instrument is in that instrument's own row.";
 
 export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   {

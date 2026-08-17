@@ -13,7 +13,8 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "doc:checkpoints": "tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh && tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- Documents (PDF)/The official checkpoints of a digital service.pdf\" && tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

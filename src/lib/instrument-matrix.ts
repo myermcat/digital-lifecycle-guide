@@ -281,7 +281,7 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     id: "topic-approvals",
     icon: Landmark,
     intro:
-      "These decide how much of the rest of this page applies to you. Two different measures are at work and they are easy to mix up. The project's complexity score, compared with the department's approved capacity class, decides whether the Treasury Board has to approve it. Separate investment thresholds decide whether a concept case is needed. Most projects are under both and stay inside the department.",
+      "These decide how much of the rest of the list applies to you. Two different measures are at work and they are easy to mix up. The project's complexity score, compared with the department's approved capacity class, decides whether the Treasury Board has to approve it. Separate investment thresholds decide whether a concept case is needed. Most projects are under both and stay inside the department.",
   },
   {
     family: "Contracts and suppliers",

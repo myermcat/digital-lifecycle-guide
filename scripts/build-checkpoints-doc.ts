@@ -15,6 +15,7 @@
  */
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import {
   AlignmentType,
   HorizontalPositionRelativeFrom,
@@ -69,7 +70,6 @@ import {
   CHECKPOINT_MAP_WHO_TITLE,
   CHECKPOINT_MAP_WHY_CREATE,
   CHECKPOINT_MAP_WHY_GCS,
-  checkpointMapSectionNumber,
   type CheckpointMapBodyPart,
   type CheckpointMapPhaseBlock,
 } from "../src/lib/checkpoint-map-content";
@@ -106,6 +106,10 @@ const CW = 9360;
 const IMG =
   "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/" +
   "Transcripts & chat knowledge/Document builders (scripts + assets)/img";
+/** The page's own figures live with the rest of the guide's blue visuals. */
+const FIGS =
+  "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
+  "DLG -- Blue Visuals/figures";
 const OUT =
   "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
   "DLG -- Editable Source Files (Word)/The official checkpoints of a digital service.docx";
@@ -130,15 +134,36 @@ const TOPIC_ICON: Record<string, string> = {
 /* ------------------------------------------------------- reference numbers */
 
 /**
- * Every instrument link becomes a numbered reference, in the order the tables
- * use them, so a printed table can still be followed to its source.
+ * Every instrument link becomes a numbered reference.
+ *
+ * The numbering is worked out before the body is built, because the reference
+ * list is grouped into governing instruments and supporting references, and a
+ * citation in a table has to carry the number the list will actually print. An
+ * earlier version numbered them in table order and then grouped them, which
+ * printed [1] [4] [5] [6] [8] down the page.
  */
-const refOrder: ExternalLinkKey[] = [];
+function isGoverning(key: ExternalLinkKey): boolean {
+  return /^(policy|directive|standard|guideline|access-to-information-act|laca)/.test(key);
+}
+
+const encountered: ExternalLinkKey[] = [];
+for (const section of MATRIX_FAMILY_SECTIONS) {
+  for (const row of INSTRUMENT_MATRIX.filter((r) => r.family === section.family)) {
+    for (const key of [row.linkKey, ...(row.moreLinks ?? [])]) {
+      if (key && !encountered.includes(key)) encountered.push(key);
+    }
+  }
+}
+for (const piece of REUSABLE_PIECES) {
+  if (piece.linkKey && !encountered.includes(piece.linkKey)) encountered.push(piece.linkKey);
+}
+const govRefs = encountered.filter(isGoverning);
+const supRefs = encountered.filter((key) => !isGoverning(key));
+const refOrder: ExternalLinkKey[] = [...govRefs, ...supRefs];
+
 function refNumber(key: ExternalLinkKey): number {
   const at = refOrder.indexOf(key);
-  if (at !== -1) return at + 1;
-  refOrder.push(key);
-  return refOrder.length;
+  return at === -1 ? 0 : at + 1;
 }
 
 /* --------------------------------------------------------------- helpers */
@@ -188,16 +213,18 @@ function bullet(t: string, ref = "b") {
 }
 
 function img(file: string, w: number, h: number, alt: string) {
+  const path = existsSync(`${IMG}/${file}`) ? `${IMG}/${file}` : `${FIGS}/${file}`;
   return new ImageRun({
     type: "png",
-    data: readFileSync(`${IMG}/${file}`),
+    data: readFileSync(path),
     transformation: { width: w, height: h },
     altText: { title: alt, description: alt, name: alt },
   });
 }
 
-function H1(id: string, title: string, pageBreak = true) {
-  const number = checkpointMapSectionNumber(id);
+/** A numbered or named section heading, bookmarked so the contents can link to it. */
+function H1D(label: string, title: string, id: string, pageBreak = true) {
+  const number = /^\d+$/.test(label) ? `${label}.` : label;
   return new Paragraph({
     heading: HeadingLevel.HEADING_1,
     keepNext: true,
@@ -220,8 +247,8 @@ function H1(id: string, title: string, pageBreak = true) {
   });
 }
 
-function H2(id: string, title: string, icon?: string) {
-  const number = checkpointMapSectionNumber(id);
+function H2D(label: string, title: string, id: string, icon?: string) {
+  const number = label;
   const kids: (TextRun | ImageRun)[] = [];
   if (icon && existsSync(`${IMG}/${icon}`)) {
     kids.push(img(icon, 20, 20, title));
@@ -351,6 +378,34 @@ function callout(children: Paragraph[], { fill = CARD, border = RUST } = {}) {
     ],
   });
 }
+
+/** One numbered reference, hanging indent, with the host as the link text. */
+function srcNum(n: number, key: ExternalLinkKey) {
+  const entry = EXTERNAL_LINKS[key];
+  const host = entry.url.replace(/^https?:\/\//, "").split("/")[0];
+  return new Paragraph({
+    spacing: { after: 60, line: 258 },
+    indent: { left: 560, hanging: 560 },
+    children: [
+      text(`[${n}]  `, { color: MUTED, size: 19 }),
+      text(`${entry.description} `, { color: MUTED, size: 19 }),
+      new ExternalHyperlink({
+        link: entry.url,
+        children: [
+          new TextRun({ text: host, font: SANS, color: "3D5A80", size: 19, underline: {} }),
+        ],
+      }),
+    ],
+  });
+}
+
+/**
+ * Where the previous build's page numbers are recorded, for the contents.
+ *
+ * fileURLToPath, not URL.pathname: this repo's path contains spaces, and pathname
+ * hands back a percent-encoded string that existsSync silently fails on.
+ */
+const PAGES_FILE = fileURLToPath(new URL("./.checkpoints-doc-pages.json", import.meta.url));
 
 /* ------------------------------------------------------------ the tables */
 
@@ -802,15 +857,77 @@ function fork(f: NonNullable<CheckpointMapPhaseBlock["forkAfter"]>) {
   );
 }
 
+/* -------------------------------------------------- numbering and captions */
+
+/**
+ * Document numbering, which is not the page's numbering.
+ *
+ * The template opens with an Introduction and closes with Conclusion and
+ * References, and the page has none of those, so the two cannot share a
+ * sequence. The appendices are named, not numbered, the way the page names them.
+ */
+const SECTIONS = {
+  intro: "1",
+  howToUse: "2",
+  varies: "3",
+  glossary: "4",
+  tables: "5",
+  conclusion: "6",
+  references: "7",
+} as const;
+
+/** Figures and tables get a number, a caption, and a line in the front matter. */
+const figures: { label: string; title: string }[] = [];
+const tables: { label: string; title: string }[] = [];
+
+function figure(label: string, title: string, file: string, w: number, h: number) {
+  figures.push({ label, title });
+  return [
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      keepLines: true,
+      keepNext: true,
+      spacing: { before: 200, after: 40 },
+      children: [img(file, w, h, title)],
+    }),
+    caption(`${label}  ${title}`),
+  ];
+}
+
+function tableCaption(label: string, title: string) {
+  tables.push({ label, title });
+  return caption(`${label}  ${title}`);
+}
+
 /* ------------------------------------------------------------------ body */
 
 const body: (Paragraph | Table)[] = [];
 
-// 1 to 3, the on-ramp
-body.push(H1("what-this-covers", CHECKPOINT_MAP_WHAT_TABLE.heading, false));
+/* 1. Introduction */
+body.push(H1D(SECTIONS.intro, "Introduction", "intro", false));
+body.push(H2D(`${SECTIONS.intro}.1`, "Context"));
+body.push(
+  P(
+    "Getting a Government of Canada digital service into service means passing official checkpoints: assessments to run, boards to attend, registers to appear in, and duties that carry on for as long as the service does. They come from Treasury Board policy, from Acts, and from standards, and they are spread across dozens of instruments. Which of them apply depends on what the service does and how much is being spent, so no two services take quite the same path.",
+  ),
+);
+body.push(H2D(`${SECTIONS.intro}.2`, "Purpose and scope"));
 body.push(boldedP(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold));
+body.push(
+  P(
+    `This document covers ${INSTRUMENT_MATRIX.length} instruments, grouped into ${MATRIX_FAMILY_SECTIONS.length} topics. Appendix 1 lists what other parts of government have already built and a team can reuse. Appendix 2 follows one invented service from its first sign of trouble to the day it is replaced.`,
+  ),
+);
+body.push(H2D(`${SECTIONS.intro}.3`, "Audience"));
+body.push(
+  P(
+    "This document is intended for the business owner of a Government of Canada digital service, and for the people who support one: program and service managers, project teams, enterprise architects, and the corporate functions a business owner has to work with, in security, privacy, procurement, information management and communications.",
+  ),
+);
+body.push(backToTop());
 
-body.push(H1("how-to-use", CHECKPOINT_MAP_HOW_TO_USE.heading, false));
+/* 2. How to use this document */
+body.push(H1D(SECTIONS.howToUse, "How to use this document", "how-to-use"));
 for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
   body.push(
     new Paragraph({
@@ -818,13 +935,15 @@ for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
       numbering: { reference: "b", level: 0 },
       children: [
         new TextRun({ text: `${item.lead} `, font: SANS, bold: true, color: BROWN, size: 21 }),
-        text(item.body),
+        text(item.body.replace("read the tables", "read the tables in section 5")),
       ],
     }),
   );
 }
+body.push(backToTop());
 
-body.push(H1("everything-varies", CHECKPOINT_MAP_VARIES.heading, false));
+/* 3. Nearly everything here varies */
+body.push(H1D(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies"));
 body.push(
   callout(
     CHECKPOINT_MAP_VARIES.paragraphs.map((paragraph, index) =>
@@ -834,14 +953,15 @@ body.push(
 );
 body.push(backToTop());
 
-// 4 Glossary
-body.push(H1("thecheckpoints", CHECKPOINT_MAP_TERMS_TITLE));
-body.push(P(CHECKPOINT_MAP_TERMS_CAPTION, { italics: true, color: MUTED }));
+/* 4. Glossary */
+body.push(H1D(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints"));
+body.push(P(CHECKPOINT_MAP_TERMS_CAPTION));
 body.push(definitionTable(CHECKPOINT_MAP_TERMS));
+body.push(tableCaption(`Table ${SECTIONS.glossary}-1`, "Words the tables use and do not define"));
 body.push(backToTop());
 
-// 5 the tables
-body.push(H1(CHECKPOINT_MAP_TABLE_SECTION.id, CHECKPOINT_MAP_TABLE_SECTION.heading));
+/* 5. Every official thing a service has to do */
+body.push(H1D(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
 body.push(P(CHECKPOINT_MAP_TABLE_SECTION.intro));
 body.push(H3("What the tags mean"));
 for (const key of Object.keys(MATRIX_ACTIONS) as (keyof typeof MATRIX_ACTIONS)[]) {
@@ -854,75 +974,201 @@ for (const key of Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]) {
 body.push(
   P(
     "An amber ONLY IF tag marks an instrument that does not apply to every service. Everything without one applies to all of them.",
-    { color: MUTED, size: 20 },
   ),
 );
+body.push(backToTop());
 
-let tableIndex = 0;
+let topicIndex = 0;
 for (const section of MATRIX_FAMILY_SECTIONS) {
   const rows = INSTRUMENT_MATRIX.filter((row) => row.family === section.family);
   if (rows.length === 0) continue;
-  tableIndex += 1;
-  body.push(H2(section.id, section.family, TOPIC_ICON[section.family]));
+  topicIndex += 1;
+  body.push(
+    H2D(`${SECTIONS.tables}.${topicIndex}`, section.family, section.id, TOPIC_ICON[section.family]),
+  );
   body.push(P(section.intro));
   body.push(topicTable(rows));
   body.push(
-    caption(
-      `Table ${checkpointMapSectionNumber(section.id)}  ${section.family}: ${rows.length} instrument${rows.length === 1 ? "" : "s"}`,
+    tableCaption(
+      `Table ${SECTIONS.tables}-${topicIndex}`,
+      `${section.family}: what applies, who does it, and when it comes up`,
     ),
   );
+  body.push(backToTop());
 }
-body.push(backToTop());
 
-// 6 Appendix 1
-body.push(H1(CHECKPOINT_MAP_APPENDIX_REUSE.id, CHECKPOINT_MAP_APPENDIX_REUSE.heading));
+/* 6. Conclusion and next steps */
+body.push(H1D(SECTIONS.conclusion, "Conclusion and next steps", "conclusion"));
 body.push(
   P(
-    "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure instead of make. Choosing to make your own breaks no rule, and an architecture review board is likely to ask which of these were considered.",
+    "The list is long, and no service meets all of it. The step that saves the most time is the cheapest one: read down the scope column of each topic that matches what your service does, and rule out what does not apply, before anyone starts planning around it. What is left is usually smaller than a team expects, and most of it belongs to somebody else to do.",
+  ),
+);
+body.push(
+  P(
+    "Two things are worth settling earlier than feels necessary, because both change the shape of the build and both are expensive to add later: how long the service is allowed to be unavailable, and what the system has to be able to do with its records. Both are in section 5, under Continuity and incidents and under Registries and records.",
+  ),
+);
+body.push(new Paragraph({ spacing: { before: 340, after: 0 }, children: [] }));
+body.push(
+  callout(
+    [
+      new Paragraph({
+        spacing: { after: 60 },
+        children: [
+          new TextRun({
+            text: "ABOUT",
+            font: SANS,
+            bold: true,
+            color: MUTED,
+            size: 15,
+            characterSpacing: 60,
+          }),
+        ],
+      }),
+      new Paragraph({
+        spacing: { after: 120 },
+        children: [
+          new Bookmark({
+            id: "about",
+            children: [
+              new TextRun({
+                text: "The Digital Lifecycle Guide",
+                font: SERIF,
+                bold: true,
+                color: BROWN,
+                size: 30,
+              }),
+            ],
+          }),
+        ],
+      }),
+      new Paragraph({
+        spacing: { after: 0, line: 276 },
+        children: [
+          text("This document is one part of the "),
+          text("Digital Lifecycle Guide", { bold: true }),
+          text(
+            ", a guide for the people who run Government of Canada digital services across the whole life of a service: from before it exists, through running and maturing it, to retiring or replacing it well. This document is the index of official checkpoints. The phase and sub-phase documents cover how to do the work inside each step, and the thread documents explain the reasoning behind each subject. To find the other documents and where they fit, start at the guide's home page, or go straight to the Index of the Digital Lifecycle Guide.",
+          ),
+        ],
+      }),
+    ],
+    { fill: CREAM, border: RUST },
+  ),
+);
+body.push(backToTop());
+
+/* 7. References */
+body.push(H1D(SECTIONS.references, "References", "references"));
+body.push(
+  P(
+    "Every instrument in section 5 and Appendix 1 that has a public source, numbered in the order the tables use them. Where a row carries no reference, the instrument is obtained through a departmental office rather than from a published page.",
+  ),
+);
+const refHead = (t: string) =>
+  new Paragraph({
+    spacing: { before: 220, after: 90 },
+    children: [new TextRun({ text: t, font: SANS, bold: true, color: MUTED, size: 19 })],
+  });
+body.push(refHead("Governing instruments"));
+for (const key of govRefs) body.push(srcNum(refOrder.indexOf(key) + 1, key));
+body.push(refHead("Supporting references"));
+for (const key of supRefs) body.push(srcNum(refOrder.indexOf(key) + 1, key));
+body.push(
+  new Paragraph({
+    spacing: { before: 220, after: 0, line: 268 },
+    children: [text(CHECKPOINT_MAP_FOOTER_DISCLAIMER, { italics: true, color: MUTED, size: 19 })],
+  }),
+);
+body.push(backToTop());
+
+/* Appendix 1 */
+body.push(H1D("Appendix 1", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+body.push(
+  P(
+    "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure something instead of making it. Choosing to make your own breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so an architecture review board is likely to ask which of these were considered and why none of them fitted.",
   ),
 );
 body.push(reuseTable());
-body.push(
-  caption(
-    `Table ${checkpointMapSectionNumber(CHECKPOINT_MAP_APPENDIX_REUSE.id)}  What is already built`,
-  ),
-);
+body.push(tableCaption("Table A1-1", "What another part of government has already built"));
 body.push(backToTop());
 
-// 7 Appendix 2
-body.push(H1(CHECKPOINT_MAP_APPENDIX_PATH.id, CHECKPOINT_MAP_APPENDIX_PATH.heading));
-body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.intro));
-body.push(callout([P(CHECKPOINT_MAP_APPENDIX_PATH.pathNote, { after: 0, color: MUTED })]));
-body.push(H3(CHECKPOINT_MAP_WHY_CREATE.heading));
-body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
-body.push(H3(CHECKPOINT_MAP_NADIA.heading));
-body.push(boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold));
-body.push(H3(CHECKPOINT_MAP_WHY_GCS.heading));
-body.push(P(CHECKPOINT_MAP_WHY_GCS.body));
-body.push(H3(CHECKPOINT_MAP_WHO_TITLE));
-body.push(P(CHECKPOINT_MAP_WHO_CAPTION, { italics: true, color: MUTED }));
-body.push(definitionTable(CHECKPOINT_MAP_WHO));
-body.push(H3("How to read the steps"));
+/* Appendix 2 */
+body.push(H1D("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
 body.push(
-  P(
-    `${CHECKPOINT_MAP_COLKEY.left} Right is who answers, and how. The tag on each response says whether the responder is in her department or central.`,
+  callout(
+    [
+      new Paragraph({
+        spacing: { after: 0, line: 276 },
+        children: [
+          text("Nadia and her grants program are invented. ", { bold: true }),
+          text(
+            "Nothing in this appendix describes a real service, a real department or a real person. It is written as one worked example so the checkpoints in section 5 can be seen in an order, and the order shown is the one this invented service produced.",
+          ),
+        ],
+      }),
+    ],
+    { fill: AMBERFILL, border: AMBER },
   ),
 );
-body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.timelineNote, { color: MUTED, size: 20 }));
+body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.intro, { after: 130 }));
+body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.pathNote));
 
+body.push(H2D("Appendix 2.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
+body.push(
+  ...figure(
+    "Figure A2-1",
+    "Nadia, a director general, and the service she is buying",
+    "gate_map_nadia.png",
+    300,
+    190,
+  ),
+);
+body.push(boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold));
+body.push(P(CHECKPOINT_MAP_WHY_GCS.body));
+body.push(H3(CHECKPOINT_MAP_WHY_CREATE.heading));
+body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
+
+body.push(H2D("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
+body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
+body.push(definitionTable(CHECKPOINT_MAP_WHO));
+body.push(tableCaption("Table A2-1", "The people Nadia deals with, and what each one does"));
+body.push(backToTop());
+
+body.push(H2D("Appendix 2.3", "How long it took", "app2-timeline"));
+body.push(
+  ...figure(
+    "Figure A2-2",
+    "How long each phase took for this one service",
+    "gate_map_timeline.png",
+    600,
+    150,
+  ),
+);
+body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.timelineNote));
+body.push(backToTop());
+
+body.push(H2D("Appendix 2.4", "How to read the steps", "app2-key"));
+body.push(
+  P(
+    `${CHECKPOINT_MAP_COLKEY.left} The right-hand column is who answers, and how. The tag on each response says whether the responder is inside her department or central.`,
+  ),
+);
+
+let phaseIndex = 4;
 for (const phase of CHECKPOINT_MAP_PHASES) {
-  body.push(
-    new Paragraph({
-      keepNext: true,
-      spacing: { before: 340, after: 60 },
-      children: [
-        new TextRun({ text: phase.heading, font: SERIF, bold: true, color: RUST, size: 25 }),
-      ],
-    }),
-  );
+  phaseIndex += 1;
+  body.push(H2D(`Appendix 2.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
   body.push(P(phase.durationLabel, { italics: true, color: MUTED, size: 19, after: 90 }));
-  body.push(P(phase.phaseNote, { color: MUTED }));
+  body.push(P(phase.phaseNote));
   body.push(phaseSteps(phase, phase.steps));
+  body.push(
+    tableCaption(
+      `Table A2-${phaseIndex - 3}`,
+      `${phase.heading.replace(/ - .*/, "")}: what Nadia does and who responds`,
+    ),
+  );
   if (phase.forkAfter) body.push(fork(phase.forkAfter));
   if (phase.stepsAfterFork) body.push(phaseSteps(phase, phase.stepsAfterFork));
   if (phase.forkEnd) body.push(fork(phase.forkEnd));
@@ -954,58 +1200,8 @@ for (const phase of CHECKPOINT_MAP_PHASES) {
       ),
     );
   }
+  body.push(backToTop());
 }
-body.push(backToTop());
-
-// References
-body.push(
-  new Paragraph({
-    heading: HeadingLevel.HEADING_1,
-    pageBreakBefore: true,
-    keepNext: true,
-    spacing: { after: 180 },
-    children: [
-      new Bookmark({
-        id: "references",
-        children: [
-          new TextRun({ text: "References", font: SERIF, bold: true, color: BROWN, size: 38 }),
-        ],
-      }),
-    ],
-  }),
-);
-body.push(
-  P(
-    "Every instrument in the tables that has a public source, numbered in the order the tables use them.",
-    { color: MUTED },
-  ),
-);
-refOrder.forEach((key, index) => {
-  const entry = EXTERNAL_LINKS[key];
-  body.push(
-    new Paragraph({
-      spacing: { after: 70, line: 258 },
-      indent: { left: 560, hanging: 560 },
-      children: [
-        text(`[${index + 1}]  `, { color: MUTED, size: 19 }),
-        new ExternalHyperlink({
-          link: entry.url,
-          children: [
-            new TextRun({
-              text: entry.description,
-              font: SANS,
-              color: "3D5A80",
-              size: 19,
-              underline: {},
-            }),
-          ],
-        }),
-      ],
-    }),
-  );
-});
-body.push(P(CHECKPOINT_MAP_FOOTER_DISCLAIMER, { italics: true, color: MUTED, size: 19 }));
-body.push(backToTop());
 
 /* ----------------------------------------------------------------- cover */
 
@@ -1087,11 +1283,11 @@ cover.push(
     spacing: { before: 280, after: 400 },
     children: [
       new TextRun({
-        text: CHECKPOINT_MAP_SUBTITLE.text,
+        text: "The approvals, reviews, sign-offs and standing duties a service has to pass, and who owns each one",
         font: SERIF,
         italics: true,
         color: NAVY,
-        size: 24,
+        size: 26,
       }),
     ],
   }),
@@ -1134,6 +1330,46 @@ cover.push(
 
 /* ----------------------------------------------------------- front matter */
 
+/**
+ * Page numbers for the contents, from the previous build.
+ *
+ * The template's contents list carries page numbers with dot leaders, and a Word
+ * field renders empty when LibreOffice makes the PDF. So the build is run twice:
+ * the first pass writes the document, `npm run doc:checkpoints` then reads the
+ * PDF back and records which page each heading fell on, and the second pass sets
+ * the numbers. Without the map the entries render without a number, which is the
+ * state of a first build on a clean checkout.
+ */
+const PAGE_MAP: Record<string, number> = existsSync(PAGES_FILE)
+  ? (JSON.parse(readFileSync(PAGES_FILE, "utf8")) as Record<string, number>)
+  : {};
+
+function tocEntry(
+  label: string,
+  title: string,
+  anchor: string | null,
+  sub = false,
+  pageKey?: string,
+) {
+  const numbered = /^\d+$/.test(label);
+  const shown = label ? `${label}${!sub && numbered ? ".  " : "  "}${title}` : title;
+  const colour = sub ? MUTED : BROWN;
+  const size = sub ? 18 : 20;
+  const page = PAGE_MAP[pageKey ?? anchor ?? shown];
+  const head = anchor
+    ? new InternalHyperlink({
+        anchor,
+        children: [new TextRun({ text: shown, font: SANS, color: colour, bold: !sub, size })],
+      })
+    : new TextRun({ text: shown, font: SANS, color: colour, bold: !sub, size });
+  return new Paragraph({
+    tabStops: [{ type: TabStopType.RIGHT, position: CW, leader: "dot" }],
+    spacing: { after: sub ? 40 : 60 },
+    indent: { left: sub ? 340 : 0 },
+    children: [head, new TextRun({ text: `\t${page ?? ""}`, font: SANS, color: colour, size })],
+  });
+}
+
 const front: (Paragraph | Table)[] = [];
 front.push(new Paragraph({ children: [new PageBreak()] }));
 front.push(
@@ -1143,72 +1379,96 @@ front.push(
       new Bookmark({
         id: "toc",
         children: [
-          new TextRun({ text: "Contents", font: SERIF, bold: true, color: BROWN, size: 36 }),
-        ],
-      }),
-    ],
-  }),
-);
-function tocLine(id: string, label: string, sub = false) {
-  return new Paragraph({
-    spacing: { after: sub ? 40 : 70, line: 264 },
-    indent: { left: sub ? 760 : 0 },
-    children: [
-      new InternalHyperlink({
-        anchor: id,
-        children: [
           new TextRun({
-            text: `${checkpointMapSectionNumber(id)}  ${label}`,
-            font: SANS,
-            bold: !sub,
-            color: sub ? BODY : BROWN,
-            size: sub ? 20 : 22,
+            text: "Table of Contents",
+            font: SERIF,
+            bold: true,
+            color: BROWN,
+            size: 36,
           }),
         ],
       }),
     ],
-  });
-}
-for (const item of CHECKPOINT_MAP_JUMP) {
-  const id = item.href.slice(1);
-  const label =
-    id === "annex-instruments"
-      ? CHECKPOINT_MAP_TABLE_SECTION.heading
-      : id === "annex-reuse"
-        ? CHECKPOINT_MAP_APPENDIX_REUSE.heading
-        : id === "annex-nadia"
-          ? CHECKPOINT_MAP_APPENDIX_PATH.heading
-          : item.label;
-  front.push(tocLine(id, label));
-  if (id !== "annex-instruments") continue;
-  for (const section of MATRIX_FAMILY_SECTIONS) {
-    front.push(tocLine(section.id, section.family, true));
-  }
-}
+  }),
+);
+
+front.push(tocEntry(SECTIONS.intro, "Introduction", "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.1`, "Context", null, true, "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.2`, "Purpose and scope", null, true, "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.3`, "Audience", null, true, "intro"));
+front.push(tocEntry(SECTIONS.howToUse, "How to use this document", "how-to-use"));
+front.push(tocEntry(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies"));
+front.push(tocEntry(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints"));
+front.push(tocEntry(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
+MATRIX_FAMILY_SECTIONS.forEach((section, index) => {
+  front.push(tocEntry(`${SECTIONS.tables}.${index + 1}`, section.family, section.id, true));
+});
+front.push(tocEntry(SECTIONS.conclusion, "Conclusion and next steps", "conclusion"));
+front.push(
+  tocEntry(`${SECTIONS.conclusion}.1`, "About the Digital Lifecycle Guide", "about", true),
+);
+front.push(tocEntry(SECTIONS.references, "References", "references"));
+front.push(tocEntry("Appendix 1", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+front.push(tocEntry("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
+front.push(tocEntry("Appendix 2.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia", true));
+front.push(tocEntry("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who", true));
+front.push(tocEntry("Appendix 2.3", "How long it took", "app2-timeline", true));
+front.push(tocEntry("Appendix 2.4", "How to read the steps", "app2-key", true));
+CHECKPOINT_MAP_PHASES.forEach((phase, index) => {
+  front.push(tocEntry(`Appendix 2.${index + 5}`, phase.heading, `app2-${phase.id}`, true));
+});
+
 front.push(
   new Paragraph({
-    spacing: { before: 40, after: 70, line: 264 },
+    spacing: { before: 360, after: 120 },
     children: [
-      new InternalHyperlink({
-        anchor: "references",
-        children: [
-          new TextRun({ text: "References", font: SANS, bold: true, color: BROWN, size: 22 }),
-        ],
-      }),
+      new TextRun({ text: "List of Figures", font: SERIF, bold: true, color: BROWN, size: 28 }),
     ],
   }),
 );
+for (const item of figures) {
+  front.push(
+    new Paragraph({
+      tabStops: [{ type: TabStopType.RIGHT, position: CW, leader: "dot" }],
+      spacing: { after: 70 },
+      children: [
+        new TextRun({ text: `${item.label}  ${item.title}`, font: SANS, color: BROWN, size: 20 }),
+        new TextRun({
+          text: `\t${PAGE_MAP[item.label] ?? ""}`,
+          font: SANS,
+          color: BROWN,
+          size: 20,
+        }),
+      ],
+    }),
+  );
+}
+
 front.push(
   new Paragraph({
-    spacing: { before: 320, after: 0 },
+    spacing: { before: 280, after: 120 },
     children: [
-      text(
-        `This document is the web page of the same name, printed. It carries ${INSTRUMENT_MATRIX.length} instruments across ${MATRIX_FAMILY_SECTIONS.length} topics, one appendix of what is already built and can be reused, and one appendix following an invented service through the lot.`,
-        { color: MUTED, size: 20, italics: true },
-      ),
+      new TextRun({ text: "List of Tables", font: SERIF, bold: true, color: BROWN, size: 28 }),
     ],
   }),
 );
+for (const item of tables) {
+  front.push(
+    new Paragraph({
+      tabStops: [{ type: TabStopType.RIGHT, position: CW, leader: "dot" }],
+      spacing: { after: 70 },
+      children: [
+        new TextRun({ text: `${item.label}  ${item.title}`, font: SANS, color: BROWN, size: 20 }),
+        new TextRun({
+          text: `\t${PAGE_MAP[item.label] ?? ""}`,
+          font: SANS,
+          color: BROWN,
+          size: 20,
+        }),
+      ],
+    }),
+  );
+}
 
 /* -------------------------------------------------------------- assemble */
 
@@ -1340,6 +1600,8 @@ Packer.toBuffer(doc).then((buffer) => {
   writeFileSync(OUT, buffer);
   console.log(
     `wrote ${OUT.split("/").pop()}  ${(buffer.length / 1024).toFixed(0)} KB  ` +
-      `${INSTRUMENT_MATRIX.length} instruments, ${tableIndex} topic tables, ${refOrder.length} references`,
+      `${INSTRUMENT_MATRIX.length} instruments, ${topicIndex} topic tables, ` +
+      `${figures.length} figures, ${tables.length} tables, ${refOrder.length} references` +
+      `${Object.keys(PAGE_MAP).length ? "" : "  (no page numbers yet: run the page pass)"}`,
   );
 });

@@ -155,6 +155,6 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     lookAtItIn: "Live, once the service is producing data worth releasing.",
     linkKey: "open-government-portal",
     caveat:
-      "Some filings here are obligations rather than options: the algorithmic impact assessment and proactive publication are both published on this portal.",
+      "Some filings here are obligations. The algorithmic impact assessment and proactive publication are both published on this portal.",
   },
 ];
