@@ -57,6 +57,20 @@ function Legend() {
         ))}
       </ul>
       <p className="mt-4 mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        The one tag that changes whether a row applies to you
+      </p>
+      <ul className="grid gap-2.5">
+        <li className="flex gap-2.5 text-[0.8rem] leading-snug">
+          <span className="pt-[0.1rem]">
+            <OnlyIfChip />
+          </span>
+          <span className="text-muted-foreground">
+            This instrument does not apply to every service. The scope column says what brings it
+            into scope. An instrument with no tag applies to all of them.
+          </span>
+        </li>
+      </ul>
+      <p className="mt-4 mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
         What kind of thing each one is
       </p>
       <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -75,6 +89,21 @@ function Legend() {
   );
 }
 
+/**
+ * The scope tag, and the brightest mark in any table.
+ *
+ * It used to be the same pale amber as the Check action tag, which made the one
+ * tag that changes whether a row applies to you look like one of seven action
+ * tags. Solid fill and white text, so it reads as a different kind of thing.
+ */
+function OnlyIfChip() {
+  return (
+    <span className="whitespace-nowrap rounded-full border border-amber-700 bg-amber-600 px-2 py-[0.1rem] text-[0.62rem] font-bold uppercase tracking-wide text-white shadow-sm dark:border-amber-500 dark:bg-amber-600">
+      Only if
+    </span>
+  );
+}
+
 function InstrumentName({ row }: { row: MatrixInstrument }) {
   return (
     <>
@@ -83,9 +112,7 @@ function InstrumentName({ row }: { row: MatrixInstrument }) {
       {row.everyService ? null : (
         <>
           {" "}
-          <span className="whitespace-nowrap rounded-full border border-amber-300 bg-amber-100 px-2 py-[0.1rem] text-[0.62rem] font-semibold uppercase tracking-wide text-amber-900 dark:border-amber-800/70 dark:bg-amber-950 dark:text-amber-200">
-            Only if
-          </span>
+          <OnlyIfChip />
         </>
       )}{" "}
       <span className="whitespace-nowrap rounded-sm border border-border bg-muted/60 px-1.5 py-[0.05rem] text-[0.62rem] font-medium uppercase tracking-wide text-muted-foreground">

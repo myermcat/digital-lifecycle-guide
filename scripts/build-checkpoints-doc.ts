@@ -178,6 +178,7 @@ function P(
 ) {
   return new Paragraph({
     spacing: { after: opts.after ?? 150, line: 278 },
+    widowControl: true,
     children: [
       text(t, { size: opts.size ?? 21, color: opts.color ?? BODY, italics: !!opts.italics }),
     ],
@@ -201,13 +202,18 @@ function boldedP(t: string, phrases: readonly string[] = [], opts: { after?: num
     cursor = hit.end;
   }
   if (cursor < t.length) runs.push(text(t.slice(cursor)));
-  return new Paragraph({ spacing: { after: opts.after ?? 150, line: 278 }, children: runs });
+  return new Paragraph({
+    spacing: { after: opts.after ?? 150, line: 278 },
+    widowControl: true,
+    children: runs,
+  });
 }
 
 function bullet(t: string, ref = "b") {
   return new Paragraph({
     numbering: { reference: ref, level: 0 },
     spacing: { after: 90, line: 276 },
+    widowControl: true,
     children: [text(t)],
   });
 }
@@ -286,6 +292,58 @@ function caption(t: string) {
     spacing: { before: 60, after: 240 },
     children: [text(t, { italics: true, color: MUTED, size: 17 })],
   });
+}
+
+/**
+ * Keeps a run of children on one page, by putting them in a borderless table.
+ *
+ * Word will not split a row with cantSplit, so this is how the other builders stop
+ * a heading, a first line or a stray link being left alone on a page.
+ */
+function keepTogether(children: (Paragraph | Table)[]) {
+  const NONE = { style: BorderStyle.NONE };
+  return new Table({
+    width: { size: CW, type: WidthType.DXA },
+    columnWidths: [CW],
+    borders: {
+      top: NONE,
+      bottom: NONE,
+      left: NONE,
+      right: NONE,
+      insideHorizontal: NONE,
+      insideVertical: NONE,
+    },
+    rows: [
+      new TableRow({
+        cantSplit: true,
+        children: [
+          new TableCell({
+            width: { size: CW, type: WidthType.DXA },
+            borders: { top: NONE, bottom: NONE, left: NONE, right: NONE },
+            margins: { top: 0, bottom: 0, left: 0, right: 0 },
+            children,
+          }),
+        ],
+      }),
+    ],
+  });
+}
+
+/**
+ * Adds the back-to-contents link, tied to whatever it follows.
+ *
+ * On its own it can be pushed to the top of the next page and sit there alone,
+ * which happened after section 2. Tying it to the last paragraph of the section
+ * means the two move together.
+ */
+function pushBackToTop(arr: (Paragraph | Table)[]) {
+  const last = arr[arr.length - 1];
+  if (last instanceof Paragraph) {
+    arr.pop();
+    arr.push(keepTogether([last, backToTop()]));
+    return;
+  }
+  arr.push(backToTop());
 }
 
 function backToTop() {
@@ -412,14 +470,26 @@ const PAGES_FILE = fileURLToPath(new URL("./.checkpoints-doc-pages.json", import
 const COLS = [2280, 2520, 2400, 2160];
 
 /** The sub-phases where something happens, as one line. */
-function whenItComesUp(row: MatrixInstrument): string {
+/**
+ * The sub-phases where something happens, as runs.
+ *
+ * The action tags are the same chips the legend shows. Spelling a tag out in plain
+ * text after the legend has shown it as a coloured chip makes the reader work out
+ * that the two are the same thing.
+ */
+function whenItComesUpRuns(row: MatrixInstrument): TextRun[] {
   const active = MATRIX_SUBPHASES.filter((s) => row.cells[s.key]);
-  if (active.length === 0) return "";
-  return active
-    .map(
-      (s) => `${s.label} ${row.cells[s.key]!.tags.map((t) => MATRIX_ACTIONS[t].label).join(", ")}`,
-    )
-    .join("  ·  ");
+  if (active.length === 0) return [];
+  const runs: TextRun[] = [];
+  active.forEach((s, index) => {
+    if (index > 0) runs.push(text("     ", { size: 20 }));
+    runs.push(text(`${s.label}\u00A0`, { size: 20, color: BROWN, bold: true }));
+    row.cells[s.key]!.tags.forEach((tag, tagIndex) => {
+      if (tagIndex > 0) runs.push(text("\u00A0", { size: 20 }));
+      runs.push(chipRun(MATRIX_ACTIONS[tag].label, ACTION_FILL[tag], ACTION_INK[tag]));
+    });
+  });
+  return runs;
 }
 
 function instrumentNameCell(row: MatrixInstrument) {
@@ -438,35 +508,13 @@ function instrumentNameCell(row: MatrixInstrument) {
       }) as unknown as TextRun,
     );
   }
-  const tags: TextRun[] = [
-    new TextRun({
-      text: MATRIX_KINDS[row.kind].label.toUpperCase(),
-      font: SANS,
-      bold: true,
-      color: MUTED,
-      size: 14,
-      characterSpacing: 20,
-    }),
-  ];
+  const tags: TextRun[] = [chipRun(MATRIX_KINDS[row.kind].label, SURF, BROWN)];
   const paragraphs = [
     new Paragraph({ spacing: { after: 40 }, children: runs }),
     new Paragraph({ spacing: { after: row.everyService ? 0 : 30 }, children: tags }),
   ];
   if (!row.everyService) {
-    paragraphs.push(
-      new Paragraph({
-        children: [
-          new TextRun({
-            text: "ONLY IF",
-            font: SANS,
-            bold: true,
-            color: AMBER,
-            size: 14,
-            characterSpacing: 20,
-          }),
-        ],
-      }),
-    );
+    paragraphs.push(new Paragraph({ children: [chipRun("Only if", ONLYIF_FILL, ONLYIF_INK)] }));
   }
   return cell(paragraphs, { width: COLS[0] });
 }
@@ -501,7 +549,7 @@ function topicTable(rows: MatrixInstrument[]) {
     );
     const detail: Paragraph[] = [
       new Paragraph({
-        spacing: { after: whenItComesUp(row) || row.caveat ? 70 : 0, line: 268 },
+        spacing: { after: whenItComesUpRuns(row).length || row.caveat ? 70 : 0, line: 268 },
         children: [
           new TextRun({
             text: "WHAT IT IS   ",
@@ -515,8 +563,8 @@ function topicTable(rows: MatrixInstrument[]) {
         ],
       }),
     ];
-    const when = whenItComesUp(row);
-    if (when) {
+    const when = whenItComesUpRuns(row);
+    if (when.length) {
       detail.push(
         new Paragraph({
           spacing: { after: row.caveat ? 70 : 0, line: 268 },
@@ -529,7 +577,7 @@ function topicTable(rows: MatrixInstrument[]) {
               size: 15,
               characterSpacing: 20,
             }),
-            text(when, { size: 20, color: MUTED }),
+            ...when,
           ],
         }),
       );
@@ -979,6 +1027,32 @@ function figureBeside(
   });
 }
 
+/**
+ * The scope tag. Solid fill, white text, the brightest mark in the document.
+ *
+ * It used to be the same pale amber as the Check action tag, on the page and here,
+ * so the one tag that decides whether a row applies to you looked like one of the
+ * seven action tags.
+ */
+const ONLYIF_FILL = "B45309";
+const ONLYIF_INK = "FFFFFF";
+
+/** A tag, drawn the same way wherever it appears: legend, name cell, or timing line. */
+function chipRun(label: string, fill: string, ink: string, bold = true) {
+  return new TextRun({
+    // Non-breaking spaces for the padding: a normal space lets Word wrap inside the
+    // chip, or leave the phase label at the end of one line and its chip on the next.
+    text: `\u00A0${label.toUpperCase().replace(/ /g, "\u00A0")}\u00A0`,
+    font: SANS,
+    bold,
+    color: ink,
+    size: 15,
+    // No letter tracking: the extra space lands after the non-breaking padding too,
+    // which drew a visible seam through "ONLY IF".
+    shading: { fill, type: ShadingType.CLEAR },
+  });
+}
+
 /** The legend chips, coloured the way the page colours them. */
 const ACTION_FILL: Record<string, string> = {
   check: "FBEED5",
@@ -1026,19 +1100,8 @@ function chipTable(items: { label: string; gloss: string; fill: string; ink: str
               margins: { top: 70, bottom: 70, left: 0, right: 160 },
               children: [
                 new Paragraph({
-                  shading: { fill: item.fill, type: ShadingType.CLEAR },
-                  spacing: { before: 30, after: 30 },
-                  indent: { left: 90, right: 90 },
-                  children: [
-                    new TextRun({
-                      text: item.label.toUpperCase(),
-                      font: SANS,
-                      bold: true,
-                      color: item.ink,
-                      size: 16,
-                      characterSpacing: 20,
-                    }),
-                  ],
+                  spacing: { before: 20, after: 20 },
+                  children: [chipRun(item.label, item.fill, item.ink)],
                 }),
               ],
             }),
@@ -1085,7 +1148,7 @@ body.push(
     "This document is intended for the business owner of a Government of Canada digital service, and for the people who support one: program and service managers, project teams, enterprise architects, and the corporate functions a business owner has to work with, in security, privacy, procurement, information management and communications.",
   ),
 );
-body.push(backToTop());
+pushBackToTop(body);
 
 /* 2. How to use this document */
 body.push(H1D(SECTIONS.howToUse, "How to use this document", "how-to-use", false));
@@ -1101,7 +1164,7 @@ for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
     }),
   );
 }
-body.push(backToTop());
+pushBackToTop(body);
 
 /* 3. Nearly everything here varies */
 body.push(H1D(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies", false));
@@ -1112,18 +1175,24 @@ body.push(
     ),
   ),
 );
-body.push(backToTop());
+pushBackToTop(body);
 
 /* 4. Glossary */
 body.push(H1D(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints", false));
 body.push(P(CHECKPOINT_MAP_TERMS_CAPTION));
 body.push(definitionTable(CHECKPOINT_MAP_TERMS));
 body.push(tableCaption(`Table ${SECTIONS.glossary}-1`, "Words the tables use and do not define"));
-body.push(backToTop());
+pushBackToTop(body);
 
 /* 5. Every official thing a service has to do */
 body.push(H1D(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
 body.push(P(CHECKPOINT_MAP_TABLE_SECTION.intro));
+let tableNo = 0;
+const nextTable = () => {
+  tableNo += 1;
+  return `Table ${SECTIONS.tables}-${tableNo}`;
+};
+
 body.push(H3("What the tags mean"));
 body.push(
   chipTable(
@@ -1135,6 +1204,22 @@ body.push(
     })),
   ),
 );
+body.push(tableCaption(nextTable(), "What each action tag means"));
+
+body.push(H3("The one tag that changes whether a row applies to you"));
+body.push(
+  chipTable([
+    {
+      label: "Only if",
+      gloss:
+        "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
+      fill: ONLYIF_FILL,
+      ink: ONLYIF_INK,
+    },
+  ]),
+);
+body.push(tableCaption(nextTable(), "The scope tag"));
+
 body.push(H3("What kind of thing each one is"));
 body.push(
   chipTable(
@@ -1146,13 +1231,8 @@ body.push(
     })),
   ),
 );
-body.push(new Paragraph({ spacing: { after: 140 }, children: [] }));
-body.push(
-  P(
-    "An amber ONLY IF tag marks an instrument that does not apply to every service. Everything without one applies to all of them.",
-  ),
-);
-body.push(backToTop());
+body.push(tableCaption(nextTable(), "What kind of thing each instrument is"));
+pushBackToTop(body);
 
 let topicIndex = 0;
 for (const section of MATRIX_FAMILY_SECTIONS) {
@@ -1165,12 +1245,9 @@ for (const section of MATRIX_FAMILY_SECTIONS) {
   body.push(P(section.intro));
   body.push(topicTable(rows));
   body.push(
-    tableCaption(
-      `Table ${SECTIONS.tables}-${topicIndex}`,
-      `${section.family}: what applies, who does it, and when it comes up`,
-    ),
+    tableCaption(nextTable(), `${section.family}: what applies, who does it, and when it comes up`),
   );
-  body.push(backToTop());
+  pushBackToTop(body);
 }
 
 /* 6. Conclusion and next steps */
@@ -1233,7 +1310,7 @@ body.push(
     { fill: CREAM, border: RUST },
   ),
 );
-body.push(backToTop());
+pushBackToTop(body);
 
 /* 7. References */
 body.push(H1D(SECTIONS.references, "References", "references"));
@@ -1257,7 +1334,7 @@ body.push(
     children: [text(CHECKPOINT_MAP_FOOTER_DISCLAIMER, { italics: true, color: MUTED, size: 19 })],
   }),
 );
-body.push(backToTop());
+pushBackToTop(body);
 
 /* Appendix 1 */
 body.push(H1D("Appendix 1", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
@@ -1268,7 +1345,7 @@ body.push(
 );
 body.push(reuseTable());
 body.push(tableCaption("Table A1-1", "What another part of government has already built"));
-body.push(backToTop());
+pushBackToTop(body);
 
 /* Appendix 2 */
 body.push(H1D("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
@@ -1307,7 +1384,7 @@ body.push(H2D("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
 body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
 body.push(definitionTable(CHECKPOINT_MAP_WHO));
 body.push(tableCaption("Table A2-1", "The people Nadia deals with, and what each one does"));
-body.push(backToTop());
+pushBackToTop(body);
 
 body.push(H2D("Appendix 2.3", "How long it took", "app2-timeline"));
 body.push(
@@ -1320,7 +1397,7 @@ body.push(
   ),
 );
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.timelineNote));
-body.push(backToTop());
+pushBackToTop(body);
 
 body.push(H2D("Appendix 2.4", "How to read the steps", "app2-key"));
 body.push(
@@ -1328,7 +1405,7 @@ body.push(
     `${CHECKPOINT_MAP_COLKEY.left} The right-hand column is who answers, and how. The tag on each response says whether the responder is inside her department or central.`,
   ),
 );
-body.push(backToTop());
+pushBackToTop(body);
 
 let phaseIndex = 4;
 for (const phase of CHECKPOINT_MAP_PHASES) {
@@ -1374,7 +1451,7 @@ for (const phase of CHECKPOINT_MAP_PHASES) {
       ),
     );
   }
-  body.push(backToTop());
+  pushBackToTop(body);
 }
 
 /* ----------------------------------------------------------------- cover */
