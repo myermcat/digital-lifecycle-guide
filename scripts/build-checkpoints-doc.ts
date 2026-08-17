@@ -7,6 +7,9 @@
  *
  *   npx tsx scripts/build-checkpoints-doc.ts
  *
+ * The layout rules this has to obey are in "Claude Hub/Document house rules.md".
+ * Read them before changing anything here.
+ *
  * House style follows the existing builders in
  * "TBS (Claude Output)/Transcripts & chat knowledge/Document builders (scripts + assets)":
  * the same palette, Georgia for headings and Arial for text, a 9360-twip content
@@ -519,7 +522,7 @@ function instrumentNameCell(row: MatrixInstrument) {
   return cell(paragraphs, { width: COLS[0] });
 }
 
-function topicTable(rows: MatrixInstrument[]) {
+function topicTable(rows: MatrixInstrument[], label: string, title: string) {
   const tableRows: TableRow[] = [
     new TableRow({
       tableHeader: true,
@@ -598,6 +601,7 @@ function topicTable(rows: MatrixInstrument[]) {
       }),
     );
   }
+  tableRows.push(captionRow(4, label, title));
   return new Table({
     width: { size: CW, type: WidthType.DXA },
     columnWidths: COLS,
@@ -607,7 +611,7 @@ function topicTable(rows: MatrixInstrument[]) {
 
 const REUSE_COLS = [2400, 2400, 2400, 2160];
 
-function reuseTable() {
+function reuseTable(label: string, title: string) {
   const rows: TableRow[] = [
     new TableRow({
       tableHeader: true,
@@ -733,6 +737,7 @@ function reuseTable() {
       );
     }
   }
+  rows.push(captionRow(4, label, title));
   return new Table({ width: { size: CW, type: WidthType.DXA }, columnWidths: REUSE_COLS, rows });
 }
 
@@ -742,7 +747,11 @@ function reuseTable() {
  * Horizontal rules only, and the term column shaded, because the full grid it
  * had before made a plain two-column list look like a data table.
  */
-function definitionTable(entries: readonly { term: string; def: string }[]) {
+function definitionTable(
+  entries: readonly { term: string; def: string }[],
+  label: string,
+  title: string,
+) {
   const w = [2860, CW - 2860];
   const NONE = { style: BorderStyle.NONE };
   const rule = { style: BorderStyle.SINGLE, size: 2, color: TAN };
@@ -757,42 +766,45 @@ function definitionTable(entries: readonly { term: string; def: string }[]) {
       insideHorizontal: rule,
       insideVertical: NONE,
     },
-    rows: entries.map(
-      (entry) =>
-        new TableRow({
-          cantSplit: true,
-          children: [
-            new TableCell({
-              width: { size: w[0], type: WidthType.DXA },
-              shading: { fill: "F3F7FB", type: ShadingType.CLEAR },
-              verticalAlign: VerticalAlign.TOP,
-              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
-              margins: { top: 110, bottom: 110, left: 140, right: 180 },
-              children: [
-                new Paragraph({
-                  spacing: { after: 0, line: 268 },
-                  children: [
-                    new TextRun({
-                      text: entry.term,
-                      font: SANS,
-                      bold: true,
-                      color: BROWN,
-                      size: 20,
-                    }),
-                  ],
-                }),
-              ],
-            }),
-            new TableCell({
-              width: { size: w[1], type: WidthType.DXA },
-              verticalAlign: VerticalAlign.TOP,
-              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
-              margins: { top: 110, bottom: 110, left: 0, right: 0 },
-              children: [P(entry.def, { after: 0, size: 20 })],
-            }),
-          ],
-        }),
-    ),
+    rows: [
+      ...entries.map(
+        (entry) =>
+          new TableRow({
+            cantSplit: true,
+            children: [
+              new TableCell({
+                width: { size: w[0], type: WidthType.DXA },
+                shading: { fill: "F3F7FB", type: ShadingType.CLEAR },
+                verticalAlign: VerticalAlign.TOP,
+                borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+                margins: { top: 110, bottom: 110, left: 140, right: 180 },
+                children: [
+                  new Paragraph({
+                    spacing: { after: 0, line: 268 },
+                    children: [
+                      new TextRun({
+                        text: entry.term,
+                        font: SANS,
+                        bold: true,
+                        color: BROWN,
+                        size: 20,
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              new TableCell({
+                width: { size: w[1], type: WidthType.DXA },
+                verticalAlign: VerticalAlign.TOP,
+                borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+                margins: { top: 110, bottom: 110, left: 0, right: 0 },
+                children: [P(entry.def, { after: 0, size: 20 })],
+              }),
+            ],
+          }),
+      ),
+      captionRow(2, label, title),
+    ],
   });
 }
 
@@ -824,10 +836,16 @@ function bodyParts(parts: readonly CheckpointMapBodyPart[] | undefined): Paragra
   return out;
 }
 
-function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlock["steps"]) {
+function phaseSteps(
+  phase: CheckpointMapPhaseBlock,
+  steps: CheckpointMapPhaseBlock["steps"],
+  caption?: { label: string; title: string },
+) {
   const rows: TableRow[] = [
     new TableRow({
-      tableHeader: true,
+      // Not a repeating header. A repeating header put an empty one on the last page
+      // of the document: the Sunset table's final row ended flush with the page break,
+      // so the header repeated onto the next page and found no rows to sit above.
       cantSplit: true,
       children: [
         headCell("#", STEP_COLS[0]),
@@ -836,7 +854,8 @@ function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlo
       ],
     }),
   ];
-  for (const step of steps) {
+  steps.forEach((step, index) => {
+    const keepNext = index === steps.length - 1;
     rows.push(
       new TableRow({
         cantSplit: true,
@@ -845,6 +864,7 @@ function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlo
             [
               new Paragraph({
                 alignment: AlignmentType.CENTER,
+                keepNext,
                 children: [
                   new TextRun({
                     text: String(step.n),
@@ -862,6 +882,7 @@ function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlo
             [
               new Paragraph({
                 spacing: { after: step.action.body ? 90 : 0, line: 272 },
+                keepNext,
                 children: [
                   new TextRun({
                     text: step.action.lead,
@@ -908,8 +929,9 @@ function phaseSteps(phase: CheckpointMapPhaseBlock, steps: CheckpointMapPhaseBlo
         ],
       }),
     );
-  }
+  });
   void phase;
+  if (caption) rows.push(captionRow(3, caption.label, caption.title, false));
   return new Table({
     width: { size: CW, type: WidthType.DXA },
     columnWidths: STEP_COLS,
@@ -1073,7 +1095,11 @@ const ACTION_INK: Record<string, string> = {
   close: "3E3A35",
 };
 
-function chipTable(items: { label: string; gloss: string; fill: string; ink: string }[]) {
+function chipTable(
+  items: { label: string; gloss: string; fill: string; ink: string }[],
+  label: string,
+  title: string,
+) {
   const w = [2400, CW - 2400];
   const NONE = { style: BorderStyle.NONE };
   const rule = { style: BorderStyle.SINGLE, size: 2, color: TAN };
@@ -1088,39 +1114,74 @@ function chipTable(items: { label: string; gloss: string; fill: string; ink: str
       insideHorizontal: rule,
       insideVertical: NONE,
     },
-    rows: items.map(
-      (item) =>
-        new TableRow({
-          cantSplit: true,
-          children: [
-            new TableCell({
-              width: { size: w[0], type: WidthType.DXA },
-              verticalAlign: VerticalAlign.CENTER,
-              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
-              margins: { top: 70, bottom: 70, left: 0, right: 160 },
-              children: [
-                new Paragraph({
-                  spacing: { before: 20, after: 20 },
-                  children: [chipRun(item.label, item.fill, item.ink)],
-                }),
-              ],
-            }),
-            new TableCell({
-              width: { size: w[1], type: WidthType.DXA },
-              verticalAlign: VerticalAlign.CENTER,
-              borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
-              margins: { top: 70, bottom: 70, left: 0, right: 0 },
-              children: [P(item.gloss, { after: 0, size: 20 })],
-            }),
-          ],
-        }),
-    ),
+    rows: [
+      ...items.map(
+        (item) =>
+          new TableRow({
+            cantSplit: true,
+            children: [
+              new TableCell({
+                width: { size: w[0], type: WidthType.DXA },
+                verticalAlign: VerticalAlign.CENTER,
+                borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+                margins: { top: 70, bottom: 70, left: 0, right: 160 },
+                children: [
+                  new Paragraph({
+                    spacing: { before: 20, after: 20 },
+                    children: [chipRun(item.label, item.fill, item.ink)],
+                  }),
+                ],
+              }),
+              new TableCell({
+                width: { size: w[1], type: WidthType.DXA },
+                verticalAlign: VerticalAlign.CENTER,
+                borders: { top: NONE, bottom: rule, left: NONE, right: NONE },
+                margins: { top: 70, bottom: 70, left: 0, right: 0 },
+                children: [P(item.gloss, { after: 0, size: 20 })],
+              }),
+            ],
+          }),
+      ),
+      captionRow(2, label, title, false),
+    ],
   });
 }
 
 function tableCaption(label: string, title: string) {
   tables.push({ label, title });
   return caption(`${label}  ${title}`);
+}
+
+/**
+ * A table's caption and its back-to-contents link, as the table's own last row.
+ *
+ * They used to be paragraphs after the table, and a table that ended flush with a
+ * page break left them alone on the next page. Inside the table they cannot be
+ * separated from it, which is the only way to be sure.
+ */
+function captionRow(columns: number, label: string, title: string, back = true) {
+  tables.push({ label, title });
+  const NONE = { style: BorderStyle.NONE };
+  const children: Paragraph[] = [
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: back ? 40 : 0 },
+      children: [text(`${label}  ${title}`, { italics: true, color: MUTED, size: 17 })],
+    }),
+  ];
+  if (back) children.push(backToTop());
+  return new TableRow({
+    cantSplit: true,
+    children: [
+      new TableCell({
+        width: { size: CW, type: WidthType.DXA },
+        columnSpan: columns,
+        borders: { top: NONE, bottom: NONE, left: NONE, right: NONE },
+        margins: { top: 0, bottom: 0, left: 0, right: 0 },
+        children,
+      }),
+    ],
+  });
 }
 
 /* ------------------------------------------------------------------ body */
@@ -1180,9 +1241,13 @@ pushBackToTop(body);
 /* 4. Glossary */
 body.push(H1D(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints", false));
 body.push(P(CHECKPOINT_MAP_TERMS_CAPTION));
-body.push(definitionTable(CHECKPOINT_MAP_TERMS));
-body.push(tableCaption(`Table ${SECTIONS.glossary}-1`, "Words the tables use and do not define"));
-pushBackToTop(body);
+body.push(
+  definitionTable(
+    CHECKPOINT_MAP_TERMS,
+    `Table ${SECTIONS.glossary}-1`,
+    "Words the tables use and do not define",
+  ),
+);
 
 /* 5. Every official thing a service has to do */
 body.push(H1D(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
@@ -1202,23 +1267,27 @@ body.push(
       fill: ACTION_FILL[key],
       ink: ACTION_INK[key],
     })),
+    nextTable(),
+    "What each action tag means",
   ),
 );
-body.push(tableCaption(nextTable(), "What each action tag means"));
 
 body.push(H3("The one tag that changes whether a row applies to you"));
 body.push(
-  chipTable([
-    {
-      label: "Only if",
-      gloss:
-        "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
-      fill: ONLYIF_FILL,
-      ink: ONLYIF_INK,
-    },
-  ]),
+  chipTable(
+    [
+      {
+        label: "Only if",
+        gloss:
+          "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
+        fill: ONLYIF_FILL,
+        ink: ONLYIF_INK,
+      },
+    ],
+    nextTable(),
+    "The scope tag",
+  ),
 );
-body.push(tableCaption(nextTable(), "The scope tag"));
 
 body.push(H3("What kind of thing each one is"));
 body.push(
@@ -1229,9 +1298,10 @@ body.push(
       fill: SURF,
       ink: BROWN,
     })),
+    nextTable(),
+    "What kind of thing each instrument is",
   ),
 );
-body.push(tableCaption(nextTable(), "What kind of thing each instrument is"));
 pushBackToTop(body);
 
 let topicIndex = 0;
@@ -1243,11 +1313,13 @@ for (const section of MATRIX_FAMILY_SECTIONS) {
     H2D(`${SECTIONS.tables}.${topicIndex}`, section.family, section.id, TOPIC_ICON[section.family]),
   );
   body.push(P(section.intro));
-  body.push(topicTable(rows));
   body.push(
-    tableCaption(nextTable(), `${section.family}: what applies, who does it, and when it comes up`),
+    topicTable(
+      rows,
+      nextTable(),
+      `${section.family}: what applies, who does it, and when it comes up`,
+    ),
   );
-  pushBackToTop(body);
 }
 
 /* 6. Conclusion and next steps */
@@ -1343,9 +1415,7 @@ body.push(
     "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure something instead of making it. Choosing to make your own breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so an architecture review board is likely to ask which of these were considered and why none of them fitted.",
   ),
 );
-body.push(reuseTable());
-body.push(tableCaption("Table A1-1", "What another part of government has already built"));
-pushBackToTop(body);
+body.push(reuseTable("Table A1-1", "What another part of government has already built"));
 
 /* Appendix 2 */
 body.push(H1D("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
@@ -1382,9 +1452,13 @@ body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
 
 body.push(H2D("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
 body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
-body.push(definitionTable(CHECKPOINT_MAP_WHO));
-body.push(tableCaption("Table A2-1", "The people Nadia deals with, and what each one does"));
-pushBackToTop(body);
+body.push(
+  definitionTable(
+    CHECKPOINT_MAP_WHO,
+    "Table A2-1",
+    "The people Nadia deals with, and what each one does",
+  ),
+);
 
 body.push(H2D("Appendix 2.3", "How long it took", "app2-timeline"));
 body.push(
@@ -1413,12 +1487,11 @@ for (const phase of CHECKPOINT_MAP_PHASES) {
   body.push(H2D(`Appendix 2.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
   body.push(P(phase.durationLabel, { italics: true, color: MUTED, size: 19, after: 90 }));
   body.push(P(phase.phaseNote));
-  body.push(phaseSteps(phase, phase.steps));
   body.push(
-    tableCaption(
-      `Table A2-${phaseIndex - 3}`,
-      `${phase.heading.replace(/ - .*/, "")}: what Nadia does and who responds`,
-    ),
+    phaseSteps(phase, phase.steps, {
+      label: `Table A2-${phaseIndex - 3}`,
+      title: `${phase.heading.replace(/ - .*/, "")}: what Nadia does and who responds`,
+    }),
   );
   if (phase.forkAfter) body.push(fork(phase.forkAfter));
   if (phase.stepsAfterFork) body.push(phaseSteps(phase, phase.stepsAfterFork));

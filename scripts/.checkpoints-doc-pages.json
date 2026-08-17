@@ -25,7 +25,7 @@
   "app2-key": 32,
   "app2-discovery": 32,
   "app2-alpha": 34,
-  "app2-beta": 37,
+  "app2-beta": 36,
   "app2-live": 39,
   "app2-sunset": 41,
   "Table 4-1": 2,
@@ -34,8 +34,8 @@
   "Table 5-3": 3,
   "Table 5-4": 5,
   "Table 5-5": 8,
-  "Table 5-6": 10,
-  "Table 5-7": 11,
+  "Table 5-6": 9,
+  "Table 5-7": 10,
   "Table 5-8": 12,
   "Table 5-9": 15,
   "Table 5-10": 17,
@@ -52,5 +52,5 @@
   "Table A2-3": 36,
   "Table A2-4": 39,
   "Table A2-5": 41,
-  "Table A2-6": 43
+  "Table A2-6": 42
 }
