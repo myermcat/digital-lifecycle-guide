@@ -175,6 +175,12 @@ export const EXTERNAL_LINKS = {
     description: "Policy on Communications and Federal Identity (TBS)",
     accessibility: "public",
   },
+  "directive-procurement-indigenous-appendix-e": {
+    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32692&section=procedure&p=E",
+    description:
+      "Directive on the Management of Procurement, Appendix E: Mandatory Procedures for Contracts Awarded to Indigenous Businesses. In force 1 April 2022. Sets the mandatory minimum 5% target and the reporting behind it.",
+    accessibility: "public",
+  },
   "directive-identity-management": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16577",
     description:

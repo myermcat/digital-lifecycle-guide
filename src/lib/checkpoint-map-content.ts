@@ -137,14 +137,15 @@ export const CHECKPOINT_MAP_JUMP = [
  * section. The rail is the only way to reach one topic directly on a page this
  * long, so the nesting is worth the extra dozen lines.
  */
-export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) => {
-  const parent = { id: item.href.slice(1), label: item.label };
+export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item, index) => {
+  const number = index + 1;
+  const parent = { id: item.href.slice(1), label: `${number}. ${item.label}` };
   if (parent.id !== "annex-instruments") return [parent];
   return [
     parent,
-    ...MATRIX_FAMILY_SECTIONS.map((section) => ({
+    ...MATRIX_FAMILY_SECTIONS.map((section, subIndex) => ({
       id: section.id,
-      label: section.family,
+      label: `${number}.${subIndex + 1} ${section.family}`,
       depth: 1,
     })),
   ];
@@ -505,6 +506,14 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
               type: "p",
               text: "Nadia writes or approves the requirements, and the solicitation is written from them, so a line still vague on the day it is posted stays vague in the contract. This runs alongside the prototyping rather than after it, because advertising, bidding and evaluation take months, and Beta cannot open until the contract is ready to sign.",
               bold: ["alongside the prototyping rather than after it"],
+            },
+            {
+              type: "p",
+              text: "Two of the requirements are hers to judge and are the easiest to leave out: how long the grants service can be down before real harm starts, and how much data it can afford to lose. Her department's business continuity specialist works those into a business impact analysis, which is also what decides whether the service counts as critical. Both numbers change the architecture and the hosting bill, so they belong in the solicitation and not in a conversation after the build is bought.",
+              bold: [
+                "how long the grants service can be down",
+                "how much data it can afford to lose",
+              ],
             },
           ],
         },

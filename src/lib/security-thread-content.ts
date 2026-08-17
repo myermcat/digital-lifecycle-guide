@@ -49,8 +49,7 @@ export const SECURITY_THREAD = {
   title: "Security",
   slug: "security" as const,
 
-  lead:
-    "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The same five questions come round again and again: what is at risk, how do we defend it, how do we spot trouble, how do we contain it, and how do we recover. Those five make up the security lifecycle.",
+  lead: "Security runs through the whole life of a service, from the first design sketch to the day it is turned off. A service that was safe at launch drifts out of date as the threats around it change and its software ages, so security is work that never quite stops. The same five questions come round again and again: what is at risk, how do we defend it, how do we spot trouble, how do we contain it, and how do we recover. Those five make up the security lifecycle.",
 
   securityLifecycle: {
     heading: "THE SECURITY LIFECYCLE",
@@ -62,8 +61,7 @@ export const SECURITY_THREAD = {
       { label: "Recover", gloss: "restore and learn" },
     ],
     framing: {
-      text:
-        "These are the five functions of the recognizable security lifecycle, the model the Government of Canada works in: Canada's ITSG-33 sets out the GC IT-security risk-management lifecycle, the Canadian Centre for Cyber Security publishes the guidance under it, and the same five functions are the international frame of the NIST Cybersecurity Framework.",
+      text: "These are the five functions of the recognizable security lifecycle, the model the Government of Canada works in: Canada's ITSG-33 sets out the GC IT-security risk-management lifecycle, the Canadian Centre for Cyber Security publishes the guidance under it, and the same five functions are the international frame of the NIST Cybersecurity Framework.",
       externalLinks: [
         { phrase: "ITSG-33", linkKey: "itsg-33" },
         { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
@@ -130,7 +128,9 @@ export const SECURITY_THREAD = {
     },
     {
       text: "The service's security maturity level is known, with a clear next step to improve it.",
-      externalLinks: [{ phrase: "security maturity level", linkKey: "owasp-dsomm" }] satisfies ExternalPhraseLink[],
+      externalLinks: [
+        { phrase: "security maturity level", linkKey: "owasp-dsomm" },
+      ] satisfies ExternalPhraseLink[],
     },
     {
       text: "Third-party components, the open-source and bought libraries the service is built on, are inventoried and watched for known problems.",
@@ -138,7 +138,10 @@ export const SECURITY_THREAD = {
         { phrase: "Third-party components", linkKey: "cyber-supply-chain-itsap10070" },
       ] satisfies ExternalPhraseLink[],
       internalLinks: [
-        { phrase: "inventoried and watched for known problems", to: THREADS["dependencies-and-standards"].path },
+        {
+          phrase: "inventoried and watched for known problems",
+          to: THREADS["dependencies-and-standards"].path,
+        },
       ] satisfies InternalPhraseLink[],
     },
   ] satisfies SecurityLinkedProse[],
@@ -146,16 +149,13 @@ export const SECURITY_THREAD = {
   whyItMatters: {
     paragraphs: [
       {
-        text:
-          "When security fails, a service can go offline or leak people's personal information, and public trust is slow to rebuild. The causes are usually mundane: an unpatched component, a default password, a permission left too wide.",
+        text: "When security fails, a service can go offline or leak people's personal information, and public trust is slow to rebuild. The causes are usually mundane: an unpatched component, a default password, a permission left too wide.",
       },
       {
-        text:
-          "Each of the five functions guards against a different failure, and the cycle only holds if none of them is skipped. Catching a flaw early also costs less, because one designed in and found late is the most expensive kind to undo.",
+        text: "Each of the five functions guards against a different failure, and the cycle only holds if none of them is skipped. Catching a flaw early also costs less, because one designed in and found late is the most expensive kind to undo.",
       },
       {
-        text:
-          "The Government of Canada's how-to for all of this is the Guideline on Secure Application Development, which covers building security into each stage of development, secure coding, handling third-party components, and managing vulnerabilities.",
+        text: "The Government of Canada's how-to for all of this is the Guideline on Secure Application Development, which covers building security into each stage of development, secure coding, handling third-party components, and managing vulnerabilities.",
         placeholderGcNetworkLinks: [
           {
             phrase: "Guideline on Secure Application Development",
@@ -196,16 +196,14 @@ export const SECURITY_THREAD = {
         title: "Identify, work out what is at risk.",
         sections: [
           {
-            text:
-              "Two questions sit under Identify: what could go wrong, and how sensitive is the information.",
+            text: "Two questions sit under Identify: what could go wrong, and how sensitive is the information.",
           },
           {
             type: "subheading",
             text: "What could go wrong: the threat model",
           },
           {
-            text:
-              "Threat modeling tells you what could go wrong. The clearest way in at the design stage is to ask four plain questions:",
+            text: "Threat modeling tells you what could go wrong. The clearest way in at the design stage is to ask four plain questions:",
             bold: [{ phrase: "what could go wrong" }],
           },
           {
@@ -229,8 +227,7 @@ export const SECURITY_THREAD = {
             text: "How sensitive the information is: security categorization",
           },
           {
-            text:
-              "Security categorization tells you how sensitive the information is. The Government of Canada has its own tool for this, an injury assessment that rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the harm, the more protection it earns. The Standard on Security Categorization sets out how that call is made.",
+            text: "Security categorization tells you how sensitive the information is. The Government of Canada has its own tool for this, an injury assessment that rates the harm a compromise would cause across economic, physical, well-being, and reputation, and sets the protection level from it: Protected B, Secret, or Top Secret. The greater the harm, the more protection it earns. The Standard on Security Categorization sets out how that call is made.",
             bold: [{ phrase: "how sensitive the information is" }],
             externalLinks: [
               {
@@ -251,8 +248,7 @@ export const SECURITY_THREAD = {
             text: "RISK = LIKELIHOOD x IMPACT",
           },
           {
-            text:
-              "In the Government of Canada, the tool that does this is a Threat and Risk Assessment (TRA), the risk-management approach in ITSG-33. A TRA takes three things and ranks the risks so you know what to protect most:",
+            text: "In the Government of Canada, the tool that does this is a Threat and Risk Assessment (TRA), the risk-management approach in ITSG-33. A TRA takes three things and ranks the risks so you know what to protect most:",
             externalLinks: [
               {
                 phrase: "Threat and Risk Assessment (TRA)",
@@ -279,8 +275,7 @@ export const SECURITY_THREAD = {
             ],
           },
           {
-            text:
-              "It is not one event. ITSG-33 runs the assessment three times, and the sub-phase pages compress the first two into one for readability:",
+            text: "It is not one event. ITSG-33 runs the assessment three times, and the sub-phase pages compress the first two into one for readability:",
             bold: [{ phrase: "It is not one event." }],
             externalLinks: [
               { phrase: "ITSG-33", linkKey: "itsg-33" },
@@ -295,16 +290,25 @@ export const SECURITY_THREAD = {
             ],
           },
           {
-            text:
-              "That third run produces the residual risk assessment: the record of what risk is left, and the thing the authorizer signs against. Nothing here is filed outside the department. What forces the work is the Authority to Operate, because without an assessment there is nothing for the authorizer to accept.",
+            type: "subheading",
+            text: "Attackers are one hazard among several",
+          },
+          {
+            text: "By doctrine the assessment is all-hazards. It covers deliberate acts, accidents and natural events alike, so a flood in the building, a power failure, a supplier going out of business and a well-meaning employee deleting the wrong thing are all inside its scope, next to the attacker everyone pictures first.",
+            bold: [{ phrase: "the assessment is all-hazards" }],
+          },
+          {
+            text: "In practice the information technology assessment usually runs narrower than that, because natural hazards are handled through continuity planning instead, which is a different team and a different plan. That is a reasonable way to divide the work. It stops being reasonable when nobody has asked which of the two owns a hazard, so it is worth asking your security team what their assessment covers and what it assumes somebody else has covered.",
+          },
+          {
+            text: "That third run produces the residual risk assessment: the record of what risk is left, and the thing the authorizer signs against. Nothing here is filed outside the department. What forces the work is the Authority to Operate, because without an assessment there is nothing for the authorizer to accept.",
           },
           {
             type: "subheading",
             text: "Guard the few things that would really hurt",
           },
           {
-            text:
-              "So protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
+            text: "So protect the few things that matter most, robustly, rather than protecting everything to the same high standard. Trying to protect everything equally runs up cost overruns, delays, or protection so watered down it helps nowhere. Find the crown jewels first, then guard them well.",
             bold: [{ phrase: "protect the few things that matter most" }],
           },
           {
@@ -312,15 +316,13 @@ export const SECURITY_THREAD = {
             label: "Example",
             paragraphs: [
               {
-                text:
-                  "The COVID Alert app worked by having phones swap anonymous random codes over Bluetooth; if someone later tested positive, those codes were used to warn the people they had recently been near. The one thing that would cause real harm was the code that could trigger a 'you were exposed' alert, so the security effort was concentrated there, with safeguards that stopped anyone sending fake alerts.",
+                text: "The COVID Alert app worked by having phones swap anonymous random codes over Bluetooth; if someone later tested positive, those codes were used to warn the people they had recently been near. The one thing that would cause real harm was the code that could trigger a 'you were exposed' alert, so the security effort was concentrated there, with safeguards that stopped anyone sending fake alerts.",
                 externalLinks: [
                   { phrase: "COVID Alert app", linkKey: "covid-alert-privacy-assessment" },
                 ] satisfies ExternalPhraseLink[],
               },
               {
-                text:
-                  "The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
+                text: "The opposite extreme makes the same point. A Top Secret room is built for the most sensitive work, so it is small, windowless, and costs a fortune. Mark everything Top Secret and the whole team would have to crowd into that one room to get anything done. So scope what genuinely needs that level.",
               },
             ],
           },
@@ -330,8 +332,7 @@ export const SECURITY_THREAD = {
         title: "Protect, build the defenses.",
         sections: [
           {
-            text:
-              "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Three defenses do most of the work:",
+            text: "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Three defenses do most of the work:",
             bold: [{ phrase: "Protect" }, { phrase: "Identify" }],
           },
           {
@@ -357,15 +358,13 @@ export const SECURITY_THREAD = {
             text: "Most source code is not a secret, and hiding it protects little",
           },
           {
-            text:
-              'Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets, can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws.',
+            text: 'Government of Canada code is open by default. Teams often label all of their code "Protected B" out of habit, but most source code holds no secrets, can be unclassified, and a good deal of it can be published openly. Open code invites more eyes, and more eyes catch more flaws.',
             externalLinks: [
               { phrase: "open by default", linkKey: "guide-open-source-software" },
             ] satisfies ExternalPhraseLink[],
           },
           {
-            text:
-              "The source-code categorization is a deliberate decision the business owner makes with the team, and there are four answers: public and open to contributions, public but closed to them, fully private, or genuinely Protected B.",
+            text: "The source-code categorization is a deliberate decision the business owner makes with the team, and there are four answers: public and open to contributions, public but closed to them, fully private, or genuinely Protected B.",
             placeholderGcNetworkLinks: [
               {
                 phrase: "source-code categorization",
@@ -378,8 +377,7 @@ export const SECURITY_THREAD = {
             text: "A ladder for working out what to improve next",
           },
           {
-            text:
-              "To level up these defenses over time, the OWASP DevSecOps Maturity Model is a ladder a service can be placed on without reading a line of code. It runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once.",
+            text: "To level up these defenses over time, the OWASP DevSecOps Maturity Model is a ladder a service can be placed on without reading a line of code. It runs from Level 0, no real security in place, up through ad hoc, defined, and integrated, to Level 4, where security is automated and measured. Knowing the level points to the one thing worth improving next, instead of trying to fix everything at once.",
             externalLinks: [
               { phrase: "OWASP DevSecOps Maturity Model", linkKey: "owasp-dsomm" },
             ] satisfies ExternalPhraseLink[],
@@ -390,8 +388,7 @@ export const SECURITY_THREAD = {
         title: "Detect, spot trouble fast.",
         sections: [
           {
-            text:
-              "You cannot prevent everything, so Detect is the half that catches what gets through. Monitoring and alerting flag unusual activity, and what counts is how fast you notice. Monitoring the service in production is where this lives once the service is running.",
+            text: "You cannot prevent everything, so Detect is the half that catches what gets through. Monitoring and alerting flag unusual activity, and what counts is how fast you notice. Monitoring the service in production is where this lives once the service is running.",
             internalLinks: [
               {
                 phrase: "Monitoring the service in production",
@@ -405,8 +402,7 @@ export const SECURITY_THREAD = {
         title: "Respond, contain it.",
         sections: [
           {
-            text:
-              "When something is spotted, Respond shuts it down quickly instead of weeks later. A rehearsed incident response plan means the team has practised the steps in advance, so a problem is caught and contained rather than left to spread.",
+            text: "When something is spotted, Respond shuts it down quickly instead of weeks later. A rehearsed incident response plan means the team has practised the steps in advance, so a problem is caught and contained rather than left to spread.",
             externalLinks: [
               { phrase: "incident response plan", linkKey: "incident-response-plan-itsap40003" },
             ] satisfies ExternalPhraseLink[],
@@ -417,51 +413,47 @@ export const SECURITY_THREAD = {
         title: "Recover, restore and learn.",
         sections: [
           {
-            text:
-              "Recover brings the service and its data back after an incident, then closes the gap that let it happen. The lesson feeds back into Identify and Protect, so the same failure does not return. That is what makes the lifecycle a cycle rather than a line.",
+            text: "Recover brings the service and its data back after an incident, then closes the gap that let it happen. The lesson feeds back into Identify and Protect, so the same failure does not return. That is what makes the lifecycle a cycle rather than a line.",
           },
           {
             type: "subheading",
             text: "Where the recovery numbers live",
           },
           {
-            text:
-              "Four numbers describe what recovery has to achieve: how long the service can be unavailable before real harm starts, what counts as good enough while it is down, how fast it should be back, and how much recent data can be lost. The service team works them out at the end of Alpha, because they change what gets built and what it costs to run.",
+            text: "Four numbers describe what recovery has to achieve: how long the service can be unavailable before real harm starts, what counts as good enough while it is down, how fast it should be back, and how much recent data can be lost. The service team works them out at the end of Alpha, because they change what gets built and what it costs to run.",
             internalLinks: [{ phrase: "end of Alpha", to: "/create-alpha" }],
           },
-      {
-        type: "unorderedList",
-        items: [
           {
-            text: "Maximum allowable downtime (MAD). How long the service can be unavailable before somebody is seriously harmed. It is a ceiling rather than a target, so the recovery plan should aim comfortably inside it.",
-            bold: [{ phrase: "Maximum allowable downtime (MAD)." }],
+            type: "unorderedList",
+            items: [
+              {
+                text: "Maximum allowable downtime (MAD). How long the service can be unavailable before somebody is seriously harmed. It is a ceiling rather than a target, so the recovery plan should aim comfortably inside it.",
+                bold: [{ phrase: "Maximum allowable downtime (MAD)." }],
+              },
+              {
+                text: "Minimum service level. What counts as good enough while the service is down, which is often a paper form or a phone line. Somebody has to have arranged it in advance for it to exist on the day.",
+                bold: [{ phrase: "Minimum service level." }],
+              },
+              {
+                text: "Recovery time objective (RTO). How fast the team is aiming to have the service back. It is set inside the maximum allowable downtime, so the two are deliberately not the same number.",
+                bold: [{ phrase: "Recovery time objective (RTO)." }],
+              },
+              {
+                text: "Recovery point objective (RPO). How much recent work the service can afford to lose, measured by how far back the last usable copy of the data goes. An hour of lost applications is a different service from a week of them.",
+                bold: [{ phrase: "Recovery point objective (RPO)." }],
+              },
+            ],
           },
-          {
-            text: "Minimum service level. What counts as good enough while the service is down, which is often a paper form or a phone line. Somebody has to have arranged it in advance for it to exist on the day.",
-            bold: [{ phrase: "Minimum service level." }],
-          },
-          {
-            text: "Recovery time objective (RTO). How fast the team is aiming to have the service back. It is set inside the maximum allowable downtime, so the two are deliberately not the same number.",
-            bold: [{ phrase: "Recovery time objective (RTO)." }],
-          },
-          {
-            text: "Recovery point objective (RPO). How much recent work the service can afford to lose, measured by how far back the last usable copy of the data goes. An hour of lost applications is a different service from a week of them.",
-            bold: [{ phrase: "Recovery point objective (RPO)." }],
-          },
-        ],
-      },
           {
             type: "subheading",
             text: "The numbers leave the team, the recovery work does not",
           },
           {
-            text:
-              "There is one business continuity plan for the whole department, and no separate one for an individual service. So the impact judgement, the four numbers, and the list of what this service falls over without all go to the department's business continuity coordinator.",
+            text: "There is one business continuity plan for the whole department, and no separate one for an individual service. So the impact judgement, the four numbers, and the list of what this service falls over without all go to the department's business continuity coordinator.",
             bold: [{ phrase: "There is one business continuity plan for the whole department" }],
           },
           {
-            text:
-              "What stays with the team is recovering this particular service, and the testing that proves the recovery actually works in the time it promised.",
+            text: "What stays with the team is recovering this particular service, and the testing that proves the recovery actually works in the time it promised.",
           },
         ],
       },
@@ -510,12 +502,10 @@ export const SECURITY_THREAD = {
         preview: "Identify and Protect are designed in, before any code is written.",
         popup: [
           {
-            text:
-              'This is where Identify and Protect are designed in, before any code is written. The team builds a threat model to set out what could go wrong and who might attack the service (the threat model itself lives in the Identify block of "A closer look").',
+            text: 'This is where Identify and Protect are designed in, before any code is written. The team builds a threat model to set out what could go wrong and who might attack the service (the threat model itself lives in the Identify block of "A closer look").',
           },
           {
-            text:
-              "The team then chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
+            text: "The team then chooses secure defaults so the safe option is the default one, and sets how the service will handle identity and access. Security requirements are written into the contract so the supplier is held to them. A weakness fixed at the design stage costs far less than one found in production.",
             internalLinks: [
               { phrase: "written into the contract", to: GOOD_CONTRACT_PATH },
             ] satisfies InternalPhraseLink[],
@@ -527,15 +517,13 @@ export const SECURITY_THREAD = {
         preview: "Protect, Detect, Respond, and Recover run continuously.",
         popup: [
           {
-            text:
-              "Once the service is running, the Protect, Detect, Respond, and Recover functions are all running at once, and the work is continuous. It splits into two halves:",
+            text: "Once the service is running, the Protect, Detect, Respond, and Recover functions are all running at once, and the work is continuous. It splits into two halves:",
           },
           {
             type: "orderedList",
             items: [
               {
-                text:
-                  "Prevention (Protect). Keep the service hardened and current: apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
+                text: "Prevention (Protect). Keep the service hardened and current: apply patches on a schedule, scan for new vulnerabilities, and check each release for security problems before it goes out, with the business owner giving the final go-ahead.",
                 bold: [{ phrase: "Prevention (Protect)." }],
                 externalLinks: [
                   {
@@ -545,8 +533,7 @@ export const SECURITY_THREAD = {
                 ] satisfies ExternalPhraseLink[],
               },
               {
-                text:
-                  "Detection and response (Detect, Respond, Recover). You cannot prevent everything, so this half matters just as much: monitor the service in production to catch unusual activity, and keep a rehearsed incident response plan so a problem is contained quickly instead of found weeks later, and the service brought back after.",
+                text: "Detection and response (Detect, Respond, Recover). You cannot prevent everything, so this half matters just as much: monitor the service in production to catch unusual activity, and keep a rehearsed incident response plan so a problem is contained quickly instead of found weeks later, and the service brought back after.",
                 bold: [{ phrase: "Detection and response (Detect, Respond, Recover)." }],
                 externalLinks: [
                   {
@@ -570,16 +557,14 @@ export const SECURITY_THREAD = {
         preview: "The service is shut down or replaced without leaving holes open.",
         popup: [
           {
-            text:
-              "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B.",
+            text: "A service is eventually retired or replaced, and security has work right to the end. As it is wound down, the team revokes access and credentials, moves or destroys data under its retention rules, and shuts off the connections to other systems so nothing is left hanging. Source code is disposed of the approved way, with extra care for anything categorized Protected B.",
             internalLinks: [
               { phrase: "retired or replaced", to: PHASES.sunset.href },
               { phrase: "moves or destroys data", to: THREADS["data-stewardship"].path },
             ] satisfies InternalPhraseLink[],
           },
           {
-            text:
-              "Most of this is easier when you plan and fund retiring a component up front. Technology that runs past its end-of-support date stops getting patches, so known vulnerabilities pile up until it is trivially exploitable. Lifecycle replacement should be budgeted from the start rather than run at risk.",
+            text: "Most of this is easier when you plan and fund retiring a component up front. Technology that runs past its end-of-support date stops getting patches, so known vulnerabilities pile up until it is trivially exploitable. Lifecycle replacement should be budgeted from the start rather than run at risk.",
             placeholderLinks: [
               {
                 phrase: "retiring a component",
@@ -588,8 +573,7 @@ export const SECURITY_THREAD = {
             ] satisfies PlaceholderPhraseLink[],
           },
           {
-            text:
-              "When hardware is finally decommissioned or donated, securely erase all the data on it first, so nothing walks out the door on a disposed drive.",
+            text: "When hardware is finally decommissioned or donated, securely erase all the data on it first, so nothing walks out the door on a disposed drive.",
           },
         ],
       },
@@ -599,8 +583,7 @@ export const SECURITY_THREAD = {
   furtherReading: {
     paragraphs: [
       {
-        text:
-          "Security in the Government of Canada comes under the Policy on Government Security, and under its Directive on Security Management, which requires security to be managed across a system's whole life. The department gathers all of it into a departmental security plan, a three-year plan reviewed every year and approved by the deputy head, and a service's security posture, its residual risks and its continuity requirements all roll up into that plan.",
+        text: "Security in the Government of Canada comes under the Policy on Government Security, and under its Directive on Security Management, which requires security to be managed across a system's whole life. The department gathers all of it into a departmental security plan, a three-year plan reviewed every year and approved by the deputy head, and a service's security posture, its residual risks and its continuity requirements all roll up into that plan.",
         externalLinks: [
           {
             phrase: "Policy on Government Security",
@@ -613,8 +596,7 @@ export const SECURITY_THREAD = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text:
-          "The closest companion to this page is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and on the open OWASP Top 10 and the NIST Secure Software Development Framework, translated into a business owner's decisions.",
+        text: "The closest companion to this page is the Guideline on Secure Application Development, on the GC network, which this thread leans on throughout. It also draws on ITSG-33 for the GC control catalogue, and on the open OWASP Top 10 and the NIST Secure Software Development Framework, translated into a business owner's decisions.",
         externalLinks: [
           { phrase: "ITSG-33", linkKey: "itsg-33" },
           { phrase: "OWASP Top 10", linkKey: "owasp-top-10" },
@@ -631,8 +613,7 @@ export const SECURITY_THREAD = {
         ] satisfies PlaceholderGcNetworkPhraseLink[],
       },
       {
-        text:
-          "To work out where spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on afterwards, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
+        text: "To work out where spending buys down the most risk, the Cyber Centre's top 10 IT security actions ranks the defences that matter most, and its baseline controls for small and medium organizations is a plainer starting point for a smaller service. For the case that security is cheapest when designed in rather than bolted on afterwards, the US Cyber Defense Agency's secure-by-design principles make the argument in a business owner's terms.",
         externalLinks: [
           { phrase: "top 10 IT security actions", linkKey: "cccs-top-10-it-security-actions" },
           {
@@ -669,19 +650,19 @@ export const SECURITY_THREAD = {
       label: "Supporting reference",
       linkKey: "guideline-vulnerability-management" satisfies ExternalLinkKey,
       description:
-        "Guideline on Vulnerability Management (GC) — the find, assess, fix loop behind \"tested regularly.\"",
+        'Guideline on Vulnerability Management (GC) — the find, assess, fix loop behind "tested regularly."',
     },
     {
       label: "Supporting reference",
       linkKey: "itsg-33" satisfies ExternalLinkKey,
       description:
-        "ITSG-33, IT security risk management, a lifecycle approach (CCCS) — the GC IT-security risk-management lifecycle and control catalogue; the Canadian-first frame for the five functions, linked inline from \"The security lifecycle\" and the Identify block (the TRA).",
+        'ITSG-33, IT security risk management, a lifecycle approach (CCCS) — the GC IT-security risk-management lifecycle and control catalogue; the Canadian-first frame for the five functions, linked inline from "The security lifecycle" and the Identify block (the TRA).',
     },
     {
       label: "Supporting reference",
       linkKey: "nist-cyberframework" satisfies ExternalLinkKey,
       description:
-        "NIST Cybersecurity Framework (NIST) — the international frame for the five functions Identify, Protect, Detect, Respond, Recover; linked inline from \"The security lifecycle.\"",
+        'NIST Cybersecurity Framework (NIST) — the international frame for the five functions Identify, Protect, Detect, Respond, Recover; linked inline from "The security lifecycle."',
     },
     {
       label: "Supporting reference",
@@ -692,12 +673,14 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "owasp-top-10" satisfies ExternalLinkKey,
-      description: "OWASP Top 10 — the common web-application risks behind \"basic things left undone.\"",
+      description:
+        'OWASP Top 10 — the common web-application risks behind "basic things left undone."',
     },
     {
       label: "Supporting reference",
       linkKey: "owasp-dsomm" satisfies ExternalLinkKey,
-      description: "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in the Protect block.",
+      description:
+        "OWASP DevSecOps Maturity Model (DSOMM) — the maturity ladder in the Protect block.",
     },
     {
       label: "Supporting reference",
@@ -775,7 +758,8 @@ export const SECURITY_THREAD = {
     {
       label: "Supporting reference",
       linkKey: "cisa-secure-by-design" satisfies ExternalLinkKey,
-      description: "US CISA Secure by Design — the case for designing security in rather than bolting it on; further reading.",
+      description:
+        "US CISA Secure by Design — the case for designing security in rather than bolting it on; further reading.",
     },
   ] satisfies SourceItem[],
 } as const;

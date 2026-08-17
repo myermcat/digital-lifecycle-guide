@@ -1,4 +1,5 @@
 import { Fragment, type ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 import { ExpandableTable } from "@/components/ExpandableTable";
 import { ExternalLink } from "@/components/ExternalLink";
 import {
@@ -163,7 +164,26 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
               />
               {section.family}
             </h3>
-            <p className={cn(guideProse, "mt-2 mb-1 max-w-[80ch]")}>{section.intro}</p>
+            <p className={cn(guideProse, "mt-2 mb-1 max-w-[80ch]")}>
+              {section.introLink
+                ? (() => {
+                    const at = section.intro.indexOf(section.introLink.phrase);
+                    if (at === -1) return section.intro;
+                    return (
+                      <>
+                        {section.intro.slice(0, at)}
+                        <Link
+                          to={section.introLink.to}
+                          className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                        >
+                          {section.introLink.phrase}
+                        </Link>
+                        {section.intro.slice(at + section.introLink.phrase.length)}
+                      </>
+                    );
+                  })()
+                : section.intro}
+            </p>
             <TopicTable family={section.family} rows={rows} />
           </section>
         );

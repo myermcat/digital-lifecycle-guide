@@ -238,6 +238,8 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
   id: string;
   icon: LucideIcon;
   intro: string;
+  /** A phrase in the intro that links to a thread page. */
+  introLink?: { phrase: string; to: string };
 }[] = [
   {
     family: "Security",
@@ -265,7 +267,7 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     id: "topic-accessibility",
     icon: Accessibility,
     intro:
-      "Two related duties. A supplier's conformance report exists only if you are buying something, and it describes one version of their product. The department's own conformance is about the service as people meet it, so a good report from a supplier is a starting point and not the finish. The dates to plan against are 5 December 2027 for web pages, and 5 December 2028 for mobile applications, digital documents and the conformity assessment used in buying.",
+      "Two related duties. A supplier's conformance report exists only if you are buying something, and it describes one version of their product. The department's own conformance is about the service as people meet it, so a good report from a supplier is a starting point and not the finish. Two deadlines set when the service itself has to conform: web pages created or updated on or after 5 December 2027, and mobile applications, digital documents and the conformity assessment used in buying from 5 December 2028.",
   },
   {
     family: "Official languages",
@@ -286,14 +288,14 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     id: "topic-contracts",
     icon: FileSignature,
     intro:
-      "Both of these apply only where a supplier will handle sensitive information, and both run on the procurement timetable, which makes them earlier than they look. The security requirements check list has to be settled before the solicitation goes out, because the security clauses in the solicitation come from it. Screening a supplier's people can take longer than the competition itself, so it helps to start as soon as the work is known to be sensitive.",
+      "All three apply only when you are buying, and all three run on the procurement timetable, which makes them earlier than they look. The check list and the screening apply where a supplier will handle sensitive information: the check list has to be settled before the solicitation goes out, because the security clauses in the solicitation come from it, and clearing a supplier's people can take longer than the competition itself. The 5% target for contracts awarded to Indigenous businesses is the department's to meet, and the one moment a business owner can affect it is before the solicitation is written.",
   },
   {
     family: "Hosting and cloud",
     id: "topic-hosting",
     icon: Cloud,
     intro:
-      "Where the service runs is worth deciding deliberately, because otherwise it is decided by whoever sets up the first environment. There is a government-wide order of preference to work through, and choosing something else is allowed with a case for it. One thing to watch: a service categorized at Protected B or below that runs on anything other than public cloud goes to the government-wide architecture board, whatever it costs. The cloud security work in the second row applies only to a cloud-hosted service.",
+      "Where the service runs is worth deciding deliberately, because otherwise it is decided by whoever sets up the first environment. There is a government-wide order of preference to work through, and choosing something else is allowed with a case for it. One thing to watch: a service categorized at Protected B or below that runs on anything other than public cloud goes to the government-wide architecture board however small the spend, since that trigger has no dollar floor. The cloud security work in the second row applies only to a cloud-hosted service.",
   },
   {
     family: "Identity and sign-in",
@@ -313,15 +315,16 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     family: "Registries and records",
     id: "topic-registries",
     icon: Archive,
+    introLink: { phrase: "Data stewardship thread", to: "/thread/data-stewardship" },
     intro:
-      "Registers are how the service becomes visible to the rest of government, and records are the information it keeps. Neither is difficult, and both are easy to overlook because they arrive after launch, when the project team has usually moved on. Two things worth knowing: only one of the two registers has anywhere to say the service is critical, and records cannot be destroyed without written consent, which makes that the one step here that cannot be undone. This covers keeping and disposing of information. How data is modelled, described and kept usable is the subject of the Data stewardship thread.",
+      "Registers are how the service becomes visible to the rest of government, and records are the information it keeps. Neither is difficult, and both are easy to overlook because they arrive after launch, when the project team has usually moved on. Two things worth knowing. Only one of the two registers has anywhere to say the service is critical. And no record may be destroyed without written consent from Library and Archives Canada, which is the one thing on this page that cannot be put right afterwards: a record destroyed is gone. This topic covers keeping information and disposing of it. How data is modelled, described and kept usable is the subject of the Data stewardship thread.",
   },
   {
     family: "Access to information and openness",
     id: "topic-openness",
     icon: BookOpen,
     intro:
-      "Work on the basis that anything the service records can be asked for, and that some of it is published without anyone asking. That affects what the service should record and how easily a record can be found again, which makes it a design question as much as a legal one. It is far cheaper to settle early than to change the data later.",
+      "Two duties, and neither one is about disposal, which is the topic above. Anyone at all can ask a federal institution for its records, and the institution then has to find them and release whatever the law allows, so plan on the basis that what this service records may one day be asked for by someone outside it. Separately, some information is published on a schedule with nobody asking for it: contracts over $10,000, and grants and contributions over $25,000. Both change what the service should record, and how easily one record can be found among thousands while the service is running, which makes them build decisions and not paperwork.",
   },
 ];
 
@@ -975,8 +978,6 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ownerBold: ["Rates the application's criticality"],
     whereItEndsUp:
       "The department transmits to the Treasury Board of Canada Secretariat annually; the public dataset refreshes twice a year.",
-    caveat:
-      "The numeric weighting behind the business value and technical condition scores is documented on Government of Canada network guides, so seeing it needs network access.",
     threads: ["data-stewardship", "dependencies-and-standards"],
     cells: {
       stabilization: {
@@ -1315,6 +1316,37 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* Hosting and cloud                                                   */
   /* ------------------------------------------------------------------ */
   {
+    name: "Contracts awarded to Indigenous businesses",
+    acronym: "the 5% target",
+    family: "Contracts and suppliers",
+    kind: "duty",
+    whatItIs:
+      "A government-wide commitment that at least 5% of the total value of contracts goes to Indigenous businesses each year. Departments plan for it, report against it, and meet it or miss it one procurement at a time.",
+    everyService: false,
+    scope:
+      "Only when buying. The target belongs to the department and not to any one contract, so no single procurement has to be set aside. Every procurement is where the target is met or missed, which is why departments plan for it up front. Whether a supplier counts is verified through Indigenous Services Canada.",
+    ownerDoes:
+      "Says early whether the requirement could be met by an Indigenous business, and says so before the solicitation is written, when the route is still open.",
+    ownerBold: ["Says early whether the requirement could be met by an Indigenous business"],
+    whoDoes:
+      "The contracting authority chooses the route and runs it. The department's procurement function plans against the target and reports the results.",
+    whoBold: ["contracting authority", "procurement function"],
+    whereItEndsUp:
+      "Public. Contracts awarded to Indigenous businesses are disclosed, and departments report on planning and performance against the target.",
+    linkKey: "directive-procurement-indigenous-appendix-e",
+    threads: ["procurement"],
+    cells: {
+      discovery: {
+        tags: ["check"],
+        note: "Ask the contracting authority what the department's position on the target is this year, because it shapes the buying route more than the requirement does.",
+      },
+      alpha: {
+        tags: ["gather"],
+        note: "Say whether the work could be done by an Indigenous business while the solicitation is still being written. Once it is published the route is fixed.",
+      },
+    },
+  },
+  {
     name: "Application hosting decision, and the public cloud default",
     family: "Hosting and cloud",
     kind: "review",
@@ -1524,8 +1556,6 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ],
     whereItEndsUp:
       "Nothing for a responsive service. A downloadable app is handed to the mandated publishing entity, which tests, publishes and retires it.",
-    caveat:
-      "The Standard on Optimizing Websites and Applications for Mobile Devices is still listed as a current standard under the Directive on Service and Digital, and its practical content now runs through the canada.ca specifications.",
     threads: ["accessibility"],
     cells: {
       alpha: {
