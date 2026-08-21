@@ -23,11 +23,25 @@ export const LIVE_PHASE = {
     ],
   } satisfies PhaseQuoteContent,
 
+  // Four separate points, and as one column of identical paragraphs a reader could not tell them
+  // apart. Each carries the heading of the thing it is actually about.
   lead: [
-    "This is where the one-time work of standing the service up ends, and the service becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its running costs begin, and where it needs steady care to stay useful.",
-    "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep listening to the people who use it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
-    "Think ahead to Sunset while you run. Every service ends, and the teams that end well are the ones that saw it coming: they watch the signals that point to retirement or replacement, keep the exit possible as contracts renew, and set the money aside before the current funding ends.",
-    "If something is going to replace this service, the planning starts years before the last day, because the old service stays available until the new one has been steady for a while. Before that can happen the replacement has to go through its own Discovery, Alpha, Beta and Stabilization, and any competition that comes with them. For much of that time a department is paying for both, and the team is winding one service down while standing another one up.",
+    {
+      heading: "Launch is where the running work begins",
+      text: "This is where the one-time work of standing the service up ends, and the service becomes something a team looks after. Launch is not the finish line. It is the point where the service starts being used, where its running costs begin, and where it needs steady care to stay useful.",
+    },
+    {
+      heading: "Live is open-ended, and the work is a cycle",
+      text: "Live is open-ended. There is no single delivery date to aim at the way Create has launch. Sometimes an end is already known, when a contract runs for a fixed term or a policy sets a retirement date, but even then the daily work is a cycle. That cycle repeats for as long as the service is used: watch how it performs, fix and improve it, keep listening to the people who use it, keep it secure, and renew its funding in good time. The three sub-phases below mark how the cycle changes as the service matures.",
+    },
+    {
+      heading: "Think ahead to Sunset while the service runs",
+      text: "Think ahead to Sunset while you run. Every service ends, and the teams that end well are the ones that saw it coming: they watch the signals that point to retirement or replacement, keep the exit possible as contracts renew, and set the money aside before the current funding ends.",
+    },
+    {
+      heading: "A replacement overlaps the service it replaces",
+      text: "If something is going to replace this service, the planning starts years before the last day, because the old service stays available until the new one has been steady for a while. Before that can happen the replacement has to go through its own Discovery, Alpha, Beta and Stabilization, and any competition that comes with them. For much of that time a department is paying for both, and the team is winding one service down while standing another one up.",
+    },
   ],
 
   costOfLate: {
@@ -247,5 +261,5 @@ export const LIVE_PHASE = {
 
 export const livePhaseLeadPlainText = [
   phaseQuotePlainText(LIVE_PHASE.quote),
-  ...LIVE_PHASE.lead,
+  ...LIVE_PHASE.lead.map((paragraph) => paragraph.text),
 ].join(" ");

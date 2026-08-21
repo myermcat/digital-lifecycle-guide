@@ -20,6 +20,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
   guideCalloutLabel,
+  guideBodySubheading,
   guideCardHeading,
   guideLink,
   guideListIndent,
@@ -55,7 +56,10 @@ export function LivePhasePage() {
 
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {lead.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <div key={paragraph.text}>
+            <h2 className={`${guideBodySubheading} mb-1`}>{paragraph.heading}</h2>
+            <p>{paragraph.text}</p>
+          </div>
         ))}
       </section>
 

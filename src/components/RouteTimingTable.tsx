@@ -25,13 +25,13 @@ const ROWS = [
     why: "This is the shape PSPC sets out. The prototypes are built under contract, so the contracts come first, with several suppliers signed at once. The build is an option inside the winner's contract, exercised by amendment.",
   },
   {
-    route: "Buy a Solution",
+    route: "Buy a Solution (traditional)",
     competition: "Alpha",
     signature: "As Beta opens",
     why: "The department prototypes first, so it can say what it wants before asking anyone to price it.",
   },
   {
-    route: "Buy a Finished Product",
+    route: "Buy a Finished Product (traditional)",
     competition: "Alpha",
     signature: "As Beta opens",
     why: "Nothing is prototyped, because the product exists. Alpha is spent evaluating real products.",
