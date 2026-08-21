@@ -1,0 +1,83 @@
+<svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#A8472F"/>
+    </marker>
+  </defs>
+
+  <!-- clockwise arrows in the gaps between cards (circle r=185, centre 300,280); all clear of the cards -->
+  <g fill="none" stroke="#A8472F" stroke-width="2.4" marker-end="url(#arw)">
+    <path d="M392.5,119.8 A185,185 0 0 1 423.8,142.5"/>
+    <path d="M480.9,318.5 A185,185 0 0 1 469.1,355.3"/>
+    <path d="M319.4,464.1 A185,185 0 0 1 280.6,464.1"/>
+    <path d="M130.9,355.3 A185,185 0 0 1 119.1,318.5"/>
+    <path d="M176.2,142.5 A185,185 0 0 1 207.5,119.8"/>
+  </g>
+
+  <!-- centre label -->
+  <text x="300" y="274" text-anchor="middle" font-size="12.5" letter-spacing="2.5" fill="#B98E73">THE SECURITY</text>
+  <text x="300" y="292" text-anchor="middle" font-size="12.5" letter-spacing="2.5" fill="#B98E73">LIFECYCLE</text>
+
+  <!-- 1. Identify (top) centre 300,95 -->
+  <g>
+    <rect x="222" y="63" width="156" height="64" rx="11" fill="#F2E8D0" stroke="#D8B89C" stroke-width="1.5"/>
+    <rect x="222" y="63" width="156" height="6" rx="3" fill="#A8472F"/>
+    <g transform="translate(238,79)" fill="none" stroke="#A8472F" stroke-width="1.5" stroke-linecap="round">
+      <circle cx="6" cy="6" r="4.5"/><line x1="9.5" y1="9.5" x2="13" y2="13"/>
+    </g>
+    <text x="262" y="93" font-size="18" font-weight="bold" fill="#A8472F">Identify</text>
+    <text x="238" y="113" font-size="12" fill="#8C7B63">know what is at risk</text>
+  </g>
+
+  <!-- 2. Protect (upper right) centre 476,223 -->
+  <g>
+    <rect x="398" y="191" width="156" height="64" rx="11" fill="#F2E8D0" stroke="#D8B89C" stroke-width="1.5"/>
+    <rect x="398" y="191" width="156" height="6" rx="3" fill="#A8472F"/>
+    <g transform="translate(414,207)" fill="none" stroke="#A8472F" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M7 1 L12.3 2.8 V7 C12.3 10.4 7 12.8 7 12.8 C7 12.8 1.7 10.4 1.7 7 V2.8 Z"/>
+      <path d="M4.6 6.8 L6.3 8.5 L9.6 5.2"/>
+    </g>
+    <text x="438" y="221" font-size="18" font-weight="bold" fill="#A8472F">Protect</text>
+    <text x="414" y="241" font-size="12" fill="#8C7B63">build the defenses</text>
+  </g>
+
+  <!-- 3. Detect (lower right) centre 409,430 -->
+  <g>
+    <rect x="331" y="398" width="156" height="64" rx="11" fill="#F2E8D0" stroke="#D8B89C" stroke-width="1.5"/>
+    <rect x="331" y="398" width="156" height="6" rx="3" fill="#A8472F"/>
+    <g transform="translate(347,414)" fill="none" stroke="#A8472F" stroke-width="1.4" stroke-linecap="round">
+      <path d="M7 7 L11.3 3.7"/>
+      <path d="M2 7 A5 5 0 0 1 7 2"/>
+      <path d="M3.7 9.5 A4 4 0 0 0 9.6 9.7" stroke-width="1.1" opacity="0.55"/>
+      <circle cx="7" cy="7" r="1" fill="#A8472F"/>
+    </g>
+    <text x="371" y="428" font-size="18" font-weight="bold" fill="#A8472F">Detect</text>
+    <text x="347" y="448" font-size="12" fill="#8C7B63">spot trouble fast</text>
+  </g>
+
+  <!-- 4. Respond (lower left) centre 191,430 -->
+  <g>
+    <rect x="113" y="398" width="156" height="64" rx="11" fill="#F2E8D0" stroke="#D8B89C" stroke-width="1.5"/>
+    <rect x="113" y="398" width="156" height="6" rx="3" fill="#A8472F"/>
+    <g transform="translate(129,414)" fill="none" stroke="#A8472F" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12 V9.5 A4 4 0 0 1 11 9.5 V12 Z"/>
+      <line x1="1.8" y1="12" x2="12.2" y2="12"/>
+      <line x1="7" y1="5.5" x2="7" y2="3.5"/>
+      <circle cx="7" cy="2.8" r="1" fill="#A8472F" stroke="none"/>
+    </g>
+    <text x="153" y="428" font-size="18" font-weight="bold" fill="#A8472F">Respond</text>
+    <text x="129" y="448" font-size="12" fill="#8C7B63">contain it</text>
+  </g>
+
+  <!-- 5. Recover (upper left) centre 124,223 -->
+  <g>
+    <rect x="46" y="191" width="156" height="64" rx="11" fill="#F2E8D0" stroke="#D8B89C" stroke-width="1.5"/>
+    <rect x="46" y="191" width="156" height="6" rx="3" fill="#A8472F"/>
+    <g transform="translate(62,207)" fill="none" stroke="#A8472F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 7 A4.5 4.5 0 1 1 4 10.4"/>
+      <path d="M2.5 3.8 L2.5 7 L5.7 7"/>
+    </g>
+    <text x="86" y="221" font-size="18" font-weight="bold" fill="#A8472F">Recover</text>
+    <text x="62" y="241" font-size="12" fill="#8C7B63">restore and learn</text>
+  </g>
+</svg>
