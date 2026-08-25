@@ -67,15 +67,15 @@ MATRIX_FAMILY_SECTIONS.forEach((section, index) => {
 record("conclusion", "6. Conclusion and next steps");
 record("about", "The Digital Lifecycle Guide");
 record("references", "7. References");
-record("annex-reuse", "Appendix 1 Reuse before you buy or build");
-record("annex-nadia", "Appendix 2 A worked example");
-record("app2-nadia", "Appendix 2.1");
-record("app2-who", "Appendix 2.2");
-record("app2-timeline", "Appendix 2.3");
-record("app2-key", "Appendix 2.4");
+record("annex-reuse", "Appendix A Reuse before you buy or build");
+record("annex-nadia", "Appendix B A worked example");
+record("app2-nadia", "Appendix B.1");
+record("app2-who", "Appendix B.2");
+record("app2-timeline", "Appendix B.3");
+record("app2-key", "Appendix B.4");
 for (const id of ["discovery", "alpha", "beta", "live", "sunset"]) {
   const n = ["discovery", "alpha", "beta", "live", "sunset"].indexOf(id) + 5;
-  record(`app2-${id}`, `Appendix 2.${n}`);
+  record(`app2-${id}`, `Appendix B.${n}`);
 }
 
 // Figure and table captions, keyed by their label alone, which is unambiguous.

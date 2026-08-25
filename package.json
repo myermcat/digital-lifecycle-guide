@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "doc:checkpoints": "tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh && tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- Documents (PDF)/The official checkpoints of a digital service.pdf\" && tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh",
-    "generate:corpus": "tsx scripts/build-corpus.ts"
+    "generate:corpus": "tsx scripts/build-corpus.ts",
+    "check:corpus": "tsx scripts/build-corpus.ts --check"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

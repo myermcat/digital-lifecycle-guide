@@ -548,6 +548,8 @@ async function build() {
   const fatal = IMPORT_FAILURES.length + missing.length + failures.length;
   if (fatal === 0) console.log("\nAll checks passed.");
 
+  const STRICT = process.argv.includes("--strict");
+
   if (CHECK_ONLY) {
     console.log("\n--check: nothing written.");
     return fatal ? 1 : 0;
@@ -763,6 +765,22 @@ async function build() {
   if (withheld) console.log(`  withheld       ${withheld} section(s) not marked public`);
 
   console.log(`\nWrote corpus/ (${pages.size} pages, map.json, instruments.json, links.json, manifest.json)`);
+
+  /**
+   * A defect here is loud but not fatal unless asked for.
+   *
+   * This runs in prebuild, so exiting non-zero took down the site's deploy over a corpus
+   * problem, which is the wrong trade: a guide page that fails to publish is worse than an
+   * assistant missing a page. Use --strict (or --check) to make it fail, which is what a
+   * corpus-focused run should do.
+   */
+  if (fatal && !STRICT) {
+    console.log(
+      `\nWARNING: ${fatal} problem(s) above. The corpus was still written so the site can` +
+        `\nbuild. Run with --strict to make these fail.`,
+    );
+    return 0;
+  }
   return fatal ? 1 : 0;
 }
 

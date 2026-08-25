@@ -1200,7 +1200,7 @@ body.push(H2D(`${SECTIONS.intro}.2`, "Purpose and scope"));
 body.push(boldedP(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold));
 body.push(
   P(
-    `This document covers ${INSTRUMENT_MATRIX.length} instruments, grouped into ${MATRIX_FAMILY_SECTIONS.length} topics. Appendix 1 lists what other parts of government have already built and a team can reuse. Appendix 2 follows one invented service from its first sign of trouble to the day it is replaced.`,
+    `This document covers ${INSTRUMENT_MATRIX.length} instruments, grouped into ${MATRIX_FAMILY_SECTIONS.length} topics. Appendix A lists what other parts of government have already built and a team can reuse. Appendix B follows one invented service from its first sign of trouble to the day it is replaced.`,
   ),
 );
 body.push(H2D(`${SECTIONS.intro}.3`, "Audience"));
@@ -1388,7 +1388,7 @@ pushBackToTop(body);
 body.push(H1D(SECTIONS.references, "References", "references"));
 body.push(
   P(
-    "Every instrument in section 5 and Appendix 1 that has a public source, numbered in the order the tables use them. Where a row carries no reference, the instrument is obtained through a departmental office rather than from a published page.",
+    "Every instrument in section 5 and Appendix A that has a public source, numbered in the order the tables use them. Where a row carries no reference, the instrument is obtained through a departmental office rather than from a published page.",
   ),
 );
 const refHead = (t: string) =>
@@ -1408,8 +1408,8 @@ body.push(
 );
 pushBackToTop(body);
 
-/* Appendix 1 */
-body.push(H1D("Appendix 1", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+/* Appendix A */
+body.push(H1D("Appendix A", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
 body.push(
   P(
     "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure something instead of making it. Choosing to make your own breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so an architecture review board is likely to ask which of these were considered and why none of them fitted.",
@@ -1417,8 +1417,8 @@ body.push(
 );
 body.push(reuseTable("Table A1-1", "What another part of government has already built"));
 
-/* Appendix 2 */
-body.push(H1D("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
+/* Appendix B */
+body.push(H1D("Appendix B", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
 body.push(
   callout(
     [
@@ -1439,7 +1439,7 @@ body.push(new Paragraph({ spacing: { after: 260 }, children: [] }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.intro, { after: 130 }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.pathNote));
 
-body.push(H2D("Appendix 2.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
+body.push(H2D("Appendix B.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
 body.push(
   figureBeside("Figure A2-1", "Nadia, a director general", "gate_map_nadia.png", 104, 126, [
     boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold, { after: 0 }),
@@ -1450,7 +1450,7 @@ body.push(P(CHECKPOINT_MAP_WHY_GCS.body));
 body.push(H3(CHECKPOINT_MAP_WHY_CREATE.heading));
 body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
 
-body.push(H2D("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
+body.push(H2D("Appendix B.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
 body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
 body.push(
   definitionTable(
@@ -1460,7 +1460,7 @@ body.push(
   ),
 );
 
-body.push(H2D("Appendix 2.3", "How long it took", "app2-timeline"));
+body.push(H2D("Appendix B.3", "How long it took", "app2-timeline"));
 body.push(
   ...figure(
     "Figure A2-2",
@@ -1473,7 +1473,7 @@ body.push(
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.timelineNote));
 pushBackToTop(body);
 
-body.push(H2D("Appendix 2.4", "How to read the steps", "app2-key"));
+body.push(H2D("Appendix B.4", "How to read the steps", "app2-key"));
 body.push(
   P(
     `${CHECKPOINT_MAP_COLKEY.left} The right-hand column is who answers, and how. The tag on each response says whether the responder is inside her department or central.`,
@@ -1484,7 +1484,7 @@ pushBackToTop(body);
 let phaseIndex = 4;
 for (const phase of CHECKPOINT_MAP_PHASES) {
   phaseIndex += 1;
-  body.push(H2D(`Appendix 2.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
+  body.push(H2D(`Appendix B.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
   body.push(P(phase.durationLabel, { italics: true, color: MUTED, size: 19, after: 90 }));
   body.push(P(phase.phaseNote));
   body.push(
@@ -1732,14 +1732,14 @@ front.push(
   tocEntry(`${SECTIONS.conclusion}.1`, "About the Digital Lifecycle Guide", "about", true),
 );
 front.push(tocEntry(SECTIONS.references, "References", "references"));
-front.push(tocEntry("Appendix 1", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
-front.push(tocEntry("Appendix 2", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
-front.push(tocEntry("Appendix 2.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia", true));
-front.push(tocEntry("Appendix 2.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who", true));
-front.push(tocEntry("Appendix 2.3", "How long it took", "app2-timeline", true));
-front.push(tocEntry("Appendix 2.4", "How to read the steps", "app2-key", true));
+front.push(tocEntry("Appendix A", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+front.push(tocEntry("Appendix B", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
+front.push(tocEntry("Appendix B.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia", true));
+front.push(tocEntry("Appendix B.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who", true));
+front.push(tocEntry("Appendix B.3", "How long it took", "app2-timeline", true));
+front.push(tocEntry("Appendix B.4", "How to read the steps", "app2-key", true));
 CHECKPOINT_MAP_PHASES.forEach((phase, index) => {
-  front.push(tocEntry(`Appendix 2.${index + 5}`, phase.heading, `app2-${phase.id}`, true));
+  front.push(tocEntry(`Appendix B.${index + 5}`, phase.heading, `app2-${phase.id}`, true));
 });
 
 front.push(
