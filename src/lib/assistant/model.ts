@@ -33,8 +33,15 @@ export type Answer = {
   cannotAnswer: boolean;
 };
 
-const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
+/**
+ * The seam for a server-held key. Point MODEL_ENDPOINT at a small proxy and the page
+ * stops needing the reader's key; nothing else here changes.
+ */
+const MODEL_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
 const MODEL = "openai/gpt-oss-120b";
+
+/** Shown in the page's status line, so the reader knows what answered. */
+export const MODEL_LABEL = "gpt-oss-120b";
 
 const KEY_STORAGE = "dlg-assistant-groq-key";
 
@@ -63,7 +70,7 @@ export function storeKey(key: string): void {
  * word "json" in the prompt, which the prompts satisfy; and 503 is routine.
  */
 async function call<T>(key: string, prompt: string, maxTokens: number, attempt = 1): Promise<T> {
-  const res = await fetch(GROQ_URL, {
+  const res = await fetch(MODEL_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
     body: JSON.stringify({

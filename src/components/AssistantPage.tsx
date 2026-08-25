@@ -1,14 +1,14 @@
 /**
- * The guide's assistant, mechanical stage.
+ * The guide's assistant.
  *
- * Everything here runs in the reader's browser: no model, no API key, no server.
- * A question is ranked against the corpus and answered with the sections that match,
- * each linking back into the guide. That is deliberately not a chat answer, and the
- * page says so, because pretending to reason without a model is the one thing that
- * would make it untrustworthy.
+ * Retrieval runs in the reader's browser over a static corpus, so it costs nothing and
+ * works with no key. A model then rewrites the question into the guide's vocabulary and
+ * writes an answer over what retrieval found, labelled with the KIND of answer it is.
  *
- * The model stage adds one call on top of this, choosing an answer shape and writing
- * prose over the top three sections. Retrieval does not change when it arrives.
+ * WHY THE READER SUPPLIES THE KEY. The site is static, so a key shipped with the page
+ * would be readable by everyone who loads it. The reader's own key never leaves their
+ * browser except to go to the model provider. `MODEL_ENDPOINT` in model.ts is the seam
+ * for a server that holds one key on everybody's behalf.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -20,40 +20,40 @@ import {
   rewriteQuestion,
   storedKey,
   storeKey,
+  MODEL_LABEL,
   type Answer,
 } from "@/lib/assistant/model";
 
-/** Real questions drawn from the corpus, so nothing here promises what it cannot do. */
-const SUGGESTIONS = [
-  "Where does Alpha stop and Beta start?",
-  "What happens if my project scores above the capacity class?",
-  "How long does a procurement take?",
-  "Do I need a privacy impact assessment?",
-  "What do I need to prepare for GC EARB?",
-  "Should we reuse, buy, or build?",
-  "Which accessibility standard applies now?",
-  "How do I decommission an application?",
+/** Real questions from the corpus, so nothing here promises what it cannot do. */
+const TOPICS: Array<[string, string]> = [
+  ["Alpha and Beta", "Where does Alpha stop and Beta start?"],
+  ["Approvals", "What happens if my project scores above the capacity class?"],
+  ["Procurement", "How long does a procurement take?"],
+  ["Privacy", "Do I need a privacy impact assessment?"],
+  ["Options analysis", "Should we reuse, buy, or build this?"],
+  ["Contracts", "Can I extend the contract we already have?"],
+  ["Accessibility", "Which accessibility standard applies now?"],
+  ["Sunset", "How do I decommission an application?"],
+  ["Monitoring", "What numbers should I be tracking?"],
+  ["Team", "Nobody knows who owns this service any more."],
+  ["Funding", "How do I get money for this?"],
+  ["Discovery", "I have been handed an app. Where do I start?"],
 ];
 
-type Turn = {
-  question: string;
-  hits: Hit[];
-  expansions: string[];
-  intents: string[];
-  /** Present once a model has written an answer over the retrieved sections. */
-  answer?: Answer & { citedSections: Section[] };
-  /** What the rewrite produced, shown so the reader can see why it searched that way. */
-  queries?: string[];
-  error?: string;
-  pending?: boolean;
-};
-
-/** What each shape means, said in the reader's terms rather than ours. */
-const SHAPE_LABEL: Record<string, { name: string; gloss: string }> = {
+const SHAPE: Record<string, { name: string; gloss: string }> = {
   quoted: { name: "Quoted", gloss: "the guide states it" },
   conditional: { name: "Conditional", gloss: "the dependency is the answer" },
   asked_back: { name: "Asked back", gloss: "one question decides it" },
   routed: { name: "Routed", gloss: "no fixed answer exists" },
+};
+
+type Turn = {
+  question: string;
+  /** Sections the model was given, or the plain search hits when there is no key. */
+  hits: Hit[];
+  answer?: Answer & { citedSections: Section[] };
+  error?: string;
+  pending?: boolean;
 };
 
 /** The model writes **bold lead-ins**, which is the guide's own house style. */
@@ -69,29 +69,49 @@ function renderBold(text: string) {
   );
 }
 
+/** Bullet lines the model wrote as "- item" become a real list. */
+function renderBlock(block: string, key: number) {
+  const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
+  const bullets = lines.filter((l) => /^[-*•]\s/.test(l));
+
+  if (bullets.length >= 2 && bullets.length === lines.length) {
+    return (
+      <ul key={key} className="flex flex-col gap-1.5 pl-4">
+        {bullets.map((b, i) => (
+          <li key={i} className="relative text-pretty before:absolute before:-left-4 before:top-[0.62em] before:h-px before:w-2 before:bg-muted-foreground">
+            {renderBold(b.replace(/^[-*•]\s+/, ""))}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  return (
+    <p key={key} className="text-pretty">
+      {renderBold(block.replace(/\n/g, " "))}
+    </p>
+  );
+}
+
 export function AssistantPage() {
   const [retriever, setRetriever] = useState<Retriever | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
   const [apiKey, setApiKey] = useState("");
+  const [keyDraft, setKeyDraft] = useState("");
+  /** Set once the reader chooses to carry on without a key. */
+  const [skippedKey, setSkippedKey] = useState(false);
   const [showKeyPanel, setShowKeyPanel] = useState(false);
   const [busy, setBusy] = useState(false);
   const endRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    setApiKey(storedKey());
-  }, []);
+  useEffect(() => setApiKey(storedKey()), []);
 
   useEffect(() => {
     let cancelled = false;
     loadCorpus()
-      .then((r) => {
-        if (!cancelled) setRetriever(r);
-      })
-      .catch((err: Error) => {
-        if (!cancelled) setLoadError(err.message);
-      });
+      .then((r) => !cancelled && setRetriever(r))
+      .catch((e: Error) => !cancelled && setLoadError(e.message));
     return () => {
       cancelled = true;
     };
@@ -102,21 +122,16 @@ export function AssistantPage() {
       const trimmed = question.trim();
       if (!trimmed || !retriever || busy) return;
 
-      /**
-       * Retrieval runs first and always, so the page is useful with no key at all. The
-       * model only rewrites the question and writes prose over what retrieval found.
-       */
       const plain = retriever.search(trimmed, 5);
       const index = turns.length;
       setTurns((prev) => [
         ...prev,
-        { question: trimmed, hits: plain.hits, expansions: plain.expansions, intents: plain.intents, pending: Boolean(apiKey) },
+        { question: trimmed, hits: plain.hits, pending: Boolean(apiKey) },
       ]);
       setDraft("");
 
       if (!apiKey) return;
       setBusy(true);
-
       const patch = (fields: Partial<Turn>) =>
         setTurns((prev) => prev.map((t, i) => (i === index ? { ...t, ...fields } : t)));
 
@@ -126,20 +141,30 @@ export function AssistantPage() {
 
         /**
          * Pool the rewritten queries by summing scores, so a section two queries agree
-         * on outranks one a single query liked. Then hand the model four sections.
+         * on outranks one a single query liked a lot.
          */
-        const pooled = new Map<string, { section: Section; score: number }>();
+        const pooled = new Map<string, { hit: Hit; score: number }>();
         for (const q of rewritten.queries) {
           for (const hit of retriever.search(q, 5).hits) {
             const prev = pooled.get(hit.section.id);
-            pooled.set(hit.section.id, { section: hit.section, score: (prev?.score ?? 0) + hit.score });
+            pooled.set(hit.section.id, { hit, score: (prev?.score ?? 0) + hit.score });
           }
         }
         const chosen = [...pooled.values()].sort((a, b) => b.score - a.score).slice(0, 4);
-        const sections = chosen.length ? chosen.map((c) => c.section) : plain.hits.map((h) => h.section);
+        const given = chosen.length ? chosen.map((c) => c.hit) : plain.hits;
 
-        const written = await answerFrom(apiKey, trimmed, sections, rewritten.situation);
-        patch({ answer: written, queries: rewritten.queries, pending: false });
+        const written = await answerFrom(
+          apiKey,
+          trimmed,
+          given.map((h) => h.section),
+          rewritten.situation,
+        );
+        /**
+         * Replace the hits with the ones the model was actually given. Leaving the plain
+         * search results underneath a written answer showed the reader the pre-rewrite
+         * results, which are the bad ones, and they read as irrelevant because they were.
+         */
+        patch({ answer: written, hits: given, pending: false });
       } catch (err) {
         patch({ error: (err as Error).message, pending: false });
       } finally {
@@ -154,65 +179,171 @@ export function AssistantPage() {
   }, [turns.length]);
 
   const started = turns.length > 0;
-  const status = useMemo(() => {
-    if (loadError) return `The corpus could not be loaded: ${loadError}`;
-    if (!retriever) return "Loading the guide…";
-    return `${retriever.size} sections of the guide, searched in your browser`;
-  }, [loadError, retriever]);
+  const gateOpen = !apiKey && !skippedKey;
+  const drifting = useMemo(
+    () => [...TOPICS].sort(() => Math.random() - 0.5).slice(0, 8),
+    [],
+  );
+
+  const status = loadError
+    ? `The guide could not be loaded: ${loadError}`
+    : !retriever
+      ? "Loading the guide"
+      : apiKey
+        ? `${retriever.size} sections, written answers by ${MODEL_LABEL}`
+        : `${retriever.size} sections, searched in your browser`;
 
   return (
-    <div className="mx-auto flex min-h-[70vh] w-full max-w-3xl flex-col gap-8 px-5 py-10">
-      <header className="flex flex-col gap-3">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">
-          Prototype · no model attached
-        </p>
+    <div className="relative mx-auto flex min-h-[78vh] w-full max-w-3xl flex-col gap-7 px-5 py-10">
+      <style>{`
+        @keyframes dlg-drift {
+          from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
+          to   { transform: translateY(-70vh) rotate(var(--tilt, 0deg)); }
+        }
+        .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
+        @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
+        /* below this there is no gutter left once the column takes its 48rem */
+        @media (max-width: 76rem) { .dlg-drift-layer { display: none; } }
+      `}</style>
+
+      {/* Drifting topic cards, in the gutters either side of the reading column. */}
+      {!started && (
+        <div
+          className="dlg-drift-layer pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_16%,black_72%,transparent_95%)]"
+          role="group"
+          aria-label="Example questions you can ask"
+        >
+          {drifting.map(([topic, question], i) => (
+            <button
+              key={question}
+              type="button"
+              onClick={() => ask(question)}
+              style={
+                {
+                  // the reading column is 48rem wide, so its half is 24rem. Anything
+                  // closer than that to the centre line overlaps the text.
+                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 25rem)",
+                  ["--dur" as string]: "64s",
+                  ["--delay" as string]: `${-i * 8}s`,
+                  ["--tilt" as string]: `${((i % 3) - 1) * 0.5}deg`,
+                  width: "min(15rem, calc(50% - 26rem))",
+                } as React.CSSProperties
+              }
+              className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.78] shadow-sm transition hover:border-primary hover:opacity-100"
+            >
+              <span className="block font-mono text-[0.58rem] uppercase tracking-[0.11em] text-muted-foreground">
+                {topic}
+              </span>
+              <span className="mt-1.5 block text-[0.9rem] leading-snug text-muted-foreground">
+                {question}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      <header className="relative z-10 flex flex-col gap-3">
         <h1 className="text-3xl font-normal leading-tight tracking-tight text-balance sm:text-4xl">
           Ask the guide
         </h1>
         <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-          Ask a question and this finds the parts of the guide that answer it, with a link
-          to each one. It does the finding, not the reasoning: every word below is the
-          guide&rsquo;s own. Nothing you type leaves your browser.
+          Ask about a checkpoint, a sub-phase, or your own situation. Every answer says what
+          kind of answer it is, and links to the part of the guide it came from.
         </p>
-        <div className="flex flex-wrap items-center gap-3">
-          <p className="font-mono text-[0.7rem] text-muted-foreground">{status}</p>
+        <p className="font-mono text-[0.7rem] text-muted-foreground">{status}</p>
+      </header>
+
+      {/* The key gate: written answers are the default, and this is the way in. */}
+      {gateOpen && (
+        <section className="relative z-10 flex flex-col gap-3 rounded-xl border-2 border-primary/40 bg-card p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Add a model key to get written answers</h2>
+          <p className="max-w-prose text-sm leading-relaxed">
+            <strong className="font-semibold">Your key stays in this browser.</strong> It is
+            stored on your own device and sent only to the model that answers your question.
+            Nobody else can read it, and it never reaches this website or anyone running it.
+          </p>
+          <p className="text-[0.8rem] leading-relaxed text-muted-foreground">
+            A free key from{" "}
+            <a
+              className="underline underline-offset-2"
+              href="https://console.groq.com/keys"
+              target="_blank"
+              rel="noreferrer"
+            >
+              console.groq.com
+            </a>{" "}
+            allows roughly a thousand questions a day and needs no credit card.
+          </p>
+          <form
+            className="flex flex-wrap gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              storeKey(keyDraft);
+              setApiKey(keyDraft.trim());
+            }}
+          >
+            <input
+              type="password"
+              value={keyDraft}
+              onChange={(e) => setKeyDraft(e.target.value)}
+              placeholder="gsk_..."
+              aria-label="Model API key"
+              className="min-w-0 flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-[0.82rem] outline-none focus:border-primary"
+            />
+            <button
+              type="submit"
+              disabled={keyDraft.trim().length === 0}
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-40"
+            >
+              Continue
+            </button>
+          </form>
+          <button
+            type="button"
+            onClick={() => setSkippedKey(true)}
+            className="self-start text-[0.78rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
+          >
+            Or carry on without one, and get the guide's own sections instead
+          </button>
+        </section>
+      )}
+
+      {/* Once a key is in, keep the control small but reachable. */}
+      {!gateOpen && (
+        <div className="relative z-10 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
+            <span
+              className={`h-1.5 w-1.5 rounded-full ${apiKey ? "bg-primary" : "bg-muted-foreground"}`}
+              aria-hidden="true"
+            />
+            {apiKey ? "Written answers on" : "Sections only"}
+          </span>
           <button
             type="button"
             onClick={() => setShowKeyPanel((v) => !v)}
-            className="font-mono text-[0.7rem] underline decoration-dotted underline-offset-2 text-muted-foreground hover:text-foreground"
+            className="text-[0.75rem] underline decoration-dotted underline-offset-2 text-muted-foreground hover:text-foreground"
           >
-            {apiKey ? "written answers on" : "written answers off"}
+            {apiKey ? "Change or remove key" : "Add a key"}
           </button>
-        </div>
-
-        {showKeyPanel && (
-          <div className="flex flex-col gap-2 rounded-lg border border-dashed border-border p-4">
-            <p className="text-sm leading-relaxed">
-              <strong className="font-semibold">Written answers need a model key.</strong> This site
-              is static, so it holds no key of its own: anything the page could read, every visitor
-              could read. Paste your own and it stays in this browser, sent only to the model.
-            </p>
-            <p className="text-[0.78rem] leading-relaxed text-muted-foreground">
-              A free key from console.groq.com allows about 1,000 questions a day and needs no card.
-              Without one, the assistant still finds the right parts of the guide.
-            </p>
-            <div className="flex flex-wrap gap-2">
+          {showKeyPanel && (
+            <form
+              className="flex w-full flex-wrap gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                storeKey(keyDraft);
+                setApiKey(keyDraft.trim());
+                setShowKeyPanel(false);
+              }}
+            >
               <input
                 type="password"
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-                placeholder="gsk_..."
+                value={keyDraft}
+                onChange={(e) => setKeyDraft(e.target.value)}
+                placeholder={apiKey ? "new key" : "gsk_..."}
                 aria-label="Model API key"
-                className="min-w-0 flex-1 rounded-md border border-border bg-card px-3 py-2 font-mono text-[0.8rem] outline-none focus:border-primary"
+                className="min-w-0 flex-1 rounded-lg border border-border bg-card px-3 py-2 font-mono text-[0.8rem] outline-none focus:border-primary"
               />
-              <button
-                type="button"
-                onClick={() => {
-                  storeKey(apiKey);
-                  setShowKeyPanel(false);
-                }}
-                className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
-              >
+              <button type="submit" className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">
                 Save
               </button>
               {apiKey && (
@@ -220,36 +351,35 @@ export function AssistantPage() {
                   type="button"
                   onClick={() => {
                     setApiKey("");
+                    setKeyDraft("");
                     storeKey("");
+                    setShowKeyPanel(false);
                   }}
-                  className="rounded-md border border-border px-3 py-2 text-sm"
+                  className="rounded-lg border border-border px-3 py-2 text-sm"
                 >
                   Forget it
                 </button>
               )}
-            </div>
-          </div>
-        )}
-      </header>
+            </form>
+          )}
+        </div>
+      )}
 
-      {!started && (
-        <section aria-labelledby="suggestions-heading" className="flex flex-col gap-3">
-          <h2
-            id="suggestions-heading"
-            className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground"
-          >
+      {!started && !gateOpen && (
+        <section className="relative z-10 flex flex-col gap-3">
+          <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">
             Questions it can answer
           </h2>
           <ul className="flex flex-wrap gap-2">
-            {SUGGESTIONS.map((s) => (
-              <li key={s}>
+            {TOPICS.slice(0, 7).map(([, q]) => (
+              <li key={q}>
                 <button
                   type="button"
-                  onClick={() => ask(s)}
+                  onClick={() => ask(q)}
                   disabled={!retriever}
-                  className="rounded-full border border-border px-3 py-1.5 text-left text-[0.82rem] font-medium text-foreground transition-colors hover:border-primary hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-full border border-border px-3 py-1.5 text-left text-[0.82rem] font-medium transition-colors hover:border-primary hover:text-primary disabled:opacity-50"
                 >
-                  {s}
+                  {q}
                 </button>
               </li>
             ))}
@@ -258,22 +388,8 @@ export function AssistantPage() {
       )}
 
       {turns.map((turn, i) => (
-        <article key={`${turn.question}-${i}`} className="flex flex-col gap-4">
+        <article key={`${turn.question}-${i}`} className="relative z-10 flex flex-col gap-4">
           <h2 className="text-lg font-semibold leading-snug text-balance">{turn.question}</h2>
-
-          {(turn.expansions.length > 0 || turn.intents.length > 0) && (
-            <p className="font-mono text-[0.68rem] leading-relaxed text-muted-foreground">
-              {turn.intents.length > 0 && (
-                <>reads as a {turn.intents.join(" and ")} question, so sections carrying one rank higher</>
-              )}
-              {turn.expansions.length > 0 && (
-                <>
-                  {turn.intents.length > 0 ? " · " : ""}
-                  expanded: {turn.expansions.join("; ")}
-                </>
-              )}
-            </p>
-          )}
 
           {turn.pending && (
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted-foreground">
@@ -282,29 +398,22 @@ export function AssistantPage() {
           )}
 
           {turn.error && (
-            <p className="rounded-lg border border-dashed border-destructive/50 p-3 text-sm">
-              {turn.error} The sections below come from the guide either way.
+            <p className="rounded-lg border border-dashed border-border p-3 text-sm">
+              {turn.error} The parts of the guide below were found without it.
             </p>
           )}
 
           {turn.answer && (
-            <div
-              className="flex flex-col gap-3 border-l-2 border-primary pl-4"
-              data-shape={turn.answer.shape}
-            >
+            <div className="flex flex-col gap-4 border-l-2 border-primary pl-4">
               <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-primary">
-                {SHAPE_LABEL[turn.answer.shape]?.name ?? turn.answer.shape}
+                {SHAPE[turn.answer.shape]?.name ?? turn.answer.shape}
                 <span className="ml-2 normal-case tracking-normal text-muted-foreground">
-                  {SHAPE_LABEL[turn.answer.shape]?.gloss}
+                  {SHAPE[turn.answer.shape]?.gloss}
                 </span>
               </p>
 
-              <div className="flex flex-col gap-2 text-[1rem] leading-relaxed">
-                {turn.answer.answer.split(/\n{2,}/).map((para, k) => (
-                  <p key={k} className="text-pretty">
-                    {renderBold(para)}
-                  </p>
-                ))}
+              <div className="flex flex-col gap-3 text-[1rem] leading-relaxed">
+                {turn.answer.answer.split(/\n{2,}/).map((b, k) => renderBlock(b, k))}
               </div>
 
               {turn.answer.options.length > 0 && (
@@ -323,68 +432,77 @@ export function AssistantPage() {
               )}
 
               {turn.answer.citedSections.length > 0 && (
-                <ul className="flex flex-col gap-1">
-                  {turn.answer.citedSections.map((s2) => (
-                    <li key={s2.id} className="font-mono text-[0.7rem]">
-                      <a href={guideLink(s2.path)} className="underline underline-offset-2">
-                        {s2.page} · {s2.heading}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-col gap-1">
+                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
+                    Where this comes from
+                  </p>
+                  <ul className="flex flex-col gap-1">
+                    {turn.answer.citedSections.map((s) => (
+                      <li key={s.id} className="text-[0.8rem]">
+                        <a href={guideLink(s.path)} className="underline underline-offset-2">
+                          {s.page}
+                        </a>
+                        <span className="text-muted-foreground"> · {s.heading}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               {turn.answer.followUps.length > 0 && (
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {turn.answer.followUps.map((f) => (
-                    <button
-                      key={f}
-                      type="button"
-                      onClick={() => ask(f)}
-                      className="text-left text-[0.8rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-primary"
-                    >
-                      {f}
-                    </button>
-                  ))}
+                <div className="flex flex-col gap-1">
+                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
+                    Ask next
+                  </p>
+                  <div className="flex flex-col items-start gap-1">
+                    {turn.answer.followUps.map((f) => (
+                      <button
+                        key={f}
+                        type="button"
+                        onClick={() => ask(f)}
+                        className="text-left text-[0.82rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-primary"
+                      >
+                        {f}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           )}
 
-          {turn.answer && turn.hits.length > 0 && (
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground">
-              What it read
-            </p>
-          )}
-
-          {turn.hits.length === 0 ? (
-            <p className="rounded-lg border border-dashed border-border p-4 text-sm leading-relaxed">
-              Nothing in the guide matched that. That is the honest answer rather than a
-              guess, and it usually means the guide does not cover it. The{" "}
-              <a className="underline" href={guideLink("/support")}>
-                support page
-              </a>{" "}
-              lists where else to ask.
-            </p>
-          ) : (
-            <ol className="flex flex-col gap-5">
-              {turn.hits.map((hit) => (
-                <li key={hit.section.id} className="border-l-2 border-border pl-4">
-                  <a
-                    href={guideLink(hit.section.path)}
-                    className="text-sm font-semibold underline decoration-1 underline-offset-2"
-                  >
-                    {hit.section.page}
-                  </a>
-                  <span className="text-sm text-muted-foreground"> · {hit.section.heading}</span>
-                  <p className="mt-2 text-[0.95rem] leading-relaxed">{hit.snippet}</p>
-                  <p className="mt-2 font-mono text-[0.65rem] text-muted-foreground">
-                    {hit.section.words} words
-                    {hit.why.length > 0 ? ` · ${hit.why.join(", ")}` : ""}
-                  </p>
-                </li>
-              ))}
-            </ol>
+          {/*
+            With no key there is no written answer, so the sections ARE the answer and
+            are shown in full. With a written answer, the citations above already name
+            what it used, so the rest is not shown: an unexplained list of near misses
+            reads as irrelevance, because that is what it is.
+          */}
+          {!turn.answer && !turn.pending && (
+            turn.hits.length === 0 ? (
+              <p className="rounded-lg border border-dashed border-border p-4 text-sm leading-relaxed">
+                Nothing in the guide matched that. That is the honest answer rather than a
+                guess. The{" "}
+                <a className="underline" href={guideLink("/support")}>
+                  support page
+                </a>{" "}
+                lists where else to ask.
+              </p>
+            ) : (
+              <ol className="flex flex-col gap-5">
+                {turn.hits.map((hit) => (
+                  <li key={hit.section.id} className="border-l-2 border-border pl-4">
+                    <a
+                      href={guideLink(hit.section.path)}
+                      className="text-sm font-semibold underline decoration-1 underline-offset-2"
+                    >
+                      {hit.section.page}
+                    </a>
+                    <span className="text-sm text-muted-foreground"> · {hit.section.heading}</span>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed">{hit.snippet}</p>
+                  </li>
+                ))}
+              </ol>
+            )
           )}
 
           <p className="border-t border-dotted border-border pt-3 text-[0.75rem] leading-relaxed text-muted-foreground">
@@ -399,7 +517,7 @@ export function AssistantPage() {
       <div ref={endRef} />
 
       <form
-        className="sticky bottom-4 flex items-end gap-2 rounded-xl border border-border bg-card p-2 shadow-sm focus-within:border-primary"
+        className="sticky bottom-4 z-10 flex items-end gap-2 rounded-xl border border-border bg-card p-2 shadow-sm focus-within:border-primary"
         onSubmit={(e) => {
           e.preventDefault();
           ask(draft);
@@ -425,9 +543,9 @@ export function AssistantPage() {
         <button
           type="submit"
           disabled={!retriever || busy || draft.trim().length === 0}
-          className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+          className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-40"
         >
-          Ask
+          {busy ? "Working" : "Ask"}
         </button>
       </form>
     </div>
