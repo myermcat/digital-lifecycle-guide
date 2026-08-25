@@ -19,6 +19,7 @@ import { LIVE_PHASE } from "@/lib/live-phase-content";
 import type { SourceItem } from "@/components/SourcesBlock";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
+  guideBlockSubheading,
   guideCalloutLabel,
   guideBodySubheading,
   guideCardHeading,
@@ -57,7 +58,14 @@ export function LivePhasePage() {
       <section className={`${guideProseSpace} mt-8 md:mt-10`}>
         {lead.map((paragraph) => (
           <div key={paragraph.text}>
-            <h2 className={`${guideBodySubheading} mb-1`}>{paragraph.heading}</h2>
+            {/*
+              guideBlockSubheading, not guideBodySubheading. The latter is plain bold sans
+              at body size, which inside a space-y block sits an equal distance from the
+              paragraph above and below and reads as unattached bold text. That token's own
+              comment describes the defect. This one is the small uppercase topic opener the
+              other pages use, and it binds itself to the paragraph it introduces.
+            */}
+            <h2 className={guideBlockSubheading}>{paragraph.heading}</h2>
             <p>{paragraph.text}</p>
           </div>
         ))}
