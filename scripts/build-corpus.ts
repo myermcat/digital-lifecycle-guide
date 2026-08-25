@@ -697,6 +697,67 @@ async function build() {
     console.log(`source links     ${slim.length} instruments -> public/assistant/sources.json`);
   }
 
+  /**
+   * The instruments themselves, searchable.
+   *
+   * A link index alone was too thin: a reader asking what an instrument requires got the
+   * guide's summary and a link, and had to go read it. The full text is 5.37 MB and cannot
+   * ship. The headings plus the opening 1,200 characters can, at 0.38 MB, and that is the
+   * part that defines the thing and says when it applies. Retrieval treats these as extra
+   * sections, so an answer can quote the instrument and still link to the whole of it.
+   *
+   * Bounded on purpose. These are public Government of Canada pages, excerpted and linked
+   * rather than republished.
+   */
+  const sourcesDir = join(OUT, "sources");
+  if (existsSync(sourcesDir)) {
+    const files = (await readdir(sourcesDir)).filter((f) => f.endsWith(".md"));
+    const instrumentSections: Array<Record<string, unknown>> = [];
+
+    for (const file of files) {
+      const raw = await readFile(join(sourcesDir, file), "utf8");
+      const front = /^---\n([\s\S]*?)\n---\n/.exec(raw);
+      const meta: Record<string, string> = {};
+      for (const line of (front?.[1] ?? "").split("\n")) {
+        const at = line.indexOf(":");
+        if (at > 0) meta[line.slice(0, at).trim()] = line.slice(at + 1).trim();
+      }
+      const body = raw.replace(/^---\n[\s\S]*?\n---\n/, "").trim();
+      if (words(body) < 80) continue;
+
+      const headings = [...body.matchAll(/^#{1,3} (.+)$/gm)].map((m) => m[1].trim()).slice(0, 25);
+      const opening = body.replace(/^#{1,3} .+$/gm, "").replace(/\n{2,}/g, "\n\n").trim().slice(0, 1200);
+      const title = (meta.page_title || meta.guide_description || file.replace(/\.md$/, ""))
+        .replace(/\s*[-|]\s*Canada\.ca\s*$/i, "")
+        .slice(0, 100);
+      const text = [meta.guide_description, headings.length ? `Covers: ${headings.join("; ")}` : "", opening]
+        .filter(Boolean)
+        .join("\n\n");
+
+      instrumentSections.push({
+        id: `instrument#${file.replace(/\.md$/, "")}`,
+        page: title,
+        path: meta.source_url ?? "",
+        external: meta.source_url ?? "",
+        slug: "instrument",
+        heading: "The instrument itself",
+        text,
+        words: words(text),
+        tokens: tokens(text),
+        visibility: "public",
+        facets: {
+          hasDuration: /\b\d+\s*(?:day|week|month|year)s?\b/i.test(text),
+          hasThreshold: /\$\s?[\d.,]+/.test(text),
+          hasRole: /\b(deputy head|chief information officer|CIO|minister|officer)\b/i.test(text),
+        },
+      });
+    }
+
+    await writeFile(join(PUBLIC_OUT, "instruments.json"), JSON.stringify(instrumentSections), "utf8");
+    const bytes = Buffer.byteLength(JSON.stringify(instrumentSections));
+    console.log(`instruments      ${instrumentSections.length} searchable, ${(bytes / 1024).toFixed(0)} KB raw`);
+  }
+
   const publicBytes = Buffer.byteLength(JSON.stringify(publicSections));
   console.log(`browser slice    ${publicSections.length} sections, ${(publicBytes / 1024).toFixed(0)} KB raw -> public/assistant/`);
   if (withheld) console.log(`  withheld       ${withheld} section(s) not marked public`);

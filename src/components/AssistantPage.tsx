@@ -361,7 +361,7 @@ export function AssistantPage() {
   }
 
   return (
-    <div className="relative mx-auto flex min-h-[100vh] w-full max-w-3xl flex-col gap-7 px-5 py-8">
+    <div className="relative mx-auto flex min-h-[100vh] w-full max-w-5xl flex-col gap-7 px-5 py-8">
       <style>{`
         @keyframes dlg-drift {
           from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
@@ -370,7 +370,7 @@ export function AssistantPage() {
         .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
         @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
         /* below this there is no gutter left once the column takes its 48rem */
-        @media (max-width: 84rem) { .dlg-drift-layer { display: none; } }
+        @media (max-width: 98rem) { .dlg-drift-layer { display: none; } }
       `}</style>
 
       {/* Drifting topic cards, in the gutters either side of the reading column. */}
@@ -392,11 +392,11 @@ export function AssistantPage() {
                    * because at 25rem the cards were still touching the text on a wide
                    * screen once their shadow was counted.
                    */
-                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 27rem)",
+                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 34rem)",
                   ["--dur" as string]: "64s",
                   ["--delay" as string]: `${-i * 8}s`,
                   ["--tilt" as string]: `${((i % 3) - 1) * 0.5}deg`,
-                  width: "min(14rem, calc(50% - 28rem))",
+                  width: "min(14rem, calc(50% - 35rem))",
                 } as React.CSSProperties
               }
               className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.78] shadow-sm transition hover:border-primary hover:opacity-100"
@@ -412,17 +412,31 @@ export function AssistantPage() {
         </div>
       )}
 
-      <header className="relative z-10 flex flex-col gap-3">
+      <header
+        className={
+          started
+            ? "relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-2"
+            : "relative z-10 flex flex-1 flex-col items-center justify-center gap-3 text-center"
+        }
+      >
         <a
           href={guideLink("/")}
-          className="self-start font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
+          className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground ${started ? "self-start" : ""}`}
         >
           Back to the guide
         </a>
-        <h1 className="text-3xl font-normal leading-tight tracking-tight text-balance sm:text-4xl">
+        <h1
+          className={
+            started
+              ? "text-2xl font-normal leading-tight tracking-tight text-balance"
+              : "text-4xl font-normal leading-[1.1] tracking-tight text-balance sm:text-5xl"
+          }
+        >
           Ask the guide
         </h1>
-        <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
+        <p
+          className={`text-sm leading-relaxed text-muted-foreground ${started ? "max-w-prose" : "max-w-md text-[0.95rem]"}`}
+        >
           Ask about a checkpoint, a sub-phase, or your own situation. Every answer says what
           kind of answer it is, and links to the part of the guide it came from.
         </p>
@@ -431,7 +445,7 @@ export function AssistantPage() {
 
       {/* Once a key is in, keep the control small but reachable. */}
       {(
-        <div className="relative z-10 flex flex-wrap items-center gap-3">
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
             <span
               className={`h-1.5 w-1.5 rounded-full ${apiKey ? "bg-primary" : "bg-muted-foreground"}`}
@@ -486,30 +500,8 @@ export function AssistantPage() {
         </div>
       )}
 
-      {!started && !gateOpen && (
-        <section className="relative z-10 flex flex-col gap-3">
-          <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">
-            Questions it can answer
-          </h2>
-          <ul className="flex flex-wrap gap-2">
-            {TOPICS.slice(0, 7).map(([, q]) => (
-              <li key={q}>
-                <button
-                  type="button"
-                  onClick={() => ask(q)}
-                  disabled={!retriever}
-                  className="rounded-full border border-border px-3 py-1.5 text-left text-[0.82rem] font-medium transition-colors hover:border-primary hover:text-primary disabled:opacity-50"
-                >
-                  {q}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
       {turns.map((turn, i) => (
-        <article key={`${turn.question}-${i}`} className="relative z-10 flex flex-col gap-4">
+        <article key={`${turn.question}-${i}`} className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-4">
           <h2 className="text-lg font-semibold leading-snug text-balance">{turn.question}</h2>
 
           {turn.pending && (
@@ -560,7 +552,11 @@ export function AssistantPage() {
                   <ul className="flex flex-col gap-1">
                     {turn.answer.citedSections.map((s) => (
                       <li key={s.id} className="text-[0.8rem]">
-                        <a href={guideLink(s.path)} className="underline underline-offset-2">
+                        <a
+                          href={s.external || guideLink(s.path)}
+                          {...(s.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                          className="underline underline-offset-2"
+                        >
                           {s.page}
                         </a>
                         <span className="text-muted-foreground"> · {s.heading}</span>
@@ -664,8 +660,36 @@ export function AssistantPage() {
 
       <div ref={endRef} />
 
+      {/*
+        The composer sits at the foot of the page with its suggestions attached above it,
+        so the questions it can answer are part of the thing you type into rather than a
+        list somewhere else. Both span wider than the reading column, which fits more
+        suggestions on one line.
+      */}
+      <div className="sticky bottom-0 z-10 -mx-5 mt-auto flex flex-col gap-2 bg-gradient-to-t from-background via-background to-transparent px-5 pb-5 pt-6">
+        {!started && (
+          <div className="mx-auto w-full max-w-5xl">
+            <p className="mb-2 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground">
+              Questions it can answer
+            </p>
+            <ul className="flex flex-wrap gap-1.5">
+              {TOPICS.map(([, q]) => (
+                <li key={q}>
+                  <button
+                    type="button"
+                    onClick={() => ask(q)}
+                    disabled={!retriever}
+                    className="rounded-full border border-border bg-card/70 px-3 py-1.5 text-left text-[0.8rem] font-medium transition-colors hover:border-primary hover:text-primary disabled:opacity-50"
+                  >
+                    {q}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       <form
-        className="sticky bottom-4 z-10 flex items-end gap-2 rounded-xl border border-border bg-card p-2 shadow-sm focus-within:border-primary"
+        className="mx-auto flex w-full max-w-5xl items-end gap-2 rounded-xl border border-border bg-card p-2 shadow-md focus-within:border-primary"
         onSubmit={(e) => {
           e.preventDefault();
           ask(draft);
@@ -696,6 +720,7 @@ export function AssistantPage() {
           {busy ? "Working" : "Ask"}
         </button>
       </form>
+      </div>
     </div>
   );
 }

@@ -99,7 +99,22 @@ export function loadCorpus(): Promise<Retriever> {
         if (!res.ok) throw new Error(`corpus unavailable (${res.status})`);
         return res.json() as Promise<Section[]>;
       })
-      .then((sections) => new Retriever(sections))
+      /**
+       * The guide and the instruments are indexed together, so one search covers both and
+       * a question about what an instrument requires can reach the instrument's own words.
+       * The instruments load second and are optional: if that file is missing the page
+       * still works on the guide alone.
+       */
+      .then(async (sections) => {
+        let instruments: Section[] = [];
+        try {
+          const res = await fetch(assetUrl("instruments.json"));
+          if (res.ok) instruments = (await res.json()) as Section[];
+        } catch {
+          instruments = [];
+        }
+        return new Retriever([...sections, ...instruments]);
+      })
       .catch((err) => {
         // let the next attempt retry rather than caching the failure forever
         cached = null;

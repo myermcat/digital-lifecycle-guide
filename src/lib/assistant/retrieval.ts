@@ -27,6 +27,8 @@ export type SectionFacets = {
 
 export type Section = {
   id: string;
+  /** Set when the section is an excerpt of an external instrument, not a guide page. */
+  external?: string;
   page: string;
   path: string;
   slug: string;
