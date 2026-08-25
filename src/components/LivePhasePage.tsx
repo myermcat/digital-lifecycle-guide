@@ -19,7 +19,7 @@ import { LIVE_PHASE } from "@/lib/live-phase-content";
 import type { SourceItem } from "@/components/SourcesBlock";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
-  guideBlockSubheading,
+  guideSubsectionTitle,
   guideCalloutLabel,
   guideBodySubheading,
   guideCardHeading,
@@ -59,13 +59,17 @@ export function LivePhasePage() {
         {lead.map((paragraph) => (
           <div key={paragraph.text}>
             {/*
-              guideBlockSubheading, not guideBodySubheading. The latter is plain bold sans
-              at body size, which inside a space-y block sits an equal distance from the
-              paragraph above and below and reads as unattached bold text. That token's own
-              comment describes the defect. This one is the small uppercase topic opener the
-              other pages use, and it binds itself to the paragraph it introduces.
+              guideSubsectionTitle: the serif subheading the home page uses for "What this
+              guide is". These headings open a topic in running prose, which is the same job.
+              The margin overrides pull the heading away from the paragraph above and close it
+              against the one below, so it reads as belonging to what follows.
+
+              Not guideBodySubheading, which is plain bold sans at body size and inside a
+              space-y block sits an equal distance from both neighbours, reading as stray bold
+              text. Not guideBlockSubheading either, whose small uppercase label suits a block
+              rather than a page's opening prose.
             */}
-            <h2 className={guideBlockSubheading}>{paragraph.heading}</h2>
+            <h2 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>{paragraph.heading}</h2>
             <p>{paragraph.text}</p>
           </div>
         ))}
