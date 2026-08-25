@@ -171,7 +171,7 @@ function Splash({
   return (
     <div className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden px-5 py-12">
       <div
-        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_10%,black_88%,transparent_100%)]"
+        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_9%,black_100%)]"
         role="group"
         aria-label="Example questions you can ask"
       >
@@ -455,7 +455,7 @@ export function AssistantPage() {
         @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
         /* below this there is no gutter left once the column takes its 48rem */
         /* the chat's cards live in the gutters, so they need a wide screen */
-        @media (max-width: 98rem) { .dlg-chat-drift { display: none; } }
+        @media (max-width: 72rem) { .dlg-chat-drift { display: none; } }
         /* the splash spreads them across the whole width, so only a phone is too narrow */
         @media (max-width: 40rem) { .dlg-splash-drift { display: none; } }
       `}</style>
@@ -463,7 +463,7 @@ export function AssistantPage() {
       {/* Drifting topic cards, in the gutters either side of the reading column. */}
       {!started && (
         <div
-          className="dlg-drift-layer dlg-chat-drift pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_16%,black_72%,transparent_95%)]"
+          className="dlg-drift-layer dlg-chat-drift pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_11%,black_100%)]"
           role="group"
           aria-label="Example questions you can ask"
         >
@@ -479,11 +479,17 @@ export function AssistantPage() {
                    * because at 25rem the cards were still touching the text on a wide
                    * screen once their shadow was counted.
                    */
-                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 34rem)",
+                  /**
+                   * Clearance is measured against the 48rem reading column, not the wider
+                   * composer: the composer is opaque and sticky at the foot, so a card
+                   * passing behind it is hidden anyway. Measuring against the composer
+                   * pushed the cards off every screen narrower than 1568px.
+                   */
+                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 25.5rem)",
                   ["--dur" as string]: "64s",
                   ["--delay" as string]: `${-i * 8}s`,
                   ["--tilt" as string]: `${((i % 3) - 1) * 0.5}deg`,
-                  width: "min(14rem, calc(50% - 35rem))",
+                  width: "min(13rem, calc(50% - 26.5rem))",
                 } as React.CSSProperties
               }
               className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.78] shadow-sm transition hover:border-primary hover:opacity-100"

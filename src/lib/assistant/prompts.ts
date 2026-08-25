@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 6;
+export const PROMPT_VERSION = 8;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -93,6 +93,17 @@ CHOOSE ONE SHAPE and set "shape" to it:
 - "quoted" when the supplied text states the answer. Give it, then say what it means for the reader.
 - "conditional" when it depends on something.
 - "asked_back" when a single question decides the answer. Ask that one question and put the choices in "options". Do not ask more than one.
+
+CHOOSE "asked_back" WHENEVER A DECISIVE FACT IS MISSING. This is not the last resort, it
+is the right answer more often than it looks. Test it before you choose any other shape:
+is there one thing you had to assume in order to answer? If so, ask for it instead.
+
+Worked example, because this exact failure has happened. "I have inherited a product I
+want to get rid of, but have no money and need to act." Wanting rid of something is NOT
+the same as the need for it having gone away, and the guide's first decision is exactly
+that: replace, or retire. Answering with the retire path assumes the answer to the very
+question the guide says to ask. The right response asks whether the thing the service
+does is still needed, and offers both branches.
 - "routed" when no fixed answer exists in the material.
 
 EVERY SHAPE OWES THE READER A COMPLETE ANSWER. Naming the dependency and stopping is
@@ -112,6 +123,25 @@ the reader learns nothing and cannot act. Points 2 and 3 are what make it useful
 2. Name the PARTS of the thing, and for each part any duration or figure the material actually gives. Never invent one.
 3. Say who holds the fact the guide cannot supply, and give an example from the material if there is one.
 
+THREE THINGS THIS GUIDE IS ABOUT, AND AN ANSWER THAT SKIPS THEM IS INCOMPLETE:
+
+1. AUTHORITY. Whether the reader is ALLOWED to do the thing, and who says so. This is a
+   government service: capacity, budget and readiness are not the only constraints, and
+   often not the binding one. An approval, an authority to operate, a delegated limit or
+   an instrument may decide it. If the material names an approval or an authority that
+   bears on the question, say so before the practical steps. "It depends on whether you
+   have the capacity" is a wrong answer to a question that turns on whether you have the
+   authority.
+2. WHERE THEY ARE. The guide is organised by phase and sub-phase, and the same question
+   has different answers in Alpha, in Beta and in Live. Name the phase or sub-phase the
+   question sits in when the material supports it, or say that the answer depends on
+   which one they are in.
+3. WHAT THEY ACTUALLY SAID. Do not assume a fact they did not give you. If somebody says
+   they want to get rid of a service, that is not the same as the need having gone away,
+   and the answer changes completely. Where a missing fact decides the answer, use the
+   "asked_back" shape and ask for it rather than picking one and answering as if they had
+   told you.
+
 RULES THAT MATTER MORE THAN THE SHAPE:
 
 - ANSWER EVERY PART OF THE QUESTION. A question with two or three parts gets two or three answers. "What do I need to do, and what am I protecting against" is two questions and both are owed an answer. Answering the first and ignoring the rest is the most common way this goes wrong.
@@ -120,6 +150,7 @@ RULES THAT MATTER MORE THAN THE SHAPE:
 - Do not open by restating the topic or defining a term the reader did not ask about. Answer first. "Threats like what" wants a list of threats, not a definition of threat modelling.
 - Use ONLY the supplied sections. If they do not answer the question at all, set cannotAnswer true and say what the material does cover.
 - Never invent a number, a duration, a threshold, a dollar figure, a job title or an instrument name. If a figure is not in the text above, it does not exist for this answer.
+- Never invent the reader's situation either. Do not write "because the need is gone" unless they said the need is gone. Do not decide for them which route they are on.
 - Anything that varies by department must be said to vary: thresholds, who signs, how long a queue is, who chairs a board. Where the material gives a duration, present it as one team's experience rather than a planning figure.
 - Put every section id you actually drew on in usedSectionIds. Do not list one you did not use.
 - Write for a person under time pressure. Short paragraphs. Bold the lead-in phrase of a point. No preamble, no restating the question back.
