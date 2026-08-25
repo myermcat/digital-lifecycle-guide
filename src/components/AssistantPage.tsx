@@ -168,7 +168,7 @@ function Splash({
           }}
         >
           <label htmlFor="splash-key" className="text-sm font-semibold">
-            Paste a model key to begin
+            Paste an AI key to begin
           </label>
           <div className="flex flex-wrap gap-2">
             <input
@@ -209,7 +209,7 @@ function Splash({
           onClick={onSkip}
           className="mt-5 text-[0.78rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
         >
-          Or continue without a model, and get the guide's own sections instead
+          Or continue without AI, and get the guide's own sections instead
         </button>
       </section>
     </div>
@@ -326,8 +326,8 @@ export function AssistantPage() {
     : !retriever
       ? "Loading the guide"
       : apiKey
-        ? `${retriever.size} sections, written answers by ${MODEL_LABEL}`
-        : `${retriever.size} sections, searched in your browser`;
+        ? `${retriever.size} sections, AI answers by ${MODEL_LABEL}`
+        : `${retriever.size} sections, searched in your browser, no AI`;
 
   const driftStyles = (
     <style>{`
@@ -451,14 +451,14 @@ export function AssistantPage() {
               className={`h-1.5 w-1.5 rounded-full ${apiKey ? "bg-primary" : "bg-muted-foreground"}`}
               aria-hidden="true"
             />
-            {apiKey ? "Written answers on" : "Sections only"}
+            {apiKey ? "AI answers on" : "AI answers off"}
           </span>
           <button
             type="button"
             onClick={() => setShowKeyPanel((v) => !v)}
             className="text-[0.75rem] underline decoration-dotted underline-offset-2 text-muted-foreground hover:text-foreground"
           >
-            {apiKey ? "Change or remove key" : "Add a key"}
+            {apiKey ? "Change or remove AI key" : "Add an AI key"}
           </button>
           {showKeyPanel && (
             <form
