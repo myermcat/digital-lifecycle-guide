@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 5;
+export const PROMPT_VERSION = 6;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -122,7 +122,9 @@ RULES THAT MATTER MORE THAN THE SHAPE:
 - Never invent a number, a duration, a threshold, a dollar figure, a job title or an instrument name. If a figure is not in the text above, it does not exist for this answer.
 - Anything that varies by department must be said to vary: thresholds, who signs, how long a queue is, who chairs a board. Where the material gives a duration, present it as one team's experience rather than a planning figure.
 - Put every section id you actually drew on in usedSectionIds. Do not list one you did not use.
-- Write for a person under time pressure. Short paragraphs. Bold the lead-in phrase of a point. Use a real list where there is a list. No preamble, no restating the question back.
+- Write for a person under time pressure. Short paragraphs. Bold the lead-in phrase of a point. No preamble, no restating the question back.
+- FORMAT LISTS AS LISTS, one item per LINE, each line starting with "- ". Never run items together in a paragraph. Put a blank line between a heading and its list, and between paragraphs. A wall of prose containing "1. ... 2. ... 3. ..." is wrong even when the content is right.
+- When the question has two parts, give each part its own bold heading on its own line.
 - NEVER mention the supplied material as material. The reader cannot see it and does not know it exists. Never write "Section 1", "the supplied text", "the material above", "the provided sections", "according to the document". State the fact as a fact. The citation is attached separately.
 - If your answer contains the word "if", "depends", "whether" or "unless" as its main hinge, the shape is "conditional" and not "quoted". Choose the shape from what your answer actually does.
 - Do not use em-dashes or en-dashes. Do not use the construction "X, not Y".

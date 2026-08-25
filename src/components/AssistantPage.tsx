@@ -71,27 +71,79 @@ function renderBold(text: string) {
   );
 }
 
-/** Bullet lines the model wrote as "- item" become a real list. */
-function renderBlock(block: string, key: number) {
-  const lines = block.split("\n").map((l) => l.trim()).filter(Boolean);
-  const bullets = lines.filter((l) => /^[-*•]\s/.test(l));
+/**
+ * Render the answer as the structure it actually has.
+ *
+ * Splitting on blank lines only produced one long paragraph, because the model writes
+ * lists with single newlines and sometimes runs "1. ... 2. ..." together on one line.
+ * This walks the lines instead, groups consecutive bullets or numbers into a real list,
+ * and leaves everything else as paragraphs.
+ */
+function renderAnswer(text: string) {
+  /* a line holding several numbered items becomes several lines */
+  const lines = text
+    .split("\n")
+    /* a line holding several numbered items becomes several lines */
+    .flatMap((line) =>
+      (line.match(/\d+[.)]\s/g) ?? []).length >= 2 ? line.split(/\s(?=\d+[.)]\s)/) : [line],
+    )
+    /* and the same for bullets, which the model also runs together on one line */
+    .flatMap((line) =>
+      (line.match(/[•*]\s|(?:^|\s)-\s/g) ?? []).length >= 2 ? line.split(/\s(?=[•*]\s|-\s)/) : [line],
+    )
+    /* a bold heading followed by its first item belongs on two lines */
+    .flatMap((line) => {
+      const m = /^(\*\*[^*]+\*\*:?)\s+(.+)$/.exec(line);
+      return m && m[2].length > 40 ? [m[1], m[2]] : [line];
+    })
+    .map((l) => l.trim())
+    .filter(Boolean);
 
-  if (bullets.length >= 2 && bullets.length === lines.length) {
+  const isBullet = (l: string) => /^[-*•]\s+/.test(l);
+  const isNumber = (l: string) => /^\d+[.)]\s+/.test(l);
+
+  const blocks: Array<{ kind: "p" | "ul" | "ol"; items: string[] }> = [];
+  for (const line of lines) {
+    const kind = isBullet(line) ? "ul" : isNumber(line) ? "ol" : "p";
+    const body = line.replace(/^[-*•]\s+/, "").replace(/^\d+[.)]\s+/, "");
+    const last = blocks[blocks.length - 1];
+    if (last && last.kind === kind && kind !== "p") last.items.push(body);
+    else blocks.push({ kind, items: [body] });
+  }
+
+  return blocks.map((block, i) => {
+    if (block.kind === "p") {
+      return (
+        <p key={i} className="text-pretty">
+          {renderBold(block.items[0])}
+        </p>
+      );
+    }
+    const List = block.kind === "ol" ? "ol" : "ul";
     return (
-      <ul key={key} className="flex flex-col gap-1.5 pl-4">
-        {bullets.map((b, i) => (
-          <li key={i} className="relative text-pretty before:absolute before:-left-4 before:top-[0.62em] before:h-px before:w-2 before:bg-muted-foreground">
-            {renderBold(b.replace(/^[-*•]\s+/, ""))}
+      <List
+        key={i}
+        className={
+          block.kind === "ol"
+            ? "flex list-decimal flex-col gap-1.5 pl-5"
+            : "flex flex-col gap-1.5 pl-4"
+        }
+      >
+        {block.items.map((item, k) => (
+          <li
+            key={k}
+            className={
+              block.kind === "ol"
+                ? "text-pretty"
+                : "relative text-pretty before:absolute before:-left-4 before:top-[0.62em] before:h-px before:w-2 before:bg-muted-foreground"
+            }
+          >
+            {renderBold(item)}
           </li>
         ))}
-      </ul>
+      </List>
     );
-  }
-  return (
-    <p key={key} className="text-pretty">
-      {renderBold(block.replace(/\n/g, " "))}
-    </p>
-  );
+  });
 }
 
 /**
@@ -119,7 +171,7 @@ function Splash({
   return (
     <div className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden px-5 py-12">
       <div
-        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,transparent_18%,black_46%,black_78%,transparent_98%)]"
+        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_10%,black_88%,transparent_100%)]"
         role="group"
         aria-label="Example questions you can ask"
       >
@@ -140,7 +192,7 @@ function Splash({
                   ["--tilt" as string]: `${((i % 3) - 1) * 0.6}deg`,
                 } as React.CSSProperties
               }
-              className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.72] shadow-sm transition hover:border-primary hover:opacity-100"
+              className="dlg-drift-card pointer-events-auto absolute top-0 rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.72] shadow-sm transition hover:border-primary hover:opacity-100"
             >
               <span className="block font-mono text-[0.58rem] uppercase tracking-[0.11em] text-muted-foreground">
                 {topic}
@@ -359,9 +411,11 @@ export function AssistantPage() {
 
   const driftStyles = (
     <style>{`
+      /* start below the fold and end above it, so a card rises into view rather than
+         appearing in the middle of the screen */
       @keyframes dlg-drift {
-        from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
-        to   { transform: translateY(-70vh) rotate(var(--tilt, 0deg)); }
+        from { transform: translateY(105vh) rotate(var(--tilt, 0deg)); }
+        to   { transform: translateY(-115vh) rotate(var(--tilt, 0deg)); }
       }
       .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
       @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
@@ -391,9 +445,11 @@ export function AssistantPage() {
   return (
     <div className="relative mx-auto flex min-h-[100vh] w-full max-w-5xl flex-col gap-7 px-5 py-8">
       <style>{`
+        /* start below the fold and end above it, so a card rises into view rather than
+           appearing in the middle of the screen */
         @keyframes dlg-drift {
-          from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
-          to   { transform: translateY(-70vh) rotate(var(--tilt, 0deg)); }
+          from { transform: translateY(105vh) rotate(var(--tilt, 0deg)); }
+          to   { transform: translateY(-115vh) rotate(var(--tilt, 0deg)); }
         }
         .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
         @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
@@ -559,7 +615,7 @@ export function AssistantPage() {
               </p>
 
               <div className="flex flex-col gap-3 text-[1rem] leading-relaxed">
-                {turn.answer.answer.split(/\n{2,}/).map((b, k) => renderBlock(b, k))}
+                {renderAnswer(turn.answer.answer)}
               </div>
 
               {turn.answer.options.length > 0 && (
