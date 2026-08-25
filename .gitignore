@@ -41,6 +41,7 @@ public/assistant/
 # committed. CI cannot rebuild it, so without this the live site loses the instruments and
 # only the guide is searchable.
 !public/assistant/instruments.json
+!public/assistant/sources.json
 
 # Local secrets. The model key belongs here, never in a VITE_ variable:
 # a VITE_ prefix ships the value to every visitor.
