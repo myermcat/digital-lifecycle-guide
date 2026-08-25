@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { List } from "lucide-react";
+import { List, MessageCircleQuestion } from "lucide-react";
 import { HeaderSearch } from "@/components/HeaderSearch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
@@ -76,6 +76,21 @@ export function GuideHeader({
               <List className="size-3.5 shrink-0 opacity-70" aria-hidden />
               <span className="hidden sm:inline">Index</span>
               <span className="sr-only sm:hidden">Index</span>
+            </Link>
+            {/* The assistant sits beside the index and the search box, because it is a
+                third way into the same content rather than a feature of its own. */}
+            <Link
+              to="/assistant"
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-md px-1.5 py-1",
+                "text-[11px] text-muted-foreground/75 hover:text-foreground/80 transition-colors",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+              )}
+              activeProps={{ className: "text-foreground/75" }}
+            >
+              <MessageCircleQuestion className="size-3.5 shrink-0 opacity-70" aria-hidden />
+              <span className="hidden sm:inline">Ask</span>
+              <span className="sr-only sm:hidden">Ask the guide</span>
             </Link>
             <HeaderSearch />
             {rootId || onThisPageItems?.length ? (

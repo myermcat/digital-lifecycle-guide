@@ -255,8 +255,8 @@ export const PROCUREMENT_STRINGS = {
             text: "Two ways to run it",
           },
           {
-            text: "Run traditionally, the department writes the requirement first and asks suppliers to price it. Run the agile way, suppliers are engaged early and more than one is paid to build something before one of them is chosen. That is why Buy a Solution appears twice in the table below, signing at a different point in each shape. Appendix 1 sets out how the agile shape runs and what it costs.",
-            anchorLinks: [{ phrase: "Appendix 1", hash: "appendix-agile-procurement" }],
+            text: "Run traditionally, the department writes the requirement first and asks suppliers to price it. Run the agile way, suppliers are engaged early and more than one is paid to build something before one of them is chosen. That is why Buy a Solution appears twice in the table below, signing at a different point in each shape. Appendix A sets out how the agile shape runs and what it costs.",
+            anchorLinks: [{ phrase: "Appendix A", hash: "appendix-agile-procurement" }],
           },
         ],
         contractSigned: {
@@ -370,7 +370,7 @@ export const PROCUREMENT_STRINGS = {
 
   agileAppendix: {
     id: "appendix-agile-procurement",
-    label: "APPENDIX 1",
+    label: "APPENDIX A",
     heading: "Agile procurement",
     intro: [
       {
@@ -851,10 +851,33 @@ export const PROCUREMENT_STRINGS = {
             type: "p",
             text: "The signature is the starting line, not the finish. Holding the supplier to what the contract promised runs for as long as the service does, and what that looks like lives in the Live and Sunset phases.",
           },
+          {
+            type: "p",
+            text: "A contract also ends, and the expiry date decides when the work to replace it has to start. Three routes out of a contract, and each one needs months of lead time:",
+            bold: [{ phrase: "the expiry date" }],
+          },
+          {
+            type: "ul",
+            items: [
+              "Re-compete it. A fresh competition, on the same timelines the first one took.",
+              "Exercise an option, where the contract you signed provides for one.",
+              "Extend with the current supplier on the current terms, which is the route left when the other two are started too late.",
+            ],
+            bold: [
+              { phrase: "Re-compete it." },
+              { phrase: "Exercise an option" },
+              { phrase: "Extend with the current supplier" },
+            ],
+          },
+          {
+            type: "p",
+            text: "Maturity sets out when to start each of them, and what an emergency extension costs the department.",
+          },
         ],
         internalLinks: [
           { phrase: "Live", to: "/live" },
           { phrase: "Sunset", to: "/sunset" },
+          { phrase: "Maturity", to: "/live-maturity" },
         ],
       },
     ] satisfies ProcurementJourneyStepStrings[],
@@ -894,7 +917,7 @@ export const PROCUREMENT_STRINGS = {
       },
     ] satisfies ComparisonRowStrings[],
     caption:
-      "What the agile shape buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. It is not a faster way to buy, and Appendix 1 sets out what it costs. Note also that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
+      "What the agile shape buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. It is not a faster way to buy, and Appendix A sets out what it costs. Note also that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one.",
   },
 
   caseStudy: {
