@@ -281,6 +281,44 @@ export class Retriever {
   }
 }
 
+/**
+ * Choose the sections to hand a model, spread across pages.
+ *
+ * Pooling by score alone handed over four sections from one page, which is why "I have no
+ * money" got an answer built entirely from the Sunset page and never mentioned money. The
+ * guide answers a constrained question from several threads at once: the phase page says
+ * what to do, the funding thread says what it costs and where money comes from, the
+ * checkpoint map says who has to approve it. Capping how many sections one page can
+ * contribute forces that breadth.
+ */
+export function selectSections(
+  scored: Array<{ section: Section; score: number }>,
+  limit = 4,
+  perPage = 2,
+): Section[] {
+  const ordered = [...scored].sort((a, b) => b.score - a.score);
+  const taken = new Map<string, number>();
+  const chosen: Section[] = [];
+
+  for (const { section } of ordered) {
+    if (chosen.length >= limit) break;
+    const used = taken.get(section.slug) ?? 0;
+    if (used >= perPage) continue;
+    taken.set(section.slug, used + 1);
+    chosen.push(section);
+  }
+
+  /* if the cap starved the list, fill it from what is left rather than under-supplying */
+  if (chosen.length < limit) {
+    for (const { section } of ordered) {
+      if (chosen.length >= limit) break;
+      if (!chosen.includes(section)) chosen.push(section);
+    }
+  }
+
+  return chosen;
+}
+
 /** The sentence carrying the most query terms, so a reader can see why it matched. */
 function snippetFor(section: Section, terms: Set<string>): string {
   const sentences = section.text

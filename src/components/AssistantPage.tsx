@@ -14,6 +14,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { loadCorpus, loadMap, loadSources, matchSources, guideLink, type SourceLink } from "@/lib/assistant/corpus";
+import { selectSections } from "@/lib/assistant/retrieval";
 import type { Hit, Retriever, Section } from "@/lib/assistant/retrieval";
 import {
   answerFrom,
@@ -358,8 +359,14 @@ export function AssistantPage() {
             pooled.set(hit.section.id, { hit, score: (prev?.score ?? 0) + hit.score });
           }
         }
-        const chosen = [...pooled.values()].sort((a, b) => b.score - a.score).slice(0, 3);
-        const given = chosen.length ? chosen.map((c) => c.hit) : plain.hits;
+        /* spread across pages, so a constrained question reaches funding as well as the phase */
+        const picked = selectSections(
+          [...pooled.values()].map((p2) => ({ section: p2.hit.section, score: p2.score })),
+          4,
+          2,
+        );
+        const byId = new Map([...pooled.values()].map((p2) => [p2.hit.section.id, p2.hit]));
+        const given = picked.length ? picked.map((sec) => byId.get(sec.id)!).filter(Boolean) : plain.hits;
 
         const written = await answerFrom(
           apiKey,
@@ -706,13 +713,17 @@ export function AssistantPage() {
                   <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
                     Ask next
                   </p>
-                  <div className="flex flex-col items-start gap-1">
+                  {/*
+                    The same pill as an asked_back option, because the reader should not have
+                    to work out which suggestions are clickable and which are decoration.
+                  */}
+                  <div className="flex flex-wrap gap-2">
                     {turn.answer.followUps.map((f) => (
                       <button
                         key={f}
                         type="button"
                         onClick={() => ask(f)}
-                        className="text-left text-[0.82rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-primary"
+                        className="rounded-full border border-border px-3 py-1.5 text-left text-[0.82rem] font-medium transition-colors hover:border-primary hover:text-primary"
                       >
                         {f}
                       </button>

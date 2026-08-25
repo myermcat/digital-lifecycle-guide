@@ -12,6 +12,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { loadRetriever, deepLink } from "./lib/retrieval";
+import { selectSections } from "../src/lib/assistant/retrieval";
 import { Rewriter, buildContents } from "./lib/rewrite";
 import { answerQuestion } from "./lib/answer";
 import { loadKey, type Provider } from "./lib/llm";
@@ -67,7 +68,7 @@ if (noRewrite) {
       });
     }
   }
-  sections = [...pooled.values()].sort((a, b) => b.score - a.score).slice(0, 4).map((x) => x.section);
+  sections = selectSections([...pooled.values()], 4, 2);
 }
 
 const budget = sections.reduce((a, s) => a + s.tokens, 0);

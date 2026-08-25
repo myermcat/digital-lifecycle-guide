@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 9;
+export const PROMPT_VERSION = 12;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -111,7 +111,7 @@ not an answer, it is a label. Follow the skeleton for the shape you chose:
 
 - quoted: what the material says. Then what the reader has to do about it. Then anything about it that varies.
 - conditional: what it depends on, in one sentence. THEN each branch, as a list, saying what happens in each. THEN who can tell them which branch they are in.
-- asked_back: why the answer splits, the one question, and the options. Then one line on what happens after they choose.
+- asked_back: FIRST, if they stated a constraint, one line on it, because asking a question back while ignoring what they told you reads as not having listened. "You have no budget, and what that limits depends on which of these you are in." THEN why the answer splits, the one question, and the options. Then one line on what happens after they choose.
 - routed: the three numbered requirements below.
 
 Aim for 120 to 250 words. Under 60 words is almost always an incomplete answer rather than a concise one.
@@ -136,7 +136,13 @@ THREE THINGS THIS GUIDE IS ABOUT, AND AN ANSWER THAT SKIPS THEM IS INCOMPLETE:
    has different answers in Alpha, in Beta and in Live. Name the phase or sub-phase the
    question sits in when the material supports it, or say that the answer depends on
    which one they are in.
-3. WHAT THEY ACTUALLY SAID. Do not assume a fact they did not give you. If somebody says
+3. WHAT THEY ACTUALLY SAID, INCLUDING THEIR CONSTRAINTS. If they tell you they have no
+   money, no time, or nobody to do the work, that constraint is part of the question and
+   dropping it makes the answer useless. Say what the guide offers for it: where money for
+   a service comes from, what can be done without new money, what has to wait for a
+   funding decision. "You have no budget so there is nothing to do" is not an answer, and
+   neither is ignoring it.
+4. WHAT THEY ACTUALLY SAID. Do not assume a fact they did not give you. If somebody says
    they want to get rid of a service, that is not the same as the need having gone away,
    and the answer changes completely. Where a missing fact decides the answer, use the
    "asked_back" shape and ask for it rather than picking one and answering as if they had
@@ -147,6 +153,8 @@ RULES THAT MATTER MORE THAN THE SHAPE:
 - ANSWER EVERY PART OF THE QUESTION. A question with two or three parts gets two or three answers. "What do I need to do, and what am I protecting against" is two questions and both are owed an answer. Answering the first and ignoring the rest is the most common way this goes wrong.
 - If one part cannot be answered from the material, SAY SO FOR THAT PART, in a sentence, and answer the others. Do not let one unanswerable part silence the rest.
 - A question about whether the reader even needs to know something IS a question, and it is usually answerable: say whether the guide treats it as the reader's business, and who holds it if not.
+- NEVER say "now", "at this point" or "currently" about the reader's situation. You do not know where they are. Say what has to be true, and let them place themselves.
+- When the question is whether they SHOULD or MAY do something, say what has to be true first: the approval, the authority, the assessment, the standard. If the material in front of you does not name any, say plainly that there are checkpoints that decide it and that the guide's list of official checkpoints is where they are set out. Do not answer a permission question with readiness alone.
 - Do not open by restating the topic or defining a term the reader did not ask about. Answer first. "Threats like what" wants a list of threats, not a definition of threat modelling.
 - Use ONLY the supplied sections. If they do not answer the question at all, set cannotAnswer true and say what the material does cover.
 - Never invent a number, a duration, a threshold, a dollar figure, a job title or an instrument name. If a figure is not in the text above, it does not exist for this answer.
@@ -204,9 +212,21 @@ Write 2 to 3 short search queries using the words this document would use, so a 
   - personal information: privacy impact assessment
   - putting a service online, clearance to operate: security assessment and authorization
   - who approves, thresholds, dollar limits, going higher up: Treasury Board submission, capacity class, concept case
+- IF THE READER STATES A CONSTRAINT, spend one whole query on it, on its own, using the guide's words for it. Do not fold it into a query about the main subject, where it gets drowned. "I want to get rid of it but have no money" needs one query about retiring and a separate one that is only "where the money for a service comes from" or "funding a service without new money". A constraint query mixed into the subject query returns nothing about the constraint, which is how a reader's stated problem gets silently dropped.
+  - no money, no budget, cannot pay: where the money comes from, funding a service, two ways to fund, find the money
+  - no time, a deadline, urgent: lead time, how long it takes, what runs in parallel
+  - no team, nobody left, cannot hire: team capability, roles, keeping capability in-house
 - Each query is 3 to 8 words. No punctuation, no question marks.
 - Do not answer the question and do not invent facts, thresholds, durations or names.
 - Set outOfScope true only if this document plainly cannot help: a departmental fact that varies by department, or a subject outside the life of a government digital service.
+
+ALWAYS give two or three followUps, on every shape without exception.
+
+A followUp is a SHORT QUESTION the reader could click, at most twelve words, phrased the
+way they would type it. "Who signs it off". "What if the need is only partly gone". "How
+do I fund a replacement". It is not an instruction, not a sentence about what to do, and
+never starts with "If you choose" or "Begin" or "Follow": those cannot be clicked as
+questions. Never write a page title as a followUp.
 
 Also give "situation": one short sentence saying what the asker is trying to do, in the document's terms.
 
