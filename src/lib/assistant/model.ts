@@ -90,7 +90,25 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
       return call<T>(key, prompt, maxTokens, attempt + 1);
     }
     if (res.status === 401) throw new Error("That key was rejected. Check it and try again.");
-    if (res.status === 429) throw new Error("The key has hit its rate limit. Wait a minute and retry.");
+
+    /**
+     * The free tier allows 6,000 tokens a minute, and INPUT PLUS OUTPUT count against it,
+     * which is how a single question could exhaust it. Waiting is the correct response, so
+     * wait rather than reporting a failure the reader can do nothing about. Groq says how
+     * long in the message; fall back to twenty seconds.
+     */
+    if (res.status === 429 && attempt < 4) {
+      const seconds = Number(detail.match(/try again in ([\d.]+)s/i)?.[1] ?? 20);
+      await new Promise((r) => setTimeout(r, Math.min(60, seconds + 2) * 1000));
+      return call<T>(key, prompt, maxTokens, attempt + 1);
+    }
+    if (res.status === 429) {
+      throw new Error(
+        "The key is out of allowance for now. A free key allows 6,000 tokens a minute, " +
+          "counting the answer as well as the question, so a couple of questions in quick " +
+          "succession can reach it. Waiting a minute is usually enough.",
+      );
+    }
     throw new Error(`The model returned ${res.status}. ${detail.slice(0, 160)}`);
   }
 
@@ -132,7 +150,7 @@ export async function answerFrom(
   sections: Section[],
   situation?: string,
 ): Promise<Answer & { citedSections: Section[] }> {
-  const raw = await call<Answer>(key, buildAnswerPrompt(question, sections, situation), 2600);
+  const raw = await call<Answer>(key, buildAnswerPrompt(question, sections, situation), 1500);
   const byId = new Map(sections.map((s) => [s.id, s]));
   // only cite what was actually supplied: an invented id would look checkable and lead nowhere
   const citedSections = (raw.usedSectionIds ?? [])

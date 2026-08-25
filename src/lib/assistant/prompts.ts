@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 3;
+export const PROMPT_VERSION = 4;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -29,11 +29,25 @@ export const CURRENCY = `Three instruments moved and must never be presented as 
 If one of these comes up, give the live instrument and name the rescinded one, because that is what the reader's old checklist says.`;
 
 
+/**
+ * A single very long section can double the cost of an answer, and the free tier counts
+ * input and output against the same per-minute allowance. Long sections are trimmed at a
+ * sentence boundary so the model still gets whole thoughts.
+ */
+const SECTION_CHAR_CAP = 1600;
+
+function trimSection(text: string): string {
+  if (text.length <= SECTION_CHAR_CAP) return text;
+  const cut = text.slice(0, SECTION_CHAR_CAP);
+  const lastStop = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("\n"));
+  return (lastStop > SECTION_CHAR_CAP * 0.6 ? cut.slice(0, lastStop + 1) : cut) + "\n[continues]";
+}
+
 export function buildAnswerPrompt(question: string, sections: Section[], situation?: string): string {
   const supplied = sections
     .map(
       (s, i) =>
-        `--- SECTION ${i + 1}  id=${s.id}\nPage: ${s.page}\nHeading: ${s.heading}\n\n${s.text}`,
+        `--- SECTION ${i + 1}  id=${s.id}\nPage: ${s.page}\nHeading: ${s.heading}\n\n${trimSection(s.text)}`,
     )
     .join("\n\n");
 
@@ -138,6 +152,6 @@ export function buildContents(
 ): string {
   return map
     .filter((p) => !p.path.startsWith("/shared") && !p.path.startsWith("/unmapped"))
-    .map((p) => `- ${p.title} (${p.path}): ${p.sections.slice(0, 5).join("; ")}`)
+    .map((p) => `- ${p.title} (${p.path}): ${p.sections.slice(0, 2).join("; ")}`)
     .join("\n");
 }

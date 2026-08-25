@@ -675,6 +675,28 @@ async function build() {
     "utf8",
   );
 
+  /**
+   * The prefetched instruments, as a LINK index only.
+   *
+   * The full text is 5.37 MB and 1.46 million tokens, so it cannot ship to a browser and
+   * cannot enter a prompt. What can is the title, the guide's own description and the URL.
+   * That lets an answer offer the instrument itself as a link, which is what a reader
+   * chasing a citation actually wants, without pretending to have read it to them.
+   */
+  const sourcesIndexPath = join(OUT, "sources-index.json");
+  if (existsSync(sourcesIndexPath)) {
+    type SourceRow = { id: string; url: string; title?: string; description?: string };
+    const rows = JSON.parse(await readFile(sourcesIndexPath, "utf8")) as SourceRow[];
+    const slim = rows.map((r) => ({
+      id: r.id,
+      url: r.url,
+      title: (r.title ?? "").replace(/\s*[-|]\s*Canada\.ca\s*$/i, "").slice(0, 90),
+      description: (r.description ?? "").slice(0, 110),
+    }));
+    await writeFile(join(PUBLIC_OUT, "sources.json"), JSON.stringify(slim), "utf8");
+    console.log(`source links     ${slim.length} instruments -> public/assistant/sources.json`);
+  }
+
   const publicBytes = Buffer.byteLength(JSON.stringify(publicSections));
   console.log(`browser slice    ${publicSections.length} sections, ${(publicBytes / 1024).toFixed(0)} KB raw -> public/assistant/`);
   if (withheld) console.log(`  withheld       ${withheld} section(s) not marked public`);

@@ -36,6 +36,60 @@ export function loadMap() {
   return cachedMap;
 }
 
+export type SourceLink = { id: string; url: string; title: string; description: string };
+
+let cachedSources: Promise<SourceLink[]> | null = null;
+
+/**
+ * The instruments the guide cites, as links.
+ *
+ * These were fetched once and their full text is far too large to ship or to put in a
+ * prompt. The index is small, so an answer can offer the instrument itself alongside the
+ * guide's explanation of it. Matching happens in the browser against the answer text, so
+ * it costs nothing and cannot invent a link.
+ */
+export function loadSources(): Promise<SourceLink[]> {
+  if (!cachedSources) {
+    cachedSources = fetch(assetUrl("sources.json"))
+      .then((res) => (res.ok ? (res.json() as Promise<SourceLink[]>) : []))
+      .catch(() => {
+        cachedSources = null;
+        return [];
+      });
+  }
+  return cachedSources;
+}
+
+/**
+ * Which cited instruments does this answer actually mention?
+ *
+ * Title words are matched rather than the whole title, because an answer says "the
+ * Directive on the Management of Procurement" while the page title carries a suffix. A
+ * match needs the distinctive words, so "Directive" alone never counts.
+ */
+export function matchSources(answer: string, sources: SourceLink[], limit = 3): SourceLink[] {
+  const haystack = answer.toLowerCase();
+  const GENERIC = new Set([
+    "the", "of", "and", "on", "for", "canada", "government", "policy", "directive",
+    "standard", "guideline", "act", "tool", "guide", "treasury", "board", "management",
+  ]);
+
+  const scored = sources
+    .map((s) => {
+      const words = s.title
+        .toLowerCase()
+        .split(/[^a-z0-9]+/)
+        .filter((w) => w.length > 3 && !GENERIC.has(w));
+      if (words.length < 2) return { s, hits: 0 };
+      const hits = words.filter((w) => haystack.includes(w)).length;
+      return { s, hits: hits >= 2 ? hits / words.length : 0 };
+    })
+    .filter((x) => x.hits > 0.5)
+    .sort((a, b) => b.hits - a.hits);
+
+  return scored.slice(0, limit).map((x) => x.s);
+}
+
 let cached: Promise<Retriever> | null = null;
 
 export function loadCorpus(): Promise<Retriever> {

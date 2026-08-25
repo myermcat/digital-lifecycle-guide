@@ -13,8 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-import { GuideLayout } from "@/components/GuideLayout";
-import { loadCorpus, loadMap, guideLink } from "@/lib/assistant/corpus";
+import { loadCorpus, loadMap, loadSources, matchSources, guideLink, type SourceLink } from "@/lib/assistant/corpus";
 import type { Hit, Retriever, Section } from "@/lib/assistant/retrieval";
 import {
   answerFrom,
@@ -230,9 +229,13 @@ export function AssistantPage() {
   const [busy, setBusy] = useState(false);
   /** A question clicked on the welcome screen, asked as soon as a key exists. */
   const [queued, setQueued] = useState<string | null>(null);
+  const [sources, setSources] = useState<SourceLink[]>([]);
   const endRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => setApiKey(storedKey()), []);
+  useEffect(() => {
+    void loadSources().then(setSources);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -277,7 +280,7 @@ export function AssistantPage() {
             pooled.set(hit.section.id, { hit, score: (prev?.score ?? 0) + hit.score });
           }
         }
-        const chosen = [...pooled.values()].sort((a, b) => b.score - a.score).slice(0, 4);
+        const chosen = [...pooled.values()].sort((a, b) => b.score - a.score).slice(0, 3);
         const given = chosen.length ? chosen.map((c) => c.hit) : plain.hits;
 
         const written = await answerFrom(
@@ -340,7 +343,7 @@ export function AssistantPage() {
 
   if (gateOpen) {
     return (
-      <GuideLayout id="assistant">
+      <>
         {driftStyles}
         <Splash
           cards={drifting}
@@ -353,13 +356,12 @@ export function AssistantPage() {
           onSkip={() => setSkippedKey(true)}
           onPickQuestion={(q) => setQueued(q)}
         />
-      </GuideLayout>
+      </>
     );
   }
 
   return (
-    <GuideLayout id="assistant">
-    <div className="relative mx-auto flex min-h-[78vh] w-full max-w-3xl flex-col gap-7 px-5 py-10">
+    <div className="relative mx-auto flex min-h-[100vh] w-full max-w-3xl flex-col gap-7 px-5 py-8">
       <style>{`
         @keyframes dlg-drift {
           from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
@@ -368,7 +370,7 @@ export function AssistantPage() {
         .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
         @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
         /* below this there is no gutter left once the column takes its 48rem */
-        @media (max-width: 76rem) { .dlg-drift-layer { display: none; } }
+        @media (max-width: 84rem) { .dlg-drift-layer { display: none; } }
       `}</style>
 
       {/* Drifting topic cards, in the gutters either side of the reading column. */}
@@ -385,13 +387,16 @@ export function AssistantPage() {
               onClick={() => ask(question)}
               style={
                 {
-                  // the reading column is 48rem wide, so its half is 24rem. Anything
-                  // closer than that to the centre line overlaps the text.
-                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 25rem)",
+                  /**
+                   * The column is 48rem, so its half is 24rem. 27rem leaves a 3rem gap,
+                   * because at 25rem the cards were still touching the text on a wide
+                   * screen once their shadow was counted.
+                   */
+                  [i % 2 === 0 ? "right" : "left"]: "calc(50% + 27rem)",
                   ["--dur" as string]: "64s",
                   ["--delay" as string]: `${-i * 8}s`,
                   ["--tilt" as string]: `${((i % 3) - 1) * 0.5}deg`,
-                  width: "min(15rem, calc(50% - 26rem))",
+                  width: "min(14rem, calc(50% - 28rem))",
                 } as React.CSSProperties
               }
               className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.78] shadow-sm transition hover:border-primary hover:opacity-100"
@@ -408,6 +413,12 @@ export function AssistantPage() {
       )}
 
       <header className="relative z-10 flex flex-col gap-3">
+        <a
+          href={guideLink("/")}
+          className="self-start font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
+        >
+          Back to the guide
+        </a>
         <h1 className="text-3xl font-normal leading-tight tracking-tight text-balance sm:text-4xl">
           Ask the guide
         </h1>
@@ -559,6 +570,33 @@ export function AssistantPage() {
                 </div>
               )}
 
+              {/* The instruments this answer names, offered as the source itself. */}
+              {(() => {
+                const cited = matchSources(turn.answer.answer, sources);
+                if (!cited.length) return null;
+                return (
+                  <div className="flex flex-col gap-1">
+                    <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
+                      Read the instrument
+                    </p>
+                    <ul className="flex flex-col gap-1">
+                      {cited.map((c) => (
+                        <li key={c.id} className="text-[0.8rem]">
+                          <a
+                            href={c.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline underline-offset-2"
+                          >
+                            {c.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })()}
+
               {turn.answer.followUps.length > 0 && (
                 <div className="flex flex-col gap-1">
                   <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
@@ -659,6 +697,5 @@ export function AssistantPage() {
         </button>
       </form>
     </div>
-    </GuideLayout>
   );
 }
