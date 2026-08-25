@@ -171,7 +171,7 @@ function Splash({
   return (
     <div className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden px-5 py-12">
       <div
-        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_9%,black_100%)]"
+        className="dlg-drift-layer dlg-splash-drift pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_9%,black_100%)]"
         role="group"
         aria-label="Example questions you can ask"
       >
@@ -414,11 +414,14 @@ export function AssistantPage() {
       /* start below the fold and end above it, so a card rises into view rather than
          appearing in the middle of the screen */
       @keyframes dlg-drift {
-        from { transform: translateY(105vh) rotate(var(--tilt, 0deg)); }
-        to   { transform: translateY(-115vh) rotate(var(--tilt, 0deg)); }
+        from { transform: translateY(100vh) rotate(var(--tilt, 0deg)); }
+        to   { transform: translateY(-110vh) rotate(var(--tilt, 0deg)); }
       }
       .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
-      @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
+      /* a still line of text reads as frozen, so the wait moves */
+      @keyframes dlg-pulse { 0%, 100% { opacity: 0.25; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-2px); } }
+      .dlg-pulse { animation: dlg-pulse 1.1s ease-in-out infinite; }
+      @media (prefers-reduced-motion: reduce) { .dlg-drift-card, .dlg-pulse { animation: none; } }
       @media (max-width: 40rem) { .dlg-drift-layer { display: none; } }
     `}</style>
   );
@@ -448,11 +451,16 @@ export function AssistantPage() {
         /* start below the fold and end above it, so a card rises into view rather than
            appearing in the middle of the screen */
         @keyframes dlg-drift {
-          from { transform: translateY(105vh) rotate(var(--tilt, 0deg)); }
-          to   { transform: translateY(-115vh) rotate(var(--tilt, 0deg)); }
+          from { transform: translateY(100vh) rotate(var(--tilt, 0deg)); }
+          to   { transform: translateY(-110vh) rotate(var(--tilt, 0deg)); }
         }
         .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
-        @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
+        @keyframes dlg-pulse { 0%, 100% { opacity: 0.25; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-2px); } }
+        .dlg-pulse { animation: dlg-pulse 1.1s ease-in-out infinite; }
+      /* a still line of text reads as frozen, so the wait moves */
+      @keyframes dlg-pulse { 0%, 100% { opacity: 0.25; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-2px); } }
+      .dlg-pulse { animation: dlg-pulse 1.1s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) { .dlg-drift-card, .dlg-pulse { animation: none; } }
         /* below this there is no gutter left once the column takes its 48rem */
         /* the chat's cards live in the gutters, so they need a wide screen */
         @media (max-width: 72rem) { .dlg-chat-drift { display: none; } }
@@ -598,9 +606,14 @@ export function AssistantPage() {
           <h2 className="text-lg font-semibold leading-snug text-balance">{turn.question}</h2>
 
           {turn.pending && (
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted-foreground">
+              <span className="flex shrink-0 items-center gap-1" aria-hidden="true">
+                <span className="dlg-pulse h-1.5 w-1.5 rounded-full bg-primary" style={{ animationDelay: "0s" }} />
+                <span className="dlg-pulse h-1.5 w-1.5 rounded-full bg-primary" style={{ animationDelay: "0.22s" }} />
+                <span className="dlg-pulse h-1.5 w-1.5 rounded-full bg-primary" style={{ animationDelay: "0.44s" }} />
+              </span>
               {turn.waiting
-                ? "Waiting out the free key's per-minute limit, then answering"
+                ? "The free key allows six thousand tokens a minute. Waiting for the next minute, then answering"
                 : "Reading the guide and writing an answer"}
             </p>
           )}

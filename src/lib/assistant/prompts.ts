@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 8;
+export const PROMPT_VERSION = 9;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -197,6 +197,10 @@ Write 2 to 3 short search queries using the words this document would use, so a 
   - who owns or runs a service, handover, no documentation: team capability, roles, service ownership
   - whether it is working, complaints, usage, what to measure: monitoring, instrumentation, signals, user research
   - replacing or retiring something: sunset, retire, replace, decommission
+  - trying it with a small group first, a pilot, one region, one office: private beta, invited users, prove it with a few real people. A pilot in this guide is a private beta, and the word pilot on its own leads to a replacement rollout in Sunset, which is a different thing.
+  - opening it to everybody: public beta, launch, release
+  - whether to carry on, stop, cancel or pull the plug: the decision to stop, the exits from a sub-phase, going forward or back
+  - whether they are allowed to do something: authority, approval, delegated limit, who signs
   - personal information: privacy impact assessment
   - putting a service online, clearance to operate: security assessment and authorization
   - who approves, thresholds, dollar limits, going higher up: Treasury Board submission, capacity class, concept case

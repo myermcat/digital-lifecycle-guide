@@ -88,6 +88,27 @@ export const ALIASES: Array<[string, string[]]> = [
   ["buy", ["procurement", "buying", "purchase"]],
   ["vendor", ["supplier", "contractor"]],
   ["timeline", ["long", "months", "weeks"]],
+
+  /**
+   * Words readers use that the guide does not.
+   *
+   * "Can I pilot it in one region" was answered from the Sunset page, because the only
+   * section containing the word "pilot" is a replacement rollout, while the thing being
+   * asked about is called a private beta. "Should we stop" missed the guide's own line
+   * that the cheapest decision is the one to stop, because nothing matched.
+   */
+  ["pilot", ["private", "beta", "small", "group", "invited", "prove"]],
+  ["piloting", ["private", "beta", "invited", "prove"]],
+  ["rollout", ["public", "beta", "release", "launch", "open"]],
+  ["launch", ["public", "beta", "live", "release"]],
+  ["stop", ["stop", "cancel", "abandon", "exit", "decision"]],
+  ["cancel", ["stop", "abandon", "exit"]],
+  ["abandon", ["stop", "cancel", "exit"]],
+  ["continue", ["forward", "proceed", "stop", "exit"]],
+  ["scrap", ["stop", "retire", "sunset"]],
+  ["allowed", ["authority", "approval", "delegated", "permitted"]],
+  ["permission", ["authority", "approval", "sign", "delegated"]],
+  ["authority", ["approval", "authorization", "delegated", "sign"]],
 ];
 
 const ALIAS_MAP = new Map(ALIASES);
