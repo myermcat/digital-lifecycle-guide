@@ -170,7 +170,6 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
     intro: [
       "The most useful thing you can do when buying a service is to not buy all of it at once.",
       "You bought the work in small, separate pieces instead of one large block. Each piece is tightly scoped, due soon, and able to build on the one before.",
-      "There are two well-worn ways to do this. Phased deliveries break the work into stages with go and no-go decision points, so you can stop or change course at each one. Contracts with task authorizations let you draw work down as and when you need it, in small, controlled amounts. You can mix them.",
     ],
     sections: [
       {
@@ -219,57 +218,6 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         highlightedNote: {
           lead: "The test:",
           body: "would these pieces exist as separate work even if there were no dollar limit to dodge? If yes, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones.",
-        },
-      },
-      {
-        id: "write-objectives",
-        title: "Write objectives, not a fixed list",
-        paragraphs: [
-          "How you write what the supplier must do decides whether buying in pieces is even workable. There are two ways to write it:",
-        ],
-        bullets: [
-          {
-            lead: "A statement of work",
-            body: 'is a fixed list of exactly what gets built and how, written as if you already know everything: "the supplier shall build these screens, in this order, by this date." It suits things that do not change, and digital work badly, because every time you learn something new you have to reopen the contract to change the list.',
-          },
-          {
-            lead: "A statement of requirement",
-            body: 'works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: "here is what this service has to achieve, and who it is for." The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of requirement vs statement of work.',
-            paragraphLink: {
-              phrase: "statement of requirement vs statement of work",
-              to: SOO_VS_SOW_PATH,
-            },
-          },
-        ],
-        paragraphsAfterBullets: [
-          "That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful.",
-        ],
-      },
-      {
-        id: "worked-example",
-        title: "A worked example",
-        caseStudy: {
-          intro: "The work does not change. The shape of the buying does.",
-          risky: {
-            heading: "Where this goes wrong",
-            items: [
-              "Gather all the requirements up front, before anything is built.",
-              "Write one large statement of work against them.",
-              "Award one big contract to a single prime supplier, who may sub-contract underneath.",
-              "Set a long stretch before any working software is due.",
-              "Find out at the end whether it works. If it doesn't, the money is gone.",
-            ],
-          },
-          safer: {
-            heading: "What this protects",
-            items: [
-              "Accept that the whole thing is complex and not fully knowable yet.",
-              "Name the real pieces: the architecture, the data move, each part of the service.",
-              "Buy each piece as its own smaller contract, often to different suppliers.",
-              "Each piece is due soon, so value shows up early and so do problems.",
-              "If one supplier underperforms, you replace that piece and the rest carries on.",
-            ],
-          },
         },
       },
       {

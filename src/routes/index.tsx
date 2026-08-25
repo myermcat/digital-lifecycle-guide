@@ -176,7 +176,9 @@ function Index() {
         </header>
 
         <EditorialNote className="mb-8 md:mb-10">
-          This is an early version, built in the open. We&apos;re looking for feedback,{" "}
+          This is a 2026 guide, accurate for the time being. Links may go stale as
+          instruments are renamed and pages move, but the concepts hold. It is also an early
+          version, built in the open, so we&apos;re looking for feedback:{" "}
           <ExternalLink linkKey="github-issues">
             tell us what&apos;s missing, wrong, or unclear
           </ExternalLink>

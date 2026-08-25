@@ -105,7 +105,7 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
       body: "There is one table per topic, and a row for every official instrument a Government of Canada digital service can meet. Start with the topics that match what your service does, read down the scope column, and rule out what does not apply to you.",
     },
     {
-      lead: "To get a feel for the order and the people, read Appendix 2.",
+      lead: "To get a feel for the order and the people, read Appendix B.",
       body: "It follows one invented service from the first sign of trouble to the day it is replaced, showing what its director general does at each step and who answers. It is a worked example of one route through these tables, and no two services take the same one.",
     },
     {
@@ -130,8 +130,8 @@ export const CHECKPOINT_MAP_JUMP = [
   { label: "Nearly everything here varies", href: "#everything-varies" },
   { label: "Glossary", href: "#thecheckpoints" },
   { label: "Every official thing", href: "#annex-instruments" },
-  { label: "Appendix 1: reuse first", href: "#annex-reuse" },
-  { label: "Appendix 2: a worked example", href: "#annex-nadia" },
+  { label: "Appendix A: reuse first", href: "#annex-reuse" },
+  { label: "Appendix B: a worked example", href: "#annex-nadia" },
 ] as const;
 
 /**
@@ -182,13 +182,13 @@ export const CHECKPOINT_MAP_TABLE_SECTION = {
 
 export const CHECKPOINT_MAP_APPENDIX_REUSE = {
   id: "annex-reuse",
-  label: "APPENDIX 1",
+  label: "APPENDIX A",
   heading: "Reuse before you buy or build",
 } as const;
 
 export const CHECKPOINT_MAP_APPENDIX_PATH = {
   id: "annex-nadia",
-  label: "APPENDIX 2",
+  label: "APPENDIX B",
   heading: "A worked example: one service's path, step by step",
   timelineNote:
     "This is Nadia's timeline, not a general one. It is what this one invented service experienced, and Create in particular can run considerably shorter or longer. Do not plan against it.",

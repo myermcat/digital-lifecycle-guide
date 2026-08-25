@@ -309,7 +309,7 @@
     "sectionId": "traditional-vs-agile",
     "sectionHeading": "Traditional vs agile",
     "lifecyclePhase": "thread",
-    "text": "Requirements. Traditional: Fixed up front, then sent to market. Agile: Start from a challenge and your minimum needs, refine with suppliers. Shape of the buy. Traditional: One or two large contracts. Agile: Several smaller contracts, in series or in parallel. Talking to industry. Traditional: Through formal documents. Agile: Early and often, in workshops and working sessions. Handling change. Traditional: Strategy mostly frozen once approved. Agile: Strategy evolves as you learn. When planning happens. Traditional: Mostly at the start. Agile: All the way through. When you know it worked. Traditional: After award and delivery. Agile: At each increment along the way. What the agile shape buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. It is not a faster way to buy, and Appendix 1 sets out what it costs. Note also that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one."
+    "text": "Requirements. Traditional: Fixed up front, then sent to market. Agile: Start from a challenge and your minimum needs, refine with suppliers. Shape of the buy. Traditional: One or two large contracts. Agile: Several smaller contracts, in series or in parallel. Talking to industry. Traditional: Through formal documents. Agile: Early and often, in workshops and working sessions. Handling change. Traditional: Strategy mostly frozen once approved. Agile: Strategy evolves as you learn. When planning happens. Traditional: Mostly at the start. Agile: All the way through. When you know it worked. Traditional: After award and delivery. Agile: At each increment along the way. What the agile shape buys is confidence: the problems surface early, while they are still cheap to fix, and because the work arrives in smaller pieces, so does its value. It is not a faster way to buy, and Appendix A sets out what it costs. Note also that traditional and agile describe the shape of a buy, which is a different question from what is being bought. A department can buy a team in a traditional shape, or a product in an agile one."
   },
   {
     "id": "/thread/procurement#case-study",
@@ -427,24 +427,6 @@
     "sectionHeading": "Modular, not split: the line you cannot cross",
     "lifecyclePhase": "thread",
     "text": "There is a legal line here, and the fear of crossing it is one reason people avoid buying in pieces. So it is worth being clear about the two things people mix up: Contract splitting is illegal. It means taking one job and cutting it into fake slices to get around a control, usually to keep each slice under the dollar limit that would force a competition. The pieces are not really separate. It is one job dressed up as several, to dodge a rule. Modular contracting is legal, and the Directive leans toward it, favouring contracts structured to allow future competition wherever possible. It means splitting a programme into pieces that are genuinely different work, each able to stand on its own, competed in the open at its real size. Nothing is hidden. The test: would these pieces exist as separate work even if there were no dollar limit to dodge? If yes, it is modular. If the only reason they are split is to duck under a number, it is splitting. One has real seams. The other has fake ones."
-  },
-  {
-    "id": "/thread/procurement/buy-in-small-pieces#write-objectives",
-    "pageTitle": "Buy in small pieces",
-    "pagePath": "/thread/procurement/buy-in-small-pieces",
-    "sectionId": "write-objectives",
-    "sectionHeading": "Write objectives, not a fixed list",
-    "lifecyclePhase": "thread",
-    "text": "How you write what the supplier must do decides whether buying in pieces is even workable. There are two ways to write it: A statement of work is a fixed list of exactly what gets built and how, written as if you already know everything: \"the supplier shall build these screens, in this order, by this date.\" It suits things that do not change, and digital work badly, because every time you learn something new you have to reopen the contract to change the list. A statement of requirement works better for digital. You write down the goals, and bring in people who can work out what to build to meet them: \"here is what this service has to achieve, and who it is for.\" The details can shift as you learn, because the contract is tied to the goal, which leaves the details free to move. See statement of requirement vs statement of work. That is what lets a piece of work change without a new contract every time, and it is what makes buying in pieces practical instead of painful."
-  },
-  {
-    "id": "/thread/procurement/buy-in-small-pieces#worked-example",
-    "pageTitle": "Buy in small pieces",
-    "pagePath": "/thread/procurement/buy-in-small-pieces",
-    "sectionId": "worked-example",
-    "sectionHeading": "A worked example",
-    "lifecyclePhase": "thread",
-    "text": ""
   },
   {
     "id": "/thread/procurement/buy-in-small-pieces#honest-cost",
