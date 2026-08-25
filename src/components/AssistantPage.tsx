@@ -13,6 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { GuideLayout } from "@/components/GuideLayout";
 import { loadCorpus, loadMap, guideLink } from "@/lib/assistant/corpus";
 import type { Hit, Retriever, Section } from "@/lib/assistant/retrieval";
 import {
@@ -92,6 +93,130 @@ function renderBlock(block: string, key: number) {
   );
 }
 
+/**
+ * The first screen, when there is no key yet.
+ *
+ * Cards drift across the whole viewport rather than only the gutters, because there is
+ * no column of text to protect: the only thing in the middle is the one card asking for
+ * a key. Clicking a drifting question stores it and asks it the moment a key arrives.
+ */
+function Splash({
+  cards,
+  keyDraft,
+  setKeyDraft,
+  onSaveKey,
+  onSkip,
+  onPickQuestion,
+}: {
+  cards: Array<[string, string]>;
+  keyDraft: string;
+  setKeyDraft: (v: string) => void;
+  onSaveKey: () => void;
+  onSkip: () => void;
+  onPickQuestion: (q: string) => void;
+}) {
+  return (
+    <div className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden px-5 py-12">
+      <div
+        className="dlg-drift-layer pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,transparent_18%,black_46%,black_78%,transparent_98%)]"
+        role="group"
+        aria-label="Example questions you can ask"
+      >
+        {cards.map(([topic, question], i) => {
+          /* spread across the width in lanes, so nothing stacks on the middle card */
+          const lanes = [4, 17, 30, 58, 71, 84, 11, 77, 24, 64, 38, 50];
+          return (
+            <button
+              key={question}
+              type="button"
+              onClick={() => onPickQuestion(question)}
+              style={
+                {
+                  left: `${lanes[i % lanes.length]}%`,
+                  width: "min(14rem, 42vw)",
+                  ["--dur" as string]: `${58 + ((i * 7) % 22)}s`,
+                  ["--delay" as string]: `${-i * 6.5}s`,
+                  ["--tilt" as string]: `${((i % 3) - 1) * 0.6}deg`,
+                } as React.CSSProperties
+              }
+              className="dlg-drift-card pointer-events-auto absolute rounded-xl border border-border/70 bg-card p-3 text-left opacity-[0.72] shadow-sm transition hover:border-primary hover:opacity-100"
+            >
+              <span className="block font-mono text-[0.58rem] uppercase tracking-[0.11em] text-muted-foreground">
+                {topic}
+              </span>
+              <span className="mt-1.5 block text-[0.88rem] leading-snug text-muted-foreground">
+                {question}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      <section className="relative z-10 w-full max-w-lg rounded-2xl border border-border bg-card/95 p-7 shadow-lg backdrop-blur-sm">
+        <h1 className="text-2xl font-normal leading-tight tracking-tight text-balance sm:text-3xl">
+          Ask the guide
+        </h1>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Put a question in your own words and get an answer from the guide, with a link to
+          the part it came from.
+        </p>
+
+        <form
+          className="mt-6 flex flex-col gap-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSaveKey();
+          }}
+        >
+          <label htmlFor="splash-key" className="text-sm font-semibold">
+            Paste a model key to begin
+          </label>
+          <div className="flex flex-wrap gap-2">
+            <input
+              id="splash-key"
+              type="password"
+              value={keyDraft}
+              onChange={(e) => setKeyDraft(e.target.value)}
+              placeholder="gsk_..."
+              className="min-w-0 flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-[0.82rem] outline-none focus:border-primary"
+            />
+            <button
+              type="submit"
+              disabled={keyDraft.trim().length === 0}
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-40"
+            >
+              Begin
+            </button>
+          </div>
+        </form>
+
+        <p className="mt-3 text-[0.78rem] leading-relaxed text-muted-foreground">
+          <strong className="font-semibold text-foreground">Your key stays on this device.</strong>{" "}
+          It is sent only to the model that writes the answer. It never reaches this website
+          or anyone running it. A free key from{" "}
+          <a
+            className="underline underline-offset-2"
+            href="https://console.groq.com/keys"
+            target="_blank"
+            rel="noreferrer"
+          >
+            console.groq.com
+          </a>{" "}
+          covers about a thousand questions a day and needs no card.
+        </p>
+
+        <button
+          type="button"
+          onClick={onSkip}
+          className="mt-5 text-[0.78rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
+        >
+          Or continue without a model, and get the guide's own sections instead
+        </button>
+      </section>
+    </div>
+  );
+}
+
 export function AssistantPage() {
   const [retriever, setRetriever] = useState<Retriever | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -103,6 +228,8 @@ export function AssistantPage() {
   const [skippedKey, setSkippedKey] = useState(false);
   const [showKeyPanel, setShowKeyPanel] = useState(false);
   const [busy, setBusy] = useState(false);
+  /** A question clicked on the welcome screen, asked as soon as a key exists. */
+  const [queued, setQueued] = useState<string | null>(null);
   const endRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => setApiKey(storedKey()), []);
@@ -178,12 +305,18 @@ export function AssistantPage() {
     if (turns.length) endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [turns.length]);
 
+  /** A question picked before there was a key gets asked once one arrives. */
+  useEffect(() => {
+    if (queued && retriever && (apiKey || skippedKey)) {
+      const q = queued;
+      setQueued(null);
+      void ask(q);
+    }
+  }, [queued, retriever, apiKey, skippedKey, ask]);
+
   const started = turns.length > 0;
   const gateOpen = !apiKey && !skippedKey;
-  const drifting = useMemo(
-    () => [...TOPICS].sort(() => Math.random() - 0.5).slice(0, 8),
-    [],
-  );
+  const drifting = useMemo(() => [...TOPICS].sort(() => Math.random() - 0.5), []);
 
   const status = loadError
     ? `The guide could not be loaded: ${loadError}`
@@ -193,7 +326,39 @@ export function AssistantPage() {
         ? `${retriever.size} sections, written answers by ${MODEL_LABEL}`
         : `${retriever.size} sections, searched in your browser`;
 
+  const driftStyles = (
+    <style>{`
+      @keyframes dlg-drift {
+        from { transform: translateY(46vh) rotate(var(--tilt, 0deg)); }
+        to   { transform: translateY(-70vh) rotate(var(--tilt, 0deg)); }
+      }
+      .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
+      @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
+      @media (max-width: 40rem) { .dlg-drift-layer { display: none; } }
+    `}</style>
+  );
+
+  if (gateOpen) {
+    return (
+      <GuideLayout id="assistant">
+        {driftStyles}
+        <Splash
+          cards={drifting}
+          keyDraft={keyDraft}
+          setKeyDraft={setKeyDraft}
+          onSaveKey={() => {
+            storeKey(keyDraft);
+            setApiKey(keyDraft.trim());
+          }}
+          onSkip={() => setSkippedKey(true)}
+          onPickQuestion={(q) => setQueued(q)}
+        />
+      </GuideLayout>
+    );
+  }
+
   return (
+    <GuideLayout id="assistant">
     <div className="relative mx-auto flex min-h-[78vh] w-full max-w-3xl flex-col gap-7 px-5 py-10">
       <style>{`
         @keyframes dlg-drift {
@@ -213,7 +378,7 @@ export function AssistantPage() {
           role="group"
           aria-label="Example questions you can ask"
         >
-          {drifting.map(([topic, question], i) => (
+          {drifting.slice(0, 8).map(([topic, question], i) => (
             <button
               key={question}
               type="button"
@@ -253,63 +418,8 @@ export function AssistantPage() {
         <p className="font-mono text-[0.7rem] text-muted-foreground">{status}</p>
       </header>
 
-      {/* The key gate: written answers are the default, and this is the way in. */}
-      {gateOpen && (
-        <section className="relative z-10 flex flex-col gap-3 rounded-xl border-2 border-primary/40 bg-card p-5 shadow-sm">
-          <h2 className="text-lg font-semibold">Add a model key to get written answers</h2>
-          <p className="max-w-prose text-sm leading-relaxed">
-            <strong className="font-semibold">Your key stays in this browser.</strong> It is
-            stored on your own device and sent only to the model that answers your question.
-            Nobody else can read it, and it never reaches this website or anyone running it.
-          </p>
-          <p className="text-[0.8rem] leading-relaxed text-muted-foreground">
-            A free key from{" "}
-            <a
-              className="underline underline-offset-2"
-              href="https://console.groq.com/keys"
-              target="_blank"
-              rel="noreferrer"
-            >
-              console.groq.com
-            </a>{" "}
-            allows roughly a thousand questions a day and needs no credit card.
-          </p>
-          <form
-            className="flex flex-wrap gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              storeKey(keyDraft);
-              setApiKey(keyDraft.trim());
-            }}
-          >
-            <input
-              type="password"
-              value={keyDraft}
-              onChange={(e) => setKeyDraft(e.target.value)}
-              placeholder="gsk_..."
-              aria-label="Model API key"
-              className="min-w-0 flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-[0.82rem] outline-none focus:border-primary"
-            />
-            <button
-              type="submit"
-              disabled={keyDraft.trim().length === 0}
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground disabled:opacity-40"
-            >
-              Continue
-            </button>
-          </form>
-          <button
-            type="button"
-            onClick={() => setSkippedKey(true)}
-            className="self-start text-[0.78rem] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground"
-          >
-            Or carry on without one, and get the guide's own sections instead
-          </button>
-        </section>
-      )}
-
       {/* Once a key is in, keep the control small but reachable. */}
-      {!gateOpen && (
+      {(
         <div className="relative z-10 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-mono text-[0.65rem] uppercase tracking-[0.1em]">
             <span
@@ -549,5 +659,6 @@ export function AssistantPage() {
         </button>
       </form>
     </div>
+    </GuideLayout>
   );
 }
