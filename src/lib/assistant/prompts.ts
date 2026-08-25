@@ -12,7 +12,7 @@ import type { Section } from "./retrieval";
  * Bump when either prompt changes. Cache keys include it, so an edited prompt is not
  * silently served stale results from the previous wording.
  */
-export const PROMPT_VERSION = 4;
+export const PROMPT_VERSION = 5;
 
 /**
  * The currency rules, verbatim from instrument-matrix.ts.
@@ -43,7 +43,34 @@ function trimSection(text: string): string {
   return (lastStop > SECTION_CHAR_CAP * 0.6 ? cut.slice(0, lastStop + 1) : cut) + "\n[continues]";
 }
 
-export function buildAnswerPrompt(question: string, sections: Section[], situation?: string): string {
+export type PriorTurn = { question: string; answer: string };
+
+/**
+ * The last few exchanges, trimmed.
+ *
+ * Without this every question was answered as if it were the first, so "threats like
+ * what" got a definition of threat modelling rather than a list of threats. Two turns is
+ * enough to resolve a follow-up and cheap enough not to matter against the rate limit.
+ */
+function historyBlock(history: PriorTurn[]): string {
+  if (!history.length) return "";
+  const recent = history.slice(-2);
+  return (
+    "\nWhat has already been said in this conversation, oldest first:\n" +
+    recent
+      .map((t) => `Q: ${t.question}\nA: ${t.answer.replace(/\s+/g, " ").slice(0, 420)}`)
+      .join("\n\n") +
+    "\n\nThe question below may be a follow-up to that. If it is, answer the NEW question " +
+    "directly and do not restate what was already said.\n"
+  );
+}
+
+export function buildAnswerPrompt(
+  question: string,
+  sections: Section[],
+  situation?: string,
+  history: PriorTurn[] = [],
+): string {
   const supplied = sections
     .map(
       (s, i) =>
@@ -53,7 +80,7 @@ export function buildAnswerPrompt(question: string, sections: Section[], situati
 
   return `You answer questions about the Government of Canada Digital Lifecycle Guide, for a person who has been made responsible for a digital service and is not an expert in how government projects get approved, funded or bought.
 
-${situation ? `What they appear to be trying to do: ${situation}\n` : ""}
+${situation ? `What they appear to be trying to do: ${situation}\n` : ""}${historyBlock(history)}
 Their question:
 "${question}"
 
@@ -78,14 +105,20 @@ not an answer, it is a label. Follow the skeleton for the shape you chose:
 
 Aim for 120 to 250 words. Under 60 words is almost always an incomplete answer rather than a concise one.
 
-A "routed" answer must do three things, in this order, or it is useless:
+A "routed" answer must do three things, in this order, or it is useless. A routed answer
+that says only "there is no single answer in the material" is a failure, not an answer:
+the reader learns nothing and cannot act. Points 2 and 3 are what make it useful.
 1. Say plainly that there is no single answer, in one short sentence.
 2. Name the PARTS of the thing, and for each part any duration or figure the material actually gives. Never invent one.
 3. Say who holds the fact the guide cannot supply, and give an example from the material if there is one.
 
 RULES THAT MATTER MORE THAN THE SHAPE:
 
-- Use ONLY the supplied sections. If they do not answer the question, set cannotAnswer true and say what the material does cover.
+- ANSWER EVERY PART OF THE QUESTION. A question with two or three parts gets two or three answers. "What do I need to do, and what am I protecting against" is two questions and both are owed an answer. Answering the first and ignoring the rest is the most common way this goes wrong.
+- If one part cannot be answered from the material, SAY SO FOR THAT PART, in a sentence, and answer the others. Do not let one unanswerable part silence the rest.
+- A question about whether the reader even needs to know something IS a question, and it is usually answerable: say whether the guide treats it as the reader's business, and who holds it if not.
+- Do not open by restating the topic or defining a term the reader did not ask about. Answer first. "Threats like what" wants a list of threats, not a definition of threat modelling.
+- Use ONLY the supplied sections. If they do not answer the question at all, set cannotAnswer true and say what the material does cover.
 - Never invent a number, a duration, a threshold, a dollar figure, a job title or an instrument name. If a figure is not in the text above, it does not exist for this answer.
 - Anything that varies by department must be said to vary: thresholds, who signs, how long a queue is, who chairs a board. Where the material gives a duration, present it as one team's experience rather than a planning figure.
 - Put every section id you actually drew on in usedSectionIds. Do not list one you did not use.
@@ -102,7 +135,11 @@ Reply with JSON only, in this shape:
 }
 
 
-export function buildRewritePrompt(question: string, contents: string): string {
+export function buildRewritePrompt(
+  question: string,
+  contents: string,
+  previousQuestion?: string,
+): string {
   return `You translate a question into the vocabulary of one specific document. You do not answer it.
 
 The document is the Government of Canada Digital Lifecycle Guide. It covers the life of a government digital service: the Create phase (Discovery, Alpha, Beta sub-phases), the Live phase (Stabilization, Growth, Maturity), Sunset, the official checkpoints a service must meet, and topic threads such as procurement, privacy, security, accessibility, funding and user research.
@@ -110,7 +147,7 @@ The document is the Government of Canada Digital Lifecycle Guide. It covers the 
 Its table of contents:
 ${contents}
 
-Someone asked:
+${previousQuestion ? `Their previous question was: "${previousQuestion}"\nThe question below may be a follow-up to it. If it is a fragment like "threats like what" or "such as", read it in the light of the previous question when choosing vocabulary.\n\n` : ""}Someone asked:
 "${question}"
 
 Write 2 to 3 short search queries using the words this document would use, so a keyword search can find the right section. Rules:

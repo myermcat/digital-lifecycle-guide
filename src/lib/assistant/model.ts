@@ -17,7 +17,7 @@
  * answers with the right sections whether or not a key is present.
  */
 
-import { buildRewritePrompt, buildAnswerPrompt, buildContents, PROMPT_VERSION } from "./prompts";
+import { buildRewritePrompt, buildAnswerPrompt, buildContents, PROMPT_VERSION, type PriorTurn } from "./prompts";
 import type { Section } from "./retrieval";
 
 export type Rewrite = { queries: string[]; situation: string; outOfScope: boolean };
@@ -135,8 +135,13 @@ export async function rewriteQuestion(
   key: string,
   question: string,
   map: MapEntry[],
+  previousQuestion?: string,
 ): Promise<Rewrite> {
-  const raw = await call<Rewrite>(key, buildRewritePrompt(question, buildContents(map)), 1200);
+  const raw = await call<Rewrite>(
+    key,
+    buildRewritePrompt(question, buildContents(map), previousQuestion),
+    1200,
+  );
   return {
     queries: (raw.queries ?? []).map((q) => String(q).trim()).filter(Boolean).slice(0, 3),
     situation: String(raw.situation ?? "").trim(),
@@ -149,8 +154,13 @@ export async function answerFrom(
   question: string,
   sections: Section[],
   situation?: string,
+  history: PriorTurn[] = [],
 ): Promise<Answer & { citedSections: Section[] }> {
-  const raw = await call<Answer>(key, buildAnswerPrompt(question, sections, situation), 1500);
+  const raw = await call<Answer>(
+    key,
+    buildAnswerPrompt(question, sections, situation, history),
+    1500,
+  );
   const byId = new Map(sections.map((s) => [s.id, s]));
   // only cite what was actually supplied: an invented id would look checkable and lead nowhere
   const citedSections = (raw.usedSectionIds ?? [])
@@ -169,3 +179,4 @@ export async function answerFrom(
 }
 
 export { PROMPT_VERSION };
+export type { PriorTurn };

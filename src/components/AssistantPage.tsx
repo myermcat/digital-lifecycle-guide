@@ -54,6 +54,8 @@ type Turn = {
   answer?: Answer & { citedSections: Section[] };
   error?: string;
   pending?: boolean;
+  /** Taking long enough that the reader deserves to know why. */
+  waiting?: boolean;
 };
 
 /** The model writes **bold lead-ins**, which is the guide's own house style. */
@@ -117,7 +119,7 @@ function Splash({
   return (
     <div className="relative flex min-h-[82vh] w-full items-center justify-center overflow-hidden px-5 py-12">
       <div
-        className="dlg-drift-layer pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,transparent_18%,black_46%,black_78%,transparent_98%)]"
+        className="dlg-drift-layer dlg-splash-drift pointer-events-none absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,transparent_18%,black_46%,black_78%,transparent_98%)]"
         role="group"
         aria-label="Example questions you can ask"
       >
@@ -191,8 +193,12 @@ function Splash({
 
         <p className="mt-3 text-[0.78rem] leading-relaxed text-muted-foreground">
           <strong className="font-semibold text-foreground">Your key stays on this device.</strong>{" "}
-          It is sent only to the model that writes the answer. It never reaches this website
-          or anyone running it. A free key from{" "}
+          It is sent only to the AI that writes the answer. It never reaches this website or
+          anyone running it.
+        </p>
+
+        <p className="mt-2 text-[0.78rem] leading-relaxed text-muted-foreground">
+          A free key from{" "}
           <a
             className="underline underline-offset-2"
             href="https://console.groq.com/keys"
@@ -201,7 +207,7 @@ function Splash({
           >
             console.groq.com
           </a>{" "}
-          covers about a thousand questions a day and needs no card.
+          covers about a thousand questions a day and needs no credit card.
         </p>
 
         <button
@@ -265,9 +271,29 @@ export function AssistantPage() {
       const patch = (fields: Partial<Turn>) =>
         setTurns((prev) => prev.map((t, i) => (i === index ? { ...t, ...fields } : t)));
 
+      /**
+       * The last two answered exchanges. Without them a follow-up like "threats like what"
+       * arrives with no idea what was being discussed, and gets answered as if it were the
+       * opening question.
+       */
+      const history = turns
+        .filter((t) => t.answer)
+        .slice(-2)
+        .map((t) => ({ question: t.question, answer: t.answer!.answer }));
+
+      /**
+       * A free key allows 6,000 tokens a minute, so a burst of questions makes the client
+       * wait. Say that, because otherwise the page looks frozen for a minute.
+       */
+      const slowTimer = window.setTimeout(
+        () => patch({ waiting: true }),
+        9000,
+      );
+
       try {
         const map = await loadMap();
-        const rewritten = await rewriteQuestion(apiKey, trimmed, map);
+        const previous = turns.length ? turns[turns.length - 1].question : undefined;
+        const rewritten = await rewriteQuestion(apiKey, trimmed, map, previous);
 
         /**
          * Pool the rewritten queries by summing scores, so a section two queries agree
@@ -288,16 +314,18 @@ export function AssistantPage() {
           trimmed,
           given.map((h) => h.section),
           rewritten.situation,
+          history,
         );
         /**
          * Replace the hits with the ones the model was actually given. Leaving the plain
          * search results underneath a written answer showed the reader the pre-rewrite
          * results, which are the bad ones, and they read as irrelevant because they were.
          */
-        patch({ answer: written, hits: given, pending: false });
+        patch({ answer: written, hits: given, pending: false, waiting: false });
       } catch (err) {
-        patch({ error: (err as Error).message, pending: false });
+        patch({ error: (err as Error).message, pending: false, waiting: false });
       } finally {
+        window.clearTimeout(slowTimer);
         setBusy(false);
       }
     },
@@ -370,13 +398,16 @@ export function AssistantPage() {
         .dlg-drift-card { animation: dlg-drift var(--dur, 64s) linear var(--delay, 0s) infinite; }
         @media (prefers-reduced-motion: reduce) { .dlg-drift-card { animation: none; } }
         /* below this there is no gutter left once the column takes its 48rem */
-        @media (max-width: 98rem) { .dlg-drift-layer { display: none; } }
+        /* the chat's cards live in the gutters, so they need a wide screen */
+        @media (max-width: 98rem) { .dlg-chat-drift { display: none; } }
+        /* the splash spreads them across the whole width, so only a phone is too narrow */
+        @media (max-width: 40rem) { .dlg-splash-drift { display: none; } }
       `}</style>
 
       {/* Drifting topic cards, in the gutters either side of the reading column. */}
       {!started && (
         <div
-          className="dlg-drift-layer pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_16%,black_72%,transparent_95%)]"
+          className="dlg-drift-layer dlg-chat-drift pointer-events-none fixed inset-0 z-0 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent_0,black_16%,black_72%,transparent_95%)]"
           role="group"
           aria-label="Example questions you can ask"
         >
@@ -506,7 +537,9 @@ export function AssistantPage() {
 
           {turn.pending && (
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-muted-foreground">
-              Reading the guide and writing an answer
+              {turn.waiting
+                ? "Waiting out the free key's per-minute limit, then answering"
+                : "Reading the guide and writing an answer"}
             </p>
           )}
 

@@ -152,6 +152,10 @@ function expand(terms: string[]): { terms: string[]; expansions: string[] } {
  */
 const SCAFFOLDING = /^\/(shared|index)\b|^\/thread\/shared\b/;
 
+/** Headings that name a list of pointers rather than an explanation. */
+const REFERENCE_FURNITURE =
+  /\b(sources?|further reading|see also|templates? and tools|supporting reference|governing instrument|communities|glossary)\b/i;
+
 /* ------------------------------------------------------------------ *
  * Index
  * ------------------------------------------------------------------ */
@@ -223,7 +227,20 @@ export class Retriever {
           why.push(`carries a ${intent.name}`);
         }
       }
-      if (section.words < 25) score *= 0.7;
+      /**
+       * Very short sections are almost never the answer. A 17-word "sources" list was
+       * outranking the 304-word Threat and risk assessment for a question about threats,
+       * because a link list mentions a term without explaining it.
+       */
+      if (section.words < 30) score *= 0.3;
+      else if (section.words < 60) score *= 0.75;
+
+      /**
+       * Reference furniture: a list of links, a template list, a see-also. These mention
+       * everything and explain nothing, so they match well and help nobody.
+       */
+      if (REFERENCE_FURNITURE.test(section.heading)) score *= 0.3;
+
       if (SCAFFOLDING.test(section.path)) score *= 0.35;
 
       hits.push({ section, score, why, snippet: snippetFor(section, matched.get(i) ?? new Set()) });
