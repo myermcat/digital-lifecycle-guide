@@ -50,6 +50,9 @@ const MODEL = "openai/gpt-oss-120b";
 
 export const hasSharedKey = Boolean(PROXY);
 
+/** Which provider answered the most recent call, for the page's status line. */
+export let lastAnsweredBy = "";
+
 /** Which route answered, so the page can say so and handle its limits differently. */
 export type Route = "shared" | "own";
 
@@ -151,6 +154,12 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
     }
     throw new Error(`The model returned ${res.status}. ${detail.slice(0, 160)}`);
   }
+
+  /**
+   * The proxy names which provider answered, because with several free keys in play the
+   * reader is better told than left guessing why an answer reads differently.
+   */
+  lastAnsweredBy = res.headers.get("X-Answered-By") ?? (viaProxy ? "shared" : "own");
 
   const json = (await res.json()) as {
     choices?: Array<{ message?: { content?: string }; finish_reason?: string }>;

@@ -8,10 +8,15 @@ without signing up for anything.
 
 ```bash
 cd worker
-npx wrangler login              # once, opens a browser
-npx wrangler secret put GROQ_API_KEY
+npx wrangler login                        # once, opens a browser
+npx wrangler secret put GROQ_API_KEY      # paste the key when prompted
+npx wrangler secret put GEMINI_API_KEY    # optional, adds a second allowance
 npx wrangler deploy
 ```
+
+The first two need you: `login` authenticates your Cloudflare account in a browser, and
+`secret put` takes the key itself. Claude does neither. `deploy` can be run by anyone once
+those are done.
 
 The deploy prints a URL. Put it in the site's environment as `VITE_ASSISTANT_PROXY` and
 rebuild:
@@ -39,9 +44,23 @@ It also separates the two kinds of rate limit, because a reader needs different 
 them: `shared_busy` means wait a moment, `shared_exhausted` means the day's allowance is gone
 and their own key is the way through.
 
-## The numbers that matter
+## Several keys, spent in order
 
-Groq's free tier allows **200,000 tokens a day**, counting input, output and reasoning. A
-question costs roughly 5,000 tokens across the two calls, so the shared allowance is about
-**40 questions a day for everybody together**. That is enough for demonstrating the thing and
-not enough for a service. Paid Groq, or a paid Gemini key on the same proxy, removes the cap.
+Every free tier is small, and they run out at different times of day against different
+meters. Measured from the APIs rather than read in documentation:
+
+| provider | allowance | questions a day |
+|---|---|---|
+| Groq | 200,000 tokens a day, counting input, output and reasoning | about **40** |
+| Gemini | 20 requests a day, and only `gemini-flash-latest` answers on a new key | about **10** |
+
+A question is two calls, the rewrite and the answer, at roughly 5,000 tokens together.
+
+The proxy spends the generous meter first and keeps the small one for when it is gone, so
+together they are about **50 questions a day**. It falls through to the next key only when
+one is done FOR THE DAY: a per-minute limit means that key is fine and merely busy, and
+waiting for it is better than burning a smaller allowance.
+
+Adding another key needs no code change. `GROQ_API_KEY_2`, `GEMINI_API_KEY_2` and so on are
+picked up in order. Neither free tier should be assumed private, so only public guide content
+goes through here.
