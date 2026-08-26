@@ -10,5 +10,10 @@ name = "dlg-assistant"
 main = "index.js"
 compatibility_date = "2026-08-01"
 
+# Workers AI, reached as env.AI. No key: it runs on this Worker's own account, which is why
+# it is the first provider tried and the only one with nothing to rotate.
+[ai]
+binding = "AI"
+
 [observability]
 enabled = true

@@ -6,17 +6,21 @@
  * after. This holds the keys instead, so a reader gets answers without signing up for
  * anything, and no key ever reaches a browser.
  *
- * WHY MORE THAN ONE PROVIDER. Every free tier is small, and they run out at different
- * times of day against different meters. Measured from the APIs rather than read in docs:
+ * WHY MORE THAN ONE PROVIDER. Every free allowance is small, and they run out at different
+ * times of day against different meters. In order of how much they give:
  *
- *   Groq    200,000 tokens a day, counting input, output and reasoning. A question costs
- *           about 5,000 tokens across the rewrite and the answer, so roughly 40 questions
- *           a day for everybody together. Also 6,000 tokens a minute.
- *   Gemini  20 requests a day per model, and only gemini-flash-latest is reachable on a
- *           new key. So about 10 questions, since each one is two calls.
+ *   Workers AI  10,000 neurons a day on the free Workers plan, which Cloudflare puts at
+ *               roughly 1,300 model responses, so about 650 questions since each one is
+ *               two calls. NO KEY AT ALL: it is a binding on this Worker's own account,
+ *               which is the account needed to deploy this in the first place.
+ *   Groq        200,000 tokens a day, counting input, output and reasoning. A question
+ *               costs about 5,000 tokens, so roughly 40 questions. Also 6,000 a minute.
+ *   Gemini      20 requests a day, and only gemini-flash-latest answers on a new key, so
+ *               about 10 questions.
  *
- * Neither is a service on its own. Together they are about 50 questions a day, and the
- * order matters: spend the generous meter first and keep the small one for when it is gone.
+ * Workers AI is therefore an order of magnitude larger than the other two together, and it
+ * is first. The keyed providers are kept behind it for when it runs out, and because an
+ * open-weight model at the edge is not always the best writer.
  *
  * WHAT IT IS NOT. Not a general proxy. It accepts one shape of request, caps what it will
  * forward, checks the origin, and refuses everything else. An open proxy in front of
@@ -58,6 +62,45 @@ const GROQ_MODELS = new Set([
  * answered.
  */
 const PROVIDERS = [
+  {
+    name: "workers-ai",
+    /**
+     * No key: Workers AI is reached through the env.AI binding declared in wrangler.toml,
+     * on the same Cloudflare account that runs this Worker. That makes it the only provider
+     * here with nothing to leak and nothing to rotate.
+     */
+    binding: true,
+    model: "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    async run(env, prompt, maxTokens) {
+      const result = await env.AI.run(this.model, {
+        messages: [{ role: "user", content: prompt }],
+        max_tokens: maxTokens,
+        temperature: 0,
+      });
+      const raw = typeof result === "string" ? result : (result?.response ?? "");
+
+      /**
+       * There is no enforced JSON mode here, unlike the keyed providers, so the reply has to
+       * be checked. Two things happen in practice: the model wraps the object in a fenced
+       * code block, which is easy to undo, or it writes prose around it, which is not. An
+       * unparseable reply THROWS, so the caller falls through to a provider that can be held
+       * to a schema, rather than handing the page something it will choke on.
+       */
+      const text = raw
+        .replace(/^\s*```(?:json)?\s*/i, "")
+        .replace(/\s*```\s*$/, "")
+        .trim();
+
+      if (!text) throw new Error("empty response");
+      try {
+        JSON.parse(text);
+      } catch {
+        throw new Error("not JSON");
+      }
+
+      return { choices: [{ message: { content: text }, finish_reason: "stop" }] };
+    },
+  },
   {
     name: "groq",
     /** Generous meter first: tokens per day rather than requests per day. */
@@ -148,13 +191,20 @@ function json(body, status, origin, extra = {}) {
   });
 }
 
-/** Every configured key, in the order they should be spent. */
+/**
+ * Everything available to spend, in order. The binding first when it is present, then every
+ * configured key. A provider with no key set simply is not in the ring.
+ */
 function keyring(env) {
   const ring = [];
   for (const provider of PROVIDERS) {
-    for (const varName of provider.keyVars) {
+    if (provider.binding) {
+      if (env.AI) ring.push({ provider, key: null });
+      continue;
+    }
+    for (const varName of provider.keyVars ?? []) {
       const key = env[varName];
-      if (key) ring.push({ provider, key, varName });
+      if (key) ring.push({ provider, key });
     }
   }
   return ring;
@@ -216,6 +266,21 @@ export default {
     let busyRetryAfter = null;
 
     for (const { provider, key } of ring) {
+      /* the binding is a function call rather than a fetch, so it is handled apart */
+      if (provider.binding) {
+        try {
+          const normalised = await provider.run(env, prompt, maxTokens);
+          return json(normalised, 200, origin, { "X-Answered-By": provider.name });
+        } catch (err) {
+          /**
+           * Workers AI answers a spent allowance with an error rather than a 429, and the
+           * wording is not stable enough to match on. Either way the next provider is the
+           * right response, so anything from here falls through.
+           */
+          continue;
+        }
+      }
+
       const { url, init } = provider.request(prompt, key, body?.model, maxTokens);
 
       let upstream;
