@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 236" width="880" height="236" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="rw" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#A8492A"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="30" width="238" height="82" rx="10" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.8"/>
+  <text x="139" y="62" text-anchor="middle" font-size="17" font-weight="bold" fill="#A8492A">Énoncé du problème</text>
+  <text x="139" y="84" text-anchor="middle" font-size="13" fill="#4A3B2E">le problème, et qui le vit,</text>
+  <text x="139" y="100" text-anchor="middle" font-size="13" fill="#4A3B2E">sans nommer de solution</text>
+
+  <path d="M266 71 L306 71" stroke="#A8492A" stroke-width="2" marker-end="url(#rw)"/>
+
+  <rect x="320" y="30" width="238" height="82" rx="10" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.8"/>
+  <text x="439" y="62" text-anchor="middle" font-size="17" font-weight="bold" fill="#A8492A">Exigences</text>
+  <text x="439" y="84" text-anchor="middle" font-size="13" fill="#4A3B2E">ce que le service doit accomplir,</text>
+  <text x="439" y="100" text-anchor="middle" font-size="13" fill="#4A3B2E">et à quel niveau</text>
+
+  <path d="M566 71 L606 71" stroke="#A8492A" stroke-width="2" marker-end="url(#rw)"/>
+
+  <rect x="620" y="30" width="240" height="82" rx="10" fill="#E7DCC6" stroke="#A8492A" stroke-width="2.6"/>
+  <text x="740" y="62" text-anchor="middle" font-size="17" font-weight="bold" fill="#A8492A">Énoncé des travaux</text>
+  <text x="740" y="84" text-anchor="middle" font-size="13" fill="#4A3B2E">les travaux achetés,</text>
+  <text x="740" y="100" text-anchor="middle" font-size="13" fill="#4A3B2E">rédigés à partir des deux précédents</text>
+
+  <path d="M740 112 L740 140" stroke="#A8492A" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="470" y="140" width="390" height="34" rx="8" fill="#F7EFE4" stroke="#C9B295" stroke-width="1.4"/>
+  <text x="665" y="162" text-anchor="middle" font-size="13.5" fill="#4A3B2E">intégré à la demande de soumissions, puis annexé au contrat</text>
+
+  <text x="20" y="207" font-size="13" font-style="italic" fill="#8C7B63">Comment la description des travaux se construit, du problème au contrat.</text>
+  <text x="20" y="225" font-size="13" font-style="italic" fill="#8C7B63">Le Canada rédige les trois.</text>
+</svg>

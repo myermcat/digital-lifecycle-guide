@@ -1,0 +1,191 @@
+import { PHASES, THREADS } from "./guide-strings";
+import {
+  OPTIONS_ANALYSIS_PATH,
+  GOOD_CONTRACT_PATH,
+  CHECKPOINT_MAP_PATH,
+} from "./reference-paths";
+import { OPTIONS_ANALYSIS } from "./options-analysis-content";
+import { GOOD_CONTRACT } from "./good-contract-content";
+import { SUPPORT_PAGE } from "./support-content";
+import { SUPPORT_PATH } from "./support-path";
+
+import { ALL_PAGES_PATH } from "./all-pages-path";
+import { SUBPHASE_PAGE_HEADINGS } from "./subphase-content";
+
+export { ALL_PAGES_PATH };
+
+export type PageIndexType = "phase" | "subphase" | "thread" | "reference" | "other";
+
+export type PageIndexStatus = "not-started" | "in-progress" | "in-review" | "done";
+
+export type PageIndexEntry = {
+  title: string;
+  path: string;
+  type: PageIndexType;
+  status: PageIndexStatus;
+};
+
+/**
+ * Single source of truth for every page in the guide and its build status.
+ * Update status here when a page moves forward.
+ *
+ * Thread order: list threads in the order they should appear when not in review.
+ * When a thread moves to in-review it floats to the top of the Threads table but
+ * keeps its place within the in-review block (so new in-review pages land at the
+ * end of that block, not in the middle).
+ */
+export const PAGE_INDEX: PageIndexEntry[] = [
+  { title: "Accueil", path: "/", type: "other", status: "in-review" },
+  {
+    title: "Les points de contrôle officiels d’un service numérique",
+    path: CHECKPOINT_MAP_PATH,
+    type: "other",
+    status: "in-review",
+  },
+  { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
+  { title: "Index du Guide du cycle de vie numérique", path: ALL_PAGES_PATH, type: "other", status: "in-review" },
+
+  { title: PHASES.create.pageHeading, path: PHASES.create.href, type: "phase", status: "in-review" },
+  { title: PHASES.live.pageHeading, path: PHASES.live.href, type: "phase", status: "in-review" },
+  { title: PHASES.sunset.pageHeading, path: PHASES.sunset.href, type: "phase", status: "in-review" },
+
+  { title: SUBPHASE_PAGE_HEADINGS.discovery, path: "/create-discovery", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.alpha, path: "/create-alpha", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.stabilization, path: "/live-stabilization", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "in-review" },
+  { title: SUBPHASE_PAGE_HEADINGS.maturity, path: "/live-maturity", type: "subphase", status: "in-review" },
+
+  { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
+  {
+    title: THREADS["releasing-changes"].title,
+    path: THREADS["releasing-changes"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["dependencies-and-standards"].title,
+    path: THREADS["dependencies-and-standards"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["user-research"].title,
+    path: THREADS["user-research"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS.security.title,
+    path: THREADS.security.path,
+    type: "thread",
+    status: "in-review",
+  },
+  { title: THREADS.privacy.title, path: THREADS.privacy.path, type: "thread", status: "in-review" },
+  {
+    title: THREADS.procurement.title,
+    path: "/thread/procurement",
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["data-stewardship"].title,
+    path: THREADS["data-stewardship"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["ethics-and-bias"].title,
+    path: THREADS["ethics-and-bias"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  { title: THREADS.backlog.title, path: THREADS.backlog.path, type: "thread", status: "in-review" },
+  {
+    title: THREADS["joined-up-delivery"].title,
+    path: THREADS["joined-up-delivery"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS.funding.title,
+    path: THREADS.funding.path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["team-capability"].title,
+    path: THREADS["team-capability"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["change-management"].title,
+    path: THREADS["change-management"].path,
+    type: "thread",
+    status: "in-review",
+  },
+  {
+    title: THREADS["monitoring-and-instrumentation"].title,
+    path: THREADS["monitoring-and-instrumentation"].path,
+    type: "thread",
+    status: "in-review",
+  },
+
+  {
+    title: OPTIONS_ANALYSIS.title,
+    path: OPTIONS_ANALYSIS_PATH,
+    type: "reference",
+    status: "in-review",
+  },
+  {
+    title: GOOD_CONTRACT.title,
+    path: GOOD_CONTRACT_PATH,
+    type: "reference",
+    status: "in-review",
+  },
+];
+
+export const PAGE_INDEX_TYPE_ORDER: PageIndexType[] = [
+  "phase",
+  "subphase",
+  "thread",
+  "reference",
+  "other",
+];
+
+export const PAGE_INDEX_TYPE_LABELS: Record<PageIndexType, string> = {
+  phase: "Phases",
+  subphase: "Sous-phases",
+  thread: "Fils",
+  reference: "Référence",
+  other: "Autre",
+};
+
+/** In-review threads float to the top of the Threads table, in PAGE_INDEX order. */
+function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {
+  return pages
+    .map((page, index) => ({ page, index }))
+    .sort((a, b) => {
+      const aInReview = a.page.status === "in-review";
+      const bInReview = b.page.status === "in-review";
+
+      if (aInReview !== bInReview) {
+        return aInReview ? -1 : 1;
+      }
+
+      return a.index - b.index;
+    })
+    .map(({ page }) => page);
+}
+
+export function getPageIndexByType(): { type: PageIndexType; label: string; pages: PageIndexEntry[] }[] {
+  return PAGE_INDEX_TYPE_ORDER.map((type) => {
+    const pages = PAGE_INDEX.filter((page) => page.type === type);
+    return {
+      type,
+      label: PAGE_INDEX_TYPE_LABELS[type],
+      pages: type === "thread" ? sortThreadPages(pages) : pages,
+    };
+  }).filter((group) => group.pages.length > 0);
+}

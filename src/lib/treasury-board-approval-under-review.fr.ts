@@ -1,0 +1,3 @@
+/** Shared stop notice — Treasury Board approval path copy is under review. */
+export const TREASURY_BOARD_APPROVAL_UNDER_REVIEW =
+  "Cette étape décrit la voie du Conseil du Trésor comme si la plupart des services l’empruntaient. Ce n’est pas le cas. Environ 5 % des projets parviennent un jour à une présentation au Conseil du Trésor. Ce qui détermine la voie, c’est le niveau d’ECGP du ministère et l’EPCP du projet, et l’analyse de rentabilisation conceptuelle ainsi que le comité d’examen de l’architecture du ministère viennent avant tout cela. Cette étape sera réécrite en même temps que la page Financement.";

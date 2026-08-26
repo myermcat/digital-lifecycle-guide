@@ -1,0 +1,24 @@
+<svg viewBox="0 95 792 325" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+
+  <!-- baseline -->
+  <line x1="120" y1="380" x2="600" y2="380" stroke="#4A3B2E" stroke-width="2"/>
+
+  <!-- Bar A: a small project, all under the limit -->
+  <rect x="180" y="266" width="120" height="114" fill="#E2BBA6" stroke="#A8492A" stroke-width="2"/>
+  <text x="240" y="312" text-anchor="middle" font-size="14" fill="#4A3B2E">approuvé</text>
+  <text x="240" y="330" text-anchor="middle" font-size="14" fill="#4A3B2E">de lui-même</text>
+  <text x="240" y="404" text-anchor="middle" font-size="16" fill="#4A3B2E">Un petit projet</text>
+
+  <!-- Bar B: a larger project crosses the limit, so the WHOLE project goes to Treasury Board (not just the part above the line) -->
+  <rect x="420" y="120" width="120" height="260" fill="#A8492A" stroke="#A8492A" stroke-width="2"/>
+  <text x="480" y="240" text-anchor="middle" font-size="14" fill="#F6F1E7">l'ensemble du</text>
+  <text x="480" y="258" text-anchor="middle" font-size="14" fill="#F6F1E7">projet exige</text>
+  <text x="480" y="276" text-anchor="middle" font-size="14" fill="#F6F1E7">Conseil du Trésor</text>
+  <text x="480" y="404" text-anchor="middle" font-size="16" fill="#4A3B2E">Un très grand projet</text>
+
+  <!-- the limit line -->
+  <line x1="140" y1="210" x2="612" y2="210" stroke="#A8492A" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="620" y="206" font-size="15" fill="#A8492A" font-weight="bold">la limite</text>
+  <text x="620" y="224" font-size="13" fill="#6B5B49">au-delà, le Conseil</text>
+  <text x="620" y="240" font-size="13" fill="#6B5B49">du Trésor doit approuver</text>
+</svg>

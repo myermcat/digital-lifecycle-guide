@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 232" width="880" height="232" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L7 4 L0 8 Z" fill="#A8492A"/>
+    </marker>
+  </defs>
+
+  <!-- routes that sign as Alpha opens -->
+  <rect x="100" y="6" width="104" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="152" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Équipe</text>
+
+  <rect x="234" y="6" width="176" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="322" y="26" text-anchor="middle" font-size="13" fill="#A8492A" font-weight="bold">Approvisionnement agile</text>
+
+  <path d="M152 36 L152 70 L322 70 L322 36" fill="none" stroke="#A8492A" stroke-width="1.6"/>
+  <path d="M237 70 L237 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- route that signs as Beta opens -->
+  <rect x="478" y="6" width="120" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="538" y="26" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Solution</text>
+  <path d="M538 36 L538 96" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- the three sub-phases -->
+  <rect x="20" y="104" width="216" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="128" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Découverte</text>
+
+  <rect x="240" y="104" width="296" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="388" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Alpha</text>
+
+  <rect x="540" y="104" width="316" height="52" rx="8" fill="#ECDFCD" stroke="#C9B295" stroke-width="1.2"/>
+  <text x="698" y="136" text-anchor="middle" font-size="18" fill="#4A3B2E">Bêta</text>
+
+  <!-- signature points on the boundaries -->
+  <circle cx="237" cy="130" r="7" fill="#A8492A"/>
+  <circle cx="538" cy="130" r="7" fill="#A8492A"/>
+
+  <!-- the other route that signs as Beta opens -->
+  <path d="M538 190 L538 166" stroke="#A8492A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="451" y="196" width="174" height="30" rx="15" fill="#ECDFCD" stroke="#A8492A" stroke-width="1.4"/>
+  <text x="538" y="216" text-anchor="middle" font-size="15" fill="#A8492A" font-weight="bold">Produit fini</text>
+
+  <text x="20" y="216" font-size="13" font-style="italic" fill="#8C7B63">Où le contrat est signé, voie par voie.</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+
+<text x="20" y="30" font-size="12.5" font-weight="bold" fill="#A8492A" letter-spacing="1.2">OÙ SE TROUVE HABITUELLEMENT LE RISQUE</text>
+
+<rect x="20" y="44" width="860" height="96" rx="10" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<text x="40" y="70" font-size="13" fill="#4A3B2E">La politique ne le permet pas</text>
+<text x="40" y="94" font-size="13" fill="#4A3B2E">Personne n'a le pouvoir légal</text>
+<text x="40" y="118" font-size="13" fill="#4A3B2E">Les données n'existent pas</text>
+<text x="470" y="70" font-size="13" fill="#4A3B2E">Les gens n'utiliseront pas ce canal</text>
+<text x="470" y="94" font-size="13" fill="#4A3B2E">Un autre ministère détient une étape</text>
+<text x="470" y="118" font-size="13" font-style="italic" fill="#8C7B63">Aucun de ces risques n'est dans le logiciel</text>
+
+<text x="20" y="186" font-size="12.5" font-weight="bold" fill="#8C7B63" letter-spacing="1.2">OÙ LES ÉQUIPES PASSENT L'ALPHA</text>
+
+<rect x="20" y="200" width="860" height="52" rx="10" fill="#FBF7EF" stroke="#C9BBA4" stroke-width="1.8"/>
+<text x="40" y="224" font-size="13" fill="#4A3B2E">À construire et tester le prototype</text>
+<text x="40" y="243" font-size="12.5" font-style="italic" fill="#8C7B63">parce que c'est la partie visible</text>
+
+<path d="M450 148 l0 44" stroke="#A8492A" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"/>
+<path d="M450 198 l-6 -10 h12 z" fill="#A8492A"/>
+<text x="466" y="176" font-size="12.5" font-style="italic" fill="#A8492A">le décalage</text>
+
+<text x="450" y="292" text-anchor="middle" font-size="14.5" font-style="italic" fill="#8C7B63">Un non technique peut tuer une idée. C'est une raison parmi d'autres, et celles du haut sont les plus faciles à manquer.</text>
+</svg>

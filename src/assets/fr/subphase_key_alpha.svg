@@ -1,0 +1,16 @@
+<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+<rect x="12" y="26" width="276" height="188" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<g transform="translate(128,60) scale(1.85)" fill="none" stroke="#A8492A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></g>
+<text x="150" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Éprouver l'idée la plus risquée</text>
+<text x="150" y="166" text-anchor="middle" font-size="13" font-style="italic" fill="#4A3B2E">d'abord, avant de s'engager</text>
+<rect x="312" y="26" width="276" height="188" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<g transform="translate(428,60) scale(1.85)" fill="none" stroke="#A8492A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></g>
+<text x="450" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Prototyper à peu de frais</text>
+<text x="450" y="166" text-anchor="middle" font-size="13" font-style="italic" fill="#4A3B2E">et essayer plus d'une</text>
+<text x="450" y="185" text-anchor="middle" font-size="13" font-style="italic" fill="#4A3B2E">approche</text>
+<rect x="612" y="26" width="276" height="188" rx="16" fill="#ECDFCD" stroke="#A8492A" stroke-width="2"/>
+<g transform="translate(728,60) scale(1.85)" fill="none" stroke="#A8492A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></g>
+<text x="750" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#A8492A">Tout jeter</text>
+<text x="750" y="166" text-anchor="middle" font-size="13" font-style="italic" fill="#4A3B2E">le code, et la plupart</text>
+<text x="750" y="185" text-anchor="middle" font-size="13" font-style="italic" fill="#4A3B2E">des idées</text>
+</svg>

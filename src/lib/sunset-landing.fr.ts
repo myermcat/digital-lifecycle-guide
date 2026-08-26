@@ -1,0 +1,43 @@
+import type { PracticeCardData } from "@/components/PracticeCard";
+import { PHASES } from "@/lib/guide-strings";
+import { SUNSET_SOURCES } from "@/lib/sunset-sources";
+import { SUNSET_STRINGS } from "@/lib/sunset-strings";
+
+export type SunsetJourneyStep =
+  | (typeof SUNSET_STRINGS.journey.steps)[number]
+  | typeof SUNSET_STRINGS.journey.decommissionStep;
+
+export type SunsetPath = "replace" | "retire";
+
+export const SUNSET_LANDING = {
+  title: PHASES.sunset.pageHeading,
+  quote: SUNSET_STRINGS.quote,
+  signals: SUNSET_STRINGS.signals,
+  intro: SUNSET_STRINGS.intro,
+  scope: SUNSET_STRINGS.scope,
+  fork: SUNSET_STRINGS.fork,
+  journeyIntro: SUNSET_STRINGS.journey.intro,
+  journeyFooter: SUNSET_STRINGS.journey.footer,
+  journeySteps: SUNSET_STRINGS.journey.steps,
+  decommissionStep: SUNSET_STRINGS.journey.decommissionStep,
+  whereNext: SUNSET_STRINGS.whereNext,
+  caution: SUNSET_STRINGS.caution,
+  sources: SUNSET_SOURCES,
+};
+
+export const SUNSET_WHERE_NEXT_CARDS: PracticeCardData[] =
+  SUNSET_STRINGS.whereNext.cards;
+
+export function sunsetJourneyStepsForPath(path: SunsetPath): SunsetJourneyStep[] {
+  const steps = SUNSET_LANDING.journeySteps.filter(
+    (step) => !step.replaceOnly || path === "replace",
+  );
+
+  if (path === "retire") {
+    return steps.map((step) =>
+      step.label === "Migrer" ? SUNSET_LANDING.decommissionStep : step,
+    );
+  }
+
+  return steps;
+}

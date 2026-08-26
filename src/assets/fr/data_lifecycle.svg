@@ -1,0 +1,51 @@
+<svg viewBox="0 20 980 330" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <marker id="dl_ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8C7B63"/></marker>
+  </defs>
+
+  <!-- spine -->
+  <line x1="70" y1="70" x2="910" y2="70" stroke="#D9CBB0" stroke-width="2.5" marker-end="url(#dl_ar)"/>
+
+  <!-- phase pills -->
+  <rect x="70" y="46" width="150" height="48" rx="24" fill="#F1E7D6" stroke="#C9A85C" stroke-width="2"/>
+  <text x="145" y="76" text-anchor="middle" font-size="20" font-weight="700" fill="#4A3B2E">Création</text>
+  <rect x="415" y="46" width="150" height="48" rx="24" fill="#F1E7D6" stroke="#C9A85C" stroke-width="2"/>
+  <text x="490" y="76" text-anchor="middle" font-size="20" font-weight="700" fill="#4A3B2E">Exploitation</text>
+  <rect x="760" y="46" width="150" height="48" rx="24" fill="#F1E7D6" stroke="#C9A85C" stroke-width="2"/>
+  <text x="835" y="76" text-anchor="middle" font-size="20" font-weight="700" fill="#4A3B2E">Retrait</text>
+
+  <!-- CREATE: set it up -->
+  <g font-family="Arial, sans-serif">
+    <text x="70" y="140" font-size="13.5" font-weight="700" letter-spacing="0.5" fill="#8C7B63">METTRE EN PLACE</text>
+    <circle cx="78" cy="164" r="3.5" fill="#A8492A"/><text x="92" y="169" font-size="15" fill="#3A3229">Décider quelles données conserver</text>
+    <circle cx="78" cy="192" r="3.5" fill="#A8492A"/><text x="92" y="197" font-size="15" fill="#3A3229">Fixer les périodes de conservation</text>
+    <circle cx="78" cy="220" r="3.5" fill="#A8492A"/><text x="92" y="225" font-size="15" fill="#3A3229">Confirmer ou demander l'autorisation</text>
+    <circle cx="78" cy="248" r="3.5" fill="#A8492A"/><text x="92" y="253" font-size="15" fill="#3A3229">Inscrire la disposition au contrat</text>
+  </g>
+
+  <!-- LIVE: keep it clean -->
+  <g font-family="Arial, sans-serif">
+    <text x="415" y="140" font-size="13.5" font-weight="700" letter-spacing="0.5" fill="#8C7B63">FAIRE LE MÉNAGE</text>
+    <circle cx="423" cy="164" r="3.5" fill="#A8492A"/><text x="437" y="169" font-size="15" fill="#3A3229">Éliminer les documents à échéance,</text>
+    <text x="437" y="190" font-size="15" fill="#3A3229">à mesure que chacun atteint sa limite</text>
+    <circle cx="423" cy="220" r="3.5" fill="#A8492A"/><text x="437" y="225" font-size="15" fill="#3A3229">La même autorisation, utilisée</text>
+    <text x="437" y="246" font-size="15" fill="#3A3229">encore et encore</text>
+  </g>
+
+  <!-- SUNSET: decide first, then move (ordered) -->
+  <g font-family="Arial, sans-serif">
+    <text x="760" y="140" font-size="13.5" font-weight="700" letter-spacing="0.5" fill="#8C7B63">TRANSFÉRER OU DÉTRUIRE</text>
+    <circle cx="770" cy="167" r="9" fill="#A8492A"/><text x="770" y="171.5" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">1</text>
+    <text x="788" y="172" font-size="15" font-weight="700" fill="#4A3B2E">Décider</text>
+    <text x="788" y="193" font-size="14.5" fill="#3A3229">ce qu'il advient de chaque</text>
+    <text x="788" y="212" font-size="14.5" fill="#3A3229">série de documents</text>
+    <circle cx="770" cy="235" r="9" fill="#8C7B63"/><text x="770" y="239.5" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">2</text>
+    <text x="788" y="240" font-size="15" font-weight="700" fill="#4A3B2E">Puis le transférer</text>
+    <text x="788" y="261" font-size="14.5" fill="#3A3229">migrer, transférer à BAC,</text>
+    <text x="788" y="280" font-size="14.5" fill="#3A3229">ou détruire</text>
+  </g>
+
+  <!-- footer principle strip (full width, not floating) -->
+  <line x1="70" y1="300" x2="910" y2="300" stroke="#E3D6C0" stroke-width="1.4"/>
+  <text x="70" y="326" font-size="15" font-family="Arial, sans-serif" fill="#6B5B49"><tspan font-weight="700" fill="#A8492A">Le piège :</tspan> reporter toute décision sur les données jusqu'à la mise hors service. À ce moment-là, il est trop tard.</text>
+</svg>
