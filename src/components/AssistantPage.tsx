@@ -23,6 +23,7 @@ import {
   storeKey,
   hasSharedKey,
   SharedExhausted,
+  SharedUnavailable,
   lastProviderLabel,
   MODEL_LABEL,
   type Answer,
@@ -406,6 +407,14 @@ export function AssistantPage() {
         if (err instanceof SharedExhausted) {
           setSharedOut(true);
           patch({ error: "", sharedOut: true, pending: false, waiting: false });
+        } else if (err instanceof SharedUnavailable) {
+          /* nothing was out of quota, so do not send them away until tomorrow */
+          patch({
+            error:
+              "None of the shared models could write an answer to that one. Trying again often works, and a key of your own uses a different model.",
+            pending: false,
+            waiting: false,
+          });
         } else {
           patch({ error: (err as Error).message, pending: false, waiting: false });
         }

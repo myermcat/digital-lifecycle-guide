@@ -71,6 +71,17 @@ const PROVIDER_LABELS: Record<string, string> = {
 /** Which route answered, so the page can say so and handle its limits differently. */
 export type Route = "shared" | "own";
 
+/**
+ * Nothing was out of quota; the shared models simply could not produce a usable answer.
+ * Kept apart from SharedExhausted because "come back tomorrow" is wrong advice for it.
+ */
+export class SharedUnavailable extends Error {
+  constructor() {
+    super("No shared model could answer this one.");
+    this.name = "SharedUnavailable";
+  }
+}
+
 export class SharedExhausted extends Error {
   constructor() {
     super("The shared allowance for today is used up.");
@@ -107,7 +118,13 @@ export function storeKey(key: string): void {
  * so too small a cap returns an empty response; the JSON mode requires the literal
  * word "json" in the prompt, which the prompts satisfy; and 503 is routine.
  */
-async function call<T>(key: string, prompt: string, maxTokens: number, attempt = 1): Promise<T> {
+async function call<T>(
+  key: string,
+  prompt: string,
+  maxTokens: number,
+  step: "rewrite" | "answer",
+  attempt = 1,
+): Promise<T> {
   /* no key means the shared proxy, which holds one; a key means talk to Groq directly */
   const viaProxy = !key && Boolean(PROXY);
   const res = await fetch(viaProxy ? PROXY : GROQ_DIRECT, {
@@ -117,6 +134,8 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
       ...(viaProxy ? {} : { Authorization: `Bearer ${key}` }),
     },
     body: JSON.stringify({
+      /* the proxy leads with a different provider per step: see worker/index.js */
+      step,
       model: MODEL,
       temperature: 0,
       reasoning_effort: "low",
@@ -136,16 +155,17 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
      */
     if (viaProxy && res.status === 429) {
       if (/shared_exhausted/.test(detail)) throw new SharedExhausted();
+      if (/shared_unavailable/.test(detail)) throw new SharedUnavailable();
       const wait = Number(detail.match(/"retryAfterSeconds":\s*(\d+)/)?.[1] ?? 25);
       if (attempt < 4) {
         await new Promise((r) => setTimeout(r, Math.min(60, wait + 2) * 1000));
-        return call<T>(key, prompt, maxTokens, attempt + 1);
+        return call<T>(key, prompt, maxTokens, step, attempt + 1);
       }
       throw new SharedExhausted();
     }
     if ((res.status === 503 || res.status === 500) && attempt < 4) {
       await new Promise((r) => setTimeout(r, attempt * 4000));
-      return call<T>(key, prompt, maxTokens, attempt + 1);
+      return call<T>(key, prompt, maxTokens, step, attempt + 1);
     }
     if (res.status === 401) throw new Error("That key was rejected. Check it and try again.");
 
@@ -158,7 +178,7 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
     if (res.status === 429 && attempt < 4) {
       const seconds = Number(detail.match(/try again in ([\d.]+)s/i)?.[1] ?? 20);
       await new Promise((r) => setTimeout(r, Math.min(60, seconds + 2) * 1000));
-      return call<T>(key, prompt, maxTokens, attempt + 1);
+      return call<T>(key, prompt, maxTokens, step, attempt + 1);
     }
     if (res.status === 429) {
       throw new Error(
@@ -206,6 +226,7 @@ export async function rewriteQuestion(
     key,
     buildRewritePrompt(question, buildContents(map), previousQuestion),
     1200,
+    "rewrite",
   );
   return {
     queries: (raw.queries ?? []).map((q) => String(q).trim()).filter(Boolean).slice(0, 3),
@@ -225,6 +246,7 @@ export async function answerFrom(
     key,
     buildAnswerPrompt(question, sections, situation, history),
     1500,
+    "answer",
   );
   const byId = new Map(sections.map((s) => [s.id, s]));
   // only cite what was actually supplied: an invented id would look checkable and lead nowhere

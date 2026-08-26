@@ -21,9 +21,19 @@
  *   Gemini      20 requests a day, and only gemini-flash-latest answers on a new key, so
  *               about 10 questions.
  *
- * Workers AI is therefore an order of magnitude larger than the other two together, and it
- * is first. The keyed providers are kept behind it for when it runs out, and because an
- * open-weight model at the edge is not always the best writer.
+ * THE ORDER DEPENDS ON THE STEP, because the two steps are not equally hard.
+ *
+ * The rewrite turns a question into three search phrases. It is short, and Workers AI does
+ * it as well as anything, so it goes first there and the big allowance carries it.
+ *
+ * The answer is long, has to obey a page of rules, and has to come back as JSON. Tested on
+ * the same question, Workers AI restated the question back, wrote "we need to know", and
+ * produced follow-ups that were questions TO the reader rather than ones a reader could
+ * click. Groq's gpt-oss 120B did not. So the answer step tries the keyed providers first
+ * and keeps Workers AI as the thing that still works when they are spent.
+ *
+ * A caller says which step it wants with "step": "rewrite" or "answer". Anything else gets
+ * the answer order, being the safer default.
  *
  * WHAT IT IS NOT. Not a general proxy. It accepts one shape of request, caps what it will
  * forward, checks the origin, and refuses everything else. An open proxy in front of
@@ -77,10 +87,16 @@ const PROVIDERS = [
     binding: true,
     model: "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
     async run(env, prompt, maxTokens) {
+      /**
+       * response_format asks Workers AI to enforce a JSON object, which is what makes this
+       * usable for the answer step. Without it the long answer prompt came back as prose
+       * with the object embedded, and the reply had to be thrown away.
+       */
       const result = await env.AI.run(this.model, {
         messages: [{ role: "user", content: prompt }],
         max_tokens: maxTokens,
         temperature: 0,
+        response_format: { type: "json_object" },
       });
       /**
        * Workers AI does not return one shape. Depending on the model it is a bare string,
@@ -283,23 +299,33 @@ function json(body, status, origin, extra = {}) {
   });
 }
 
+/** Which provider leads, per step. Anything not named keeps its declared order behind them. */
+const ORDER = {
+  rewrite: ["workers-ai", "groq", "cerebras", "openrouter", "gemini"],
+  answer: ["groq", "cerebras", "openrouter", "workers-ai", "gemini"],
+};
+
 /**
- * Everything available to spend, in order. The binding first when it is present, then every
- * configured key. A provider with no key set simply is not in the ring.
+ * Everything available to spend, in the order for this step. A provider with no key set is
+ * simply not in the ring, so the whole thing runs on Workers AI alone until keys are added.
  */
-function keyring(env) {
-  const ring = [];
+function keyring(env, step) {
+  const available = [];
   for (const provider of PROVIDERS) {
     if (provider.binding) {
-      if (env.AI) ring.push({ provider, key: null });
+      if (env.AI) available.push({ provider, key: null });
       continue;
     }
     for (const varName of provider.keyVars ?? []) {
       const key = env[varName];
-      if (key) ring.push({ provider, key });
+      if (key) available.push({ provider, key });
     }
   }
-  return ring;
+
+  const order = ORDER[step] ?? ORDER.answer;
+  return available.sort(
+    (a, b) => order.indexOf(a.provider.name) - order.indexOf(b.provider.name),
+  );
 }
 
 export default {
@@ -316,15 +342,7 @@ export default {
       return json({ error: { code: "origin", message: "Not served from here." } }, 403, origin);
     }
 
-    const ring = keyring(env);
-    if (ring.length === 0) {
-      return json(
-        { error: { code: "unconfigured", message: "No shared key is set on the server." } },
-        503,
-        origin,
-      );
-    }
-
+    /* the caller says which step this is, because the two need different providers first */
     let body;
     try {
       body = await request.json();
@@ -349,6 +367,17 @@ export default {
       );
     }
     const maxTokens = Math.min(Number(body?.max_tokens) || MAX_OUTPUT_TOKENS, MAX_OUTPUT_TOKENS);
+
+    const step = body?.step === "rewrite" ? "rewrite" : "answer";
+    const ring = keyring(env, step);
+
+    if (ring.length === 0) {
+      return json(
+        { error: { code: "unconfigured", message: "No provider is configured on the server." } },
+        503,
+        origin,
+      );
+    }
 
     /**
      * Try each key in turn. Fall through only when a key is done FOR THE DAY: a
@@ -442,14 +471,21 @@ export default {
       );
     }
 
+    /**
+     * Two different failures, and telling them apart matters to the reader. If anything was
+     * genuinely out of quota, tomorrow helps. If everything declined for another reason, a
+     * bad reply or a misconfigured provider, tomorrow helps nobody and saying it is a lie.
+     */
+    const anythingSpent = declined.some((d) => /out for the day/.test(d));
+
     return json(
       {
         error: {
-          code: "shared_exhausted",
-          message: "The shared allowance for today is used up.",
+          code: anythingSpent ? "shared_exhausted" : "shared_unavailable",
+          message: anythingSpent
+            ? "The shared allowance for today is used up."
+            : "No shared model could answer this one.",
           retryAfterSeconds: null,
-          /* which providers declined and why: a spent quota reads very differently
-             from a binding that was never configured */
           declined,
         },
       },
