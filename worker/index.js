@@ -15,9 +15,6 @@
  *               which is the account needed to deploy this in the first place.
  *   Groq        200,000 tokens a day, counting input, output and reasoning. A question
  *               costs about 5,000 tokens, so roughly 40 questions. Also 6,000 a minute.
- *   Cerebras    a free tier with no card, OpenAI-compatible, smaller than Groq.
- *   OpenRouter  one API in front of many models, some free. Least predictable, since what
- *               is free there changes, which is why it is the last resort.
  *   Gemini      20 requests a day, and only gemini-flash-latest answers on a new key, so
  *               about 10 questions.
  *
@@ -65,10 +62,11 @@ const ALLOWED_ORIGINS = [
  * Providers
  * ------------------------------------------------------------------ */
 
+/** Confirmed present on the account, asked of Groq rather than taken from documentation. */
 const GROQ_MODELS = new Set([
   "openai/gpt-oss-120b",
   "openai/gpt-oss-20b",
-  "qwen/qwen3.6-27b",
+  "qwen/qwen3.8-27b",
 ]);
 
 /**
@@ -144,6 +142,11 @@ const PROVIDERS = [
   {
     name: "groq",
     /** Generous meter first: tokens per day rather than requests per day. */
+    /**
+     * Several keys are allowed, but note they do NOT multiply the allowance: Groq's limits
+     * are per organisation, so two keys on one account share the same 200,000 tokens a day.
+     * A second key is for revoking one without breaking the other.
+     */
     keyVars: ["GROQ_API_KEY", "GROQ_API_KEY_2", "GROQ_API_KEY_3"],
     request(prompt, key, model, maxTokens) {
       return {
@@ -169,74 +172,6 @@ const PROVIDERS = [
     /** True when this key is done for the day rather than merely busy. */
     exhausted(status, text) {
       return status === 429 && /per day|TPD|tokens per day|requests per day|RPD/i.test(text);
-    },
-  },
-  {
-    name: "cerebras",
-    /**
-     * Same request shape as Groq, being OpenAI-compatible, and free with no card. Placed
-     * after Groq because its allowance is smaller and its models fewer, and before Gemini
-     * because Gemini's twenty requests a day is the smallest thing here.
-     */
-    keyVars: ["CEREBRAS_API_KEY", "CEREBRAS_API_KEY_2"],
-    request(prompt, key, _model, maxTokens) {
-      return {
-        url: "https://api.cerebras.ai/v1/chat/completions",
-        init: {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
-          body: JSON.stringify({
-            model: "llama3.1-8b",
-            temperature: 0,
-            max_tokens: maxTokens,
-            response_format: { type: "json_object" },
-            messages: [{ role: "user", content: prompt }],
-          }),
-        },
-      };
-    },
-    normalise(json) {
-      return json;
-    },
-    exhausted(status, text) {
-      return status === 429 && /per day|daily|quota/i.test(text);
-    },
-  },
-  {
-    name: "openrouter",
-    /**
-     * One API in front of many models, some of them free. Last of the keyed providers
-     * because a free model there is whatever is free that week, so it is the least
-     * predictable, which is exactly what a last resort should be.
-     */
-    keyVars: ["OPENROUTER_API_KEY"],
-    request(prompt, key, _model, maxTokens) {
-      return {
-        url: "https://openrouter.ai/api/v1/chat/completions",
-        init: {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${key}`,
-            /* OpenRouter asks callers to identify themselves */
-            "HTTP-Referer": "https://myermcat.github.io/digital-lifecycle-guide/",
-            "X-Title": "Digital Lifecycle Guide assistant",
-          },
-          body: JSON.stringify({
-            model: "meta-llama/llama-3.3-70b-instruct:free",
-            temperature: 0,
-            max_tokens: maxTokens,
-            response_format: { type: "json_object" },
-            messages: [{ role: "user", content: prompt }],
-          }),
-        },
-      };
-    },
-    normalise(json) {
-      return json;
-    },
-    exhausted(status, text) {
-      return status === 429 && /per day|daily|quota|credits/i.test(text);
     },
   },
   {
@@ -300,10 +235,30 @@ function json(body, status, origin, extra = {}) {
 }
 
 /** Which provider leads, per step. Anything not named keeps its declared order behind them. */
+/**
+ * TWO PROVIDERS WERE TRIED AND REMOVED. Both are recorded here so nobody adds them back on
+ * the strength of a blog post, because both look good on paper.
+ *
+ * Cerebras: a free account answers "Payment required to access this resource". The $5 shown
+ * at signup is credit against a card, not a renewing free allowance. It offers exactly two
+ * models, gpt-oss-120b and gemma-4-31b. Worth revisiting only with billing enabled.
+ *
+ * OpenRouter: works, and is unusable. A trivial probe took 93 to 106 seconds and came back
+ * as malformed JSON. Its free catalogue rotates, llama-3.3-70b:free stopped being free, and
+ * it counts the primary model against its own three-model limit. A slow wrong answer is
+ * worse than no answer, so it is gone.
+ */
 const ORDER = {
-  rewrite: ["workers-ai", "groq", "cerebras", "openrouter", "gemini"],
-  answer: ["groq", "cerebras", "openrouter", "workers-ai", "gemini"],
+  rewrite: ["workers-ai", "groq", "gemini"],
+  answer: ["groq", "workers-ai", "gemini"],
 };
+
+/**
+ * A provider that takes too long is worse than one that fails, because the reader waits and
+ * then gets nothing. OpenRouter's free models answered a trivial probe in 106 seconds, so
+ * anything slower than this is abandoned and the next provider is tried.
+ */
+const PROVIDER_TIMEOUT_MS = 25_000;
 
 /**
  * Everything available to spend, in the order for this step. A provider with no key set is
@@ -342,12 +297,86 @@ export default {
       return json({ error: { code: "origin", message: "Not served from here." } }, 403, origin);
     }
 
-    /* the caller says which step this is, because the two need different providers first */
+
     let body;
     try {
       body = await request.json();
     } catch {
       return json({ error: { code: "bad_json", message: "Body must be JSON." } }, 400, origin);
+    }
+
+    /**
+     * A probe: try EVERY configured provider with a trivial prompt and report what each
+     * one said. Without it the only way to know whether a newly added key works is to wait
+     * for the one in front of it to run out, which can be a day.
+     */
+    if (body?.probe === true) {
+      const results = [];
+      for (const { provider, key } of keyring(env, "answer")) {
+        const started = Date.now();
+        const probePrompt = 'Reply with JSON only, exactly: {"ok":true}';
+        try {
+          if (provider.binding) {
+            await provider.run(env, probePrompt, 64);
+            results.push({ provider: provider.name, ok: true, ms: Date.now() - started });
+            continue;
+          }
+          const { url, init } = provider.request(probePrompt, key, undefined, 64);
+          const res = await fetch(url, init);
+          const text = (await res.text()).replaceAll(key, "[key]");
+          if (res.ok) {
+            const parsed = JSON.parse(text);
+            const content = provider.normalise(parsed)?.choices?.[0]?.message?.content ?? "";
+            results.push({
+              provider: provider.name,
+              ok: Boolean(content.trim()),
+              ms: Date.now() - started,
+              reply: content.trim().slice(0, 40),
+            });
+          } else {
+            results.push({
+              provider: provider.name,
+              ok: false,
+              status: res.status,
+              outOfQuota: provider.exhausted(res.status, text),
+              detail: text.slice(0, 160),
+            });
+          }
+        } catch (err) {
+          results.push({
+            provider: provider.name,
+            ok: false,
+            detail: String(err?.message ?? err).slice(0, 160),
+          });
+        }
+      }
+      /**
+       * Also ask each keyed provider what it offers. Model names are the thing that goes
+       * stale here: Cerebras answered "model does not exist" and OpenRouter said its free
+       * slug is no longer free, and neither is knowable from documentation that was right
+       * last month.
+       */
+      if (body?.models === true) {
+        const catalogues = {};
+        const endpoints = {
+          groq: "https://api.groq.com/openai/v1/models",
+        };
+        for (const { provider, key } of keyring(env, "answer")) {
+          const url = endpoints[provider.name];
+          if (!url || !key) continue;
+          try {
+            const res = await fetch(url, { headers: { Authorization: `Bearer ${key}` } });
+            const listed = await res.json();
+            const ids = (listed?.data ?? []).map((m) => m.id);
+            catalogues[provider.name] = ids.slice(0, 40);
+          } catch (err) {
+            catalogues[provider.name] = [`error: ${String(err?.message ?? err).slice(0, 80)}`];
+          }
+        }
+        return json({ probe: results, models: catalogues }, 200, origin);
+      }
+
+      return json({ probe: results }, 200, origin);
     }
 
     const messages = Array.isArray(body?.messages) ? body.messages : null;
@@ -370,6 +399,7 @@ export default {
 
     const step = body?.step === "rewrite" ? "rewrite" : "answer";
     const ring = keyring(env, step);
+
 
     if (ring.length === 0) {
       return json(
@@ -413,7 +443,13 @@ export default {
 
       let upstream;
       try {
-        upstream = await fetch(url, init);
+        const cutoff = new AbortController();
+        const timer = setTimeout(() => cutoff.abort(), PROVIDER_TIMEOUT_MS);
+        try {
+          upstream = await fetch(url, { ...init, signal: cutoff.signal });
+        } finally {
+          clearTimeout(timer);
+        }
       } catch (err) {
         /* network trouble with one provider is not the reader's problem, but record it */
         declined.push(`${provider.name}: network ${String(err?.message ?? err).slice(0, 80)}`);
