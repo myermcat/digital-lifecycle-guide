@@ -16,6 +16,7 @@ import {
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
+import type { SourceItem } from "@/components/SourcesBlock";
 import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 
 export const GROWTH_LEAD: ThreadLinkedProse = {
@@ -474,3 +475,71 @@ export const GROWTH_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+/**
+ * Sources de la page Croissance. Ce tableau se trouvait dans LiveGrowthPage.tsx, mais les
+ * modules sous src/components ne sont jamais remplacés par la version française : les
+ * libellés et les descriptions restaient donc en anglais. Il vit ici pour être traduit.
+ */
+export const GROWTH_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    linkKey: "pcra-tool",
+    description:
+      "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver ; un ajout important peut être un projet en soi.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "algorithmic-impact-assessment",
+    description:
+      "Outil d’évaluation de l’incidence algorithmique (SCT) : il cote toute automatisation que la Croissance ajoute.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-automated-decision-making",
+    description:
+      "Directive sur la prise de décisions automatisée (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "concept-case-procedures",
+    description:
+      "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT) : un ajout de grande envergure peut exiger sa propre analyse de rentabilisation conceptuelle.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères pour les changements qui modifient l’architecture.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "task-authorizations",
+    description:
+      "Autorisations de tâches (guide de l’acheteur d’AchatsCanada).",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "modify-contract",
+    description:
+      "Modifier un contrat (guide de l’acheteur d’AchatsCanada) : la procédure pour les modifications qui restent dans la portée.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "oag-arrivecan",
+    description:
+      "Rapports de 2024 du BVG, rapport 1 — ArriveCAN.",
+  },
+  {
+    label: "Collectivités",
+    linkKey: "gcdigital-community",
+    description:
+      "Collectivité GCNumérique (BDPI du SCT) : la collectivité des praticiens du numérique dans l’ensemble du gouvernement.",
+  },
+];

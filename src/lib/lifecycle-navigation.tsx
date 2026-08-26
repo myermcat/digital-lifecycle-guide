@@ -7,26 +7,27 @@ import {
 import { PHASES, type LifecyclePhaseId } from "@/lib/guide-strings";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import { SUBPHASE_PAGE_HEADINGS } from "@/lib/subphase-content";
+import { NAV_STRINGS } from "@/lib/lifecycle-navigation-strings";
 
 /** @deprecated Prefer PHASES[id].pageHeading */
 export function howThePhaseWorksTitle(phaseName: string): string {
-  return `How the ${phaseName} phase works`;
+  return NAV_STRINGS.howThePhaseWorks(phaseName);
 }
 
 /** @deprecated Prefer SUBPHASE_PAGE_HEADINGS or SUBPHASE_META[slug].pageHeading */
 export function howTheSubphaseWorksTitle(subphaseName: string): string {
-  return `How the ${subphaseName} sub-phase works`;
+  return NAV_STRINGS.howTheSubphaseWorks(subphaseName);
 }
 
 export function phasePageDocumentTitle(pageHeading: string): string {
-  return `${pageHeading} — The 2026 Digital Lifecycle Guide`;
+  return `${pageHeading} — ${NAV_STRINGS.documentTitleSuffix}`;
 }
 
 export function subphasePageDocumentTitle(
   pageHeading: string,
   lifecyclePhaseTitle: string,
 ): string {
-  return `${pageHeading} — ${lifecyclePhaseTitle} — The 2026 Digital Lifecycle Guide`;
+  return `${pageHeading} — ${lifecyclePhaseTitle} — ${NAV_STRINGS.documentTitleSuffix}`;
 }
 
 export type { LifecyclePhaseId };
@@ -44,15 +45,15 @@ export interface SubphaseNavItem {
 export type PhaseNavItem = SubphaseNavItem;
 
 export const CREATE_SUBPHASES: SubphaseNavItem[] = [
-  { title: "Discovery", href: "/create-discovery", slug: "discovery" },
-  { title: "Alpha", href: "/create-alpha", slug: "alpha" },
-  { title: "Beta", href: "/create-beta", slug: "beta" },
+  { title: NAV_STRINGS.subphase.discovery, href: "/create-discovery", slug: "discovery" },
+  { title: NAV_STRINGS.subphase.alpha, href: "/create-alpha", slug: "alpha" },
+  { title: NAV_STRINGS.subphase.beta, href: "/create-beta", slug: "beta" },
 ];
 
 export const LIVE_SUBPHASES: SubphaseNavItem[] = [
-  { title: "Stabilization", href: "/live-stabilization", slug: "stabilization" },
-  { title: "Growth", href: "/live-growth", slug: "growth" },
-  { title: "Maturity", href: "/live-maturity", slug: "maturity" },
+  { title: NAV_STRINGS.subphase.stabilization, href: "/live-stabilization", slug: "stabilization" },
+  { title: NAV_STRINGS.subphase.growth, href: "/live-growth", slug: "growth" },
+  { title: NAV_STRINGS.subphase.maturity, href: "/live-maturity", slug: "maturity" },
 ];
 
 /** @deprecated Use CREATE_SUBPHASES */
@@ -178,10 +179,9 @@ export const SUBPHASE_META: Record<
   discovery: {
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
-    subphase: "Discovery",
+    subphase: NAV_STRINGS.subphase.discovery,
     pageHeading: SUBPHASE_PAGE_HEADINGS.discovery,
-    subtitle:
-      "Before anything is designed or built, there is a period of structured listening. The team talks to the people who currently live with the problem, the applicants, the officers, the people caught in the middle, and maps what is actually happening, not what the process document says should happen. The goal is to understand the problem clearly enough that the right solution becomes obvious. The output is a problem statement the whole team agrees on, and enough evidence to justify spending public money on a new service.",
+    subtitle: NAV_STRINGS.subtitle.discovery,
     path: "/create-discovery",
     where: () => whereThisFitsForCreateSubphase("discovery"),
     showComingSoon: false,
@@ -189,10 +189,9 @@ export const SUBPHASE_META: Record<
   alpha: {
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
-    subphase: "Alpha",
+    subphase: NAV_STRINGS.subphase.alpha,
     pageHeading: SUBPHASE_PAGE_HEADINGS.alpha,
-    subtitle:
-      "With a real problem to solve, the team starts making things cheaply and quickly, on purpose. Rough sketches, mock-ups of the screens, and clickable prototypes get put in front of people to test whether the team's assumptions are right. Most of them will not be. Each round of testing replaces a guess with a fact, and the concept gets sharper. The team might try several completely different approaches before one earns enough confidence to build for real. Nothing made in this sub-phase is meant to last. It is meant to teach.",
+    subtitle: NAV_STRINGS.subtitle.alpha,
     path: "/create-alpha",
     where: () => whereThisFitsForCreateSubphase("alpha"),
     showComingSoon: false,
@@ -200,10 +199,9 @@ export const SUBPHASE_META: Record<
   beta: {
     lifecyclePhase: "create",
     lifecyclePhaseHref: PHASES.create.href,
-    subphase: "Beta",
+    subphase: NAV_STRINGS.subphase.beta,
     pageHeading: SUBPHASE_PAGE_HEADINGS.beta,
-    subtitle:
-      "The first version built to last does only the essential thing, and goes live to a limited audience or for a narrow use case. The point is to replace test conditions with real ones: real users, real data, real failure modes. The team watches what happens, measures it, and uses what they learn to decide what to build next. A version that teaches the team what users actually need is doing exactly what it is supposed to do.",
+    subtitle: NAV_STRINGS.subtitle.beta,
     path: "/create-beta",
     where: () => whereThisFitsForCreateSubphase("beta"),
     showComingSoon: false,
@@ -211,42 +209,41 @@ export const SUBPHASE_META: Record<
   stabilization: {
     lifecyclePhase: "live",
     lifecyclePhaseHref: PHASES.live.href,
-    subphase: "Stabilization",
+    subphase: NAV_STRINGS.subphase.stabilization,
     pageHeading: SUBPHASE_PAGE_HEADINGS.stabilization,
-    subtitle: "Stabilize the service right after it goes live.",
+    subtitle: NAV_STRINGS.subtitle.stabilization,
     path: "/live-stabilization",
     where: () => whereThisFitsForLiveSubphase("stabilization"),
     sectionNav: {
-      prev: { href: "/live", label: "Live phase", level: "phase" },
-      next: { href: "/live-growth", label: "Growth sub-phase", level: "subphase" },
+      prev: { href: "/live", label: NAV_STRINGS.navLabel.livePhase, level: "phase" },
+      next: { href: "/live-growth", label: NAV_STRINGS.navLabel.growthSubphase, level: "subphase" },
     },
   },
   growth: {
     lifecyclePhase: "live",
     lifecyclePhaseHref: PHASES.live.href,
-    subphase: "Growth",
+    subphase: NAV_STRINGS.subphase.growth,
     pageHeading: SUBPHASE_PAGE_HEADINGS.growth,
-    subtitle: "Add capability as more users arrive.",
+    subtitle: NAV_STRINGS.subtitle.growth,
     path: "/live-growth",
     where: () => whereThisFitsForLiveSubphase("growth"),
     sectionNav: {
-      prev: { href: "/live-stabilization", label: "Stabilization sub-phase", level: "subphase" },
-      next: { href: "/live-maturity", label: "Maturity sub-phase", level: "subphase" },
+      prev: { href: "/live-stabilization", label: NAV_STRINGS.navLabel.stabilizationSubphase, level: "subphase" },
+      next: { href: "/live-maturity", label: NAV_STRINGS.navLabel.maturitySubphase, level: "subphase" },
     },
   },
   maturity: {
     lifecyclePhase: "live",
     lifecyclePhaseHref: PHASES.live.href,
-    subphase: "Maturity",
+    subphase: NAV_STRINGS.subphase.maturity,
     pageHeading: SUBPHASE_PAGE_HEADINGS.maturity,
-    subtitle:
-      "The mature life of a digital service in the Live phase — operating and improving an existing service.",
+    subtitle: NAV_STRINGS.subtitle.maturity,
     path: "/live-maturity",
     where: () => whereThisFitsForLiveSubphase("maturity"),
     showComingSoon: false,
     sectionNav: {
-      prev: { href: "/live-growth", label: "Growth sub-phase", level: "subphase" },
-      next: { href: "/sunset", label: "Sunset phase", level: "phase" },
+      prev: { href: "/live-growth", label: NAV_STRINGS.navLabel.growthSubphase, level: "subphase" },
+      next: { href: "/sunset", label: NAV_STRINGS.navLabel.sunsetPhase, level: "phase" },
     },
   },
 };

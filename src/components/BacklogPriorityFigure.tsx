@@ -1,7 +1,8 @@
+import { UI } from "@/lib/ui-strings";
 import { cn } from "@/lib/utils";
 
 export const BACKLOG_PRIORITY_FIGURE_ALT =
-  "A vertical backlog column with ready items at the top and larger rough items below, beside a downward arrow labelled higher priority at the top and lower priority at the bottom.";
+  UI.backlogFigureAlt;
 
 type BacklogItemType = "Feature" | "Fix" | "Tech debt";
 
@@ -12,14 +13,14 @@ type BacklogRow = {
 };
 
 const readyRows: BacklogRow[] = [
-  { type: "Feature", title: "Register to vote online", state: "ready" },
-  { type: "Fix", title: "Correct postcode lookup", state: "ready" },
-  { type: "Tech debt", title: "Upgrade session storage", state: "ready" },
+  { type: "Feature", title: UI.backlogItemVote, state: "ready" },
+  { type: "Fix", title: UI.backlogItemPostcode, state: "ready" },
+  { type: "Tech debt", title: UI.backlogItemSession, state: "ready" },
 ];
 
 const roughRows: BacklogRow[] = [
-  { type: "Feature", title: "Cross-service address sync across departments", state: "rough" },
-  { type: "Feature", title: "Annual renewal reminders and notifications", state: "rough" },
+  { type: "Feature", title: UI.backlogItemAddress, state: "rough" },
+  { type: "Feature", title: UI.backlogItemRenewal, state: "rough" },
 ];
 
 const typeTagClass: Record<BacklogItemType, string> = {

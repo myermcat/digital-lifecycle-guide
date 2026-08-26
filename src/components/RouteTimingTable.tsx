@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { ROUTE_TIMING_TABLE_STRINGS } from "@/lib/route-timing-table-strings";
 import { UI } from "@/lib/ui-strings";
 
 /**
@@ -10,39 +11,28 @@ import { UI } from "@/lib/ui-strings";
  *
  * Below the small breakpoint it stacks into labelled cards, because a
  * three-column table at 375px is unreadable and the guide is read on phones.
+ *
+ * The words are in `@/lib/route-timing-table-strings`, not here: nothing in
+ * src/components is source-swapped for the French build.
  */
 
-const ROWS = [
-  {
-    route: "Buy a Team",
-    competition: "Discovery",
-    signature: "As Alpha opens",
-    why: "The team is what does Alpha, so it has to be there on the first day.",
-  },
-  {
-    route: "The agile procurement model",
-    competition: "Discovery",
-    signature: "As Alpha opens",
-    why: "This is the shape PSPC sets out. The prototypes are built under contract, so the contracts come first, with several suppliers signed at once. The build is an option inside the winner's contract, exercised by amendment.",
-  },
-  {
-    route: "Buy a Solution (traditional)",
-    competition: "Alpha",
-    signature: "As Beta opens",
-    why: "The department prototypes first, so it can say what it wants before asking anyone to price it.",
-  },
-  {
-    route: "Buy a Finished Product (traditional)",
-    competition: "Alpha",
-    signature: "As Beta opens",
-    why: "Nothing is prototyped, because the product exists. Alpha is spent evaluating real products.",
-  },
-  {
-    route: "Build in-house, or reuse",
-    competition: "None",
-    signature: "None",
-    why: "There is no supplier, so there is nothing to compete and nothing to sign.",
-  },
+const { columnHeadings, rows } = ROUTE_TIMING_TABLE_STRINGS;
+
+const ROW_ORDER = [
+  "buyATeam",
+  "agileProcurementModel",
+  "buyASolution",
+  "buyAFinishedProduct",
+  "buildInHouseOrReuse",
+] as const;
+
+const ROWS = ROW_ORDER.map((key) => rows[key]);
+
+const HEADINGS = [
+  columnHeadings.route,
+  columnHeadings.competition,
+  columnHeadings.contractSigned,
+  columnHeadings.why,
 ];
 
 export function RouteTimingTable() {
@@ -54,7 +44,7 @@ export function RouteTimingTable() {
         </caption>
         <thead>
           <tr className="border-b border-border">
-            {["Route", "Competition runs", "Contract signed", "Why"].map((heading) => (
+            {HEADINGS.map((heading) => (
               <th
                 key={heading}
                 scope="col"

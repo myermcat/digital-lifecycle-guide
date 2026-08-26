@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { REQUIREMENTS_NAMING_STRIP_STRINGS } from "@/lib/requirements-naming-strip-strings";
 import { UI } from "@/lib/ui-strings";
 
 /**
@@ -11,32 +12,23 @@ import { UI } from "@/lib/ui-strings";
  *
  * Each entry says who it is mandatory for, because that is the question a reader
  * actually has when they meet one of these names in a meeting.
+ *
+ * The prose lives in src/lib/requirements-naming-strip-strings.ts so the French
+ * build can swap it; only the layout and the official/unofficial flag are here.
  */
 
 const STEPS = [
   {
-    when: "Before, back in Discovery",
-    name: "Concept case",
+    ...REQUIREMENTS_NAMING_STRIP_STRINGS.conceptCase,
     official: true,
-    what: "A Discovery artifact, written before Alpha begins. It sets out the problem, the rough size of the investment, and the direction being considered, and stops short of choosing a solution.",
-    who: "Mandatory for digitally enabled projects at $2.5M with no approved capacity class or class 1, rising to $25M at class 4.",
-    alsoUseful: "Below the threshold nobody asks for one, and the template is still worth using.",
   },
   {
-    when: "In between",
-    name: "The requirements",
+    ...REQUIREMENTS_NAMING_STRIP_STRINGS.requirements,
     official: false,
-    what: "What the service has to do, what the organization needs, and how the service has to behave.",
-    who: "The business owner, for every purchase, with no dollar floor.",
-    alsoUseful: "Just as necessary when nobody is buying anything, since it is how the team knows what to build.",
   },
   {
-    when: "After",
-    name: "Statement of work",
+    ...REQUIREMENTS_NAMING_STRIP_STRINGS.statementOfWork,
     official: true,
-    what: "The description of the work being bought, written from the requirements.",
-    who: "Required only when the department is buying, because it belongs to the contract.",
-    alsoUseful: "An in-house team is welcome to write one anyway. It comes with a template, and a template is easier to start from than a blank page.",
   },
 ];
 

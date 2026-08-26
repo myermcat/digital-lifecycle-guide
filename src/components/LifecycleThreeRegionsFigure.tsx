@@ -1,8 +1,9 @@
+import { UI } from "@/lib/ui-strings";
 import lifecycleVisual from "@/assets/lifecycle_three_regions_bow.svg?url";
 import { cn } from "@/lib/utils";
 
 export const LIFECYCLE_THREE_REGIONS_ALT =
-  "A solid arrow labelled Create points into a large infinity loop labelled Live, then a dashed fading arrow labelled Sunset points out of it.";
+  UI.lifecycleThreeRegionsAlt;
 
 type LifecycleThreeRegionsFigureProps = {
   className?: string;

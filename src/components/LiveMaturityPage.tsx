@@ -17,7 +17,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   MATURITY_ACCORDION,
   MATURITY_ACCORDION_STAGES,
@@ -26,6 +25,7 @@ import {
   MATURITY_LEAD,
   MATURITY_ON_RAMP,
   MATURITY_PILLAR,
+  MATURITY_SOURCES,
   MATURITY_TEAM,
 } from "@/lib/live-maturity-content";
 import { SUBPHASE_EXTRACTS } from "@/lib/subphase-content";
@@ -40,68 +40,6 @@ import {
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideProse } from "@/lib/guide-typography";
-
-const MATURITY_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    linkKey: "gc-service-inventory",
-    description:
-      "GC Service Inventory (Open Government): the dataset where the service's record is kept current.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "policy-on-service-and-digital",
-    description:
-      "Policy on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-on-service-and-digital",
-    description:
-      "Directive on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "guideline-service-digital",
-    description:
-      "Guideline on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "standard-at-risk-it",
-    description:
-      "Standard on At-Risk Information Technology (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "service-fees-act",
-    description:
-      "Service Fees Act.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "charging-directive",
-    description:
-      "Directive on Charging and Special Financial Authorities (TBS): how service fees are set and reviewed.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "apm-gcwiki",
-    description:
-      "Application Portfolio Management guidance hub (GCcollab wiki).",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "oag-phoenix-build",
-    description:
-      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
-  },
-  {
-    label: "Communities",
-    description:
-      "Application Portfolio Management community: on GCXchange, search the name.",
-  },
-];
 
 export function LiveMaturityPage() {
   const meta = SUBPHASE_META.maturity;

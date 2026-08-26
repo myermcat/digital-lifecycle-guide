@@ -98,7 +98,7 @@ export function WhatYouAreBuyingBlock({
 
       <img
         src={whereContractSignedVisual}
-        alt="Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. The caption, at the bottom left, reads: where the contract is signed, route by route."
+        alt={UI.whereContractSignedAlt}
         className="mx-auto mb-3 mt-1 w-full max-w-3xl"
       />
 

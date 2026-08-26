@@ -1,10 +1,11 @@
+import { UI } from "@/lib/ui-strings";
 import { Sparkles } from "lucide-react";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import type { ThreadLinkedProse } from "@/lib/thread-rich-content";
 import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 
 export type SubphaseExtract = {
-  /** The one-line "what this sub-phase exists to do", rendered as the card's heading. */
+  /** The one-line UI.whatThisSubphaseExistsToDo, rendered as the card's heading. */
   spine: string;
   opening: ThreadLinkedProse;
   workOutItems: readonly string[];

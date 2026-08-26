@@ -80,7 +80,7 @@ export function CrossCuttingThreadPage({
               </h3>
               <p className="mt-1">
                 {phaseNotes.get(phaseId) ??
-                  "This page will describe how this thread applies during this phase."}
+                  UI.threadPhasePlaceholder}
               </p>
             </div>
           ))}

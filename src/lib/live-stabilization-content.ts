@@ -10,6 +10,7 @@ import {
   Server,
   Wrench,
 } from "lucide-react";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SubphaseExtract } from "@/components/SubphaseExtractCard";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
@@ -435,3 +436,63 @@ export const STABILIZATION_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+// Sources for the Stabilization page. This lives here, not in LiveStabilizationPage.tsx,
+// because the French build swaps modules by source path (x.ts -> x.fr.ts) and never swaps
+// anything under src/components — an array left in the component would render in English
+// on the French site.
+export const STABILIZATION_SOURCES: SourceItem[] = [
+  {
+    label: "Templates and tools",
+    linkKey: "gc-service-inventory",
+    description:
+      "GC Service Inventory (Open Government): the dataset the new service must be registered in.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "apm-dataset",
+    description:
+      "GC Application Portfolio Details (Open Government): the dataset the department's application record feeds.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "service-fees-act",
+    description:
+      "Service Fees Act.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "charging-directive",
+    description:
+      "Directive on Charging and Special Financial Authorities (TBS): the rules behind fee remission.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "apm-gcwiki",
+    description:
+      "Application Portfolio Management guidance hub (GCcollab wiki).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-phoenix-build",
+    description:
+      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
+  },
+  {
+    label: "Communities",
+    description:
+      "Application Portfolio Management community: on GCXchange, search the name.",
+  },
+];

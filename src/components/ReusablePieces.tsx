@@ -80,7 +80,7 @@ export function ReusablePieces({ embedded = false }: { embedded?: boolean } = {}
               {[
                 ["Piece", "min-w-[13rem]"],
                 ["What you would otherwise build", "min-w-[15rem]"],
-                ["Who runs it, and how to get it", "min-w-[14rem]"],
+                [UI.whoRunsItAndHowToGetIt, "min-w-[14rem]"],
                 ["Worth a look in", "min-w-[12rem]"],
               ].map(([label, width]) => (
                 <th

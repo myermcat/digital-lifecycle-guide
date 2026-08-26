@@ -45,4 +45,66 @@ export const HOME = {
   p38: "Un ministère qui suit l’approche agile définie par Services publics et Approvisionnement Canada.",
   p39: "Le concours, la signature et la première vraie construction sont les trois mêmes événements dans les trois cas. Là où ils tombent se déplace d’une sous-phase entière, et la seule chose qui les a déplacés est la façon dont le ministère a choisi d’acheter. C’est pourquoi ce guide décrit chaque sous-phase plus librement que les guides dont il s’est inspiré.",
   p40: "Aucun guide ne peut dire à un ministère comment se déroulera son service en particulier. Ce qu’il peut faire, c’est rendre le lecteur plus difficile à surprendre. Si la prochaine version de ceci fait une chose mieux, nous aimerions que ce soit celle-là : moins de gens qui apprennent une décision au moment où elle a déjà été prise à leur place.",
+
+  // "What this guide is": the sentence wrapped around UI.aFewWaysOfBuildingADigitalService.
+  whatThisGuideIsLead: "Il décrit",
+  whatThisGuideIsTail: ", et non la seule bonne façon, parce qu’il n’y en a pas.",
+
+  // "What is here for you, whichever way you go": the body after each bolded lead-in.
+  hereForYouSecurityBody: "Chaque service en a besoin, qu’il ait été construit à l’interne, acheté tel quel, ou assemblé à partir de quelque chose qui existait déjà.",
+  hereForYouCheckpointsBody: "Les évaluations, approbations et autorisations qu’un service du gouvernement du Canada doit franchir. Elles vous trouveront quelle que soit la voie prise, et chacune coûte moins cher à préparer qu’à subir par surprise.",
+  hereForYouPictureBody: "Quelles décisions arrivent dans quel ordre approximatif, qui d’autre doit être associé, et lesquelles sont coûteuses à défaire plus tard.",
+
+  // "The one thing worth holding on to": the body after UI.itStaysYourService.
+  itStaysYourServiceBody: "Vous pouvez confier la construction à un fournisseur, et bien souvent c’est la chose sensée à faire. Ce qui ne se transfère pas avec elle, c’est le fait d’en répondre. Quand un service ne fonctionne pas, la personne qui n’arrive pas à déposer sa demande n’entend jamais parler du contrat d’approvisionnement qui se trouve derrière, et s’en moquerait si elle l’entendait. Elle le vit comme le gouvernement du Canada qui la laisse tomber, et c’est le ministère qui en répond, publiquement et après coup.",
+
+  // "You might be:" — each line is an article, a bolded role, and the rest of the line.
+  roleBusinessOwnerArticle: "un ",
+  roleBusinessOwnerLabel: "responsable opérationnel",
+  roleBusinessOwnerRest: "déjà nommé au regard d’un système dans le registre des applications de votre ministère",
+  roleProgramManagerArticle: "un ",
+  roleProgramManagerLabel: "gestionnaire de programme",
+  roleProgramManagerRest: "dont le processus ne suffit plus au volume",
+  rolePolicyLeadArticle: "un ",
+  rolePolicyLeadLabel: "responsable des politiques",
+  // Leading space is deliberate: this one sits directly against the bolded role.
+  rolePolicyLeadRest: " à qui l’on a demandé de livrer quelque chose pour une date",
+  roleDirectorGeneralArticle: "un ",
+  roleDirectorGeneralLabel: "directeur général",
+  roleDirectorGeneralRest: "qui a hérité d’un système que personne ne peut expliquer entièrement",
+  roleProjectManagerArticle: "un ",
+  roleProjectManagerLabel: "gestionnaire de projet",
+  roleProjectManagerRest: "à qui l’on a confié un service déjà en fonction",
+  roleOtherPositions: "ou dans n’importe quelle autre position où les gens se retrouvent quand un service devient leur responsabilité. La liste ne se veut pas exhaustive.",
+
+  // The gate-map callout's link.
+  seeTheWholePathLinkLabel: "Voir le parcours complet →",
+
+  // The sub-phase pills inside the three-phases accordion, and their hover hints.
+  subphasesOfCreateIntro: "Les trois sous-phases de la Création :",
+  subphasesOfLiveIntro: "Les trois sous-phases de l’Exploitation :",
+  subphaseDiscoveryHint: "Comprendre le problème avant de vous engager dans une solution.",
+  subphaseAlphaHint: "Essayer des choses à peu de frais avant de construire la vraie.",
+  subphaseBetaHint: "Construire la première version réelle qui entrera en fonction.",
+  subphaseStabilizationHint: "Stabiliser le service juste après sa mise en fonction.",
+  subphaseGrowthHint: "Ajouter des capacités à mesure que de nouveaux utilisateurs arrivent.",
+  subphaseMaturityHint: "Garder le service en santé sur le long terme.",
+
+  // The joined-up delivery sentence wrapped around the thread link.
+  joinedUpDeliveryLead: "Quelle que soit la phase où vous êtes, une idée court sous tout cela : un service gouvernemental n’est presque jamais la chose qu’une personne veut réellement. C’est une étape dans un parcours bien plus vaste qui est le sien, souvent réparti entre de nombreux ministères et ordres de gouvernement.",
+  joinedUpDeliveryTail: "est le point de départ de cette réflexion.",
+
+  // The worked example.
+  nadiaDisclaimer: "Nadia est fictive, et son programme aussi. Toute ressemblance avec des personnes ou des programmes réels est fortuite.",
+  nadiaClosingPoint: "Le but de ce guide est que la prochaine Nadia sache tout cela pendant qu’elle peut encore y faire quelque chose.",
+
+  // "Why we could not simply follow the UK and Australia": the sentence around both links.
+  twoGuidesLead: "Les deux guides que nous avons le plus consultés sont",
+  twoGuidesAnd: "et",
+  twoGuidesTail: ". Les deux tracent des lignes fermes entre les phases, et les deux le peuvent, parce que chacun est écrit pour une seule situation : une petite équipe de fonctionnaires qui construit elle-même un service, sur une infrastructure commune et des composants réutilisables que son gouvernement a déjà construits à cette fin.",
+
+  // The three procurement examples: the body after each bolded lead-in (p36..p38).
+  procurementContractsTeamBody: "Il mène le concours pendant la Découverte et signe à l’ouverture de l’Alpha, parce que c’est l’équipe à contrat qui construit les prototypes.",
+  procurementBuysProductBody: "Il met en concurrence pendant l’Alpha et signe à l’ouverture de la Bêta, et ne construit jamais de prototype, parce que le produit existe déjà.",
+  procurementAgileBody: "Il met en concurrence pendant la Découverte, signe avec plusieurs fournisseurs à la fois à l’ouverture de l’Alpha, et chacun d’eux construit un prototype au titre de ce contrat. Le gagnant est choisi en modifiant son contrat plutôt qu’en tenant un second concours.",
 } as const;

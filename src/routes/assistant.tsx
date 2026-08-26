@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import { createFileRoute, lazyRouteComponent } from "@tanstack/react-router";
 
 /**
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/assistant")({
       {
         name: "description",
         content:
-          "Ask a question and find the parts of the Digital Lifecycle Guide that answer it, with a link to each one.",
+          UI.assistantMetaDescription,
       },
     ],
   }),

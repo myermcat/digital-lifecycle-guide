@@ -15,6 +15,7 @@ import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
+import type { SourceItem } from "@/components/SourcesBlock";
 
 export const DISCOVERY_EXTRACT = {
   spine: "La Découverte sert à comprendre le problème avant que quoi que ce soit soit engagé.",
@@ -495,3 +496,86 @@ export const DISCOVERY_SECTION_NAV = {
   prev: { href: "/create", label: "Phase Création", level: "phase" },
   next: { href: "/create-alpha", label: "Sous-phase Alpha", level: "subphase" },
 } satisfies { prev: SectionNavLink; next: SectionNavLink };
+
+// Vit ici, et non dans CreateDiscoveryPage.tsx, parce que la version française ne
+// remplace que les modules de src/lib. Tant que ce tableau se trouvait dans le composant,
+// il ne pouvait pas être remplacé : la page française affichait ces sources en anglais.
+export const DISCOVERY_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    description:
+      "Modèle d’analyse de rentabilisation conceptuelle (SCT) : le formulaire à remplir qu’exigent les procédures sur les analyses de rentabilisation conceptuelles ; demandez la version courante à votre bureau de gestion de projet.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "pcra-tool",
+    description: "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-service-inventory",
+    description:
+      "Répertoire des services du GC (Gouvernement ouvert) : la liste des services existants du GC, pour vérifier qu’un nouveau service ne fera pas double emploi avec eux.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-open-resource-exchange",
+    description:
+      "Échange de ressources ouvertes : le registre du GC des solutions ouvertes réutilisables ; cherchez-y avant de construire, et inscrivez ce que vous publiez.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-notify-contact",
+    description: "Notification GC (Service numérique canadien) : une plateforme de notification à configurer avant d’en construire une.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-forms-assistance",
+    description: "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer avant d’en construire une.",
+  },
+  { label: "Instrument directeur", linkKey: "digital-standards", description: "Normes relatives au numérique du gouvernement du Canada (SCT)." },
+  { label: "Instrument directeur", linkKey: "guideline-service-digital", description: "Ligne directrice sur les services et le numérique (SCT)." },
+  {
+    label: "Instrument directeur",
+    linkKey: "concept-case-procedures",
+    description: "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "gc-enterprise-architecture-framework",
+    description: "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères qu’appliquent les examens d’architecture, la réutilisation d’abord.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "policy-privacy-protection",
+    description:
+      "Politique sur la protection de la vie privée (SCT) : décidez tôt, avec votre bureau de l’AIPRP, si le service a besoin d’une évaluation des facteurs relatifs à la vie privée.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "design-with-users",
+    description: "Normes relatives au numérique, « Concevoir avec les utilisateurs » : le mode d’emploi de la recherche en Découverte.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "gba-plus",
+    description:
+      "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada) : le processus du GC pour trouver qui un service pourrait exclure ; exigée dans les présentations au Conseil du Trésor.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "open-government-portal",
+    description:
+      "Portail du gouvernement ouvert : la porte d’entrée des jeux de données existants du GC, pour le balayage de réutilisation et pour les chiffres de référence.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "oag-it-shared-services",
+    description: "Rapports de l’automne 2015 du BVG, rapport 4 : Les services partagés en technologie de l’information.",
+  },
+  {
+    label: "Collectivités",
+    linkKey: "gc-ux-network",
+    description: "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement ; aussi sur GCXchange, cherchez le nom.",
+  },
+];

@@ -12,6 +12,7 @@ import {
   Telescope,
   Users,
 } from "lucide-react";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
@@ -475,3 +476,68 @@ export const MATURITY_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+// This list used to live in LiveMaturityPage.tsx. Components are never swapped by the
+// French build, so the Sources block stayed English there. It belongs in a lib module,
+// where live-maturity-content.fr.ts can take its place.
+export const MATURITY_SOURCES: SourceItem[] = [
+  {
+    label: "Templates and tools",
+    linkKey: "gc-service-inventory",
+    description:
+      "GC Service Inventory (Open Government): the dataset where the service's record is kept current.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "policy-on-service-and-digital",
+    description:
+      "Policy on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "standard-at-risk-it",
+    description:
+      "Standard on At-Risk Information Technology (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "service-fees-act",
+    description:
+      "Service Fees Act.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "charging-directive",
+    description:
+      "Directive on Charging and Special Financial Authorities (TBS): how service fees are set and reviewed.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "apm-gcwiki",
+    description:
+      "Application Portfolio Management guidance hub (GCcollab wiki).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-phoenix-build",
+    description:
+      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
+  },
+  {
+    label: "Communities",
+    description:
+      "Application Portfolio Management community: on GCXchange, search the name.",
+  },
+];

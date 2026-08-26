@@ -18,7 +18,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   DISCOVERY_ACCORDION,
   DISCOVERY_ACCORDION_STAGES,
@@ -29,6 +28,7 @@ import {
   DISCOVERY_ON_RAMP,
   DISCOVERY_PILLAR,
   DISCOVERY_SECTION_NAV,
+  DISCOVERY_SOURCES,
   DISCOVERY_TEAM,
 } from "@/lib/create-discovery-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
@@ -39,86 +39,6 @@ import {
 } from "@/lib/thread-rich-content";
 import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 import { UI } from "@/lib/ui-strings";
-
-const DISCOVERY_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    description:
-      "Concept Case Template (TBS): the fill-in form the concept case procedures require; ask your project-management office for the current version.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "pcra-tool",
-    description: "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-service-inventory",
-    description:
-      "GC Service Inventory (Open Government): the list of existing GC services, for checking a new one would not duplicate them.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-open-resource-exchange",
-    description:
-      "Open Resource Exchange: the GC registry of reusable open-source solutions; search it before building, and register what you release.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-notify-contact",
-    description: "GC Notify (Canadian Digital Service): a notification platform to configure before building one.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-forms-assistance",
-    description: "GC Forms (Canadian Digital Service): a form-building platform to configure before building one.",
-  },
-  { label: "Governing instrument", linkKey: "digital-standards", description: "Government of Canada Digital Standards (TBS)." },
-  { label: "Governing instrument", linkKey: "guideline-service-digital", description: "Guideline on Service and Digital (TBS)." },
-  {
-    label: "Governing instrument",
-    linkKey: "concept-case-procedures",
-    description: "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "gc-enterprise-architecture-framework",
-    description: "GC Enterprise Architecture Framework (TBS): the criteria the architecture reviews apply, reuse first.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "policy-privacy-protection",
-    description:
-      "Policy on Privacy Protection (TBS): decide early, with your ATIP office, whether the service needs a Privacy Impact Assessment.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "design-with-users",
-    description: "Digital Standards, Design with users: the how-to for discovery research.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "gba-plus",
-    description:
-      "Gender-based Analysis Plus (Women and Gender Equality Canada): the GC process for finding who a service could exclude; required in Treasury Board submissions.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "open-government-portal",
-    description:
-      "Open Government Portal: the front door to existing GC datasets, for the reuse scan and for baseline numbers.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "oag-it-shared-services",
-    description: "OAG Fall 2015 Reports, Report 4: Information Technology Shared Services.",
-  },
-  {
-    label: "Communities",
-    linkKey: "gc-ux-network",
-    description: "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
-  },
-];
 
 export function CreateDiscoveryPage() {
   const meta = SUBPHASE_META.discovery;

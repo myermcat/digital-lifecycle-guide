@@ -17,6 +17,7 @@ import { SunsetPathFork, sunsetJourneyCardBox } from "@/components/SunsetPathFor
 import { WhereThisFits } from "@/components/WhereThisFits";
 import { whereThisFitsForSunsetPhaseLanding } from "@/lib/lifecycle-navigation";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
+import { PHASE_CROSSING } from "@/lib/phase-crossing-strings";
 import {
   SUNSET_LANDING,
   SUNSET_WHERE_NEXT_CARDS,
@@ -64,9 +65,9 @@ export function SunsetLandingPage() {
       </section>
 
       <CheckpointMapPhaseCallout
-        text="See where Sunset sits in the whole lifecycle."
+        text={PHASE_CROSSING.sunsetCheckpointsLead}
         hash="sunset"
-        linkLabel="See the checkpoints in Sunset →"
+        linkLabel={UI.seeCheckpointsInSunset}
       />
 
       <aside className="mt-8 rounded-lg border border-primary/30 bg-primary/5 px-6 py-5 md:px-7 md:py-6">

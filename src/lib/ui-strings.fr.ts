@@ -176,4 +176,72 @@ export const UI = {
   rightIsWhoAnswersAndHowTheTagOnEachRes: "À droite, qui intervient et comment. L’étiquette de chaque intervention dit si l’intervenant est",
   timelineShowingDiscoveryAlphaAndBetaMa: "Chronologie montrant la Découverte, l’Alpha et la Bêta qui composent la phase de Création (environ 6 à 12 mois), puis l’Exploitation avec ses sous-phases Stabilisation, Croissance et Maturité, et le Retrait, toutes deux sans durée déterminée",
   whatWorkStaysYours: "Quel travail reste le vôtre",
+  lifecycleIslandsAlt:
+    "Le cycle de vie du service sous forme de trois îles — Création, Exploitation, Retrait — reliées par deux ponts : Lancement, et Planifier la sortie.",
+  governingInstrumentLabel: "Instrument directeur",
+  supportingReferenceLabel: "Référence complémentaire",
+  templatesAndToolsLabel: "Modèles et outils",
+  communitiesLabel: "Collectivités",
+  digitalStandardsPhrase: "Normes relatives au numérique du gouvernement du Canada",
+  describingWhatYouBuyAlt:
+    "Trois boîtes en rangée. L’énoncé du problème, le problème et qui l’a, sans qu’une solution soit nommée, mène aux Exigences, ce que le service doit accomplir et à quel point, qui mènent à l’Énoncé des travaux, les travaux achetés, rédigés à partir des deux précédents. Une ligne pointillée partant de l’énoncé des travaux indique : entre dans la demande de soumissions, puis est annexé au contrat. Une légende précise que le Canada rédige les trois.",
+  optionsAnalysisLifecycleAlt:
+    "Une boîte Analyse des options à gauche, la première étape, avec une flèche vers le cycle de vie : Création, puis Exploitation, puis Retrait. Une faible flèche pointillée boucle du Retrait vers l’Analyse des options, montrant qu’on y revient au moment de soupeser un remplacement.",
+  sunsetReplaceOverlapAlt:
+    "Deux rangées sur une même ligne du temps. Le nouveau service traverse la Découverte, l’Alpha et la Bêta, puis une ligne de lancement pointillée, puis une bande Exploitation plus épaisse divisée en Stabilisation et Croissance. L’ancien service traverse Évaluer, Décider, Planifier, Acheter ou construire, et Migrer. Migrer traverse la ligne de lancement, et une flèche montre les utilisateurs et les données qui passent dans l’Exploitation. L’ancien service est marqué comme éteint tôt dans la Croissance, une fois que le nouveau est en fonction et stable, et non au lancement.",
+  whereContractSignedAlt:
+    "Où le contrat est signé au fil de la Découverte, de l’Alpha et de la Bêta. Acheter une Équipe et le modèle d’approvisionnement agile pointent tous deux vers la frontière où la Découverte se termine et où l’Alpha s’ouvre. Acheter une Solution et Acheter un Produit fini pointent vers la frontière où l’Alpha se termine et où la Bêta s’ouvre. La légende, en bas à gauche, indique : où le contrat est signé, voie par voie.",
+  createToLiveCrossingAlt:
+    "Passage de la Création à l’Exploitation",
+  liveToSunsetCrossingAlt:
+    "Passage de l’Exploitation au Retrait",
+  backlogFigureAlt:
+    "Une colonne verticale de carnet de produit, avec les éléments prêts en haut et les éléments plus gros et plus grossiers en dessous, à côté d’une flèche descendante indiquant priorité plus élevée en haut et priorité plus faible en bas.",
+  backlogItemVote:
+    "S’inscrire pour voter en ligne",
+  backlogItemPostcode:
+    "Corriger la recherche par code postal",
+  backlogItemSession:
+    "Mettre à niveau le stockage de session",
+  backlogItemAddress:
+    "Synchronisation des adresses entre services et entre ministères",
+  backlogItemRenewal:
+    "Rappels et notifications de renouvellement annuel",
+  openEndedAsLongAsNeeded:
+    "sans terme — aussi longtemps que le service est nécessaire",
+  createCheckpointsLead:
+    "C’est dans la Création que tombent la plupart des points de contrôle officiels. Voyez où elle s’inscrit dans l’ensemble du cycle de vie.",
+  phaseLevelReferencesNote:
+    "Ce sont les références au niveau de la phase. Les références de travail de chaque partie de la phase se trouvent sur ses pages de sous-phase.",
+  threadPhasePlaceholder:
+    "Cette page décrira comment ce fil s’applique pendant cette phase.",
+  examplesComingLater:
+    "Les exemples pour cette sous-phase viendront plus tard.",
+  gcNetworkOnly:
+    "Accessible uniquement sur le réseau du gouvernement du Canada.",
+  lifecycleThreeRegionsAlt:
+    "Une flèche pleine intitulée Création pointe vers une grande boucle d’infini intitulée Exploitation, puis une flèche pointillée qui s’estompe, intitulée Retrait, en ressort.",
+  sunsetOverlapShortAlt:
+    "Deux rangées sur une même ligne du temps. Le nouveau service traverse la Découverte, l’Alpha et la Bêta, puis une ligne de lancement pointillée, puis une bande Exploitation plus épaisse divisée en Stabilisation et Croissance. L’ancien service traverse Évaluer, Décider, Planifier, Acheter ou construire, et Migrer. Les utilisateurs et les données passent de l’autre côté au lancement. L’ancien service est marqué comme éteint tôt dans la Croissance, une fois que le nouveau est stable.",
+  stabilizationFireAlt:
+    "Une personne debout, calme, au milieu du feu",
+  whoRunsItAndHowToGetIt:
+    "Qui l’exploite, et comment l’obtenir",
+  whatThisSubphaseExistsToDo:
+    "ce à quoi sert cette sous-phase",
+  assistantMetaDescription:
+    "Posez une question et trouvez les parties du Guide du cycle de vie numérique qui y répondent, avec un lien vers chacune.",
+  buildStatusMetaDescription:
+    "Suivi interne de l’état de construction de chaque page du Guide du cycle de vie numérique.",
+  aFewWaysOfBuildingADigitalService:
+    "quelques façons de construire un service numérique",
+  someoneJustToldThereIsMoney:
+    "quelqu’un à qui l’on vient d’annoncer qu’il y a de l’argent pour acheter un système",
+  seeCheckpointsInCreate: "Voir les points de contrôle de la Création →",
+  seeCheckpointsInLive: "Voir les points de contrôle de l’Exploitation →",
+  seeCheckpointsInSunset: "Voir les points de contrôle du Retrait →",
+  instrumentsIntroBefore:
+    "Tout ce qui est officiel et à quoi il arrive quelque chose pendant ",
+  instrumentsIntroAfter:
+    ", et ce que ce quelque chose est. L’étiquette dit à quelle étape l’instrument parvient ici, non qu’il soit terminé.",
 } as const;

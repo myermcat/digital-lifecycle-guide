@@ -93,9 +93,9 @@ export function SubphaseInstruments({
       </h2>
       <div className={cn(guideProse, "mb-5 max-w-3xl space-y-2")}>
         <p>
-          Everything official that has something happening to it during {label},
-          and what that something is. The tag says what stage the instrument
-          reaches here, not that it is finished.
+          {UI.instrumentsIntroBefore}
+          {label}
+          {UI.instrumentsIntroAfter}
         </p>
         <p className="text-muted-foreground">
           {UI.placingAnInstrumentInASubPhaseIsThisGu}

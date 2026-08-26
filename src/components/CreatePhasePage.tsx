@@ -15,6 +15,7 @@ import { guideDoorwayCardClassName } from "@/lib/guide-cards";
 import { PHASES } from "@/lib/guide-strings";
 import createToLiveVisual from "@/assets/lifecycle_create_to_live.svg?url";
 import { whereThisFitsForCreateSubphase } from "@/lib/lifecycle-navigation";
+import { PHASE_CROSSING } from "@/lib/phase-crossing-strings";
 import { subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
@@ -58,9 +59,9 @@ export function CreatePhasePage() {
       </section>
 
       <CheckpointMapPhaseCallout
-        text="Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle."
+        text={UI.createCheckpointsLead}
         hash="discovery"
-        linkLabel="See the checkpoints in Create →"
+        linkLabel={UI.seeCheckpointsInCreate}
       />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfCreate.id}>
@@ -121,17 +122,16 @@ export function CreatePhasePage() {
         </div>
 
         <p className={`${guideProse} mt-5`}>
-          Launch is the crossing into{" "}
+          {PHASE_CROSSING.createToLiveLeadIn}{" "}
           <Link to={PHASES.live.href} className={guideLink}>
             {UI.live}
           </Link>
-          : the service goes live and becomes the real one people use, in place of whatever they did
-          before.
+          {PHASE_CROSSING.createToLiveRest}
         </p>
 
         <img
           src={createToLiveVisual}
-          alt="Create to Live crossing"
+          alt={UI.createToLiveCrossingAlt}
           className="max-w-2xl mx-auto mt-4 w-full"
         />
       </section>
@@ -146,13 +146,17 @@ export function CreatePhasePage() {
 
       <PageFoot
         sources={sources}
-        sourcesIntro="These are the phase-level references. The working references for each part of the phase are on its sub-phase pages."
+        sourcesIntro={UI.phaseLevelReferencesNote}
       />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
       <SubphaseSectionNav
-        next={{ href: "/create-discovery", label: "Discovery sub-phase", level: "subphase" }}
+        next={{
+          href: "/create-discovery",
+          label: PHASE_CROSSING.nextDiscoverySubphase,
+          level: "subphase",
+        }}
       />
 
       <div className="h-24" />

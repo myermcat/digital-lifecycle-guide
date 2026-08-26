@@ -10,6 +10,7 @@ import {
   Server,
   Wrench,
 } from "lucide-react";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SubphaseExtract } from "@/components/SubphaseExtractCard";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
@@ -435,3 +436,63 @@ export const STABILIZATION_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+// Sources de la page Stabilisation. Ce tableau vit ici, et non dans
+// LiveStabilizationPage.tsx, parce que la version française permute les modules par chemin
+// source (x.ts -> x.fr.ts) et ne permute jamais rien sous src/components : un tableau
+// laissé dans le composant s’afficherait en anglais sur le site français.
+export const STABILIZATION_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-service-inventory",
+    description:
+      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le nouveau service doit être inscrit.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "apm-dataset",
+    description:
+      "Détails du portefeuille d’applications du GC (Gouvernement ouvert) : le jeu de données qu’alimente le dossier d’application du ministère.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "guideline-service-digital",
+    description:
+      "Ligne directrice sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "service-fees-act",
+    description:
+      "Loi sur les frais de service.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "charging-directive",
+    description:
+      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : les règles derrière la remise des frais.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "apm-gcwiki",
+    description:
+      "Carrefour d’orientation sur la gestion du portefeuille d’applications (wiki GCcollab).",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "oag-phoenix-build",
+    description:
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+  },
+  {
+    label: "Collectivités",
+    description:
+      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
+  },
+];

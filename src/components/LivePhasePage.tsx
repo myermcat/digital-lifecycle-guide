@@ -16,6 +16,7 @@ import createToSunsetVisual from "@/assets/lifecycle_live_to_sunset.svg?url";
 import { whereThisFitsForLiveSubphase } from "@/lib/lifecycle-navigation";
 import { subphaseFootVisuals } from "@/lib/lifecycle-visuals";
 import { LIVE_PHASE } from "@/lib/live-phase-content";
+import { PHASE_CROSSING } from "@/lib/phase-crossing-strings";
 import type { SourceItem } from "@/components/SourcesBlock";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
 import {
@@ -77,9 +78,9 @@ export function LivePhasePage() {
       </section>
 
       <CheckpointMapPhaseCallout
-        text="See where Live sits in the whole lifecycle."
+        text={PHASE_CROSSING.liveCheckpointsLead}
         hash="live"
-        linkLabel="See the checkpoints in Live →"
+        linkLabel={UI.seeCheckpointsInLive}
       />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={workOfLive.id}>
@@ -160,17 +161,16 @@ export function LivePhasePage() {
         </div>
 
         <p className={`${guideProse} mt-5`}>
-          Leaving Live is the crossing into{" "}
+          {PHASE_CROSSING.liveToSunsetLeadIn}{" "}
           <Link to={PHASES.sunset.href} className={guideLink}>
             {UI.sunset}
           </Link>
-          : the service is being replaced or retired, and the exit has to be planned and funded
-          before the money runs out.
+          {PHASE_CROSSING.liveToSunsetRest}
         </p>
 
         <img
           src={createToSunsetVisual}
-          alt="Live to Sunset crossing"
+          alt={UI.liveToSunsetCrossingAlt}
           className="max-w-2xl mx-auto mt-4 w-full"
         />
       </section>
@@ -185,14 +185,18 @@ export function LivePhasePage() {
 
       <PageFoot
         sources={sources}
-        sourcesIntro="These are the phase-level references. The working references for each part of the phase are on its sub-phase pages."
+        sourcesIntro={UI.phaseLevelReferencesNote}
       />
 
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
       <SubphaseSectionNav
         prev={{ href: "/create-beta", label: UI.subBetaCreate, level: "subphase" }}
-        next={{ href: "/live-stabilization", label: "Stabilization sub-phase", level: "subphase" }}
+        next={{
+          href: "/live-stabilization",
+          label: PHASE_CROSSING.nextStabilizationSubphase,
+          level: "subphase",
+        }}
       />
 
       <div className="h-24" />

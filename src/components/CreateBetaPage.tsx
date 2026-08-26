@@ -18,7 +18,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   BETA_ACCORDION,
   BETA_ACCORDION_STAGES,
@@ -29,6 +28,7 @@ import {
   BETA_ON_RAMP,
   BETA_PILLAR,
   BETA_SECTION_NAV,
+  BETA_SOURCES,
   BETA_STAGES,
   BETA_TEAM,
 } from "@/lib/create-beta-content";
@@ -39,99 +39,6 @@ import {
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideBlockSubheading, guideBodySubheading, guideListIndent, guideProse, guideSectionTitle } from "@/lib/guide-typography";
-
-const BETA_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    linkKey: "algorithmic-impact-assessment",
-    description:
-      "Algorithmic Impact Assessment tool (TBS): the questionnaire that scores an automated decision system.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "a11y-toolkit-procurement",
-    description:
-      "Digital Accessibility Toolkit, procurement: generates the accessibility requirements for what you buy and build.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-notify-contact",
-    description:
-      "GC Notify (Canadian Digital Service): a notification platform to configure instead of building one.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-forms-assistance",
-    description:
-      "GC Forms (Canadian Digital Service): a form-building platform to configure instead of building one.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-design-system",
-    description:
-      "GC Design System (Canadian Digital Service): ready-made, accessible interface components.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "guideline-service-digital",
-    description:
-      "Guideline on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "policy-government-security",
-    description:
-      "Policy on Government Security (TBS): the parent policy the security directive sits under, and where business continuity and critical services come from.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-security-management",
-    description:
-      "Directive on Security Management (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-automated-decision-making",
-    description:
-      "Directive on Automated Decision-Making (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-privacy-practices",
-    description:
-      "Directive on Privacy Practices (TBS).",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "itsg-33",
-    description:
-      "ITSG-33, IT security risk management (Canadian Centre for Cyber Security).",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "harmonized-tra-methodology",
-    description:
-      "Harmonized Threat and Risk Assessment methodology (Canadian Centre for Cyber Security): the assessment the security authorization is built on.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "lac-information-disposition-hub",
-    description:
-      "Library and Archives Canada, information disposition: where records-keeping duties come from.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "oag-phoenix-build",
-    description:
-      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
-  },
-  {
-    label: "Communities",
-    linkKey: "a11y-community-terms",
-    description:
-      "Access Working Group: the interdepartmental accessibility community behind the Digital Accessibility Toolkit.",
-  },
-];
 
 export function CreateBetaPage() {
   const meta = SUBPHASE_META.beta;

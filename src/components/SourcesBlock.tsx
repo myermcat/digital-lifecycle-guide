@@ -9,10 +9,6 @@ import {
 import { cn } from "@/lib/utils";
 import { UI } from "@/lib/ui-strings";
 
-const GOVERNING_INSTRUMENT_LABEL = "Governing instrument";
-const SUPPORTING_REFERENCE_LABEL = "Supporting reference";
-const TEMPLATES_AND_TOOLS_LABEL = "Templates and tools";
-const COMMUNITIES_LABEL = "Communities";
 
 export type SourceItem = {
   label: string;
@@ -65,15 +61,15 @@ function sourceLinkText(item: SourceItem, href: string | undefined): string {
 }
 
 function groupSourceSections(items: SourceItem[]): SourceSection[] {
-  const templates = items.filter((item) => item.label === TEMPLATES_AND_TOOLS_LABEL);
-  const governing = items.filter((item) => item.label === GOVERNING_INSTRUMENT_LABEL);
-  const supporting = items.filter((item) => item.label === SUPPORTING_REFERENCE_LABEL);
-  const communities = items.filter((item) => item.label === COMMUNITIES_LABEL);
-  const namedGroupLabels = [
-    TEMPLATES_AND_TOOLS_LABEL,
-    GOVERNING_INSTRUMENT_LABEL,
-    SUPPORTING_REFERENCE_LABEL,
-    COMMUNITIES_LABEL,
+  const templates = items.filter((item) => item.label === UI.templatesAndToolsLabel);
+  const governing = items.filter((item) => item.label === UI.governingInstrumentLabel);
+  const supporting = items.filter((item) => item.label === UI.supportingReferenceLabel);
+  const communities = items.filter((item) => item.label === UI.communitiesLabel);
+  const namedGroupLabels: string[] = [
+    UI.templatesAndToolsLabel,
+    UI.governingInstrumentLabel,
+    UI.supportingReferenceLabel,
+    UI.communitiesLabel,
   ];
   const otherLabels: string[] = [];
 
@@ -86,13 +82,13 @@ function groupSourceSections(items: SourceItem[]): SourceSection[] {
   const sections: SourceSection[] = [];
 
   if (templates.length > 0) {
-    sections.push({ label: TEMPLATES_AND_TOOLS_LABEL, items: templates });
+    sections.push({ label: UI.templatesAndToolsLabel, items: templates });
   }
   if (governing.length > 0) {
-    sections.push({ label: GOVERNING_INSTRUMENT_LABEL, items: governing });
+    sections.push({ label: UI.governingInstrumentLabel, items: governing });
   }
   if (supporting.length > 0) {
-    sections.push({ label: SUPPORTING_REFERENCE_LABEL, items: supporting });
+    sections.push({ label: UI.supportingReferenceLabel, items: supporting });
   }
   for (const label of otherLabels) {
     sections.push({
@@ -101,7 +97,7 @@ function groupSourceSections(items: SourceItem[]): SourceSection[] {
     });
   }
   if (communities.length > 0) {
-    sections.push({ label: COMMUNITIES_LABEL, items: communities });
+    sections.push({ label: UI.communitiesLabel, items: communities });
   }
 
   return sections;
@@ -125,7 +121,7 @@ function SourceLinkItem({ item }: { item: SourceItem }) {
             href={href}
             className={gcNetworkOnly ? sourceLinkGcNetwork : sourceLinkByTone[tone]}
             title={
-              gcNetworkOnly ? "Only available on the Government of Canada network." : undefined
+              gcNetworkOnly ? UI.gcNetworkOnly : undefined
             }
             {...(isInternal ? {} : { target: "_blank", rel: "noopener noreferrer" })}
           >

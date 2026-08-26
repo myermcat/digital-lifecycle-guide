@@ -15,7 +15,7 @@ export const Route = createFileRoute("/build-status")({
       {
         name: "description",
         content:
-          "Internal build-status tracker for every page in the Digital Lifecycle Guide.",
+          UI.buildStatusMetaDescription,
       },
       { name: "robots", content: "noindex" },
     ],

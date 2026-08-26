@@ -26,7 +26,7 @@ export function DescribingWhatYouBuy() {
 
       <img
         src={requirementToSow}
-        alt="Three boxes in a row. Challenge statement, the problem and who has it with no solution named, leads to Requirements, what the service has to achieve and how well, which leads to Statement of work, the work being bought, written from the two before it. A dashed line from the statement of work reads: goes into the solicitation, then annexed to the contract. A caption says Canada writes all three."
+        alt={UI.describingWhatYouBuyAlt}
         className="mx-auto mt-6 w-full max-w-3xl"
       />
 

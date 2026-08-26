@@ -21,11 +21,25 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
  * components or the English modules changes, and a module with no French twin
  * (routing, config, helpers) resolves normally.
  */
-const FRENCH_MODULES = new Set(
-  readdirSync(resolve(__dirname, "src/lib"))
-    .filter((f) => f.endsWith(".fr.ts"))
-    .map((f) => f.slice(0, -".fr.ts".length)),
-);
+/**
+ * Every module with a French twin, keyed by its path under src/lib.
+ *
+ * Walks the tree rather than one directory, and keeps the extension, because the
+ * first version matched only "src/lib/<name>.ts": a .tsx twin could not be written
+ * at all, and nothing under src/lib/assistant/ was reachable. The navigation module
+ * is .tsx, so every sub-phase title and every prev/next label stayed English.
+ */
+const FRENCH_MODULES = new Map<string, string>();
+(function collect(dir: string, prefix = "") {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) collect(resolve(dir, entry.name), rel);
+    else {
+      const m = /^(.*)\.fr\.(ts|tsx)$/.exec(rel);
+      if (m) FRENCH_MODULES.set(`${m[1]}.${m[2]}`, rel);
+    }
+  }
+})(resolve(__dirname, "src/lib"));
 
 const FRENCH_FIGURES = new Set(
   readdirSync(resolve(__dirname, "src/assets/fr")).filter((f) => f.endsWith(".svg")),
@@ -63,9 +77,13 @@ function frenchContent() {
       return query ? `${fr}?${query}` : fr;
     },
     load(id: string) {
-      const m = /^(.*[\\/]src[\\/]lib[\\/])([a-z0-9.-]+)\.ts$/.exec(id.split("?")[0]);
-      if (!m || m[2].endsWith(".fr") || !FRENCH_MODULES.has(m[2])) return null;
-      return readFileSync(`${m[1]}${m[2]}.fr.ts`, "utf8");
+      const m = /^(.*[\\/]src[\\/]lib[\\/])(.+\.tsx?)$/.exec(id.split("?")[0]);
+      if (!m) return null;
+      const rel = m[2].split(/[\\/]/).join("/");
+      if (/\.fr\.tsx?$/.test(rel)) return null;
+      const twin = FRENCH_MODULES.get(rel);
+      if (!twin) return null;
+      return readFileSync(resolve(m[1], twin), "utf8");
     },
   };
 }

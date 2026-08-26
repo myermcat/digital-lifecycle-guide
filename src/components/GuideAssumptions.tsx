@@ -4,13 +4,12 @@ import { UI } from "@/lib/ui-strings";
 
 export { GUIDE_ASSUMPTIONS_TEXT };
 
-const DIGITAL_STANDARDS_PHRASE = "Government of Canada Digital Standards";
 
 const assumptionsMutedLink =
   "underline underline-offset-[3px] decoration-muted-foreground/25 text-muted-foreground/48 hover:text-muted-foreground/55 hover:decoration-muted-foreground/35 transition-colors";
 
 function AssumptionsBody() {
-  const start = GUIDE_ASSUMPTIONS_TEXT.indexOf(DIGITAL_STANDARDS_PHRASE);
+  const start = GUIDE_ASSUMPTIONS_TEXT.indexOf(UI.digitalStandardsPhrase);
   if (start === -1) {
     return GUIDE_ASSUMPTIONS_TEXT;
   }
@@ -24,9 +23,9 @@ function AssumptionsBody() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {DIGITAL_STANDARDS_PHRASE}
+        {UI.digitalStandardsPhrase}
       </a>
-      {GUIDE_ASSUMPTIONS_TEXT.slice(start + DIGITAL_STANDARDS_PHRASE.length)}
+      {GUIDE_ASSUMPTIONS_TEXT.slice(start + UI.digitalStandardsPhrase.length)}
     </>
   );
 }

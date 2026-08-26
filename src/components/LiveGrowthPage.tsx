@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
@@ -17,7 +18,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   GROWTH_ACCORDION,
   GROWTH_ACCORDION_STAGES,
@@ -26,6 +26,7 @@ import {
   GROWTH_LEAD,
   GROWTH_ON_RAMP,
   GROWTH_PILLAR,
+  GROWTH_SOURCES,
   GROWTH_TEAM,
 } from "@/lib/live-growth-content";
 import { SUBPHASE_EXTRACTS } from "@/lib/subphase-content";
@@ -44,71 +45,7 @@ import {
 import { guideProse } from "@/lib/guide-typography";
 /** Same timeline the Sunset page uses, shown here because this is where the old service goes. */
 const SUNSET_OVERLAP_ALT =
-  "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Users and data move across at launch. The old service is marked switched off early in Growth, once the new one is steady.";
-
-
-const GROWTH_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    linkKey: "pcra-tool",
-    description:
-      "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it; a significant addition can be a project of its own.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "algorithmic-impact-assessment",
-    description:
-      "Algorithmic Impact Assessment tool (TBS): scores any automation the growth adds.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-on-service-and-digital",
-    description:
-      "Directive on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-automated-decision-making",
-    description:
-      "Directive on Automated Decision-Making (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "concept-case-procedures",
-    description:
-      "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS): a large addition may need its own concept case.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "gc-enterprise-architecture-framework",
-    description:
-      "GC Enterprise Architecture Framework (TBS): the criteria for changes that alter the architecture.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "task-authorizations",
-    description:
-      "Task authorizations (CanadaBuys buyer's guide).",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "modify-contract",
-    description:
-      "Modifying a contract (CanadaBuys buyer's guide): the procedure for amendments that stay within scope.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "oag-arrivecan",
-    description:
-      "OAG 2024 Reports, Report 1: ArriveCAN.",
-  },
-  {
-    label: "Communities",
-    linkKey: "gcdigital-community",
-    description:
-      "GCDigital community (TBS OCIO): the community for digital practitioners across government.",
-  },
-];
+  UI.sunsetOverlapShortAlt;
 
 export function LiveGrowthPage() {
   const meta = SUBPHASE_META.growth;

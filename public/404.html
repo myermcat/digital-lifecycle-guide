@@ -4,11 +4,20 @@
     <meta charset="utf-8" />
     <title>Redirecting…</title>
     <script>
-      // GitHub Pages SPA fallback — keep segmentCount in sync with GITHUB_PAGES_PATH_SEGMENTS
+      // GitHub Pages SPA fallback — keep the segmentCount seed in sync with
+      // GITHUB_PAGES_PATH_SEGMENTS (the French branch below adds one on top of it)
       // https://github.com/rafgraph/spa-github-pages
       (function () {
         var segmentCount = 1;
         var l = window.location;
+        // The two languages are two apps on one Pages site: English at the base,
+        // French at <base>/fr/ with its own index.html. With the plain one-segment
+        // rafgraph count, a French deep link that was never prerendered redirected to
+        // <base>/?/fr/... — the ENGLISH index.html — and the reader landed in the
+        // English app at a French URL. Keep "fr" inside the redirect target so the
+        // French index.html loads instead. English paths carry no "fr" segment here,
+        // so they take the same route as before.
+        if (l.pathname.split("/")[1 + segmentCount] === "fr") segmentCount += 1;
         l.replace(
           l.protocol +
             "//" +

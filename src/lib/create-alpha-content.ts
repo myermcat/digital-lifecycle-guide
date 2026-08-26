@@ -21,6 +21,7 @@ import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
@@ -830,3 +831,83 @@ export const ALPHA_SECTION_NAV = {
   prev: { href: "/create-discovery", label: "Discovery sub-phase", level: "subphase" },
   next: { href: "/create-beta", label: "Beta sub-phase", level: "subphase" },
 } satisfies { prev: SectionNavLink; next: SectionNavLink };
+
+/**
+ * Sources for the Alpha sub-phase page. This lives here, not in CreateAlphaPage.tsx,
+ * because the French build swaps modules under src/lib only: anything left in a
+ * component is never swapped and would render in English on the French site.
+ */
+export const ALPHA_SOURCES: SourceItem[] = [
+  {
+    label: "Templates and tools",
+    linkKey: "design-canada",
+    description:
+      "Canada.ca design system (design.canada.ca): user-tested styles, templates, and patterns to prototype with.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-design-system",
+    description:
+      "GC Design System (Canadian Digital Service): ready-made, accessible interface components.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "gc-forms-assistance",
+    description:
+      "GC Forms (Canadian Digital Service): a form-building platform for prototyping forms without writing code.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "digital-accessibility-toolkit",
+    description:
+      "Digital Accessibility Toolkit (a11y.canada.ca): how-tos for designing, building, and testing accessible services.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "digital-standards",
+    description:
+      "Government of Canada Digital Standards (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "guideline-service-digital",
+    description:
+      "Guideline on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "GC Enterprise Architecture Framework (TBS): the criteria your departmental architecture review board assesses the build-or-buy direction against; the largest initiatives go to the GC-level board.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "en-301-549",
+    description:
+      "CAN/ASC - EN 301 549:2024 (Accessibility Standards Canada): the accessibility standard new web pages and applications must conform to under the Accessible Canada Regulations.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "design-research",
+    description:
+      "Canada.ca design system, research and testing how-to: methods for testing prototypes with users.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "esdc-a11y-regulations-guidance",
+    description:
+      "Guidance on the Digital Technologies Accessibility Regulations (ESDC): what must conform, and by when.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "harmonized-tra-methodology",
+    description:
+      "Harmonized Threat and Risk Assessment methodology (Canadian Centre for Cyber Security): how the threats to a service are listed and ranked.",
+  },
+  {
+    label: "Communities",
+    linkKey: "gc-ux-network",
+    description:
+      "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
+  },
+];

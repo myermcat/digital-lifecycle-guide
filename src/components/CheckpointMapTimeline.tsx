@@ -290,7 +290,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             fontStyle: "italic",
           }}
         >
-          open-ended - as long as the service is needed
+          {UI.openEndedAsLongAsNeeded}
         </text>
       </svg>
     </div>

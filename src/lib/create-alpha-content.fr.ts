@@ -21,6 +21,7 @@ import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import { LIFECYCLE_VISUALS } from "@/lib/lifecycle-visuals";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 
@@ -830,3 +831,84 @@ export const ALPHA_SECTION_NAV = {
   prev: { href: "/create-discovery", label: "Sous-phase Découverte", level: "subphase" },
   next: { href: "/create-beta", label: "Sous-phase Bêta", level: "subphase" },
 } satisfies { prev: SectionNavLink; next: SectionNavLink };
+
+/**
+ * Sources du bloc Sources de la sous-phase Alpha. Ce tableau vit ici, et non dans
+ * CreateAlphaPage.tsx, parce que la version française ne substitue que les modules
+ * de src/lib : ce qui reste dans un composant n’est jamais substitué et s’afficherait
+ * en anglais sur le site français.
+ */
+export const ALPHA_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    linkKey: "design-canada",
+    description:
+      "Système de design de Canada.ca (design.canada.ca) : styles, gabarits et modèles testés auprès des utilisateurs, pour prototyper.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-design-system",
+    description:
+      "Système de design GC (Service numérique canadien) : des composants d’interface accessibles et prêts à l’emploi.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-forms-assistance",
+    description:
+      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires pour prototyper des formulaires sans écrire de code.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "digital-accessibility-toolkit",
+    description:
+      "Boîte à outils de l’accessibilité numérique (a11y.canada.ca) : des modes d’emploi pour concevoir, construire et tester des services accessibles.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "digital-standards",
+    description:
+      "Normes relatives au numérique du gouvernement du Canada (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "guideline-service-digital",
+    description:
+      "Ligne directrice sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "Cadre de l’architecture intégrée du GC (SCT) : les critères au regard desquels le comité d’examen de l’architecture de votre ministère évalue la direction retenue pour construire ou acheter ; les initiatives les plus vastes vont au comité de l’échelle du GC.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "en-301-549",
+    description:
+      "CAN/ASC - EN 301 549:2024 (Normes d’accessibilité Canada) : la norme d’accessibilité à laquelle les nouvelles pages Web et applications doivent se conformer en vertu du Règlement canadien sur l’accessibilité.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "design-research",
+    description:
+      "Système de design de Canada.ca, mode d’emploi de la recherche et des tests : méthodes pour tester des prototypes avec les utilisateurs.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "esdc-a11y-regulations-guidance",
+    description:
+      "Lignes directrices sur la règlementation sur l’accessibilité des technologies numériques (EDSC) : ce qui doit s’y conformer, et pour quand.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "harmonized-tra-methodology",
+    description:
+      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : comment les menaces qui pèsent sur un service sont énumérées et classées.",
+  },
+  {
+    label: "Collectivités",
+    linkKey: "gc-ux-network",
+    description:
+      "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement ; aussi sur GCXchange, cherchez le nom.",
+  },
+];

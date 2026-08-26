@@ -45,4 +45,66 @@ export const HOME = {
   p38: "A department following the agile approach Public Services and Procurement Canada sets out.",
   p39: "The competition, the signature and the first real build are the same three events in all three cases. Where they land moves by a whole sub-phase, and the only thing that moved them is how the department chose to buy. That is why this guide describes each sub-phase more loosely than the guides it learned from.",
   p40: "No guide can tell a department how its particular service will go. What it can do is leave the reader harder to surprise. If the next version of this does one thing better, we would like it to be that: fewer people finding out about a decision at the point where it has already been made for them.",
+
+  // "What this guide is": the sentence wrapped around UI.aFewWaysOfBuildingADigitalService.
+  whatThisGuideIsLead: "It describes",
+  whatThisGuideIsTail: ", not the only correct way, because there is not one.",
+
+  // "What is here for you, whichever way you go": the body after each bolded lead-in.
+  hereForYouSecurityBody: "Every service needs them, whether it was built in-house, bought whole, or assembled from something that already existed.",
+  hereForYouCheckpointsBody: "The assessments, approvals and authorizations a Government of Canada service has to clear. They will find you whichever route you take, and each one is cheaper to prepare for than to be surprised by.",
+  hereForYouPictureBody: "Which decisions arrive in roughly what order, who else has to be involved, and which of them are expensive to reverse later.",
+
+  // "The one thing worth holding on to": the body after UI.itStaysYourService.
+  itStaysYourServiceBody: "You can hand the building to a supplier, and much of the time that is the sensible thing to do. What does not transfer with it is the answering for it. When a service does not work, the person who cannot get their application in never hears about the procurement contract behind it, and would not care if they did. They experience it as the Government of Canada failing them, and it is the department that answers for that, publicly and afterwards.",
+
+  // "You might be:" — each line is an article, a bolded role, and the rest of the line.
+  roleBusinessOwnerArticle: "a ",
+  roleBusinessOwnerLabel: "business owner",
+  roleBusinessOwnerRest: "already named against a system in your department's application register",
+  roleProgramManagerArticle: "a ",
+  roleProgramManagerLabel: "program manager",
+  roleProgramManagerRest: "whose process has stopped coping with the volume",
+  rolePolicyLeadArticle: "a ",
+  rolePolicyLeadLabel: "policy lead",
+  // Leading space is deliberate: this one sits directly against the bolded role.
+  rolePolicyLeadRest: " who has been told to deliver something by a date",
+  roleDirectorGeneralArticle: "a ",
+  roleDirectorGeneralLabel: "director general",
+  roleDirectorGeneralRest: "who has inherited a system nobody can fully explain",
+  roleProjectManagerArticle: "a ",
+  roleProjectManagerLabel: "project manager",
+  roleProjectManagerRest: "handed a service that is already live",
+  roleOtherPositions: "or in any of the other positions people find themselves in when a service becomes their responsibility. The list is not meant to be complete.",
+
+  // The gate-map callout's link.
+  seeTheWholePathLinkLabel: "See the whole path →",
+
+  // The sub-phase pills inside the three-phases accordion, and their hover hints.
+  subphasesOfCreateIntro: "The three sub-phases of Create:",
+  subphasesOfLiveIntro: "The three sub-phases of Live:",
+  subphaseDiscoveryHint: "Understand the problem before you commit to a solution.",
+  subphaseAlphaHint: "Try things out cheaply before you build the real one.",
+  subphaseBetaHint: "Build the first real version that will go live.",
+  subphaseStabilizationHint: "Stabilize the service right after it goes live.",
+  subphaseGrowthHint: "Add capability as more users arrive.",
+  subphaseMaturityHint: "Keep the service healthy over the long term.",
+
+  // The joined-up delivery sentence wrapped around the thread link.
+  joinedUpDeliveryLead: "Whichever phase you are in, one idea runs under all of it: a government service is almost never the thing a person actually wants. It is one step in a much bigger journey of theirs, often spread across many departments and levels of government.",
+  joinedUpDeliveryTail: "is where that thinking starts.",
+
+  // The worked example.
+  nadiaDisclaimer: "Nadia is made up, and so is her program. Any resemblance to real persons or programs is coincidental.",
+  nadiaClosingPoint: "The point of this guide is that the next Nadia knows all of it while she can still do something about it.",
+
+  // "Why we could not simply follow the UK and Australia": the sentence around both links.
+  twoGuidesLead: "The two guides we looked at most were the",
+  twoGuidesAnd: "and",
+  twoGuidesTail: ". Both draw firm lines between phases, and both can, because each is written for one situation: a small team of public servants building a service themselves, on shared infrastructure and reusable components their government has already built for that purpose.",
+
+  // The three procurement examples: the body after each bolded lead-in (p36..p38).
+  procurementContractsTeamBody: "It runs the competition during Discovery and signs as Alpha begins, because the contracted team is who builds the prototypes.",
+  procurementBuysProductBody: "It competes during Alpha and signs as Beta begins, and never builds a prototype at all, because the product already exists.",
+  procurementAgileBody: "It competes during Discovery, signs with several suppliers at once as Alpha begins, and each of them builds a prototype under that contract. The winner is chosen by amending their contract rather than by running a second competition.",
 } as const;

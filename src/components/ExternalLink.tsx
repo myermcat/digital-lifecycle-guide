@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import type { ReactNode } from "react";
 import { guideLink, guideLinkGcNetwork, guideLinkInstrument } from "@/lib/guide-typography";
 import {
@@ -52,7 +53,7 @@ export function ExternalLink({
             ? cn(className, guideLinkInstrument)
             : cn(guideLink, className)
       }
-      title={gcNetworkOnly ? "Only available on the Government of Canada network." : undefined}
+      title={gcNetworkOnly ? UI.gcNetworkOnly : undefined}
       target="_blank"
       rel="noopener noreferrer"
     >

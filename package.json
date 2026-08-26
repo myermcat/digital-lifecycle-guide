@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run generate:search-index && npm run generate:corpus && vite dev",
-    "generate:search-index": "tsx scripts/generate-search-index.ts",
+    "generate:search-index": "tsx scripts/generate-search-index.mjs",
     "build": "vite build",
     "prebuild": "npm run generate:search-index && npm run generate:corpus",
     "build:pages": "sh scripts/build-github-pages.sh",

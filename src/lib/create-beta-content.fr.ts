@@ -26,6 +26,7 @@ import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
 import type { SectionNavLink } from "@/components/SubphaseSectionNav";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
+import type { SourceItem } from "@/components/SourcesBlock";
 
 export const BETA_EXTRACT = {
   spine: "La Bêta sert à construire le service pour de vrai et à le prouver avant qu’il devienne officiel.",
@@ -847,3 +848,96 @@ export const BETA_SECTION_NAV = {
   prev: { href: "/create-alpha", label: "Sous-phase Alpha", level: "subphase" },
   next: { href: "/live", label: "Phase Exploitation", level: "phase" },
 } satisfies { prev: SectionNavLink; next: SectionNavLink };
+
+export const BETA_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    linkKey: "algorithmic-impact-assessment",
+    description:
+      "Outil d’évaluation de l’incidence algorithmique (SCT) : le questionnaire qui note un système de décision automatisée.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "a11y-toolkit-procurement",
+    description:
+      "Boîte à outils de l’accessibilité numérique, approvisionnement : génère les exigences d’accessibilité pour ce que vous achetez et construisez.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-notify-contact",
+    description:
+      "Notification GC (Service numérique canadien) : une plateforme de notification à configurer au lieu d’en construire une.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-forms-assistance",
+    description:
+      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer au lieu d’en construire une.",
+  },
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-design-system",
+    description:
+      "Système de design GC (Service numérique canadien) : des composants d’interface prêts à l’emploi et accessibles.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "guideline-service-digital",
+    description:
+      "Ligne directrice sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "policy-government-security",
+    description:
+      "Politique sur la sécurité du gouvernement (SCT) : la politique mère sous laquelle se trouve la directive sur la sécurité, et d’où viennent la continuité des activités et les services essentiels.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-security-management",
+    description:
+      "Directive sur la gestion de la sécurité (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-automated-decision-making",
+    description:
+      "Directive sur la prise de décisions automatisée (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-privacy-practices",
+    description:
+      "Directive sur les pratiques relatives à la protection de la vie privée (SCT).",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "itsg-33",
+    description:
+      "ITSG-33, La gestion des risques liés à la sécurité des TI (Centre canadien pour la cybersécurité).",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "harmonized-tra-methodology",
+    description:
+      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : l’évaluation sur laquelle repose l’autorisation de sécurité.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "lac-information-disposition-hub",
+    description:
+      "Bibliothèque et Archives Canada, disposition de l’information : d’où viennent les obligations de tenue de documents.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "oag-phoenix-build",
+    description:
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+  },
+  {
+    label: "Collectivités",
+    linkKey: "a11y-community-terms",
+    description:
+      "Groupe de travail sur l’accès : la collectivité interministérielle de l’accessibilité derrière la Boîte à outils de l’accessibilité numérique.",
+  },
+];

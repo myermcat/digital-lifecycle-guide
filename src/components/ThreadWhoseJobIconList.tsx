@@ -29,99 +29,115 @@ import { guideProse } from "@/lib/guide-typography";
 const iconTileClassName =
   "flex h-16 w-16 shrink-0 items-center justify-center rounded-md border border-primary/20 bg-primary/[0.07] md:h-[4.25rem] md:w-[4.25rem]";
 
-/** Map a whose-job role label to its lucide icon. */
+/**
+ * Map a whose-job role label to its lucide icon.
+ *
+ * This lives in a component, so the French build cannot swap it: it has to read both
+ * languages. Matching on English alone sent every role on every French thread page to
+ * the fallback glyph. The order of the tests is the order of the English original, so
+ * English behaviour is unchanged; each test gains the French wording beside it.
+ */
 export function whoseJobIconForRole(role: string): LucideIcon {
-  const normalized = role.toLowerCase();
+  const normalized = role.toLowerCase().replace(/[\u2019\u02bc]/g, "'");
+  const has = (...needles: string[]) => needles.some((n) => normalized.includes(n));
 
-  if (normalized.includes("business owner")) {
+  if (has("business owner", "responsable operationnel", "responsable opérationnel")) {
     return Briefcase;
   }
-  if (
-    normalized.includes("finance team") ||
-    normalized.includes("chief financial officer") ||
-    normalized.includes("(cfo)")
-  ) {
+  if (has("finance team", "chief financial officer", "(cfo)", "equipe des finances",
+          "équipe des finances", "dirigeant principal des finances", "(dpf)")) {
     return Coins;
   }
-  if (normalized.includes("corporate services")) {
+  if (has("corporate services", "services ministeriels", "services ministériels")) {
     return Users;
   }
-  if (normalized.includes("legal team") || normalized.includes("legal services")) {
+  if (has("legal team", "legal services", "equipe juridique", "équipe juridique",
+          "services juridiques")) {
     return Scale;
   }
-  if (normalized.includes("treasury board secretariat analyst") || normalized.includes("tbs analyst")) {
+  if (has("treasury board secretariat analyst", "tbs analyst",
+          "analyste du secretariat du conseil du tresor",
+          "analyste du secrétariat du conseil du trésor", "analyste du sct")) {
     return ClipboardCheck;
   }
-  if (normalized.includes("responsible minister") || normalized.includes("the minister")) {
+  if (has("responsible minister", "the minister", "ministre responsable", "le ministre")) {
     return Stamp;
   }
-  if (normalized.includes("product or service owner")) {
+  if (has("product or service owner", "responsable de produit ou de service")) {
     return ClipboardList;
   }
-  if (
-    normalized.includes("product owner or delivery lead") ||
-    normalized.includes("delivery lead")
-  ) {
+  if (has("product owner or delivery lead", "delivery lead", "chef de la livraison",
+          "gestionnaire de la livraison")) {
     return Compass;
   }
-  if (normalized.includes("human resources") || normalized.includes("hiring managers")) {
+  if (has("human resources", "hiring managers", "ressources humaines",
+          "gestionnaires d'embauche")) {
     return Users;
   }
-  if (
-    normalized.includes("change lead or sponsor") ||
-    normalized.includes("change sponsor")
-  ) {
+  if (has("change lead or sponsor", "change sponsor", "responsable du changement",
+          "parrain du changement")) {
     return Megaphone;
   }
-  if (normalized.includes("managers of the affected teams") || normalized.includes("affected teams")) {
+  if (has("managers of the affected teams", "affected teams", "equipes touchees",
+          "équipes touchées")) {
     return Users;
   }
-  if (normalized.includes("service team")) {
+  if (has("service team", "equipe du service", "équipe du service")) {
     return Code;
   }
-  if (normalized.includes("product manager")) {
+  if (has("product manager", "gestionnaire de produit")) {
     return Activity;
   }
-  if (normalized.includes("runs the service in production")) {
+  if (has("runs the service in production", "exploite le service en production")) {
     return Headset;
   }
-  if (normalized.includes("change management community")) {
+  if (has("change management community", "collectivite de gestion du changement",
+          "collectivité de gestion du changement")) {
     return LifeBuoy;
   }
-  if (normalized.includes("team members")) {
+  if (has("team members", "membres de l'equipe", "membres de l'équipe")) {
     return Code;
   }
-  if (normalized.includes("digital talent community")) {
+  if (has("digital talent community", "collectivite des talents numeriques",
+          "collectivité des talents numériques")) {
     return LifeBuoy;
   }
-  if (normalized.includes("service designer") || normalized.includes("user researcher")) {
+  if (has("service designer", "user researcher", "concepteur de services",
+          "concepteurs de services", "chercheur en experience utilisateur",
+          "chercheur en expérience utilisateur", "chercheurs en experience utilisateur",
+          "chercheurs en expérience utilisateur")) {
     return Map;
   }
-  if (normalized === "the team") {
+  if (normalized === "the team" || normalized === "l'equipe" || normalized === "l'équipe") {
     return Code;
   }
-  if (normalized.includes("release engineer")) {
+  if (has("release engineer", "mise en production")) {
     return Rocket;
   }
-  if (normalized.includes("operations") || normalized.includes("front-line")) {
+  if (has("operations", "front-line", "premiere ligne", "première ligne")) {
     return Headset;
   }
-  if (normalized.includes("data scientist") || normalized.includes("developer") || normalized.includes("architect")) {
+  if (has("data scientist", "developer", "architect", "scientifiques des donnees",
+          "scientifiques des données", "developpeur", "développeur", "architecte",
+          "technologue")) {
     return Code;
   }
-  if (normalized.includes("designer") || normalized.includes("content author")) {
+  if (has("designer", "content author", "concepteur", "redacteur de contenu",
+          "rédacteur de contenu", "rédacteurs de contenu")) {
     return PenTool;
   }
-  if (normalized.includes("security specialist")) {
+  if (has("security specialist", "specialistes de la securite",
+          "spécialistes de la sécurité")) {
     return ShieldCheck;
   }
-  if (normalized.includes("procurement") || normalized.includes("contracting")) {
+  if (has("procurement", "contracting", "approvisionnement", "autorite contractante",
+          "autorité contractante")) {
     return FileText;
   }
-  if (normalized.includes("operations")) {
+  if (has("operations", "exploitation")) {
     return Server;
   }
-  if (normalized.includes("legal") || normalized.includes("privacy")) {
+  if (has("legal", "privacy", "juridique", "vie privee", "vie privée")) {
     return LifeBuoy;
   }
 

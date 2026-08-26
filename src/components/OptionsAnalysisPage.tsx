@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import type { ReactNode } from "react";
 import { OptionsAlternativeGrid } from "@/components/OptionsAlternativeGrid";
 import { ReferenceArticleLayout } from "@/components/ReferenceArticleLayout";
@@ -9,8 +10,6 @@ import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
 import { guideProse, guideProseSpace } from "@/lib/guide-typography";
 import optionsAnalysisLifecycle from "@/assets/options_analysis_lifecycle.svg?url";
 
-const OPTIONS_ANALYSIS_LIFECYCLE_ALT =
-  "An Options analysis box on the left, the first step, with an arrow into the lifecycle: Create, then Live, then Sunset. A faint dashed arrow loops from Sunset back to Options analysis, showing it is revisited when weighing a replacement.";
 
 function renderProblemParagraph(
   paragraph: string,
@@ -39,7 +38,7 @@ export function OptionsAnalysisPage() {
       <figure className="mb-8 md:mb-10">
         <img
           src={optionsAnalysisLifecycle}
-          alt={OPTIONS_ANALYSIS_LIFECYCLE_ALT}
+          alt={UI.optionsAnalysisLifecycleAlt}
           className="w-full h-auto"
           width={820}
           height={235}

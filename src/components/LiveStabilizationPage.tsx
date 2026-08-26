@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import { CautionBlock } from "@/components/CautionBlock";
 import { RealExampleCallout } from "@/components/RealExampleCallout";
 import { REAL_EXAMPLES } from "@/lib/real-examples";
@@ -17,7 +18,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   STABILIZATION_ACCORDION,
   STABILIZATION_ACCORDION_STAGES,
@@ -29,6 +29,7 @@ import {
   STABILIZATION_WHOLE_SERVICE,
   STABILIZATION_ON_RAMP,
   STABILIZATION_PILLAR,
+  STABILIZATION_SOURCES,
   STABILIZATION_TEAM,
 } from "@/lib/live-stabilization-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
@@ -39,62 +40,6 @@ import {
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideProse } from "@/lib/guide-typography";
-
-const STABILIZATION_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    linkKey: "gc-service-inventory",
-    description:
-      "GC Service Inventory (Open Government): the dataset the new service must be registered in.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "apm-dataset",
-    description:
-      "GC Application Portfolio Details (Open Government): the dataset the department's application record feeds.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "directive-on-service-and-digital",
-    description:
-      "Directive on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "guideline-service-digital",
-    description:
-      "Guideline on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "service-fees-act",
-    description:
-      "Service Fees Act.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "charging-directive",
-    description:
-      "Directive on Charging and Special Financial Authorities (TBS): the rules behind fee remission.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "apm-gcwiki",
-    description:
-      "Application Portfolio Management guidance hub (GCcollab wiki).",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "oag-phoenix-build",
-    description:
-      "OAG 2018 Spring Reports, Report 1: Building and Implementing the Phoenix Pay System.",
-  },
-  {
-    label: "Communities",
-    description:
-      "Application Portfolio Management community: on GCXchange, search the name.",
-  },
-];
 
 export function LiveStabilizationPage() {
   const meta = SUBPHASE_META.stabilization;
@@ -122,7 +67,7 @@ export function LiveStabilizationPage() {
       <section className="mt-8 md:mt-10 flex items-center gap-4 md:gap-6">
         <img
           src={stabilizationFireVisual}
-          alt="A person standing calmly in the fire"
+          alt={UI.stabilizationFireAlt}
           className="w-36 shrink-0 md:w-44"
         />
         <p className={guideProse}>{renderLinkedProse(STABILIZATION_LEAD)}</p>

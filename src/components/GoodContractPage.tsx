@@ -17,6 +17,7 @@ import {
   type GoodContractLinkedProse,
   type GoodContractScheduleTag,
 } from "@/lib/good-contract-content";
+import { GOOD_CONTRACT_PAGE_STRINGS } from "@/lib/good-contract-page-strings";
 import { THREADS } from "@/lib/guide-strings";
 import {
   guideBlockSubheading,
@@ -83,7 +84,9 @@ function ScheduleTag({ tag }: { tag: GoodContractScheduleTag }) {
           : "border-amber-600/30 bg-amber-500/12 text-amber-900/85",
       )}
     >
-      {isStandard ? "Standard, in every contract" : "Added for this service"}
+      {isStandard
+        ? GOOD_CONTRACT_PAGE_STRINGS.scheduleTags.standard
+        : GOOD_CONTRACT_PAGE_STRINGS.scheduleTags.tailored}
     </span>
   );
 }
@@ -205,7 +208,7 @@ export function GoodContractPage() {
               <span className="font-semibold text-foreground">{part.term}.</span>
               {"optional" in part && part.optional ? (
                 <span className="ml-1.5 align-middle text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                  optional
+                  {GOOD_CONTRACT_PAGE_STRINGS.optionalBadge}
                 </span>
               ) : null}{" "}
               {part.text}
@@ -224,9 +227,10 @@ export function GoodContractPage() {
           ))}
           <p>
             {tagLegendLead}{" "}
-            <ScheduleTag tag="standard" /> means it is conventional, in nearly every service
-            contract; <ScheduleTag tag="tailored" /> means we wrote it in because of what the
-            grant portal is and the information it holds.
+            <ScheduleTag tag="standard" />
+            {GOOD_CONTRACT_PAGE_STRINGS.tagLegend.afterStandardTag}
+            <ScheduleTag tag="tailored" />
+            {GOOD_CONTRACT_PAGE_STRINGS.tagLegend.afterTailoredTag}
           </p>
           <SimplificationNote />
         </div>

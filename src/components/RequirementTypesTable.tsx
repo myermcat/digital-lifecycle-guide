@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { REQUIREMENT_TYPES_TABLE_STRINGS } from "@/lib/requirement-types-table-strings";
 import { UI } from "@/lib/ui-strings";
 
 /**
@@ -11,37 +12,23 @@ import { UI } from "@/lib/ui-strings";
  *
  * Below the small breakpoint it stacks into three labelled cards, because a
  * three-column table at 375px is unreadable and the guide is read on phones.
+ *
+ * Every word rendered here comes from `@/lib/requirement-types-table-strings`,
+ * so the French build can swap it.
  */
 
-/*
- * The examples are written the way a real Government of Canada requirement is
- * written. PSPC's statement-of-work guidance says to use "must", not "shall",
- * and the general conditions bear that out: GC 2035 uses "must" throughout and
- * "shall" nowhere. A business requirement takes no modal verb at all, because it
- * states a need and not an obligation on a system.
- */
+const S = REQUIREMENT_TYPES_TABLE_STRINGS;
+
+const HEADINGS = [
+  S.columnHeadings.kind,
+  S.columnHeadings.whatItSays,
+  S.columnHeadings.howItAges,
+];
+
 const ROWS = [
-  {
-    kind: "Business",
-    says: "What the organization needs, and why, in the language of the program.",
-    example: "Applicants can find out where their application stands without phoning anyone.",
-    ages: "Slowly. What people need from a service outlasts any particular version of it, so these are safe to commit to.",
-    tone: "stable" as const,
-  },
-  {
-    kind: "Functional",
-    says: "What the system must do, screen by screen and step by step.",
-    example: "The service must show the applicant the current stage of their application and the date it last changed.",
-    ages: "Fast. These change as soon as real users touch the service, which is what Alpha is for. Pinning them into a contract is how a department pays for a service nobody wanted.",
-    tone: "volatile" as const,
-  },
-  {
-    kind: "Non-functional",
-    says: "How the service has to behave: how fast, how available, how long it holds records, which accessibility standard it meets, how quickly it recovers.",
-    example: "The service must be available 99.5 per cent of each month, must meet EN 301 549, and must be restored within four hours of an outage.",
-    ages: "Slowly, and it can be tested. This is what a contract should hold a supplier to.",
-    tone: "stable" as const,
-  },
+  { ...S.rows.business, tone: "stable" as const },
+  { ...S.rows.functional, tone: "volatile" as const },
+  { ...S.rows.nonFunctional, tone: "stable" as const },
 ];
 
 const toneChip: Record<"stable" | "volatile", string> = {
@@ -52,8 +39,8 @@ const toneChip: Record<"stable" | "volatile", string> = {
 };
 
 const toneLabel: Record<"stable" | "volatile", string> = {
-  stable: "Safe to contract",
-  volatile: "Keep out of the contract",
+  stable: S.toneLabels.stable,
+  volatile: S.toneLabels.volatile,
 };
 
 export function RequirementTypesTable() {
@@ -65,7 +52,7 @@ export function RequirementTypesTable() {
         </caption>
         <thead>
           <tr className="border-b border-border">
-            {["Kind", "What it says", "How it ages"].map((heading) => (
+            {HEADINGS.map((heading) => (
               <th
                 key={heading}
                 scope="col"

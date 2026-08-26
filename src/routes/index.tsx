@@ -195,11 +195,11 @@ function Index() {
 
           <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>{UI.whatThisGuideIs}</h3>
           <p>
-            It describes{" "}
+            {HOME.whatThisGuideIsLead}{" "}
             <strong className="font-semibold text-foreground">
-              a few ways of building a digital service
+              {UI.aFewWaysOfBuildingADigitalService}
             </strong>
-            , not the only correct way, because there is not one.
+            {HOME.whatThisGuideIsTail}
           </p>
           <p>
             {HOME.p3}
@@ -220,8 +220,7 @@ function Index() {
               />
               <p className={guideProse}>
                 <strong className="font-semibold text-foreground">{UI.theSecurityPractices}</strong>{" "}
-                Every service needs them, whether it was built in-house, bought whole, or
-                assembled from something that already existed.
+                {HOME.hereForYouSecurityBody}
               </p>
             </li>
             <li className="flex items-start gap-3">
@@ -232,9 +231,7 @@ function Index() {
               />
               <p className={guideProse}>
                 <strong className="font-semibold text-foreground">{UI.theOfficialCheckpoints2}</strong>{" "}
-                The assessments, approvals and authorizations a Government of Canada service
-                has to clear. They will find you whichever route you take, and each one is
-                cheaper to prepare for than to be surprised by.
+                {HOME.hereForYouCheckpointsBody}
               </p>
             </li>
             <li className="flex items-start gap-3">
@@ -245,8 +242,7 @@ function Index() {
               />
               <p className={guideProse}>
                 <strong className="font-semibold text-foreground">{UI.aPictureOfWhatIsComing}</strong>{" "}
-                Which decisions arrive in roughly what order, who else has to be involved, and
-                which of them are expensive to reverse later.
+                {HOME.hereForYouPictureBody}
               </p>
             </li>
           </ul>
@@ -267,12 +263,7 @@ function Index() {
           <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>{UI.theOneThingWorthHoldingOnTo}</h3>
           <p>
             <strong className="font-semibold text-foreground">{UI.itStaysYourService}</strong>{" "}
-            You can hand the building to a supplier, and much of the time that is the sensible
-            thing to do. What does not transfer with it is the answering for it. When a
-            service does not work, the person who cannot get their application in never
-            hears about the procurement contract behind it, and would not care if they did.
-            They experience it as the Government of Canada failing them, and it is the
-            department that answers for that, publicly and afterwards.
+            {HOME.itStaysYourServiceBody}
           </p>
           <p>
             {HOME.p7}
@@ -296,31 +287,35 @@ function Index() {
             <p>{UI.youMightBe}</p>
             <ul className={`list-disc space-y-1.5 ${guideListIndent}`}>
               <li>
-                a <strong className="font-semibold text-foreground">business owner</strong>{" "}
-                already named against a system in your department&apos;s application register
+                {HOME.roleBusinessOwnerArticle}
+                <strong className="font-semibold text-foreground">{HOME.roleBusinessOwnerLabel}</strong>{" "}
+                {HOME.roleBusinessOwnerRest}
               </li>
               <li>
-                a <strong className="font-semibold text-foreground">program manager</strong>{" "}
-                whose process has stopped coping with the volume
+                {HOME.roleProgramManagerArticle}
+                <strong className="font-semibold text-foreground">{HOME.roleProgramManagerLabel}</strong>{" "}
+                {HOME.roleProgramManagerRest}
               </li>
               <li>
-                a <strong className="font-semibold text-foreground">policy lead</strong> who
-                has been told to deliver something by a date
+                {HOME.rolePolicyLeadArticle}
+                <strong className="font-semibold text-foreground">{HOME.rolePolicyLeadLabel}</strong>
+                {HOME.rolePolicyLeadRest}
               </li>
               <li>
-                a <strong className="font-semibold text-foreground">director general</strong>{" "}
-                who has inherited a system nobody can fully explain
+                {HOME.roleDirectorGeneralArticle}
+                <strong className="font-semibold text-foreground">{HOME.roleDirectorGeneralLabel}</strong>{" "}
+                {HOME.roleDirectorGeneralRest}
               </li>
               <li>
-                a <strong className="font-semibold text-foreground">project manager</strong>{" "}
-                handed a service that is already live
+                {HOME.roleProjectManagerArticle}
+                <strong className="font-semibold text-foreground">{HOME.roleProjectManagerLabel}</strong>{" "}
+                {HOME.roleProjectManagerRest}
               </li>
               <li>
-                someone who has just been told there is money to buy a system
+                {UI.someoneJustToldThereIsMoney}
               </li>
               <li>
-                or in any of the other positions people find themselves in when a service
-                becomes their responsibility. The list is not meant to be complete.
+                {HOME.roleOtherPositions}
               </li>
             </ul>
             <p>
@@ -339,7 +334,7 @@ function Index() {
           title={UI.theOfficialCheckpointsOfADigitalServic}
           icon={Map}
           href="/gate-map"
-          linkLabel="See the whole path →"
+          linkLabel={HOME.seeTheWholePathLinkLabel}
         >
           <p>
             {HOME.p12}
@@ -368,16 +363,16 @@ function Index() {
                   <>
                     <PhaseDescriptionBody paragraphs={PHASE_DESCRIPTIONS.create} />
                     <SubphasePills
-                      intro="The three sub-phases of Create:"
+                      intro={HOME.subphasesOfCreateIntro}
                       items={CREATE_SUBPHASES.map((subphase) => ({
                         title: subphase.title,
                         href: subphase.href,
                         description:
                           subphase.slug === "discovery"
-                            ? "Understand the problem before you commit to a solution."
+                            ? HOME.subphaseDiscoveryHint
                             : subphase.slug === "alpha"
-                              ? "Try things out cheaply before you build the real one."
-                              : "Build the first real version that will go live.",
+                              ? HOME.subphaseAlphaHint
+                              : HOME.subphaseBetaHint,
                       }))}
                     />
                     <PhaseDeepLink
@@ -395,16 +390,16 @@ function Index() {
                   <>
                     <PhaseDescriptionBody paragraphs={PHASE_DESCRIPTIONS.live} />
                     <SubphasePills
-                      intro="The three sub-phases of Live:"
+                      intro={HOME.subphasesOfLiveIntro}
                       items={LIVE_SUBPHASES.map((subphase) => ({
                         title: subphase.title,
                         href: subphase.href,
                         description:
                           subphase.slug === "stabilization"
-                            ? "Stabilize the service right after it goes live."
+                            ? HOME.subphaseStabilizationHint
                             : subphase.slug === "growth"
-                              ? "Add capability as more users arrive."
-                              : "Keep the service healthy over the long term.",
+                              ? HOME.subphaseGrowthHint
+                              : HOME.subphaseMaturityHint,
                       }))}
                     />
                     <PhaseDeepLink
@@ -436,7 +431,7 @@ function Index() {
           </p>
           <img
             src={lifecycleIslands}
-            alt="The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit."
+            alt={UI.lifecycleIslandsAlt}
             className="mx-auto mt-8 md:mt-10 mb-6 md:mb-8 h-auto w-full max-w-3xl"
           />
           {/* Hidden for now: phases read as distinct enough without this test. */}
@@ -446,13 +441,11 @@ function Index() {
             </GuideCallout>
           ) : null}
           <p>
-            Whichever phase you are in, one idea runs under all of it: a government service is
-            almost never the thing a person actually wants. It is one step in a much bigger journey
-            of theirs, often spread across many departments and levels of government.{" "}
+            {HOME.joinedUpDeliveryLead}{" "}
             <Link to={THREADS["joined-up-delivery"].path} className={guideLink}>
               {UI.joinedUpDelivery}
             </Link>{" "}
-            is where that thinking starts.
+            {HOME.joinedUpDeliveryTail}
           </p>
         </section>
 
@@ -467,8 +460,7 @@ function Index() {
                 eyebrow: WORKED_EXAMPLE_LABELS.setup,
                 title: UI.nobodyToldHer,
                 titleClassName: "text-lg md:text-xl",
-                triggerNote:
-                  "Nadia is made up, and so is her program. Any resemblance to real persons or programs is coincidental.",
+                triggerNote: HOME.nadiaDisclaimer,
                 children: (
                   <>
                     <div className="space-y-3">
@@ -587,8 +579,7 @@ function Index() {
                         <strong className="font-semibold text-foreground">
                           {UI.nadiaIsNotSpecialThisHappensMoreOftenT}
                         </strong>{" "}
-                        The point of this guide is that the next Nadia knows all of it while she
-                        can still do something about it.
+                        {HOME.nadiaClosingPoint}
                       </p>
                     </div>
                   </>
@@ -615,18 +606,15 @@ function Index() {
 
           <h3 className={`${guideSubsectionTitle} !mt-8 !mb-2`}>{UI.whyWeCouldNotSimplyFollowTheUkAndAustr}</h3>
           <p className={guideProse}>
-            The two guides we looked at most were the{" "}
+            {HOME.twoGuidesLead}{" "}
             <ExternalLink linkKey="uk-service-manual">
               {UI.unitedKingdomAposSServiceManual}
             </ExternalLink>{" "}
-            and{" "}
+            {HOME.twoGuidesAnd}{" "}
             <ExternalLink linkKey="australia-service-process">
               {UI.australiaAposSServiceDesignAndDelivery}
             </ExternalLink>
-            . Both draw firm lines between phases, and both can, because each is written
-            for one situation: a small team of public servants building a service
-            themselves, on shared infrastructure and reusable components their government
-            has already built for that purpose.
+            {HOME.twoGuidesTail}
           </p>
           <p className={guideProse}>
             {HOME.p35}
@@ -635,23 +623,19 @@ function Index() {
             <li>
               <strong className="font-semibold text-foreground">
                 {HOME.p36}         </strong>{" "}
-              It runs the competition during Discovery and signs as Alpha begins, because
-              the contracted team is who builds the prototypes.
+              {HOME.procurementContractsTeamBody}
             </li>
             <li>
               <strong className="font-semibold text-foreground">
                 {HOME.p37}
               </strong>{" "}
-              It competes during Alpha and signs as Beta begins, and never builds a
-              prototype at all, because the product already exists.
+              {HOME.procurementBuysProductBody}
             </li>
             <li>
               <strong className="font-semibold text-foreground">
                 {HOME.p38}
               </strong>{" "}
-              It competes during Discovery, signs with several suppliers at once as Alpha
-              begins, and each of them builds a prototype under that contract. The winner is
-              chosen by amending their contract rather than by running a second competition.
+              {HOME.procurementAgileBody}
             </li>
           </ul>
           <p className={`${guideProse} mt-5`}>

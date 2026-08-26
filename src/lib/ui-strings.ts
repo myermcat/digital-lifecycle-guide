@@ -176,4 +176,72 @@ export const UI = {
   rightIsWhoAnswersAndHowTheTagOnEachRes: "Right is who answers, and how. The tag on each response says whether the responder is",
   timelineShowingDiscoveryAlphaAndBetaMa: "Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live with its sub-phases Stabilization, Growth, and Maturity, and Sunset, both open-ended",
   whatWorkStaysYours: "What work stays yours",
+  lifecycleIslandsAlt:
+    "The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit.",
+  governingInstrumentLabel: "Governing instrument",
+  supportingReferenceLabel: "Supporting reference",
+  templatesAndToolsLabel: "Templates and tools",
+  communitiesLabel: "Communities",
+  digitalStandardsPhrase: "Government of Canada Digital Standards",
+  describingWhatYouBuyAlt:
+    "Three boxes in a row. Challenge statement, the problem and who has it with no solution named, leads to Requirements, what the service has to achieve and how well, which leads to Statement of work, the work being bought, written from the two before it. A dashed line from the statement of work reads: goes into the solicitation, then annexed to the contract. A caption says Canada writes all three.",
+  optionsAnalysisLifecycleAlt:
+    "An Options analysis box on the left, the first step, with an arrow into the lifecycle: Create, then Live, then Sunset. A faint dashed arrow loops from Sunset back to Options analysis, showing it is revisited when weighing a replacement.",
+  sunsetReplaceOverlapAlt:
+    "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Migrate crosses the launch line, and an arrow shows users and data moving across into Live. The old service is marked switched off early in Growth, once the new one is live and steady, not at launch.",
+  whereContractSignedAlt:
+    "Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. The caption, at the bottom left, reads: where the contract is signed, route by route.",
+  createToLiveCrossingAlt:
+    "Create to Live crossing",
+  liveToSunsetCrossingAlt:
+    "Live to Sunset crossing",
+  backlogFigureAlt:
+    "A vertical backlog column with ready items at the top and larger rough items below, beside a downward arrow labelled higher priority at the top and lower priority at the bottom.",
+  backlogItemVote:
+    "Register to vote online",
+  backlogItemPostcode:
+    "Correct postcode lookup",
+  backlogItemSession:
+    "Upgrade session storage",
+  backlogItemAddress:
+    "Cross-service address sync across departments",
+  backlogItemRenewal:
+    "Annual renewal reminders and notifications",
+  openEndedAsLongAsNeeded:
+    "open-ended - as long as the service is needed",
+  createCheckpointsLead:
+    "Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle.",
+  phaseLevelReferencesNote:
+    "These are the phase-level references. The working references for each part of the phase are on its sub-phase pages.",
+  threadPhasePlaceholder:
+    "This page will describe how this thread applies during this phase.",
+  examplesComingLater:
+    "Examples for this sub-phase are coming later.",
+  gcNetworkOnly:
+    "Only available on the Government of Canada network.",
+  lifecycleThreeRegionsAlt:
+    "A solid arrow labelled Create points into a large infinity loop labelled Live, then a dashed fading arrow labelled Sunset points out of it.",
+  sunsetOverlapShortAlt:
+    "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Users and data move across at launch. The old service is marked switched off early in Growth, once the new one is steady.",
+  stabilizationFireAlt:
+    "A person standing calmly in the fire",
+  whoRunsItAndHowToGetIt:
+    "Who runs it, and how to get it",
+  whatThisSubphaseExistsToDo:
+    "what this sub-phase exists to do",
+  assistantMetaDescription:
+    "Ask a question and find the parts of the Digital Lifecycle Guide that answer it, with a link to each one.",
+  buildStatusMetaDescription:
+    "Internal build-status tracker for every page in the Digital Lifecycle Guide.",
+  aFewWaysOfBuildingADigitalService:
+    "a few ways of building a digital service",
+  someoneJustToldThereIsMoney:
+    "someone who has just been told there is money to buy a system",
+  seeCheckpointsInCreate: "See the checkpoints in Create →",
+  seeCheckpointsInLive: "See the checkpoints in Live →",
+  seeCheckpointsInSunset: "See the checkpoints in Sunset →",
+  instrumentsIntroBefore:
+    "Everything official that has something happening to it during ",
+  instrumentsIntroAfter:
+    ", and what that something is. The tag says what stage the instrument reaches here, not that it is finished.",
 } as const;

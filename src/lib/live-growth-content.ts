@@ -16,6 +16,7 @@ import {
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
+import type { SourceItem } from "@/components/SourcesBlock";
 import { GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 
 export const GROWTH_LEAD: ThreadLinkedProse = {
@@ -474,3 +475,71 @@ export const GROWTH_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+/**
+ * Sources for the Growth page. This lived inside LiveGrowthPage.tsx, but modules under
+ * src/components are never swapped by the French build, so the labels and descriptions
+ * always rendered in English. It sits here so the .fr.ts twin can replace it.
+ */
+export const GROWTH_SOURCES: SourceItem[] = [
+  {
+    label: "Templates and tools",
+    linkKey: "pcra-tool",
+    description:
+      "Project Complexity and Risk Assessment (PCRA) tool (TBS): the questionnaire that rates how big and risky the project is; the score, against the department's approved capacity class, decides who can approve it; a significant addition can be a project of its own.",
+  },
+  {
+    label: "Templates and tools",
+    linkKey: "algorithmic-impact-assessment",
+    description:
+      "Algorithmic Impact Assessment tool (TBS): scores any automation the growth adds.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive on Service and Digital (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "directive-automated-decision-making",
+    description:
+      "Directive on Automated Decision-Making (TBS).",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "concept-case-procedures",
+    description:
+      "Mandatory Procedures for Concept Cases for Digitally Enabled Projects (TBS): a large addition may need its own concept case.",
+  },
+  {
+    label: "Governing instrument",
+    linkKey: "gc-enterprise-architecture-framework",
+    description:
+      "GC Enterprise Architecture Framework (TBS): the criteria for changes that alter the architecture.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "task-authorizations",
+    description:
+      "Task authorizations (CanadaBuys buyer's guide).",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "modify-contract",
+    description:
+      "Modifying a contract (CanadaBuys buyer's guide): the procedure for amendments that stay within scope.",
+  },
+  {
+    label: "Supporting reference",
+    linkKey: "oag-arrivecan",
+    description:
+      "OAG 2024 Reports, Report 1: ArriveCAN.",
+  },
+  {
+    label: "Communities",
+    linkKey: "gcdigital-community",
+    description:
+      "GCDigital community (TBS OCIO): the community for digital practitioners across government.",
+  },
+];

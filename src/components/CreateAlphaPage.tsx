@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 import { CautionBlock } from "@/components/CautionBlock";
 import { GuideCallout } from "@/components/GuideCallout";
 import { CheckpointMapSeeAlsoLink } from "@/components/CheckpointMapPointers";
@@ -15,7 +16,7 @@ import requirementToSow from "@/assets/requirement_to_statement_of_work.svg?url"
 
 /** Same chain the Procurement page shows; this is the sub-phase where the middle box gets written. */
 const REQUIREMENT_CHAIN_ALT =
-  "Three boxes in a row. Challenge statement, the problem and who has it with no solution named, leads to Requirements, what the service has to achieve and how well, which leads to Statement of work, the work being bought, written from the two before it. A dashed line from the statement of work reads: goes into the solicitation, then annexed to the contract. A caption says Canada writes all three.";
+  UI.describingWhatYouBuyAlt;
 import { PillarCallout } from "@/components/PillarCallout";
 import { SubphaseDescriptionPanel } from "@/components/SubphaseDescriptionPanel";
 import { SubphaseInstruments } from "@/components/SubphaseInstruments";
@@ -23,7 +24,6 @@ import { SubphaseFinishSection } from "@/components/SubphaseFinishSection";
 import { SubphaseSectionNav } from "@/components/SubphaseSectionNav";
 import { SubphaseTeamRoles } from "@/components/SubphaseTeamRoles";
 import { WhereThisFits } from "@/components/WhereThisFits";
-import type { SourceItem } from "@/components/SourcesBlock";
 import {
   ALPHA_ACCORDION,
   ALPHA_ACCORDION_STAGES,
@@ -38,6 +38,7 @@ import {
   ALPHA_PILLAR,
   ALPHA_PROTOTYPE_QUOTE,
   ALPHA_SECTION_NAV,
+  ALPHA_SOURCES,
   ALPHA_TEAM,
 } from "@/lib/create-alpha-content";
 import { SUBPHASE_META } from "@/lib/lifecycle-navigation";
@@ -49,81 +50,6 @@ import {
 import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
-
-const ALPHA_SOURCES: SourceItem[] = [
-  {
-    label: "Templates and tools",
-    linkKey: "design-canada",
-    description:
-      "Canada.ca design system (design.canada.ca): user-tested styles, templates, and patterns to prototype with.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-design-system",
-    description:
-      "GC Design System (Canadian Digital Service): ready-made, accessible interface components.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "gc-forms-assistance",
-    description:
-      "GC Forms (Canadian Digital Service): a form-building platform for prototyping forms without writing code.",
-  },
-  {
-    label: "Templates and tools",
-    linkKey: "digital-accessibility-toolkit",
-    description:
-      "Digital Accessibility Toolkit (a11y.canada.ca): how-tos for designing, building, and testing accessible services.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "digital-standards",
-    description:
-      "Government of Canada Digital Standards (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "guideline-service-digital",
-    description:
-      "Guideline on Service and Digital (TBS).",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "gc-enterprise-architecture-framework",
-    description:
-      "GC Enterprise Architecture Framework (TBS): the criteria your departmental architecture review board assesses the build-or-buy direction against; the largest initiatives go to the GC-level board.",
-  },
-  {
-    label: "Governing instrument",
-    linkKey: "en-301-549",
-    description:
-      "CAN/ASC - EN 301 549:2024 (Accessibility Standards Canada): the accessibility standard new web pages and applications must conform to under the Accessible Canada Regulations.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "design-research",
-    description:
-      "Canada.ca design system, research and testing how-to: methods for testing prototypes with users.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "esdc-a11y-regulations-guidance",
-    description:
-      "Guidance on the Digital Technologies Accessibility Regulations (ESDC): what must conform, and by when.",
-  },
-  {
-    label: "Supporting reference",
-    linkKey: "harmonized-tra-methodology",
-    description:
-      "Harmonized Threat and Risk Assessment methodology (Canadian Centre for Cyber Security): how the threats to a service are listed and ranked.",
-  },
-  {
-    label: "Communities",
-    linkKey: "gc-ux-network",
-    description:
-      "Government of Canada UX Network: user research practitioners across government; also on GCXchange, search the name.",
-  },
-];
 
 const alphaQuoteClassName =
   "mt-6 md:mt-8 border-l-4 border-l-primary/35 pl-4 md:pl-5 font-serif text-lg md:text-xl text-foreground/90 leading-snug";

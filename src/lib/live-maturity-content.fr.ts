@@ -12,6 +12,7 @@ import {
   Telescope,
   Users,
 } from "lucide-react";
+import type { SourceItem } from "@/components/SourcesBlock";
 import type { SubphaseTeamRole } from "@/components/SubphaseTeamRoles";
 import type { ThreadContentSection, ThreadLinkedProse } from "@/lib/thread-rich-content";
 import type { FinishBlock } from "@/components/SubphaseFinishSection";
@@ -475,3 +476,65 @@ export const MATURITY_FINISH = {
     ] satisfies readonly ThreadLinkedProse[],
   },
 };
+
+export const MATURITY_SOURCES: SourceItem[] = [
+  {
+    label: "Modèles et outils",
+    linkKey: "gc-service-inventory",
+    description:
+      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le dossier du service est tenu à jour.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "policy-on-service-and-digital",
+    description:
+      "Politique sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "directive-on-service-and-digital",
+    description:
+      "Directive sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "guideline-service-digital",
+    description:
+      "Ligne directrice sur les services et le numérique (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "standard-at-risk-it",
+    description:
+      "Norme sur la technologie de l’information à risque (SCT).",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "service-fees-act",
+    description:
+      "Loi sur les frais de service.",
+  },
+  {
+    label: "Instrument directeur",
+    linkKey: "charging-directive",
+    description:
+      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : comment les frais de service sont établis et examinés.",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "apm-gcwiki",
+    description:
+      "Carrefour d’orientation sur la gestion du portefeuille d’applications (wiki GCcollab).",
+  },
+  {
+    label: "Référence complémentaire",
+    linkKey: "oag-phoenix-build",
+    description:
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+  },
+  {
+    label: "Collectivités",
+    description:
+      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
+  },
+];
