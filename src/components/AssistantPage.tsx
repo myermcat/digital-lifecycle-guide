@@ -569,9 +569,20 @@ export function AssistantPage() {
             : "relative z-10 flex flex-1 flex-col items-center justify-center gap-3 text-center"
         }
       >
+        {/*
+         * This is the only way back to the guide: the assistant carries no site nav.
+         * It sits at the top of a page that grows with every answer, so on a phone,
+         * a few turns in, it is off screen and there is nothing to reach for. Pin it
+         * once a conversation has started, and only where the screen is short of
+         * room -- from sm up the header is in view often enough to leave alone.
+         */}
         <a
           href={guideLink("/")}
-          className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground ${started ? "self-start" : ""}`}
+          className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground ${
+            started
+              ? "sticky top-0 z-20 -mx-5 self-stretch bg-background px-5 py-2 sm:static sm:mx-0 sm:self-start sm:bg-transparent sm:px-0 sm:py-0"
+              : ""
+          }`}
         >
           Back to the guide
         </a>
