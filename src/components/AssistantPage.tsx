@@ -562,6 +562,31 @@ export function AssistantPage() {
         </div>
       )}
 
+      {/*
+       * This is the only way back to the guide: the assistant carries no site nav, and
+       * the page grows with every answer, so on a phone a few turns in the link has
+       * scrolled off and there is nothing to reach for.
+       *
+       * It has to be pinned from OUTSIDE the header. A sticky child cannot leave its
+       * parent's box, and the header is about 190px tall, so pinning the link inside it
+       * bought 190px of scrolling and then let it slide away with the header -- measured
+       * at 375px, gone by 300px down. As a child of the page column it sticks for the
+       * whole scroll. The -mb-5 gives back the column's gap-7 down to the gap-2 the
+       * header used to hold the link at, so nothing below it moves.
+       *
+       * From sm up the header is in view often enough to leave alone, so the phone bar
+       * is display:none there, taking its flex gap with it, and the copy inside the
+       * header renders in its place.
+       */}
+      {started && (
+        <a
+          href={guideLink("/")}
+          className="sticky top-0 z-20 -mx-5 -mb-5 bg-background px-5 py-2 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground sm:hidden"
+        >
+          Back to the guide
+        </a>
+      )}
+
       <header
         className={
           started
@@ -569,19 +594,10 @@ export function AssistantPage() {
             : "relative z-10 flex flex-1 flex-col items-center justify-center gap-3 text-center"
         }
       >
-        {/*
-         * This is the only way back to the guide: the assistant carries no site nav.
-         * It sits at the top of a page that grows with every answer, so on a phone,
-         * a few turns in, it is off screen and there is nothing to reach for. Pin it
-         * once a conversation has started, and only where the screen is short of
-         * room -- from sm up the header is in view often enough to leave alone.
-         */}
         <a
           href={guideLink("/")}
           className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground underline decoration-dotted underline-offset-2 hover:text-foreground ${
-            started
-              ? "sticky top-0 z-20 -mx-5 self-stretch bg-background px-5 py-2 sm:static sm:mx-0 sm:self-start sm:bg-transparent sm:px-0 sm:py-0"
-              : ""
+            started ? "hidden self-start sm:inline-block" : ""
           }`}
         >
           Back to the guide
