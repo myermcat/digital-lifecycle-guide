@@ -7,6 +7,7 @@ import {
   type ExternalLinkKey,
 } from "@/lib/external-links";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 const GOVERNING_INSTRUMENT_LABEL = "Governing instrument";
 const SUPPORTING_REFERENCE_LABEL = "Supporting reference";
@@ -187,7 +188,7 @@ export function SourcesBlock({
             aria-hidden
           />
           <span className="text-xs uppercase tracking-[0.18em] font-normal text-muted-foreground/60 group-hover:text-muted-foreground/80 transition-colors">
-            References
+            {UI.references}
           </span>
         </button>
         {open ? (

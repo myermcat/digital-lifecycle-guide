@@ -3,6 +3,7 @@ import { DashedArrow } from "@/components/PhaseVisuals";
 import { guideLink } from "@/lib/guide-typography";
 import { phaseVisual, type LifecyclePhaseId, type WhereThisFitsConfig } from "@/lib/lifecycle-navigation";
 import { PHASES, PHASE_ORDER } from "@/lib/guide-strings";
+import { UI } from "@/lib/ui-strings";
 
 export type WhereThisFitsProps = WhereThisFitsConfig;
 
@@ -21,7 +22,7 @@ export function WhereThisFits({
       style={{ backgroundColor: "var(--phase-group)" }}
     >
       <p className="text-xs uppercase tracking-[0.22em] text-foreground/60 mb-4 text-center">
-        Where this fits
+        {UI.whereThisFits}
       </p>
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 w-full overflow-x-auto pb-0.5">

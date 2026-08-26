@@ -9,6 +9,7 @@ import {
 } from "@/lib/thread-rich-content";
 import { guideProse, guideSectionTitle, guideSubsectionTitle } from "@/lib/guide-typography";
 import whereContractSignedVisual from "@/assets/where_contract_signed.svg?url";
+import { UI } from "@/lib/ui-strings";
 
 export type BuyingRouteContent = {
   id: string;
@@ -68,7 +69,7 @@ function renderCombiningLead(paragraph: CombiningRoutesParagraph) {
 function ContractSignedSignpost({ when }: { when: ThreadLinkedProse }) {
   return (
     <p className="mt-4 rounded-md border border-border/70 border-l-4 border-l-primary/35 bg-muted/35 px-3 py-2 font-sans text-[0.8125rem] leading-snug text-foreground/90">
-      <strong className="font-semibold text-foreground">Contract signed:</strong>{" "}
+      <strong className="font-semibold text-foreground">{UI.contractSigned}</strong>{" "}
       {renderLinkedProse(when)}
     </p>
   );

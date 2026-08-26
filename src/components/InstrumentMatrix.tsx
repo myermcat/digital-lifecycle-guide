@@ -14,6 +14,7 @@ import {
 } from "@/lib/instrument-matrix";
 import { guideProse, guideSectionTitle, guideSubsectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * TRANSITORY WORKING MATERIAL, home page only.
@@ -44,7 +45,7 @@ function Legend() {
   return (
     <div className="mt-5 rounded-lg border border-border bg-muted/30 p-4">
       <p className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        What the tags mean
+        {UI.whatTheTagsMean}
       </p>
       <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {(Object.keys(MATRIX_ACTIONS) as MatrixAction[]).map((key) => (
@@ -57,7 +58,7 @@ function Legend() {
         ))}
       </ul>
       <p className="mt-4 mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        The one tag that changes whether a row applies to you
+        {UI.theOneTagThatChangesWhetherARowApplies}
       </p>
       <ul className="grid gap-2.5">
         <li className="flex gap-2.5 text-[0.8rem] leading-snug">
@@ -65,13 +66,12 @@ function Legend() {
             <OnlyIfChip />
           </span>
           <span className="text-muted-foreground">
-            This instrument does not apply to every service. The scope column says what brings it
-            into scope. An instrument with no tag applies to all of them.
+            {UI.thisInstrumentDoesNotApplyToEveryServi}
           </span>
         </li>
       </ul>
       <p className="mt-4 mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-        What kind of thing each one is
+        {UI.whatKindOfThingEachOneIs}
       </p>
       <ul className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {(Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]).map((key) => (
@@ -99,7 +99,7 @@ function Legend() {
 function OnlyIfChip() {
   return (
     <span className="whitespace-nowrap rounded-full border border-amber-700 bg-amber-600 px-2 py-[0.1rem] text-[0.62rem] font-bold uppercase tracking-wide text-white shadow-sm dark:border-amber-500 dark:bg-amber-600">
-      Only if
+      {UI.onlyIf}
     </span>
   );
 }
@@ -150,30 +150,21 @@ export function InstrumentMatrix({ embedded = false }: { embedded?: boolean } = 
       {embedded ? null : (
         <>
           <h2 className={guideSectionTitle}>
-            Every official thing a service has to do, by sub-phase
+            {UI.everyOfficialThingAServiceHasToDoBySub}
           </h2>
           <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
             <p>
-              Getting a service live means passing official checkpoints: assessments to run, boards
-              to attend, registers to appear in, and duties that carry on for as long as the service
-              does. Which ones apply depends on what the service does and how much is being spent,
-              so no two services take the same path.
+              {UI.gettingAServiceLiveMeansPassingOfficia}
             </p>
           </div>
         </>
       )}
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          One table per topic below, and every instrument in them takes two rows. The top row says
-          what brings it into scope, what you personally have to do about it, and who does the rest.
-          The row underneath says what the thing is, and when in the service&apos;s life it comes
-          up.
+          {UI.oneTablePerTopicBelowAndEveryInstrumen}
         </p>
         <p className="text-muted-foreground">
-          One caution. Which sub-phase an instrument belongs to is this guide&apos;s own judgement,
-          because no Government of Canada source uses these phase names. Where a placement follows a
-          real deadline in the instrument, the row says so. Where it does not, the row says that
-          too.
+          {UI.oneCautionWhichSubPhaseAnInstrumentBel}
         </p>
       </div>
 
@@ -233,16 +224,16 @@ function TopicTable({ family, rows }: { family: string; rows: MatrixInstrument[]
         <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
           <tr className="bg-muted/60">
             <th className="sm:sticky sm:left-0 z-40 min-w-[13rem] sm:min-w-[16rem] bg-muted border-b border-r border-border px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-              Instrument
+              {UI.instrument}
             </th>
             <th className="min-w-[15rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-              What brings it into scope
+              {UI.whatBringsItIntoScope}
             </th>
             <th className="min-w-[17rem] border-b border-border bg-[color-mix(in_oklch,var(--muted),var(--primary)_8%)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-foreground/80">
-              What the business owner does
+              {UI.whatTheBusinessOwnerDoes}
             </th>
             <th className="min-w-[13rem] border-b border-border bg-muted px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
-              Who does the work
+              {UI.whoDoesTheWork}
             </th>
           </tr>
         </thead>
@@ -294,7 +285,7 @@ function WhenItComesUp({ row }: { row: MatrixInstrument }) {
   return (
     <span className="mt-1.5 block">
       <span className="mr-2 align-[0.08rem] text-[0.66rem] font-semibold uppercase tracking-wide text-foreground/55">
-        When it comes up
+        {UI.whenItComesUp}
       </span>
       {active.map((s, index) => (
         <span key={s.key}>
@@ -339,7 +330,7 @@ function InstrumentRows({ rows }: { rows: MatrixInstrument[] }) {
               className="border-b border-border bg-muted/20 px-3.5 pb-2.5 pt-1 text-[0.8rem] leading-snug text-muted-foreground"
             >
               <span className="mr-2 align-[0.08rem] text-[0.66rem] font-semibold uppercase tracking-wide text-foreground/55">
-                What it is
+                {UI.whatItIs}
               </span>
               {row.whatItIs}
               <WhenItComesUp row={row} />

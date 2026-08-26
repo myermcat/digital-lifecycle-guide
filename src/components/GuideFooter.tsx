@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { PHASES } from "@/lib/guide-strings";
 import { SUPPORT_PATH } from "@/lib/support-path";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Site footer — Government of Canada–inflected, calm to match the guide.
@@ -29,16 +30,16 @@ export function GuideFooter() {
       <div className="bg-secondary/40 border-t border-border/60">
         <div className="mx-auto max-w-2xl px-6 py-10 md:py-12">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
-            <FooterColumn title="The guide">
-              <FooterLink to="/">Home</FooterLink>
-              <FooterLink to={ALL_PAGES_PATH}>Index</FooterLink>
-              <FooterLink to={SUPPORT_PATH}>Support and communities</FooterLink>
+            <FooterColumn title={UI.theGuide}>
+              <FooterLink to="/">{UI.home}</FooterLink>
+              <FooterLink to={ALL_PAGES_PATH}>{UI.index}</FooterLink>
+              <FooterLink to={SUPPORT_PATH}>{UI.supportAndCommunities2}</FooterLink>
               <FooterExternalLink href="https://github.com/myermcat/digital-lifecycle-guide">
-                GitHub
+                {UI.github}
               </FooterExternalLink>
             </FooterColumn>
 
-            <FooterColumn title="Phases">
+            <FooterColumn title={UI.phases}>
               {lifecyclePhases.map((r) => (
                 <FooterLink key={r.id} to={r.href}>
                   {r.title}
@@ -46,15 +47,13 @@ export function GuideFooter() {
               ))}
             </FooterColumn>
 
-            <FooterColumn title="About">
+            <FooterColumn title={UI.about}>
               <div>
                 <p className="text-xs leading-relaxed text-muted-foreground/60">
-                  A practitioner's guide to the digital service lifecycle in the
-                  Government of Canada.
+                  {UI.aPractitionerSGuideToTheDigitalService}
                 </p>
                 <p className="text-xs leading-relaxed text-muted-foreground/60 mt-3">
-                  This guide is a work in progress. Spotted something off, or have
-                  feedback?
+                  {UI.thisGuideIsAWorkInProgressSpottedSomet}
                 </p>
                 <p className="text-xs leading-relaxed text-muted-foreground/60 mt-1.5">
                   <a
@@ -63,7 +62,7 @@ export function GuideFooter() {
                     rel="noopener noreferrer"
                     className="text-muted-foreground/75 hover:text-muted-foreground underline underline-offset-4 transition-colors"
                   >
-                    Open an issue on GitHub
+                    {UI.openAnIssueOnGithub}
                   </a>
                 </p>
               </div>
@@ -86,8 +85,7 @@ export function GuideFooter() {
             className="text-[11px] tracking-wide"
             style={{ color: "var(--gc-footer-muted)" }}
           >
-            © {year} · An independent guide. Not an official Government of
-            Canada publication.
+            © {year} · {UI.anIndependentGuideNotAnOfficial}
           </p>
           <CanadaWordmark />
         </div>
@@ -152,14 +150,14 @@ function CanadaWordmark() {
   return (
     <div
       className="relative inline-flex select-none"
-      aria-label="Canada"
+      aria-label={UI.canada}
       role="img"
     >
       <span
         className="font-serif text-2xl leading-none tracking-tight"
         style={{ color: "var(--gc-footer-fg)" }}
       >
-        Canada
+        {UI.canada}
       </span>
       {/* Red flag square sits over the bowl of the final 'a' */}
       <span

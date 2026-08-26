@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowDownToLine, Infinity as InfinityIcon } from "lucide-react";
 import { guideLink } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 export type SectionNavLink = {
   href: string;
@@ -55,7 +56,7 @@ export function SubphaseSectionNav({
 }) {
   return (
     <nav
-      aria-label="Phases and sub-phases"
+      aria-label={UI.phasesAndSubPhases}
       className={cn(
         className ?? "mt-8 flex items-center gap-4 border-t border-border/60 pt-6",
         prev ? "justify-between" : "justify-end",

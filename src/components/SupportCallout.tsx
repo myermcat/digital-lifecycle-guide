@@ -8,6 +8,7 @@ import {
   guideSupportCalloutTitle,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 const supportCalloutLink =
   "text-sm font-medium text-primary/65 underline underline-offset-4 transition-colors hover:text-primary/85";
@@ -36,12 +37,12 @@ export function SupportCallout({
       )}
     >
       <p className="text-[10px] uppercase tracking-[0.22em] text-primary/50 font-sans">
-        SUPPORT AND COMMUNITIES
+        {UI.supportAndCommunities}
       </p>
       <h2
         className={`${guideSupportCalloutTitle} mt-2 mb-1.5 text-primary/70`}
       >
-        Need a hand with this?
+        {UI.needAHandWithThis}
       </h2>
       <div className="space-y-4">
         <p className={`${guideProseTight} text-foreground/60`}>
@@ -54,7 +55,7 @@ export function SupportCallout({
         </p>
         <p>
           <Link to={SUPPORT_PATH} className={supportCalloutLink}>
-            Browse the support communities →
+            {UI.browseTheSupportCommunities}
           </Link>
         </p>
       </div>

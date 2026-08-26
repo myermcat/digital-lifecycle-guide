@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * What the requirements are called, before and after.
@@ -43,7 +44,7 @@ export function RequirementsNamingStrip() {
   return (
     <div className="mt-5">
       <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-        What each one is called, and who has to produce it
+        {UI.whatEachOneIsCalledAndWhoHasToProduceI}
       </p>
       <ol className="grid list-none grid-cols-1 gap-3 p-0 m-0 sm:grid-cols-3">
         {STEPS.map((step) => (

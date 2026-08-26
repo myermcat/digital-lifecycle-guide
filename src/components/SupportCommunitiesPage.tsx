@@ -13,6 +13,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function renderBullet(bullet: SupportLinkedBullet) {
   return proseWithMixedLinks(bullet.text, {
@@ -28,9 +29,9 @@ export function SupportCommunitiesPage() {
   return (
     <GuideLayout id={SUPPORT_PAGE.id}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›

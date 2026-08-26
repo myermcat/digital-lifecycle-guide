@@ -16,6 +16,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function CrossCuttingThreadPage({
   content,
@@ -31,9 +32,9 @@ export function CrossCuttingThreadPage({
   return (
     <GuideLayout id={`thread-${content.slug}`}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -51,7 +52,7 @@ export function CrossCuttingThreadPage({
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
-        <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whatGoodLooksLike}</h2>
         <ul className={`${guideProse} space-y-2 list-disc ${guideListIndent}`}>
           {content.whatGoodLooksLike.map((item) => (
             <li key={item}>{item}</li>
@@ -60,12 +61,12 @@ export function CrossCuttingThreadPage({
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
-        <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whyItMatters}</h2>
         <p className={guideProse}>{content.whyItMatters}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
-        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whoseJobItIs}</h2>
         <p className={guideProse}>{content.whoseJob}</p>
       </section>
 
@@ -88,7 +89,7 @@ export function CrossCuttingThreadPage({
 
       {content.topicSections && content.topicSections.length > 0 ? (
         <section className="mt-10 md:mt-12 scroll-mt-24" id="focus-areas">
-          <h2 className={`${guideSectionTitle} mb-3`}>Focus areas</h2>
+          <h2 className={`${guideSectionTitle} mb-3`}>{UI.focusAreas}</h2>
           <div className={`${guideProseSpace} mt-4`}>
             {content.topicSections.map((section) => (
               <div key={section.title}>

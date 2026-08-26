@@ -1,3 +1,4 @@
+import { UI } from "@/lib/ui-strings";
 /** Horizontal Create → Live → Sunset duration map in the guide warm palette. */
 export function CheckpointMapTimeline({ className }: { className?: string }) {
   return (
@@ -11,7 +12,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
         viewBox="0 0 900 194"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live with its sub-phases Stabilization, Growth, and Maturity, and Sunset, both open-ended"
+        aria-label={UI.timelineShowingDiscoveryAlphaAndBetaMa}
         className="w-full h-auto block"
       >
         <text
@@ -26,7 +27,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             textTransform: "uppercase",
           }}
         >
-          HOW LONG IT TAKES
+          {UI.howLongItTakes}
         </text>
         <defs>
           <pattern
@@ -69,7 +70,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             letterSpacing: 1,
           }}
         >
-          LAUNCH
+          {UI.launch}
         </text>
 
         <text
@@ -79,7 +80,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 13, fontWeight: 700 }}
         >
-          Discovery
+          {UI.discovery}
         </text>
         <text
           x="78"
@@ -99,7 +100,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 13, fontWeight: 700 }}
         >
-          Alpha
+          {UI.alpha}
         </text>
         <text
           x="176"
@@ -119,7 +120,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 13, fontWeight: 700 }}
         >
-          Beta
+          {UI.beta}
         </text>
         <text
           x="311"
@@ -147,7 +148,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 13, fontWeight: 700 }}
         >
-          Live
+          {UI.live}
         </text>
         <text
           x="560"
@@ -178,7 +179,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             fontWeight: 700,
           }}
         >
-          Stabilization
+          {UI.stabilization}
         </text>
         <rect
           x="508"
@@ -200,7 +201,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             fontWeight: 700,
           }}
         >
-          Growth
+          {UI.growth}
         </text>
         <rect
           x="598"
@@ -222,7 +223,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
             fontWeight: 700,
           }}
         >
-          Maturity
+          {UI.maturity}
         </text>
 
         <text
@@ -232,7 +233,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 13, fontWeight: 700 }}
         >
-          Sunset
+          {UI.sunset}
         </text>
         <text
           x="800"
@@ -266,7 +267,7 @@ export function CheckpointMapTimeline({ className }: { className?: string }) {
           className="fill-foreground"
           style={{ fontFamily: "Georgia, serif", fontSize: 12.5, fontWeight: 700 }}
         >
-          Create - from problem to launch
+          {UI.createFromProblemToLaunch}
         </text>
         <text
           x="213"

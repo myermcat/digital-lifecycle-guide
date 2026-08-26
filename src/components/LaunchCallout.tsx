@@ -1,5 +1,6 @@
 import { Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * The one moment in the lifecycle that is a door rather than a gradient.
@@ -18,12 +19,10 @@ export function LaunchCallout({ className }: { className?: string }) {
     >
       <Rocket className="mx-auto mb-3 h-7 w-7 md:h-8 md:w-8" aria-hidden />
       <p className="font-serif text-3xl font-bold uppercase tracking-[0.18em] md:text-4xl">
-        Launch
+        {UI.launch2}
       </p>
       <p className="mx-auto mt-3 max-w-xl font-serif text-[0.95rem] leading-snug text-primary-foreground/90 md:text-base">
-        Beta ends here. The service becomes the official one, real people depend
-        on it, and the department owns it from this point until it is replaced
-        or retired.
+        {UI.betaEndsHereTheServiceBecomesTheOffici}
       </p>
     </div>
   );

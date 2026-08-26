@@ -2,6 +2,7 @@ import { AnimalIllustrationPanel } from "@/components/AnimalIllustrationPanel";
 import { GuideLayout } from "@/components/GuideLayout";
 import { PageFoot } from "@/components/PageFoot";
 import { guidePageTitle, guideProse, guideProseSpace } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function SourceComingSoonPage({
   source,
@@ -17,7 +18,7 @@ export function SourceComingSoonPage({
       <AnimalIllustrationPanel animal="fox">
         <header className="mb-6 md:mb-8">
           <h1 className={guidePageTitle}>
-            This source is on its way
+            {UI.thisSourceIsOnItsWay}
           </h1>
           <div className="mx-auto md:mx-0 mt-5 h-px w-16 bg-border" />
         </header>
@@ -29,7 +30,7 @@ export function SourceComingSoonPage({
           </p>
           {part ? (
             <p className="font-sans text-sm text-muted-foreground">
-              Section: <span className="text-foreground/75">{part}</span>
+              {UI.section} <span className="text-foreground/75">{part}</span>
             </p>
           ) : null}
         </section>

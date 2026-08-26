@@ -10,6 +10,7 @@ import { OPTIONS_ANALYSIS } from "@/lib/options-analysis-content";
 import { OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH } from "@/lib/reference-paths";
 import { GOOD_CONTRACT } from "@/lib/good-contract-content";
 import { guideLink } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function slugFromHref(href: string) {
   return href.split("/").pop() ?? "";
@@ -72,7 +73,7 @@ export function ContractingSectionNav({ slug }: { slug: string }) {
 
   return (
     <nav
-      aria-label="Procurement sections"
+      aria-label={UI.procurementSections}
       className="mt-8 flex items-center justify-between gap-4 border-t border-border/60 pt-6"
     >
       <Link to={nav.prev.href} className={linkClass}>

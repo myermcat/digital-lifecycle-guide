@@ -56,6 +56,7 @@ import { cn } from "@/lib/utils";
 import dataLifecycle from "@/assets/data_lifecycle.svg?url";
 import dataAuthorityCheck from "@/assets/data_authority_check.svg?url";
 import sunsetReplaceOverlap from "@/assets/sunset_replace_overlap.svg?url";
+import { UI } from "@/lib/ui-strings";
 
 const REASON_ICONS = {
   minimize: Minimize,
@@ -189,9 +190,9 @@ export function DataStewardshipThreadPage() {
   return (
     <GuideLayout id={`thread-${DATA_STEWARDSHIP_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -207,7 +208,7 @@ export function DataStewardshipThreadPage() {
       <ThreadCoreStrip content={DATA_STEWARDSHIP_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
-        <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whatGoodLooksLike}</h2>
         <ul className={guideArrowList}>
           {whatGoodLooksLike.map((item) => (
             <li key={item.text} className="flex items-start gap-2.5">
@@ -226,12 +227,12 @@ export function DataStewardshipThreadPage() {
       </GuideCallout>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
-        <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whyItMatters}</h2>
         <p className={guideProse}>{renderLinkedProse(whyItMatters)}</p>
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
-        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whoseJobItIs}</h2>
         <div>{renderThreadWhoseJob(whoseJob)}</div>
       </section>
 
@@ -284,7 +285,7 @@ export function DataStewardshipThreadPage() {
           className="mt-5 md:mt-6"
           as="aside"
           icon={AlertTriangle}
-          label="CAUTION"
+          label={UI.caution}
           title={decidingWhatHappens.trapCallout.title}
           titleAs="p"
         >
@@ -508,7 +509,7 @@ export function DataStewardshipThreadPage() {
       <CaseStudyBlock
         id={twoWaysComparison.id}
         className="mt-10 md:mt-12"
-        label="Comparison"
+        label={UI.comparison}
         title={twoWaysComparison.title}
         actual={twoWaysComparison.risky}
         alternative={twoWaysComparison.safe}

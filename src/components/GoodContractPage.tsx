@@ -29,6 +29,7 @@ import {
   guideLink,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 const contractPanelClassName =
   "relative overflow-hidden rounded-lg border border-[#c9bc9e]/70 bg-[#f8f4eb] px-6 py-7 md:px-9 md:py-9 shadow-[inset_0_1px_0_rgba(255,255,255,0.65),0_2px_16px_rgba(44,36,22,0.07)]";
@@ -58,7 +59,7 @@ function SimplificationNote() {
   const note = GOOD_CONTRACT.simplificationNote;
 
   return (
-    <EditorialNote label="Shortened">
+    <EditorialNote label={UI.shortened}>
       <div className="space-y-3">
         <p className="font-semibold text-foreground/90">{note.lead}</p>
         {note.paragraphs.map((paragraph) => (
@@ -156,9 +157,9 @@ export function GoodContractPage() {
   return (
     <GuideLayout id="reference-good-contract">
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -187,7 +188,7 @@ export function GoodContractPage() {
             })}
           </p>
         ))}
-        <EditorialNote label="Example">{GOOD_CONTRACT.exampleNote}</EditorialNote>
+        <EditorialNote label={UI.example}>{GOOD_CONTRACT.exampleNote}</EditorialNote>
       </section>
 
       <section
@@ -216,7 +217,7 @@ export function GoodContractPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="how-to-read">
-        <h2 className={`${guideSectionTitle} mb-3`}>How to read this contract</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.howToReadThisContract}</h2>
         <div className={guideProseSpace}>
           {GOOD_CONTRACT.howToRead.intro.slice(0, -1).map((paragraph) => (
             <p key={paragraph.text}>{renderLinkedProseBlock(paragraph)}</p>
@@ -232,7 +233,7 @@ export function GoodContractPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="the-contract">
-        <h2 className={`${guideSectionTitle} mb-4`}>The contract</h2>
+        <h2 className={`${guideSectionTitle} mb-4`}>{UI.theContract}</h2>
         <article className={contractPanelClassName}>
           <header className="pb-6">
             <p className={`text-center font-serif text-lg font-semibold text-[#2f2920] md:text-xl`}>
@@ -279,7 +280,7 @@ export function GoodContractPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="the-schedules">
-        <h2 className={`${guideSectionTitle} mb-4`}>The schedules</h2>
+        <h2 className={`${guideSectionTitle} mb-4`}>{UI.theSchedules}</h2>
         <article className={contractSchedulesPanelClassName}>
           <ContractSchedulesAccordion
             openSchedule={openSchedule}

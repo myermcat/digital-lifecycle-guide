@@ -1,6 +1,7 @@
 import { InlineArrowLeadList } from "@/lib/guide-lists";
 import type { PlaceholderPhraseLink } from "@/lib/placeholder-sources";
 import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 type Item = {
   lead: string;
@@ -9,7 +10,7 @@ type Item = {
 };
 
 export function WhatStaysYoursBlock({
-  heading = "What work stays yours",
+  heading = UI.whatWorkStaysYours,
   intro,
   items,
   close,

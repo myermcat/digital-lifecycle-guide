@@ -14,6 +14,7 @@ import {
   guideSectionTitle,
   guideSubsectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Agile procurement, kept off the main flow.
@@ -82,7 +83,7 @@ export function AgileProcurementAppendix() {
           </li>
         ))}
       </ul>
-      <GuideCallout compact className="mt-5" label="Who pays">
+      <GuideCallout compact className="mt-5" label={UI.whoPays}>
         <p>{renderLinkedProse(appendix.paysNote)}</p>
       </GuideCallout>
 

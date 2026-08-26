@@ -8,6 +8,7 @@ import {
 } from "@/lib/instrument-matrix";
 import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /** The opening sentence of the registry definition, so the block never assumes the name is known. */
 function firstSentence(text: string) {
@@ -56,14 +57,11 @@ export function ThreadInstruments({
       className={cn("mt-10 md:mt-12 scroll-mt-24", className)}
     >
       <h2 className={`${guideSectionTitle} mb-3`}>
-        The official instruments behind {threadTitle.toLowerCase()}
+        {UI.theOfficialInstrumentsBehind} {threadTitle.toLowerCase()}
       </h2>
       <div className={cn(guideProse, "mb-5 max-w-3xl space-y-2")}>
         <p>
-          Everything official this subject brings with it, and where in a
-          service&apos;s life each one comes up. The full detail, including who
-          does the work and what the business owner personally does, is in the
-          table on the home page.
+          {UI.everythingOfficialThisSubjectBringsWit}
         </p>
       </div>
 

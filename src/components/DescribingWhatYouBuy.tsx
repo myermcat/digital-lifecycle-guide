@@ -2,6 +2,7 @@ import { CaseStudyBlock } from "@/components/CaseStudyBlock";
 import requirementToSow from "@/assets/requirement_to_statement_of_work.svg?url";
 import { SOO_VS_SOW } from "@/lib/soo-vs-sow-content";
 import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * How the work gets described in writing.
@@ -13,7 +14,7 @@ import { guideProse, guideProseSpace, guideSectionTitle } from "@/lib/guide-typo
 export function DescribingWhatYouBuy() {
   return (
     <section className="mt-10 md:mt-12 scroll-mt-24" id="describing-what-you-buy">
-      <h2 className={`${guideSectionTitle} mb-3`}>Describing what you buy</h2>
+      <h2 className={`${guideSectionTitle} mb-3`}>{UI.describingWhatYouBuy}</h2>
 
       <div className={guideProseSpace}>
         {SOO_VS_SOW.summary.map((paragraph) => (

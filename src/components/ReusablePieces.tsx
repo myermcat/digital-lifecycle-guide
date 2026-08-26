@@ -4,6 +4,7 @@ import { ExternalLink } from "@/components/ExternalLink";
 import { REUSABLE_CATEGORIES, REUSABLE_PIECES } from "@/lib/reusable-pieces";
 import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /** The phase and sub-phase names, bolded wherever they appear in "Worth a look in". */
 const PHASE_WORDS = [
@@ -62,22 +63,17 @@ const CELL = "align-top border-b border-border/60 px-3 py-3 text-[0.8rem] leadin
 export function ReusablePieces({ embedded = false }: { embedded?: boolean } = {}) {
   return (
     <section className={embedded ? "" : "mt-12 md:mt-14"} id="reusable-pieces">
-      {embedded ? null : <h2 className={guideSectionTitle}>Reuse before you buy or build</h2>}
+      {embedded ? null : <h2 className={guideSectionTitle}>{UI.reuseBeforeYouBuyOrBuild}</h2>}
       <div className={cn(guideProse, "mt-3 max-w-3xl space-y-3")}>
         <p>
-          Look for something to reuse before making your own. These are the pieces already built and
-          maintained by another part of government, so a team can configure rather than make. The
-          table of official instruments is what a service has to deal with. This is what it can
-          avoid having to make.
+          {UI.lookForSomethingToReuseBeforeMakingYou}
         </p>
         <p className="text-muted-foreground">
-          Choosing to make your own instead breaks no rule. The enterprise architecture framework
-          does ask teams to look at reuse first, so a departmental architecture review board is
-          likely to ask which of these were considered and why none of them fitted.
+          {UI.choosingToMakeYourOwnInsteadBreaksNoRu}
         </p>
       </div>
 
-      <ExpandableTable title="Reuse before you buy or build" className="mt-6" maxHeight="75vh">
+      <ExpandableTable title={UI.reuseBeforeYouBuyOrBuild} className="mt-6" maxHeight="75vh">
         <table className="w-full min-w-[52rem] border-collapse text-left">
           <thead className="sticky top-0 z-30 shadow-[0_1px_0_0_var(--border),0_4px_10px_-6px_rgb(0_0_0/0.25)]">
             <tr className="bg-muted/60">
@@ -145,7 +141,7 @@ export function ReusablePieces({ embedded = false }: { embedded?: boolean } = {}
                       className="border-b border-border bg-muted/20 px-3 pb-2.5 pt-1 text-[0.78rem] leading-snug text-muted-foreground"
                     >
                       <span className="mr-2 align-[0.08rem] text-[0.66rem] font-semibold uppercase tracking-wide text-foreground/55">
-                        What it is
+                        {UI.whatItIs}
                       </span>
                       {p.whatItIs}
                       {p.caveat ? (

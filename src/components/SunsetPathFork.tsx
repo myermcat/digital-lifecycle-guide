@@ -1,6 +1,7 @@
 import type { SunsetPath } from "@/lib/sunset-landing";
 import { guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 export type SunsetPathForkOption = {
   path: SunsetPath;
@@ -37,7 +38,7 @@ export function SunsetPathFork({
 
       <div
         role="radiogroup"
-        aria-label="Replace or retire path"
+        aria-label={UI.replaceOrRetirePath}
         className="mt-4 inline-flex rounded-full border border-border bg-background p-1"
       >
         {(

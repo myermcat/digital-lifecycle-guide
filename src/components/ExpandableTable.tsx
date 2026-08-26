@@ -1,6 +1,7 @@
 import { useCallback, useRef, type ReactNode } from "react";
 import { RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Wraps a wide table in a scroll box that keeps its sticky header and sticky
@@ -149,8 +150,7 @@ export function ExpandableTable({
       <p className="mb-2 flex items-start gap-2 rounded-md border border-border bg-muted/40 px-3 py-2 text-[0.78rem] leading-snug text-muted-foreground sm:hidden">
         <RotateCcw className="mt-[0.15rem] h-3.5 w-3.5 shrink-0" aria-hidden />
         <span>
-          This table is wide. Turn the phone sideways to read it, and scroll sideways inside the
-          table to reach the later columns.
+          {UI.thisTableIsWideTurnThePhoneSidewaysToR}
         </span>
       </p>
 

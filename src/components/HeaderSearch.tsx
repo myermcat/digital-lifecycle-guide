@@ -6,6 +6,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { loadSearchIndex, type SearchIndexRecord } from "@/lib/search-index";
+import { UI } from "@/lib/ui-strings";
 
 type SearchHit = SearchIndexRecord & { score: number; terms?: string[] };
 
@@ -226,23 +227,23 @@ export function HeaderSearch() {
       <button
         ref={triggerRef}
         type="button"
-        aria-label="Search the guide"
+        aria-label={UI.searchTheGuide}
         aria-keyshortcuts="Meta+K Control+K /"
         onClick={() => setOpen(true)}
         className={cn(
           "group inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/80 backdrop-blur-sm",
           "px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] font-sans text-foreground/65",
           "hover:bg-muted/60 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-          "md:w-[240px] md:justify-between",
+          "lg:w-[240px] lg:justify-between",
         )}
       >
         <span className="inline-flex items-center gap-2">
           <Search className="size-3.5 opacity-70" aria-hidden />
-          <span className="hidden md:inline normal-case tracking-normal text-xs text-foreground/60">
-            Search the guide
+          <span className="hidden lg:inline normal-case tracking-normal text-xs text-foreground/60">
+            {UI.searchShort}
           </span>
         </span>
-        <span className="hidden md:inline-flex items-center rounded-md border border-border/60 bg-background/50 px-1.5 py-0.5 text-[10px] text-foreground/55">
+        <span className="hidden lg:inline-flex items-center rounded-md border border-border/60 bg-background/50 px-1.5 py-0.5 text-[10px] text-foreground/55">
           ⌘K
         </span>
       </button>
@@ -256,26 +257,26 @@ export function HeaderSearch() {
                 ref={inputRef}
                 value={query}
                 onValueChange={setQuery}
-                placeholder="Search the guide…"
-                aria-label="Search the guide"
+                placeholder={UI.searchTheGuide2}
+                aria-label={UI.searchTheGuide}
                 className="w-full bg-transparent outline-none text-sm text-foreground placeholder:text-foreground/45"
               />
             </div>
 
             <Command.List className="max-h-[420px] overflow-auto p-2">
               {isLoading ? (
-                <p className="px-3 py-2 text-sm text-foreground/60">Loading search…</p>
+                <p className="px-3 py-2 text-sm text-foreground/60">{UI.loadingSearch}</p>
               ) : isError ? (
                 <p className="px-3 py-2 text-sm text-foreground/60">
                   {(searchState as { status: "error"; message: string }).message}
                 </p>
               ) : query.trim().length === 0 ? (
                 <p className="px-3 py-2 text-sm text-foreground/60">
-                  Type a page name or a phrase from the guide.
+                  {UI.typeAPageNameOrAPhraseFromTheGuide}
                 </p>
               ) : results.length === 0 ? (
                 <Command.Empty className="px-3 py-2 text-sm text-foreground/60">
-                  Nothing matched. Try another word.
+                  {UI.nothingMatchedTryAnotherWord}
                 </Command.Empty>
               ) : (
                 grouped.map(([pagePath, pageResults]) => {

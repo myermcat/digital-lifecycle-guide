@@ -1,5 +1,6 @@
 import { GUIDE_ASSUMPTIONS_TEXT } from "@/lib/guide-strings";
 import { externalLinkUrl } from "@/lib/external-links";
+import { UI } from "@/lib/ui-strings";
 
 export { GUIDE_ASSUMPTIONS_TEXT };
 
@@ -34,7 +35,7 @@ export function GuideAssumptions({ className }: { className?: string }) {
   return (
     <div className={`space-y-2 text-sm leading-[1.7] text-muted-foreground/50 ${className ?? ""}`}>
       <p className="text-xs uppercase tracking-[0.18em] font-normal text-muted-foreground/35">
-        Assumptions this page makes
+        {UI.assumptionsThisPageMakes}
       </p>
       <p className="text-muted-foreground/40">
         <AssumptionsBody />

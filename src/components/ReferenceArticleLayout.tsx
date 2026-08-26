@@ -7,6 +7,7 @@ import type { SourceItem } from "@/components/SourcesBlock";
 import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { guideArticleMeasure } from "@/lib/guide-article";
 import { guidePageTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export type ReferenceBreadcrumbParent = {
   title: string;
@@ -33,9 +34,9 @@ export function ReferenceArticleLayout({
   return (
     <GuideLayout id={id}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           {breadcrumbParent ? (
             <>

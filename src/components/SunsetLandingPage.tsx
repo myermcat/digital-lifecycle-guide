@@ -31,6 +31,7 @@ import {
   guideSectionTitle,
 } from "@/lib/guide-typography";
 import { PHASES } from "@/lib/guide-strings";
+import { UI } from "@/lib/ui-strings";
 
 export function SunsetLandingPage() {
   const [path, setPath] = useState<SunsetPath>("replace");
@@ -69,7 +70,7 @@ export function SunsetLandingPage() {
       />
 
       <aside className="mt-8 rounded-lg border border-primary/30 bg-primary/5 px-6 py-5 md:px-7 md:py-6">
-        <p className={guideCalloutLabel}>Scope</p>
+        <p className={guideCalloutLabel}>{UI.scope}</p>
         <p className={`${guideProseTight} mt-2`}>
           {proseWithMixedLinks(landing.scope.text, {
             placeholder: landing.scope.placeholderLinks,
@@ -135,7 +136,7 @@ export function SunsetLandingPage() {
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
       <SubphaseSectionNav
-        prev={{ href: "/live-maturity", label: "Maturity sub-phase (Live)", level: "subphase" }}
+        prev={{ href: "/live-maturity", label: UI.subMaturityLive, level: "subphase" }}
       />
 
       <div className="h-24" />

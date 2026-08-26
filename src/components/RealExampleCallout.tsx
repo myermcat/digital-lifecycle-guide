@@ -2,6 +2,7 @@ import { History } from "lucide-react";
 import { StandoutIconCallout } from "@/components/StandoutIconCallout";
 import type { RealExample } from "@/lib/real-examples";
 import { renderLinkedProse } from "@/lib/thread-rich-content";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * A documented Government of Canada failure story, placed after the caution
@@ -20,7 +21,7 @@ export function RealExampleCallout({
       id={example.id}
       className={className}
       icon={History}
-      label="A REAL EXAMPLE"
+      label={UI.aRealExample}
       title={example.title}
     >
       {example.paragraphs.map((paragraph) => (

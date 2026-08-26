@@ -29,6 +29,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function ToggleStepNumber({ n }: { n: number }) {
   return (
@@ -55,9 +56,9 @@ export function TeamCapabilityThreadPage() {
   return (
     <GuideLayout id={`thread-${TEAM_CAPABILITY_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -77,7 +78,7 @@ export function TeamCapabilityThreadPage() {
       <ThreadCoreStrip content={TEAM_CAPABILITY_CORE_STRIP} />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
-        <h2 className={`${guideSectionTitle} mb-3`}>What good looks like</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whatGoodLooksLike}</h2>
         <ul className={guideArrowList}>
           {whatGoodLooksLike.map((item) => (
             <li key={item.text} className="flex items-start gap-2.5">
@@ -89,7 +90,7 @@ export function TeamCapabilityThreadPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
-        <h2 className={`${guideSectionTitle} mb-3`}>The cost of skipping it</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.theCostOfSkippingIt}</h2>
         {renderThreadWhyItMattersPitch(whyItMatters)}
       </section>
 
@@ -115,14 +116,14 @@ export function TeamCapabilityThreadPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
-        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whoseJobItIs}</h2>
         {renderThreadWhoseJob(whoseJob)}
       </section>
 
       <CaseStudyBlock
         id={twoWaysComparison.id}
         className="mt-10 md:mt-12"
-        label="Comparison"
+        label={UI.comparison}
         title={twoWaysComparison.title}
         actual={twoWaysComparison.risky}
         alternative={twoWaysComparison.safe}

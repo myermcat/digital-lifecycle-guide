@@ -8,6 +8,7 @@ import {
 } from "@/lib/page-index";
 import { guideLink, guidePageTitle, guideProseTight } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 const STATUS_LABELS: Record<PageIndexStatus, string> = {
   "not-started": "Not started",
@@ -63,19 +64,19 @@ function PageTable({ pages }: { pages: PageIndexEntry[] }) {
               scope="col"
               className="px-4 py-2.5 text-left text-xs font-normal uppercase tracking-[0.14em] text-muted-foreground/50"
             >
-              Page
+              {UI.page}
             </th>
             <th
               scope="col"
               className="px-4 py-2.5 text-left text-xs font-normal uppercase tracking-[0.14em] text-muted-foreground/50 w-28"
             >
-              Type
+              {UI.type}
             </th>
             <th
               scope="col"
               className="px-4 py-2.5 text-left text-xs font-normal uppercase tracking-[0.14em] text-muted-foreground/50 w-32"
             >
-              Status
+              {UI.status}
             </th>
           </tr>
         </thead>
@@ -147,26 +148,25 @@ export function AllPagesPage() {
   return (
     <>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
           </span>
-          <span className="text-foreground/80">Build status</span>
+          <span className="text-foreground/80">{UI.buildStatus}</span>
         </nav>
-        <h1 className={`mt-4 ${guidePageTitle}`}>Build status</h1>
+        <h1 className={`mt-4 ${guidePageTitle}`}>{UI.buildStatus}</h1>
         <p className={`${guideProseTight} mt-3 text-foreground/65 max-w-xl`}>
-          Internal build tracker for every page in the guide, including stubs not linked from
-          normal navigation. The reader-facing index is under Index in the header.
+          {UI.internalBuildTrackerForEveryPageInTheG}
         </p>
         <div className="mt-4 h-px w-16 bg-border" />
       </header>
 
       <div
         role="tablist"
-        aria-label="Filter by status"
+        aria-label={UI.filterByStatus}
         className="mb-8 md:mb-10 flex flex-wrap gap-2"
       >
         {filters.map((filter) => {
@@ -202,7 +202,7 @@ export function AllPagesPage() {
 
       {groups.length === 0 ? (
         <p className={`${guideProseTight} text-foreground/60`}>
-          No pages with this status yet.
+          {UI.noPagesWithThisStatusYet}
         </p>
       ) : (
         <div className="space-y-10 md:space-y-12">

@@ -22,6 +22,7 @@ import {
   guideArticleProse,
 } from "@/lib/guide-article";
 import { guideLink, guideProse, guideListIndent } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function renderParagraph(
   paragraph: string,
@@ -114,8 +115,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
         afterAssumptions={sectionNav}
       >
         <p className={guideProse}>
-          This page is still to come. It will cover what it means to hold on to enough
-          understanding to govern the work and to handle an exit.
+          {UI.thisPageIsStillToComeItWillCoverWhatIt}
         </p>
       </ThreadArticleLayout>
     );
@@ -203,7 +203,7 @@ export function ContractingSubPage({ page }: { page: ContractingSubPageContent }
           {section.caseStudy ? (
             <CaseStudyBlock
               className={guideArticleCalloutLift}
-              title="The same programme, bought two ways"
+              title={UI.theSameProgrammeBoughtTwoWays}
               intro={section.caseStudy.intro}
               actual={section.caseStudy.risky}
               alternative={section.caseStudy.safer}

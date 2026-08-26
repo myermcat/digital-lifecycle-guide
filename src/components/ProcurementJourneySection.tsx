@@ -15,6 +15,7 @@ import {
   guideProseTight,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function JourneyStepNumber({ n }: { n: number }) {
   return (
@@ -26,7 +27,7 @@ function JourneyStepNumber({ n }: { n: number }) {
 
 export function ProcurementJourneySection({
   sectionId = "the-steps-of-a-procurement",
-  heading = "The steps of a procurement",
+  heading = UI.theStepsOfAProcurement,
   intro,
   steps,
 }: {
@@ -39,7 +40,7 @@ export function ProcurementJourneySection({
     <section className="mt-10 md:mt-12 scroll-mt-24" id={sectionId}>
       <h2 className={`${guideSectionTitle} mb-4`}>{heading}</h2>
 
-      <div className="mb-6 overflow-x-auto pb-1">
+      <div className="mb-6 min-w-0 max-w-full overflow-x-auto pb-1">
         <ol className="flex min-w-max gap-2 list-none pl-0">
           {steps.map((step, index) => (
             <li
@@ -115,7 +116,7 @@ export function ProcurementJourneySection({
                   ),
                 )}
                 {step.reviewNotice ? (
-                  <EditorialNote label="UNDER REVIEW">
+                  <EditorialNote label={UI.underReview}>
                     <p>{step.reviewNotice}</p>
                   </EditorialNote>
                 ) : null}

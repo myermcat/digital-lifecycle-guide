@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { guidePageTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 interface PhaseBreadcrumbProps {
   pageHeading: string;
@@ -18,9 +19,9 @@ export function PhaseBreadcrumb({
 }: PhaseBreadcrumbProps) {
   return (
     <header className={className}>
-      <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+      <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
         <Link to="/" className="hover:text-foreground transition-colors">
-          Home
+          {UI.home}
         </Link>
         <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
           ›

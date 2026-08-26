@@ -16,6 +16,7 @@ import {
   guideProseTight,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 function JourneyStepNumber({ n }: { n: number }) {
   return (
@@ -30,7 +31,7 @@ function SunsetJourneyStepExample({ example }: { example: SunsetJourneyStepExamp
     <div className="mt-4 rounded-lg border border-border bg-card shadow-sm overflow-hidden">
       <div className="px-4 py-4 md:px-5 md:py-5 space-y-4">
         <div>
-          <p className={guideCalloutLabel}>Example</p>
+          <p className={guideCalloutLabel}>{UI.example}</p>
           <h4 className={`${guideBlockTitle} mt-1.5 text-lg md:text-xl`}>{example.title}</h4>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -76,7 +77,7 @@ export function SunsetJourneySection({
       className={embedded ? "scroll-mt-24" : "mt-10 md:mt-12 scroll-mt-24"}
       id="how-a-sunset-goes"
     >
-      <h2 className={`${guideSectionTitle} mb-4`}>How a sunset goes</h2>
+      <h2 className={`${guideSectionTitle} mb-4`}>{UI.howASunsetGoes}</h2>
 
       {fork}
 

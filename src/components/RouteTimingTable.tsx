@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Where the competition runs and where the contract is signed, per route.
@@ -49,8 +50,7 @@ export function RouteTimingTable() {
     <div className="mt-5">
       <table className="hidden w-full border-collapse text-left sm:table">
         <caption className="sr-only">
-          A few of the routes, showing where the competition runs and where the
-          contract is signed
+          {UI.aFewOfTheRoutesShowingWhereTheCompetit}
         </caption>
         <thead>
           <tr className="border-b border-border">
@@ -98,13 +98,13 @@ export function RouteTimingTable() {
             </p>
             <p className={`${guideProseTight} text-foreground/80`}>
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                Competition
+                {UI.competition}
               </span>{" "}
               {row.competition}
             </p>
             <p className={`${guideProseTight} text-foreground/80`}>
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                Signed
+                {UI.signed}
               </span>{" "}
               {row.signature}
             </p>

@@ -9,6 +9,7 @@ import { practiceCardGridCols, practiceCardLinkClassName } from "@/components/Pr
 import { guideClickableCardFillStyle } from "@/lib/guide-cards";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { guideProse, guideSubsectionTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export type PhasePreviewCardData = {
   id: string;
@@ -35,7 +36,7 @@ export function PhasePreviewPopupCards({ cards }: { cards: PhasePreviewCardData[
     <>
       <ul
         className={`grid gap-3 list-none pl-0 ${practiceCardGridCols(cards.length)}`}
-        aria-label="Security by lifecycle phase"
+        aria-label={UI.securityByLifecyclePhase}
       >
         {cards.map((card) => (
           <li key={card.id}>

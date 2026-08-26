@@ -6,6 +6,7 @@ import {
   scrollToOnThisPageSection,
   type OnThisPageItem,
 } from "@/lib/on-this-page";
+import { UI } from "@/lib/ui-strings";
 
 export type { OnThisPageItem } from "@/lib/on-this-page";
 
@@ -33,17 +34,17 @@ export function OnThisPageNav({
   });
 
   return (
-    <div className="relative" aria-label="On this page">
+    <div className="relative" aria-label={UI.onThisPage}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-label="On this page"
-        title="On this page"
+        aria-label={UI.onThisPage}
+        title={UI.onThisPage}
         className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/80 backdrop-blur-sm px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] font-sans text-foreground/70 hover:bg-muted/60 hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <AlignLeft className="size-3.5 shrink-0 opacity-70" aria-hidden />
-        <span className="hidden sm:inline">On this page</span>
+        <span className="hidden sm:inline">{UI.onThisPage}</span>
         {open ? (
           <ChevronUp className="size-3.5 shrink-0 opacity-60" aria-hidden />
         ) : (
@@ -63,7 +64,7 @@ export function OnThisPageNav({
             id="on-this-page-heading"
             className="text-[10px] uppercase tracking-[0.2em] text-foreground/55 font-sans px-1 mb-2"
           >
-            On this page
+            {UI.onThisPage}
           </p>
           <ol className="list-none pl-0 space-y-1">
             {displayItems.map(({ item, isSub, number }) => (

@@ -6,6 +6,7 @@ import { SupportCallout } from "@/components/SupportCallout";
 import type { LifecycleVisualAsset } from "@/lib/lifecycle-visuals";
 import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { guideSectionTitle, guideProse } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Standard page foot: support callout → Further reading → See also → Sources.
@@ -50,7 +51,7 @@ export function PageFoot({
       {showSupportCallout ? <SupportCallout variant={support} /> : null}
       {hasFurtherReading ? (
         <section className="scroll-mt-24" id="further-reading">
-          <h2 className={`${guideSectionTitle} mb-3`}>Further reading</h2>
+          <h2 className={`${guideSectionTitle} mb-3`}>{UI.furtherReading}</h2>
           <div className={guideProse}>{furtherReading}</div>
         </section>
       ) : null}

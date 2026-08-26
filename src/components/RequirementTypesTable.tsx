@@ -1,4 +1,5 @@
 import { guideProseTight } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * The three kinds of requirement, and how fast each one goes out of date.
@@ -60,8 +61,7 @@ export function RequirementTypesTable() {
     <div className="mt-5">
       <table className="hidden w-full border-collapse text-left sm:table">
         <caption className="sr-only">
-          The three kinds of requirement, what each one says, and how fast each
-          goes out of date
+          {UI.theThreeKindsOfRequirementWhatEachOneS}
         </caption>
         <thead>
           <tr className="border-b border-border">
@@ -125,7 +125,7 @@ export function RequirementTypesTable() {
             </p>
             <p className={`${guideProseTight} mt-1.5 text-muted-foreground`}>
               <span className="font-semibold uppercase tracking-[0.1em] text-[0.6rem]">
-                How it ages.
+                {UI.howItAges}
               </span>{" "}
               {row.ages}
             </p>

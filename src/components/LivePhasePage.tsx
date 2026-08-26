@@ -29,6 +29,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function LivePhasePage() {
   const { lead, quote, subphases, workOfLive, whatRuns, reviews } = LIVE_PHASE;
@@ -139,7 +140,7 @@ export function LivePhasePage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id={subphases.id}>
-        <h2 className={`${guideSectionTitle} mb-3`}>The three sub-phases of Live</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.theThreeSubPhasesOfLive}</h2>
         <p className={`${guideProse} mb-5`}>{subphases.intro}</p>
 
         <div className={guideDoorwayCardClassName}>
@@ -161,7 +162,7 @@ export function LivePhasePage() {
         <p className={`${guideProse} mt-5`}>
           Leaving Live is the crossing into{" "}
           <Link to={PHASES.sunset.href} className={guideLink}>
-            Sunset
+            {UI.sunset}
           </Link>
           : the service is being replaced or retired, and the exit has to be planned and funded
           before the money runs out.
@@ -190,7 +191,7 @@ export function LivePhasePage() {
       <GuideAssumptions className="mt-14 md:mt-16 max-w-xl" />
 
       <SubphaseSectionNav
-        prev={{ href: "/create-beta", label: "Beta sub-phase (Create)", level: "subphase" }}
+        prev={{ href: "/create-beta", label: UI.subBetaCreate, level: "subphase" }}
         next={{ href: "/live-stabilization", label: "Stabilization sub-phase", level: "subphase" }}
       />
 

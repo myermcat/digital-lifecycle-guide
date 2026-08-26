@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { PillarCallout } from "@/components/PillarCallout";
 import { CHECKPOINT_MAP_PATH } from "@/lib/reference-paths";
 import { guideLink } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 const checkpointMapCalloutClassName =
   "scroll-mt-24 mt-6 md:mt-8 rounded-lg border border-primary/40 bg-[var(--phase-group)] shadow-sm overflow-hidden";
@@ -19,7 +20,7 @@ export function CheckpointMapPhaseCallout({ text, hash, linkLabel }: CheckpointM
     <PillarCallout
       compact
       className={checkpointMapCalloutClassName}
-      label="THE OFFICIAL CHECKPOINTS"
+      label={UI.theOfficialCheckpoints}
       icon={Map}
       href={CHECKPOINT_MAP_PATH}
       hash={hash}
@@ -41,7 +42,7 @@ export function CheckpointMapSeeAlsoLink({
   return (
     <p className="mt-4 md:mt-5 text-[15px] leading-relaxed text-foreground/85">
       <Link to={CHECKPOINT_MAP_PATH} hash={hash} className={guideLink}>
-        The official checkpoints of a digital service
+        {UI.theOfficialCheckpointsOfADigitalServic}
       </Link>{" "}
       shows where {phaseLabel} comes in the whole journey, checkpoint by checkpoint.
     </p>

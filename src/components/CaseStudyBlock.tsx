@@ -8,6 +8,7 @@ import {
   guideProseTight,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 export interface CaseStudyTradeoff {
   lead: string;
@@ -147,14 +148,14 @@ function TradeoffPanel({
       {side.framing ? <p className={`${guideProseTight} mb-4`}>{side.framing}</p> : null}
       <div className="space-y-2">
         <TradeoffGroup
-          label="Good"
+          label={UI.good}
           items={side.good ?? []}
           panelId={`${groupId}-good`}
           open={openGroups.has("good")}
           onToggle={() => toggleGroup("good")}
         />
         <TradeoffGroup
-          label="Bad"
+          label={UI.bad}
           items={side.bad ?? []}
           panelId={`${groupId}-bad`}
           open={openGroups.has("bad")}

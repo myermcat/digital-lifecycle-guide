@@ -28,6 +28,7 @@ import {
 import { cn } from "@/lib/utils";
 import fundingHero from "@/assets/funding_hero.svg?url";
 import fundingThreshold from "@/assets/funding_threshold.svg?url";
+import { UI } from "@/lib/ui-strings";
 
 const DETAIL_ICONS: Record<FundingDetailIcon, LucideIcon> = {
   coins: Coins,
@@ -87,9 +88,9 @@ export function FundingThreadPage() {
   return (
     <GuideLayout id={`thread-${FUNDING_THREAD.slug}`}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -225,14 +226,14 @@ export function FundingThreadPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
-        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whoseJobItIs}</h2>
         {renderThreadWhoseJob(whoseJob)}
       </section>
 
       <CaseStudyBlock
         id={twoWaysComparison.id}
         className="mt-10 md:mt-12"
-        label="Comparison"
+        label={UI.comparison}
         title={twoWaysComparison.title}
         actual={twoWaysComparison.risky}
         alternative={twoWaysComparison.safe}

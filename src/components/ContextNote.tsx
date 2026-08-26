@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { readGuideSettings, introNoteFor } from "@/lib/guide-settings";
+import { UI } from "@/lib/ui-strings";
 
 interface ContextNoteProps {
   label?: string;
@@ -8,7 +9,7 @@ interface ContextNoteProps {
 }
 
 export function ContextNote({
-  label = "For your setup",
+  label = UI.forYourSetup,
   getMessage = introNoteFor,
   className,
 }: ContextNoteProps) {

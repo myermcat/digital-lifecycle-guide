@@ -6,6 +6,7 @@ import { PageFoot } from "@/components/PageFoot";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { BUILD_STATUS_PATH } from "@/lib/build-status-path";
 import { guideLink, guideProseTight } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export const Route = createFileRoute("/build-status")({
   head: () => ({
@@ -31,7 +32,7 @@ function BuildStatusRoute() {
       <p className={`${guideProseTight} mt-6 text-muted-foreground`}>
         Internal tracker at {BUILD_STATUS_PATH}. The public index is{" "}
         <Link to={ALL_PAGES_PATH} className={guideLink}>
-          Index
+          {UI.index}
         </Link>
         .
       </p>

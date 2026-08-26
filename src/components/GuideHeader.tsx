@@ -1,11 +1,18 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { List, MessageCircleQuestion } from "lucide-react";
 import { HeaderSearch } from "@/components/HeaderSearch";
+import {
+  IS_FRENCH,
+  LANGUAGE_SWITCH_LABEL,
+  LANGUAGE_SWITCH_TITLE,
+  otherLanguageHref,
+} from "@/lib/language-switch";
 import { OnThisPageNav } from "@/components/OnThisPageNav";
 import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { PHASES } from "@/lib/guide-strings";
 import type { OnThisPageItem } from "@/lib/on-this-page";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /**
  * Site header — calm, editorial chrome that sits above the page content.
@@ -20,6 +27,7 @@ export function GuideHeader({
   rootId?: string;
   onThisPageItems?: readonly OnThisPageItem[];
 }) {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lifecyclePhases = [PHASES.create, PHASES.live, PHASES.sunset];
 
   return (
@@ -36,14 +44,14 @@ export function GuideHeader({
               style={{ backgroundColor: "var(--gc-red)" }}
             />
             <span className="truncate font-serif text-base md:text-lg font-semibold tracking-tight text-foreground leading-none">
-              <span className="sm:hidden">The 2026 Guide</span>
-              <span className="hidden sm:inline">The 2026 Digital Lifecycle Guide</span>
+              <span className="sm:hidden">{UI.the2026Guide}</span>
+              <span className="hidden sm:inline">{UI.the2026DigitalLifecycleGuide}</span>
             </span>
           </Link>
 
           <nav
-            aria-label="Phases"
-            className="hidden md:flex items-center gap-5 ml-2"
+            aria-label={UI.phases}
+            className="hidden lg:flex items-center gap-5 ml-2"
           >
             {lifecyclePhases.map((r) => (
               <Link
@@ -74,8 +82,8 @@ export function GuideHeader({
               }}
             >
               <List className="size-3.5 shrink-0 opacity-70" aria-hidden />
-              <span className="hidden sm:inline">Index</span>
-              <span className="sr-only sm:hidden">Index</span>
+              <span className="hidden sm:inline">{UI.index}</span>
+              <span className="sr-only sm:hidden">{UI.index}</span>
             </Link>
             {/* The assistant sits beside the index and the search box, because it is a
                 third way into the same content rather than a feature of its own. */}
@@ -89,10 +97,24 @@ export function GuideHeader({
               activeProps={{ className: "text-foreground/75" }}
             >
               <MessageCircleQuestion className="size-3.5 shrink-0 opacity-70" aria-hidden />
-              <span className="hidden sm:inline">Ask</span>
-              <span className="sr-only sm:hidden">Ask the guide</span>
+              <span className="hidden sm:inline">{UI.ask}</span>
+              <span className="sr-only sm:hidden">{UI.askTheGuide}</span>
             </Link>
             <HeaderSearch />
+            {/* One button, always in the same place: the other language of this page. */}
+            <a
+              href={otherLanguageHref(pathname)}
+              hrefLang={IS_FRENCH ? "en" : "fr"}
+              title={LANGUAGE_SWITCH_TITLE}
+              className={cn(
+                "inline-flex items-center rounded-md px-1.5 py-1 font-mono",
+                "text-[11px] uppercase tracking-[0.08em] text-muted-foreground/75",
+                "hover:text-foreground/80 transition-colors",
+                "focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+              )}
+            >
+              {LANGUAGE_SWITCH_LABEL}
+            </a>
             {rootId || onThisPageItems?.length ? (
               <div className="lg:hidden">
                 <OnThisPageNav rootId={rootId} items={onThisPageItems} />

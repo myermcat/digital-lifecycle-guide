@@ -10,6 +10,7 @@ import {
 } from "@/lib/instrument-matrix";
 import { guideProse, guideSectionTitle } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 /** The opening sentence of the registry definition, so the block never assumes the name is known. */
 function firstSentence(text: string) {
@@ -88,7 +89,7 @@ export function SubphaseInstruments({
       className={cn("mt-10 md:mt-12 scroll-mt-24", className)}
     >
       <h2 className={`${guideSectionTitle} mb-3`}>
-        The official instruments in {label}
+        {UI.theOfficialInstrumentsIn} {label}
       </h2>
       <div className={cn(guideProse, "mb-5 max-w-3xl space-y-2")}>
         <p>
@@ -97,16 +98,13 @@ export function SubphaseInstruments({
           reaches here, not that it is finished.
         </p>
         <p className="text-muted-foreground">
-          Placing an instrument in a sub-phase is this guide&apos;s own editorial
-          choice, anchored where possible on a real deadline in the instrument
-          itself. The full detail, including who does the work and what the
-          business owner personally does, is in the full instruments table.
+          {UI.placingAnInstrumentInASubPhaseIsThisGu}
         </p>
       </div>
 
       <dl className="mb-5 max-w-3xl space-y-2 rounded-md border border-border bg-muted/30 p-4">
         <p className="mb-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          What the tags mean
+          {UI.whatTheTagsMean}
         </p>
         {usedActions.map((action) => (
           <div key={action} className="flex flex-wrap items-baseline gap-x-2">

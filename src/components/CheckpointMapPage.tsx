@@ -56,6 +56,7 @@ import {
   guideSubsectionTitle,
 } from "@/lib/guide-typography";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 const CHECKPOINT_MAP_PHASE_IDS = CHECKPOINT_MAP_PHASES.map((phase) => phase.id);
 
@@ -240,10 +241,10 @@ function StepGrid({ steps }: { steps: readonly CheckpointMapStep[] }) {
           #
         </div>
         <div className="bg-foreground px-3 py-2 font-sans text-[11px] font-semibold uppercase tracking-wide text-background">
-          What Nadia does
+          {UI.whatNadiaDoes}
         </div>
         <div className="bg-foreground px-3 py-2 font-sans text-[11px] font-semibold uppercase tracking-wide text-background">
-          Who responds, and how
+          {UI.whoRespondsAndHow}
         </div>
       </div>
       {steps.map((step) => (
@@ -602,8 +603,7 @@ export function CheckpointMapPage() {
                   {CHECKPOINT_MAP_COLKEY.left}
                 </p>
                 <p className={`${guideProseTight} px-3.5 py-2.5 text-muted-foreground`}>
-                  Right is who answers, and how. The tag on each response says whether the responder
-                  is <WhoTag tag="dept" /> or a <WhoTag tag="central" />.
+                  {UI.rightIsWhoAnswersAndHowTheTagOnEachRes} <WhoTag tag="dept" /> or a <WhoTag tag="central" />.
                 </p>
               </div>
             </div>

@@ -26,6 +26,7 @@ import {
   guideCardHeading,
   guideCalloutLabel,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function CreatePhasePage() {
   const { workOfCreate, workingThroughCreate, sources } = CREATE_PHASE;
@@ -122,7 +123,7 @@ export function CreatePhasePage() {
         <p className={`${guideProse} mt-5`}>
           Launch is the crossing into{" "}
           <Link to={PHASES.live.href} className={guideLink}>
-            Live
+            {UI.live}
           </Link>
           : the service goes live and becomes the real one people use, in place of whatever they did
           before.

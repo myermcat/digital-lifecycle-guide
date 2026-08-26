@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { useOnThisPageSections } from "@/hooks/use-on-this-page-sections";
 import {
-  ON_THIS_PAGE_RAIL_WIDTH,
   onThisPageRailWidth,
   scrollToOnThisPageSection,
   type OnThisPageItem,
 } from "@/lib/on-this-page";
 import { cn } from "@/lib/utils";
+import { UI } from "@/lib/ui-strings";
 
 export function OnThisPageRail({
   rootId,
@@ -81,15 +81,17 @@ export function OnThisPageRail({
 
   return (
     <nav
-      aria-label="On this page"
-      className="hidden lg:block shrink-0 self-stretch"
-      style={{ width: ON_THIS_PAGE_RAIL_WIDTH[railWidth] }}
+      aria-label={UI.onThisPage}
+      className={cn(
+        "hidden lg:block shrink-0 self-stretch lg:w-60",
+        railWidth === "wide" && "xl:w-80",
+      )}
       data-rail-width={railWidth}
     >
       <div className="sticky top-24">
         <div className="rounded-xl border border-border/35 bg-background/30 px-3 py-3">
           <p className="text-[10px] uppercase tracking-[0.2em] text-foreground/40 font-sans mb-2.5">
-            On this page
+            {UI.onThisPage}
           </p>
           <ol className="list-none pl-0 space-y-1.5">
             {items.map((item) => {

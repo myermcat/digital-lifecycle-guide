@@ -38,6 +38,7 @@ import {
   renderThreadSections,
 } from "@/lib/thread-rich-content";
 import { guideBodySubheading, guideListIndent, guideProse } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 const DISCOVERY_SOURCES: SourceItem[] = [
   {
@@ -176,7 +177,7 @@ export function CreateDiscoveryPage() {
         <p className="mt-3">{renderLinkedProse(DISCOVERY_PILLAR.sometimes)}</p>
       </PillarCallout>
 
-      <EditorialNote className="mt-5 md:mt-6" label="Note">
+      <EditorialNote className="mt-5 md:mt-6" label={UI.note}>
         <div className="space-y-2.5">
           <p>{renderLinkedProse(DISCOVERY_PILLAR.teamNote.title)}</p>
           <p>{renderLinkedProse(DISCOVERY_PILLAR.teamNote.routes)}</p>

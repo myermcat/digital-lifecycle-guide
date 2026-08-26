@@ -29,6 +29,7 @@ import {
   guideProseSpace,
   guideSectionTitle,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function ProcurementLandingPage() {
   const landing = PROCUREMENT_LANDING;
@@ -36,9 +37,9 @@ export function ProcurementLandingPage() {
   return (
     <GuideLayout id="thread-procurement">
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›
@@ -95,13 +96,13 @@ export function ProcurementLandingPage() {
       <DescribingWhatYouBuy />
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="what-good-looks-like">
-        <h2 className={`${guideSectionTitle} mb-2`}>What good looks like</h2>
+        <h2 className={`${guideSectionTitle} mb-2`}>{UI.whatGoodLooksLike}</h2>
         <p className={`${guideProse} mb-4`}>{landing.goodLooksIntro}</p>
         <PracticeCardGroup cards={PROCUREMENT_GOOD_LOOKS_CARDS} numbered />
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="why-it-matters">
-        <h2 className={`${guideSectionTitle} mb-3`}>Why it matters</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whyItMatters}</h2>
         <div className={guideProseSpace}>
           {landing.whyItMatters.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -110,7 +111,7 @@ export function ProcurementLandingPage() {
       </section>
 
       <section className="mt-10 md:mt-12 scroll-mt-24" id="whose-job">
-        <h2 className={`${guideSectionTitle} mb-3`}>Whose job it is</h2>
+        <h2 className={`${guideSectionTitle} mb-3`}>{UI.whoseJobItIs}</h2>
         <p className={guideProse}>
           {proseWithMixedLinks(landing.whoseJob.text, {
             external: landing.whoseJob.externalLinks,

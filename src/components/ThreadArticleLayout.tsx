@@ -8,6 +8,7 @@ import type { SupportCalloutVariant } from "@/lib/support-callout";
 import { PROCUREMENT_LANDING, PROCUREMENT_LANDING_PATH } from "@/lib/procurement-landing";
 import { guideArticleMeasure } from "@/lib/guide-article";
 import { guidePageTitle } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function ThreadArticleLayout({
   id,
@@ -29,9 +30,9 @@ export function ThreadArticleLayout({
   return (
     <GuideLayout id={id}>
       <header className="mb-8 md:mb-10">
-        <nav aria-label="Breadcrumb" className="text-xs tracking-wide text-muted-foreground">
+        <nav aria-label={UI.breadcrumb} className="text-xs tracking-wide text-muted-foreground">
           <Link to="/" className="hover:text-foreground transition-colors">
-            Home
+            {UI.home}
           </Link>
           <span aria-hidden="true" className="mx-1.5 text-muted-foreground/70">
             ›

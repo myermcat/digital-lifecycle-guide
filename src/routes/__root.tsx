@@ -17,6 +17,8 @@ import { SITE_DESCRIPTION, SITE_FULL_TITLE, SITE_NAME } from "../lib/site-meta";
 import { GITHUB_PAGES_SPA_RESTORE_SCRIPT } from "../lib/github-pages-spa-fallback";
 import { THREADS } from "@/lib/guide-strings";
 import { DESIGN_FOR_WHOLE_JOURNEY_LEGACY_PATH } from "@/lib/reference-paths";
+import { UI } from "@/lib/ui-strings";
+import { IS_FRENCH } from "@/lib/language-switch";
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
@@ -29,10 +31,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          {UI.thisPageDidnTLoad}
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          {UI.somethingWentWrongOnOurEndYouCanTryRef}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -42,13 +44,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            {UI.tryAgain}
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            {UI.goHome}
           </a>
         </div>
       </div>
@@ -97,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang={IS_FRENCH ? "fr" : "en"}>
       <head>
         <script
           dangerouslySetInnerHTML={{ __html: GITHUB_PAGES_SPA_RESTORE_SCRIPT }}

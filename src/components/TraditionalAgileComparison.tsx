@@ -5,6 +5,7 @@ import {
   guideCalloutLabel,
   guideProseTight,
 } from "@/lib/guide-typography";
+import { UI } from "@/lib/ui-strings";
 
 export function TraditionalAgileComparison({
   id = "traditional-vs-agile",
@@ -22,13 +23,13 @@ export function TraditionalAgileComparison({
     <section id={id} className="mt-8 scroll-mt-24 rounded-lg border border-border bg-card shadow-sm overflow-hidden">
       <div className="px-6 py-6 md:px-8 md:py-7 space-y-5">
         <div>
-          <p className={guideCalloutLabel}>Comparison</p>
-          <h3 className={`${guideBlockTitle} mt-1.5`}>Traditional and agile</h3>
+          <p className={guideCalloutLabel}>{UI.comparison}</p>
+          <h3 className={`${guideBlockTitle} mt-1.5`}>{UI.traditionalAndAgile}</h3>
         </div>
 
         <div
           role="radiogroup"
-          aria-label="Traditional and agile comparison"
+          aria-label={UI.traditionalAndAgileComparison}
           className="inline-flex rounded-full border border-border bg-background p-1"
         >
           {(
@@ -67,13 +68,13 @@ export function TraditionalAgileComparison({
             <thead>
               <tr className="border-b border-border">
                 <th className={`${guideProseTight} py-2 pr-4 font-semibold text-foreground/90`}>
-                  Topic
+                  {UI.topic}
                 </th>
                 <th className={`${guideProseTight} py-2 pr-4 font-semibold text-foreground/90`}>
-                  Traditional
+                  {UI.traditional}
                 </th>
                 <th className={`${guideProseTight} py-2 font-semibold text-foreground/90`}>
-                  Agile
+                  {UI.agile}
                 </th>
               </tr>
             </thead>
