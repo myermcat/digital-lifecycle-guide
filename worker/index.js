@@ -248,9 +248,20 @@ function json(body, status, origin, extra = {}) {
  * it counts the primary model against its own three-model limit. A slow wrong answer is
  * worse than no answer, so it is gone.
  */
+/**
+ * Answers: Groq, then Gemini, then Workers AI. Gemini goes second on Mariia's question,
+ * and she is right: it gives about ten questions a day, which is small, but its writing is
+ * better than the open model at the edge. Ten good answers followed by many adequate ones
+ * beats going straight to the adequate ones, and nothing is wasted either way, because
+ * Workers AI is still there when Gemini is spent.
+ *
+ * Rewrites: Workers AI first. That step is three search phrases, it does it as well as
+ * anything, and its allowance is the only large one, so it should carry the cheap half of
+ * every question and leave the keyed providers for the writing.
+ */
 const ORDER = {
   rewrite: ["workers-ai", "groq", "gemini"],
-  answer: ["groq", "workers-ai", "gemini"],
+  answer: ["groq", "gemini", "workers-ai"],
 };
 
 /**
