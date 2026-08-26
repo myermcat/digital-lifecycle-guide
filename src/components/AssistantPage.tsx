@@ -11,7 +11,7 @@
  * for a server that holds one key on everybody's behalf.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { loadCorpus, loadMap, loadSources, matchSources, guideLink, type SourceLink } from "@/lib/assistant/corpus";
 import { selectSections } from "@/lib/assistant/retrieval";
@@ -446,7 +446,27 @@ export function AssistantPage() {
    * own once the shared allowance runs out for the day.
    */
   const gateOpen = !apiKey && !skippedKey && !hasSharedKey && !sharedOut;
-  const drifting = useMemo(() => [...TOPICS].sort(() => Math.random() - 0.5), []);
+  /**
+   * The cards are shuffled so the page does not always open on the same three questions,
+   * and the shuffle has to happen AFTER hydration. Shuffling during render ran once on the
+   * server and again in the browser, which handed React two different card orders for the
+   * same DOM and threw a hydration mismatch on every load of the live page.
+   *
+   * The old shuffle was also wrong on its own terms. Passing sort a comparator that returns
+   * a fresh random number breaks the ordering it relies on, so the result is biased toward
+   * the original order and differs between engines. Fisher-Yates is unbiased.
+   */
+  const [drifting, setDrifting] = useState(TOPICS);
+  useEffect(() => {
+    setDrifting((current) => {
+      const next = [...current];
+      for (let i = next.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [next[i], next[j]] = [next[j], next[i]];
+      }
+      return next;
+    });
+  }, []);
 
   const status = loadError
     ? `The guide could not be loaded: ${loadError}`
@@ -907,7 +927,19 @@ export function AssistantPage() {
         list somewhere else. Both span wider than the reading column, which fits more
         suggestions on one line.
       */}
-      <div className="sticky bottom-0 z-10 -mx-5 mt-auto flex flex-col gap-2 bg-gradient-to-t from-background via-background to-transparent px-5 pb-5 pt-6">
+      {/*
+        Sticky only once the conversation has started. Before that the suggestions are
+        attached above the composer, and on a phone the two together are taller than the
+        screen: 617px of chips and composer inside 812px of viewport, measured at 375px.
+        A sticky box taller than its room does not push the page down, it rides up over
+        whatever is above it, which put the chips on top of the header, the status line
+        and the shared-allowance pill all at once. In normal flow the page simply grows
+        and scrolls. Once started the suggestions are gone, the box is just the composer,
+        and pinning it to the foot is both wanted and safe.
+      */}
+      <div
+        className={`${started ? "sticky" : "static sm:sticky"} bottom-0 z-10 -mx-5 mt-auto flex flex-col gap-2 bg-gradient-to-t from-background via-background to-transparent px-5 pb-5 pt-6`}
+      >
         {!started && (
           <div className="mx-auto w-full max-w-5xl">
             <p className="mb-2 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted-foreground">
