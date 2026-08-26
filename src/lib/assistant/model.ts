@@ -34,11 +34,31 @@ export type Answer = {
 };
 
 /**
- * The seam for a server-held key. Point MODEL_ENDPOINT at a small proxy and the page
- * stops needing the reader's key; nothing else here changes.
+ * TWO WAYS TO REACH A MODEL, AND THE ORDER MATTERS.
+ *
+ * If VITE_ASSISTANT_PROXY is set, the page posts to that proxy, which holds one shared key
+ * server-side. A reader asks a question without signing up for anything. When the shared
+ * allowance runs out for the day, the proxy says so by name, and the page can then offer the
+ * reader their own key.
+ *
+ * Without the proxy, or once a reader has supplied a key, the page talks to Groq directly
+ * with that key, which never leaves their browser.
  */
-const MODEL_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions";
+const PROXY = (import.meta.env.VITE_ASSISTANT_PROXY ?? "").replace(/\/$/, "");
+const GROQ_DIRECT = "https://api.groq.com/openai/v1/chat/completions";
 const MODEL = "openai/gpt-oss-120b";
+
+export const hasSharedKey = Boolean(PROXY);
+
+/** Which route answered, so the page can say so and handle its limits differently. */
+export type Route = "shared" | "own";
+
+export class SharedExhausted extends Error {
+  constructor() {
+    super("The shared allowance for today is used up.");
+    this.name = "SharedExhausted";
+  }
+}
 
 /** Shown in the page's status line, so the reader knows what answered. */
 export const MODEL_LABEL = "gpt-oss-120b";
@@ -70,9 +90,14 @@ export function storeKey(key: string): void {
  * word "json" in the prompt, which the prompts satisfy; and 503 is routine.
  */
 async function call<T>(key: string, prompt: string, maxTokens: number, attempt = 1): Promise<T> {
-  const res = await fetch(MODEL_ENDPOINT, {
+  /* no key means the shared proxy, which holds one; a key means talk to Groq directly */
+  const viaProxy = !key && Boolean(PROXY);
+  const res = await fetch(viaProxy ? PROXY : GROQ_DIRECT, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
+    headers: {
+      "Content-Type": "application/json",
+      ...(viaProxy ? {} : { Authorization: `Bearer ${key}` }),
+    },
     body: JSON.stringify({
       model: MODEL,
       temperature: 0,
@@ -84,7 +109,22 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
   });
 
   if (!res.ok) {
-    const detail = (await res.text()).replaceAll(key, "[key]");
+    const detail = key ? (await res.text()).replaceAll(key, "[key]") : await res.text();
+
+    /**
+     * The proxy names the two rate limits apart, because a reader needs different things
+     * from them: busy means wait, exhausted means the day is gone and their own key is the
+     * only way through today.
+     */
+    if (viaProxy && res.status === 429) {
+      if (/shared_exhausted/.test(detail)) throw new SharedExhausted();
+      const wait = Number(detail.match(/"retryAfterSeconds":\s*(\d+)/)?.[1] ?? 25);
+      if (attempt < 4) {
+        await new Promise((r) => setTimeout(r, Math.min(60, wait + 2) * 1000));
+        return call<T>(key, prompt, maxTokens, attempt + 1);
+      }
+      throw new SharedExhausted();
+    }
     if ((res.status === 503 || res.status === 500) && attempt < 4) {
       await new Promise((r) => setTimeout(r, attempt * 4000));
       return call<T>(key, prompt, maxTokens, attempt + 1);

@@ -28,6 +28,11 @@ jobs:
 
       - name: Build static site for GitHub Pages
         run: npm run build:pages
+        env:
+          # The assistant's model proxy. A repository variable rather than a secret: it is a
+          # URL, and the key it holds never leaves the proxy. Unset simply means the page asks
+          # each reader for a key of their own, which is how it worked before the proxy.
+          VITE_ASSISTANT_PROXY: ${{ vars.VITE_ASSISTANT_PROXY }}
 
       - name: Publish to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4

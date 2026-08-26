@@ -1,0 +1,14 @@
+# The assistant's model proxy. See index.js for what it does and refuses.
+#
+#   npx wrangler secret put GROQ_API_KEY     paste the key when prompted
+#   npx wrangler deploy
+#
+# The key is a secret, set once with the command above. It is never in this file, never in
+# the repository, and never sent to a browser.
+
+name = "dlg-assistant"
+main = "index.js"
+compatibility_date = "2026-08-01"
+
+[observability]
+enabled = true

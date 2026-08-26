@@ -21,6 +21,8 @@ import {
   rewriteQuestion,
   storedKey,
   storeKey,
+  hasSharedKey,
+  SharedExhausted,
   MODEL_LABEL,
   type Answer,
 } from "@/lib/assistant/model";
@@ -57,6 +59,8 @@ type Turn = {
   pending?: boolean;
   /** Taking long enough that the reader deserves to know why. */
   waiting?: boolean;
+  /** The shared allowance ran out on this question. */
+  sharedOut?: boolean;
 };
 
 /** The model writes **bold lead-ins**, which is the guide's own house style. */
@@ -286,6 +290,8 @@ export function AssistantPage() {
   const [skippedKey, setSkippedKey] = useState(false);
   const [showKeyPanel, setShowKeyPanel] = useState(false);
   const [busy, setBusy] = useState(false);
+  /** Set when the shared allowance is gone for the day, so the page can offer a key. */
+  const [sharedOut, setSharedOut] = useState(false);
   /** A question clicked on the welcome screen, asked as soon as a key exists. */
   const [queued, setQueued] = useState<string | null>(null);
   const [sources, setSources] = useState<SourceLink[]>([]);
@@ -315,11 +321,17 @@ export function AssistantPage() {
       const index = turns.length;
       setTurns((prev) => [
         ...prev,
-        { question: trimmed, hits: plain.hits, pending: Boolean(apiKey) },
+        {
+          question: trimmed,
+          hits: plain.hits,
+          pending: Boolean(apiKey) || (hasSharedKey && !sharedOut),
+        },
       ]);
       setDraft("");
 
-      if (!apiKey) return;
+      /* their key if they gave one, otherwise the shared proxy; neither means no answer */
+      const usable = apiKey || (hasSharedKey && !sharedOut);
+      if (!usable) return;
       setBusy(true);
       const patch = (fields: Partial<Turn>) =>
         setTurns((prev) => prev.map((t, i) => (i === index ? { ...t, ...fields } : t)));
@@ -382,7 +394,12 @@ export function AssistantPage() {
          */
         patch({ answer: written, hits: given, pending: false, waiting: false });
       } catch (err) {
-        patch({ error: (err as Error).message, pending: false, waiting: false });
+        if (err instanceof SharedExhausted) {
+          setSharedOut(true);
+          patch({ error: "", sharedOut: true, pending: false, waiting: false });
+        } else {
+          patch({ error: (err as Error).message, pending: false, waiting: false });
+        }
       } finally {
         window.clearTimeout(slowTimer);
         setBusy(false);
@@ -405,7 +422,12 @@ export function AssistantPage() {
   }, [queued, retriever, apiKey, skippedKey, ask]);
 
   const started = turns.length > 0;
-  const gateOpen = !apiKey && !skippedKey;
+  /**
+   * The gate only exists when there is nothing to fall back on. With a shared key behind the
+   * proxy a reader asks a question and gets an answer, and is only asked for a key of their
+   * own once the shared allowance runs out for the day.
+   */
+  const gateOpen = !apiKey && !skippedKey && !hasSharedKey && !sharedOut;
   const drifting = useMemo(() => [...TOPICS].sort(() => Math.random() - 0.5), []);
 
   const status = loadError
@@ -413,7 +435,9 @@ export function AssistantPage() {
     : !retriever
       ? "Loading the guide"
       : apiKey
-        ? `${retriever.size} sections, AI answers by ${MODEL_LABEL}`
+      ? `${retriever.size} sections, AI answers by ${MODEL_LABEL}, on your key`
+      : hasSharedKey && !sharedOut
+        ? `${retriever.size} sections, AI answers by ${MODEL_LABEL}, shared allowance`
         : `${retriever.size} sections, searched in your browser, no AI`;
 
   const driftStyles = (
@@ -559,7 +583,7 @@ export function AssistantPage() {
               className={`h-1.5 w-1.5 rounded-full ${apiKey ? "bg-primary" : "bg-muted-foreground"}`}
               aria-hidden="true"
             />
-            {apiKey ? "AI answers on" : "AI answers off"}
+            {apiKey ? "AI answers on, your key" : hasSharedKey && !sharedOut ? "AI answers on, shared" : "AI answers off"}
           </span>
           <button
             type="button"
@@ -623,6 +647,44 @@ export function AssistantPage() {
                 ? "The free key allows six thousand tokens a minute. Waiting for the next minute, then answering"
                 : "Reading the guide and writing an answer"}
             </p>
+          )}
+
+          {turn.sharedOut && (
+            <div className="flex flex-col gap-3 rounded-lg border border-primary/40 bg-card p-4">
+              <p className="text-sm leading-relaxed">
+                <strong className="font-semibold">
+                  The shared allowance is used up for today.
+                </strong>{" "}
+                Everyone using this page draws on one free allowance, which is about forty
+                questions a day between them. The parts of the guide below were found without
+                it, and they are the same ones an answer would have been written from.
+              </p>
+              <p className="text-sm leading-relaxed">Two ways on:</p>
+              <ul className="flex flex-col gap-1.5 pl-4 text-sm">
+                <li className="relative before:absolute before:-left-4 before:top-[0.62em] before:h-px before:w-2 before:bg-muted-foreground">
+                  <button
+                    type="button"
+                    onClick={() => setShowKeyPanel(true)}
+                    className="font-semibold underline underline-offset-2"
+                  >
+                    Add your own key
+                  </button>{" "}
+                  and you have your own allowance, about forty questions a day, from{" "}
+                  <a
+                    className="underline underline-offset-2"
+                    href="https://console.groq.com/keys"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    console.groq.com
+                  </a>
+                  , free and no credit card.
+                </li>
+                <li className="relative before:absolute before:-left-4 before:top-[0.62em] before:h-px before:w-2 before:bg-muted-foreground">
+                  Come back tomorrow. The allowance resets.
+                </li>
+              </ul>
+            </div>
           )}
 
           {turn.error && (
