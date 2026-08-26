@@ -167,6 +167,22 @@ export const FUNDING_THREAD = {
       },
       {
         text:
+          "Both have a published floor, given as the amount the department is willing to invest. A concept case is mandatory from $2.5 million where a department has no approved capacity class or holds class 1, and the floor climbs with the class: $5 million at class 2, $10 million at class 3, $25 million at class 4, and $15 million for National Defence.",
+        bold: [{ phrase: "a published floor" }],
+      },
+      {
+        text:
+          "The risk assessment carries a ladder of its own, from the same floor up to $50 million at class 4, tax included. The two ladders do not line up, so a project can owe one without owing the other, and every figure has its source in the lifecycle of a digital service.",
+        bold: [{ phrase: "The two ladders do not line up" }],
+        internalLinks: [
+          {
+            phrase: "the lifecycle of a digital service",
+            to: CHECKPOINT_MAP_PATH,
+          },
+        ],
+      },
+      {
+        text:
           "Getting the money then means producing a plan, and that plan is a Treasury Board submission. A large service also passes a set of other checks along the way, from an early concept case to an architecture review, and the money comes only at the end, on a fixed yearly cycle, so a large request that starts late waits for the next cycle. The full sequence, in order, with who signs off at each step, is laid out in the lifecycle of a digital service. Funding is one part of it.",
         internalLinks: [
           {
