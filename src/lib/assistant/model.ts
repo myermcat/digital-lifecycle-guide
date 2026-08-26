@@ -52,6 +52,21 @@ export const hasSharedKey = Boolean(PROXY);
 
 /** Which provider answered the most recent call, for the page's status line. */
 export let lastAnsweredBy = "";
+export let lastProviderLabel = "";
+
+/**
+ * What to call each provider to a reader. They will see the name change when one
+ * allowance runs out and the proxy moves to the next, and an unexplained change of voice
+ * is unsettling, so the page says which model and why.
+ */
+const PROVIDER_LABELS: Record<string, string> = {
+  "workers-ai": "Llama 3.3 70B on Cloudflare",
+  groq: "gpt-oss 120B on Groq",
+  gemini: "Gemini Flash",
+  cerebras: "Llama on Cerebras",
+  openrouter: "a free model via OpenRouter",
+  own: "gpt-oss 120B on your key",
+};
 
 /** Which route answered, so the page can say so and handle its limits differently. */
 export type Route = "shared" | "own";
@@ -160,6 +175,7 @@ async function call<T>(key: string, prompt: string, maxTokens: number, attempt =
    * reader is better told than left guessing why an answer reads differently.
    */
   lastAnsweredBy = res.headers.get("X-Answered-By") ?? (viaProxy ? "shared" : "own");
+  lastProviderLabel = PROVIDER_LABELS[lastAnsweredBy] ?? lastAnsweredBy;
 
   const json = (await res.json()) as {
     choices?: Array<{ message?: { content?: string }; finish_reason?: string }>;

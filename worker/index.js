@@ -15,6 +15,9 @@
  *               which is the account needed to deploy this in the first place.
  *   Groq        200,000 tokens a day, counting input, output and reasoning. A question
  *               costs about 5,000 tokens, so roughly 40 questions. Also 6,000 a minute.
+ *   Cerebras    a free tier with no card, OpenAI-compatible, smaller than Groq.
+ *   OpenRouter  one API in front of many models, some free. Least predictable, since what
+ *               is free there changes, which is why it is the last resort.
  *   Gemini      20 requests a day, and only gemini-flash-latest answers on a new key, so
  *               about 10 questions.
  *
@@ -32,8 +35,10 @@
  *   npx wrangler secret put GROQ_API_KEY        (and GEMINI_API_KEY, if you have one)
  *   npx wrangler deploy
  *
- * Adding another key later needs no code change: GROQ_API_KEY_2, GEMINI_API_KEY_2 and so
- * on are picked up automatically, in order.
+ * Every provider is optional. One with no key set is simply not in the ring, so this runs
+ * on Workers AI alone until keys are added, and adding one needs no code change:
+ * GROQ_API_KEY, CEREBRAS_API_KEY, OPENROUTER_API_KEY, GEMINI_API_KEY, and _2 variants of
+ * each, are picked up in the order listed above.
  */
 
 /** Caps, from what the assistant actually sends: prompts of about 1,200 and 2,200 tokens. */
@@ -77,7 +82,26 @@ const PROVIDERS = [
         max_tokens: maxTokens,
         temperature: 0,
       });
-      const raw = typeof result === "string" ? result : (result?.response ?? "");
+      /**
+       * Workers AI does not return one shape. Depending on the model it is a bare string,
+       * an object with `response`, or an OpenAI-style `choices` array, and `response` is
+       * itself sometimes an object rather than text. Assuming one of them cost a deploy:
+       * the failure surfaced as "raw.replace is not a function", reported to the reader as
+       * a spent allowance.
+       */
+      const candidates = [
+        typeof result === "string" ? result : null,
+        typeof result?.response === "string" ? result.response : null,
+        typeof result?.response?.response === "string" ? result.response.response : null,
+        typeof result?.choices?.[0]?.message?.content === "string"
+          ? result.choices[0].message.content
+          : null,
+        typeof result?.result?.response === "string" ? result.result.response : null,
+      ];
+      const raw = candidates.find((c) => c && c.trim());
+      if (!raw) {
+        throw new Error(`unexpected shape: ${JSON.stringify(result).slice(0, 120)}`);
+      }
 
       /**
        * There is no enforced JSON mode here, unlike the keyed providers, so the reply has to
@@ -129,6 +153,74 @@ const PROVIDERS = [
     /** True when this key is done for the day rather than merely busy. */
     exhausted(status, text) {
       return status === 429 && /per day|TPD|tokens per day|requests per day|RPD/i.test(text);
+    },
+  },
+  {
+    name: "cerebras",
+    /**
+     * Same request shape as Groq, being OpenAI-compatible, and free with no card. Placed
+     * after Groq because its allowance is smaller and its models fewer, and before Gemini
+     * because Gemini's twenty requests a day is the smallest thing here.
+     */
+    keyVars: ["CEREBRAS_API_KEY", "CEREBRAS_API_KEY_2"],
+    request(prompt, key, _model, maxTokens) {
+      return {
+        url: "https://api.cerebras.ai/v1/chat/completions",
+        init: {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
+          body: JSON.stringify({
+            model: "llama3.1-8b",
+            temperature: 0,
+            max_tokens: maxTokens,
+            response_format: { type: "json_object" },
+            messages: [{ role: "user", content: prompt }],
+          }),
+        },
+      };
+    },
+    normalise(json) {
+      return json;
+    },
+    exhausted(status, text) {
+      return status === 429 && /per day|daily|quota/i.test(text);
+    },
+  },
+  {
+    name: "openrouter",
+    /**
+     * One API in front of many models, some of them free. Last of the keyed providers
+     * because a free model there is whatever is free that week, so it is the least
+     * predictable, which is exactly what a last resort should be.
+     */
+    keyVars: ["OPENROUTER_API_KEY"],
+    request(prompt, key, _model, maxTokens) {
+      return {
+        url: "https://openrouter.ai/api/v1/chat/completions",
+        init: {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${key}`,
+            /* OpenRouter asks callers to identify themselves */
+            "HTTP-Referer": "https://myermcat.github.io/digital-lifecycle-guide/",
+            "X-Title": "Digital Lifecycle Guide assistant",
+          },
+          body: JSON.stringify({
+            model: "meta-llama/llama-3.3-70b-instruct:free",
+            temperature: 0,
+            max_tokens: maxTokens,
+            response_format: { type: "json_object" },
+            messages: [{ role: "user", content: prompt }],
+          }),
+        },
+      };
+    },
+    normalise(json) {
+      return json;
+    },
+    exhausted(status, text) {
+      return status === 429 && /per day|daily|quota|credits/i.test(text);
     },
   },
   {
@@ -264,6 +356,12 @@ export default {
      * rather than burning the next key's smaller allowance on it.
      */
     let busyRetryAfter = null;
+    /**
+     * Why each provider declined. Returned when everything fails, because a bare
+     * "allowance used up" gave no way to tell a spent quota from a misconfigured binding,
+     * and the first deploy failed for the second reason while reporting the first.
+     */
+    const declined = [];
 
     for (const { provider, key } of ring) {
       /* the binding is a function call rather than a fetch, so it is handled apart */
@@ -275,8 +373,9 @@ export default {
           /**
            * Workers AI answers a spent allowance with an error rather than a 429, and the
            * wording is not stable enough to match on. Either way the next provider is the
-           * right response, so anything from here falls through.
+           * right response, so anything from here falls through, with the reason kept.
            */
+          declined.push(`${provider.name}: ${String(err?.message ?? err).slice(0, 160)}`);
           continue;
         }
       }
@@ -286,8 +385,10 @@ export default {
       let upstream;
       try {
         upstream = await fetch(url, init);
-      } catch {
-        continue; /* network trouble with one provider is not the reader's problem */
+      } catch (err) {
+        /* network trouble with one provider is not the reader's problem, but record it */
+        declined.push(`${provider.name}: network ${String(err?.message ?? err).slice(0, 80)}`);
+        continue;
       }
 
       const text = (await upstream.text()).replaceAll(key, "[key]");
@@ -297,16 +398,21 @@ export default {
         try {
           parsed = JSON.parse(text);
         } catch {
+          declined.push(`${provider.name}: reply was not JSON`);
           continue;
         }
         return json(provider.normalise(parsed), 200, origin, { "X-Answered-By": provider.name });
       }
 
-      if (provider.exhausted(upstream.status, text)) continue;
+      if (provider.exhausted(upstream.status, text)) {
+        declined.push(`${provider.name}: out for the day`);
+        continue;
+      }
 
       if (upstream.status === 429) {
         const seconds = text.match(/try again in ([\d.]+)s/i)?.[1];
         busyRetryAfter = seconds ? Math.ceil(Number(seconds)) : 25;
+        declined.push(`${provider.name}: busy`);
         continue;
       }
 
@@ -342,6 +448,9 @@ export default {
           code: "shared_exhausted",
           message: "The shared allowance for today is used up.",
           retryAfterSeconds: null,
+          /* which providers declined and why: a spent quota reads very differently
+             from a binding that was never configured */
+          declined,
         },
       },
       429,

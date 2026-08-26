@@ -23,6 +23,7 @@ import {
   storeKey,
   hasSharedKey,
   SharedExhausted,
+  lastProviderLabel,
   MODEL_LABEL,
   type Answer,
 } from "@/lib/assistant/model";
@@ -61,6 +62,8 @@ type Turn = {
   waiting?: boolean;
   /** The shared allowance ran out on this question. */
   sharedOut?: boolean;
+  /** Which model answered, shown when it differs from the last one. */
+  provider?: string;
 };
 
 /** The model writes **bold lead-ins**, which is the guide's own house style. */
@@ -392,7 +395,13 @@ export function AssistantPage() {
          * search results underneath a written answer showed the reader the pre-rewrite
          * results, which are the bad ones, and they read as irrelevant because they were.
          */
-        patch({ answer: written, hits: given, pending: false, waiting: false });
+        patch({
+          answer: written,
+          hits: given,
+          pending: false,
+          waiting: false,
+          provider: lastProviderLabel,
+        });
       } catch (err) {
         if (err instanceof SharedExhausted) {
           setSharedOut(true);
@@ -692,6 +701,21 @@ export function AssistantPage() {
               {turn.error} The parts of the guide below were found without it.
             </p>
           )}
+
+          {/*
+            Only when it CHANGED. Saying which model answered every time is noise; saying it
+            the once it changes explains why the writing suddenly reads differently, which is
+            otherwise unsettling and looks like a fault.
+          */}
+          {turn.provider &&
+            turn.provider !== turns.slice(0, i).reverse().find((t) => t.provider)?.provider && (
+              <p className="text-[0.75rem] leading-relaxed text-muted-foreground">
+                Answered by <span className="font-medium">{turn.provider}</span>
+                {i > 0
+                  ? ". The previous allowance ran out, so this switched to the next free one. Nothing else changes, and the guide it reads is the same."
+                  : "."}
+              </p>
+            )}
 
           {turn.answer && (
             <div className="flex flex-col gap-4 border-l-2 border-primary pl-4">
