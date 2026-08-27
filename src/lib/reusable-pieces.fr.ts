@@ -94,7 +94,7 @@ export const REUSABLE_PIECES: ReusablePiece[] = [
     name: "Système de design GC",
     category: "L’apparence",
     whatItIs:
-      "Des composants d’interface prêts à l’emploi — boutons, champs, messages d’erreur et le reste — déjà testés pour l’accessibilité et offerts dans les deux langues officielles.",
+      "Des composants d’interface prêts à l’emploi, boutons, champs, messages d’erreur et le reste, déjà testés pour l’accessibilité et offerts dans les deux langues officielles.",
     insteadOfBuilding: "Des composants d’interface, et les tests d’accessibilité de chacun.",
     insteadBold: ["Des composants d’interface"],
     runBy: "Service numérique canadien.",

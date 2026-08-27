@@ -207,7 +207,7 @@ export const CHECKPOINT_MAP_NADIA = {
 
 export const CHECKPOINT_MAP_WHY_GCS = {
   heading: "Pourquoi les S et C servent d’exemple",
-  body: "Ce parcours est bâti autour d’un système de subventions et contributions parce que c’est un cas travaillé utile : il touche presque tous les points de contrôle à la fois — fonds publics, approvisionnement, autorisation de sécurité, renseignements personnels, documents, et une décision prise au sujet de personnes. Le guide dans son ensemble ne se limite pas aux S et C; n’importe quel service peut être cartographié selon le même parcours.",
+  body: "Ce parcours est bâti autour d’un système de subventions et contributions parce que c’est un cas travaillé utile : il touche presque tous les points de contrôle à la fois - fonds publics, approvisionnement, autorisation de sécurité, renseignements personnels, documents, et une décision prise au sujet de personnes. Le guide dans son ensemble ne se limite pas aux S et C; n’importe quel service peut être cartographié selon le même parcours.",
 } as const;
 
 export const CHECKPOINT_MAP_WHY_CREATE = {
@@ -246,7 +246,7 @@ export const CHECKPOINT_MAP_FOOTER_DISCLAIMER =
 export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   {
     id: "discovery",
-    heading: "Création · Découverte — déterminer ce qui est nécessaire",
+    heading: "Création · Découverte - déterminer ce qui est nécessaire",
     durationLabel: "Typique : de quelques semaines à quelques mois · variable",
     phaseNote:
       "Financé à même le budget de fonctionnement existant du ministère. C’est ici que la voie se décide. Nadia a repéré un problème. La Découverte est le moment où elle détermine sa gravité, qui doit être mobilisé, et quelle voie le projet devrait emprunter.",
@@ -446,7 +446,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "caution",
               lead: "Lacune courante :",
-              text: "les équipes planifient soigneusement le coût de construction et traitent le budget de fonctionnement comme le problème de quelqu’un d’autre. Il ne l’est pas — si le financement d’exploitation n’est pas engagé en principe au début de la Bêta, le service risque d’être lancé sans plan pour la suite.",
+              text: "les équipes planifient soigneusement le coût de construction et traitent le budget de fonctionnement comme le problème de quelqu’un d’autre. Il ne l’est pas - si le financement d’exploitation n’est pas engagé en principe au début de la Bêta, le service risque d’être lancé sans plan pour la suite.",
             },
           ],
         },
@@ -455,7 +455,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "alpha",
-    heading: "Création · Alpha — éprouver l’idée, franchir l’examen d’architecture, et aller au marché",
+    heading: "Création · Alpha - éprouver l’idée, franchir l’examen d’architecture, et aller au marché",
     durationLabel: "Typique : de six à douze semaines · variable",
     phaseNote:
       "Un prototype n’exige aucun fournisseur : une esquisse sur papier ou dans Figma suffit à montrer aux fournisseurs ce qu’elle veut. L’achat commence ici aussi, parce qu’un concours s’étire sur des mois et que la Bêta s’ouvre avec la signature.",
@@ -568,7 +568,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "beta",
-    heading: "Création · Bêta — l’acheter, le sécuriser, et le prouver",
+    heading: "Création · Bêta - l’acheter, le sécuriser, et le prouver",
     durationLabel: "Typique : plusieurs mois · variable",
     phaseNote:
       "La signature, l’autorisation de sécurité et l’évaluation de la protection de la vie privée tombent toutes ici. Le concours lui-même s’est déroulé pendant l’Alpha, parce qu’un appel d’offres concurrentiel complet prend souvent quelques mois et que la Bêta les passerait autrement à attendre.",
@@ -713,7 +713,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "live",
-    heading: "Exploitation — l’exploiter, et l’inscrire aux registres",
+    heading: "Exploitation - l’exploiter, et l’inscrire aux registres",
     durationLabel: "Continu, pendant des années · variable",
     phaseNote:
       "L’Exploitation est présentée ici comme une seule section parce qu’elle comporte très peu de points de contrôle officiels, bien moins que la Création. Elle a ses propres sous-phases dans le guide, et les étapes ci-dessous couvrent ce qu’elles exigent. Le dépôt le plus facile à oublier est l’inscription du service aux registres officiels. Ajouter une fonctionnalité importante peut aussi ramener des points de contrôle antérieurs.",
@@ -793,7 +793,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "sunset",
-    heading: "Retrait — le retirer ou le remplacer, et rendre compte des données",
+    heading: "Retrait - le retirer ou le remplacer, et rendre compte des données",
     durationLabel: "Typique : des mois · variable",
     phaseNote:
       "Moins de points de contrôle que la Création, mais deux sont stricts : les documents ne peuvent pas être détruits sans le consentement écrit de Bibliothèque et Archives Canada, et l’autorisation de sécurité doit être close, non simplement éteinte.",

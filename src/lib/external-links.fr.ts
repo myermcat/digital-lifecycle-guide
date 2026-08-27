@@ -771,7 +771,7 @@ export const EXTERNAL_LINKS = {
   },
   "gc-notify-contact": {
     url: "https://notification.canada.ca/accueil",
-    description: "Notification GC — pour nous joindre",
+    description: "Notification GC, pour nous joindre",
     accessibility: "public",
   },
   "gc-forms-assistance": {
