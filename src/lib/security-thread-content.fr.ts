@@ -196,6 +196,18 @@ export const SECURITY_THREAD = {
         title: "Identifier : déterminer ce qui est à risque.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Définition",
+            paragraphs: [
+              {
+                text: "Le NIST Cybersecurity Framework formule le résultat ainsi : les risques actuels de cybersécurité de l’organisation sont compris.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "Deux questions sous-tendent l’identification : ce qui pourrait mal tourner, et le degré de sensibilité de l’information.",
           },
           {
@@ -332,6 +344,18 @@ export const SECURITY_THREAD = {
         title: "Protéger : bâtir les défenses.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Définition",
+            paragraphs: [
+              {
+                text: "Le NIST Cybersecurity Framework formule le résultat ainsi : des mesures de protection servant à gérer les risques de cybersécurité de l’organisation sont utilisées.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "La protection transforme les constats de l’identification en défenses réelles. Utilisez une conception sécurisée et des réglages sécurisés par défaut, pour que l’option sûre soit celle par défaut. Trois défenses font l’essentiel du travail :",
             bold: [{ phrase: "protection" }, { phrase: "identification" }],
           },
@@ -388,6 +412,18 @@ export const SECURITY_THREAD = {
         title: "Détecter : repérer vite les ennuis.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Définition",
+            paragraphs: [
+              {
+                text: "Le NIST Cybersecurity Framework formule le résultat ainsi : les attaques et les compromissions possibles en cybersécurité sont repérées et analysées.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "On ne peut pas tout prévenir : la détection est donc la moitié qui attrape ce qui passe. La surveillance et les alertes signalent les activités inhabituelles, et ce qui compte, c’est la vitesse à laquelle on s’en aperçoit. La surveillance du service en production est là où cela se joue une fois le service en fonction.",
             internalLinks: [
               {
@@ -402,6 +438,18 @@ export const SECURITY_THREAD = {
         title: "Intervenir : contenir l’incident.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Définition",
+            paragraphs: [
+              {
+                text: "Le NIST Cybersecurity Framework formule le résultat ainsi : des mesures sont prises à l’égard d’un incident de cybersécurité détecté.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "Quand quelque chose est repéré, l’intervention y met fin rapidement plutôt que des semaines plus tard. Un plan d’intervention en cas d’incident répété signifie que l’équipe a mis les étapes en pratique d’avance, de sorte qu’un problème est attrapé et contenu plutôt que laissé à se répandre.",
             externalLinks: [
               { phrase: "plan d’intervention en cas d’incident", linkKey: "incident-response-plan-itsap40003" },
@@ -412,6 +460,18 @@ export const SECURITY_THREAD = {
       {
         title: "Rétablir : restaurer et apprendre.",
         sections: [
+          {
+            type: "editorialNote",
+            label: "Définition",
+            paragraphs: [
+              {
+                text: "Le NIST Cybersecurity Framework formule le résultat ainsi : les actifs et les activités touchés par un incident de cybersécurité sont rétablis.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
           {
             text: "Le rétablissement ramène le service et ses données après un incident, puis comble la brèche qui l’a permis. La leçon est réintégrée à l’identification et à la protection, pour que la même défaillance ne revienne pas. C’est ce qui fait du cycle de vie un cycle plutôt qu’une ligne.",
           },

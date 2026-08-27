@@ -196,6 +196,18 @@ export const SECURITY_THREAD = {
         title: "Identify, work out what is at risk.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Definition",
+            paragraphs: [
+              {
+                text: "The NIST Cybersecurity Framework puts the outcome this way: the organization’s current cybersecurity risks are understood.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "Two questions sit under Identify: what could go wrong, and how sensitive is the information.",
           },
           {
@@ -332,6 +344,18 @@ export const SECURITY_THREAD = {
         title: "Protect, build the defenses.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Definition",
+            paragraphs: [
+              {
+                text: "The NIST Cybersecurity Framework puts the outcome this way: safeguards to manage the organization’s cybersecurity risks are used.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "Protect turns what Identify found into the actual defenses. Use secure design and secure defaults, so the safe option is the default one. Three defenses do most of the work:",
             bold: [{ phrase: "Protect" }, { phrase: "Identify" }],
           },
@@ -388,6 +412,18 @@ export const SECURITY_THREAD = {
         title: "Detect, spot trouble fast.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Definition",
+            paragraphs: [
+              {
+                text: "The NIST Cybersecurity Framework puts the outcome this way: possible cybersecurity attacks and compromises are found and analyzed.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "You cannot prevent everything, so Detect is the half that catches what gets through. Monitoring and alerting flag unusual activity, and what counts is how fast you notice. Monitoring the service in production is where this lives once the service is running.",
             internalLinks: [
               {
@@ -402,6 +438,18 @@ export const SECURITY_THREAD = {
         title: "Respond, contain it.",
         sections: [
           {
+            type: "editorialNote",
+            label: "Definition",
+            paragraphs: [
+              {
+                text: "The NIST Cybersecurity Framework puts the outcome this way: actions regarding a detected cybersecurity incident are taken.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
+          {
             text: "When something is spotted, Respond shuts it down quickly instead of weeks later. A rehearsed incident response plan means the team has practised the steps in advance, so a problem is caught and contained rather than left to spread.",
             externalLinks: [
               { phrase: "incident response plan", linkKey: "incident-response-plan-itsap40003" },
@@ -412,6 +460,18 @@ export const SECURITY_THREAD = {
       {
         title: "Recover, restore and learn.",
         sections: [
+          {
+            type: "editorialNote",
+            label: "Definition",
+            paragraphs: [
+              {
+                text: "The NIST Cybersecurity Framework puts the outcome this way: assets and operations affected by a cybersecurity incident are restored.",
+                externalLinks: [
+                  { phrase: "NIST Cybersecurity Framework", linkKey: "nist-cyberframework" },
+                ] satisfies ExternalPhraseLink[],
+              },
+            ],
+          },
           {
             text: "Recover brings the service and its data back after an incident, then closes the gap that let it happen. The lesson feeds back into Identify and Protect, so the same failure does not return. That is what makes the lifecycle a cycle rather than a line.",
           },
