@@ -59,9 +59,9 @@ export const QA_TOGGLE_BLOCK = {
   component: "QaToggleBlock",
   importPath: "@/components/QaToggleBlock",
   purpose:
-    "Expand-in-place question-and-answer lists : each question is a card toggle ; the answer opens on tap.",
+    "Expand-in-place question-and-answer lists : each question is a card toggle; the answer opens on tap.",
   visual:
-    "Closer-look accordion structure ( ? badge left, chevron right, separator lines). Muted procurement fill (bg-muted/15, border-border/50) and answer tone.",
+    "Closer-look accordion structure (? badge left, chevron right, separator lines). Muted procurement fill (bg-muted/15, border-border/50) and answer tone.",
   examples: [
     "Procurement — Buy in small pieces, common worries",
     "Backlog — Common questions",

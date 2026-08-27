@@ -27,7 +27,7 @@ export const GOOD_CONTRACT_PAGE_STRINGS = {
    */
   tagLegend: {
     afterStandardTag:
-      " signifie qu’elle est conventionnelle, présente dans presque tout contrat de service ; ",
+      " signifie qu’elle est conventionnelle, présente dans presque tout contrat de service; ",
     afterTailoredTag:
       " signifie que nous l’avons inscrite en raison de ce qu’est le portail de subventions et de l’information qu’il détient.",
   },

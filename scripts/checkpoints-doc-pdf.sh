@@ -4,8 +4,8 @@
 set -e
 REPO="$PWD/../../TBS (Claude Output)/GCX Repo"
 NAME="The official checkpoints of a digital service"
-rm -f "$REPO/DLG -- Documents (PDF)/$NAME.pdf"
+rm -f "$REPO/DLG -- EN/DLG -- Documents (PDF)/$NAME.pdf"
 soffice --headless --convert-to pdf \
-  --outdir "$REPO/DLG -- Documents (PDF)" \
-  "$REPO/DLG -- Editable Source Files (Word)/$NAME.docx" >/dev/null
-echo "converted: $(pdfinfo "$REPO/DLG -- Documents (PDF)/$NAME.pdf" | grep Pages)"
+  --outdir "$REPO/DLG -- EN/DLG -- Documents (PDF)" \
+  "$REPO/DLG -- EN/DLG -- Editable Source Files (Word)/$NAME.docx" >/dev/null
+echo "converted: $(pdfinfo "$REPO/DLG -- EN/DLG -- Documents (PDF)/$NAME.pdf" | grep Pages)"

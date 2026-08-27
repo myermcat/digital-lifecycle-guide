@@ -112,7 +112,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         text: "Quelqu’un à l’extérieur de l’équipe surveille cela",
       },
       {
-        text: "Le gouvernement du Canada en fait aussi le suivi : l’état de santé de chaque application est consigné dans l’outil de gestion du portefeuille d’applications du ministère, et exploiter une technologie non soutenue est interdit par la Norme sur la technologie de l’information à risque. Le bureau du DPI fait rapport ; l’équipe tient à jour le dossier de son application.",
+        text: "Le gouvernement du Canada en fait aussi le suivi : l’état de santé de chaque application est consigné dans l’outil de gestion du portefeuille d’applications du ministère, et exploiter une technologie non soutenue est interdit par la Norme sur la technologie de l’information à risque. Le bureau du DPI fait rapport; l’équipe tient à jour le dossier de son application.",
         bold: [{ phrase: "exploiter une technologie non soutenue est interdit" }],
         externalLinks: [
           { phrase: "Norme sur la technologie de l’information à risque", linkKey: "standard-at-risk-it" },
@@ -126,7 +126,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
     title: "Le garder bon pour les personnes qui l’utilisent.",
     sections: [
       {
-        text: "Le tableau de bord montre où les gens ont de la difficulté ; la recherche auprès des gens eux-mêmes montre pourquoi. Une ronde de recherche sur les utilisateurs une fois par année est un plancher courant, et les constats entrent dans le carnet de produit comme tout autre travail.",
+        text: "Le tableau de bord montre où les gens ont de la difficulté; la recherche auprès des gens eux-mêmes montre pourquoi. Une ronde de recherche sur les utilisateurs une fois par année est un plancher courant, et les constats entrent dans le carnet de produit comme tout autre travail.",
         bold: [{ phrase: "la recherche auprès des gens eux-mêmes montre pourquoi" }],
         internalLinks: [
           { phrase: "recherche sur les utilisateurs", to: "/thread/user-research" },
@@ -211,7 +211,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
         items: [
           {
             bold: "Le Répertoire des services du GC,",
-            text: " mis à jour chaque année par l’appel de données du ministère. L’équipe fournit les chiffres de son service ; le cadre désigné les dépose.",
+            text: " mis à jour chaque année par l’appel de données du ministère. L’équipe fournit les chiffres de son service; le cadre désigné les dépose.",
           },
           {
             bold: "Le dossier de gestion du portefeuille d’applications,",
@@ -219,7 +219,7 @@ export const MATURITY_ACCORDION_STAGES: readonly MaturityAccordionStage[] = [
           },
           {
             bold: "Les normes de service, réexaminées régulièrement.",
-            text: " La directive exige un examen régulier ; les réexaminer chaque année, au regard du rendement de l’année, est le conseil courant.",
+            text: " La directive exige un examen régulier; les réexaminer chaque année, au regard du rendement de l’année, est le conseil courant.",
           },
           {
             text: "Si le service perçoit des frais, la Loi sur les frais de service ajoute des obligations prévues par la loi : un rapport sur les frais déposé au Parlement chaque exercice, des frais rajustés annuellement selon l’inflation, et une partie des frais remise quand la norme de rendement n’a pas été atteinte.",
@@ -346,7 +346,7 @@ export const MATURITY_TEAM = {
       role: "Développeurs, du fournisseur ou de l’interne",
       icon: Code2,
       body: {
-        text: "une tranche constante de capacité pour les correctifs et les petites améliorations. La tranche peut être petite ; un service qui cesse de s’améliorer vieillit vers un remplacement forcé.",
+        text: "une tranche constante de capacité pour les correctifs et les petites améliorations. La tranche peut être petite; un service qui cesse de s’améliorer vieillit vers un remplacement forcé.",
       },
     },
     {
@@ -398,7 +398,7 @@ export const MATURITY_FINISH = {
       heading: "L’argent de la suite est mis de côté avant la fin du financement actuel",
       paragraphs: [
         {
-          text: "Le travail qui suit coûte de l’argent. Un retour à la Croissance exige une nouvelle décision de financement pour la construction ; un retrait est en soi des mois de travail financé. Ni l’un ni l’autre ne peut être payé à même une enveloppe déjà terminée.",
+          text: "Le travail qui suit coûte de l’argent. Un retour à la Croissance exige une nouvelle décision de financement pour la construction; un retrait est en soi des mois de travail financé. Ni l’un ni l’autre ne peut être payé à même une enveloppe déjà terminée.",
         },
         {
           text: "Entamez la demande pendant que l’enveloppe actuelle paie encore le service. Une décision de financement avance au rythme des approbations, et les prolongations achetées entre-temps le sont aux conditions du fournisseur.",
@@ -421,7 +421,7 @@ export const MATURITY_FINISH = {
     heading: "Pourquoi aucun point de contrôle ne clôt la Maturité",
     paragraphs: [
         {
-          text: "Ceci existe pour répondre à une question que soulèvent les blocs ci-dessus : où est le point de contrôle qui clôt la Maturité ? Il n’y en a pas, et la raison façonne toute la section.",
+          text: "Ceci existe pour répondre à une question que soulèvent les blocs ci-dessus : où est le point de contrôle qui clôt la Maturité? Il n’y en a pas, et la raison façonne toute la section.",
         },
         {
           text: "Chaque instrument qui atteint la Maturité y arrive comme une obligation d’entretien : déclarations renouvelées, autorisations maintenues, examens récurrents. Les gestes de fermeture appartiennent au Retrait. Aucune approbation ne met donc fin à la Maturité. Le responsable opérationnel lit les preuves et décide, et les blocs ci-dessus sont ce dont cette décision a besoin.",
@@ -482,7 +482,7 @@ export const MATURITY_SOURCES: SourceItem[] = [
     label: "Modèles et outils",
     linkKey: "gc-service-inventory",
     description:
-      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le dossier du service est tenu à jour.",
+      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le dossier du service est tenu à jour.",
   },
   {
     label: "Instrument directeur",
@@ -518,7 +518,7 @@ export const MATURITY_SOURCES: SourceItem[] = [
     label: "Instrument directeur",
     linkKey: "charging-directive",
     description:
-      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : comment les frais de service sont établis et examinés.",
+      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : comment les frais de service sont établis et examinés.",
   },
   {
     label: "Référence complémentaire",
@@ -530,11 +530,11 @@ export const MATURITY_SOURCES: SourceItem[] = [
     label: "Référence complémentaire",
     linkKey: "oag-phoenix-build",
     description:
-      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
   },
   {
     label: "Collectivités",
     description:
-      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
+      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
   },
 ];

@@ -209,10 +209,10 @@ export const SECURITY_THREAD = {
           {
             type: "orderedList",
             items: [
-              "Que construisons-nous ?",
-              "Qu’est-ce qui peut mal tourner ?",
-              "Qu’allons-nous faire à ce sujet ?",
-              "Avons-nous fait un assez bon travail ?",
+              "Que construisons-nous?",
+              "Qu’est-ce qui peut mal tourner?",
+              "Qu’allons-nous faire à ce sujet?",
+              "Avons-nous fait un assez bon travail?",
             ],
           },
           {
@@ -261,11 +261,11 @@ export const SECURITY_THREAD = {
             type: "orderedList",
             items: [
               {
-                text: "les menaces, tirées de votre modèle de menaces ;",
+                text: "les menaces, tirées de votre modèle de menaces;",
                 bold: [{ phrase: "threats" }],
               },
               {
-                text: "la sensibilité de l’information, tirée de la catégorisation ;",
+                text: "la sensibilité de l’information, tirée de la catégorisation;",
                 bold: [{ phrase: "sensitivity" }],
               },
               {
@@ -284,8 +284,8 @@ export const SECURITY_THREAD = {
           {
             type: "orderedList",
             items: [
-              { text: "une fois contre la conception de haut niveau ;" },
-              { text: "de nouveau contre la conception détaillée ;" },
+              { text: "une fois contre la conception de haut niveau;" },
+              { text: "de nouveau contre la conception détaillée;" },
               { text: "et une troisième fois contre le système réellement construit." },
             ],
           },
@@ -301,7 +301,7 @@ export const SECURITY_THREAD = {
             text: "En pratique, l’évaluation en technologie de l’information est habituellement plus étroite, parce que les dangers naturels sont traités par la planification de la continuité, qui relève d’une autre équipe et d’un autre plan. C’est une façon raisonnable de répartir le travail. Elle cesse de l’être quand personne n’a demandé lequel des deux est responsable d’un danger : il vaut donc la peine de demander à votre équipe de sécurité ce que couvre son évaluation et ce qu’elle présume couvert par quelqu’un d’autre.",
           },
           {
-            text: "Ce troisième passage produit l’évaluation du risque résiduel : le relevé du risque qui subsiste, et ce sur quoi l’autorisateur appose sa signature. Rien ici n’est déposé à l’extérieur du ministère. Ce qui impose le travail, c’est l’autorisation d’exploiter, parce que sans évaluation l’autorisateur n’a rien à accepter.",
+            text: "Ce troisième passage produit l’évaluation du risque résiduel : le relevé du risque qui subsiste, et ce sur quoi l’autorité approbatrice appose sa signature. Rien ici n’est déposé à l’extérieur du ministère. Ce qui impose le travail, c’est l’autorisation d’exploiter, parce que sans évaluation l’autorité approbatrice n’a rien à accepter.",
           },
           {
             type: "subheading",
@@ -316,7 +316,7 @@ export const SECURITY_THREAD = {
             label: "Exemple",
             paragraphs: [
               {
-                text: "L’application Alerte COVID fonctionnait en faisant échanger aux téléphones des codes aléatoires anonymes par Bluetooth ; si quelqu’un obtenait ensuite un résultat positif, ces codes servaient à avertir les personnes dont il s’était récemment approché. La seule chose qui aurait causé un préjudice réel était le code capable de déclencher une alerte « vous avez été exposé » : l’effort de sécurité s’est donc concentré là, avec des mesures empêchant quiconque d’envoyer de fausses alertes.",
+                text: "L’application Alerte COVID fonctionnait en faisant échanger aux téléphones des codes aléatoires anonymes par Bluetooth; si quelqu’un obtenait ensuite un résultat positif, ces codes servaient à avertir les personnes dont il s’était récemment approché. La seule chose qui aurait causé un préjudice réel était le code capable de déclencher une alerte « vous avez été exposé » : l’effort de sécurité s’est donc concentré là, avec des mesures empêchant quiconque d’envoyer de fausses alertes.",
                 externalLinks: [
                   { phrase: "L’application Alerte COVID", linkKey: "covid-alert-privacy-assessment" },
                 ] satisfies ExternalPhraseLink[],
@@ -338,8 +338,8 @@ export const SECURITY_THREAD = {
           {
             type: "unorderedList",
             items: [
-              "ne donner à chaque personne et à chaque système que l’accès nécessaire ;",
-              "chiffrer les données qui comptent ;",
+              "ne donner à chaque personne et à chaque système que l’accès nécessaire;",
+              "chiffrer les données qui comptent;",
               "garder le service à jour en appliquant les correctifs selon un calendrier.",
             ],
           },
@@ -686,7 +686,7 @@ export const SECURITY_THREAD = {
       label: "Référence complémentaire",
       linkKey: "guide-open-source-software" satisfies ExternalLinkKey,
       description:
-        "Guide pour l’utilisation de logiciels libres (GC) — https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-using-open-source-software.html — la position du GC sur le libre derrière « ouvert par défaut » ; liée en ligne depuis le bloc Protéger.",
+        "Guide pour l’utilisation de logiciels libres (GC) — https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-using-open-source-software.html — la position du GC sur le libre derrière « ouvert par défaut »; liée en ligne depuis le bloc Protéger.",
     },
     {
       label: "Référence complémentaire",
@@ -698,13 +698,13 @@ export const SECURITY_THREAD = {
       label: "Référence complémentaire",
       linkKey: "threat-modelling-developers" satisfies ExternalLinkKey,
       description:
-        "CCC, Modélisation des menaces pour les développeurs — ce qu’est un modèle de menaces ; liée en ligne depuis le bloc Identifier.",
+        "CCC, Modélisation des menaces pour les développeurs — ce qu’est un modèle de menaces; liée en ligne depuis le bloc Identifier.",
     },
     {
       label: "Référence complémentaire",
       linkKey: "threat-modeling-manifesto" satisfies ExternalLinkKey,
       description:
-        "Threat Modeling Manifesto — les quatre questions simples derrière la modélisation des menaces ; liée en ligne depuis le bloc Identifier.",
+        "Threat Modeling Manifesto — les quatre questions simples derrière la modélisation des menaces; liée en ligne depuis le bloc Identifier.",
     },
     {
       label: "Référence complémentaire",
@@ -722,7 +722,7 @@ export const SECURITY_THREAD = {
       label: "Référence complémentaire",
       linkKey: "incident-response-plan-itsap40003" satisfies ExternalLinkKey,
       description:
-        "CCC, Élaborer un plan d’intervention en cas d’incident (ITSAP.40.003) — ce qu’est un plan d’intervention ; lié en ligne depuis « À quoi ressemble la réussite », le bloc Intervenir, et la phase Exploitation.",
+        "CCC, Élaborer un plan d’intervention en cas d’incident (ITSAP.40.003) — ce qu’est un plan d’intervention; lié en ligne depuis « À quoi ressemble la réussite », le bloc Intervenir, et la phase Exploitation.",
     },
     {
       label: "Référence complémentaire",
@@ -747,19 +747,19 @@ export const SECURITY_THREAD = {
       label: "Référence complémentaire",
       linkKey: "cccs-top-10-it-security-actions" satisfies ExternalLinkKey,
       description:
-        "CCC, 10 principales mesures de sécurité des TI (ITSM.10.089) — les défenses classées qui réduisent le plus le risque ; lecture complémentaire.",
+        "CCC, 10 principales mesures de sécurité des TI (ITSM.10.089) — les défenses classées qui réduisent le plus le risque; lecture complémentaire.",
     },
     {
       label: "Référence complémentaire",
       linkKey: "cccs-baseline-cyber-security-sme" satisfies ExternalLinkKey,
       description:
-        "CCC, Contrôles de cybersécurité de base pour les petites et moyennes organisations — un ensemble de contrôles plus simple pour un service de moindre envergure ; lecture complémentaire.",
+        "CCC, Contrôles de cybersécurité de base pour les petites et moyennes organisations — un ensemble de contrôles plus simple pour un service de moindre envergure; lecture complémentaire.",
     },
     {
       label: "Référence complémentaire",
       linkKey: "cisa-secure-by-design" satisfies ExternalLinkKey,
       description:
-        "CISA des États-Unis, Secure by Design — l’argument pour concevoir la sécurité dès le départ plutôt que de l’ajouter après coup ; lecture complémentaire.",
+        "CISA des États-Unis, Secure by Design — l’argument pour concevoir la sécurité dès le départ plutôt que de l’ajouter après coup; lecture complémentaire.",
     },
   ] satisfies SourceItem[],
 } as const;

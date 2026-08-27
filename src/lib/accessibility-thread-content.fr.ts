@@ -39,7 +39,7 @@ export const ACCESSIBILITY_THREAD = {
 
   userResearchOverlap: {
     text:
-      "L’accessibilité chevauche la recherche sur les utilisateurs, en particulier les tests avec de vraies personnes. Cette page couvre le volet accessibilité ; la recherche et les tests avec les utilisateurs en général relèvent de la recherche sur les utilisateurs.",
+      "L’accessibilité chevauche la recherche sur les utilisateurs, en particulier les tests avec de vraies personnes. Cette page couvre le volet accessibilité; la recherche et les tests avec les utilisateurs en général relèvent de la recherche sur les utilisateurs.",
     internalLinks: [
       { phrase: "recherche sur les utilisateurs", to: THREADS["user-research"].path },
     ] satisfies InternalPhraseLink[],
@@ -94,7 +94,7 @@ export const ACCESSIBILITY_THREAD = {
 
   whyItMatters: {
     text:
-      "Quand un service n’est pas accessible, des gens sont exclus de choses qu’ils ont le droit d’utiliser — une prestation, une déclaration de revenus, un service de santé — et il n’existe souvent aucun autre moyen de les obtenir. C’est aussi une obligation légale : en vertu de la Loi canadienne sur l’accessibilité et du Règlement canadien sur l’accessibilité, un service numérique fédéral doit respecter la norme d’accessibilité, avec des échéances échelonnées en 2027 et 2028, et le commissaire à l’accessibilité peut imposer des sanctions. Il y a un intervalle entre les deux, et il est facile à mal lire. La Norme sur l’accessibilité des sites Web du Conseil du Trésor a été abrogée le 2 mars 2026 : jusqu’à ce que le règlement s’applique, aucune norme unique du Conseil du Trésor n’est en vigueur. Ce n’est pas une pause. La consigne donnée aux ministères est que l’abrogation ne doit pas entraîner de réduction de l’accessibilité, de report de l’entretien, ni de recul. Continuez de respecter au moins ce que le service respectait déjà, et nommez CAN/ASC-EN 301 549 dans tout ce qui est acheté maintenant, parce qu’une plateforme choisie aujourd’hui fonctionnera encore à l’arrivée des échéances. Intégrer l’accessibilité tôt coûte bien moins cher que de la corriger sous pression d’échéance, et un service accessible est plus facile pour tout le monde, sur un téléphone, sur une connexion lente, en plein soleil. La plupart des obstacles sont ordinaires et évitables : une image sans texte de remplacement, un formulaire qui exige une souris, un contraste trop faible pour être lu.",
+      "Quand un service n’est pas accessible, des gens sont exclus de choses qu’ils ont le droit d’utiliser — une prestation, une déclaration de revenus, un service de santé — et il n’existe souvent aucun autre moyen de les obtenir. C’est aussi une obligation légale : en vertu de la Loi canadienne sur l’accessibilité et du Règlement canadien sur l’accessibilité, un service numérique fédéral doit respecter la norme d’accessibilité, avec des échéances échelonnées en 2027 et 2028, et le commissaire à l’accessibilité peut imposer des sanctions. Il y a un intervalle entre les deux, et il est facile à mal lire. La Norme sur l’accessibilité des sites Web du Conseil du Trésor a été abrogée le 2 mars 2026 : jusqu’à ce que le règlement s’applique, aucune norme unique du Conseil du Trésor n’est en vigueur. Ce n’est pas une pause. La consigne donnée aux ministères est que l’abrogation ne doit pas entraîner de réduction de l’accessibilité, de report de l’entretien, ni de recul. Continuez de respecter au moins ce que le service respectait déjà, et nommez CAN/ASC-EN 301 549 dans tout ce qui est acheté maintenant, parce qu’une plateforme choisie aujourd’hui fonctionnera encore à l’arrivée des échéances. Intégrer l’accessibilité tôt coûte bien moins cher que de la corriger sous pression d’échéance, et un service accessible est plus facile pour tout le monde, sur un téléphone, sur une connexion lente, en plein soleil. La plupart des obstacles sont ordinaires et évitables : une image sans texte de remplacement, un formulaire qui exige une souris, un contraste trop faible pour être lu.",
     externalLinks: [
       { phrase: "Loi canadienne sur l’accessibilité", linkKey: "accessible-canada-act-summary" },
       {
@@ -154,7 +154,7 @@ export const ACCESSIBILITY_THREAD = {
             ],
           },
           {
-            text: "La norme dépasse le site Web : les documents numériques comme les PDF et les fichiers Word, et toute application mobile, doivent la respecter aussi. Les WCAG comportent trois niveaux, A, AA et AAA ; AA est la barre à laquelle un service gouvernemental se construit.",
+            text: "La norme dépasse le site Web : les documents numériques comme les PDF et les fichiers Word, et toute application mobile, doivent la respecter aussi. Les WCAG comportent trois niveaux, A, AA et AAA; AA est la barre à laquelle un service gouvernemental se construit.",
             bold: [{ phrase: "AA" }],
           },
         ],
@@ -306,7 +306,7 @@ export const ACCESSIBILITY_THREAD = {
         popup: [
           {
             text:
-              "Une fois le service en fonction, chaque nouvelle page, chaque document et chaque fonctionnalité sont tenus à la norme, et le service est testé régulièrement, y compris avec des technologies d’assistance. Une déclaration d’accessibilité publiée indique ce qui est accessible et ce qui ne l’est pas et comment demander de l’aide ou une solution de rechange, et un canal de rétroaction permet aux gens de signaler des obstacles. La déclaration revient au ministère en vertu du Règlement canadien sur l’accessibilité modifié, avec entrée en vigueur progressive à partir de décembre 2027 ; une seule déclaration peut couvrir plusieurs services, et les résultats de tests de chaque service l’alimentent. Les personnes qui ne peuvent pas utiliser le service seules sont soutenues par téléphone ou en personne. Le personnel qui construit ou achète des technologies numériques tient sa formation en accessibilité à jour.",
+              "Une fois le service en fonction, chaque nouvelle page, chaque document et chaque fonctionnalité sont tenus à la norme, et le service est testé régulièrement, y compris avec des technologies d’assistance. Une déclaration d’accessibilité publiée indique ce qui est accessible et ce qui ne l’est pas et comment demander de l’aide ou une solution de rechange, et un canal de rétroaction permet aux gens de signaler des obstacles. La déclaration revient au ministère en vertu du Règlement canadien sur l’accessibilité modifié, avec entrée en vigueur progressive à partir de décembre 2027; une seule déclaration peut couvrir plusieurs services, et les résultats de tests de chaque service l’alimentent. Les personnes qui ne peuvent pas utiliser le service seules sont soutenues par téléphone ou en personne. Le personnel qui construit ou achète des technologies numériques tient sa formation en accessibilité à jour.",
             internalLinks: [
               {
                 phrase: "soutenues par téléphone ou en personne",
@@ -347,7 +347,7 @@ export const ACCESSIBILITY_THREAD = {
       label: "Instrument directeur",
       linkKey: "accessible-canada-act-summary" satisfies ExternalLinkKey,
       description:
-        "Loi canadienne sur l’accessibilité (résumé d’EDSC ; texte contraignant chez Justice) — https://www.canada.ca/en/employment-social-development/programs/accessible-canada/act-summary.html",
+        "Loi canadienne sur l’accessibilité (résumé d’EDSC; texte contraignant chez Justice) — https://www.canada.ca/en/employment-social-development/programs/accessible-canada/act-summary.html",
     },
     {
       label: "Instrument directeur",
@@ -359,13 +359,13 @@ export const ACCESSIBILITY_THREAD = {
       label: "Instrument directeur",
       linkKey: "can-asc-en-301-549" satisfies ExternalLinkKey,
       description:
-        "CAN/ASC-EN 301 549:2024, exigences d’accessibilité pour les TIC (Normes d’accessibilité Canada ; PDF gratuit) — https://accessible.canada.ca/",
+        "CAN/ASC-EN 301 549:2024, exigences d’accessibilité pour les TIC (Normes d’accessibilité Canada; PDF gratuit) — https://accessible.canada.ca/",
     },
     {
       label: "Référence complémentaire",
       linkKey: "policy-on-service-and-digital" satisfies ExternalLinkKey,
       description:
-        "Orientation du SCT sur l’accessibilité des TIC (2026-03-02), au titre de la Politique sur les services et le numérique (art. 4.4.11) ; elle a abrogé l’ancienne Norme sur l’accessibilité des sites Web et fixe la règle de transition — https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603",
+        "Orientation du SCT sur l’accessibilité des TIC (2026-03-02), au titre de la Politique sur les services et le numérique (art. 4.4.11); elle a abrogé l’ancienne Norme sur l’accessibilité des sites Web et fixe la règle de transition — https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603",
     },
     {
       label: "Référence complémentaire",

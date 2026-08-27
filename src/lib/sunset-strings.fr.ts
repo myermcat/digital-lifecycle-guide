@@ -91,8 +91,8 @@ export const SUNSET_STRINGS = {
   },
 
   fork: {
-    title: "La première décision : remplacer ou mettre hors service ?",
-    intro: "Avant tout, répondez à une question : le service est-il encore nécessaire ?",
+    title: "La première décision : remplacer ou mettre hors service?",
+    intro: "Avant tout, répondez à une question : le service est-il encore nécessaire?",
     bullets: [
       {
         lead: "Le besoin a disparu : vous le mettez hors service.",
@@ -105,7 +105,7 @@ export const SUNSET_STRINGS = {
     ],
     close:
       "L’essentiel de cette page suit le chemin du remplacement, le plus long des deux. Le chemin de la mise hors service est le même parcours, sans le milieu.",
-    cardTitle: "Remplacer ou mettre hors service ?",
+    cardTitle: "Remplacer ou mettre hors service?",
     pathOptions: [
       {
         path: "replace" as const,
@@ -129,7 +129,7 @@ export const SUNSET_STRINGS = {
         label: "Évaluer",
         title: "Évaluer : faire l’inventaire de l’ancien service.",
         leadIn: "Dressez un portrait clair de ce que vous avez.",
-        body: "Dressez un portrait clair de ce que vous avez avant de changer quoi que ce soit. Faites l’inventaire du service : ce qu’il fait, qui l’utilise et comment, ce à quoi il se connecte, ce qu’il coûte à exploiter, quelles données il détient, et à quel point il est essentiel. Posez ensuite la question plus difficile pour chaque application : est-elle encore nécessaire ? Certaines valent la peine d’être conservées et transférées, d’autres peuvent être mises hors service purement et simplement. Nommez les risques d’y toucher, en particulier tout ce qui perturberait les utilisateurs en plein cycle.",
+        body: "Dressez un portrait clair de ce que vous avez avant de changer quoi que ce soit. Faites l’inventaire du service : ce qu’il fait, qui l’utilise et comment, ce à quoi il se connecte, ce qu’il coûte à exploiter, quelles données il détient, et à quel point il est essentiel. Posez ensuite la question plus difficile pour chaque application : est-elle encore nécessaire? Certaines valent la peine d’être conservées et transférées, d’autres peuvent être mises hors service purement et simplement. Nommez les risques d’y toucher, en particulier tout ce qui perturberait les utilisateurs en plein cycle.",
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Step 1, Application Inventory Template — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {

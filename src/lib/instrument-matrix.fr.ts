@@ -79,7 +79,7 @@ export const MATRIX_KINDS: Record<MatrixKind, { label: string; gloss: string }> 
   },
   authorization: {
     label: "Autorisation",
-    gloss: "L’autorisation d’aller de l’avant, signée par une personne nommée qui accepte le risque.",
+    gloss: "L’autorisation d’aller de l’avant, signée par une personne désignée qui accepte le risque.",
   },
   review: {
     label: "Examen",
@@ -135,7 +135,7 @@ export const MATRIX_ACTIONS: Record<
   sign: {
     label: "Signer ou accepter",
     gloss:
-      "Une personne nommée y appose son nom, ou reçoit le résultat de quelqu’un d’autre et décide quoi en faire.",
+      "Une personne désignée y appose son nom, ou reçoit le résultat de quelqu’un d’autre et décide quoi en faire.",
     className:
       "bg-rose-100 text-rose-900 border-rose-300 dark:bg-rose-950 dark:text-rose-200 dark:border-rose-800/70",
   },
@@ -282,14 +282,14 @@ export const MATRIX_FAMILY_SECTIONS: readonly {
     id: "topic-approvals",
     icon: Landmark,
     intro:
-      "Ces éléments déterminent quelle part du reste de la liste vous concerne. Deux mesures différentes sont à l’œuvre et on les confond facilement. Le score de complexité du projet, comparé à la classe de capacité approuvée du ministère, détermine si le Conseil du Trésor doit l’approuver. Des seuils d’investissement distincts déterminent si une analyse de rentabilisation conceptuelle est nécessaire. La plupart des projets sont sous les deux et restent à l’intérieur du ministère.",
+      "Ces éléments déterminent quelle part du reste de la liste vous concerne. Deux mesures différentes sont à l’œuvre et on les confond facilement. La cote de complexité du projet, comparé à la classe de capacité approuvée du ministère, détermine si le Conseil du Trésor doit l’approuver. Des seuils d’investissement distincts déterminent si une analyse de rentabilisation conceptuelle est nécessaire. La plupart des projets sont sous les deux et restent à l’intérieur du ministère.",
   },
   {
     family: "Contrats et fournisseurs",
     id: "topic-contracts",
     icon: FileSignature,
     intro:
-      "Les trois ne s’appliquent que si vous achetez, et les trois suivent le calendrier d’approvisionnement, ce qui les rend plus précoces qu’il n’y paraît. La liste de vérification et le filtrage s’appliquent lorsqu’un fournisseur traitera de l’information sensible : la liste de vérification doit être réglée avant la parution de la demande de soumissions, parce que les clauses de sécurité de celle-ci en découlent, et l’obtention des attestations de sécurité du personnel d’un fournisseur peut prendre plus de temps que le concours lui-même. La cible de 5 % de contrats attribués à des entreprises autochtones revient au ministère, et le seul moment où un responsable opérationnel peut l’influencer est avant la rédaction de la demande de soumissions.",
+      "Les trois ne s’appliquent que si vous achetez, et les trois suivent le calendrier d’approvisionnement, ce qui les rend plus précoces qu’il n’y paraît. La liste de vérification et le filtrage s’appliquent lorsqu’un fournisseur traitera de l’information sensible : la liste de vérification doit être réglée avant la parution de la demande de soumissions, parce que les clauses de sécurité de celle-ci en découlent, et l’obtention des attestations de sécurité du personnel d’un fournisseur peut prendre plus de temps que le concours lui-même. La cible de 5 % de contrats attribués à des entreprises autochtones revient au ministère, et le seul moment où un responsable opérationnel peut l’influencer est avant la rédaction de la demande de soumissions.",
   },
   {
     family: "Hébergement et infonuagique",
@@ -373,18 +373,18 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Évaluation de la menace et des risques",
-    acronym: "TRA",
+    acronym: "EMR",
     family: "Sécurité",
     kind: "assessment",
     whatItIs:
       "L’exercice qui énumère ce qui pourrait mal tourner, classe chaque élément selon sa probabilité et l’ampleur du dommage, et énonce le risque qui subsiste une fois les mesures de protection en place. Il couvre autant les menaces délibérées qu’accidentelles et naturelles : il est donc plus large qu’un exercice de cybersécurité.",
     everyService: true,
     scope:
-      "L’activité s’applique à tous les systèmes d’information qui soutiennent des programmes, services ou activités du ministère. Aucun seuil monétaire, aucun nombre d’utilisateurs, aucun score de risque. Un rapport autonome est autre chose : en produire un n’est ni recommandé ni exigé, et les résultats sont censés entrer dans les documents de conception ordinaires.",
+      "L’activité s’applique à tous les systèmes d’information qui soutiennent des programmes, services ou activités du ministère. Aucun seuil monétaire, aucun nombre d’utilisateurs, aucune cote de risque. Un rapport autonome est autre chose : en produire un n’est ni recommandé ni exigé, et les résultats sont censés entrer dans les documents de conception ordinaires.",
     ownerDoes:
       "Approuve le plan de travail avant le début de l’évaluation, et énonce d’avance le niveau de risque résiduel acceptable. Fournit la valeur du service pour les activités et ce dont il dépend. Accepte ou refuse le risque résiduel à la fin.",
     whoDoes:
-      "Un praticien de la sécurité travaille avec les concepteurs du système pendant la conception ; un évaluateur de sécurité, souvent un entrepreneur, évalue le système construit. Le responsable opérationnel siège à l’équipe d’évaluation à titre d’autorité du programme.",
+      "Un praticien de la sécurité travaille avec les concepteurs du système pendant la conception; un évaluateur de sécurité, souvent un entrepreneur, évalue le système construit. Le responsable opérationnel siège à l’équipe d’évaluation à titre d’autorité du programme.",
     whoBold: ["praticien de la sécurité", "évaluateur de sécurité", "responsable opérationnel"],
     ownerBold: [
       "Approuve le plan de travail",
@@ -407,7 +407,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       growth: {
         tags: ["keep"],
-        note: "Un changement signifie que l’évaluation du risque résiduel est mise à jour ; un changement majeur retourne aussi à l’autorisateur.",
+        note: "Un changement signifie que l’évaluation du risque résiduel est mise à jour; un changement majeur retourne aussi à l’autorité approbatrice.",
       },
       maturity: {
         tags: ["keep"],
@@ -417,7 +417,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Évaluation de la sécurité matérielle et autorisation d’occuper des locaux",
-    acronym: "ATOF",
+    acronym: undefined,
     family: "Sécurité",
     kind: "authorization",
     whatItIs:
@@ -432,7 +432,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoBold: ["La sécurité matérielle du ministère"],
     ownerBold: ["Indique si le service touche l’espace physique"],
     whereItEndsUp:
-      "Conservée au sein du ministère. Rien à l’extérieur ne l’attend : le calendrier appartient donc au ministère. Le dirigeant principal de la sécurité ou son délégué signe le rapport d’évaluation ; l’autorité déléguée approuve l’autorisation d’occuper des locaux.",
+      "Conservée au sein du ministère. Rien à l’extérieur ne l’attend : le calendrier appartient donc au ministère. Le dirigeant principal de la sécurité ou son délégué signe le rapport d’évaluation; l’autorité déléguée approuve l’autorisation d’occuper des locaux.",
     threads: ["security"],
     cells: {
       alpha: {
@@ -456,34 +456,34 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     scope:
       "Chaque système d’information, avant le début de l’exploitation. Chaque ministère définit sa propre pratique documentée pour la façon de procéder, et c’est pourquoi des systèmes identiques sont traités différemment selon les ministères.",
     ownerDoes:
-      "Obtient par écrit les conditions d’autorisation avant le début de la conception, à partir du plan de sécurité du ministère ou directement de l’autorisateur. Lit le dossier et décide : autoriser, autoriser sous conditions, ou refuser.",
+      "Obtient par écrit les conditions d’autorisation avant le début de la conception, à partir du plan de sécurité du ministère ou directement de l’autorité approbatrice. Lit le dossier et décide : autoriser, autoriser sous conditions, ou refuser.",
     whoDoes:
-      "L’équipe de sécurité de la technologie de l’information assemble le dossier ; un évaluateur de sécurité, souvent indépendant, réalise l’évaluation.",
+      "L’équipe de sécurité de la technologie de l’information assemble le dossier; un évaluateur de sécurité, souvent indépendant, réalise l’évaluation.",
     whoBold: ["équipe de sécurité de la technologie de l’information", "évaluateur de sécurité"],
     ownerBold: [
       "Obtient par écrit les conditions d’autorisation",
       "Lit le dossier et décide",
     ],
     whereItEndsUp:
-      "Conservée au sein du ministère et signée là. L’autorisateur est la seule personne qui l’attend. Pour les systèmes communs ou intégrés, y compris les services de Services partagés Canada, l’autorisateur est plutôt le dirigeant principal de l’information du Canada. Lorsque deux organisations ou plus partagent un système, c’est le gestionnaire du programme ou du service.",
+      "Conservée au sein du ministère et signée là. L’autorité approbatrice est la seule personne qui l’attend. Pour les systèmes communs ou intégrés, y compris les services de Services partagés Canada, l’autorité approbatrice est plutôt le dirigeant principal de l’information du Canada. Lorsque deux organisations ou plus partagent un système, c’est le gestionnaire du programme ou du service.",
     linkKey: "directive-security-management",
     threads: ["security"],
     cells: {
       discovery: {
         tags: ["gather", "sign"],
-        note: "Sortir les conditions permanentes d’autorisation du plan de sécurité du ministère, ou les obtenir directement de l’autorisateur, et les inscrire à la charte de projet. L’autorisateur signe la charte.",
+        note: "Sortir les conditions permanentes d’autorisation du plan de sécurité du ministère, ou les obtenir directement de l’autorité approbatrice, et les inscrire à la charte de projet. L’autorité approbatrice signe la charte.",
       },
       alpha: {
         tags: ["sign"],
-        note: "L’autorisateur approuve les exigences initiales d’assurance de la sécurité, l’ensemble de contrôles et la conception de haut niveau. Trois de ses sept points d’approbation.",
+        note: "L’autorité approbatrice approuve les exigences initiales d’assurance de la sécurité, l’ensemble de contrôles et la conception de haut niveau. Trois de ses sept points d’approbation.",
       },
       beta: {
         tags: ["sign"],
-        note: "L’autorisateur approuve la conception détaillée, approuve l’installation en production dans les projets plus grands, puis signe l’autorisation d’exploiter avant le début de l’exploitation. Elle n’expire pas et ne se renouvelle pas selon un calendrier.",
+        note: "L’autorité approbatrice approuve la conception détaillée, approuve l’installation en production dans les projets plus grands, puis signe l’autorisation d’exploiter avant le début de l’exploitation. Elle n’expire pas et ne se renouvelle pas selon un calendrier.",
       },
       growth: {
         tags: ["keep", "sign"],
-        note: "Les changements majeurs exigent des demandes de changement approuvées par les autorités opérationnelles et par l’autorisateur.",
+        note: "Les changements majeurs exigent des demandes de changement approuvées par les autorités opérationnelles et par l’autorité approbatrice.",
       },
       maturity: {
         tags: ["keep"],
@@ -501,7 +501,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* ------------------------------------------------------------------ */
   {
     name: "Analyse des répercussions sur les activités",
-    acronym: "BIA",
+    acronym: "ARA",
     family: "Continuité et incidents",
     kind: "assessment",
     whatItIs:
@@ -543,7 +543,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Plan de continuité des activités",
-    acronym: "BCP",
+    acronym: "PCA",
     family: "Continuité et incidents",
     kind: "plan",
     whatItIs:
@@ -571,7 +571,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       maturity: {
         tags: ["keep"],
-        note: "Mis à l’essai. La directive ne fixe aucun intervalle obligatoire ; elle n’exige que des essais réguliers conformes aux pratiques ministérielles ; les grands ministères sont évalués sur une fenêtre d’essai de deux ans. L’obligation d’essai retombe en pratique sur les responsables de service.",
+        note: "Mis à l’essai. La directive ne fixe aucun intervalle obligatoire; elle n’exige que des essais réguliers conformes aux pratiques ministérielles; les grands ministères sont évalués sur une fenêtre d’essai de deux ans. L’obligation d’essai retombe en pratique sur les responsables de service.",
       },
     },
   },
@@ -581,7 +581,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* ------------------------------------------------------------------ */
   {
     name: "Liste de vérification et évaluation des facteurs relatifs à la vie privée",
-    acronym: "PIA",
+    acronym: "ÉFVP",
     family: "Vie privée et décisions automatisées",
     kind: "assessment",
     whatItIs:
@@ -592,7 +592,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ownerDoes:
       "Remplit la liste de vérification, même lorsque la réponse s’avère négative. Indique quels renseignements personnels le service utilisera et quelles décisions concernant des personnes seront prises à partir d’eux.",
     whoDoes:
-      "Le secteur de programme la rédige selon le gabarit du Conseil du Trésor ; le bureau de l’accès à l’information et de la protection des renseignements personnels l’examine, l’itère et en est propriétaire.",
+      "Le secteur de programme la rédige selon le gabarit du Conseil du Trésor; le bureau de l’accès à l’information et de la protection des renseignements personnels l’examine, l’itère et en est propriétaire.",
     whoBold: ["secteur de programme", "bureau de l’accès à l’information et de la protection des renseignements personnels"],
     ownerBold: ["Remplit la liste de vérification", "Indique quels renseignements personnels le service utilisera"],
     whereItEndsUp:
@@ -626,11 +626,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Évaluation de l’incidence algorithmique",
-    acronym: "AIA",
+    acronym: "ÉIA",
     family: "Vie privée et décisions automatisées",
     kind: "assessment",
     whatItIs:
-      "Un questionnaire coté sur l’ampleur de l’incidence qu’une décision automatisée pourrait avoir sur les droits, la santé ou les intérêts économiques d’une personne, ou sur la durabilité continue d’un écosystème. Le score fixe ce que le service doit ensuite en matière d’explication, d’intervention humaine, de mise à l’essai et de recours.",
+      "Un questionnaire coté sur l’ampleur de l’incidence qu’une décision automatisée pourrait avoir sur les droits, la santé ou les intérêts économiques d’une personne, ou sur la durabilité continue d’un écosystème. La cote fixe ce que le service doit ensuite en matière d’explication, d’intervention humaine, de mise à l’essai et de recours.",
     everyService: false,
     scope:
       "Seulement si le service prend ou soutient une décision automatisée concernant une personne : cotation, classement, recommandation ou approbation automatique. Une fonctionnalité d’efficience ajoutée plus tard peut la déclencher sans que personne s’en aperçoive.",
@@ -670,14 +670,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* ------------------------------------------------------------------ */
   {
     name: "Rapport de conformité en matière d’accessibilité",
-    acronym: "ACR",
+    acronym: "RCA",
     family: "Accessibilité",
     kind: "assessment",
     whatItIs:
       "La déclaration écrite d’un fournisseur indiquant dans quelle mesure son produit respecte la norme d’accessibilité, clause par clause, avec les écarts nommés. C’est une affirmation à vérifier.",
     everyService: false,
     scope:
-      "Seulement à l’achat. Une construction interne n’a ni fournisseur ni rapport ; l’obligation équivalente est l’évaluation de conformité du ministère lui-même au regard de la norme.",
+      "Seulement à l’achat. Une construction interne n’a ni fournisseur ni rapport; l’obligation équivalente est l’évaluation de conformité du ministère lui-même au regard de la norme.",
     ownerDoes:
       "Indique quelles clauses de la norme le service doit respecter, pour qu’elles entrent dans la demande de soumissions, puis lit le rapport du fournisseur et vérifie ses affirmations à l’égard du produit.",
     whoDoes: "Le fournisseur, par l’entremise d’un tiers ou d’un expert interne qualifié en accessibilité.",
@@ -757,7 +757,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Un court exposé initial du problème et de l’ordre de grandeur de l’investissement, produit avant une analyse de rentabilisation et avant qu’une solution soit choisie.",
     everyService: false,
     scope:
-      "Obligatoire pour les projets habilités par le numérique lorsque le ministère est prêt à investir au moins : 2,5 millions de dollars sans classe de capacité approuvée ou en classe 1 ; 5 millions en classe 2 ; 10 millions en classe 3 ; 15 millions pour la Défense nationale ; 25 millions en classe 4.",
+      "Obligatoire pour les projets habilités par le numérique lorsque le ministère est prêt à investir au moins : 2,5 millions de dollars sans classe de capacité approuvée ou en classe 1; 5 millions en classe 2; 10 millions en classe 3; 15 millions pour la Défense nationale; 25 millions en classe 4.",
     ownerDoes:
       "Rédige le problème et l’ordre de grandeur à partir des preuves de la Découverte, puis la porte en approbation.",
     whoDoes: "Le ministère, avec approbation au niveau du sous-ministre adjoint ou plus haut.",
@@ -777,18 +777,18 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Évaluation de la complexité et des risques des projets",
-    acronym: "PCRA",
+    acronym: "ECRP",
     family: "Approbations et financement",
     kind: "assessment",
     whatItIs:
-      "Un outil de cotation de 64 questions qui classe un projet du niveau 1, maintien, au niveau 4, transformationnel. Le score détermine qui a le droit d’approuver le projet : le ministre, ou le Conseil du Trésor.",
+      "Un outil de cotation de 64 questions qui classe un projet du niveau 1, maintien, au niveau 4, transformationnel. La cote détermine qui a le droit d’approuver le projet : le ministre, ou le Conseil du Trésor.",
     everyService: false,
     scope:
-      "Exigée à : 2,5 millions de dollars sans classe de capacité approuvée ou en classe 0 ; 5 millions en classe 1 ; 10 millions en classe 2 ; 25 millions en classe 3 ; 50 millions en classe 4, taxes comprises. À noter que cette échelle diffère de celle du comité d’examen de l’architecture telle qu’elle est rédigée.",
+      "Exigée à : 2,5 millions de dollars sans classe de capacité approuvée ou en classe 0; 5 millions en classe 1; 10 millions en classe 2; 25 millions en classe 3; 50 millions en classe 4, taxes comprises. À noter que cette échelle diffère de celle du comité d’examen de l’architecture telle qu’elle est rédigée.",
     ownerDoes:
       "Répond aux questions sur les risques opérationnels, y compris le degré de préparation réel de l’organisation à adopter la chose.",
     whoDoes:
-      "Le bureau de gestion de projet du ministère la rédige ; le parrain du projet est chargé de veiller à ce qu’elle soit remplie ; l’administrateur général répond de son exactitude.",
+      "Le bureau de gestion de projet du ministère la rédige; le parrain du projet est chargé de veiller à ce qu’elle soit remplie; l’administrateur général répond de son exactitude.",
     whoBold: ["bureau de gestion de projet", "parrain du projet", "administrateur général"],
     ownerBold: ["Répond aux questions sur les risques opérationnels"],
     whereItEndsUp:
@@ -808,14 +808,14 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Comité d’examen de l’architecture du ministère",
-    acronym: "DARB",
+    acronym: "CEAM",
     family: "Approbations et financement",
     kind: "review",
     whatItIs:
       "Le comité propre au ministère, qui examine la conception d’une initiative numérique au regard du cadre d’architecture pangouvernemental : chercher ce qui existe déjà avant d’acheter ou de construire, normes ouvertes, données, sécurité et protection de la vie privée.",
     everyService: true,
     scope:
-      "Toutes les initiatives numériques ministérielles. Deux exclusions : les petits ministères et organismes, c’est-à-dire dont les niveaux de référence sont inférieurs à 300 millions de dollars par année ou qui sont désignés comme tels, sont exemptés ; les agents du Parlement le sont aussi.",
+      "Toutes les initiatives numériques ministérielles. Deux exclusions : les petits ministères et organismes, c’est-à-dire dont les niveaux de référence sont inférieurs à 300 millions de dollars par année ou qui sont désignés comme tels, sont exemptés; les agents du Parlement le sont aussi.",
     ownerDoes: "Présente la direction retenue, en apportant le balayage de réutilisation produit par la Découverte.",
     whoDoes:
       "Le comité examine. L’équipe d’architecture du dirigeant principal de l’information réserve la plage et prépare la documentation.",
@@ -849,7 +849,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ownerDoes:
       "Vérifie les six déclencheurs, puisqu’une petite initiative peut être visée par les seules technologies émergentes ou l’hébergement, puis fournit la documentation pour la présentation du dirigeant principal de l’information du ministère.",
     whoDoes:
-      "Le dirigeant principal de l’information du ministère présente ; l’équipe de projet y assiste habituellement.",
+      "Le dirigeant principal de l’information du ministère présente; l’équipe de projet y assiste habituellement.",
     whoBold: ["dirigeant principal de l’information du ministère"],
     ownerBold: ["Vérifie les six déclencheurs", "fournit la documentation"],
     whereItEndsUp:
@@ -874,7 +874,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Lorsque le niveau de complexité du projet dépasse la classe de capacité approuvée du ministère, ou que le ministère n’a pas de classe et que le projet dépasse 2,5 millions de dollars. Plus tous les programmes. Plus l’approvisionnement ou les biens immobiliers au-delà de leurs propres limites d’approbation.",
     ownerDoes:
       "Fournit la raison d’être du service, ce qu’il coûtera, et les avantages qu’il promet. Ces promesses font l’objet d’un suivi après l’approbation.",
-    whoDoes: "Le ministère la rédige ; le dirigeant principal des finances atteste.",
+    whoDoes: "Le ministère la rédige; le dirigeant principal des finances atteste.",
     whoBold: ["Le ministère la rédige", "le dirigeant principal des finances atteste"],
     ownerBold: ["Fournit la raison d’être du service", "les avantages qu’il promet"],
     whereItEndsUp: "Le ministre signe et elle est transmise au Conseil du Trésor.",
@@ -943,7 +943,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoBold: ["cadre désigné pour les services"],
     ownerBold: ["Nomme le service", "fournit les détails"],
     whereItEndsUp:
-      "Le ministère publie par le portail du gouvernement ouvert ; l’administrateur général approuve le répertoire et ses mises à jour annuelles.",
+      "Le ministère publie par le portail du gouvernement ouvert; l’administrateur général approuve le répertoire et ses mises à jour annuelles.",
     linkKey: "gc-service-inventory",
     moreLinks: ["policy-on-service-and-digital"],
     threads: ["data-stewardship"],
@@ -964,7 +964,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   },
   {
     name: "Gestion du portefeuille d’applications",
-    acronym: "APM",
+    acronym: "GPA",
     family: "Registres et documents",
     kind: "register",
     whatItIs:
@@ -978,7 +978,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whoBold: ["délégué du portefeuille"],
     ownerBold: ["Cote la criticité"],
     whereItEndsUp:
-      "Le ministère transmet au Secrétariat du Conseil du Trésor du Canada chaque année ; le jeu de données public est actualisé deux fois par année.",
+      "Le ministère transmet au Secrétariat du Conseil du Trésor du Canada chaque année; le jeu de données public est actualisé deux fois par année.",
     threads: ["data-stewardship", "dependencies-and-standards"],
     cells: {
       stabilization: {
@@ -1000,10 +1000,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     family: "Registres et documents",
     kind: "register",
     whatItIs:
-      "Le consentement écrit de Bibliothèque et Archives Canada sans lequel aucun document gouvernemental ne peut être détruit. L’autorisation est une permission de disposer. Elle n’ordonne à personne de disposer, et elle ne fixe pas les périodes de conservation ; c’est le calendrier propre au ministère qui le fait.",
+      "Le consentement écrit de Bibliothèque et Archives Canada sans lequel aucun document gouvernemental ne peut être détruit. L’autorisation est une permission de disposer. Elle n’ordonne à personne de disposer, et elle ne fixe pas les périodes de conservation; c’est le calendrier propre au ministère qui le fait.",
     everyService: true,
     scope:
-      "Toute l’information et toutes les données. Bibliothèque et Archives Canada délivre soit une autorisation propre à une institution, soit une autorisation pluri-institutionnelle ; le ministère confirme laquelle couvre ses documents et fixe lui-même les périodes de conservation.",
+      "Toute l’information et toutes les données. Bibliothèque et Archives Canada délivre soit une autorisation propre à une institution, soit une autorisation pluri-institutionnelle; le ministère confirme laquelle couvre ses documents et fixe lui-même les périodes de conservation.",
     ownerDoes:
       "Indique au bureau de la gestion de l’information quels documents et données le service créera et détiendra, et fixe la durée de conservation de chaque type.",
     whoDoes:
@@ -1051,7 +1051,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Inscrit ces éléments dans les exigences avant tout achat, avant tout l’exportation en bloc dans des formats ouverts et la capacité d’appliquer une règle de conservation. Un produit incapable de ces deux choses ne pourra pas y être amené plus tard sans être remplacé.",
     ownerBold: ["Inscrit ces éléments aux exigences avant tout achat"],
     whoDoes:
-      "La fonction de gestion de l’information dit ce qui est nécessaire ; l’équipe du service ou le fournisseur le construit.",
+      "La fonction de gestion de l’information dit ce qui est nécessaire; l’équipe du service ou le fournisseur le construit.",
     whoBold: ["fonction de gestion de l’information"],
     whereItEndsUp:
       "Conservé au sein du ministère. Rien n’est déposé. Cela se traduit par des clauses dans la demande de soumissions et par des points à vérifier à l’acceptation.",
@@ -1078,7 +1078,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     family: "Continuité et incidents",
     kind: "plan",
     whatItIs:
-      "Les dispositions de rétablissement propres à l’équipe du service : comment ce système se relève, dans quel ordre ses composants sont restaurés, et la preuve par les essais que la restauration fonctionne. Le plan de continuité des activités du ministère appartient au ministère ; ceci est la partie dont l’équipe est responsable.",
+      "Les dispositions de rétablissement propres à l’équipe du service : comment ce système se relève, dans quel ordre ses composants sont restaurés, et la preuve par les essais que la restauration fonctionne. Le plan de continuité des activités du ministère appartient au ministère; ceci est la partie dont l’équipe est responsable.",
     everyService: true,
     scope:
       "Tous les systèmes d’information. Les stratégies de rétablissement sont établies conformément aux exigences de continuité des activités du ministère : les cibles de rétablissement descendent donc de l’analyse des répercussions sur les activités, et c’est ici qu’elles sont atteintes.",
@@ -1194,13 +1194,13 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     ownerDoes:
       "Finance et planifie les deux langues dès le premier prototype, et teste avec des utilisateurs francophones.",
     whoDoes:
-      "L’équipe du service le construit bilingue ; le champion ou conseiller des langues officielles du ministère établit les obligations ; les communications sont responsables des normes de contenu.",
+      "L’équipe du service le construit bilingue; le champion ou conseiller des langues officielles du ministère établit les obligations; les communications sont responsables des normes de contenu.",
     whoBold: ["équipe du service", "champion ou conseiller des langues officielles"],
     ownerBold: ["Finance et planifie les deux langues", "teste avec des utilisateurs francophones"],
     whereItEndsUp:
       "Rien de courant n’est déposé. Un seul artefact est réel : toute initiative qui va au Conseil du Trésor porte une annexe sur les langues officielles remplie, la filtrant au regard des parties IV, V, VI et VII, plus une analyse d’incidence si une réponse est affirmative.",
     caveat:
-      "Le projet de loi C-13 a modifié les obligations relatives à la langue de travail à compter du 20 juin 2025 : tout ce qui a été rédigé avant cette date peut donc être désuet du côté du travail.",
+      "Le projet de loi C-13 a modifié les obligations relatives à la langue de travail à compter du 20 juin 2025 : tout ce qui a été rédigé avant cette date peut donc être désuet du côté du travail.",
     threads: ["joined-up-delivery", "change-management"],
     cells: {
       discovery: {
@@ -1292,7 +1292,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       beta: {
         tags: ["sign", "submit"],
-        note: "L’autorité de projet signe son bloc ; l’agent de sécurité signe le sien. L’attestation est confirmée avant l’adjudication, et le filtrage du fournisseur peut prendre des mois : un départ tardif retarde donc le contrat, non la paperasse.",
+        note: "L’autorité de projet signe son bloc; l’agent de sécurité signe le sien. L’attestation est confirmée avant l’adjudication, et le filtrage du fournisseur peut prendre des mois : un départ tardif retarde donc le contrat, non la paperasse.",
       },
       growth: {
         tags: ["keep"],
@@ -1316,7 +1316,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Les attestations qu’une entreprise et ses employés doivent détenir avant de toucher à du travail gouvernemental sensible. Un ministère ne peut pas les délivrer lui-même, et le travail ne peut pas être adjugé tant que l’attestation n’est pas confirmée par écrit.",
     everyService: false,
     scope:
-      "Chaque approvisionnement dont la Liste de vérification des exigences relatives à la sécurité recense une exigence de sécurité, et il en va de même pour les sous-traitants à tous les niveaux. Le filtrage de l’organisation couvre Protégé A, B et C ; une attestation d’installation vise le Classifié.",
+      "Chaque approvisionnement dont la Liste de vérification des exigences relatives à la sécurité recense une exigence de sécurité, et il en va de même pour les sous-traitants à tous les niveaux. Le filtrage de l’organisation couvre Protégé A, B et C; une attestation d’installation vise le Classifié.",
     ownerDoes:
       "Détermine tôt quel niveau d’attestation le travail exige. Le filtrage dure souvent plus longtemps que l’approvisionnement.",
     whoDoes:
@@ -1353,11 +1353,11 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
   /* ------------------------------------------------------------------ */
   {
     name: "Contrats attribués à des entreprises autochtones",
-    acronym: "la cible de 5 %",
+    acronym: "la cible de 5 %",
     family: "Contrats et fournisseurs",
     kind: "duty",
     whatItIs:
-      "Un engagement pangouvernemental voulant qu’au moins 5 % de la valeur totale des contrats aille à des entreprises autochtones chaque année. Les ministères le planifient, en rendent compte, et l’atteignent ou le manquent un approvisionnement à la fois.",
+      "Un engagement pangouvernemental voulant qu’au moins 5 % de la valeur totale des contrats aille à des entreprises autochtones chaque année. Les ministères le planifient, en rendent compte, et l’atteignent ou le manquent un approvisionnement à la fois.",
     everyService: false,
     scope:
       "Seulement à l’achat. La cible appartient au ministère et non à un contrat en particulier : aucun approvisionnement n’a donc à être réservé. Chaque approvisionnement est l’endroit où la cible est atteinte ou manquée, et c’est pourquoi les ministères la planifient d’avance. La qualification d’un fournisseur est vérifiée par Services aux Autochtones Canada.",
@@ -1427,7 +1427,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Seulement pour les services hébergés dans le nuage. Le profil de contrôles Protégé B est le point de départ habituel. Le Centre pour la cybersécurité évalue séparément les fournisseurs de services infonuagiques : un ministère hérite donc de cette évaluation plutôt que de la refaire, et n’évalue que sa propre configuration et son propre usage.",
     ownerDoes: "Indique ce que le service détient, pour que le bon profil de contrôles soit choisi.",
     whoDoes:
-      "L’équipe de sécurité du ministère, avec l’équipe infonuagique, établit le partage des responsabilités avec le fournisseur ; l’évaluation propre au fournisseur est héritée.",
+      "L’équipe de sécurité du ministère, avec l’équipe infonuagique, établit le partage des responsabilités avec le fournisseur; l’évaluation propre au fournisseur est héritée.",
     whoBold: ["équipe de sécurité du ministère"],
     ownerBold: ["Indique ce que le service détient"],
     linkKey: "gc-cloud-security-control-profile",
@@ -1549,7 +1549,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     whereItEndsUp:
       "L’adresse Web se règle à l’extérieur de l’équipe du service, par l’équipe Web du ministère. Pour une application mobile téléchargeable, l’entité de publication désignée la teste, la publie et la retire ensuite de façon indépendante : le ministère ne contrôle donc pas sa propre présence dans les magasins d’applications.",
     caveat:
-      "L’instrument directeur a changé le 27 mars 2025 : la Directive sur la gestion des communications et de l’image de marque a remplacé la directive sur les communications de 2016, et son annexe D a remplacé les anciennes procédures obligatoires pour les médias sociaux et les communications Web. Tout ce qui cite l’instrument antérieur cite un instrument archivé.",
+      "L’instrument directeur a changé le 27 mars 2025 : la Directive sur la gestion des communications et de l’image de marque a remplacé la directive sur les communications de 2016, et son annexe D a remplacé les anciennes procédures obligatoires pour les médias sociaux et les communications Web. Tout ce qui cite l’instrument antérieur cite un instrument archivé.",
     threads: ["accessibility", "change-management"],
     cells: {
       alpha: {
@@ -1570,7 +1570,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       },
       sunset: {
         tags: ["close"],
-        note: "Les pages sont retirées par l’équipe Web ; une application téléchargeable est retirée de façon centralisée plutôt que par le ministère.",
+        note: "Les pages sont retirées par l’équipe Web; une application téléchargeable est retirée de façon centralisée plutôt que par le ministère.",
       },
     },
   },
@@ -1627,7 +1627,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Tous les documents relevant du ministère. Les systèmes qui gèrent l’information et les données ont leur propre norme, qui établit ce qu’un système doit pouvoir faire avec les documents.",
     ownerDoes: "Indique quelles décisions le service prend et quelles preuves devraient être conservées.",
     whoDoes:
-      "L’équipe du service construit les documents pour qu’ils puissent être retrouvés et communiqués ; le bureau de l’accès à l’information et de la protection des renseignements personnels traite les demandes.",
+      "L’équipe du service construit les documents pour qu’ils puissent être retrouvés et communiqués; le bureau de l’accès à l’information et de la protection des renseignements personnels traite les demandes.",
     whoBold: ["équipe du service", "bureau de l’accès à l’information et de la protection des renseignements personnels"],
     ownerBold: ["Indique quelles décisions le service prend", "quelles preuves devraient être conservées"],
     whereItEndsUp:
@@ -1656,10 +1656,10 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
       "Une publication qui se fait sans que personne le demande, en vertu d’une obligation légale. Pour un service numérique acquis, celles qui s’appliquent sont les contrats de plus de 10 000 $, les subventions et contributions de plus de 25 000 $, et les titres des documents d’information.",
     everyService: false,
     scope:
-      "Déclenchée par ce que fait le service plutôt que par sa taille. Tout contrat de plus de 10 000 $ déclenche la publication des contrats ; un programme de subventions ou de contributions déclenche l’autre.",
+      "Déclenchée par ce que fait le service plutôt que par sa taille. Tout contrat de plus de 10 000 $ déclenche la publication des contrats; un programme de subventions ou de contributions déclenche l’autre.",
     ownerDoes: "Indique à l’autorité contractante quels contrats et quelles subventions franchissent les seuils.",
     whoDoes:
-      "La fonction de publication proactive du ministère publie ; l’autorité contractante fournit les données du contrat.",
+      "La fonction de publication proactive du ministère publie; l’autorité contractante fournit les données du contrat.",
     whoBold: ["fonction de publication proactive", "autorité contractante"],
     ownerBold: ["Indique à l’autorité contractante"],
     whereItEndsUp:

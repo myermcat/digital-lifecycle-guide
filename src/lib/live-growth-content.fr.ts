@@ -124,7 +124,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
     title: "Construire chaque ajout par son propre petit cycle de vie.",
     sections: [
       {
-        text: "Le cycle qui a construit le service construit chaque fonctionnalité importante : une petite découverte pour apprendre qui en a besoin, quel problème elle résout, et si quelqu’un d’autre l’a déjà résolu ; des prototypes jetables pendant que l’idée est peu coûteuse à changer ; puis une vraie construction validée avec un petit groupe avant que tout le monde l’obtienne. Ajustez-la à la fonctionnalité : une petite amélioration exige une conversation et une esquisse ; une grosse exige le passage complet.",
+        text: "Le cycle qui a construit le service construit chaque fonctionnalité importante : une petite découverte pour apprendre qui en a besoin, quel problème elle résout, et si quelqu’un d’autre l’a déjà résolu; des prototypes jetables pendant que l’idée est peu coûteuse à changer; puis une vraie construction validée avec un petit groupe avant que tout le monde l’obtienne. Ajustez-la à la fonctionnalité : une petite amélioration exige une conversation et une esquisse; une grosse exige le passage complet.",
         bold: [{ phrase: "Ajustez-la à la fonctionnalité :" }],
       },
       {
@@ -254,7 +254,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         ],
       },
       {
-        text: "La gestion du changement couvre la conquête de l’adoption à l’intérieur du ministère ; le parcours de part et d’autre du service relève de la prestation intégrée.",
+        text: "La gestion du changement couvre la conquête de l’adoption à l’intérieur du ministère; le parcours de part et d’autre du service relève de la prestation intégrée.",
         internalLinks: [
           { phrase: "gestion du changement", to: "/thread/change-management" },
           { phrase: "prestation intégrée", to: "/thread/joined-up-delivery" },
@@ -275,7 +275,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
         items: [
           {
             bold: "L’infrastructure.",
-            text: " Refaites les tests de capacité et de rendement à mesure que la charge monte ; la marge mesurée au lancement rétrécit avec l’utilisation.",
+            text: " Refaites les tests de capacité et de rendement à mesure que la charge monte; la marge mesurée au lancement rétrécit avec l’utilisation.",
           },
           {
             bold: "Le soutien.",
@@ -296,7 +296,7 @@ export const GROWTH_ACCORDION_STAGES: readonly GrowthAccordionStage[] = [
     title: "Protéger le service en fonction pendant que vous construisez.",
     sections: [
       {
-        text: "Les personnes qui utilisent déjà le service sont plus nombreuses que celles à qui la nouvelle fonctionnalité est destinée, et leur service garde son plancher. Le cycle de santé tourne à travers chaque construction : surveillance lue, correctifs appliqués, petites mises en production par la même chaîne. La capacité de construction et la capacité d’exploitation sont des postes distincts ; quand les mêmes personnes portent les deux, la construction gagne et le plancher glisse.",
+        text: "Les personnes qui utilisent déjà le service sont plus nombreuses que celles à qui la nouvelle fonctionnalité est destinée, et leur service garde son plancher. Le cycle de santé tourne à travers chaque construction : surveillance lue, correctifs appliqués, petites mises en production par la même chaîne. La capacité de construction et la capacité d’exploitation sont des postes distincts; quand les mêmes personnes portent les deux, la construction gagne et le plancher glisse.",
         bold: [{ phrase: "leur service garde son plancher" }],
         internalLinks: [
           { phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" },
@@ -383,10 +383,10 @@ export const GROWTH_FINISH = {
       heading: "Les évaluations décrivent le service tel qu’il est maintenant",
       paragraphs: [
         {
-          text: "La Croissance a changé ce qu’est le service, et la documentation doit le dire avant que la sous-phase se referme. Chaque ajout important a mis à jour ses propres évaluations pendant sa construction ; la vérification de clôture lit l’ensemble au regard du service tel qu’il fonctionne maintenant.",
+          text: "La Croissance a changé ce qu’est le service, et la documentation doit le dire avant que la sous-phase se referme. Chaque ajout important a mis à jour ses propres évaluations pendant sa construction; la vérification de clôture lit l’ensemble au regard du service tel qu’il fonctionne maintenant.",
         },
         {
-          text: "L’évaluation de sécurité couvre chaque changement, les plus importants étant approuvés par la personne qui a autorisé l’exploitation du service. La déclaration d’accessibilité couvre les pages nouvelles et modifiées. Tout ce qui a touché des renseignements personnels a son évaluation de la protection de la vie privée mise à jour ; tout ce qui a automatisé une décision a son évaluation de l’incidence algorithmique mise à jour et approuvée.",
+          text: "L’évaluation de sécurité couvre chaque changement, les plus importants étant approuvés par la personne qui a autorisé l’exploitation du service. La déclaration d’accessibilité couvre les pages nouvelles et modifiées. Tout ce qui a touché des renseignements personnels a son évaluation de la protection de la vie privée mise à jour; tout ce qui a automatisé une décision a son évaluation de l’incidence algorithmique mise à jour et approuvée.",
         },
       ],
     },
@@ -420,7 +420,7 @@ export const GROWTH_FINISH = {
     heading: "Revenir à la Croissance",
     paragraphs: [
         {
-          text: "Cette note est là pour l’équipe qui hésite à clore la Croissance au cas où quelque chose de gros arriverait plus tard ; rien dans le fait de clore maintenant ne rend la réouverture plus difficile.",
+          text: "Cette note est là pour l’équipe qui hésite à clore la Croissance au cas où quelque chose de gros arriverait plus tard; rien dans le fait de clore maintenant ne rend la réouverture plus difficile.",
         },
         {
           text: "Un service peut revenir à la Croissance. Le prochain mandat la rouvre de la même façon : un ajout nommé, la preuve qu’il est nécessaire, de l’argent, et de la marge dans le contrat. La voie d’entrée au haut de cette page est la même chaque fois.",
@@ -486,13 +486,13 @@ export const GROWTH_SOURCES: SourceItem[] = [
     label: "Modèles et outils",
     linkKey: "pcra-tool",
     description:
-      "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver ; un ajout important peut être un projet en soi.",
+      "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver; un ajout important peut être un projet en soi.",
   },
   {
     label: "Modèles et outils",
     linkKey: "algorithmic-impact-assessment",
     description:
-      "Outil d’évaluation de l’incidence algorithmique (SCT) : il cote toute automatisation que la Croissance ajoute.",
+      "Outil d’évaluation de l’incidence algorithmique (SCT) : il cote toute automatisation que la Croissance ajoute.",
   },
   {
     label: "Instrument directeur",
@@ -510,13 +510,13 @@ export const GROWTH_SOURCES: SourceItem[] = [
     label: "Instrument directeur",
     linkKey: "concept-case-procedures",
     description:
-      "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT) : un ajout de grande envergure peut exiger sa propre analyse de rentabilisation conceptuelle.",
+      "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT) : un ajout de grande envergure peut exiger sa propre analyse de rentabilisation conceptuelle.",
   },
   {
     label: "Instrument directeur",
     linkKey: "gc-enterprise-architecture-framework",
     description:
-      "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères pour les changements qui modifient l’architecture.",
+      "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères pour les changements qui modifient l’architecture.",
   },
   {
     label: "Référence complémentaire",
@@ -528,7 +528,7 @@ export const GROWTH_SOURCES: SourceItem[] = [
     label: "Référence complémentaire",
     linkKey: "modify-contract",
     description:
-      "Modifier un contrat (guide de l’acheteur d’AchatsCanada) : la procédure pour les modifications qui restent dans la portée.",
+      "Modifier un contrat (guide de l’acheteur d’AchatsCanada) : la procédure pour les modifications qui restent dans la portée.",
   },
   {
     label: "Référence complémentaire",
@@ -540,6 +540,6 @@ export const GROWTH_SOURCES: SourceItem[] = [
     label: "Collectivités",
     linkKey: "gcdigital-community",
     description:
-      "Collectivité GCNumérique (BDPI du SCT) : la collectivité des praticiens du numérique dans l’ensemble du gouvernement.",
+      "Collectivité GCNumérique (BDPI du SCT) : la collectivité des praticiens du numérique dans l’ensemble du gouvernement.",
   },
 ];

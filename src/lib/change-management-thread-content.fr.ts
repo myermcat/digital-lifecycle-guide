@@ -31,7 +31,7 @@ export const changeManagementWhoseJobPlainText = (whoseJob: ThreadWhoseJobSectio
 export const changeManagementWhyItMattersPlainText = threadWhyItMattersPitchPlainText;
 
 export const CHANGE_MANAGEMENT_CONVERGE_DIAGRAM_ALT =
-  "Diagramme : la mise en production du changement et la gestion du changement convergent vers les personnes qui l’utilisent ; quand les deux les atteignent, le changement est adopté.";
+  "Diagramme : la mise en production du changement et la gestion du changement convergent vers les personnes qui l’utilisent; quand les deux les atteignent, le changement est adopté.";
 
 export const CHANGE_MANAGEMENT_THREAD = {
   title: "Gestion du changement",
@@ -147,7 +147,7 @@ export const CHANGE_MANAGEMENT_THREAD = {
         bold: [{ phrase: "Deux systèmes fonctionnent en même temps." }],
       },
       {
-        text: "Les bénéfices n’arrivent jamais. Le service a été financé pour produire un résultat ; sans adoption, l’argent est dépensé et le résultat ne vient pas.",
+        text: "Les bénéfices n’arrivent jamais. Le service a été financé pour produire un résultat; sans adoption, l’argent est dépensé et le résultat ne vient pas.",
         bold: [{ phrase: "Les bénéfices n’arrivent jamais." }],
       },
       {

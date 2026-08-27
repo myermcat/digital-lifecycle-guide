@@ -118,7 +118,7 @@ export const PRIVACY_THREAD = {
           },
           {
             text:
-              "Elle est déclenchée chaque fois qu’un service utilise des renseignements personnels pour prendre une décision au sujet de quelqu’un, ou modifie cette utilisation : quand un formulaire de prestations papier passe en ligne, par exemple, l’ÉFVP est mise à jour avant que le nouveau service soit mis en service. En vertu de la Directive sur les pratiques relatives à la protection de la vie privée, une ÉFVP est exigée, et le Guide sur les pratiques relatives à la vie privée numérique la parcourt étape par étape. Le Commissariat à la protection de la vie privée examine une ÉFVP et donne des conseils, mais ne l’approuve pas ; l’approbation demeure celle de l’institution.",
+              "Elle est déclenchée chaque fois qu’un service utilise des renseignements personnels pour prendre une décision au sujet de quelqu’un, ou modifie cette utilisation : quand un formulaire de prestations papier passe en ligne, par exemple, l’ÉFVP est mise à jour avant que le nouveau service soit mis en service. En vertu de la Directive sur les pratiques relatives à la protection de la vie privée, une ÉFVP est exigée, et le Guide sur les pratiques relatives à la vie privée numérique la parcourt étape par étape. Le Commissariat à la protection de la vie privée examine une ÉFVP et donne des conseils, mais ne l’approuve pas; l’approbation demeure celle de l’institution.",
             externalLinks: [
               { phrase: "Directive sur les pratiques relatives à la protection de la vie privée", linkKey: "directive-privacy-practices" },
               { phrase: "Guide sur les pratiques relatives à la vie privée numérique", linkKey: "digital-privacy-playbook-pia" },

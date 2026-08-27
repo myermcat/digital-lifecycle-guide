@@ -80,7 +80,7 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   "ethics-and-bias": {
-    text: "Pour les questions d’IA responsable et d’équité, le carrefour de l’utilisation responsable de l’IA au gouvernement est le point de départ du gouvernement du Canada ; le bureau des données ou de l’IA de votre ministère, le bureau de la protection de la vie privée ou de l’AIPRP, et les services juridiques sont les personnes à faire intervenir tôt, et le soutien en ACS Plus vient de Femmes et Égalité des genres Canada.",
+    text: "Pour les questions d’IA responsable et d’équité, le carrefour de l’utilisation responsable de l’IA au gouvernement est le point de départ du gouvernement du Canada; le bureau des données ou de l’IA de votre ministère, le bureau de la protection de la vie privée ou de l’AIPRP, et les services juridiques sont les personnes à faire intervenir tôt, et le soutien en ACS Plus vient de Femmes et Égalité des genres Canada.",
     externalLinks: [
       { phrase: "utilisation responsable de l’IA au gouvernement", linkKey: "responsible-use-ai-hub" },
       { phrase: "ACS Plus", linkKey: "gba-plus" },
@@ -101,7 +101,7 @@ export const SUPPORT_CALLOUT_BODIES = {
     ],
   },
   "releasing-changes": {
-    text: "Pour la mise en production des changements, l’équipe de plateforme ou de DevOps de votre ministère exploite la chaîne et les déploiements ; pour le socle de sécurité infonuagique, Services partagés Canada valide les Garde-fous infonuagiques du GC, et la norme « itérer et améliorer fréquemment » est l’attente derrière des mises en production fréquentes.",
+    text: "Pour la mise en production des changements, l’équipe de plateforme ou de DevOps de votre ministère exploite la chaîne et les déploiements; pour le socle de sécurité infonuagique, Services partagés Canada valide les Garde-fous infonuagiques du GC, et la norme « itérer et améliorer fréquemment » est l’attente derrière des mises en production fréquentes.",
     externalLinks: [
       { phrase: "Garde-fous infonuagiques du GC", linkKey: "gc-cloud-guardrails" },
       { phrase: "itérer et améliorer fréquemment", linkKey: "iterate-improve-frequently" },

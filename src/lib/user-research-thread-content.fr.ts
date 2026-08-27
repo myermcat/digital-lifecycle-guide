@@ -263,13 +263,13 @@ export const USER_RESEARCH_THREAD = {
       label: "Référence complémentaire",
       linkKey: "ontario-user-research-guide" satisfies ExternalLinkKey,
       description:
-        "Guide de recherche sur les utilisateurs de l’Ontario (Service numérique de l’Ontario, CC-BY ; réutilisable, provincial) — https://www.ontario.ca/page/user-research-guide",
+        "Guide de recherche sur les utilisateurs de l’Ontario (Service numérique de l’Ontario, CC-BY; réutilisable, provincial) — https://www.ontario.ca/page/user-research-guide",
     },
     {
       label: "Référence complémentaire",
       linkKey: "ontario-service-design-playbook" satisfies ExternalLinkKey,
       description:
-        "Guide de conception de services de l’Ontario (SNO, CC-BY ; réutilisable, provincial) — https://www.ontario.ca/page/service-design-playbook",
+        "Guide de conception de services de l’Ontario (SNO, CC-BY; réutilisable, provincial) — https://www.ontario.ca/page/service-design-playbook",
     },
     {
       label: "Référence complémentaire",
@@ -311,7 +311,7 @@ export const USER_RESEARCH_THREAD = {
       label: "Référence complémentaire",
       linkKey: "australia-dta-understand-user-needs" satisfies ExternalLinkKey,
       description:
-        "Digital Service Standard, critère 2 : connaître son utilisateur (Australie) — https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-2",
+        "Digital Service Standard, critère 2 : connaître son utilisateur (Australie) — https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-2",
     },
     {
       label: "Référence complémentaire",
@@ -335,13 +335,13 @@ export const USER_RESEARCH_THREAD = {
       label: "Référence complémentaire",
       linkKey: "ixdf-user-research" satisfies ExternalLinkKey,
       description:
-        "Interaction Design Foundation, « What is User Research ? » — https://www.interaction-design.org/literature/topics/user-research",
+        "Interaction Design Foundation, « What is User Research? » — https://www.interaction-design.org/literature/topics/user-research",
     },
     {
       label: "Référence complémentaire",
       linkKey: "gba-plus",
       description:
-        "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada) : qui un service touche différemment ; exigée dans les présentations au Conseil du Trésor.",
+        "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada) : qui un service touche différemment; exigée dans les présentations au Conseil du Trésor.",
     },
     {
       label: "Référence complémentaire",
@@ -353,7 +353,7 @@ export const USER_RESEARCH_THREAD = {
       label: "Collectivités",
       linkKey: "gc-ux-network",
       description:
-        "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement ; aussi sur GCXchange, cherchez le nom.",
+        "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement; aussi sur GCXchange, cherchez le nom.",
     },
   ] satisfies SourceItem[],
 } as const;

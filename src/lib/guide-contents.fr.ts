@@ -145,7 +145,7 @@ export const GUIDE_CONTENTS = {
     ] satisfies ContentsDocLink[],
   },
   newToThis: {
-    title: "Vous découvrez tout cela ?",
+    title: "Vous découvrez tout cela?",
     steps: [
       "Lisez la page d’accueil. Elle dit ce qu’est le guide et à qui il s’adresse.",
       {

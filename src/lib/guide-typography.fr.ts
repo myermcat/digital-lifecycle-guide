@@ -20,7 +20,7 @@ export const guideBodySubheading =
  * before and close it up against what comes after.
  */
 export const guideBlockSubheading =
-  "!mt-8 !mb-0 [&+*]:!mt-1.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/90";
+  "!mt-8!mb-0 [&+*]:!mt-1.5 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-primary/90";
 
 /** Monospace formula — same size and leading as guideProseTight. */
 export const guideFormulaLine =

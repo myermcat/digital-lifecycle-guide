@@ -224,7 +224,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
             bold: [{ phrase: "Une esquisse sur papier exige une personne capable de dessiner." }],
           },
           {
-            text: "Un prototype cliquable exige une demi-journée, et vous pouvez le faire vous-même. Les outils d’IA prennent une description écrite et en construisent un ; prévoyez que la demi-journée comprenne l’apprentissage de l’outil. Un collègue qui connaît Figma ou Penpot peut construire une maquette de la même façon, même si demander la moitié d’une journée de travail à quelqu’un reste une vraie demande.",
+            text: "Un prototype cliquable exige une demi-journée, et vous pouvez le faire vous-même. Les outils d’IA prennent une description écrite et en construisent un; prévoyez que la demi-journée comprenne l’apprentissage de l’outil. Un collègue qui connaît Figma ou Penpot peut construire une maquette de la même façon, même si demander la moitié d’une journée de travail à quelqu’un reste une vraie demande.",
             bold: [
               { phrase: "Un prototype cliquable exige une demi-journée, et vous pouvez le faire vous-même." },
             ],
@@ -363,7 +363,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         internalLinks: [{ phrase: "Financement", to: "/thread/funding" }],
       },
       {
-        text: "Déterminez les menaces auxquelles le service fera face et la façon dont il sera gardé sécurisé. Une Évaluation de la menace et des risques les énumère et les classe. Elle se fait trois fois : ici, contre la conception de haut niveau ; de nouveau contre la conception détaillée à mesure que la construction est précisée ; et une troisième fois contre le système fini en Bêta, ce qui est le passage sur lequel repose l’autorisation d’exploiter.",
+        text: "Déterminez les menaces auxquelles le service fera face et la façon dont il sera gardé sécurisé. Une Évaluation de la menace et des risques les énumère et les classe. Elle se fait trois fois : ici, contre la conception de haut niveau; de nouveau contre la conception détaillée à mesure que la construction est précisée; et une troisième fois contre le système fini en Bêta, ce qui est le passage sur lequel repose l’autorisation d’exploiter.",
       },
       {
         text: "Découvrez dès maintenant qui signera cette autorisation, parce que ce n’est pas automatique. C’est normalement le responsable opérationnel pour un service appartenant à un seul ministère, le dirigeant principal de l’information du Canada pour un système commun ou intégré, et le gestionnaire du programme pour un système partagé par deux organisations ou plus. La Bêta a besoin de la réponse avant l’ouverture de la bêta privée, et c’est une question peu coûteuse ici et coûteuse à ce moment-là. La sécurité couvre la façon dont le travail d’évaluation se fait.",
@@ -435,7 +435,7 @@ export const ALPHA_ACCORDION_STAGES: readonly AlphaAccordionStage[] = [
         text: "Les exigences comptent encore quand personne n’achète",
       },
       {
-        text: "Une équipe qui construit le service elle-même a quand même besoin des trois catégories d’exigences devant elle, parce que c’est ainsi qu’on sait quoi construire. L’achat ajoute une forme imposée et une signature ; il ne crée pas le besoin. Un énoncé des travaux n’est pas exigé pour une construction interne, même si en rédiger un peut être plus facile que de partir d’une page blanche, puisqu’il vient avec un gabarit.",
+        text: "Une équipe qui construit le service elle-même a quand même besoin des trois catégories d’exigences devant elle, parce que c’est ainsi qu’on sait quoi construire. L’achat ajoute une forme imposée et une signature; il ne crée pas le besoin. Un énoncé des travaux n’est pas exigé pour une construction interne, même si en rédiger un peut être plus facile que de partir d’une page blanche, puisqu’il vient avec un gabarit.",
         bold: [{ phrase: "a quand même besoin des trois catégories d’exigences devant elle" }],
       },
       {
@@ -559,10 +559,10 @@ export const ALPHA_EXERCISE = {
   } satisfies ThreadLinkedProse,
   bodyQuestions: [
     {
-      text: "Qu’est-ce qui pourrait arrêter le service, ou nuire aux personnes qui l’utilisent ?",
+      text: "Qu’est-ce qui pourrait arrêter le service, ou nuire aux personnes qui l’utilisent?",
     },
     {
-      text: "Combien de temps peut-il être hors service avant qu’un préjudice réel commence ?",
+      text: "Combien de temps peut-il être hors service avant qu’un préjudice réel commence?",
     },
   ] satisfies readonly ThreadLinkedProse[],
   bodyAfterQuestions: {
@@ -581,19 +581,19 @@ export const ALPHA_EXERCISE = {
   sizingColumns: ["Question", "Ce que la réponse détermine"],
   sizingRows: [
     {
-      term: "Quelles obligations s’y rattachent ?",
+      term: "Quelles obligations s’y rattachent?",
       cells: [
         "Un service accessible au public doit les deux langues officielles, la norme d’accessibilité et une autorisation d’exploiter. Un outil interne en doit moins. Celle-ci porte sur les obligations, pas sur l’importance.",
       ],
     },
     {
-      term: "Que contient-il ?",
+      term: "Que contient-il?",
       cells: [
         "Rien de sensible, ou des renseignements personnels et financiers. La seconde réponse entraîne une évaluation de la protection de la vie privée, une catégorisation de sécurité, et des règles sur l’endroit où les données peuvent résider.",
       ],
     },
     {
-      term: "Que se passe-t-il quand il tombe en panne ?",
+      term: "Que se passe-t-il quand il tombe en panne?",
       cells: [
         "Un inconvénient, ou un préjudice. C’est celle qui exige un vrai travail pour y répondre, et c’est de cela que traite le reste de ce bloc.",
       ],
@@ -843,25 +843,25 @@ export const ALPHA_SOURCES: SourceItem[] = [
     label: "Modèles et outils",
     linkKey: "design-canada",
     description:
-      "Système de design de Canada.ca (design.canada.ca) : styles, gabarits et modèles testés auprès des utilisateurs, pour prototyper.",
+      "Système de design de Canada.ca (design.canada.ca) : styles, gabarits et modèles testés auprès des utilisateurs, pour prototyper.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-design-system",
     description:
-      "Système de design GC (Service numérique canadien) : des composants d’interface accessibles et prêts à l’emploi.",
+      "Système de design GC (Service numérique canadien) : des composants d’interface accessibles et prêts à l’emploi.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-forms-assistance",
     description:
-      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires pour prototyper des formulaires sans écrire de code.",
+      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires pour prototyper des formulaires sans écrire de code.",
   },
   {
     label: "Modèles et outils",
     linkKey: "digital-accessibility-toolkit",
     description:
-      "Boîte à outils de l’accessibilité numérique (a11y.canada.ca) : des modes d’emploi pour concevoir, construire et tester des services accessibles.",
+      "Boîte à outils de l’accessibilité numérique (a11y.canada.ca) : des modes d’emploi pour concevoir, construire et tester des services accessibles.",
   },
   {
     label: "Instrument directeur",
@@ -879,36 +879,36 @@ export const ALPHA_SOURCES: SourceItem[] = [
     label: "Instrument directeur",
     linkKey: "gc-enterprise-architecture-framework",
     description:
-      "Cadre de l’architecture intégrée du GC (SCT) : les critères au regard desquels le comité d’examen de l’architecture de votre ministère évalue la direction retenue pour construire ou acheter ; les initiatives les plus vastes vont au comité de l’échelle du GC.",
+      "Cadre de l’architecture intégrée du GC (SCT) : les critères au regard desquels le comité d’examen de l’architecture de votre ministère évalue la direction retenue pour construire ou acheter; les initiatives les plus vastes vont au comité de l’échelle du GC.",
   },
   {
     label: "Instrument directeur",
     linkKey: "en-301-549",
     description:
-      "CAN/ASC - EN 301 549:2024 (Normes d’accessibilité Canada) : la norme d’accessibilité à laquelle les nouvelles pages Web et applications doivent se conformer en vertu du Règlement canadien sur l’accessibilité.",
+      "CAN/ASC - EN 301 549:2024 (Normes d’accessibilité Canada) : la norme d’accessibilité à laquelle les nouvelles pages Web et applications doivent se conformer en vertu du Règlement canadien sur l’accessibilité.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "design-research",
     description:
-      "Système de design de Canada.ca, mode d’emploi de la recherche et des tests : méthodes pour tester des prototypes avec les utilisateurs.",
+      "Système de design de Canada.ca, mode d’emploi de la recherche et des tests : méthodes pour tester des prototypes avec les utilisateurs.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "esdc-a11y-regulations-guidance",
     description:
-      "Lignes directrices sur la règlementation sur l’accessibilité des technologies numériques (EDSC) : ce qui doit s’y conformer, et pour quand.",
+      "Lignes directrices sur la règlementation sur l’accessibilité des technologies numériques (EDSC) : ce qui doit s’y conformer, et pour quand.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "harmonized-tra-methodology",
     description:
-      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : comment les menaces qui pèsent sur un service sont énumérées et classées.",
+      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : comment les menaces qui pèsent sur un service sont énumérées et classées.",
   },
   {
     label: "Collectivités",
     linkKey: "gc-ux-network",
     description:
-      "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement ; aussi sur GCXchange, cherchez le nom.",
+      "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement; aussi sur GCXchange, cherchez le nom.",
   },
 ];

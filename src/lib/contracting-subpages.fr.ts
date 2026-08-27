@@ -179,7 +179,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
           "Si vous construisiez le service vous-même, vous n’écririez pas le tout d’une seule traite. Vous en dégageriez la forme, construiriez un morceau, vérifieriez qu’il fonctionne, puis construiriez le suivant par-dessus. De petits pas que vous pouvez tester. Vous corrigez le cap à mesure que vous apprenez.",
           "Acheter en morceaux, c’est la même habitude appliquée aux contrats. Au lieu d’un gros contrat pour tout le travail, vous en rédigez plusieurs plus petits, chacun pour un vrai morceau de travail. L’architecture est un morceau. Le transfert des données est un morceau. Chaque partie du service est un morceau. Vous les achetez dans un ordre où chacun vous apprend quelque chose avant que le suivant commence.",
         ],
-        bulletLead: "Pourquoi se donner cette peine, quand un seul gros contrat paraît plus simple ?",
+        bulletLead: "Pourquoi se donner cette peine, quand un seul gros contrat paraît plus simple?",
         bullets: [
           {
             lead: "La valeur et les problèmes apparaissent tôt.",
@@ -217,7 +217,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         ],
         highlightedNote: {
           lead: "Le critère :",
-          body: "ces morceaux existeraient-ils comme travaux distincts même s’il n’y avait aucune limite en dollars à esquiver ? Si oui, c’est modulaire. Si la seule raison de les séparer est de passer sous un chiffre, c’est du fractionnement. L’un a de vraies coutures. L’autre en a de fausses.",
+          body: "ces morceaux existeraient-ils comme travaux distincts même s’il n’y avait aucune limite en dollars à esquiver? Si oui, c’est modulaire. Si la seule raison de les séparer est de passer sous un chiffre, c’est du fractionnement. L’un a de vraies coutures. L’autre en a de fausses.",
         },
       },
       {
@@ -230,7 +230,7 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
       },
       {
         id: "common-worries",
-        title: "Mais ne sera-ce pas difficile à faire accepter ? Les inquiétudes courantes, avec des réponses",
+        title: "Mais ne sera-ce pas difficile à faire accepter? Les inquiétudes courantes, avec des réponses",
         paragraphs: [
           "La plupart des raisons pour lesquelles les gens signent un seul gros contrat ne sont pas des règles. Ce sont des craintes et des habitudes. Voici celles que vous rencontrerez, et quoi faire pour chacune.",
         ],
@@ -249,11 +249,11 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
             body: "C’est la confusion la plus courante, et la dissiper est la clé. L’argent et le contrat sont deux choses différentes. Un seul programme financé peut porter de nombreux petits contrats. Vous n’avez pas besoin d’une approbation budgétaire distincte pour chaque morceau. Il vous faut un programme financé et la liberté de l’acheter en morceaux. L’enveloppe est grande. Les contrats à l’intérieur n’ont pas à l’être.",
           },
           {
-            lead: "« Si le travail n’est pas fixé d’avance, qu’est-ce qu’on paie au juste ? »",
+            lead: "« Si le travail n’est pas fixé d’avance, qu’est-ce qu’on paie au juste? »",
             body: "Vous payez des progrès au regard d’objectifs convenus, vérifiés en chemin, plutôt qu’une liste fixe de fonctionnalités promises avant que quiconque ait vraiment compris le problème. Les engagements sont réels : les mesures que vous avez inscrites au contrat, le logiciel qui fonctionne livré à chaque courte étape, les objectifs atteints. C’est souvent plus facile à défendre que la grande liste fixe, parce que vous pouvez voir la valeur arriver et cesser de payer si elle n’arrive pas. Vous achetez une suite d’étapes livrées et vérifiables.",
           },
           {
-            lead: "« Est-ce que cela n’aura pas l’air d’un fractionnement ? »",
+            lead: "« Est-ce que cela n’aura pas l’air d’un fractionnement? »",
             body: "Seulement si vous le faites pour esquiver une limite. Si vos morceaux sont de vrais livrables différents mis en concurrence ouvertement, vous êtes du bon côté de la ligne. Servez-vous du critère plus haut et gardez votre raisonnement par écrit. Le modulaire fait ouvertement est le contraire du fractionnement fait en secret.",
           },
         ],
@@ -396,9 +396,9 @@ export const PROCUREMENT_SUBPAGES: Record<ProcurementSubPageSlug, ContractingSub
         bulletLead:
           "« Assez » ne veut pas dire que vous pouvez faire le travail du fournisseur. Cela veut dire que vous pouvez en rester maître. Vous voulez de votre côté des personnes qui :",
         continuationBullets: [
-          "peuvent lire ce que le fournisseur livre et juger si c’est bon ;",
-          "savent où vivent vos données et comment elles circulent ;",
-          "comprennent les principales décisions de conception et pourquoi elles ont été prises ;",
+          "peuvent lire ce que le fournisseur livre et juger si c’est bon;",
+          "savent où vivent vos données et comment elles circulent;",
+          "comprennent les principales décisions de conception et pourquoi elles ont été prises;",
           "ne seraient pas perdues si le fournisseur partait demain.",
         ],
       },

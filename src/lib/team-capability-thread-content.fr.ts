@@ -124,11 +124,11 @@ export const TEAM_CAPABILITY_THREAD = {
           {
             type: "unorderedList",
             items: [
-              { bold: "gestionnaire de produit", text: ", qui décide quoi construire et pourquoi ;" },
-              { bold: "gestionnaire de livraison", text: ", qui garde le travail en mouvement ;" },
-              { bold: "chercheurs en expérience utilisateur", text: ", qui découvrent ce dont les gens ont besoin ;" },
-              { bold: "designers", text: ", qui façonnent le service ;" },
-              { bold: "developers", text: ", qui le construisent ;" },
+              { bold: "gestionnaire de produit", text: ", qui décide quoi construire et pourquoi;" },
+              { bold: "gestionnaire de livraison", text: ", qui garde le travail en mouvement;" },
+              { bold: "chercheurs en expérience utilisateur", text: ", qui découvrent ce dont les gens ont besoin;" },
+              { bold: "designers", text: ", qui façonnent le service;" },
+              { bold: "developers", text: ", qui le construisent;" },
               { bold: "operations", text: ", qui l’exploitent une fois en fonction." },
             ],
           },
@@ -223,13 +223,13 @@ export const TEAM_CAPABILITY_THREAD = {
             type: "orderedList",
             items: [
               {
-                text: "la plateforme Talents numériques du GC pour trouver et classifier les rôles numériques ;",
+                text: "la plateforme Talents numériques du GC pour trouver et classifier les rôles numériques;",
                 externalLinks: [
                   { phrase: "la plateforme Talents numériques du GC", linkKey: "gc-digital-talent-platform" },
                 ] satisfies ExternalPhraseLink[],
               },
               {
-                text: "l’Académie du numérique de l’EFPC pour la formation en produit, conception, données et exploitation ;",
+                text: "l’Académie du numérique de l’EFPC pour la formation en produit, conception, données et exploitation;",
                 externalLinks: [
                   { phrase: "l’Académie du numérique de l’EFPC", linkKey: "csps-digital-academy" },
                 ] satisfies ExternalPhraseLink[],

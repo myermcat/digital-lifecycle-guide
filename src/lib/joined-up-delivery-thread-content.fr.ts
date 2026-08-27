@@ -31,7 +31,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
 
   lead: {
     text:
-      "La prestation intégrée consiste à faire fonctionner la tâche entière d’une personne de bout en bout, y compris les étapes prises en charge par d’autres services qui viennent avant et après le vôtre dans son parcours. Une personne entreprend rarement d’utiliser un seul service ; elle entreprend de déménager, de démarrer une entreprise, ou de se remettre d’un décès, et cette tâche traverse habituellement plusieurs services et plusieurs façons d’obtenir de l’aide. La prestation intégrée réunit quatre choses : voir le parcours complet de l’utilisateur à travers chaque service et chaque canal touché, travailler avec les équipes responsables des services de part et d’autre du vôtre, connecter les systèmes pour qu’ils échangent l’information au lieu de la redemander à l’utilisateur, et garder chaque canal au diapason pour que la ligne téléphonique et le comptoir donnent les mêmes réponses que le site Web.",
+      "La prestation intégrée consiste à faire fonctionner la tâche entière d’une personne de bout en bout, y compris les étapes prises en charge par d’autres services qui viennent avant et après le vôtre dans son parcours. Une personne entreprend rarement d’utiliser un seul service; elle entreprend de déménager, de démarrer une entreprise, ou de se remettre d’un décès, et cette tâche traverse habituellement plusieurs services et plusieurs façons d’obtenir de l’aide. La prestation intégrée réunit quatre choses : voir le parcours complet de l’utilisateur à travers chaque service et chaque canal touché, travailler avec les équipes responsables des services de part et d’autre du vôtre, connecter les systèmes pour qu’ils échangent l’information au lieu de la redemander à l’utilisateur, et garder chaque canal au diapason pour que la ligne téléphonique et le comptoir donnent les mêmes réponses que le site Web.",
   } satisfies ThreadLinkedProse,
 
   wholeJourney: {
@@ -54,7 +54,7 @@ export const JOINED_UP_DELIVERY_THREAD = {
     ] satisfies ThreadLinkedProse[],
     example: {
       title: "Refaire sa vie au Canada.",
-      text: "Prenons Amara, une infirmière qui vient travailler au Canada. Son objectif est simple : vivre et travailler ici, avec ses enfants à l’école. Pour y arriver, elle doit obtenir l’autorisation de venir (résidence permanente, IRCC ; si son emploi l’exige, son employeur obtient d’abord une étude d’impact sur le marché du travail, EDSC), être admise à la frontière (ASFC), obtenir un numéro d’assurance sociale avant de pouvoir être payée (Service Canada), ouvrir un compte bancaire, demander une carte d’assurance maladie provinciale et, dans certaines provinces, attendre trois mois avant d’être couverte, obtenir un permis de conduire, faire reconnaître ses titres de compétence en soins infirmiers par l’organisme de réglementation provincial, inscrire ses enfants à l’école, et produire une déclaration de revenus pour recevoir l’Allocation canadienne pour enfants et le crédit pour la TPS (ARC). Des mois plus tard, elle doit suivre le moment où sa carte de résidence permanente doit être renouvelée et celui où elle pourra demander la citoyenneté. Aucun bureau ne voit le parcours complet d’Amara. Chacun voit son propre formulaire. Elle est la seule à vivre l’ensemble, et c’est à elle de déterminer l’ordre, le calendrier, et quel bureau appeler.",
+      text: "Prenons Amara, une infirmière qui vient travailler au Canada. Son objectif est simple : vivre et travailler ici, avec ses enfants à l’école. Pour y arriver, elle doit obtenir l’autorisation de venir (résidence permanente, IRCC; si son emploi l’exige, son employeur obtient d’abord une étude d’impact sur le marché du travail, EDSC), être admise à la frontière (ASFC), obtenir un numéro d’assurance sociale avant de pouvoir être payée (Service Canada), ouvrir un compte bancaire, demander une carte d’assurance maladie provinciale et, dans certaines provinces, attendre trois mois avant d’être couverte, obtenir un permis de conduire, faire reconnaître ses titres de compétence en soins infirmiers par l’organisme de réglementation provincial, inscrire ses enfants à l’école, et produire une déclaration de revenus pour recevoir l’Allocation canadienne pour enfants et le crédit pour la TPS (ARC). Des mois plus tard, elle doit suivre le moment où sa carte de résidence permanente doit être renouvelée et celui où elle pourra demander la citoyenneté. Aucun bureau ne voit le parcours complet d’Amara. Chacun voit son propre formulaire. Elle est la seule à vivre l’ensemble, et c’est à elle de déterminer l’ordre, le calendrier, et quel bureau appeler.",
     },
     closingLeads: [
       {
@@ -107,8 +107,8 @@ export const JOINED_UP_DELIVERY_THREAD = {
       "Une personne ne vit pas votre service isolément. Elle vit la tâche entière, et cette tâche traverse habituellement des ministères et des canaux.",
     failureIntro: "Quand les parties ne s’articulent pas, la personne se retrouve à devoir :",
     failureModes: [
-      "comprendre comment le gouvernement est organisé simplement pour accomplir quelque chose ;",
-      "donner les mêmes renseignements à un service après l’autre ;",
+      "comprendre comment le gouvernement est organisé simplement pour accomplir quelque chose;",
+      "donner les mêmes renseignements à un service après l’autre;",
       "ou tomber dans l’écart entre un formulaire en ligne et une ligne téléphonique qui n’en sait rien.",
     ],
     closing: {
@@ -376,19 +376,19 @@ export const JOINED_UP_DELIVERY_THREAD = {
       label: "Référence complémentaire",
       linkKey: "gc-ea-application-architecture" satisfies ExternalLinkKey,
       description:
-        "Architecture intégrée du GC, architecture applicative (CEAI GC, GCcollab ; ouvert) — https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture",
+        "Architecture intégrée du GC, architecture applicative (CEAI GC, GCcollab; ouvert) — https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture",
     },
     {
       label: "Référence complémentaire",
       linkKey: "uk-service-standard-point-2" satisfies ExternalLinkKey,
       description:
-        "Norme de service de GOV.UK, point 2 : résoudre un problème entier pour les utilisateurs — https://www.gov.uk/service-manual/service-standard/point-2-solve-a-whole-problem",
+        "Norme de service de GOV.UK, point 2 : résoudre un problème entier pour les utilisateurs — https://www.gov.uk/service-manual/service-standard/point-2-solve-a-whole-problem",
     },
     {
       label: "Référence complémentaire",
       linkKey: "uk-service-standard-point-3-join-channels" satisfies ExternalLinkKey,
       description:
-        "Norme de service de GOV.UK, point 3 : offrir une expérience intégrée sur tous les canaux — https://www.gov.uk/service-manual/service-standard/point-3-join-up-across-channels",
+        "Norme de service de GOV.UK, point 3 : offrir une expérience intégrée sur tous les canaux — https://www.gov.uk/service-manual/service-standard/point-3-join-up-across-channels",
     },
     {
       label: "Référence complémentaire",

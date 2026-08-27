@@ -128,7 +128,7 @@ export const SUBPHASE_CONTENT: Partial<Record<string, SubphaseBodyContent>> = {
     },
     onRamp: {
       title: "Avant de commencer la Découverte.",
-      intro: "Vous arrivez sur un service déjà en Découverte ? Vérifiez que ceci est vrai :",
+      intro: "Vous arrivez sur un service déjà en Découverte? Vérifiez que ceci est vrai :",
       items: [
         "Il y a un problème réel et nommé, et non simplement une solution que quelqu’un veut construire.",
         "Les personnes qui vivent le problème, les utilisateurs et le personnel qui les sert, ont été identifiées.",

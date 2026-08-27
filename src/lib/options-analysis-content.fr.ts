@@ -13,7 +13,7 @@ export const OPTIONS_ANALYSIS = {
 
   intro: [
     "L’analyse des options est l’étape où vous déterminez les différentes façons de répondre à un besoin, et où vous les pesez, avant de vous engager envers l’une d’elles. Elle se fait tôt, avant que quoi que ce soit ait été acheté ou construit, et elle s’applique que vous résolviez un nouveau problème ou que vous remplaciez un service qui arrive à son terme.",
-    "Pourquoi la faire ? Parce que l’instinct est de sauter directement à une solution, habituellement celle qu’on a déjà en tête, et c’est ainsi que des ministères finissent par acheter quelque chose dont ils n’avaient pas besoin, ou une moins bonne réponse que celle qu’ils auraient pu avoir. La valeur de cette étape, c’est la pause : nommez clairement le problème, puis regardez les vraies options d’un œil clair avant d’en choisir une. Un après-midi ici peut épargner un approvisionnement de deux ans.",
+    "Pourquoi la faire? Parce que l’instinct est de sauter directement à une solution, habituellement celle qu’on a déjà en tête, et c’est ainsi que des ministères finissent par acheter quelque chose dont ils n’avaient pas besoin, ou une moins bonne réponse que celle qu’ils auraient pu avoir. La valeur de cette étape, c’est la pause : nommez clairement le problème, puis regardez les vraies options d’un œil clair avant d’en choisir une. Un après-midi ici peut épargner un approvisionnement de deux ans.",
   ],
 
   startWithProblem: {
@@ -42,7 +42,7 @@ export const OPTIONS_ANALYSIS = {
     ladder: [
       {
         lead: "Utilisez ce que vous avez déjà.",
-        body: "Possédez-vous un outil qui fait déjà cela, ou presque ? La solution la moins coûteuse est celle que vous n’avez pas à acheter.",
+        body: "Possédez-vous un outil qui fait déjà cela, ou presque? La solution la moins coûteuse est celle que vous n’avez pas à acheter.",
       },
       {
         lead: "Réutilisez ou adaptez ce que quelqu’un d’autre exploite.",
@@ -87,7 +87,7 @@ export const OPTIONS_ANALYSIS = {
           {
             phrase: "de 12 à 24 mois",
             source: GCCASE_MIGRATION_READINESS_GUIDE,
-            part: "Liste de vérification des décisions de migration ; Risques d’une planification tardive",
+            part: "Liste de vérification des décisions de migration; Risques d’une planification tardive",
           },
         ] satisfies PlaceholderPhraseLink[],
       },
@@ -125,7 +125,7 @@ export const OPTIONS_ANALYSIS = {
     {
       phrase: "une liste de vérification structurée",
       source: GCCASE_MIGRATION_READINESS_GUIDE,
-      part: "Liste de vérification des décisions de migration ; Risques d’une planification tardive",
+      part: "Liste de vérification des décisions de migration; Risques d’une planification tardive",
     },
   ] satisfies PlaceholderPhraseLink[],
 
@@ -208,7 +208,7 @@ export const OPTIONS_ANALYSIS = {
     {
       label: "Référence complémentaire (réseau du GC)",
       linkKey: "gc-enterprise-solutions-catalog" satisfies ExternalLinkKey,
-      note: "Catalogue provisoire ; l’URL peut changer.",
+      note: "Catalogue provisoire; l’URL peut changer.",
     },
     gccaseComingSoonSourceItem(),
   ] satisfies SourceItem[],

@@ -7,7 +7,7 @@ export const SOO_VS_SOW = {
   ],
   afterVisual: [
     "L’énoncé des travaux est celui qui compte en fin de compte. Il entre dans la demande de soumissions, de sorte que les fournisseurs soumissionnent en fonction de lui, et il est annexé au contrat, ce qui en fait la chose à laquelle le fournisseur est tenu.",
-    "Ce que vous décidez, c’est le niveau de détail à y mettre. Rédigez-le au niveau de ce que le service doit accomplir, et lorsque les tests montreront plus tard qu’un écran ne va pas, corriger cet écran fera partie du travail pour lequel le fournisseur a déjà été engagé. Rédigez-le comme un ensemble de conceptions d’écrans convenues avant que quiconque les ait testées, et le fournisseur construira ces conceptions ; en changer une signifiera alors modifier le contrat, à un prix fixé par le seul fournisseur dans la salle.",
+    "Ce que vous décidez, c’est le niveau de détail à y mettre. Rédigez-le au niveau de ce que le service doit accomplir, et lorsque les tests montreront plus tard qu’un écran ne va pas, corriger cet écran fera partie du travail pour lequel le fournisseur a déjà été engagé. Rédigez-le comme un ensemble de conceptions d’écrans convenues avant que quiconque les ait testées, et le fournisseur construira ces conceptions; en changer une signifiera alors modifier le contrat, à un prix fixé par le seul fournisseur dans la salle.",
   ],
   comparison: {
     actualLabel: "Rédigé de façon serrée",

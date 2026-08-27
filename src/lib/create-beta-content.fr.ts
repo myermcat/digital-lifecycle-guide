@@ -379,7 +379,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
         text: "Inscrivez-le au contrat comme un seul livrable, non deux",
       },
       {
-        text: "Lorsqu’un fournisseur construit, héberge, soutient ou rédige du contenu pour une partie du service, l’obligation appartient au contrat, et elle y appartient comme un seul livrable plutôt que deux. Le français n’est pas un ajout au service ; c’est l’autre moitié du même service. Un fournisseur qui n’est pas contractuellement tenu de le livrer en fixera le prix plus tard comme un changement, et c’est ainsi qu’un ministère finit par payer deux fois une chose qu’il était toujours tenu d’avoir. L’exigence vient du responsable opérationnel ; l’autorité contractante rédige les clauses.",
+        text: "Lorsqu’un fournisseur construit, héberge, soutient ou rédige du contenu pour une partie du service, l’obligation appartient au contrat, et elle y appartient comme un seul livrable plutôt que deux. Le français n’est pas un ajout au service; c’est l’autre moitié du même service. Un fournisseur qui n’est pas contractuellement tenu de le livrer en fixera le prix plus tard comme un changement, et c’est ainsi qu’un ministère finit par payer deux fois une chose qu’il était toujours tenu d’avoir. L’exigence vient du responsable opérationnel; l’autorité contractante rédige les clauses.",
         bold: [{ phrase: "c’est l’autre moitié du même service" }],
         internalLinks: [{ phrase: "autorité contractante", to: "/thread/procurement" }],
       },
@@ -584,7 +584,7 @@ export const BETA_ACCORDION_STAGES: readonly BetaAccordionStage[] = [
       },
       {
         text:
-          "Si un fournisseur détient ou traite les documents, réglez la question avant la signature du contrat, où qu’elle tombe pour votre voie, parce que les exigences de conservation et de disposition y appartiennent. Pour la plupart des voies, cela veut dire le faire tôt en Bêta ; pour celles qui ont signé à l’ouverture de l’Alpha, ce devrait déjà être fait.",
+          "Si un fournisseur détient ou traite les documents, réglez la question avant la signature du contrat, où qu’elle tombe pour votre voie, parce que les exigences de conservation et de disposition y appartiennent. Pour la plupart des voies, cela veut dire le faire tôt en Bêta; pour celles qui ont signé à l’ouverture de l’Alpha, ce devrait déjà être fait.",
         bold: [{ phrase: "réglez la question avant la signature du contrat" }],
       },
       {
@@ -802,7 +802,7 @@ export const BETA_FINISH = {
         bold: [{ phrase: "Le contrat," }],
       },
       {
-        text: "La norme d’accessibilité respectée, et les tests faits avec les personnes les plus susceptibles d’être exclues, leurs constats corrigés. Aucune exigence officielle n’impose ces tests ; c’est la seule façon de savoir que la norme est respectée dans les faits.",
+        text: "La norme d’accessibilité respectée, et les tests faits avec les personnes les plus susceptibles d’être exclues, leurs constats corrigés. Aucune exigence officielle n’impose ces tests; c’est la seule façon de savoir que la norme est respectée dans les faits.",
         bold: [{ phrase: "La norme d’accessibilité respectée," }],
       },
       {
@@ -821,7 +821,7 @@ export const BETA_FINISH = {
         bold: [{ phrase: "La restauration testée au moins une fois." }],
       },
       {
-        text: "Le tableau de bord en fonction, et une personne nommée qui en est responsable.",
+        text: "Le tableau de bord en fonction, et une personne désignée qui en est responsable.",
         bold: [{ phrase: "Le tableau de bord en fonction," }],
       },
       {
@@ -854,31 +854,31 @@ export const BETA_SOURCES: SourceItem[] = [
     label: "Modèles et outils",
     linkKey: "algorithmic-impact-assessment",
     description:
-      "Outil d’évaluation de l’incidence algorithmique (SCT) : le questionnaire qui note un système de décision automatisée.",
+      "Outil d’évaluation de l’incidence algorithmique (SCT) : le questionnaire qui note un système de décision automatisée.",
   },
   {
     label: "Modèles et outils",
     linkKey: "a11y-toolkit-procurement",
     description:
-      "Boîte à outils de l’accessibilité numérique, approvisionnement : génère les exigences d’accessibilité pour ce que vous achetez et construisez.",
+      "Boîte à outils de l’accessibilité numérique, approvisionnement : génère les exigences d’accessibilité pour ce que vous achetez et construisez.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-notify-contact",
     description:
-      "Notification GC (Service numérique canadien) : une plateforme de notification à configurer au lieu d’en construire une.",
+      "Notification GC (Service numérique canadien) : une plateforme de notification à configurer au lieu d’en construire une.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-forms-assistance",
     description:
-      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer au lieu d’en construire une.",
+      "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer au lieu d’en construire une.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-design-system",
     description:
-      "Système de design GC (Service numérique canadien) : des composants d’interface prêts à l’emploi et accessibles.",
+      "Système de design GC (Service numérique canadien) : des composants d’interface prêts à l’emploi et accessibles.",
   },
   {
     label: "Instrument directeur",
@@ -890,7 +890,7 @@ export const BETA_SOURCES: SourceItem[] = [
     label: "Instrument directeur",
     linkKey: "policy-government-security",
     description:
-      "Politique sur la sécurité du gouvernement (SCT) : la politique mère sous laquelle se trouve la directive sur la sécurité, et d’où viennent la continuité des activités et les services essentiels.",
+      "Politique sur la sécurité du gouvernement (SCT) : la politique mère sous laquelle se trouve la directive sur la sécurité, et d’où viennent la continuité des activités et les services essentiels.",
   },
   {
     label: "Instrument directeur",
@@ -920,24 +920,24 @@ export const BETA_SOURCES: SourceItem[] = [
     label: "Référence complémentaire",
     linkKey: "harmonized-tra-methodology",
     description:
-      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : l’évaluation sur laquelle repose l’autorisation de sécurité.",
+      "Méthodologie harmonisée d’évaluation de la menace et des risques (Centre canadien pour la cybersécurité) : l’évaluation sur laquelle repose l’autorisation de sécurité.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "lac-information-disposition-hub",
     description:
-      "Bibliothèque et Archives Canada, disposition de l’information : d’où viennent les obligations de tenue de documents.",
+      "Bibliothèque et Archives Canada, disposition de l’information : d’où viennent les obligations de tenue de documents.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "oag-phoenix-build",
     description:
-      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
   },
   {
     label: "Collectivités",
     linkKey: "a11y-community-terms",
     description:
-      "Groupe de travail sur l’accès : la collectivité interministérielle de l’accessibilité derrière la Boîte à outils de l’accessibilité numérique.",
+      "Groupe de travail sur l’accès : la collectivité interministérielle de l’accessibilité derrière la Boîte à outils de l’accessibilité numérique.",
   },
 ];

@@ -178,7 +178,7 @@ export const EXTERNAL_LINKS = {
   "directive-procurement-indigenous-appendix-e": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32692&section=procedure&p=E",
     description:
-      "Directive sur la gestion de l’approvisionnement, annexe E : Procédures obligatoires pour les marchés attribués aux entreprises autochtones. En vigueur le 1er avril 2022. Établit la cible minimale obligatoire de 5 % et la déclaration qui l’accompagne.",
+      "Directive sur la gestion de l’approvisionnement, annexe E : Procédures obligatoires pour les marchés attribués aux entreprises autochtones. En vigueur le 1er avril 2022. Établit la cible minimale obligatoire de 5 % et la déclaration qui l’accompagne.",
     accessibility: "public",
   },
   "directive-identity-management": {
@@ -270,7 +270,7 @@ export const EXTERNAL_LINKS = {
   "standard-at-risk-it": {
     url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32714",
     description:
-      "Norme sur la technologie de l’information à risque (SCT) — garder les applications à jour ; les technologies non soutenues sont interdites",
+      "Norme sur la technologie de l’information à risque (SCT) — garder les applications à jour; les technologies non soutenues sont interdites",
     accessibility: "public",
   },
   "task-authorizations": {
@@ -361,7 +361,7 @@ export const EXTERNAL_LINKS = {
   },
   "australia-dta-understand-user-needs": {
     url: "https://www.digital.gov.au/policy/digital-experience/digital-service-standard/criterion-2",
-    description: "Digital Service Standard, critère 2 : Connaître son utilisateur (Australie)",
+    description: "Digital Service Standard, critère 2 : Connaître son utilisateur (Australie)",
     accessibility: "public",
   },
   "uk-service-manual": {
@@ -416,7 +416,7 @@ export const EXTERNAL_LINKS = {
   "supply-manual-chapter-6": {
     url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
     description:
-      "Guide des approvisionnements, chapitre 6, Approbations et pouvoirs (approbation des contrats, pouvoirs de signature et fractionnement de contrat). Archivé le 30 janvier 2026 ; le Portail des acheteurs d’AchatsCanada est la source actuelle.",
+      "Guide des approvisionnements, chapitre 6, Approbations et pouvoirs (approbation des contrats, pouvoirs de signature et fractionnement de contrat). Archivé le 30 janvier 2026; le Portail des acheteurs d’AchatsCanada est la source actuelle.",
     accessibility: "public",
   },
   "contract-approval-authorities": {
@@ -958,13 +958,13 @@ export const EXTERNAL_LINKS = {
   },
   "uk-service-standard-point-2": {
     url: "https://www.gov.uk/service-manual/service-standard/point-2-solve-a-whole-problem",
-    description: "Service Standard de GOV.UK, point 2 : Résoudre un problème entier pour les utilisateurs",
+    description: "Service Standard de GOV.UK, point 2 : Résoudre un problème entier pour les utilisateurs",
     accessibility: "public",
   },
   "uk-service-standard-point-3-join-channels": {
     url: "https://www.gov.uk/service-manual/service-standard/point-3-join-up-across-channels",
     description:
-      "Service Standard de GOV.UK, point 3 : Offrir une expérience intégrée sur tous les canaux",
+      "Service Standard de GOV.UK, point 3 : Offrir une expérience intégrée sur tous les canaux",
     accessibility: "public",
   },
   "uk-creating-experience-map": {
@@ -1199,7 +1199,7 @@ export const EXTERNAL_LINKS = {
   },
   "ixdf-user-research": {
     url: "https://www.interaction-design.org/literature/topics/user-research",
-    description: "Interaction Design Foundation, What is User Research ?, qu’est-ce que la recherche sur les utilisateurs",
+    description: "Interaction Design Foundation, What is User Research?, qu’est-ce que la recherche sur les utilisateurs",
     accessibility: "public",
   },
   "threat-modeling-manifesto": {
@@ -1467,7 +1467,7 @@ export const EXTERNAL_LINKS = {
   },
   opentelemetry: {
     url: "https://opentelemetry.io/docs/what-is-opentelemetry/",
-    description: "Qu’est-ce qu’OpenTelemetry ? (CNCF)",
+    description: "Qu’est-ce qu’OpenTelemetry? (CNCF)",
     accessibility: "public",
   },
   "google-sre-service-level-objectives": {

@@ -216,7 +216,7 @@ export const CREATE_PHASE = {
       label: "Modèles et outils",
       linkKey: "pcra-tool" satisfies ExternalLinkKey,
       description:
-        "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
+        "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
     },
     {
       label: "Instrument directeur",

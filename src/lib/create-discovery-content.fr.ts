@@ -44,7 +44,7 @@ export const DISCOVERY_ON_RAMP = {
     "Une découverte se passe mal quand les bases ne sont pas en place d’abord. Voici ce qu’il faut avoir avant de commencer :",
   items: [
     {
-      text: "Un problème nommé. Quelque chose dans le programme dessert mal les personnes visées : plaintes, arriérés, contournements, système vieillissant, changement de politique. Consigné en une ou deux phrases. Il n’est pas nécessaire d’avoir choisi une solution ; remarquer la douleur suffit pour commencer.",
+      text: "Un problème nommé. Quelque chose dans le programme dessert mal les personnes visées : plaintes, arriérés, contournements, système vieillissant, changement de politique. Consigné en une ou deux phrases. Il n’est pas nécessaire d’avoir choisi une solution; remarquer la douleur suffit pour commencer.",
       bold: [{ phrase: "Un problème nommé." }],
     },
     {
@@ -56,7 +56,7 @@ export const DISCOVERY_ON_RAMP = {
       bold: [{ phrase: "Une petite équipe dédiée" }],
     },
     {
-      text: "Il y a un budget pour mener la recherche. Il est habituellement couvert par le budget de fonctionnement existant du ministère : aucune présentation au Conseil du Trésor n’est donc nécessaire ; la demande de nouveaux fonds pour construire vient plus tard. Le Financement explique d’où vient l’argent.",
+      text: "Il y a un budget pour mener la recherche. Il est habituellement couvert par le budget de fonctionnement existant du ministère : aucune présentation au Conseil du Trésor n’est donc nécessaire; la demande de nouveaux fonds pour construire vient plus tard. Le Financement explique d’où vient l’argent.",
       bold: [{ phrase: "un budget pour mener la recherche" }],
       internalLinks: [{ phrase: "Financement", to: "/thread/funding" }],
     },
@@ -110,7 +110,7 @@ export const DISCOVERY_PILLAR = {
       ],
     } satisfies ThreadLinkedProse,
     routes: {
-      text: "Parmi les voies possibles : Équipe, Solution, Produit fini, et Interne ou Réutilisation ; il en existe d’autres, et un ministère peut avoir raison d’en emprunter une. Rien n’est acheté pendant la Découverte. Seule la voie Équipe est même préparée aussi tôt, parce que c’est l’équipe qui réalise l’Alpha : menez le concours pendant la Découverte, et adjugez une fois la décision de continuer prise, pour que l’équipe soit en place dès le premier jour de l’Alpha.",
+      text: "Parmi les voies possibles : Équipe, Solution, Produit fini, et Interne ou Réutilisation; il en existe d’autres, et un ministère peut avoir raison d’en emprunter une. Rien n’est acheté pendant la Découverte. Seule la voie Équipe est même préparée aussi tôt, parce que c’est l’équipe qui réalise l’Alpha : menez le concours pendant la Découverte, et adjugez une fois la décision de continuer prise, pour que l’équipe soit en place dès le premier jour de l’Alpha.",
       internalLinks: [
         { phrase: "Parmi les voies possibles", to: "/thread/procurement" },
         { phrase: "Alpha", to: "/create-alpha" },
@@ -160,7 +160,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         bold: [{ phrase: "l’analyse de rentabilisation conceptuelle" }],
       },
       {
-        text: "L’analyse de rentabilisation conceptuelle décrit le problème ou l’occasion avant qu’une solution soit choisie. Elle est approuvée au niveau du sous-ministre adjoint ou plus haut, et est transmise au Secrétariat du Conseil du Trésor du Canada pour examen par le dirigeant principal de l’information du gouvernement du Canada. Le travail de la Découverte sur le problème est ce qui la remplit ; les Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique énoncent le reste.",
+        text: "L’analyse de rentabilisation conceptuelle décrit le problème ou l’occasion avant qu’une solution soit choisie. Elle est approuvée au niveau du sous-ministre adjoint ou plus haut, et est transmise au Secrétariat du Conseil du Trésor du Canada pour examen par le dirigeant principal de l’information du gouvernement du Canada. Le travail de la Découverte sur le problème est ce qui la remplit; les Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique énoncent le reste.",
         bold: [{ phrase: "avant qu’une solution soit choisie" }],
         externalLinks: [
           {
@@ -198,7 +198,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         ],
       },
       {
-        text: "Ce que l’utilisateur cherche à faire n’est presque toujours qu’une étape d’un parcours plus long : cartographiez donc ce parcours complet, à travers chaque canal et chaque service touché, à partir des parcours réels que les gens décrivent. C’est le point de départ de la prestation intégrée. La carte du parcours est l’artefact clé de la Découverte ; regroupez les points de douleur entendus et convenez du ou des deux qui valent la peine d’être résolus.",
+        text: "Ce que l’utilisateur cherche à faire n’est presque toujours qu’une étape d’un parcours plus long : cartographiez donc ce parcours complet, à travers chaque canal et chaque service touché, à partir des parcours réels que les gens décrivent. C’est le point de départ de la prestation intégrée. La carte du parcours est l’artefact clé de la Découverte; regroupez les points de douleur entendus et convenez du ou des deux qui valent la peine d’être résolus.",
         bold: [{ phrase: "une étape d’un parcours plus long" }],
         internalLinks: [{ phrase: "prestation intégrée", to: "/thread/joined-up-delivery" }],
       },
@@ -246,7 +246,7 @@ export const DISCOVERY_ACCORDION_STAGES: readonly DiscoveryAccordionStage[] = [
         ],
       },
       {
-        text: "Apprenez en même temps les besoins intrinsèques, parce qu’ils déterminent quelles options sont même possibles : à quel point l’information est sensible, pour que la sécurité soit intégrée dès le départ ; combien de personnes auront besoin du service en même temps, pour qu’il tienne sous une charge réelle ; et ce qu’il peut se permettre de coûter à exploiter, pour rester efficient pendant des années. Trouvés pendant la Découverte, ce sont des exigences. Trouvés après la construction, c’est du retravail.",
+        text: "Apprenez en même temps les besoins intrinsèques, parce qu’ils déterminent quelles options sont même possibles : à quel point l’information est sensible, pour que la sécurité soit intégrée dès le départ; combien de personnes auront besoin du service en même temps, pour qu’il tienne sous une charge réelle; et ce qu’il peut se permettre de coûter à exploiter, pour rester efficient pendant des années. Trouvés pendant la Découverte, ce sont des exigences. Trouvés après la construction, c’est du retravail.",
         bold: [{ phrase: "Apprenez en même temps les besoins intrinsèques" }],
       },
       {
@@ -434,7 +434,7 @@ export const DISCOVERY_FINISH = {
           text: "Cette note existe parce que les équipes, rendues là, demandent qui, à l’extérieur de l’équipe, certifie la fin de la Découverte. La réponse est personne, et c’est pourquoi le test ci-dessus est la décision de l’équipe elle-même.",
         },
         {
-          text: "Aucun instrument du gouvernement du Canada n’emploie les noms Découverte, Alpha ou Bêta ; ce sont les noms que ce guide donne aux sous-phases, et aucun point de contrôle officiel n’est défini comme la fin de la Découverte. Les instruments qui exigent quelque chose pendant la Découverte figurent dans le tableau ci-dessous, avec ce qui doit se passer pour chacun, et qui fait le travail se trouve dans le tableau complet des instruments.",
+          text: "Aucun instrument du gouvernement du Canada n’emploie les noms Découverte, Alpha ou Bêta; ce sont les noms que ce guide donne aux sous-phases, et aucun point de contrôle officiel n’est défini comme la fin de la Découverte. Les instruments qui exigent quelque chose pendant la Découverte figurent dans le tableau ci-dessous, avec ce qui doit se passer pour chacun, et qui fait le travail se trouve dans le tableau complet des instruments.",
         },
     ],
   },
@@ -504,34 +504,34 @@ export const DISCOVERY_SOURCES: SourceItem[] = [
   {
     label: "Modèles et outils",
     description:
-      "Modèle d’analyse de rentabilisation conceptuelle (SCT) : le formulaire à remplir qu’exigent les procédures sur les analyses de rentabilisation conceptuelles ; demandez la version courante à votre bureau de gestion de projet.",
+      "Modèle d’analyse de rentabilisation conceptuelle (SCT) : le formulaire à remplir qu’exigent les procédures sur les analyses de rentabilisation conceptuelles; demandez la version courante à votre bureau de gestion de projet.",
   },
   {
     label: "Modèles et outils",
     linkKey: "pcra-tool",
-    description: "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
+    description: "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-service-inventory",
     description:
-      "Répertoire des services du GC (Gouvernement ouvert) : la liste des services existants du GC, pour vérifier qu’un nouveau service ne fera pas double emploi avec eux.",
+      "Répertoire des services du GC (Gouvernement ouvert) : la liste des services existants du GC, pour vérifier qu’un nouveau service ne fera pas double emploi avec eux.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-open-resource-exchange",
     description:
-      "Échange de ressources ouvertes : le registre du GC des solutions ouvertes réutilisables ; cherchez-y avant de construire, et inscrivez ce que vous publiez.",
+      "Échange de ressources ouvertes : le registre du GC des solutions ouvertes réutilisables; cherchez-y avant de construire, et inscrivez ce que vous publiez.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-notify-contact",
-    description: "Notification GC (Service numérique canadien) : une plateforme de notification à configurer avant d’en construire une.",
+    description: "Notification GC (Service numérique canadien) : une plateforme de notification à configurer avant d’en construire une.",
   },
   {
     label: "Modèles et outils",
     linkKey: "gc-forms-assistance",
-    description: "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer avant d’en construire une.",
+    description: "Formulaires GC (Service numérique canadien) : une plateforme de création de formulaires à configurer avant d’en construire une.",
   },
   { label: "Instrument directeur", linkKey: "digital-standards", description: "Normes relatives au numérique du gouvernement du Canada (SCT)." },
   { label: "Instrument directeur", linkKey: "guideline-service-digital", description: "Ligne directrice sur les services et le numérique (SCT)." },
@@ -543,39 +543,39 @@ export const DISCOVERY_SOURCES: SourceItem[] = [
   {
     label: "Instrument directeur",
     linkKey: "gc-enterprise-architecture-framework",
-    description: "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères qu’appliquent les examens d’architecture, la réutilisation d’abord.",
+    description: "Cadre de l’architecture intégrée du gouvernement du Canada (SCT) : les critères qu’appliquent les examens d’architecture, la réutilisation d’abord.",
   },
   {
     label: "Instrument directeur",
     linkKey: "policy-privacy-protection",
     description:
-      "Politique sur la protection de la vie privée (SCT) : décidez tôt, avec votre bureau de l’AIPRP, si le service a besoin d’une évaluation des facteurs relatifs à la vie privée.",
+      "Politique sur la protection de la vie privée (SCT) : décidez tôt, avec votre bureau de l’AIPRP, si le service a besoin d’une évaluation des facteurs relatifs à la vie privée.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "design-with-users",
-    description: "Normes relatives au numérique, « Concevoir avec les utilisateurs » : le mode d’emploi de la recherche en Découverte.",
+    description: "Normes relatives au numérique, « Concevoir avec les utilisateurs » : le mode d’emploi de la recherche en Découverte.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "gba-plus",
     description:
-      "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada) : le processus du GC pour trouver qui un service pourrait exclure ; exigée dans les présentations au Conseil du Trésor.",
+      "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada) : le processus du GC pour trouver qui un service pourrait exclure; exigée dans les présentations au Conseil du Trésor.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "open-government-portal",
     description:
-      "Portail du gouvernement ouvert : la porte d’entrée des jeux de données existants du GC, pour le balayage de réutilisation et pour les chiffres de référence.",
+      "Portail du gouvernement ouvert : la porte d’entrée des jeux de données existants du GC, pour le balayage de réutilisation et pour les chiffres de référence.",
   },
   {
     label: "Référence complémentaire",
     linkKey: "oag-it-shared-services",
-    description: "Rapports de l’automne 2015 du BVG, rapport 4 : Les services partagés en technologie de l’information.",
+    description: "Rapports de l’automne 2015 du BVG, rapport 4 : Les services partagés en technologie de l’information.",
   },
   {
     label: "Collectivités",
     linkKey: "gc-ux-network",
-    description: "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement ; aussi sur GCXchange, cherchez le nom.",
+    description: "Réseau UX du gouvernement du Canada : praticiens de la recherche sur les utilisateurs dans l’ensemble du gouvernement; aussi sur GCXchange, cherchez le nom.",
   },
 ];

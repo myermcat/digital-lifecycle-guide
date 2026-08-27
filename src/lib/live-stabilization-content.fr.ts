@@ -86,7 +86,7 @@ export const STABILIZATION_ON_RAMP = {
       bold: [{ phrase: "L’équipe d’exploitation nommée," }],
     },
     {
-      text: "Les personnes qui l’ont construit joignables. Pour une construction par un fournisseur, la garantie, c’est-à-dire la période après le lancement pendant laquelle le fournisseur corrige les défauts sans frais additionnels, précisée au contrat avec ses délais de réponse ; pour une construction interne, les développeurs encore affectés.",
+      text: "Les personnes qui l’ont construit joignables. Pour une construction par un fournisseur, la garantie, c’est-à-dire la période après le lancement pendant laquelle le fournisseur corrige les défauts sans frais additionnels, précisée au contrat avec ses délais de réponse; pour une construction interne, les développeurs encore affectés.",
       bold: [{ phrase: "Les personnes qui l’ont construit joignables." }],
     },
     {
@@ -246,7 +246,7 @@ export const STABILIZATION_ACCORDION_STAGES: readonly StabilizationAccordionStag
         items: [
           {
             bold: "Inscrire le service.",
-            text: " Dans le Répertoire des services du GC à la prochaine mise à jour annuelle, et l’application cotée dans la gestion du portefeuille d’applications. L’équipe fournit les détails ; le bureau du DPI procède à l’inscription.",
+            text: " Dans le Répertoire des services du GC à la prochaine mise à jour annuelle, et l’application cotée dans la gestion du portefeuille d’applications. L’équipe fournit les détails; le bureau du DPI procède à l’inscription.",
           },
           {
             bold: "Garder l’ancienne façon en marche.",
@@ -373,10 +373,10 @@ export const STABILIZATION_FINISH = {
           text: "Ni l’un ni l’autre registre n’appartient à l’équipe : voici donc ce qu’est chacun et qui le dépose.",
         },
         {
-          text: "Le Répertoire des services du GC consigne quels services existent et quel volume ils traitent. Le cadre désigné pour les services le dépose ; le responsable opérationnel fournit les détails. Il est actualisé une fois par année et personne ne le relance entre-temps, et c’est pourquoi c’est l’inscription qu’on oublie.",
+          text: "Le Répertoire des services du GC consigne quels services existent et quel volume ils traitent. Le cadre désigné pour les services le dépose; le responsable opérationnel fournit les détails. Il est actualisé une fois par année et personne ne le relance entre-temps, et c’est pourquoi c’est l’inscription qu’on oublie.",
         },
         {
-          text: "La gestion du portefeuille d’applications consigne les applications derrière ces services, cotées selon la valeur opérationnelle, l’état, le coût et la criticité. C’est le seul registre qui saisit la criticité : une entrée vide signifie donc que rien à l’échelle du gouvernement ne présente le service comme essentiel. Un délégué du portefeuille le tient ; les cotes viennent du responsable opérationnel.",
+          text: "La gestion du portefeuille d’applications consigne les applications derrière ces services, cotées selon la valeur opérationnelle, l’état, le coût et la criticité. C’est le seul registre qui saisit la criticité : une entrée vide signifie donc que rien à l’échelle du gouvernement ne présente le service comme essentiel. Un délégué du portefeuille le tient; les cotes viennent du responsable opérationnel.",
         },
     ],
   },
@@ -418,7 +418,7 @@ export const STABILIZATION_FINISH = {
         bold: [{ phrase: "Le guide d’exploitation et la liste des erreurs connues," }],
       },
       {
-        text: "La garantie close, pour une construction par un fournisseur : défauts ouverts corrigés ou consciemment acceptés, chacun avec un responsable nommé. La clore règle qui paie les corrections ; les modalités de soutien du contrat se poursuivent.",
+        text: "La garantie close, pour une construction par un fournisseur : défauts ouverts corrigés ou consciemment acceptés, chacun avec un responsable nommé. La clore règle qui paie les corrections; les modalités de soutien du contrat se poursuivent.",
         bold: [{ phrase: "La garantie close," }],
       },
       {
@@ -446,13 +446,13 @@ export const STABILIZATION_SOURCES: SourceItem[] = [
     label: "Modèles et outils",
     linkKey: "gc-service-inventory",
     description:
-      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le nouveau service doit être inscrit.",
+      "Répertoire des services du GC (Gouvernement ouvert) : le jeu de données où le nouveau service doit être inscrit.",
   },
   {
     label: "Modèles et outils",
     linkKey: "apm-dataset",
     description:
-      "Détails du portefeuille d’applications du GC (Gouvernement ouvert) : le jeu de données qu’alimente le dossier d’application du ministère.",
+      "Détails du portefeuille d’applications du GC (Gouvernement ouvert) : le jeu de données qu’alimente le dossier d’application du ministère.",
   },
   {
     label: "Instrument directeur",
@@ -476,7 +476,7 @@ export const STABILIZATION_SOURCES: SourceItem[] = [
     label: "Instrument directeur",
     linkKey: "charging-directive",
     description:
-      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : les règles derrière la remise des frais.",
+      "Directive sur l’imputation et les autorisations financières spéciales (SCT) : les règles derrière la remise des frais.",
   },
   {
     label: "Référence complémentaire",
@@ -488,11 +488,11 @@ export const STABILIZATION_SOURCES: SourceItem[] = [
     label: "Référence complémentaire",
     linkKey: "oag-phoenix-build",
     description:
-      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
+      "Rapports du printemps 2018 du BVG, rapport 1 : Construction et mise en œuvre du système de paye Phoenix.",
   },
   {
     label: "Collectivités",
     description:
-      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
+      "Collectivité de la gestion du portefeuille d’applications : sur GCXchange, cherchez le nom.",
   },
 ];

@@ -110,7 +110,7 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
     },
     {
       lead: "Pour bien comprendre un instrument en particulier, suivez-le jusqu’à sa page thématique.",
-      body: "La sécurité, la protection de la vie privée, l’accessibilité et l’approvisionnement ont chacun leur propre page dans le guide, qui en explique le raisonnement. Cette page-ci est l’index ; les pages thématiques portent l’explication.",
+      body: "La sécurité, la protection de la vie privée, l’accessibilité et l’approvisionnement ont chacun leur propre page dans le guide, qui en explique le raisonnement. Cette page-ci est l’index; les pages thématiques portent l’explication.",
     },
   ],
 } as const;
@@ -118,7 +118,7 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
 export const CHECKPOINT_MAP_VARIES = {
   heading: "Presque tout ici varie",
   paragraphs: [
-    "Les points de contrôle eux-mêmes sont réels et sont énoncés dans des instruments du gouvernement du Canada. Presque tout ce qui les entoure ne l’est pas. Ceux qui s’appliquent dépendent de ce que fait le service et de ce qui est dépensé. Qui préside un comité, quels sont les seuils d’un ministère, qui signe, et la façon dont chaque étape se déroule en pratique diffèrent d’un ministère à l’autre.",
+    "Les points de contrôle eux-mêmes sont réels et sont énoncés dans des instruments du gouvernement du Canada. Presque tout ce qui les entoure, en revanche, n’est pas fixé. Ceux qui s’appliquent dépendent de ce que fait le service et de ce qui est dépensé. Qui préside un comité, quels sont les seuils d’un ministère, qui signe, et la façon dont chaque étape se déroule en pratique diffèrent d’un ministère à l’autre.",
     "Le calendrier est ce qui varie le plus. Rien ici ne dit combien de temps prend une étape, parce que cela dépend de la capacité du ministère, de la file devant vous, et de ce qui se passe d’autre cette année-là. Là où une durée est donnée, traitez-la comme l’expérience d’une seule équipe plutôt que comme un chiffre de planification, et confirmez-la auprès de votre propre ministère.",
     "L’ordre varie aussi. La séquence dans laquelle un service rencontre ces points de contrôle suit la voie qu’il emprunte : acheter un produit fini, mettre une équipe sous contrat, mener un approvisionnement agile et construire à l’interne les réarrangent tous, et certains disparaissent entièrement.",
   ],
@@ -200,24 +200,24 @@ export const CHECKPOINT_MAP_APPENDIX_PATH = {
 
 export const CHECKPOINT_MAP_NADIA = {
   heading: "Voici Nadia, directrice générale",
-  body: "Son programme de subventions a débordé de ses feuilles de calcul : elle achète donc un système de gestion des subventions. Son projet obtient un score sous le seuil de son ministère : aucune présentation au Conseil du Trésor n’est donc nécessaire. Le CEAI GC est une question distincte : six déclencheurs y envoient un ministère et l’argent n’en est qu’un ; son équipe vérifie donc les six pendant l’Alpha et aucun ne se déclenche. Les deux ensemble constituent le cas ordinaire, environ 95 % des projets. Là où un autre projet bifurquerait vers le haut est montré dans les encadrés ambrés.",
+  body: "Son programme de subventions a débordé de ses feuilles de calcul : elle achète donc un système de gestion des subventions. Son projet obtient une cote sous le seuil de son ministère : aucune présentation au Conseil du Trésor n’est donc nécessaire. Le CEAI GC est une question distincte : six déclencheurs y envoient un ministère et l’argent n’en est qu’un; son équipe vérifie donc les six pendant l’Alpha et aucun ne se déclenche. Les deux ensemble constituent le cas ordinaire, environ 95 % des projets. Là où un autre projet bifurquerait vers le haut est montré dans les encadrés ambrés.",
   bold: ["below", "six déclencheurs y envoient un ministère et l’argent n’en est qu’un"],
   amber: ["encadrés ambrés"],
 } as const;
 
 export const CHECKPOINT_MAP_WHY_GCS = {
   heading: "Pourquoi les S et C servent d’exemple",
-  body: "Ce parcours est bâti autour d’un système de subventions et contributions parce que c’est un cas travaillé utile : il touche presque tous les points de contrôle à la fois — fonds publics, approvisionnement, autorisation de sécurité, renseignements personnels, documents, et une décision prise au sujet de personnes. Le guide dans son ensemble ne se limite pas aux S et C ; n’importe quel service peut être cartographié selon le même parcours.",
+  body: "Ce parcours est bâti autour d’un système de subventions et contributions parce que c’est un cas travaillé utile : il touche presque tous les points de contrôle à la fois — fonds publics, approvisionnement, autorisation de sécurité, renseignements personnels, documents, et une décision prise au sujet de personnes. Le guide dans son ensemble ne se limite pas aux S et C; n’importe quel service peut être cartographié selon le même parcours.",
 } as const;
 
 export const CHECKPOINT_MAP_WHY_CREATE = {
   heading: "Pourquoi la Création remplit l’essentiel de cette annexe",
-  body: "Les points de contrôle officiels sont concentrés au début. Presque chaque approbation, examen et signature officiels se produisent avant le lancement : la Création porte donc l’essentiel des étapes. L’Exploitation et le Retrait paraissent plus courts ici seulement parce que cette annexe suit les points de contrôle, et non parce qu’il y a moins de travail.",
+  body: "Les points de contrôle officiels sont concentrés au début. Presque toutes les approbations, tous les examens et toutes les signatures officiels se produisent avant le lancement : la Création porte donc l’essentiel des étapes. L’Exploitation et le Retrait paraissent plus courts ici seulement parce que cette annexe suit les points de contrôle, et non parce qu’il y a moins de travail.",
 } as const;
 
 export const CHECKPOINT_MAP_WHAT_TABLE = {
   heading: "Ce que couvre cette page",
-  body: "Les points de contrôle officiels seulement : les approbations, examens, signatures et obligations permanentes officiels qui découlent d’instruments du gouvernement du Canada. Chacun est accompagné de ce qu’il est, de ce qui l’amène dans la portée, et de ce que le responsable opérationnel doit personnellement faire. Elle ne couvre pas comment faire le travail à l’intérieur de chaque étape, ce à quoi servent les pages de phase et de sous-phase. Lisez-la comme la liste à laquelle confronter votre propre service.",
+  body: "Les points de contrôle officiels seulement : les approbations, examens, signatures et obligations permanentes officiels qui découlent d’instruments du gouvernement du Canada. Chacun est accompagné de ce qu’il est, de ce qui l’amène dans la portée, et de ce que le responsable opérationnel doit personnellement faire. Il ne couvre pas comment faire le travail à l’intérieur de chaque étape, ce à quoi servent les pages de phase et de sous-phase. Lisez-le comme la liste à laquelle confronter votre propre service.",
   bold: ["les points de contrôle officiels seulement"],
 } as const;
 
@@ -229,12 +229,12 @@ export const CHECKPOINT_MAP_COLKEY = {
 } as const;
 
 export const CHECKPOINT_MAP_LAUNCH = {
-  tag: "LAUNCH",
-  text: "Le service est mis en service ici. Tout ce qui précède relève de la Création (la construction) ; tout ce qui suit relève de l’Exploitation et du Retrait (l’exploiter, puis le retirer ou le remplacer).",
+  tag: "LANCEMENT",
+  text: "Le service est mis en service ici. Tout ce qui précède relève de la Création (la construction); tout ce qui suit relève de l’Exploitation et du Retrait (l’exploiter, puis le retirer ou le remplacer).",
 } as const;
 
 export const CHECKPOINT_MAP_VARY_NOTE =
-  "Les mécanismes et les échéanciers ministériels varient ; confirmez auprès de votre propre ministère avant de traiter une étape comme fixe.";
+  "Les mécanismes et les échéanciers ministériels varient; confirmez auprès de votre propre ministère avant de traiter une étape comme fixe.";
 
 export const CHECKPOINT_MAP_FOOTER_DISCLAIMER =
   "Nadia est fictive, et son programme aussi. Toute ressemblance avec des personnes ou des programmes réels est fortuite.";
@@ -291,11 +291,11 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
               type: "ul",
               items: [
                 "le bureau du DPI ou de la TI",
-                "finance",
-                "procurement",
-                "security",
+                "les finances",
+                "l’approvisionnement",
+                "la sécurité",
                 "le bureau de la protection de la vie privée (AIPRP)",
-                "records",
+                "la gestion des documents",
               ],
             },
             {
@@ -322,7 +322,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Certaines de son propre programme, qui connaissent le travail, et, par le bureau du DPI ou de la TI, un analyste opérationnel et souvent un gestionnaire de projet du bureau de gestion de projet du ministère. L’équipe est petite pendant la Découverte et grandit jusqu’à la Bêta à mesure que la construction et le personnel du fournisseur s’ajoutent. Nadia la parraine ; elle ne fait pas elle-même le travail pratique.",
+              text: "Certaines de son propre programme, qui connaissent le travail, et, par le bureau du DPI ou de la TI, un analyste opérationnel et souvent un gestionnaire de projet du bureau de gestion de projet du ministère. L’équipe est petite pendant la Découverte et grandit jusqu’à la Bêta à mesure que la construction et le personnel du fournisseur s’ajoutent. Nadia la parraine; elle ne fait pas elle-même le travail pratique.",
             },
           ],
         },
@@ -344,7 +344,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Elles ajoutent l’initiative au plan ministériel et au plan d’investissement ministériel (approuvé par l’administrateur général). Elle y verse l’initiative ; elle ne met pas ces plans à jour elle-même.",
+              text: "Elles ajoutent l’initiative au plan ministériel et au plan d’investissement ministériel (approuvé par l’administrateur général). Elle y verse l’initiative; elle ne met pas ces plans à jour elle-même.",
               bold: ["plan ministériel", "plan d’investissement ministériel"],
             },
           ],
@@ -354,7 +354,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         n: 5,
         action: {
           lead: "Fait dimensionner, coter en risque et chiffrer le projet.",
-          body: [{ type: "p", text: "Quelle est vraiment son ampleur, et quel est son risque ?" }],
+          body: [{ type: "p", text: "Quelle est vraiment son ampleur, et quel est son risque?" }],
         },
         response: {
           tags: ["dept"],
@@ -368,8 +368,8 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "ul",
               items: [
-                "l’administrateur général répond de l’exactitude du score",
-                "ce score est comparé à la classe de capacité de gestion de projet approuvée du ministère",
+                "l’administrateur général répond de l’exactitude de la cote",
+                "cette cote est comparée à la classe de capacité de gestion de projet approuvée du ministère",
               ],
               itemBold: ["administrateur général", "classe de capacité de gestion de projet"],
             },
@@ -379,7 +379,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkAfter: {
       title: "Le choix qui décide de tout.",
-      text: "Si le niveau de l’ECRP se situe à l’intérieur de la classe de capacité du ministère, le ministère approuve et finance le projet lui-même, ce qui est la voie de Nadia. S’il se situe au-dessus de la classe, ou si son coût dépasse la limite déléguée du ministère, le projet exige l’approbation du Conseil du Trésor, et cela signifie une présentation au Conseil du Trésor. C’est l’autre ~5 %, et cela peut ajouter de six à douze mois ou plus. Nadia est sous cette ligne. Un projet plus grand devrait aussi une analyse de rentabilisation conceptuelle, un instrument distinct avec son propre seuil et ses propres examinateurs. Nadia est également sous ce plancher : l’exposé de l’étape 4 reste donc à l’intérieur du ministère et n’en est pas une. Le CEAI GC est encore une question distincte, une question d’architecture, et le bloc Alpha l’expose.",
+      text: "Si le niveau de l’ECRP se situe à l’intérieur de la classe de capacité du ministère, le ministère approuve et finance le projet lui-même, ce qui est la voie de Nadia. S’il se situe au-dessus de la classe, ou si son coût dépasse la limite déléguée du ministère, le projet exige l’approbation du Conseil du Trésor, et cela signifie une présentation au Conseil du Trésor. C’est l’autre ~5 %, et cela peut ajouter de six à douze mois ou plus. Nadia est sous cette ligne. Un projet plus grand exigerait aussi une analyse de rentabilisation conceptuelle, un instrument distinct avec son propre seuil et ses propres examinateurs. Nadia est également sous ce plancher : l’exposé de l’étape 4 reste donc à l’intérieur du ministère et n’en est pas une. Le CEAI GC est encore une question distincte, une question d’architecture, et le bloc Alpha l’expose.",
       bold: ["within", "above"],
       checkpointPhrases: ["CEAI GC", "présentation au Conseil du Trésor"],
     },
@@ -391,7 +391,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "La réutilisation vient en premier dans la politique du GC. Ce n’est pas elle qui cherche ; c’est elle qui décide.",
+              text: "La réutilisation vient en premier dans la politique du GC. Ce n’est pas elle qui cherche; c’est elle qui décide.",
             },
           ],
         },
@@ -561,7 +561,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "Si l’un des déclencheurs était atteint",
-      text: ", le DPI du ministère le porterait au CEAI GC, le Comité d’examen de l’architecture intégrée du gouvernement du Canada. Six déclencheurs y envoient un ministère et un seul suffit ; le tableau ci-dessus les énumère tous les six. Les cinq qui n’ont rien à voir avec l’argent sont ceux que les équipes manquent, parce qu’une petite initiative peut être visée par les seules technologies émergentes ou l’hébergement. C’est le ministère qui présente, et l’équipe d’architecture du DPI prépare la documentation, l’équipe de projet assistant habituellement pour la présenter.",
+      text: ", le DPI du ministère le porterait au CEAI GC, le Comité d’examen de l’architecture intégrée du gouvernement du Canada. Six déclencheurs y envoient un ministère et un seul suffit; le tableau ci-dessus les énumère tous les six. Les cinq qui n’ont rien à voir avec l’argent sont ceux que les équipes manquent, parce qu’une petite initiative peut être visée par les seules technologies émergentes ou l’hébergement. C’est le ministère qui présente, et l’équipe d’architecture du DPI prépare la documentation, l’équipe de projet assistant habituellement pour la présenter.",
       bold: ["department"],
       checkpointPhrases: ["CEAI GC"],
     },
@@ -596,7 +596,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "ul",
               items: [
-                "gèrent le processus d’évaluation et adjugent le contrat au titre de la Directive sur la gestion de l’approvisionnement ; c’est l’autorité contractante qui signe, non Nadia",
+                "gèrent le processus d’évaluation et adjugent le contrat au titre de la Directive sur la gestion de l’approvisionnement; c’est l’autorité contractante qui signe, non Nadia",
                 "confirment avant l’adjudication que le soumissionnaire retenu détient les attestations du personnel et de l’organisation qu’exige le Programme de sécurité des contrats, et annexent au contrat la Liste de vérification des exigences relatives à la sécurité approuvée",
               ],
               itemBold: ["Directive sur la gestion de l’approvisionnement", "Programme de sécurité des contrats"],
@@ -624,7 +624,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "caution",
-              lead: "Caution:",
+              lead: "Mise en garde :",
               text: "dans l’histoire, le rapport portait sur une version antérieure, et la version réellement déployée n’a jamais été revérifiée.",
             },
           ],
@@ -641,7 +641,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "L’équipe de sécurité mène l’évaluation et autorisation de sécurité et transmet le risque résiduel de sécurité de la TI (cybersécurité) à l’autorisateur du programme. Cet autorisateur signe l’autorisation d’exploiter, acceptant le risque, au titre de la Politique sur la sécurité du gouvernement, de sa Directive sur la gestion de la sécurité, et de l’ITSG-33. Pour un service qui vit à l’intérieur d’un seul ministère, l’autorisateur est normalement le responsable opérationnel : Nadia signe la sienne.",
+              text: "L’équipe de sécurité mène l’évaluation et autorisation de sécurité et transmet le risque résiduel de sécurité de la TI (cybersécurité) à l’autorité approbatrice du programme. Cette autorité approbatrice signe l’autorisation d’exploiter, acceptant le risque, au titre de la Politique sur la sécurité du gouvernement, de sa Directive sur la gestion de la sécurité, et de l’ITSG-33. Pour un service qui vit à l’intérieur d’un seul ministère, l’autorité approbatrice est normalement le responsable opérationnel : Nadia signe la sienne.",
               bold: [
                 "évaluation et autorisation de sécurité",
                 "autorisation d’exploiter",
@@ -671,7 +671,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Comme le système de subventions traite des renseignements personnels, le programme remplit l’évaluation des facteurs relatifs à la vie privée, avec l’appui du bureau de l’AIPRP ; elle est transmise au Commissariat à la protection de la vie privée et au SCT avant le lancement ; le fichier de renseignements personnels est inscrit dans la liste Info Source du ministère.",
+              text: "Comme le système de subventions traite des renseignements personnels, le programme remplit l’évaluation des facteurs relatifs à la vie privée, avec l’appui du bureau de l’AIPRP; elle est transmise au Commissariat à la protection de la vie privée et au SCT avant le lancement; le fichier de renseignements personnels est inscrit dans la liste Info Source du ministère.",
               bold: [
                 "évaluation des facteurs relatifs à la vie privée",
                 "Commissariat à la protection de la vie privée",
@@ -729,7 +729,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Le projet financé se termine par une clôture : le ministère confirme ce qui a été livré, libère ce qu’il reste du budget, et fait le suivi de l’arrivée des avantages promis, la réalisation des avantages nommée au moment où le ministère a engagé le financement. La Directive sur la gestion des projets et des programmes établit l’obligation ; Nadia fournit le relevé de livraison, et le bureau de projet le dépose.",
+              text: "Le projet financé se termine par une clôture : le ministère confirme ce qui a été livré, libère ce qu’il reste du budget, et fait le suivi de l’arrivée des avantages promis, la réalisation des avantages nommée au moment où le ministère a engagé le financement. La Directive sur la gestion des projets et des programmes établit l’obligation; Nadia fournit le relevé de livraison, et le bureau de projet le dépose.",
               bold: ["close-out", "réalisation des avantages"],
             },
           ],
@@ -746,7 +746,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: "Elle fournit les détails ; ils inscrivent le service au Répertoire des services du GC et cotent l’application dans la gestion du portefeuille d’applications. Elle verse l’information ; c’est le bureau du DPI qui procède à l’inscription.",
+              text: "Elle fournit les détails; ils inscrivent le service au Répertoire des services du GC et cotent l’application dans la gestion du portefeuille d’applications. Elle verse l’information; c’est le bureau du DPI qui procède à l’inscription.",
               bold: ["Répertoire des services du GC", "gestion du portefeuille d’applications"],
             },
           ],
@@ -763,7 +763,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
               items: [
                 "Stabiliser (juste après le lancement) : corriger les défauts, intervenir sur les incidents, ajuster le rendement",
                 "Croître : ajouter des fonctionnalités et améliorer le service à mesure que les besoins des utilisateurs évoluent",
-                "Maturité (récurrent) : le surveiller et le corriger ; renouveler le financement avant son expiration ; tenir à jour les tests d’accessibilité, qui alimentent la déclaration d’accessibilité du ministère (exigée à partir de décembre 2027) ; mettre à jour l’évaluation de la protection de la vie privée à mesure que le service change ; gérer le fournisseur",
+                "Maturité (récurrent) : le surveiller et le corriger; renouveler le financement avant son expiration; tenir à jour les tests d’accessibilité, qui alimentent la déclaration d’accessibilité du ministère (exigée à partir de décembre 2027); mettre à jour l’évaluation de la protection de la vie privée à mesure que le service change; gérer le fournisseur",
               ],
               itemBold: ["Stabiliser (juste après le lancement) :", "Grow:", "Maturité (récurrent) :"],
             },
@@ -779,11 +779,11 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             },
             {
               type: "p",
-              text: "Ajouter une fonctionnalité importante peut ramener des points de contrôle antérieurs : une fonctionnalité qui traite des renseignements personnels peut exiger une évaluation des facteurs relatifs à la vie privée mise à jour ; automatiser une décision déclenche une évaluation de l’incidence algorithmique ; les changements architecturaux majeurs retournent au CEAM ; une capacité nouvelle ou élargie peut exiger une modification de contrat ou un nouvel approvisionnement.",
+              text: "Ajouter une fonctionnalité importante peut ramener des points de contrôle antérieurs : une fonctionnalité qui traite des renseignements personnels peut exiger une évaluation des facteurs relatifs à la vie privée mise à jour; automatiser une décision déclenche une évaluation de l’incidence algorithmique; les changements architecturaux majeurs retournent au CEAM; une capacité nouvelle ou élargie peut exiger une modification de contrat ou un nouvel approvisionnement.",
             },
             {
               type: "caution",
-              lead: "Caution:",
+              lead: "Mise en garde :",
               text: "dans l’histoire, le lancement a été traité comme la ligne d’arrivée : personne n’était clairement responsable du service en exploitation et la fin du contrat n’a pas été planifiée. Quand le terme de trois ans est arrivé, aucun budget n’avait été mis de côté et il ne restait aucun délai pour remettre en concurrence ou renouveler.",
             },
           ],
@@ -837,7 +837,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "ul",
               items: [
-                "kept",
+                "conservé",
                 "transféré à Bibliothèque et Archives Canada",
                 "ou détruit selon le calendrier",
               ],
@@ -854,7 +854,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
         response: {
           tags: ["dept"],
-          lead: "Migrer si remplacé ; éliminer si retiré.",
+          lead: "Migrer si remplacé; éliminer si retiré.",
           body: [
             {
               type: "p",
@@ -871,11 +871,11 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         },
         response: {
           tags: ["dept"],
-          lead: "L’autorisateur, la sécurité, les contrats et le bureau de la gestion des services closent chacun leur part.",
+          lead: "L’autorité approbatrice, la sécurité, les contrats et le bureau de la gestion des services closent chacun leur part.",
           body: [
             {
               type: "p",
-              text: "L’autorisateur qui a signé l’autorisation d’exploiter y met officiellement fin, et l’équipe de sécurité de la TI efface de façon sécuritaire le stockage démantelé ; l’autorité contractante clôt le contrat ; le bureau de la gestion des services met à jour le Répertoire des services du GC et la gestion du portefeuille d’applications pour indiquer que le service est retiré.",
+              text: "L’autorité approbatrice qui a signé l’autorisation d’exploiter y met officiellement fin, et l’équipe de sécurité de la TI efface de façon sécuritaire le stockage démantelé; l’autorité contractante clôt le contrat; le bureau de la gestion des services met à jour le Répertoire des services du GC et la gestion du portefeuille d’applications pour indiquer que le service est retiré.",
               bold: [
                 "autorisation d’exploiter",
                 "Répertoire des services du GC",
@@ -913,10 +913,10 @@ export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
   },
   {
     term: "Bureau de gestion de projet du ministère",
-    def: "Aide à coter et à chiffrer le projet et à trouver un gestionnaire de projet. Son organisation varie ; l’administrateur général répond du score.",
+    def: "Aide à coter et à chiffrer le projet et à trouver un gestionnaire de projet. Son organisation varie; l’administrateur général répond de la cote.",
   },
   {
-    term: "DARB",
+    term: "CEAM",
     def: "Comité d’examen de l’architecture du ministère. À l’intérieur du ministère, présidé par son DPI, et il examine la conception.",
   },
   {
@@ -928,7 +928,7 @@ export const CHECKPOINT_MAP_WHO: readonly CheckpointMapWhoEntry[] = [
     def: "L’agent d’approvisionnement qui mène le concours et signe le contrat. Jamais le responsable opérationnel.",
   },
   {
-    term: "Autorisateur",
+    term: "Autorité approbatrice",
     def: "Le cadre supérieur qui signe l’autorisation d’exploiter et accepte le risque de sécurité qui subsiste.",
   },
   {

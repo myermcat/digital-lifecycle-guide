@@ -60,7 +60,7 @@ export const DATA_STEWARDSHIP_THREAD = {
   ] satisfies ThreadLinkedProse[],
 
   retentionQuestionCallout: {
-    title: "Question courante : combien de temps dois-je conserver les données ?",
+    title: "Question courante : combien de temps dois-je conserver les données?",
     body: {
       text:
         "Il n’y a pas de chiffre unique. Chaque type de document a sa propre période de conservation. Les Outils générique d’évaluation de Bibliothèque et Archives Canada donnent les périodes de départ normalisées par activité, et le calendrier de conservation de votre ministère en précise les détails. Une fois la période connue, consignez-la comme une durée, un déclencheur qui met l’horloge en marche, et un motif, puis disposez selon le calendrier.",
@@ -72,7 +72,7 @@ export const DATA_STEWARDSHIP_THREAD = {
 
   whyItMatters: {
     text:
-      "Les données sont la partie d’un service qui survit au logiciel. Une équipe peut remplacer le système et garder les documents : les documents méritent donc plus de soin que le code. Quand la qualité des données glisse, des décisions se prennent sur de l’information erronée, et l’erreur se propage à tous ceux en aval qui s’y fient. Conserver des données plus longtemps que permis, ou les détruire sans autorisation, enfreint les règles dans les deux cas : la Politique sur les services et le numérique et sa directive exigent d’une institution qu’elle gère la qualité des données, fixe des périodes de conservation, et applique un processus de disposition documenté ; et en vertu de la Loi sur la Bibliothèque et les Archives du Canada, aucun document gouvernemental ne peut être détruit sans le consentement écrit du bibliothécaire et archiviste.",
+      "Les données sont la partie d’un service qui survit au logiciel. Une équipe peut remplacer le système et garder les documents : les documents méritent donc plus de soin que le code. Quand la qualité des données glisse, des décisions se prennent sur de l’information erronée, et l’erreur se propage à tous ceux en aval qui s’y fient. Conserver des données plus longtemps que permis, ou les détruire sans autorisation, enfreint les règles dans les deux cas : la Politique sur les services et le numérique et sa directive exigent d’une institution qu’elle gère la qualité des données, fixe des périodes de conservation, et applique un processus de disposition documenté; et en vertu de la Loi sur la Bibliothèque et les Archives du Canada, aucun document gouvernemental ne peut être détruit sans le consentement écrit du bibliothécaire et archiviste.",
     externalLinks: [
       { phrase: "Politique sur les services et le numérique", linkKey: "policy-on-service-and-digital" },
       { phrase: "directive", linkKey: "directive-on-service-and-digital" },
@@ -85,7 +85,7 @@ export const DATA_STEWARDSHIP_THREAD = {
     roles: [
       {
         role: "Le bureau de la gestion de l’information du ministère",
-        text: "établit les normes et détient les autorisations de disposition ; certains ministères nomment un dirigeant principal des données pour diriger ce travail.",
+        text: "établit les normes et détient les autorisations de disposition; certains ministères nomment un dirigeant principal des données pour diriger ce travail.",
         externalLinks: [
           { phrase: "les autorisations de disposition", linkKey: "lac-information-disposition-hub" },
         ] satisfies ExternalPhraseLink[],
@@ -239,7 +239,7 @@ export const DATA_STEWARDSHIP_THREAD = {
     },
     authorityCheck: {
       id: "is-an-authority-already-in-place",
-      title: "2. Une autorisation est-elle déjà en place ?",
+      title: "2. Une autorisation est-elle déjà en place?",
       intro: {
         text:
           "Une autorisation se rattache à un ministère et à un type de document, non à un projet en particulier : il se peut donc qu’il y en ait déjà une. Dans les deux cas, le bureau de la gestion de l’information (GI) le confirme.",
@@ -247,8 +247,8 @@ export const DATA_STEWARDSHIP_THREAD = {
       } satisfies ThreadLinkedProse,
       figure: {
         caption:
-          "Demandez d’abord au bureau de la GI. Habituellement, les documents sont déjà couverts ; parfois, il faut demander une nouvelle autorisation.",
-        alt: "Demandez d’abord au bureau de la GI : habituellement les documents sont déjà couverts ; parfois il faut demander une nouvelle autorisation.",
+          "Demandez d’abord au bureau de la GI. Habituellement, les documents sont déjà couverts; parfois, il faut demander une nouvelle autorisation.",
+        alt: "Demandez d’abord au bureau de la GI : habituellement les documents sont déjà couverts; parfois il faut demander une nouvelle autorisation.",
       },
       bullets: [
         {
@@ -272,7 +272,7 @@ export const DATA_STEWARDSHIP_THREAD = {
           lead: "When.",
           body: {
             text:
-              " Tôt, en Bêta, avant le lancement du service. Une autorisation n’est jamais refusée : ce n’est donc pas un point de contrôle de type réussite ou échec ; le seul risque est le temps que prend une nouvelle, et c’est pourquoi la démarche commence tôt.",
+              " Tôt, en Bêta, avant le lancement du service. Une autorisation n’est jamais refusée : ce n’est donc pas un point de contrôle de type réussite ou échec; le seul risque est le temps que prend une nouvelle, et c’est pourquoi la démarche commence tôt.",
             bold: [{ phrase: "Bêta" }],
           } satisfies ThreadLinkedProse,
         },
@@ -292,8 +292,8 @@ export const DATA_STEWARDSHIP_THREAD = {
         },
       ],
       askList: [
-        "Une autorisation est-elle déjà en place pour ces documents, et sinon, comment en demande-t-on une et combien de temps cela prendra-t-il ?",
-        "Que peut-on éliminer de façon continue une fois le service en fonction, et au titre de quelle autorisation ?",
+        "Une autorisation est-elle déjà en place pour ces documents, et sinon, comment en demande-t-on une et combien de temps cela prendra-t-il?",
+        "Que peut-on éliminer de façon continue une fois le service en fonction, et au titre de quelle autorisation?",
       ],
       waitNote: {
         bold: "Pourquoi une nouvelle autorisation peut prendre si longtemps.",
@@ -357,7 +357,7 @@ export const DATA_STEWARDSHIP_THREAD = {
       ],
       contractDuty: {
         text:
-          "Pour une petite équipe qui exploite un produit acheté, l’élimination ne se fait pas d’elle-même ; elle ne se fait que là où le contrat l’exige. Ces obligations appartiennent donc au contrat dès le départ : disposer selon le calendrier, restituer les données, détruire les copies de façon sécuritaire, et démontrer que cela a été fait. Elles forment le calendrier des données d’un bon contrat, établi au moment de l’achat du service.",
+          "Pour une petite équipe qui exploite un produit acheté, l’élimination ne se fait pas d’elle-même; elle ne se fait que là où le contrat l’exige. Ces obligations appartiennent donc au contrat dès le départ : disposer selon le calendrier, restituer les données, détruire les copies de façon sécuritaire, et démontrer que cela a été fait. Elles forment le calendrier des données d’un bon contrat, établi au moment de l’achat du service.",
         internalLinks: [
           {
             phrase: "le calendrier des données d’un bon contrat",
@@ -366,8 +366,8 @@ export const DATA_STEWARDSHIP_THREAD = {
         ] satisfies InternalPhraseLink[],
       },
       reasonsLead: {
-        text: "Pourquoi éliminer les documents au fur et à mesure ? Trois raisons.",
-        bold: [{ phrase: "Pourquoi éliminer les documents au fur et à mesure ?" }],
+        text: "Pourquoi éliminer les documents au fur et à mesure? Trois raisons.",
+        bold: [{ phrase: "Pourquoi éliminer les documents au fur et à mesure?" }],
       } satisfies ThreadLinkedProse,
     },
     reasonCards: [
@@ -387,7 +387,7 @@ export const DATA_STEWARDSHIP_THREAD = {
         icon: "lock" as const,
         heading: "Une cible plus petite.",
         line:
-          "Les données conservées sont des données à protéger. (Le coût de stockage peut compter aussi, mais seulement là où le contrat facture à l’usage ; à tarif fixe, l’économie est surtout une réduction du risque.)",
+          "Les données conservées sont des données à protéger. (Le coût de stockage peut compter aussi, mais seulement là où le contrat facture à l’usage; à tarif fixe, l’économie est surtout une réduction du risque.)",
       },
     ],
     inPractice: {
@@ -454,7 +454,7 @@ export const DATA_STEWARDSHIP_THREAD = {
       copyrightNote: {
         bold: "La propriété du logiciel compte aussi.",
         text:
-          " La possibilité de disposer de l’application et de ses données peut dépendre de qui détient le droit d’auteur, établi dans le contrat d’approvisionnement : la Couronne en est propriétaire quand des fonctionnaires l’ont construite ; autrement, c’est le contrat qui tranche.",
+          " La possibilité de disposer de l’application et de ses données peut dépendre de qui détient le droit d’auteur, établi dans le contrat d’approvisionnement : la Couronne en est propriétaire quand des fonctionnaires l’ont construite; autrement, c’est le contrat qui tranche.",
       },
     },
     whoYouTalkTo: {

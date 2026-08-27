@@ -67,12 +67,12 @@ export const REAL_EXAMPLES: Partial<
     title: "177 versions, et aucun moyen d’additionner la facture",
     paragraphs: [
       {
-        text: "ArriveCAN a été construit vite, en situation d’urgence, et ce n’est pas la vitesse qui lui a nui. Les dossiers de l’Agence des services frontaliers du Canada étaient si mauvais que le vérificateur général n’a pas pu déterminer ce que l’application avait coûté ; l’estimation était d’environ 59,5 millions de dollars. Le premier contrat a été adjugé par un processus non concurrentiel que l’agence pouvait à peine documenter, et les factures en disaient souvent trop peu pour savoir quels travaux étaient facturés au titre de quelle autorisation de tâches.",
+        text: "ArriveCAN a été construit vite, en situation d’urgence, et ce n’est pas la vitesse qui lui a nui. Les dossiers de l’Agence des services frontaliers du Canada étaient si mauvais que le vérificateur général n’a pas pu déterminer ce que l’application avait coûté; l’estimation était d’environ 59,5 millions de dollars. Le premier contrat a été adjugé par un processus non concurrentiel que l’agence pouvait à peine documenter, et les factures en disaient souvent trop peu pour savoir quels travaux étaient facturés au titre de quelle autorisation de tâches.",
         bold: [{ phrase: "n’a pas pu déterminer ce que l’application avait coûté" }],
         externalLinks: [{ phrase: "le vérificateur général", linkKey: "oag-arrivecan" }],
       },
       {
-        text: "L’agence a publié 177 versions de l’application, souvent avec peu ou pas d’essais documentés. Une mise à jour, en juin 2022, a dit à tort à environ 10 000 voyageurs de se mettre en quarantaine. Une tâche décrite, chiffrée et approuvée ; une mise en production éprouvée d’abord à petite échelle : les règles de ce bloc sont la discipline dont la vérification décrit l’absence.",
+        text: "L’agence a publié 177 versions de l’application, souvent avec peu ou pas d’essais documentés. Une mise à jour, en juin 2022, a dit à tort à environ 10 000 voyageurs de se mettre en quarantaine. Une tâche décrite, chiffrée et approuvée; une mise en production éprouvée d’abord à petite échelle : les règles de ce bloc sont la discipline dont la vérification décrit l’absence.",
         bold: [{ phrase: "a dit à tort à environ 10 000 voyageurs de se mettre en quarantaine" }],
       },
     ],

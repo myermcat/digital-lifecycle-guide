@@ -34,7 +34,7 @@ export const MONITORING_INSTRUMENT_SEE_ACT_DIAGRAM_ALT =
   "Diagramme : L’instrumenter, Le voir et Agir, en boucle. Les signaux ne comptent que lorsqu’ils se transforment en travail.";
 
 export const MONITORING_BLIND_VS_SEEING_DIAGRAM_ALT =
-  "Diagramme : sans instrumentation — aucun signal, l’équipe devine — par rapport à avec instrumentation — les signaux montrent son état. Le même service ; la différence est de savoir s’il a été conçu pour montrer ce qu’il fait.";
+  "Diagramme : sans instrumentation — aucun signal, l’équipe devine — par rapport à avec instrumentation — les signaux montrent son état. Le même service; la différence est de savoir s’il a été conçu pour montrer ce qu’il fait.";
 
 export const MONITORING_THREAD = {
   title: "Surveillance et instrumentation",
@@ -156,7 +156,7 @@ export const MONITORING_THREAD = {
     title: "Un regard de plus près",
     intro: {
       text:
-        "La surveillance fonctionne en boucle à trois étapes. Sautez la première et il n’y a rien de réel à voir ; sautez la dernière et rien ne change.",
+        "La surveillance fonctionne en boucle à trois étapes. Sautez la première et il n’y a rien de réel à voir; sautez la dernière et rien ne change.",
     } satisfies ThreadLinkedProse,
     blocks: [
       {
@@ -204,7 +204,7 @@ export const MONITORING_THREAD = {
             items: [
               {
                 text:
-                  "Réussite des tâches — les gens terminent-ils ce qu’ils étaient venus faire ? Le Sondage sur la réussite des tâches du GC est la méthode obligatoire du GC, mesurant l’achèvement, la facilité et la satisfaction.",
+                  "Réussite des tâches — les gens terminent-ils ce qu’ils étaient venus faire? Le Sondage sur la réussite des tâches du GC est la méthode obligatoire du GC, mesurant l’achèvement, la facilité et la satisfaction.",
                 bold: [{ phrase: "Réussite des tâches" }],
                 externalLinks: [
                   { phrase: "Sondage sur la réussite des tâches du GC", linkKey: "gc-task-success-survey" },
@@ -231,7 +231,7 @@ export const MONITORING_THREAD = {
               },
               {
                 text:
-                  "Santé des mises en production — après la sortie d’un changement, le service tient-il toujours ? Les indicateurs DORA en font le suivi, tout comme la mise en production des changements.",
+                  "Santé des mises en production — après la sortie d’un changement, le service tient-il toujours? Les indicateurs DORA en font le suivi, tout comme la mise en production des changements.",
                 bold: [{ phrase: "Santé des mises en production" }],
                 externalLinks: [
                   { phrase: "Les indicateurs DORA", linkKey: "dora-metrics" },
@@ -248,7 +248,7 @@ export const MONITORING_THREAD = {
           },
           {
             text:
-              "Un chiffre seul ne dit rien : 82 % est bon ou mauvais selon ce que vous aviez promis. Les services du gouvernement du Canada publient leurs cibles sous forme de normes de service, qui sont une promesse publique du rendement auquel un client peut s’attendre, et les résultats sont déclarés chaque année dans le répertoire des services du GC.",
+              "Un chiffre seul ne dit rien : 82 % est bon ou mauvais selon ce que vous aviez promis. Les services du gouvernement du Canada publient leurs cibles sous forme de normes de service, qui sont une promesse publique du rendement auquel un client peut s’attendre, et les résultats sont déclarés chaque année dans le répertoire des services du GC.",
             externalLinks: [
               { phrase: "répertoire des services du GC", linkKey: "gc-service-inventory" },
             ] satisfies ExternalPhraseLink[],
@@ -289,7 +289,7 @@ export const MONITORING_THREAD = {
             bold: [{ phrase: "une mesure qui changerait ce que quelqu’un fait" }],
           },
           {
-            text: "Le test est court. Si ce chiffre bougeait, qui agirait, et que ferait-il ? Si personne ne peut répondre, il a sa place dans un rapport plutôt que sur le tableau de bord.",
+            text: "Le test est court. Si ce chiffre bougeait, qui agirait, et que ferait-il? Si personne ne peut répondre, il a sa place dans un rapport plutôt que sur le tableau de bord.",
           },
           {
             type: "subheading",
@@ -302,19 +302,19 @@ export const MONITORING_THREAD = {
             type: "orderedList",
             items: [
               {
-                bold: "Est-ce que cela fonctionne ?",
+                bold: "Est-ce que cela fonctionne?",
                 text: " La proportion de gens qui terminent ce qu’ils étaient venus faire. C’est celui qui compte le plus et celui qui manque le plus souvent, parce qu’il est plus difficile à recueillir que les pages vues.",
               },
               {
-                bold: "Est-ce assez rapide pour la personne qui l’utilise ?",
+                bold: "Est-ce assez rapide pour la personne qui l’utilise?",
                 text: " Mesuré depuis sa position, sur la connexion et l’appareil qu’elle a réellement, non depuis l’intérieur du centre de données.",
               },
               {
-                bold: "À quelle fréquence cela échoue-t-il, et à quoi ressemble l’échec vu de l’extérieur ?",
+                bold: "À quelle fréquence cela échoue-t-il, et à quoi ressemble l’échec vu de l’extérieur?",
                 text: " Un taux d’erreur, plus au moins une mesure de ce qui se passe ensuite : les personnes qui abandonnent, ou qui finissent par téléphoner.",
               },
               {
-                bold: "Combien cela coûte-t-il à exploiter ?",
+                bold: "Combien cela coûte-t-il à exploiter?",
                 text: " Par transaction, ou par mois en fonction du volume. Personne ne le demande avant la conversation sur le financement, moment où il est en retard d’un an.",
               },
             ],
@@ -332,7 +332,7 @@ export const MONITORING_THREAD = {
             text: "Nommer qui la lit, et à quelle fréquence",
           },
           {
-            text: "Un chiffre que personne ne lit n’est pas une mesure, c’est un graphique. Dites qui regarde, à quelle fréquence, et ce qui se passe quand un chiffre va dans le mauvais sens deux relevés de suite. En Stabilisation, c’est quotidien ; rendu à la Maturité, c’est habituellement mensuel.",
+            text: "Un chiffre que personne ne lit n’est pas une mesure, c’est un graphique. Dites qui regarde, à quelle fréquence, et ce qui se passe quand un chiffre va dans le mauvais sens deux relevés de suite. En Stabilisation, c’est quotidien; rendu à la Maturité, c’est habituellement mensuel.",
             bold: [{ phrase: "Un chiffre que personne ne lit n’est pas une mesure, c’est un graphique." }],
           },
         ],
@@ -546,7 +546,7 @@ export const MONITORING_THREAD = {
     {
       label: "Référence complémentaire",
       linkKey: "opentelemetry" satisfies ExternalLinkKey,
-      description: "Qu’est-ce qu’OpenTelemetry ? (CNCF) — https://opentelemetry.io/docs/what-is-opentelemetry/",
+      description: "Qu’est-ce qu’OpenTelemetry? (CNCF) — https://opentelemetry.io/docs/what-is-opentelemetry/",
     },
     {
       label: "Référence complémentaire",

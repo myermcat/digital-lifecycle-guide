@@ -174,7 +174,7 @@ export const PROCUREMENT_STRINGS = {
         bold: [{ phrase: "quelques-unes des voies" }],
       },
       {
-        text: "Un mot mérite d’être réglé avant que les voies aient du sens. Une demande de soumissions est l’ensemble de documents que le Canada publie pour inviter les fournisseurs à concourir ; ce n’est pas le contrat, qui vient plus tard et seulement pour le gagnant. Ainsi, quand cette page dit que la demande de soumissions s’ouvre sur l’énoncé du problème, cela veut dire que le document de concours commence par le problème plutôt que par une spécification de la réponse. Le reste du vocabulaire se trouve dans le glossaire de l’approvisionnement, plus bas.",
+        text: "Un mot mérite d’être réglé avant que les voies aient du sens. Une demande de soumissions est l’ensemble de documents que le Canada publie pour inviter les fournisseurs à concourir; ce n’est pas le contrat, qui vient plus tard et seulement pour le gagnant. Ainsi, quand cette page dit que la demande de soumissions s’ouvre sur l’énoncé du problème, cela veut dire que le document de concours commence par le problème plutôt que par une spécification de la réponse. Le reste du vocabulaire se trouve dans le glossaire de l’approvisionnement, plus bas.",
         anchorLinks: [{ phrase: "glossaire de l’approvisionnement", hash: "the-words" }],
       },
     ] satisfies ThreadLinkedProse[],
@@ -374,7 +374,7 @@ export const PROCUREMENT_STRINGS = {
     heading: "Approvisionnement agile",
     intro: [
       {
-        text: "Le développement agile fonctionne en construisant un peu, en le montrant à des gens, et en changeant le plan quand ils vous apprennent quelque chose que vous ne saviez pas. Puis la question arrive : comment cela fonctionne-t-il quand c’est un fournisseur qui construit ? Un contrat fixe ce qui est livré et quand, et il est signé avant que quiconque ait appris grand-chose. Apprendre en chemin et être lié par un document rédigé d’avance semblent opposés.",
+        text: "Le développement agile fonctionne en construisant un peu, en le montrant à des gens, et en changeant le plan quand ils vous apprennent quelque chose que vous ne saviez pas. Puis la question arrive : comment cela fonctionne-t-il quand c’est un fournisseur qui construit? Un contrat fixe ce qui est livré et quand, et il est signé avant que quiconque ait appris grand-chose. Apprendre en chemin et être lié par un document rédigé d’avance semblent opposés.",
       },
       {
         text: "Il y a une réponse, et SPAC l’a mise par écrit. Le Guide de l’approvisionnement agile expose comment mener un achat qui s’attend à apprendre en chemin. Ce qui suit en est la version courte, limitée à ce qu’un responsable opérationnel doit savoir pour suivre la conversation. Si vous en menez un, le guide de SPAC lui-même vaut la lecture.",
@@ -476,7 +476,7 @@ export const PROCUREMENT_STRINGS = {
         body: "Les demandes de changement, les portes de sortie, la clause qui permet au Canada de passer au fournisseur suivant au classement, et les critères de choix ultérieur doivent tous figurer dans la demande de soumissions. Rien de cela ne peut être ajouté une fois le contrat signé, et c’est toute la raison pour laquelle la forme compte.",
       },
     ],
-    worthItHeading: "Si c’est tant de travail, pourquoi le faire ?",
+    worthItHeading: "Si c’est tant de travail, pourquoi le faire?",
     worthIt: [
       {
         lead: "Vous choisissez à partir de quelque chose de construit, non d’une promesse écrite.",
@@ -597,8 +597,8 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "ul",
             items: [
-              "Possédez-vous déjà quelque chose qui le résout ?",
-              "Pourriez-vous plutôt réutiliser, adapter ou construire ?",
+              "Possédez-vous déjà quelque chose qui le résout?",
+              "Pourriez-vous plutôt réutiliser, adapter ou construire?",
             ],
           },
           {
@@ -738,7 +738,7 @@ export const PROCUREMENT_STRINGS = {
         blocks: [
           {
             type: "p",
-            text: "La plupart des services sont approuvés et financés à l’intérieur du ministère, et environ 95 % des projets ne montent jamais plus haut.",
+            text: "La plupart des services sont approuvés et financés à l’intérieur du ministère, et environ 95 % des projets ne montent jamais plus haut.",
           },
           {
             type: "subheading",
@@ -748,12 +748,12 @@ export const PROCUREMENT_STRINGS = {
             type: "ul",
             items: [
               "La classe de capacité de gestion de projet approuvée du ministère, c’est-à-dire l’ampleur de projet que le ministère est autorisé à mener de son propre pouvoir.",
-              "Le score du projet à l’Évaluation de la complexité et des risques des projets, c’est-à-dire l’ampleur de celui-ci.",
+              "La cote du projet à l’Évaluation de la complexité et des risques des projets, c’est-à-dire l’ampleur de celui-ci.",
             ],
           },
           {
             type: "p",
-            text: "Un score à l’intérieur de la capacité du ministère et c’est la gouvernance du ministère qui l’approuve. Un score au-dessus et le projet monte jusqu’au Comité d’examen de l’architecture intégrée du gouvernement du Canada et à une présentation au Conseil du Trésor. Dans les deux cas, une analyse de rentabilisation conceptuelle et le comité d’examen de l’architecture du ministère viennent d’abord.",
+            text: "Une cote à l’intérieur de la capacité du ministère et c’est la gouvernance du ministère qui l’approuve. Une cote au-dessus et le projet monte jusqu’au Comité d’examen de l’architecture intégrée du gouvernement du Canada et à une présentation au Conseil du Trésor. Dans les deux cas, une analyse de rentabilisation conceptuelle et le comité d’examen de l’architecture du ministère viennent d’abord.",
           },
           {
             type: "subheading",

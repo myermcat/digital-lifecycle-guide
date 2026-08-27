@@ -79,7 +79,7 @@ export const LIVE_PHASE = {
     rows: [
       {
         title: "Stabilisation",
-        description: "Tout juste lancé ; le rendre fiable sous une charge réelle et complète.",
+        description: "Tout juste lancé; le rendre fiable sous une charge réelle et complète.",
         href: "/live-stabilization",
       },
       {
@@ -89,7 +89,7 @@ export const LIVE_PHASE = {
       },
       {
         title: "Maturité",
-        description: "Régime stable ; le garder en santé sur le long terme.",
+        description: "Régime stable; le garder en santé sur le long terme.",
         href: "/live-maturity",
       },
     ] satisfies LiveSubphaseRow[],
@@ -195,12 +195,12 @@ export const LIVE_PHASE = {
       {
         slug: "monitoring-and-instrumentation",
         title: THREADS["monitoring-and-instrumentation"].title,
-        note: "Guetter les signaux et les transformer en travail ; l’essentiel de la surveillance se joue ici.",
+        note: "Guetter les signaux et les transformer en travail; l’essentiel de la surveillance se joue ici.",
       },
       {
         slug: "backlog",
         title: THREADS.backlog.title,
-        note: "Décider quoi améliorer ensuite ; c’est le plus long chapitre de l’amélioration continue.",
+        note: "Décider quoi améliorer ensuite; c’est le plus long chapitre de l’amélioration continue.",
       },
       {
         slug: "releasing-changes",
@@ -236,7 +236,7 @@ export const LIVE_PHASE = {
     id: "live-reviews-come-round-again",
     title: "Les vérifications de l’Exploitation reviennent",
     text:
-      "La Création passe par des approbations ponctuelles. L’Exploitation fonctionne autrement : ses vérifications reviennent. Intégrez une vérification de sécurité à chaque mise en production, mettez à jour l’évaluation de la protection de la vie privée quand le service change de façon importante, et obtenez le financement de renouvellement avant la fin de l’argent actuel. On redemande aussi ici à quel point le service est essentiel et à quelle vitesse il doit revenir. La Stabilisation vérifie si les cibles de rétablissement fixées en Alpha sont atteignables. La Croissance les rouvre quand le service change, et la Maturité les repasse selon le propre cycle du ministère. Le travail ne se termine pas ; il revient.",
+      "La Création passe par des approbations ponctuelles. L’Exploitation fonctionne autrement : ses vérifications reviennent. Intégrez une vérification de sécurité à chaque mise en production, mettez à jour l’évaluation de la protection de la vie privée quand le service change de façon importante, et obtenez le financement de renouvellement avant la fin de l’argent actuel. On redemande aussi ici à quel point le service est essentiel et à quelle vitesse il doit revenir. La Stabilisation vérifie si les cibles de rétablissement fixées en Alpha sont atteignables. La Croissance les rouvre quand le service change, et la Maturité les repasse selon le propre cycle du ministère. Le travail ne se termine pas; il revient.",
   },
 
   sources: [

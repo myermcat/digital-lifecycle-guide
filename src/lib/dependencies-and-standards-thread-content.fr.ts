@@ -33,7 +33,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
 
   lead: {
     text:
-      "Presque aucun service n’est bâti à partir de rien. Il est assemblé à partir de pièces : bibliothèques à code source libre, services de tiers, produits de fournisseurs, et les formats et protocoles qui permettent à ces pièces de communiquer entre elles. Les dépendances et normes, c’est bien choisir ces pièces et en prendre soin. Cela réunit quatre habitudes : bâtir sur des normes ouvertes pour que les pièces puissent se connecter et être remplacées ; connaître tout ce dont le service dépend ; évaluer un composant avant de l’adopter ; et garder ce dont on dépend à jour et sous surveillance.",
+      "Presque aucun service n’est bâti à partir de rien. Il est assemblé à partir de pièces : bibliothèques à code source libre, services de tiers, produits de fournisseurs, et les formats et protocoles qui permettent à ces pièces de communiquer entre elles. Les dépendances et normes, c’est bien choisir ces pièces et en prendre soin. Cela réunit quatre habitudes : bâtir sur des normes ouvertes pour que les pièces puissent se connecter et être remplacées; connaître tout ce dont le service dépend; évaluer un composant avant de l’adopter; et garder ce dont on dépend à jour et sous surveillance.",
   } satisfies ThreadLinkedProse,
 
   whatGoodLooksLike: [
@@ -199,11 +199,11 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
             type: "unorderedList",
             items: [
               {
-                text: "si le projet est encore activement entretenu ;",
+                text: "si le projet est encore activement entretenu;",
                 bold: [{ phrase: "activement entretenu" }],
               },
-              { text: "qui le développe ;", bold: [{ phrase: "qui le développe" }] },
-              { text: "à quel point il est bien documenté ;", bold: [{ phrase: "documented" }] },
+              { text: "qui le développe;", bold: [{ phrase: "qui le développe" }] },
+              { text: "à quel point il est bien documenté;", bold: [{ phrase: "documented" }] },
               {
                 text: "à quelle vitesse il corrige les failles de sécurité.",
                 bold: [{ phrase: "patches" }],
@@ -212,7 +212,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
           },
           {
             text:
-              "Des outils peuvent faire une bonne partie de ce travail pour vous. Une note de santé du code source libre évalue un projet sur dix selon des critères comme le fait qu’il soit encore entretenu et qu’il garde ses propres dépendances à jour ; une équipe peut ainsi juger du risque de l’ajouter.",
+              "Des outils peuvent faire une bonne partie de ce travail pour vous. Une note de santé du code source libre évalue un projet sur dix selon des critères comme le fait qu’il soit encore entretenu et qu’il garde ses propres dépendances à jour; une équipe peut ainsi juger du risque de l’ajouter.",
             externalLinks: [
               { phrase: "Une note de santé du code source libre", linkKey: "openssf-scorecard" },
             ] satisfies ExternalPhraseLink[],
@@ -223,7 +223,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
         title: "Gardez la chaîne d’approvisionnement sûre.",
         sections: [
           {
-            text: "Un maillon faible n’importe où dans la chaîne est un risque pour tout le service ; quelques habitudes comptent donc.",
+            text: "Un maillon faible n’importe où dans la chaîne est un risque pour tout le service; quelques habitudes comptent donc.",
           },
           {
             text:
@@ -238,14 +238,14 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
           {
             type: "unorderedList",
             items: [
-              "connaître vos fournisseurs ;",
-              "fixer des exigences minimales de sécurité ;",
+              "connaître vos fournisseurs;",
+              "fixer des exigences minimales de sécurité;",
               "inscrire au contrat une clause obligeant le fournisseur à signaler un incident de sécurité dans un délai déterminé.",
             ],
           },
           {
             text:
-              "Trois questions transforment une confiance vague en quelque chose de vérifiable : le fournisseur tient-il une nomenclature logicielle, à quelle vitesse corrige-t-il, et comment vous préviendrait-il ?",
+              "Trois questions transforment une confiance vague en quelque chose de vérifiable : le fournisseur tient-il une nomenclature logicielle, à quelle vitesse corrige-t-il, et comment vous préviendrait-il?",
           },
         ],
       },
@@ -427,7 +427,7 @@ export const DEPENDENCIES_AND_STANDARDS_THREAD = {
       label: "Instrument directeur",
       linkKey: "standard-at-risk-it",
       description:
-        "Norme sur la technologie de l’information à risque (SCT) : garder les applications à jour ; la technologie non soutenue est interdite.",
+        "Norme sur la technologie de l’information à risque (SCT) : garder les applications à jour; la technologie non soutenue est interdite.",
     },
     {
       label: "Instrument directeur",

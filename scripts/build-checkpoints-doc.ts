@@ -86,6 +86,7 @@ import {
 } from "../src/lib/instrument-matrix";
 import { REUSABLE_CATEGORIES, REUSABLE_PIECES } from "../src/lib/reusable-pieces";
 import { EXTERNAL_LINKS, type ExternalLinkKey } from "../src/lib/external-links";
+import { CHECKPOINTS_DOC as S } from "../src/lib/checkpoints-doc-strings";
 
 /* ---------------------------------------------------------------- palette */
 
@@ -112,27 +113,44 @@ const IMG =
 /** The page's own figures live with the rest of the guide's blue visuals. */
 const FIGS =
   "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
-  "DLG -- Blue Visuals/figures";
-const OUT =
-  "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
-  "DLG -- Editable Source Files (Word)/The official checkpoints of a digital service.docx";
-const DATE = "17 August 2026";
+  "DLG -- EN/DLG -- Blue Visuals/figures";
 
-/** A PNG for each topic, from the assets the other builders already use. */
-const TOPIC_ICON: Record<string, string> = {
-  Security: "shieldcheck.png",
-  "Continuity and incidents": "siren.png",
-  "Privacy and automated decisions": "shield.png",
-  Accessibility: "users.png",
-  "Official languages": "megaphone.png",
-  "Approvals and money": "coins.png",
-  "Contracts and suppliers": "filesignature.png",
-  "Hosting and cloud": "server.png",
-  "Identity and sign-in": "user.png",
-  "Publishing on canada.ca": "layers.png",
-  "Registries and records": "archive.png",
-  "Access to information and openness": "search.png",
-};
+/**
+ * The French edition.
+ *
+ * This document is generated outside Vite, so the build's module swap never runs here.
+ * It is reached through build-checkpoints-doc.mjs, which registers the same resolve
+ * hook the search index uses: with DLG_LOCALE=fr every "../src/lib/x" import loads
+ * "x.fr.ts" instead. What is left is this file's own words, which live in
+ * checkpoints-doc-strings, and the three things below that are paths rather than prose.
+ */
+const IS_FR = process.env.DLG_LOCALE === "fr";
+const FR_FIGS =
+  "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
+  "DLG -- FR/DLG -- Blue Visuals FR/figures";
+const OUT = IS_FR
+  ? "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
+    "DLG -- FR/DLG -- Editable Source Files (Word) FR/" +
+    "Les points de contrôle officiels d'un service numérique.docx"
+  : "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
+    "DLG -- EN/DLG -- Editable Source Files (Word)/The official checkpoints of a digital service.docx";
+const DATE = IS_FR ? "17 août 2026" : "17 August 2026";
+
+/** A PNG for each topic, keyed by the topic name in whichever language is being built. */
+const TOPIC_ICON: Record<string, string> = S.topicIcons;
+
+/**
+ * Fills {name} placeholders in a string from `checkpoints-doc-strings`.
+ *
+ * A few of this document's own sentences carry a count or a topic name. They are
+ * held as templates rather than as sentence fragments, because a French sentence
+ * does not put its pieces in the same order an English one does.
+ */
+function fillIn(template: string, vars: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (whole, key: string) =>
+    key in vars ? String(vars[key]) : whole,
+  );
+}
 
 /* ------------------------------------------------------- reference numbers */
 
@@ -222,7 +240,11 @@ function bullet(t: string, ref = "b") {
 }
 
 function img(file: string, w: number, h: number, alt: string) {
-  const path = existsSync(`${IMG}/${file}`) ? `${IMG}/${file}` : `${FIGS}/${file}`;
+  const path = IS_FR && existsSync(`${FR_FIGS}/${file}`)
+    ? `${FR_FIGS}/${file}`
+    : existsSync(`${IMG}/${file}`)
+      ? `${IMG}/${file}`
+      : `${FIGS}/${file}`;
   return new ImageRun({
     type: "png",
     data: readFileSync(path),
@@ -357,7 +379,7 @@ function backToTop() {
         anchor: "toc",
         children: [
           new TextRun({
-            text: "↑ Back to contents",
+            text: S.backToContents,
             font: SANS,
             italics: true,
             color: MUTED,
@@ -466,7 +488,10 @@ function srcNum(n: number, key: ExternalLinkKey) {
  * fileURLToPath, not URL.pathname: this repo's path contains spaces, and pathname
  * hands back a percent-encoded string that existsSync silently fails on.
  */
-const PAGES_FILE = fileURLToPath(new URL("./.checkpoints-doc-pages.json", import.meta.url));
+/* One page map per language: French runs longer, so its headings fall elsewhere. */
+const PAGES_FILE = fileURLToPath(
+  new URL(IS_FR ? "./.checkpoints-doc-pages.fr.json" : "./.checkpoints-doc-pages.json", import.meta.url),
+);
 
 /* ------------------------------------------------------------ the tables */
 
@@ -517,7 +542,7 @@ function instrumentNameCell(row: MatrixInstrument) {
     new Paragraph({ spacing: { after: row.everyService ? 0 : 30 }, children: tags }),
   ];
   if (!row.everyService) {
-    paragraphs.push(new Paragraph({ children: [chipRun("Only if", ONLYIF_FILL, ONLYIF_INK)] }));
+    paragraphs.push(new Paragraph({ children: [chipRun(S.tags.onlyIf, ONLYIF_FILL, ONLYIF_INK)] }));
   }
   return cell(paragraphs, { width: COLS[0] });
 }
@@ -528,10 +553,10 @@ function topicTable(rows: MatrixInstrument[], label: string, title: string) {
       tableHeader: true,
       cantSplit: true,
       children: [
-        headCell("Instrument", COLS[0]),
-        headCell("What brings it into scope", COLS[1]),
-        headCell("What the business owner does", COLS[2]),
-        headCell("Who does the work", COLS[3]),
+        headCell(S.tableHeaders.instrument, COLS[0]),
+        headCell(S.tableHeaders.whatBringsItIntoScope, COLS[1]),
+        headCell(S.tableHeaders.whatTheBusinessOwnerDoes, COLS[2]),
+        headCell(S.tableHeaders.whoDoesTheWork, COLS[3]),
       ],
     }),
   ];
@@ -555,7 +580,7 @@ function topicTable(rows: MatrixInstrument[], label: string, title: string) {
         spacing: { after: whenItComesUpRuns(row).length || row.caveat ? 70 : 0, line: 268 },
         children: [
           new TextRun({
-            text: "WHAT IT IS   ",
+            text: S.inlineLabels.whatItIs,
             font: SANS,
             bold: true,
             color: MUTED,
@@ -573,7 +598,7 @@ function topicTable(rows: MatrixInstrument[], label: string, title: string) {
           spacing: { after: row.caveat ? 70 : 0, line: 268 },
           children: [
             new TextRun({
-              text: "WHEN IT COMES UP   ",
+              text: S.inlineLabels.whenItComesUp,
               font: SANS,
               bold: true,
               color: MUTED,
@@ -617,10 +642,10 @@ function reuseTable(label: string, title: string) {
       tableHeader: true,
       cantSplit: true,
       children: [
-        headCell("Piece", REUSE_COLS[0]),
-        headCell("What you would otherwise build", REUSE_COLS[1]),
-        headCell("Who runs it, and how to get it", REUSE_COLS[2]),
-        headCell("Worth a look in", REUSE_COLS[3]),
+        headCell(S.tableHeaders.piece, REUSE_COLS[0]),
+        headCell(S.tableHeaders.whatYouWouldOtherwiseBuild, REUSE_COLS[1]),
+        headCell(S.tableHeaders.whoRunsItAndHowToGetIt, REUSE_COLS[2]),
+        headCell(S.tableHeaders.worthALookIn, REUSE_COLS[3]),
       ],
     }),
   ];
@@ -684,20 +709,7 @@ function reuseTable(label: string, title: string) {
             }),
             cell(
               [
-                boldedP(
-                  piece.lookAtItIn,
-                  [
-                    "Discovery",
-                    "Alpha",
-                    "Beta",
-                    "Stabilization",
-                    "Growth",
-                    "Maturity",
-                    "Live",
-                    "Sunset",
-                  ],
-                  { after: 0 },
-                ),
+                boldedP(piece.lookAtItIn, S.phaseWords, { after: 0 }),
               ],
               { width: REUSE_COLS[3] },
             ),
@@ -709,7 +721,7 @@ function reuseTable(label: string, title: string) {
           spacing: { after: piece.caveat ? 70 : 0, line: 268 },
           children: [
             new TextRun({
-              text: "WHAT IT IS   ",
+              text: S.inlineLabels.whatItIs,
               font: SANS,
               bold: true,
               color: MUTED,
@@ -848,9 +860,9 @@ function phaseSteps(
       // so the header repeated onto the next page and found no rows to sit above.
       cantSplit: true,
       children: [
-        headCell("#", STEP_COLS[0]),
-        headCell("What Nadia does", STEP_COLS[1]),
-        headCell("Who responds, and how", STEP_COLS[2]),
+        headCell(S.tableHeaders.stepNumber, STEP_COLS[0]),
+        headCell(S.tableHeaders.whatNadiaDoes, STEP_COLS[1]),
+        headCell(S.tableHeaders.whoRespondsAndHow, STEP_COLS[2]),
       ],
     }),
   ];
@@ -905,7 +917,10 @@ function phaseSteps(
                   ...step.response.tags.map(
                     (tag) =>
                       new TextRun({
-                        text: tag === "dept" ? "HER DEPARTMENT  " : "CENTRAL  ",
+                        text:
+                          tag === "dept"
+                            ? S.inlineLabels.responderDepartment
+                            : S.inlineLabels.responderCentral,
                         font: SANS,
                         bold: true,
                         color: tag === "dept" ? RUST : AMBER,
@@ -1189,30 +1204,25 @@ function captionRow(columns: number, label: string, title: string, back = true) 
 const body: (Paragraph | Table)[] = [];
 
 /* 1. Introduction */
-body.push(H1D(SECTIONS.intro, "Introduction", "intro", false));
-body.push(H2D(`${SECTIONS.intro}.1`, "Context"));
-body.push(
-  P(
-    "Getting a Government of Canada digital service into service means passing official checkpoints: assessments to run, boards to attend, registers to appear in, and duties that carry on for as long as the service does. They come from Treasury Board policy, from Acts, and from standards, and they are spread across dozens of instruments. Which of them apply depends on what the service does and how much is being spent, so no two services take quite the same path.",
-  ),
-);
-body.push(H2D(`${SECTIONS.intro}.2`, "Purpose and scope"));
+body.push(H1D(SECTIONS.intro, S.headings.introduction, "intro", false));
+body.push(H2D(`${SECTIONS.intro}.1`, S.headings.context));
+body.push(P(S.prose.context));
+body.push(H2D(`${SECTIONS.intro}.2`, S.headings.purposeAndScope));
 body.push(boldedP(CHECKPOINT_MAP_WHAT_TABLE.body, CHECKPOINT_MAP_WHAT_TABLE.bold));
 body.push(
   P(
-    `This document covers ${INSTRUMENT_MATRIX.length} instruments, grouped into ${MATRIX_FAMILY_SECTIONS.length} topics. Appendix A lists what other parts of government have already built and a team can reuse. Appendix B follows one invented service from its first sign of trouble to the day it is replaced.`,
+    fillIn(S.prose.purposeAndScope, {
+      instruments: INSTRUMENT_MATRIX.length,
+      topics: MATRIX_FAMILY_SECTIONS.length,
+    }),
   ),
 );
-body.push(H2D(`${SECTIONS.intro}.3`, "Audience"));
-body.push(
-  P(
-    "This document is intended for the business owner of a Government of Canada digital service, and for the people who support one: program and service managers, project teams, enterprise architects, and the corporate functions a business owner has to work with, in security, privacy, procurement, information management and communications.",
-  ),
-);
+body.push(H2D(`${SECTIONS.intro}.3`, S.headings.audience));
+body.push(P(S.prose.audience));
 pushBackToTop(body);
 
 /* 2. How to use this document */
-body.push(H1D(SECTIONS.howToUse, "How to use this document", "how-to-use", false));
+body.push(H1D(SECTIONS.howToUse, S.headings.howToUse, "how-to-use", false));
 for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
   body.push(
     new Paragraph({
@@ -1220,7 +1230,7 @@ for (const item of CHECKPOINT_MAP_HOW_TO_USE.items) {
       numbering: { reference: "b", level: 0 },
       children: [
         new TextRun({ text: `${item.lead} `, font: SANS, bold: true, color: BROWN, size: 21 }),
-        text(item.body.replace("read the tables", "read the tables in section 5")),
+        text(item.body.replace(S.prose.howToUseFind, S.prose.howToUseReplace)),
       ],
     }),
   );
@@ -1244,8 +1254,8 @@ body.push(P(CHECKPOINT_MAP_TERMS_CAPTION));
 body.push(
   definitionTable(
     CHECKPOINT_MAP_TERMS,
-    `Table ${SECTIONS.glossary}-1`,
-    "Words the tables use and do not define",
+    `${S.captions.tableWord} ${SECTIONS.glossary}-1`,
+    S.captions.glossary,
   ),
 );
 
@@ -1255,10 +1265,10 @@ body.push(P(CHECKPOINT_MAP_TABLE_SECTION.intro));
 let tableNo = 0;
 const nextTable = () => {
   tableNo += 1;
-  return `Table ${SECTIONS.tables}-${tableNo}`;
+  return `${S.captions.tableWord} ${SECTIONS.tables}-${tableNo}`;
 };
 
-body.push(H3("What the tags mean"));
+body.push(H3(S.headings.tagsMean));
 body.push(
   chipTable(
     (Object.keys(MATRIX_ACTIONS) as (keyof typeof MATRIX_ACTIONS)[]).map((key) => ({
@@ -1268,28 +1278,22 @@ body.push(
       ink: ACTION_INK[key],
     })),
     nextTable(),
-    "What each action tag means",
+    S.captions.actionTags,
   ),
 );
 
-body.push(H3("The one tag that changes whether a row applies to you"));
+body.push(H3(S.headings.scopeTag));
 body.push(
   chipTable(
     [
-      {
-        label: "Only if",
-        gloss:
-          "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
-        fill: ONLYIF_FILL,
-        ink: ONLYIF_INK,
-      },
+      { label: S.tags.onlyIf, gloss: S.tags.onlyIfGloss, fill: ONLYIF_FILL, ink: ONLYIF_INK },
     ],
     nextTable(),
-    "The scope tag",
+    S.captions.scopeTag,
   ),
 );
 
-body.push(H3("What kind of thing each one is"));
+body.push(H3(S.headings.kinds));
 body.push(
   chipTable(
     (Object.keys(MATRIX_KINDS) as (keyof typeof MATRIX_KINDS)[]).map((key) => ({
@@ -1299,7 +1303,7 @@ body.push(
       ink: BROWN,
     })),
     nextTable(),
-    "What kind of thing each instrument is",
+    S.captions.kinds,
   ),
 );
 pushBackToTop(body);
@@ -1313,27 +1317,14 @@ for (const section of MATRIX_FAMILY_SECTIONS) {
     H2D(`${SECTIONS.tables}.${topicIndex}`, section.family, section.id, TOPIC_ICON[section.family]),
   );
   body.push(P(section.intro));
-  body.push(
-    topicTable(
-      rows,
-      nextTable(),
-      `${section.family}: what applies, who does it, and when it comes up`,
-    ),
-  );
+  const topicCaption = fillIn(S.captions.topicTable, { topic: section.family });
+  body.push(topicTable(rows, nextTable(), topicCaption));
 }
 
 /* 6. Conclusion and next steps */
-body.push(H1D(SECTIONS.conclusion, "Conclusion and next steps", "conclusion", false));
-body.push(
-  P(
-    "The list is long, and no service meets all of it. The step that saves the most time is the cheapest one: read down the scope column of each topic that matches what your service does, and rule out what does not apply, before anyone starts planning around it. What is left is usually smaller than a team expects, and most of it belongs to somebody else to do.",
-  ),
-);
-body.push(
-  P(
-    "Two things are worth settling earlier than feels necessary, because both change the shape of the build and both are expensive to add later: how long the service is allowed to be unavailable, and what the system has to be able to do with its records. Both are in section 5, under Continuity and incidents and under Registries and records.",
-  ),
-);
+body.push(H1D(SECTIONS.conclusion, S.headings.conclusion, "conclusion", false));
+body.push(P(S.conclusion.ruleOutFirst));
+body.push(P(S.conclusion.settleEarly));
 body.push(new Paragraph({ spacing: { before: 340, after: 0 }, children: [] }));
 body.push(
   callout(
@@ -1342,7 +1333,7 @@ body.push(
         spacing: { after: 60 },
         children: [
           new TextRun({
-            text: "ABOUT",
+            text: S.inlineLabels.about,
             font: SANS,
             bold: true,
             color: MUTED,
@@ -1358,7 +1349,7 @@ body.push(
             id: "about",
             children: [
               new TextRun({
-                text: "The Digital Lifecycle Guide",
+                text: S.conclusion.aboutHeading,
                 font: SERIF,
                 bold: true,
                 color: BROWN,
@@ -1371,11 +1362,9 @@ body.push(
       new Paragraph({
         spacing: { after: 0, line: 276 },
         children: [
-          text("This document is one part of the "),
-          text("Digital Lifecycle Guide", { bold: true }),
-          text(
-            ", a guide for the people who run Government of Canada digital services across the whole life of a service: from before it exists, through running and maturing it, to retiring or replacing it well. This document is the index of official checkpoints. The phase and sub-phase documents cover how to do the work inside each step, and the thread documents explain the reasoning behind each subject. To find the other documents and where they fit, start at the guide's home page, or go straight to the Index of the Digital Lifecycle Guide.",
-          ),
+          text(S.conclusion.aboutBefore),
+          text(S.conclusion.aboutGuideName, { bold: true }),
+          text(S.conclusion.aboutAfter),
         ],
       }),
     ],
@@ -1385,20 +1374,16 @@ body.push(
 pushBackToTop(body);
 
 /* 7. References */
-body.push(H1D(SECTIONS.references, "References", "references"));
-body.push(
-  P(
-    "Every instrument in section 5 and Appendix A that has a public source, numbered in the order the tables use them. Where a row carries no reference, the instrument is obtained through a departmental office rather than from a published page.",
-  ),
-);
+body.push(H1D(SECTIONS.references, S.headings.references, "references"));
+body.push(P(S.references.intro));
 const refHead = (t: string) =>
   new Paragraph({
     spacing: { before: 220, after: 90 },
     children: [new TextRun({ text: t, font: SANS, bold: true, color: MUTED, size: 19 })],
   });
-body.push(refHead("Governing instruments"));
+body.push(refHead(S.inlineLabels.governingInstruments));
 for (const key of govRefs) body.push(srcNum(refOrder.indexOf(key) + 1, key));
-body.push(refHead("Supporting references"));
+body.push(refHead(S.inlineLabels.supportingReferences));
 for (const key of supRefs) body.push(srcNum(refOrder.indexOf(key) + 1, key));
 body.push(
   new Paragraph({
@@ -1409,27 +1394,18 @@ body.push(
 pushBackToTop(body);
 
 /* Appendix A */
-body.push(H1D("Appendix A", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
-body.push(
-  P(
-    "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure something instead of making it. Choosing to make your own breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so an architecture review board is likely to ask which of these were considered and why none of them fitted.",
-  ),
-);
-body.push(reuseTable("Table A1-1", "What another part of government has already built"));
+body.push(H1D(S.appendix.labelA, CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+body.push(P(S.appendix.reuseIntro));
+body.push(reuseTable(`${S.captions.tableWord} A1-1`, S.captions.reuseTable));
 
 /* Appendix B */
-body.push(H1D("Appendix B", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
+body.push(H1D(S.appendix.labelB, CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
 body.push(
   callout(
     [
       new Paragraph({
         spacing: { after: 0, line: 276 },
-        children: [
-          text("Nadia and her grants program are invented. ", { bold: true }),
-          text(
-            "Nothing in this appendix describes a real service, a real department or a real person. It is written as one worked example so the checkpoints in section 5 can be seen in an order, and the order shown is the one this invented service produced.",
-          ),
-        ],
+        children: [text(S.appendix.inventedLead, { bold: true }), text(S.appendix.inventedBody)],
       }),
     ],
     { fill: AMBERFILL, border: AMBER },
@@ -1439,32 +1415,33 @@ body.push(new Paragraph({ spacing: { after: 260 }, children: [] }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.intro, { after: 130 }));
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.pathNote));
 
-body.push(H2D("Appendix B.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
+body.push(H2D(`${S.appendix.labelB}.1`, CHECKPOINT_MAP_NADIA.heading, "app2-nadia"));
 body.push(
-  figureBeside("Figure A2-1", "Nadia, a director general", "gate_map_nadia.png", 104, 126, [
-    boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold, { after: 0 }),
-  ]),
+  figureBeside(
+    `${S.captions.figureWord} A2-1`,
+    S.captions.nadiaPortrait,
+    "gate_map_nadia.png",
+    104,
+    126,
+    [boldedP(CHECKPOINT_MAP_NADIA.body, CHECKPOINT_MAP_NADIA.bold, { after: 0 })],
+  ),
 );
 body.push(new Paragraph({ spacing: { after: 200 }, children: [] }));
 body.push(P(CHECKPOINT_MAP_WHY_GCS.body));
 body.push(H3(CHECKPOINT_MAP_WHY_CREATE.heading));
 body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
 
-body.push(H2D("Appendix B.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
+body.push(H2D(`${S.appendix.labelB}.2`, CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
 body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
 body.push(
-  definitionTable(
-    CHECKPOINT_MAP_WHO,
-    "Table A2-1",
-    "The people Nadia deals with, and what each one does",
-  ),
+  definitionTable(CHECKPOINT_MAP_WHO, `${S.captions.tableWord} A2-1`, S.captions.whoTable),
 );
 
-body.push(H2D("Appendix B.3", "How long it took", "app2-timeline"));
+body.push(H2D(`${S.appendix.labelB}.3`, S.headings.howLongItTook, "app2-timeline"));
 body.push(
   ...figure(
-    "Figure A2-2",
-    "How long each phase took for this one service",
+    `${S.captions.figureWord} A2-2`,
+    S.captions.timeline,
     "gate_map_timeline.png",
     600,
     150,
@@ -1473,24 +1450,22 @@ body.push(
 body.push(P(CHECKPOINT_MAP_APPENDIX_PATH.timelineNote));
 pushBackToTop(body);
 
-body.push(H2D("Appendix B.4", "How to read the steps", "app2-key"));
-body.push(
-  P(
-    `${CHECKPOINT_MAP_COLKEY.left} The right-hand column is who answers, and how. The tag on each response says whether the responder is inside her department or central.`,
-  ),
-);
+body.push(H2D(`${S.appendix.labelB}.4`, S.headings.howToReadTheSteps, "app2-key"));
+body.push(P(`${CHECKPOINT_MAP_COLKEY.left} ${S.appendix.columnKeyRight}`));
 pushBackToTop(body);
 
 let phaseIndex = 4;
 for (const phase of CHECKPOINT_MAP_PHASES) {
   phaseIndex += 1;
-  body.push(H2D(`Appendix B.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
+  body.push(H2D(`${S.appendix.labelB}.${phaseIndex}`, phase.heading, `app2-${phase.id}`));
   body.push(P(phase.durationLabel, { italics: true, color: MUTED, size: 19, after: 90 }));
   body.push(P(phase.phaseNote));
   body.push(
     phaseSteps(phase, phase.steps, {
-      label: `Table A2-${phaseIndex - 3}`,
-      title: `${phase.heading.replace(/ - .*/, "")}: what Nadia does and who responds`,
+      label: `${S.captions.tableWord} A2-${phaseIndex - 3}`,
+      title: fillIn(S.captions.phaseSteps, {
+        phase: phase.heading.split(S.appendix.phaseHeadingSeparator)[0],
+      }),
     }),
   );
   if (phase.forkAfter) body.push(fork(phase.forkAfter));
@@ -1545,9 +1520,9 @@ cover.push(
           allowOverlap: true,
         },
         altText: {
-          title: "Government of Canada",
-          description: "Treasury Board of Canada Secretariat",
-          name: "GC banner",
+          title: S.frontMatter.bannerAltTitle,
+          description: S.frontMatter.bannerAltDescription,
+          name: S.frontMatter.bannerAltName,
         },
       }),
     ],
@@ -1559,7 +1534,7 @@ cover.push(
     spacing: { before: 60, after: 1500 },
     children: [
       new TextRun({
-        text: "UNCLASSIFIED / NON CLASSIFIÉ",
+        text: S.frontMatter.classification,
         font: SANS,
         bold: true,
         color: UNCL,
@@ -1575,7 +1550,7 @@ cover.push(
     spacing: { after: 80 },
     children: [
       new TextRun({
-        text: "The Digital Lifecycle Guide",
+        text: S.frontMatter.eyebrow,
         font: SANS,
         color: MUTED,
         size: 19,
@@ -1607,7 +1582,7 @@ cover.push(
     spacing: { before: 280, after: 400 },
     children: [
       new TextRun({
-        text: "The approvals, reviews, sign-offs and standing duties a service has to pass, and who owns each one",
+        text: S.frontMatter.subtitle,
         font: SERIF,
         italics: true,
         color: NAVY,
@@ -1629,7 +1604,7 @@ cover.push(
     spacing: { after: 0, line: 236 },
     children: [
       new TextRun({
-        text: "Developed by the Treasury Board of Canada Secretariat, Office of the Chief Information Officer,",
+        text: S.frontMatter.developedByLine1,
         font: SANS,
         color: BANNERBLUE,
         size: 15,
@@ -1643,7 +1618,7 @@ cover.push(
     spacing: { after: 0, line: 236 },
     children: [
       new TextRun({
-        text: "Chief Technology Officer Sector, Digital Technology and Cyber Security.",
+        text: S.frontMatter.developedByLine2,
         font: SANS,
         color: BANNERBLUE,
         size: 15,
@@ -1704,7 +1679,7 @@ front.push(
         id: "toc",
         children: [
           new TextRun({
-            text: "Table of Contents",
+            text: S.frontMatter.contents,
             font: SERIF,
             bold: true,
             color: BROWN,
@@ -1716,37 +1691,43 @@ front.push(
   }),
 );
 
-front.push(tocEntry(SECTIONS.intro, "Introduction", "intro"));
-front.push(tocEntry(`${SECTIONS.intro}.1`, "Context", null, true, "intro"));
-front.push(tocEntry(`${SECTIONS.intro}.2`, "Purpose and scope", null, true, "intro"));
-front.push(tocEntry(`${SECTIONS.intro}.3`, "Audience", null, true, "intro"));
-front.push(tocEntry(SECTIONS.howToUse, "How to use this document", "how-to-use"));
+front.push(tocEntry(SECTIONS.intro, S.headings.introduction, "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.1`, S.headings.context, null, true, "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.2`, S.headings.purposeAndScope, null, true, "intro"));
+front.push(tocEntry(`${SECTIONS.intro}.3`, S.headings.audience, null, true, "intro"));
+front.push(tocEntry(SECTIONS.howToUse, S.headings.howToUse, "how-to-use"));
 front.push(tocEntry(SECTIONS.varies, CHECKPOINT_MAP_VARIES.heading, "everything-varies"));
 front.push(tocEntry(SECTIONS.glossary, CHECKPOINT_MAP_TERMS_TITLE, "thecheckpoints"));
 front.push(tocEntry(SECTIONS.tables, CHECKPOINT_MAP_TABLE_SECTION.heading, "annex-instruments"));
 MATRIX_FAMILY_SECTIONS.forEach((section, index) => {
   front.push(tocEntry(`${SECTIONS.tables}.${index + 1}`, section.family, section.id, true));
 });
-front.push(tocEntry(SECTIONS.conclusion, "Conclusion and next steps", "conclusion"));
-front.push(
-  tocEntry(`${SECTIONS.conclusion}.1`, "About the Digital Lifecycle Guide", "about", true),
-);
-front.push(tocEntry(SECTIONS.references, "References", "references"));
-front.push(tocEntry("Appendix A", CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
-front.push(tocEntry("Appendix B", CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
-front.push(tocEntry("Appendix B.1", CHECKPOINT_MAP_NADIA.heading, "app2-nadia", true));
-front.push(tocEntry("Appendix B.2", CHECKPOINT_MAP_WHO_TITLE, "app2-who", true));
-front.push(tocEntry("Appendix B.3", "How long it took", "app2-timeline", true));
-front.push(tocEntry("Appendix B.4", "How to read the steps", "app2-key", true));
+front.push(tocEntry(SECTIONS.conclusion, S.headings.conclusion, "conclusion"));
+front.push(tocEntry(`${SECTIONS.conclusion}.1`, S.headings.aboutTheGuide, "about", true));
+front.push(tocEntry(SECTIONS.references, S.headings.references, "references"));
+front.push(tocEntry(S.appendix.labelA, CHECKPOINT_MAP_APPENDIX_REUSE.heading, "annex-reuse"));
+front.push(tocEntry(S.appendix.labelB, CHECKPOINT_MAP_APPENDIX_PATH.heading, "annex-nadia"));
+front.push(tocEntry(`${S.appendix.labelB}.1`, CHECKPOINT_MAP_NADIA.heading, "app2-nadia", true));
+front.push(tocEntry(`${S.appendix.labelB}.2`, CHECKPOINT_MAP_WHO_TITLE, "app2-who", true));
+front.push(tocEntry(`${S.appendix.labelB}.3`, S.headings.howLongItTook, "app2-timeline", true));
+front.push(tocEntry(`${S.appendix.labelB}.4`, S.headings.howToReadTheSteps, "app2-key", true));
 CHECKPOINT_MAP_PHASES.forEach((phase, index) => {
-  front.push(tocEntry(`Appendix B.${index + 5}`, phase.heading, `app2-${phase.id}`, true));
+  front.push(
+    tocEntry(`${S.appendix.labelB}.${index + 5}`, phase.heading, `app2-${phase.id}`, true),
+  );
 });
 
 front.push(
   new Paragraph({
     spacing: { before: 360, after: 120 },
     children: [
-      new TextRun({ text: "List of Figures", font: SERIF, bold: true, color: BROWN, size: 28 }),
+      new TextRun({
+        text: S.frontMatter.listOfFigures,
+        font: SERIF,
+        bold: true,
+        color: BROWN,
+        size: 28,
+      }),
     ],
   }),
 );
@@ -1772,7 +1753,13 @@ front.push(
   new Paragraph({
     spacing: { before: 280, after: 120 },
     children: [
-      new TextRun({ text: "List of Tables", font: SERIF, bold: true, color: BROWN, size: 28 }),
+      new TextRun({
+        text: S.frontMatter.listOfTables,
+        font: SERIF,
+        bold: true,
+        color: BROWN,
+        size: 28,
+      }),
     ],
   }),
 );
@@ -1808,7 +1795,7 @@ const bannerHeader = new Header({
       children: [
         new TextRun({ text: CHECKPOINT_MAP_TITLE, font: SANS, color: MUTED, size: 16 }),
         new TextRun({
-          text: "\t\tUNCLASSIFIED / NON CLASSIFIÉ",
+          text: S.frontMatter.headerClassification,
           font: SANS,
           bold: true,
           color: UNCL,
@@ -1842,7 +1829,14 @@ const page = {
 const doc = new Document({
   features: { updateFields: true },
   styles: {
-    default: { document: { run: { font: SANS, size: 21, color: BODY } } },
+    /* The document's language, so a screen reader pronounces it correctly and Word
+       spell-checks it against the right dictionary. Without it the French edition
+       declares itself English. */
+    default: {
+      document: {
+        run: { font: SANS, size: 21, color: BODY, language: { value: IS_FR ? "fr-CA" : "en-CA" } },
+      },
+    },
     paragraphStyles: [
       {
         id: "Heading1",

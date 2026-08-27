@@ -18,7 +18,7 @@ export const SUPPORT_PAGE = {
   id: "support",
 
   lead:
-    "Quand une partie de ce guide vous laisse coincé, il existe presque toujours une équipe, une collectivité ou une ressource en ligne qui peut aider. Cette page les rassemble au même endroit. La plupart sont ouvertes à quiconque travaille au gouvernement ; quelques-unes se trouvent sur le réseau du gouvernement du Canada. Certaines de ces collectivités changent de plateforme en ce moment (GCconnex est en voie de retrait) : un lien peut donc avoir changé depuis la rédaction.",
+    "Quand une partie de ce guide vous laisse coincé, il existe presque toujours une équipe, une collectivité ou une ressource en ligne qui peut aider. Cette page les rassemble au même endroit. La plupart sont ouvertes à quiconque travaille au gouvernement; quelques-unes se trouvent sur le réseau du gouvernement du Canada. Certaines de ces collectivités changent de plateforme en ce moment (GCconnex est en voie de retrait) : un lien peut donc avoir changé depuis la rédaction.",
 
   byTopic: {
     id: "by-topic",
@@ -57,7 +57,7 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Protection de la vie privée. Parlez d’abord au coordonnateur de l’AIPRP ou de la protection de la vie privée de votre propre ministère (trouvez le vôtre par le carrefour Accès à l’information et protection des renseignements personnels) ; le Commissariat à la protection de la vie privée est l’organisme de réglementation.",
+        text: "Protection de la vie privée. Parlez d’abord au coordonnateur de l’AIPRP ou de la protection de la vie privée de votre propre ministère (trouvez le vôtre par le carrefour Accès à l’information et protection des renseignements personnels); le Commissariat à la protection de la vie privée est l’organisme de réglementation.",
         bold: [{ phrase: "Privacy." }],
         externalLinks: [
           {
@@ -145,7 +145,7 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Langues officielles. Le coordonnateur des langues officielles de votre ministère d’abord ; la Collectivité des langues officielles et les pages du SCT sur les langues officielles.",
+        text: "Langues officielles. Le coordonnateur des langues officielles de votre ministère d’abord; la Collectivité des langues officielles et les pages du SCT sur les langues officielles.",
         bold: [{ phrase: "Langues officielles." }],
         externalLinks: [
           {
@@ -156,7 +156,7 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "ACS Plus et inclusion. Le point focal ACS Plus de votre ministère d’abord ; le carrefour ACS Plus et le cours INC101 de l’EFPC.",
+        text: "ACS Plus et inclusion. Le point focal ACS Plus de votre ministère d’abord; le carrefour ACS Plus et le cours INC101 de l’EFPC.",
         bold: [{ phrase: "ACS Plus et inclusion." }],
         externalLinks: [
           { phrase: "carrefour ACS Plus", linkKey: "gba-plus" },
@@ -164,7 +164,7 @@ export const SUPPORT_PAGE = {
         ] satisfies ExternalPhraseLink[],
       },
       {
-        text: "Identité et ouverture de session. Le DPI ou le responsable de la sécurité de votre ministère (ils font intervenir les équipes de gestion de l’identité et des accès) ; le carrefour sur la sécurité et la protection de la vie privée en ligne.",
+        text: "Identité et ouverture de session. Le DPI ou le responsable de la sécurité de votre ministère (ils font intervenir les équipes de gestion de l’identité et des accès); le carrefour sur la sécurité et la protection de la vie privée en ligne.",
         bold: [{ phrase: "Identité et ouverture de session." }],
         externalLinks: [
           {
@@ -182,7 +182,7 @@ export const SUPPORT_PAGE = {
       },
     ] satisfies SupportLinkedBullet[],
     closing: {
-      text: "Si votre sujet ne figure pas ici, le répertoire des collectivités fonctionnelles du GC énumère les collectivités professionnelles de l’ensemble du gouvernement ; l’une d’elles le couvre probablement.",
+      text: "Si votre sujet ne figure pas ici, le répertoire des collectivités fonctionnelles du GC énumère les collectivités professionnelles de l’ensemble du gouvernement; l’une d’elles le couvre probablement.",
       externalLinks: [
         {
           phrase: "répertoire des collectivités fonctionnelles du GC",

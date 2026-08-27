@@ -29,7 +29,7 @@ export const REQUIREMENT_TYPES_TABLE_STRINGS = {
       kind: "Opérationnelles",
       says: "Ce dont l’organisation a besoin, et pourquoi, dans le langage du programme.",
       example: "Les demandeurs peuvent savoir où en est leur demande sans téléphoner à personne.",
-      ages: "Lentement. Ce dont les gens ont besoin d’un service survit à n’importe quelle version particulière de celui-ci ; on peut donc s’y engager sans risque.",
+      ages: "Lentement. Ce dont les gens ont besoin d’un service survit à n’importe quelle version particulière de celui-ci; on peut donc s’y engager sans risque.",
     },
     functional: {
       kind: "Fonctionnelles",

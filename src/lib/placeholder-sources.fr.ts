@@ -58,7 +58,7 @@ export const GCCASE_MIGRATION_READINESS_GUIDE_TITLE =
   "Guide de préparation à la migration GCcase et son évaluation (SCT-DPI, en production)";
 
 export const GCCASE_MIGRATION_READINESS_GUIDE_NOTE =
-  "Orientations pour les ministères qui migrent hors de la plateforme de gestion des cas GCcase, en cours de mise hors service. Citées ici comme exemple concret de transition ; elles portent sur GCcase plutôt que sur la migration en général.";
+  "Orientations pour les ministères qui migrent hors de la plateforme de gestion des cas GCcase, en cours de mise hors service. Citées ici comme exemple concret de transition; elles portent sur GCcase plutôt que sur la migration en général.";
 
 /** @deprecated Use GCCASE_MIGRATION_READINESS_GUIDE_TITLE and GCCASE_MIGRATION_READINESS_GUIDE_NOTE */
 export const GCCASE_MIGRATION_READINESS_GUIDE_DESCRIPTION = `${GCCASE_MIGRATION_READINESS_GUIDE_TITLE} ${GCCASE_MIGRATION_READINESS_GUIDE_NOTE}`;

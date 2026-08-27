@@ -57,7 +57,7 @@ export const ETHICS_AND_BIAS_THREAD = {
       text: "Les gens sont informés lorsqu’une décision est automatisée, et peuvent obtenir une explication claire de la façon dont elle a été prise.",
     },
     {
-      text: "Une personne désignée demeure responsable des décisions ; jamais le système.",
+      text: "Une personne désignée demeure responsable des décisions; jamais le système.",
     },
     {
       text: "Toute utilisation d’IA générative suit les principes « PRETES » : pertinente, responsable, équitable, transparente, éclairée, sécurisée.",
@@ -174,7 +174,7 @@ export const ETHICS_AND_BIAS_THREAD = {
         sections: [
           {
             text:
-              "La responsabilité appartient à l’institution, jamais au système : une personne doit donc toujours pouvoir accéder à une véritable solution de rechange humaine et contester un résultat. Deux mises en garde méritent d’être retenues. Les systèmes moyens jugent mal les personnes qui sortent de l’ordinaire ou s’éloignent de la norme, et des données représentatives à elles seules n’y remédient pas (c’est ce qu’on appelle la discrimination statistique) ; mettez donc à l’essai auprès de différents groupes et gardez une personne dans la boucle. Et pour l’IA générative, suivez les principes « PRETES » ; pour une IA qui agit d’elle-même, gardez des limites étroites et un moyen de l’arrêter.",
+              "La responsabilité appartient à l’institution, jamais au système : une personne doit donc toujours pouvoir accéder à une véritable solution de rechange humaine et contester un résultat. Deux mises en garde méritent d’être retenues. Les systèmes moyens jugent mal les personnes qui sortent de l’ordinaire ou s’éloignent de la norme, et des données représentatives à elles seules n’y remédient pas (c’est ce qu’on appelle la discrimination statistique); mettez donc à l’essai auprès de différents groupes et gardez une personne dans la boucle. Et pour l’IA générative, suivez les principes « PRETES »; pour une IA qui agit d’elle-même, gardez des limites étroites et un moyen de l’arrêter.",
             externalLinks: [
               {
                 phrase: "une véritable solution de rechange humaine",
@@ -201,7 +201,7 @@ export const ETHICS_AND_BIAS_THREAD = {
         "résultats jamais mis à l’essai auprès de différents groupes",
       ],
       closing:
-        "Résultat : le modèle a reproduit d’anciens biais sans que personne ne le remarque, rejetant de solides demandes provenant de certaines régions ; personne ne pouvait expliquer pourquoi une demande donnée avait obtenu une note faible, et il n’y avait aucune personne vers qui se tourner.",
+        "Résultat : le modèle a reproduit d’anciens biais sans que personne ne le remarque, rejetant de solides demandes provenant de certaines régions; personne ne pouvait expliquer pourquoi une demande donnée avait obtenu une note faible, et il n’y avait aucune personne vers qui se tourner.",
     } satisfies CaseStudySide,
     safe: {
       heading: "Pax",
@@ -294,13 +294,13 @@ export const ETHICS_AND_BIAS_THREAD = {
       label: "Instrument directeur",
       linkKey: "algorithmic-impact-assessment" satisfies ExternalLinkKey,
       description:
-        "Évaluation de l’incidence algorithmique (SCT ; outil à code source libre, résultats publiés) — https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+        "Évaluation de l’incidence algorithmique (SCT; outil à code source libre, résultats publiés) — https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
     },
     {
       label: "Instrument directeur",
       linkKey: "gba-plus" satisfies ExternalLinkKey,
       description:
-        "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada ; exigée dans les présentations au CT) — https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus.html",
+        "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada; exigée dans les présentations au CT) — https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus.html",
     },
     {
       label: "Référence complémentaire",

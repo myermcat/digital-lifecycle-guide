@@ -16,7 +16,7 @@ export const fundingWhoseJobPlainText = (whoseJob: ThreadWhoseJobSection) =>
   threadWhoseJobPlainText(whoseJob);
 
 export const FUNDING_HERO_ALT =
-  "Le ministère est au centre. Pour presque tous les services, environ 95 %, le ministère les finance et les approuve à même des fonds qu’il détient déjà. Pour l’exception, environ 5 %, quand un service exige de nouveaux fonds ou qu’il est vaste ou complexe, le ministère s’adresse au Conseil du Trésor, qui débloque les fonds et accorde l’autorisation.";
+  "Le ministère est au centre. Pour presque tous les services, environ 95 %, le ministère les finance et les approuve à même des fonds qu’il détient déjà. Pour l’exception, environ 5 %, quand un service exige de nouveaux fonds ou qu’il est vaste ou complexe, le ministère s’adresse au Conseil du Trésor, qui débloque les fonds et accorde l’autorisation.";
 
 export type FundingDetailIcon = "coins" | "refresh" | "logout";
 
@@ -40,7 +40,7 @@ export const FUNDING_THREAD = {
     },
     {
       text:
-        "C’est l’autre moitié de l’achat. L’approvisionnement, c’est la façon dont un service est acheté ; le financement, c’est la façon dont il est payé et approuvé. Un service peut avoir un fournisseur prêt à commencer et n’aller nulle part tant que l’argent et l’autorisation ne sont pas en place.",
+        "C’est l’autre moitié de l’achat. L’approvisionnement, c’est la façon dont un service est acheté; le financement, c’est la façon dont il est payé et approuvé. Un service peut avoir un fournisseur prêt à commencer et n’aller nulle part tant que l’argent et l’autorisation ne sont pas en place.",
       internalLinks: [{ phrase: "approvisionnement", to: THREADS.procurement.path }],
     },
     {
@@ -69,7 +69,7 @@ export const FUNDING_THREAD = {
       },
     ],
     closing:
-      "Un budget réserve des fonds ; il ne les remet pas. Cela ressemble davantage à une reconnaissance de dette (une promesse écrite de payer). Pour transformer la promesse en argent dépensable, un ministère doit produire un plan et le porter au Conseil du Trésor. Les nouveaux fonds arrivent donc toujours en deux temps : ils sont réservés, puis ils sont débloqués.",
+      "Un budget réserve des fonds; il ne les remet pas. Cela ressemble davantage à une reconnaissance de dette (une promesse écrite de payer). Pour transformer la promesse en argent dépensable, un ministère doit produire un plan et le porter au Conseil du Trésor. Les nouveaux fonds arrivent donc toujours en deux temps : ils sont réservés, puis ils sont débloqués.",
   },
 
   commonPath: {
@@ -135,7 +135,7 @@ export const FUNDING_THREAD = {
       title: "Engager tôt les fonds d’exploitation",
       body: {
         text:
-          "Le budget pour exploiter un service année après année est établi séparément des fonds pour le construire. Le ministère signale le coût d’exploitation prévu dès le départ et s’y engage en principe avant que la construction commence (la sous-phase Bêta) ; un service lancé sans cela peut entrer en service sans aucun plan pour le maintenir en fonction.",
+          "Le budget pour exploiter un service année après année est établi séparément des fonds pour le construire. Le ministère signale le coût d’exploitation prévu dès le départ et s’y engage en principe avant que la construction commence (la sous-phase Bêta); un service lancé sans cela peut entrer en service sans aucun plan pour le maintenir en fonction.",
         internalLinks: [
           {
             phrase: "sous-phase Bêta",
@@ -152,7 +152,7 @@ export const FUNDING_THREAD = {
     id: "when-a-service-goes-to-the-treasury-board",
     title: "Quand un service va au Conseil du Trésor",
     thresholdFigure: {
-      alt: "Diagramme en colonnes : un petit projet reste sous la limite et est approuvé à l’intérieur du ministère ; un plus grand franchit la limite et exige le Conseil du Trésor.",
+      alt: "Diagramme en colonnes : un petit projet reste sous la limite et est approuvé à l’intérieur du ministère; un plus grand franchit la limite et exige le Conseil du Trésor.",
       caption:
         "La limite n’est pas un montant fixe. Elle dépend du ministère et du type de projet.",
     },
@@ -163,7 +163,7 @@ export const FUNDING_THREAD = {
       },
       {
         text:
-          "Ce qui est « trop vaste » n’est pas un chiffre national unique. Chaque ministère se voit reconnaître un niveau de projet qu’il peut gérer seul, établi par son Évaluation de la capacité organisationnelle de gestion de projet (ECOGP). Chaque projet est dimensionné par une Évaluation de la complexité et des risques des projets (ECRP). Quand l’ECRP d’un projet dépasse le niveau du ministère, il va au Conseil du Trésor ; en deçà, le ministère décide seul.",
+          "Ce qui est « trop vaste » n’est pas un chiffre national unique. Chaque ministère se voit reconnaître un niveau de projet qu’il peut gérer seul, établi par son Évaluation de la capacité organisationnelle de gestion de projet (ECOGP). Chaque projet est dimensionné par une Évaluation de la complexité et des risques des projets (ECRP). Quand l’ECRP d’un projet dépasse le niveau du ministère, il va au Conseil du Trésor; en deçà, le ministère décide seul.",
       },
       {
         text:
@@ -209,10 +209,10 @@ export const FUNDING_THREAD = {
           },
           {
             text:
-              "Une estimation précoce a le droit d’être approximative, pourvu qu’elle dise à quel point. Une estimation d’ordre de grandeur (EOG) peut s’écarter jusqu’à 40 % du coût réel ; une estimation indicative ramène cet écart à environ 25 % ; une estimation définitive, à environ 15 %. Chaque estimation devrait préciser de quel type elle est, pour qu’un chiffre précoce ne soit pas lu comme un prix ferme.",
+              "Une estimation précoce a le droit d’être approximative, pourvu qu’elle dise à quel point. Une estimation d’ordre de grandeur (EOG) peut s’écarter jusqu’à 40 % du coût réel; une estimation indicative ramène cet écart à environ 25 %; une estimation définitive, à environ 15 %. Chaque estimation devrait préciser de quel type elle est, pour qu’un chiffre précoce ne soit pas lu comme un prix ferme.",
           },
         ],
-        formula: "EOG ± 40 %  →  indicative ± 25 %  →  définitive ± 15 %",
+        formula: "EOG ± 40 %  →  indicative ± 25 %  →  définitive ± 15 %",
         afterFormula: {
           text:
             "Le Guide d’établissement des coûts du GC expose une méthode en sept étapes pour bâtir une estimation qui tient la route.",
@@ -364,7 +364,7 @@ export const FUNDING_THREAD = {
       label: "Modèles et outils",
       linkKey: "pcra-tool",
       description:
-        "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet ; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
+        "Outil d’évaluation de la complexité et des risques des projets (ECRP) (SCT) : le questionnaire qui évalue l’ampleur et le risque du projet; le résultat, comparé à la classe de capacité approuvée du ministère, détermine qui peut l’approuver.",
     },
   ] satisfies SourceItem[],
 } as const;

@@ -107,7 +107,7 @@ export const BACKLOG_THREAD = {
     roles: [
       {
         role: "Le responsable de produit ou de service",
-        text: "tient la liste unique, l’ordonne et l’affine ; c’est lui qui décide de ce qui vient ensuite.",
+        text: "tient la liste unique, l’ordonne et l’affine; c’est lui qui décide de ce qui vient ensuite.",
       },
       {
         role: "L’équipe",
@@ -225,7 +225,7 @@ export const BACKLOG_THREAD = {
           },
           {
             text:
-              "Une seule personne, le responsable de produit ou de service, est responsable de l’ordre ; tous les autres lui présentent leurs arguments plutôt que de réordonner la liste eux-mêmes. Et une définition de « terminé », c’est-à-dire une barre commune indiquant quand quelque chose est véritablement achevé, maintient la qualité : si un élément ne l’atteint pas, il retourne au carnet de produit au lieu d’aller au public. Le Guide Scrum est la source de ces termes.",
+              "Une seule personne, le responsable de produit ou de service, est responsable de l’ordre; tous les autres lui présentent leurs arguments plutôt que de réordonner la liste eux-mêmes. Et une définition de « terminé », c’est-à-dire une barre commune indiquant quand quelque chose est véritablement achevé, maintient la qualité : si un élément ne l’atteint pas, il retourne au carnet de produit au lieu d’aller au public. Le Guide Scrum est la source de ces termes.",
             externalLinks: [{ phrase: "Guide Scrum", linkKey: "scrum-guide" }] satisfies ExternalPhraseLink[],
           },
         ],
@@ -322,7 +322,7 @@ export const BACKLOG_THREAD = {
         ],
       },
       {
-        title: "Tout semble prioritaire. Comment choisir ?",
+        title: "Tout semble prioritaire. Comment choisir?",
         sections: [
           {
             text:
@@ -348,7 +348,7 @@ export const BACKLOG_THREAD = {
         sections: [
           {
             text:
-              "Certains ont été ajoutés pour faire plaisir à quelqu’un et n’allaient jamais vraiment être construits ; d’autres étaient de bonnes idées dépassées par le changement des priorités. La cause ne change pas le remède : un carnet de produit n’est pas un endroit où les éléments vivent pour toujours. À chaque examen régulier, abandonnez ce qui ne sert plus l’objectif actuel, et gardez le reste dans un ordre de priorité honnête, pour que la liste reste assez courte pour qu’on puisse agir dessus.",
+              "Certains ont été ajoutés pour faire plaisir à quelqu’un et n’allaient jamais vraiment être construits; d’autres étaient de bonnes idées dépassées par le changement des priorités. La cause ne change pas le remède : un carnet de produit n’est pas un endroit où les éléments vivent pour toujours. À chaque examen régulier, abandonnez ce qui ne sert plus l’objectif actuel, et gardez le reste dans un ordre de priorité honnête, pour que la liste reste assez courte pour qu’on puisse agir dessus.",
             internalLinks: [{ phrase: "examen régulier", to: CLOSER_LOOK_PATH }] satisfies InternalPhraseLink[],
           },
         ],
@@ -397,7 +397,7 @@ export const BACKLOG_THREAD = {
       label: "Référence complémentaire",
       linkKey: "ontario-service-design-playbook" satisfies ExternalLinkKey,
       description:
-        "Guide de conception de services de l’Ontario (Service numérique de l’Ontario, CC-BY ; provincial, réutilisable) — https://www.ontario.ca/page/service-design-playbook",
+        "Guide de conception de services de l’Ontario (Service numérique de l’Ontario, CC-BY; provincial, réutilisable) — https://www.ontario.ca/page/service-design-playbook",
     },
     {
       label: "Référence complémentaire",
@@ -408,7 +408,7 @@ export const BACKLOG_THREAD = {
       label: "Référence complémentaire",
       linkKey: "uk-service-manual-agile-delivery" satisfies ExternalLinkKey,
       description:
-        "Service Manual de GOV.UK, livraison agile (rédiger des histoires d’utilisateur ; établir les priorités) — https://www.gov.uk/service-manual/agile-delivery",
+        "Service Manual de GOV.UK, livraison agile (rédiger des histoires d’utilisateur; établir les priorités) — https://www.gov.uk/service-manual/agile-delivery",
     },
     {
       label: "Référence complémentaire",
