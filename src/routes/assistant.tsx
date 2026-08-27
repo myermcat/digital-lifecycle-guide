@@ -1,5 +1,6 @@
 import { UI } from "@/lib/ui-strings";
 import { createFileRoute, lazyRouteComponent } from "@tanstack/react-router";
+import { SITE_NAME } from "@/lib/site-meta";
 
 /**
  * The assistant route.
@@ -12,7 +13,7 @@ import { createFileRoute, lazyRouteComponent } from "@tanstack/react-router";
 export const Route = createFileRoute("/assistant")({
   head: () => ({
     meta: [
-      { title: "Ask the guide — The 2026 Digital Lifecycle Guide" },
+      { title: `Ask the guide — ${SITE_NAME}` },
       {
         name: "description",
         content:

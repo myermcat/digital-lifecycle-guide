@@ -7,11 +7,12 @@ import { ALL_PAGES_PATH } from "@/lib/all-pages-path";
 import { BUILD_STATUS_PATH } from "@/lib/build-status-path";
 import { guideLink, guideProseTight } from "@/lib/guide-typography";
 import { UI } from "@/lib/ui-strings";
+import { SITE_NAME } from "@/lib/site-meta";
 
 export const Route = createFileRoute("/build-status")({
   head: () => ({
     meta: [
-      { title: "Build status — The 2026 Digital Lifecycle Guide" },
+      { title: `Build status — ${SITE_NAME}` },
       {
         name: "description",
         content:

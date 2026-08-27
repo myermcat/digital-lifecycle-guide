@@ -2,6 +2,7 @@ import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { ContractingSubPage } from "@/components/ContractingSubPage";
 import { PROCUREMENT_SUBPAGES, isProcurementSubPageSlug } from "@/lib/contracting-subpages";
 import { PROCUREMENT_SUBPAGE_REDIRECTS } from "@/lib/procurement-subpage-slugs";
+import { SITE_NAME } from "@/lib/site-meta";
 
 export const Route = createFileRoute("/thread/procurement/$page")({
   beforeLoad: ({ params }) => {
@@ -17,13 +18,13 @@ export const Route = createFileRoute("/thread/procurement/$page")({
     return {
       meta: content
         ? [
-            { title: `${content.title} — Procurement — The 2026 Digital Lifecycle Guide` },
+            { title: `${content.title} — Procurement — ${SITE_NAME}` },
             {
               name: "description",
               content: content.intro?.[0] ?? content.title,
             },
           ]
-        : [{ title: "Not found — The 2026 Digital Lifecycle Guide" }],
+        : [{ title: `Not found — ${SITE_NAME}` }],
     };
   },
   component: ProcurementSubRoutePage,
