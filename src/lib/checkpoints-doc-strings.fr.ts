@@ -21,9 +21,9 @@ export const CHECKPOINTS_DOC = {
   /** La couverture, l’en-tête courant et les pages liminaires. */
   frontMatter: {
     /** Jamais traduit, dans l’une comme dans l’autre édition. */
-    classification: "UNCLASSIFIED / NON CLASSIFIÉ",
+    classification: "NON CLASSIFIÉ / UNCLASSIFIED",
     /** La même mention dans l’en-tête courant, après deux taquets. */
-    headerClassification: "\t\tUNCLASSIFIED / NON CLASSIFIÉ",
+    headerClassification: "\t\tNON CLASSIFIÉ / UNCLASSIFIED",
     /** La petite ligne au-dessus du titre, sur la couverture. */
     eyebrow: "Le Guide du cycle de vie numérique",
     subtitle:

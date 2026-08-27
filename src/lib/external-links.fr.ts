@@ -8,92 +8,92 @@ export type ExternalLinkEntry = {
 
 export const EXTERNAL_LINKS = {
   "directive-procurement": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32692",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32692",
     description:
       "Directive sur la gestion de l’approvisionnement du Conseil du Trésor (l’instrument contraignant)",
     accessibility: "public",
   },
   "pcra-tool": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/information-technology-project-management/project-management/project-complexity-risk-assessment-tool.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/gestion-information-technologie-projets/gestion-projects/outil-evaluation-complexite-risques-projets.html",
     description: "Outil d’évaluation de la complexité et des risques des projets (EPCP) (SCT)",
     accessibility: "public",
   },
   "tbs-tb-submissions": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor.html",
     description: "Présentations au Conseil du Trésor (SCT)",
     accessibility: "public",
   },
   "gc-enterprise-architecture-framework": {
-    url: "https://www.canada.ca/en/government/system/digital-government/policies-standards/government-canada-enterprise-architecture-framework.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/politiques-normes/cadre-architecture-integree-gouvernement-canada.html",
     description: "Cadre de l’architecture intégrée du gouvernement du Canada (comprend le CEAI GC)",
     accessibility: "public",
   },
   "buyers-portal": {
-    url: "https://canadabuys.canada.ca/en/buyer-s-portal",
+    url: "https://canadabuys.canada.ca/fr/portail-de-l-acheteur",
     description: "Portail des acheteurs de SPAC, la source officielle du programme fédéral des acquisitions",
     accessibility: "public",
   },
   canadabuys: {
-    url: "https://canadabuys.canada.ca/en",
+    url: "https://canadabuys.canada.ca/fr",
     description: "AchatsCanada — occasions fédérales et orientations sur l’approvisionnement",
     accessibility: "public",
   },
   "procurement-policies": {
-    url: "https://www.canada.ca/en/services/business/doing-business/how-to-sell/procurement-policies.html",
+    url: "https://www.canada.ca/fr/services/entreprises/faire-affaire/comment-vendre/politiques-matiere-approvisionnement.html",
     description: "Aperçu en langage clair des politiques fédérales d’approvisionnement",
     accessibility: "public",
   },
   "procura-chatbot": {
-    url: "https://canadabuys.canada.ca/en/procura-chatbot-beta",
+    url: "https://canadabuys.canada.ca/fr/version-beta-du-robot-conversationnel-procura",
     description: "Robot conversationnel Procura (bêta), pour poser des questions d’approvisionnement",
     accessibility: "public",
   },
   "professional-services-policy": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32775",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32775",
     description:
       "Politique du SCT sur l’approvisionnement en services professionnels (extraits d’orientations plus générales)",
     accessibility: "public",
   },
   "task-based-professional-services": {
-    url: "https://www.tpsgc-pwgsc.gc.ca/app-acq/spc-cps/spcts-tsps-eng.html",
+    url: "https://www.canada.ca/fr/services-publics-approvisionnement/services/achats/services-professionnels-centres-taches-solutions.html",
     description: "Services professionnels en informatique centrés sur les tâches et les livrables de SPAC (SPICT/SPCS)",
     accessibility: "public",
   },
   "oag-phoenix-build": {
-    url: "https://publications.gc.ca/site/eng/9.864945/publication.html",
+    url: "https://publications.gc.ca/site/fra/9.864945/publication.html",
     description:
       "Rapports du printemps 2018 du BVG, rapport 1 — Construction et mise en œuvre du système de paye Phoenix (fiche des Publications du gouvernement du Canada)",
     accessibility: "public",
   },
   "oag-it-shared-services": {
-    url: "https://publications.gc.ca/site/eng/9.804430/publication.html",
+    url: "https://publications.gc.ca/site/fra/9.804430/publication.html",
     description:
       "Rapports de l’automne 2015 du BVG, rapport 4 — Les services partagés en technologie de l’information (fiche des Publications du gouvernement du Canada)",
     accessibility: "public",
   },
   "oag-arrivecan": {
-    url: "https://www.canada.ca/en/auditor-general/our-work/audit-reports/parl-oag-202402-01-e.html",
+    url: "https://www.canada.ca/fr/verificateur-general/notre-travail/rapports-daudit/parl-oag-202402-01-f.html",
     description: "Rapports de 2024 du BVG, rapport 1 — ArriveCAN",
     accessibility: "public",
   },
   "aaact-program": {
-    url: "https://www.canada.ca/en/shared-services/services/employees-accessibility/aaact-program.html",
+    url: "https://www.canada.ca/fr/services-partages/services/employes-accessibilite/programme-aatia.html",
     description:
       "Programme AATIA (Services partagés Canada) — formation, essais de technologies adaptatives et conseils en approvisionnement pour construire des produits et services accessibles",
     accessibility: "public",
   },
   "design-canada": {
-    url: "https://design.canada.ca/",
+    url: "https://conception.canada.ca",
     description: "Système de design de Canada.ca : styles, gabarits et modèles testés auprès des utilisateurs",
     accessibility: "public",
   },
   "design-research": {
-    url: "https://design.canada.ca/continuous-improvement/research.html",
+    url: "https://conception.canada.ca/amelioration-continue/recherche.html",
     description: "Système de design de Canada.ca : comment faire de la recherche et tester le contenu avec les utilisateurs",
     accessibility: "public",
   },
   "charging-directive": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32502",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32502",
     description: "Directive sur l’imputation et les autorisations financières spéciales (SCT)",
     accessibility: "public",
   },
@@ -103,32 +103,32 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "apm-dataset": {
-    url: "https://open.canada.ca/data/en/dataset/46fc3f0a-1b34-4585-b993-dfb600805d24",
+    url: "https://ouvert.canada.ca/data/fr/dataset/46fc3f0a-1b34-4585-b993-dfb600805d24",
     description: "Jeu de données sur les détails du portefeuille d’applications du GC (Portail du gouvernement ouvert)",
     accessibility: "public",
   },
   "modify-contract": {
-    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/manage/modify-contract/procedural-elements-amending-contracts",
+    url: "https://canadabuys.canada.ca/fr/portail-de-l-acheteur/guide-de-l-acheteur/gerer/modifier-un-contrat/principaux-elements-de-procedure-pour-la-modification-des-contrats",
     description: "Guide de l’acheteur d’AchatsCanada : modifier un contrat, éléments de procédure",
     accessibility: "public",
   },
   "gcdigital-community": {
-    url: "https://www.canada.ca/en/government/system/digital-government/gcdigital-community/gcdigital-community-about-us.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/collectivite-gcnumerique/collectivite-gcnumerique-a-propos.html",
     description: "Collectivité GCNumérique (SCT, BDPI) : la collectivité des praticiens du numérique du GC",
     accessibility: "public",
   },
   "directive-projects-programmes": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32594",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32594",
     description: "Directive sur la gestion des projets et des programmes (SCT)",
     accessibility: "public",
   },
   "a11y-community-terms": {
-    url: "https://a11y.canada.ca/en/terms-of-reference/index.html",
+    url: "https://a11y.canada.ca/fr/mandats/index.html",
     description: "Mandat du Groupe de travail sur l’accès (Boîte à outils de l’accessibilité numérique)",
     accessibility: "public",
   },
   "policy-privacy-protection": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=12510",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=12510",
     description: "Politique sur la protection de la vie privée (SCT)",
     accessibility: "public",
   },
@@ -139,74 +139,74 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "en-301-549": {
-    url: "https://accessible.canada.ca/standards-and-technical-guides/standards-and-technical-guides-database/can-asc-en-301-5492024-accessibility-requirements-ict-products-and-services-en-301-5492021-idt",
+    url: "https://accessibilite.canada.ca/normes-et-guides-techniques/base-de-donnees-des-normes-et-des-guides-techniques/can-asc-en-301-5492024-exigences-daccessibilite-pour-les-produits-et-services-de-tic-en-301-5492021-idt",
     description:
       "CAN/ASC - EN 301 549:2024, Exigences d’accessibilité pour les produits et services des TIC (Normes d’accessibilité Canada)",
     accessibility: "public",
   },
   "esdc-a11y-regulations-guidance": {
-    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/category-digital-technologies.html",
+    url: "https://www.canada.ca/fr/emploi-developpement-social/programmes/directives-reglements-canadien-accessibilite/categorie-technologies-numeriques.html",
     description: "Lignes directrices sur la règlementation sur l’accessibilité des technologies numériques (EDSC)",
     accessibility: "public",
   },
   "cio-direction-ict-accessibility": {
-    url: "https://www.canada.ca/en/government/system/digital-government/policies-standards/policy-service-digital-announcements/direction-information-communication-technologies-accessibility-towards-regulatory-implementation.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/politiques-normes/annonces-politique-services-numerique/orientations-relatives-accessibilite-technologies-information-communications-vers-mise-en-oeuvre-reglementaire.html",
     description:
       "Direction relative à l’accessibilité des TIC : vers la mise en œuvre réglementaire (DPI du Canada, mars 2026)",
     accessibility: "public",
   },
   "esdc-a11y-training-guidance": {
-    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/training.html",
+    url: "https://www.canada.ca/fr/emploi-developpement-social/programmes/directives-reglements-canadien-accessibilite/formation.html",
     description: "Lignes directrices pour offrir une formation sur les notions fondamentales de l’accessibilité numérique (EDSC)",
     accessibility: "public",
   },
   "a11y-remediation-roadmap": {
-    url: "https://a11y.canada.ca/en/accessibility-remediation-roadmap-template/",
+    url: "https://a11y.canada.ca/fr/le-modele-de-feuille-de-route-pour-la-correction-des-problemes-daccessibilite/index.html",
     description: "Le modèle de feuille de route pour la correction des problèmes d’accessibilité (SPC)",
     accessibility: "public",
   },
   "guide-publishing-open-source": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-publishing-open-source-code.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/logiciels-libres/guide-pour-la-publication-du-code-source-libre.html",
     description: "Guide pour la publication du code source libre (SCT)",
     accessibility: "public",
   },
   "policy-communications-federal-identity": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=30683",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=30683",
     description: "Politique sur les communications et l’image de marque (SCT)",
     accessibility: "public",
   },
   "directive-procurement-indigenous-appendix-e": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32692&section=procedure&p=E",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32692&section=procedure&p=E",
     description:
       "Directive sur la gestion de l’approvisionnement, annexe E : Procédures obligatoires pour les marchés attribués aux entreprises autochtones. En vigueur le 1er avril 2022. Établit la cible minimale obligatoire de 5 % et la déclaration qui l’accompagne.",
     accessibility: "public",
   },
   "directive-identity-management": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16577",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=16577",
     description:
       "Directive sur la gestion de l’identité (SCT). En vigueur le 1er juillet 2019. Son annexe A est la Norme sur l’assurance de l’identité et des justificatifs, qui a remplacé la norme autonome de 2013 lorsque celle-ci a été archivée le 28 juin 2019.",
     accessibility: "public",
   },
   "guideline-authentication-requirements": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=26262",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=26262",
     description:
       "Ligne directrice sur la définition des exigences en matière d’authentification (SCT). Expose les quatre niveaux d’assurance et la façon de déterminer celui dont un service a besoin.",
     accessibility: "public",
   },
   "gc-cloud-security-control-profile": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-security-control-profile-cloud-based-it-services.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/services-informatique-nuage/profil-controle-securite-services-ti-fondes-information-nuage.html",
     description:
       "Profil des mesures de sécurité pour les services du GC fondés sur l’informatique en nuage. Les contrôles de base pour Protégé B, intégrité moyenne, disponibilité moyenne, et lesquels sont mis en œuvre par le fournisseur infonuagique par rapport à ceux mis en œuvre par le ministère.",
     accessibility: "public",
   },
   "access-to-information-act": {
-    url: "https://laws-lois.justice.gc.ca/eng/acts/A-1/FullText.html",
+    url: "https://laws-lois.justice.gc.ca/fra/lois/A-1/TexteComplet.html",
     description:
       "Loi sur l’accès à l’information. La partie 2 établit les obligations de publication proactive, y compris les contrats de plus de 10 000 $ et les subventions et contributions de plus de 25 000 $.",
     accessibility: "public",
   },
   "directive-communications-federal-identity": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=30682",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=30682",
     description:
       "Directive sur la gestion des communications et de l’image de marque (SCT). En vigueur le 27 mars 2025, remplaçant la directive de 2016 et les Procédures de publication de 2013. L’annexe D est la Norme sur les sites Web et les applications mobiles destinés au public.",
     accessibility: "public",
@@ -217,70 +217,70 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "directive-open-government": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=28108",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=28108",
     description: "Directive sur le gouvernement ouvert (SCT)",
     accessibility: "public",
   },
   "standard-systems-manage-information": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32716",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32716",
     description: "Annexe J : Norme relative aux systèmes de gestion de l’information et des données (SCT)",
     accessibility: "public",
   },
   "standard-managing-metadata": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32786",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32786",
     description: "Annexe L : Norme sur la gestion des métadonnées (SCT)",
     accessibility: "public",
   },
   "open-government-licence": {
-    url: "https://open.canada.ca/en/open-government-licence-canada",
+    url: "https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada",
     description: "Licence du gouvernement ouvert – Canada",
     accessibility: "public",
   },
   "open-government-guidebook": {
-    url: "https://open.canada.ca/data/en/info/cf9ba695-59dc-4cc0-8a52-94ff6d9db665",
+    url: "https://ouvert.canada.ca/data/fr/info/cf9ba695-59dc-4cc0-8a52-94ff6d9db665",
     description: "Guide du gouvernement ouvert (SCT)",
     accessibility: "public",
   },
   "im-basics-guidance": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16557",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=16557",
     description: "Orientation à l’intention des employés : les bases de la gestion de l’information (SCT)",
     accessibility: "public",
   },
   "guide-peer-review-ads": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-peer-review-automated-decision-systems.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-examen-pairs-systemes-decisionnels-automatises.html",
     description: "Guide sur l’examen par les pairs des systèmes décisionnels automatisés (SCT)",
     accessibility: "public",
   },
   "guide-scope-dadm": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-portee-directive-prise-decisions-automatisee.html",
     description: "Guide sur la portée de la Directive sur la prise de décisions automatisée (SCT)",
     accessibility: "public",
   },
   "gc-ai-strategy": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/gc-ai-strategy-overview.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/gc-ai-strategie-apercu.html",
     description: "Stratégie en matière d’intelligence artificielle pour la fonction publique fédérale 2025-2027 (SCT)",
     accessibility: "public",
   },
   "concept-case-procedures": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593&section=procedure&p=B",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32593&section=procedure&p=B",
     description:
       "Annexe B : Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (Politique sur la planification et la gestion des investissements)",
     accessibility: "public",
   },
   "standard-at-risk-it": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32714",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32714",
     description:
       "Norme sur la technologie de l’information à risque (SCT) — garder les applications à jour; les technologies non soutenues sont interdites",
     accessibility: "public",
   },
   "task-authorizations": {
-    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/manage/manage-contract/task-authorizations",
+    url: "https://canadabuys.canada.ca/fr/portail-de-l-acheteur/guide-de-l-acheteur/gerer/gerer-un-contrat/autorisations-de-taches",
     description:
       "Guide de l’acheteur d’AchatsCanada — autorisations de tâches (travaux autorisés tâche par tâche au titre d’un contrat existant)",
     accessibility: "public",
   },
   "agile-challenge-based-procurement": {
-    url: "https://www.canada.ca/en/public-services-procurement/services/acquisitions/better-buying/simplifying-procurement-process/agile.html",
+    url: "https://www.canada.ca/fr/services-publics-approvisionnement/services/achats/mieux-acheter/simplifier-processus-approvisionnement/agile.html",
     description: "Simplifier le processus d’approvisionnement par l’approvisionnement agile (SPAC)",
     accessibility: "public",
   },
@@ -300,27 +300,27 @@ export const EXTERNAL_LINKS = {
     accessibility: "gc-network-only",
   },
   "policy-planning-investments": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32593",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32593",
     description: "Politique sur la planification et la gestion des investissements du Conseil du Trésor",
     accessibility: "public",
   },
   "digital-standards": {
-    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/normes-numeriques-gouvernement-canada.html",
     description: "Normes relatives au numérique du gouvernement du Canada",
     accessibility: "public",
   },
   "design-with-users": {
-    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/design-with-users.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/normes-numeriques-gouvernement-canada/concevoir-avec-utilisateurs.html",
     description: 'Normes relatives au numérique du GC, « Concevoir avec les utilisateurs » (SCT)',
     accessibility: "public",
   },
   "guideline-service-digital": {
-    url: "https://www.canada.ca/en/government/system/digital-government/guideline-service-digital.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/ligne-directrice-services-numerique.html",
     description: "Ligne directrice sur les services et le numérique (SCT)",
     accessibility: "public",
   },
   "gc-page-feedback": {
-    url: "https://design.canada.ca/feedback/index.html",
+    url: "https://conception.canada.ca/retroaction/index.html",
     description: "Rétroaction GC de Canada.ca / outil de rétroaction sur les pages (EDSC)",
     accessibility: "public",
   },
@@ -414,29 +414,29 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "supply-manual-chapter-6": {
-    url: "https://canadabuys.canada.ca/en/how-procurement-works/policies-and-guidelines/supply-manual/chapter-6",
+    url: "https://canadabuys.canada.ca/fr/guide-des-approvisionnements/chapitre-6",
     description:
       "Guide des approvisionnements, chapitre 6, Approbations et pouvoirs (approbation des contrats, pouvoirs de signature et fractionnement de contrat). Archivé le 30 janvier 2026; le Portail des acheteurs d’AchatsCanada est la source actuelle.",
     accessibility: "public",
   },
   "contract-approval-authorities": {
-    url: "https://canadabuys.canada.ca/en/buyer-s-portal/buyer-s-guide/approve/delegation-procurement-authority/contract-approval-and-signing-authorities",
+    url: "https://canadabuys.canada.ca/fr/portail-de-l-acheteur/guide-de-l-acheteur/approuver/approbations-et-pouvoirs/pouvoirs-d-approbation-et-de-signature-des-contrats",
     description:
       "Approbation des contrats et pouvoirs de signature, guide de l’acheteur en langage clair sur AchatsCanada",
     accessibility: "public",
   },
   "directive-security-management-appendix-b": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32611",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32611",
     description: "Directive sur la gestion de la sécurité, annexe B (SCT)",
     accessibility: "public",
   },
   "guideline-vulnerability-management": {
-    url: "https://www.canada.ca/en/government/system/digital-government/online-security-privacy/cyber-security-guidance-policy/guideline-vulnerability-management.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/securite-confidentialite-ligne/orientations-politiques-matiere-cybersecurite/lignes-directrices-gestion-vulnerabilities.html",
     description: "Lignes directrices sur la gestion des vulnérabilités (GC)",
     accessibility: "public",
   },
   "itsg-33": {
-    url: "https://www.cyber.gc.ca/en/guidance/it-security-risk-management-lifecycle-approach-itsg-33",
+    url: "https://www.cyber.gc.ca/fr/orientation/la-gestion-des-risques-lies-la-securite-des-ti-une-methode-axee-sur-le-cycle-de-vie",
     description: "ITSG-33, La gestion des risques liés à la sécurité des TI : une méthode axée sur le cycle de vie (CCC)",
     accessibility: "public",
   },
@@ -456,18 +456,18 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "guide-open-source-software": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/guide-for-using-open-source-software.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/logiciels-libres/guide-pour-lutilisation-de-logiciels-libres.html",
     description: "Guide pour l’utilisation de logiciels libres (GC)",
     accessibility: "public",
   },
   "standard-on-security-categorization": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32614",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32614",
     description:
       "Norme sur la catégorisation de sécurité (Directive sur la gestion de la sécurité, annexe J, SCT)",
     accessibility: "public",
   },
   "harmonized-tra-methodology": {
-    url: "https://www.cyber.gc.ca/en/tools-services/harmonized-tra-methodology",
+    url: "https://www.cyber.gc.ca/fr/outils-services/methodologie-harmonisee-emr",
     description: "Méthodologie harmonisée d’évaluation de la menace et des risques (EMR) (CCC)",
     accessibility: "public",
   },
@@ -487,27 +487,27 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "threat-modelling-developers": {
-    url: "https://www.cyber.gc.ca/en/education-community/learning-hub/courses/threat-modelling-developers",
+    url: "https://www.cyber.gc.ca/fr/education-communaute/carrefour-apprentissage/cours/modelisation-menaces-developpement-logiciel",
     description: "CCC, La modélisation des menaces pour les développeurs",
     accessibility: "public",
   },
   "incident-response-plan-itsap40003": {
-    url: "https://www.cyber.gc.ca/en/guidance/developing-your-incident-response-plan-itsap40003",
+    url: "https://www.cyber.gc.ca/fr/orientation/elaborer-un-plan-dintervention-en-cas-dincident-itsap40003",
     description: "CCC, Élaborer un plan d’intervention en cas d’incident (ITSAP.40.003)",
     accessibility: "public",
   },
   "least-privilege-itsap10094": {
-    url: "https://www.cyber.gc.ca/en/guidance/managing-and-controlling-administrative-privileges-itsap10094",
+    url: "https://www.cyber.gc.ca/fr/orientation/gestion-et-controle-des-privileges-administratifs-itsap10094",
     description: "CCC, Gestion et contrôle des privilèges administratifs (ITSAP.10.094)",
     accessibility: "public",
   },
   "cyber-supply-chain-itsap10070": {
-    url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-approach-assessing-risk-itsap10070",
+    url: "https://www.cyber.gc.ca/fr/orientation/la-cybersecurite-et-la-chaine-dapprovisionnement-evaluation-des-risques-itsap10070",
     description: "CCC, La cybersécurité et la chaîne d’approvisionnement : évaluation des risques (ITSAP.10.070)",
     accessibility: "public",
   },
   "directive-security-management": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32611&section=html",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32611&section=html",
     description: "Directive sur la gestion de la sécurité (SCT)",
     accessibility: "public",
   },
@@ -542,57 +542,57 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "atip-privacy-hub": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/acces-information-protection-renseignements-personnels.html",
     description: "Accès à l’information et protection des renseignements personnels (carrefour du SCT)",
     accessibility: "public",
   },
   "privacy-commissioner": {
-    url: "https://www.priv.gc.ca/en/",
+    url: "https://www.priv.gc.ca/fr",
     description: "Commissariat à la protection de la vie privée du Canada",
     accessibility: "public",
   },
   "privacy-act": {
-    url: "https://laws-lois.justice.gc.ca/eng/acts/P-21/",
+    url: "https://laws-lois.justice.gc.ca/fra/lois/P-21/",
     description: "Loi sur la protection des renseignements personnels (L.R.C. 1985, ch. P-21)",
     accessibility: "public",
   },
   "directive-privacy-practices": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=18309",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=18309",
     description: "Directive sur les pratiques relatives à la protection de la vie privée (SCT)",
     accessibility: "public",
   },
   "tbs-privacy-before-contracting": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/access-information-privacy/privacy/guidance-document-taking-privacy-into-account-before-making-contracting-decisions.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/acces-information-protection-renseignements-personnels/protection-renseignement-personnels/document-orientation-pris-compte-protection-renseignements-personnels-avant-conclure-marche.html",
     description: "Prendre en compte la protection de la vie privée avant de prendre des décisions contractuelles (SCT)",
     accessibility: "public",
   },
   "digital-privacy-playbook": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/guide-pratiques-relatives-privee-numerique.html",
     description: "Guide sur les pratiques relatives à la vie privée numérique (SCT)",
     accessibility: "public",
   },
   "digital-privacy-playbook-pia": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-impact-assessments.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/guide-pratiques-relatives-privee-numerique/evaluations-facteurs-relatifs-vie-privee.html",
     description: "Guide sur les pratiques relatives à la vie privée numérique — évaluations des facteurs relatifs à la vie privée",
     accessibility: "public",
   },
   "digital-privacy-playbook-privacy-notices": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-notices.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/guide-pratiques-relatives-privee-numerique/avis-confidentialite.html",
     description: "Guide sur les pratiques relatives à la vie privée numérique — avis de confidentialité",
     accessibility: "public",
   },
   "digital-privacy-playbook-checklist": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-privacy-playbook/privacy-guidance-checklist.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/guide-pratiques-relatives-privee-numerique/liste-verification-protection-vie-privee.html",
     description: "Guide sur les pratiques relatives à la vie privée numérique — liste de vérification",
     accessibility: "public",
   },
   "opc-pia-expectations": {
-    url: "https://www.priv.gc.ca/en/privacy-topics/federal-government-privacy/privacy-impact-assessments/gd_exp_202003/",
+    url: "https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/protection-des-renseignements-personnels-pour-les-institutions-federales/evaluations-des-facteurs-relatifs-a-la-vie-privee/gd_exp_202003/",
     description: "CPVP, Guide du Commissariat au sujet du processus d’évaluation des facteurs relatifs à la vie privée (Attentes)",
     accessibility: "public",
   },
   "opc-federal-institutions": {
-    url: "https://www.priv.gc.ca/en/for-federal-institutions/",
+    url: "https://www.priv.gc.ca/fr/pour-les-institutions-federales/",
     description: "CPVP, Pour les institutions fédérales",
     accessibility: "public",
   },
@@ -602,7 +602,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "ssc-tapi": {
-    url: "https://www.canada.ca/en/shared-services/campaigns/stories/tapi-ervpt.html",
+    url: "https://www.canada.ca/fr/services-partages/campagnes/histoires/tapi-ervpt.html",
     description: "SPC, Évaluation technologique des répercussions sur la vie privée (ETRVP)",
     accessibility: "public",
   },
@@ -617,42 +617,42 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "policy-on-service-and-digital": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32603",
     description: "Politique sur les services et le numérique (SCT)",
     accessibility: "public",
   },
   "directive-on-service-and-digital": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32601",
     description: "Directive sur les services et le numérique (SCT)",
     accessibility: "public",
   },
   "service-fees-act": {
-    url: "https://laws-lois.justice.gc.ca/eng/acts/s-8.4/",
+    url: "https://laws-lois.justice.gc.ca/fra/lois/s-8.4/",
     description: "Loi sur les frais de service (Lois du ministère de la Justice)",
     accessibility: "public",
   },
   laca: {
-    url: "https://laws-lois.justice.gc.ca/eng/acts/l-7.7/FullText.html",
+    url: "https://laws-lois.justice.gc.ca/fra/lois/l-7.7/TexteComplet.html",
     description: "Loi sur la Bibliothèque et les Archives du Canada (L.C. 2004, ch. 11)",
     accessibility: "public",
   },
   "lac-documented-disposition": {
-    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/management/guidelines/documented-disposition-records.html",
+    url: "https://www.canada.ca/fr/bibliotheque-archives/services/gouvernement/information-disposition/gestion/lignes-directrices/processus-documente-disposition.html",
     description: "BAC, Lignes directrices sur la documentation de la disposition des documents",
     accessibility: "public",
   },
   "lac-gvt-overview": {
-    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/management/generic-valuation-tools/overview.html",
+    url: "https://www.canada.ca/fr/bibliotheque-archives/services/gouvernement/information-disposition/gestion/outils-generiques-evaluation/apercu.html",
     description: "BAC, Outils générique d’évaluation (aperçu)",
     accessibility: "public",
   },
   "lac-information-disposition-hub": {
-    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition.html",
+    url: "https://www.canada.ca/fr/bibliotheque-archives/services/gouvernement/information-disposition.html",
     description: "BAC, Gestion de l’information et disposition des documents fédéraux (carrefour)",
     accessibility: "public",
   },
   "tbs-data-quality-guidance": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-data-quality.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/gestion-information/orientation-qualite-donnees.html",
     description: "SCT, Orientations sur la qualité des données (neuf dimensions)",
     accessibility: "public",
   },
@@ -662,7 +662,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "tbs-fair-principles": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/guidance-assessing-readiness-manage-data-according-findable-accessible-interoperable-reusable-principles.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/gestion-information/orientation-evaluation-etat-preparation-gestion-donnees-selon-principes-donnees-faciles-trouver-accessibles-interoperables-reutilisables.html",
     description: "SCT, Orientations sur la préparation à gérer les données selon les principes FAIR",
     accessibility: "public",
   },
@@ -679,17 +679,17 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "accessible-canada-act-summary": {
-    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada/act-summary.html",
+    url: "https://www.canada.ca/fr/emploi-developpement-social/programmes/accessible-personnes-handicapees/loi-resume.html",
     description: "Loi canadienne sur l’accessibilité (résumé d’EDSC)",
     accessibility: "public",
   },
   "accessible-canada-regulations-digital-technologies": {
-    url: "https://www.canada.ca/en/employment-social-development/programs/accessible-canada-regulations-guidance/category-digital-technologies.html",
+    url: "https://www.canada.ca/fr/emploi-developpement-social/programmes/directives-reglements-canadien-accessibilite/categorie-technologies-numeriques.html",
     description: "Règlement canadien sur l’accessibilité, technologies numériques (EDSC)",
     accessibility: "public",
   },
   "can-asc-en-301-549": {
-    url: "https://accessible.canada.ca/creating-accessibility-standards/canasc-en-301-5492024-accessibility-requirements-ict-products-and-services",
+    url: "https://accessibilite.canada.ca/normes-et-guides-techniques/base-de-donnees-des-normes-et-des-guides-techniques/can-asc-en-301-5492024-exigences-daccessibilite-pour-les-produits-et-services-de-tic-en-301-5492021-idt",
     description: "CAN/ASC-EN 301 549:2024, Exigences d’accessibilité pour les TIC",
     accessibility: "public",
   },
@@ -699,28 +699,28 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "a11y-toolkit-procurement": {
-    url: "https://a11y.canada.ca/en/procurement/",
+    url: "https://a11y.canada.ca/fr/approvisionnement/index.html",
     description: "Boîte à outils de l’accessibilité numérique — approvisionnement",
     accessibility: "public",
   },
   "a11y-ict-procurement-guide": {
-    url: "https://a11y.canada.ca/en/guide-for-including-accessibility-in-information-and-communication-technology-ict-related-procurement/",
+    url: "https://a11y.canada.ca/fr/guide-pour-linclusion-de-laccessibilite-dans-lapprovisionnement-lie-aux-technologies-de-linformation-et-des-communications-tic/index.html",
     description:
       "Guide pour l’inclusion de l’accessibilité dans l’approvisionnement lié aux TIC (Boîte à outils de l’accessibilité numérique)",
     accessibility: "public",
   },
   "gccatalogue-accessibility-procurement": {
-    url: "https://gccatalogue.alpha.canada.ca/patterns/accessibilityprocurement-EN.html",
+    url: "https://gccatalogue.alpha.canada.ca/patterns/accessibilityprocurement-FR.html",
     description: "Libellé d’approvisionnement en matière d’accessibilité (catalogue du GC)",
     accessibility: "public",
   },
   "a11y-toolkit-test-products": {
-    url: "https://a11y.canada.ca/en/test-your-products/",
+    url: "https://a11y.canada.ca/fr/testez-vos-produits/index.html",
     description: "Boîte à outils de l’accessibilité numérique — tester vos produits",
     accessibility: "public",
   },
   "a11y-toolkit-standards": {
-    url: "https://a11y.canada.ca/en/accessibility-standards/",
+    url: "https://a11y.canada.ca/fr/normes-daccessibilite/index.html",
     description: "Boîte à outils de l’accessibilité numérique — normes d’accessibilité",
     accessibility: "public",
   },
@@ -760,27 +760,27 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "digital-accessibility-toolkit": {
-    url: "https://a11y.canada.ca/en/",
+    url: "https://a11y.canada.ca/fr/index.html",
     description: "Boîte à outils de l’accessibilité numérique",
     accessibility: "public",
   },
   "a11y-community-directory": {
-    url: "https://a11y.canada.ca/en/community-directory/",
+    url: "https://a11y.canada.ca/fr/repertoire-de-la-communaute/index.html",
     description: "Répertoire communautaire de la Boîte à outils de l’accessibilité numérique",
     accessibility: "public",
   },
   "gc-notify-contact": {
-    url: "https://notification.canada.ca/",
+    url: "https://notification.canada.ca/accueil",
     description: "Notification GC — pour nous joindre",
     accessibility: "public",
   },
   "gc-forms-assistance": {
-    url: "https://articles.alpha.canada.ca/forms-formulaires/",
+    url: "https://articles.alpha.canada.ca/forms-formulaires/fr/",
     description: "Formulaires GC",
     accessibility: "public",
   },
   "gc-design-system": {
-    url: "https://design-system.canada.ca/",
+    url: "https://design-system.canada.ca/fr/",
     description: "Système de design GC",
     accessibility: "public",
   },
@@ -790,27 +790,27 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "open-government-portal": {
-    url: "https://open.canada.ca/en",
+    url: "https://ouvert.canada.ca/fr",
     description: "Portail du gouvernement ouvert (Canada)",
     accessibility: "public",
   },
   "directive-automated-decision-making": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592",
     description: "Directive sur la prise de décisions automatisée (SCT)",
     accessibility: "public",
   },
   "algorithmic-impact-assessment": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/algorithmic-impact-assessment.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/evaluation-incidence-algorithmique.html",
     description: "évaluation de l’incidence algorithmique (SCT)",
     accessibility: "public",
   },
   "gba-plus": {
-    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus.html",
+    url: "https://www.canada.ca/fr/femmes-egalite-genres/analyse-comparative-entre-sexes-plus.html",
     description: "Analyse comparative entre les sexes plus (Femmes et Égalité des genres Canada)",
     accessibility: "public",
   },
   "gc-information-management-community": {
-    url: "https://www.tbs-sct.canada.ca/im-gi/imc-cgi/imc-cgi-eng.asp",
+    url: "https://www.tbs-sct.canada.ca/im-gi/imc-cgi/imc-cgi-fra.asp",
     description: "Collectivité de la gestion de l’information du GC et liste de diffusion GI (SCT)",
     accessibility: "public",
   },
@@ -820,53 +820,53 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "tbs-official-languages": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/topics/values-ethics/official-languages.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/sujets/valeurs-ethique/langues-officielles.html",
     description: "Langues officielles (Secrétariat du Conseil du Trésor du Canada)",
     accessibility: "public",
   },
   "csps-inc101": {
-    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=en",
+    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=INC101&cm_locale=fr",
     description: "Introduction à l’analyse comparative entre les sexes plus, INC101 (EFPC)",
     accessibility: "public",
   },
   "online-security-privacy-hub": {
-    url: "https://www.canada.ca/en/government/system/digital-government/online-security-privacy.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/securite-confidentialite-ligne.html",
     description: "Sécurité et protection de la vie privée en ligne (gouvernement du Canada)",
     accessibility: "public",
   },
   "responsible-use-ai-hub": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai.html",
     description: "Utilisation responsable de l’IA au gouvernement (carrefour, SCT)",
     accessibility: "public",
   },
   "ai-guiding-principles": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/principles.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/principes.html",
     description: "Principes directeurs pour l’utilisation de l’IA au gouvernement (SCT)",
     accessibility: "public",
   },
   "generative-ai-faster": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-generative.html",
     description: "Guide sur l’utilisation de l’intelligence artificielle générative, les principes « PRETES » (SCT)",
     accessibility: "public",
   },
   "agentic-ai-guide": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-agentic-artificial-antelligence.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html",
     description: "Guide sur l’utilisation de l’intelligence artificielle agentive (SCT)",
     accessibility: "public",
   },
   "can-asc-62-equitable-ai": {
-    url: "https://accessible.canada.ca/creating-accessibility-standards/asc-62-accessible-equitable-artificial-intelligence-systems",
+    url: "https://accessibilite.canada.ca/normes-et-guides-techniques/base-de-donnees-des-normes-et-des-guides-techniques/can-asc-622025-systemes-dintelligence-artificielle-accessibles-et-equitables",
     description: "CAN-ASC-6.2 Systèmes d’intelligence artificielle accessibles et équitables (Normes d’accessibilité Canada)",
     accessibility: "public",
   },
   "opc-generative-ai-principles": {
-    url: "https://www.priv.gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/",
+    url: "https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/technologie/intelligence-artificielle/gd_principes_ia/",
     description:
       "CPVP, Principes pour des technologies de l’IA générative responsables, dignes de confiance et respectueuses de la vie privée",
     accessibility: "public",
   },
   "statcan-ai": {
-    url: "https://www.statcan.gc.ca/en/trust/collecting-your-data/artificial-intelligence",
+    url: "https://www.statcan.gc.ca/fr/confiance/collecte-de-donnees/intelligence-artificielle",
     description: "Utilisation de l’intelligence artificielle à Statistique Canada",
     accessibility: "public",
   },
@@ -886,12 +886,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "iterate-improve-frequently": {
-    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/iterate-improve-frequently.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/normes-numeriques-gouvernement-canada/iterer-ameliorer-frequemment.html",
     description: 'Normes relatives au numérique du GC, « Itérer et améliorer fréquemment » (SCT)',
     accessibility: "public",
   },
   "work-open-default": {
-    url: "https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards/work-open-default.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/normes-numeriques-gouvernement-canada/travailler-ouvertement-defaut.html",
     description: 'Normes relatives au numérique du GC, « Travailler ouvertement par défaut » (SCT)',
     accessibility: "public",
   },
@@ -942,12 +942,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-standards-on-apis": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/government-canada-standards-apis.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/normes-gouvernement-canada-api.html",
     description: "Normes du gouvernement du Canada sur les API (SCT)",
     accessibility: "public",
   },
   "enabling-interoperability": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/permettre-interoperabilite.html",
     description: "Carrefour Favoriser l’interopérabilité du GC (SCT)",
     accessibility: "public",
   },
@@ -1023,12 +1023,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-data-sovereignty-white-paper": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty/gc-white-paper-data-sovereignty-public-cloud.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/services-informatique-nuage/souverainete-numerique/gc-livre-blanc-souverainete-donnees-nuage-public.html",
     description: "Gouvernement du Canada Livre blanc : Souveraineté des données et nuage public (SCT)",
     accessibility: "public",
   },
   "tbs-digital-sovereignty-residency": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/digital-sovereignty.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/services-informatique-nuage/souverainete-numerique.html",
     description: "Souveraineté numérique, y compris l’Orientation sur la résidence des données électroniques (SCT)",
     accessibility: "public",
   },
@@ -1068,12 +1068,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "cccs-top-10-it-security-actions": {
-    url: "https://www.cyber.gc.ca/en/guidance/top-10-it-security-actions-protect-internet-connected-networks-and-information-itsm10089",
+    url: "https://www.cyber.gc.ca/fr/orientation/les-10-mesures-de-securite-des-ti-visant-proteger-les-reseaux-internet-et-0",
     description: "CCC, Les 10 principales mesures de sécurité des TI (ITSM.10.089)",
     accessibility: "public",
   },
   "cccs-baseline-cyber-security-sme": {
-    url: "https://www.cyber.gc.ca/en/guidance/baseline-cyber-security-controls-small-and-medium-organizations",
+    url: "https://www.cyber.gc.ca/fr/orientation/controles-de-cybersecurite-de-base-pour-les-petites-et-moyennes-organisations",
     description: "CCC, Contrôles de cybersécurité de base pour les petites et moyennes organisations",
     accessibility: "public",
   },
@@ -1083,7 +1083,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "opc-privacy-act-in-brief": {
-    url: "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-privacy-act/pa_brief/",
+    url: "https://www.priv.gc.ca/fr/sujets-lies-a-la-protection-de-la-vie-privee/lois-sur-la-protection-des-renseignements-personnels-au-canada/la-loi-sur-la-protection-des-renseignements-personnels/lprp_survol/",
     description: "CPVP, Survol de la Loi sur la protection des renseignements personnels",
     accessibility: "public",
   },
@@ -1098,7 +1098,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "asc-creating-accessibility-standards": {
-    url: "https://accessible.canada.ca/creating-accessibility-standards",
+    url: "https://accessibilite.canada.ca/normes-et-guides-techniques",
     description: "Normes d’accessibilité Canada (Élaboration de normes d’accessibilité)",
     accessibility: "public",
   },
@@ -1113,12 +1113,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "tbs-2023-2026-data-strategy": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/corporate/reports/2023-2026-data-strategy.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/organisation/rapports/strategie-relative-aux-donnees-2023-2026.html",
     description: "SCT, Stratégie relative aux données de 2023-2026 pour la fonction publique fédérale",
     accessibility: "public",
   },
   "statcan-data-stewardship-intro": {
-    url: "https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020013",
+    url: "https://www.statcan.gc.ca/fr/afc/litteratie-donnees/catalogue/892000062020013",
     description: "Statistique Canada, Intendance des données : introduction",
     accessibility: "public",
   },
@@ -1158,7 +1158,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "design-canada-continuous-improvement": {
-    url: "https://design.canada.ca/continuous-improvement.html",
+    url: "https://conception.canada.ca/amelioration-continue.html",
     description: "design.canada.ca, amélioration continue",
     accessibility: "public",
   },
@@ -1188,7 +1188,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "design-canada-research-summaries": {
-    url: "https://design.canada.ca/research-summaries/",
+    url: "https://conception.canada.ca/resumes-recherche/",
     description: "Résumés de recherche de Canada.ca",
     accessibility: "public",
   },
@@ -1208,59 +1208,59 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "covid-alert-privacy-assessment": {
-    url: "https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19/covid-alert/privacy-policy/assessment.html",
+    url: "https://www.canada.ca/fr/sante-publique/services/maladies/maladie-coronavirus-covid-19/alerte-covid/politique-confidentialite/evaluation.html",
     description: "Évaluation de la protection de la vie privée d’Alerte COVID (Santé Canada et SNC)",
     accessibility: "public",
   },
   "open-first-whitepaper-standards": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper/open-first-whitepaper-standards.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/logiciels-libres/livre-blanc-ouvert-premier/livre-blanc-ouvert-premier-normes.html",
     description: "Livre blanc Ouvert en premier : Normes ouvertes (SCT)",
     accessibility: "public",
   },
   "cccs-software-supply-chain-itsm10071": {
-    url: "https://www.cyber.gc.ca/en/guidance/protecting-your-organization-software-supply-chain-threats-itsm10071",
+    url: "https://www.cyber.gc.ca/fr/orientation/proteger-votre-organisation-contre-les-menaces-de-la-chaine-dapprovisionnement-des-logiciels-itsm10071",
     description:
       "CCC, Protéger votre organisation contre les menaces de la chaîne d’approvisionnement des logiciels (ITSM.10.071)",
     accessibility: "public",
   },
   "cccs-cyber-supply-chain-smb-itsap00070": {
-    url: "https://www.cyber.gc.ca/en/guidance/cyber-supply-chain-security-small-medium-sized-organizations-itsap00070",
+    url: "https://www.cyber.gc.ca/fr/orientation/cybersecurite-chaine-approvisionnement-pour-petites-moyennes-organisations-itsap00070",
     description:
       "CCC, Cybersécurité de la chaîne d’approvisionnement pour les petites et moyennes organisations (ITSAP.00.070)",
     accessibility: "public",
   },
   "cccs-log4j-alert": {
-    url: "https://www.cyber.gc.ca/en/alerts/active-exploitation-apache-log4j-vulnerability",
+    url: "https://www.cyber.gc.ca/fr/alertes-avis/exploitation-active-de-la-vulnerabilite-apache-log4j",
     description: "CCC, Exploitation active de la vulnérabilité Apache Log4j",
     accessibility: "public",
   },
   "pspc-security-requirements-contracting": {
-    url: "https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting.html",
+    url: "https://www.canada.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats.html",
     description: "Exigences de sécurité des contrats du gouvernement du Canada (SPAC)",
     accessibility: "public",
   },
   "psc-general-conditions-service-contract": {
-    url: "https://www.canada.ca/en/public-service-commission/corporate/about-us/doing-business-public-service-commission/general-conditions-service-contract.html",
+    url: "https://www.canada.ca/fr/commission-fonction-publique/organisation/propos-nous/faire-affaires-commission-fonction-publique/conditions-generales-contrat-service.html",
     description: "Conditions générales d’un contrat de services (SPC)",
     accessibility: "public",
   },
   "tbs-service-agreements-essential-elements": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=25761",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=25761",
     description: "Ligne directrice sur les ententes de service : éléments essentiels (SCT)",
     accessibility: "public",
   },
   "pspc-contract-security-manual": {
-    url: "https://www.canada.ca/en/public-services-procurement/services/industrial-security/security-requirements-contracting/contract-security-manual-contracting-government-canada/contract-security-manual.html",
+    url: "https://www.canada.ca/fr/services-publics-approvisionnement/services/securite-industrielle/exigences-securite-contrats/manuel-securite-contrats-gouvernement-canada/manuel-securite-contrats.html",
     description: "Manuel de la sécurité des contrats (SPAC)",
     accessibility: "public",
   },
   "tbs-srcl-350-103": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/corporate/forms/350-103.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/organisation/formulaires/350-103.html",
     description: "Liste de vérification des exigences relatives à la sécurité, LVERS (SCT 350-103)",
     accessibility: "public",
   },
   "open-first-whitepaper-oss-use": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper/open-first-whitepaper-use.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/logiciels-libres/livre-blanc-ouvert-premier/livre-blanc-ouvert-premier-utilisation.html",
     description: "Livre blanc Ouvert en premier : Logiciels libres - Utilisation (SCT)",
     accessibility: "public",
   },
@@ -1285,7 +1285,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-open-resource-exchange": {
-    url: "https://code.open.canada.ca/en/index.html",
+    url: "https://code.ouvert.canada.ca/fr/index.html",
     description: "Échange de ressources ouvert du GC (SCT)",
     accessibility: "public",
   },
@@ -1295,12 +1295,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "tbs-tb-submissions-overview": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/treasury-board-submissions-overview.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor/apercu-presentations-conseil-tresor.html",
     description: "Processus de présentation au Conseil du Trésor et pratiques exemplaires (SCT)",
     accessibility: "public",
   },
   "tbs-guidance-drafters-tb-submissions": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/guidance-for-drafters-of-treasury-board-submissions.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor/guide-lintention-des-redacteurs-de-presentations-au-conseil-du-tresor.html",
     description: "Guide à l’intention des rédacteurs de présentations au Conseil du Trésor (SCT)",
     accessibility: "public",
   },
@@ -1310,47 +1310,47 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "tbs-tb-submission-roles": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/roles-responsibilities-treasury-board-submission-process.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor/roles-responsabilities-processus-presentation-conseil-tresor.html",
     description: "Rôles et responsabilités dans le processus de présentation au CT (SCT)",
     accessibility: "public",
   },
   "tbs-three-phases-submission-process": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/three-phases-submission-process.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor/guide-lintention-des-redacteurs-de-presentations-au-conseil-du-tresor.html",
     description: "Les trois étapes du processus de présentation (SCT)",
     accessibility: "public",
   },
   "tbs-submission-service-quality-standards": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/treasury-board-submissions/service-quality-standards-support-submission-reviews.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/services/presentations-conseil-tresor/normes-service-qualite-appui-examen-presentations.html",
     description: "Normes de service et de qualité à l’appui de l’examen des présentations (SCT)",
     accessibility: "public",
   },
   "tbs-cfo-attestation-cabinet-submissions": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=27256",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=27256",
     description: "Ligne directrice sur l’attestation du DPF pour les présentations au Cabinet (SCT)",
     accessibility: "public",
   },
   "tbs-guide-costing": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/services/guidance-government-spending/guide-costing.html",
+    url: "https://www.canada.ca/fr/erreurs/404.html",
     description: "Guide d’établissement des coûts du GC (SCT)",
     accessibility: "public",
   },
   "tbs-guide-assessing-cost-estimates": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32818",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32818",
     description: "Guide d’évaluation des estimations de coûts (SCT)",
     accessibility: "public",
   },
   "tbs-directive-management-projects-programmes": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32594",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32594",
     description: "Directive sur la gestion des projets et des programmes (SCT)",
     accessibility: "public",
   },
   "gba-plus-what-is": {
-    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus/what-gender-based-analysis-plus.html",
+    url: "https://www.canada.ca/fr/femmes-egalite-genres/analyse-comparative-entre-sexes-plus/est-analyse-comparative-entre-sexes-plus.html",
     description: "ACS Plus, Qu’est-ce que l’ACS Plus (Femmes et Égalité des genres Canada)",
     accessibility: "public",
   },
   "gba-plus-course": {
-    url: "https://www.canada.ca/en/women-gender-equality/gender-based-analysis-plus/take-course.html",
+    url: "https://www.canada.ca/fr/femmes-egalite-genres/analyse-comparative-entre-sexes-plus/suivez-cours.html",
     description: "ACS Plus, Suivre le cours (FEGC et EFPC)",
     accessibility: "public",
   },
@@ -1361,22 +1361,22 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "csps-cor433": {
-    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=COR433&cm_locale=en",
+    url: "https://catalogue.csps-efpc.gc.ca/product?catalog=COR433&cm_locale=fr",
     description: "Introduction à la planification et à la gestion des investissements, COR433 (EFPC)",
     accessibility: "public",
   },
   "directive-digital-talent": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32749",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32749",
     description: "Directive sur les talents numériques (SCT)",
     accessibility: "public",
   },
   "gc-digital-talent-strategy": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-talent-strategy.html",
+    url: "https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/strategie-talents-numeriques.html",
     description: "Stratégie en matière de talents numériques du GC (SCT, BDPI)",
     accessibility: "public",
   },
   "gc-digital-talent-platform": {
-    url: "https://talent.canada.ca/en",
+    url: "https://talent.canada.ca/fr",
     description: "Plateforme Talents numériques du GC (SCT)",
     accessibility: "public",
   },
@@ -1386,7 +1386,7 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-data-community": {
-    url: "https://www.csps-efpc.gc.ca/partnerships/data-community-eng.aspx",
+    url: "https://www.csps-efpc.gc.ca/partnerships/data-community-fra.aspx",
     description: "Collectivité des données du GC (École de la fonction publique du Canada)",
     accessibility: "public",
   },
@@ -1411,12 +1411,12 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "gc-information-management-strategy-storyline": {
-    url: "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/information-management-strategy/storyline.html",
+    url: "https://www.canada.ca/fr/erreurs/404.html",
     description: "Stratégie de gestion de l’information du GC, fil narratif (SCT)",
     accessibility: "public",
   },
   "csps-project-management-learning-path": {
-    url: "https://www.csps-efpc.gc.ca/learning-paths/project-management-eng.aspx",
+    url: "https://www.csps-efpc.gc.ca/learning-paths/project-management-fra.aspx",
     description: "Parcours d’apprentissage sur la gestion de projet de l’EFPC, volet changement",
     accessibility: "public",
   },
@@ -1441,22 +1441,22 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "monitoring-measuring-task-success": {
-    url: "https://design.canada.ca/continuous-improvement/monitoring.html",
+    url: "https://conception.canada.ca/amelioration-continue/mesure.html",
     description: "Surveiller et mesurer la réussite des tâches (EDSC, design.canada.ca)",
     accessibility: "public",
   },
   "gc-task-success-survey": {
-    url: "https://design.canada.ca/survey/",
+    url: "https://conception.canada.ca/sondage/index.html",
     description: "Sondage sur la réussite des tâches du GC (EDSC)",
     accessibility: "public",
   },
   "gc-service-inventory": {
-    url: "https://open.canada.ca/data/en/dataset/3ac0d080-6149-499a-8b06-7ce5f00ec56c",
+    url: "https://ouvert.canada.ca/data/fr/dataset/3ac0d080-6149-499a-8b06-7ce5f00ec56c",
     description: "Répertoire des services du GC (Gouvernement ouvert)",
     accessibility: "public",
   },
   "canada-ca-analytics": {
-    url: "https://www.canada.ca/en/analytics.html",
+    url: "https://www.canada.ca/fr/analytique.html",
     description: "Analytique de Canada.ca (SCT et EDSC)",
     accessibility: "public",
   },
@@ -1481,23 +1481,23 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "cccs-network-security-logging-monitoring": {
-    url: "https://www.cyber.gc.ca/en/guidance/network-security-logging-monitoring-itsap80085",
+    url: "https://www.cyber.gc.ca/fr/orientation/journalisation-surveillance-securite-reseau-itsap80085",
     description: "Journalisation et surveillance de la sécurité des réseaux, ITSAP.80.085 (CCC)",
     accessibility: "public",
   },
   "lac-da-2016-001": {
-    url: "https://www.canada.ca/en/library-archives/services/government/information-disposition/records/multi-institution-disposition-authorizations/2016-001-da-transitory-records.html",
+    url: "https://www.canada.ca/fr/bibliotheque-archives/services/gouvernement/information-disposition/documents/autorisations-disposition-pluri-institutionnelles/2016-001-ad-documents-ephemeres.html",
     description: "Autorisation de disposition 2016/001 (documents éphémères)",
     accessibility: "public",
   },
   "oag-2014-ch7-documentary-heritage": {
-    url: "https://www.oag-bvg.gc.ca/internet/English/parl_oag_201411_07_e_39965.html",
+    url: "https://www.oag-bvg.gc.ca/internet/Francais/parl_oag_201411_07_f_39965.html",
     description:
       "Rapport de l’automne 2014 du vérificateur général du Canada, chapitre 7 — Le patrimoine documentaire du gouvernement du Canada",
     accessibility: "public",
   },
   "cccs-itsm-50-104": {
-    url: "https://www.cyber.gc.ca/en/guidance/recommended-cyber-security-contract-clauses-cloud-services-itsm50104",
+    url: "https://www.cyber.gc.ca/fr/orientation/clauses-contractuelles-recommandees-matiere-cybersecurite-pour-services-infonuagiques-itsm50104",
     description: "CCC ITSM.50.104 (clauses contractuelles recommandées en matière de cybersécurité)",
     accessibility: "public",
   },
@@ -1507,18 +1507,18 @@ export const EXTERNAL_LINKS = {
     accessibility: "public",
   },
   "policy-government-security": {
-    url: "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=16578",
+    url: "https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=16578",
     description:
       "Politique sur la sécurité du gouvernement (SCT) : la politique mère derrière la Directive sur la gestion de la sécurité",
     accessibility: "public",
   },
   "gc-digital-competencies": {
-    url: "https://www.canada.ca/en/treasury-board-secretariat/topics/professional-development/gc-digital-competencies-all-public-servants.html",
+    url: "https://www.canada.ca/fr/secretariat-conseil-tresor/sujets/perfectionnement-professionnel/competences-matiere-numerique-sein-gc-fonctionnaires.html",
     description: "Compétences en matière de numérique au sein du GC pour tous les fonctionnaires (SCT)",
     accessibility: "public",
   },
   "csps-digital-competencies-learning-path": {
-    url: "https://www.csps-efpc.gc.ca/learning-paths/digital-competencies-eng.aspx",
+    url: "https://www.csps-efpc.gc.ca/learning-paths/digital-competencies-fra.aspx",
     description: "Parcours d’apprentissage sur les compétences numériques (École de la fonction publique du Canada)",
     accessibility: "public",
   },

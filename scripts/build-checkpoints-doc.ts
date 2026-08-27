@@ -131,7 +131,7 @@ const FR_FIGS =
 const OUT = IS_FR
   ? "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
     "DLG -- FR/DLG -- Editable Source Files (Word) FR/" +
-    "Les points de contrôle officiels d'un service numérique.docx"
+    "Points de contrôle.docx"
   : "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
     "DLG -- EN/DLG -- Editable Source Files (Word)/The official checkpoints of a digital service.docx";
 const DATE = IS_FR ? "17 août 2026" : "17 August 2026";
