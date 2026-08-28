@@ -22,7 +22,7 @@ import type { Section } from "./retrieval";
 
 export type Rewrite = { queries: string[]; situation: string; outOfScope: boolean };
 
-export type Shape = "quoted" | "conditional" | "asked_back" | "routed";
+export type Shape = "quoted" | "conditional" | "asked_back" | "routed" | "out_of_scope";
 
 export type Answer = {
   shape: Shape;

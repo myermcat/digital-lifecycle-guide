@@ -50,6 +50,7 @@ const SHAPE: Record<string, { name: string; gloss: string }> = {
   conditional: { name: "Conditional", gloss: "the dependency is the answer" },
   asked_back: { name: "Asked back", gloss: "one question decides it" },
   routed: { name: "Routed", gloss: "no fixed answer exists" },
+  out_of_scope: { name: "Not in the guide", gloss: "this is not what the guide covers" },
 };
 
 type Turn = {
@@ -801,7 +802,13 @@ export function AssistantPage() {
                 </div>
               )}
 
-              {turn.answer.citedSections.length > 0 && (
+              {/*
+                An out-of-scope answer cites nothing. The guide has no section on the
+                weather, and attaching the sections retrieval happened to score highest
+                implies it half covers the question, which is the opposite of what the
+                answer just said.
+              */}
+              {turn.answer.shape !== "out_of_scope" && turn.answer.citedSections.length > 0 && (
                 <div className="flex flex-col gap-1">
                   <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted-foreground">
                     Where this comes from
@@ -825,6 +832,7 @@ export function AssistantPage() {
 
               {/* The instruments this answer names, offered as the source itself. */}
               {(() => {
+                if (turn.answer.shape === "out_of_scope") return null;
                 const cited = matchSources(turn.answer.answer, sources);
                 if (!cited.length) return null;
                 return (
