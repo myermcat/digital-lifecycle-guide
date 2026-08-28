@@ -232,9 +232,11 @@ Write 2 to 3 short search queries using the words this document would use, so a 
   - personal information: privacy impact assessment
   - putting a service online, clearance to operate: security assessment and authorization
   - who approves, thresholds, dollar limits, going higher up: Treasury Board submission, capacity class, concept case
+  - nothing exists yet, we have not started, where do I begin: Discovery, the first sub-phase, understanding the problem before choosing a solution
 - IF THE READER STATES A CONSTRAINT, spend one whole query on it, on its own, using the guide's words for it. Do not fold it into a query about the main subject, where it gets drowned. "I want to get rid of it but have no money" needs one query about retiring and a separate one that is only "where the money for a service comes from" or "funding a service without new money". A constraint query mixed into the subject query returns nothing about the constraint, which is how a reader's stated problem gets silently dropped.
   - no money, no budget, cannot pay: where the money comes from, funding a service, two ways to fund, find the money
   - no time, a deadline, urgent: lead time, how long it takes, what runs in parallel
+  - a minister announced it, a date somebody else set, the legislation names it: a fixed date somebody else set, working back from a date, what runs in parallel. The announcement is a deadline and it does not skip a sub-phase, so this also needs a query about where a service starts.
   - no team, nobody left, cannot hire: team capability, roles, keeping capability in-house
 - Each query is 3 to 8 words. No punctuation, no question marks.
 - Do not answer the question and do not invent facts, thresholds, durations or names.
