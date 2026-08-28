@@ -31,6 +31,7 @@ export const CHECKPOINTS_DOC = {
       "Created by team members from the Treasury Board of Canada Secretariat's Office of the Chief Information Officer, Chief Technology Officer Sector, and Digital Technology and Cyber Security team to help you on your way.",
     bannerAltTitle: "Cover band",
     bannerAltDescription: "Decorative band across the top of the cover",
+    bannerAltFootDescription: "Decorative band across the foot of the cover",
     bannerAltName: "Cover band",
     /**
      * The caveat on the title page, one paragraph per line.

@@ -23,6 +23,7 @@ import {
   AlignmentType,
   HorizontalPositionRelativeFrom,
   TextWrappingType,
+  VerticalPositionAlign,
   VerticalPositionRelativeFrom,
   BorderStyle,
   Bookmark,
@@ -1575,6 +1576,32 @@ cover.push(
         altText: {
           title: S.frontMatter.bannerAltTitle,
           description: S.frontMatter.bannerAltDescription,
+          name: S.frontMatter.bannerAltName,
+        },
+      }),
+    ],
+  }),
+);
+cover.push(
+  new Paragraph({
+    spacing: { after: 0 },
+    children: [
+      new ImageRun({
+        type: "png",
+        data: readFileSync(`${IMG}/cover_band_bottom.png`),
+        transformation: { width: 816, height: 14 },
+        floating: {
+          horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: 0 },
+          verticalPosition: {
+            relative: VerticalPositionRelativeFrom.PAGE,
+            align: VerticalPositionAlign.BOTTOM,
+          },
+          wrap: { type: TextWrappingType.TOP_AND_BOTTOM },
+          allowOverlap: true,
+        },
+        altText: {
+          title: S.frontMatter.bannerAltTitle,
+          description: S.frontMatter.bannerAltFootDescription,
           name: S.frontMatter.bannerAltName,
         },
       }),
