@@ -59,7 +59,8 @@ if (noRewrite) {
    * single query liked a lot.
    */
   const pooled = new Map<string, { section: Section; score: number }>();
-  for (const q of rewritten.queries) {
+  /* the reader's own words go in the pool too, so a bad rewrite cannot lose a good hit */
+  for (const q of [question, ...rewritten.queries]) {
     for (const hit of retriever.search(q, 5).hits) {
       const prev = pooled.get(hit.section.id);
       pooled.set(hit.section.id, {

@@ -369,8 +369,18 @@ export function AssistantPage() {
          * Pool the rewritten queries by summing scores, so a section two queries agree
          * on outranks one a single query liked a lot.
          */
+        /*
+         * The reader's own words go in the pool with the rewrites, never instead of them.
+         * The rewrite earns its place most of the time, and when it misses it used to take
+         * the whole retrieval with it: asked how long a procurement takes, it produced
+         * "procurement lead time estimate", "supplier competition timeline months" and
+         * "procurement process duration", and not one of them found the section that
+         * carries the 12 to 24 month range, which the raw question ranks first. The same
+         * shape is on record in the defects register, where a rewrite moved a question
+         * about extending a contract onto a page that did not answer it.
+         */
         const pooled = new Map<string, { hit: Hit; score: number }>();
-        for (const q of rewritten.queries) {
+        for (const q of [trimmed, ...rewritten.queries]) {
           for (const hit of retriever.search(q, 5).hits) {
             const prev = pooled.get(hit.section.id);
             pooled.set(hit.section.id, { hit, score: (prev?.score ?? 0) + hit.score });
