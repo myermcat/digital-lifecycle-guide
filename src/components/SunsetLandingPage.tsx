@@ -124,13 +124,9 @@ export function SunsetLandingPage() {
         title={landing.caution.title}
         lead={landing.caution.lead}
         items={landing.caution.items}
-        closing={proseWithMixedLinks(landing.caution.closingCitation.text, {
-          placeholder: landing.caution.closingCitation.placeholderLinks,
-        })}
       />
 
       <SubphaseInstruments subPhase="sunset" />
-
 
       <PageFoot sources={landing.sources} />
 

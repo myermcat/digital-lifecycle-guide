@@ -69,7 +69,8 @@ export const SUNSET_STRINGS = {
 
   signals: {
     title: "Ce qui envoie un service au Retrait",
-    intro: "Aucun de ces éléments ne devrait surprendre : les repérer tôt fait partie de l’exploitation du service, et la Maturité explique comment. Le Retrait commence quand l’un ou plusieurs de ces éléments sont vrais :",
+    intro:
+      "Aucun de ces éléments ne devrait surprendre : les repérer tôt fait partie de l’exploitation du service, et la Maturité explique comment. Le Retrait commence quand l’un ou plusieurs de ces éléments sont vrais :",
     bullets: [
       {
         lead: "Le besoin a disparu, ou il est servi ailleurs.",
@@ -121,7 +122,8 @@ export const SUNSET_STRINGS = {
   },
 
   journey: {
-    intro: "Vous n’exécuterez peut-être pas tout vous-même, mais vous devriez reconnaître chaque étape. Pour un remplacement, les étapes du milieu ne sont pas des inventions nouvelles : ce sont la Création du nouveau service, vue du côté de l’ancien. Décider est sa Découverte, Planifier est sa réflexion Alpha, et Acheter ou construire est sa Bêta.",
+    intro:
+      "Vous n’exécuterez peut-être pas tout vous-même, mais vous devriez reconnaître chaque étape. Pour un remplacement, les étapes du milieu ne sont pas des inventions nouvelles : ce sont la Création du nouveau service, vue du côté de l’ancien. Décider est sa Découverte, Planifier est sa réflexion Alpha, et Acheter ou construire est sa Bêta.",
     footer:
       "Ces étapes sont présentées dans l’ordre, mais en pratique elles se chevauchent et certaines se répètent. Pendant que vous acquérez la nouvelle solution et y migrez, vous fermez encore l’ancienne : les étapes quatre et cinq se déroulent donc ensemble. Vous sortez du Retrait quand l’ancien service est complètement fermé et que ses données et ses utilisateurs ont un foyer sûr. Si vous l’avez remplacé, ce nouveau service a déjà commencé sa propre Création.",
     steps: [
@@ -180,7 +182,9 @@ export const SUNSET_STRINGS = {
         leadIn: "Obtenez et préparez la nouvelle solution, en l’achetant ou en la construisant.",
         body: "Si vous achetez, menez le processus d’approvisionnement. Si vous construisez avec une équipe à contrat, mettez cette équipe en place et faites le travail de développement. Si vous construisez à l’interne, mettez en place l’équipe du ministère. Dans tous les cas, configurez la solution selon les exigences issues de l’étape Décider, choisissez votre approche de migration (d’un seul coup, ou par étapes avec des projets pilotes), nettoyez les données avant de les transférer, et formez les gens. L’achat peut prendre de 12 à 24 mois rien que pour l’approvisionnement : commencer tôt compte donc. Pour un remplacement, c’est sa Bêta : la vraie solution est mise en place et validée.",
         replaceOnly: true,
-        internalLinks: [{ phrase: "le processus d’approvisionnement", to: PROCUREMENT_LANDING_PATH }],
+        internalLinks: [
+          { phrase: "le processus d’approvisionnement", to: PROCUREMENT_LANDING_PATH },
+        ],
         // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
         placeholderLinks: [
           {
@@ -231,7 +235,7 @@ export const SUNSET_STRINGS = {
         label: "Analyse des options",
         href: OPTIONS_ANALYSIS_PATH,
         description:
-          'La version complète de l’étape « évaluer les options », partagée avec la Création.',
+          "La version complète de l’étape « évaluer les options », partagée avec la Création.",
       },
       {
         label: "Les points de contrôle officiels d’un service numérique",
@@ -272,16 +276,5 @@ export const SUNSET_STRINGS = {
         line: "Ratez l’échéance et les processus opérationnels qui dépendent du service peuvent s’arrêter.",
       },
     ] satisfies CautionItem[],
-    // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
-    closingCitation: {
-      text: "Source : Guide de préparation à la migration GCcase — Risques d’une planification tardive.",
-      placeholderLinks: [
-        {
-          phrase: "Guide de préparation à la migration GCcase — Risques d’une planification tardive",
-          source: GCCASE,
-          part: "Risques d’une planification tardive",
-        },
-      ],
-    },
   },
 };

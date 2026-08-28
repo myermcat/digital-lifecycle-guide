@@ -69,7 +69,8 @@ export const SUNSET_STRINGS = {
 
   signals: {
     title: "What sends a service into Sunset",
-    intro: "None of these should come as a surprise: spotting them early is part of running the service, and Maturity covers how. Sunset starts when one or more of these is true:",
+    intro:
+      "None of these should come as a surprise: spotting them early is part of running the service, and Maturity covers how. Sunset starts when one or more of these is true:",
     bullets: [
       {
         lead: "The need is gone, or served elsewhere.",
@@ -121,7 +122,8 @@ export const SUNSET_STRINGS = {
   },
 
   journey: {
-    intro: "You might not run all of it yourself, but you should recognize every step. For a replacement, the middle steps are not new inventions: they are the new service's Create, seen from the old service's side. Decide is its Discovery, Plan is its Alpha thinking, and Buy or build is its Beta.",
+    intro:
+      "You might not run all of it yourself, but you should recognize every step. For a replacement, the middle steps are not new inventions: they are the new service's Create, seen from the old service's side. Decide is its Discovery, Plan is its Alpha thinking, and Buy or build is its Beta.",
     footer:
       "These steps are shown in order, but in practice they overlap and some repeat. While you acquire and migrate to the new solution, you are still shutting down the old one, so steps four and five run together. You are out of Sunset when the old service is fully shut down and its data and users have a safe home. If you replaced it, that new service has already begun its own Create.",
     steps: [
@@ -230,8 +232,7 @@ export const SUNSET_STRINGS = {
       {
         label: "Options analysis",
         href: OPTIONS_ANALYSIS_PATH,
-        description:
-          'The full version of the "assess options" step, shared with Create.',
+        description: 'The full version of the "assess options" step, shared with Create.',
       },
       {
         label: "The official checkpoints of a digital service",
@@ -272,16 +273,5 @@ export const SUNSET_STRINGS = {
         line: "Miss the deadline and the business processes that depend on the service can stop.",
       },
     ] satisfies CautionItem[],
-    // PLACEHOLDER SOURCE: GCcase Migration Readiness Guide — Risks of Delayed Planning — REPLACE WITH REAL LINK WHEN PUBLISHED
-    closingCitation: {
-      text: "Source: GCcase Migration Readiness Guide — Risks of Delayed Planning.",
-      placeholderLinks: [
-        {
-          phrase: "GCcase Migration Readiness Guide — Risks of Delayed Planning",
-          source: GCCASE,
-          part: "Risks of Delayed Planning",
-        },
-      ],
-    },
   },
 };
