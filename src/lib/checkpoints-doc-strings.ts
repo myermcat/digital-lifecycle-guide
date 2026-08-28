@@ -32,6 +32,9 @@ export const CHECKPOINTS_DOC = {
     bannerAltTitle: "Government of Canada",
     bannerAltDescription: "Treasury Board of Canada Secretariat",
     bannerAltName: "GC banner",
+    /** The caveat on the title page: the addresses rot before the thinking does. */
+    datedNote:
+      "This is a 2026 guide, accurate for the time being. Links may go stale as instruments are renamed and pages move, but the concepts hold.",
     contents: "Table of Contents",
     listOfFigures: "List of Figures",
     listOfTables: "List of Tables",

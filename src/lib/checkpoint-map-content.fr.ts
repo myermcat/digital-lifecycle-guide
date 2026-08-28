@@ -90,7 +90,7 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "Voir le parcours complet";
 
-export const CHECKPOINT_MAP_TITLE = "Les points de contrôle officiels d’un service numérique";
+export const CHECKPOINT_MAP_TITLE = "Les points de contrôle officiels du GC pour un service numérique";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
   text: "Chaque point de contrôle officiel qu’un service numérique du gouvernement du Canada peut rencontrer, par sujet, avec ce qui l’amène dans la portée et ce que le responsable opérationnel doit personnellement faire à son égard. Une annexe énumère ce qui existe déjà et peut être réutilisé. Une deuxième suit un service fictif depuis le premier signe de difficulté jusqu’au jour où il est remplacé, rencontrant les points de contrôle dans l’ordre où ce service les a rencontrés.",

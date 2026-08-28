@@ -90,7 +90,7 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 
-export const CHECKPOINT_MAP_TITLE = "The official checkpoints of a digital service";
+export const CHECKPOINT_MAP_TITLE = "Official GC checkpoints for a digital service";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
   text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service from its first sign of trouble to the day it is replaced, meeting the checkpoints in the order that service met them.",

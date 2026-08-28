@@ -291,7 +291,7 @@
     "sectionId": "what-work-stays-yours",
     "sectionHeading": "The parts you cannot hand to a supplier",
     "lifecyclePhase": "thread",
-    "text": "Whoever else is involved, some of this work stays with you. Here is what usually does. How long it takes. Procurement runs on its own clock, often many months from first idea to signed contract. Plan your timelines around it early, so it does not catch you short. The decisions only you can make. What problem you are solving, what good outcomes look like, whether to reuse or buy, and how to break the work into pieces. No one can make these calls for you. What you bring to each approval. Every checkpoint along the way expects something from you, a document, a number, a sign-off, and the work waits until it has it. Answering for it. You can hand a supplier the work. You cannot hand over the answering. When the service stumbles, it is your department that explains why, and the question comes back to you. What you sign today is still binding in ten years. The contract shapes the whole later life of the service: what it costs, whether you can change it, and whether you can ever move off it. None of that is easy to revisit once it is signed. You do not need to be an expert. You need to stay in charge, and to ask when you are unsure."
+    "text": "Whoever else is involved, some of this work stays with you. Here is what usually does. How long it takes. Procurement runs on its own clock, often many months from first idea to signed contract. One team's experience puts the buying alone at 12 to 24 months. Treat that as an illustration and get the figure for your own case from your procurement office. Plan your timelines around it early, so it does not catch you short. The requirements, in writing. Above $40,000 of professional services, the contracting authority needs a written statement of work before award, and the business owner signs a confirmation that the requirements are complete. The dollar value changes the paperwork; the duty to get the requirements right applies whatever the value. The decisions only you can make. What problem you are solving, what good outcomes look like, whether to reuse or buy, and how to break the work into pieces. No one can make these calls for you. What you bring to each approval. Every checkpoint along the way expects something from you, a document, a number, a sign-off, and the work waits until it has it. Answering for it. You can hand a supplier the work. You cannot hand over the answering. When the service stumbles, it is your department that explains why, and the question comes back to you. What you sign today is still binding in ten years. The contract shapes the whole later life of the service: what it costs, whether you can change it, and whether you can ever move off it. None of that is easy to revisit once it is signed. You do not need to be an expert. You need to stay in charge, and to ask when you are unsure."
   },
   {
     "id": "/thread/procurement#how-a-procurement-goes",
@@ -988,7 +988,7 @@
     "sectionId": "by-phase",
     "sectionHeading": "What Accessibility looks like in each phase",
     "lifecyclePhase": "thread",
-    "text": "The accessibility work changes shape across the life of a service. Create. Design it in and set the standard. Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end. The work changes shape across Create's three sub-phases: In Discovery, learn who gets excluded. include people with visual, hearing, motor, or cognitive impairments in the research, and people with little digital access or confidence learn where the current way of doing things shuts people out nothing exists yet, so there is nothing to test In Alpha, make the mock-ups accessible, and test them with the people most likely to be excluded. check the designs against the accessibility principles run the research sessions on the mock-ups with people with access needs work out which clauses of the standard belong in the build contract In Beta, prove it on the real service. test with assistive technology, and with the people most likely to be excluded fix what the testing finds before the public arrives check the supplier's Accessibility Conformance Report against the contract Live. Keep it accessible and tell people where it stands. Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. The statement is the department's to publish under the amended Accessible Canada Regulations, phasing in from December 2027; one statement can cover many services, and each service's testing results feed it. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current. Sunset. Keep the replacement accessible, and strand no one. When a service is retired or replaced, accessibility carries into what comes next: a replacement is built to the standard from the start, and content that moves keeps its accessible structure. While the old service is still running, its accessibility statement and feedback channel stay live. No one should be left without an accessible way to do the task during the change.",
+    "text": "The accessibility work changes shape across the life of a service. Create. Design it in and set the standard. Accessibility is cheapest to build in at the start. The team designs for keyboard and screen-reader use, writes in plain language, and sets EN 301 549 (WCAG 2.1 AA for the web) as the bar the service is built to. If technology is bought, the accessibility requirements are written into the contract and the supplier's Accessibility Conformance Report is checked. Testing with people is planned now rather than left to the end. The work changes shape across Create's three sub-phases: In Discovery, learn who gets excluded. include people with visual, hearing, motor, or cognitive impairments in the research, and people with little digital access or confidence learn where the current way of doing things shuts people out nothing exists yet, so there is nothing to test In Alpha, make the mock-ups accessible, and test them with the people most likely to be excluded. check the designs against the accessibility principles run the research sessions on the mock-ups with people with access needs work out which clauses of the standard belong in the build contract In Beta, prove it on the real service. test with assistive technology, and with the people most likely to be excluded fix what the testing finds before the public arrives check the supplier's Accessibility Conformance Report against the contract Live. Keep it accessible and tell people where it stands. Once the service is running, every new page, document, and feature is kept to the standard, and the service is tested regularly, including with assistive technology. A published accessibility statement says what is and is not accessible and how to ask for help or an alternative, and a feedback channel lets people report barriers. The statement is the department's to publish under the amended Accessible Canada Regulations, phasing in from December 2027; one statement can cover many services, and each service's testing results feed it. It is refreshed every 12 months and kept electronically for four years, so it stays a live obligation for as long as the service runs. People who cannot use the service on their own are supported by phone or in person. Staff who build or buy digital technology keep their accessibility training current. Sunset. Keep the replacement accessible, and strand no one. When a service is retired or replaced, accessibility carries into what comes next: a replacement is built to the standard from the start, and content that moves keeps its accessible structure. While the old service is still running, its accessibility statement and feedback channel stay live. No one should be left without an accessible way to do the task during the change.",
     "keywords": "WCAG EN 301 549 Accessible Canada Act"
   },
   {
@@ -1883,7 +1883,7 @@
   },
   {
     "id": "/gate-map#annex-instruments",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "annex-instruments",
     "sectionHeading": "Every official thing a service has to do",
@@ -1892,7 +1892,7 @@
   },
   {
     "id": "/gate-map#topic-security",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-security",
     "sectionHeading": "Security",
@@ -1902,7 +1902,7 @@
   },
   {
     "id": "/gate-map#topic-continuity",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-continuity",
     "sectionHeading": "Continuity and incidents",
@@ -1912,7 +1912,7 @@
   },
   {
     "id": "/gate-map#topic-privacy",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-privacy",
     "sectionHeading": "Privacy and automated decisions",
@@ -1922,7 +1922,7 @@
   },
   {
     "id": "/gate-map#topic-accessibility",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-accessibility",
     "sectionHeading": "Accessibility",
@@ -1932,7 +1932,7 @@
   },
   {
     "id": "/gate-map#topic-official-languages",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-official-languages",
     "sectionHeading": "Official languages",
@@ -1942,7 +1942,7 @@
   },
   {
     "id": "/gate-map#topic-approvals",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-approvals",
     "sectionHeading": "Approvals and money",
@@ -1952,7 +1952,7 @@
   },
   {
     "id": "/gate-map#topic-contracts",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-contracts",
     "sectionHeading": "Contracts and suppliers",
@@ -1962,17 +1962,17 @@
   },
   {
     "id": "/gate-map#topic-hosting",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-hosting",
     "sectionHeading": "Hosting and cloud",
     "lifecyclePhase": "other",
-    "text": "Where the service runs is worth deciding deliberately, because otherwise it is decided by whoever sets up the first environment. There is a government-wide order of preference to work through, and choosing something else is allowed with a case for it. One thing to watch: a service categorized at Protected B or below that runs on anything other than public cloud goes to the government-wide architecture board however small the spend, since that trigger has no dollar floor. The cloud security work in the second row applies only to a cloud-hosted service. Application hosting decision, and the public cloud default The decision about where the service runs, made against a government-wide preference order: software as a service before platform before infrastructure, and public cloud before hybrid before private before non-cloud. Departing from that order needs a case. Cloud security profile, guardrails, and the cloud authorization The extra security work a cloud-hosted service carries: a ready-made control profile to build against, guardrails that have to be in place within the first days of a new cloud environment, and a security assessment that accounts for the split between what the provider does and what the department does.",
+    "text": "Where the service runs is worth deciding deliberately, because otherwise it is decided by whoever sets up the first environment. There is a government-wide order of preference to work through, and choosing something else is allowed with a case for it. One thing to watch: a service categorized at Protected B or below that runs on anything other than public cloud goes to the government-wide architecture board however small the spend, since that trigger has no dollar floor. The cloud security work in the second row applies only to a cloud-hosted service. Application hosting decision, and the public cloud default The decision about where the service runs, made against a government-wide preference order: software as a service before platform before infrastructure, and public cloud before hybrid before private before non-cloud. Departing from that order needs a case. Cloud security profile, guardrails, and the cloud authorization The extra security work a cloud-hosted service carries: a ready-made control profile to build against, guardrails that have to be implemented, validated and reported within the first 30 business days of getting a cloud account, and a security assessment that accounts for the split between what the provider does and what the department does.",
     "keywords": "Application hosting decision, and the public cloud default Cloud security profile, guardrails, and the cloud authorization"
   },
   {
     "id": "/gate-map#topic-identity",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-identity",
     "sectionHeading": "Identity and sign-in",
@@ -1982,7 +1982,7 @@
   },
   {
     "id": "/gate-map#topic-publishing",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-publishing",
     "sectionHeading": "Publishing on canada.ca",
@@ -1992,7 +1992,7 @@
   },
   {
     "id": "/gate-map#topic-registries",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-registries",
     "sectionHeading": "Registries and records",
@@ -2002,7 +2002,7 @@
   },
   {
     "id": "/gate-map#topic-openness",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "topic-openness",
     "sectionHeading": "Access to information and openness",
@@ -2012,7 +2012,7 @@
   },
   {
     "id": "/gate-map#annex-reuse",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "annex-reuse",
     "sectionHeading": "Reuse before you buy or build",
@@ -2022,7 +2022,7 @@
   },
   {
     "id": "/gate-map#annex-nadia",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Official GC checkpoints for a digital service",
     "pagePath": "/gate-map",
     "sectionId": "annex-nadia",
     "sectionHeading": "A worked example: one service's path, step by step",

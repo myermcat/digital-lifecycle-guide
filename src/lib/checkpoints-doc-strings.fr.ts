@@ -35,6 +35,9 @@ export const CHECKPOINTS_DOC = {
     bannerAltTitle: "Gouvernement du Canada",
     bannerAltDescription: "Secrétariat du Conseil du Trésor du Canada",
     bannerAltName: "Bannière du gouvernement du Canada",
+    /** The caveat on the title page: the addresses rot before the thinking does. */
+    datedNote:
+      "Ceci est un guide de 2026, exact pour le moment. Des liens peuvent se périmer à mesure que des instruments sont renommés et que des pages changent d’adresse, mais les concepts tiennent.",
     contents: "Table des matières",
     listOfFigures: "Liste des figures",
     listOfTables: "Liste des tableaux",
@@ -143,7 +146,7 @@ export const CHECKPOINTS_DOC = {
      * Ce qui sépare le nom d’une phase de son résumé dans les titres de phase importés.
      * La légende du tableau des étapes ne garde que ce qui vient avant.
      */
-    phaseHeadingSeparator: " — ",
+    phaseHeadingSeparator: " - ",
   },
 
   /** La section de clôture, et la note permanente sur le guide. */

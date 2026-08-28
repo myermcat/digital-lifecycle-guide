@@ -1502,9 +1502,54 @@ for (const phase of CHECKPOINT_MAP_PHASES) {
   pushBackToTop(body);
 }
 
+/**
+ * The dated-guide note that closes the title page.
+ *
+ * The same caveat the home page carries, in the same words: this is a 2026 guide, the
+ * addresses in it will rot before the thinking does. On a document it matters more than
+ * on a page, because a downloaded file has no way of telling the reader how old it is.
+ *
+ * Dashed rather than solid, and the palest fill in the palette, so it reads as an aside
+ * on the title page instead of competing with the title above it.
+ */
+function datedNote() {
+  const dash = { style: BorderStyle.DASHED, size: 4, color: TAN };
+  return new Table({
+    width: { size: CW, type: WidthType.DXA },
+    columnWidths: [CW],
+    rows: [
+      new TableRow({
+        cantSplit: true,
+        children: [
+          new TableCell({
+            width: { size: CW, type: WidthType.DXA },
+            shading: { fill: CARD, type: ShadingType.CLEAR },
+            borders: { top: dash, bottom: dash, left: dash, right: dash },
+            margins: { top: 150, bottom: 150, left: 220, right: 220 },
+            children: [
+              new Paragraph({
+                alignment: AlignmentType.CENTER,
+                spacing: { after: 0, line: 264 },
+                children: [
+                  new TextRun({
+                    text: S.frontMatter.datedNote,
+                    font: SANS,
+                    color: MUTED,
+                    size: 17,
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+      }),
+    ],
+  });
+}
+
 /* ----------------------------------------------------------------- cover */
 
-const cover: Paragraph[] = [];
+const cover: (Paragraph | Table)[] = [];
 cover.push(
   new Paragraph({
     spacing: { after: 0 },
@@ -1626,6 +1671,9 @@ cover.push(
     ],
   }),
 );
+
+cover.push(new Paragraph({ spacing: { after: 420 } }));
+cover.push(datedNote());
 
 /* ----------------------------------------------------------- front matter */
 
