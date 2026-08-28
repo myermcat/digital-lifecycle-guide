@@ -32,9 +32,17 @@ export const CHECKPOINTS_DOC = {
     bannerAltTitle: "Government of Canada",
     bannerAltDescription: "Treasury Board of Canada Secretariat",
     bannerAltName: "GC banner",
-    /** The caveat on the title page: the addresses rot before the thinking does. */
-    datedNote:
+    /**
+     * The caveat on the title page, one paragraph per line.
+     *
+     * The first is the caveat the home page carries, in the same words. The second is
+     * this document's own: the list was assembled by reading the instruments, not handed
+     * down by anyone, so it says so and asks for what it missed.
+     */
+    datedNote: [
       "This is a 2026 guide, accurate for the time being. Links may go stale as instruments are renamed and pages move, but the concepts hold.",
+      "It is our best attempt at gathering these checkpoints in one place. If something is missing, please tell us.",
+    ],
     contents: "Table of Contents",
     listOfFigures: "List of Figures",
     listOfTables: "List of Tables",

@@ -35,9 +35,17 @@ export const CHECKPOINTS_DOC = {
     bannerAltTitle: "Gouvernement du Canada",
     bannerAltDescription: "Secrétariat du Conseil du Trésor du Canada",
     bannerAltName: "Bannière du gouvernement du Canada",
-    /** The caveat on the title page: the addresses rot before the thinking does. */
-    datedNote:
+    /**
+     * The caveat on the title page, one paragraph per line.
+     *
+     * The first is the caveat the home page carries, in the same words. The second is
+     * this document's own: the list was assembled by reading the instruments, not handed
+     * down by anyone, so it says so and asks for what it missed.
+     */
+    datedNote: [
       "Ceci est un guide de 2026, exact pour le moment. Des liens peuvent se périmer à mesure que des instruments sont renommés et que des pages changent d’adresse, mais les concepts tiennent.",
+      "C’est notre meilleure tentative de réunir ces points de contrôle au même endroit. S’il en manque un, dites-le-nous.",
+    ],
     contents: "Table des matières",
     listOfFigures: "Liste des figures",
     listOfTables: "Liste des tableaux",
@@ -196,10 +204,10 @@ export const CHECKPOINTS_DOC = {
    * traduits.
    */
   topicIcons: {
-    "Sécurité": "shieldcheck.png",
+    Sécurité: "shieldcheck.png",
     "Continuité et incidents": "siren.png",
     "Vie privée et décisions automatisées": "shield.png",
-    "Accessibilité": "users.png",
+    Accessibilité: "users.png",
     "Langues officielles": "megaphone.png",
     "Approbations et financement": "coins.png",
     "Contrats et fournisseurs": "filesignature.png",

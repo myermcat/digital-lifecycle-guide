@@ -240,11 +240,12 @@ function bullet(t: string, ref = "b") {
 }
 
 function img(file: string, w: number, h: number, alt: string) {
-  const path = IS_FR && existsSync(`${FR_FIGS}/${file}`)
-    ? `${FR_FIGS}/${file}`
-    : existsSync(`${IMG}/${file}`)
-      ? `${IMG}/${file}`
-      : `${FIGS}/${file}`;
+  const path =
+    IS_FR && existsSync(`${FR_FIGS}/${file}`)
+      ? `${FR_FIGS}/${file}`
+      : existsSync(`${IMG}/${file}`)
+        ? `${IMG}/${file}`
+        : `${FIGS}/${file}`;
   return new ImageRun({
     type: "png",
     data: readFileSync(path),
@@ -490,7 +491,10 @@ function srcNum(n: number, key: ExternalLinkKey) {
  */
 /* One page map per language: French runs longer, so its headings fall elsewhere. */
 const PAGES_FILE = fileURLToPath(
-  new URL(IS_FR ? "./.checkpoints-doc-pages.fr.json" : "./.checkpoints-doc-pages.json", import.meta.url),
+  new URL(
+    IS_FR ? "./.checkpoints-doc-pages.fr.json" : "./.checkpoints-doc-pages.json",
+    import.meta.url,
+  ),
 );
 
 /* ------------------------------------------------------------ the tables */
@@ -707,12 +711,7 @@ function reuseTable(label: string, title: string) {
             cell([P(`${piece.runBy} ${piece.howToGetIt}`, { after: 0, size: 20, color: MUTED })], {
               width: REUSE_COLS[2],
             }),
-            cell(
-              [
-                boldedP(piece.lookAtItIn, S.phaseWords, { after: 0 }),
-              ],
-              { width: REUSE_COLS[3] },
-            ),
+            cell([boldedP(piece.lookAtItIn, S.phaseWords, { after: 0 })], { width: REUSE_COLS[3] }),
           ],
         }),
       );
@@ -1285,9 +1284,7 @@ body.push(
 body.push(H3(S.headings.scopeTag));
 body.push(
   chipTable(
-    [
-      { label: S.tags.onlyIf, gloss: S.tags.onlyIfGloss, fill: ONLYIF_FILL, ink: ONLYIF_INK },
-    ],
+    [{ label: S.tags.onlyIf, gloss: S.tags.onlyIfGloss, fill: ONLYIF_FILL, ink: ONLYIF_INK }],
     nextTable(),
     S.captions.scopeTag,
   ),
@@ -1433,9 +1430,7 @@ body.push(P(CHECKPOINT_MAP_WHY_CREATE.body));
 
 body.push(H2D(`${S.appendix.labelB}.2`, CHECKPOINT_MAP_WHO_TITLE, "app2-who"));
 body.push(P(CHECKPOINT_MAP_WHO_CAPTION));
-body.push(
-  definitionTable(CHECKPOINT_MAP_WHO, `${S.captions.tableWord} A2-1`, S.captions.whoTable),
-);
+body.push(definitionTable(CHECKPOINT_MAP_WHO, `${S.captions.tableWord} A2-1`, S.captions.whoTable));
 
 body.push(H2D(`${S.appendix.labelB}.3`, S.headings.howLongItTook, "app2-timeline"));
 body.push(
@@ -1526,20 +1521,14 @@ function datedNote() {
             shading: { fill: CARD, type: ShadingType.CLEAR },
             borders: { top: dash, bottom: dash, left: dash, right: dash },
             margins: { top: 150, bottom: 150, left: 220, right: 220 },
-            children: [
-              new Paragraph({
-                alignment: AlignmentType.CENTER,
-                spacing: { after: 0, line: 264 },
-                children: [
-                  new TextRun({
-                    text: S.frontMatter.datedNote,
-                    font: SANS,
-                    color: MUTED,
-                    size: 17,
-                  }),
-                ],
-              }),
-            ],
+            children: S.frontMatter.datedNote.map(
+              (line, i, all) =>
+                new Paragraph({
+                  alignment: AlignmentType.CENTER,
+                  spacing: { after: i === all.length - 1 ? 0 : 90, line: 264 },
+                  children: [new TextRun({ text: line, font: SANS, color: MUTED, size: 17 })],
+                }),
+            ),
           }),
         ],
       }),
@@ -1636,10 +1625,13 @@ cover.push(
     ],
   }),
 );
+cover.push(new Paragraph({ spacing: { before: 1900, after: 0 } }));
+cover.push(datedNote());
+
 cover.push(
   new Paragraph({
     alignment: AlignmentType.CENTER,
-    spacing: { before: 2600, after: 70 },
+    spacing: { before: 520, after: 70 },
     children: [new TextRun({ text: DATE, font: SANS, color: BROWN, size: 22 })],
   }),
 );
@@ -1671,9 +1663,6 @@ cover.push(
     ],
   }),
 );
-
-cover.push(new Paragraph({ spacing: { after: 420 } }));
-cover.push(datedNote());
 
 /* ----------------------------------------------------------- front matter */
 

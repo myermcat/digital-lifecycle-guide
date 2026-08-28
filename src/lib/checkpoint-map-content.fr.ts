@@ -90,7 +90,12 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "Voir le parcours complet";
 
-export const CHECKPOINT_MAP_TITLE = "Les points de contrôle officiels du GC pour un service numérique";
+export const CHECKPOINT_MAP_TITLE =
+  "Les points de contrôle qu’un service numérique du GC doit franchir";
+
+/** The page says plainly that the list was assembled, not handed down. */
+export const CHECKPOINT_MAP_BEST_ATTEMPT =
+  "C’est notre meilleure tentative de réunir ces points de contrôle au même endroit. S’il en manque un, dites-le-nous.";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
   text: "Chaque point de contrôle officiel qu’un service numérique du gouvernement du Canada peut rencontrer, par sujet, avec ce qui l’amène dans la portée et ce que le responsable opérationnel doit personnellement faire à son égard. Une annexe énumère ce qui existe déjà et peut être réutilisé. Une deuxième suit un service fictif depuis le premier signe de difficulté jusqu’au jour où il est remplacé, rencontrant les points de contrôle dans l’ordre où ce service les a rencontrés.",
@@ -277,7 +282,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
         n: 2,
         action: {
           lead: "Appelle les services ministériels de son propre ministère.",
-          body: [{ type: "p", text: 'Demande, simplement : « par où est-ce que je commence ? »' }],
+          body: [{ type: "p", text: "Demande, simplement : « par où est-ce que je commence ? »" }],
         },
         response: {
           tags: ["dept"],
@@ -455,7 +460,8 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
   },
   {
     id: "alpha",
-    heading: "Création · Alpha - éprouver l’idée, franchir l’examen d’architecture, et aller au marché",
+    heading:
+      "Création · Alpha - éprouver l’idée, franchir l’examen d’architecture, et aller au marché",
     durationLabel: "Typique : de six à douze semaines · variable",
     phaseNote:
       "Un prototype n’exige aucun fournisseur : une esquisse sur papier ou dans Figma suffit à montrer aux fournisseurs ce qu’elle veut. L’achat commence ici aussi, parce qu’un concours s’étire sur des mois et que la Bêta s’ouvre avec la signature.",
@@ -599,7 +605,10 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
                 "gèrent le processus d’évaluation et adjugent le contrat au titre de la Directive sur la gestion de l’approvisionnement; c’est l’autorité contractante qui signe, non Nadia",
                 "confirment avant l’adjudication que le soumissionnaire retenu détient les attestations du personnel et de l’organisation qu’exige le Programme de sécurité des contrats, et annexent au contrat la Liste de vérification des exigences relatives à la sécurité approuvée",
               ],
-              itemBold: ["Directive sur la gestion de l’approvisionnement", "Programme de sécurité des contrats"],
+              itemBold: [
+                "Directive sur la gestion de l’approvisionnement",
+                "Programme de sécurité des contrats",
+              ],
             },
             {
               type: "p",
@@ -705,7 +714,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
     ],
     forkEnd: {
       title: "Si le système automatisait une décision.",
-      text: 'Les évaluateurs de Nadia décident à la main : ce point de contrôle ne s’applique donc pas à elle. Mais si le système de subventions notait, classait ou approuvait automatiquement les demandes, la Directive sur la prise de décisions automatisée s’appliquerait. L’évaluation de l’incidence algorithmique devrait alors être remplie, approuvée et publiée sur le Portail du gouvernement ouvert avant que le système entre en production, avec un avis aux demandeurs, une voie d’appel, et une supervision humaine proportionnée au niveau d’incidence. À partir du niveau d’incidence deux, un examen par les pairs est aussi exigé, et ses constats publiés avant le lancement. Bon à savoir, parce qu’une fonction d’« efficience » ajoutée plus tard peut déclencher tout cela sans que personne ne le remarque.',
+      text: "Les évaluateurs de Nadia décident à la main : ce point de contrôle ne s’applique donc pas à elle. Mais si le système de subventions notait, classait ou approuvait automatiquement les demandes, la Directive sur la prise de décisions automatisée s’appliquerait. L’évaluation de l’incidence algorithmique devrait alors être remplie, approuvée et publiée sur le Portail du gouvernement ouvert avant que le système entre en production, avec un avis aux demandeurs, une voie d’appel, et une supervision humaine proportionnée au niveau d’incidence. À partir du niveau d’incidence deux, un examen par les pairs est aussi exigé, et ses constats publiés avant le lancement. Bon à savoir, parce qu’une fonction d’« efficience » ajoutée plus tard peut déclencher tout cela sans que personne ne le remarque.",
       bold: ["Directive sur la prise de décisions automatisée"],
       checkpointPhrases: ["évaluation de l’incidence algorithmique"],
     },
@@ -765,7 +774,11 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
                 "Croître : ajouter des fonctionnalités et améliorer le service à mesure que les besoins des utilisateurs évoluent",
                 "Maturité (récurrent) : le surveiller et le corriger; renouveler le financement avant son expiration; tenir à jour les tests d’accessibilité, qui alimentent la déclaration d’accessibilité du ministère (exigée à partir de décembre 2027); mettre à jour l’évaluation de la protection de la vie privée à mesure que le service change; gérer le fournisseur",
               ],
-              itemBold: ["Stabiliser (juste après le lancement) :", "Grow:", "Maturité (récurrent) :"],
+              itemBold: [
+                "Stabiliser (juste après le lancement) :",
+                "Grow:",
+                "Maturité (récurrent) :",
+              ],
             },
           ],
         },
@@ -775,7 +788,7 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
           body: [
             {
               type: "p",
-              text: 'Chacun porte sa part aussi longtemps que le service est utilisé. L’argent pour l’exploiter vient du budget de fonctionnement du ministère lui-même (ses niveaux de référence), fixé chaque année par le Budget des dépenses. Si le financement d’origine était à durée limitée (une clause de « temporisation »), il doit être renouvelé par une nouvelle décision de financement avant son expiration, et ce délai est facile à sous-estimer.',
+              text: "Chacun porte sa part aussi longtemps que le service est utilisé. L’argent pour l’exploiter vient du budget de fonctionnement du ministère lui-même (ses niveaux de référence), fixé chaque année par le Budget des dépenses. Si le financement d’origine était à durée limitée (une clause de « temporisation »), il doit être renouvelé par une nouvelle décision de financement avant son expiration, et ce délai est facile à sous-estimer.",
             },
             {
               type: "p",
@@ -832,7 +845,10 @@ export const CHECKPOINT_MAP_PHASES: readonly CheckpointMapPhaseBlock[] = [
             {
               type: "p",
               text: "En vertu de la Loi sur la Bibliothèque et les Archives du Canada, aucun document gouvernemental ne peut être détruit sans le consentement écrit du bibliothécaire et archiviste. Chaque document est :",
-              bold: ["Loi sur la Bibliothèque et les Archives du Canada", "bibliothécaire et archiviste"],
+              bold: [
+                "Loi sur la Bibliothèque et les Archives du Canada",
+                "bibliothécaire et archiviste",
+              ],
             },
             {
               type: "ul",

@@ -23,6 +23,7 @@ import {
   CHECKPOINT_MAP_TABLE_SECTION,
   CHECKPOINT_MAP_NADIA,
   CHECKPOINT_MAP_PHASES,
+  CHECKPOINT_MAP_BEST_ATTEMPT,
   CHECKPOINT_MAP_SUBTITLE,
   CHECKPOINT_MAP_TITLE,
   CHECKPOINT_MAP_WHAT_TABLE,
@@ -473,6 +474,8 @@ export function CheckpointMapPage() {
         </p>
       </header>
 
+      <EditorialNote className="mb-6 md:mb-8">{CHECKPOINT_MAP_BEST_ATTEMPT}</EditorialNote>
+
       <section id="what-this-covers" className="mb-5 scroll-mt-24">
         <h3 className={`${guideSubsectionTitle} mb-2`}>
           <SectionNumber id="what-this-covers" />
@@ -603,7 +606,8 @@ export function CheckpointMapPage() {
                   {CHECKPOINT_MAP_COLKEY.left}
                 </p>
                 <p className={`${guideProseTight} px-3.5 py-2.5 text-muted-foreground`}>
-                  {UI.rightIsWhoAnswersAndHowTheTagOnEachRes} <WhoTag tag="dept" /> or a <WhoTag tag="central" />.
+                  {UI.rightIsWhoAnswersAndHowTheTagOnEachRes} <WhoTag tag="dept" /> or a{" "}
+                  <WhoTag tag="central" />.
                 </p>
               </div>
             </div>

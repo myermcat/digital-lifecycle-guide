@@ -90,7 +90,11 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 
-export const CHECKPOINT_MAP_TITLE = "Official GC checkpoints for a digital service";
+export const CHECKPOINT_MAP_TITLE = "Checkpoints a GC digital service has to pass";
+
+/** The page says plainly that the list was assembled, not handed down. */
+export const CHECKPOINT_MAP_BEST_ATTEMPT =
+  "This is our best attempt at gathering these checkpoints in one place. If something is missing, please tell us.";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
   text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service from its first sign of trouble to the day it is replaced, meeting the checkpoints in the order that service met them.",
