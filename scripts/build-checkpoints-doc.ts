@@ -1863,7 +1863,7 @@ const bannerHeader = new Header({
       spacing: { after: 20 },
       border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: TAN, space: 4 } },
       children: [
-        new TextRun({ text: CHECKPOINT_MAP_TITLE, font: SANS, color: MUTED, size: 16 }),
+        new TextRun({ text: S.frontMatter.runningTitle, font: SANS, color: MUTED, size: 16 }),
         new TextRun({
           text: S.frontMatter.headerClassification,
           font: SANS,

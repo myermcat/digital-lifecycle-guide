@@ -20,6 +20,15 @@ export const CHECKPOINTS_DOC = {
   frontMatter: {
     /** Never translated, in either edition. */
     classification: "UNCLASSIFIED / NON CLASSIFIÉ",
+    /**
+     * The short name for the running header.
+     *
+     * The cover carries the full title, which says what the document is and what it is
+     * not. On every page after it that title runs into the classification marking on the
+     * right and wraps onto a second line, so the header uses the shorter name the rest of
+     * the guide refers to this document by.
+     */
+    runningTitle: "Checkpoints a GC digital service has to pass",
     /** The same marking in the running header, after two tab stops. */
     headerClassification: "\t\tUNCLASSIFIED / NON CLASSIFIÉ",
     /** The small line above the title on the cover. */

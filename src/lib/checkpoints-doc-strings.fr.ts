@@ -23,6 +23,15 @@ export const CHECKPOINTS_DOC = {
     /** Jamais traduit, dans l’une comme dans l’autre édition. */
     classification: "NON CLASSIFIÉ / UNCLASSIFIED",
     /** La même mention dans l’en-tête courant, après deux taquets. */
+    /**
+     * The short name for the running header.
+     *
+     * The cover carries the full title, which says what the document is and what it is
+     * not. On every page after it that title runs into the classification marking on the
+     * right and wraps onto a second line, so the header uses the shorter name the rest of
+     * the guide refers to this document by.
+     */
+    runningTitle: "Les points de contrôle qu’un service numérique du GC doit franchir",
     headerClassification: "\t\tNON CLASSIFIÉ / UNCLASSIFIED",
     /** La petite ligne au-dessus du titre, sur la couverture. */
     eyebrow: "Le Guide du cycle de vie numérique",
