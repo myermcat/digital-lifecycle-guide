@@ -134,8 +134,14 @@ async function call<T>(
       ...(viaProxy ? {} : { Authorization: `Bearer ${key}` }),
     },
     body: JSON.stringify({
-      /* the proxy leads with a different provider per step: see worker/index.js */
-      step,
+      /*
+       * "step" is ours, not the API's: the proxy leads with a different provider per step,
+       * see worker/index.js. It must go ONLY to the proxy. Groq is strict about unknown
+       * properties and answers a request carrying it with 400, "property 'step' is
+       * unsupported", so sending it unconditionally broke every question asked by a reader
+       * holding their own key while leaving the shared path working.
+       */
+      ...(viaProxy ? { step } : {}),
       model: MODEL,
       temperature: 0,
       reasoning_effort: "low",
