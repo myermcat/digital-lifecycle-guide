@@ -1564,7 +1564,7 @@ cover.push(
     children: [
       new ImageRun({
         type: "png",
-        data: readFileSync(`${IMG}/gc_banner.png`),
+        data: readFileSync(`${IMG}/cover_band.png`),
         transformation: { width: 816, height: 82 },
         floating: {
           horizontalPosition: { relative: HorizontalPositionRelativeFrom.PAGE, offset: 0 },

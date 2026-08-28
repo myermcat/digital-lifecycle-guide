@@ -29,9 +29,9 @@ export const CHECKPOINTS_DOC = {
     developedByLine1:
       "Developed by the Treasury Board of Canada Secretariat, Office of the Chief Information Officer,",
     developedByLine2: "Chief Technology Officer Sector, Digital Technology and Cyber Security.",
-    bannerAltTitle: "Government of Canada",
-    bannerAltDescription: "Treasury Board of Canada Secretariat",
-    bannerAltName: "GC banner",
+    bannerAltTitle: "Cover band",
+    bannerAltDescription: "Decorative band across the top of the cover",
+    bannerAltName: "Cover band",
     /**
      * The caveat on the title page, one paragraph per line.
      *

@@ -32,9 +32,9 @@ export const CHECKPOINTS_DOC = {
       "Élaboré par le Secrétariat du Conseil du Trésor du Canada, Bureau du dirigeant principal de l’information,",
     developedByLine2:
       "Secteur du dirigeant principal de la technologie, Technologie numérique et cybersécurité.",
-    bannerAltTitle: "Gouvernement du Canada",
-    bannerAltDescription: "Secrétariat du Conseil du Trésor du Canada",
-    bannerAltName: "Bannière du gouvernement du Canada",
+    bannerAltTitle: "Bandeau de couverture",
+    bannerAltDescription: "Bandeau décoratif en haut de la couverture",
+    bannerAltName: "Bandeau de couverture",
     /**
      * The caveat on the title page, one paragraph per line.
      *
