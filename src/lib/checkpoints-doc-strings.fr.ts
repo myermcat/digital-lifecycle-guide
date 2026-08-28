@@ -42,6 +42,8 @@ export const CHECKPOINTS_DOC = {
      * this document's own: the list was assembled by reading the instruments, not handed
      * down by anyone, so it says so and asks for what it missed.
      */
+    /** The small label above the note. */
+    datedNoteLabel: "À PROPOS DE CETTE ÉDITION",
     datedNote: [
       "Ceci est un guide de 2026, exact pour le moment. Des liens peuvent se périmer à mesure que des instruments sont renommés et que des pages changent d’adresse, mais les concepts tiennent.",
       "C’est notre meilleure tentative de réunir ces points de contrôle au même endroit. S’il en manque un, dites-le-nous.",

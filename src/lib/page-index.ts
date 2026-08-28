@@ -1,9 +1,5 @@
 import { PHASES, THREADS } from "./guide-strings";
-import {
-  OPTIONS_ANALYSIS_PATH,
-  GOOD_CONTRACT_PATH,
-  CHECKPOINT_MAP_PATH,
-} from "./reference-paths";
+import { OPTIONS_ANALYSIS_PATH, GOOD_CONTRACT_PATH, CHECKPOINT_MAP_PATH } from "./reference-paths";
 import { OPTIONS_ANALYSIS } from "./options-analysis-content";
 import { GOOD_CONTRACT } from "./good-contract-content";
 import { SUPPORT_PAGE } from "./support-content";
@@ -37,26 +33,76 @@ export type PageIndexEntry = {
 export const PAGE_INDEX: PageIndexEntry[] = [
   { title: "Home", path: "/", type: "other", status: "in-review" },
   {
-    title: "The official checkpoints of a digital service",
+    title: "Checkpoints a GC digital service has to pass",
     path: CHECKPOINT_MAP_PATH,
     type: "other",
     status: "in-review",
   },
   { title: SUPPORT_PAGE.title, path: SUPPORT_PATH, type: "other", status: "in-review" },
-  { title: "Index of the Digital Lifecycle Guide", path: ALL_PAGES_PATH, type: "other", status: "in-review" },
+  {
+    title: "Index of the Digital Lifecycle Guide",
+    path: ALL_PAGES_PATH,
+    type: "other",
+    status: "in-review",
+  },
 
-  { title: PHASES.create.pageHeading, path: PHASES.create.href, type: "phase", status: "in-review" },
+  {
+    title: PHASES.create.pageHeading,
+    path: PHASES.create.href,
+    type: "phase",
+    status: "in-review",
+  },
   { title: PHASES.live.pageHeading, path: PHASES.live.href, type: "phase", status: "in-review" },
-  { title: PHASES.sunset.pageHeading, path: PHASES.sunset.href, type: "phase", status: "in-review" },
+  {
+    title: PHASES.sunset.pageHeading,
+    path: PHASES.sunset.href,
+    type: "phase",
+    status: "in-review",
+  },
 
-  { title: SUBPHASE_PAGE_HEADINGS.discovery, path: "/create-discovery", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.alpha, path: "/create-alpha", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.beta, path: "/create-beta", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.stabilization, path: "/live-stabilization", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.growth, path: "/live-growth", type: "subphase", status: "in-review" },
-  { title: SUBPHASE_PAGE_HEADINGS.maturity, path: "/live-maturity", type: "subphase", status: "in-review" },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.discovery,
+    path: "/create-discovery",
+    type: "subphase",
+    status: "in-review",
+  },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.alpha,
+    path: "/create-alpha",
+    type: "subphase",
+    status: "in-review",
+  },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.beta,
+    path: "/create-beta",
+    type: "subphase",
+    status: "in-review",
+  },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.stabilization,
+    path: "/live-stabilization",
+    type: "subphase",
+    status: "in-review",
+  },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.growth,
+    path: "/live-growth",
+    type: "subphase",
+    status: "in-review",
+  },
+  {
+    title: SUBPHASE_PAGE_HEADINGS.maturity,
+    path: "/live-maturity",
+    type: "subphase",
+    status: "in-review",
+  },
 
-  { title: THREADS.accessibility.title, path: THREADS.accessibility.path, type: "thread", status: "in-review" },
+  {
+    title: THREADS.accessibility.title,
+    path: THREADS.accessibility.path,
+    type: "thread",
+    status: "in-review",
+  },
   {
     title: THREADS["releasing-changes"].title,
     path: THREADS["releasing-changes"].path,
@@ -179,7 +225,11 @@ function sortThreadPages(pages: PageIndexEntry[]): PageIndexEntry[] {
     .map(({ page }) => page);
 }
 
-export function getPageIndexByType(): { type: PageIndexType; label: string; pages: PageIndexEntry[] }[] {
+export function getPageIndexByType(): {
+  type: PageIndexType;
+  label: string;
+  pages: PageIndexEntry[];
+}[] {
   return PAGE_INDEX_TYPE_ORDER.map((type) => {
     const pages = PAGE_INDEX.filter((page) => page.type === type);
     return {

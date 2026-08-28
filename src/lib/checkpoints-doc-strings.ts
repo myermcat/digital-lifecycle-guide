@@ -39,6 +39,8 @@ export const CHECKPOINTS_DOC = {
      * this document's own: the list was assembled by reading the instruments, not handed
      * down by anyone, so it says so and asks for what it missed.
      */
+    /** The small label above the note. */
+    datedNoteLabel: "ABOUT THIS EDITION",
     datedNote: [
       "This is a 2026 guide, accurate for the time being. Links may go stale as instruments are renamed and pages move, but the concepts hold.",
       "It is our best attempt at gathering these checkpoints in one place. If something is missing, please tell us.",

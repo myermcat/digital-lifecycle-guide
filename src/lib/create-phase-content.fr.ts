@@ -15,8 +15,7 @@ export const CREATE_PHASE = {
   title: PHASES.create.pageHeading,
 
   quote: {
-    lead:
-      "Là où un service passe d’un problème à une première version fonctionnelle entre les mains des utilisateurs. L’équipe :",
+    lead: "Là où un service passe d’un problème à une première version fonctionnelle entre les mains des utilisateurs. L’équipe :",
     items: [
       "détermine quel est réellement le problème",
       "décide s’il faut réutiliser, acheter ou construire",
@@ -92,7 +91,8 @@ export const CREATE_PHASE = {
   workOfCreate: {
     id: "the-work-of-create",
     title: "Le travail de la Création",
-    introBold: "La Création, c’est trois types de travail, et elle se termine le jour où le service est mis en service.",
+    introBold:
+      "La Création, c’est trois types de travail, et elle se termine le jour où le service est mis en service.",
     blocks: [
       {
         heading: "1. Déterminer ce qui est nécessaire.",
@@ -107,24 +107,25 @@ export const CREATE_PHASE = {
         bullets: [
           {
             text: "La recherche sur les utilisateurs révèle ce dont les gens ont réellement besoin, avant que quoi que ce soit soit construit.",
-            internalLinks: [{ phrase: "recherche sur les utilisateurs", to: "/thread/user-research" }],
+            internalLinks: [
+              { phrase: "recherche sur les utilisateurs", to: "/thread/user-research" },
+            ],
           },
           {
             text: "Une analyse des options détermine s’il faut réutiliser, acheter ou construire.",
-            internalLinks: [{ phrase: "Une analyse des options", to: "/reference/options-analysis" }],
+            internalLinks: [
+              { phrase: "Une analyse des options", to: "/reference/options-analysis" },
+            ],
           },
           {
             text: "La prestation intégrée confronte le service au parcours complet d’une personne, pour qu’il ne soit pas conçu comme une île.",
-            internalLinks: [
-              { phrase: "prestation intégrée", to: "/thread/joined-up-delivery" },
-            ],
+            internalLinks: [{ phrase: "prestation intégrée", to: "/thread/joined-up-delivery" }],
           },
         ],
       },
       {
         heading: "2. Le faire financer et approuver.",
-        lead:
-          "Le vrai service n’est construit que lorsque les fonds et les autorisations sont en place, et pour la plupart des services cela se passe à l’intérieur du ministère.",
+        lead: "Le vrai service n’est construit que lorsque les fonds et les autorisations sont en place, et pour la plupart des services cela se passe à l’intérieur du ministère.",
         bullets: [
           {
             text: "Les projets dépassant les seuils du Conseil du Trésor sont évalués en coûts et en risques au moyen de l’Évaluation de la complexité et des risques des projets, et cette évaluation détermine le parcours d’approbation du service.",
@@ -136,11 +137,11 @@ export const CREATE_PHASE = {
             text: "Seuls les services les plus vastes ou les plus complexes vont plus loin, jusqu’au Comité d’examen de l’architecture intégrée du gouvernement du Canada et à une présentation au Conseil du Trésor. La plupart n’y vont pas.",
           },
           {
-            text: "Le Financement présente le parcours complet, et lequel un service donné emprunte. Les points de contrôle officiels d’un service numérique présentent chaque point de contrôle officiel sur une seule page.",
+            text: "Le Financement présente le parcours complet, et lequel un service donné emprunte. Les points de contrôle qu’un service numérique du GC doit franchir réunissent les points de contrôle officiels sur une seule page.",
             internalLinks: [
               { phrase: "Financement", to: "/thread/funding" },
               {
-                phrase: "Les points de contrôle officiels d’un service numérique",
+                phrase: "Les points de contrôle qu’un service numérique du GC doit franchir",
                 to: "/gate-map",
               },
             ],
@@ -151,7 +152,8 @@ export const CREATE_PHASE = {
         ],
       },
       {
-        heading: "3. Le construire pour qu’il puisse être exploité, puis remplacé ou mis hors service.",
+        heading:
+          "3. Le construire pour qu’il puisse être exploité, puis remplacé ou mis hors service.",
         lead: "Ce qui se décide ici, le service devra vivre avec pendant des années : il vaut donc la peine de bien faire pendant que c’est encore facile à changer.",
         bullets: [
           {
@@ -226,7 +228,8 @@ export const CREATE_PHASE = {
     {
       label: "Instrument directeur",
       linkKey: "concept-case-procedures" satisfies ExternalLinkKey,
-      description: "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT).",
+      description:
+        "Procédures obligatoires sur les analyses de rentabilisation conceptuelles pour les projets habilités par le numérique (SCT).",
     },
     {
       label: "Instrument directeur",

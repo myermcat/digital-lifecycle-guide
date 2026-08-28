@@ -10,10 +10,10 @@
   },
   {
     "id": "/gate-map",
-    "pageTitle": "The official checkpoints of a digital service",
+    "pageTitle": "Checkpoints a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "",
-    "sectionHeading": "The official checkpoints of a digital service",
+    "sectionHeading": "Checkpoints a GC digital service has to pass",
     "lifecyclePhase": "other",
     "text": ""
   },
@@ -651,7 +651,7 @@
     "sectionId": "the-work-of-create",
     "sectionHeading": "The work of Create",
     "lifecyclePhase": "create",
-    "text": "Create is three kinds of work, and it ends on the day the service goes live. 1. Work out what is needed. Most of Create is deciding, and the cheapest decision is the one to stop. User research finds out what people actually need, before anything is built. An options analysis works out whether to reuse, buy, or build. Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island. 2. Get it funded and approved. The real service is not built until the money and the sign-offs are in place, and for most services that happens inside the department. Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the service takes. For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance bodies and its own architecture review board. Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not. Funding sets out the whole path, and which one a given service takes. The official checkpoints of a digital service lays out every official checkpoint on one page. Winning whichever approvals apply, before the build, is what gives Create its finish line. 3. Build it so it can be run, and later replaced or retired. What is settled here is what the service will live with for years, so it is worth getting right while it is still easy to change. Security and privacy are designed in while changing the design is still cheap. If the service handles personal information used to make decisions about people, a Privacy Impact Assessment is done here. Accessibility is built in from the start. When technology is bought, procurement writes the requirements, and the exit, into the contract. The team that will run the service is put together. These are one-time decisions, made to get the service built. The business case is made, the money for building and running it is committed, and the design is signed off. Most of them come round again after launch, each on its own cycle: some at every release, some once a year, some only when something about the service changes. That recurring rhythm is what makes Live different."
+    "text": "Create is three kinds of work, and it ends on the day the service goes live. 1. Work out what is needed. Most of Create is deciding, and the cheapest decision is the one to stop. User research finds out what people actually need, before anything is built. An options analysis works out whether to reuse, buy, or build. Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island. 2. Get it funded and approved. The real service is not built until the money and the sign-offs are in place, and for most services that happens inside the department. Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the service takes. For most services, the assessment keeps them inside the department: added to the department's investment plan, funded from the department's own budget, and reviewed by its own governance bodies and its own architecture review board. Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not. Funding sets out the whole path, and which one a given service takes. Checkpoints a GC digital service has to pass gathers the official checkpoints on one page. Winning whichever approvals apply, before the build, is what gives Create its finish line. 3. Build it so it can be run, and later replaced or retired. What is settled here is what the service will live with for years, so it is worth getting right while it is still easy to change. Security and privacy are designed in while changing the design is still cheap. If the service handles personal information used to make decisions about people, a Privacy Impact Assessment is done here. Accessibility is built in from the start. When technology is bought, procurement writes the requirements, and the exit, into the contract. The team that will run the service is put together. These are one-time decisions, made to get the service built. The business case is made, the money for building and running it is committed, and the design is signed off. Most of them come round again after launch, each on its own cycle: some at every release, some once a year, some only when something about the service changes. That recurring rhythm is what makes Live different."
   },
   {
     "id": "/create#create-in-three-sub-phases",
@@ -1883,16 +1883,16 @@
   },
   {
     "id": "/gate-map#annex-instruments",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "annex-instruments",
-    "sectionHeading": "Every official thing a service has to do",
+    "sectionHeading": "The official things a service has to do",
     "lifecyclePhase": "other",
     "text": "Split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service."
   },
   {
     "id": "/gate-map#topic-security",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-security",
     "sectionHeading": "Security",
@@ -1902,7 +1902,7 @@
   },
   {
     "id": "/gate-map#topic-continuity",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-continuity",
     "sectionHeading": "Continuity and incidents",
@@ -1912,7 +1912,7 @@
   },
   {
     "id": "/gate-map#topic-privacy",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-privacy",
     "sectionHeading": "Privacy and automated decisions",
@@ -1922,7 +1922,7 @@
   },
   {
     "id": "/gate-map#topic-accessibility",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-accessibility",
     "sectionHeading": "Accessibility",
@@ -1932,7 +1932,7 @@
   },
   {
     "id": "/gate-map#topic-official-languages",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-official-languages",
     "sectionHeading": "Official languages",
@@ -1942,7 +1942,7 @@
   },
   {
     "id": "/gate-map#topic-approvals",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-approvals",
     "sectionHeading": "Approvals and money",
@@ -1952,7 +1952,7 @@
   },
   {
     "id": "/gate-map#topic-contracts",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-contracts",
     "sectionHeading": "Contracts and suppliers",
@@ -1962,7 +1962,7 @@
   },
   {
     "id": "/gate-map#topic-hosting",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-hosting",
     "sectionHeading": "Hosting and cloud",
@@ -1972,7 +1972,7 @@
   },
   {
     "id": "/gate-map#topic-identity",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-identity",
     "sectionHeading": "Identity and sign-in",
@@ -1982,7 +1982,7 @@
   },
   {
     "id": "/gate-map#topic-publishing",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-publishing",
     "sectionHeading": "Publishing on canada.ca",
@@ -1992,7 +1992,7 @@
   },
   {
     "id": "/gate-map#topic-registries",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-registries",
     "sectionHeading": "Registries and records",
@@ -2002,7 +2002,7 @@
   },
   {
     "id": "/gate-map#topic-openness",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "topic-openness",
     "sectionHeading": "Access to information and openness",
@@ -2012,7 +2012,7 @@
   },
   {
     "id": "/gate-map#annex-reuse",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "annex-reuse",
     "sectionHeading": "Reuse before you buy or build",
@@ -2022,7 +2022,7 @@
   },
   {
     "id": "/gate-map#annex-nadia",
-    "pageTitle": "Checkpoints a GC digital service has to pass",
+    "pageTitle": "An unofficial list of the approvals and duties a GC digital service has to pass",
     "pagePath": "/gate-map",
     "sectionId": "annex-nadia",
     "sectionHeading": "A worked example: one service's path, step by step",

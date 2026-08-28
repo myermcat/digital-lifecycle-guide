@@ -15,8 +15,7 @@ export const CREATE_PHASE = {
   title: PHASES.create.pageHeading,
 
   quote: {
-    lead:
-      "Where a service goes from a problem to a working first version in users' hands. The team:",
+    lead: "Where a service goes from a problem to a working first version in users' hands. The team:",
     items: [
       "works out what the problem actually is",
       "decides whether to reuse, buy, or build",
@@ -115,16 +114,13 @@ export const CREATE_PHASE = {
           },
           {
             text: "Joined-up delivery checks the service against the whole journey a person is on, so it is not designed as an island.",
-            internalLinks: [
-              { phrase: "Joined-up delivery", to: "/thread/joined-up-delivery" },
-            ],
+            internalLinks: [{ phrase: "Joined-up delivery", to: "/thread/joined-up-delivery" }],
           },
         ],
       },
       {
         heading: "2. Get it funded and approved.",
-        lead:
-          "The real service is not built until the money and the sign-offs are in place, and for most services that happens inside the department.",
+        lead: "The real service is not built until the money and the sign-offs are in place, and for most services that happens inside the department.",
         bullets: [
           {
             text: "Projects above Treasury Board's thresholds are costed and risk-assessed through the Project Complexity and Risk Assessment, and that assessment decides the approval path the service takes.",
@@ -136,11 +132,11 @@ export const CREATE_PHASE = {
             text: "Only the largest or most complex services go further, to the Government of Canada Enterprise Architecture Review Board and a Treasury Board submission. Most do not.",
           },
           {
-            text: "Funding sets out the whole path, and which one a given service takes. The official checkpoints of a digital service lays out every official checkpoint on one page.",
+            text: "Funding sets out the whole path, and which one a given service takes. Checkpoints a GC digital service has to pass gathers the official checkpoints on one page.",
             internalLinks: [
               { phrase: "Funding", to: "/thread/funding" },
               {
-                phrase: "The official checkpoints of a digital service",
+                phrase: "Checkpoints a GC digital service has to pass",
                 to: "/gate-map",
               },
             ],
@@ -196,14 +192,12 @@ export const CREATE_PHASE = {
       },
       {
         title: "Alpha",
-        description:
-          "test the riskiest ideas with throwaway prototypes, before committing.",
+        description: "test the riskiest ideas with throwaway prototypes, before committing.",
         href: "/create-alpha",
       },
       {
         title: "Beta",
-        description:
-          "stand up the real service and prove it with real users, before launch.",
+        description: "stand up the real service and prove it with real users, before launch.",
         href: "/create-beta",
       },
     ],

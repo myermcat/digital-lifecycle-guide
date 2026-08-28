@@ -56,7 +56,8 @@ export const UI = {
   live: "Live",
   loadingSearch: "Loading search…",
   maturity: "Maturity",
-  nadiaIsNotSpecialThisHappensMoreOftenT: "Nadia is not special: this happens more often than you would believe.",
+  nadiaIsNotSpecialThisHappensMoreOftenT:
+    "Nadia is not special: this happens more often than you would believe.",
   needAHandWithThis: "Need a hand with this?",
   noPagesWithThisStatusYet: "No pages with this status yet.",
   nobodyWasAssignedToManageTheSupplier: "Nobody was assigned to manage the supplier.",
@@ -99,7 +100,7 @@ export const UI = {
   theGuide: "The guide",
   theOfficialCheckpoints: "THE OFFICIAL CHECKPOINTS",
   theOfficialCheckpoints2: "The official checkpoints.",
-  theOfficialCheckpointsOfADigitalServic: "The official checkpoints of a digital service",
+  theOfficialCheckpointsOfADigitalServic: "Checkpoints a GC digital service has to pass",
   theOneTagThatChangesWhetherARowApplies: "The one tag that changes whether a row applies to you",
   theOneThingWorthHoldingOnTo: "The one thing worth holding on to",
   theSameProgrammeBoughtTwoWays: "The same programme, bought two ways",
@@ -144,28 +145,48 @@ export const UI = {
   theStepsOfAProcurement: "The steps of a procurement",
   theOfficialInstrumentsBehind: "The official instruments behind",
   searchShort: "Search the guide",
-  aFewOfTheRoutesShowingWhereTheCompetit: "A few of the routes, showing where the competition runs and where the contract is signed",
-  aPractitionerSGuideToTheDigitalService: "A practitioner's guide to the digital service lifecycle in the Government of Canada.",
-  betaEndsHereTheServiceBecomesTheOffici: "Beta ends here. The service becomes the official one, real people depend on it, and the department owns it from this point until it is replaced or retired.",
-  choosingToMakeYourOwnInsteadBreaksNoRu: "Choosing to make your own instead breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so a departmental architecture review board is likely to ask which of these were considered and why none of them fitted.",
-  everythingOfficialThisSubjectBringsWit: "Everything official this subject brings with it, and where in a service's life each one comes up. The full detail, including who does the work and what the business owner personally does, is in the table on the home page.",
-  gettingAServiceLiveMeansPassingOfficia: "Getting a service live means passing official checkpoints: assessments to run, boards to attend, registers to appear in, and duties that carry on for as long as the service does. Which ones apply depends on what the service does and how much is being spent, so no two services take the same path.",
-  internalBuildTrackerForEveryPageInTheG: "Internal build tracker for every page in the guide, including stubs not linked from normal navigation. The reader-facing index is under Index in the header.",
-  lookForSomethingToReuseBeforeMakingYou: "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure rather than make. The table of official instruments is what a service has to deal with. This is what it can avoid having to make.",
-  oneCautionWhichSubPhaseAnInstrumentBel: "One caution. Which sub-phase an instrument belongs to is this guide's own judgement, because no Government of Canada source uses these phase names. Where a placement follows a real deadline in the instrument, the row says so. Where it does not, the row says that too.",
-  oneTablePerTopicBelowAndEveryInstrumen: "One table per topic below, and every instrument in them takes two rows. The top row says what brings it into scope, what you personally have to do about it, and who does the rest. The row underneath says what the thing is, and when in the service's life it comes up.",
-  placingAnInstrumentInASubPhaseIsThisGu: "Placing an instrument in a sub-phase is this guide's own editorial choice, anchored where possible on a real deadline in the instrument itself. The full detail, including who does the work and what the business owner personally does, is in the full instruments table.",
-  somethingWentWrongOnOurEndYouCanTryRef: "Something went wrong on our end. You can try refreshing or head back home.",
-  thePageYouAreLookingForDoesNotExistOrI: "The page you are looking for does not exist, or it may have moved. Either way, it is not here.",
-  theThreeKindsOfRequirementWhatEachOneS: "The three kinds of requirement, what each one says, and how fast each goes out of date",
-  thisGuideIsAWorkInProgressSpottedSomet: "This guide is a work in progress. Spotted something off, or have feedback?",
-  thisInstrumentDoesNotApplyToEveryServi: "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
-  thisPageIsStillToComeItWillCoverWhatIt: "This page is still to come. It will cover what it means to hold on to enough understanding to govern the work and to handle an exit.",
-  thisTableIsWideTurnThePhoneSidewaysToR: "This table is wide. Turn the phone sideways to read it, and scroll sideways inside the table to reach the later columns.",
+  aFewOfTheRoutesShowingWhereTheCompetit:
+    "A few of the routes, showing where the competition runs and where the contract is signed",
+  aPractitionerSGuideToTheDigitalService:
+    "A practitioner's guide to the digital service lifecycle in the Government of Canada.",
+  betaEndsHereTheServiceBecomesTheOffici:
+    "Beta ends here. The service becomes the official one, real people depend on it, and the department owns it from this point until it is replaced or retired.",
+  choosingToMakeYourOwnInsteadBreaksNoRu:
+    "Choosing to make your own instead breaks no rule. The enterprise architecture framework does ask teams to look at reuse first, so a departmental architecture review board is likely to ask which of these were considered and why none of them fitted.",
+  everythingOfficialThisSubjectBringsWit:
+    "Everything official this subject brings with it, and where in a service's life each one comes up. The full detail, including who does the work and what the business owner personally does, is in the table on the home page.",
+  gettingAServiceLiveMeansPassingOfficia:
+    "Getting a service live means passing official checkpoints: assessments to run, boards to attend, registers to appear in, and duties that carry on for as long as the service does. Which ones apply depends on what the service does and how much is being spent, so no two services take the same path.",
+  internalBuildTrackerForEveryPageInTheG:
+    "Internal build tracker for every page in the guide, including stubs not linked from normal navigation. The reader-facing index is under Index in the header.",
+  lookForSomethingToReuseBeforeMakingYou:
+    "Look for something to reuse before making your own. These are the pieces already built and maintained by another part of government, so a team can configure rather than make. The table of official instruments is what a service has to deal with. This is what it can avoid having to make.",
+  oneCautionWhichSubPhaseAnInstrumentBel:
+    "One caution. Which sub-phase an instrument belongs to is this guide's own judgement, because no Government of Canada source uses these phase names. Where a placement follows a real deadline in the instrument, the row says so. Where it does not, the row says that too.",
+  oneTablePerTopicBelowAndEveryInstrumen:
+    "One table per topic below, and every instrument in them takes two rows. The top row says what brings it into scope, what you personally have to do about it, and who does the rest. The row underneath says what the thing is, and when in the service's life it comes up.",
+  placingAnInstrumentInASubPhaseIsThisGu:
+    "Placing an instrument in a sub-phase is this guide's own editorial choice, anchored where possible on a real deadline in the instrument itself. The full detail, including who does the work and what the business owner personally does, is in the full instruments table.",
+  somethingWentWrongOnOurEndYouCanTryRef:
+    "Something went wrong on our end. You can try refreshing or head back home.",
+  thePageYouAreLookingForDoesNotExistOrI:
+    "The page you are looking for does not exist, or it may have moved. Either way, it is not here.",
+  theThreeKindsOfRequirementWhatEachOneS:
+    "The three kinds of requirement, what each one says, and how fast each goes out of date",
+  thisGuideIsAWorkInProgressSpottedSomet:
+    "This guide is a work in progress. Spotted something off, or have feedback?",
+  thisInstrumentDoesNotApplyToEveryServi:
+    "This instrument does not apply to every service. The scope column says what brings it into scope. An instrument with no tag applies to all of them.",
+  thisPageIsStillToComeItWillCoverWhatIt:
+    "This page is still to come. It will cover what it means to hold on to enough understanding to govern the work and to handle an exit.",
+  thisTableIsWideTurnThePhoneSidewaysToR:
+    "This table is wide. Turn the phone sideways to read it, and scroll sideways inside the table to reach the later columns.",
   aGuideForTheNextGuide: "A guide for the next guide",
-  anIndependentGuideNotAnOfficial: "An independent guide. Not an official Government of Canada publication.",
+  anIndependentGuideNotAnOfficial:
+    "An independent guide. Not an official Government of Canada publication.",
   nobodyToldHer: "Nobody told her",
-  noteAccurateForNow: "This is a 2026 guide, accurate for the time being. Links may go stale as instruments are renamed and pages move, but the concepts hold. It is also an early version, built in the open, so we're looking for feedback:",
+  noteAccurateForNow:
+    "This is a 2026 guide, accurate for the time being. Links may go stale as instruments are renamed and pages move, but the concepts hold. It is also an early version, built in the open, so we're looking for feedback:",
   subBetaCreate: "Beta sub-phase (Create)",
   subMaturityLive: "Maturity sub-phase (Live)",
   tellUsWhatIsMissing: "tell us what's missing, wrong, or unclear",
@@ -173,8 +194,10 @@ export const UI = {
   theOfficialCheckpointsPlain: "The official checkpoints",
   aPictureOfWhatIsComing: "A picture of what is coming.",
   forYourSetup: "For your setup",
-  rightIsWhoAnswersAndHowTheTagOnEachRes: "Right is who answers, and how. The tag on each response says whether the responder is",
-  timelineShowingDiscoveryAlphaAndBetaMa: "Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live with its sub-phases Stabilization, Growth, and Maturity, and Sunset, both open-ended",
+  rightIsWhoAnswersAndHowTheTagOnEachRes:
+    "Right is who answers, and how. The tag on each response says whether the responder is",
+  timelineShowingDiscoveryAlphaAndBetaMa:
+    "Timeline showing Discovery, Alpha, and Beta making up the Create phase (about 6 to 12 months), then Live with its sub-phases Stabilization, Growth, and Maturity, and Sunset, both open-ended",
   whatWorkStaysYours: "What work stays yours",
   lifecycleIslandsAlt:
     "The service lifecycle as three islands — Create, Live, Sunset — joined by two bridges: Launch, and Plan the exit.",
@@ -191,57 +214,40 @@ export const UI = {
     "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Migrate crosses the launch line, and an arrow shows users and data moving across into Live. The old service is marked switched off early in Growth, once the new one is live and steady, not at launch.",
   whereContractSignedAlt:
     "Where the contract is signed across Discovery, Alpha and Beta. Team and the agile procurement model both point at the boundary where Discovery ends and Alpha opens. Solution and Finished Product point at the boundary where Alpha ends and Beta opens. The caption, at the bottom left, reads: where the contract is signed, route by route.",
-  createToLiveCrossingAlt:
-    "Create to Live crossing",
-  liveToSunsetCrossingAlt:
-    "Live to Sunset crossing",
+  createToLiveCrossingAlt: "Create to Live crossing",
+  liveToSunsetCrossingAlt: "Live to Sunset crossing",
   backlogFigureAlt:
     "A vertical backlog column with ready items at the top and larger rough items below, beside a downward arrow labelled higher priority at the top and lower priority at the bottom.",
-  backlogItemVote:
-    "Register to vote online",
-  backlogItemPostcode:
-    "Correct postcode lookup",
-  backlogItemSession:
-    "Upgrade session storage",
-  backlogItemAddress:
-    "Cross-service address sync across departments",
-  backlogItemRenewal:
-    "Annual renewal reminders and notifications",
-  openEndedAsLongAsNeeded:
-    "open-ended - as long as the service is needed",
+  backlogItemVote: "Register to vote online",
+  backlogItemPostcode: "Correct postcode lookup",
+  backlogItemSession: "Upgrade session storage",
+  backlogItemAddress: "Cross-service address sync across departments",
+  backlogItemRenewal: "Annual renewal reminders and notifications",
+  openEndedAsLongAsNeeded: "open-ended - as long as the service is needed",
   createCheckpointsLead:
     "Create is where most of the official checkpoints fall. See where it sits in the whole lifecycle.",
   phaseLevelReferencesNote:
     "These are the phase-level references. The working references for each part of the phase are on its sub-phase pages.",
-  threadPhasePlaceholder:
-    "This page will describe how this thread applies during this phase.",
-  examplesComingLater:
-    "Examples for this sub-phase are coming later.",
-  gcNetworkOnly:
-    "Only available on the Government of Canada network.",
+  threadPhasePlaceholder: "This page will describe how this thread applies during this phase.",
+  examplesComingLater: "Examples for this sub-phase are coming later.",
+  gcNetworkOnly: "Only available on the Government of Canada network.",
   lifecycleThreeRegionsAlt:
     "A solid arrow labelled Create points into a large infinity loop labelled Live, then a dashed fading arrow labelled Sunset points out of it.",
   sunsetOverlapShortAlt:
     "Two rows on one timeline. The new service runs through Discovery, Alpha and Beta, then a dashed launch line, then a thicker Live band split into Stabilization and Growth. The old service runs through Assess, Decide, Plan, Buy or build, and Migrate. Users and data move across at launch. The old service is marked switched off early in Growth, once the new one is steady.",
-  stabilizationFireAlt:
-    "A person standing calmly in the fire",
-  whoRunsItAndHowToGetIt:
-    "Who runs it, and how to get it",
-  whatThisSubphaseExistsToDo:
-    "what this sub-phase exists to do",
+  stabilizationFireAlt: "A person standing calmly in the fire",
+  whoRunsItAndHowToGetIt: "Who runs it, and how to get it",
+  whatThisSubphaseExistsToDo: "what this sub-phase exists to do",
   assistantMetaDescription:
     "Ask a question and find the parts of the Digital Lifecycle Guide that answer it, with a link to each one.",
   buildStatusMetaDescription:
     "Internal build-status tracker for every page in the Digital Lifecycle Guide.",
-  aFewWaysOfBuildingADigitalService:
-    "a few ways of building a digital service",
-  someoneJustToldThereIsMoney:
-    "someone who has just been told there is money to buy a system",
+  aFewWaysOfBuildingADigitalService: "a few ways of building a digital service",
+  someoneJustToldThereIsMoney: "someone who has just been told there is money to buy a system",
   seeCheckpointsInCreate: "See the checkpoints in Create →",
   seeCheckpointsInLive: "See the checkpoints in Live →",
   seeCheckpointsInSunset: "See the checkpoints in Sunset →",
-  instrumentsIntroBefore:
-    "Everything official that has something happening to it during ",
+  instrumentsIntroBefore: "Everything official that has something happening to it during ",
   instrumentsIntroAfter:
     ", and what that something is. The tag says what stage the instrument reaches here, not that it is finished.",
 } as const;

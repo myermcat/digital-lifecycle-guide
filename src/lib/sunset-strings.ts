@@ -235,7 +235,7 @@ export const SUNSET_STRINGS = {
         description: 'The full version of the "assess options" step, shared with Create.',
       },
       {
-        label: "The official checkpoints of a digital service",
+        label: "Checkpoints a GC digital service has to pass",
         href: "/gate-map",
         description:
           "The map of official checkpoints across Create, Live, and Sunset, including the records checkpoint at exit.",

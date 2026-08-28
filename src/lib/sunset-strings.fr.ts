@@ -238,7 +238,7 @@ export const SUNSET_STRINGS = {
           "La version complète de l’étape « évaluer les options », partagée avec la Création.",
       },
       {
-        label: "Les points de contrôle officiels d’un service numérique",
+        label: "Les points de contrôle qu’un service numérique du GC doit franchir",
         href: "/gate-map",
         description:
           "La carte des points de contrôle officiels de la Création, l’Exploitation et le Retrait, y compris le point de contrôle des documents à la sortie.",

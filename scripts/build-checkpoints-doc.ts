@@ -1509,26 +1509,45 @@ for (const phase of CHECKPOINT_MAP_PHASES) {
  */
 function datedNote() {
   const dash = { style: BorderStyle.DASHED, size: 4, color: TAN };
+  const INSET = 1100;
   return new Table({
-    width: { size: CW, type: WidthType.DXA },
-    columnWidths: [CW],
+    width: { size: CW - INSET * 2, type: WidthType.DXA },
+    columnWidths: [CW - INSET * 2],
+    alignment: AlignmentType.CENTER,
+    indent: { size: INSET, type: WidthType.DXA },
     rows: [
       new TableRow({
         cantSplit: true,
         children: [
           new TableCell({
-            width: { size: CW, type: WidthType.DXA },
+            width: { size: CW - INSET * 2, type: WidthType.DXA },
             shading: { fill: CARD, type: ShadingType.CLEAR },
             borders: { top: dash, bottom: dash, left: dash, right: dash },
-            margins: { top: 150, bottom: 150, left: 220, right: 220 },
-            children: S.frontMatter.datedNote.map(
-              (line, i, all) =>
-                new Paragraph({
-                  alignment: AlignmentType.CENTER,
-                  spacing: { after: i === all.length - 1 ? 0 : 90, line: 264 },
-                  children: [new TextRun({ text: line, font: SANS, color: MUTED, size: 17 })],
-                }),
-            ),
+            margins: { top: 220, bottom: 240, left: 300, right: 300 },
+            children: [
+              new Paragraph({
+                alignment: AlignmentType.CENTER,
+                spacing: { after: 140 },
+                children: [
+                  new TextRun({
+                    text: S.frontMatter.datedNoteLabel,
+                    font: SANS,
+                    bold: true,
+                    color: RUST,
+                    size: 15,
+                    characterSpacing: 60,
+                  }),
+                ],
+              }),
+              ...S.frontMatter.datedNote.map(
+                (line, i, all) =>
+                  new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { after: i === all.length - 1 ? 0 : 130, line: 288 },
+                    children: [new TextRun({ text: line, font: SANS, color: MUTED, size: 17 })],
+                  }),
+              ),
+            ],
           }),
         ],
       }),

@@ -91,15 +91,15 @@ export { CHECKPOINT_MAP_PATH };
 export const CHECKPOINT_MAP_EYEBROW = "Voir le parcours complet";
 
 export const CHECKPOINT_MAP_TITLE =
-  "Les points de contrôle qu’un service numérique du GC doit franchir";
+  "Une liste non officielle des approbations et des obligations par lesquelles un service numérique du GC doit passer";
 
 /** The page says plainly that the list was assembled, not handed down. */
 export const CHECKPOINT_MAP_BEST_ATTEMPT =
   "C’est notre meilleure tentative de réunir ces points de contrôle au même endroit. S’il en manque un, dites-le-nous.";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
-  text: "Chaque point de contrôle officiel qu’un service numérique du gouvernement du Canada peut rencontrer, par sujet, avec ce qui l’amène dans la portée et ce que le responsable opérationnel doit personnellement faire à son égard. Une annexe énumère ce qui existe déjà et peut être réutilisé. Une deuxième suit un service fictif depuis le premier signe de difficulté jusqu’au jour où il est remplacé, rencontrant les points de contrôle dans l’ordre où ce service les a rencontrés.",
-  bold: ["point de contrôle officiel"],
+  text: "Les points de contrôle officiels qu’un service numérique du gouvernement du Canada peut rencontrer, par sujet, avec ce qui l’amène dans la portée et ce que le responsable opérationnel doit personnellement faire à son égard. Une annexe énumère ce qui existe déjà et peut être réutilisé. Une deuxième suit un service fictif depuis le premier signe de difficulté jusqu’au jour où il est remplacé, rencontrant les points de contrôle dans l’ordre où ce service les a rencontrés.",
+  bold: ["points de contrôle officiels"],
 } as const;
 
 export const CHECKPOINT_MAP_HOW_TO_USE = {
@@ -134,7 +134,7 @@ export const CHECKPOINT_MAP_JUMP = [
   { label: "Comment utiliser cette page", href: "#how-to-use" },
   { label: "Presque tout ici varie", href: "#everything-varies" },
   { label: "Glossaire", href: "#thecheckpoints" },
-  { label: "Chaque élément officiel", href: "#annex-instruments" },
+  { label: "Les éléments officiels", href: "#annex-instruments" },
   { label: "Annexe A : réutiliser d’abord", href: "#annex-reuse" },
   { label: "Annexe B : un exemple travaillé", href: "#annex-nadia" },
 ] as const;
@@ -180,7 +180,7 @@ export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) =>
 export const CHECKPOINT_MAP_TABLE_SECTION = {
   id: "annex-instruments",
   label: "LE TABLEAU",
-  heading: "Chaque élément officiel qu’un service doit accomplir",
+  heading: "Les éléments officiels qu’un service doit accomplir",
   intro:
     "Réparti en douze sujets pour qu’un lecteur puisse aller droit à ceux qui le concernent. Chaque sujet s’ouvre sur ce qui compte le plus à son égard, puis un tableau de ses instruments. Rien ici n’est propre à un ministère ou à un type de service.",
 } as const;

@@ -90,15 +90,16 @@ export { CHECKPOINT_MAP_PATH };
 
 export const CHECKPOINT_MAP_EYEBROW = "See the whole path";
 
-export const CHECKPOINT_MAP_TITLE = "Checkpoints a GC digital service has to pass";
+export const CHECKPOINT_MAP_TITLE =
+  "An unofficial list of the approvals and duties a GC digital service has to pass";
 
 /** The page says plainly that the list was assembled, not handed down. */
 export const CHECKPOINT_MAP_BEST_ATTEMPT =
   "This is our best attempt at gathering these checkpoints in one place. If something is missing, please tell us.";
 
 export const CHECKPOINT_MAP_SUBTITLE = {
-  text: "Every official checkpoint a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service from its first sign of trouble to the day it is replaced, meeting the checkpoints in the order that service met them.",
-  bold: ["official checkpoint"],
+  text: "The official checkpoints a Government of Canada digital service can meet, by topic, with what brings each one into scope and what the business owner personally has to do about it. One appendix lists what is already built and can be reused. A second follows one invented service from its first sign of trouble to the day it is replaced, meeting the checkpoints in the order that service met them.",
+  bold: ["official checkpoints"],
 } as const;
 
 export const CHECKPOINT_MAP_HOW_TO_USE = {
@@ -106,7 +107,7 @@ export const CHECKPOINT_MAP_HOW_TO_USE = {
   items: [
     {
       lead: "To find out what applies to your service, read the tables.",
-      body: "There is one table per topic, and a row for every official instrument a Government of Canada digital service can meet. Start with the topics that match what your service does, read down the scope column, and rule out what does not apply to you.",
+      body: "There is one table per topic, and a row for each official instrument a Government of Canada digital service can meet. Start with the topics that match what your service does, read down the scope column, and rule out what does not apply to you.",
     },
     {
       lead: "To get a feel for the order and the people, read Appendix B.",
@@ -133,7 +134,7 @@ export const CHECKPOINT_MAP_JUMP = [
   { label: "How to use this page", href: "#how-to-use" },
   { label: "Nearly everything here varies", href: "#everything-varies" },
   { label: "Glossary", href: "#thecheckpoints" },
-  { label: "Every official thing", href: "#annex-instruments" },
+  { label: "The official things", href: "#annex-instruments" },
   { label: "Appendix A: reuse first", href: "#annex-reuse" },
   { label: "Appendix B: a worked example", href: "#annex-nadia" },
 ] as const;
@@ -179,7 +180,7 @@ export const CHECKPOINT_MAP_ON_THIS_PAGE = CHECKPOINT_MAP_JUMP.flatMap((item) =>
 export const CHECKPOINT_MAP_TABLE_SECTION = {
   id: "annex-instruments",
   label: "THE TABLE",
-  heading: "Every official thing a service has to do",
+  heading: "The official things a service has to do",
   intro:
     "Split into twelve topics so a reader can go straight to the ones that apply. Every topic opens with what matters most about it, then a table of its instruments. Nothing here is specific to one department or one kind of service.",
 } as const;

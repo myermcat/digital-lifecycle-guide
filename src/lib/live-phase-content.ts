@@ -109,9 +109,7 @@ export const LIVE_PHASE = {
         bullets: [
           {
             text: "The team watches it through monitoring and acts on what the signals show.",
-            internalLinks: [
-              { phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" },
-            ],
+            internalLinks: [{ phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" }],
           },
           {
             text: "Changes are released small and often, so fixes and improvements go out safely.",
@@ -123,9 +121,7 @@ export const LIVE_PHASE = {
           },
           {
             text: "Its dependencies are kept patched and current.",
-            internalLinks: [
-              { phrase: "dependencies", to: "/thread/dependencies-and-standards" },
-            ],
+            internalLinks: [{ phrase: "dependencies", to: "/thread/dependencies-and-standards" }],
           },
         ],
       },
@@ -152,11 +148,11 @@ export const LIVE_PHASE = {
         lead: "A live service needs looking after to keep going well.",
         bullets: [
           {
-            text: "Its funding is renewed before the current money runs out. The official checkpoints of a digital service shows which checkpoints still apply once the service is running.",
+            text: "Its funding is renewed before the current money runs out. Checkpoints a GC digital service has to pass shows which checkpoints still apply once the service is running.",
             internalLinks: [
               { phrase: "funding", to: "/thread/funding" },
               {
-                phrase: "The official checkpoints of a digital service",
+                phrase: "Checkpoints a GC digital service has to pass",
                 to: "/gate-map",
               },
             ],
@@ -235,8 +231,7 @@ export const LIVE_PHASE = {
   reviews: {
     id: "live-reviews-come-round-again",
     title: "Live's checks come round again",
-    text:
-      "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. How critical the service is and how fast it has to come back are re-asked here too. Stabilization tests whether the recovery targets set in Alpha are achievable. Growth reopens them when the service changes, and Maturity re-runs them on the department's own cycle. The work does not finish; it comes round again.",
+    text: "Create runs through one-time approvals. Live works differently: its checks recur. Build a security check into every release, update the privacy assessment when the service changes substantially, and secure renewal funding before the current money ends. How critical the service is and how fast it has to come back are re-asked here too. Stabilization tests whether the recovery targets set in Alpha are achievable. Growth reopens them when the service changes, and Maturity re-runs them on the department's own cycle. The work does not finish; it comes round again.",
   },
 
   sources: [

@@ -109,9 +109,7 @@ export const LIVE_PHASE = {
         bullets: [
           {
             text: "L’équipe l’observe au moyen de la surveillance et agit sur ce que montrent les signaux.",
-            internalLinks: [
-              { phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" },
-            ],
+            internalLinks: [{ phrase: "monitoring", to: "/thread/monitoring-and-instrumentation" }],
           },
           {
             text: "Les changements sont mis en production en petits lots et souvent, pour que les correctifs et les améliorations sortent en toute sécurité.",
@@ -123,9 +121,7 @@ export const LIVE_PHASE = {
           },
           {
             text: "Ses dépendances sont maintenues à jour et corrigées.",
-            internalLinks: [
-              { phrase: "dependencies", to: "/thread/dependencies-and-standards" },
-            ],
+            internalLinks: [{ phrase: "dependencies", to: "/thread/dependencies-and-standards" }],
           },
         ],
       },
@@ -135,7 +131,9 @@ export const LIVE_PHASE = {
         bullets: [
           {
             text: "Une nouvelle recherche sur les utilisateurs montre quoi corriger et quoi ajouter.",
-            internalLinks: [{ phrase: "recherche sur les utilisateurs", to: "/thread/user-research" }],
+            internalLinks: [
+              { phrase: "recherche sur les utilisateurs", to: "/thread/user-research" },
+            ],
           },
           {
             text: "Le carnet de produit est l’endroit où cela devient du travail priorisé.",
@@ -152,11 +150,11 @@ export const LIVE_PHASE = {
         lead: "Un service en exploitation doit être entretenu pour continuer de bien fonctionner.",
         bullets: [
           {
-            text: "Son financement est renouvelé avant que l’argent actuel s’épuise. Les points de contrôle officiels d’un service numérique indiquent quels points de contrôle s’appliquent encore une fois le service en fonction.",
+            text: "Son financement est renouvelé avant que l’argent actuel s’épuise. Les points de contrôle qu’un service numérique du GC doit franchir indiquent quels points de contrôle s’appliquent encore une fois le service en fonction.",
             internalLinks: [
               { phrase: "funding", to: "/thread/funding" },
               {
-                phrase: "Les points de contrôle officiels d’un service numérique",
+                phrase: "Les points de contrôle qu’un service numérique du GC doit franchir",
                 to: "/gate-map",
               },
             ],
@@ -235,8 +233,7 @@ export const LIVE_PHASE = {
   reviews: {
     id: "live-reviews-come-round-again",
     title: "Les vérifications de l’Exploitation reviennent",
-    text:
-      "La Création passe par des approbations ponctuelles. L’Exploitation fonctionne autrement : ses vérifications reviennent. Intégrez une vérification de sécurité à chaque mise en production, mettez à jour l’évaluation de la protection de la vie privée quand le service change de façon importante, et obtenez le financement de renouvellement avant la fin de l’argent actuel. On redemande aussi ici à quel point le service est essentiel et à quelle vitesse il doit revenir. La Stabilisation vérifie si les cibles de rétablissement fixées en Alpha sont atteignables. La Croissance les rouvre quand le service change, et la Maturité les repasse selon le propre cycle du ministère. Le travail ne se termine pas; il revient.",
+    text: "La Création passe par des approbations ponctuelles. L’Exploitation fonctionne autrement : ses vérifications reviennent. Intégrez une vérification de sécurité à chaque mise en production, mettez à jour l’évaluation de la protection de la vie privée quand le service change de façon importante, et obtenez le financement de renouvellement avant la fin de l’argent actuel. On redemande aussi ici à quel point le service est essentiel et à quelle vitesse il doit revenir. La Stabilisation vérifie si les cibles de rétablissement fixées en Alpha sont atteignables. La Croissance les rouvre quand le service change, et la Maturité les repasse selon le propre cycle du ministère. Le travail ne se termine pas; il revient.",
   },
 
   sources: [
@@ -254,7 +251,8 @@ export const LIVE_PHASE = {
     {
       label: "Référence complémentaire",
       linkKey: "apm-gcwiki",
-      description: "Carrefour d’orientation sur la gestion du portefeuille d’applications (wiki GCcollab).",
+      description:
+        "Carrefour d’orientation sur la gestion du portefeuille d’applications (wiki GCcollab).",
     },
   ] satisfies SourceItem[],
 } as const;

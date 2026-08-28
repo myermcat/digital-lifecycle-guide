@@ -14,7 +14,8 @@ export const UI = {
   ask: "Demander",
   askTheGuide: "Demander au guide",
   assumptionsThisPageMakes: "Les hypothèses de cette page",
-  australiaAposSServiceDesignAndDelivery: "Le processus de conception et de prestation de services de l’Australie",
+  australiaAposSServiceDesignAndDelivery:
+    "Le processus de conception et de prestation de services de l’Australie",
   backToHome: "Retour à l’accueil",
   bad: "Mauvais",
   beta: "Bêta",
@@ -31,7 +32,8 @@ export const UI = {
   describingWhatYouBuy: "Décrire ce que vous achetez",
   digitalLifecycleGuide: "du cycle de vie numérique",
   discovery: "Découverte",
-  everyOfficialThingAServiceHasToDoBySub: "Chaque obligation officielle d’un service, par sous-phase",
+  everyOfficialThingAServiceHasToDoBySub:
+    "Chaque obligation officielle d’un service, par sous-phase",
   example: "Exemple",
   filterByStatus: "Filtrer par état",
   focusAreas: "Domaines prioritaires",
@@ -56,17 +58,21 @@ export const UI = {
   live: "Exploitation",
   loadingSearch: "Chargement de la recherche…",
   maturity: "Maturité",
-  nadiaIsNotSpecialThisHappensMoreOftenT: "Nadia n’a rien d’exceptionnel : cela arrive plus souvent qu’on ne le croit.",
+  nadiaIsNotSpecialThisHappensMoreOftenT:
+    "Nadia n’a rien d’exceptionnel : cela arrive plus souvent qu’on ne le croit.",
   needAHandWithThis: "Besoin d’un coup de main?",
   noPagesWithThisStatusYet: "Aucune page dans cet état pour l’instant.",
   nobodyWasAssignedToManageTheSupplier: "Personne n’a été chargé de gérer le fournisseur.",
-  noneOfThatIsWrongItIsACompetentPurchas: "Rien de tout cela n’est erroné. C’est un achat compétent.",
+  noneOfThatIsWrongItIsACompetentPurchas:
+    "Rien de tout cela n’est erroné. C’est un achat compétent.",
   notSureWhichPhaseYouAreIn: "Vous ne savez pas dans quelle phase vous êtes?",
   note: "Note",
   nothingMatchedTryAnotherWord: "Aucun résultat. Essayez un autre mot.",
   onThisPage: "Sur cette page",
-  oneThingThatCatchesPeopleWhicheverRout: "Une chose qui prend les gens au dépourvu, quelle que soit la voie",
-  onlyAvailableOnTheGovernmentOfCanadaNe: "Accessible uniquement sur le réseau du gouvernement du Canada.",
+  oneThingThatCatchesPeopleWhicheverRout:
+    "Une chose qui prend les gens au dépourvu, quelle que soit la voie",
+  onlyAvailableOnTheGovernmentOfCanadaNe:
+    "Accessible uniquement sur le réseau du gouvernement du Canada.",
   onlyIf: "Seulement si",
   openAnIssueOnGithub: "Ouvrir un ticket sur GitHub",
   page: "Page",
@@ -99,7 +105,8 @@ export const UI = {
   theGuide: "Le guide",
   theOfficialCheckpoints: "LES POINTS DE CONTRÔLE OFFICIELS",
   theOfficialCheckpoints2: "Les points de contrôle officiels.",
-  theOfficialCheckpointsOfADigitalServic: "Les points de contrôle officiels d’un service numérique",
+  theOfficialCheckpointsOfADigitalServic:
+    "Les points de contrôle qu’un service numérique du GC doit franchir",
   theOneTagThatChangesWhetherARowApplies: "L’étiquette qui décide si une rangée vous concerne",
   theOneThingWorthHoldingOnTo: "La seule chose qu’il vaut la peine de retenir",
   theSameProgrammeBoughtTwoWays: "Le même programme, acheté de deux façons",
@@ -107,7 +114,8 @@ export const UI = {
   theSecurityPractices: "Les pratiques de sécurité.",
   theThreePhases: "Les trois phases",
   theThreeSubPhasesOfLive: "Les trois sous-phases de l’Exploitation",
-  thisGuideIsForYouWhateverBroughtYouHer: "Ce guide est pour vous, quelle que soit la raison de votre venue",
+  thisGuideIsForYouWhateverBroughtYouHer:
+    "Ce guide est pour vous, quelle que soit la raison de votre venue",
   thisPageDidnTLoad: "Cette page ne s’est pas chargée",
   thisPageWanderedOff: "Cette page s’est égarée",
   thisSourceIsOnItsWay: "Cette source s’en vient",
@@ -139,33 +147,54 @@ export const UI = {
   whoThisIsFor: "À qui cela s’adresse",
   whoseJobItIs: "À qui revient ce travail",
   whyItMatters: "Pourquoi cela compte",
-  whyWeCouldNotSimplyFollowTheUkAndAustr: "Pourquoi nous ne pouvions pas simplement suivre le Royaume-Uni et l’Australie",
+  whyWeCouldNotSimplyFollowTheUkAndAustr:
+    "Pourquoi nous ne pouvions pas simplement suivre le Royaume-Uni et l’Australie",
   youMightBe: "Vous êtes peut-être :",
   theStepsOfAProcurement: "Les étapes d’un approvisionnement",
   theOfficialInstrumentsBehind: "Les instruments officiels derrière",
   searchShort: "Rechercher",
-  aFewOfTheRoutesShowingWhereTheCompetit: "Quelques-unes des voies, montrant où se déroule le concours et où le contrat est signé",
-  aPractitionerSGuideToTheDigitalService: "Un guide pratique du cycle de vie d’un service numérique au gouvernement du Canada.",
-  betaEndsHereTheServiceBecomesTheOffici: "La Bêta se termine ici. Le service devient le service officiel, de vraies personnes en dépendent, et le ministère en répond à partir de ce moment jusqu’à son remplacement ou son retrait.",
-  choosingToMakeYourOwnInsteadBreaksNoRu: "Choisir de fabriquer le vôtre n’enfreint aucune règle. Le cadre de l’architecture intégrée demande toutefois aux équipes d’examiner d’abord la réutilisation : un comité d’examen de l’architecture du ministère demandera probablement lesquels de ces éléments ont été envisagés et pourquoi aucun ne convenait.",
-  everythingOfficialThisSubjectBringsWit: "Tout ce que ce sujet apporte d’officiel, et à quel moment de la vie d’un service chaque élément survient. Le détail complet, y compris qui fait le travail et ce que le responsable opérationnel fait personnellement, se trouve dans le tableau de la page d’accueil.",
-  gettingAServiceLiveMeansPassingOfficia: "Mettre un service en exploitation suppose de franchir des points de contrôle officiels : évaluations à mener, comités à rencontrer, registres où figurer, et obligations qui durent aussi longtemps que le service. Lesquels s’appliquent dépend de ce que fait le service et de ce qui est dépensé : deux services n’empruntent donc jamais le même parcours.",
-  internalBuildTrackerForEveryPageInTheG: "Suivi interne de construction pour chaque page du guide, y compris les ébauches qui ne sont liées à aucune navigation ordinaire. L’index destiné aux lecteurs se trouve sous Index dans l’en-tête.",
-  lookForSomethingToReuseBeforeMakingYou: "Cherchez quelque chose à réutiliser avant de fabriquer le vôtre. Voici les pièces déjà construites et entretenues par une autre partie du gouvernement : une équipe peut donc configurer plutôt que fabriquer. Le tableau des instruments officiels est ce avec quoi un service doit composer. Ceci est ce qu’il peut éviter d’avoir à fabriquer.",
-  oneCautionWhichSubPhaseAnInstrumentBel: "Une mise en garde. La sous-phase à laquelle appartient un instrument relève du jugement propre à ce guide, parce qu’aucune source du gouvernement du Canada n’emploie ces noms de phases. Là où le placement suit une véritable échéance inscrite dans l’instrument, la rangée le dit. Là où ce n’est pas le cas, la rangée le dit aussi.",
-  oneTablePerTopicBelowAndEveryInstrumen: "Un tableau par sujet ci-dessous, et chaque instrument y occupe deux rangées. La rangée du haut dit ce qui le fait entrer dans la portée, ce que vous devez personnellement faire à son sujet, et qui fait le reste. La rangée du dessous dit ce qu’est la chose, et à quel moment de la vie du service elle survient.",
-  placingAnInstrumentInASubPhaseIsThisGu: "Placer un instrument dans une sous-phase est un choix éditorial propre à ce guide, ancré autant que possible sur une véritable échéance inscrite dans l’instrument lui-même. Le détail complet, y compris qui fait le travail et ce que le responsable opérationnel fait personnellement, se trouve dans le tableau complet des instruments.",
-  somethingWentWrongOnOurEndYouCanTryRef: "Quelque chose a mal tourné de notre côté. Vous pouvez essayer d’actualiser ou revenir à l’accueil.",
-  thePageYouAreLookingForDoesNotExistOrI: "La page que vous cherchez n’existe pas, ou elle a peut-être déménagé. Dans un cas comme dans l’autre, elle n’est pas ici.",
-  theThreeKindsOfRequirementWhatEachOneS: "Les trois catégories d’exigences, ce que chacune dit, et à quelle vitesse chacune se périme",
-  thisGuideIsAWorkInProgressSpottedSomet: "Ce guide est en chantier. Vous avez remarqué quelque chose qui cloche, ou vous avez des commentaires?",
-  thisInstrumentDoesNotApplyToEveryServi: "Cet instrument ne s’applique pas à tous les services. La colonne de la portée dit ce qui le fait entrer dans la portée. Un instrument sans étiquette s’applique à tous.",
-  thisPageIsStillToComeItWillCoverWhatIt: "Cette page s’en vient. Elle portera sur ce que veut dire conserver assez de compréhension pour gouverner le travail et pour gérer une sortie.",
-  thisTableIsWideTurnThePhoneSidewaysToR: "Ce tableau est large. Tournez le téléphone sur le côté pour le lire, et faites défiler horizontalement à l’intérieur du tableau pour atteindre les dernières colonnes.",
+  aFewOfTheRoutesShowingWhereTheCompetit:
+    "Quelques-unes des voies, montrant où se déroule le concours et où le contrat est signé",
+  aPractitionerSGuideToTheDigitalService:
+    "Un guide pratique du cycle de vie d’un service numérique au gouvernement du Canada.",
+  betaEndsHereTheServiceBecomesTheOffici:
+    "La Bêta se termine ici. Le service devient le service officiel, de vraies personnes en dépendent, et le ministère en répond à partir de ce moment jusqu’à son remplacement ou son retrait.",
+  choosingToMakeYourOwnInsteadBreaksNoRu:
+    "Choisir de fabriquer le vôtre n’enfreint aucune règle. Le cadre de l’architecture intégrée demande toutefois aux équipes d’examiner d’abord la réutilisation : un comité d’examen de l’architecture du ministère demandera probablement lesquels de ces éléments ont été envisagés et pourquoi aucun ne convenait.",
+  everythingOfficialThisSubjectBringsWit:
+    "Tout ce que ce sujet apporte d’officiel, et à quel moment de la vie d’un service chaque élément survient. Le détail complet, y compris qui fait le travail et ce que le responsable opérationnel fait personnellement, se trouve dans le tableau de la page d’accueil.",
+  gettingAServiceLiveMeansPassingOfficia:
+    "Mettre un service en exploitation suppose de franchir des points de contrôle officiels : évaluations à mener, comités à rencontrer, registres où figurer, et obligations qui durent aussi longtemps que le service. Lesquels s’appliquent dépend de ce que fait le service et de ce qui est dépensé : deux services n’empruntent donc jamais le même parcours.",
+  internalBuildTrackerForEveryPageInTheG:
+    "Suivi interne de construction pour chaque page du guide, y compris les ébauches qui ne sont liées à aucune navigation ordinaire. L’index destiné aux lecteurs se trouve sous Index dans l’en-tête.",
+  lookForSomethingToReuseBeforeMakingYou:
+    "Cherchez quelque chose à réutiliser avant de fabriquer le vôtre. Voici les pièces déjà construites et entretenues par une autre partie du gouvernement : une équipe peut donc configurer plutôt que fabriquer. Le tableau des instruments officiels est ce avec quoi un service doit composer. Ceci est ce qu’il peut éviter d’avoir à fabriquer.",
+  oneCautionWhichSubPhaseAnInstrumentBel:
+    "Une mise en garde. La sous-phase à laquelle appartient un instrument relève du jugement propre à ce guide, parce qu’aucune source du gouvernement du Canada n’emploie ces noms de phases. Là où le placement suit une véritable échéance inscrite dans l’instrument, la rangée le dit. Là où ce n’est pas le cas, la rangée le dit aussi.",
+  oneTablePerTopicBelowAndEveryInstrumen:
+    "Un tableau par sujet ci-dessous, et chaque instrument y occupe deux rangées. La rangée du haut dit ce qui le fait entrer dans la portée, ce que vous devez personnellement faire à son sujet, et qui fait le reste. La rangée du dessous dit ce qu’est la chose, et à quel moment de la vie du service elle survient.",
+  placingAnInstrumentInASubPhaseIsThisGu:
+    "Placer un instrument dans une sous-phase est un choix éditorial propre à ce guide, ancré autant que possible sur une véritable échéance inscrite dans l’instrument lui-même. Le détail complet, y compris qui fait le travail et ce que le responsable opérationnel fait personnellement, se trouve dans le tableau complet des instruments.",
+  somethingWentWrongOnOurEndYouCanTryRef:
+    "Quelque chose a mal tourné de notre côté. Vous pouvez essayer d’actualiser ou revenir à l’accueil.",
+  thePageYouAreLookingForDoesNotExistOrI:
+    "La page que vous cherchez n’existe pas, ou elle a peut-être déménagé. Dans un cas comme dans l’autre, elle n’est pas ici.",
+  theThreeKindsOfRequirementWhatEachOneS:
+    "Les trois catégories d’exigences, ce que chacune dit, et à quelle vitesse chacune se périme",
+  thisGuideIsAWorkInProgressSpottedSomet:
+    "Ce guide est en chantier. Vous avez remarqué quelque chose qui cloche, ou vous avez des commentaires?",
+  thisInstrumentDoesNotApplyToEveryServi:
+    "Cet instrument ne s’applique pas à tous les services. La colonne de la portée dit ce qui le fait entrer dans la portée. Un instrument sans étiquette s’applique à tous.",
+  thisPageIsStillToComeItWillCoverWhatIt:
+    "Cette page s’en vient. Elle portera sur ce que veut dire conserver assez de compréhension pour gouverner le travail et pour gérer une sortie.",
+  thisTableIsWideTurnThePhoneSidewaysToR:
+    "Ce tableau est large. Tournez le téléphone sur le côté pour le lire, et faites défiler horizontalement à l’intérieur du tableau pour atteindre les dernières colonnes.",
   aGuideForTheNextGuide: "Un guide pour le prochain guide",
-  anIndependentGuideNotAnOfficial: "Un guide indépendant. Il ne s’agit pas d’une publication officielle du gouvernement du Canada.",
+  anIndependentGuideNotAnOfficial:
+    "Un guide indépendant. Il ne s’agit pas d’une publication officielle du gouvernement du Canada.",
   nobodyToldHer: "Personne ne le lui a dit",
-  noteAccurateForNow: "Ceci est un guide de 2026, exact pour le moment. Des liens peuvent se périmer à mesure que des instruments sont renommés et que des pages changent d’adresse, mais les concepts tiennent. C’est aussi une version préliminaire, construite au grand jour : nous cherchons donc vos commentaires :",
+  noteAccurateForNow:
+    "Ceci est un guide de 2026, exact pour le moment. Des liens peuvent se périmer à mesure que des instruments sont renommés et que des pages changent d’adresse, mais les concepts tiennent. C’est aussi une version préliminaire, construite au grand jour : nous cherchons donc vos commentaires :",
   subBetaCreate: "Sous-phase Bêta (Création)",
   subMaturityLive: "Sous-phase Maturité (Exploitation)",
   tellUsWhatIsMissing: "dites-nous ce qui manque, ce qui est faux ou ce qui n’est pas clair",
@@ -173,8 +202,10 @@ export const UI = {
   theOfficialCheckpointsPlain: "Les points de contrôle officiels",
   aPictureOfWhatIsComing: "Un aperçu de ce qui s’en vient.",
   forYourSetup: "Pour votre configuration",
-  rightIsWhoAnswersAndHowTheTagOnEachRes: "À droite, qui intervient et comment. L’étiquette de chaque intervention dit si l’intervenant est",
-  timelineShowingDiscoveryAlphaAndBetaMa: "Chronologie montrant la Découverte, l’Alpha et la Bêta qui composent la phase de Création (environ 6 à 12 mois), puis l’Exploitation avec ses sous-phases Stabilisation, Croissance et Maturité, et le Retrait, toutes deux sans durée déterminée",
+  rightIsWhoAnswersAndHowTheTagOnEachRes:
+    "À droite, qui intervient et comment. L’étiquette de chaque intervention dit si l’intervenant est",
+  timelineShowingDiscoveryAlphaAndBetaMa:
+    "Chronologie montrant la Découverte, l’Alpha et la Bêta qui composent la phase de Création (environ 6 à 12 mois), puis l’Exploitation avec ses sous-phases Stabilisation, Croissance et Maturité, et le Retrait, toutes deux sans durée déterminée",
   whatWorkStaysYours: "Quel travail reste le vôtre",
   lifecycleIslandsAlt:
     "Le cycle de vie du service sous forme de trois îles — Création, Exploitation, Retrait — reliées par deux ponts : Lancement, et Planifier la sortie.",
@@ -191,57 +222,41 @@ export const UI = {
     "Deux rangées sur une même ligne du temps. Le nouveau service traverse la Découverte, l’Alpha et la Bêta, puis une ligne de lancement pointillée, puis une bande Exploitation plus épaisse divisée en Stabilisation et Croissance. L’ancien service traverse Évaluer, Décider, Planifier, Acheter ou construire, et Migrer. Migrer traverse la ligne de lancement, et une flèche montre les utilisateurs et les données qui passent dans l’Exploitation. L’ancien service est marqué comme éteint tôt dans la Croissance, une fois que le nouveau est en fonction et stable, et non au lancement.",
   whereContractSignedAlt:
     "Où le contrat est signé au fil de la Découverte, de l’Alpha et de la Bêta. Acheter une Équipe et le modèle d’approvisionnement agile pointent tous deux vers la frontière où la Découverte se termine et où l’Alpha s’ouvre. Acheter une Solution et Acheter un Produit fini pointent vers la frontière où l’Alpha se termine et où la Bêta s’ouvre. La légende, en bas à gauche, indique : où le contrat est signé, voie par voie.",
-  createToLiveCrossingAlt:
-    "Passage de la Création à l’Exploitation",
-  liveToSunsetCrossingAlt:
-    "Passage de l’Exploitation au Retrait",
+  createToLiveCrossingAlt: "Passage de la Création à l’Exploitation",
+  liveToSunsetCrossingAlt: "Passage de l’Exploitation au Retrait",
   backlogFigureAlt:
     "Une colonne verticale de carnet de produit, avec les éléments prêts en haut et les éléments plus gros et plus grossiers en dessous, à côté d’une flèche descendante indiquant priorité plus élevée en haut et priorité plus faible en bas.",
-  backlogItemVote:
-    "S’inscrire pour voter en ligne",
-  backlogItemPostcode:
-    "Corriger la recherche par code postal",
-  backlogItemSession:
-    "Mettre à niveau le stockage de session",
-  backlogItemAddress:
-    "Synchronisation des adresses entre services et entre ministères",
-  backlogItemRenewal:
-    "Rappels et notifications de renouvellement annuel",
-  openEndedAsLongAsNeeded:
-    "sans terme — aussi longtemps que le service est nécessaire",
+  backlogItemVote: "S’inscrire pour voter en ligne",
+  backlogItemPostcode: "Corriger la recherche par code postal",
+  backlogItemSession: "Mettre à niveau le stockage de session",
+  backlogItemAddress: "Synchronisation des adresses entre services et entre ministères",
+  backlogItemRenewal: "Rappels et notifications de renouvellement annuel",
+  openEndedAsLongAsNeeded: "sans terme — aussi longtemps que le service est nécessaire",
   createCheckpointsLead:
     "C’est dans la Création que tombent la plupart des points de contrôle officiels. Voyez où elle s’inscrit dans l’ensemble du cycle de vie.",
   phaseLevelReferencesNote:
     "Ce sont les références au niveau de la phase. Les références de travail de chaque partie de la phase se trouvent sur ses pages de sous-phase.",
-  threadPhasePlaceholder:
-    "Cette page décrira comment ce fil s’applique pendant cette phase.",
-  examplesComingLater:
-    "Les exemples pour cette sous-phase viendront plus tard.",
-  gcNetworkOnly:
-    "Accessible uniquement sur le réseau du gouvernement du Canada.",
+  threadPhasePlaceholder: "Cette page décrira comment ce fil s’applique pendant cette phase.",
+  examplesComingLater: "Les exemples pour cette sous-phase viendront plus tard.",
+  gcNetworkOnly: "Accessible uniquement sur le réseau du gouvernement du Canada.",
   lifecycleThreeRegionsAlt:
     "Une flèche pleine intitulée Création pointe vers une grande boucle d’infini intitulée Exploitation, puis une flèche pointillée qui s’estompe, intitulée Retrait, en ressort.",
   sunsetOverlapShortAlt:
     "Deux rangées sur une même ligne du temps. Le nouveau service traverse la Découverte, l’Alpha et la Bêta, puis une ligne de lancement pointillée, puis une bande Exploitation plus épaisse divisée en Stabilisation et Croissance. L’ancien service traverse Évaluer, Décider, Planifier, Acheter ou construire, et Migrer. Les utilisateurs et les données passent de l’autre côté au lancement. L’ancien service est marqué comme éteint tôt dans la Croissance, une fois que le nouveau est stable.",
-  stabilizationFireAlt:
-    "Une personne debout, calme, au milieu du feu",
-  whoRunsItAndHowToGetIt:
-    "Qui l’exploite, et comment l’obtenir",
-  whatThisSubphaseExistsToDo:
-    "ce à quoi sert cette sous-phase",
+  stabilizationFireAlt: "Une personne debout, calme, au milieu du feu",
+  whoRunsItAndHowToGetIt: "Qui l’exploite, et comment l’obtenir",
+  whatThisSubphaseExistsToDo: "ce à quoi sert cette sous-phase",
   assistantMetaDescription:
     "Posez une question et trouvez les parties du Guide du cycle de vie numérique qui y répondent, avec un lien vers chacune.",
   buildStatusMetaDescription:
     "Suivi interne de l’état de construction de chaque page du Guide du cycle de vie numérique.",
-  aFewWaysOfBuildingADigitalService:
-    "quelques façons de construire un service numérique",
+  aFewWaysOfBuildingADigitalService: "quelques façons de construire un service numérique",
   someoneJustToldThereIsMoney:
     "quelqu’un à qui l’on vient d’annoncer qu’il y a de l’argent pour acheter un système",
   seeCheckpointsInCreate: "Voir les points de contrôle de la Création →",
   seeCheckpointsInLive: "Voir les points de contrôle de l’Exploitation →",
   seeCheckpointsInSunset: "Voir les points de contrôle du Retrait →",
-  instrumentsIntroBefore:
-    "Tout ce qui est officiel et à quoi il arrive quelque chose pendant ",
+  instrumentsIntroBefore: "Tout ce qui est officiel et à quoi il arrive quelque chose pendant ",
   instrumentsIntroAfter:
     ", et ce que ce quelque chose est. L’étiquette dit à quelle étape l’instrument parvient ici, non qu’il soit terminé.",
 } as const;
