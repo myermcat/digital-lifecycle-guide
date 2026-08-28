@@ -1658,23 +1658,10 @@ cover.push(
   new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 0, line: 236 },
+    indent: { left: 1500, right: 1500 },
     children: [
       new TextRun({
-        text: S.frontMatter.developedByLine1,
-        font: SANS,
-        color: BANNERBLUE,
-        size: 15,
-      }),
-    ],
-  }),
-);
-cover.push(
-  new Paragraph({
-    alignment: AlignmentType.CENTER,
-    spacing: { after: 0, line: 236 },
-    children: [
-      new TextRun({
-        text: S.frontMatter.developedByLine2,
+        text: S.frontMatter.developedBy,
         font: SANS,
         color: BANNERBLUE,
         size: 15,

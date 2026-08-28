@@ -28,10 +28,9 @@ export const CHECKPOINTS_DOC = {
     eyebrow: "Le Guide du cycle de vie numérique",
     subtitle:
       "Les approbations, les examens, les autorisations et les obligations permanentes par lesquels un service doit passer, et à qui revient chacun",
-    developedByLine1:
-      "Élaboré par le Secrétariat du Conseil du Trésor du Canada, Bureau du dirigeant principal de l’information,",
-    developedByLine2:
-      "Secteur du dirigeant principal de la technologie, Technologie numérique et cybersécurité.",
+    /** Qui l’a fait, en une phrase. Des personnes, non une institution qui publie. */
+    developedBy:
+      "Créé par des membres des équipes du Bureau du dirigeant principal de l’information du Secrétariat du Conseil du Trésor du Canada, du Secteur du dirigeant principal de la technologie et de la Technologie numérique et cybersécurité, pour vous aider en chemin.",
     bannerAltTitle: "Bandeau de couverture",
     bannerAltDescription: "Bandeau décoratif en haut de la couverture",
     bannerAltName: "Bandeau de couverture",

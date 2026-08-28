@@ -26,9 +26,9 @@ export const CHECKPOINTS_DOC = {
     eyebrow: "The Digital Lifecycle Guide",
     subtitle:
       "The approvals, reviews, sign-offs and standing duties a service has to pass, and who owns each one",
-    developedByLine1:
-      "Developed by the Treasury Board of Canada Secretariat, Office of the Chief Information Officer,",
-    developedByLine2: "Chief Technology Officer Sector, Digital Technology and Cyber Security.",
+    /** Who made it, in one sentence. Named people, not an institution issuing a document. */
+    developedBy:
+      "Created by team members from the Treasury Board of Canada Secretariat's Office of the Chief Information Officer, Chief Technology Officer Sector, and Digital Technology and Cyber Security team to help you on your way.",
     bannerAltTitle: "Cover band",
     bannerAltDescription: "Decorative band across the top of the cover",
     bannerAltName: "Cover band",
