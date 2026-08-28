@@ -139,7 +139,11 @@ export const PROCUREMENT_STRINGS = {
     items: [
       {
         lead: "Le temps que cela prend.",
-        body: "L’approvisionnement suit sa propre horloge, souvent plusieurs mois de la première idée au contrat signé. Planifiez vos échéanciers autour de lui dès le départ, pour qu’il ne vous prenne pas de court.",
+        body: "L’approvisionnement suit sa propre horloge, souvent plusieurs mois de la première idée au contrat signé. L’expérience d’une équipe situe l’achat seul entre 12 et 24 mois. Traitez ce chiffre comme une illustration et obtenez celui de votre propre cas auprès de votre bureau de l’approvisionnement. Planifiez vos échéanciers autour de lui dès le départ, pour qu’il ne vous prenne pas de court.",
+      },
+      {
+        lead: "Les exigences, par écrit.",
+        body: "Au-delà de 40 000 $ de services professionnels, l’autorité contractante a besoin d’un énoncé des travaux écrit avant l’attribution, et le propriétaire d’entreprise signe une confirmation que les exigences sont complètes. La valeur en dollars change la paperasse. Le devoir de bien formuler les exigences s’applique quelle que soit la valeur.",
       },
       {
         lead: "Les décisions que vous seul pouvez prendre.",
@@ -872,6 +876,11 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "p",
             text: "La Maturité expose quand amorcer chacune d’elles, et ce qu’une prolongation d’urgence coûte au ministère.",
+          },
+          {
+            type: "p",
+            text: "Un contrat signé devient aussi public. Tout contrat de plus de 10 000 $ est publié au titre d’une obligation légale, et les subventions et contributions de plus de 25 000 $ avec lui. Cela se produit sans que personne le demande, de sorte que le contrat est rédigé en sachant qu’il sera lu.",
+            bold: [{ phrase: "devient aussi public" }],
           },
         ],
         internalLinks: [

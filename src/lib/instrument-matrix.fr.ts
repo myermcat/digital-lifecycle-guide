@@ -1421,7 +1421,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     family: "Hébergement et infonuagique",
     kind: "authorization",
     whatItIs:
-      "Le travail de sécurité supplémentaire que porte un service hébergé dans le nuage : un profil de contrôles prêt à l’emploi sur lequel construire, des garde-fous qui doivent être en place dans les premiers jours d’un nouvel environnement infonuagique, et une évaluation de sécurité qui tient compte du partage entre ce que fait le fournisseur et ce que fait le ministère.",
+      "Le travail de sécurité supplémentaire que porte un service hébergé dans le nuage : un profil de contrôles prêt à l’emploi sur lequel construire, des garde-fous qui doivent être mis en place, validés et déclarés dans les 30 premiers jours ouvrables suivant l’obtention d’un compte infonuagique, et une évaluation de sécurité qui tient compte du partage entre ce que fait le fournisseur et ce que fait le ministère.",
     everyService: false,
     scope:
       "Seulement pour les services hébergés dans le nuage. Le profil de contrôles Protégé B est le point de départ habituel. Le Centre pour la cybersécurité évalue séparément les fournisseurs de services infonuagiques : un ministère hérite donc de cette évaluation plutôt que de la refaire, et n’évalue que sa propre configuration et son propre usage.",

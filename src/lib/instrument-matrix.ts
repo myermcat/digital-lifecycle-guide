@@ -1420,7 +1420,7 @@ export const INSTRUMENT_MATRIX: MatrixInstrument[] = [
     family: "Hosting and cloud",
     kind: "authorization",
     whatItIs:
-      "The extra security work a cloud-hosted service carries: a ready-made control profile to build against, guardrails that have to be in place within the first days of a new cloud environment, and a security assessment that accounts for the split between what the provider does and what the department does.",
+      "The extra security work a cloud-hosted service carries: a ready-made control profile to build against, guardrails that have to be implemented, validated and reported within the first 30 business days of getting a cloud account, and a security assessment that accounts for the split between what the provider does and what the department does.",
     everyService: false,
     scope:
       "Only for cloud-hosted services. The Protected B control profile is the usual starting point. The Cyber Centre separately assesses cloud service providers, so a department inherits that assessment rather than repeating it, and assesses only its own configuration and use.",

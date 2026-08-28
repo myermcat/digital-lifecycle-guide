@@ -139,7 +139,11 @@ export const PROCUREMENT_STRINGS = {
     items: [
       {
         lead: "How long it takes.",
-        body: "Procurement runs on its own clock, often many months from first idea to signed contract. Plan your timelines around it early, so it does not catch you short.",
+        body: "Procurement runs on its own clock, often many months from first idea to signed contract. One team's experience puts the buying alone at 12 to 24 months. Treat that as an illustration and get the figure for your own case from your procurement office. Plan your timelines around it early, so it does not catch you short.",
+      },
+      {
+        lead: "The requirements, in writing.",
+        body: "Above $40,000 of professional services, the contracting authority needs a written statement of work before award, and the business owner signs a confirmation that the requirements are complete. The dollar value changes the paperwork; the duty to get the requirements right applies whatever the value.",
       },
       {
         lead: "The decisions only you can make.",
@@ -872,6 +876,11 @@ export const PROCUREMENT_STRINGS = {
           {
             type: "p",
             text: "Maturity sets out when to start each of them, and what an emergency extension costs the department.",
+          },
+          {
+            type: "p",
+            text: "A signed contract also becomes public. Any contract over $10,000 is published as a statutory duty, and grants and contributions over $25,000 with it. This happens without anyone asking for it, so the contract is written knowing it will be read.",
+            bold: [{ phrase: "becomes public" }],
           },
         ],
         internalLinks: [
