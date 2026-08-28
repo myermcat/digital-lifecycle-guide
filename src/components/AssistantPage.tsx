@@ -407,8 +407,22 @@ export function AssistantPage() {
          * search results underneath a written answer showed the reader the pre-rewrite
          * results, which are the bad ones, and they read as irrelevant because they were.
          */
+        /*
+         * The rewrite step is asked for followUps too, and its ones are thrown away when the
+         * answer step supplies its own. When the answer step supplies none, which it does
+         * despite being told to always give two or three, the reader was left with no way on.
+         * Asked whether to extend a service to everyone, the answer came back with
+         * "followUps": [] and finish_reason "stop", so nothing was truncated: the model just
+         * declined. The rewrite had already produced three usable ones. Spend them rather
+         * than showing a dead end.
+         */
+        const withWayOut =
+          written.followUps.length > 0
+            ? written
+            : { ...written, followUps: rewritten.followUps.slice(0, 3) };
+
         patch({
-          answer: written,
+          answer: withWayOut,
           hits: given,
           pending: false,
           waiting: false,

@@ -111,7 +111,7 @@ EVERY SHAPE OWES THE READER A COMPLETE ANSWER. Naming the dependency and stoppin
 not an answer, it is a label. Follow the skeleton for the shape you chose:
 
 - quoted: what the material says. Then what the reader has to do about it. Then anything about it that varies.
-- conditional: what it depends on, in one sentence. THEN each branch, as a list, saying what happens in each. THEN who can tell them which branch they are in.
+- conditional: what it depends on, in one sentence. THEN each branch, as a list, saying what happens in each. THEN who can tell them which branch they are in. ALSO put one short phrase per branch in "options", written the way the reader would say which one they are in, "We are still in Beta", "We have already launched". The reader can then click theirs. A conditional that names two branches and leaves "options" empty makes the reader retype what the answer just told them.
 - asked_back: FIRST, only if the reader actually stated a constraint, one line naming THEIR constraint in your own words, because asking a question back while ignoring what they told you reads as not having listened. If they stated no constraint, write no such line, and never write a line saying that no constraint was mentioned: a reader who said nothing about money must not be told they have no budget. Do not reuse a phrasing from these instructions; write the line from what they said. THEN why the answer splits, the one question, and the options. Then say what each option leads to, as part of the answer, and never as a sentence about the act of choosing: no "what happens after you choose is", no "once you pick", no describing the buttons. The reader can see the options; they cannot see where the options go.
 - routed: the three numbered requirements below.
 
@@ -242,7 +242,10 @@ Write 2 to 3 short search queries using the words this document would use, so a 
 - Do not answer the question and do not invent facts, thresholds, durations or names.
 - Set outOfScope true only if this document plainly cannot help: a departmental fact that varies by department, or a subject outside the life of a government digital service.
 
-ALWAYS give two or three followUps, on every shape without exception.
+ALWAYS give two or three followUps, on every shape without exception, including "quoted"
+and "conditional". This is not optional and an empty "followUps" is a defect: the reader
+is left at a dead end with no way to carry on. The only exception is "out_of_scope",
+where there is nothing in the guide to go on to.
 
 A followUp is a SHORT QUESTION the reader could click, at most twelve words, phrased the
 way they would type it. "Who signs it off". "What if the need is only partly gone". "How

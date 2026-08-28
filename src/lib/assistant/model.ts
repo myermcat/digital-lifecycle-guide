@@ -20,7 +20,17 @@
 import { buildRewritePrompt, buildAnswerPrompt, buildContents, PROMPT_VERSION, type PriorTurn } from "./prompts";
 import type { Section } from "./retrieval";
 
-export type Rewrite = { queries: string[]; situation: string; outOfScope: boolean };
+/**
+ * followUps is here because the rewrite step is asked for them and used to have them
+ * parsed away. The answer step sometimes returns none despite being told to always
+ * give two or three, and these are the fallback, already paid for.
+ */
+export type Rewrite = {
+  queries: string[];
+  situation: string;
+  outOfScope: boolean;
+  followUps: string[];
+};
 
 export type Shape = "quoted" | "conditional" | "asked_back" | "routed" | "out_of_scope";
 
@@ -238,6 +248,10 @@ export async function rewriteQuestion(
     queries: (raw.queries ?? []).map((q) => String(q).trim()).filter(Boolean).slice(0, 3),
     situation: String(raw.situation ?? "").trim(),
     outOfScope: Boolean(raw.outOfScope),
+    followUps: (raw.followUps ?? [])
+      .map((f) => String(f).trim())
+      .filter(Boolean)
+      .slice(0, 3),
   };
 }
 
