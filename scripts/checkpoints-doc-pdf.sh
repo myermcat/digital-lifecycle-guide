@@ -14,7 +14,7 @@ REPO="$PWD/../../TBS (Claude Output)/GCX Repo"
 if [ "$1" = "fr" ]; then
   WORD="$REPO/DLG -- FR/DLG -- Editable Source Files (Word) FR"
   PDF="$REPO/DLG -- FR/DLG -- Documents (PDF) FR"
-  NAME="Points de contrôle non officiels"
+  NAME="Points de contrôle"
 else
   WORD="$REPO/DLG -- EN/DLG -- Editable Source Files (Word)"
   PDF="$REPO/DLG -- EN/DLG -- Documents (PDF)"
