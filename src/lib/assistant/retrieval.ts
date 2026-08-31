@@ -138,6 +138,20 @@ const INTENTS: Array<{ name: string; test: RegExp; facet: keyof SectionFacets }>
     test: /\b(who (?:signs|approves|owns|decides|does|is responsible)|whose job|which team|accountable)\b/i,
     facet: "hasRole",
   },
+  /*
+   * A decision question needs the decider even when it does not ask for one.
+   *
+   * "we are over budget and behind schedule, do i stop or push through" carries no "who"
+   * wording, so it got no role boost, and the answer told the reader to weigh the evidence
+   * without naming a single person or body who could act on it. In this guide the answer to
+   * "should I" is almost always "you, up to a limit, and someone else above it", so a
+   * question shaped like a decision is a question about authority whether it says so or not.
+   */
+  {
+    name: "decision",
+    test: /\b(should (?:i|we)|do (?:i|we) (?:stop|continue|need|have to)|can (?:i|we)|am (?:i|we) allowed|are we allowed|is it ok(?:ay)?|stop or|push through|go ahead)\b/i,
+    facet: "hasRole",
+  },
 ];
 
 export function tokenise(input: string): string[] {
@@ -336,4 +350,46 @@ function snippetFor(section: Section, terms: Set<string>): string {
     }
   }
   return best.replace(/\s+/g, " ").trim().slice(0, 320);
+}
+
+/**
+ * The one place a question becomes a set of sections.
+ *
+ * This used to live inside the component, and a copy of it lived in each command-line
+ * script. They drifted, and the drift was invisible: a change made in the component was
+ * verified against a script that pooled differently over a different corpus, and reported
+ * as working when it was not. Three times. Anything that wants to know what the model will
+ * be given calls this.
+ *
+ * Three sources of query, pooled by summing scores so a section several of them agree on
+ * outranks one that a single query liked a lot:
+ *   the reader's own words, which are the only thing guaranteed to be about their question;
+ *   the vocabulary bridge, deterministic and in the guide's own words;
+ *   the model's rewrite, which is usually the best of the three and cannot be relied on,
+ *   because the proxy answers this step with whichever provider has allowance left.
+ */
+export function poolSections<H extends { section: Section; score: number }>(
+  retriever: { search(query: string, n: number): { hits: H[] } },
+  question: string,
+  rewrites: string[],
+  bridge: string[] = [],
+  limit = 4,
+  perPage = 2,
+): { given: Section[]; hits: H[]; queries: string[] } {
+  const queries = [question, ...bridge, ...rewrites].filter(Boolean);
+  /* the pooled score is the sum; the kept hit is the best single one, so its snippet is real */
+  const pooled = new Map<string, { section: Section; score: number; best: H }>();
+  for (const q of queries) {
+    for (const hit of retriever.search(q, 5).hits) {
+      const prev = pooled.get(hit.section.id);
+      pooled.set(hit.section.id, {
+        section: hit.section,
+        score: (prev?.score ?? 0) + hit.score,
+        best: prev && prev.best.score >= hit.score ? prev.best : hit,
+      });
+    }
+  }
+  const given = selectSections([...pooled.values()], limit, perPage);
+  const byId = new Map([...pooled.values()].map((p) => [p.section.id, p.best]));
+  return { given, hits: given.map((s) => byId.get(s.id)!).filter(Boolean), queries };
 }

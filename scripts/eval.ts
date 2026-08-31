@@ -32,9 +32,25 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { loadRetriever } from "./lib/retrieval";
+import { poolSections } from "../src/lib/assistant/retrieval";
+import { bridgeQueries } from "../src/lib/assistant/vocabulary";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CORPUS = resolve(HERE, "..", "corpus");
+/**
+ * Retrieval is measured against the slice the BROWSER downloads, not the full corpus.
+ *
+ * build-corpus.ts writes both. corpus/sections.json is everything it extracted, which since
+ * the French content files landed is 2852 sections, of which 1602 are French modules and 1745
+ * are /unmapped/ ones like ui-strings. public/assistant/sections.json is the 1107 a reader
+ * actually gets: public visibility, unmapped removed. Scoring against the full set flattered
+ * nothing and misled a lot: the misses named /unmapped/ui-strings and /unmapped/home-page-content
+ * as top hits, which cannot happen on the page.
+ *
+ * The cases still come from corpus/, because they are built from the instrument matrix and the
+ * matrix is not part of the browser slice.
+ */
+const BROWSER_SLICE = resolve(HERE, "..", "public", "assistant");
 
 type Instrument = {
   name: string;
@@ -172,14 +188,23 @@ async function main() {
     }
   ).INSTRUMENT_MATRIX;
 
-  const retriever = await loadRetriever(CORPUS);
+  const retriever = await loadRetriever(BROWSER_SLICE);
   const cases = buildCases(instruments).filter((c) => !onlyFamily || c.family === onlyFamily);
 
   type Row = Case & { rank: number | null; got: string[]; topScore: number; expectPath?: string };
   const rows: Row[] = [];
 
   for (const c of cases) {
-    const { hits } = retriever.search(c.question, 5);
+    /*
+     * Score what the page would retrieve, which is the reader's words plus the deterministic
+     * vocabulary bridge. The model rewrite is deliberately left out: it varies by provider
+     * and by remaining allowance, so an eval that included it would not be repeatable.
+     * Set DLG_EVAL_NO_BRIDGE=1 to see the raw-question numbers this used to report.
+     */
+    const bridge = process.env.DLG_EVAL_NO_BRIDGE ? [] : bridgeQueries(c.question);
+    const { hits } = bridge.length
+      ? { hits: poolSections(retriever, c.question, [], bridge, 5, 5).hits }
+      : retriever.search(c.question, 5);
     const expectPath = (c as Case & { expectPath?: string }).expectPath;
     const got = expectPath ? hits.map((h) => h.section.path) : hits.map((h) => h.section.heading);
     const target = expectPath ?? c.expectHeading;

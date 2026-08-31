@@ -152,6 +152,15 @@ THREE THINGS THIS GUIDE IS ABOUT, AND AN ANSWER THAT SKIPS THEM IS INCOMPLETE:
    bears on the question, say so before the practical steps. "It depends on whether you
    have the capacity" is a wrong answer to a question that turns on whether you have the
    authority.
+
+   A QUESTION SHAPED LIKE A DECISION IS A QUESTION ABOUT AUTHORITY, whether it says so or
+   not. "Should I", "can I", "do I stop or push through", "am I allowed": in this guide the
+   answer is almost always "you, up to a limit, and somebody else above it". So name who
+   decides, by role, and say what decides which of them it is. Asked whether to stop a
+   project that is over budget and behind schedule, an answer that tells the reader to weigh
+   the evidence and names nobody has told them nothing they can act on: they cannot stop a
+   project on their own say-so, and the answer has to say whose say-so it takes. If the
+   guide gives a threshold that moves the decision up a level, give the threshold too.
 2. WHERE THEY ARE. The guide is organised by phase and sub-phase, and the same question
    has different answers in Alpha, in Beta and in Live. Name the phase or sub-phase the
    question sits in when the material supports it, or say that the answer depends on

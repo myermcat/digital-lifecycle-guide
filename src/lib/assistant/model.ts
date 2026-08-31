@@ -222,12 +222,42 @@ async function call<T>(
 }
 
 /** Straight quotes and ordinary hyphens, whatever the model produced. */
+/**
+ * Phrases that name our own machinery, and what the reader should see instead.
+ *
+ * A reader cannot see the sections that were retrieved and does not know a retrieval step
+ * exists, so "No single answer is provided in the material" reads as a machine talking about
+ * itself. The prompt has been told not to write these and still does, so they come out here,
+ * where compliance is not required.
+ *
+ * Every pattern below was checked against the 1107 sections the browser downloads and appears
+ * in none of them, so a scrub cannot corrupt an answer that is quoting the guide correctly.
+ * That check matters: "the material" on its own is guide prose six times over, in "prepares
+ * the material" and "supplies the material" about a board submission, so the broad form of
+ * this rule would have rewritten a correct answer. Check anything added here the same way.
+ */
+const PLUMBING: Array<[RegExp, string]> = [
+  [/\bin the (?:provided|supplied|given) material\b/gi, "in the guide"],
+  [/\bin the material provided\b/gi, "in the guide"],
+  [/\bthe (?:provided|supplied|given) material\b/gi, "the guide"],
+  [/\bin the material\b/gi, "in the guide"],
+  [/\bthe material (covers|says|states|gives|provides)\b/gi, "the guide $1"],
+  [/\bthe sections (?:you have|provided|supplied)\b/gi, "the guide"],
+  [/\bno section (?:supplies|provides|gives)\b/gi, "the guide does not give"],
+  [/\bthese sources\b/gi, "the guide"],
+  [/\bthe (?:provided|supplied) (?:text|context|sections)\b/gi, "the guide"],
+  [/\bthe context provided\b/gi, "the guide"],
+];
+
 function normalise(t: string): string {
-  return t
+  let out = t
     .replace(/[‘’]/g, "'")
     .replace(/[“”]/g, '"')
     .replace(/[‑‒–—]/g, "-")
     .replace(/ /g, " ");
+  for (const [pattern, replacement] of PLUMBING) out = out.replace(pattern, replacement);
+  /* if two rules meet on one phrase, do not leave "the guide provided" behind */
+  return out.replace(/\bthe guide (?:provided|supplied|given)\b/gi, "the guide");
 }
 
 export type MapEntry = { title: string; path: string; sections: string[] };

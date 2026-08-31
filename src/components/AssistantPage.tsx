@@ -14,7 +14,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { loadCorpus, loadMap, loadSources, matchSources, guideLink, type SourceLink } from "@/lib/assistant/corpus";
-import { selectSections } from "@/lib/assistant/retrieval";
+import { poolSections } from "@/lib/assistant/retrieval";
+import { bridgeQueries } from "@/lib/assistant/vocabulary";
 import type { Hit, Retriever, Section } from "@/lib/assistant/retrieval";
 import {
   answerFrom,
@@ -366,34 +367,13 @@ export function AssistantPage() {
         const rewritten = await rewriteQuestion(apiKey, trimmed, map, previous);
 
         /**
-         * Pool the rewritten queries by summing scores, so a section two queries agree
-         * on outranks one a single query liked a lot.
+         * One shared function turns a question into sections, for the page, the command line
+         * and the eval alike. A copy of this logic used to live here and another in each
+         * script; they drifted, and the drift was invisible, which is how three fixes came to
+         * be verified against a script and were false on this page.
          */
-        /*
-         * The reader's own words go in the pool with the rewrites, never instead of them.
-         * The rewrite earns its place most of the time, and when it misses it used to take
-         * the whole retrieval with it: asked how long a procurement takes, it produced
-         * "procurement lead time estimate", "supplier competition timeline months" and
-         * "procurement process duration", and not one of them found the section that
-         * carries the 12 to 24 month range, which the raw question ranks first. The same
-         * shape is on record in the defects register, where a rewrite moved a question
-         * about extending a contract onto a page that did not answer it.
-         */
-        const pooled = new Map<string, { hit: Hit; score: number }>();
-        for (const q of [trimmed, ...rewritten.queries]) {
-          for (const hit of retriever.search(q, 5).hits) {
-            const prev = pooled.get(hit.section.id);
-            pooled.set(hit.section.id, { hit, score: (prev?.score ?? 0) + hit.score });
-          }
-        }
-        /* spread across pages, so a constrained question reaches funding as well as the phase */
-        const picked = selectSections(
-          [...pooled.values()].map((p2) => ({ section: p2.hit.section, score: p2.score })),
-          4,
-          2,
-        );
-        const byId = new Map([...pooled.values()].map((p2) => [p2.hit.section.id, p2.hit]));
-        const given = picked.length ? picked.map((sec) => byId.get(sec.id)!).filter(Boolean) : plain.hits;
+        const pooled = poolSections(retriever, trimmed, rewritten.queries, bridgeQueries(trimmed));
+        const given: Hit[] = pooled.hits.length ? pooled.hits : plain.hits;
 
         const written = await answerFrom(
           apiKey,
