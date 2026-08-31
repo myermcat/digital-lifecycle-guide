@@ -247,6 +247,14 @@ const PLUMBING: Array<[RegExp, string]> = [
   [/\bthese sources\b/gi, "the guide"],
   [/\bthe (?:provided|supplied) (?:text|context|sections)\b/gi, "the guide"],
   [/\bthe context provided\b/gi, "the guide"],
+  /*
+   * The prompt labels each supplied section "--- SECTION 1 id=create-discovery#0" so the model
+   * can cite one in usedSectionIds. It sometimes writes the label into the prose instead, and
+   * "(Section id=create-discovery#0)" appeared in a live answer. The page already lists where
+   * an answer came from, with real titles and links, so the raw id is noise at best.
+   */
+  [/\s*\((?:section\s+)?id=[^)]*\)/gi, ""],
+  [/\s*\(section\s+\d+(?:\s*,\s*id=[^)]*)?\)/gi, ""],
 ];
 
 function normalise(t: string): string {

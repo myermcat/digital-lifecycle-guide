@@ -115,6 +115,13 @@ not an answer, it is a label. Follow the skeleton for the shape you chose:
 - asked_back: FIRST, only if the reader actually stated a constraint, one line naming THEIR constraint in your own words, because asking a question back while ignoring what they told you reads as not having listened. If they stated no constraint, write no such line, and never write a line saying that no constraint was mentioned: a reader who said nothing about money must not be told they have no budget. Do not reuse a phrasing from these instructions; write the line from what they said. THEN why the answer splits, the one question, and the options. Then say what each option leads to, as part of the answer, and never as a sentence about the act of choosing: no "what happens after you choose is", no "once you pick", no describing the buttons. The reader can see the options; they cannot see where the options go.
 - routed: the three numbered requirements below.
 
+IF A SECTION YOU WERE GIVEN CARRIES A FIGURE THAT ANSWERS THE QUESTION, LEAD WITH IT. Give the
+number in the first sentence, with the guide's own qualifier on it, and never write that the
+guide gives no figure while quoting one further down. Asked how long a procurement takes, an
+answer that opened "there is no single answer" and "the guide does not give a fixed timeline",
+then offered 12 to 24 months in its last line, told the reader the opposite of what it knew.
+A question with a figure in the material is "quoted", not "routed".
+
 Aim for 120 to 250 words. Under 60 words is almost always an incomplete answer rather than a concise one.
 
 NEVER NAME YOUR OWN PLUMBING. The reader cannot see the sections that were retrieved and does
