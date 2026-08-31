@@ -265,7 +265,17 @@ function normalise(t: string): string {
     .replace(/ /g, " ");
   for (const [pattern, replacement] of PLUMBING) out = out.replace(pattern, replacement);
   /* if two rules meet on one phrase, do not leave "the guide provided" behind */
-  return out.replace(/\bthe guide (?:provided|supplied|given)\b/gi, "the guide");
+  out = out.replace(/\bthe guide (?:provided|supplied|given)\b/gi, "the guide");
+  /*
+   * The phrases replaced above are plural, "the sections you have", "these sources", so the
+   * verb after them is plural too and "the guide do not cover it" is what comes out. Put the
+   * agreement back rather than leaving the reader a sentence that reads as broken English.
+   */
+  return out
+    .replace(/\bthe guide do not\b/gi, "the guide does not")
+    .replace(/\bthe guide (cover|mention|say|state|give|provide|include|list)\b/gi, "the guide $1s")
+    .replace(/\bthe guide are\b/gi, "the guide is")
+    .replace(/\bthe guide have\b/gi, "the guide has");
 }
 
 export type MapEntry = { title: string; path: string; sections: string[] };

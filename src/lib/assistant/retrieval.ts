@@ -205,8 +205,16 @@ export class Retriever {
     this.sections = opts.includePrivate ? sections : sections.filter((s) => s.visibility === "public");
 
     this.sections.forEach((s, i) => {
-      // the heading counts three times: it is the most descriptive thing about a section
-      const terms = tokenise(`${s.heading} ${s.heading} ${s.heading} ${s.page} ${s.text}`);
+      /*
+       * The heading counts four times, because it is the most descriptive thing about a
+       * section. It used to say three, and 405 of the 1107 sections then repeated their
+       * heading as the first line of their own body, so those were really being counted four
+       * times and the rest three. Taking the duplicate out of the corpus, which it had to be
+       * because the model was reading the line twice and writing it twice, dropped NAMED
+       * top-1 from 92 to 89 per cent and OWNER from 95 to 86: the accidental weight had been
+       * doing real work. This says four on purpose, and every section gets it.
+       */
+      const terms = tokenise(`${s.heading} ${s.heading} ${s.heading} ${s.heading} ${s.page} ${s.text}`);
       this.lengths[i] = terms.length;
       for (const t of terms) {
         let posting = this.postings.get(t);

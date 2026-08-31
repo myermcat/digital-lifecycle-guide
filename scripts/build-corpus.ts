@@ -591,14 +591,38 @@ async function build() {
     }
     let i = 0;
     for (const [g, group] of grouped) {
-      const text = group.map((f) => f.text).join("\n\n");
-      if (words(text) < 8) continue;
+      const heading = names.get(g);
+      /*
+       * Do not put the heading in the body as well.
+       *
+       * The markdown path above drops this fragment for the same reason, at the
+       * isSectionTitle check, and this path did not, so 411 of the 1107 sections a reader
+       * retrieves opened with a verbatim copy of their own heading. The answer prompt then
+       * prints "Heading: ..." immediately above the body, so the model was shown the same
+       * line twice and duly wrote it twice: asked whether to stop a project over budget, it
+       * said the guide suggests stopping when the evidence says the service should not
+       * launch, and then said it again in the next sentence. It also double-counted those
+       * words in the ranking and spent the tokens on nothing.
+       */
+      const body = group.filter(
+        (f) => !(HEADING_KEYS.has(f.key) && words(f.text) <= 14 && f.text === heading),
+      );
+      /*
+       * The floor is measured on the whole group, before the heading came out, so removing a
+       * duplicate never removes a section. Measuring it after cost 33 of them, mostly link
+       * stubs like "Governing instrument", and one real claim, "The team that built it is not
+       * the team that will run it, and nothing was written down". Where the heading was all
+       * there was, it stays as the text: the duplication is then unavoidable and harmless,
+       * because there is no body for it to be repeated against.
+       */
+      if (words(group.map((f) => f.text).join("\n\n")) < 8) continue;
+      const text = (body.length ? body : group).map((f) => f.text).join("\n\n");
       sectionRecords.push({
         id: `${page.slug}#${i++}`,
         page: page.title,
         path: page.path,
         slug: page.slug,
-        heading: names.get(g) ?? g,
+        heading: heading ?? g,
         trail: g,
         text,
         words: words(text),
