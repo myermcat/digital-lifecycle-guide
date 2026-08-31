@@ -14,10 +14,10 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "doc:checkpoints": "tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh && tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- EN/DLG -- Documents (PDF)/The official checkpoints of a digital service.pdf\" && tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh",
+    "doc:checkpoints": "tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh && tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- EN/DLG -- Documents (PDF)/The unofficial checkpoints of a digital service.pdf\" && tsx scripts/build-checkpoints-doc.ts && sh scripts/checkpoints-doc-pdf.sh",
     "generate:corpus": "tsx scripts/build-corpus.ts",
     "check:corpus": "tsx scripts/build-corpus.ts --check",
-    "doc:checkpoints:fr": "DLG_LOCALE=fr tsx scripts/build-checkpoints-doc.mjs && sh scripts/checkpoints-doc-pdf.sh fr && DLG_LOCALE=fr tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- FR/DLG -- Documents (PDF) FR/Points de contrôle.pdf\" && DLG_LOCALE=fr tsx scripts/build-checkpoints-doc.mjs && sh scripts/checkpoints-doc-pdf.sh fr"
+    "doc:checkpoints:fr": "DLG_LOCALE=fr tsx scripts/build-checkpoints-doc.mjs && sh scripts/checkpoints-doc-pdf.sh fr && DLG_LOCALE=fr tsx scripts/checkpoints-doc-pages.mjs \"$PWD/../../TBS (Claude Output)/GCX Repo/DLG -- FR/DLG -- Documents (PDF) FR/Points de contrôle non officiels.pdf\" && DLG_LOCALE=fr tsx scripts/build-checkpoints-doc.mjs && sh scripts/checkpoints-doc-pdf.sh fr"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

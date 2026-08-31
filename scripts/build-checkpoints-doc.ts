@@ -132,9 +132,9 @@ const FR_FIGS =
 const OUT = IS_FR
   ? "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
     "DLG -- FR/DLG -- Editable Source Files (Word) FR/" +
-    "Points de contrôle.docx"
+    "Points de contrôle non officiels.docx"
   : "/Users/maryy/Desktop/Claude Hub/Claude -- TBS/TBS (Claude Output)/GCX Repo/" +
-    "DLG -- EN/DLG -- Editable Source Files (Word)/The official checkpoints of a digital service.docx";
+    "DLG -- EN/DLG -- Editable Source Files (Word)/The unofficial checkpoints of a digital service.docx";
 const DATE = IS_FR ? "17 août 2026" : "17 August 2026";
 
 /** A PNG for each topic, keyed by the topic name in whichever language is being built. */

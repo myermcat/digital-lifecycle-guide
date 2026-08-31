@@ -14,11 +14,11 @@ REPO="$PWD/../../TBS (Claude Output)/GCX Repo"
 if [ "$1" = "fr" ]; then
   WORD="$REPO/DLG -- FR/DLG -- Editable Source Files (Word) FR"
   PDF="$REPO/DLG -- FR/DLG -- Documents (PDF) FR"
-  NAME="Points de contrôle"
+  NAME="Points de contrôle non officiels"
 else
   WORD="$REPO/DLG -- EN/DLG -- Editable Source Files (Word)"
   PDF="$REPO/DLG -- EN/DLG -- Documents (PDF)"
-  NAME="The official checkpoints of a digital service"
+  NAME="The unofficial checkpoints of a digital service"
 fi
 
 rm -f "$PDF/$NAME.pdf"
